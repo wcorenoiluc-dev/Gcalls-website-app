@@ -40,7 +40,9 @@ export function Breadcrumb({ trail }: { trail: Crumb[] }) {
               ) : (
                 <Link
                   to={crumb.path}
-                  className="rounded transition-colors duration-150 hover:text-[#673ab7] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
+                  // min-h-11 keeps the crumb a 44px tap target without
+                  // changing the visual row height.
+                  className="inline-flex min-h-11 items-center rounded transition-colors duration-150 hover:text-[#673ab7] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
                   style={{ color: '#5b5f6b' }}
                 >
                   {crumb.label}

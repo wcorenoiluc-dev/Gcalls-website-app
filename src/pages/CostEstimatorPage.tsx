@@ -2,6 +2,7 @@ import { ArrowRight, Check } from 'lucide-react'
 import { Link } from 'react-router'
 import { DevStatusNote, PageShell } from '@/components/layout/PageShell'
 import { CONTACT, ROUTES } from '@/config/navigation'
+import { PRICING_NOTE, SOLUTION_PRICING, estimateCost } from '@/data/pricing'
 
 /**
  * Cost estimator — structure only (Checkpoint 2).
@@ -40,6 +41,9 @@ const WORKFLOW_STEPS = [
 ]
 
 export function CostEstimatorPage() {
+  // Shared with /bang-gia/ — one pricing model, no duplicated constants (§19).
+  const result = estimateCost()
+
   return (
     <PageShell
       eyebrow="Chi phí"
@@ -100,7 +104,11 @@ export function CostEstimatorPage() {
             </p>
 
             <ul className="mt-6 flex flex-col gap-3">
-              {['Giải pháp quan tâm', 'Số lượng người dùng', 'Nhu cầu tích hợp'].map(
+              {[
+                `Giải pháp quan tâm (${SOLUTION_PRICING.length} lựa chọn)`,
+                'Số lượng Agent',
+                'Nhu cầu sử dụng theo giải pháp',
+              ].map(
                 (field) => (
                   <li
                     key={field}
@@ -133,13 +141,13 @@ export function CostEstimatorPage() {
               Ước tính
             </h2>
 
-            {/* No pricing config yet — never render 0₫. */}
+            {/* Price state comes from the shared config — never renders 0₫. */}
             <p className="mt-4 text-xl sm:text-2xl font-extrabold" style={{ color: '#673ab7' }}>
-              Liên hệ để nhận báo giá
+              {result.label}
             </p>
             <p className="mt-3 text-base leading-relaxed" style={{ color: '#5b5f6b' }}>
-              Chi phí phụ thuộc vào quy mô đội ngũ, giải pháp tích hợp và nhu cầu sử dụng
-              thực tế.
+              {PRICING_NOTE}. Chi phí phụ thuộc vào quy mô đội ngũ, giải pháp tích hợp và
+              nhu cầu sử dụng thực tế.
             </p>
 
             <Link

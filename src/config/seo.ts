@@ -39,6 +39,11 @@ export interface PageMeta {
   description: string
   /** Set on the home route so the title is not suffixed twice. */
   isHome?: boolean
+  /**
+   * Use `title` verbatim, without the `| Gcalls` suffix. For routes with an
+   * approved full title that already contains the brand.
+   */
+  exactTitle?: boolean
 }
 
 export const PAGE_META: Record<RoutePath, PageMeta> = {
@@ -84,9 +89,10 @@ export const PAGE_META: Record<RoutePath, PageMeta> = {
       'Gcalls CX tập trung vào trải nghiệm khách hàng trên toàn bộ hành trình tương tác qua kênh thoại.',
   },
   [ROUTES.pricing]: {
-    title: 'Bảng giá',
+    title: 'Bảng giá Gcalls | Gói tổng đài cho SME & giải pháp doanh nghiệp',
+    exactTitle: true,
     description:
-      'Thông tin gói dịch vụ tổng đài Gcalls. Liên hệ đội ngũ Gcalls để nhận báo giá phù hợp với quy mô doanh nghiệp.',
+      'Xem bảng giá Gcalls cho Webphone SME, tích hợp CRM/Helpdesk, tổng đài quốc tế, Gcalls CX và giải pháp AI theo nhu cầu doanh nghiệp.',
   },
   [ROUTES.costEstimator]: {
     title: 'Ước tính chi phí',
@@ -105,7 +111,9 @@ export function getPageMeta(path: string): PageMeta {
 }
 
 export function buildTitle(meta: PageMeta): string {
-  return meta.isHome ? meta.title : `${meta.title} | ${SITE_NAME}`
+  return meta.isHome || meta.exactTitle
+    ? meta.title
+    : `${meta.title} | ${SITE_NAME}`
 }
 
 export function buildCanonical(path: string): string {
