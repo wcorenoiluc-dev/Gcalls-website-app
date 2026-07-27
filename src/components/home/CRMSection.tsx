@@ -113,7 +113,7 @@ const useCases = [
   },
 ];
 
-function CRMMockup() {
+export function CRMMockup() {
   const [activeContact, setActiveContact] = useState(0);
   const [searchVal, setSearchVal] = useState("");
   const contact = crmContacts[activeContact];

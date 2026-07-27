@@ -1,7 +1,7 @@
 import { ArrowRight, Calculator } from 'lucide-react'
 import { Link } from 'react-router'
 import { ROUTES } from '@/config/navigation'
-import { Container, Eyebrow, GradientHeading } from './primitives'
+import { Container, Eyebrow, GradientHeading } from '@/components/common/primitives'
 
 /**
  * Pricing hero.

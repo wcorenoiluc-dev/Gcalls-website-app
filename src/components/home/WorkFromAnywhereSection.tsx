@@ -46,7 +46,7 @@ const wfaStats = [
   { value: "Multi",    label: "Any Device",          icon: LayoutGrid,  color: "#d97706" },
 ];
 
-function DialpadMockup() {
+export function DialpadMockup() {
   const [dialInput, setDialInput] = useState("0901 234");
   const keys = [["1","2","3"],["4","5","6"],["7","8","9"],["*","0","#"]];
 
@@ -132,7 +132,7 @@ function DialpadMockup() {
   );
 }
 
-function SoftphoneMockup() {
+export function SoftphoneMockup() {
   const [onCall, setOnCall] = useState(false);
   const [muted, setMuted] = useState(false);
   const [elapsed, setElapsed] = useState(0);
@@ -240,7 +240,7 @@ function SoftphoneMockup() {
   );
 }
 
-function UserStatusDashboard() {
+export function UserStatusDashboard() {
   const [filter, setFilter] = useState<"all" | "available" | "in-call" | "away" | "offline">("all");
   const filtered = filter === "all" ? remoteStatuses : remoteStatuses.filter(s => s.status === filter);
 
@@ -292,7 +292,7 @@ function UserStatusDashboard() {
       {/* Wraps below `lg` rather than scrolling: at 390px this row hid 252px
           of content, leaving the "Vắng mặt" and "Ngoại tuyến" filters
           unreachable behind a horizontal drag most visitors never discover. */}
-      <div className="flex gap-1 px-4 pt-3 pb-0 max-lg:flex-wrap! max-lg:overflow-x-visible!" style={{ borderBottom: "1px solid rgba(103,58,183,0.08)", overflowX: "auto" }}>
+      <div className="flex gap-1 px-4 pt-3 pb-0 flex-wrap overflow-x-visible!" style={{ borderBottom: "1px solid rgba(103,58,183,0.08)", overflowX: "auto" }}>
         {filterBtns.map(fb => (
           <button
             key={fb.key}

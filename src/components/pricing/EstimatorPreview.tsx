@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react'
 import { Link } from 'react-router'
 import { ROUTES } from '@/config/navigation'
 import { SOLUTION_PRICING, estimateCost } from '@/data/pricing'
-import { Card } from './primitives'
+import { Card } from '@/components/common/primitives'
 
 /**
  * Interactive cost-estimator preview.

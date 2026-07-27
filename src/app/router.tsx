@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react'
 import { createBrowserRouter } from 'react-router'
 import { ROUTES } from '@/config/navigation'
 import { SiteLayout } from '@/layouts/SiteLayout'
+import { RouteFallback } from '@/components/common/RouteFallback'
 import { HomePage } from '@/pages/HomePage'
 
 /**
@@ -48,14 +49,6 @@ const CostEstimatorPage = lazy(() =>
 const NotFoundPage = lazy(() =>
   import('@/pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })),
 )
-
-/**
- * Placeholder shown while a route chunk loads. Reserves viewport height so the
- * header and footer do not collapse together mid-navigation.
- */
-function RouteFallback() {
-  return <div className="min-h-[70vh]" aria-busy="true" aria-live="polite" />
-}
 
 function lazyRoute(element: React.ReactNode) {
   return <Suspense fallback={<RouteFallback />}>{element}</Suspense>

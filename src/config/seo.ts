@@ -54,9 +54,10 @@ export const PAGE_META: Record<RoutePath, PageMeta> = {
     isHome: true,
   },
   [ROUTES.gcallsPlus]: {
-    title: 'Gcalls Plus Webphone',
+    title: 'Gcalls Plus Webphone | Tổng đài trên trình duyệt cho Sales & CSKH',
+    exactTitle: true,
     description:
-      'Tổng đài chuyên nghiệp chạy trên trình duyệt cho đội Sales và CSKH: nghe gọi, quản lý danh bạ, lịch sử tương tác và theo dõi hiệu suất.',
+      'Gcalls Plus Webphone giúp doanh nghiệp nghe gọi, quản lý lịch sử khách hàng và triển khai tổng đài ngay trên trình duyệt, không cần hệ thống phức tạp.',
   },
   [ROUTES.crmIntegration]: {
     title: 'Tích hợp CRM',

@@ -107,7 +107,7 @@ const methodColor: Record<string, { bg: string; text: string }> = {
   DELETE: { bg: "#fee2e2", text: "#dc2626" },
 };
 
-function APIManagerMockup() {
+export function APIManagerMockup() {
   const [activeEndpoint, setActiveEndpoint] = useState(0);
   return (
     <div
@@ -193,7 +193,7 @@ function APIManagerMockup() {
   );
 }
 
-function CustomerPopupMockup() {
+export function CustomerPopupMockup() {
   const [ringing, setRinging] = useState(true);
   useEffect(() => {
     const t = setTimeout(() => setRinging(false), 2800);
@@ -280,7 +280,7 @@ function CustomerPopupMockup() {
   );
 }
 
-function WidgetMockup() {
+export function WidgetMockup() {
   const [widgetOpen, setWidgetOpen] = useState(false);
   const [widgetInput, setWidgetInput] = useState("");
 

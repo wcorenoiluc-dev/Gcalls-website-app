@@ -1,7 +1,7 @@
 import { ArrowRight, Receipt } from 'lucide-react'
 import { Link } from 'react-router'
 import { PRICE_FALLBACK, type SolutionPricing } from '@/data/pricing'
-import { Card } from './primitives'
+import { Card } from '@/components/common/primitives'
 
 /**
  * Solution pricing-model card.

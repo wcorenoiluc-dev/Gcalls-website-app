@@ -19,7 +19,7 @@ import {
   Section,
   SectionHeader,
   Card,
-} from '@/components/pricing/primitives'
+} from '@/components/common/primitives'
 import { PricingHero } from '@/components/pricing/PricingHero'
 import { PricingProductSelector } from '@/components/pricing/PricingProductSelector'
 import { PricingPlanCard } from '@/components/pricing/PricingPlanCard'

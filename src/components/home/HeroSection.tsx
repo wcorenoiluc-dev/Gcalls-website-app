@@ -35,7 +35,7 @@ const agentStatus = [
 
 // ── Dashboard UI mockup ──────────────────────────────────────────────────────
 
-function DashboardMain() {
+export function DashboardMain() {
   const [playingId, setPlayingId] = useState<number | null>(null);
 
   return (
@@ -171,7 +171,7 @@ function DashboardMain() {
   );
 }
 
-function FloatingTimeline() {
+export function FloatingTimeline() {
   const [playing, setPlaying] = useState(false);
   const [progress, setProgress] = useState(38);
 
@@ -251,7 +251,7 @@ function FloatingTimeline() {
   );
 }
 
-function FloatingCRM() {
+export function FloatingCRM() {
   return (
     <div
       className="rounded-2xl p-3.5"
@@ -287,7 +287,7 @@ function FloatingCRM() {
   );
 }
 
-function FloatingAnalytics() {
+export function FloatingAnalytics() {
   const bars = [65, 80, 72, 90, 78, 85, 73];
   const days = ["T2", "T3", "T4", "T5", "T6", "T7", "CN"];
 
@@ -330,7 +330,7 @@ function FloatingAnalytics() {
   );
 }
 
-function FloatingDialpad() {
+export function FloatingDialpad() {
   const [input, setInput] = useState("0901 234 5");
 
   const keys = [

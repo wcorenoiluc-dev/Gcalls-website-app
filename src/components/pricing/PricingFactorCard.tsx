@@ -1,4 +1,4 @@
-import { Card } from './primitives'
+import { Card } from '@/components/common/primitives'
 
 /**
  * "What makes up the cost" factor card.

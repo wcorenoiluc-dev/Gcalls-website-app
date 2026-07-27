@@ -97,7 +97,7 @@ const floatingStats = [
   { value: "Ghi âm", label: "Tự động theo cuộc gọi", icon: Mic, color: "#0891b2" },
 ];
 
-function CallTimelineMockup() {
+export function CallTimelineMockup() {
   const [activeId, setActiveId] = useState<number>(2);
   const [playing, setPlaying] = useState(false);
   const [progress, setProgress] = useState(44);

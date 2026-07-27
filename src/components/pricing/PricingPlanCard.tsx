@@ -7,7 +7,7 @@ import {
   hasApprovedPrice,
   type PricingPlan,
 } from '@/data/pricing'
-import { Card, PriceState } from './primitives'
+import { Card, PriceState } from '@/components/common/primitives'
 
 /**
  * Gcalls Plus package card.

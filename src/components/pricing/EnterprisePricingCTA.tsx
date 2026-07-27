@@ -1,5 +1,5 @@
 import { ArrowRight, Check } from 'lucide-react'
-import { Container } from './primitives'
+import { Container } from '@/components/common/primitives'
 
 /**
  * Enterprise section.

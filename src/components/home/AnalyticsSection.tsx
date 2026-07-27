@@ -55,7 +55,7 @@ const analyticUseCases = [
   { role: "Operation Team",   icon: Settings,      color: "#d97706", bg: "#fffbeb",  desc: "Cấu hình báo cáo tự động, phân tích tắc nghẽn luồng cuộc gọi và tối ưu phân công." },
 ];
 
-function AnalyticsDashboardMockup() {
+export function AnalyticsDashboardMockup() {
   const [range, setRange] = useState<"day" | "week" | "month">("week");
   const [hoveredBar, setHoveredBar] = useState<number | null>(null);
 
