@@ -1,6 +1,6 @@
 import { Mail, Phone } from 'lucide-react'
 import { Link } from 'react-router'
-import { CONTACT, FOOTER_GROUPS } from '@/config/navigation'
+import { CONTACT, FOOTER_COLUMNS } from '@/config/navigation'
 import { Logo } from '@/components/navigation/Logo'
 
 /**
@@ -23,7 +23,7 @@ export function Footer() {
       }}
     >
       <div className="max-w-7xl mx-auto px-5 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 lg:gap-8">
           {/* Brand + contact */}
           <div>
             <Logo />
@@ -56,7 +56,7 @@ export function Footer() {
           </div>
 
           {/* Navigation columns */}
-          {FOOTER_GROUPS.map((group) => (
+          {FOOTER_COLUMNS.map((group: (typeof FOOTER_COLUMNS)[number]) => (
             <nav key={group.id} aria-label={group.label}>
               <h2
                 className="text-sm font-bold uppercase tracking-wider"
@@ -65,7 +65,7 @@ export function Footer() {
                 {group.label}
               </h2>
               <ul className="mt-4 flex flex-col">
-                {group.items.map((item) => (
+                {group.items.map((item: (typeof group.items)[number]) => (
                   <li key={item.path}>
                     <Link
                       to={item.path}

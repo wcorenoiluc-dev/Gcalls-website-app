@@ -1,13 +1,12 @@
 /**
  * Per-route SEO metadata.
  *
- * Checkpoint 2 scope: make every route *capable* of independent metadata.
- * The copy here is descriptive placeholder metadata derived from the approved
- * route purposes — it is NOT optimised copy and will be rewritten in the SEO
- * checkpoint. What matters now is that no two routes share one global title.
+ * Titles and descriptions are authored per entity in `src/config/sitemap.ts`
+ * and read from there — there is no template that generates metadata for
+ * shells, so no two routes share a title or description.
  */
 
-import { ROUTES, type RoutePath } from './navigation'
+import { SITEMAP, ROUTES, getEntry } from './sitemap'
 
 /* ------------------------------------------------------------------------ *
  * SEARCH INDEXING — READ BEFORE CHANGING
@@ -18,12 +17,11 @@ import { ROUTES, type RoutePath } from './navigation'
  * To enable indexing at go-live, set VITE_ALLOW_INDEXING=true in the
  * production environment (see docs/LAUNCH_CHECKLIST.md). Flipping this is a
  * conscious launch step, not a code change.
+ *
+ * Per-route control also exists: an entry with `indexable: false` in the
+ * sitemap stays noindex even after the global flag is enabled.
  * ------------------------------------------------------------------------ */
 export const ALLOW_INDEXING = import.meta.env.VITE_ALLOW_INDEXING === 'true'
-
-export const ROBOTS_CONTENT = ALLOW_INDEXING
-  ? 'index, follow'
-  : 'noindex, nofollow'
 
 /** Canonical origin. Override per environment at launch. */
 export const SITE_ORIGIN =
@@ -34,91 +32,53 @@ export const SITE_LOCALE = 'vi_VN'
 export const DEFAULT_OG_TYPE = 'website'
 
 export interface PageMeta {
-  /** <title> for this route. Rendered as `${title} | Gcalls` unless isHome. */
   title: string
   description: string
-  /** Set on the home route so the title is not suffixed twice. */
-  isHome?: boolean
-  /**
-   * Use `title` verbatim, without the `| Gcalls` suffix. For routes with an
-   * approved full title that already contains the brand.
-   */
+  /** Use `title` verbatim, without the "| Gcalls" suffix. */
   exactTitle?: boolean
+  /** False keeps this route noindex even once indexing is enabled globally. */
+  indexable: boolean
 }
 
-export const PAGE_META: Record<RoutePath, PageMeta> = {
-  [ROUTES.home]: {
-    title: 'Gcalls — Call Smarter, Grow Faster',
-    description:
-      'Gcalls Plus Webphone giúp đội Sales và CSKH nghe gọi, quản lý danh bạ, lịch sử tương tác, ghi chú và theo dõi hoạt động cuộc gọi ngay trên trình duyệt.',
-    isHome: true,
-  },
-  [ROUTES.gcallsPlus]: {
-    title: 'Gcalls Plus Webphone | Tổng đài trên trình duyệt cho Sales & CSKH',
-    exactTitle: true,
-    description:
-      'Gcalls Plus Webphone giúp doanh nghiệp nghe gọi, quản lý lịch sử khách hàng và triển khai tổng đài ngay trên trình duyệt, không cần hệ thống phức tạp.',
-  },
-  [ROUTES.crmIntegration]: {
-    title: 'Tổng đài tích hợp CRM | Click-to-Call & dữ liệu khách hàng | Gcalls',
-    exactTitle: true,
-    description:
-      'Kết nối Gcalls với CRM để gọi trực tiếp, hiển thị ngữ cảnh khách hàng và quản lý lịch sử tương tác trong workflow Sales và CSKH.',
-  },
-  [ROUTES.helpdeskIntegration]: {
-    title: 'Tích hợp Helpdesk',
-    description:
-      'Kết nối tổng đài Gcalls với hệ thống Helpdesk để gắn cuộc gọi vào ticket và theo dõi toàn bộ lịch sử hỗ trợ khách hàng.',
-  },
-  [ROUTES.posIntegration]: {
-    title: 'Tích hợp POS',
-    description:
-      'Kết nối tổng đài Gcalls với hệ thống POS để nhận diện khách hàng và xử lý đơn hàng ngay khi cuộc gọi đến.',
-  },
-  [ROUTES.internationalCalling]: {
-    title: 'Tổng đài quốc tế',
-    description:
-      'Giải pháp tổng đài cho doanh nghiệp có nhu cầu liên lạc quốc tế, với hạ tầng thoại đám mây và quản lý tập trung.',
-  },
-  [ROUTES.qcCenter]: {
-    title: 'QA QC Center',
-    description:
-      'QA QC Center (QC Bot AI) hỗ trợ đánh giá và kiểm soát chất lượng cuộc gọi của đội Sales và CSKH.',
-  },
-  [ROUTES.gcallsCx]: {
-    title: 'Gcalls CX',
-    description:
-      'Gcalls CX tập trung vào trải nghiệm khách hàng trên toàn bộ hành trình tương tác qua kênh thoại.',
-  },
-  [ROUTES.pricing]: {
-    title: 'Bảng giá Gcalls | Gói tổng đài cho SME & giải pháp doanh nghiệp',
-    exactTitle: true,
-    description:
-      'Xem bảng giá Gcalls cho Webphone SME, tích hợp CRM/Helpdesk, tổng đài quốc tế, Gcalls CX và giải pháp AI theo nhu cầu doanh nghiệp.',
-  },
-  [ROUTES.costEstimator]: {
-    title: 'Ước tính chi phí Gcalls | Chọn cấu hình theo nhu cầu doanh nghiệp',
-    exactTitle: true,
-    description:
-      'Chọn sản phẩm Gcalls, quy mô đội ngũ, lưu lượng sử dụng và nhu cầu tích hợp để chuẩn bị cấu hình và chi phí tham khảo trước khi nhận báo giá.',
-  },
+const FALLBACK_META: PageMeta = {
+  title: 'Không tìm thấy trang',
+  description: 'Trang bạn tìm không tồn tại.',
+  exactTitle: false,
+  indexable: false,
 }
+
+export const PAGE_META: Record<string, PageMeta> = Object.fromEntries(
+  SITEMAP.map((entry) => [
+    entry.route,
+    {
+      title: entry.title,
+      description: entry.description,
+      exactTitle: entry.exactTitle,
+      indexable: entry.indexable,
+    },
+  ]),
+)
 
 export function getPageMeta(path: string): PageMeta {
-  return (
-    PAGE_META[path as RoutePath] ?? {
-      title: 'Không tìm thấy trang',
-      description: 'Trang bạn tìm không tồn tại.',
-    }
-  )
+  return PAGE_META[path] ?? FALLBACK_META
 }
 
 export function buildTitle(meta: PageMeta): string {
-  return meta.isHome || meta.exactTitle
-    ? meta.title
-    : `${meta.title} | ${SITE_NAME}`
+  return meta.exactTitle ? meta.title : `${meta.title} | ${SITE_NAME}`
 }
 
 export function buildCanonical(path: string): string {
   return `${SITE_ORIGIN}${path}`
 }
+
+/** Robots directive for a specific route. */
+export function buildRobots(path: string): string {
+  const entry = getEntry(path)
+  const routeIndexable = entry?.indexable ?? false
+  return ALLOW_INDEXING && routeIndexable ? 'index, follow' : 'noindex, nofollow'
+}
+
+/** Kept for callers that only need the global default. */
+export const ROBOTS_CONTENT = ALLOW_INDEXING ? 'index, follow' : 'noindex, nofollow'
+
+export { ROUTES }

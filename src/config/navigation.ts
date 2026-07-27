@@ -1,83 +1,156 @@
 /**
- * Single source of truth for site information architecture.
+ * Navigation information architecture.
  *
- * Header navigation, the mobile menu and the footer all read from this file.
- * Adding a route here wires it into all three — do not hardcode links in
- * components.
+ * Everything here is derived from `src/config/sitemap.ts`, which is the single
+ * source of truth for routes and labels. This module shapes that data into the
+ * header mega menus and the footer columns.
  *
- * Route paths are the approved GCALLS product/solution routes and include a
- * trailing slash. Do not add routes that are not on this list.
+ * ROUTES and RoutePath are re-exported so existing imports keep working —
+ * there is still exactly one place a URL is defined.
  */
 
-export const ROUTES = {
-  home: '/',
-  gcallsPlus: '/gcalls-plus-webphone/',
-  crmIntegration: '/tong-dai-tich-hop-crm/',
-  helpdeskIntegration: '/tong-dai-tich-hop-helpdesk/',
-  posIntegration: '/tong-dai-tich-hop-pos/',
-  internationalCalling: '/tong-dai-quoc-te/',
-  qcCenter: '/qc-bot-ai/',
-  gcallsCx: '/gcalls-cx/',
-  pricing: '/bang-gia/',
-  costEstimator: '/uoc-tinh-chi-phi/',
-} as const
+import { ROUTES, getEntry, type RoutePath } from './sitemap'
 
-export type RoutePath = (typeof ROUTES)[keyof typeof ROUTES]
+export { ROUTES }
+export type { RoutePath }
 
 export interface NavItem {
-  /** Display label — the approved entity label for this route. */
   label: string
   path: RoutePath
-  /** Optional supporting label (e.g. "QC Bot AI" under "QA QC Center"). */
+  /** Supporting label, e.g. "QC Bot AI" under "QA QC Center". */
   supportingLabel?: string
-  /** Optional one-line description shown in dropdown menus. */
+  /** One-line description shown in mega menus. */
   description?: string
+}
+
+/** A labelled column inside a mega menu. */
+export interface NavColumn {
+  /** Optional column heading, e.g. "CRM" / "HELPDESK". */
+  heading?: string
+  items: NavItem[]
 }
 
 export interface NavGroup {
   id: string
   label: string
-  items: NavItem[]
+  /** "See all" destination for the group. */
+  overview?: NavItem
+  columns: NavColumn[]
+  cta?: NavItem
 }
+
+/** Pull label + summary straight from the sitemap so they cannot drift. */
+function item(route: RoutePath, overrides: Partial<NavItem> = {}): NavItem {
+  const entry = getEntry(route)
+  return {
+    label: overrides.label ?? entry?.label ?? route,
+    path: route,
+    description: overrides.description ?? entry?.summary,
+    supportingLabel: overrides.supportingLabel ?? entry?.supportingLabel,
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Header mega menus
+ * ------------------------------------------------------------------ */
 
 export const NAV_GROUPS: NavGroup[] = [
   {
     id: 'products',
     label: 'Sản phẩm',
-    items: [
-      { label: 'Gcalls Plus Webphone', path: ROUTES.gcallsPlus },
-      { label: 'QA QC Center', path: ROUTES.qcCenter, supportingLabel: 'QC Bot AI' },
-      { label: 'Gcalls CX', path: ROUTES.gcallsCx },
+    overview: item(ROUTES.products, { label: 'Tất cả sản phẩm' }),
+    columns: [
+      {
+        items: [
+          item(ROUTES.gcallsPlus),
+          item(ROUTES.qcCenter),
+          item(ROUTES.gcallsCx),
+        ],
+      },
     ],
+    cta: { label: 'Khám phá sản phẩm', path: ROUTES.products },
   },
   {
     id: 'solutions',
     label: 'Giải pháp',
-    items: [
-      { label: 'Tích hợp CRM', path: ROUTES.crmIntegration },
-      { label: 'Tích hợp Helpdesk', path: ROUTES.helpdeskIntegration },
-      { label: 'Tích hợp POS', path: ROUTES.posIntegration },
-      { label: 'Tổng đài quốc tế', path: ROUTES.internationalCalling },
+    overview: item(ROUTES.solutions, { label: 'Tất cả giải pháp' }),
+    columns: [
+      {
+        heading: 'System integration',
+        items: [
+          item(ROUTES.crmIntegration),
+          item(ROUTES.helpdeskIntegration),
+          item(ROUTES.posIntegration),
+        ],
+      },
+      {
+        heading: 'Global communication',
+        items: [item(ROUTES.internationalCalling)],
+      },
     ],
+    cta: { label: 'Khám phá giải pháp', path: ROUTES.solutions },
+  },
+  {
+    id: 'integrations',
+    label: 'Tích hợp',
+    overview: item(ROUTES.integrations, { label: 'Tất cả tích hợp' }),
+    columns: [
+      {
+        heading: 'CRM',
+        items: [item(ROUTES.hubspot), item(ROUTES.salesforce), item(ROUTES.zohoCrm)],
+      },
+      {
+        heading: 'Helpdesk',
+        items: [item(ROUTES.freshdesk), item(ROUTES.zendesk)],
+      },
+    ],
+    cta: { label: 'Khám phá tích hợp', path: ROUTES.integrations },
+  },
+  {
+    id: 'industries',
+    label: 'Theo ngành',
+    overview: item(ROUTES.industries, { label: 'Tất cả ngành' }),
+    columns: [
+      {
+        items: [item(ROUTES.education), item(ROUTES.finance), item(ROUTES.insurance)],
+      },
+      {
+        items: [item(ROUTES.realEstate), item(ROUTES.ecommerce), item(ROUTES.bpo)],
+      },
+    ],
+    cta: { label: 'Xem tất cả ngành', path: ROUTES.industries },
+  },
+  {
+    id: 'resources',
+    label: 'Tài nguyên',
+    overview: item(ROUTES.resources, { label: 'Trung tâm tài nguyên' }),
+    columns: [
+      {
+        heading: 'Kiến thức',
+        items: [
+          item(ROUTES.blog),
+          item(ROUTES.guides),
+          item(ROUTES.glossary),
+          item(ROUTES.faq),
+        ],
+      },
+      {
+        heading: 'Chuyên sâu',
+        items: [item(ROUTES.caseStudies), item(ROUTES.ebook)],
+      },
+    ],
+    cta: { label: 'Xem tài nguyên', path: ROUTES.resources },
   },
   {
     /**
-     * Pricing group. "Ước tính chi phí" is deliberately NOT a top-level nav
-     * item — it is a child action of Bảng giá. Both children are first-class
-     * destinations with their own routes.
+     * Pricing. "Ước tính chi phí" is a child action here and must never be
+     * promoted to a top-level navigation item.
      */
     id: 'pricing',
     label: 'Bảng giá',
-    items: [
+    columns: [
       {
-        label: 'Bảng giá Gcalls',
-        path: ROUTES.pricing,
-        description: 'Xem mô hình chi phí theo từng sản phẩm và giải pháp.',
-      },
-      {
-        label: 'Ước tính chi phí',
-        path: ROUTES.costEstimator,
-        description: 'Chuẩn bị cấu hình và nhu cầu sử dụng trước khi nhận báo giá.',
+        items: [item(ROUTES.pricing), item(ROUTES.costEstimator)],
       },
     ],
   },
@@ -85,10 +158,7 @@ export const NAV_GROUPS: NavGroup[] = [
 
 export const PRIMARY_CTA = {
   label: 'Đăng ký tư vấn',
-  /**
-   * Consultation destination. Points at the cost estimator, which now carries
-   * the site's quote-request form — the first real lead-capture surface.
-   */
+  /** Points at the estimator, which carries the site's quote-request form. */
   path: ROUTES.costEstimator,
 } as const
 
@@ -99,33 +169,67 @@ export const CONTACT = {
   phoneHref: 'tel:02873025469',
 } as const
 
-/** Footer column layout. */
-export const FOOTER_GROUPS: NavGroup[] = [
+/* ------------------------------------------------------------------ *
+ * Footer
+ * ------------------------------------------------------------------ */
+
+export interface FooterColumn {
+  id: string
+  label: string
+  items: NavItem[]
+}
+
+export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     id: 'footer-products',
     label: 'Sản phẩm',
     items: [
-      { label: 'Gcalls Plus', path: ROUTES.gcallsPlus },
-      { label: 'QA QC Center', path: ROUTES.qcCenter },
-      { label: 'Gcalls CX', path: ROUTES.gcallsCx },
+      item(ROUTES.gcallsPlus, { label: 'Gcalls Plus' }),
+      item(ROUTES.qcCenter),
+      item(ROUTES.gcallsCx),
     ],
   },
   {
     id: 'footer-solutions',
     label: 'Giải pháp',
     items: [
-      { label: 'Tích hợp CRM', path: ROUTES.crmIntegration },
-      { label: 'Tích hợp Helpdesk', path: ROUTES.helpdeskIntegration },
-      { label: 'Tích hợp POS', path: ROUTES.posIntegration },
-      { label: 'Tổng đài quốc tế', path: ROUTES.internationalCalling },
+      item(ROUTES.crmIntegration, { label: 'CRM Integration' }),
+      item(ROUTES.helpdeskIntegration, { label: 'Helpdesk Integration' }),
+      item(ROUTES.posIntegration, { label: 'POS Integration' }),
+      item(ROUTES.internationalCalling),
     ],
   },
   {
-    id: 'footer-pricing',
-    label: 'Bảng giá',
+    id: 'footer-explore',
+    label: 'Khám phá',
     items: [
-      { label: 'Bảng giá Gcalls', path: ROUTES.pricing },
-      { label: 'Ước tính chi phí', path: ROUTES.costEstimator },
+      item(ROUTES.integrations, { label: 'Tích hợp' }),
+      item(ROUTES.industries, { label: 'Theo ngành' }),
+      item(ROUTES.pricing, { label: 'Bảng giá' }),
+      item(ROUTES.costEstimator),
+    ],
+  },
+  {
+    id: 'footer-resources',
+    label: 'Tài nguyên',
+    items: [
+      item(ROUTES.blog),
+      item(ROUTES.guides),
+      item(ROUTES.caseStudies),
+      item(ROUTES.ebook),
+      item(ROUTES.glossary),
+      item(ROUTES.faq),
+    ],
+  },
+  {
+    id: 'footer-company',
+    label: 'Gcalls',
+    items: [
+      item(ROUTES.company, { label: 'Về Gcalls' }),
+      item(ROUTES.customers),
+      item(ROUTES.partners),
+      item(ROUTES.referral),
+      item(ROUTES.contact),
     ],
   },
 ]

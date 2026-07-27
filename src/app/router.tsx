@@ -6,15 +6,13 @@ import { RouteFallback } from '@/components/common/RouteFallback'
 import { HomePage } from '@/pages/HomePage'
 
 /**
- * Route table for the GCALLS website.
+ * Route table for the GCALLS website — 37 routes.
  *
- * Paths are the approved product/solution routes and carry a trailing slash.
- * They are defined once in `config/navigation.ts` so navigation, footer and
- * SEO metadata cannot drift apart from the router.
+ * Paths come from `src/config/sitemap.ts`, the single source of truth, so the
+ * router, navigation, footer, breadcrumbs and SEO metadata cannot drift apart.
  *
- * Home is bundled eagerly — it is the most common entry point and already
- * carries the heaviest section code. Every other route is code-split, which
- * keeps the initial payload flat as content-heavy pages (pricing first) land.
+ * Home is bundled eagerly; everything else is code-split. Routes that share a
+ * page component (the sitemap-driven shells) share one chunk.
  */
 
 const GcallsPlusPage = lazy(() =>
@@ -23,28 +21,26 @@ const GcallsPlusPage = lazy(() =>
 const CRMIntegrationPage = lazy(() =>
   import('@/pages/CRMIntegrationPage').then((m) => ({ default: m.CRMIntegrationPage })),
 )
-const HelpdeskIntegrationPage = lazy(() =>
-  import('@/pages/HelpdeskIntegrationPage').then((m) => ({
-    default: m.HelpdeskIntegrationPage,
-  })),
-)
-const POSIntegrationPage = lazy(() =>
-  import('@/pages/POSIntegrationPage').then((m) => ({ default: m.POSIntegrationPage })),
-)
-const InternationalCallingPage = lazy(() =>
-  import('@/pages/InternationalCallingPage').then((m) => ({
-    default: m.InternationalCallingPage,
-  })),
-)
-const QCPage = lazy(() => import('@/pages/QCPage').then((m) => ({ default: m.QCPage })))
-const GcallsCXPage = lazy(() =>
-  import('@/pages/GcallsCXPage').then((m) => ({ default: m.GcallsCXPage })),
-)
 const PricingPage = lazy(() =>
   import('@/pages/PricingPage').then((m) => ({ default: m.PricingPage })),
 )
 const CostEstimatorPage = lazy(() =>
   import('@/pages/CostEstimatorPage').then((m) => ({ default: m.CostEstimatorPage })),
+)
+const SolutionsHubPage = lazy(() =>
+  import('@/pages/SolutionsHubPage').then((m) => ({ default: m.SolutionsHubPage })),
+)
+const IntegrationsHubPage = lazy(() =>
+  import('@/pages/IntegrationsHubPage').then((m) => ({ default: m.IntegrationsHubPage })),
+)
+const ContactPage = lazy(() =>
+  import('@/pages/ContactPage').then((m) => ({ default: m.ContactPage })),
+)
+const ReferralPage = lazy(() =>
+  import('@/pages/ReferralPage').then((m) => ({ default: m.ReferralPage })),
+)
+const ShellPage = lazy(() =>
+  import('@/pages/ShellPage').then((m) => ({ default: m.ShellPage })),
 )
 const NotFoundPage = lazy(() =>
   import('@/pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })),
@@ -54,27 +50,69 @@ function lazyRoute(element: React.ReactNode) {
   return <Suspense fallback={<RouteFallback />}>{element}</Suspense>
 }
 
+/** Routes served by the sitemap-driven shell. */
+const SHELL_ROUTES = [
+  // Products
+  ROUTES.products,
+  ROUTES.qcCenter,
+  ROUTES.gcallsCx,
+  // Solutions
+  ROUTES.helpdeskIntegration,
+  ROUTES.posIntegration,
+  ROUTES.internationalCalling,
+  // Integrations
+  ROUTES.hubspot,
+  ROUTES.salesforce,
+  ROUTES.zohoCrm,
+  ROUTES.freshdesk,
+  ROUTES.zendesk,
+  // Industries
+  ROUTES.industries,
+  ROUTES.education,
+  ROUTES.finance,
+  ROUTES.insurance,
+  ROUTES.realEstate,
+  ROUTES.ecommerce,
+  ROUTES.bpo,
+  // Resources
+  ROUTES.resources,
+  ROUTES.blog,
+  ROUTES.guides,
+  ROUTES.caseStudies,
+  ROUTES.ebook,
+  ROUTES.glossary,
+  ROUTES.faq,
+  // Company
+  ROUTES.company,
+  ROUTES.customers,
+  ROUTES.partners,
+]
+
 export const router = createBrowserRouter([
   {
     path: ROUTES.home,
     element: <SiteLayout />,
     children: [
       { index: true, element: <HomePage /> },
+
+      // Fully built pages
       { path: ROUTES.gcallsPlus, element: lazyRoute(<GcallsPlusPage />) },
       { path: ROUTES.crmIntegration, element: lazyRoute(<CRMIntegrationPage />) },
-      {
-        path: ROUTES.helpdeskIntegration,
-        element: lazyRoute(<HelpdeskIntegrationPage />),
-      },
-      { path: ROUTES.posIntegration, element: lazyRoute(<POSIntegrationPage />) },
-      {
-        path: ROUTES.internationalCalling,
-        element: lazyRoute(<InternationalCallingPage />),
-      },
-      { path: ROUTES.qcCenter, element: lazyRoute(<QCPage />) },
-      { path: ROUTES.gcallsCx, element: lazyRoute(<GcallsCXPage />) },
       { path: ROUTES.pricing, element: lazyRoute(<PricingPage />) },
       { path: ROUTES.costEstimator, element: lazyRoute(<CostEstimatorPage />) },
+
+      // Hubs and pages with bespoke content
+      { path: ROUTES.solutions, element: lazyRoute(<SolutionsHubPage />) },
+      { path: ROUTES.integrations, element: lazyRoute(<IntegrationsHubPage />) },
+      { path: ROUTES.contact, element: lazyRoute(<ContactPage />) },
+      { path: ROUTES.referral, element: lazyRoute(<ReferralPage />) },
+
+      // Sitemap-driven shells
+      ...SHELL_ROUTES.map((path) => ({
+        path,
+        element: lazyRoute(<ShellPage />),
+      })),
+
       { path: '*', element: lazyRoute(<NotFoundPage />) },
     ],
   },

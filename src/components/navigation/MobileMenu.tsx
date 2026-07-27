@@ -39,7 +39,9 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
   // route starts open so a visitor sees where they are; otherwise the first
   // group is open so the panel is never entirely collapsed.
   const [openGroups, setOpenGroups] = useState<string[]>(() => {
-    const active = NAV_GROUPS.find((g) => g.items.some((i) => i.path === pathname))
+    const active = NAV_GROUPS.find((g) =>
+      g.columns.some((c) => c.items.some((i) => i.path === pathname)),
+    )
     return [active?.id ?? NAV_GROUPS[0].id]
   })
 
@@ -193,37 +195,58 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
                 </h3>
 
                 {groupOpen && (
-                  <ul id={panelId} aria-labelledby={buttonId} className="pb-1 pl-2">
-                    {group.items.map((item) => (
-                      <li key={item.path}>
-                        <Link to={item.path} className={rowClass}>
-                          <span className="flex flex-col py-2">
-                            <span
-                              className="font-medium"
-                              style={{
-                                color: pathname === item.path ? '#673ab7' : '#1e2026',
-                              }}
-                            >
-                              {item.label}
-                            </span>
-                            {item.supportingLabel && (
-                              <span className="text-sm" style={{ color: '#5b5f6b' }}>
-                                {item.supportingLabel}
-                              </span>
-                            )}
-                            {item.description && (
-                              <span
-                                className="text-sm leading-relaxed"
-                                style={{ color: '#5b5f6b' }}
-                              >
-                                {item.description}
-                              </span>
-                            )}
-                          </span>
-                        </Link>
-                      </li>
+                  <div id={panelId} aria-labelledby={buttonId} className="pb-1 pl-2">
+                    {group.overview && (
+                      <Link to={group.overview.path} className={`${rowClass} font-semibold`}>
+                        <span style={{ color: '#673ab7' }}>{group.overview.label}</span>
+                      </Link>
+                    )}
+
+                    {group.columns.map((column, columnIndex) => (
+                      <div key={column.heading ?? columnIndex}>
+                        {column.heading && (
+                          <p
+                            className="px-4 pb-1 pt-3 text-xs font-bold uppercase tracking-wider"
+                            style={{ color: '#9ca3af' }}
+                          >
+                            {column.heading}
+                          </p>
+                        )}
+                        <ul>
+                          {column.items.map((navItem) => (
+                            <li key={navItem.path}>
+                              <Link to={navItem.path} className={rowClass}>
+                                <span className="flex flex-col py-2">
+                                  <span
+                                    className="font-medium"
+                                    style={{
+                                      color:
+                                        pathname === navItem.path ? '#673ab7' : '#1e2026',
+                                    }}
+                                  >
+                                    {navItem.label}
+                                  </span>
+                                  {navItem.supportingLabel && (
+                                    <span className="text-sm" style={{ color: '#673ab7' }}>
+                                      {navItem.supportingLabel}
+                                    </span>
+                                  )}
+                                  {navItem.description && (
+                                    <span
+                                      className="text-sm leading-relaxed"
+                                      style={{ color: '#5b5f6b' }}
+                                    >
+                                      {navItem.description}
+                                    </span>
+                                  )}
+                                </span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 )}
               </div>
             )

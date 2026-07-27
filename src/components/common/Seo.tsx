@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 import {
   DEFAULT_OG_TYPE,
-  ROBOTS_CONTENT,
+  buildRobots,
   SITE_LOCALE,
   SITE_NAME,
   buildCanonical,
@@ -59,7 +59,7 @@ export function Seo() {
     })
     upsertMeta('meta[name="robots"]', {
       name: 'robots',
-      content: ROBOTS_CONTENT,
+      content: buildRobots(pathname),
     })
 
     upsertLink('canonical', canonical)
