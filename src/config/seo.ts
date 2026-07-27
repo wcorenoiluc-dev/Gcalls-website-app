@@ -96,9 +96,10 @@ export const PAGE_META: Record<RoutePath, PageMeta> = {
       'Xem bảng giá Gcalls cho Webphone SME, tích hợp CRM/Helpdesk, tổng đài quốc tế, Gcalls CX và giải pháp AI theo nhu cầu doanh nghiệp.',
   },
   [ROUTES.costEstimator]: {
-    title: 'Ước tính chi phí',
+    title: 'Ước tính chi phí Gcalls | Chọn cấu hình theo nhu cầu doanh nghiệp',
+    exactTitle: true,
     description:
-      'Chọn giải pháp, nhập nhu cầu sử dụng và nhận ước tính chi phí tổng đài Gcalls cho doanh nghiệp của bạn.',
+      'Chọn sản phẩm Gcalls, quy mô đội ngũ, lưu lượng sử dụng và nhu cầu tích hợp để chuẩn bị cấu hình và chi phí tham khảo trước khi nhận báo giá.',
   },
 }
 

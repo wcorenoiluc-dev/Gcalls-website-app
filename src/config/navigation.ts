@@ -30,6 +30,8 @@ export interface NavItem {
   path: RoutePath
   /** Optional supporting label (e.g. "QC Bot AI" under "QA QC Center"). */
   supportingLabel?: string
+  /** Optional one-line description shown in dropdown menus. */
+  description?: string
 }
 
 export interface NavGroup {
@@ -58,21 +60,36 @@ export const NAV_GROUPS: NavGroup[] = [
       { label: 'Tổng đài quốc tế', path: ROUTES.internationalCalling },
     ],
   },
-]
-
-/** Commercial links — rendered flat (not as a dropdown group) in the header. */
-export const COMMERCIAL_ITEMS: NavItem[] = [
-  { label: 'Bảng giá', path: ROUTES.pricing },
-  { label: 'Ước tính chi phí', path: ROUTES.costEstimator },
+  {
+    /**
+     * Pricing group. "Ước tính chi phí" is deliberately NOT a top-level nav
+     * item — it is a child action of Bảng giá. Both children are first-class
+     * destinations with their own routes.
+     */
+    id: 'pricing',
+    label: 'Bảng giá',
+    items: [
+      {
+        label: 'Bảng giá Gcalls',
+        path: ROUTES.pricing,
+        description: 'Xem mô hình chi phí theo từng sản phẩm và giải pháp.',
+      },
+      {
+        label: 'Ước tính chi phí',
+        path: ROUTES.costEstimator,
+        description: 'Chuẩn bị cấu hình và nhu cầu sử dụng trước khi nhận báo giá.',
+      },
+    ],
+  },
 ]
 
 export const PRIMARY_CTA = {
   label: 'Đăng ký tư vấn',
   /**
-   * Consultation destination. Until a real lead-capture form exists
-   * (Checkpoint 3), this points at the pricing route rather than a dead `#`.
+   * Consultation destination. Points at the cost estimator, which now carries
+   * the site's quote-request form — the first real lead-capture surface.
    */
-  path: ROUTES.pricing,
+  path: ROUTES.costEstimator,
 } as const
 
 export const CONTACT = {
@@ -104,10 +121,10 @@ export const FOOTER_GROUPS: NavGroup[] = [
     ],
   },
   {
-    id: 'footer-other',
-    label: 'Khác',
+    id: 'footer-pricing',
+    label: 'Bảng giá',
     items: [
-      { label: 'Bảng giá', path: ROUTES.pricing },
+      { label: 'Bảng giá Gcalls', path: ROUTES.pricing },
       { label: 'Ước tính chi phí', path: ROUTES.costEstimator },
     ],
   },

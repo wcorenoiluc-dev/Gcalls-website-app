@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { Link, useLocation } from 'react-router'
-import { COMMERCIAL_ITEMS, NAV_GROUPS, type NavGroup } from '@/config/navigation'
+import { NAV_GROUPS, type NavGroup } from '@/config/navigation'
 
 /**
  * Desktop navigation.
@@ -83,7 +83,7 @@ function NavDropdown({ group }: { group: NavGroup }) {
 
       {open && (
         <div
-          className="absolute left-0 top-full pt-2 min-w-[248px]"
+          className="absolute left-0 top-full pt-2 min-w-[248px] max-w-[320px]"
           role="group"
           aria-label={group.label}
         >
@@ -113,6 +113,14 @@ function NavDropdown({ group }: { group: NavGroup }) {
                     {item.supportingLabel}
                   </span>
                 )}
+                {item.description && (
+                  <span
+                    className="block text-xs mt-1 leading-relaxed"
+                    style={{ color: '#5b5f6b' }}
+                  >
+                    {item.description}
+                  </span>
+                )}
               </Link>
             ))}
           </div>
@@ -123,23 +131,10 @@ function NavDropdown({ group }: { group: NavGroup }) {
 }
 
 export function DesktopNav() {
-  const { pathname } = useLocation()
-
   return (
     <nav className="hidden md:flex items-center gap-1" aria-label="Điều hướng chính">
       {NAV_GROUPS.map((group) => (
         <NavDropdown key={group.id} group={group} />
-      ))}
-
-      {COMMERCIAL_ITEMS.map((item) => (
-        <Link
-          key={item.path}
-          to={item.path}
-          className={`${linkClass} ${pathname === item.path ? activeLinkClass : ''}`}
-          style={{ fontFamily: "'Open Sans', sans-serif" }}
-        >
-          {item.label}
-        </Link>
       ))}
     </nav>
   )

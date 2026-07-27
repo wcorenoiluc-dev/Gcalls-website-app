@@ -1,12 +1,7 @@
-import { useEffect, useRef } from 'react'
-import { Phone, X } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { ChevronDown, Phone, X } from 'lucide-react'
 import { Link, useLocation } from 'react-router'
-import {
-  COMMERCIAL_ITEMS,
-  CONTACT,
-  NAV_GROUPS,
-  PRIMARY_CTA,
-} from '@/config/navigation'
+import { CONTACT, NAV_GROUPS, PRIMARY_CTA } from '@/config/navigation'
 
 /**
  * Mobile navigation panel.
@@ -39,6 +34,19 @@ interface MobileMenuProps {
 export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
   const panelRef = useRef<HTMLDivElement>(null)
   const { pathname } = useLocation()
+
+  // Groups are expandable (Checkpoint 3B). The group containing the current
+  // route starts open so a visitor sees where they are; otherwise the first
+  // group is open so the panel is never entirely collapsed.
+  const [openGroups, setOpenGroups] = useState<string[]>(() => {
+    const active = NAV_GROUPS.find((g) => g.items.some((i) => i.path === pathname))
+    return [active?.id ?? NAV_GROUPS[0].id]
+  })
+
+  const toggleGroup = (id: string) =>
+    setOpenGroups((current) =>
+      current.includes(id) ? current.filter((g) => g !== id) : [...current, id],
+    )
 
   // Close after navigating to a new route.
   useEffect(() => {
@@ -150,63 +158,76 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
         </div>
 
         <div className="px-3 pb-5">
-          {NAV_GROUPS.map((group) => (
-            <div key={group.id} className="mb-4">
-              <p
-                className="px-4 pt-2 pb-1 text-xs font-bold uppercase tracking-wider"
-                style={{ color: '#5b5f6b' }}
-              >
-                {group.label}
-              </p>
-              <ul>
-                {group.items.map((item) => (
-                  <li key={item.path}>
-                    <Link to={item.path} className={rowClass}>
-                      <span className="flex flex-col py-2">
-                        <span
-                          className="font-medium"
-                          style={{
-                            color: pathname === item.path ? '#673ab7' : '#1e2026',
-                          }}
-                        >
-                          {item.label}
-                        </span>
-                        {item.supportingLabel && (
-                          <span className="text-sm" style={{ color: '#5b5f6b' }}>
-                            {item.supportingLabel}
-                          </span>
-                        )}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {NAV_GROUPS.map((group) => {
+            const groupOpen = openGroups.includes(group.id)
+            const panelId = `mobile-group-${group.id}`
+            const buttonId = `mobile-group-button-${group.id}`
 
-          <div className="mb-4">
-            <p
-              className="px-4 pt-2 pb-1 text-xs font-bold uppercase tracking-wider"
-              style={{ color: '#5b5f6b' }}
-            >
-              Chi phí
-            </p>
-            <ul>
-              {COMMERCIAL_ITEMS.map((item) => (
-                <li key={item.path}>
-                  <Link to={item.path} className={`${rowClass} font-medium`}>
+            return (
+              <div key={group.id} className="mb-2">
+                {/* Expandable section header. 48px+ tap target. */}
+                <h3>
+                  <button
+                    type="button"
+                    id={buttonId}
+                    aria-expanded={groupOpen}
+                    aria-controls={panelId}
+                    onClick={() => toggleGroup(group.id)}
+                    className="flex min-h-[52px] w-full items-center justify-between gap-3 rounded-xl px-4 text-left transition-colors duration-150 hover:bg-[#f6f3fc] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#673ab7]"
+                  >
                     <span
-                      style={{
-                        color: pathname === item.path ? '#673ab7' : '#1e2026',
-                      }}
+                      className="text-base font-semibold"
+                      style={{ color: '#1e2026' }}
                     >
-                      {item.label}
+                      {group.label}
                     </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+                    <ChevronDown
+                      size={20}
+                      aria-hidden="true"
+                      className={`shrink-0 transition-transform duration-200 ${
+                        groupOpen ? 'rotate-180' : ''
+                      }`}
+                      style={{ color: '#673ab7' }}
+                    />
+                  </button>
+                </h3>
+
+                {groupOpen && (
+                  <ul id={panelId} aria-labelledby={buttonId} className="pb-1 pl-2">
+                    {group.items.map((item) => (
+                      <li key={item.path}>
+                        <Link to={item.path} className={rowClass}>
+                          <span className="flex flex-col py-2">
+                            <span
+                              className="font-medium"
+                              style={{
+                                color: pathname === item.path ? '#673ab7' : '#1e2026',
+                              }}
+                            >
+                              {item.label}
+                            </span>
+                            {item.supportingLabel && (
+                              <span className="text-sm" style={{ color: '#5b5f6b' }}>
+                                {item.supportingLabel}
+                              </span>
+                            )}
+                            {item.description && (
+                              <span
+                                className="text-sm leading-relaxed"
+                                style={{ color: '#5b5f6b' }}
+                              >
+                                {item.description}
+                              </span>
+                            )}
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            )
+          })}
 
           {/* Primary CTA — full width on mobile. */}
           <div className="px-1 pt-2">
