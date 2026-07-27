@@ -5,6 +5,15 @@
 **Branch:** `feature/gcalls-website-foundation`
 **Scope:** Audit only. No layout, content, navigation, colour, hierarchy, product scope, SEO copy or demo imagery was changed.
 
+> ### ⚠️ Status — superseded in part by Checkpoint 2
+>
+> This document records the findings **as measured against the Figma Make baseline**.
+> Checkpoint 2 (commits `8323485` → `c462017`) resolved a large share of them.
+> See **[§ Checkpoint 2 outcome](#checkpoint-2-outcome)** at the end for what is
+> fixed, what is deliberately deferred, and what remains open.
+>
+> Findings above that section are kept **unedited** as the historical baseline record.
+
 **Brand context:** GCALLS · *CALL SMARTER, GROW FASTER* · The Integration & Communication Standard · Primary `#673AB7` · Open Sans · **mobile-first, primary viewport 390 px**.
 
 ---
@@ -294,3 +303,77 @@ Explicitly **deferred to Checkpoint 3** (they are design and content decisions, 
 - Mobile-menu, CTA and tap-target findings were confirmed by live DOM interaction, not by reading source alone.
 - Dependency usage was derived by extracting every bare module specifier under `src/` and diffing against `package.json` `dependencies`; the `tw-animate-css` false positive was identified and excluded.
 - Build, dev-server and install results are reproducible with the commands in [`FIGMA_MAKE_HANDOFF.md` §5](./FIGMA_MAKE_HANDOFF.md#5-run--build-commands).
+
+---
+
+# Checkpoint 2 outcome
+
+**Date:** 2026-07-27 · **Branch:** `feature/gcalls-website-foundation`
+**Commits:** `8323485` docs · `30c9e94` tooling · `7c6174c` routing · `c462017` mobile
+
+Checkpoint 2 was technical foundation, routing and the mobile system — **not** a redesign.
+Layout, content, colours, visual hierarchy, product scope, approved copy and demo visuals were preserved. Desktop rendering is unchanged.
+
+## Measured before / after (Home, `/`)
+
+| Metric @ 390px | Baseline | After | Status |
+|---|---|---|---|
+| Page horizontal overflow | 0px *(masked by `overflow-x-hidden`)* | **0px** *(genuine — root clip removed)* | ✅ |
+| Elements escaping the viewport | 100 | **0** | ✅ |
+| Clipped text nodes | 20 | **0** | ✅ |
+| Unintended horizontal scrollbars | 2 (one hiding 252px) | **0** | ✅ |
+| Site controls under 44px | 3 | **0** | ✅ |
+| Marketing text under 14px | 179 | **55** | ⚠️ residual |
+| Product-mockup text under 14px | 476 | 470 | ➖ permitted (category B) |
+| Mobile navigation links | **0** | **11** | ✅ |
+| Working routes | 1 | **10 + 404** | ✅ |
+| Distinct `href` values in DOM | 1 (`#`) | 20+ real routes | ✅ |
+| `App.tsx` line count | 4,679 | **6** | ✅ |
+
+Verified at 390 / 430 / 768 / 1024 / 1440 across all 10 routes: 0 failures on page overflow, `h1` presence, header, footer, `lang="vi"` and robots tag.
+
+## Resolved
+
+| ID | Finding | How |
+|---|---|---|
+| P0-2 | No `.gitignore` | Added; `package-lock.json` committed |
+| P0-3 | No TypeScript config | `tsconfig` (app+node), `typecheck` script, `strict` on; 4 real errors fixed |
+| P0-4 | No lint | ESLint 9 flat config, correctness rules only; `lint` + `check` scripts |
+| P0-5 | No lockfile; React an optional peer | `package-lock.json` committed; React/ReactDOM promoted to `dependencies` |
+| P0-6 | Package-manager conflict | Standardised on npm; linux-only `pnpm-workspace.yaml` removed |
+| P0-7 | 19 advisories | react-router 7.13.0→7.18.1 (12→1); vite 6.3.5→6.4.3 (7→0) |
+| P0-8 | Placeholder identity | Package renamed `gcalls-website`; real `<title>`; README rewritten |
+| P1-2 | Mobile menu rendered nothing | Real modal panel: 11 route links, 48px rows, 16px text, Escape, focus trap + restore, scroll lock, closes on navigate |
+| P1-3 | Hero composition collapsed | `ResponsiveProductVisual` — desktop overlap preserved, reflowed below `lg` |
+| P1-4 | `overflow-x-hidden` masking overflow | Removed from root; causes fixed at source |
+| P1-5 | 252px hidden behind h-scroll | Filter rows wrap below `lg` |
+| P1-6 | 72% of tap targets under 44px | All **site** controls now ≥44px at 390px (mockup internals excluded by design) |
+| P1-9 | `lang="en"` on Vietnamese content | `lang="vi"` |
+| P1-11 | Placeholder `<title>` | Per-route titles via `src/config/seo.ts` |
+| P1-12 | No canonical / OG / Twitter | All present per route (6 OG + 3 Twitter + canonical) |
+| P1-14 | No anchorable sections, dead links | Real routes; breadcrumbs on every shell |
+| P1-16 | Pricing & FAQ advertised but absent | `/bang-gia/` and `/uoc-tinh-chi-phi/` now exist; FAQ removed from nav rather than linking nowhere |
+| P1-20 | No footer | Shared footer with navigation columns + approved contact details |
+| P2-1 | 4,679-line monolith | Extracted to 37 source files; `App.tsx` is 6 lines |
+| P2-4 | 14 unused dependencies | 8 removed; `react-router` retained (now used); `tw-animate-css` kept (used in CSS) |
+| P2-6 | Stale Vite config | Typed; dead `figmaAssetResolver` documented for removal |
+
+## Deliberately deferred
+
+| ID | Finding | Why |
+|---|---|---|
+| P0-1 | `noindex, nofollow` | **Correct for pre-launch.** Now a documented flag (`VITE_ALLOW_INDEXING`) rather than an unexplained tag. See `LAUNCH_CHECKLIST.md` §1. |
+| P1-10 | English meta description | SEO copy is a content decision — `src/config/seo.ts` holds descriptive placeholders |
+| P1-13 | Zero real images | `ResponsiveScreenshot` is ready; needs actual assets |
+| P1-15 | SPA with no SSR | Architectural decision for the team; `Seo.tsx` is the single migration point |
+| P1-17/18/19 | Inert CTAs, no forms, no analytics | Conversion layer is Checkpoint 3. CTAs now route to `/bang-gia/` instead of dead `#`. |
+| P2-2 | 845 hardcoded hex / 691 inline styles | Design-token migration belongs with the redesign |
+| P2-3 | Dead shadcn kit, 2.4MB PDF | Retained pending a decision on adopting shadcn |
+
+## Open residuals
+
+1. **55 marketing text nodes still under 14px at 390px** — avatar initials (`VP`, `BM`), stat-chip micro-labels (`Minh họa`, `+12%`, `Realtime`). No body copy remains under 14px. These sit inside stat chips whose primary value is rendered large; a proper responsive type scale in the redesign supersedes the current CSS floor.
+2. **5 desktop nav controls at 36–40px at `lg`+** — left at baseline size because §10 required preserving navigation appearance. Tablet range already gets 44px. Revisit with the redesign.
+3. **Home is 35,496px tall at 390px** vs 16,557px at 1440px. Overflow and clipping are fixed, but mobile content density is a design question, not a structural one.
+4. **`P2-5` imperative hover handlers** — fixed in navigation (now CSS `:hover`/`:focus-visible`); ~28 remain inside home mockups.
+5. **Bundle is a single 465KB chunk.** Fine for 10 routes; introduce route-level code splitting as pages gain real content.
