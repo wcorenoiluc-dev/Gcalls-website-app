@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { ArrowRight, Check, Clock, Download, FileText, Mic, Pause, PhoneCall, PhoneIncoming, PhoneMissed, PhoneOutgoing, Play, Search, SlidersHorizontal, Star, Tag, Voicemail, Volume2 } from "lucide-react";
+import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 
 // ─── Section 3: Call Timeline ────────────────────────────────────────────────
 
@@ -423,7 +424,7 @@ export function CallTimelineSection() {
           </div>
 
           {/* ── Right — UI mockup ────────────────────────────── */}
-          <div className="relative flex items-center justify-center order-1 lg:order-2" style={{ minHeight: "520px" }}>
+          <div className={`${stageClass} flex items-center justify-center order-1 lg:order-2`} style={{ minHeight: "520px" }}>
             {/* Glow backdrop */}
             <div
               className="absolute rounded-full pointer-events-none"
@@ -438,7 +439,7 @@ export function CallTimelineSection() {
             />
 
             {/* Main card */}
-            <div className="relative w-full" style={{ maxWidth: "560px", zIndex: 2 }}>
+            <div className={stageMainClass} style={{ maxWidth: "560px", zIndex: 2 }}>
               <CallTimelineMockup />
             </div>
 
@@ -453,7 +454,7 @@ export function CallTimelineSection() {
               return (
                 <div
                   key={s.label}
-                  className="absolute flex items-center gap-2.5 px-4 py-3 rounded-2xl"
+                  className={`${stageFloatClass} flex items-center gap-2.5 px-4 py-3 rounded-2xl`}
                   style={{
                     ...positions[i],
                     background: "#fff",

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowUpRight, BarChart2, Check, ChevronRight, Pause, Phone, PhoneCall, PhoneIncoming, Play, Search, Star, TrendingUp, Users, Voicemail, Wifi } from "lucide-react";
+import { stageClass, stageMainClass, stageFloatFullClass, hideBelowLgClass } from "@/components/common/ResponsiveProductVisual";
 
 const callLog = [
   { id: 1, name: "Nguyễn Văn Minh", phone: "0901 234 567", type: "out", duration: "3:42", status: "answered", time: "09:14", tag: "Khách hàng mới" },
@@ -136,8 +137,12 @@ function DashboardMain() {
           </div>
         </div>
 
-        {/* Agent sidebar */}
-        <div className="w-44 flex-shrink-0" style={{ borderLeft: "1px solid rgba(103,58,183,0.08)" }}>
+        {/* Agent sidebar.
+            Hidden below `md`: this dashboard is drawn at 540px, and at 390px
+            the two-column split squeezed the call log until phone numbers
+            wrapped onto three lines. Cropping to the primary column is the
+            mobile focus treatment — the call log is the point of the visual. */}
+        <div className="w-44 flex-shrink-0 max-md:hidden!" style={{ borderLeft: "1px solid rgba(103,58,183,0.08)" }}>
           <div className="px-3 py-2.5" style={{ borderBottom: "1px solid rgba(103,58,183,0.08)" }}>
             <span className="text-xs font-semibold" style={{ color: "#1e2026" }}>Đội ngũ</span>
           </div>
@@ -559,15 +564,25 @@ export function Hero() {
           </div>
 
           {/* ── Right column — Layered UI ────────────────────────── */}
-          <div className="relative flex items-center justify-center" style={{ minHeight: "560px" }}>
+          {/*
+            Desktop keeps the original overlapping composition exactly.
+            Below `lg` the stage reflows: the dashboard goes full width and
+            only the call-timeline card is kept beneath it. The other three
+            floats are desktop-only — at 390px they overlapped each other and
+            clipped their own internals.
+          */}
+          <div
+            className={`${stageClass} flex items-center justify-center`}
+            style={{ minHeight: "560px" }}
+          >
             {/* Main dashboard */}
-            <div className="w-full" style={{ maxWidth: "540px" }}>
+            <div className={stageMainClass} style={{ maxWidth: "540px" }}>
               <DashboardMain />
             </div>
 
-            {/* Timeline/audio — top-right */}
+            {/* Timeline/audio — top-right. The one supporting visual kept below lg. */}
             <div
-              className="absolute"
+              className={stageFloatFullClass}
               style={{ top: "-30px", right: "-40px", zIndex: 10, transform: "rotate(1.5deg)" }}
             >
               <FloatingTimeline />
@@ -575,7 +590,7 @@ export function Hero() {
 
             {/* Analytics — bottom-left */}
             <div
-              className="absolute"
+              className={`${stageFloatFullClass} ${hideBelowLgClass}`}
               style={{ bottom: "-20px", left: "-32px", zIndex: 10, transform: "rotate(-1.5deg)" }}
             >
               <FloatingAnalytics />
@@ -583,7 +598,7 @@ export function Hero() {
 
             {/* CRM — mid-left */}
             <div
-              className="absolute"
+              className={`${stageFloatFullClass} ${hideBelowLgClass}`}
               style={{ top: "50%", left: "-44px", zIndex: 9, transform: "translateY(-50%) rotate(-1deg)" }}
             >
               <FloatingCRM />
@@ -591,7 +606,7 @@ export function Hero() {
 
             {/* Dialpad — bottom-right */}
             <div
-              className="absolute"
+              className={`${stageFloatFullClass} ${hideBelowLgClass}`}
               style={{ bottom: "-24px", right: "-20px", zIndex: 10, transform: "rotate(2deg)" }}
             >
               <FloatingDialpad />

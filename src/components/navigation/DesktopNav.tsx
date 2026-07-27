@@ -18,7 +18,9 @@ import { COMMERCIAL_ITEMS, NAV_GROUPS, type NavGroup } from '@/config/navigation
  */
 
 const linkClass =
-  'px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-150 ' +
+  // max-lg:min-h-11 gives a 44px target in the tablet touch range; the
+  // desktop (lg+) appearance is untouched.
+  'px-4 py-2 max-lg:min-h-11 inline-flex items-center text-sm font-medium rounded-lg transition-colors duration-150 ' +
   'text-[#5b5f6b] hover:text-[#673ab7] hover:bg-[#f6f3fc] ' +
   'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]'
 

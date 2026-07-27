@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Activity, BarChart2, Briefcase, Building2, Check, ChevronRight, Filter, MoreHorizontal, PhoneCall, Plus, Search, Settings, ShieldCheck, UserCheck, Users } from "lucide-react";
+import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 
 // ─── Section 5: Team Management ──────────────────────────────────────────────
 
@@ -328,9 +329,9 @@ export function TeamSection() {
           </div>
 
           {/* Right mockup */}
-          <div className="relative flex items-center justify-center" style={{ minHeight: "500px" }}>
+          <div className={`${stageClass} flex items-center justify-center`} style={{ minHeight: "500px" }}>
             <div className="absolute rounded-full pointer-events-none" style={{ width: "480px", height: "480px", background: "radial-gradient(circle, rgba(103,58,183,0.08) 0%, transparent 70%)", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }} />
-            <div className="relative w-full" style={{ maxWidth: "560px", zIndex: 2 }}>
+            <div className={stageMainClass} style={{ maxWidth: "560px", zIndex: 2 }}>
               <TeamMgmtMockup />
             </div>
             {/* Floating cards */}
@@ -341,7 +342,7 @@ export function TeamSection() {
             ].map((s, i) => {
               const Icon = s.icon;
               return (
-                <div key={i} className="absolute flex items-center gap-2.5 px-4 py-3 rounded-2xl" style={{ ...s.pos, background: "#fff", boxShadow: "0 8px 28px rgba(103,58,183,0.13), 0 1px 4px rgba(0,0,0,0.04)", border: "1px solid rgba(103,58,183,0.10)", zIndex: 10, fontFamily: "'Inter', sans-serif", minWidth: "172px" }}>
+                <div key={i} className={`${stageFloatClass} flex items-center gap-2.5 px-4 py-3 rounded-2xl`} style={{ ...s.pos, background: "#fff", boxShadow: "0 8px 28px rgba(103,58,183,0.13), 0 1px 4px rgba(0,0,0,0.04)", border: "1px solid rgba(103,58,183,0.10)", zIndex: 10, fontFamily: "'Inter', sans-serif", minWidth: "172px" }}>
                   <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: s.color + "15" }}>
                     <Icon size={16} color={s.color} strokeWidth={2} />
                   </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Activity, Briefcase, Building2, Check, ExternalLink, FileText, Filter, HeadphonesIcon, Mail, MoreHorizontal, Phone, PhoneCall, PhoneIncoming, PhoneOutgoing, Plug, Plus, Search, ShieldCheck, Tag, Users } from "lucide-react";
+import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 
 // ─── Section 4: CRM ──────────────────────────────────────────────────────────
 
@@ -134,7 +135,7 @@ function CRMMockup() {
       }}
     >
       {/* ── Left panel: contact list ── */}
-      <div className="w-52 flex-shrink-0 flex flex-col" style={{ borderRight: "1px solid rgba(103,58,183,0.09)" }}>
+      <div className="w-52 flex-shrink-0 flex flex-col max-md:w-full!" style={{ borderRight: "1px solid rgba(103,58,183,0.09)" }}>
         {/* Panel header */}
         <div className="px-3.5 pt-4 pb-3" style={{ borderBottom: "1px solid rgba(103,58,183,0.08)" }}>
           <div className="flex items-center justify-between mb-2.5">
@@ -200,7 +201,11 @@ function CRMMockup() {
       </div>
 
       {/* ── Right panel: contact detail ── */}
-      <div className="flex-1 flex flex-col overflow-hidden">
+      {/* Contact detail panel. Hidden below md: this mockup is drawn at
+          580px, and at 390px the two-column split squeezed both columns
+          until names wrapped onto three lines. The contact list is the
+          point of the visual, so it keeps the full width. */}
+      <div className="flex-1 flex flex-col overflow-hidden max-md:hidden!">
         {/* Detail header */}
         <div
           className="px-5 pt-5 pb-4"
@@ -332,7 +337,7 @@ export function CRMSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24 items-center">
 
           {/* ── Right: mockup first visually on desktop ── */}
-          <div className="relative flex items-center justify-center order-1" style={{ minHeight: "520px" }}>
+          <div className={`${stageClass} flex items-center justify-center order-1`} style={{ minHeight: "520px" }}>
             {/* Glow */}
             <div
               className="absolute rounded-full pointer-events-none"
@@ -346,7 +351,7 @@ export function CRMSection() {
               }}
             />
 
-            <div className="relative w-full" style={{ maxWidth: "580px", zIndex: 2 }}>
+            <div className={stageMainClass} style={{ maxWidth: "580px", zIndex: 2 }}>
               <CRMMockup />
             </div>
 
@@ -360,7 +365,7 @@ export function CRMSection() {
               return (
                 <div
                   key={i}
-                  className="absolute flex items-center gap-2.5 px-4 py-3 rounded-2xl"
+                  className={`${stageFloatClass} flex items-center gap-2.5 px-4 py-3 rounded-2xl`}
                   style={{
                     ...s.pos,
                     background: "#fff",

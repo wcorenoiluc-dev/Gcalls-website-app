@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Activity, Bell, Check, ChevronRight, Code2, FileText, HeadphonesIcon, Key, Link2, MessageCircle, MousePointerClick, Phone, PhoneIncoming, PhoneOff, PhoneOutgoing, RefreshCw, Users, Webhook, X, Zap } from "lucide-react";
+import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 
 // ─── Section 8: Integrations ─────────────────────────────────────────────────
 
@@ -401,9 +402,9 @@ export function IntegrationsSection() {
           </div>
 
           {/* Right: API mockup */}
-          <div className="relative flex items-center justify-center order-1 lg:order-2" style={{ minHeight: "480px" }}>
+          <div className={`${stageClass} flex items-center justify-center order-1 lg:order-2`} style={{ minHeight: "480px" }}>
             <div className="absolute rounded-full pointer-events-none" style={{ width: "460px", height: "460px", background: "radial-gradient(circle, rgba(103,58,183,0.07) 0%, transparent 70%)", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }} />
-            <div className="relative w-full" style={{ maxWidth: "540px", zIndex: 2 }}>
+            <div className={stageMainClass} style={{ maxWidth: "540px", zIndex: 2 }}>
               <APIManagerMockup />
             </div>
             {/* Floating integration badges */}
@@ -413,7 +414,7 @@ export function IntegrationsSection() {
               { name: "Salesforce", abbr: "SF", color: "#00a1e0", pos: { bottom: "60px", left: "-20px" } },
               { name: "Webhook", abbr: "WH", color: "#0891b2", pos: { bottom: "12px", right: "-12px" } },
             ].map((b, i) => (
-              <div key={i} className="absolute flex items-center gap-2 px-3 py-2 rounded-xl" style={{ ...b.pos, background: "#fff", boxShadow: "0 6px 20px rgba(103,58,183,0.12)", border: "1px solid rgba(103,58,183,0.10)", zIndex: 10, fontFamily: "'Inter',sans-serif" }}>
+              <div key={i} className={`${stageFloatClass} flex items-center gap-2 px-3 py-2 rounded-xl`} style={{ ...b.pos, background: "#fff", boxShadow: "0 6px 20px rgba(103,58,183,0.12)", border: "1px solid rgba(103,58,183,0.10)", zIndex: 10, fontFamily: "'Inter',sans-serif" }}>
                 <div className="w-6 h-6 rounded-lg flex items-center justify-center text-[9px] font-bold" style={{ background: b.color + "18", color: b.color }}>{b.abbr}</div>
                 <span className="text-[11px] font-semibold" style={{ color: "#1e2026" }}>{b.name}</span>
                 <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#22c55e" }} />

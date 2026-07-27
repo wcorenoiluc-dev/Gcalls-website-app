@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Activity, ArrowRight, ArrowUpRight, BarChart2, Check, ChevronRight, Clock, HeadphonesIcon, PhoneCall, PhoneIncoming, PhoneMissed, PhoneOutgoing, Settings, Star, TrendingUp } from "lucide-react";
+import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 
 // ─── Section 6: Analytics ────────────────────────────────────────────────────
 
@@ -298,9 +299,9 @@ export function AnalyticsSection() {
           </div>
 
           {/* Right mockup */}
-          <div className="relative flex items-center justify-center order-1 lg:order-2" style={{ minHeight: "520px" }}>
+          <div className={`${stageClass} flex items-center justify-center order-1 lg:order-2`} style={{ minHeight: "520px" }}>
             <div className="absolute rounded-full pointer-events-none" style={{ width: "500px", height: "500px", background: "radial-gradient(circle, rgba(103,58,183,0.08) 0%, transparent 70%)", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }} />
-            <div className="relative w-full" style={{ maxWidth: "580px", zIndex: 2 }}>
+            <div className={stageMainClass} style={{ maxWidth: "580px", zIndex: 2 }}>
               <AnalyticsDashboardMockup />
             </div>
             {/* Floating KPI cards */}
@@ -315,7 +316,7 @@ export function AnalyticsSection() {
               return (
                 <div
                   key={i}
-                  className="absolute flex items-center gap-2.5 px-3.5 py-3 rounded-2xl"
+                  className={`${stageFloatClass} flex items-center gap-2.5 px-3.5 py-3 rounded-2xl`}
                   style={{
                     ...positions[i],
                     background: "#fff",

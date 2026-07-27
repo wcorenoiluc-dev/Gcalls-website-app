@@ -8,9 +8,10 @@ import { ROUTES } from '@/config/navigation'
  */
 export function Logo() {
   return (
+    /* min-h-11 gives a 44px tap target without resizing the 32px mark. */
     <Link
       to={ROUTES.home}
-      className="flex items-center gap-2 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#673ab7]"
+      className="inline-flex items-center gap-2 min-h-11 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#673ab7]"
       aria-label="Gcalls — về trang chủ"
     >
       <div

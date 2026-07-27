@@ -289,7 +289,10 @@ function UserStatusDashboard() {
       </div>
 
       {/* Filter tabs */}
-      <div className="flex gap-1 px-4 pt-3 pb-0" style={{ borderBottom: "1px solid rgba(103,58,183,0.08)", overflowX: "auto" }}>
+      {/* Wraps below `lg` rather than scrolling: at 390px this row hid 252px
+          of content, leaving the "Vắng mặt" and "Ngoại tuyến" filters
+          unreachable behind a horizontal drag most visitors never discover. */}
+      <div className="flex gap-1 px-4 pt-3 pb-0 max-lg:flex-wrap! max-lg:overflow-x-visible!" style={{ borderBottom: "1px solid rgba(103,58,183,0.08)", overflowX: "auto" }}>
         {filterBtns.map(fb => (
           <button
             key={fb.key}
@@ -414,13 +417,19 @@ export function WorkFromAnywhereSection() {
             </div>
           </div>
 
-          {/* Right: dialpad + softphone side by side */}
-          <div className="relative flex items-center justify-center gap-6" style={{ minHeight: "520px" }}>
+          {/* Right: dialpad + softphone side by side.
+              Their fixed widths (220px + 240px + gap) total 484px, so below
+              `lg` they stack instead of overflowing a 350px column. The
+              decorative rotations are dropped at the same breakpoint. */}
+          <div
+            className="relative flex items-center justify-center gap-6 max-lg:flex-col! max-lg:min-h-0!"
+            style={{ minHeight: "520px" }}
+          >
             <div className="absolute rounded-full pointer-events-none" style={{ width: "480px", height: "480px", background: "radial-gradient(circle, rgba(103,58,183,0.08) 0%, transparent 70%)", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }} />
-            <div className="relative" style={{ zIndex: 2, transform: "rotate(-2deg) translateY(-12px)" }}>
+            <div className="relative max-lg:transform-none!" style={{ zIndex: 2, transform: "rotate(-2deg) translateY(-12px)" }}>
               <DialpadMockup />
             </div>
-            <div className="relative" style={{ zIndex: 3, transform: "rotate(1.5deg) translateY(12px)" }}>
+            <div className="relative max-lg:transform-none!" style={{ zIndex: 3, transform: "rotate(1.5deg) translateY(12px)" }}>
               <SoftphoneMockup />
             </div>
             {/* Floating stat chips */}

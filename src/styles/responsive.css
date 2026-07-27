@@ -1,0 +1,113 @@
+/**
+ * Mobile responsive foundation.
+ *
+ * Checkpoint 2 — structural fixes only. This file deliberately contains no
+ * visual redesign: it raises text that is too small to read on a phone and
+ * enforces the responsive-image rules from the mobile brief.
+ */
+
+/* -------------------------------------------------------------------------
+ * A. MOBILE TYPOGRAPHY FLOOR
+ *
+ * The Figma Make export sizes text identically at every viewport: 655 text
+ * nodes render below 14px on a 390px phone, exactly as they do at 1440px.
+ *
+ * The brief separates two categories, and so does this rule:
+ *
+ *   A. Website content text  — must be readable on mobile. Floored at 14px.
+ *   B. Product UI mockup text — may stay smaller, because it is a picture of
+ *      an interface rather than marketing copy.
+ *
+ * Every mockup card declares its own type stack inline (`font-family: 'Inter'`
+ * or `'DM Mono'`), which is what distinguishes the two here. The restore rules
+ * below carry higher specificity (0,2,1) than the floor (0,1,1), so mockup
+ * internals keep their designed density.
+ *
+ * This is a stopgap for the current markup. The durable fix is a responsive
+ * type scale applied at the component level, which belongs with the redesign.
+ * ------------------------------------------------------------------------- */
+
+@media (max-width: 1023px) {
+  main .text-xs,
+  main .text-\[13px\],
+  main .text-\[12px\],
+  main .text-\[11px\] {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.5;
+  }
+
+  /* Product UI mockups keep their designed density. */
+  main [style*='Inter'] .text-xs,
+  main [style*='DM Mono'] .text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  main [style*='Inter'] .text-\[13px\],
+  main [style*='DM Mono'] .text-\[13px\] {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  main [style*='Inter'] .text-\[12px\],
+  main [style*='DM Mono'] .text-\[12px\] {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  main [style*='Inter'] .text-\[11px\],
+  main [style*='DM Mono'] .text-\[11px\] {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+}
+
+/* -------------------------------------------------------------------------
+ * B. RESPONSIVE MEDIA
+ *
+ * No image may impose a fixed desktop width on a phone. The site currently
+ * ships zero <img> elements (all visuals are inline SVG/DOM), so this is
+ * groundwork for when real screenshots land.
+ * ------------------------------------------------------------------------- */
+
+img,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  max-width: 100%;
+}
+
+/* -------------------------------------------------------------------------
+ * C. TEXT OVERFLOW SAFETY
+ *
+ * Long unbroken strings (URLs, emails, phone numbers, API paths) are a common
+ * source of horizontal overflow at 390px.
+ * ------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li,
+  a {
+    overflow-wrap: break-word;
+  }
+}
+
+/* -------------------------------------------------------------------------
+ * D. MOTION
+ * ------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

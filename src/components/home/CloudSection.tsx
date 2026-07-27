@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowRight, BarChart2, Check, ChevronRight, Cloud, GitBranch, Globe, HeadphonesIcon, Layers, Mic, MoreHorizontal, Network, Phone, PhoneForwarded, PhoneIncoming, Plus, RefreshCw, Server, Settings, Users, Voicemail, Wifi, Zap } from "lucide-react";
+import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 
 // ─── Section 7: Cloud Call Center ────────────────────────────────────────────
 
@@ -102,8 +103,9 @@ function CloudMockup() {
         </div>
       </div>
 
-      {/* Tabs */}
-      <div className="flex px-4 pt-3 gap-1" style={{ borderBottom: "1px solid rgba(103,58,183,0.08)" }}>
+      {/* Tabs — wrap below `lg` so the trailing "Thêm" action is not clipped
+          off the right edge of the card at mobile widths. */}
+      <div className="flex px-4 pt-3 gap-1 max-lg:flex-wrap!" style={{ borderBottom: "1px solid rgba(103,58,183,0.08)" }}>
         {([
           { key: "sip",     label: "SIP Accounts" },
           { key: "ivr",     label: "IVR & Routing" },
@@ -350,9 +352,9 @@ export function CloudSection() {
           </div>
 
           {/* Right mockup */}
-          <div className="relative flex items-center justify-center" style={{ minHeight: "520px" }}>
+          <div className={`${stageClass} flex items-center justify-center`} style={{ minHeight: "520px" }}>
             <div className="absolute rounded-full pointer-events-none" style={{ width: "500px", height: "500px", background: "radial-gradient(circle, rgba(103,58,183,0.08) 0%, transparent 70%)", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }} />
-            <div className="relative w-full" style={{ maxWidth: "570px", zIndex: 2 }}>
+            <div className={stageMainClass} style={{ maxWidth: "570px", zIndex: 2 }}>
               <CloudMockup />
             </div>
             {/* Floating cards */}
@@ -365,7 +367,7 @@ export function CloudSection() {
                 { bottom: "16px", right: "-16px" },
               ][i];
               return (
-                <div key={i} className="absolute flex items-center gap-2.5 px-3.5 py-3 rounded-2xl" style={{ ...pos, background: "#fff", boxShadow: "0 8px 28px rgba(103,58,183,0.13), 0 1px 4px rgba(0,0,0,0.04)", border: "1px solid rgba(103,58,183,0.10)", zIndex: 10, fontFamily: "'Inter',sans-serif", minWidth: "155px" }}>
+                <div key={i} className={`${stageFloatClass} flex items-center gap-2.5 px-3.5 py-3 rounded-2xl`} style={{ ...pos, background: "#fff", boxShadow: "0 8px 28px rgba(103,58,183,0.13), 0 1px 4px rgba(0,0,0,0.04)", border: "1px solid rgba(103,58,183,0.10)", zIndex: 10, fontFamily: "'Inter',sans-serif", minWidth: "155px" }}>
                   <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: f.color + "15" }}>
                     <Icon size={14} color={f.color} strokeWidth={2} />
                   </div>

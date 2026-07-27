@@ -48,7 +48,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             <Link
               to={PRIMARY_CTA.path}
-              className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors duration-150 hover:bg-[#5929a8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
+              className="hidden md:inline-flex items-center justify-center gap-1.5 text-sm font-semibold px-5 py-2.5 max-lg:min-h-11 rounded-xl transition-colors duration-150 hover:bg-[#5929a8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
               style={{
                 background: '#673ab7',
                 color: '#fff',
