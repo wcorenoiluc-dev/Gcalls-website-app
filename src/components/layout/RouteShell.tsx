@@ -163,6 +163,7 @@ export function RouteShell({
           description="Chia sẻ quy mô đội ngũ, hệ thống đang sử dụng và nhu cầu giao tiếp để Gcalls đề xuất cấu hình phù hợp."
           primary={PRIMARY_CTA}
           secondary={{ label: 'Xem bảng giá', path: ROUTES.pricing }}
+          lead={{ intent: 'consultation', source: 'consultation' }}
           showPhone
         />
       </Section>
@@ -183,6 +184,7 @@ const HUB_HEADINGS: Record<string, string> = {
   [ROUTES.integrations]: 'Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng',
   [ROUTES.industries]: 'Giải pháp giao tiếp theo bối cảnh vận hành của từng ngành',
   [ROUTES.resources]: 'Kiến thức về Call Center, CRM, CX và AI',
+  [ROUTES.contact]: 'Trao đổi với Gcalls về bài toán giao tiếp của doanh nghiệp',
 }
 
 function shellHeading(entry: SitemapEntry): string {

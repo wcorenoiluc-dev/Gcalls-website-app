@@ -84,6 +84,11 @@ export function GcallsPlusPage() {
           description={GP_FINAL_CTA.description}
           primary={GP_FINAL_CTA.primaryCta}
           secondary={GP_FINAL_CTA.secondaryCta}
+          lead={{
+            intent: 'consultation',
+            source: 'gcalls_plus',
+            product: 'Gcalls Plus Webphone',
+          }}
           showPhone
         />
       </Section>

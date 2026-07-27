@@ -158,8 +158,11 @@ export const NAV_GROUPS: NavGroup[] = [
 
 export const PRIMARY_CTA = {
   label: 'Đăng ký tư vấn',
-  /** Points at the estimator, which carries the site's quote-request form. */
-  path: ROUTES.costEstimator,
+  /**
+   * Canonical lead route. Every consultation CTA converges here so there is a
+   * single conversion surface rather than several page-specific ones.
+   */
+  path: ROUTES.contact,
 } as const
 
 export const CONTACT = {

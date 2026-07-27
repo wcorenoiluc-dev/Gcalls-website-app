@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Activity, BarChart2, Briefcase, Check, Clock, Cloud, Globe, HeadphonesIcon, Layers, LayoutGrid, MapPin, Mic, MicOff, Phone, PhoneCall, PhoneForwarded, PhoneIncoming, PhoneOff, RefreshCw, ShieldCheck, Volume2, Wifi, X, Zap } from "lucide-react";
+import { Link } from "react-router";
+import { leadCtaHref } from "@/lib/leads/ctaLink";
 
 // ─── Section 9: Work From Anywhere ───────────────────────────────────────────
 
@@ -594,14 +596,14 @@ export function WorkFromAnywhereSection() {
                 Không cần phần cứng, không cần cài đặt phức tạp — chỉ cần trình duyệt và kết nối internet, đội ngũ của bạn đã có thể bắt đầu ngay.
               </p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                <button
+                <Link to={leadCtaHref({ intent: 'consultation', source: 'consultation' })}
                   className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150"
                   style={{ background: "#fff", color: "#673ab7", boxShadow: "0 4px 24px rgba(0,0,0,0.18)" }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "none"; }}
                 >
                   <Phone size={15} /> Đăng ký tư vấn
-                </button>
+                </Link>
                 <button
                   className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150"
                   style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1.5px solid rgba(255,255,255,0.28)" }}

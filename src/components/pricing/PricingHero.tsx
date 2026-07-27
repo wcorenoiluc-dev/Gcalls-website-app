@@ -1,6 +1,7 @@
 import { ArrowRight, Calculator } from 'lucide-react'
 import { Link } from 'react-router'
 import { ROUTES } from '@/config/navigation'
+import { leadCtaHref } from '@/lib/leads/ctaLink'
 import { Container, Eyebrow, GradientHeading } from '@/components/common/primitives'
 
 /**
@@ -44,13 +45,13 @@ export function PricingHero() {
               Ước tính chi phí
             </Link>
 
-            <a
-              href="#nhan-bao-gia"
+            <Link
+              to={leadCtaHref({ intent: 'quote', source: 'pricing' })}
               className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-7 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
             >
               Nhận báo giá
               <ArrowRight size={18} aria-hidden="true" />
-            </a>
+            </Link>
           </div>
 
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">

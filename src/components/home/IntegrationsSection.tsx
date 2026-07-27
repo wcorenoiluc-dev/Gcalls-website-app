@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Activity, Bell, Check, ChevronRight, Code2, FileText, HeadphonesIcon, Key, Link2, MessageCircle, MousePointerClick, Phone, PhoneIncoming, PhoneOff, PhoneOutgoing, RefreshCw, Users, Webhook, X, Zap } from "lucide-react";
+import { Link } from "react-router";
+import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 
 // ─── Section 8: Integrations ─────────────────────────────────────────────────
@@ -598,22 +600,22 @@ export function IntegrationsSection() {
               Từ CRM, Helpdesk đến các hệ thống nội bộ — Gcalls kết nối nhanh chóng qua API mở, không yêu cầu kiến thức kỹ thuật chuyên sâu.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <button
+              <Link to={leadCtaHref({ intent: 'consultation', source: 'consultation' })}
                 className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150"
                 style={{ background: "#fff", color: "#673ab7", boxShadow: "0 4px 24px rgba(0,0,0,0.18)" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.22)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "none"; (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.18)"; }}
               >
                 <Phone size={15} /> Đăng ký tư vấn
-              </button>
-              <button
+              </Link>
+              <Link to={leadCtaHref({ intent: 'integration', source: 'consultation' })}
                 className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150"
                 style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1.5px solid rgba(255,255,255,0.30)" }}
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.22)"}
                 onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.15)"}
               >
                 <Code2 size={15} /> Tư vấn tích hợp
-              </button>
+              </Link>
             </div>
             <p className="mt-5 text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>Đăng ký để nhận tư vấn cấu hình phù hợp với nhu cầu</p>
           </div>

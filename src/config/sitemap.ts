@@ -856,7 +856,7 @@ export const SITEMAP: SitemapEntry[] = [
     description:
       'Liên hệ đội ngũ Gcalls qua email sales@gcalls.co hoặc số 028 7302 5469 để được tư vấn giải pháp tổng đài phù hợp.',
     intro:
-      'Chia sẻ nhu cầu của doanh nghiệp để đội ngũ Gcalls tư vấn cấu hình phù hợp.',
+      'Chia sẻ nhu cầu hiện tại để đội ngũ Gcalls có thêm thông tin trước khi trao đổi cùng doanh nghiệp.',
     summary: 'Liên hệ đội ngũ Gcalls.',
   },
 

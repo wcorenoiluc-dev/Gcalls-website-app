@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { ArrowUpRight, BarChart2, Check, ChevronRight, Pause, Phone, PhoneCall, PhoneIncoming, Play, Search, Star, TrendingUp, Users, Voicemail, Wifi } from "lucide-react";
+import { Link } from "react-router";
+import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { stageClass, stageMainClass, stageFloatFullClass, hideBelowLgClass } from "@/components/common/ResponsiveProductVisual";
 
 const callLog = [
@@ -478,7 +480,7 @@ export function Hero() {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-3">
-              <button
+              <Link to={leadCtaHref({ intent: 'consultation', source: 'consultation' })}
                 className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-[15px] transition-all duration-150"
                 style={{
                   background: "#673ab7",
@@ -498,7 +500,7 @@ export function Hero() {
               >
                 <Phone size={16} />
                 Đăng ký tư vấn
-              </button>
+              </Link>
               <button
                 className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-[15px] transition-all duration-150"
                 style={{

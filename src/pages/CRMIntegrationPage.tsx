@@ -342,6 +342,11 @@ export function CRMIntegrationPage() {
           description={CRM_FINAL_CTA.description}
           primary={CRM_FINAL_CTA.primaryCta}
           secondary={CRM_FINAL_CTA.secondaryCta}
+          lead={{
+            intent: 'integration',
+            source: 'crm_integration',
+            solution: 'Tích hợp CRM',
+          }}
           showPhone
         />
       </Section>

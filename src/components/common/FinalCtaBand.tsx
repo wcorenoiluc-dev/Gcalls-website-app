@@ -1,6 +1,8 @@
 import { ArrowRight, Phone } from 'lucide-react'
 import { Link } from 'react-router'
 import { CONTACT } from '@/config/navigation'
+import { track } from '@/lib/analytics'
+import { leadCtaHref, type LeadCtaContext } from '@/lib/leads/ctaLink'
 import { Container } from './primitives'
 
 /**
@@ -18,6 +20,7 @@ export function FinalCtaBand({
   secondary,
   anchorId,
   showPhone = false,
+  lead,
 }: {
   eyebrow?: string
   title: string
@@ -28,7 +31,13 @@ export function FinalCtaBand({
   /** Optional in-page anchor target, e.g. for "Nhận báo giá" links. */
   anchorId?: string
   showPhone?: boolean
+  /**
+   * Conversion context. When provided, the primary CTA routes to the canonical
+   * lead form carrying it, instead of a generic destination.
+   */
+  lead?: LeadCtaContext
 }) {
+  const primaryHref = lead ? leadCtaHref(lead) : primary.path
   return (
     <Container>
       <div
@@ -60,7 +69,16 @@ export function FinalCtaBand({
 
         <div className="mx-auto mt-8 flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center">
           <Link
-            to={primary.path}
+            to={primaryHref}
+            onClick={() =>
+              track('cta_clicked', {
+                label: primary.label,
+                source: lead?.source,
+                intent: lead?.intent,
+                product: lead?.product,
+                solution: lead?.solution,
+              })
+            }
             className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[10px] bg-white px-7 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
           >
             {primary.label}

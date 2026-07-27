@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react'
 import { Link } from 'react-router'
 import { ROUTES } from '@/config/navigation'
 import { SOLUTION_PRICING, estimateCost } from '@/data/pricing'
+import { leadCtaHref } from '@/lib/leads/ctaLink'
 import { Card } from '@/components/common/primitives'
 
 /**
@@ -164,13 +165,13 @@ export function EstimatorPreview() {
           Ước tính chi phí chi tiết
         </Link>
 
-        <a
-          href="#nhan-bao-gia"
+        <Link
+          to={leadCtaHref({ intent: 'quote', source: 'pricing', product: solution.name })}
           className="mt-3 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-5 text-[15px] font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
         >
           Nhận báo giá
           <ArrowRight size={16} aria-hidden="true" />
-        </a>
+        </Link>
       </Card>
     </div>
   )
