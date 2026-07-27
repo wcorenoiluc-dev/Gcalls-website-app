@@ -64,7 +64,7 @@ These are known gaps, deferred from Checkpoint 2 by design.
 
 | Item | Status | Notes |
 |---|---|---|
-| Lead capture | ❌ None | Zero `<form>` elements site-wide. CTAs currently route to `/bang-gia/`. |
+| Lead capture | ⚠️ Frontend done, **backend not connected** | Shared pipeline complete; needs a server endpoint. See [`LEAD_CAPTURE_ARCHITECTURE.md`](LEAD_CAPTURE_ARCHITECTURE.md) §7. |
 | Analytics / tag manager | ❌ None | No GA, GTM, or pixel. No attribution from day one without this. |
 | Cookie / consent banner | ❌ None | Required before analytics if targeting EU visitors. |
 | Favicon | ❌ None | No `<link rel="icon">`. |
