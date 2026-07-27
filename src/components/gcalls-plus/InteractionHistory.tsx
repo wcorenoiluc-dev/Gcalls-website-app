@@ -2,7 +2,7 @@ import { History } from 'lucide-react'
 import { ProductVisual } from '@/components/common/ProductVisual'
 import { CallTimelineMockup } from '@/components/product-ui'
 import { GP_HISTORY } from '@/data/gcallsPlus'
-import { FeatureSplit } from './FeatureSplit'
+import { FeatureSplit } from '@/components/common/FeatureSplit'
 
 /**
  * Interaction history — timeline, call history and filtering.

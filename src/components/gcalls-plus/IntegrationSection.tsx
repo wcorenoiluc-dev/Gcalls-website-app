@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import { ProductVisualWithSupport } from '@/components/common/ProductVisual'
 import { APIManagerMockup, WidgetMockup } from '@/components/product-ui'
 import { GP_INTEGRATION } from '@/data/gcallsPlus'
-import { FeatureSplit } from './FeatureSplit'
+import { FeatureSplit } from '@/components/common/FeatureSplit'
 
 /**
  * CRM / system integration.

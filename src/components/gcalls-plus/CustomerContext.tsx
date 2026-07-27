@@ -2,7 +2,7 @@ import { Users } from 'lucide-react'
 import { ProductVisualWithSupport } from '@/components/common/ProductVisual'
 import { CRMMockup, DialpadMockup } from '@/components/product-ui'
 import { GP_CONTEXT } from '@/data/gcallsPlus'
-import { FeatureSplit } from './FeatureSplit'
+import { FeatureSplit } from '@/components/common/FeatureSplit'
 
 /**
  * Customer context — contact profile alongside the call.

@@ -60,9 +60,10 @@ export const PAGE_META: Record<RoutePath, PageMeta> = {
       'Gcalls Plus Webphone giúp doanh nghiệp nghe gọi, quản lý lịch sử khách hàng và triển khai tổng đài ngay trên trình duyệt, không cần hệ thống phức tạp.',
   },
   [ROUTES.crmIntegration]: {
-    title: 'Tích hợp CRM',
+    title: 'Tổng đài tích hợp CRM | Click-to-Call & dữ liệu khách hàng | Gcalls',
+    exactTitle: true,
     description:
-      'Kết nối tổng đài Gcalls với hệ thống CRM để đồng bộ danh bạ, lịch sử cuộc gọi và ghi chú trực tiếp trong quy trình bán hàng.',
+      'Kết nối Gcalls với CRM để gọi trực tiếp, hiển thị ngữ cảnh khách hàng và quản lý lịch sử tương tác trong workflow Sales và CSKH.',
   },
   [ROUTES.helpdeskIntegration]: {
     title: 'Tích hợp Helpdesk',

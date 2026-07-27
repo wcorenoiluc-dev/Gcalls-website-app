@@ -2,7 +2,7 @@ import { BarChart2 } from 'lucide-react'
 import { ProductVisual } from '@/components/common/ProductVisual'
 import { AnalyticsDashboardMockup, UserStatusDashboard } from '@/components/product-ui'
 import { GP_PERFORMANCE } from '@/data/gcallsPlus'
-import { FeatureSplit } from './FeatureSplit'
+import { FeatureSplit } from '@/components/common/FeatureSplit'
 
 /**
  * Analytics & team performance.
