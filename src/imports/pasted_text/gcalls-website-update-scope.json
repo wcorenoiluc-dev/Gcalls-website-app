@@ -1,0 +1,1422 @@
+UPDATE THE CURRENT GCALLS WEBSITE.
+
+DO NOT rebuild the website from scratch.
+
+Continue from the CURRENT Figma Make implementation and preserve:
+
+- current visual style
+- current approved Header
+- current navigation interaction style
+- current mobile menu style
+- current design system
+- #673AB7 branding
+- Open Sans
+- current section rhythm
+- mobile-first implementation
+
+IMPORTANT:
+
+The newly supplied SEO/AIO Product Scope file is now the SOURCE OF TRUTH
+for PRODUCTS, SOLUTIONS, PRICING and INTERACTIVE PRODUCT TOOLS.
+
+==================================================
+01. PRODUCT / SOLUTION SCOPE — LOCK THIS
+==================================================
+
+The website must use ONLY the following current product / solution entities:
+
+PRODUCTS
+
+1. Gcalls Plus Webphone
+
+2. QA QC Center
+   Powered by QC Bot AI
+
+3. Gcalls CX
+
+
+SOLUTIONS
+
+4. CRM Integration
+
+5. Helpdesk Integration
+
+6. POS Integration
+
+7. International Calling
+
+
+COMMERCIAL
+
+8. Pricing
+
+9. Gcalls Cost Estimator
+
+
+Do not introduce other standalone products or solution pages unless explicitly added later.
+
+==================================================
+02. REMOVE UNSUPPORTED PRODUCT / SOLUTION ITEMS
+==================================================
+
+Remove the following from:
+
+- Homepage product cards
+- Homepage solution cards
+- Mega Menu product / solution items
+- Footer product / solution navigation
+- temporary routes
+- related CTA destinations
+
+REMOVE:
+
+Voicebot
+
+Sales as a standalone Solution
+
+Customer Service as a standalone Solution
+
+Quality Assurance as a standalone Solution
+
+
+IMPORTANT:
+
+Do NOT remove the Quality Assurance concept.
+
+Move Quality Assurance into:
+
+QA QC Center / QC Bot AI.
+
+
+Quality Assurance becomes a capability/use case of QA QC Center,
+not a separate primary solution entity.
+
+==================================================
+03. DO NOT DELETE GLOBAL WEBSITE CONTENT
+==================================================
+
+The Product SEO file controls PRODUCT / SOLUTION scope only.
+
+Do NOT automatically delete global website functions such as:
+
+Blog
+
+Resources
+
+Company
+
+Contact
+
+Customers
+
+Partners
+
+FAQ
+
+because they are not product entities.
+
+Keep them when they already belong to the global website architecture.
+
+==================================================
+04. UPDATE HOMEPAGE PRODUCT ECOSYSTEM
+==================================================
+
+Find the current:
+
+HỆ SINH THÁI SẢN PHẨM
+
+section.
+
+Replace the existing product list with EXACTLY THREE primary products:
+
+--------------------------------
+
+GCALLS PLUS WEBPHONE
+
+Label:
+
+Webphone / Call Center tinh gọn
+
+
+Description:
+
+Nghe gọi, quản lý danh bạ, lịch sử tương tác, ghi chú và theo dõi hoạt động cuộc gọi trực tiếp trên trình duyệt.
+
+
+Key capabilities:
+
+• Webphone trên trình duyệt
+
+• Danh bạ & lịch sử tương tác
+
+• Ghi chú, nhắc nhở và phân loại cuộc gọi
+
+• Analytics & hiệu suất Agent
+
+
+CTA:
+
+Khám phá Gcalls Plus
+
+
+Future route:
+
+/gcalls-plus-webphone/
+
+
+--------------------------------
+
+QA QC CENTER
+
+Supporting label:
+
+Powered by QC Bot AI
+
+
+Description:
+
+Trung tâm kiểm soát chất lượng hội thoại giúp đội QA chuyển cuộc gọi thành dữ liệu có cấu trúc, áp dụng tiêu chí đánh giá và tập trung kiểm tra những cuộc gọi cần chú ý.
+
+
+Key capabilities:
+
+• Speech-to-Text & Transcript
+
+• Tiêu chí QA và chấm điểm
+
+• Phân tích từ khóa và cảm xúc
+
+• Theo dõi tín hiệu cần kiểm tra
+
+
+CTA:
+
+Khám phá QA QC Center
+
+
+Route:
+
+/qc-bot-ai/
+
+
+--------------------------------
+
+GCALLS CX
+
+Label:
+
+Omnichannel Contact Center
+
+
+Description:
+
+Hợp nhất các điểm chạm giao tiếp và quy trình hỗ trợ khách hàng trên một nền tảng Contact Center đa kênh.
+
+
+Key capabilities:
+
+• Omnichannel
+
+• Ticket & workflow hỗ trợ
+
+• Customer context
+
+• Reporting & integrations
+
+
+CTA:
+
+Khám phá Gcalls CX
+
+
+Route:
+
+/gcalls-cx/
+
+
+==================================================
+05. PRODUCT CARD LAYOUT
+==================================================
+
+Desktop:
+
+3 equal premium product cards in one row.
+
+
+Tablet:
+
+2 + 1 balanced layout.
+
+
+Mobile 390:
+
+ONE product card per row.
+
+Do not use a horizontal carousel as the only access method.
+
+Cards must remain readable and touch-friendly.
+
+Use demo visual assets for now.
+
+All demo visuals should have internal names:
+
+DEMO_VISUAL_REPLACE_LATER
+
+==================================================
+06. QA QC CENTER — NEW PRODUCT CONTENT
+==================================================
+
+Create QA QC Center as a clear first-class product in the current website.
+
+IMPORTANT:
+
+This is based on the existing QC Bot AI capability.
+
+Do not create unsupported features.
+
+
+Product display name:
+
+QA QC Center
+
+
+Supporting technology label:
+
+QC Bot AI
+
+
+SEO / product route:
+
+/qc-bot-ai/
+
+
+Suggested H1:
+
+QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi
+
+
+Direct answer:
+
+QA QC Center sử dụng năng lực QC Bot AI để chuyển nội dung cuộc gọi thành transcript, đánh giá theo các tiêu chí QA được cấu hình và làm nổi bật những tín hiệu cần kiểm tra như từ khóa, cảm xúc hoặc mức độ tuân thủ.
+
+
+Core capabilities:
+
+01
+Speech-to-Text
+
+Chuyển nội dung hội thoại thành transcript để đội QA dễ tìm kiếm và rà soát.
+
+
+02
+QA Criteria
+
+Thiết lập các tiêu chí đánh giá phù hợp với quy trình kiểm soát chất lượng.
+
+
+03
+AI Scoring
+
+Hỗ trợ chấm điểm hội thoại theo các tiêu chí được cấu hình.
+
+
+04
+Keyword & Sentiment
+
+Phân tích từ khóa, cảm xúc và các tín hiệu cần QA chú ý.
+
+
+05
+Conversation Review
+
+Đưa các cuộc gọi cần kiểm tra vào một luồng rà soát tập trung.
+
+
+06
+Quality Dashboard
+
+Theo dõi xu hướng và kết quả đánh giá chất lượng theo dữ liệu.
+
+
+Do NOT write:
+
+100% accuracy
+
+replace QA staff
+
+guaranteed compliance
+
+guaranteed ROI
+
+or other unsupported AI claims.
+
+==================================================
+07. QA QC CENTER DEMO VISUAL
+==================================================
+
+Create premium DEMO product visuals.
+
+These are temporary and will be replaced later.
+
+Do NOT pretend they are authentic screenshots.
+
+
+VISUAL A
+
+QA QUALITY CENTER
+
+
+Left:
+
+conversation list
+
+
+Center:
+
+Transcript
+
+
+Right:
+
+Quality Score
+
+
+Example demo:
+
+Minh Anh
+Nova Education
+
+Quality Score
+86 / 100
+
+
+Criteria:
+
+✓ Greeting
+
+✓ Customer verification
+
+✓ Needs discovery
+
+! Required statement
+
+✓ Closing
+
+
+Supporting chips:
+
+Sentiment
+
+Keywords
+
+QA Criteria
+
+
+--------------------------------
+
+VISUAL B
+
+Conversation Transcript
+
+
+AGENT
+
+Chào anh Minh Anh...
+
+
+CUSTOMER
+
+Tôi muốn tìm hiểu...
+
+
+Highlight demo keywords:
+
+CRM
+
+Chi phí
+
+Follow-up
+
+
+--------------------------------
+
+VISUAL C
+
+QA Review Queue
+
+
+Cards:
+
+Ưu tiên kiểm tra
+
+Cần xem lại
+
+Đã đánh giá
+
+
+Use Gcalls brand:
+
+#673AB7
+white
+light gray/purple
+
+
+No robot illustration.
+
+No futuristic AI brain.
+
+No stock QA staff image.
+
+==================================================
+08. SOLUTION SCOPE
+==================================================
+
+Update the Homepage solution section to EXACTLY:
+
+CRM Integration
+
+Helpdesk Integration
+
+POS Integration
+
+International Calling
+
+
+Do NOT display:
+
+Sales
+
+Customer Service
+
+Quality Assurance
+
+as separate solution cards.
+
+
+QA requirements should link to QA QC Center.
+
+Customer Service requirements may link to:
+
+Gcalls CX
+
+Helpdesk Integration
+
+or Gcalls Plus
+
+depending on context.
+
+
+Sales requirements may link to:
+
+Gcalls Plus
+
+CRM Integration
+
+depending on context.
+
+==================================================
+09. GCALLS PLUS CONTENT — REPLACE UNSAFE COPY
+==================================================
+
+Use the CLEANED Gcalls Plus content.
+
+Do not keep numerical marketing claims from the previous draft.
+
+--------------------------------------------------
+HERO
+--------------------------------------------------
+
+Badge:
+
+GCALLS PLUS WEBPHONE
+
+
+H1:
+
+Gcalls Plus Webphone – tổng đài chuyên nghiệp chạy trên trình duyệt
+
+
+Description:
+
+Gcalls Plus Webphone giúp đội Sales và CSKH nghe gọi, quản lý danh bạ, lịch sử tương tác, ghi chú và theo dõi hoạt động cuộc gọi ngay trên trình duyệt.
+
+
+CTA:
+
+Đăng ký tư vấn
+
+
+Secondary:
+
+Khám phá tính năng
+
+
+Key points:
+
+• Nghe gọi trực tiếp trên trình duyệt
+
+• Quản lý danh bạ và lịch sử tương tác
+
+• Ghi chú, nhắc nhở và phân loại cuộc gọi
+
+• Theo dõi lịch sử, thống kê và hiệu suất đội ngũ
+
+
+--------------------------------------------------
+PROBLEMS
+--------------------------------------------------
+
+Badge:
+
+BÀI TOÁN
+
+
+Headline:
+
+Những điểm nghẽn làm giảm hiệu suất nghe gọi của đội Sales và CSKH
+
+
+Description:
+
+Khi dữ liệu khách hàng, lịch sử cuộc gọi và công cụ làm việc nằm ở nhiều nơi, đội ngũ dễ mất ngữ cảnh và tốn thời gian cho thao tác thủ công.
+
+
+Pain points:
+
+• Dữ liệu khách hàng và lịch sử cuộc gọi bị phân tán
+
+• Nhân viên phải chuyển đổi giữa nhiều công cụ khi gọi và ghi chú
+
+• Khó theo dõi trạng thái và lịch sử tương tác của từng khách hàng
+
+• Quản lý thiếu dữ liệu tập trung để theo dõi hoạt động và hiệu suất
+
+
+--------------------------------------------------
+PRODUCT DEFINITION
+--------------------------------------------------
+
+Badge:
+
+GCALLS PLUS
+
+
+Headline:
+
+Call Center tinh gọn hoạt động ngay trên trình duyệt
+
+
+Description:
+
+Gcalls Plus tập trung các chức năng nghe gọi, danh bạ, lịch sử tương tác, ghi chú và thống kê vào một giao diện Webphone để đội Sales/CSKH vận hành đơn giản hơn.
+
+
+Capabilities:
+
+• Webphone chạy trên trình duyệt
+
+• IVR và Call Flow theo nhu cầu vận hành
+
+• Danh bạ thông minh với lịch sử tương tác
+
+• Ghi chú, nhắc nhở và phân loại cuộc gọi
+
+• Lịch sử và thống kê cuộc gọi
+
+• Khả năng tích hợp CRM
+
+==================================================
+10. GCALLS PLUS FEATURE STRUCTURE
+==================================================
+
+Keep these content sections:
+
+01
+Hoạt động & lịch sử cuộc gọi
+
+
+Headline:
+
+Theo dõi lịch sử và hoạt động cuộc gọi trên một nơi
+
+
+02
+Danh bạ & ngữ cảnh khách hàng
+
+
+Headline:
+
+Giữ thông tin và lịch sử tương tác ngay cạnh cuộc gọi
+
+
+03
+Analytics & hiệu suất Agent
+
+
+Headline:
+
+Theo dõi hoạt động và hiệu suất đội ngũ bằng dữ liệu
+
+
+04
+IVR, Call Flow & vận hành Webphone
+
+
+Headline:
+
+Thiết lập luồng nghe gọi phù hợp với cách đội ngũ vận hành
+
+
+05
+Tích hợp CRM & hệ thống doanh nghiệp
+
+
+Headline:
+
+Kết nối Gcalls Plus với hệ thống doanh nghiệp đang sử dụng
+
+
+06
+Làm việc linh hoạt
+
+
+Headline:
+
+Nghe gọi và theo dõi công việc trên trình duyệt ở nơi có kết nối Internet
+
+
+07
+Use Cases
+
+
+Headline:
+
+Phù hợp với đội ngũ cần một hệ thống nghe gọi tinh gọn
+
+==================================================
+11. REMOVE OLD UNSAFE CLAIMS
+==================================================
+
+Search the CURRENT website for these types of content and remove/rewrite them:
+
+“Thiết lập trong 5 phút”
+
+“Tối ưu 40% chi phí”
+
+“1.000+ doanh nghiệp”
+
+“Giảm 40% năng suất”
+
+“Lãng phí 50% thời gian”
+
+“Gấp 100 lần”
+
+“1.250+ cuộc gọi”
+
+“98%”
+
+“100% ghi âm”
+
+“15.000+”
+
+“95% tỷ lệ bắt máy”
+
+“12.5K+ cuộc gọi”
+
+“99.99% uptime”
+
+“Unlimited SIP”
+
+“18ms”
+
+“Kết nối trong 5s”
+
+“Dùng thử miễn phí 14 ngày”
+
+“Không cần thẻ tín dụng”
+
+“Onboarding 1-1”
+
+
+unless a specific value has later been explicitly verified for public publication.
+
+
+Demo numbers may exist INSIDE demo UI.
+
+They must be clearly treated as:
+
+Dữ liệu minh họa.
+
+==================================================
+12. APP ƯỚC TÍNH CHI PHÍ
+==================================================
+
+Create / update:
+
+APP-001
+
+Route:
+
+/uoc-tinh-chi-phi/
+
+
+Page title:
+
+Ước tính chi phí giải pháp Gcalls
+
+
+H1:
+
+Ước tính cấu hình và chi phí giải pháp Gcalls phù hợp với nhu cầu
+
+
+Description:
+
+Chọn giải pháp, quy mô đội ngũ và nhu cầu sử dụng để xem cấu hình dự kiến và chi phí tham khảo khi bảng giá tương ứng đã được cấu hình.
+
+
+IMPORTANT:
+
+NEVER INVENT PUBLIC PRICING.
+
+Pricing values must come from an INTERNAL PRICING CONFIG.
+
+==================================================
+13. PRODUCT SELECTOR
+==================================================
+
+The first field must be:
+
+Giải pháp / sản phẩm
+
+
+Dropdown options:
+
+Gcalls Plus Webphone
+
+CRM Integration
+
+Helpdesk Integration
+
+POS Integration
+
+International Calling
+
+QA QC Center / QC Bot AI
+
+Gcalls CX
+
+
+Do NOT include:
+
+Voicebot
+
+Sales
+
+Customer Service
+
+Quality Assurance standalone.
+
+==================================================
+14. COMMON COST INPUTS
+==================================================
+
+Common input fields:
+
+Số người dùng / Agent
+
+Số phút gọi dự kiến mỗi tháng
+
+Số hotline / đầu số
+
+Số hệ thống cần tích hợp
+
+
+Use number controls with:
+
+minus
+value
+plus
+
+
+Mobile:
+
+large touch targets.
+
+==================================================
+15. CONDITIONAL PRODUCT INPUTS
+==================================================
+
+Show only fields relevant to the selected product.
+
+
+GCALLS PLUS
+
+Show:
+
+Agent
+
+Minutes
+
+Hotline
+
+
+CRM INTEGRATION
+
+Show:
+
+Agent
+
+CRM integration count
+
+Implementation requirement
+
+
+HELPDESK
+
+Show:
+
+Agent
+
+Helpdesk integration count
+
+Implementation requirement
+
+
+POS
+
+Show:
+
+POS integration count
+
+Implementation requirement
+
+
+INTERNATIONAL
+
+Show:
+
+Number of international numbers
+
+Country / market
+
+Estimated monthly calling minutes
+
+
+QA QC CENTER
+
+Show:
+
+Number of Agents
+
+Estimated call volume per month
+
+Volume of calls to be analyzed
+
+QA criteria / scorecard requirement
+
+
+GCALLS CX
+
+Show:
+
+Number of Agents
+
+Number of Omnichannel channels
+
+Estimated conversation volume
+
+Integration requirement
+
+==================================================
+16. COST ESTIMATOR RESULTS
+==================================================
+
+Result card:
+
+CẤU HÌNH DỰ KIẾN
+
+
+Show selected products and configuration.
+
+
+Then:
+
+CHI PHÍ DỰ KIẾN HÀNG THÁNG
+
+
+If internal pricing is configured:
+
+calculate result.
+
+
+If pricing is NOT configured:
+
+display:
+
+“Cần cấu hình bảng giá để tính chi phí chính xác”
+
+
+Then:
+
+CHI PHÍ TRIỂN KHAI MỘT LẦN
+
+
+Same rule.
+
+
+Then:
+
+TỔNG DỰ KIẾN THÁNG ĐẦU
+
+
+Only calculate when valid pricing config exists.
+
+==================================================
+17. PRICING ENGINE
+==================================================
+
+Create an internal configuration structure.
+
+Do NOT expose this configuration publicly.
+
+
+For each product support internal fields such as:
+
+baseMonthlyFee
+
+perUserFee
+
+perMinuteFee
+
+perHotlineFee
+
+perIntegrationFee
+
+perInternationalNumberFee
+
+perQCVolumeFee
+
+perChannelFee
+
+implementationFee
+
+
+The public calculator reads these values.
+
+When a required rate is missing:
+
+do not treat it as zero.
+
+Set pricing status:
+
+MISSING_PRICE_CONFIG
+
+
+Then use CTA:
+
+Nhận báo giá chi tiết
+
+==================================================
+18. COST FORMULA
+==================================================
+
+Conceptually:
+
+Monthly Estimate
+
+=
+
+Base monthly fee
+
++ User cost
+
++ Usage cost
+
++ Hotline cost
+
++ Integration cost
+
++ International cost
+
++ QA QC usage cost
+
++ Omnichannel channel cost
+
+
+Only include relevant terms for the selected solution.
+
+
+Implementation cost:
+
+use configured one-time implementation fee.
+
+
+First month:
+
+Monthly Estimate
++
+Implementation Fee
+
+
+Do NOT hardcode fictional VND values.
+
+==================================================
+19. ESTIMATOR DISCLAIMER
+==================================================
+
+Display clearly:
+
+“Kết quả là ước tính tham khảo dựa trên thông tin người dùng nhập và cấu hình giá hiện hành. Báo giá chính thức phụ thuộc vào giải pháp, đầu số, tích hợp, lưu lượng và yêu cầu kỹ thuật thực tế.”
+
+
+Do not hide this disclaimer in tiny text.
+
+==================================================
+20. ESTIMATOR CONVERSION CTA
+==================================================
+
+After results:
+
+Primary CTA:
+
+Nhận báo giá chi tiết
+
+
+Secondary CTA:
+
+Đăng ký tư vấn
+
+
+When user clicks:
+
+carry selected configuration into the consultation form.
+
+
+Example hidden/summary data:
+
+Product
+
+Agents
+
+Minutes
+
+Hotlines
+
+Integrations
+
+International requirements
+
+QA volume
+
+CX channels
+
+Estimated pricing status
+
+==================================================
+21. HOMEPAGE COST ESTIMATOR PREVIEW
+==================================================
+
+Add a lightweight preview section on HOME.
+
+Do not place the entire complex calculator directly in the Homepage.
+
+
+Eyebrow:
+
+ƯỚC TÍNH CHI PHÍ
+
+
+H2:
+
+Giải pháp Gcalls phù hợp với quy mô của bạn sẽ có cấu hình như thế nào?
+
+
+Description:
+
+Chọn nhanh sản phẩm và quy mô đội ngũ để bắt đầu ước tính cấu hình và chi phí.
+
+
+Quick inputs:
+
+Sản phẩm
+
+Số Agent
+
+
+CTA:
+
+Ước tính chi phí
+
+
+Link:
+
+/uoc-tinh-chi-phi/
+
+
+Visual:
+
+clean calculator preview.
+
+==================================================
+22. PRICING PAGE
+==================================================
+
+Update:
+
+/bang-gia/
+
+
+Do NOT publish invented fixed prices.
+
+Explain cost drivers:
+
+• Sản phẩm / giải pháp
+
+• Số lượng Agent
+
+• Lưu lượng gọi
+
+• Hotline / đầu số
+
+• Tích hợp
+
+• Quốc tế
+
+• Khối lượng QA QC
+
+• Số kênh Omnichannel
+
+
+Primary CTA:
+
+Ước tính chi phí
+
+
+Link:
+
+/uoc-tinh-chi-phi/
+
+
+Secondary CTA:
+
+Nhận báo giá
+
+==================================================
+23. MENU UPDATE
+==================================================
+
+KEEP THE CURRENT APPROVED MENU DESIGN.
+
+Do NOT redesign the menu component.
+
+Only update its CONTENT.
+
+
+PRODUCTS:
+
+Gcalls Plus
+
+QA QC Center
+
+Gcalls CX
+
+
+SOLUTIONS:
+
+CRM Integration
+
+Helpdesk Integration
+
+POS Integration
+
+International Calling
+
+
+COMMERCIAL:
+
+Bảng giá
+
+Ước tính chi phí
+
+
+Do not show unsupported product items.
+
+==================================================
+24. MOBILE-FIRST
+==================================================
+
+390px is the priority viewport.
+
+For Product cards:
+
+1 column
+
+
+For Solution cards:
+
+1 column
+
+
+For QA QC Center:
+
+content first
+visual second
+
+
+For Cost Estimator:
+
+Step-based mobile UX is preferred.
+
+
+Suggested mobile steps:
+
+STEP 1
+Chọn giải pháp
+
+
+STEP 2
+Quy mô sử dụng
+
+
+STEP 3
+Nhu cầu bổ sung
+
+
+STEP 4
+Kết quả
+
+
+Buttons:
+
+minimum 48px height
+
+
+Inputs:
+
+minimum 48px height
+
+
+CTA:
+
+full width
+
+
+Do not use a horizontal pricing table on mobile.
+
+==================================================
+25. SEO / AIO
+==================================================
+
+Maintain separate search intent:
+
+HOME
+=
+Gcalls platform / brand
+
+
+Gcalls Plus
+=
+Webphone / Call Center trên trình duyệt
+
+
+CRM
+=
+Tổng đài tích hợp CRM
+
+
+Helpdesk
+=
+Tổng đài tích hợp Helpdesk
+
+
+POS
+=
+Tổng đài tích hợp POS
+
+
+International
+=
+Tổng đài quốc tế
+
+
+QA QC Center
+=
+QC Bot AI / kiểm soát chất lượng cuộc gọi
+
+
+Gcalls CX
+=
+Omnichannel Contact Center
+
+
+Cost Estimator
+=
+Ước tính chi phí Gcalls
+
+
+Do not merge all keywords into Homepage.
+
+==================================================
+26. FINAL QA
+==================================================
+
+Audit the CURRENT website after update.
+
+Confirm:
+
+✓ Product scope matches source file
+
+✓ Unsupported standalone products removed
+
+✓ Voicebot removed
+
+✓ Sales standalone solution removed
+
+✓ Customer Service standalone solution removed
+
+✓ Quality Assurance standalone solution removed
+
+✓ QA content moved into QA QC Center
+
+✓ QA QC Center appears as a primary product
+
+✓ QC Bot SEO route remains /qc-bot-ai/
+
+✓ Gcalls Plus uses cleaned copy
+
+✓ unsafe numerical claims removed
+
+✓ Gcalls CX remains
+
+✓ CRM remains
+
+✓ Helpdesk remains
+
+✓ POS remains
+
+✓ International remains
+
+✓ Pricing remains
+
+✓ Cost Estimator exists
+
+✓ QA QC Center is available in Cost Estimator
+
+✓ no fake public price
+
+✓ mobile 390px works cleanly
+
+✓ current menu VISUAL DESIGN remains unchanged
+
+Do NOT redesign the site.
+
+This task is:
+
+CONTENT CLEANUP
++
+PRODUCT SCOPE CLEANUP
++
+QA QC CENTER ADDITION
++
+COST ESTIMATOR UPGRADE.
