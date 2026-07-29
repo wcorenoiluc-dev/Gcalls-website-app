@@ -58,6 +58,7 @@ const PRODUCT_SLUG_ALIASES: Record<string, string> = {
   'gcalls-cx': 'cx',
   'crm-integration': 'crm',
   'helpdesk-integration': 'helpdesk',
+  'pos-integration': 'pos',
 }
 
 function usePreselectedSolution(): string | null {

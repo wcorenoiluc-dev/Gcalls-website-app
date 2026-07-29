@@ -302,15 +302,15 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.solutions,
     group: 'solutions',
     priority: 0.8,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: true,
     eyebrow: 'Giải pháp',
-    title: 'Tổng đài tích hợp POS | Kết nối cuộc gọi với dữ liệu bán hàng | Gcalls',
+    title: 'Tổng đài tích hợp POS | Kết nối cuộc gọi với dữ liệu bán hàng',
     exactTitle: true,
     description:
-      'Kết nối Gcalls với hệ thống POS để nhận diện khách hàng và xử lý yêu cầu liên quan tới đơn hàng ngay khi cuộc gọi đến.',
+      'Gcalls kết nối tổng đài với POS để đội bán hàng và CSKH sử dụng customer context, dữ liệu bán hàng và lịch sử tương tác trong cùng quy trình chăm sóc.',
     intro:
       'Tích hợp POS kết nối hoạt động giao tiếp với dữ liệu khách hàng và bán hàng, phù hợp với doanh nghiệp có hoạt động bán lẻ hoặc thương mại.',
     summary: 'Kết nối cuộc gọi với dữ liệu bán hàng.',

@@ -32,6 +32,11 @@ const HelpdeskIntegrationPage = lazy(() =>
     default: m.HelpdeskIntegrationPage,
   })),
 )
+const POSIntegrationPage = lazy(() =>
+  import('@/pages/POSIntegrationPage').then((m) => ({
+    default: m.POSIntegrationPage,
+  })),
+)
 const PricingPage = lazy(() =>
   import('@/pages/PricingPage').then((m) => ({ default: m.PricingPage })),
 )
@@ -66,7 +71,6 @@ const SHELL_ROUTES = [
   // Products
   ROUTES.products,
   // Solutions
-  ROUTES.posIntegration,
   ROUTES.internationalCalling,
   // Integrations
   ROUTES.hubspot,
@@ -112,6 +116,7 @@ export const router = createBrowserRouter([
         path: ROUTES.helpdeskIntegration,
         element: lazyRoute(<HelpdeskIntegrationPage />),
       },
+      { path: ROUTES.posIntegration, element: lazyRoute(<POSIntegrationPage />) },
       { path: ROUTES.pricing, element: lazyRoute(<PricingPage />) },
       { path: ROUTES.costEstimator, element: lazyRoute(<CostEstimatorPage />) },
 
