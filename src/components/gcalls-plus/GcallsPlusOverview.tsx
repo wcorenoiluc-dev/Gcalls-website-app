@@ -12,7 +12,7 @@ import { GP_OVERVIEW } from '@/data/gcallsPlus'
  */
 export function GcallsPlusOverview() {
   return (
-    <Section ariaLabelledBy="gcalls-plus-la-gi">
+    <Section ariaLabelledBy="tong-quan-webphone">
       <Container>
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
@@ -20,7 +20,7 @@ export function GcallsPlusOverview() {
               {GP_OVERVIEW.eyebrow}
             </Eyebrow>
 
-            <GradientHeading id="gcalls-plus-la-gi" className="mt-4">
+            <GradientHeading id="tong-quan-webphone" className="mt-4">
               {GP_OVERVIEW.h2}
             </GradientHeading>
 

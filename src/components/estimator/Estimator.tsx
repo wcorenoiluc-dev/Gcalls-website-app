@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { ArrowLeft, ArrowRight, RotateCcw } from 'lucide-react'
+import { useSearchParams } from 'react-router'
 import { Card } from '@/components/common/primitives'
 import { ESTIMATOR_SOLUTIONS } from '@/data/estimator'
 import { track } from '@/lib/analytics'
@@ -28,10 +29,40 @@ import { QuoteRequestForm } from './QuoteRequestForm'
  * solution and stale values from another product would silently corrupt the
  * configuration.
  */
+/**
+ * Reads `?product=` and returns it only when it names a real solution.
+ *
+ * Product pages deep-link here (e.g. `/uoc-tinh-chi-phi/?product=gcalls-plus`)
+ * so a visitor arriving from a product page does not have to re-pick the
+ * product they were just reading about. An unknown or absent value simply
+ * falls through to the normal "choose a solution" step — the parameter can
+ * never put the estimator into an invalid state.
+ */
+/** Seed a solution's answers from its field defaults. */
+function defaultAnswersFor(id: string): EstimatorAnswers {
+  const next: EstimatorAnswers = {}
+  for (const field of getSolution(id).fields) {
+    if (field.defaultValue !== undefined) next[field.id] = field.defaultValue
+  }
+  return next
+}
+
+function usePreselectedSolution(): string | null {
+  const [params] = useSearchParams()
+  const requested = params.get('product')
+  return requested && ESTIMATOR_SOLUTIONS.some((s) => s.id === requested)
+    ? requested
+    : null
+}
+
 export function Estimator() {
+  const preselected = usePreselectedSolution()
+
   const [step, setStep] = useState(1)
-  const [solutionId, setSolutionId] = useState<string | null>(null)
-  const [answers, setAnswers] = useState<EstimatorAnswers>({})
+  const [solutionId, setSolutionId] = useState<string | null>(preselected)
+  const [answers, setAnswers] = useState<EstimatorAnswers>(() =>
+    preselected ? defaultAnswersFor(preselected) : {},
+  )
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [showQuoteForm, setShowQuoteForm] = useState(false)
   const [started, setStarted] = useState(false)
@@ -79,13 +110,7 @@ export function Estimator() {
     }
     // Field sets differ per solution — clear rather than carry over.
     setSolutionId(id)
-    setAnswers(() => {
-      const next: EstimatorAnswers = {}
-      for (const field of getSolution(id).fields) {
-        if (field.defaultValue !== undefined) next[field.id] = field.defaultValue
-      }
-      return next
-    })
+    setAnswers(defaultAnswersFor(id))
     setErrors({})
     setShowQuoteForm(false)
     track('estimator_solution_selected', { solution: id })

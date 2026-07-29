@@ -1,9 +1,16 @@
 import { useState } from 'react'
-import { Plus } from 'lucide-react'
+import { ArrowRight, Plus } from 'lucide-react'
+import { Link } from 'react-router'
 
 export interface FaqItem {
   q: string
   a: string
+  /**
+   * Optional contextual link rendered under the answer, for questions that
+   * hand off to the page that actually owns the topic. Omit it and nothing
+   * renders — existing FAQs are unaffected.
+   */
+  link?: { label: string; path: string }
 }
 
 /**
@@ -11,7 +18,8 @@ export interface FaqItem {
  *
  * Used by every page that needs an FAQ. Pair it with a FAQPage JSON-LD block
  * built from the SAME array, so the rendered questions and the structured data
- * cannot drift apart.
+ * cannot drift apart. Note that `link` is presentation only — it is never
+ * folded into the JSON-LD answer text.
  *
  * Mobile: full-width rows, 56px minimum control height, 16px question text.
  */
@@ -70,6 +78,16 @@ export function FaqAccordion({
                 <p className="text-[15px] leading-relaxed text-muted-foreground sm:text-base">
                   {item.a}
                 </p>
+
+                {item.link && (
+                  <Link
+                    to={item.link.path}
+                    className="mt-3 inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-brand underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                  >
+                    {item.link.label}
+                    <ArrowRight size={16} aria-hidden="true" />
+                  </Link>
+                )}
               </div>
             )}
           </li>

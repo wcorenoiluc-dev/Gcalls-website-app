@@ -192,7 +192,7 @@ export const SITEMAP: SitemapEntry[] = [
     title: 'Gcalls Plus Webphone | Tổng đài trên trình duyệt cho Sales & CSKH',
     exactTitle: true,
     description:
-      'Gcalls Plus Webphone giúp doanh nghiệp nghe gọi, quản lý lịch sử khách hàng và triển khai tổng đài ngay trên trình duyệt, không cần hệ thống phức tạp.',
+      'Gcalls Plus Webphone giúp doanh nghiệp nghe gọi, quản lý danh bạ, lịch sử tương tác và hoạt động cuộc gọi ngay trên trình duyệt, phù hợp cho Sales và CSKH.',
     summary: 'Webphone & Call Center tinh gọn.',
   },
   {

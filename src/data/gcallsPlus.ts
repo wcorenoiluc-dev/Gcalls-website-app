@@ -5,13 +5,15 @@
  * COPY IS LOCKED.
  * ---------------------------------------------------------------------------
  * Every string below is taken verbatim from the approved SEO/AIO + Website
- * Master source (src/imports/pasted_text/gcalls-website-update-scope.json §09,
- * §10). Do not rewrite, shorten, paraphrase or "improve" it, and do not add
- * claims, benefits, statistics or feature names that are not here.
+ * Master source — the hero from Checkpoint P01, the remaining sections from
+ * Checkpoint P01-B. Do not rewrite, shorten, paraphrase or "improve" it, and
+ * do not add claims, benefits, statistics or feature names that are not here.
  *
- * Claim-safety rules that apply to this page (source doc §14):
+ * Claim-safety rules that apply to this page (source doc §14, P01-B §24):
  * no efficiency percentages, no savings percentages, no "100% calls analysed",
- * no 5/30-minute deployment, no uptime figure, no customer counts.
+ * no 5/30-minute deployment, no "không cần IT", no uptime figure, no customer
+ * counts. Numbers rendered inside the demo mockups are demo data and must
+ * never be quoted as marketing proof.
  *
  * Positioning is deliberately narrow: browser-based Call Center / Webphone for
  * Sales and CSKH. The broader "nền tảng giao tiếp doanh nghiệp" positioning
@@ -22,250 +24,437 @@
 import { ROUTES } from '@/config/navigation'
 
 export const GP_HERO = {
-  eyebrow: 'Gcalls Plus • Webphone',
-  h1: 'Gcalls Plus Webphone – tổng đài chuyên nghiệp chạy trên trình duyệt',
+  eyebrow: 'GCALLS PLUS WEBPHONE',
+  h1: 'Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình duyệt',
   description:
-    'Gcalls Plus Webphone giúp đội Sales và CSKH nghe gọi, quản lý danh bạ, lịch sử tương tác, ghi chú và theo dõi hoạt động cuộc gọi ngay trên trình duyệt.',
-  keyPoints: [
-    'Nghe gọi trực tiếp trên trình duyệt',
-    'Quản lý danh bạ và lịch sử tương tác',
-    'Ghi chú, nhắc nhở và phân loại cuộc gọi',
-    'Theo dõi lịch sử, thống kê và hiệu suất đội ngũ',
+    'Nghe gọi, quản lý danh bạ, theo dõi lịch sử tương tác và hoạt động của đội ngũ Sales/CSKH trong một giao diện Webphone tập trung.',
+  /**
+   * Three value points, each with its own supporting line. Checkpoint P01
+   * replaced the previous four-item flat checklist: the hero now has to carry
+   * the positioning (browser-native, customer context, team activity), not just
+   * list features.
+   */
+  valuePoints: [
+    {
+      title: 'Làm việc ngay trên trình duyệt',
+      detail:
+        'Đưa hoạt động nghe gọi vào môi trường làm việc trên máy tính thay vì phụ thuộc vào một hệ thống điện thoại rời rạc.',
+    },
+    {
+      title: 'Theo dõi context khách hàng',
+      detail:
+        'Danh bạ, lịch sử tương tác, ghi chú và thông tin cuộc gọi được tổ chức để nhân viên dễ tiếp tục cuộc hội thoại.',
+    },
+    {
+      title: 'Quản lý hoạt động đội ngũ',
+      detail:
+        'Theo dõi lịch sử và dữ liệu hoạt động cuộc gọi để hỗ trợ quản lý vận hành.',
+    },
   ],
-  primaryCta: { label: 'Đăng ký tư vấn', path: ROUTES.pricing },
+  /**
+   * Primary CTA goes through the shared lead-capture architecture
+   * (`leadCtaHref`), not to a static route. See GP_LEAD_CONTEXT.
+   */
+  primaryCta: { label: 'Đăng ký tư vấn' },
   secondaryCta: { label: 'Khám phá tính năng', href: '#tinh-nang' },
 } as const
 
+/**
+ * Conversion context for every Gcalls Plus CTA that opens the shared LeadForm.
+ *
+ * The checkpoint brief specifies `product = gcalls-plus`, `intent =
+ * consultation`, `source = gcalls`. Mapped onto the existing shared lead model
+ * (`src/lib/leads/types.ts`) that is:
+ *
+ *   product → 'Gcalls Plus Webphone'  — the approved LEAD_NEEDS label; the raw
+ *             slug would not match the need list and the form could not
+ *             pre-select it.
+ *   source  → 'gcalls_plus'           — 'gcalls' is not a member of LeadSource;
+ *             'gcalls_plus' is the enum value that means "originated on the
+ *             Gcalls Plus page" and preserves per-page attribution.
+ *   intent  → 'consultation'          — verbatim.
+ */
+export const GP_LEAD_CONTEXT = {
+  intent: 'consultation',
+  source: 'gcalls_plus',
+  product: 'Gcalls Plus Webphone',
+} as const
+
+/**
+ * Direct answer / AIO block. Rendered as plain visible text immediately after
+ * the hero — never inside a tab, modal or collapsed element — so both readers
+ * and answer engines get the definition without interaction.
+ *
+ * This is also the single natural placement of the primary keyword
+ * "phần mềm tổng đài webphone". It appears once, in the first clause, and is
+ * not repeated elsewhere on the page.
+ */
+export const GP_DIRECT_ANSWER = {
+  question: 'Gcalls Plus Webphone là gì?',
+  answer:
+    'Gcalls Plus Webphone là phần mềm tổng đài Webphone hoạt động trực tiếp trên trình duyệt, giúp đội Sales và Chăm sóc khách hàng thực hiện cuộc gọi, quản lý danh bạ, theo dõi lịch sử tương tác, ghi chú và hoạt động cuộc gọi trên một giao diện tập trung. Giải pháp phù hợp với các đội ngũ cần triển khai kênh nghe gọi chuyên nghiệp nhưng muốn giữ quy trình vận hành đơn giản.',
+} as const
+
 export const GP_PROBLEMS = {
-  eyebrow: 'Bài toán',
-  h2: 'Những điểm nghẽn làm giảm hiệu suất nghe gọi của đội Sales và CSKH',
+  eyebrow: 'BÀI TOÁN',
+  h2: 'Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp',
   description:
-    'Khi dữ liệu khách hàng, lịch sử cuộc gọi và công cụ làm việc nằm ở nhiều nơi, đội ngũ dễ mất ngữ cảnh và tốn thời gian cho thao tác thủ công.',
+    'Khi dữ liệu cuộc gọi, ghi chú và lịch sử khách hàng nằm rải rác, ngay cả một đội Sales hoặc CSKH nhỏ cũng có thể mất nhiều thời gian để theo dõi và tiếp tục từng cuộc hội thoại.',
   items: [
-    { n: '01', text: 'Dữ liệu khách hàng và lịch sử cuộc gọi bị phân tán' },
-    { n: '02', text: 'Nhân viên phải chuyển đổi giữa nhiều công cụ khi gọi và ghi chú' },
-    { n: '03', text: 'Khó theo dõi trạng thái và lịch sử tương tác của từng khách hàng' },
-    { n: '04', text: 'Quản lý thiếu dữ liệu tập trung để theo dõi hoạt động và hiệu suất' },
+    {
+      n: '01',
+      title: 'Thông tin cuộc gọi nằm rời rạc',
+      detail:
+        'Nhân viên gọi điện nhưng lịch sử trao đổi, ghi chú và thông tin khách hàng không nằm trong cùng một luồng làm việc.',
+    },
+    {
+      n: '02',
+      title: 'Khó theo dõi những gì đã trao đổi',
+      detail:
+        'Khi khách hàng quay lại, nhân viên cần biết ai đã liên hệ, trao đổi nội dung gì và bước tiếp theo là gì.',
+    },
+    {
+      n: '03',
+      title: 'Quản lý khó nhìn thấy hoạt động của đội ngũ',
+      detail:
+        'Không có dữ liệu tập trung khiến việc theo dõi lượng cuộc gọi và hoạt động của nhân viên trở nên khó khăn hơn.',
+    },
+    {
+      n: '04',
+      title: 'Giải pháp quá phức tạp so với nhu cầu thực tế',
+      detail:
+        'SME có thể chỉ cần một hệ thống nghe gọi gọn nhẹ thay vì bắt đầu bằng một Contact Center với quá nhiều lớp vận hành.',
+    },
   ],
 } as const
 
 export const GP_OVERVIEW = {
-  eyebrow: 'Gcalls Plus',
-  h2: 'Call Center tinh gọn hoạt động ngay trên trình duyệt',
+  eyebrow: 'GCALLS PLUS WEBPHONE',
+  h2: 'Webphone đưa chức năng tổng đài vào trình duyệt',
   description:
-    'Gcalls Plus tập trung các chức năng nghe gọi, danh bạ, lịch sử tương tác, ghi chú và thống kê vào một giao diện Webphone để đội Sales và CSKH vận hành đơn giản hơn.',
+    'Gcalls Plus tập trung các chức năng nghe gọi và quản lý tương tác vào giao diện Webphone để nhân viên có thể xử lý công việc trên máy tính.',
+  /**
+   * The four things this section must establish (P01-B §4), as live text:
+   * browser-based, calling-focused, lighter than a full omnichannel Contact
+   * Center, and aimed at Sales / Customer Service. Nothing beyond that — the
+   * omnichannel positioning belongs to Gcalls CX.
+   */
   capabilities: [
-    'Webphone chạy trên trình duyệt',
-    'IVR và Call Flow theo nhu cầu vận hành',
-    'Danh bạ thông minh với lịch sử tương tác',
-    'Ghi chú, nhắc nhở và phân loại cuộc gọi',
-    'Lịch sử và thống kê cuộc gọi',
-    'Khả năng tích hợp CRM',
+    'Hoạt động trực tiếp trên trình duyệt',
+    'Tập trung vào hoạt động nghe gọi và quản lý tương tác',
+    'Gọn nhẹ hơn so với một Contact Center đa kênh đầy đủ',
+    'Phù hợp với đội Sales và Chăm sóc khách hàng',
   ],
 } as const
 
 export const GP_FEATURES = {
-  eyebrow: 'Tính năng',
-  h2: 'Các công cụ cần thiết cho quy trình nghe gọi hằng ngày',
+  eyebrow: 'NĂNG LỰC CỐT LÕI',
+  h2: 'Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày',
   items: [
     {
       n: '01',
-      title: 'Webphone trên trình duyệt',
+      title: 'Webphone',
       detail:
-        'Nghe gọi trong một giao diện web, phù hợp với đội ngũ cần thao tác tập trung.',
+        'Thực hiện và tiếp nhận cuộc gọi trực tiếp từ giao diện làm việc trên trình duyệt.',
     },
     {
       n: '02',
-      title: 'Danh bạ khách hàng',
+      title: 'IVR & Call Flow',
       detail:
-        'Quản lý thông tin liên hệ và ngữ cảnh khách hàng bên cạnh hoạt động cuộc gọi.',
+        'Thiết lập lời chào và luồng xử lý cuộc gọi phù hợp với cách doanh nghiệp tổ chức tiếp nhận khách hàng.',
     },
     {
       n: '03',
-      title: 'Lịch sử tương tác',
-      detail: 'Theo dõi các hoạt động và cuộc gọi đã diễn ra theo từng khách hàng.',
+      title: 'Quản lý danh bạ',
+      detail:
+        'Quản lý thông tin liên hệ phục vụ hoạt động Sales hoặc Chăm sóc khách hàng.',
     },
     {
       n: '04',
-      title: 'Ghi chú & nhắc nhở',
-      detail: 'Ghi lại nội dung trao đổi và thông tin cần follow-up.',
+      title: 'Lịch sử tương tác',
+      detail:
+        'Theo dõi lịch sử tương tác để nhân viên có thêm context khi tiếp tục làm việc với khách hàng.',
     },
     {
       n: '05',
-      title: 'IVR & Call Flow',
+      title: 'Ghi chú & Follow-up',
       detail:
-        'Cấu hình luồng tiếp nhận và phân phối cuộc gọi theo nhu cầu vận hành.',
+        'Ghi lại thông tin liên quan đến cuộc gọi và hỗ trợ nhân viên tiếp tục xử lý ở bước tiếp theo.',
     },
     {
       n: '06',
-      title: 'Thống kê & hiệu suất',
-      detail: 'Theo dõi hoạt động và dữ liệu phục vụ quản lý đội ngũ.',
+      title: 'Phân loại cuộc gọi',
+      detail:
+        'Phân loại cuộc gọi theo nội dung hoặc mục đích để thuận tiện cho quản lý và báo cáo.',
     },
   ],
 } as const
 
 export const GP_HISTORY = {
-  eyebrow: 'Lịch sử tương tác',
-  h2: 'Theo dõi lịch sử và hoạt động cuộc gọi trên một nơi',
+  eyebrow: 'LỊCH SỬ TƯƠNG TÁC',
+  h2: 'Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi riêng lẻ',
   description:
-    'Giữ lại ngữ cảnh của các lần tương tác để đội ngũ dễ tiếp tục follow-up mà không phải tìm kiếm thông tin ở nhiều công cụ.',
+    'Lịch sử tương tác giúp nhân viên xem lại những lần liên hệ trước, nội dung đã ghi chú và các hoạt động liên quan trước khi tiếp tục xử lý khách hàng.',
   /** Live text so the meaning does not depend on reading the screenshot. */
   points: [
-    'Xem lại hoạt động và cuộc gọi theo dòng thời gian',
-    'Tra cứu lịch sử cuộc gọi theo trạng thái và hotline',
-    'Lọc theo tiêu chí cần thiết khi rà soát lại tương tác',
+    'Lịch sử cuộc gọi',
+    'Thời gian tương tác',
+    'Ghi chú',
+    'Phân loại',
+    'Hoạt động liên quan',
   ],
 } as const
 
 export const GP_CONTEXT = {
-  eyebrow: 'Khách hàng',
-  h2: 'Giữ thông tin và lịch sử tương tác ngay cạnh cuộc gọi',
+  eyebrow: 'CUSTOMER CONTEXT',
+  h2: 'Hiểu khách hàng trước khi tiếp tục cuộc hội thoại',
   description:
-    'Nhân viên có thể xem thông tin khách hàng, ghi chú và lịch sử tương tác trong cùng workflow nghe gọi.',
-  points: [
-    'Thông tin liên hệ hiển thị cùng màn hình nghe gọi',
-    'Ghi chú và phân loại ngay trong lúc trao đổi',
-    'Lịch sử tương tác của từng khách hàng ở cùng một nơi',
+    'Khi thông tin liên hệ, lịch sử cuộc gọi và ghi chú được tập trung trong cùng một giao diện, nhân viên có thể nhanh chóng xem lại những gì đã diễn ra trước khi tiếp tục trao đổi với khách hàng.',
+  /**
+   * Drawn directly from the approved copy above. Deliberately not framed as a
+   * CRM replacement (P01-B §7) — this is the Gcalls side of the call workflow.
+   */
+  points: ['Thông tin liên hệ', 'Lịch sử cuộc gọi', 'Ghi chú'],
+} as const
+
+export const GP_WORKFLOW = {
+  eyebrow: 'QUY TRÌNH',
+  h2: 'Từ cuộc gọi đến bước follow-up tiếp theo',
+  steps: [
+    {
+      n: '01',
+      title: 'Tiếp nhận hoặc thực hiện cuộc gọi',
+      detail: 'Nhân viên xử lý cuộc gọi trên Webphone.',
+    },
+    {
+      n: '02',
+      title: 'Xem context liên hệ',
+      detail:
+        'Thông tin khách hàng và lịch sử tương tác hỗ trợ nhân viên hiểu bối cảnh trước khi trao đổi.',
+    },
+    {
+      n: '03',
+      title: 'Ghi lại nội dung quan trọng',
+      detail: 'Nhân viên thêm ghi chú, phân loại hoặc thông tin cần follow-up.',
+    },
+    {
+      n: '04',
+      title: 'Theo dõi lịch sử',
+      detail:
+        'Hoạt động được lưu trong lịch sử để đội ngũ có thể tiếp tục xử lý ở lần tương tác tiếp theo.',
+    },
   ],
 } as const
 
 export const GP_PERFORMANCE = {
-  eyebrow: 'Hiệu suất',
-  h2: 'Theo dõi hoạt động và hiệu suất đội ngũ bằng dữ liệu',
+  eyebrow: 'QUẢN LÝ HOẠT ĐỘNG',
+  h2: 'Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung',
   description:
-    'Các màn hình thống kê giúp quản lý theo dõi hoạt động cuộc gọi, trạng thái Agent và những chỉ số vận hành cần thiết.',
+    'Lịch sử và dữ liệu hoạt động cuộc gọi giúp người quản lý có thêm cơ sở để theo dõi cách đội Sales/CSKH đang vận hành thay vì chỉ dựa vào báo cáo thủ công từ từng nhân viên.',
+  /** No percentage, rate or improvement figure is approved for this page. */
   points: [
-    'Theo dõi hoạt động cuộc gọi của đội ngũ',
-    'Xem trạng thái Agent trong quá trình vận hành',
-    'Sử dụng dữ liệu thống kê phục vụ quản lý',
+    'Lịch sử cuộc gọi của đội ngũ',
+    'Dữ liệu hoạt động tập trung',
+    'Trạng thái Agent trong quá trình vận hành',
   ],
 } as const
 
+/**
+ * CRM / system integration — SUPPORTING CONTEXT ONLY.
+ *
+ * The keyword "tổng đài tích hợp CRM" is owned by /tong-dai-tich-hop-crm/.
+ * This section deliberately carries no capability bullet list: it states the
+ * boundary and hands off. Do not grow it back into a second CRM landing page.
+ */
 export const GP_INTEGRATION = {
-  eyebrow: 'Tích hợp',
-  h2: 'Kết nối Gcalls Plus với hệ thống doanh nghiệp đang sử dụng',
+  eyebrow: 'KẾT NỐI HỆ THỐNG',
+  h2: 'Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần',
   description:
-    'Gcalls Plus có thể được kết nối với CRM và các hệ thống vận hành để đưa cuộc gọi và ngữ cảnh khách hàng vào workflow hiện tại.',
-  points: [
-    'Cấu hình kết nối theo hệ thống doanh nghiệp đang dùng',
-    'Đưa cuộc gọi và ngữ cảnh khách hàng vào workflow hiện tại',
-    'Thiết lập click-to-call trong công cụ làm việc',
-  ],
-  cta: { label: 'Khám phá giải pháp tích hợp CRM', path: ROUTES.crmIntegration },
+    'Khi quy trình Sales hoặc CSKH đã vận hành trên CRM, Gcalls có thể mở rộng từ Webphone sang mô hình tích hợp sâu hơn để hoạt động cuộc gọi gắn với dữ liệu và workflow hiện có của doanh nghiệp.',
+  cta: { label: 'Khám phá Tổng đài tích hợp CRM', path: ROUTES.crmIntegration },
 } as const
 
 export const GP_USE_CASES = {
-  eyebrow: 'Phù hợp với',
-  h2: 'Phù hợp với đội ngũ cần một hệ thống nghe gọi tinh gọn',
+  eyebrow: 'TÌNH HUỐNG SỬ DỤNG',
+  h2: 'Gcalls Plus phù hợp với những đội ngũ nào?',
   items: [
     {
       role: 'Sales',
       detail:
-        'Quản lý cuộc gọi, ghi chú và follow-up khách hàng trong một workflow tập trung.',
+        'Quản lý hoạt động gọi lead, lịch sử liên hệ, ghi chú và follow-up trong một luồng làm việc gọn hơn.',
     },
     {
-      role: 'Customer Service',
+      role: 'Chăm sóc khách hàng',
       detail:
-        'Giữ lịch sử và ngữ cảnh khách hàng để xử lý cuộc gọi nhất quán hơn.',
+        'Tiếp nhận cuộc gọi và xem lại lịch sử tương tác trước khi hỗ trợ khách hàng.',
     },
     {
-      role: 'Education / Admissions',
+      role: 'Giáo dục',
       detail:
-        'Theo dõi các cuộc trao đổi với người quan tâm và giữ lại thông tin cần follow-up.',
+        'Phù hợp với đội tư vấn tuyển sinh và chăm sóc học viên cần xử lý lượng liên hệ thường xuyên.',
+      link: { label: 'Giải pháp cho ngành Giáo dục', path: ROUTES.education },
     },
     {
-      role: 'Service Businesses',
+      role: 'Dịch vụ',
       detail:
-        'Tiếp nhận và xử lý cuộc gọi của khách hàng theo một quy trình thống nhất.',
+        'Phù hợp với các doanh nghiệp dịch vụ cần hotline và hệ thống quản lý hoạt động gọi tập trung.',
     },
     {
-      role: 'E-commerce support',
+      role: 'Thương mại điện tử',
       detail:
-        'Xử lý cuộc gọi liên quan tới đơn hàng và giữ lại ngữ cảnh trao đổi với khách hàng.',
+        'Hỗ trợ đội bán hàng hoặc CSKH xử lý cuộc gọi liên quan tới tư vấn, đơn hàng và chăm sóc sau bán.',
+      link: {
+        label: 'Giải pháp cho ngành Thương mại điện tử',
+        path: ROUTES.ecommerce,
+      },
     },
   ],
 } as const
 
-export const GP_DEPLOYMENT = {
-  eyebrow: 'Triển khai',
-  h2: 'Bắt đầu từ nhu cầu hiện tại và mở rộng khi đội ngũ phát triển',
-  /** No timeframe is stated anywhere — none is approved. */
-  steps: [
-    { n: '01', title: 'Khảo sát nhu cầu nghe gọi' },
-    { n: '02', title: 'Cấu hình Webphone và luồng vận hành' },
-    { n: '03', title: 'Thiết lập người dùng, đầu số và tích hợp nếu cần' },
-    { n: '04', title: 'Kiểm thử và đưa vào sử dụng' },
+/**
+ * Product boundaries.
+ *
+ * Semantically the most important section on the page: it states what Gcalls
+ * Plus is for and routes every adjacent need to the product that actually owns
+ * it. Gcalls Plus must never be implied to do all four jobs itself.
+ *
+ * The eyebrow is a structural label added for visual consistency with the
+ * other sections; it is not a product claim.
+ */
+export const GP_BOUNDARIES = {
+  eyebrow: 'PHẠM VI PHÙ HỢP',
+  h2: 'Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Contact Center phức tạp',
+  fitTitle: 'PHÙ HỢP VỚI GCALLS PLUS',
+  fitItems: [
+    'SME / Startup',
+    'Sales team',
+    'Customer Service team',
+    'Đội ngũ quy mô nhỏ và vừa',
+    'Doanh nghiệp cần quản lý cuộc gọi tập trung',
+  ],
+  expandTitle: 'KHI NHU CẦU MỞ RỘNG',
+  expandItems: [
+    {
+      need: 'CRM workflow sâu hơn',
+      solution: 'Tổng đài tích hợp CRM',
+      path: ROUTES.crmIntegration,
+    },
+    { need: 'Giao tiếp đa kênh', solution: 'Gcalls CX', path: ROUTES.gcallsCx },
+    {
+      need: 'Kiểm soát chất lượng hội thoại bằng AI',
+      solution: 'QA QC Center',
+      path: ROUTES.qcCenter,
+    },
+    {
+      need: 'Liên lạc quốc tế',
+      solution: 'International Calling',
+      path: ROUTES.internationalCalling,
+    },
   ],
 } as const
+
+/**
+ * Deployment.
+ *
+ * The description states explicitly that timing depends on configuration.
+ * "Cài đặt trong 30 phút" and "Không cần IT" are NOT approved as absolute
+ * promises and must not return without formally approved evidence.
+ */
+export const GP_DEPLOYMENT = {
+  eyebrow: 'TRIỂN KHAI',
+  h2: 'Triển khai theo nhu cầu vận hành thực tế',
+  description:
+    'Gcalls Plus được thiết kế theo mô hình Webphone để giảm độ phức tạp khi triển khai cho đội ngũ cần một hệ thống nghe gọi tập trung. Thời gian triển khai thực tế phụ thuộc vào cấu hình hotline, call flow, số lượng người dùng và yêu cầu tích hợp của doanh nghiệp.',
+  steps: [
+    { n: '01', title: 'Khảo sát nhu cầu' },
+    { n: '02', title: 'Xác định hotline và người dùng' },
+    { n: '03', title: 'Thiết lập call flow' },
+    { n: '04', title: 'Kiểm thử' },
+    { n: '05', title: 'Hướng dẫn sử dụng' },
+    { n: '06', title: 'Vận hành' },
+  ],
+} as const
+
+/** Deep link that pre-selects Gcalls Plus in the estimator. */
+export const GP_ESTIMATOR_HREF = `${ROUTES.costEstimator}?product=gcalls-plus`
 
 export const GP_PRICING = {
-  eyebrow: 'Chi phí',
-  h2: 'Ước tính cấu hình Gcalls Plus theo quy mô đội ngũ',
+  eyebrow: 'CẤU HÌNH & CHI PHÍ',
+  h2: 'Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng',
   description:
-    'Chi phí phụ thuộc vào số lượng Agent, lưu lượng sử dụng, đầu số và phạm vi tích hợp thực tế.',
-  primaryCta: { label: 'Ước tính chi phí', path: ROUTES.costEstimator },
-  secondaryCta: { label: 'Xem bảng giá', path: ROUTES.pricing },
+    'Quy mô người dùng, hotline, lưu lượng gọi và yêu cầu tích hợp có thể ảnh hưởng đến cấu hình giải pháp. Sử dụng công cụ ước tính để mô tả nhu cầu trước khi nhận tư vấn.',
+  primaryCta: { label: 'Ước tính cấu hình & chi phí', path: GP_ESTIMATOR_HREF },
+  secondaryCta: { label: 'Xem bảng giá Gcalls', path: ROUTES.pricing },
 } as const
 
+/**
+ * Trust section.
+ *
+ * No approved customer logo assets exist in this project and no public case
+ * content has been cleared, so this stays a clean placeholder. Per P01-B §15
+ * nothing is invented here — no testimonial, quote, percentage improvement,
+ * case study or customer count.
+ */
 export const GP_STORY = {
-  eyebrow: 'Câu chuyện khách hàng',
-  h2: 'Gcalls Plus trong hoạt động thực tế',
-  /**
-   * No approved public case content exists. Per the brief, show a clean
-   * placeholder rather than inventing metrics, quotes, results or testimonials.
-   */
-  placeholder: 'Case Study đang được cập nhật',
+  eyebrow: 'KHÁCH HÀNG',
+  h2: 'Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau',
+  placeholder: 'Nội dung khách hàng đang được cập nhật',
   placeholderNote:
-    'Nội dung câu chuyện khách hàng sẽ được bổ sung khi có thông tin được duyệt công bố.',
+    'Câu chuyện khách hàng sẽ được bổ sung khi có thông tin được duyệt công bố.',
+  link: { label: 'Đọc bài viết trên Blog Gcalls', path: ROUTES.blog },
 } as const
 
-export const GP_FAQ: Array<{ q: string; a: string }> = [
+export interface GpFaqItem {
+  q: string
+  a: string
+  link?: { label: string; path: string }
+}
+
+export const GP_FAQ: GpFaqItem[] = [
   {
     q: 'Gcalls Plus Webphone là gì?',
-    a: 'Gcalls Plus Webphone là giải pháp Call Center chạy trên trình duyệt, giúp đội Sales và CSKH nghe gọi, quản lý danh bạ, lịch sử tương tác, ghi chú và theo dõi hoạt động cuộc gọi trong một hệ thống.',
+    a: 'Gcalls Plus Webphone là giải pháp tổng đài hoạt động trên trình duyệt giúp doanh nghiệp thực hiện cuộc gọi và quản lý các thông tin liên quan đến hoạt động tương tác trong một giao diện tập trung.',
   },
   {
-    q: 'Gcalls Plus có cần cài đặt phần mềm không?',
-    a: 'Gcalls Plus được thiết kế để sử dụng qua trình duyệt web. Yêu cầu triển khai cụ thể có thể phụ thuộc vào thiết bị, đầu số và cấu hình doanh nghiệp.',
+    q: 'Gcalls Plus có cần điện thoại bàn không?',
+    a: 'Webphone được thiết kế để hoạt động thông qua môi trường trình duyệt trên máy tính. Yêu cầu thiết bị và cấu hình thực tế sẽ tùy thuộc vào mô hình triển khai.',
   },
   {
-    q: 'Gcalls Plus phù hợp với doanh nghiệp nào?',
-    a: 'Gcalls Plus phù hợp với đội ngũ Sales và CSKH cần một hệ thống nghe gọi tập trung, đặc biệt khi doanh nghiệp muốn bắt đầu từ một mô hình Call Center tinh gọn.',
+    q: 'Gcalls Plus có lưu lịch sử cuộc gọi không?',
+    a: 'Có. Gcalls Plus hỗ trợ theo dõi lịch sử và dữ liệu hoạt động cuộc gọi để nhân viên và người quản lý có thêm context trong quá trình làm việc.',
   },
   {
-    q: 'Gcalls Plus có quản lý lịch sử cuộc gọi không?',
-    a: 'Gcalls Plus hỗ trợ theo dõi lịch sử và hoạt động cuộc gọi để đội ngũ có thêm ngữ cảnh khi tiếp tục tương tác với khách hàng.',
+    q: 'Gcalls Plus có tích hợp CRM không?',
+    a: 'Gcalls có khả năng kết nối hoạt động nghe gọi với CRM. Với doanh nghiệp cần workflow sâu hơn như Click-to-Call, context khách hàng hoặc đồng bộ lịch sử cuộc gọi, hãy tham khảo giải pháp Tổng đài tích hợp CRM.',
+    link: { label: 'Tổng đài tích hợp CRM', path: ROUTES.crmIntegration },
   },
   {
-    q: 'Gcalls Plus có thể tích hợp CRM không?',
-    a: 'Gcalls Plus có khả năng kết nối với CRM và hệ thống doanh nghiệp theo cấu hình tích hợp phù hợp.',
+    q: 'Gcalls Plus phù hợp với ai?',
+    a: 'Gcalls Plus hướng tới các SME và đội Sales/CSKH cần một hệ thống nghe gọi tập trung trên trình duyệt nhưng chưa cần một Contact Center đa kênh phức tạp.',
   },
   {
-    q: 'Gcalls Plus có hỗ trợ IVR và Call Flow không?',
-    a: 'Gcalls Plus có các khả năng IVR và Call Flow để hỗ trợ tổ chức luồng nghe gọi theo nhu cầu vận hành.',
-  },
-  {
-    q: 'Gcalls Plus khác Gcalls CX như thế nào?',
-    a: 'Gcalls Plus tập trung vào Call Center/Webphone và workflow nghe gọi tinh gọn. Gcalls CX hướng tới Contact Center đa kênh và các quy trình giao tiếp rộng hơn.',
-  },
-  {
-    q: 'Chi phí Gcalls Plus được tính như thế nào?',
-    a: 'Chi phí phụ thuộc vào cấu hình sử dụng như số lượng Agent, lưu lượng gọi, đầu số và phạm vi tích hợp. Doanh nghiệp có thể sử dụng công cụ Ước tính chi phí để chuẩn bị cấu hình ban đầu trước khi nhận báo giá chính thức.',
+    q: 'Tôi có thể biết chi phí trước khi tư vấn không?',
+    a: 'Doanh nghiệp có thể sử dụng công cụ Ước tính cấu hình & chi phí để mô tả quy mô và nhu cầu trước khi nhận báo giá chính thức.',
+    link: { label: 'Ước tính cấu hình & chi phí', path: GP_ESTIMATOR_HREF },
   },
 ]
 
 export const GP_FINAL_CTA = {
-  eyebrow: 'Bắt đầu',
-  h2: 'Sẵn sàng xây dựng kênh nghe gọi chuyên nghiệp cho đội ngũ?',
+  eyebrow: 'GCALLS PLUS WEBPHONE',
+  h2: 'Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ của bạn đang làm việc',
   description:
-    'Chia sẻ quy mô đội Sales/CSKH và nhu cầu vận hành hiện tại để Gcalls đề xuất cấu hình phù hợp.',
-  primaryCta: { label: 'Đăng ký tư vấn', path: ROUTES.pricing },
-  secondaryCta: { label: 'Ước tính chi phí', path: ROUTES.costEstimator },
+    'Chia sẻ quy mô Sales/CSKH, số hotline và quy trình hiện tại để Gcalls tư vấn cấu hình Webphone phù hợp.',
+  primaryCta: { label: 'Đăng ký tư vấn', path: ROUTES.contact },
+  secondaryCta: { label: 'Ước tính cấu hình', path: GP_ESTIMATOR_HREF },
 } as const
 
 /**
- * Structured data. No Offer/price is emitted — public pricing does not exist,
- * and a zero or invented price would publish a false claim.
+ * Structured data.
+ *
+ * Four nodes only — BreadcrumbList, Product, SoftwareApplication, FAQPage.
+ * No Offer/price is emitted (public pricing does not exist, and a zero or
+ * invented price would publish a false claim), and no AggregateRating, Review,
+ * customer count, award or unverified statistic.
  */
 export function buildGcallsPlusJsonLd(origin: string) {
   return {
@@ -286,7 +475,7 @@ export function buildGcallsPlusJsonLd(origin: string) {
       {
         '@type': 'Product',
         name: 'Gcalls Plus Webphone',
-        description: GP_HERO.description,
+        description: GP_DIRECT_ANSWER.answer,
         brand: { '@type': 'Brand', name: 'Gcalls' },
         category: 'Call Center Software',
         url: `${origin}${ROUTES.gcallsPlus}`,
@@ -299,7 +488,7 @@ export function buildGcallsPlusJsonLd(origin: string) {
         operatingSystem: 'Web browser',
         description: GP_OVERVIEW.description,
         url: `${origin}${ROUTES.gcallsPlus}`,
-        featureList: GP_OVERVIEW.capabilities,
+        featureList: GP_FEATURES.items.map((f) => f.title),
         provider: { '@type': 'Organization', name: 'Gcalls' },
       },
       {

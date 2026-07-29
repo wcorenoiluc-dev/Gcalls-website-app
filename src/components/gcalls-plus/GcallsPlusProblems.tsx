@@ -29,9 +29,14 @@ export function GcallsPlusProblems() {
               >
                 {item.n}
               </span>
-              <p className="self-center text-base leading-relaxed text-foreground">
-                {item.text}
-              </p>
+              <div className="min-w-0">
+                <h3 className="text-base font-bold leading-snug text-foreground sm:text-lg">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground sm:text-base">
+                  {item.detail}
+                </p>
+              </div>
             </Card>
           ))}
         </ul>

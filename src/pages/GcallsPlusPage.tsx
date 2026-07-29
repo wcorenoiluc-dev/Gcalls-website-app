@@ -5,16 +5,24 @@ import { FaqAccordion } from '@/components/common/FaqAccordion'
 import { FinalCtaBand } from '@/components/common/FinalCtaBand'
 import { Breadcrumb } from '@/components/layout/Breadcrumb'
 import { SITE_ORIGIN } from '@/config/seo'
-import { GP_FAQ, GP_FINAL_CTA, buildGcallsPlusJsonLd } from '@/data/gcallsPlus'
+import {
+  GP_FAQ,
+  GP_FINAL_CTA,
+  GP_LEAD_CONTEXT,
+  buildGcallsPlusJsonLd,
+} from '@/data/gcallsPlus'
 import { GcallsPlusHero } from '@/components/gcalls-plus/GcallsPlusHero'
+import { DirectAnswer } from '@/components/gcalls-plus/DirectAnswer'
 import { GcallsPlusProblems } from '@/components/gcalls-plus/GcallsPlusProblems'
 import { GcallsPlusOverview } from '@/components/gcalls-plus/GcallsPlusOverview'
 import { GcallsPlusFeatures } from '@/components/gcalls-plus/GcallsPlusFeatures'
 import { InteractionHistory } from '@/components/gcalls-plus/InteractionHistory'
 import { CustomerContext } from '@/components/gcalls-plus/CustomerContext'
+import { WorkflowSection } from '@/components/gcalls-plus/WorkflowSection'
 import { PerformanceSection } from '@/components/gcalls-plus/PerformanceSection'
 import { IntegrationSection } from '@/components/gcalls-plus/IntegrationSection'
 import { UseCases } from '@/components/gcalls-plus/UseCases'
+import { ProductBoundaries } from '@/components/gcalls-plus/ProductBoundaries'
 import { DeploymentSection } from '@/components/gcalls-plus/DeploymentSection'
 import { PricingCTA } from '@/components/gcalls-plus/PricingCTA'
 import { CustomerStory } from '@/components/gcalls-plus/CustomerStory'
@@ -49,19 +57,22 @@ export function GcallsPlusPage() {
       </div>
 
       {/* 01 */} <GcallsPlusHero />
-      {/* 02 */} <GcallsPlusProblems />
-      {/* 03 */} <GcallsPlusOverview />
-      {/* 04 */} <GcallsPlusFeatures />
-      {/* 05 */} <InteractionHistory />
-      {/* 06 */} <CustomerContext />
-      {/* 07 */} <PerformanceSection />
-      {/* 08 */} <IntegrationSection />
-      {/* 09 */} <UseCases />
-      {/* 10 */} <DeploymentSection />
-      {/* 11 */} <PricingCTA />
-      {/* 12 */} <CustomerStory />
+      {/* 02 */} <DirectAnswer />
+      {/* 03 */} <GcallsPlusProblems />
+      {/* 04 */} <GcallsPlusOverview />
+      {/* 05 */} <GcallsPlusFeatures />
+      {/* 06 */} <InteractionHistory />
+      {/* 07 */} <CustomerContext />
+      {/* 08 */} <WorkflowSection />
+      {/* 09 */} <PerformanceSection />
+      {/* 10 */} <IntegrationSection />
+      {/* 11 */} <UseCases />
+      {/* 12 */} <ProductBoundaries />
+      {/* 13 */} <DeploymentSection />
+      {/* 14 */} <PricingCTA />
+      {/* 15 */} <CustomerStory />
 
-      {/* 13 */}
+      {/* 16 */}
       <Section ariaLabelledBy="faq-gcalls-plus">
         <Container>
           <SectionHeader
@@ -75,7 +86,7 @@ export function GcallsPlusPage() {
         </Container>
       </Section>
 
-      {/* 14 */}
+      {/* 17 */}
       <Section tinted ariaLabelledBy="cta-gcalls-plus">
         <FinalCtaBand
           eyebrow={GP_FINAL_CTA.eyebrow}
@@ -84,11 +95,7 @@ export function GcallsPlusPage() {
           description={GP_FINAL_CTA.description}
           primary={GP_FINAL_CTA.primaryCta}
           secondary={GP_FINAL_CTA.secondaryCta}
-          lead={{
-            intent: 'consultation',
-            source: 'gcalls_plus',
-            product: 'Gcalls Plus Webphone',
-          }}
+          lead={GP_LEAD_CONTEXT}
           showPhone
         />
       </Section>

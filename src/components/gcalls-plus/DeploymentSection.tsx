@@ -5,8 +5,9 @@ import { GP_DEPLOYMENT } from '@/data/gcallsPlus'
 /**
  * Deployment steps.
  *
- * No timeframe appears anywhere — "5 phút", "30 phút" and instant-deployment
- * claims are explicitly unapproved (brief §12, source doc §14).
+ * No absolute timeframe or effort promise appears anywhere. "Cài đặt trong 30
+ * phút" and "Không cần IT" are explicitly unapproved (P01-B §13/§24); instead
+ * the lead paragraph states plainly that timing depends on configuration.
  */
 export function DeploymentSection() {
   return (
@@ -17,9 +18,10 @@ export function DeploymentSection() {
           eyebrowIcon={<Rocket size={14} aria-hidden="true" />}
           title={GP_DEPLOYMENT.h2}
           titleId="trien-khai"
+          lead={GP_DEPLOYMENT.description}
         />
 
-        <ol className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {GP_DEPLOYMENT.steps.map((step) => (
             <Card as="li" key={step.n} className="flex h-full flex-col p-6">
               <span

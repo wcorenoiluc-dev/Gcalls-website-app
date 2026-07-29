@@ -1,13 +1,15 @@
-import { Quote } from 'lucide-react'
+import { ArrowRight, Quote } from 'lucide-react'
+import { Link } from 'react-router'
 import { Card, Container, Section, SectionHeader } from '@/components/common/primitives'
 import { GP_STORY } from '@/data/gcallsPlus'
 
 /**
- * Customer story.
+ * Trust / customer section.
  *
- * No approved public case content exists, so this renders a clean placeholder.
- * Per the brief nothing is invented here — no metrics, quotes, results,
- * timelines or testimonials, and no unnamed "a leading enterprise" filler.
+ * The project holds no approved customer logo assets and no cleared public
+ * case content, so this renders a clean placeholder and links to the blog
+ * instead. Nothing is invented here — no metrics, quotes, results, timelines,
+ * testimonials, customer counts, or unnamed "a leading enterprise" filler.
  */
 export function CustomerStory() {
   return (
@@ -35,6 +37,14 @@ export function CustomerStory() {
           <p className="mt-3 max-w-md text-base leading-relaxed text-muted-foreground">
             {GP_STORY.placeholderNote}
           </p>
+
+          <Link
+            to={GP_STORY.link.path}
+            className="mt-5 inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-brand underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+          >
+            {GP_STORY.link.label}
+            <ArrowRight size={16} aria-hidden="true" />
+          </Link>
         </Card>
       </Container>
     </Section>

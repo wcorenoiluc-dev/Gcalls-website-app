@@ -3,7 +3,9 @@ import { Link } from 'react-router'
 import { Container, Eyebrow, GradientHeading } from '@/components/common/primitives'
 import { ProductVisualWithSupport } from '@/components/common/ProductVisual'
 import { CRMMockup, SoftphoneMockup } from '@/components/product-ui'
-import { GP_HERO } from '@/data/gcallsPlus'
+import { track } from '@/lib/analytics'
+import { leadCtaHref } from '@/lib/leads/ctaLink'
+import { GP_HERO, GP_LEAD_CONTEXT } from '@/data/gcallsPlus'
 
 /**
  * Page hero. Carries the page's single H1.
@@ -39,25 +41,38 @@ export function GcallsPlusHero() {
               {GP_HERO.description}
             </p>
 
-            <ul className="mt-7 flex flex-col gap-3">
-              {GP_HERO.keyPoints.map((point) => (
-                <li key={point} className="flex items-start gap-3">
+            <ul className="mt-7 flex flex-col gap-5">
+              {GP_HERO.valuePoints.map((point) => (
+                <li key={point.title} className="flex items-start gap-3">
                   <span
                     className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-light"
                     aria-hidden="true"
                   >
                     <Check size={12} className="text-brand" strokeWidth={3} />
                   </span>
-                  <span className="text-base leading-relaxed text-foreground">
-                    {point}
-                  </span>
+                  <div>
+                    <p className="text-base font-semibold leading-snug text-foreground">
+                      {point.title}
+                    </p>
+                    <p className="mt-1 text-[15px] leading-relaxed text-muted-foreground">
+                      {point.detail}
+                    </p>
+                  </div>
                 </li>
               ))}
             </ul>
 
             <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
               <Link
-                to={GP_HERO.primaryCta.path}
+                to={leadCtaHref(GP_LEAD_CONTEXT)}
+                onClick={() =>
+                  track('cta_clicked', {
+                    label: GP_HERO.primaryCta.label,
+                    source: GP_LEAD_CONTEXT.source,
+                    intent: GP_LEAD_CONTEXT.intent,
+                    product: GP_LEAD_CONTEXT.product,
+                  })
+                }
                 className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
               >
                 {GP_HERO.primaryCta.label}

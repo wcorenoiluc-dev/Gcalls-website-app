@@ -11,6 +11,11 @@ import { FeatureSplit } from '@/components/common/FeatureSplit'
  * Shows the Gcalls-side integration configuration surface only. No specific
  * third-party platform UI is depicted and no connector behaviour is claimed
  * for any named CRM — the brief forbids inventing either.
+ *
+ * SUPPORTING CONTEXT ONLY. The "tổng đài tích hợp CRM" keyword is owned by
+ * /tong-dai-tich-hop-crm/, so this section carries no capability bullet list:
+ * it states the boundary and hands off. Do not grow it into a second CRM
+ * landing page (P01-B §10).
  */
 export function IntegrationSection() {
   return (
@@ -21,7 +26,6 @@ export function IntegrationSection() {
       title={GP_INTEGRATION.h2}
       titleId="tich-hop-he-thong"
       description={GP_INTEGRATION.description}
-      points={GP_INTEGRATION.points}
       visual={
         <ProductVisualWithSupport
           main={<APIManagerMockup />}
