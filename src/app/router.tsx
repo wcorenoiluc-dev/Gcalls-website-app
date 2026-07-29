@@ -18,6 +18,9 @@ import { HomePage } from '@/pages/HomePage'
 const GcallsPlusPage = lazy(() =>
   import('@/pages/GcallsPlusPage').then((m) => ({ default: m.GcallsPlusPage })),
 )
+const QaQcCenterPage = lazy(() =>
+  import('@/pages/QaQcCenterPage').then((m) => ({ default: m.QaQcCenterPage })),
+)
 const CRMIntegrationPage = lazy(() =>
   import('@/pages/CRMIntegrationPage').then((m) => ({ default: m.CRMIntegrationPage })),
 )
@@ -54,7 +57,6 @@ function lazyRoute(element: React.ReactNode) {
 const SHELL_ROUTES = [
   // Products
   ROUTES.products,
-  ROUTES.qcCenter,
   ROUTES.gcallsCx,
   // Solutions
   ROUTES.helpdeskIntegration,
@@ -97,6 +99,7 @@ export const router = createBrowserRouter([
 
       // Fully built pages
       { path: ROUTES.gcallsPlus, element: lazyRoute(<GcallsPlusPage />) },
+      { path: ROUTES.qcCenter, element: lazyRoute(<QaQcCenterPage />) },
       { path: ROUTES.crmIntegration, element: lazyRoute(<CRMIntegrationPage />) },
       { path: ROUTES.pricing, element: lazyRoute(<PricingPage />) },
       { path: ROUTES.costEstimator, element: lazyRoute(<CostEstimatorPage />) },
