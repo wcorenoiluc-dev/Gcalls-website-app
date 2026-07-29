@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { MoreHorizontal, X } from 'lucide-react'
 import { Link } from 'react-router'
 import { PRIMARY_CTA } from '@/config/navigation'
+import { leadCtaHref } from '@/lib/leads/ctaLink'
 import { DesktopNav } from './DesktopNav'
 import { Logo } from './Logo'
 import { MobileMenu } from './MobileMenu'
@@ -47,7 +48,9 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <Link
-              to={PRIMARY_CTA.path}
+              /* Carries conversion context so a header lead is attributed to
+                 the header, not recorded as an untracked direct visit. */
+              to={leadCtaHref({ intent: 'consultation', source: 'consultation' })}
               className="hidden md:inline-flex items-center justify-center gap-1.5 text-sm font-semibold px-5 py-2.5 max-lg:min-h-11 rounded-xl transition-colors duration-150 hover:bg-[#5929a8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
               style={{
                 background: '#673ab7',

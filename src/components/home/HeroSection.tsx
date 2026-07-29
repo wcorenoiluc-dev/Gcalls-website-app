@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ROUTES } from '@/config/navigation';
 import { ArrowUpRight, BarChart2, Check, ChevronRight, Pause, Phone, PhoneCall, PhoneIncoming, Play, Search, Star, TrendingUp, Users, Voicemail, Wifi } from "lucide-react";
 import { Link } from "react-router";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
@@ -501,8 +502,9 @@ export function Hero() {
                 <Phone size={16} />
                 Đăng ký tư vấn
               </Link>
-              <button
-                className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-[15px] transition-all duration-150"
+              <Link
+                to={ROUTES.gcallsPlus}
+                className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-[15px] transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
                 style={{
                   background: "#fff",
                   color: "#673ab7",
@@ -522,7 +524,7 @@ export function Hero() {
               >
                 Khám phá tính năng
                 <ChevronRight size={16} />
-              </button>
+              </Link>
             </div>
 
             {/* Quick highlights */}

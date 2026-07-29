@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ROUTES } from '@/config/navigation';
 import { Activity, BarChart2, Briefcase, Check, Clock, Cloud, Globe, HeadphonesIcon, Layers, LayoutGrid, MapPin, Mic, MicOff, Phone, PhoneCall, PhoneForwarded, PhoneIncoming, PhoneOff, RefreshCw, ShieldCheck, Volume2, Wifi, X, Zap } from "lucide-react";
 import { Link } from "react-router";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
@@ -604,14 +605,15 @@ export function WorkFromAnywhereSection() {
                 >
                   <Phone size={15} /> Đăng ký tư vấn
                 </Link>
-                <button
-                  className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150"
+                <Link
+                to={ROUTES.gcallsPlus}
+                  className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                   style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1.5px solid rgba(255,255,255,0.28)" }}
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.22)"}
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.15)"}
                 >
                   <Zap size={15} /> Khám phá tính năng
-                </button>
+                </Link>
               </div>
               <p className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.40)" }}>Đội ngũ Gcalls hỗ trợ cấu hình và triển khai theo nhu cầu thực tế</p>
             </div>

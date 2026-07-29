@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import { ROUTES } from '@/config/navigation';
+import { Link } from "react-router";
 import { ArrowRight, Check, Clock, Download, FileText, Mic, Pause, PhoneCall, PhoneIncoming, PhoneMissed, PhoneOutgoing, Play, Search, SlidersHorizontal, Star, Tag, Voicemail, Volume2 } from "lucide-react";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 
@@ -510,8 +512,9 @@ export function CallTimelineSection() {
             </p>
           </div>
 
-          <button
-            className="flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-sm flex-shrink-0 transition-all duration-150"
+          <Link
+                to={ROUTES.gcallsPlus}
+            className="flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-sm flex-shrink-0 transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
             style={{
               background: "#673ab7",
               color: "#fff",
@@ -529,7 +532,7 @@ export function CallTimelineSection() {
           >
             Xem tính năng Timeline
             <ArrowRight size={16} />
-          </button>
+          </Link>
         </div>
 
       </div>

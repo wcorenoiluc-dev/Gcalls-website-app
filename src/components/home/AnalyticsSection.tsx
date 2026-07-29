@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { ROUTES } from '@/config/navigation';
+import { Link } from "react-router";
 import { Activity, ArrowRight, ArrowUpRight, BarChart2, Check, ChevronRight, Clock, HeadphonesIcon, PhoneCall, PhoneIncoming, PhoneMissed, PhoneOutgoing, Settings, Star, TrendingUp } from "lucide-react";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 
@@ -363,15 +365,16 @@ export function AnalyticsSection() {
               Không cần tổng hợp báo cáo thủ công từ nhiều nguồn. Mọi chỉ số quan trọng đều được hiển thị trực quan giúp quản lý nhanh chóng nắm bắt tình hình vận hành.
             </p>
           </div>
-          <button
-            className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm flex-shrink-0 transition-all duration-150 whitespace-nowrap"
+          <Link
+                to={ROUTES.gcallsPlus}
+            className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm flex-shrink-0 transition-all duration-150 whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
             style={{ background: "#673ab7", color: "#fff", boxShadow: "0 4px 20px rgba(103,58,183,0.30)" }}
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#5929a8"; (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)"; }}
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "#673ab7"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}
           >
             Khám phá Analytics
             <ArrowRight size={15} />
-          </button>
+          </Link>
         </div>
 
         {/* ── Block 2: 6 metric cards ── */}

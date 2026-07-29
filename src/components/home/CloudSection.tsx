@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { ROUTES } from '@/config/navigation';
+import { Link } from "react-router";
 import { ArrowRight, BarChart2, Check, ChevronRight, Cloud, GitBranch, Globe, HeadphonesIcon, Layers, Mic, MoreHorizontal, Network, Phone, PhoneForwarded, PhoneIncoming, Plus, RefreshCw, Server, Settings, Users, Voicemail, Wifi, Zap } from "lucide-react";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 
@@ -407,15 +409,16 @@ export function CloudSection() {
               Tự động điều hướng cuộc gọi đến đúng bộ phận, đúng nhân viên hoặc đúng chi nhánh giúp nâng cao trải nghiệm khách hàng và tăng tỷ lệ kết nối thành công.
             </p>
           </div>
-          <button
-            className="flex items-center gap-2 px-7 py-4 rounded-2xl font-bold text-sm flex-shrink-0 transition-all duration-150 whitespace-nowrap relative"
+          <Link
+                to={ROUTES.gcallsPlus}
+            className="flex items-center gap-2 px-7 py-4 rounded-2xl font-bold text-sm flex-shrink-0 transition-all duration-150 whitespace-nowrap relative focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             style={{ background: "#fff", color: "#673ab7", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "none"; }}
           >
             Xem Cloud PBX
             <ArrowRight size={15} />
-          </button>
+          </Link>
         </div>
 
         {/* ── Feature grid 8 cards ── */}

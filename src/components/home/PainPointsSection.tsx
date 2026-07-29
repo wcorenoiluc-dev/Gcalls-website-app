@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { ROUTES } from '@/config/navigation';
+import { Link } from "react-router";
 import { ArrowRight, Check, ClipboardList, MapPin, Phone, PieChart, Plug, UserX } from "lucide-react";
 
 // ─── Section 2: Pain Points ──────────────────────────────────────────────────
@@ -236,8 +238,9 @@ export function PainPointsSection() {
 
             {/* CTA */}
             <div className="flex flex-col items-center lg:items-end gap-4 flex-shrink-0">
-              <button
-                className="group flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-[15px] transition-all duration-150 whitespace-nowrap"
+              <Link
+                to={ROUTES.gcallsPlus}
+                className="group flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-[15px] transition-all duration-150 whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 style={{
                   background: "#fff",
                   color: "#673ab7",
@@ -254,7 +257,7 @@ export function PainPointsSection() {
               >
                 Khám phá Gcalls Webphone
                 <ArrowRight size={16} className="transition-transform duration-150 group-hover:translate-x-1" />
-              </button>
+              </Link>
               <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>Không cần cài đặt phần mềm · Chạy trực tiếp trên trình duyệt</p>
             </div>
           </div>
