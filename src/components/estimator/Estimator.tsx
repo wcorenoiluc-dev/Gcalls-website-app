@@ -56,6 +56,7 @@ function defaultAnswersFor(id: string): EstimatorAnswers {
  */
 const PRODUCT_SLUG_ALIASES: Record<string, string> = {
   'gcalls-cx': 'cx',
+  'crm-integration': 'crm',
 }
 
 function usePreselectedSolution(): string | null {

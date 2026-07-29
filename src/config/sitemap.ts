@@ -269,10 +269,10 @@ export const SITEMAP: SitemapEntry[] = [
     indexable: true,
     navVisibility: true,
     footerVisibility: true,
-    title: 'Tổng đài tích hợp CRM | Click-to-Call & dữ liệu khách hàng | Gcalls',
+    title: 'Tổng đài tích hợp CRM | Click-to-Call & dữ liệu khách hàng',
     exactTitle: true,
     description:
-      'Kết nối Gcalls với CRM để gọi trực tiếp, hiển thị ngữ cảnh khách hàng và quản lý lịch sử tương tác trong workflow Sales và CSKH.',
+      'Gcalls kết nối tổng đài với CRM để đội Sales và CSKH gọi trực tiếp từ hệ thống, nhận diện khách hàng khi có cuộc gọi và đồng bộ lịch sử tương tác theo cấu hình.',
     summary: 'Kết nối cuộc gọi với dữ liệu và workflow CRM.',
   },
   {

@@ -1,5 +1,5 @@
-import { useMemo } from 'react'
-import { ArrowRight, History, MousePointerClick, Settings, Users } from 'lucide-react'
+import { useMemo, type ReactNode } from 'react'
+import { Database, Headset, MousePointerClick, Target, Users } from 'lucide-react'
 import { Link } from 'react-router'
 import {
   Card,
@@ -19,10 +19,9 @@ import {
   ProductVisualWithSupport,
 } from '@/components/common/ProductVisual'
 import { Breadcrumb } from '@/components/layout/Breadcrumb'
-import { ROUTES } from '@/config/navigation'
 import { SITE_ORIGIN } from '@/config/seo'
+import { leadCtaHref } from '@/lib/leads/ctaLink'
 import {
-  APIManagerMockup,
   CRMMockup,
   CallTimelineMockup,
   CustomerPopupMockup,
@@ -30,49 +29,60 @@ import {
   WidgetMockup,
 } from '@/components/product-ui'
 import {
-  CRM_BENEFITS,
-  CRM_CLICK_TO_CALL,
-  CRM_CONFIG,
+  CRM_BEFORE_AFTER,
+  CRM_BOUNDARIES,
+  CRM_CAPABILITIES,
   CRM_CONTEXT,
-  CRM_DEFINITION,
+  CRM_DATA_SYNC,
   CRM_DEPLOYMENT,
+  CRM_DIRECT_ANSWER,
   CRM_FAQ,
   CRM_FINAL_CTA,
   CRM_HERO,
-  CRM_HISTORY,
+  CRM_HOW_IT_WORKS,
+  CRM_LEAD,
+  CRM_OVERVIEW,
   CRM_PLATFORMS,
   CRM_PLATFORM_NOTE,
+  CRM_PLATFORM_SECTION,
   CRM_PRICING,
   CRM_PROBLEMS,
-  CRM_USE_CASES,
-  CRM_WORKFLOW,
+  CRM_SALES_USE_CASE,
+  CRM_SERVICE_USE_CASE,
+  CRM_TRUST,
   buildCrmJsonLd,
 } from '@/data/crmIntegration'
+import { IntegrationBeforeAfter } from '@/components/integration/IntegrationBeforeAfter'
+import { IntegrationBoundaries } from '@/components/integration/IntegrationBoundaries'
 import { IntegrationHero } from '@/components/integration/IntegrationHero'
-import { IntegrationProblems } from '@/components/integration/IntegrationProblems'
-import { IntegrationWorkflow } from '@/components/integration/IntegrationWorkflow'
 import { IntegrationPlatforms } from '@/components/integration/IntegrationPlatforms'
-import { IntegrationBenefits } from '@/components/integration/IntegrationBenefits'
+import { IntegrationProblems } from '@/components/integration/IntegrationProblems'
 import { IntegrationSteps } from '@/components/integration/IntegrationSteps'
-import { IntegrationUseCases } from '@/components/integration/IntegrationUseCases'
+import { IntegrationWorkflow } from '@/components/integration/IntegrationWorkflow'
 
 /**
- * `/tong-dai-tich-hop-crm/` — Gcalls Call Center + CRM integration.
+ * `/tong-dai-tich-hop-crm/` — Gcalls Call Center + CRM integration (S01).
  *
- * Positioning is the *integration*, not CRM in general: connecting business
- * calling with CRM customer data for Sales and CSKH workflows.
+ * This is a SOLUTION page answering "how do I connect my calling workflow with
+ * my existing CRM?". It is not a product page, not a vendor page and not a
+ * generic CRM explainer.
  *
- * Two constraints shaped the build:
- *  - No third-party CRM UI is depicted. Every visual is an existing Gcalls
- *    demo mockup, and the process is explained with a purpose-built workflow
- *    diagram rather than a fabricated HubSpot/Salesforce screen.
- *  - No capability is claimed to behave identically across platforms, and no
- *    automatic-sync behaviour is described — nothing confirms it.
+ * Three constraints shaped the build:
+ *  - No third-party CRM UI is depicted. Every visual is an existing approved
+ *    Gcalls demo mockup from `@/components/product-ui`; no HubSpot, Salesforce
+ *    or Zoho screen is fabricated, and no mockup is presented as belonging to
+ *    a third-party product.
+ *  - No capability behaves identically across platforms and no universal
+ *    synchronisation is described — scope always defers to configuration. See
+ *    the claim guard in `src/data/crmIntegration.ts`.
+ *  - Recording sync is NOT published (unverified), and vendor keywords stay
+ *    with the vendor pages.
  *
  * Exactly one H1, in IntegrationHero.
  */
 export function CRMIntegrationPage() {
   const jsonLd = useMemo(() => buildCrmJsonLd(SITE_ORIGIN), [])
+  const leadHref = leadCtaHref(CRM_LEAD)
 
   return (
     <>
@@ -80,17 +90,19 @@ export function CRMIntegrationPage() {
 
       <div className="bg-brand-light/60 pt-20 sm:pt-24">
         <Container>
-          <Breadcrumb trail={[{ label: 'Giải pháp' }, { label: 'Tích hợp CRM' }]} />
+          <Breadcrumb
+            trail={[{ label: 'Giải pháp' }, { label: 'Tổng đài tích hợp CRM' }]}
+          />
         </Container>
       </div>
 
-      {/* 01 */}
+      {/* 01 — Hero. Primary CTA routes through the shared lead form. */}
       <IntegrationHero
         eyebrow={CRM_HERO.eyebrow}
         title={CRM_HERO.h1}
         description={CRM_HERO.description}
-        keyPoints={CRM_HERO.keyPoints}
-        primaryCta={CRM_HERO.primaryCta}
+        keyPoints={CRM_HERO.valuePoints.map((v) => `${v.title} — ${v.detail}`)}
+        primaryCta={{ label: CRM_HERO.primaryCta.label, path: leadHref }}
         secondaryCta={CRM_HERO.secondaryCta}
         visual={
           <ProductVisualWithSupport
@@ -101,39 +113,20 @@ export function CRMIntegrationPage() {
         }
       />
 
-      {/* 02 */}
-      <IntegrationProblems
-        eyebrow={CRM_PROBLEMS.eyebrow}
-        title={CRM_PROBLEMS.h2}
-        titleId="bai-toan-crm"
-        items={CRM_PROBLEMS.items}
-      />
-
-      {/* 03 — what CRM integration is, with a direct-answer paragraph */}
+      {/* 02 — Direct answer. Plain visible text, never collapsed. */}
       <Section ariaLabelledBy="tong-dai-crm-la-gi">
         <Container>
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <div>
-              <Eyebrow>{CRM_DEFINITION.eyebrow}</Eyebrow>
+              <Eyebrow>Định nghĩa</Eyebrow>
 
               <GradientHeading id="tong-dai-crm-la-gi" className="mt-4">
-                {CRM_DEFINITION.h2}
+                {CRM_DIRECT_ANSWER.question}
               </GradientHeading>
 
               <p className="mt-5 max-w-xl rounded-[14px] border border-brand-border bg-background px-5 py-4 text-base leading-relaxed text-muted-foreground">
-                {CRM_DEFINITION.directAnswer}
+                {CRM_DIRECT_ANSWER.answer}
               </p>
-
-              <ul className="mt-6 flex flex-wrap gap-2">
-                {CRM_DEFINITION.capabilities.map((capability) => (
-                  <li
-                    key={capability}
-                    className="rounded-full bg-brand-light px-4 py-2 text-[15px] font-semibold text-brand"
-                  >
-                    {capability}
-                  </li>
-                ))}
-              </ul>
             </div>
 
             <ProductVisual maxWidth="320px">
@@ -143,23 +136,92 @@ export function CRMIntegrationPage() {
         </Container>
       </Section>
 
-      {/* 04 */}
-      <IntegrationWorkflow
-        title={CRM_WORKFLOW.h2}
-        titleId="cach-hoat-dong-heading"
-        anchorId="cach-hoat-dong"
-        steps={CRM_WORKFLOW.steps}
+      {/* 03 */}
+      <IntegrationProblems
+        eyebrow={CRM_PROBLEMS.eyebrow}
+        title={CRM_PROBLEMS.h2}
+        titleId="bai-toan-crm"
+        items={CRM_PROBLEMS.items}
       />
 
-      {/* 05 — Click-to-Call */}
+      {/* 04 — Overview + core flow diagram */}
+      <IntegrationWorkflow
+        eyebrow={CRM_OVERVIEW.eyebrow}
+        title={CRM_OVERVIEW.h2}
+        titleId="tong-quan-crm"
+        steps={CRM_OVERVIEW.flow}
+      />
+
+      {/* 05 — How it works */}
+      <Section tinted ariaLabelledBy="cach-hoat-dong-heading" className="scroll-mt-20">
+        <Container>
+          <div id={CRM_HOW_IT_WORKS.anchorId} className="scroll-mt-24" />
+
+          <SectionHeader
+            eyebrow={CRM_HOW_IT_WORKS.eyebrow}
+            title={CRM_HOW_IT_WORKS.h2}
+            titleId="cach-hoat-dong-heading"
+          />
+
+          <ol className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {CRM_HOW_IT_WORKS.steps.map((step) => (
+              <Card as="li" key={step.n} className="flex h-full flex-col p-6">
+                <span
+                  className="flex h-9 w-9 items-center justify-center rounded-[9px] bg-brand-light text-sm font-extrabold text-brand"
+                  aria-hidden="true"
+                >
+                  {step.n}
+                </span>
+                <h3 className="mt-4 text-lg font-extrabold tracking-tight text-foreground">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
+                  {step.detail}
+                </p>
+              </Card>
+            ))}
+          </ol>
+        </Container>
+      </Section>
+
+      {/* 06 — Three core capabilities */}
+      <Section ariaLabelledBy="nang-luc-tich-hop">
+        <Container>
+          <SectionHeader
+            eyebrow={CRM_CAPABILITIES.eyebrow}
+            title={CRM_CAPABILITIES.h2}
+            titleId="nang-luc-tich-hop"
+          />
+
+          <ul className="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-3">
+            {CRM_CAPABILITIES.items.map((item) => (
+              <Card as="li" key={item.n} className="flex h-full flex-col p-6 sm:p-7">
+                <span
+                  className="flex h-9 w-9 items-center justify-center rounded-[9px] bg-brand-light text-sm font-extrabold text-brand"
+                  aria-hidden="true"
+                >
+                  {item.n}
+                </span>
+                <h3 className="mt-4 text-lg font-extrabold tracking-tight text-foreground">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
+                  {item.detail}
+                </p>
+              </Card>
+            ))}
+          </ul>
+        </Container>
+      </Section>
+
+      {/* 07 — Click-to-Call in the Gcalls widget */}
       <FeatureSplit
         tinted
-        eyebrow={CRM_CLICK_TO_CALL.eyebrow}
+        eyebrow="CLICK-TO-CALL"
         eyebrowIcon={<MousePointerClick size={14} aria-hidden="true" />}
-        title={CRM_CLICK_TO_CALL.h2}
+        title={CRM_CAPABILITIES.items[0].title}
         titleId="click-to-call"
-        description={CRM_CLICK_TO_CALL.description}
-        points={CRM_CLICK_TO_CALL.points}
+        description={CRM_CAPABILITIES.items[0].detail}
         visual={
           <ProductVisual maxWidth="360px">
             <WidgetMockup />
@@ -167,9 +229,27 @@ export function CRMIntegrationPage() {
         }
       />
 
-      {/* 06 — Customer context */}
+      {/* 08 — Before / after workflow */}
+      <IntegrationBeforeAfter
+        eyebrow={CRM_BEFORE_AFTER.eyebrow}
+        title={CRM_BEFORE_AFTER.h2}
+        titleId="truoc-sau-tich-hop"
+        before={CRM_BEFORE_AFTER.before}
+        after={CRM_BEFORE_AFTER.after}
+      />
+
+      {/* 09 — CRM ecosystem. Each card routes to the page owning its keyword. */}
+      <IntegrationPlatforms
+        eyebrow={CRM_PLATFORM_SECTION.eyebrow}
+        title={CRM_PLATFORM_SECTION.h2}
+        titleId="he-sinh-thai-crm"
+        platforms={CRM_PLATFORMS}
+        note={CRM_PLATFORM_NOTE}
+        cta={{ label: 'Tìm hiểu tích hợp', path: CRM_PLATFORMS[3].path }}
+      />
+
+      {/* 10 — Customer context */}
       <FeatureSplit
-        reverse
         eyebrow={CRM_CONTEXT.eyebrow}
         eyebrowIcon={<Users size={14} aria-hidden="true" />}
         title={CRM_CONTEXT.h2}
@@ -183,15 +263,16 @@ export function CRMIntegrationPage() {
         }
       />
 
-      {/* 07 — Interaction history */}
+      {/* 11 — Data synchronization */}
       <FeatureSplit
         tinted
-        eyebrow={CRM_HISTORY.eyebrow}
-        eyebrowIcon={<History size={14} aria-hidden="true" />}
-        title={CRM_HISTORY.h2}
-        titleId="lich-su-tuong-tac-crm"
-        description={CRM_HISTORY.description}
-        points={CRM_HISTORY.points}
+        reverse
+        eyebrow={CRM_DATA_SYNC.eyebrow}
+        eyebrowIcon={<Database size={14} aria-hidden="true" />}
+        title={CRM_DATA_SYNC.h2}
+        titleId="dong-bo-du-lieu"
+        description={CRM_DATA_SYNC.description}
+        points={CRM_DATA_SYNC.points}
         visual={
           <ProductVisual maxWidth="560px">
             <CallTimelineMockup />
@@ -199,63 +280,41 @@ export function CRMIntegrationPage() {
         }
       />
 
-      {/* 08 — Integration configuration */}
-      <FeatureSplit
-        reverse
-        eyebrow={CRM_CONFIG.eyebrow}
-        eyebrowIcon={<Settings size={14} aria-hidden="true" />}
-        title={CRM_CONFIG.h2}
-        titleId="cau-hinh-tich-hop"
-        description="Quy trình kết nối được thực hiện theo bốn bước, từ chọn tích hợp đến khi đưa vào vận hành."
-        visual={
-          <ProductVisual maxWidth="560px">
-            <APIManagerMockup />
-          </ProductVisual>
-        }
-      >
-        <ol className="mt-7 flex flex-col gap-3">
-          {CRM_CONFIG.steps.map((step) => (
-            <li key={step.n} className="flex items-start gap-3">
-              <span
-                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] bg-brand-light text-sm font-extrabold text-brand"
-                aria-hidden="true"
-              >
-                {step.n}
-              </span>
-              <span className="text-base leading-relaxed text-foreground">
-                <span className="font-semibold">{step.title}</span>
-                <span className="text-muted-foreground"> — {step.detail}</span>
-              </span>
-            </li>
-          ))}
-        </ol>
-      </FeatureSplit>
+      {/* 12 + 13 — Sales and Customer Service use cases */}
+      <Section ariaLabelledBy="use-case-sales">
+        <Container>
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14">
+            <UseCase
+              eyebrow={CRM_SALES_USE_CASE.eyebrow}
+              icon={<Target size={14} aria-hidden="true" />}
+              title={CRM_SALES_USE_CASE.h2}
+              titleId="use-case-sales"
+              description={CRM_SALES_USE_CASE.description}
+              points={CRM_SALES_USE_CASE.points}
+            />
+            <UseCase
+              eyebrow={CRM_SERVICE_USE_CASE.eyebrow}
+              icon={<Headset size={14} aria-hidden="true" />}
+              title={CRM_SERVICE_USE_CASE.h2}
+              titleId="use-case-cskh"
+              description={CRM_SERVICE_USE_CASE.description}
+              points={CRM_SERVICE_USE_CASE.points}
+            />
+          </div>
+        </Container>
+      </Section>
 
-      {/* 09 — CRM ecosystem */}
-      <IntegrationPlatforms
-        title="Kết nối với các nền tảng CRM theo nhu cầu triển khai"
-        titleId="he-sinh-thai-crm"
-        platforms={CRM_PLATFORMS}
-        note={CRM_PLATFORM_NOTE}
-        cta={{ label: 'Tìm hiểu tích hợp', path: ROUTES.costEstimator }}
-      />
-
-      {/* 10 */}
-      <IntegrationBenefits
-        title={CRM_BENEFITS.h2}
-        titleId="loi-ich-crm"
-        items={CRM_BENEFITS.items}
-      />
-
-      {/* 11 */}
-      <IntegrationUseCases
+      {/* 14 — CRM / Helpdesk / CX / Plus boundary */}
+      <IntegrationBoundaries
         tinted
-        title={CRM_USE_CASES.h2}
-        titleId="use-case-crm"
-        items={CRM_USE_CASES.items}
+        eyebrow={CRM_BOUNDARIES.eyebrow}
+        title={CRM_BOUNDARIES.h2}
+        titleId="ranh-gioi-tich-hop"
+        items={CRM_BOUNDARIES.items}
+        related={CRM_BOUNDARIES.related}
       />
 
-      {/* 12 */}
+      {/* 15 — Implementation process */}
       <IntegrationSteps
         eyebrow={CRM_DEPLOYMENT.eyebrow}
         title={CRM_DEPLOYMENT.h2}
@@ -263,9 +322,38 @@ export function CRMIntegrationPage() {
         steps={CRM_DEPLOYMENT.steps}
       />
 
-      {/* 13 */}
+      {/* 16 — Trust. Neutral: no case, quote or figure is fabricated. */}
+      <Section tinted ariaLabelledBy="boi-canh-trien-khai">
+        <Container>
+          <div className="mx-auto max-w-3xl text-center">
+            <Eyebrow>{CRM_TRUST.eyebrow}</Eyebrow>
+            <GradientHeading id="boi-canh-trien-khai" className="mt-4">
+              {CRM_TRUST.h2}
+            </GradientHeading>
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+              {CRM_TRUST.description}
+            </p>
+
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link
+                to={leadHref}
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
+              >
+                {CRM_TRUST.cta.label}
+              </Link>
+              <Link
+                to={CRM_TRUST.link.path}
+                className="inline-flex min-h-12 items-center gap-1.5 text-[15px] font-semibold text-brand underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+              >
+                {CRM_TRUST.link.label}
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* 17 — Configuration & cost */}
       <PricingCtaBand
-        tinted
         eyebrow={CRM_PRICING.eyebrow}
         title={CRM_PRICING.h2}
         titleId="chi-phi-crm"
@@ -274,52 +362,7 @@ export function CRMIntegrationPage() {
         secondary={CRM_PRICING.secondaryCta}
       />
 
-      {/* Related solutions — real internal links, no invented routes. */}
-      <Section ariaLabelledBy="giai-phap-lien-quan">
-        <Container>
-          <SectionHeader
-            eyebrow="Khám phá thêm"
-            title="Giải pháp liên quan"
-            titleId="giai-phap-lien-quan"
-          />
-
-          <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-            {[
-              {
-                path: ROUTES.gcallsPlus,
-                name: 'Gcalls Plus Webphone',
-                detail:
-                  'Hệ thống Webphone / Call Center tinh gọn cho đội Sales và CSKH.',
-              },
-              {
-                path: ROUTES.helpdeskIntegration,
-                name: 'Tích hợp Helpdesk',
-                detail: 'Đưa cuộc gọi vào quy trình hỗ trợ và ticket.',
-              },
-            ].map((item) => (
-              <Card as="li" key={item.path} className="flex h-full flex-col p-6">
-                <h3 className="text-lg font-extrabold tracking-tight text-foreground">
-                  {item.name}
-                </h3>
-                <p className="mt-2 text-base leading-relaxed text-muted-foreground">
-                  {item.detail}
-                </p>
-                <div className="mt-auto pt-5">
-                  <Link
-                    to={item.path}
-                    className="inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-brand underline-offset-4 transition-colors duration-150 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-                  >
-                    Tìm hiểu thêm
-                    <ArrowRight size={15} aria-hidden="true" />
-                  </Link>
-                </div>
-              </Card>
-            ))}
-          </ul>
-        </Container>
-      </Section>
-
-      {/* 14 */}
+      {/* 18 — FAQ */}
       <Section tinted ariaLabelledBy="faq-crm">
         <Container>
           <SectionHeader
@@ -333,23 +376,64 @@ export function CRMIntegrationPage() {
         </Container>
       </Section>
 
-      {/* 15 */}
+      {/* 19 — Final CTA */}
       <Section ariaLabelledBy="cta-crm">
         <FinalCtaBand
-          eyebrow="Bắt đầu"
+          eyebrow={CRM_FINAL_CTA.eyebrow}
           title={CRM_FINAL_CTA.h2}
           titleId="cta-crm"
           description={CRM_FINAL_CTA.description}
           primary={CRM_FINAL_CTA.primaryCta}
+          lead={CRM_LEAD}
           secondary={CRM_FINAL_CTA.secondaryCta}
-          lead={{
-            intent: 'integration',
-            source: 'crm_integration',
-            solution: 'Tích hợp CRM',
-          }}
           showPhone
         />
       </Section>
     </>
+  )
+}
+
+/** Sales / Customer Service use-case block — same shape, different content. */
+function UseCase({
+  eyebrow,
+  icon,
+  title,
+  titleId,
+  description,
+  points,
+}: {
+  eyebrow: string
+  icon: ReactNode
+  title: string
+  titleId: string
+  description: string
+  points: readonly string[]
+}) {
+  return (
+    <section aria-labelledby={titleId}>
+      <Eyebrow icon={icon}>{eyebrow}</Eyebrow>
+
+      <h2
+        id={titleId}
+        className="mt-4 text-2xl font-extrabold tracking-tight text-foreground sm:text-[28px]"
+      >
+        {title}
+      </h2>
+
+      <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+        {description}
+      </p>
+
+      <ul className="mt-6 flex flex-wrap gap-2">
+        {points.map((point) => (
+          <li
+            key={point}
+            className="rounded-full bg-brand-light px-4 py-2 text-[15px] font-semibold text-brand"
+          >
+            {point}
+          </li>
+        ))}
+      </ul>
+    </section>
   )
 }

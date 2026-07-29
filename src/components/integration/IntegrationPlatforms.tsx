@@ -23,7 +23,12 @@ export function IntegrationPlatforms({
   title: string
   titleId: string
   eyebrow?: string
-  platforms: readonly { id: string; name: string; detail: string }[]
+  /**
+   * `path` is optional: when a platform has its own integration page, the card
+   * routes there so that page keeps its vendor keyword. Otherwise the card
+   * falls back to the shared `cta.path`.
+   */
+  platforms: readonly { id: string; name: string; detail: string; path?: string }[]
   note: string
   cta: { label: string; path: string }
 }) {
@@ -50,10 +55,11 @@ export function IntegrationPlatforms({
 
               <div className="mt-auto pt-5">
                 <Link
-                  to={cta.path}
+                  to={platform.path ?? cta.path}
                   className="inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-brand underline-offset-4 transition-colors duration-150 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
                 >
                   {cta.label}
+                  <span className="sr-only"> — {platform.name}</span>
                   <ArrowRight size={15} aria-hidden="true" />
                 </Link>
               </div>
