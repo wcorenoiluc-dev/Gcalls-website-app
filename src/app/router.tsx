@@ -27,6 +27,11 @@ const GcallsCxPage = lazy(() =>
 const CRMIntegrationPage = lazy(() =>
   import('@/pages/CRMIntegrationPage').then((m) => ({ default: m.CRMIntegrationPage })),
 )
+const HelpdeskIntegrationPage = lazy(() =>
+  import('@/pages/HelpdeskIntegrationPage').then((m) => ({
+    default: m.HelpdeskIntegrationPage,
+  })),
+)
 const PricingPage = lazy(() =>
   import('@/pages/PricingPage').then((m) => ({ default: m.PricingPage })),
 )
@@ -61,7 +66,6 @@ const SHELL_ROUTES = [
   // Products
   ROUTES.products,
   // Solutions
-  ROUTES.helpdeskIntegration,
   ROUTES.posIntegration,
   ROUTES.internationalCalling,
   // Integrations
@@ -104,6 +108,10 @@ export const router = createBrowserRouter([
       { path: ROUTES.qcCenter, element: lazyRoute(<QaQcCenterPage />) },
       { path: ROUTES.gcallsCx, element: lazyRoute(<GcallsCxPage />) },
       { path: ROUTES.crmIntegration, element: lazyRoute(<CRMIntegrationPage />) },
+      {
+        path: ROUTES.helpdeskIntegration,
+        element: lazyRoute(<HelpdeskIntegrationPage />),
+      },
       { path: ROUTES.pricing, element: lazyRoute(<PricingPage />) },
       { path: ROUTES.costEstimator, element: lazyRoute(<CostEstimatorPage />) },
 

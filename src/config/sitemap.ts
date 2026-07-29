@@ -282,15 +282,15 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.solutions,
     group: 'solutions',
     priority: 0.8,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: true,
     eyebrow: 'Giải pháp',
-    title: 'Tổng đài tích hợp Helpdesk | Cuộc gọi trong quy trình hỗ trợ | Gcalls',
+    title: 'Tổng đài tích hợp Helpdesk | Kết nối cuộc gọi & Ticket CSKH',
     exactTitle: true,
     description:
-      'Kết nối Gcalls với hệ thống Helpdesk để gắn cuộc gọi vào ticket và giữ lịch sử hỗ trợ khách hàng trong cùng quy trình.',
+      'Gcalls kết nối tổng đài với Helpdesk để đội CSKH quản lý cuộc gọi, ticket và lịch sử hỗ trợ trong cùng quy trình, giảm việc chuyển đổi giữa nhiều công cụ.',
     intro:
       'Tích hợp Helpdesk đưa hoạt động nghe gọi vào quy trình hỗ trợ khách hàng, giúp đội CSKH xử lý yêu cầu với ngữ cảnh đầy đủ hơn.',
     summary: 'Đưa cuộc gọi vào quy trình hỗ trợ và ticket.',
