@@ -23,6 +23,13 @@ export type LeadSource =
 /** What the visitor is asking for. */
 export type LeadIntent =
   | 'consultation'
+  /**
+   * A request to be shown the product working. Distinct from
+   * `product_information` (wants to read about it) and `consultation` (wants
+   * to discuss their situation) because it implies a scheduled, sales-assisted
+   * session — worth routing and reporting separately.
+   */
+  | 'demo'
   | 'quote'
   | 'product_information'
   | 'integration'

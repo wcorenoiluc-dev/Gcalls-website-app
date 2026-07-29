@@ -36,6 +36,7 @@ export function leadCtaHref(context: LeadCtaContext = {}): string {
 
 const VALID_INTENTS: LeadIntent[] = [
   'consultation',
+  'demo',
   'quote',
   'product_information',
   'integration',

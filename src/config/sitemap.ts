@@ -223,15 +223,15 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.products,
     group: 'products',
     priority: 0.8,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: true,
     eyebrow: 'Sản phẩm',
-    title: 'Gcalls CX | Contact Center đa kênh cho chăm sóc khách hàng',
+    title: 'Gcalls CX | Contact Center đa kênh cho Zalo, Facebook, Hotline',
     exactTitle: true,
     description:
-      'Gcalls CX hướng tới Contact Center đa kênh, giúp doanh nghiệp vận hành các kênh giao tiếp với khách hàng trong một quy trình thống nhất.',
+      'Gcalls CX hợp nhất Zalo OA, Facebook Fanpage, SMS, Email và Hotline vào một màn hình để đội CSKH quản lý hội thoại, ticket và customer context tập trung hơn.',
     intro:
       'Gcalls CX tập trung vào trải nghiệm khách hàng trên nhiều kênh giao tiếp, dành cho đội ngũ cần vận hành hoạt động chăm sóc khách hàng ở quy mô rộng hơn kênh thoại.',
     summary: 'Omnichannel Contact Center.',

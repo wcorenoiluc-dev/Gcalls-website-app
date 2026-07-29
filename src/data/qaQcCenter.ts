@@ -37,17 +37,16 @@ import { ROUTES } from '@/config/navigation'
 /**
  * Conversion context for QA QC Center CTAs.
  *
- * P02 §5 suggests `intent = demo`, but `LeadIntent` (src/lib/leads/types.ts)
- * has no `demo` member, and §5 directs us to use the closest valid typed value
- * rather than introduce an incompatible string. A demo request is mapped to
- * `product_information` — the visitor wants to see the product — which keeps
- * it distinct from the plain consultation CTA below.
+ * P02 shipped `intent: 'product_information'` because `LeadIntent` had no
+ * `demo` member at the time. P03 added one, and this CTA was migrated to it —
+ * a conversion-model correction only. No P02 page copy, layout or component
+ * changed; intent is pass-through data that no rendered text depends on.
  *
  * `source` and `product` are exact matches to the existing enum / LEAD_NEEDS:
  * `qa_qc_center` and `QA QC Center`.
  */
 export const QQ_DEMO_LEAD = {
-  intent: 'product_information',
+  intent: 'demo',
   source: 'qa_qc_center',
   product: 'QA QC Center',
 } as const

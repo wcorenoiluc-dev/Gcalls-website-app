@@ -47,12 +47,24 @@ function defaultAnswersFor(id: string): EstimatorAnswers {
   return next
 }
 
+/**
+ * Public slugs that differ from the internal solution id.
+ *
+ * Product pages link with a readable, stable marketing slug; the estimator's
+ * internal ids are shorter. Mapping here keeps the public URL stable without
+ * renaming product data (which would change estimator analytics history).
+ */
+const PRODUCT_SLUG_ALIASES: Record<string, string> = {
+  'gcalls-cx': 'cx',
+}
+
 function usePreselectedSolution(): string | null {
   const [params] = useSearchParams()
   const requested = params.get('product')
-  return requested && ESTIMATOR_SOLUTIONS.some((s) => s.id === requested)
-    ? requested
-    : null
+  if (!requested) return null
+
+  const id = PRODUCT_SLUG_ALIASES[requested] ?? requested
+  return ESTIMATOR_SOLUTIONS.some((s) => s.id === id) ? id : null
 }
 
 export function Estimator() {
