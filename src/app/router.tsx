@@ -43,11 +43,28 @@ const PricingPage = lazy(() =>
 const CostEstimatorPage = lazy(() =>
   import('@/pages/CostEstimatorPage').then((m) => ({ default: m.CostEstimatorPage })),
 )
+const InternationalCallingPage = lazy(() =>
+  import('@/pages/InternationalCallingPage').then((m) => ({
+    default: m.InternationalCallingPage,
+  })),
+)
+const ProductsHubPage = lazy(() =>
+  import('@/pages/ProductsHubPage').then((m) => ({ default: m.ProductsHubPage })),
+)
 const SolutionsHubPage = lazy(() =>
   import('@/pages/SolutionsHubPage').then((m) => ({ default: m.SolutionsHubPage })),
 )
 const IntegrationsHubPage = lazy(() =>
   import('@/pages/IntegrationsHubPage').then((m) => ({ default: m.IntegrationsHubPage })),
+)
+const IndustriesHubPage = lazy(() =>
+  import('@/pages/IndustriesHubPage').then((m) => ({ default: m.IndustriesHubPage })),
+)
+const ResourcesHubPage = lazy(() =>
+  import('@/pages/ResourcesHubPage').then((m) => ({ default: m.ResourcesHubPage })),
+)
+const CompanyHubPage = lazy(() =>
+  import('@/pages/CompanyHubPage').then((m) => ({ default: m.CompanyHubPage })),
 )
 const ContactPage = lazy(() =>
   import('@/pages/ContactPage').then((m) => ({ default: m.ContactPage })),
@@ -66,36 +83,35 @@ function lazyRoute(element: React.ReactNode) {
   return <Suspense fallback={<RouteFallback />}>{element}</Suspense>
 }
 
-/** Routes served by the sitemap-driven shell. */
+/**
+ * Routes served by the sitemap-driven shell.
+ *
+ * Every remaining entry is a CHILD route. No hub and no page reachable in one
+ * click from the header renders a shell — that is a Boss Demo V1 requirement,
+ * and the list below is where a regression would show up first.
+ */
 const SHELL_ROUTES = [
-  // Products
-  ROUTES.products,
-  // Solutions
-  ROUTES.internationalCalling,
-  // Integrations
+  // Integrations — platform child pages
   ROUTES.hubspot,
   ROUTES.salesforce,
   ROUTES.zohoCrm,
   ROUTES.freshdesk,
   ROUTES.zendesk,
-  // Industries
-  ROUTES.industries,
+  // Industries — child pages
   ROUTES.education,
   ROUTES.finance,
   ROUTES.insurance,
   ROUTES.realEstate,
   ROUTES.ecommerce,
   ROUTES.bpo,
-  // Resources
-  ROUTES.resources,
+  // Resources — child pages
   ROUTES.blog,
   ROUTES.guides,
   ROUTES.caseStudies,
   ROUTES.ebook,
   ROUTES.glossary,
   ROUTES.faq,
-  // Company
-  ROUTES.company,
+  // Company — child pages
   ROUTES.customers,
   ROUTES.partners,
 ]
@@ -117,12 +133,22 @@ export const router = createBrowserRouter([
         element: lazyRoute(<HelpdeskIntegrationPage />),
       },
       { path: ROUTES.posIntegration, element: lazyRoute(<POSIntegrationPage />) },
+      {
+        path: ROUTES.internationalCalling,
+        element: lazyRoute(<InternationalCallingPage />),
+      },
       { path: ROUTES.pricing, element: lazyRoute(<PricingPage />) },
       { path: ROUTES.costEstimator, element: lazyRoute(<CostEstimatorPage />) },
 
-      // Hubs and pages with bespoke content
+      // Navigation hubs — all six, so no header path lands on a shell
+      { path: ROUTES.products, element: lazyRoute(<ProductsHubPage />) },
       { path: ROUTES.solutions, element: lazyRoute(<SolutionsHubPage />) },
       { path: ROUTES.integrations, element: lazyRoute(<IntegrationsHubPage />) },
+      { path: ROUTES.industries, element: lazyRoute(<IndustriesHubPage />) },
+      { path: ROUTES.resources, element: lazyRoute(<ResourcesHubPage />) },
+      { path: ROUTES.company, element: lazyRoute(<CompanyHubPage />) },
+
+      // Pages with bespoke content
       { path: ROUTES.contact, element: lazyRoute(<ContactPage />) },
       { path: ROUTES.referral, element: lazyRoute(<ReferralPage />) },
 

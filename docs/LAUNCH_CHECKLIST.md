@@ -18,6 +18,8 @@ it is not hardcoded and must not be removed ad hoc.
 |---|---|---|
 | Runtime (per route) | `src/config/seo.ts` → `ALLOW_INDEXING` / `ROBOTS_CONTENT` | Reads `VITE_ALLOW_INDEXING`; applied by `src/components/common/Seo.tsx` on every navigation |
 | Pre-hydration default | `index.html` | Static `<meta name="robots" content="noindex, nofollow">`, matching the runtime default |
+| Crawl policy | `public/robots.txt` | `Disallow: /` — added for the Boss Demo V1 preview |
+| Transport header | `public/_headers` | `X-Robots-Tag: noindex, nofollow, noarchive` (Cloudflare Pages) |
 
 ### To enable at go-live
 
@@ -28,12 +30,15 @@ it is not hardcoded and must not be removed ad hoc.
    ```
 2. Update the static fallback in `index.html` to `index, follow` so crawlers
    that read pre-hydration HTML are not blocked.
-3. Rebuild and redeploy.
-4. Verify on the live site: view source **and** inspect the hydrated DOM — both
-   must show `index, follow`.
+3. Replace `Disallow: /` in `public/robots.txt` with the production crawl policy.
+4. Remove the `X-Robots-Tag` line from `public/_headers`.
+5. Rebuild and redeploy.
+6. Verify on the live site: view source, inspect the hydrated DOM, **and**
+   `curl -I` the response — all three must show `index, follow` with no
+   `X-Robots-Tag`.
 
-> Both layers must agree. Changing only the env var leaves the static tag
-> blocking crawlers that do not execute JavaScript.
+> All four layers must agree. Changing only the env var leaves the static tag,
+> `robots.txt` and the header still blocking crawlers.
 
 ---
 
@@ -45,7 +50,7 @@ The site is a client-rendered SPA using the History API. The production server
 
 Vite's dev server does this automatically; production hosts do not, unless told.
 
-- **Netlify** — `_redirects`: `/*  /index.html  200`
+- **Cloudflare Pages / Netlify** — `public/_redirects`: `/*  /index.html  200` — **committed** (see that file)
 - **Vercel** — `vercel.json` rewrite: `{ "source": "/(.*)", "destination": "/index.html" }`
 - **Nginx** — `try_files $uri $uri/ /index.html;`
 - **Apache** — `FallbackResource /index.html`
@@ -70,9 +75,9 @@ These are known gaps, deferred from Checkpoint 2 by design.
 | Favicon | ❌ None | No `<link rel="icon">`. |
 | OG preview image | ❌ None | `og:image` is not set — shared links have no thumbnail. The site has zero `<img>` elements. |
 | `sitemap.xml` | ❌ None | Generate from `ROUTES` in `src/config/navigation.ts`. |
-| `robots.txt` | ❌ None | Must agree with the indexing flag above. |
-| Structured data (JSON-LD) | ❌ None | Organization + SoftwareApplication at minimum; FAQPage when FAQ content exists. |
-| Page content | ⚠️ Shells | 9 of 10 routes are page shells with approved-purpose placeholders. |
+| `robots.txt` | ⚠️ Preview policy | `public/robots.txt` ships `Disallow: /` for the demo. Must be replaced at go-live — see §1. |
+| Structured data (JSON-LD) | ✅ Per page | Service / SoftwareApplication / CollectionPage + BreadcrumbList + FAQPage on every built page and hub. Organization-level node still to add. |
+| Page content | ⚠️ Mixed | All 6 hubs, 3 products, 4 solutions, pricing, estimator and contact are built. 21 CHILD routes remain sitemap-driven shells — see `docs/BOSS_DEMO_V1.md` §8. |
 | Pricing configuration | ⚠️ Absent | Pricing and estimator show "Liên hệ để nhận báo giá". They must never render `0₫`. |
 | SEO copy | ⚠️ Placeholder | `src/config/seo.ts` holds descriptive placeholders, not optimised copy. |
 | Footer legal links | ⚠️ Deliberately absent | No privacy/terms/company links were invented. Add once approved. |

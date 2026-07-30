@@ -1,0 +1,14 @@
+# Cloudflare Pages headers — Boss Demo V1 preview.
+#
+# X-Robots-Tag is the transport-level counterpart to the meta robots tag. It
+# still applies to responses a crawler fetches directly (assets, a URL reached
+# without reading robots.txt first), which the HTML meta tag cannot cover.
+#
+# AT GO-LIVE: remove the X-Robots-Tag block below together with the
+# public/robots.txt change and VITE_ALLOW_INDEXING=true. See
+# docs/LAUNCH_CHECKLIST.md.
+
+/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

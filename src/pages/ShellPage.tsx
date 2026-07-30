@@ -17,29 +17,11 @@ import { ROUTES } from '@/config/navigation'
 /**
  * Onward navigation for leaf routes that have no children of their own.
  * Chosen per route so the links are genuinely relevant, not filler.
+ *
+ * Only CHILD routes appear here. Every hub, product and solution page now has
+ * its own component, so an entry for one of those would be dead code.
  */
 const RELATED: Record<string, string[]> = {
-  // Products
-  [ROUTES.qcCenter]: [ROUTES.gcallsPlus, ROUTES.gcallsCx, ROUTES.pricing],
-  [ROUTES.gcallsCx]: [ROUTES.gcallsPlus, ROUTES.qcCenter, ROUTES.pricing],
-
-  // Solutions
-  [ROUTES.helpdeskIntegration]: [
-    ROUTES.crmIntegration,
-    ROUTES.posIntegration,
-    ROUTES.gcallsPlus,
-  ],
-  [ROUTES.posIntegration]: [
-    ROUTES.crmIntegration,
-    ROUTES.helpdeskIntegration,
-    ROUTES.gcallsPlus,
-  ],
-  [ROUTES.internationalCalling]: [
-    ROUTES.gcallsPlus,
-    ROUTES.gcallsCx,
-    ROUTES.costEstimator,
-  ],
-
   // Integration platform pages
   [ROUTES.hubspot]: [ROUTES.crmIntegration, ROUTES.salesforce, ROUTES.zohoCrm],
   [ROUTES.salesforce]: [ROUTES.crmIntegration, ROUTES.hubspot, ROUTES.zohoCrm],
@@ -68,20 +50,8 @@ const RELATED: Record<string, string[]> = {
   [ROUTES.partners]: [ROUTES.company, ROUTES.referral, ROUTES.contact],
 }
 
-const HEADINGS: Record<string, string> = {
-  [ROUTES.products]: 'Sản phẩm Gcalls',
-  [ROUTES.industries]: 'Ngành đang được hỗ trợ',
-  [ROUTES.resources]: 'Danh mục tài nguyên',
-  [ROUTES.company]: 'Tìm hiểu thêm về Gcalls',
-}
-
 export function ShellPage() {
   const { pathname } = useLocation()
 
-  return (
-    <RouteShell
-      related={RELATED[pathname] ?? []}
-      childrenHeading={HEADINGS[pathname]}
-    />
-  )
+  return <RouteShell related={RELATED[pathname] ?? []} />
 }

@@ -174,16 +174,14 @@ export function RouteShell({
 /**
  * H1 for a shell.
  *
- * Hub pages carry an approved H1 that differs from their nav label, so those
- * are listed explicitly. Everything else uses its label, which reads correctly
- * as a heading.
+ * A route whose approved H1 differs from its nav label is listed explicitly.
+ * Everything else uses its label, which reads correctly as a heading.
+ *
+ * The six navigation hubs are NOT here any more: each now has its own page
+ * component (`src/pages/*HubPage.tsx`) with its own H1, because a hub reached
+ * in one click from the header must not render a shell.
  */
 const HUB_HEADINGS: Record<string, string> = {
-  [ROUTES.products]: 'Hệ sinh thái sản phẩm Gcalls',
-  [ROUTES.solutions]: 'Giải pháp giao tiếp theo bài toán vận hành doanh nghiệp',
-  [ROUTES.integrations]: 'Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng',
-  [ROUTES.industries]: 'Giải pháp giao tiếp theo bối cảnh vận hành của từng ngành',
-  [ROUTES.resources]: 'Kiến thức về Call Center, CRM, CX và AI',
   [ROUTES.contact]: 'Trao đổi với Gcalls về bài toán giao tiếp của doanh nghiệp',
 }
 

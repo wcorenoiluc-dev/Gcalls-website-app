@@ -1,0 +1,25 @@
+# ---------------------------------------------------------------------------
+# BOSS DEMO V1 — CRAWLING IS DISALLOWED SITE-WIDE.
+# ---------------------------------------------------------------------------
+# This build is a REVIEW PREVIEW (v2.gcalls.co / *.pages.dev), not production.
+# gcalls.co is still served by WordPress and is unaffected by this file.
+#
+# This is the third of three independent layers keeping the preview out of
+# search results, so a single mistake cannot expose it:
+#   1. <meta name="robots" content="noindex, nofollow"> in index.html
+#      (the pre-hydration default)
+#   2. the same directive re-applied per route at runtime by
+#      src/components/common/Seo.tsx, driven by src/config/seo.ts
+#   3. this file, plus the X-Robots-Tag header in public/_headers
+#
+# ---------------------------------------------------------------------------
+# AT GO-LIVE — DO NOT SKIP
+# ---------------------------------------------------------------------------
+# Replace the Disallow below with the production policy AT THE SAME TIME as
+# setting VITE_ALLOW_INDEXING=true. Shipping one without the other either
+# leaves the live site unindexable or exposes the preview.
+# See docs/LAUNCH_CHECKLIST.md.
+# ---------------------------------------------------------------------------
+
+User-agent: *
+Disallow: /
