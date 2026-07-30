@@ -442,16 +442,25 @@ export const SITEMAP: SitemapEntry[] = [
     route: ROUTES.freshdesk,
     parent: ROUTES.integrations,
     group: 'integrations',
-    priority: 0.7,
-    status: 'shell',
+    priority: 0.8,
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: false,
     eyebrow: 'Tích hợp Helpdesk',
-    title: 'Tích hợp Gcalls với Freshdesk | Kết nối tổng đài và Helpdesk',
+    /*
+      Locked at Checkpoint INT-04 §5. Do not reword.
+
+      Deliberately carries NO "Click-to-Call", "Popup khách hàng",
+      "Click-to-SMS", "tự động tạo ticket" or "đồng bộ ghi âm": every one of
+      those gates closed against publication (§11 A, B, E–H, J). INT-02 had to be
+      corrected for exactly this kind of title/body mismatch — do not add one
+      back unless the corresponding gate is reopened with current evidence.
+    */
+    title: 'Tổng đài tích hợp Freshdesk | Kết nối cuộc gọi với ticket CSKH',
     exactTitle: true,
     description:
-      'Thông tin về khả năng kết nối Gcalls với Freshdesk để gắn hoạt động nghe gọi vào quy trình hỗ trợ khách hàng.',
+      'Gcalls tích hợp Freshdesk giúp đội CSKH kết nối hoạt động nghe gọi với customer context, ticket và lịch sử hỗ trợ theo phạm vi cấu hình.',
     intro:
       'Kết nối Gcalls với Freshdesk để gắn hoạt động nghe gọi vào quy trình hỗ trợ. Phạm vi tích hợp được xác nhận theo hệ thống thực tế.',
     summary: 'Kết nối tổng đài với Freshdesk.',

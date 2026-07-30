@@ -63,6 +63,11 @@ const ZohoCrmIntegrationPage = lazy(() =>
     default: m.ZohoCrmIntegrationPage,
   })),
 )
+const FreshdeskIntegrationPage = lazy(() =>
+  import('@/pages/FreshdeskIntegrationPage').then((m) => ({
+    default: m.FreshdeskIntegrationPage,
+  })),
+)
 const ProductsHubPage = lazy(() =>
   import('@/pages/ProductsHubPage').then((m) => ({ default: m.ProductsHubPage })),
 )
@@ -107,9 +112,8 @@ function lazyRoute(element: React.ReactNode) {
  */
 const SHELL_ROUTES = [
   // Integrations — platform child pages
-  // The three CRM platforms all have real pages now: HubSpot (INT-01),
-  // Salesforce (INT-02), Zoho CRM (INT-03). Only the helpdesk platforms remain.
-  ROUTES.freshdesk,
+  // HubSpot (INT-01), Salesforce (INT-02), Zoho CRM (INT-03) and Freshdesk
+  // (INT-04) all have real pages now. Zendesk is the last platform shell.
   ROUTES.zendesk,
   // Industries — child pages
   ROUTES.education,
@@ -158,6 +162,7 @@ export const router = createBrowserRouter([
       { path: ROUTES.hubspot, element: lazyRoute(<HubspotIntegrationPage />) },
       { path: ROUTES.salesforce, element: lazyRoute(<SalesforceIntegrationPage />) },
       { path: ROUTES.zohoCrm, element: lazyRoute(<ZohoCrmIntegrationPage />) },
+      { path: ROUTES.freshdesk, element: lazyRoute(<FreshdeskIntegrationPage />) },
 
       // Navigation hubs — all six, so no header path lands on a shell
       { path: ROUTES.products, element: lazyRoute(<ProductsHubPage />) },

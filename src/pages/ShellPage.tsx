@@ -23,10 +23,9 @@ import { ROUTES } from '@/config/navigation'
  */
 const RELATED: Record<string, string[]> = {
   // Integration platform pages
-  // All three CRM platforms have their own pages now — HubSpot (INT-01),
-  // Salesforce (INT-02), Zoho CRM (INT-03) — so none has an entry here. Only
-  // the helpdesk platforms are still shells.
-  [ROUTES.freshdesk]: [ROUTES.helpdeskIntegration, ROUTES.zendesk, ROUTES.gcallsCx],
+  // HubSpot (INT-01), Salesforce (INT-02), Zoho CRM (INT-03) and Freshdesk
+  // (INT-04) all have their own pages, so none has an entry here. Zendesk is the
+  // last platform shell.
   [ROUTES.zendesk]: [ROUTES.helpdeskIntegration, ROUTES.freshdesk, ROUTES.gcallsCx],
 
   // Industries
