@@ -390,8 +390,17 @@ export const SITEMAP: SitemapEntry[] = [
     navVisibility: true,
     footerVisibility: false,
     eyebrow: 'Tích hợp CRM',
-    /* Locked at Checkpoint INT-02 §5. Do not reword. */
-    title: 'Tổng đài tích hợp Salesforce | Click-to-Call & Popup khách hàng',
+    /*
+      Locked at Checkpoint INT-02 §5, corrected at INT-03 Part A. Do not reword.
+
+      The original locked title said "Click-to-Call & Popup khách hàng". The
+      §11 popup gate resolved CONTEXT ONLY — the page publishes no automatic
+      popup claim and the word "popup" appears nowhere in its body — so the
+      title was the only place a reader could read a popup claim off this page.
+      Corrected to match the body. Do not reintroduce "Popup khách hàng" unless
+      the popup gate is reopened with current implementation evidence.
+    */
+    title: 'Tổng đài tích hợp Salesforce | Click-to-Call & dữ liệu cuộc gọi',
     exactTitle: true,
     description:
       'Gcalls tích hợp Salesforce giúp đội Sales và Service gọi từ CRM, nhận biết khách hàng khi có cuộc gọi và ghi nhận lịch sử tương tác theo cấu hình.',
@@ -405,16 +414,24 @@ export const SITEMAP: SitemapEntry[] = [
     route: ROUTES.zohoCrm,
     parent: ROUTES.integrations,
     group: 'integrations',
-    priority: 0.7,
-    status: 'shell',
+    priority: 0.8,
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: false,
     eyebrow: 'Tích hợp CRM',
-    title: 'Tích hợp Gcalls với Zoho CRM | Kết nối tổng đài và CRM',
+    /*
+      Locked at Checkpoint INT-03 §5. Do not reword.
+
+      Deliberately carries NO "Popup khách hàng", "Click-to-SMS" or "đồng bộ ghi
+      âm": the §10 B/D/E gates did not verify any of them, and INT-02 had to be
+      corrected for exactly that title/body mismatch. Do not add one back unless
+      the corresponding gate is reopened with current implementation evidence.
+    */
+    title: 'Tổng đài tích hợp Zoho CRM | Cuộc gọi & dữ liệu khách hàng',
     exactTitle: true,
     description:
-      'Thông tin về khả năng kết nối Gcalls với Zoho CRM để đưa hoạt động nghe gọi vào workflow dữ liệu khách hàng.',
+      'Gcalls tích hợp Zoho CRM giúp đội Sales và CSKH kết nối hoạt động nghe gọi với customer context và lịch sử tương tác theo phạm vi cấu hình.',
     intro:
       'Kết nối Gcalls với Zoho CRM để đưa hoạt động nghe gọi vào workflow dữ liệu khách hàng. Phạm vi tích hợp được xác nhận theo hệ thống thực tế.',
     summary: 'Kết nối tổng đài với Zoho CRM.',

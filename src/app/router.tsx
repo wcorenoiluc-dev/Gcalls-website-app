@@ -58,6 +58,11 @@ const SalesforceIntegrationPage = lazy(() =>
     default: m.SalesforceIntegrationPage,
   })),
 )
+const ZohoCrmIntegrationPage = lazy(() =>
+  import('@/pages/ZohoCrmIntegrationPage').then((m) => ({
+    default: m.ZohoCrmIntegrationPage,
+  })),
+)
 const ProductsHubPage = lazy(() =>
   import('@/pages/ProductsHubPage').then((m) => ({ default: m.ProductsHubPage })),
 )
@@ -102,8 +107,8 @@ function lazyRoute(element: React.ReactNode) {
  */
 const SHELL_ROUTES = [
   // Integrations — platform child pages
-  // HubSpot (INT-01) and Salesforce (INT-02) have real pages, so neither is here.
-  ROUTES.zohoCrm,
+  // The three CRM platforms all have real pages now: HubSpot (INT-01),
+  // Salesforce (INT-02), Zoho CRM (INT-03). Only the helpdesk platforms remain.
   ROUTES.freshdesk,
   ROUTES.zendesk,
   // Industries — child pages
@@ -152,6 +157,7 @@ export const router = createBrowserRouter([
       // Integration platform pages
       { path: ROUTES.hubspot, element: lazyRoute(<HubspotIntegrationPage />) },
       { path: ROUTES.salesforce, element: lazyRoute(<SalesforceIntegrationPage />) },
+      { path: ROUTES.zohoCrm, element: lazyRoute(<ZohoCrmIntegrationPage />) },
 
       // Navigation hubs — all six, so no header path lands on a shell
       { path: ROUTES.products, element: lazyRoute(<ProductsHubPage />) },

@@ -75,7 +75,8 @@ problem, FAQ answer or claim was copied or renamed.
 ## 2. SEO ownership
 
 - **Primary keyword:** `tổng đài tích hợp Salesforce`
-- **Title:** `Tổng đài tích hợp Salesforce | Click-to-Call & Popup khách hàng`
+- **Title:** `Tổng đài tích hợp Salesforce | Click-to-Call & dữ liệu cuộc gọi`
+  *(corrected at INT-03 Part A — see the resolved note below)*
 - **Meta:** `Gcalls tích hợp Salesforce giúp đội Sales và Service gọi từ CRM, nhận biết khách hàng khi có cuộc gọi và ghi nhận lịch sử tương tác theo cấu hình.`
 - **H1:** `Tổng đài tích hợp Salesforce cho đội Sales và Customer Service`
 - **Canonical:** `https://gcalls.co/tich-hop/salesforce/`
@@ -94,18 +95,24 @@ Salesforce`, `click to call Salesforce`, `gọi điện trên Salesforce`, `đ�
 cuộc gọi Salesforce`, `Salesforce CRM call integration`, `call history
 Salesforce`, `Salesforce call center`.
 
-### ⚠️ Title / body tension worth a decision (flagged, not silently resolved)
+### ✅ Title / body tension — RESOLVED at INT-03 Part A
 
-The locked §5 title contains **"Popup khách hàng"**, but the §11 popup gate
-resolved **CONTEXT ONLY** (see §3), so the rendered body deliberately contains
-**0 occurrences of the word "popup"** and never claims an automatic popup.
+INT-02 originally shipped the §5 title verbatim as
+`Tổng đài tích hợp Salesforce | Click-to-Call & Popup khách hàng`, while the §11
+popup gate resolved **CONTEXT ONLY** (see §3) — so the body contains **0
+occurrences of the word "popup"** and never claims an automatic popup. The title
+was the one place a reader could take a popup claim off this page, and that
+mismatch was flagged rather than resolved unilaterally.
 
-The title was published exactly as §5 locks it — it is a keyword target for
-`popup khách hàng Salesforce`, and §5 carries no conditional. But a title that
-names a behaviour the body declines to assert is a real inconsistency, and it is
-the one thing on this page a reader could take as a popup claim. **Recommend
-either verifying popup behaviour (which would let §11 flip positive and the two
-agree) or amending the locked title.** Not changed unilaterally.
+**Decision taken: the title was amended.** At INT-03 Part A it became
+`Tổng đài tích hợp Salesforce | Click-to-Call & dữ liệu cuộc gọi`, matching the
+body. Nothing else on the page changed — meta description, H1, section structure
+(20 sections / 17 in-content H2), CTAs, visuals, internal links, FAQ (7) and
+JSON-LD were all verified byte-identical afterwards. The Salesforce JSON-LD does
+not derive from page metadata, so no schema value moved.
+
+Do not reintroduce "Popup khách hàng" unless the §11 gate is reopened with
+current implementation evidence. See `docs/CHECKPOINT_INT03_ZOHO_CRM.md` Part A.
 
 ### Cannibalization
 
@@ -457,4 +464,6 @@ claim guard and all three evidence gates with their reasoning. Do not reword, an
 do not add capabilities, objects, synced fields, editions, plans or benefits that
 are not there.
 
-Zoho CRM remains a shell — **not** started here.
+Zoho CRM was not started at INT-02. It was built at INT-03 — see
+`docs/CHECKPOINT_INT03_ZOHO_CRM.md`, which also records the Part A title
+correction applied to this page.

@@ -91,6 +91,7 @@ const PRODUCT_DISPLAY_LABELS: Readonly<Record<string, string>> = {
   // Platform integration pages
   HubSpot: 'HubSpot',
   Salesforce: 'Salesforce',
+  'Zoho CRM': 'Zoho CRM',
   // Products
   'Gcalls Plus': 'Gcalls Plus',
   'Gcalls Plus Webphone': 'Gcalls Plus Webphone',
