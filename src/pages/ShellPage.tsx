@@ -23,7 +23,7 @@ import { ROUTES } from '@/config/navigation'
  */
 const RELATED: Record<string, string[]> = {
   // Integration platform pages
-  [ROUTES.hubspot]: [ROUTES.crmIntegration, ROUTES.salesforce, ROUTES.zohoCrm],
+  // HubSpot has its own page (INT-01), so no entry for it here.
   [ROUTES.salesforce]: [ROUTES.crmIntegration, ROUTES.hubspot, ROUTES.zohoCrm],
   [ROUTES.zohoCrm]: [ROUTES.crmIntegration, ROUTES.hubspot, ROUTES.salesforce],
   [ROUTES.freshdesk]: [ROUTES.helpdeskIntegration, ROUTES.zendesk, ROUTES.gcallsCx],

@@ -11,8 +11,12 @@ import { parseLeadCtaContext } from '@/lib/leads/ctaLink'
  *
  * Every conversion CTA on the site lands here carrying categorical context
  * (`?intent=&source=&product=`), which pre-scopes the form and records where
- * the lead came from. Context values are validated against allow-lists before
- * use, and nothing a visitor typed ever appears in the URL.
+ * the lead came from. Nothing a visitor typed ever appears in the URL.
+ *
+ * `intent` and `source` are validated against typed allow-lists on parse.
+ * `product` is not enumerable at parse time (pricing passes plan names), so it
+ * is length-capped for use and separately allow-listed before it is ever
+ * DISPLAYED — see `displayableLeadProduct`.
  *
  * The form itself is the shared `LeadForm` — this page owns no submit logic.
  */

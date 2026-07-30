@@ -48,6 +48,11 @@ const InternationalCallingPage = lazy(() =>
     default: m.InternationalCallingPage,
   })),
 )
+const HubspotIntegrationPage = lazy(() =>
+  import('@/pages/HubspotIntegrationPage').then((m) => ({
+    default: m.HubspotIntegrationPage,
+  })),
+)
 const ProductsHubPage = lazy(() =>
   import('@/pages/ProductsHubPage').then((m) => ({ default: m.ProductsHubPage })),
 )
@@ -92,7 +97,6 @@ function lazyRoute(element: React.ReactNode) {
  */
 const SHELL_ROUTES = [
   // Integrations — platform child pages
-  ROUTES.hubspot,
   ROUTES.salesforce,
   ROUTES.zohoCrm,
   ROUTES.freshdesk,
@@ -139,6 +143,9 @@ export const router = createBrowserRouter([
       },
       { path: ROUTES.pricing, element: lazyRoute(<PricingPage />) },
       { path: ROUTES.costEstimator, element: lazyRoute(<CostEstimatorPage />) },
+
+      // Integration platform pages
+      { path: ROUTES.hubspot, element: lazyRoute(<HubspotIntegrationPage />) },
 
       // Navigation hubs — all six, so no header path lands on a shell
       { path: ROUTES.products, element: lazyRoute(<ProductsHubPage />) },

@@ -3,6 +3,7 @@ import { AlertCircle, CheckCircle2, Mail, Phone, Send } from 'lucide-react'
 import { Card } from '@/components/common/primitives'
 import { CONTACT } from '@/config/navigation'
 import { track } from '@/lib/analytics'
+import { displayableLeadProduct } from '@/lib/leads/ctaLink'
 import {
   LEAD_BACKEND_CONFIGURED,
   normalizeLeadPayload,
@@ -87,8 +88,27 @@ export function LeadForm({
   const uid = useId()
   const headings = HEADINGS[variant]
 
+  /**
+   * Pre-select the need from `product`, falling back to `solution`.
+   *
+   * The fallback matters for platform pages: `/tich-hop/hubspot/` sets
+   * `product: 'HubSpot'` (the platform is the only thing the payload can carry
+   * it in) and `solution: 'Tích hợp CRM'` (an approved LEAD_NEEDS value).
+   * Resolving only `product ?? solution` would leave the select empty there.
+   * Behaviour is unchanged for every caller that passes one or the other.
+   */
+  const needs = LEAD_NEEDS as readonly string[]
   const initialNeed =
-    (LEAD_NEEDS as readonly string[]).find((n) => n === (product ?? solution)) ?? ''
+    needs.find((n) => n === product) ?? needs.find((n) => n === solution) ?? ''
+
+  /**
+   * The product label, only if it is safe to display (see the helper).
+   *
+   * Suppressed when it duplicates the pre-selected "Nhu cầu", so a page that
+   * passes one approved label does not say the same word twice.
+   */
+  const displayable = displayableLeadProduct(product)
+  const shownProduct = displayable === initialNeed ? undefined : displayable
 
   const [values, setValues] = useState<LeadContactFields>({
     ...empty,
@@ -214,6 +234,19 @@ export function LeadForm({
             {headings.lead}
           </p>
         </>
+      )}
+
+      {/*
+        Confirms WHAT the visitor clicked about.
+        A CTA on a platform page (e.g. `/tich-hop/hubspot/`) carries the platform
+        in `product`; without this the visitor lands on a generic form with no
+        sign their HubSpot context survived. Allow-listed before rendering — an
+        arbitrary `?product=` must not be able to write text onto the page.
+      */}
+      {shownProduct && (
+        <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-brand-light px-3.5 py-1.5 text-[13px] font-bold text-brand">
+          Quan tâm: {shownProduct}
+        </p>
       )}
 
       {/* Failure states. Distinct copy per cause — a missing backend is not
