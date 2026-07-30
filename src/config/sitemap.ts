@@ -384,16 +384,17 @@ export const SITEMAP: SitemapEntry[] = [
     route: ROUTES.salesforce,
     parent: ROUTES.integrations,
     group: 'integrations',
-    priority: 0.7,
-    status: 'shell',
+    priority: 0.8,
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: false,
     eyebrow: 'Tích hợp CRM',
-    title: 'Tích hợp Gcalls với Salesforce | Kết nối tổng đài và CRM',
+    /* Locked at Checkpoint INT-02 §5. Do not reword. */
+    title: 'Tổng đài tích hợp Salesforce | Click-to-Call & Popup khách hàng',
     exactTitle: true,
     description:
-      'Thông tin về khả năng kết nối Gcalls với Salesforce để đưa hoạt động nghe gọi vào workflow dữ liệu khách hàng.',
+      'Gcalls tích hợp Salesforce giúp đội Sales và Service gọi từ CRM, nhận biết khách hàng khi có cuộc gọi và ghi nhận lịch sử tương tác theo cấu hình.',
     intro:
       'Kết nối Gcalls với Salesforce để đưa hoạt động nghe gọi vào workflow dữ liệu khách hàng. Phạm vi tích hợp được xác nhận theo hệ thống thực tế.',
     summary: 'Kết nối tổng đài với Salesforce.',

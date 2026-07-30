@@ -15,12 +15,16 @@ export function IntegrationWorkflow({
   title,
   titleId,
   eyebrow = 'Cách hoạt động',
+  lead,
   steps,
   anchorId,
 }: {
   title: string
   titleId: string
   eyebrow?: string
+  /** Optional intro paragraph above the chain, for pages whose approved copy
+   *  carries an overview description alongside the flow. */
+  lead?: string
   steps: readonly { n: string; label: string; detail: string }[]
   anchorId?: string
 }) {
@@ -29,7 +33,7 @@ export function IntegrationWorkflow({
       <Container>
         {anchorId && <div id={anchorId} className="scroll-mt-24" />}
 
-        <SectionHeader eyebrow={eyebrow} title={title} titleId={titleId} />
+        <SectionHeader eyebrow={eyebrow} title={title} titleId={titleId} lead={lead} />
 
         <ol className="mt-10 flex flex-col gap-3 lg:grid lg:grid-cols-4 lg:gap-4">
           {steps.map((step, index) => (
