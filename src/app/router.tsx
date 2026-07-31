@@ -68,6 +68,11 @@ const FreshdeskIntegrationPage = lazy(() =>
     default: m.FreshdeskIntegrationPage,
   })),
 )
+const ZendeskIntegrationPage = lazy(() =>
+  import('@/pages/ZendeskIntegrationPage').then((m) => ({
+    default: m.ZendeskIntegrationPage,
+  })),
+)
 const ProductsHubPage = lazy(() =>
   import('@/pages/ProductsHubPage').then((m) => ({ default: m.ProductsHubPage })),
 )
@@ -111,10 +116,9 @@ function lazyRoute(element: React.ReactNode) {
  * and the list below is where a regression would show up first.
  */
 const SHELL_ROUTES = [
-  // Integrations — platform child pages
-  // HubSpot (INT-01), Salesforce (INT-02), Zoho CRM (INT-03) and Freshdesk
-  // (INT-04) all have real pages now. Zendesk is the last platform shell.
-  ROUTES.zendesk,
+  // Integrations — no platform child page is a shell any more. All five have
+  // real pages: HubSpot (INT-01), Salesforce (INT-02), Zoho CRM (INT-03),
+  // Freshdesk (INT-04), Zendesk (INT-05) — Integration Cluster V1 complete.
   // Industries — child pages
   ROUTES.education,
   ROUTES.finance,
@@ -163,6 +167,7 @@ export const router = createBrowserRouter([
       { path: ROUTES.salesforce, element: lazyRoute(<SalesforceIntegrationPage />) },
       { path: ROUTES.zohoCrm, element: lazyRoute(<ZohoCrmIntegrationPage />) },
       { path: ROUTES.freshdesk, element: lazyRoute(<FreshdeskIntegrationPage />) },
+      { path: ROUTES.zendesk, element: lazyRoute(<ZendeskIntegrationPage />) },
 
       // Navigation hubs — all six, so no header path lands on a shell
       { path: ROUTES.products, element: lazyRoute(<ProductsHubPage />) },

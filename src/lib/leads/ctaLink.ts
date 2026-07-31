@@ -93,6 +93,7 @@ const PRODUCT_DISPLAY_LABELS: Readonly<Record<string, string>> = {
   Salesforce: 'Salesforce',
   'Zoho CRM': 'Zoho CRM',
   Freshdesk: 'Freshdesk',
+  Zendesk: 'Zendesk',
   // Products
   'Gcalls Plus': 'Gcalls Plus',
   'Gcalls Plus Webphone': 'Gcalls Plus Webphone',
