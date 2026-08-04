@@ -1,22 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Gcalls -</title>
-      <meta name="description" content="Streamline your sales and customer service operations with a powerful webphone platform that enables calls, call management, and real-time analytics." />
-      <meta name="robots" content="noindex, nofollow" />
-      <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
-      
-    </head>
+    <!--
+      These are DEFAULTS only. Per-route title / description / canonical /
+      Open Graph tags are applied at runtime by src/components/common/Seo.tsx,
+      driven by src/config/seo.ts.
 
-    <body>
-      
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-      
-    </body>
-  </html>
-  
+      SEARCH INDEXING IS INTENTIONALLY DISABLED for the pre-launch build.
+      Do not delete the robots tag here — it is the pre-hydration default that
+      matches ROBOTS_CONTENT in src/config/seo.ts. Indexing is enabled at
+      go-live by setting VITE_ALLOW_INDEXING=true.
+      See docs/LAUNCH_CHECKLIST.md.
+    -->
+    <title>Gcalls — Call Smarter, Grow Faster</title>
+    <meta
+      name="description"
+      content="Gcalls Plus Webphone giúp đội Sales và CSKH nghe gọi, quản lý danh bạ, lịch sử tương tác, ghi chú và theo dõi hoạt động cuộc gọi ngay trên trình duyệt."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

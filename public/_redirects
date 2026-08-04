@@ -1,0 +1,10 @@
+# Cloudflare Pages / Netlify SPA fallback.
+#
+# REQUIRED, not optional. This app is a client-routed SPA built by Vite: only
+# /index.html exists on disk. Without this rule a deep link the reviewer opens
+# or reloads — /tong-dai-quoc-te/, /san-pham/, any hub — returns 404, because
+# the host looks for a file at that path.
+#
+# 200 (rewrite), not 301/302: the browser must keep the requested URL so
+# react-router can resolve it after hydration.
+/*    /index.html   200
