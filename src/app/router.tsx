@@ -24,6 +24,9 @@ const QaQcCenterPage = lazy(() =>
 const GcallsCxPage = lazy(() =>
   import('@/pages/GcallsCxPage').then((m) => ({ default: m.GcallsCxPage })),
 )
+const VoicebotAiPage = lazy(() =>
+  import('@/pages/VoicebotAiPage').then((m) => ({ default: m.VoicebotAiPage })),
+)
 const CRMIntegrationPage = lazy(() =>
   import('@/pages/CRMIntegrationPage').then((m) => ({ default: m.CRMIntegrationPage })),
 )
@@ -149,6 +152,7 @@ export const router = createBrowserRouter([
       { path: ROUTES.gcallsPlus, element: lazyRoute(<GcallsPlusPage />) },
       { path: ROUTES.qcCenter, element: lazyRoute(<QaQcCenterPage />) },
       { path: ROUTES.gcallsCx, element: lazyRoute(<GcallsCxPage />) },
+      { path: ROUTES.voicebotAi, element: lazyRoute(<VoicebotAiPage />) },
       { path: ROUTES.crmIntegration, element: lazyRoute(<CRMIntegrationPage />) },
       {
         path: ROUTES.helpdeskIntegration,

@@ -18,6 +18,8 @@ export type LeadSource =
   | 'international'
   | 'qa_qc_center'
   | 'gcalls_cx'
+  /** Added in WEB-PRO-004. Every product page carries its own source. */
+  | 'voicebot_ai'
   | 'other'
 
 /** What the visitor is asking for. */
@@ -119,6 +121,12 @@ export const LEAD_NEEDS = [
   'Gcalls Plus Webphone',
   'QA QC Center',
   'Gcalls CX',
+  /**
+   * Added in WEB-PRO-004 alongside `/voicebot-ai/`. Additive only — every
+   * existing option keeps its position, so no other page's pre-selection
+   * changes.
+   */
+  'Gcalls Voicebot AI',
   'Tích hợp CRM',
   'Tích hợp Helpdesk',
   'Tích hợp POS',

@@ -60,6 +60,7 @@ const VALID_SOURCES: LeadSource[] = [
   'international',
   'qa_qc_center',
   'gcalls_cx',
+  'voicebot_ai',
   'other',
 ]
 
@@ -99,6 +100,7 @@ const PRODUCT_DISPLAY_LABELS: Readonly<Record<string, string>> = {
   'Gcalls Plus Webphone': 'Gcalls Plus Webphone',
   'Gcalls CX': 'Gcalls CX',
   'QA QC Center': 'QA QC Center',
+  'Gcalls Voicebot AI': 'Gcalls Voicebot AI',
   // Solutions — English internal labels mapped to their approved Vietnamese one
   'CRM Integration': 'Tích hợp CRM',
   'Helpdesk Integration': 'Tích hợp Helpdesk',

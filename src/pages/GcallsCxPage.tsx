@@ -44,7 +44,7 @@ import {
  * needs away from this page on purpose — it is not a capability list.
  *
  * SCOPE: Auto Call / Auto Dialer is NOT published (no evidence in this
- * repository) and Voicebot is out of scope. See the header of
+ * repository) and Voicebot belongs to /voicebot-ai/, not here. See the header of
  * `src/data/gcallsCx.ts`, which also carries the claim guard — no "không bỏ
  * sót lead", no "hỗ trợ mọi kênh", no unsupported percentage.
  *

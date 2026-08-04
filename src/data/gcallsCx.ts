@@ -30,8 +30,9 @@
  * config, no estimator field, no scope-document capability entry. The section
  * is therefore omitted entirely rather than written speculatively.
  *
- * VOICEBOT — out of scope. `src/config/sitemap.ts` records it as deliberately
- * removed; it is not mentioned anywhere on this page.
+ * VOICEBOT — out of scope FOR THIS PAGE. It now has its own route,
+ * `/voicebot-ai/` (WEB-PRO-004), and is still not mentioned anywhere here:
+ * automated script-driven calling is that page's subject, not Gcalls CX's.
  *
  * CHANNELS — exactly five, and only because each is independently evidenced by
  * the existing approved estimator config (`src/data/estimator.ts`, solution

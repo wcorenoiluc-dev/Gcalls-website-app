@@ -8,15 +8,21 @@
  * ---------------------------------------------------------------------------
  * PRODUCT SCOPE
  * ---------------------------------------------------------------------------
- * There are deliberately NO standalone routes for Voicebot, Sales, Customer
- * Service or Quality Assurance. The first is out of scope; the other three are
- * use cases, not products, and map onto real routes:
+ * There are deliberately NO standalone routes for Sales, Customer Service or
+ * Quality Assurance. They are use cases, not products, and map onto real
+ * routes:
  *
  *   Sales             -> Gcalls Plus + CRM Integration
  *   Customer Service  -> Gcalls Plus + Helpdesk + Gcalls CX
  *   Quality Assurance -> QA QC Center
  *
  * They appear as navigation aids on the solutions hub without minting routes.
+ *
+ * VOICEBOT was on that list until Checkpoint WEB-PRO-004, which reversed the
+ * decision and minted `/voicebot-ai/` as a product route. The reversal is a
+ * product decision, not new evidence — this repository still holds no Voicebot
+ * config, estimator field or screenshot, so the page copy is bounded by the
+ * claim guard at the top of `src/data/voicebotAi.ts`.
  * ---------------------------------------------------------------------------
  */
 
@@ -33,6 +39,7 @@ export const ROUTES = {
   gcallsPlus: '/gcalls-plus-webphone/',
   qcCenter: '/qc-bot-ai/',
   gcallsCx: '/gcalls-cx/',
+  voicebotAi: '/voicebot-ai/',
 
   // Solutions
   solutions: '/giai-phap/',
@@ -235,6 +242,34 @@ export const SITEMAP: SitemapEntry[] = [
     intro:
       'Gcalls CX tập trung vào trải nghiệm khách hàng trên nhiều kênh giao tiếp, dành cho đội ngũ cần vận hành hoạt động chăm sóc khách hàng ở quy mô rộng hơn kênh thoại.',
     summary: 'Omnichannel Contact Center.',
+  },
+  {
+    id: 'WEB-037',
+    label: 'Gcalls Voicebot AI',
+    route: ROUTES.voicebotAi,
+    parent: ROUTES.products,
+    group: 'products',
+    priority: 0.8,
+    status: 'complete',
+    indexable: true,
+    /**
+     * Both false ON PURPOSE, and only for now. WEB-PRO-004 built the page but
+     * deliberately did not touch `NAV_GROUPS` or `FOOTER_COLUMNS` — the header
+     * and footer are shared surfaces and changing them was out of scope for
+     * that checkpoint. Flip both to true in the same change that adds the
+     * entry to `src/config/navigation.ts` and the products hub.
+     */
+    navVisibility: false,
+    footerVisibility: false,
+    supportingLabel: 'Voicebot AI',
+    eyebrow: 'Sản phẩm',
+    title: 'Voicebot AI cho doanh nghiệp | Tự động hóa cuộc gọi | Gcalls',
+    exactTitle: true,
+    description:
+      'Khám phá giải pháp Voicebot AI giúp doanh nghiệp tự động hóa các cuộc gọi lặp lại, ghi nhận phản hồi và chuyển những tình huống cần thiết cho nhân viên.',
+    intro:
+      'Gcalls tư vấn, kết nối và tích hợp Voicebot AI vào quy trình gọi hiện tại của doanh nghiệp, bắt đầu từ những tác vụ có kịch bản rõ ràng.',
+    summary: 'Tự động hóa cuộc gọi lặp lại.',
   },
 
   /* ── Solutions ────────────────────────────────────────────────── */
