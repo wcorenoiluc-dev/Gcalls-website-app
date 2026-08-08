@@ -83,6 +83,31 @@ const ZendeskIntegrationPage = lazy(() =>
 const IndustryPage = lazy(() =>
   import('@/pages/IndustryPage').then((m) => ({ default: m.IndustryPage })),
 )
+/**
+ * Resource pages — Checkpoint WEB-RES-001. Six routes, six components: unlike
+ * the industry pages, these bodies genuinely differ (a glossary and a
+ * case-study index are not the same page with different words), so each keeps
+ * its own chunk. They share the resource section library, which vite hoists
+ * into a chunk of its own.
+ */
+const BlogPage = lazy(() =>
+  import('@/pages/BlogPage').then((m) => ({ default: m.BlogPage })),
+)
+const GuidesPage = lazy(() =>
+  import('@/pages/GuidesPage').then((m) => ({ default: m.GuidesPage })),
+)
+const CaseStudiesPage = lazy(() =>
+  import('@/pages/CaseStudiesPage').then((m) => ({ default: m.CaseStudiesPage })),
+)
+const EbookPage = lazy(() =>
+  import('@/pages/EbookPage').then((m) => ({ default: m.EbookPage })),
+)
+const GlossaryPage = lazy(() =>
+  import('@/pages/GlossaryPage').then((m) => ({ default: m.GlossaryPage })),
+)
+const FaqPage = lazy(() =>
+  import('@/pages/FaqPage').then((m) => ({ default: m.FaqPage })),
+)
 const ProductsHubPage = lazy(() =>
   import('@/pages/ProductsHubPage').then((m) => ({ default: m.ProductsHubPage })),
 )
@@ -131,14 +156,9 @@ const SHELL_ROUTES = [
   // Freshdesk (INT-04), Zendesk (INT-05) — Integration Cluster V1 complete.
   // Industries — no child page is a shell any more. All six have real pages,
   // built from one component in Checkpoint WEB-IND-001.
-  // Resources — child pages
-  ROUTES.blog,
-  ROUTES.guides,
-  ROUTES.caseStudies,
-  ROUTES.ebook,
-  ROUTES.glossary,
-  ROUTES.faq,
-  // Company — child pages
+  // Resources — no child page is a shell any more. All six have real pages,
+  // built in Checkpoint WEB-RES-001.
+  // Company — child pages. The last two shells on the site.
   ROUTES.customers,
   ROUTES.partners,
 ]
@@ -185,6 +205,14 @@ export const router = createBrowserRouter([
       },
       { path: ROUTES.ecommerce, element: lazyRoute(<IndustryPage industry="ecommerce" />) },
       { path: ROUTES.bpo, element: lazyRoute(<IndustryPage industry="bpo" />) },
+
+      // Resource pages
+      { path: ROUTES.blog, element: lazyRoute(<BlogPage />) },
+      { path: ROUTES.guides, element: lazyRoute(<GuidesPage />) },
+      { path: ROUTES.caseStudies, element: lazyRoute(<CaseStudiesPage />) },
+      { path: ROUTES.ebook, element: lazyRoute(<EbookPage />) },
+      { path: ROUTES.glossary, element: lazyRoute(<GlossaryPage />) },
+      { path: ROUTES.faq, element: lazyRoute(<FaqPage />) },
 
       // Navigation hubs — all six, so no header path lands on a shell
       { path: ROUTES.products, element: lazyRoute(<ProductsHubPage />) },

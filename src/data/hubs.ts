@@ -654,7 +654,7 @@ export const RESOURCES_HUB: HubContent = {
     eyebrow: 'Tổng quan',
     question: 'Trung tâm tài nguyên Gcalls có những gì?',
     answer:
-      'Trung tâm tài nguyên được chia thành sáu danh mục theo mục đích sử dụng: Blog cho góc nhìn vận hành, Guides cho hướng dẫn thực hành, Case Studies cho câu chuyện triển khai, Ebook cho tài liệu chuyên sâu, Glossary cho thuật ngữ và FAQ cho câu hỏi thường gặp. Nội dung đang được biên tập và sẽ được đăng tải theo từng danh mục.',
+      'Trung tâm tài nguyên được chia thành sáu danh mục theo mục đích sử dụng: Blog cho góc nhìn vận hành, Guides cho lộ trình đánh giá trước khi triển khai, Case Studies cho tiêu chuẩn bằng chứng, Ebook cho chủ đề chuyên sâu, Glossary cho thuật ngữ và FAQ cho câu hỏi thường gặp. Glossary, FAQ và Guides đã có nội dung đầy đủ; Blog, Case Studies và Ebook nêu rõ phạm vi nội dung và trạng thái thật của từng danh mục.',
   },
   cards: {
     eyebrow: 'SÁU DANH MỤC',
@@ -663,48 +663,48 @@ export const RESOURCES_HUB: HubContent = {
       {
         title: 'Blog',
         detail:
-          'Góc nhìn về vận hành Call Center, tích hợp hệ thống và chăm sóc khách hàng.',
-        points: ['Đang biên tập'],
+          'Sáu danh mục biên tập về vận hành Call Center, tích hợp hệ thống và chăm sóc khách hàng.',
+        points: ['Chưa có bài viết'],
         path: ROUTES.blog,
         cta: 'Xem Blog',
       },
       {
         title: 'Guides',
         detail:
-          'Hướng dẫn thực hành về triển khai tổng đài và tổ chức quy trình nghe gọi.',
-        points: ['Đang biên tập'],
+          'Sáu lộ trình nêu cần làm rõ những gì trước khi chọn phương án hoặc yêu cầu báo giá.',
+        points: ['Đã có nội dung'],
         path: ROUTES.guides,
         cta: 'Xem Guides',
       },
       {
         title: 'Case Studies',
         detail:
-          'Câu chuyện triển khai thực tế, đăng tải khi có nội dung được duyệt công bố.',
-        points: ['Chờ duyệt công bố'],
+          'Tiêu chuẩn bằng chứng bắt buộc trước khi một câu chuyện triển khai được công bố.',
+        points: ['Đang thu thập bằng chứng'],
         path: ROUTES.caseStudies,
         cta: 'Xem Case Studies',
       },
       {
         title: 'Ebook',
         detail:
-          'Tài liệu chuyên sâu về tổ chức hoạt động giao tiếp với khách hàng.',
-        points: ['Đang biên tập'],
+          'Năm nhóm chủ đề chuyên sâu đang chuẩn bị, kèm tiêu chuẩn nội dung khi phát hành.',
+        points: ['Chưa phát hành tài liệu'],
         path: ROUTES.ebook,
         cta: 'Xem Ebook',
       },
       {
         title: 'Glossary',
         detail:
-          'Giải thích ngắn gọn các thuật ngữ thường gặp trong Call Center, CRM và CX.',
-        points: ['Đang biên tập'],
+          'Hai mươi bốn thuật ngữ thường gặp trong Call Center, CRM, CX và quản lý chất lượng.',
+        points: ['Đã có nội dung'],
         path: ROUTES.glossary,
         cta: 'Xem Glossary',
       },
       {
         title: 'FAQ',
         detail:
-          'Câu hỏi thường gặp về sản phẩm, giải pháp, tích hợp và chi phí, tổng hợp theo chủ đề.',
-        points: ['Đang biên tập'],
+          'Hai mươi mốt câu hỏi theo sáu nhóm: chọn giải pháp, tích hợp, quốc tế, đa kênh, AI, triển khai.',
+        points: ['Đã có nội dung'],
         path: ROUTES.faq,
         cta: 'Xem FAQ',
       },
@@ -712,7 +712,7 @@ export const RESOURCES_HUB: HubContent = {
     note: 'Các trang sản phẩm và giải pháp đều có phần FAQ riêng theo chủ đề, nên đó thường là nơi trả lời nhanh nhất cho câu hỏi về một sản phẩm cụ thể.',
   },
   links: {
-    h2: 'Trong lúc chờ nội dung, có thể xem',
+    h2: 'Có thể xem thêm',
     items: [
       { label: 'Gcalls Plus Webphone', path: ROUTES.gcallsPlus },
       { label: 'QA QC Center', path: ROUTES.qcCenter },

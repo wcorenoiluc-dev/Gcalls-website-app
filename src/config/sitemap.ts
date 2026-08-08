@@ -735,18 +735,24 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.resources,
     group: 'resources',
     priority: 0.7,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: true,
     eyebrow: 'Tài nguyên',
     title: 'Blog Gcalls | Kiến thức vận hành Call Center và CRM',
     exactTitle: true,
+    /**
+     * Describes the EDITORIAL SCOPE, not an article inventory. WEB-RES-001
+     * built the blog as a foundation page: no article exists yet, so a
+     * description promising "bài viết của Gcalls" would be a search result that
+     * lies about what the page contains.
+     */
     description:
-      'Bài viết của Gcalls về vận hành Call Center, tích hợp CRM, chăm sóc khách hàng và ứng dụng AI trong giao tiếp doanh nghiệp.',
+      'Phạm vi biên tập của blog Gcalls theo sáu danh mục: vận hành call center, tích hợp CRM và Helpdesk, giao tiếp quốc tế, trải nghiệm đa kênh, Voicebot và AI QC, vận hành theo ngành.',
     intro:
-      'Các bài viết về vận hành Call Center, tích hợp hệ thống và chăm sóc khách hàng. Nội dung đang được biên tập và sẽ được đăng tải tại đây.',
-    summary: 'Bài viết và góc nhìn vận hành.',
+      'Sáu danh mục biên tập và lối vào các trang đã hoàn thiện theo từng bài toán vận hành.',
+    summary: 'Phạm vi biên tập và góc nhìn vận hành.',
   },
   {
     id: 'WEB-027',
@@ -755,7 +761,7 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.resources,
     group: 'resources',
     priority: 0.6,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: true,
@@ -763,10 +769,10 @@ export const SITEMAP: SitemapEntry[] = [
     title: 'Guides Gcalls | Hướng dẫn triển khai tổng đài và tích hợp',
     exactTitle: true,
     description:
-      'Hướng dẫn từng bước về triển khai tổng đài, cấu hình tích hợp và tổ chức quy trình nghe gọi cho đội ngũ Sales và CSKH.',
+      'Sáu lộ trình đánh giá trước khi triển khai: chọn tổng đài trên trình duyệt, lập kế hoạch tích hợp CRM, đầu số quốc tế, chăm sóc đa kênh, Voicebot và giám sát chất lượng cuộc gọi.',
     intro:
-      'Hướng dẫn thực hành về triển khai tổng đài và tổ chức quy trình nghe gọi. Nội dung đang được biên tập.',
-    summary: 'Hướng dẫn triển khai thực hành.',
+      'Sáu lộ trình nêu rõ cần làm rõ những gì trước khi chọn phương án hoặc yêu cầu báo giá.',
+    summary: 'Sáu lộ trình đánh giá trước triển khai.',
   },
   {
     id: 'WEB-028',
@@ -775,18 +781,23 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.resources,
     group: 'resources',
     priority: 0.6,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: true,
     eyebrow: 'Tài nguyên',
-    title: 'Case Studies | Cách doanh nghiệp triển khai Gcalls',
+    title: 'Case Studies | Tiêu chuẩn bằng chứng triển khai của Gcalls',
     exactTitle: true,
+    /**
+     * The page publishes the evidence STANDARD, not case studies. The
+     * description says so, because a snippet promising customer stories on a
+     * page that deliberately has none is the same fabrication as a fake card.
+     */
     description:
-      'Các câu chuyện triển khai Gcalls trong hoạt động thực tế của doanh nghiệp, được cập nhật khi có nội dung được duyệt công bố.',
+      'Tám điều kiện bằng chứng bắt buộc trước khi Gcalls công bố một câu chuyện triển khai, kèm cấu trúc phân loại của thư viện case study đang được thu thập.',
     intro:
-      'Câu chuyện triển khai thực tế sẽ được đăng tải tại đây khi có nội dung được duyệt công bố.',
-    summary: 'Câu chuyện triển khai thực tế.',
+      'Tiêu chuẩn bằng chứng áp dụng cho mọi câu chuyện triển khai Gcalls công bố.',
+    summary: 'Tiêu chuẩn bằng chứng triển khai.',
   },
   {
     id: 'WEB-029',
@@ -795,18 +806,18 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.resources,
     group: 'resources',
     priority: 0.5,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: true,
     eyebrow: 'Tài nguyên',
-    title: 'Ebook Gcalls | Tài liệu chuyên sâu về giao tiếp doanh nghiệp',
+    title: 'Ebook Gcalls | Chủ đề tài liệu chuyên sâu đang chuẩn bị',
     exactTitle: true,
     description:
-      'Tài liệu chuyên sâu của Gcalls về tổ chức hoạt động giao tiếp với khách hàng cho đội Sales, CSKH và QA.',
+      'Năm nhóm chủ đề tài liệu chuyên sâu Gcalls đang chuẩn bị và tiêu chuẩn nội dung áp dụng cho chúng. Chưa có tài liệu nào được phát hành, nên trang không có nút tải.',
     intro:
-      'Tài liệu chuyên sâu dành cho đội ngũ vận hành. Nội dung đang được biên tập.',
-    summary: 'Tài liệu chuyên sâu.',
+      'Năm nhóm chủ đề chuyên sâu và tiêu chuẩn nội dung áp dụng khi phát hành.',
+    summary: 'Chủ đề chuyên sâu đang chuẩn bị.',
   },
   {
     id: 'WEB-030',
@@ -815,7 +826,7 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.resources,
     group: 'resources',
     priority: 0.5,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: true,
@@ -823,10 +834,10 @@ export const SITEMAP: SitemapEntry[] = [
     title: 'Glossary | Thuật ngữ Call Center, CRM và CX | Gcalls',
     exactTitle: true,
     description:
-      'Giải thích các thuật ngữ thường gặp trong Call Center, CRM, CX và quản lý chất lượng cuộc gọi.',
+      'Hai mươi bốn thuật ngữ thường gặp khi triển khai tổng đài: tổng đài đám mây, IVR, call flow, Webphone, Click-to-Call, omnichannel, Voicebot, AI QC, SLA, API và SDK.',
     intro:
-      'Giải thích ngắn gọn các thuật ngữ thường gặp khi triển khai tổng đài và hệ thống chăm sóc khách hàng.',
-    summary: 'Thuật ngữ thường gặp.',
+      'Hai mươi bốn thuật ngữ, giải thích khái niệm trước rồi mới nói tới liên quan với Gcalls.',
+    summary: 'Hai mươi bốn thuật ngữ thường gặp.',
   },
   {
     id: 'WEB-031',
@@ -835,7 +846,7 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.resources,
     group: 'resources',
     priority: 0.6,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: true,
@@ -843,10 +854,10 @@ export const SITEMAP: SitemapEntry[] = [
     title: 'FAQ Gcalls | Câu hỏi thường gặp về tổng đài và tích hợp',
     exactTitle: true,
     description:
-      'Câu hỏi thường gặp về sản phẩm, giải pháp, tích hợp và chi phí của Gcalls, tổng hợp theo từng chủ đề.',
+      'Hai mươi mốt câu hỏi thường gặp theo sáu nhóm: chọn giải pháp, tích hợp CRM và Helpdesk, gọi quốc tế, vận hành đa kênh, Voicebot và AI QC, triển khai và hỗ trợ.',
     intro:
-      'Tổng hợp câu hỏi thường gặp về sản phẩm, tích hợp và chi phí. Mỗi trang sản phẩm cũng có phần FAQ riêng theo chủ đề.',
-    summary: 'Câu hỏi thường gặp.',
+      'Hai mươi mốt câu hỏi theo sáu nhóm chủ đề. Mỗi trang sản phẩm cũng có phần FAQ riêng.',
+    summary: 'Hai mươi mốt câu hỏi theo sáu nhóm.',
   },
 
   /* ── Company ──────────────────────────────────────────────────── */

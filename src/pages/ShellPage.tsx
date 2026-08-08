@@ -28,20 +28,11 @@ const RELATED: Record<string, string[]> = {
   // Integration Cluster V1 no longer touches the shell at all.
 
   // Industries
-  [ROUTES.education]: [ROUTES.gcallsPlus, ROUTES.crmIntegration, ROUTES.industries],
-  [ROUTES.finance]: [ROUTES.gcallsPlus, ROUTES.qcCenter, ROUTES.industries],
-  [ROUTES.insurance]: [ROUTES.gcallsPlus, ROUTES.qcCenter, ROUTES.industries],
-  [ROUTES.realEstate]: [ROUTES.gcallsPlus, ROUTES.crmIntegration, ROUTES.industries],
-  [ROUTES.ecommerce]: [ROUTES.posIntegration, ROUTES.gcallsCx, ROUTES.industries],
-  [ROUTES.bpo]: [ROUTES.gcallsCx, ROUTES.qcCenter, ROUTES.industries],
+  // None left. All six have their own pages as of Checkpoint WEB-IND-001, so
+  // an entry here would never be read.
 
   // Resources
-  [ROUTES.blog]: [ROUTES.guides, ROUTES.caseStudies, ROUTES.resources],
-  [ROUTES.guides]: [ROUTES.blog, ROUTES.glossary, ROUTES.resources],
-  [ROUTES.caseStudies]: [ROUTES.blog, ROUTES.ebook, ROUTES.resources],
-  [ROUTES.ebook]: [ROUTES.guides, ROUTES.caseStudies, ROUTES.resources],
-  [ROUTES.glossary]: [ROUTES.faq, ROUTES.guides, ROUTES.resources],
-  [ROUTES.faq]: [ROUTES.glossary, ROUTES.pricing, ROUTES.resources],
+  // None left. All six have their own pages as of Checkpoint WEB-RES-001.
 
   // Company
   [ROUTES.customers]: [ROUTES.company, ROUTES.partners, ROUTES.caseStudies],
