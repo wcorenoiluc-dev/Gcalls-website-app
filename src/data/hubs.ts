@@ -797,17 +797,18 @@ export const COMPANY_HUB: HubContent = {
     h2: 'Các trang thông tin về Gcalls',
     rows: [
       {
-        problem: 'Muốn biết doanh nghiệp nào đang sử dụng Gcalls.',
+        problem: 'Muốn biết Gcalls được xây dựng cho kiểu vận hành nào.',
         solution: 'Khách hàng',
         reason:
-          'Thông tin khách hàng được đăng tải khi có nội dung được duyệt công bố.',
+          'Năm mô hình vận hành được phục vụ và bảy giai đoạn làm việc từ khảo sát tới vận hành. Tên và logo khách hàng chỉ được đăng sau khi có sự đồng ý bằng văn bản.',
         path: ROUTES.customers,
       },
       {
         problem:
           'Là đơn vị triển khai, tư vấn hoặc tích hợp hệ thống và muốn hợp tác.',
         solution: 'Đối tác',
-        reason: 'Thông tin về chương trình hợp tác triển khai và tích hợp.',
+        reason:
+          'Khung hợp tác, các hình thức có thể trao đổi kèm điều kiện áp dụng, và tiêu chí được làm rõ trước khi hai bên cam kết.',
         path: ROUTES.partners,
       },
       {

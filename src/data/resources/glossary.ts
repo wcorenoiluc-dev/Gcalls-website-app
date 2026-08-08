@@ -192,8 +192,17 @@ export const GLOSSARY: GlossaryContent = {
           aka: ['Auto Call', 'Quay số tự động'],
           definition:
             'Nhóm công cụ tự động quay số từ một danh sách thay vì để nhân viên bấm từng số, và chỉ chuyển máy cho nhân viên khi cuộc gọi được kết nối. Đây là năng lực phổ biến trong ngành call center, với nhiều biến thể khác nhau về cách quay số và cách phân bổ cuộc gọi.',
+          /**
+           * WEB-COMPANY-001 §2.3 replaced the earlier wording, which read as a
+           * paradox: a page cannot meaningfully say a capability "has not been
+           * announced on this website" while describing it on that website.
+           * The corrected sentence separates the two facts that actually
+           * apply — the planning source mentions it, and Gcalls has not
+           * confirmed it as publicly offered scope. Status stays
+           * NEEDS_GCALLS_VERIFICATION; do not promote this into a capability.
+           */
           gcallsNote:
-            'Gcalls chưa công bố tính năng quay số tự động trên website này, nên thuật ngữ ở đây được giải thích như một khái niệm của ngành, không phải một tính năng đang được chào bán. Doanh nghiệp có bài toán gọi ra khối lượng lớn nên nêu cụ thể khi liên hệ để được trao đổi về phạm vi khả thi.',
+            'Tài liệu nguồn có đề cập Auto Dialer, nhưng Gcalls chưa xác nhận đây là tính năng thuộc phạm vi chào bán công khai. Khả năng cung cấp và phạm vi triển khai cần được xác nhận trong quá trình tư vấn.',
         },
         {
           id: 'voice-brandname',

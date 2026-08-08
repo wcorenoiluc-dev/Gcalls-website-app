@@ -888,18 +888,24 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.company,
     group: 'company',
     priority: 0.5,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: false,
     footerVisibility: true,
     eyebrow: 'Về Gcalls',
-    title: 'Khách hàng của Gcalls | Doanh nghiệp đang sử dụng',
+    /**
+     * Title and description describe OPERATIONAL PROFILES, not a customer list.
+     * WEB-COMPANY-001 built this page without a single customer name, because
+     * no permission record exists — so a snippet promising "doanh nghiệp đang
+     * sử dụng" would advertise content the page deliberately does not contain.
+     */
+    title: 'Khách hàng của Gcalls | Mô hình vận hành được phục vụ',
     exactTitle: true,
     description:
-      'Thông tin về các doanh nghiệp sử dụng Gcalls, được cập nhật khi có nội dung được duyệt công bố.',
+      'Năm mô hình vận hành Gcalls phục vụ, các vấn đề nên làm rõ trước khi triển khai, và bảy giai đoạn làm việc từ khảo sát tới vận hành.',
     intro:
-      'Thông tin khách hàng sẽ được cập nhật tại đây khi có nội dung được duyệt công bố.',
-    summary: 'Doanh nghiệp đang sử dụng Gcalls.',
+      'Các mô hình vận hành Gcalls phục vụ và cách hai bên làm việc từ khảo sát tới vận hành.',
+    summary: 'Mô hình vận hành Gcalls phục vụ.',
   },
   {
     id: 'WEB-034',
@@ -908,18 +914,23 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.company,
     group: 'company',
     priority: 0.5,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: false,
     footerVisibility: true,
     eyebrow: 'Về Gcalls',
-    title: 'Đối tác Gcalls | Hợp tác triển khai và tích hợp',
+    /**
+     * "Khung hợp tác", never "chương trình hợp tác". The page describes how a
+     * partnership would be assessed; it does not announce an open programme,
+     * and the metadata must not either.
+     */
+    title: 'Đối tác Gcalls | Khung hợp tác và tiêu chí đánh giá',
     exactTitle: true,
     description:
-      'Thông tin về chương trình hợp tác của Gcalls với các đơn vị triển khai, tư vấn và tích hợp hệ thống.',
+      'Sáu nhóm hợp tác Gcalls sẵn sàng trao đổi, các hình thức hợp tác kèm điều kiện áp dụng, và chín hạng mục được làm rõ trước khi hai bên cam kết.',
     intro:
-      'Gcalls hợp tác với các đơn vị triển khai và tư vấn hệ thống. Thông tin chi tiết sẽ được cập nhật tại đây.',
-    summary: 'Hợp tác triển khai và tích hợp.',
+      'Khung hợp tác, tiêu chí đánh giá và ranh giới giữa tích hợp kỹ thuật với quan hệ đối tác.',
+    summary: 'Khung hợp tác và tiêu chí đánh giá.',
   },
   {
     id: 'WEB-035',

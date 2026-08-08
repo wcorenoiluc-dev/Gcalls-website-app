@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router'
 import { Header } from '@/components/navigation/Header'
 import { Footer } from '@/components/layout/Footer'
-import { ScrollToTop, Seo } from '@/components/common/Seo'
+import { ScrollManager, Seo } from '@/components/common/Seo'
 
 /**
  * Shared chrome for every route: header, routed page, footer.
@@ -15,7 +15,7 @@ export function SiteLayout() {
   return (
     <div className="relative bg-background text-foreground min-h-screen flex flex-col">
       <Seo />
-      <ScrollToTop />
+      <ScrollManager />
 
       <a
         href="#main-content"

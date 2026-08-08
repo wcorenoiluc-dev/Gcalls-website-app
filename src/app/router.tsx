@@ -1,6 +1,6 @@
 import { Suspense, lazy } from 'react'
 import { createBrowserRouter } from 'react-router'
-import { ROUTES } from '@/config/navigation'
+import { ROUTES, type RoutePath } from '@/config/navigation'
 import { SiteLayout } from '@/layouts/SiteLayout'
 import { RouteFallback } from '@/components/common/RouteFallback'
 import { HomePage } from '@/pages/HomePage'
@@ -108,6 +108,15 @@ const GlossaryPage = lazy(() =>
 const FaqPage = lazy(() =>
   import('@/pages/FaqPage').then((m) => ({ default: m.FaqPage })),
 )
+/**
+ * Company pages — Checkpoint WEB-COMPANY-001. The last two shells on the site.
+ */
+const CustomersPage = lazy(() =>
+  import('@/pages/CustomersPage').then((m) => ({ default: m.CustomersPage })),
+)
+const PartnersPage = lazy(() =>
+  import('@/pages/PartnersPage').then((m) => ({ default: m.PartnersPage })),
+)
 const ProductsHubPage = lazy(() =>
   import('@/pages/ProductsHubPage').then((m) => ({ default: m.ProductsHubPage })),
 )
@@ -146,22 +155,18 @@ function lazyRoute(element: React.ReactNode) {
 /**
  * Routes served by the sitemap-driven shell.
  *
- * Every remaining entry is a CHILD route. No hub and no page reachable in one
- * click from the header renders a shell — that is a Boss Demo V1 requirement,
- * and the list below is where a regression would show up first.
+ * EMPTY as of Checkpoint WEB-COMPANY-001: every public content route on this
+ * site now has a real page. The clusters closed in order — Integrations
+ * (INT-01…05), Industries (WEB-IND-001), Resources (WEB-RES-001), Company
+ * (WEB-COMPANY-001).
+ *
+ * The array and `ShellPage` are kept ON PURPOSE rather than deleted. The shell
+ * renders a real page from a sitemap entry, so it remains the correct landing
+ * for any route minted ahead of its content — adding a path here is still the
+ * cheapest way to ship a new route without a dead end. Deleting the mechanism
+ * would mean rebuilding it the next time that happens.
  */
-const SHELL_ROUTES = [
-  // Integrations — no platform child page is a shell any more. All five have
-  // real pages: HubSpot (INT-01), Salesforce (INT-02), Zoho CRM (INT-03),
-  // Freshdesk (INT-04), Zendesk (INT-05) — Integration Cluster V1 complete.
-  // Industries — no child page is a shell any more. All six have real pages,
-  // built from one component in Checkpoint WEB-IND-001.
-  // Resources — no child page is a shell any more. All six have real pages,
-  // built in Checkpoint WEB-RES-001.
-  // Company — child pages. The last two shells on the site.
-  ROUTES.customers,
-  ROUTES.partners,
-]
+const SHELL_ROUTES: RoutePath[] = []
 
 export const router = createBrowserRouter([
   {
@@ -213,6 +218,10 @@ export const router = createBrowserRouter([
       { path: ROUTES.ebook, element: lazyRoute(<EbookPage />) },
       { path: ROUTES.glossary, element: lazyRoute(<GlossaryPage />) },
       { path: ROUTES.faq, element: lazyRoute(<FaqPage />) },
+
+      // Company pages
+      { path: ROUTES.customers, element: lazyRoute(<CustomersPage />) },
+      { path: ROUTES.partners, element: lazyRoute(<PartnersPage />) },
 
       // Navigation hubs — all six, so no header path lands on a shell
       { path: ROUTES.products, element: lazyRoute(<ProductsHubPage />) },
