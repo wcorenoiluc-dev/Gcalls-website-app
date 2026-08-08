@@ -76,6 +76,13 @@ const ZendeskIntegrationPage = lazy(() =>
     default: m.ZendeskIntegrationPage,
   })),
 )
+/**
+ * One component serves all six `/nganh/…` routes, so they share a single chunk
+ * — the sections are identical and only the content object differs.
+ */
+const IndustryPage = lazy(() =>
+  import('@/pages/IndustryPage').then((m) => ({ default: m.IndustryPage })),
+)
 const ProductsHubPage = lazy(() =>
   import('@/pages/ProductsHubPage').then((m) => ({ default: m.ProductsHubPage })),
 )
@@ -122,13 +129,8 @@ const SHELL_ROUTES = [
   // Integrations — no platform child page is a shell any more. All five have
   // real pages: HubSpot (INT-01), Salesforce (INT-02), Zoho CRM (INT-03),
   // Freshdesk (INT-04), Zendesk (INT-05) — Integration Cluster V1 complete.
-  // Industries — child pages
-  ROUTES.education,
-  ROUTES.finance,
-  ROUTES.insurance,
-  ROUTES.realEstate,
-  ROUTES.ecommerce,
-  ROUTES.bpo,
+  // Industries — no child page is a shell any more. All six have real pages,
+  // built from one component in Checkpoint WEB-IND-001.
   // Resources — child pages
   ROUTES.blog,
   ROUTES.guides,
@@ -172,6 +174,17 @@ export const router = createBrowserRouter([
       { path: ROUTES.zohoCrm, element: lazyRoute(<ZohoCrmIntegrationPage />) },
       { path: ROUTES.freshdesk, element: lazyRoute(<FreshdeskIntegrationPage />) },
       { path: ROUTES.zendesk, element: lazyRoute(<ZendeskIntegrationPage />) },
+
+      // Industry pages — one component, six content objects
+      { path: ROUTES.education, element: lazyRoute(<IndustryPage industry="education" />) },
+      { path: ROUTES.finance, element: lazyRoute(<IndustryPage industry="finance" />) },
+      { path: ROUTES.insurance, element: lazyRoute(<IndustryPage industry="insurance" />) },
+      {
+        path: ROUTES.realEstate,
+        element: lazyRoute(<IndustryPage industry="real-estate" />),
+      },
+      { path: ROUTES.ecommerce, element: lazyRoute(<IndustryPage industry="ecommerce" />) },
+      { path: ROUTES.bpo, element: lazyRoute(<IndustryPage industry="bpo" />) },
 
       // Navigation hubs — all six, so no header path lands on a shell
       { path: ROUTES.products, element: lazyRoute(<ProductsHubPage />) },

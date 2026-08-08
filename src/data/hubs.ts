@@ -119,11 +119,17 @@ export interface HubContent {
  * ------------------------------------------------------------------ */
 
 /**
- * Three products, and the boundary between them stated plainly.
+ * Four products, and the boundary between them stated plainly.
  *
  * The boundary is the point of this hub: the most common reason a visitor picks
- * wrong is assuming Gcalls Plus, QA QC Center and Gcalls CX are tiers of one
- * product. They are not — they answer different questions.
+ * wrong is assuming Gcalls Plus, QA QC Center, Gcalls CX and Voicebot AI are
+ * tiers of one product. They are not — they answer different questions.
+ *
+ * Voicebot AI joined in Checkpoint WEB-IND-001. Its card inherits the claim
+ * guard at the head of `src/data/voicebotAi.ts`: Gcalls is presented as the
+ * party that consults, connects and integrates a Voicebot, never as the author
+ * of the engine, and no accuracy, concurrency, language or saving figure
+ * appears here either.
  */
 export const PRODUCTS_HUB: HubContent = {
   id: 'products',
@@ -134,7 +140,7 @@ export const PRODUCTS_HUB: HubContent = {
     eyebrow: 'SẢN PHẨM GCALLS',
     h1: 'Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA',
     description:
-      'Gcalls có ba sản phẩm phục vụ ba bài toán khác nhau trong hoạt động giao tiếp với khách hàng: kênh nghe gọi cho đội ngũ, kiểm soát chất lượng hội thoại, và vận hành chăm sóc khách hàng đa kênh.',
+      'Gcalls có bốn sản phẩm phục vụ bốn bài toán khác nhau trong hoạt động giao tiếp với khách hàng: kênh nghe gọi cho đội ngũ, kiểm soát chất lượng hội thoại, vận hành chăm sóc khách hàng đa kênh, và tự động hóa các cuộc gọi lặp lại.',
     primaryCta: { label: 'Đăng ký tư vấn sản phẩm' },
     secondaryCta: { label: 'Xem bảng giá', path: ROUTES.pricing },
   },
@@ -142,10 +148,10 @@ export const PRODUCTS_HUB: HubContent = {
     eyebrow: 'Tổng quan',
     question: 'Gcalls có những sản phẩm nào?',
     answer:
-      'Gcalls có ba sản phẩm: Gcalls Plus Webphone là kênh nghe gọi và quản lý hoạt động cuộc gọi trên trình duyệt; QA QC Center sử dụng QC Bot AI để hỗ trợ đánh giá chất lượng hội thoại; Gcalls CX là nền tảng chăm sóc khách hàng đa kênh. Ba sản phẩm giải quyết các bài toán khác nhau, không phải ba mức giá của cùng một sản phẩm, và được chọn theo nhu cầu vận hành thực tế của doanh nghiệp.',
+      'Gcalls có bốn sản phẩm: Gcalls Plus Webphone là kênh nghe gọi và quản lý hoạt động cuộc gọi trên trình duyệt; QA QC Center sử dụng QC Bot AI để hỗ trợ đánh giá chất lượng hội thoại; Gcalls CX là nền tảng chăm sóc khách hàng đa kênh; Gcalls Voicebot AI dành cho các cuộc gọi lặp lại theo kịch bản đã thiết lập. Bốn sản phẩm giải quyết các bài toán khác nhau, không phải bốn mức giá của cùng một sản phẩm, và được chọn theo nhu cầu vận hành thực tế của doanh nghiệp.',
   },
   cards: {
-    eyebrow: 'BA SẢN PHẨM',
+    eyebrow: 'BỐN SẢN PHẨM',
     h2: 'Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau',
     items: [
       {
@@ -173,12 +179,21 @@ export const PRODUCTS_HUB: HubContent = {
         path: ROUTES.gcallsCx,
         cta: 'Xem Gcalls CX',
       },
+      {
+        title: 'Gcalls Voicebot AI',
+        supportingLabel: 'Voicebot AI',
+        detail:
+          'Tự động hóa những cuộc gọi lặp lại theo kịch bản đã thiết lập — nhắc lịch, xác nhận thông tin, sàng lọc nhu cầu — và chuyển tình huống cần chuyên môn cho nhân viên.',
+        points: ['Kịch bản cuộc gọi', 'Chiến dịch tự động', 'Chuyển tiếp nhân viên'],
+        path: ROUTES.voicebotAi,
+        cta: 'Xem Gcalls Voicebot AI',
+      },
     ],
-    note: 'Ba sản phẩm có thể dùng độc lập hoặc cùng nhau. Cấu hình phù hợp phụ thuộc vào quy mô đội ngũ, kênh giao tiếp và nhu cầu kiểm soát chất lượng của doanh nghiệp.',
+    note: 'Bốn sản phẩm có thể dùng độc lập hoặc cùng nhau. Cấu hình phù hợp phụ thuộc vào quy mô đội ngũ, kênh giao tiếp và nhu cầu kiểm soát chất lượng của doanh nghiệp.',
   },
   decisionGuide: {
     eyebrow: 'CHỌN ĐÚNG SẢN PHẨM',
-    h2: 'Ranh giới giữa ba sản phẩm',
+    h2: 'Ranh giới giữa bốn sản phẩm',
     lead: 'Nếu bài toán hiện tại thuộc một trong các trường hợp dưới đây, đây là sản phẩm nên xem trước.',
     rows: [
       {
@@ -204,6 +219,14 @@ export const PRODUCTS_HUB: HubContent = {
         reason:
           'Bài toán nằm ở lớp vận hành đa kênh, rộng hơn kênh thoại đơn thuần.',
         path: ROUTES.gcallsCx,
+      },
+      {
+        problem:
+          'Một phần lớn cuộc gọi lặp lại gần như nguyên vẹn mỗi lần — nhắc lịch, xác nhận thông tin, sàng lọc danh sách.',
+        solution: 'Gcalls Voicebot AI',
+        reason:
+          'Bài toán nằm ở lớp tự động hóa tác vụ có kịch bản rõ ràng, để nhân viên còn thời gian cho những cuộc trao đổi cần tư vấn thật sự.',
+        path: ROUTES.voicebotAi,
       },
       {
         problem:

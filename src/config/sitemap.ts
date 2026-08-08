@@ -180,9 +180,9 @@ export const SITEMAP: SitemapEntry[] = [
     title: 'Sản phẩm Gcalls | Webphone, QA QC Center và Contact Center',
     exactTitle: true,
     description:
-      'Tổng quan hệ sinh thái sản phẩm Gcalls: Gcalls Plus Webphone, QA QC Center và Gcalls CX cho đội Sales, CSKH và QA.',
+      'Tổng quan hệ sinh thái sản phẩm Gcalls: Gcalls Plus Webphone, QA QC Center, Gcalls CX và Gcalls Voicebot AI cho đội Sales, CSKH và QA.',
     intro:
-      'Ba sản phẩm Gcalls phục vụ các bài toán khác nhau trong hoạt động giao tiếp với khách hàng, từ kênh nghe gọi tinh gọn đến kiểm soát chất lượng và vận hành đa kênh.',
+      'Bốn sản phẩm Gcalls phục vụ các bài toán khác nhau trong hoạt động giao tiếp với khách hàng, từ kênh nghe gọi tinh gọn đến kiểm soát chất lượng, vận hành đa kênh và tự động hóa cuộc gọi lặp lại.',
     summary: 'Toàn bộ sản phẩm Gcalls.',
   },
   {
@@ -253,14 +253,13 @@ export const SITEMAP: SitemapEntry[] = [
     status: 'complete',
     indexable: true,
     /**
-     * Both false ON PURPOSE, and only for now. WEB-PRO-004 built the page but
-     * deliberately did not touch `NAV_GROUPS` or `FOOTER_COLUMNS` — the header
-     * and footer are shared surfaces and changing them was out of scope for
-     * that checkpoint. Flip both to true in the same change that adds the
-     * entry to `src/config/navigation.ts` and the products hub.
+     * Flipped to true in Checkpoint WEB-IND-001, which did the shared-surface
+     * work WEB-PRO-004 deferred: `/voicebot-ai/` is now the fourth item in the
+     * products mega menu and the footer's product column, and the fourth card
+     * on the products hub. Keep these three in step with these flags.
      */
-    navVisibility: false,
-    footerVisibility: false,
+    navVisibility: true,
+    footerVisibility: true,
     supportingLabel: 'Voicebot AI',
     eyebrow: 'Sản phẩm',
     title: 'Voicebot AI cho doanh nghiệp | Tự động hóa cuộc gọi | Gcalls',
@@ -558,7 +557,7 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.industries,
     group: 'industries',
     priority: 0.6,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: false,
@@ -578,7 +577,7 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.industries,
     group: 'industries',
     priority: 0.6,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: false,
@@ -598,7 +597,7 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.industries,
     group: 'industries',
     priority: 0.6,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: false,
@@ -618,7 +617,7 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.industries,
     group: 'industries',
     priority: 0.6,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: false,
@@ -638,7 +637,7 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.industries,
     group: 'industries',
     priority: 0.6,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: false,
@@ -658,7 +657,7 @@ export const SITEMAP: SitemapEntry[] = [
     parent: ROUTES.industries,
     group: 'industries',
     priority: 0.6,
-    status: 'shell',
+    status: 'complete',
     indexable: true,
     navVisibility: true,
     footerVisibility: false,

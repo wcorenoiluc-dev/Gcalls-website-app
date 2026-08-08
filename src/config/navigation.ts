@@ -65,6 +65,7 @@ export const NAV_GROUPS: NavGroup[] = [
           item(ROUTES.gcallsPlus),
           item(ROUTES.qcCenter),
           item(ROUTES.gcallsCx),
+          item(ROUTES.voicebotAi),
         ],
       },
     ],
@@ -190,6 +191,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       item(ROUTES.gcallsPlus, { label: 'Gcalls Plus' }),
       item(ROUTES.qcCenter),
       item(ROUTES.gcallsCx),
+      item(ROUTES.voicebotAi),
     ],
   },
   {
