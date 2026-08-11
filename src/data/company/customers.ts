@@ -13,9 +13,12 @@
  * a grid of marks a reader cannot map onto their own situation.
  *
  * CLAIM GUARD: no ROI figure from the ICP table appears here — not "2.5%", not
- * "30–50%", not "40%", not "50–90%". The working model describes PHASES and
- * never durations, so "cài đặt trong 30 phút" and "triển khai trong một ngày"
- * have nowhere to appear.
+ * "30–50%", not "40%", and not either of the two conflicting international saving
+ * figures (ICP image 50%–80%, DIB planning material 80%–90%; the earlier
+ * "50–90%" written here was a splice of the two, corrected in Checkpoint
+ * WEB-SITE-QA-001). The working model describes PHASES and never durations, so
+ * "cài đặt trong 30 phút", "triển khai trong một ngày" and "thiết lập trong 5
+ * phút" have nowhere to appear.
  */
 
 import { ROUTES } from '@/config/navigation'

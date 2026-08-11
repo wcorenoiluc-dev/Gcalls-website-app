@@ -13,6 +13,15 @@ Nothing was deployed, published or pushed.
 > corrected here, and the Auto Dialer correction was also applied to the live
 > copy in `src/data/resources/glossary.ts`.
 
+> **Further correction (WEB-SITE-QA-001 §3).** The international cost-saving row
+> said "50–90%", which is not what either source says. Direct inspection of the
+> supplied ICP image gives **50%–80%**; the DIB planning material gives
+> **80%–90%**. "50–90%" was a conflation of the two — the low end of one with the
+> high end of the other — producing a range no source states. It is now two rows,
+> one per source, so the conflict is visible rather than averaged away. Both stay
+> WITHHELD and the site publishes no numeric saving figure. The same conflated
+> string is corrected in the guard in `src/data/resources/types.ts`.
+
 ---
 
 ## 1. Architecture
@@ -56,7 +65,8 @@ One publication status per row.
 |---|---|---|---|---|---|
 | International number availability by country | B | Glossary, FAQ, Guides | Availability depends on country, regulation and documentation | QUALIFIED CAPABILITY | Per-market confirmation at deployment time |
 | International numbers in 70+ countries | B | — | Numeric count not published | NEEDS_GCALLS_VERIFICATION | Approved and current country-availability list |
-| International cost saving of 50–90% | C | — | Not published | WITHHELD | Approved calculation methodology and evidence |
+| International cost saving — **ICP image: 50%–80%** | C | — | Not published | WITHHELD | Approved calculation methodology and evidence |
+| International cost saving — **DIB planning material: 80%–90%** | C | — | Not published | WITHHELD | Reconciliation of the two conflicting source figures, then approved methodology |
 | QC analysis or scoring of 100% of calls | C | — | Not published; QC is described as sampling a person verifies | WITHHELD | Approved product scope, processing limits and measurement definition |
 | Auto Dialer / Auto Call | B | Glossary | "Tài liệu nguồn có đề cập Auto Dialer, nhưng Gcalls chưa xác nhận đây là tính năng thuộc phạm vi chào bán công khai. Khả năng cung cấp và phạm vi triển khai cần được xác nhận trong quá trình tư vấn." | NEEDS_GCALLS_VERIFICATION | Product confirmation that the capability exists and its operational scope |
 | Voice Brandname | B | Glossary, FAQ | Carrier-provided and carrier-approved; Gcalls has published no carrier list or market scope; not applied by default to international numbers | NEEDS_GCALLS_VERIFICATION | Carrier list, approved markets, approval conditions and lead time |

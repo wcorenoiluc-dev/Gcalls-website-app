@@ -46,10 +46,25 @@ const teamFeatures = [
   "Tăng cường bảo mật hệ thống",
 ];
 
+/**
+ * Capability labels, NOT metrics — Checkpoint WEB-SITE-QA-001.
+ *
+ * These pills render twice: in the page copy column and as floating cards
+ * beside the mockup. They are therefore PAGE-LEVEL STATEMENTS, not sample data
+ * inside an illustrated UI, and they are read as claims.
+ *
+ * They previously said "50+ / Nhân sự được quản lý" and "100% / Dữ liệu tập
+ * trung". Neither is evidenced anywhere in this repository: "50+" reads as a
+ * customer-scale figure, and a bare "100%" is precisely the absolute the claim
+ * guards forbid ("100% cuộc gọi" in `src/data/resources/types.ts`).
+ *
+ * Both are now capability labels, which is what the surrounding section
+ * actually demonstrates. Do not put a number back without an approved source.
+ */
 const teamStats = [
-  { value: "50+", label: "Nhân sự được quản lý", icon: Users, color: "#673ab7" },
+  { value: "Đa phòng ban", label: "Quản lý theo nhóm và phòng ban", icon: Users, color: "#673ab7" },
   { value: "RBAC", label: "Role Based Permission", icon: ShieldCheck, color: "#0891b2" },
-  { value: "100%", label: "Dữ liệu tập trung", icon: Activity, color: "#16a34a" },
+  { value: "Tập trung", label: "Dữ liệu trên một nền tảng", icon: Activity, color: "#16a34a" },
 ];
 
 const workflowSteps = [

@@ -7,6 +7,7 @@ import {
   SectionHeader,
 } from '@/components/common/primitives'
 import { ResourceLinkList } from './sections'
+import { leadAwareHref } from '@/lib/leads/ctaLink'
 import type {
   BlogContent,
   CaseStudiesContent,
@@ -177,7 +178,16 @@ export function GuidePathSection({ content }: { content: GuidesContent }) {
               </p>
               <ResourceLinkList links={path.related} />
 
-              <Link to={path.nextAction.path} className={CARD_LINK}>
+              {/*
+                A guide's next action is sometimes a content page and sometimes
+                `/lien-he/` ("Trao đổi về thị trường cần triển khai"). The latter
+                is a conversion and used to reach the form with no attribution —
+                `leadAwareHref` tags only that case, with this page's own context.
+              */}
+              <Link
+                to={leadAwareHref(path.nextAction.path, content.lead)}
+                className={CARD_LINK}
+              >
                 {path.nextAction.label}
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>

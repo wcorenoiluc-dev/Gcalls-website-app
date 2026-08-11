@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ROUTES } from '@/config/navigation';
-import { ArrowUpRight, BarChart2, Check, ChevronRight, Pause, Phone, PhoneCall, PhoneIncoming, Play, Search, Star, TrendingUp, Users, Voicemail, Wifi } from "lucide-react";
+import { ArrowUpRight, BarChart2, Check, ChevronRight, Pause, Phone, PhoneCall, PhoneIncoming, Play, Search, TrendingUp, Users, Voicemail, Wifi } from "lucide-react";
 import { Link } from "react-router";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { stageClass, stageMainClass, stageFloatFullClass, hideBelowLgClass } from "@/components/common/ResponsiveProductVisual";
@@ -542,27 +542,32 @@ export function Hero() {
               ))}
             </div>
 
-            {/* Social proof */}
-            <div className="flex items-center gap-5 pt-2" style={{ borderTop: "1px solid rgba(103,58,183,0.10)" }}>
-              <div className="flex -space-x-2">
-                {["VP", "BM", "SV", "TH"].map((a, i) => (
-                  <div
-                    key={i}
-                    className="w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold border-2 border-white"
-                    style={{ background: `hsl(${260 + i * 20},50%,${55 + i * 6}%)`, color: "#fff" }}
-                  >
-                    {a}
-                  </div>
-                ))}
-              </div>
-              <div>
-                <div className="flex items-center gap-1 mb-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={11} fill="#f59e0b" color="#f59e0b" />
-                  ))}
-                  <span className="text-xs font-bold ml-1" style={{ color: "#1e2026" }}>4.9</span>
-                </div>
-                <div className="text-xs" style={{ color: "#5b5f6b" }}>Được tin dùng bởi các doanh nghiệp Việt Nam</div>
+            {/*
+              WHAT USED TO BE HERE, AND WHY IT IS GONE — Checkpoint WEB-SITE-QA-001.
+
+              A five-star row reading "4.9" beside four avatar initials
+              ("VP", "BM", "SV", "TH") under the caption "Được tin dùng bởi các
+              doanh nghiệp Việt Nam". Every part of it was fabricated: this
+              repository holds no rating, no review, no customer count and no
+              permission record for any customer name, and the four initials
+              matched the invented companies in the mock contact list further
+              down the page.
+
+              It was also the single most visible contradiction on the site.
+              `/cong-ty/khach-hang/` deliberately publishes no customer name for
+              exactly this reason, and `src/data/company/types.ts` makes the
+              permission gate a type error — while the homepage hero showed a
+              rating and a logo wall in miniature.
+
+              Do not restore any of it without an approved evidence record. A
+              real rating needs a source; real customer marks need
+              `ApprovedLogo` in `src/data/company/types.ts`, which requires a
+              legal name, an asset path and a permission reference.
+            */}
+            <div className="pt-2" style={{ borderTop: "1px solid rgba(103,58,183,0.10)" }}>
+              <div className="text-xs" style={{ color: "#5b5f6b" }}>
+                Phạm vi triển khai và cấu hình được xác nhận cùng đội ngũ Gcalls theo hệ
+                thống thực tế của doanh nghiệp.
               </div>
             </div>
           </div>

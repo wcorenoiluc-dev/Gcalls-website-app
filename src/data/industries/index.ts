@@ -73,11 +73,19 @@ export function buildIndustryJsonLd(content: IndustryContent, origin: string) {
         provider: { '@type': 'Organization', name: 'Gcalls' },
         areaServed: 'VN',
         url: `${origin}${content.route}`,
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
+        /*
+          `hasOfferCatalog` / `OfferCatalog` until Checkpoint WEB-SITE-QA-001 —
+          replaced for the reason recorded in `src/data/voicebotAi.ts`:
+          `OfferCatalog` describes a catalogue of things offered for sale, and a
+          capability list on an industry page is not that. Same content, no
+          commercial implication.
+        */
+        hasPart: {
+          '@type': 'ItemList',
           name: content.capability.h2,
-          itemListElement: content.capability.items.map((item) => ({
-            '@type': 'OfferCatalog',
+          itemListElement: content.capability.items.map((item, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
             name: item.title,
             description: item.detail,
           })),

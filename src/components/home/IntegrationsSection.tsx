@@ -6,48 +6,78 @@ import { stageClass, stageMainClass, stageFloatClass } from "@/components/common
 
 // ─── Section 8: Integrations ─────────────────────────────────────────────────
 
+/**
+ * Integration capability cards — rewritten in Checkpoint WEB-SITE-QA-001.
+ *
+ * ---------------------------------------------------------------------------
+ * WHY THESE ARE WORDED CONDITIONALLY
+ * ---------------------------------------------------------------------------
+ * This block is the homepage summary of work that five locked integration
+ * checkpoints (INT-01…05) did in detail, and it had drifted into claiming MORE
+ * than any of those pages is allowed to claim. Every correction below points at
+ * the gate that closed against the original wording:
+ *
+ *  · "xác thực OAuth 2.0, sandbox miễn phí cho dev" — no repository evidence of
+ *    either. Removed rather than softened: a named auth standard and a free
+ *    sandbox are checkable facts, not positioning.
+ *  · "Popup … ngay lập tức" — the §11 popup gate resolved CONTEXT ONLY, and the
+ *    Salesforce title had to be corrected at INT-03 for exactly this claim
+ *    (`src/config/sitemap.ts`, WEB-013). The word "popup" is deliberately gone.
+ *  · "Click To Call … từ CRM, Helpdesk, ERP" — the Freshdesk and Zendesk gates
+ *    closed against a Click-to-Call claim (INT-04 §11 A, INT-05 §11 A), so
+ *    Helpdesk cannot be included unconditionally. ERP is not an integration
+ *    category anywhere on this site.
+ *  · "Đồng bộ hai chiều" — no page claims two-way sync. "Freshsales" is not a
+ *    platform Gcalls has an integration page or any evidence for.
+ *  · "ghi âm tự động" — the recording-sync gates closed at INT-03, INT-04 §11 J
+ *    and INT-05 §11 J.
+ *
+ * The approved register is the one in `src/data/company/types.ts`: "có thể tích
+ * hợp với…", "phạm vi tích hợp phụ thuộc API, gói dịch vụ và yêu cầu triển
+ * khai", "được đánh giá trong quá trình khảo sát kỹ thuật". Keep to it.
+ */
 const integrationFeatures = [
   {
     icon: Code2,
     label: "Open API",
     color: "#673ab7",
     bg: "#f5f0fd",
-    desc: "REST API đầy đủ tài liệu, xác thực OAuth 2.0, sandbox miễn phí cho dev.",
+    desc: "API để kết nối Gcalls với hệ thống nội bộ. Phạm vi được xác nhận theo yêu cầu triển khai.",
   },
   {
     icon: Webhook,
     label: "Webhook",
     color: "#0891b2",
     bg: "#f0f9ff",
-    desc: "Nhận sự kiện realtime: cuộc gọi đến, kết thúc, ghi âm, ghi chú mới.",
+    desc: "Nhận sự kiện cuộc gọi để hệ thống của doanh nghiệp xử lý tiếp, theo cấu hình.",
   },
   {
     icon: Bell,
-    label: "Customer Popup",
+    label: "Customer Context",
     color: "#16a34a",
     bg: "#f0fdf4",
-    desc: "Hiển thị thông tin KH ngay khi nhận cuộc gọi, kéo dữ liệu từ CRM.",
+    desc: "Hiển thị thông tin khách hàng lấy từ hệ thống đã kết nối, theo phạm vi cấu hình.",
   },
   {
     icon: MousePointerClick,
     label: "Click To Call",
     color: "#d97706",
     bg: "#fffbeb",
-    desc: "Gọi trực tiếp từ CRM, Helpdesk, ERP chỉ bằng một click chuột.",
+    desc: "Gọi từ hệ thống đang dùng, ở những nền tảng có hỗ trợ trong phạm vi tích hợp.",
   },
   {
     icon: Link2,
     label: "CRM Integration",
     color: "#7c3aed",
     bg: "#f5f0ff",
-    desc: "Đồng bộ hai chiều với HubSpot, Salesforce, Zoho CRM và Freshsales.",
+    desc: "Kết nối cuộc gọi với HubSpot, Salesforce và Zoho CRM. Mỗi nền tảng có trang riêng.",
   },
   {
     icon: RefreshCw,
     label: "Data Sync",
     color: "#0284c7",
     bg: "#e0f2fe",
-    desc: "Đồng bộ liên hệ, lịch sử, ghi âm tự động — không cần copy thủ công.",
+    desc: "Đồng bộ liên hệ và lịch sử tương tác theo cấu hình, thay cho nhập liệu thủ công.",
   },
 ];
 
@@ -57,10 +87,17 @@ const ecosystemGroups = [
     color: "#673ab7",
     icon: Users,
     tools: [
+      /*
+        The five platforms listed across this grid are exactly the five with a
+        completed integration page (INT-01…05). "Freshsales" was removed in
+        Checkpoint WEB-SITE-QA-001: it has no page, no config and no evidence
+        anywhere in this repository, and a green status dot beside a platform
+        name reads as a confirmed, live integration. Do not add a platform here
+        before its integration page exists.
+      */
       { name: "HubSpot",    abbr: "HS",  color: "#ff7a59" },
       { name: "Salesforce", abbr: "SF",  color: "#00a1e0" },
       { name: "Zoho CRM",   abbr: "ZH",  color: "#e42527" },
-      { name: "Freshsales", abbr: "FS",  color: "#0fa958" },
     ],
   },
   {
@@ -337,7 +374,7 @@ export function WidgetMockup() {
             </button>
             <div className="flex items-center justify-center gap-1.5">
               <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
-              <span className="text-[9px]" style={{ color: "#5b5f6b" }}>Đang trực · Phản hồi trong 30 giây</span>
+              <span className="text-[9px]" style={{ color: "#5b5f6b" }}>Đang trực · Gọi lại khi có yêu cầu</span>
             </div>
           </div>
         </div>
@@ -454,21 +491,31 @@ export function IntegrationsSection() {
           {/* Left copy */}
           <div className="flex flex-col gap-6">
             <div className="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full text-xs font-bold" style={{ background: "rgba(103,58,183,0.10)", color: "#673ab7" }}>
-              <Bell size={11} color="#673ab7" /> Customer Popup
+              <Bell size={11} color="#673ab7" /> Customer Context
             </div>
             <h3 className="font-extrabold" style={{ fontSize: "clamp(20px, 2.4vw, 30px)", color: "#1e2026", lineHeight: 1.2 }}>
               Nhận diện khách hàng{" "}
-              <span style={{ color: "#673ab7" }}>ngay khi cuộc gọi đến</span>
+              <span style={{ color: "#673ab7" }}>khi có cuộc gọi đến</span>
             </h3>
+            {/*
+              Reworded in Checkpoint WEB-SITE-QA-001. The original said Gcalls
+              "tự động kéo thông tin từ CRM và hiển thị popup ngay lập tức". The
+              automatic-popup gate resolved CONTEXT ONLY across INT-02…05, and
+              the Salesforce page title had to be corrected at INT-03 for
+              publishing exactly this. The capability shown here is customer
+              context on an incoming call, within the configured integration
+              scope — not a guaranteed automatic popup.
+            */}
             <p style={{ color: "#5b5f6b", fontSize: "15px", lineHeight: 1.7 }}>
-              Gcalls tự động kéo thông tin từ CRM và hiển thị popup ngay lập tức khi có cuộc gọi đến — nhân viên biết ngay đang nói chuyện với ai.
+              Khi có cuộc gọi đến, nhân viên xem được thông tin khách hàng lấy từ hệ thống
+              đã kết nối — trong phạm vi tích hợp được cấu hình cho doanh nghiệp.
             </p>
             <div className="flex flex-col gap-2.5">
               {[
                 "Biết khách hàng là ai trước khi bắt máy",
-                "Xem lịch sử chăm sóc và ghi chú ngay lập tức",
+                "Xem lịch sử chăm sóc và ghi chú đã lưu",
                 "Không cần hỏi lại thông tin đã có",
-                "Tăng trải nghiệm và sự hài lòng của khách hàng",
+                "Giữ ngữ cảnh trao đổi giữa các lần liên hệ",
               ].map((b) => (
                 <div key={b} className="flex items-start gap-2.5">
                   <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(103,58,183,0.12)" }}>
@@ -501,7 +548,15 @@ export function IntegrationsSection() {
               <span style={{ color: "#673ab7" }}>thành cuộc gọi</span>
             </h3>
             <p style={{ color: "#5b5f6b", fontSize: "15px", lineHeight: 1.7 }}>
-              Nhúng nút gọi ngay vào website chỉ với vài dòng code. Khách hàng nhập số điện thoại và được kết nối với nhân viên trong vòng 30 giây.
+              {/*
+                "được kết nối với nhân viên trong vòng 30 giây" was a guaranteed
+                connection time — the same family of claim as the withheld
+                deployment-time figures ("thiết lập trong 5 phút", "triển khai
+                trong một ngày"). It depends on agent availability and carrier
+                routing, neither of which this page can promise.
+              */}
+              Nhúng nút gọi vào website chỉ với vài dòng code. Khách truy cập để lại số
+              điện thoại và đội ngũ gọi lại theo cấu hình phân phối cuộc gọi của doanh nghiệp.
             </p>
             <div className="flex flex-col gap-2.5">
               {[
@@ -524,7 +579,7 @@ export function IntegrationsSection() {
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl" style={{ background: "#f0fdf4" }}>
                 <Zap size={12} color="#16a34a" />
-                <span className="text-xs font-semibold" style={{ color: "#16a34a" }}>Kết nối trong 30s</span>
+                <span className="text-xs font-semibold" style={{ color: "#16a34a" }}>Gọi lại theo cấu hình</span>
               </div>
             </div>
           </div>
@@ -536,7 +591,8 @@ export function IntegrationsSection() {
             <h3 className="font-extrabold mb-2" style={{ fontSize: "clamp(18px, 2.2vw, 26px)", color: "#1e2026" }}>
               Hệ sinh thái <span style={{ color: "#673ab7" }}>tích hợp của Gcalls</span>
             </h3>
-            <p className="text-sm" style={{ color: "#5b5f6b" }}>Kết nối sẵn sàng với các nền tảng phổ biến nhất tại Việt Nam và toàn cầu</p>
+            {/* "phổ biến nhất" is an unsupported superlative — dropped. */}
+            <p className="text-sm" style={{ color: "#5b5f6b" }}>Các nền tảng Gcalls có thể kết nối, theo phạm vi tích hợp được xác nhận</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {ecosystemGroups.map((group) => {
@@ -591,13 +647,19 @@ export function IntegrationsSection() {
           <div className="relative max-w-xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold mb-6" style={{ background: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.9)" }}>
               <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              Tích hợp sẵn sàng · Không cần dev
+              {/*
+                "Không cần dev" was an absolute. `src/data/gcallsPlus.ts` already
+                records that "Không cần IT" is NOT approved as an absolute claim;
+                this is the same claim in the same place on the same site.
+              */}
+              Tích hợp theo phạm vi được xác nhận
             </div>
             <h3 className="font-extrabold text-white mb-4" style={{ fontSize: "clamp(22px, 3vw, 36px)", lineHeight: 1.15 }}>
               Kết nối Gcalls với hệ thống doanh nghiệp của bạn
             </h3>
             <p className="mb-8" style={{ color: "rgba(255,255,255,0.72)", fontSize: "16px", lineHeight: 1.7 }}>
-              Từ CRM, Helpdesk đến các hệ thống nội bộ — Gcalls kết nối nhanh chóng qua API mở, không yêu cầu kiến thức kỹ thuật chuyên sâu.
+              Từ CRM, Helpdesk đến các hệ thống nội bộ — Gcalls kết nối qua API mở. Phạm vi
+              và công việc cần thiết được đánh giá trong quá trình khảo sát kỹ thuật.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link to={leadCtaHref({ intent: 'consultation', source: 'consultation' })}

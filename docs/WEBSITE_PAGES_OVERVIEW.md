@@ -1,5 +1,37 @@
 # Tổng quan các trang website Gcalls — nội dung & ảnh chụp
 
+> ## ⚠️ ẢNH CHỤP CŨ — KHÔNG PHẢI TRẠNG THÁI HIỆN TẠI CỦA SITE
+>
+> **Tài liệu này được sinh ngày 2026-08-04, TRƯỚC Checkpoint WEB-SITE-QA-001.**
+> Nó ghi lại nguyên văn một số nội dung mà checkpoint đó đã **xóa hoặc sửa vì
+> không có bằng chứng**. Không dùng tài liệu này để mô tả site hiện tại, và
+> tuyệt đối không dùng nó làm nguồn để phục hồi nội dung cũ.
+>
+> Cụ thể, những nội dung sau xuất hiện trong tài liệu này nhưng **không còn trên
+> site**:
+>
+> | Xuất hiện trong ảnh chụp cũ | Lý do đã xóa/sửa |
+> |---|---|
+> | `VP BM SV TH` · `4.9` · "Được tin dùng bởi các doanh nghiệp Việt Nam" | Đánh giá và tên doanh nghiệp bịa đặt. Không có hồ sơ đánh giá, không có permission record cho bất kỳ tên khách hàng nào. |
+> | `50+ Nhân sự được quản lý` · `100% Dữ liệu tập trung` | Số liệu không có căn cứ, hiển thị ở cấp trang (không phải trong ảnh minh họa sản phẩm). |
+> | `Freshsales` trong danh mục tích hợp | Không có trang tích hợp, không có config, không có bằng chứng nào trong repository. |
+> | "Đồng bộ **hai chiều**" | Không trang tích hợp nào công bố đồng bộ hai chiều. |
+> | "hiển thị popup **ngay lập tức**" | Popup gate chỉ đạt CONTEXT ONLY (INT-02…05); title trang Salesforce đã phải sửa vì đúng claim này. |
+> | "Click To Call … CRM, Helpdesk, **ERP**" | Gate Click-to-Call của Freshdesk và Zendesk đều đóng. ERP không phải nhóm tích hợp nào trên site. |
+> | "ghi âm tự động" (Data Sync) | Gate đồng bộ ghi âm đóng ở INT-03, INT-04 §11 J, INT-05 §11 J. |
+> | "xác thực **OAuth 2.0**, **sandbox miễn phí**" | Không có bằng chứng trong repository. |
+> | "nền tảng **phổ biến nhất**" | So sánh nhất không có căn cứ. |
+> | "Tích hợp sẵn sàng · **Không cần dev**" · "không yêu cầu kiến thức kỹ thuật chuyên sâu" | Claim tuyệt đối; `src/data/gcallsPlus.ts` đã ghi rõ "Không cần IT" không được duyệt ở dạng tuyệt đối. |
+> | "kết nối với nhân viên **trong vòng 30 giây**" · "Kết nối trong 30s" | Cam kết thời gian kết nối, phụ thuộc nhân sự trực và định tuyến nhà mạng. |
+> | "**Không bỏ lỡ bất kỳ** cuộc gọi nào" · "không bỏ lỡ bất kỳ cơ hội nào" · "tăng tỷ lệ kết nối thành công" · "**hoàn toàn tự động**" | Cam kết kết quả tuyệt đối. |
+>
+> Xem `docs/CHECKPOINT_SITE_QA_001.md` §3 để biết lý do đầy đủ của từng mục.
+>
+> **Chưa sinh lại được.** `scripts/capture-pages.mjs` cần `playwright-core`, hiện
+> không có trong `node_modules`; WEB-SITE-QA-001 không được phép thêm dependency.
+> Việc chụp lại là một việc riêng, cần chạy dev server và cài lại công cụ chụp.
+> Tài liệu cũng chỉ bao gồm **16 trang trong tổng số 38 route đã đăng ký**.
+
 > Sinh tự động ngày **2026-08-04** từ dev server (`localhost:5173`), viewport 1440×900 @2x.
 > Mỗi trang gồm 1 ảnh full-page (thu gọn trong mục *Ảnh toàn trang*) và ảnh chụp từng section.
 

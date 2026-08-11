@@ -47,11 +47,20 @@
  * These pages inherit every guard already established in `src/data/industries/types.ts`
  * and the product data files, and add nothing to the evidence base. WITHHELD
  * throughout: every ROI, productivity, saving, coverage, stability and timeline
- * figure from the supplied planning sources ("2.5%", "30–50%", "40%", "50–90%",
+ * figure from the supplied planning sources ("2.5%", "30–50%", "40%",
  * "100% cuộc gọi", "1.200 giờ", "cài đặt trong 30 phút", "triển khai trong một
- * ngày"), plus Auto Dialer / Auto Call as an available Gcalls capability, plus
- * Voice Brandname as a universal or guaranteed one, plus any count of
- * countries, integrations, customers or years.
+ * ngày", "thiết lập trong 5 phút", "hoạt động 24/7" as a performance promise),
+ * plus Auto Dialer / Auto Call as an available Gcalls capability, plus Voice
+ * Brandname as a universal or guaranteed one, plus any count of countries,
+ * integrations, customers or years.
+ *
+ * The international cost saving is TWO withheld figures, not one. Corrected in
+ * Checkpoint WEB-SITE-QA-001: this list previously read "50–90%", which is not a
+ * range any source states. Direct inspection of the supplied ICP image gives
+ * 50%–80%; the DIB planning material gives 80%–90%. "50–90%" spliced the bottom
+ * of one onto the top of the other. Both are WITHHELD, the conflict is
+ * unresolved, and no numeric saving figure appears anywhere on the site — so the
+ * guard now names both rather than a number nobody claimed.
  *
  * The glossary is the one place several of those terms are allowed to appear at
  * all, and only because a glossary DEFINES an industry concept rather than

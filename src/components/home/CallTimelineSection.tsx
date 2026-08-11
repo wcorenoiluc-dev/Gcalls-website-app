@@ -508,7 +508,8 @@ export function CallTimelineSection() {
               <span style={{ color: "#673ab7" }}>dữ liệu giá trị</span>
             </h3>
             <p className="text-base leading-relaxed" style={{ color: "#5b5f6b", maxWidth: "580px" }}>
-              Lịch sử trao đổi, ghi âm, ghi chú và kết quả cuộc gọi được lưu lại giúp đội Sales và CSKH dễ dàng tiếp nối công việc mà không bỏ lỡ bất kỳ cơ hội nào.
+              {/* "không bỏ lỡ bất kỳ cơ hội nào" was an absolute outcome guarantee. */}
+              Lịch sử trao đổi, ghi âm, ghi chú và kết quả cuộc gọi được lưu lại giúp đội Sales và CSKH tiếp nối công việc với đầy đủ ngữ cảnh của lần liên hệ trước.
             </p>
           </div>
 

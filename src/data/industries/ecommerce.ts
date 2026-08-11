@@ -159,7 +159,7 @@ export const ECOMMERCE: IndustryContent = {
         /**
          * The domestic scope lives in THIS string, not only in the section
          * note below it. `capability.items[].detail` is what the JSON-LD
-         * `hasOfferCatalog` emits, so a scope stated only in the note would be
+         * `hasPart` ItemList emits, so a scope stated only in the note would be
          * absent from the structured data — and the card is also what a reader
          * sees first. WEB-IND-001A found that framing ambiguous and moved the
          * scope inline.

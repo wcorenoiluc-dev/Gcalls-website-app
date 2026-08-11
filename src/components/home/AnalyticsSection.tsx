@@ -379,11 +379,30 @@ export function AnalyticsSection() {
 
         {/* ── Block 2: 6 metric cards ── */}
         <div className="mb-16">
+          {/*
+            ILLUSTRATIVE FIGURES — labelled in Checkpoint WEB-SITE-QA-001.
+
+            Unlike the numbers inside `AnalyticsMockup`, this grid renders at
+            PAGE level under its own heading, with trend arrows and no
+            surrounding device frame. Read in place it looked like Gcalls
+            publishing its own aggregate results: 284 calls, 391 calls, a 4.7/5
+            performance score. None of it is evidenced.
+
+            The numbers stay, because the block's purpose is to show WHICH
+            metrics the dashboard reports — but the caption below now says so, in
+            the same register as the "(minh họa)" labels already used elsewhere
+            on this page. If a real figure ever replaces one of these, it needs a
+            source, and the caption has to change with it.
+          */}
           <div className="text-center mb-8">
             <h3 className="font-extrabold" style={{ fontSize: "clamp(18px, 2.2vw, 28px)", color: "#1e2026" }}>
               Các chỉ số quan trọng trong{" "}
               <span style={{ color: "#673ab7" }}>một màn hình</span>
             </h3>
+            <p className="mt-2 text-sm" style={{ color: "#5b5f6b" }}>
+              Các chỉ số Gcalls Analytics theo dõi. Số liệu bên dưới là dữ liệu minh họa,
+              không phải kết quả đo được của một doanh nghiệp cụ thể.
+            </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {metricCards.map((m) => {

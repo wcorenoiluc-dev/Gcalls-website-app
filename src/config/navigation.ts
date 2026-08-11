@@ -169,8 +169,18 @@ export const PRIMARY_CTA = {
 export const CONTACT = {
   email: 'sales@gcalls.co',
   phone: '028 7302 5469',
-  /** tel: needs the digits only. */
-  phoneHref: 'tel:02873025469',
+  /**
+   * E.164, with the +84 country code — corrected in Checkpoint WEB-SITE-QA-001.
+   *
+   * It was `tel:02873025469`. RFC 3966 treats a number without a country code as
+   * a LOCAL number, which is only interpretable alongside a `phone-context`
+   * parameter; without one, behaviour is up to the dialer. The practical failure
+   * is a visitor abroad — which this site actively courts, since
+   * `/tong-dai-quoc-te/` is about multi-market operations — tapping the number
+   * and reaching nothing. `+84` drops the trunk `0` and is unambiguous
+   * everywhere, while `phone` below keeps the domestic display format.
+   */
+  phoneHref: 'tel:+842873025469',
 } as const
 
 /* ------------------------------------------------------------------ *
