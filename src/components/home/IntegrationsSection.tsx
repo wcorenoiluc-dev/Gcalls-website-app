@@ -1,10 +1,31 @@
 import { useState, useEffect } from "react";
-import { Activity, Bell, Check, ChevronRight, Code2, FileText, HeadphonesIcon, Key, Link2, MessageCircle, MousePointerClick, Phone, PhoneIncoming, PhoneOff, PhoneOutgoing, RefreshCw, Users, Webhook, X, Zap } from "lucide-react";
+import { Activity, Bell, ChevronRight, Code2, FileText, Key, Link2, MousePointerClick, Phone, PhoneIncoming, PhoneOff, PhoneOutgoing, RefreshCw, Webhook, X } from "lucide-react";
 import { Link } from "react-router";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
+import { ecosystemGroups } from "./sectionData";
 
-// ─── Section 8: Integrations ─────────────────────────────────────────────────
+// ─── Section 11: Integration CTA (+ shared integration mockups) ──────────────
+
+/**
+ * WHAT THIS MODULE IS, AFTER THE HOMEPAGE RESTRUCTURE
+ * ---------------------------------------------------------------------------
+ * It used to render one very long "Integrations & Automation" section holding
+ * six unrelated blocks. The approved homepage structure splits that content
+ * across three of its thirteen sections:
+ *
+ *   §9  Customer Popup                     → `CustomerPopupSection.tsx`
+ *   §10 Call Button Widget & Ecosystem     → `CallWidgetSection.tsx`
+ *   §11 Integration CTA                    → `IntegrationCtaSection` below
+ *
+ * So this file keeps the API surface — the three mockups re-exported through
+ * `@/components/product-ui` and consumed by the product and integration pages —
+ * and renders §11 itself. The mockups stay here rather than moving into the new
+ * section files because moving them would change `@/components/product-ui` for
+ * pages outside this checkpoint. Data the split sections share lives in
+ * `sectionData.ts`.
+ * ---------------------------------------------------------------------------
+ */
 
 /**
  * Integration capability cards — rewritten in Checkpoint WEB-SITE-QA-001.
@@ -78,56 +99,6 @@ const integrationFeatures = [
     color: "#0284c7",
     bg: "#e0f2fe",
     desc: "Đồng bộ liên hệ và lịch sử tương tác theo cấu hình, thay cho nhập liệu thủ công.",
-  },
-];
-
-const ecosystemGroups = [
-  {
-    category: "CRM",
-    color: "#673ab7",
-    icon: Users,
-    tools: [
-      /*
-        The five platforms listed across this grid are exactly the five with a
-        completed integration page (INT-01…05). "Freshsales" was removed in
-        Checkpoint WEB-SITE-QA-001: it has no page, no config and no evidence
-        anywhere in this repository, and a green status dot beside a platform
-        name reads as a confirmed, live integration. Do not add a platform here
-        before its integration page exists.
-      */
-      { name: "HubSpot",    abbr: "HS",  color: "#ff7a59" },
-      { name: "Salesforce", abbr: "SF",  color: "#00a1e0" },
-      { name: "Zoho CRM",   abbr: "ZH",  color: "#e42527" },
-    ],
-  },
-  {
-    category: "Helpdesk",
-    color: "#0891b2",
-    icon: HeadphonesIcon,
-    tools: [
-      { name: "Freshdesk", abbr: "FD", color: "#0fa958" },
-      { name: "Zendesk",   abbr: "ZD", color: "#03363d" },
-    ],
-  },
-  {
-    category: "Communication",
-    color: "#16a34a",
-    icon: MessageCircle,
-    tools: [
-      { name: "Facebook", abbr: "FB", color: "#1877f2" },
-      { name: "Zalo OA",  abbr: "ZA", color: "#0068ff" },
-      { name: "Email",    abbr: "EM", color: "#ea4335" },
-    ],
-  },
-  {
-    category: "Developer",
-    color: "#d97706",
-    icon: Code2,
-    tools: [
-      { name: "Open API",    abbr: "API", color: "#673ab7" },
-      { name: "Webhook",     abbr: "WH",  color: "#0891b2" },
-      { name: "Custom",      abbr: "DEV", color: "#6b7280" },
-    ],
   },
 ];
 
@@ -265,11 +236,11 @@ export function CustomerPopupMockup() {
         <div className="ml-auto flex gap-1.5">
           {ringing ? (
             <>
-              <button className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: "#22c55e" }} onClick={() => setRinging(false)}><Phone size={12} color="#fff" /></button>
-              <button className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: "rgba(255,255,255,0.2)" }}><PhoneOff size={12} color="#fff" /></button>
+              <button type="button" aria-label="Bắt máy" className="w-7 h-7 rounded-full flex items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" style={{ background: "#22c55e" }} onClick={() => setRinging(false)}><Phone size={12} color="#fff" aria-hidden="true" /></button>
+              <button type="button" aria-label="Từ chối cuộc gọi" className="w-7 h-7 rounded-full flex items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" style={{ background: "rgba(255,255,255,0.2)" }}><PhoneOff size={12} color="#fff" aria-hidden="true" /></button>
             </>
           ) : (
-            <button className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: "rgba(255,255,255,0.2)" }}><PhoneOff size={12} color="#fff" /></button>
+            <button type="button" aria-label="Kết thúc cuộc gọi" className="w-7 h-7 rounded-full flex items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" style={{ background: "rgba(255,255,255,0.2)" }}><PhoneOff size={12} color="#fff" aria-hidden="true" /></button>
           )}
         </div>
       </div>
@@ -382,7 +353,10 @@ export function WidgetMockup() {
 
       {/* Floating button */}
       <button
-        className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-200"
+        type="button"
+        aria-label={widgetOpen ? "Đóng nút gọi minh họa" : "Mở nút gọi minh họa"}
+        aria-expanded={widgetOpen}
+        className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
         style={{
           background: widgetOpen ? "#5929a8" : "#673ab7",
           boxShadow: "0 8px 28px rgba(103,58,183,0.40)",
@@ -396,9 +370,13 @@ export function WidgetMockup() {
   );
 }
 
-export function IntegrationsSection() {
+export function IntegrationCtaSection() {
   return (
-    <section className="py-28 overflow-hidden" style={{ background: "#fff", fontFamily: "'Open Sans', sans-serif" }}>
+    <section
+      aria-labelledby="home-integration-cta-heading"
+      className="py-28 overflow-hidden"
+      style={{ background: "#fff", fontFamily: "'Open Sans', sans-serif" }}
+    >
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
 
         {/* ── Block 1: Hero 2-col ── */}
@@ -407,16 +385,21 @@ export function IntegrationsSection() {
           {/* Left copy */}
           <div className="flex flex-col gap-7 order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase" style={{ background: "rgba(103,58,183,0.08)", color: "#673ab7", letterSpacing: "0.08em" }}>
-              <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#673ab7" }} />
-              Integrations & Automation
+              <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#673ab7" }} aria-hidden="true" />
+              Integration CTA
             </div>
 
             <div>
-              <h2 className="font-extrabold tracking-tight mb-5" style={{ fontSize: "clamp(26px, 3.2vw, 42px)", color: "#1e2026", lineHeight: 1.14 }}>
-                Kết nối dữ liệu khách hàng và cuộc gọi{" "}
+              <h2
+                id="home-integration-cta-heading"
+                className="font-extrabold tracking-tight mb-5"
+                style={{ fontSize: "clamp(26px, 3.2vw, 42px)", color: "#1e2026", lineHeight: 1.14 }}
+              >
+                Kết nối Gcalls với{" "}
                 <span style={{ background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  trên một nền tảng duy nhất
-                </span>
+                  hệ thống CRM
+                </span>{" "}
+                của doanh nghiệp bạn
               </h2>
               <p style={{ color: "#5b5f6b", fontSize: "16px", lineHeight: 1.7, maxWidth: "480px" }}>
                 Gcalls giúp doanh nghiệp đồng bộ dữ liệu khách hàng, cuộc gọi và hoạt động chăm sóc khách hàng với CRM, Helpdesk và các hệ thống nội bộ thông qua API mở và Webhook.
@@ -486,140 +469,6 @@ export function IntegrationsSection() {
           </div>
         </div>
 
-        {/* ── Block 3: Customer Popup ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center mb-16 rounded-3xl px-8 py-14" style={{ background: "#f6f3fc", border: "1px solid rgba(103,58,183,0.08)" }}>
-          {/* Left copy */}
-          <div className="flex flex-col gap-6">
-            <div className="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full text-xs font-bold" style={{ background: "rgba(103,58,183,0.10)", color: "#673ab7" }}>
-              <Bell size={11} color="#673ab7" /> Customer Context
-            </div>
-            <h3 className="font-extrabold" style={{ fontSize: "clamp(20px, 2.4vw, 30px)", color: "#1e2026", lineHeight: 1.2 }}>
-              Nhận diện khách hàng{" "}
-              <span style={{ color: "#673ab7" }}>khi có cuộc gọi đến</span>
-            </h3>
-            {/*
-              Reworded in Checkpoint WEB-SITE-QA-001. The original said Gcalls
-              "tự động kéo thông tin từ CRM và hiển thị popup ngay lập tức". The
-              automatic-popup gate resolved CONTEXT ONLY across INT-02…05, and
-              the Salesforce page title had to be corrected at INT-03 for
-              publishing exactly this. The capability shown here is customer
-              context on an incoming call, within the configured integration
-              scope — not a guaranteed automatic popup.
-            */}
-            <p style={{ color: "#5b5f6b", fontSize: "15px", lineHeight: 1.7 }}>
-              Khi có cuộc gọi đến, nhân viên xem được thông tin khách hàng lấy từ hệ thống
-              đã kết nối — trong phạm vi tích hợp được cấu hình cho doanh nghiệp.
-            </p>
-            <div className="flex flex-col gap-2.5">
-              {[
-                "Biết khách hàng là ai trước khi bắt máy",
-                "Xem lịch sử chăm sóc và ghi chú đã lưu",
-                "Không cần hỏi lại thông tin đã có",
-                "Giữ ngữ cảnh trao đổi giữa các lần liên hệ",
-              ].map((b) => (
-                <div key={b} className="flex items-start gap-2.5">
-                  <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(103,58,183,0.12)" }}>
-                    <Check size={11} color="#673ab7" strokeWidth={3} />
-                  </div>
-                  <span className="text-sm" style={{ color: "#5b5f6b" }}>{b}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Right: popup mockup */}
-          <div className="flex items-center justify-center">
-            <CustomerPopupMockup />
-          </div>
-        </div>
-
-        {/* ── Block 4: Widget ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center mb-16">
-          {/* Left: widget mockup */}
-          <div className="flex items-center justify-center order-2 lg:order-1">
-            <WidgetMockup />
-          </div>
-          {/* Right copy */}
-          <div className="flex flex-col gap-6 order-1 lg:order-2">
-            <div className="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full text-xs font-bold" style={{ background: "rgba(103,58,183,0.10)", color: "#673ab7" }}>
-              <MousePointerClick size={11} color="#673ab7" /> Call Button Widget
-            </div>
-            <h3 className="font-extrabold" style={{ fontSize: "clamp(20px, 2.4vw, 30px)", color: "#1e2026", lineHeight: 1.2 }}>
-              Biến khách truy cập website{" "}
-              <span style={{ color: "#673ab7" }}>thành cuộc gọi</span>
-            </h3>
-            <p style={{ color: "#5b5f6b", fontSize: "15px", lineHeight: 1.7 }}>
-              {/*
-                "được kết nối với nhân viên trong vòng 30 giây" was a guaranteed
-                connection time — the same family of claim as the withheld
-                deployment-time figures ("thiết lập trong 5 phút", "triển khai
-                trong một ngày"). It depends on agent availability and carrier
-                routing, neither of which this page can promise.
-              */}
-              Nhúng nút gọi vào website chỉ với vài dòng code. Khách truy cập để lại số
-              điện thoại và đội ngũ gọi lại theo cấu hình phân phối cuộc gọi của doanh nghiệp.
-            </p>
-            <div className="flex flex-col gap-2.5">
-              {[
-                { label: "Tăng tỷ lệ chuyển đổi từ visitor thành lead", color: "#673ab7" },
-                { label: "Thu thập số điện thoại và gọi lại tức thì", color: "#0891b2" },
-                { label: "Theo dõi nguồn cuộc gọi từ từng trang web", color: "#16a34a" },
-              ].map((b) => (
-                <div key={b.label} className="flex items-start gap-2.5">
-                  <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: b.color + "15" }}>
-                    <Check size={11} color={b.color} strokeWidth={3} />
-                  </div>
-                  <span className="text-sm" style={{ color: "#5b5f6b" }}>{b.label}</span>
-                </div>
-              ))}
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl" style={{ background: "#f0ecf9" }}>
-                <Code2 size={12} color="#673ab7" />
-                <span className="text-xs font-semibold" style={{ color: "#673ab7" }}>{"<script>"} 1 dòng</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl" style={{ background: "#f0fdf4" }}>
-                <Zap size={12} color="#16a34a" />
-                <span className="text-xs font-semibold" style={{ color: "#16a34a" }}>Gọi lại theo cấu hình</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* ── Block 5: Ecosystem grid ── */}
-        <div className="mb-14 rounded-3xl p-8" style={{ background: "#f6f3fc", border: "1px solid rgba(103,58,183,0.09)" }}>
-          <div className="text-center mb-8">
-            <h3 className="font-extrabold mb-2" style={{ fontSize: "clamp(18px, 2.2vw, 26px)", color: "#1e2026" }}>
-              Hệ sinh thái <span style={{ color: "#673ab7" }}>tích hợp của Gcalls</span>
-            </h3>
-            {/* "phổ biến nhất" is an unsupported superlative — dropped. */}
-            <p className="text-sm" style={{ color: "#5b5f6b" }}>Các nền tảng Gcalls có thể kết nối, theo phạm vi tích hợp được xác nhận</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {ecosystemGroups.map((group) => {
-              const GroupIcon = group.icon;
-              return (
-                <div key={group.category} className="rounded-2xl p-5" style={{ background: "#fff", border: `1px solid ${group.color}18`, boxShadow: "0 2px 10px rgba(103,58,183,0.05)" }}>
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="w-7 h-7 rounded-xl flex items-center justify-center" style={{ background: group.color + "15" }}>
-                      <GroupIcon size={14} color={group.color} strokeWidth={2} />
-                    </div>
-                    <span className="text-xs font-bold" style={{ color: "#1e2026" }}>{group.category}</span>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    {group.tools.map((t) => (
-                      <div key={t.name} className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl" style={{ background: "#f9f7fe" }}>
-                        <div className="w-6 h-6 rounded-lg flex items-center justify-center text-[9px] font-bold flex-shrink-0" style={{ background: t.color + "18", color: t.color }}>{t.abbr}</div>
-                        <span className="text-xs font-medium" style={{ color: "#5b5f6b" }}>{t.name}</span>
-                        <div className="w-1.5 h-1.5 rounded-full ml-auto flex-shrink-0" style={{ background: "#22c55e" }} />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
         {/* ── Block 6: CTA ── */}
         <div
           className="relative rounded-3xl overflow-hidden px-10 py-16 text-center"
@@ -655,28 +504,28 @@ export function IntegrationsSection() {
               Tích hợp theo phạm vi được xác nhận
             </div>
             <h3 className="font-extrabold text-white mb-4" style={{ fontSize: "clamp(22px, 3vw, 36px)", lineHeight: 1.15 }}>
-              Kết nối Gcalls với hệ thống doanh nghiệp của bạn
+              Trao đổi phạm vi tích hợp cùng đội ngũ Gcalls
             </h3>
             <p className="mb-8" style={{ color: "rgba(255,255,255,0.72)", fontSize: "16px", lineHeight: 1.7 }}>
               Từ CRM, Helpdesk đến các hệ thống nội bộ — Gcalls kết nối qua API mở. Phạm vi
               và công việc cần thiết được đánh giá trong quá trình khảo sát kỹ thuật.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link to={leadCtaHref({ intent: 'consultation', source: 'consultation' })}
-                className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150"
+              <Link to={leadCtaHref({ intent: 'demo', source: 'consultation' })}
+                className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 style={{ background: "#fff", color: "#673ab7", boxShadow: "0 4px 24px rgba(0,0,0,0.18)" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.22)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "none"; (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.18)"; }}
               >
-                <Phone size={15} /> Đăng ký tư vấn
+                <Phone size={15} aria-hidden="true" /> Đăng ký demo
               </Link>
               <Link to={leadCtaHref({ intent: 'integration', source: 'consultation' })}
-                className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150"
+                className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1.5px solid rgba(255,255,255,0.30)" }}
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.22)"}
                 onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.15)"}
               >
-                <Code2 size={15} /> Tư vấn tích hợp
+                <Code2 size={15} aria-hidden="true" /> Tư vấn tích hợp
               </Link>
             </div>
             <p className="mt-5 text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>Đăng ký để nhận tư vấn cấu hình phù hợp với nhu cầu</p>

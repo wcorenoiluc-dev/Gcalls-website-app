@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --build --force",
     "lint": "eslint .",
-    "check": "npm run typecheck && npm run lint && npm run build"
+    "test": "node scripts/verify-loss-estimator.mjs",
+    "check": "npm run typecheck && npm run lint && npm run test && npm run build"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "1.2.3",

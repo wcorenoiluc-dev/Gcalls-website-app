@@ -1,50 +1,63 @@
 import { useState } from "react";
-import { ROUTES } from '@/config/navigation';
-import { Link } from "react-router";
-import { ArrowRight, Check, ClipboardList, MapPin, Phone, PieChart, Plug, UserX } from "lucide-react";
+import { BarChart3, Globe2, Keyboard, PhoneOff, ShieldAlert, UserX } from "lucide-react";
+import { LossEstimator } from "./LossEstimator";
 
-// ─── Section 2: Pain Points ──────────────────────────────────────────────────
+// ─── Section 2: Pain Points + operational-loss estimator ─────────────────────
 
+/**
+ * The six approved pain points.
+ *
+ * ---------------------------------------------------------------------------
+ * WORDING IS FIXED — DO NOT "IMPROVE" IT
+ * ---------------------------------------------------------------------------
+ * These six lines come verbatim from the approved homepage content. The source
+ * spreadsheet's own commentary around them carries figures that are NOT
+ * publishable (ROI percentages from the ICP deck, a "40% chi phí vận hành"
+ * saving, "hơn 30 phần mềm tích hợp"), so the copy here deliberately describes
+ * the SITUATION and never quantifies its cost. The only numbers on this section
+ * are the ones a visitor types into the estimator below.
+ * ---------------------------------------------------------------------------
+ */
 const painPoints = [
   {
-    icon: UserX,
-    title: "Dữ liệu khách hàng và lịch sử cuộc gọi bị phân tán",
-    desc: "Thông tin lưu ở nhiều nơi khác nhau, đội ngũ không có cái nhìn đầy đủ về khách hàng khi cần.",
+    icon: PhoneOff,
+    title: "Gián đoạn hoạt động telesales khi số gọi ra bị khóa hoặc bị người nhận báo cáo spam",
+    desc: "Chiến dịch gọi ra đang chạy có thể dừng giữa chừng, đội ngũ phải chờ xử lý đầu số trước khi tiếp tục liên hệ khách hàng.",
     accent: "#673ab7",
     bg: "#f5f0fd",
   },
   {
-    icon: ClipboardList,
-    title: "Nhân viên phải chuyển đổi giữa nhiều công cụ khi gọi và ghi chú",
-    desc: "Mỗi cuộc gọi yêu cầu thao tác trên nhiều ứng dụng khác nhau, làm chậm quy trình và dễ bỏ sót thông tin.",
+    icon: UserX,
+    title: "Khách hàng e ngại và từ chối cuộc gọi đến từ số lạ",
+    desc: "Khi cuộc gọi không mang dấu hiệu nhận diện, người nhận khó biết ai đang gọi và thường bỏ qua trước khi nghe nội dung tư vấn.",
     accent: "#7c3aed",
     bg: "#f3f0fe",
   },
   {
-    icon: Phone,
-    title: "Khó theo dõi trạng thái và lịch sử tương tác của từng khách hàng",
-    desc: "Không có lịch sử tương tác tập trung khiến đội ngũ mất ngữ cảnh và phải hỏi lại thông tin đã có.",
+    icon: ShieldAlert,
+    title: "Quản lý khó kiểm soát chất lượng tư vấn thực tế",
+    desc: "Nếu không có ghi âm, ghi chú và tiêu chí đánh giá tập trung, quản lý chỉ nắm được một phần nội dung trao đổi giữa nhân viên và khách hàng.",
     accent: "#5b21b6",
     bg: "#f0ebfd",
   },
   {
-    icon: PieChart,
-    title: "Quản lý thiếu dữ liệu tập trung để theo dõi hoạt động và hiệu suất",
-    desc: "Không có bảng điều khiển tổng hợp khiến quản lý khó đánh giá hiệu suất và phân bổ nguồn lực hợp lý.",
+    icon: BarChart3,
+    title: "Thiếu dữ liệu thời gian thực để đánh giá hiệu suất đội ngũ",
+    desc: "Báo cáo tổng hợp thủ công thường đến sau khi vấn đề đã xảy ra, khiến quản lý khó điều phối nguồn lực trong ngày.",
     accent: "#673ab7",
     bg: "#f5f0fd",
   },
   {
-    icon: MapPin,
-    title: "Đội ngũ làm việc từ nhiều nơi thiếu công cụ thống nhất",
-    desc: "Sales remote, CSKH tại văn phòng, telesales — mỗi nơi dùng một công cụ, khó phối hợp và giám sát.",
+    icon: Globe2,
+    title: "Chi phí cao và tỷ lệ bắt máy thấp khi liên hệ thị trường quốc tế",
+    desc: "Gọi ra thị trường nước ngoài bằng đầu số không phù hợp làm tăng chi phí liên lạc và giảm khả năng khách hàng nhận máy.",
     accent: "#7c3aed",
     bg: "#f3f0fe",
   },
   {
-    icon: Plug,
-    title: "Tổng đài và hệ thống doanh nghiệp hoạt động rời rạc",
-    desc: "Khi tổng đài và CRM không kết nối, nhân viên phải nhập liệu thủ công, tốn thời gian và dễ sai sót.",
+    icon: Keyboard,
+    title: "Nhân viên mất thời gian nhập liệu và đối chiếu thông tin thủ công",
+    desc: "Mỗi cuộc gọi kéo theo thao tác sao chép, nhập lại và kiểm tra chéo giữa các hệ thống, làm chậm quy trình và dễ phát sinh sai sót.",
     accent: "#5b21b6",
     bg: "#f0ebfd",
   },
@@ -76,7 +89,7 @@ function PainCard({ item, index }: { item: typeof painPoints[0]; index: number }
           background: hovered ? item.accent : item.bg,
         }}
       >
-        <Icon size={22} color={hovered ? "#fff" : item.accent} strokeWidth={1.8} />
+        <Icon size={22} color={hovered ? "#fff" : item.accent} strokeWidth={1.8} aria-hidden="true" />
       </div>
 
       {/* Number badge */}
@@ -87,6 +100,7 @@ function PainCard({ item, index }: { item: typeof painPoints[0]; index: number }
         <span
           className="text-xs font-bold flex-shrink-0 mt-0.5"
           style={{ color: "rgba(103,58,183,0.25)", fontFamily: "'DM Mono', monospace" }}
+          aria-hidden="true"
         >
           {String(index + 1).padStart(2, "0")}
         </span>
@@ -105,6 +119,7 @@ function PainCard({ item, index }: { item: typeof painPoints[0]; index: number }
           transform: hovered ? "scaleX(1)" : "scaleX(0)",
           transformOrigin: "left",
         }}
+        aria-hidden="true"
       />
     </div>
   );
@@ -113,6 +128,7 @@ function PainCard({ item, index }: { item: typeof painPoints[0]; index: number }
 export function PainPointsSection() {
   return (
     <section
+      aria-labelledby="home-pain-points-heading"
       className="py-24"
       style={{
         background: "#fff",
@@ -122,19 +138,20 @@ export function PainPointsSection() {
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
 
         {/* Header */}
-        <div className="max-w-2xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-16">
           <div
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6"
             style={{ background: "rgba(103,58,183,0.08)", color: "#673ab7", letterSpacing: "0.08em" }}
           >
-            <span>BÀI TOÁN</span>
+            <span>NỖI ĐAU DOANH NGHIỆP</span>
           </div>
 
           <h2
+            id="home-pain-points-heading"
             className="font-extrabold tracking-tight mb-5"
             style={{ fontSize: "clamp(28px, 3.5vw, 44px)", color: "#1e2026", lineHeight: 1.15 }}
           >
-            Những điểm nghẽn{" "}
+            “Khoảng Trống” Vận Hành Khiến Doanh Nghiệp{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)",
@@ -143,125 +160,30 @@ export function PainPointsSection() {
                 backgroundClip: "text",
               }}
             >
-              làm giảm hiệu suất
-            </span>{" "}
-            nghe gọi của đội Sales và CSKH
+              Rò Rỉ Khách Hàng Và Thất Thoát Doanh Thu
+            </span>
           </h2>
 
           <p className="text-base leading-relaxed" style={{ color: "#5b5f6b", fontSize: "17px" }}>
-            Khi dữ liệu khách hàng, lịch sử cuộc gọi và công cụ làm việc nằm ở nhiều nơi, đội ngũ dễ mất ngữ cảnh và tốn thời gian cho thao tác thủ công.
+            Đội Sales và CSKH có thể mất nhiều thời gian và dữ liệu khi hệ thống nghe gọi,
+            quản lý khách hàng và báo cáo vận hành hoạt động rời rạc.
           </p>
         </div>
 
         {/* Grid 3×2 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
           {painPoints.map((item, i) => (
-            <PainCard key={i} item={item} index={i} />
+            <PainCard key={item.title} item={item} index={i} />
           ))}
         </div>
 
-        {/* CTA Banner */}
-        <div
-          className="relative rounded-3xl overflow-hidden px-10 py-12"
-          style={{
-            background: "linear-gradient(135deg, #673ab7 0%, #4c1d95 100%)",
-          }}
-        >
-          {/* Subtle pattern */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <svg className="absolute inset-0 w-full h-full opacity-[0.06]" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <pattern id="dots2" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1.5" fill="#fff" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#dots2)" />
-            </svg>
-            <div
-              className="absolute rounded-full"
-              style={{
-                width: "420px",
-                height: "420px",
-                top: "-160px",
-                right: "-80px",
-                background: "radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%)",
-              }}
-            />
-            <div
-              className="absolute rounded-full"
-              style={{
-                width: "300px",
-                height: "300px",
-                bottom: "-120px",
-                left: "-60px",
-                background: "radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%)",
-              }}
-            />
-          </div>
-
-          <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="lg:max-w-xl">
-              {/* Eyebrow */}
-              <div
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold mb-5"
-                style={{ background: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.9)" }}
-              >
-                <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                Giải pháp Gcalls
-              </div>
-
-              <h3
-                className="font-extrabold mb-4 text-white"
-                style={{ fontSize: "clamp(22px, 2.8vw, 34px)", lineHeight: 1.2 }}
-              >
-                Một nền tảng duy nhất để quản lý toàn bộ hoạt động cuộc gọi
-              </h3>
-
-              <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
-                Từ gọi điện, chăm sóc khách hàng, quản lý danh bạ, ghi âm, báo cáo cho đến phân quyền đội ngũ.
-              </p>
-
-              {/* Mini feature list */}
-              <div className="flex flex-wrap gap-3 mt-6">
-                {["Webphone trên trình duyệt", "Danh bạ & lịch sử tương tác", "CRM tích hợp", "Báo cáo theo dữ liệu"].map((f) => (
-                  <div
-                    key={f}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium"
-                    style={{ background: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.9)" }}
-                  >
-                    <Check size={11} color="rgba(255,255,255,0.8)" strokeWidth={2.5} />
-                    {f}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="flex flex-col items-center lg:items-end gap-4 flex-shrink-0">
-              <Link
-                to={ROUTES.gcallsPlus}
-                className="group flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-[15px] transition-all duration-150 whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                style={{
-                  background: "#fff",
-                  color: "#673ab7",
-                  boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.2)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.15)";
-                }}
-              >
-                Khám phá Gcalls Webphone
-                <ArrowRight size={16} className="transition-transform duration-150 group-hover:translate-x-1" />
-              </Link>
-              <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>Không cần cài đặt phần mềm · Chạy trực tiếp trên trình duyệt</p>
-            </div>
-          </div>
-        </div>
+        {/*
+          The estimator sits inside this section by design: it quantifies the
+          six problems above using the visitor's own numbers, and its disclaimer
+          is only honest while it stays next to the problem statement rather
+          than being promoted into a standalone "savings" block.
+        */}
+        <LossEstimator />
 
       </div>
     </section>

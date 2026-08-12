@@ -170,8 +170,8 @@ function CloudMockup() {
                   <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: st.dot }} />
                   <span className="text-[10px]" style={{ color: "#5b5f6b" }}>{st.label}</span>
                 </div>
-                <button className="w-6 h-6 rounded-lg flex items-center justify-center self-center" style={{ background: "#f6f3fc" }}>
-                  <MoreHorizontal size={10} color="#673ab7" />
+                <button type="button" aria-label="Tùy chọn cho extension này" className="w-6 h-6 rounded-lg flex items-center justify-center self-center" style={{ background: "#f6f3fc" }}>
+                  <MoreHorizontal size={10} color="#673ab7" aria-hidden="true" />
                 </button>
               </div>
             );

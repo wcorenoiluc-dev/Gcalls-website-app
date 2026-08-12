@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
-import { ROUTES } from '@/config/navigation';
-import { Activity, BarChart2, Briefcase, Check, Clock, Cloud, Globe, HeadphonesIcon, Layers, LayoutGrid, MapPin, Mic, MicOff, Phone, PhoneCall, PhoneForwarded, PhoneIncoming, PhoneOff, RefreshCw, ShieldCheck, Volume2, Wifi, X, Zap } from "lucide-react";
-import { Link } from "react-router";
-import { leadCtaHref } from "@/lib/leads/ctaLink";
+import { Activity, BarChart2, Check, Clock, Cloud, Globe, MapPin, Mic, MicOff, Phone, PhoneCall, PhoneForwarded, PhoneIncoming, PhoneOff, RefreshCw, ShieldCheck, Volume2, Wifi, X, Zap } from "lucide-react";
 
 // ─── Section 9: Work From Anywhere ───────────────────────────────────────────
 
@@ -29,24 +26,6 @@ const remoteFeatures2 = [
   { icon: Mic,     label: "Softphone",    desc: "Chất lượng âm thanh HD, noise cancellation, dễ cấu hình",            color: "#0891b2", bg: "#f0f9ff" },
   { icon: Cloud,   label: "Cloud System", desc: "Dữ liệu lưu trên Cloud, truy cập bất cứ đâu, không phụ thuộc server nội bộ", color: "#16a34a", bg: "#f0fdf4" },
   { icon: RefreshCw, label: "Auto Sync", desc: "Lịch sử, ghi chú, trạng thái đồng bộ tức thì giữa các thiết bị",     color: "#d97706", bg: "#fffbeb" },
-];
-
-const remoteUseCases = [
-  { role: "Sales Team",      icon: Briefcase,       color: "#673ab7", bg: "#f5f0fd",
-    points: ["Gọi cho KH từ bất kỳ đâu", "Xem hồ sơ KH ngay trên trình duyệt", "Ghi chú kết quả sau mỗi cuộc gọi"] },
-  { role: "Remote Team",     icon: Globe,           color: "#0891b2", bg: "#f0f9ff",
-    points: ["Làm việc từ xa như tại văn phòng", "Quản lý theo dõi realtime", "Không cần VPN hay thiết bị đặc biệt"] },
-  { role: "Multi Branch",    icon: Layers,          color: "#16a34a", bg: "#f0fdf4",
-    points: ["Kết nối nhiều chi nhánh trên 1 hệ thống", "Đổ chuông liên chi nhánh", "Báo cáo tổng hợp toàn bộ"] },
-  { role: "Contact Center",  icon: HeadphonesIcon,  color: "#d97706", bg: "#fffbeb",
-    points: ["Điều phối đội ngũ theo ca", "Giám sát trạng thái realtime", "Ghi âm tự động cuộc gọi"] },
-];
-
-const wfaStats = [
-  { value: "Anywhere", label: "Work From Anywhere", icon: Globe,       color: "#673ab7" },
-  { value: "Cloud",    label: "Cloud SaaS",          icon: Cloud,       color: "#0891b2" },
-  { value: "Live",     label: "Realtime Sync",       icon: Activity,    color: "#16a34a" },
-  { value: "Multi",    label: "Any Device",          icon: LayoutGrid,  color: "#d97706" },
 ];
 
 export function DialpadMockup() {
@@ -108,11 +87,13 @@ export function DialpadMockup() {
             <Phone size={15} /> Gọi
           </button>
           <button
-            className="w-11 h-11 rounded-2xl flex items-center justify-center"
+            type="button"
+            aria-label="Xóa chữ số cuối"
+            className="w-11 h-11 rounded-2xl flex items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
             style={{ background: "#fef2f2" }}
             onClick={() => setDialInput(p => p.slice(0, -1))}
           >
-            <PhoneOff size={14} color="#ef4444" />
+            <PhoneOff size={14} color="#ef4444" aria-hidden="true" />
           </button>
         </div>
       </div>
@@ -377,7 +358,11 @@ export function UserStatusDashboard() {
 
 export function WorkFromAnywhereSection() {
   return (
-    <section className="py-28 overflow-hidden" style={{ background: "#fff", fontFamily: "'Open Sans', sans-serif" }}>
+    <section
+      aria-labelledby="home-wfa-heading"
+      className="py-28 overflow-hidden"
+      style={{ background: "#fff", fontFamily: "'Open Sans', sans-serif" }}
+    >
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
 
         {/* ── Block 1: Hero 2-col ── */}
@@ -389,7 +374,7 @@ export function WorkFromAnywhereSection() {
               Work From Anywhere
             </div>
             <div>
-              <h2 className="font-extrabold tracking-tight mb-5" style={{ fontSize: "clamp(26px, 3.2vw, 42px)", color: "#1e2026", lineHeight: 1.14 }}>
+              <h2 id="home-wfa-heading" className="font-extrabold tracking-tight mb-5" style={{ fontSize: "clamp(26px, 3.2vw, 42px)", color: "#1e2026", lineHeight: 1.14 }}>
                 Mang tổng đài doanh nghiệp{" "}
                 <span style={{ background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                   theo bạn đến bất kỳ đâu
@@ -485,7 +470,7 @@ export function WorkFromAnywhereSection() {
         </div>
 
         {/* ── Block 3 & 4: Status dashboard full width ── */}
-        <div className="mb-16 rounded-3xl overflow-hidden" style={{ background: "#f6f3fc", border: "1px solid rgba(103,58,183,0.09)" }}>
+        <div className="rounded-3xl overflow-hidden" style={{ background: "#f6f3fc", border: "1px solid rgba(103,58,183,0.09)" }}>
           <div className="px-8 pt-10 pb-6 text-center">
             <h3 className="font-extrabold mb-2" style={{ fontSize: "clamp(18px, 2.2vw, 28px)", color: "#1e2026" }}>
               Biết đội ngũ đang làm gì{" "}
@@ -523,102 +508,6 @@ export function WorkFromAnywhereSection() {
           </div>
         </div>
 
-        {/* ── Block 5: Use cases ── */}
-        <div className="mb-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {remoteUseCases.map((uc) => {
-              const Icon = uc.icon;
-              return (
-                <div
-                  key={uc.role}
-                  className="rounded-2xl p-6 transition-all duration-200"
-                  style={{ background: "#fff", border: `1px solid ${uc.color}18`, boxShadow: "0 2px 10px rgba(103,58,183,0.05)" }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"; (e.currentTarget as HTMLElement).style.boxShadow = `0 14px 36px ${uc.color}18`; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "none"; (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 10px rgba(103,58,183,0.05)"; }}
-                >
-                  <div className="w-11 h-11 rounded-2xl flex items-center justify-center mb-4" style={{ background: uc.bg }}>
-                    <Icon size={20} color={uc.color} strokeWidth={1.8} />
-                  </div>
-                  <div className="text-sm font-bold mb-3" style={{ color: "#1e2026" }}>{uc.role}</div>
-                  <div className="flex flex-col gap-2">
-                    {uc.points.map((pt) => (
-                      <div key={pt} className="flex items-start gap-2">
-                        <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: uc.color + "15" }}>
-                          <Check size={9} color={uc.color} strokeWidth={3} />
-                        </div>
-                        <span className="text-xs leading-snug" style={{ color: "#5b5f6b" }}>{pt}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* ── Block 6: CTA purple ── */}
-        <div
-          className="relative rounded-3xl overflow-hidden px-10 py-16"
-          style={{ background: "linear-gradient(135deg, #2d0e6e 0%, #673ab7 55%, #9c63d6 100%)" }}
-        >
-          <svg className="absolute inset-0 w-full h-full opacity-[0.05] pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-            <defs><pattern id="dotsWFA" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.5" fill="#fff" /></pattern></defs>
-            <rect width="100%" height="100%" fill="url(#dotsWFA)" />
-          </svg>
-          <div className="absolute rounded-full pointer-events-none" style={{ width: "600px", height: "600px", top: "-240px", right: "-120px", background: "radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 70%)" }} />
-
-          <div className="relative flex flex-col lg:flex-row items-center gap-10">
-            {/* Left: stats */}
-            <div className="grid grid-cols-2 gap-3 flex-shrink-0">
-              {wfaStats.map((s) => {
-                const Icon = s.icon;
-                return (
-                  <div key={s.value} className="flex flex-col items-center gap-2 px-5 py-4 rounded-2xl text-center" style={{ background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.12)" }}>
-                    <div className="w-10 h-10 rounded-2xl flex items-center justify-center" style={{ background: "rgba(255,255,255,0.15)" }}>
-                      <Icon size={18} color="#fff" strokeWidth={1.8} />
-                    </div>
-                    <div className="text-sm font-extrabold text-white" style={{ fontFamily: "'DM Mono',monospace" }}>{s.value}</div>
-                    <div className="text-[10px] text-center" style={{ color: "rgba(255,255,255,0.6)" }}>{s.label}</div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Right: copy + CTA */}
-            <div className="flex-1 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold mb-5" style={{ background: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.9)" }}>
-                <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                Sẵn sàng triển khai ngay hôm nay
-              </div>
-              <h3 className="font-extrabold text-white mb-4" style={{ fontSize: "clamp(22px, 2.8vw, 34px)", lineHeight: 1.15 }}>
-                Tổng đài doanh nghiệp luôn đồng hành cùng đội ngũ của bạn
-              </h3>
-              <p className="mb-8" style={{ color: "rgba(255,255,255,0.70)", fontSize: "15px", lineHeight: 1.7 }}>
-                Không cần phần cứng, không cần cài đặt phức tạp — chỉ cần trình duyệt và kết nối internet, đội ngũ của bạn đã có thể bắt đầu ngay.
-              </p>
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                <Link to={leadCtaHref({ intent: 'consultation', source: 'consultation' })}
-                  className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150"
-                  style={{ background: "#fff", color: "#673ab7", boxShadow: "0 4px 24px rgba(0,0,0,0.18)" }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "none"; }}
-                >
-                  <Phone size={15} /> Đăng ký tư vấn
-                </Link>
-                <Link
-                to={ROUTES.gcallsPlus}
-                  className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                  style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1.5px solid rgba(255,255,255,0.28)" }}
-                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.22)"}
-                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.15)"}
-                >
-                  <Zap size={15} /> Khám phá tính năng
-                </Link>
-              </div>
-              <p className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.40)" }}>Đội ngũ Gcalls hỗ trợ cấu hình và triển khai theo nhu cầu thực tế</p>
-            </div>
-          </div>
-        </div>
 
       </div>
     </section>

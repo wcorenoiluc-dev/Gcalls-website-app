@@ -141,11 +141,11 @@ export function CRMMockup() {
           <div className="flex items-center justify-between mb-2.5">
             <span className="text-xs font-bold" style={{ color: "#1e2026" }}>Danh bạ</span>
             <div className="flex items-center gap-1">
-              <button className="w-5 h-5 rounded-md flex items-center justify-center" style={{ background: "#f0ecf9" }}>
-                <Filter size={10} color="#673ab7" />
+              <button type="button" aria-label="Lọc danh bạ" className="w-5 h-5 rounded-md flex items-center justify-center" style={{ background: "#f0ecf9" }}>
+                <Filter size={10} color="#673ab7" aria-hidden="true" />
               </button>
-              <button className="w-5 h-5 rounded-md flex items-center justify-center" style={{ background: "#673ab7" }}>
-                <Plus size={10} color="#fff" />
+              <button type="button" aria-label="Thêm liên hệ" className="w-5 h-5 rounded-md flex items-center justify-center" style={{ background: "#673ab7" }}>
+                <Plus size={10} color="#fff" aria-hidden="true" />
               </button>
             </div>
           </div>
@@ -241,14 +241,14 @@ export function CRMMockup() {
               </div>
             </div>
             <div className="flex gap-1.5 flex-shrink-0">
-              <button className="w-7 h-7 rounded-xl flex items-center justify-center" style={{ background: "#f0ecf9" }}>
-                <Phone size={12} color="#673ab7" />
+              <button type="button" aria-label="Gọi khách hàng" className="w-7 h-7 rounded-xl flex items-center justify-center" style={{ background: "#f0ecf9" }}>
+                <Phone size={12} color="#673ab7" aria-hidden="true" />
               </button>
-              <button className="w-7 h-7 rounded-xl flex items-center justify-center" style={{ background: "#f0ecf9" }}>
-                <Mail size={12} color="#673ab7" />
+              <button type="button" aria-label="Gửi email" className="w-7 h-7 rounded-xl flex items-center justify-center" style={{ background: "#f0ecf9" }}>
+                <Mail size={12} color="#673ab7" aria-hidden="true" />
               </button>
-              <button className="w-7 h-7 rounded-xl flex items-center justify-center" style={{ background: "#f0ecf9" }}>
-                <MoreHorizontal size={12} color="#673ab7" />
+              <button type="button" aria-label="Tùy chọn khác" className="w-7 h-7 rounded-xl flex items-center justify-center" style={{ background: "#f0ecf9" }}>
+                <MoreHorizontal size={12} color="#673ab7" aria-hidden="true" />
               </button>
             </div>
           </div>

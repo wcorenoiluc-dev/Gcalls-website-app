@@ -158,10 +158,22 @@ export const SITEMAP: SitemapEntry[] = [
     indexable: true,
     navVisibility: false,
     footerVisibility: false,
-    title: 'Gcalls — Call Smarter, Grow Faster',
+    /*
+      Retitled in Checkpoint HOME-CONTENT-IMPLEMENTATION-001, and ONLY because
+      the page beneath it changed. The old pair described a single product —
+      "Gcalls Plus Webphone giúp đội Sales và CSKH nghe gọi…" — while the
+      homepage now opens on "Tổng Đài Ảo Tích Hợp CRM" and maps the whole
+      product and solution ecosystem. A title that names a narrower thing than
+      the H1 is a mismatch a crawler and a visitor both notice.
+
+      The description is the approved hero copy, trimmed to fit. Note what it
+      still does NOT contain: no setup time, no integration count, no saving
+      percentage. The source content's hero paragraph carried all three.
+    */
+    title: 'Gcalls — Tổng đài ảo tích hợp CRM cho đội Sales và CSKH',
     exactTitle: true,
     description:
-      'Gcalls Plus Webphone giúp đội Sales và CSKH nghe gọi, quản lý danh bạ, lịch sử tương tác, ghi chú và theo dõi hoạt động cuộc gọi ngay trên trình duyệt.',
+      'Giải pháp tổng đài thông minh giúp đội Sales và CSKH gọi trên trình duyệt, lưu lịch sử và ghi âm, quản lý khách hàng, theo dõi hiệu suất và kết nối với hệ thống quản trị doanh nghiệp.',
   },
 
   /* ── Products ─────────────────────────────────────────────────── */
