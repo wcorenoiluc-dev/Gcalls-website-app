@@ -1,7 +1,7 @@
 HUB,Hub Name,Rebuilt Articles,Net-New Proposed,Total Planned,Priority,Primary Product CTA,Coverage Verdict
-HUB-01,Tổng đài và Call Center,42,0,42,P1,Cloud Call Center|/lien-he/ ; Gcalls Plus Webphone|/gcalls-plus-webphone/,ADEQUATE
+HUB-01,Tổng đài và Call Center,42,0,42,P0,Cloud Call Center|/lien-he/ ; Gcalls Plus Webphone|/gcalls-plus-webphone/,ADEQUATE
 HUB-02,Gcalls Plus Webphone,1,1,2,P0,Gcalls Plus Webphone|/gcalls-plus-webphone/,THIN — net-new required
-HUB-03,"CRM, Helpdesk và tích hợp",15,1,16,P0,Tổng đài tích hợp CRM|/tong-dai-tich-hop-crm/ ; Tổng đài tích hợp Helpdesk|/tong-dai-tich-hop-helpdesk/,ADEQUATE
+HUB-03,"CRM, Helpdesk và tích hợp",15,2,17,P0,Tổng đài tích hợp CRM|/tong-dai-tich-hop-crm/ ; Tổng đài tích hợp Helpdesk|/tong-dai-tich-hop-helpdesk/,ADEQUATE
 HUB-04,Telesales và Sales Operations,77,0,77,P1,Gcalls Plus Webphone|/gcalls-plus-webphone/ ; Tổng đài tích hợp CRM|/tong-dai-tich-hop-crm/,ADEQUATE
 HUB-05,Customer Service và Customer Experience,34,0,34,P1,Gcalls CX|/gcalls-cx/ ; Tổng đài tích hợp Helpdesk|/tong-dai-tich-hop-helpdesk/,ADEQUATE
 HUB-06,Gcalls CX,0,2,2,P0,Gcalls CX|/gcalls-cx/,NO LEGACY CONTENT — net-new only
@@ -12,4 +12,4 @@ HUB-10,Cloud Call Center và làm việc từ xa,2,0,2,P1,Cloud Call Center|/lie
 HUB-11,Vận hành doanh nghiệp,49,0,49,P2,Gcalls Plus Webphone|/gcalls-plus-webphone/,ADEQUATE
 HUB-12,Hướng dẫn sử dụng Gcalls,0,1,1,P2,Gcalls Plus Webphone|/gcalls-plus-webphone/,NO LEGACY CONTENT — net-new only
 HUB-13,Case study,0,0,0,P3,,NO LEGACY CONTENT — net-new only
-TOTAL,,227,12,239,,,
+TOTAL,,227,13,240,,,

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 import {
-  DEFAULT_OG_TYPE,
+  buildOgType,
   buildRobots,
   SITE_LOCALE,
   SITE_NAME,
@@ -71,7 +71,7 @@ export function Seo() {
     })
     upsertMeta('meta[property="og:type"]', {
       property: 'og:type',
-      content: DEFAULT_OG_TYPE,
+      content: buildOgType(pathname),
     })
     upsertMeta('meta[property="og:url"]', { property: 'og:url', content: canonical })
     upsertMeta('meta[property="og:site_name"]', {

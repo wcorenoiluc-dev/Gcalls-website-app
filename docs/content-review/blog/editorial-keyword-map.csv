@@ -2,11 +2,11 @@ Legacy Post ID,New Title,HUB,Primary Keyword,Search Intent,Funnel Stage,Pillar/S
 410,Nâng tầm giá trị thương hiệu của doanh nghiệp bạn với Voice Brandname,HUB-11,nâng tầm giá trị thương,transactional,TOFU,SUPPORTING,YES,P2
 439,Góc nhìn của doanh nghiệp và khách hàng về tổng đài CSKH và bán hàng,HUB-05,góc nhìn khách hàng tổng,informational-general,TOFU,SUPPORTING,YES,P1
 553,"Gcalls và bạn - đối tác giới thiệu khách hàng - Cùng hợp tác, cùng có lợi",HUB-03,gcalls đối tác giới thiệu,informational-general,MOFU,PILLAR,YES,P0
-566,Dịch Vụ Call Center là gì? Dịch vụ Tổng đài Call Center,HUB-01,dịch vụ call center dịch,informational-definition,TOFU,PILLAR,YES,P1
+566,Dịch vụ Call Center là gì và doanh nghiệp nào thực sự cần,HUB-01,dịch vụ call center là gì,informational-definition,TOFU,PILLAR,YES,P0
 588,"Tổng Đài Call Center Và Những Kiến Thức ""Cứu Sống"" Doanh Nghiệp",HUB-01,tổng đài call center kiến,informational-general,TOFU,PILLAR,YES,P1
 603,10 Thống kê về hệ thống VoIP chứng minh tầm quan trọng của công nghệ,HUB-01,thống kê hệ thống voip,informational-general,TOFU,SUPPORTING,YES,P1
 615,10 mẹo hay nhất để Telesales thành công,HUB-04,mẹo hay telesales thành công,informational-howto,TOFU,SUPPORTING,YES,P1
-647,7 Lý Do Nên Chọn Tổng Đài Ảo Call Center Cho Doanh Nghiệp,HUB-01,lý do chọn tổng đài,informational-howto,TOFU,PILLAR,YES,P1
+647,Khi nào doanh nghiệp nên chuyển sang tổng đài ảo,HUB-01,khi nào nên chuyển sang tổng đài ảo,commercial-investigation,MOFU,SUPPORTING,YES,P0
 654,5 Lợi ích của việc Sử dụng Báo cáo Tổng đài Call Center (Phần cuối),HUB-01,lợi ích việc sử dụng,informational-general,TOFU,SUPPORTING,COLLISION,P1
 669,5 Lợi ích của việc Sử dụng Báo cáo Tổng đài Call Center (Phần 1),HUB-01,lợi ích việc sử dụng,informational-general,TOFU,SUPPORTING,COLLISION,P1
 676,Làm thế nào để mở rộng một nhóm bán hàng toàn cầu?,HUB-04,làm mở rộng nhóm bán,informational-general,TOFU,SUPPORTING,YES,P1
@@ -31,7 +31,7 @@ Legacy Post ID,New Title,HUB,Primary Keyword,Search Intent,Funnel Stage,Pillar/S
 1314,Telesales: Cách tập trung khi gọi điện bán hàng,HUB-04,telesales tập trung gọi điện,informational-howto,TOFU,SUPPORTING,YES,P1
 1324,Thế nào là telesales thành công và cách đánh giá cuộc gọi bán hàng?,HUB-04,telesales thành công đánh giá,informational-howto,TOFU,SUPPORTING,YES,P1
 1351,6 cách nhắn tin cho khách hàng đạt hiệu quả trong quy trình bán hàng,HUB-04,nhắn tin khách hàng đạt,informational-howto,TOFU,PILLAR,YES,P1
-1368,Phần mềm gọi tự động và lợi ích đối với chiến lược bán hàng,HUB-02,mềm gọi tự động lợi,informational-general,MOFU,PILLAR,YES,P0
+1368,Gọi ra theo danh sách: cách tổ chức và những giới hạn cần biết,HUB-02,gọi ra theo danh sách,informational-howto,MOFU,SUPPORTING,YES,P0
 1381,6 bước xây dựng kịch bản bán hàng đỉnh cao,HUB-04,bước xây dựng kịch bản,informational-howto,TOFU,PILLAR,YES,P1
 1396,Cách gọi điện thoại cho khách hàng tiềm năng đã mở email,HUB-04,gọi điện thoại khách hàng,informational-howto,TOFU,PILLAR,YES,P1
 1420,Cách giảm áp lực khi làm telesales,HUB-04,giảm áp lực làm telesales,informational-howto,TOFU,SUPPORTING,YES,P1
@@ -47,9 +47,9 @@ Legacy Post ID,New Title,HUB,Primary Keyword,Search Intent,Funnel Stage,Pillar/S
 1705,Cách viết bản tự đánh giá công việc của nhân viên đầy đủ và ấn tượng,HUB-11,viết bản tự đánh giá,informational-howto,TOFU,PILLAR,YES,P2
 1805,Bán hàng qua điện thoại: 3 câu hỏi bạn nên tự hỏi bản thân trước khi thực hiện cuộc gọi,HUB-04,bán hàng qua điện thoại,informational-general,TOFU,SUPPORTING,COLLISION,P1
 1817,Cách chiếm được lòng tin của khách hàng kín tiếng,HUB-04,chiếm được lòng tin khách,informational-howto,TOFU,SUPPORTING,YES,P1
-1828,Cải thiện trải nghiệm khách hàng tại Call Center bằng biểu mẫu chấm điểm đánh giá cuộc gọi,HUB-07,cải thiện trải nghiệm khách,commercial-investigation,MOFU,PILLAR,YES,P0
+1828,Dùng biểu mẫu đánh giá cuộc gọi để cải thiện trải nghiệm khách hàng,HUB-07,biểu mẫu đánh giá cuộc gọi,informational-howto,MOFU,SUPPORTING,YES,P0
 1967,Chiến lược mở rộng ra thị trường nước quốc tế,HUB-09,chiến lược mở rộng ra,informational-general,MOFU,PILLAR,YES,P0
-1968,Tổng đài quốc tế: Mở rộng thị trường dễ dàng với phần mềm Call Center kết nối số nước ngoài,HUB-01,tổng đài quốc tế mở,informational-general,TOFU,SUPPORTING,YES,P1
+1968,Mở rộng thị trường quốc tế: vai trò của hệ thống liên lạc,HUB-09,mở rộng thị trường quốc tế,informational-general,TOFU,SUPPORTING,YES,P0
 2244,Làm gì để mở rộng đội ngũ hỗ trợ khách hàng mà không hi sinh chất lượng dịch vụ?,HUB-07,làm mở rộng đội ngũ,informational-general,MOFU,PILLAR,YES,P0
 2261,Cách tính giá trị vòng đời khách hàng CLV của doanh nghiệp,HUB-11,tính giá trị vòng đời,informational-howto,TOFU,PILLAR,YES,P2
 2400,Hướng dẫn đo lường kết quả khảo sát sự hài lòng của khách hàng,HUB-05,hướng dẫn đo lường kết,informational-howto,TOFU,PILLAR,YES,P1
@@ -68,7 +68,7 @@ Legacy Post ID,New Title,HUB,Primary Keyword,Search Intent,Funnel Stage,Pillar/S
 2738,Tại sao phàn nàn của khách hàng lại có ích cho doanh nghiệp của bạn?,HUB-11,phàn nàn khách hàng lại,informational-general,TOFU,PILLAR,YES,P2
 2752,Khách hàng tự phục vụ và ví dụ về các cổng thông tin tự phục vụ tốt nhất,HUB-05,khách hàng tự phục vụ,commercial-investigation,TOFU,PILLAR,COLLISION,P1
 2761,Làm thế nào để kết nối 2 bộ phận bán hàng và dịch vụ khách hàng?,HUB-04,làm kết nối bộ phận,informational-general,TOFU,PILLAR,YES,P1
-2768,Call Center: Điểm khác biệt giữa On-Premises và Cloud Call Center (Phần 1),HUB-01,call center điểm khác biệt,informational-general,TOFU,PILLAR,COLLISION,P1
+2768,Call Center On-Premises và Cloud khác nhau ở đâu,HUB-01,on-premises và cloud call center,commercial-investigation,MOFU,PILLAR,YES,P0
 2784,18 lợi ích mà giải pháp tích hợp điện thoại máy tính đem đến cho Call Center,HUB-01,lợi ích mà giải pháp,informational-general,TOFU,PILLAR,YES,P1
 2811,Call Center: Điểm khác biệt giữa On-Premises và Cloud Call Center (Phần cuối),HUB-01,call center điểm khác biệt,informational-general,TOFU,PILLAR,COLLISION,P1
 2819,"Ưu, nhược điểm của phần mềm quản lý quan hệ khách hàng Zoho CRM",HUB-03,ưu nhược điểm mềm quản,commercial-investigation,MOFU,PILLAR,YES,P0
@@ -174,7 +174,7 @@ Legacy Post ID,New Title,HUB,Primary Keyword,Search Intent,Funnel Stage,Pillar/S
 15713,Quản Lý Cuộc Gọi Khách Hàng Có Thật Sự Dễ Dàng?,HUB-11,quản lý cuộc gọi khách,informational-general,TOFU,SUPPORTING,YES,P2
 15724,Bí Quyết Chăm Sóc Khách Hàng Tuyệt Đỉnh Nhất,HUB-05,bí quyết chăm sóc khách,informational-general,TOFU,SUPPORTING,YES,P1
 15738,"Tại Sao Dịch Vụ Tổng Đài Ảo Dành Cho Startup ""Bùng Nổ"" 2023?",HUB-01,dịch vụ tổng đài ảo,informational-general,TOFU,SUPPORTING,COLLISION,P1
-15743,Đồng Bộ Hóa Dữ Liệu Là Gì? Tại Sao Nên Đồng Bộ Dữ Liệu?,HUB-03,đồng bộ hóa dữ liệu,informational-definition,MOFU,PILLAR,YES,P0
+15743,Đồng bộ dữ liệu giữa tổng đài và CRM: phạm vi và giới hạn,HUB-03,đồng bộ dữ liệu tổng đài và CRM,informational-definition,MOFU,SUPPORTING,YES,P0
 15765,Phần Mềm Auto Call Và Những Lợi Ích Cho Doanh Nghiệp,HUB-11,mềm auto call lợi ích,informational-general,TOFU,SUPPORTING,YES,P2
 15775,5 Lợi Ích Của Dịch Vụ Hỗ Trợ Trực Tuyến,HUB-11,lợi ích dịch vụ hỗ,informational-general,TOFU,SUPPORTING,YES,P2
 15794,Hệ Thống Quản Lý Khách Hàng Và Phần Mềm Trên Điện Thoại,HUB-11,hệ thống quản lý khách,informational-general,TOFU,SUPPORTING,COLLISION,P2
@@ -226,3 +226,14 @@ Legacy Post ID,New Title,HUB,Primary Keyword,Search Intent,Funnel Stage,Pillar/S
 17911,“Khách hàng luôn đúng”:Ý nghĩa và góc nhìn về tính đúng đắn của triết lý,HUB-11,khách hàng luôn đúng ý,informational-general,TOFU,PILLAR,YES,P2
 17917,15 cách để tránh cạn kiệt năng lượng của tổng đài viên,HUB-01,tránh cạn kiệt năng lượng,informational-howto,TOFU,PILLAR,YES,P1
 17924,Product Demo là gì? Cách thực hiện Product Demo thành công dành cho nhân viên bán hàng,HUB-04,product demo thực hiện product,informational-definition,TOFU,PILLAR,YES,P1
+GC-B01-04,Tổng đài trên trình duyệt hoạt động thế nào trong một ngày làm việc,HUB-02,tổng đài trên trình duyệt,informational-howto,MOFU,PILLAR,YES,P0
+GC-B01-06,Checklist đánh giá mức độ sẵn sàng tích hợp tổng đài với CRM,HUB-03,tích hợp tổng đài với CRM,commercial-investigation,BOFU,PILLAR,YES,P0
+GC-B01-08,Dữ liệu nào thực sự đồng bộ giữa tổng đài và Helpdesk,HUB-03,đồng bộ dữ liệu tổng đài và helpdesk,informational-definition,MOFU,SUPPORTING,YES,P0
+GC-B01-09,"Hợp nhất hội thoại hotline, Zalo OA và Facebook về một nơi",HUB-06,hợp nhất hội thoại đa kênh,informational-howto,MOFU,PILLAR,YES,P0
+GC-B01-10,Khi nào doanh nghiệp thực sự cần nền tảng đa kênh,HUB-06,nền tảng đa kênh cho doanh nghiệp,commercial-investigation,MOFU,SUPPORTING,YES,P0
+GC-B01-11,Xây dựng bộ tiêu chí đánh giá chất lượng cuộc gọi từ đầu,HUB-07,bộ tiêu chí đánh giá chất lượng cuộc gọi,informational-howto,MOFU,PILLAR,YES,P0
+GC-B01-12,Chấm điểm thủ công và hỗ trợ bằng AI khác nhau ở đâu,HUB-07,chấm điểm cuộc gọi bằng AI,commercial-investigation,MOFU,SUPPORTING,YES,P0
+GC-B01-14,Loại cuộc gọi nào phù hợp đưa vào kịch bản Voicebot,HUB-08,kịch bản voicebot,commercial-investigation,MOFU,PILLAR,YES,P0
+GC-B01-15,"Voicebot, IVR và tổng đài tự động khác nhau thế nào",HUB-08,voicebot và IVR,informational-definition,TOFU,SUPPORTING,YES,P0
+GC-B01-16,Doanh nghiệp cần gì khi gọi ra thị trường nước ngoài,HUB-09,gọi ra thị trường nước ngoài,informational-definition,TOFU,PILLAR,YES,P0
+GC-B01-17,Hồ sơ thường được yêu cầu khi đăng ký đầu số quốc tế,HUB-09,đăng ký đầu số quốc tế,informational-howto,BOFU,SUPPORTING,YES,P0

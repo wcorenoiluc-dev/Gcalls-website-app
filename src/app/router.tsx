@@ -4,6 +4,7 @@ import { ROUTES, type RoutePath } from '@/config/navigation'
 import { SiteLayout } from '@/layouts/SiteLayout'
 import { RouteFallback } from '@/components/common/RouteFallback'
 import { HomePage } from '@/pages/HomePage'
+import { VISIBLE_ARTICLES } from '@/data/blog/visibility'
 
 /**
  * Route table for the GCALLS website — 37 routes.
@@ -147,6 +148,17 @@ const ShellPage = lazy(() =>
 const NotFoundPage = lazy(() =>
   import('@/pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })),
 )
+/**
+ * Blog articles — Checkpoint GCALLS-BLOG-BATCH-01-CORRECTION-AUTHORING.
+ *
+ * One component, eighteen explicit paths built from the catalog. Explicit
+ * rather than a `:slug` parameter because Batch 1 preserves legacy ROOT-LEVEL
+ * URLs, and a root-level wildcard would swallow every unmatched path on the
+ * site — including the 404.
+ */
+const BlogArticlePage = lazy(() =>
+  import('@/pages/BlogArticlePage').then((m) => ({ default: m.BlogArticlePage })),
+)
 
 function lazyRoute(element: React.ReactNode) {
   return <Suspense fallback={<RouteFallback />}>{element}</Suspense>
@@ -239,6 +251,20 @@ export const router = createBrowserRouter([
       ...SHELL_ROUTES.map((path) => ({
         path,
         element: lazyRoute(<ShellPage />),
+      })),
+
+      /**
+       * Blog article routes.
+       *
+       * `VISIBLE_ARTICLES` is empty in a normal production build because every
+       * Batch 1 article is a draft, so these paths are NOT REGISTERED there and
+       * fall through to the 404 below. This is the primary guard against a
+       * draft shipping; the robots directive and the page-level `isVisible`
+       * check are the second and third.
+       */
+      ...VISIBLE_ARTICLES.map((article) => ({
+        path: article.url,
+        element: lazyRoute(<BlogArticlePage slug={article.slug} />),
       })),
 
       { path: '*', element: lazyRoute(<NotFoundPage />) },
