@@ -508,8 +508,15 @@ export const CX_FINAL_CTA = {
 /**
  * Structured data.
  *
- * Four nodes only. No Offer, price, AggregateRating, Review, customerCount,
- * channel count or uptime is emitted — none is verified.
+ * Three nodes — BreadcrumbList, SoftwareApplication, FAQPage. Corrected in
+ * Checkpoint WEB-SITE-QA-001: the breadcrumb node was missing the "Sản phẩm"
+ * level the page actually renders, and the `Product` node was dropped as a
+ * duplicate of `SoftwareApplication` that pulled commerce vocabulary onto a page
+ * with no approved price or availability. See `src/data/gcallsPlus.ts` for the
+ * full reasoning.
+ *
+ * Still deliberately absent: Offer, price, availability, AggregateRating,
+ * Review, customerCount, channel count and uptime — none is verified.
  */
 export function buildGcallsCxJsonLd(origin: string) {
   return {
@@ -522,18 +529,16 @@ export function buildGcallsCxJsonLd(origin: string) {
           {
             '@type': 'ListItem',
             position: 2,
+            name: 'Sản phẩm',
+            item: `${origin}${ROUTES.products}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
             name: 'Gcalls CX',
             item: `${origin}${ROUTES.gcallsCx}`,
           },
         ],
-      },
-      {
-        '@type': 'Product',
-        name: 'Gcalls CX',
-        description: CX_DIRECT_ANSWER.answer,
-        brand: { '@type': 'Brand', name: 'Gcalls' },
-        category: 'Omnichannel Contact Center Software',
-        url: `${origin}${ROUTES.gcallsCx}`,
       },
       {
         '@type': 'SoftwareApplication',

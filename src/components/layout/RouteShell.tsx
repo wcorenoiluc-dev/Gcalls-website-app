@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useMemo, type ReactNode } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { Link, useLocation } from 'react-router'
 import {
@@ -10,7 +10,9 @@ import {
   SectionHeader,
 } from '@/components/common/primitives'
 import { FinalCtaBand } from '@/components/common/FinalCtaBand'
+import { JsonLd } from '@/components/common/JsonLd'
 import { Breadcrumb } from '@/components/layout/Breadcrumb'
+import { SITE_ORIGIN } from '@/config/seo'
 import { PRIMARY_CTA, ROUTES } from '@/config/navigation'
 import {
   getBreadcrumbTrail,
@@ -78,6 +80,51 @@ export function RouteShell({
   const { pathname } = useLocation()
   const entry = getEntry(pathname)
 
+  /**
+   * BreadcrumbList — added in Checkpoint WEB-SITE-QA-001.
+   *
+   * `/lien-he/` and `/referral/` were the only two routes on the site that
+   * rendered a visible breadcrumb and emitted no matching structured data. Both
+   * render through this component, so the node is built HERE, from the same
+   * `getBreadcrumbTrail(pathname)` result the `<Breadcrumb>` element below is fed
+   * — the two cannot disagree, which is exactly the failure mode three product
+   * pages had before this checkpoint corrected them.
+   *
+   * `Trang chủ` is prepended because `Breadcrumb` prepends it too (see
+   * `src/components/layout/Breadcrumb.tsx`) and `getBreadcrumbTrail` drops it.
+   *
+   * Nothing else is emitted: a shell has no verified entity behind it, so no
+   * `WebPage`, `Service` or `Product` node belongs here.
+   *
+   * Computed BEFORE the `!entry` guard below, because a hook cannot sit after a
+   * conditional return.
+   */
+  const breadcrumbJsonLd = useMemo(
+    () => ({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Trang chủ',
+              item: `${SITE_ORIGIN}${ROUTES.home}`,
+            },
+            ...getBreadcrumbTrail(pathname).map((crumb, index) => ({
+              '@type': 'ListItem',
+              position: index + 2,
+              name: crumb.label,
+              item: `${SITE_ORIGIN}${crumb.route}`,
+            })),
+          ],
+        },
+      ],
+    }),
+    [pathname],
+  )
+
   if (!entry) return null
 
   const trail = getBreadcrumbTrail(pathname)
@@ -96,6 +143,8 @@ export function RouteShell({
 
   return (
     <>
+      <JsonLd id={`shell-${entry.id}`} data={breadcrumbJsonLd} />
+
       <div className="bg-brand-light/60 pt-20 sm:pt-24">
         <Container>
           <Breadcrumb trail={breadcrumb} />

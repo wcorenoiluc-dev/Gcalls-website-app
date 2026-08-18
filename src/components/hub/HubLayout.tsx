@@ -14,7 +14,7 @@ import { JsonLd } from '@/components/common/JsonLd'
 import { Breadcrumb } from '@/components/layout/Breadcrumb'
 import type { Crumb } from '@/components/layout/Breadcrumb'
 import { SITE_ORIGIN } from '@/config/seo'
-import { leadCtaHref } from '@/lib/leads/ctaLink'
+import { leadAwareHref, leadCtaHref } from '@/lib/leads/ctaLink'
 import type { HubContent } from '@/data/hubs'
 
 /**
@@ -162,8 +162,10 @@ export function HubLayout({
                 )}
 
                 <div className="mt-auto pt-5">
+                  {/* Same reason as the decision-guide row below: `/cong-ty/`'s
+                      "Trao đổi với Gcalls" card points at `/lien-he/`. */}
                   <Link
-                    to={item.path}
+                    to={leadAwareHref(item.path, content.lead)}
                     className="inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-brand underline-offset-4 transition-colors duration-150 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
                   >
                     {item.cta}
@@ -210,8 +212,14 @@ export function HubLayout({
                   </p>
 
                   <div className="mt-auto pt-5">
+                    {/*
+                      A guide row usually points at a content page, but the last
+                      row on `/tich-hop/` points at `/lien-he/` ("my system is not
+                      in the list") — a conversion, and it used to arrive with no
+                      attribution at all. `leadAwareHref` tags only that case.
+                    */}
                     <Link
-                      to={row.path}
+                      to={leadAwareHref(row.path, content.lead)}
                       className="inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-brand underline-offset-4 transition-colors duration-150 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
                     >
                       {row.solution}

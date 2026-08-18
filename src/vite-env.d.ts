@@ -5,6 +5,12 @@ interface ImportMetaEnv {
   readonly VITE_ALLOW_INDEXING?: string
   /** Canonical origin, e.g. https://gcalls.co */
   readonly VITE_SITE_ORIGIN?: string
+  /**
+   * Set to "true" only in the private demo build. Renders draft blog articles
+   * so reviewers can read them. Drafts still ship DRAFT_ROBOTS regardless.
+   * Never set in a public production build.
+   */
+  readonly VITE_BLOG_PREVIEW?: string
 }
 
 interface ImportMeta {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ROUTES } from '@/config/navigation';
-import { ArrowUpRight, BarChart2, Check, ChevronRight, Pause, Phone, PhoneCall, PhoneIncoming, Play, Search, Star, TrendingUp, Users, Voicemail, Wifi } from "lucide-react";
+import { ArrowUpRight, BarChart2, Check, ChevronRight, Pause, Phone, PhoneCall, PhoneIncoming, Play, Search, TrendingUp, Users, Voicemail, Wifi } from "lucide-react";
 import { Link } from "react-router";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { stageClass, stageMainClass, stageFloatFullClass, hideBelowLgClass } from "@/components/common/ResponsiveProductVisual";
@@ -35,6 +35,21 @@ const agentStatus = [
 
 // ─── Sub-components ─────────────────────────────────────────────────────────
 
+/**
+ * Bar height for the recording waveform, in px.
+ *
+ * Deterministic on purpose. This used to be `… + Math.random() * 6`, evaluated
+ * inside the map during render — and `FloatingTimeline` re-renders every 80ms
+ * while playback runs, so all 52 bars were re-randomised on every tick and the
+ * waveform visibly boiled instead of scrubbing. The third term below keeps the
+ * same irregular texture the random value gave, as a pure function of the bar
+ * index, so a bar's height depends only on where it sits in the clip.
+ */
+function waveformHeight(index: number): number {
+  const jitter = Math.abs(Math.sin(index * 12.9898) * 43758.5453) % 1;
+  return Math.max(4, 10 + Math.sin(index * 0.7) * 6 + Math.sin(index * 1.3) * 8 + jitter * 6);
+}
+
 
 // ── Dashboard UI mockup ──────────────────────────────────────────────────────
 
@@ -67,6 +82,34 @@ export function DashboardMain() {
           <span className="text-xs text-white/70">SIP: Kết nối</span>
           <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
         </div>
+      </div>
+
+      {/* Incoming-call strip — the moment the rest of the hero visual explains. */}
+      <div
+        className="flex items-center gap-3 px-4 py-2.5"
+        style={{ background: "#f6fdf8", borderBottom: "1px solid rgba(34,197,94,0.18)" }}
+      >
+        <div
+          className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
+          style={{ background: "#dcfce7" }}
+        >
+          <PhoneIncoming size={13} color="#16a34a" aria-hidden="true" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="text-xs font-semibold truncate" style={{ color: "#1e2026" }}>
+            Cuộc gọi đến · Nguyễn Văn Minh
+          </div>
+          <div className="text-[10px]" style={{ color: "#5b5f6b" }}>
+            0901 234 567 · Hotline 1900 1234
+          </div>
+        </div>
+        <span
+          className="text-[10px] px-2 py-0.5 rounded-full font-semibold flex-shrink-0"
+          style={{ background: "#dcfce7", color: "#16a34a" }}
+        >
+          Đang đổ chuông
+        </span>
+        <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse flex-shrink-0" aria-hidden="true" />
       </div>
 
       {/* KPI row */}
@@ -128,11 +171,15 @@ export function DashboardMain() {
                 </div>
                 {call.status === "answered" && (
                   <button
-                    className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 transition-colors"
+                    type="button"
+                    aria-label={`${playingId === call.id ? "Tạm dừng" : "Nghe"} ghi âm cuộc gọi với ${call.name}`}
+                    className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
                     style={{ background: playingId === call.id ? "#673ab7" : "#f0ecf9" }}
                     onClick={() => setPlayingId(playingId === call.id ? null : call.id)}
                   >
-                    {playingId === call.id ? <Pause size={8} color="#fff" /> : <Play size={8} color="#673ab7" />}
+                    {playingId === call.id
+                      ? <Pause size={8} color="#fff" aria-hidden="true" />
+                      : <Play size={8} color="#673ab7" aria-hidden="true" />}
                   </button>
                 )}
               </div>
@@ -168,6 +215,113 @@ export function DashboardMain() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/*
+        ILLUSTRATIVE-DATA LABEL.
+
+        Every name, phone number, call count and rate inside this frame is
+        invented. Without this line the frame reads as a screenshot of a real
+        Gcalls tenant, which is exactly the class of implied customer proof the
+        hero's removed rating row was deleted for. Keep it whenever the mockup
+        is rendered at page scale.
+      */}
+      <div
+        className="px-4 py-2 text-[10px] text-center"
+        style={{ background: "#fbfaff", borderTop: "1px solid rgba(103,58,183,0.08)", color: "#8b8f9a" }}
+      >
+        Giao diện và số liệu minh họa — không phải dữ liệu vận hành của một doanh nghiệp cụ thể.
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Incoming-call customer popup.
+ *
+ * Added for the hero composition, which has to show the identification moment
+ * (call arrives → who is calling → what was discussed last time). The wording
+ * is the approved conditional register used everywhere else on the site: the
+ * information comes from a CONNECTED system, within the configured integration
+ * scope. It is not "Gcalls tự động kéo dữ liệu và hiển thị popup ngay lập tức"
+ * — that phrasing failed the popup gate at INT-02…05.
+ */
+export function FloatingCustomerPopup() {
+  return (
+    <div
+      className="rounded-2xl overflow-hidden"
+      style={{
+        background: "#fff",
+        boxShadow: "0 8px 32px rgba(103,58,183,0.14), 0 1px 4px rgba(0,0,0,0.05)",
+        border: "1px solid rgba(103,58,183,0.10)",
+        width: "230px",
+        fontFamily: "'Inter', sans-serif",
+      }}
+    >
+      <div
+        className="flex items-center gap-2 px-3.5 py-2.5"
+        style={{ background: "#16a34a" }}
+      >
+        <PhoneIncoming size={12} color="#fff" aria-hidden="true" />
+        <span className="text-[11px] font-semibold text-white">Cuộc gọi đến</span>
+        <span className="ml-auto text-[9px]" style={{ color: "rgba(255,255,255,0.8)" }}>1900 1234</span>
+      </div>
+
+      <div className="p-3.5">
+        <div className="flex items-center gap-2.5 mb-3">
+          <div
+            className="w-9 h-9 rounded-xl flex items-center justify-center text-[11px] font-bold flex-shrink-0"
+            style={{ background: "#ede8f9", color: "#673ab7" }}
+          >
+            BM
+          </div>
+          <div className="min-w-0">
+            <div className="text-xs font-bold truncate" style={{ color: "#1e2026" }}>Nguyễn Văn Minh</div>
+            <div className="text-[10px] truncate" style={{ color: "#5b5f6b" }}>Công ty TNHH Bình Minh</div>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-1.5 mb-3">
+          {["Demo", "Ưu tiên cao"].map((tag) => (
+            <span
+              key={tag}
+              className="text-[9px] px-1.5 py-0.5 rounded-full font-medium"
+              style={{ background: "#f0ecf9", color: "#673ab7" }}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="pt-2.5" style={{ borderTop: "1px solid rgba(103,58,183,0.08)" }}>
+          <div className="text-[9px] font-bold uppercase tracking-wide mb-1" style={{ color: "#9ca3af" }}>
+            Lịch sử gần nhất
+          </div>
+          <div className="text-[10px] leading-snug" style={{ color: "#5b5f6b" }}>
+            Gọi đi 09:14 · “KH quan tâm gói Business, hẹn demo thứ 5”
+          </div>
+        </div>
+
+        <div className="mt-3 flex gap-1.5">
+          <span
+            className="flex-1 text-center text-[9px] font-semibold py-1.5 rounded-lg"
+            style={{ background: "#f6f3fc", color: "#673ab7" }}
+          >
+            Ghi chú
+          </span>
+          <span
+            className="flex-1 text-center text-[9px] font-semibold py-1.5 rounded-lg"
+            style={{ background: "#f6f3fc", color: "#673ab7" }}
+          >
+            Gắn tag
+          </span>
+          <span
+            className="flex-1 text-center text-[9px] font-semibold py-1.5 rounded-lg"
+            style={{ background: "#f6f3fc", color: "#673ab7" }}
+          >
+            Hồ sơ
+          </span>
         </div>
       </div>
     </div>
@@ -214,14 +368,14 @@ export function FloatingTimeline() {
       {/* Waveform */}
       <div className="flex items-center gap-[2px] h-8 mb-2.5 px-1">
         {Array.from({ length: 52 }, (_, i) => {
-          const h = 10 + Math.sin(i * 0.7) * 6 + Math.sin(i * 1.3) * 8 + Math.random() * 6;
+          const h = waveformHeight(i);
           const pct = (i / 52) * 100;
           return (
             <div
               key={i}
               className="rounded-full flex-1 transition-colors duration-150"
               style={{
-                height: `${Math.max(4, h)}px`,
+                height: `${h}px`,
                 background: pct <= progress ? "#673ab7" : "#e5e0f5",
               }}
             />
@@ -231,11 +385,15 @@ export function FloatingTimeline() {
 
       <div className="flex items-center gap-2">
         <button
-          className="w-7 h-7 rounded-full flex items-center justify-center transition-colors"
+          type="button"
+          aria-label={playing ? "Tạm dừng ghi âm minh họa" : "Phát ghi âm minh họa"}
+          className="w-7 h-7 rounded-full flex items-center justify-center transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
           style={{ background: "#673ab7" }}
           onClick={() => setPlaying(!playing)}
         >
-          {playing ? <Pause size={10} color="#fff" /> : <Play size={10} color="#fff" />}
+          {playing
+            ? <Pause size={10} color="#fff" aria-hidden="true" />
+            : <Play size={10} color="#fff" aria-hidden="true" />}
         </button>
         <div className="flex-1 h-1 rounded-full overflow-hidden" style={{ background: "#e5e0f5" }}>
           <div className="h-full rounded-full transition-all duration-75" style={{ width: `${progress}%`, background: "#673ab7" }} />
@@ -362,7 +520,9 @@ export function FloatingDialpad() {
         {keys.flat().map((k) => (
           <button
             key={k}
-            className="h-8 rounded-xl text-sm font-semibold transition-colors"
+            type="button"
+            aria-label={`Nhập phím ${k}`}
+            className="h-8 rounded-xl text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
             style={{ background: "#f6f3fc", color: "#1e2026", fontFamily: "'DM Mono', monospace" }}
             onClick={() => setInput((p) => p + k)}
             onMouseEnter={(e) => ((e.target as HTMLElement).style.background = "#ede8f9")}
@@ -373,10 +533,11 @@ export function FloatingDialpad() {
         ))}
       </div>
       <button
-        className="w-full h-9 rounded-xl flex items-center justify-center gap-1.5 font-semibold text-xs transition-colors"
+        type="button"
+        className="w-full h-9 rounded-xl flex items-center justify-center gap-1.5 font-semibold text-xs transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
         style={{ background: "#22c55e", color: "#fff" }}
       >
-        <Phone size={13} />
+        <Phone size={13} aria-hidden="true" />
         Gọi ngay
       </button>
     </div>
@@ -385,16 +546,26 @@ export function FloatingDialpad() {
 
 // ─── Hero Section ────────────────────────────────────────────────────────────
 
+/**
+ * The four approved hero benefits — wording is fixed by the content checkpoint.
+ *
+ * Note what is NOT here: the source spreadsheet's hero copy carried "thiết lập
+ * ngay trong 5 phút", "hơn 30 phần mềm quản trị" and "tối ưu 40% chi phí vận
+ * hành", plus a "4.9 / 1.000+ doanh nghiệp" social-proof row. All four are on
+ * the withheld list and none of them may be reinstated without an approved
+ * evidence record.
+ */
 const highlights = [
-  "Nghe gọi trực tiếp trên trình duyệt",
-  "Quản lý danh bạ và lịch sử tương tác",
-  "Ghi chú, nhắc nhở và phân loại cuộc gọi",
-  "Theo dõi lịch sử, thống kê và hiệu suất đội ngũ",
+  "Gọi trực tiếp trên trình duyệt",
+  "Lưu lịch sử và ghi âm cuộc gọi",
+  "Quản lý danh bạ khách hàng",
+  "Theo dõi KPI realtime",
 ];
 
 export function Hero() {
   return (
     <section
+      aria-labelledby="home-hero-heading"
       className="min-h-screen flex items-center pt-16 pb-20 overflow-hidden"
       style={{
         background: "linear-gradient(135deg, #ffffff 0%, #f9f7fe 40%, #f0eaf9 100%)",
@@ -402,7 +573,7 @@ export function Hero() {
       }}
     >
       {/* Decorative orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div
           className="absolute rounded-full"
           style={{
@@ -445,14 +616,15 @@ export function Hero() {
                 className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase"
                 style={{ background: "rgba(103,58,183,0.1)", color: "#673ab7", letterSpacing: "0.08em" }}
               >
-                <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#673ab7" }} />
-                GCALLS PLUS WEBPHONE
+                <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#673ab7" }} aria-hidden="true" />
+                GCALLS WEBPHONE
               </div>
             </div>
 
-            {/* Headline */}
+            {/* Headline — the page's only H1. */}
             <div>
               <h1
+                id="home-hero-heading"
                 className="font-extrabold leading-tight tracking-tight mb-5"
                 style={{
                   fontSize: "clamp(32px, 4.5vw, 54px)",
@@ -460,7 +632,7 @@ export function Hero() {
                   lineHeight: 1.12,
                 }}
               >
-                Gcalls Plus Webphone –{" "}
+                Tổng Đài Ảo Tích Hợp CRM -{" "}
                 <span
                   style={{
                     background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)",
@@ -469,20 +641,22 @@ export function Hero() {
                     backgroundClip: "text",
                   }}
                 >
-                  tổng đài chuyên nghiệp
+                  Bứt Phá Doanh Số
                 </span>{" "}
-                chạy trên trình duyệt
+                Cho Đội Sales &amp; CSKH
               </h1>
 
-              <p className="text-base leading-relaxed" style={{ color: "#5b5f6b", maxWidth: "520px", fontSize: "17px" }}>
-                Gcalls Plus Webphone giúp đội Sales và CSKH nghe gọi, quản lý danh bạ, lịch sử tương tác, ghi chú và theo dõi hoạt động cuộc gọi ngay trên trình duyệt.
+              <p className="text-base leading-relaxed" style={{ color: "#5b5f6b", maxWidth: "560px", fontSize: "17px" }}>
+                Giải pháp tổng đài thông minh giúp đội Sales và CSKH thực hiện cuộc gọi trên trình
+                duyệt, lưu lịch sử và ghi âm, quản lý thông tin khách hàng, theo dõi hiệu suất và
+                kết nối với hệ thống quản trị doanh nghiệp.
               </p>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-3">
-              <Link to={leadCtaHref({ intent: 'consultation', source: 'consultation' })}
-                className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-[15px] transition-all duration-150"
+              <Link to={leadCtaHref({ intent: 'demo', source: 'consultation', product: 'Gcalls Plus Webphone' })}
+                className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-[15px] transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
                 style={{
                   background: "#673ab7",
                   color: "#fff",
@@ -499,8 +673,8 @@ export function Hero() {
                   (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
                 }}
               >
-                <Phone size={16} />
-                Đăng ký tư vấn
+                <Phone size={16} aria-hidden="true" />
+                Đăng ký demo
               </Link>
               <Link
                 to={ROUTES.gcallsPlus}
@@ -522,8 +696,8 @@ export function Hero() {
                   (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
                 }}
               >
-                Khám phá tính năng
-                <ChevronRight size={16} />
+                Khám phá Gcalls Webphone
+                <ChevronRight size={16} aria-hidden="true" />
               </Link>
             </div>
 
@@ -534,6 +708,7 @@ export function Hero() {
                   <div
                     className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
                     style={{ background: "rgba(103,58,183,0.12)" }}
+                    aria-hidden="true"
                   >
                     <Check size={11} color="#673ab7" strokeWidth={3} />
                   </div>
@@ -542,27 +717,42 @@ export function Hero() {
               ))}
             </div>
 
-            {/* Social proof */}
-            <div className="flex items-center gap-5 pt-2" style={{ borderTop: "1px solid rgba(103,58,183,0.10)" }}>
-              <div className="flex -space-x-2">
-                {["VP", "BM", "SV", "TH"].map((a, i) => (
-                  <div
-                    key={i}
-                    className="w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold border-2 border-white"
-                    style={{ background: `hsl(${260 + i * 20},50%,${55 + i * 6}%)`, color: "#fff" }}
-                  >
-                    {a}
-                  </div>
-                ))}
+            {/*
+              WHAT USED TO BE HERE, AND WHY IT IS GONE — Checkpoint WEB-SITE-QA-001.
+
+              A five-star row reading "4.9" beside four avatar initials
+              ("VP", "BM", "SV", "TH") under the caption "Được tin dùng bởi các
+              doanh nghiệp Việt Nam". Every part of it was fabricated: this
+              repository holds no rating, no review, no customer count and no
+              permission record for any customer name, and the four initials
+              matched the invented companies in the mock contact list further
+              down the page.
+
+              It was also the single most visible contradiction on the site.
+              `/cong-ty/khach-hang/` deliberately publishes no customer name for
+              exactly this reason, and `src/data/company/types.ts` makes the
+              permission gate a type error — while the homepage hero showed a
+              rating and a logo wall in miniature.
+
+              Do not restore any of it without an approved evidence record. A
+              real rating needs a source; real customer marks need
+              `ApprovedLogo` in `src/data/company/types.ts`, which requires a
+              legal name, an asset path and a permission reference.
+            */}
+            <div className="pt-2" style={{ borderTop: "1px solid rgba(103,58,183,0.10)" }}>
+              <div className="text-xs" style={{ color: "#5b5f6b" }}>
+                Phạm vi triển khai và cấu hình được xác nhận cùng đội ngũ Gcalls theo hệ
+                thống thực tế của doanh nghiệp.
               </div>
-              <div>
-                <div className="flex items-center gap-1 mb-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={11} fill="#f59e0b" color="#f59e0b" />
-                  ))}
-                  <span className="text-xs font-bold ml-1" style={{ color: "#1e2026" }}>4.9</span>
-                </div>
-                <div className="text-xs" style={{ color: "#5b5f6b" }}>Được tin dùng bởi các doanh nghiệp Việt Nam</div>
+              {/*
+                The illustrative-data label is repeated here, in flowing text,
+                because the one inside the dashboard frame is partially covered
+                by the overlapping float cards at desktop widths. A claim-safety
+                label that a layered composition can hide is not a label.
+              */}
+              <div className="text-xs mt-1.5" style={{ color: "#8b8f9a" }}>
+                Hình ảnh giao diện và toàn bộ số liệu trong ảnh là minh họa, không phải kết quả
+                vận hành của một doanh nghiệp cụ thể.
               </div>
             </div>
           </div>
@@ -600,12 +790,16 @@ export function Hero() {
               <FloatingAnalytics />
             </div>
 
-            {/* CRM — mid-left */}
+            {/* Customer popup — mid-left.
+                Replaces the contact-list card that was here: the hero has to
+                show the identification moment (call arrives → who is calling),
+                and a static directory does not. `FloatingCRM` is still exported
+                for the product pages that compose a contact list. */}
             <div
               className={`${stageFloatFullClass} ${hideBelowLgClass}`}
               style={{ top: "50%", left: "-44px", zIndex: 9, transform: "translateY(-50%) rotate(-1deg)" }}
             >
-              <FloatingCRM />
+              <FloatingCustomerPopup />
             </div>
 
             {/* Dialpad — bottom-right */}

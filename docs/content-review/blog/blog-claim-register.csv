@@ -1,0 +1,103 @@
+Post ID,Slug,Status,Claim Pattern,Detected In,Evidence Status,Required Action,Priority
+439,goc-nhin-cua-doanh-nghiep-va-khach-hang-ve-tong-dai-cskh-va-,publish,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+553,gcalls-va-ban-doi-tac-gioi-thieu-khach-hang,publish,countries_70,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P1
+553,gcalls-va-ban-doi-tac-gioi-thieu-khach-hang,publish,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+553,gcalls-va-ban-doi-tac-gioi-thieu-khach-hang,publish,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+566,5-linh-vuc-rat-can-dich-vu-call-center-trung-tam-cuoc-goi,publish,countries_70,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P1
+588,call-center-la-mot-trai-nghiem-thuong-hieu-trong-nganh-dich-,publish,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+603,10-thong-ke-ve-he-thong-voip-chung-minh-tam-quan-trong-cua-c,publish,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+647,4-ly-do-su-dung-tong-dai-ao-call-center-la-can-thiet-voi-mot,publish,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+647,4-ly-do-su-dung-tong-dai-ao-call-center-la-can-thiet-voi-mot,publish,never_miss,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+647,4-ly-do-su-dung-tong-dai-ao-call-center-la-can-thiet-voi-mot,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+647,4-ly-do-su-dung-tong-dai-ao-call-center-la-can-thiet-voi-mot,publish,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+861,11-chi-so-danh-gia-quan-trong-doi-voi-bo-phan-cham-soc-khach,publish,sla_uptime,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+872,cong-nghe-dang-thay-doi-cach-moi-nguoi-lam-viec-tu-xa-nhu-th,publish,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+1102,5-chi-so-do-luong-hieu-suat-ban-hang-quan-trong-nen-theo-doi,publish,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+1157,cac-phan-mem-call-center-phu-hop-voi-cac-tong-dai-doanh-nghi,publish,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+1157,cac-phan-mem-call-center-phu-hop-voi-cac-tong-dai-doanh-nghi,publish,sla_uptime,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+1157,cac-phan-mem-call-center-phu-hop-voi-cac-tong-dai-doanh-nghi,publish,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+1187,ban-hang-inbound-hay-ban-hang-outbound-phan-1,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+1198,ban-hang-inbound-hay-ban-hang-outbound-phan-2,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+1231,tuong-lai-cua-tong-dai-doanh-nghiep-10-xu-huong-noi-bat-nhat,publish,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+1368,phan-mem-goi-tu-dong-va-loi-ich-doi-voi-chien-luoc-ban-hang,publish,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+1454,huong-dan-nhan-vien-ban-hang-saas-xu-ly-tu-choi-giao-dich-ph,draft,setup_time,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+1705,cach-viet-ban-tu-danh-gia-cong-viec-cua-nhan-vien,publish,perf_30_50,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P1
+1968,tong-dai-quoc-te-mo-rong-thi-truong,publish,countries_70,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P1
+1968,tong-dai-quoc-te-mo-rong-thi-truong,publish,setup_time,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2244,lam-gi-de-mo-rong-doi-ngu-ho-tro-khach-hang-ma-khong-hi-sinh,draft,setup_time,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2400,huong-dan-do-luong-ket-qua-khao-sat-su-hai-long-cua-khach-ha,draft,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2437,cong-cu-tao-phieu-yeu-cau-ho-tro-ticket-cho-bo-phan-dich-vu-,private,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2437,cong-cu-tao-phieu-yeu-cau-ho-tro-ticket-cho-bo-phan-dich-vu-,private,sla_uptime,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2437,cong-cu-tao-phieu-yeu-cau-ho-tro-ticket-cho-bo-phan-dich-vu-,private,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2449,,draft,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2449,,draft,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2462,tai-sao-ty-le-giu-chan-khach-hang-lai-quan-trong-doi-voi-doa,draft,perf_30_50,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P1
+2472,,draft,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+2486,,draft,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+2495,19-vi-du-ve-khao-sat-su-hai-long-cua-khach-hang-va-cac-khao-,draft,setup_time,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2621,uu-va-nhuoc-diem-cua-cac-giai-phap-trong-phan-mem-crm-hubspo,draft,setup_time,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2621,uu-va-nhuoc-diem-cua-cac-giai-phap-trong-phan-mem-crm-hubspo,draft,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+2641,phan-mem-bitrix24-cac-tinh-nang-noi-bat-va-ly-do-nen-lua-cho,draft,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2752,khach-hang-tu-phuc-vu-va-vi-du-ve-cac-cong-thong-tin-tu-phuc,draft,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2752,khach-hang-tu-phuc-vu-va-vi-du-ve-cac-cong-thong-tin-tu-phuc,draft,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+2784,loi-ich-ma-giai-phap-tich-hop-dien-thoai-may-tinh-dem-den-ch,publish,sla_uptime,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2811,call-center-diem-khac-biet-giua-on-premises-va-cloud-call-ce,publish,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2811,call-center-diem-khac-biet-giua-on-premises-va-cloud-call-ce,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2850,uu-va-nhuoc-diem-cua-zendesk-dau-la-phan-mem-help-desk-tot-n,draft,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+2958,ban-hang-qua-dien-thoai-lam-gi-neu-khach-hang-noi-toi-khong-,publish,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+10728,,draft,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+10742,quyet-toan-thue-tncn-doanh-nghiep-va-nguoi-lao-dong-can-biet,publish,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+10743,huong-dan-nhan-vien-tu-van-ban-hang-cach-xu-ly-khach-hang-no,draft,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+10746,xay-dung-chien-luoc-email-follow-up-phan-cuoi,publish,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+10752,dung-bao-gia-giai-phap-truoc-khi-truyen-tai-duoc-gia-tri-den,publish,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+10798,tuyen-dung-customer-success-engineer-it-full-time,publish,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+10801,tuyen-dung-customer-success-engineer-internship,publish,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+10962,thuc-tap-sinh-tu-van-doanh-nghiep,publish,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+11915,chay-quang-cao-tren-shopee-tu-a-den-z,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+12281,sms-marketing-la-gi-vi-sao-ban-nen-dung-sms-marketing,publish,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+12326,sms-brandname-la-gi-gom-may-loai-va-co-loi-ich-gi-cho-doanh-,publish,qc_100,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P1
+13020,khoa-hoc-kinh-doanh-shopee-hieu-qua-trong-top-3,publish,save_50_80,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P1
+13020,khoa-hoc-kinh-doanh-shopee-hieu-qua-trong-top-3,publish,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+13208,dich-vu-call-center-la-gi-cong-ty-cung-cap-uy-tin-nhat,publish,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+13388,tong-dai-noi-bo-ao-khac-tong-dai-ao-diem-nao,publish,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+13427,giai-phap-tong-dai-ao-khong-day-co-gi-tot,publish,qc_100,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P1
+13469,tuyen-dung-customer-success-specialist-intern,publish,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+13483,tong-dai-cong-nghe-la-gi-co-nen-dau-tu-vao-tong-dai-ao,publish,qc_100,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P1
+13483,tong-dai-cong-nghe-la-gi-co-nen-dau-tu-vao-tong-dai-ao,publish,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+13483,tong-dai-cong-nghe-la-gi-co-nen-dau-tu-vao-tong-dai-ao,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+13535,hr-intern,publish,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+14304,tuyen-dung-customer-success-specialist-fulltime,publish,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+14462,hotline-la-gi-co-nhung-loai-dau-so-hotline-nao-hien-nay,publish,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+14502,ivr-la-gi-va-nhung-dieu-can-biet-ve,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+14522,acd-la-gi-ung-dung-thuc-te-cua-acd-vao-call-center,publish,setup_time,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+14536,dich-vu-tong-dai-ao-13-tinh-nang-noi-bat,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+14539,sip-trunk-la-gi-loi-ich-dich-vu-nay-mang-den-nhu-the-nao,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+14560,so-tong-dai-1800-la-gi-huong-dan-dang-ky-dau-so-1800-don-gia,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+14568,giai-dap-thong-tin-ve-voip-va-ung-dung-thuc-te,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+14614,service-level-agreement-la-gi-tu-a-z-thong-tin-ve-sla,publish,sla_uptime,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+14773,best-virtual-phone-system-for-small-medium-business-2023,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+15008,tong-dai-ip-va-nhung-khac-biet-so-voi-tong-dai-analog,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+15049,kich-ban-tu-van-khach-hang-spa-la-gi,publish,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+15207,5-ly-do-nen-chon-dich-vu-cham-soc-khach-hang-viettel,publish,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+15207,5-ly-do-nen-chon-dich-vu-cham-soc-khach-hang-viettel,publish,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+15207,5-ly-do-nen-chon-dich-vu-cham-soc-khach-hang-viettel,publish,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+15250,tong-dai-contact-center-la-gi,publish,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+15250,tong-dai-contact-center-la-gi,publish,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+15281,mua-so-tong-dai-1900-co-loi-ich-gi-nen-mua-o-dau-uy-tin,publish,never_miss,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+15281,mua-so-tong-dai-1900-co-loi-ich-gi-nen-mua-o-dau-uy-tin,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+15281,mua-so-tong-dai-1900-co-loi-ich-gi-nen-mua-o-dau-uy-tin,publish,pricing,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+15332,dich-vu-voice-brandname-la-gi,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+15384,salesforce-marketing-cloud-la-gi-tim-hieu-thong-tin-tu-a-z,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+15561,trai-nghiem-khach-hang-xuat-sac-la-gi-cach-nang-cap,publish,unlimited,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+15646,top-5-loi-ich-cua-phan-mem-auto-answer,publish,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+15713,quan-ly-cuoc-goi-khach-hang,publish,setup_time,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+15765,phan-mem-auto-call-va-nhung-loi-ich-cho-doanh-nghiep,publish,save_50_80,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P1
+15806,giai-phap-tong-dai-ao-cho-doanh-nghiep-vua-va-nho,publish,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+16005,he-thong-cham-soc-khach-hang-loi-ich-va-6-tinh-nang,publish,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+16018,dang-ky-tong-dai-ao-giai-phap-cham-soc-khach-hang-hieu-qua,publish,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+16018,dang-ky-tong-dai-ao-giai-phap-cham-soc-khach-hang-hieu-qua,publish,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1
+16389,,draft,always_247,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+17839,,draft,setup_time,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+17884,,draft,perf_30_50,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P1
+17917,,draft,setup_time,article body,VERIFY_REQUIRED,"Requires Product evidence, or replace with qualitative wording",P2
+17924,,draft,customer_named,article body,VERIFY_LEGAL,Requires written customer permission before republishing,P1

@@ -426,8 +426,27 @@ export function estimateCost(): {
 /**
  * Structured data for the pricing page.
  *
- * `Offer.price` is deliberately omitted while pricing is unconfigured —
- * emitting a zero would publish a false price to search engines.
+ * ---------------------------------------------------------------------------
+ * WHY THERE IS NO Product, Offer OR OfferCatalog NODE — WEB-SITE-QA-001
+ * ---------------------------------------------------------------------------
+ * There used to be all three, and the previous comment here explained only half
+ * the problem. Omitting `price` was correct but insufficient: the node also
+ * emitted `availability: https://schema.org/InStock` and
+ * `offerCount: 4`, which together assert that four purchasable plans are
+ * available right now. That is a product-availability claim, and this repository
+ * has no approved rate and no confirmed public plan scope — `PRICING_CONFIGURED`
+ * is false, and the page itself renders `PRICE_FALLBACK` copy rather than
+ * numbers. Structured data was making a stronger claim than the page it
+ * described.
+ *
+ * `OfferCatalog` went for the same reason: it is commerce vocabulary that reads
+ * as a priced catalogue. The solutions it listed are real routes, so the list
+ * itself is honest — it is now an `ItemList`, which says "these pages exist"
+ * without implying "these are offers you can buy".
+ *
+ * Do not reintroduce Product/Offer/AggregateOffer here until an approved rate
+ * card exists AND the visible page publishes it. Emitting availability or price
+ * ahead of the page is the same defect in the other direction.
  */
 export function buildPricingJsonLd(origin: string) {
   return {
@@ -441,22 +460,7 @@ export function buildPricingJsonLd(origin: string) {
         ],
       },
       {
-        '@type': 'Product',
-        name: 'Gcalls Plus Webphone',
-        description:
-          'Tổng đài chuyên nghiệp chạy trên trình duyệt cho đội Sales và CSKH.',
-        brand: { '@type': 'Brand', name: 'Gcalls' },
-        offers: {
-          '@type': 'AggregateOffer',
-          priceCurrency: 'VND',
-          // No `lowPrice` / `highPrice` / `price`: pricing is not approved.
-          availability: 'https://schema.org/InStock',
-          url: `${origin}${ROUTES.pricing}`,
-          offerCount: GCALLS_PLUS_PLANS.length,
-        },
-      },
-      {
-        '@type': 'OfferCatalog',
+        '@type': 'ItemList',
         name: 'Giải pháp Gcalls',
         itemListElement: SOLUTION_PRICING.map((s, i) => ({
           '@type': 'ListItem',

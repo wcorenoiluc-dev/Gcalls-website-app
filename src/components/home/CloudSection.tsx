@@ -170,8 +170,8 @@ function CloudMockup() {
                   <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: st.dot }} />
                   <span className="text-[10px]" style={{ color: "#5b5f6b" }}>{st.label}</span>
                 </div>
-                <button className="w-6 h-6 rounded-lg flex items-center justify-center self-center" style={{ background: "#f6f3fc" }}>
-                  <MoreHorizontal size={10} color="#673ab7" />
+                <button type="button" aria-label="Tùy chọn cho extension này" className="w-6 h-6 rounded-lg flex items-center justify-center self-center" style={{ background: "#f6f3fc" }}>
+                  <MoreHorizontal size={10} color="#673ab7" aria-hidden="true" />
                 </button>
               </div>
             );
@@ -402,11 +402,19 @@ export function CloudSection() {
             <PhoneIncoming size={28} color="#fff" strokeWidth={1.8} />
           </div>
           <div className="flex-1 relative text-center md:text-left">
+            {/*
+              "Không bỏ lỡ bất kỳ cuộc gọi nào" was an absolute outcome
+              guarantee, and "tăng tỷ lệ kết nối thành công" promised a result.
+              Both now describe the mechanism — routing rules — which is what the
+              product does; whether a call is answered depends on staffing and
+              carrier conditions Gcalls does not control.
+            */}
             <h3 className="font-extrabold text-white mb-3" style={{ fontSize: "clamp(20px, 2.4vw, 30px)", lineHeight: 1.2 }}>
-              Không bỏ lỡ bất kỳ <span style={{ color: "rgba(255,255,255,0.75)" }}>cuộc gọi nào</span>
+              Điều hướng cuộc gọi đến <span style={{ color: "rgba(255,255,255,0.75)" }}>đúng người phụ trách</span>
             </h3>
             <p style={{ color: "rgba(255,255,255,0.72)", maxWidth: "540px", fontSize: "15px", lineHeight: 1.7 }}>
-              Tự động điều hướng cuộc gọi đến đúng bộ phận, đúng nhân viên hoặc đúng chi nhánh giúp nâng cao trải nghiệm khách hàng và tăng tỷ lệ kết nối thành công.
+              Cấu hình luồng cuộc gọi tới đúng bộ phận, đúng nhân viên hoặc đúng chi nhánh, kèm
+              nhóm đổ chuông và chuyển tiếp cho trường hợp không có người nhận máy.
             </p>
           </div>
           <Link
@@ -458,7 +466,8 @@ export function CloudSection() {
               Hành trình cuộc gọi từ{" "}
               <span style={{ color: "#673ab7" }}>đầu đến cuối</span>
             </h3>
-            <p className="text-sm" style={{ color: "#5b5f6b" }}>Mỗi cuộc gọi đều được xử lý, ghi nhận và phân tích hoàn toàn tự động</p>
+            {/* "hoàn toàn tự động" overstated: each step below is configured, not automatic by default. */}
+            <p className="text-sm" style={{ color: "#5b5f6b" }}>Các bước một cuộc gọi đi qua, theo luồng doanh nghiệp cấu hình</p>
           </div>
 
           {/* Flow steps — horizontal on desktop, vertical on mobile */}

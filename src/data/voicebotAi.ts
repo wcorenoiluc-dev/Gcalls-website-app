@@ -497,11 +497,12 @@ export const VB_FINAL_CTA = {
   description:
     'Chia sẻ quy trình hiện tại để đội ngũ Gcalls cùng bạn xác định use case, phạm vi tích hợp và phương án triển khai Voicebot phù hợp.',
   /**
-   * One action only. A secondary button here would either compete with the
-   * conversion or be an in-page hash — and a hash link inside this SPA does not
-   * scroll on its own (`ScrollToTop` only reacts to pathname), so it would read
-   * as a dead control. The in-page jump to the use cases lives in the hero,
-   * where it is a plain anchor the browser handles natively.
+   * One action only: a secondary button here would compete with the conversion.
+   *
+   * The original note also said an in-page hash would read as a dead control.
+   * That is no longer true — `ScrollManager` in `src/components/common/Seo.tsx`
+   * resolves fragments, including across routes and on direct load. The
+   * single-CTA decision stands on its own, but do not cite the old reason.
    */
   primaryCta: { label: 'Đăng ký tư vấn Voicebot', path: ROUTES.contact },
 } as const
@@ -551,11 +552,20 @@ export function buildVoicebotJsonLd(origin: string) {
         provider: { '@type': 'Organization', name: 'Gcalls' },
         areaServed: 'VN',
         url: `${origin}${ROUTES.voicebotAi}`,
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
+        /*
+          `hasOfferCatalog` / `OfferCatalog` until Checkpoint WEB-SITE-QA-001.
+          The use cases it listed are real page content, but `OfferCatalog` is
+          commerce vocabulary: it describes a catalogue of things being offered
+          for sale, which is not what a use-case list is, and this page has no
+          approved price, package or availability. `ItemList` states the same
+          content without the commercial implication.
+        */
+        hasPart: {
+          '@type': 'ItemList',
           name: VB_USE_CASES.h2,
-          itemListElement: VB_USE_CASES.items.map((item) => ({
-            '@type': 'OfferCatalog',
+          itemListElement: VB_USE_CASES.items.map((item, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
             name: item.title,
             description: item.detail,
           })),

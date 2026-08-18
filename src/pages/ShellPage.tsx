@@ -1,6 +1,5 @@
 import { useLocation } from 'react-router'
 import { RouteShell } from '@/components/layout/RouteShell'
-import { ROUTES } from '@/config/navigation'
 
 /**
  * Generic page shell.
@@ -15,38 +14,16 @@ import { ROUTES } from '@/config/navigation'
  */
 
 /**
- * Onward navigation for leaf routes that have no children of their own.
- * Chosen per route so the links are genuinely relevant, not filler.
+ * Onward navigation for shell routes.
  *
- * Only CHILD routes appear here. Every hub, product and solution page now has
- * its own component, so an entry for one of those would be dead code.
+ * EMPTY as of Checkpoint WEB-COMPANY-001 — every public content route now has
+ * its own page, so no entry here would ever be read. The map is kept for the
+ * same reason `SHELL_ROUTES` is: a route minted ahead of its content should
+ * land on a real page with relevant onward links, and this is where those links
+ * are declared. Add the route to `SHELL_ROUTES` in `src/app/router.tsx` and its
+ * links here at the same time.
  */
-const RELATED: Record<string, string[]> = {
-  // Integration platform pages
-  // None left here. All five have their own pages — HubSpot (INT-01), Salesforce
-  // (INT-02), Zoho CRM (INT-03), Freshdesk (INT-04), Zendesk (INT-05) — so
-  // Integration Cluster V1 no longer touches the shell at all.
-
-  // Industries
-  [ROUTES.education]: [ROUTES.gcallsPlus, ROUTES.crmIntegration, ROUTES.industries],
-  [ROUTES.finance]: [ROUTES.gcallsPlus, ROUTES.qcCenter, ROUTES.industries],
-  [ROUTES.insurance]: [ROUTES.gcallsPlus, ROUTES.qcCenter, ROUTES.industries],
-  [ROUTES.realEstate]: [ROUTES.gcallsPlus, ROUTES.crmIntegration, ROUTES.industries],
-  [ROUTES.ecommerce]: [ROUTES.posIntegration, ROUTES.gcallsCx, ROUTES.industries],
-  [ROUTES.bpo]: [ROUTES.gcallsCx, ROUTES.qcCenter, ROUTES.industries],
-
-  // Resources
-  [ROUTES.blog]: [ROUTES.guides, ROUTES.caseStudies, ROUTES.resources],
-  [ROUTES.guides]: [ROUTES.blog, ROUTES.glossary, ROUTES.resources],
-  [ROUTES.caseStudies]: [ROUTES.blog, ROUTES.ebook, ROUTES.resources],
-  [ROUTES.ebook]: [ROUTES.guides, ROUTES.caseStudies, ROUTES.resources],
-  [ROUTES.glossary]: [ROUTES.faq, ROUTES.guides, ROUTES.resources],
-  [ROUTES.faq]: [ROUTES.glossary, ROUTES.pricing, ROUTES.resources],
-
-  // Company
-  [ROUTES.customers]: [ROUTES.company, ROUTES.partners, ROUTES.caseStudies],
-  [ROUTES.partners]: [ROUTES.company, ROUTES.referral, ROUTES.contact],
-}
+const RELATED: Record<string, string[]> = {}
 
 export function ShellPage() {
   const { pathname } = useLocation()

@@ -2,7 +2,8 @@ import { ArrowRight, Check } from 'lucide-react'
 import { Link } from 'react-router'
 import { Container, Eyebrow, GradientHeading } from '@/components/common/primitives'
 import { ProductVisualWithSupport } from '@/components/common/ProductVisual'
-import { CRMMockup, SoftphoneMockup } from '@/components/product-ui'
+import { ProductScreenshot } from '@/components/common/ProductScreenshot'
+import { GCALLS_PLUS_IMAGES } from '@/data/productImages'
 import { track } from '@/lib/analytics'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
 import { GP_HERO, GP_LEAD_CONTEXT } from '@/data/gcallsPlus'
@@ -11,8 +12,14 @@ import { GP_HERO, GP_LEAD_CONTEXT } from '@/data/gcallsPlus'
  * Page hero. Carries the page's single H1.
  *
  * Visual composition per brief §3:
- *   MAIN     Contact Profile (+ keypad, inside the mockup)
- *   SUPPORT  Active Call
+ *   MAIN     Webphone — contact profile + activity feed + keypad, one screen
+ *   SUPPORT  Active Call, as it renders on a phone
+ *
+ * Both are real captures, masked irreversibly before they entered the repo.
+ * The main visual is this page's LCP image: eager, sync-decoded,
+ * fetchpriority=high. The supporting card sits above the fold from `lg` up, so
+ * it is eager too — but without the priority hint, so it does not compete with
+ * the LCP image.
  * Desktop shows both, supporting card overlapping. Mobile stacks them — one
  * main visual, then the supporting card below. Never 3–4 floating screenshots.
  *
@@ -90,9 +97,20 @@ export function GcallsPlusHero() {
 
           {/* Visual second. */}
           <ProductVisualWithSupport
-            main={<CRMMockup />}
-            support={<SoftphoneMockup />}
+            main={
+              <ProductScreenshot
+                image={GCALLS_PLUS_IMAGES.webphoneDesktop}
+                priority
+              />
+            }
+            support={
+              <ProductScreenshot
+                image={GCALLS_PLUS_IMAGES.activeCallMobile}
+                aboveFold
+              />
+            }
             mainMaxWidth="580px"
+            note="Ảnh chụp thật từ môi trường demo nội bộ. Dữ liệu khách hàng và nhân viên đã được che vĩnh viễn."
           />
         </div>
       </Container>

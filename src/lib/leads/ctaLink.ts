@@ -38,6 +38,29 @@ export function leadCtaHref(context: LeadCtaContext = {}): string {
   return query ? `${ROUTES.contact}?${query}` : ROUTES.contact
 }
 
+/**
+ * A link whose destination MIGHT be the contact route.
+ *
+ * Added in Checkpoint WEB-SITE-QA-001. Several content structures hold a
+ * `path: RoutePath` that usually points at a real content page but occasionally
+ * points at `/lien-he/` — a hub decision-guide row for "my system is not in the
+ * list", a guide's next action, the referral page's closing button. Rendered with
+ * a plain `<Link to={path}>` those arrived at the form with no `intent` and no
+ * `source`, so the lead recorded nothing about where it came from while every
+ * neighbouring CTA on the same page recorded everything.
+ *
+ * Wrapping the render site rather than editing each data row means a row added
+ * later cannot reintroduce the bug. Pass the page's own lead context.
+ *
+ * Use this ONLY for conversion CTAs. Wayfinding links — a "Xem thêm" list, a
+ * sitemap-derived card grid that happens to include the contact page — should
+ * stay bare: they are navigation to a destination, not a conversion, and tagging
+ * them would attribute leads to whichever page a visitor merely passed through.
+ */
+export function leadAwareHref(path: string, lead: LeadCtaContext = {}): string {
+  return path === ROUTES.contact ? leadCtaHref(lead) : path
+}
+
 const VALID_INTENTS: LeadIntent[] = [
   'consultation',
   'demo',

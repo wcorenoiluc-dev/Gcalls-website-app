@@ -451,10 +451,26 @@ export const GP_FINAL_CTA = {
 /**
  * Structured data.
  *
- * Four nodes only — BreadcrumbList, Product, SoftwareApplication, FAQPage.
- * No Offer/price is emitted (public pricing does not exist, and a zero or
- * invented price would publish a false claim), and no AggregateRating, Review,
- * customer count, award or unverified statistic.
+ * Three nodes — BreadcrumbList, SoftwareApplication, FAQPage.
+ *
+ * ---------------------------------------------------------------------------
+ * TWO CORRECTIONS FROM CHECKPOINT WEB-SITE-QA-001
+ * ---------------------------------------------------------------------------
+ * 1. The breadcrumb trail was missing its middle level. The page RENDERS
+ *    "Trang chủ › Sản phẩm › Gcalls Plus Webphone" (the trail comes from
+ *    `getBreadcrumbTrail`, and WEB-003's parent is `ROUTES.products`), but this
+ *    node emitted only two items. Structured data that disagrees with the
+ *    visible breadcrumb is a mismatch regardless of which one is "nicer".
+ *
+ * 2. The `Product` node was removed. It carried nothing the
+ *    `SoftwareApplication` node below does not already carry — same name,
+ *    description, category and url — so the only thing it added was the
+ *    commerce vocabulary, and `Product` invites `offers`, `availability` and
+ *    `aggregateRating`, none of which is verified here. `SoftwareApplication` is
+ *    also the more accurate type for a browser-based webphone.
+ *
+ * Still deliberately absent: Offer, price, availability, AggregateRating,
+ * Review, customer count, award and every unverified statistic.
  */
 export function buildGcallsPlusJsonLd(origin: string) {
   return {
@@ -467,18 +483,16 @@ export function buildGcallsPlusJsonLd(origin: string) {
           {
             '@type': 'ListItem',
             position: 2,
+            name: 'Sản phẩm',
+            item: `${origin}${ROUTES.products}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
             name: 'Gcalls Plus Webphone',
             item: `${origin}${ROUTES.gcallsPlus}`,
           },
         ],
-      },
-      {
-        '@type': 'Product',
-        name: 'Gcalls Plus Webphone',
-        description: GP_DIRECT_ANSWER.answer,
-        brand: { '@type': 'Brand', name: 'Gcalls' },
-        category: 'Call Center Software',
-        url: `${origin}${ROUTES.gcallsPlus}`,
       },
       {
         '@type': 'SoftwareApplication',

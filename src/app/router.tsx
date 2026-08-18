@@ -1,9 +1,10 @@
 import { Suspense, lazy } from 'react'
 import { createBrowserRouter } from 'react-router'
-import { ROUTES } from '@/config/navigation'
+import { ROUTES, type RoutePath } from '@/config/navigation'
 import { SiteLayout } from '@/layouts/SiteLayout'
 import { RouteFallback } from '@/components/common/RouteFallback'
 import { HomePage } from '@/pages/HomePage'
+import { VISIBLE_ARTICLES } from '@/data/blog/visibility'
 
 /**
  * Route table for the GCALLS website — 37 routes.
@@ -76,6 +77,47 @@ const ZendeskIntegrationPage = lazy(() =>
     default: m.ZendeskIntegrationPage,
   })),
 )
+/**
+ * One component serves all six `/nganh/…` routes, so they share a single chunk
+ * — the sections are identical and only the content object differs.
+ */
+const IndustryPage = lazy(() =>
+  import('@/pages/IndustryPage').then((m) => ({ default: m.IndustryPage })),
+)
+/**
+ * Resource pages — Checkpoint WEB-RES-001. Six routes, six components: unlike
+ * the industry pages, these bodies genuinely differ (a glossary and a
+ * case-study index are not the same page with different words), so each keeps
+ * its own chunk. They share the resource section library, which vite hoists
+ * into a chunk of its own.
+ */
+const BlogPage = lazy(() =>
+  import('@/pages/BlogPage').then((m) => ({ default: m.BlogPage })),
+)
+const GuidesPage = lazy(() =>
+  import('@/pages/GuidesPage').then((m) => ({ default: m.GuidesPage })),
+)
+const CaseStudiesPage = lazy(() =>
+  import('@/pages/CaseStudiesPage').then((m) => ({ default: m.CaseStudiesPage })),
+)
+const EbookPage = lazy(() =>
+  import('@/pages/EbookPage').then((m) => ({ default: m.EbookPage })),
+)
+const GlossaryPage = lazy(() =>
+  import('@/pages/GlossaryPage').then((m) => ({ default: m.GlossaryPage })),
+)
+const FaqPage = lazy(() =>
+  import('@/pages/FaqPage').then((m) => ({ default: m.FaqPage })),
+)
+/**
+ * Company pages — Checkpoint WEB-COMPANY-001. The last two shells on the site.
+ */
+const CustomersPage = lazy(() =>
+  import('@/pages/CustomersPage').then((m) => ({ default: m.CustomersPage })),
+)
+const PartnersPage = lazy(() =>
+  import('@/pages/PartnersPage').then((m) => ({ default: m.PartnersPage })),
+)
 const ProductsHubPage = lazy(() =>
   import('@/pages/ProductsHubPage').then((m) => ({ default: m.ProductsHubPage })),
 )
@@ -106,6 +148,17 @@ const ShellPage = lazy(() =>
 const NotFoundPage = lazy(() =>
   import('@/pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })),
 )
+/**
+ * Blog articles — Checkpoint GCALLS-BLOG-BATCH-01-CORRECTION-AUTHORING.
+ *
+ * One component, eighteen explicit paths built from the catalog. Explicit
+ * rather than a `:slug` parameter because Batch 1 preserves legacy ROOT-LEVEL
+ * URLs, and a root-level wildcard would swallow every unmatched path on the
+ * site — including the 404.
+ */
+const BlogArticlePage = lazy(() =>
+  import('@/pages/BlogArticlePage').then((m) => ({ default: m.BlogArticlePage })),
+)
 
 function lazyRoute(element: React.ReactNode) {
   return <Suspense fallback={<RouteFallback />}>{element}</Suspense>
@@ -114,32 +167,18 @@ function lazyRoute(element: React.ReactNode) {
 /**
  * Routes served by the sitemap-driven shell.
  *
- * Every remaining entry is a CHILD route. No hub and no page reachable in one
- * click from the header renders a shell — that is a Boss Demo V1 requirement,
- * and the list below is where a regression would show up first.
+ * EMPTY as of Checkpoint WEB-COMPANY-001: every public content route on this
+ * site now has a real page. The clusters closed in order — Integrations
+ * (INT-01…05), Industries (WEB-IND-001), Resources (WEB-RES-001), Company
+ * (WEB-COMPANY-001).
+ *
+ * The array and `ShellPage` are kept ON PURPOSE rather than deleted. The shell
+ * renders a real page from a sitemap entry, so it remains the correct landing
+ * for any route minted ahead of its content — adding a path here is still the
+ * cheapest way to ship a new route without a dead end. Deleting the mechanism
+ * would mean rebuilding it the next time that happens.
  */
-const SHELL_ROUTES = [
-  // Integrations — no platform child page is a shell any more. All five have
-  // real pages: HubSpot (INT-01), Salesforce (INT-02), Zoho CRM (INT-03),
-  // Freshdesk (INT-04), Zendesk (INT-05) — Integration Cluster V1 complete.
-  // Industries — child pages
-  ROUTES.education,
-  ROUTES.finance,
-  ROUTES.insurance,
-  ROUTES.realEstate,
-  ROUTES.ecommerce,
-  ROUTES.bpo,
-  // Resources — child pages
-  ROUTES.blog,
-  ROUTES.guides,
-  ROUTES.caseStudies,
-  ROUTES.ebook,
-  ROUTES.glossary,
-  ROUTES.faq,
-  // Company — child pages
-  ROUTES.customers,
-  ROUTES.partners,
-]
+const SHELL_ROUTES: RoutePath[] = []
 
 export const router = createBrowserRouter([
   {
@@ -173,6 +212,29 @@ export const router = createBrowserRouter([
       { path: ROUTES.freshdesk, element: lazyRoute(<FreshdeskIntegrationPage />) },
       { path: ROUTES.zendesk, element: lazyRoute(<ZendeskIntegrationPage />) },
 
+      // Industry pages — one component, six content objects
+      { path: ROUTES.education, element: lazyRoute(<IndustryPage industry="education" />) },
+      { path: ROUTES.finance, element: lazyRoute(<IndustryPage industry="finance" />) },
+      { path: ROUTES.insurance, element: lazyRoute(<IndustryPage industry="insurance" />) },
+      {
+        path: ROUTES.realEstate,
+        element: lazyRoute(<IndustryPage industry="real-estate" />),
+      },
+      { path: ROUTES.ecommerce, element: lazyRoute(<IndustryPage industry="ecommerce" />) },
+      { path: ROUTES.bpo, element: lazyRoute(<IndustryPage industry="bpo" />) },
+
+      // Resource pages
+      { path: ROUTES.blog, element: lazyRoute(<BlogPage />) },
+      { path: ROUTES.guides, element: lazyRoute(<GuidesPage />) },
+      { path: ROUTES.caseStudies, element: lazyRoute(<CaseStudiesPage />) },
+      { path: ROUTES.ebook, element: lazyRoute(<EbookPage />) },
+      { path: ROUTES.glossary, element: lazyRoute(<GlossaryPage />) },
+      { path: ROUTES.faq, element: lazyRoute(<FaqPage />) },
+
+      // Company pages
+      { path: ROUTES.customers, element: lazyRoute(<CustomersPage />) },
+      { path: ROUTES.partners, element: lazyRoute(<PartnersPage />) },
+
       // Navigation hubs — all six, so no header path lands on a shell
       { path: ROUTES.products, element: lazyRoute(<ProductsHubPage />) },
       { path: ROUTES.solutions, element: lazyRoute(<SolutionsHubPage />) },
@@ -189,6 +251,20 @@ export const router = createBrowserRouter([
       ...SHELL_ROUTES.map((path) => ({
         path,
         element: lazyRoute(<ShellPage />),
+      })),
+
+      /**
+       * Blog article routes.
+       *
+       * `VISIBLE_ARTICLES` is empty in a normal production build because every
+       * Batch 1 article is a draft, so these paths are NOT REGISTERED there and
+       * fall through to the 404 below. This is the primary guard against a
+       * draft shipping; the robots directive and the page-level `isVisible`
+       * check are the second and third.
+       */
+      ...VISIBLE_ARTICLES.map((article) => ({
+        path: article.url,
+        element: lazyRoute(<BlogArticlePage slug={article.slug} />),
       })),
 
       { path: '*', element: lazyRoute(<NotFoundPage />) },

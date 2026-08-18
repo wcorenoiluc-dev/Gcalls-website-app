@@ -4,11 +4,18 @@
 # still applies to responses a crawler fetches directly (assets, a URL reached
 # without reading robots.txt first), which the HTML meta tag cannot cover.
 #
+# The directive list matches DRAFT_ROBOTS in src/data/blog/visibility.ts. The
+# private demo serves draft articles and real product screenshots, so the two
+# extra directives are load-bearing: `nosnippet` stops draft copy appearing in
+# a result even when the page itself is never indexed, and `noimageindex` keeps
+# the masked product screenshots out of image search. An image reached directly
+# never parses the HTML meta tag, so this header is the only thing covering it.
+#
 # AT GO-LIVE: remove the X-Robots-Tag block below together with the
 # public/robots.txt change and VITE_ALLOW_INDEXING=true. See
 # docs/LAUNCH_CHECKLIST.md.
 
 /*
-  X-Robots-Tag: noindex, nofollow, noarchive
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

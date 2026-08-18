@@ -504,9 +504,16 @@ export const QQ_FINAL_CTA = {
 /**
  * Structured data.
  *
- * Four nodes only. No Offer, price, AggregateRating, Review, customerCount,
- * accuracy percentage or coverage percentage is emitted — none is verified,
- * and publishing one would be a false claim.
+ * Three nodes — BreadcrumbList, SoftwareApplication, FAQPage. Corrected in
+ * Checkpoint WEB-SITE-QA-001: the breadcrumb node was missing the "Sản phẩm"
+ * level the page actually renders, and the `Product` node was dropped as a
+ * duplicate of `SoftwareApplication` that pulled commerce vocabulary onto a page
+ * with no approved price or availability. See `src/data/gcallsPlus.ts` for the
+ * full reasoning.
+ *
+ * Still deliberately absent: Offer, price, availability, AggregateRating,
+ * Review, customerCount, accuracy percentage and coverage percentage — none is
+ * verified, and publishing one would be a false claim.
  */
 export function buildQaQcJsonLd(origin: string) {
   return {
@@ -519,18 +526,16 @@ export function buildQaQcJsonLd(origin: string) {
           {
             '@type': 'ListItem',
             position: 2,
+            name: 'Sản phẩm',
+            item: `${origin}${ROUTES.products}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
             name: 'QA QC Center',
             item: `${origin}${ROUTES.qcCenter}`,
           },
         ],
-      },
-      {
-        '@type': 'Product',
-        name: 'QA QC Center',
-        description: QQ_DIRECT_ANSWER.answer,
-        brand: { '@type': 'Brand', name: 'Gcalls' },
-        category: 'Call Quality Assurance Software',
-        url: `${origin}${ROUTES.qcCenter}`,
       },
       {
         '@type': 'SoftwareApplication',

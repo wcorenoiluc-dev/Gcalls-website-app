@@ -2,7 +2,26 @@ import { ArrowRight, Check } from 'lucide-react'
 import { Link } from 'react-router'
 import { Card } from '@/components/common/primitives'
 import { RouteShell } from '@/components/layout/RouteShell'
-import { ROUTES } from '@/config/navigation'
+import { leadCtaHref } from '@/lib/leads/ctaLink'
+
+/**
+ * Conversion context for this page's CTA — added in Checkpoint WEB-SITE-QA-001.
+ *
+ * The button used to link to a bare `/lien-he/`, so a referral enquiry reached
+ * the form indistinguishable from generic contact traffic.
+ *
+ * `partnership` is an EXISTING approved `LeadIntent`; no enum was invented.
+ * `LeadSource` has no referral value, so this uses `contact`, exactly as
+ * `/cong-ty/doi-tac/` does (WEB-COMPANY-001 §5) — adding one would change a
+ * shared union the contact form validates against, which is a lead-architecture
+ * decision rather than a QA correction. `solution` is free-form categorical text,
+ * not an enum, so it carries the distinguishing detail.
+ */
+const REFERRAL_LEAD = {
+  intent: 'partnership',
+  source: 'contact',
+  solution: 'Chương trình giới thiệu',
+} as const
 
 /**
  * `/referral/` — referral programme.
@@ -64,7 +83,7 @@ export function ReferralPage() {
           </p>
 
           <Link
-            to={ROUTES.contact}
+            to={leadCtaHref(REFERRAL_LEAD)}
             className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto sm:self-start"
           >
             Trở thành đối tác giới thiệu Gcalls
