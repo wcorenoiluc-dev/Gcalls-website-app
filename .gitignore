@@ -18,6 +18,8 @@ lerna-debug.log*
 .env
 .env.*
 !.env.example
+# Templates only. Both hold placeholders, never a real value.
+!.env.demo.example
 
 # Editor / IDE
 .vscode/*

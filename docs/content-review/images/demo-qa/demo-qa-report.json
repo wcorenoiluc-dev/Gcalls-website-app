@@ -1,0 +1,80 @@
+{
+  "generatedFor": "GCALLS-DEMO-IMAGE-FOUNDATION-001 §I §J",
+  "routesTested": 57,
+  "websiteRoutes": 38,
+  "articleRoutes": 18,
+  "routesFailing": 0,
+  "failures": [],
+  "draftRobots": {
+    "articles": 18,
+    "wrong": []
+  },
+  "indexablePages": [],
+  "canonicalMissing": [],
+  "structuredData": {
+    "pagesWithJsonLd": 55,
+    "invalid": []
+  },
+  "images": {
+    "totalOnDisk": 13,
+    "totalBytes": 319890,
+    "totalKB": 312.4,
+    "over500KB": [],
+    "renderedTotal": 6,
+    "missingDimensions": 0,
+    "missingAlt": 0,
+    "decorativeAlt": 0,
+    "lazyCoverage": "4/6",
+    "eager": [
+      "/images/products/gcalls-plus/gcalls-plus-webphone-desktop-v1.webp",
+      "/images/products/gcalls-plus/gcalls-plus-webphone-active-call-mobile-v1.webp"
+    ],
+    "notLoaded": [],
+    "deferredUntilScroll": 4
+  },
+  "p0Pages": [
+    {
+      "path": "/",
+      "images": 0,
+      "firstViewport": 0,
+      "bytes": 0
+    },
+    {
+      "path": "/gcalls-plus-webphone/",
+      "images": 6,
+      "firstViewport": 2,
+      "bytes": 210024
+    },
+    {
+      "path": "/blog/",
+      "images": 0,
+      "firstViewport": 0,
+      "bytes": 0
+    }
+  ],
+  "gcallsPlusLcpImage": {
+    "src": "/images/products/gcalls-plus/gcalls-plus-webphone-desktop-v1.webp",
+    "loading": "eager",
+    "inFirstViewport": true
+  },
+  "responsive": {
+    "viewports": [
+      1440,
+      1024,
+      768,
+      390,
+      320
+    ],
+    "routesWithHorizontalOverflow": []
+  },
+  "lazyRuleViolations": [],
+  "knownGaps": {
+    "faviconMissing": 1,
+    "note": "No favicon is declared in index.html and none exists in public/. Chrome probes /favicon.ico on every route and gets a 404. Pre-existing; needs a brand asset, not a code fix."
+  },
+  "notFound": {
+    "path": "/khong-ton-tai-checkpoint-001/",
+    "rendered404": true,
+    "robots": "noindex, nofollow"
+  }
+}
