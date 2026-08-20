@@ -1,0 +1,71 @@
+# ---------------------------------------------------------------------------
+# Apache / LiteSpeed configuration — PRIVATE DEMO on shared hosting (iNET).
+# ---------------------------------------------------------------------------
+# `public/_headers` and `public/_redirects` are Cloudflare Pages / Netlify
+# formats. A cPanel host reads NEITHER of them — it reads this file. Without
+# this file the demo loses BOTH the SPA fallback (every deep link 404s) and the
+# X-Robots-Tag layer (the only thing covering assets fetched directly, since a
+# .webp never parses an HTML meta tag).
+#
+# Keep this in sync with public/_headers. See docs/PRIVATE_DEMO_SETUP.md §3.
+#
+# AT GO-LIVE: the X-Robots-Tag block below must be removed together with the
+# public/robots.txt change and VITE_ALLOW_INDEXING=true, never one alone.
+# See docs/LAUNCH_CHECKLIST.md.
+# ---------------------------------------------------------------------------
+
+# --- SPA fallback ----------------------------------------------------------
+# Only /index.html exists on disk; react-router resolves the rest after
+# hydration. A real file or directory is served as-is and never rewritten, so
+# /assets/*.js, /images/*.webp and /robots.txt keep their own content type.
+# The rewrite is internal (no redirect), so the browser keeps the requested URL.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# --- Headers ---------------------------------------------------------------
+<IfModule mod_headers.c>
+  # Transport-level counterpart to <meta name="robots">. Matches DRAFT_ROBOTS
+  # in src/data/blog/visibility.ts and the /* block in public/_headers.
+  Header always set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet, noimageindex"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # index.html carries the asset hashes, so it must never be cached: a stale
+  # copy points at asset filenames that no longer exist.
+  <FilesMatch "^index\.html$">
+    Header always set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # robots.txt must be re-read, not remembered from a previous deploy.
+  <FilesMatch "^robots\.txt$">
+    Header always set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# Content-hashed filenames — safe to cache for a year, they are immutable.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|webp|png|jpg|jpeg|svg|woff2?)$">
+    Header always set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# --- Do not serve files that are not part of the site ----------------------
+# `_headers` / `_redirects` are other platforms' config. `*.bak` covers the
+# host's default landing page, which the panel drops into a new document root
+# and which we rename rather than delete — renaming alone still leaves it
+# publicly fetchable.
+#
+# mod_authz_core exists only on Apache 2.4+ (and LiteSpeed, which emulates it).
+# Guarded so an older 2.2 host skips the block instead of returning 500.
+<IfModule mod_authz_core.c>
+  <FilesMatch "^(_headers|_redirects)$|\.bak$">
+    Require all denied
+  </FilesMatch>
+</IfModule>
