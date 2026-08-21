@@ -22,6 +22,27 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # --- Canonical scheme and host -------------------------------------------
+  # One hostname answers for the demo: https, no www. Written host-agnostically
+  # on purpose — hardcoding the domain here would have to be edited again the
+  # next time the demo moves, and an edit that is forgotten is a redirect loop.
+  #
+  # The www rule runs first so http://www/ takes a single hop instead of
+  # bouncing through https://www/. Neither rule can match its own target, so
+  # there is no loop.
+  #
+  # LiteSpeed terminates TLS on this box, so %{HTTPS} is authoritative. The
+  # X-Forwarded-Proto check only matters if a proxy is ever put in front: such a
+  # proxy speaks http to the origin, and without this condition every request
+  # would redirect forever.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # --- SPA fallback (see the note above) ------------------------------------
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
