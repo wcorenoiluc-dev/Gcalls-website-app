@@ -1,0 +1,28 @@
+# ---------------------------------------------------------------------------
+# GCALLS DEMO — CRAWLING IS DISALLOWED SITE-WIDE.
+# ---------------------------------------------------------------------------
+# This host serves a review demo. It is public so that anyone holding the link
+# can read it, and it must stay out of search results anyway. Those two facts
+# are not in tension: the link is unlisted, and four independent layers keep
+# crawlers out.
+#
+#   1. WordPress "Discourage search engines" (Settings > Reading), which emits
+#      noindex, nofollow on every page;
+#   2. Gcalls Core strengthens that to
+#      noindex, nofollow, noarchive, nosnippet, noimageindex;
+#   3. the X-Robots-Tag header in .htaccess, the only layer covering assets
+#      fetched directly;
+#   4. this file.
+#
+# A PHYSICAL robots.txt OVERRIDES WORDPRESS'S VIRTUAL ONE. That is why this
+# file exists: it states the policy explicitly rather than depending on a
+# setting that a plugin could change without anyone noticing.
+#
+# AT GO-LIVE: replace the Disallow below AT THE SAME TIME as turning the
+# Reading setting back on and removing the X-Robots-Tag block. Shipping one
+# without the others either leaves the live site unindexable or exposes the
+# preview.
+# ---------------------------------------------------------------------------
+
+User-agent: *
+Disallow: /

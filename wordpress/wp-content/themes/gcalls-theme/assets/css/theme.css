@@ -1,0 +1,618 @@
+/**
+ * Gcalls theme styles.
+ *
+ * The tokens below are transcribed from src/styles/theme.css in the React
+ * source, which stays the design reference. Values are duplicated rather than
+ * imported on purpose — the React build is not deployed with this site, so an
+ * import would be a broken link, and a token that silently disappears is worse
+ * than one written down twice. When a token changes in the React source it must
+ * be changed here in the same commit.
+ *
+ * Layout tokens that are also declared in theme.json (colours, font sizes,
+ * spacing steps) are the block editor's copy of the same values. theme.json
+ * feeds the editor UI; this file styles the classic templates. They must agree.
+ */
+
+:root {
+	/* Brand */
+	--gcalls-brand: #673ab7;
+	--gcalls-brand-dark: #4a2391;
+	--gcalls-brand-light: #f5f1fc;
+	--gcalls-brand-gradient: linear-gradient(135deg, #673ab7 0%, #4a2391 100%);
+
+	/* Surfaces and text */
+	--gcalls-surface: #ffffff;
+	--gcalls-surface-alt: #faf9fc;
+	--gcalls-foreground: #1e2026;
+	--gcalls-muted: #5b5f6b;
+	--gcalls-border: #e8e5ef;
+	--gcalls-border-soft: rgba(103, 58, 183, 0.12);
+
+	/* Type */
+	--gcalls-font-sans: 'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--gcalls-font-mono: 'DM Mono', ui-monospace, SFMono-Regular, monospace;
+	--gcalls-font-size: 1rem;
+	--gcalls-line-height: 1.65;
+
+	/* Geometry */
+	--gcalls-container: 1280px;
+	--gcalls-measure: 760px;
+	--gcalls-gutter: 1.25rem;
+	--gcalls-radius: 0.625rem;
+	--gcalls-radius-sm: 0.375rem;
+
+	/* Spacing scale — matches theme.json spacingSizes. */
+	--gcalls-space-1: 0.5rem;
+	--gcalls-space-2: 1rem;
+	--gcalls-space-3: 1.5rem;
+	--gcalls-space-4: 2.5rem;
+	--gcalls-space-5: 4rem;
+	--gcalls-space-6: 6rem;
+}
+
+@media (min-width: 1024px) {
+	:root {
+		--gcalls-gutter: 2rem;
+	}
+}
+
+/* -------------------------------------------------------------------------
+ * Base
+ * ---------------------------------------------------------------------- */
+
+body {
+	margin: 0;
+	background: var(--gcalls-surface);
+	color: var(--gcalls-foreground);
+	font-family: var(--gcalls-font-sans);
+	font-size: var(--gcalls-font-size);
+	line-height: var(--gcalls-line-height);
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 var(--gcalls-space-2);
+	line-height: 1.25;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: clamp(1.875rem, 1.2rem + 2.2vw, 3rem);
+}
+
+h2 {
+	font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
+}
+
+h3 {
+	font-size: 1.375rem;
+}
+
+p,
+ul,
+ol {
+	margin: 0 0 var(--gcalls-space-2);
+}
+
+a {
+	color: var(--gcalls-brand);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.15em;
+}
+
+a:hover,
+a:focus {
+	color: var(--gcalls-brand-dark);
+}
+
+/* No image may impose a desktop width on a phone. */
+img,
+video,
+iframe,
+svg {
+	max-width: 100%;
+	height: auto;
+}
+
+code,
+pre {
+	font-family: var(--gcalls-font-mono);
+	font-size: 0.9375em;
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+	outline: 2px solid var(--gcalls-brand);
+	outline-offset: 2px;
+}
+
+/* -------------------------------------------------------------------------
+ * Accessibility helpers
+ * ---------------------------------------------------------------------- */
+
+.screen-reader-text {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}
+
+.gcalls-skip-link:focus {
+	position: fixed !important;
+	top: var(--gcalls-space-1);
+	left: var(--gcalls-space-1);
+	z-index: 999;
+	width: auto;
+	height: auto;
+	clip-path: none;
+	padding: var(--gcalls-space-1) var(--gcalls-space-2);
+	background: var(--gcalls-surface);
+	border-radius: var(--gcalls-radius-sm);
+	box-shadow: 0 2px 12px rgba(30, 32, 38, 0.18);
+}
+
+/* -------------------------------------------------------------------------
+ * Layout
+ * ---------------------------------------------------------------------- */
+
+.gcalls-container {
+	width: 100%;
+	max-width: var(--gcalls-container);
+	margin-inline: auto;
+	padding-inline: var(--gcalls-gutter);
+}
+
+.gcalls-stack {
+	padding-block: var(--gcalls-space-4) var(--gcalls-space-5);
+}
+
+/* An Elementor page manages its own width; the theme must not constrain it. */
+.gcalls-page--elementor,
+.gcalls-page--full-width {
+	width: 100%;
+}
+
+.gcalls-prose {
+	max-width: var(--gcalls-measure);
+}
+
+.gcalls-prose > * + * {
+	margin-top: var(--gcalls-space-2);
+}
+
+.gcalls-prose h2 {
+	margin-top: var(--gcalls-space-4);
+}
+
+.gcalls-prose h3 {
+	margin-top: var(--gcalls-space-3);
+}
+
+.gcalls-prose table {
+	width: 100%;
+	border-collapse: collapse;
+	display: block;
+	overflow-x: auto;
+}
+
+.gcalls-prose th,
+.gcalls-prose td {
+	border: 1px solid var(--gcalls-border);
+	padding: var(--gcalls-space-1) var(--gcalls-space-2);
+	text-align: left;
+	vertical-align: top;
+}
+
+/* -------------------------------------------------------------------------
+ * Header and navigation
+ * ---------------------------------------------------------------------- */
+
+.gcalls-header {
+	border-bottom: 1px solid var(--gcalls-border);
+	background: var(--gcalls-surface);
+}
+
+.gcalls-header__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--gcalls-space-2);
+	min-height: 72px;
+}
+
+.gcalls-branding {
+	margin: 0;
+	font-size: 1.25rem;
+	font-weight: 800;
+}
+
+.gcalls-branding__text {
+	color: var(--gcalls-brand);
+	text-decoration: none;
+}
+
+.gcalls-header__toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	padding: 0;
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius-sm);
+	background: var(--gcalls-surface);
+	cursor: pointer;
+}
+
+.gcalls-header__toggle-bar,
+.gcalls-header__toggle-bar::before,
+.gcalls-header__toggle-bar::after {
+	display: block;
+	width: 18px;
+	height: 2px;
+	background: var(--gcalls-foreground);
+	content: '';
+}
+
+.gcalls-header__toggle-bar {
+	position: relative;
+}
+
+.gcalls-header__toggle-bar::before {
+	position: absolute;
+	top: -6px;
+}
+
+.gcalls-header__toggle-bar::after {
+	position: absolute;
+	top: 6px;
+}
+
+.gcalls-nav__list,
+.gcalls-footer__list,
+.gcalls-footer__legal-list,
+.gcalls-terms {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gcalls-nav__list a {
+	display: block;
+	padding: var(--gcalls-space-1) 0;
+	color: var(--gcalls-foreground);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.gcalls-nav__list a:hover,
+.gcalls-nav__list .current-menu-item > a {
+	color: var(--gcalls-brand);
+}
+
+/* Mobile first: the menu is a closed panel until the toggle opens it. */
+@media (max-width: 1023px) {
+	.gcalls-nav {
+		position: absolute;
+		left: 0;
+		right: 0;
+		display: none;
+		padding: var(--gcalls-space-2) var(--gcalls-gutter) var(--gcalls-space-3);
+		background: var(--gcalls-surface);
+		border-bottom: 1px solid var(--gcalls-border);
+		box-shadow: 0 12px 24px rgba(30, 32, 38, 0.08);
+		z-index: 20;
+	}
+
+	.gcalls-nav.is-open {
+		display: block;
+	}
+
+	.gcalls-header__inner {
+		position: relative;
+		flex-wrap: wrap;
+	}
+
+	.gcalls-nav__list .sub-menu {
+		list-style: none;
+		margin: 0;
+		padding-left: var(--gcalls-space-2);
+	}
+}
+
+@media (min-width: 1024px) {
+	.gcalls-header__toggle {
+		display: none;
+	}
+
+	.gcalls-nav__list {
+		display: flex;
+		align-items: center;
+		gap: var(--gcalls-space-3);
+	}
+
+	.gcalls-nav__list .sub-menu {
+		position: absolute;
+		display: none;
+		min-width: 220px;
+		list-style: none;
+		margin: 0;
+		padding: var(--gcalls-space-1);
+		background: var(--gcalls-surface);
+		border: 1px solid var(--gcalls-border);
+		border-radius: var(--gcalls-radius);
+		box-shadow: 0 12px 24px rgba(30, 32, 38, 0.1);
+		z-index: 20;
+	}
+
+	.gcalls-nav__list > li {
+		position: relative;
+	}
+
+	.gcalls-nav__list > li:hover > .sub-menu,
+	.gcalls-nav__list > li:focus-within > .sub-menu {
+		display: block;
+	}
+}
+
+/* -------------------------------------------------------------------------
+ * Cards, meta, terms
+ * ---------------------------------------------------------------------- */
+
+.gcalls-cards {
+	display: grid;
+	gap: var(--gcalls-space-3);
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+	.gcalls-cards {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1024px) {
+	.gcalls-cards {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+.gcalls-card {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background: var(--gcalls-surface);
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius);
+}
+
+.gcalls-card__body {
+	padding: var(--gcalls-space-3);
+}
+
+.gcalls-card__title {
+	margin: 0 0 var(--gcalls-space-1);
+	font-size: 1.125rem;
+}
+
+.gcalls-card__title a {
+	color: var(--gcalls-foreground);
+	text-decoration: none;
+}
+
+.gcalls-card__title a:hover {
+	color: var(--gcalls-brand);
+}
+
+.gcalls-card__excerpt {
+	margin: 0 0 var(--gcalls-space-2);
+	color: var(--gcalls-muted);
+}
+
+.gcalls-meta {
+	margin: 0;
+	color: var(--gcalls-muted);
+	font-size: 0.875rem;
+}
+
+.gcalls-terms {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gcalls-space-1);
+	margin-bottom: var(--gcalls-space-1);
+}
+
+.gcalls-terms__item a {
+	display: inline-block;
+	padding: 0.125rem 0.625rem;
+	background: var(--gcalls-brand-light);
+	border-radius: 999px;
+	color: var(--gcalls-brand-dark);
+	font-size: 0.8125rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.gcalls-thumbnail {
+	margin: 0;
+}
+
+.gcalls-thumbnail img {
+	display: block;
+	width: 100%;
+}
+
+/* -------------------------------------------------------------------------
+ * Page header, breadcrumbs, buttons
+ * ---------------------------------------------------------------------- */
+
+.gcalls-page-header {
+	max-width: var(--gcalls-measure);
+	margin-bottom: var(--gcalls-space-3);
+}
+
+.gcalls-page-header__intro {
+	color: var(--gcalls-muted);
+}
+
+.gcalls-breadcrumbs {
+	margin-bottom: var(--gcalls-space-2);
+	color: var(--gcalls-muted);
+	font-size: 0.875rem;
+}
+
+.gcalls-breadcrumbs ol {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.375rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gcalls-breadcrumbs li + li::before {
+	margin-right: 0.375rem;
+	content: '/';
+	color: var(--gcalls-border);
+}
+
+.gcalls-button {
+	display: inline-block;
+	padding: 0.75rem 1.5rem;
+	background: var(--gcalls-brand-gradient);
+	border-radius: var(--gcalls-radius);
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.gcalls-button:hover,
+.gcalls-button:focus {
+	color: #fff;
+	filter: brightness(1.08);
+}
+
+/* -------------------------------------------------------------------------
+ * Post navigation, pagination, empty state, footer
+ * ---------------------------------------------------------------------- */
+
+.gcalls-article__footer {
+	max-width: var(--gcalls-measure);
+	margin-top: var(--gcalls-space-4);
+	padding-top: var(--gcalls-space-3);
+	border-top: 1px solid var(--gcalls-border);
+}
+
+.post-navigation .nav-links {
+	display: grid;
+	gap: var(--gcalls-space-2);
+}
+
+@media (min-width: 768px) {
+	.post-navigation .nav-links {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+.gcalls-post-nav__label {
+	display: block;
+	color: var(--gcalls-muted);
+	font-size: 0.8125rem;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.pagination .nav-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gcalls-space-1);
+	margin-top: var(--gcalls-space-4);
+}
+
+.pagination .page-numbers {
+	display: inline-block;
+	min-width: 40px;
+	padding: 0.5rem 0.75rem;
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius-sm);
+	text-align: center;
+	text-decoration: none;
+}
+
+.pagination .page-numbers.current {
+	background: var(--gcalls-brand);
+	border-color: var(--gcalls-brand);
+	color: #fff;
+}
+
+.gcalls-empty {
+	max-width: var(--gcalls-measure);
+	padding: var(--gcalls-space-4);
+	background: var(--gcalls-surface-alt);
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius);
+}
+
+.gcalls-empty__title {
+	margin-top: 0;
+}
+
+.gcalls-footer {
+	margin-top: var(--gcalls-space-6);
+	padding-block: var(--gcalls-space-4);
+	background: var(--gcalls-surface-alt);
+	border-top: 1px solid var(--gcalls-border);
+}
+
+.gcalls-footer__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gcalls-space-3);
+}
+
+.gcalls-footer__list a,
+.gcalls-footer__legal-list a {
+	color: var(--gcalls-foreground);
+	text-decoration: none;
+}
+
+.gcalls-footer__list a:hover,
+.gcalls-footer__legal-list a:hover {
+	color: var(--gcalls-brand);
+}
+
+.gcalls-footer__bottom {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--gcalls-space-2);
+	margin-top: var(--gcalls-space-3);
+	padding-top: var(--gcalls-space-2);
+	border-top: 1px solid var(--gcalls-border);
+	color: var(--gcalls-muted);
+	font-size: 0.875rem;
+}
+
+.gcalls-footer__legal-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gcalls-space-2);
+}
+
+.gcalls-widget {
+	margin-bottom: var(--gcalls-space-3);
+}
+
+.gcalls-widget__title {
+	font-size: 1.0625rem;
+}

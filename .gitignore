@@ -37,3 +37,26 @@ Thumbs.db
 .eslintcache
 *.tsbuildinfo
 .vite/
+
+# WordPress — source only. Core, config and uploads never enter this repo.
+# Core is installed on the host and updated there; a copy here would go stale
+# and would be the version an attacker reads off GitHub.
+wordpress/core/
+wordpress/wp-admin/
+wordpress/wp-includes/
+wordpress/wp-config.php
+wordpress/wp-content/uploads/
+wordpress/wp-content/cache/
+wordpress/wp-content/upgrade/
+wordpress/wp-content/languages/
+# Every plugin except the one we author. Elementor and Rank Math are installed
+# from wordpress.org on the host, never vendored here.
+wordpress/wp-content/plugins/*
+!wordpress/wp-content/plugins/gcalls-core/
+# Same rule for themes.
+wordpress/wp-content/themes/*
+!wordpress/wp-content/themes/gcalls-theme/
+# Database dumps and backups.
+wordpress/**/*.sql
+wordpress/**/*.sql.gz
+wordpress/backups/

@@ -1,0 +1,993 @@
+{
+  "generator": "wordpress/scripts/export-content.mjs",
+  "checkpoint": "GCALLS-WORDPRESS-MIGRATION-003A",
+  "withBodies": false,
+  "counts": {
+    "pages": 38,
+    "articles": 18,
+    "media": 13
+  },
+  "hubs": [
+    "HUB-01",
+    "HUB-02",
+    "HUB-03",
+    "HUB-06",
+    "HUB-07",
+    "HUB-08",
+    "HUB-09"
+  ],
+  "pages": [
+    {
+      "id": "web-001",
+      "kind": "page",
+      "route": "/",
+      "slug": "trang-chu",
+      "parentRoute": null,
+      "title": "Trang chủ",
+      "status": "draft",
+      "isFrontPage": true,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Gcalls — Tổng đài ảo tích hợp CRM cho đội Sales và CSKH",
+        "description": "Giải pháp tổng đài thông minh giúp đội Sales và CSKH gọi trên trình duyệt, lưu lịch sử và ghi âm, quản lý khách hàng, theo dõi hiệu suất và kết nối với hệ thống quản trị doanh nghiệp."
+      }
+    },
+    {
+      "id": "web-002",
+      "kind": "page",
+      "route": "/san-pham/",
+      "slug": "san-pham",
+      "parentRoute": "/",
+      "title": "Tổng quan sản phẩm",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Sản phẩm Gcalls | Webphone, QA QC Center và Contact Center",
+        "description": "Tổng quan hệ sinh thái sản phẩm Gcalls: Gcalls Plus Webphone, QA QC Center, Gcalls CX và Gcalls Voicebot AI cho đội Sales, CSKH và QA."
+      }
+    },
+    {
+      "id": "web-003",
+      "kind": "page",
+      "route": "/gcalls-plus-webphone/",
+      "slug": "gcalls-plus-webphone",
+      "parentRoute": "/san-pham/",
+      "title": "Gcalls Plus Webphone",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Gcalls Plus Webphone | Tổng đài trên trình duyệt cho Sales & CSKH",
+        "description": "Gcalls Plus Webphone giúp doanh nghiệp nghe gọi, quản lý danh bạ, lịch sử tương tác và hoạt động cuộc gọi ngay trên trình duyệt, phù hợp cho Sales và CSKH."
+      }
+    },
+    {
+      "id": "web-004",
+      "kind": "page",
+      "route": "/qc-bot-ai/",
+      "slug": "qc-bot-ai",
+      "parentRoute": "/san-pham/",
+      "title": "QA QC Center",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "QA QC Center | AI kiểm soát chất lượng cuộc gọi | Gcalls",
+        "description": "QA QC Center của Gcalls sử dụng QC Bot AI để chuyển cuộc gọi thành transcript, hỗ trợ chấm điểm theo tiêu chí QA và làm nổi bật các tín hiệu cần kiểm tra."
+      }
+    },
+    {
+      "id": "web-005",
+      "kind": "page",
+      "route": "/gcalls-cx/",
+      "slug": "gcalls-cx",
+      "parentRoute": "/san-pham/",
+      "title": "Gcalls CX",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Gcalls CX | Contact Center đa kênh cho Zalo, Facebook, Hotline",
+        "description": "Gcalls CX hợp nhất Zalo OA, Facebook Fanpage, SMS, Email và Hotline vào một màn hình để đội CSKH quản lý hội thoại, ticket và customer context tập trung hơn."
+      }
+    },
+    {
+      "id": "web-037",
+      "kind": "page",
+      "route": "/voicebot-ai/",
+      "slug": "voicebot-ai",
+      "parentRoute": "/san-pham/",
+      "title": "Gcalls Voicebot AI",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Voicebot AI cho doanh nghiệp | Tự động hóa cuộc gọi | Gcalls",
+        "description": "Khám phá giải pháp Voicebot AI giúp doanh nghiệp tự động hóa các cuộc gọi lặp lại, ghi nhận phản hồi và chuyển những tình huống cần thiết cho nhân viên."
+      }
+    },
+    {
+      "id": "web-006",
+      "kind": "page",
+      "route": "/giai-phap/",
+      "slug": "giai-phap",
+      "parentRoute": "/",
+      "title": "Tổng quan giải pháp",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Giải pháp Gcalls | Tích hợp hệ thống và tổng đài quốc tế",
+        "description": "Giải pháp giao tiếp Gcalls theo bài toán vận hành: tích hợp CRM, Helpdesk, POS và tổng đài quốc tế cho doanh nghiệp."
+      }
+    },
+    {
+      "id": "web-007",
+      "kind": "page",
+      "route": "/tong-dai-tich-hop-crm/",
+      "slug": "tong-dai-tich-hop-crm",
+      "parentRoute": "/giai-phap/",
+      "title": "Tích hợp CRM",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Tổng đài tích hợp CRM | Click-to-Call & dữ liệu khách hàng",
+        "description": "Gcalls kết nối tổng đài với CRM để đội Sales và CSKH gọi trực tiếp từ hệ thống, nhận diện khách hàng khi có cuộc gọi và đồng bộ lịch sử tương tác theo cấu hình."
+      }
+    },
+    {
+      "id": "web-008",
+      "kind": "page",
+      "route": "/tong-dai-tich-hop-helpdesk/",
+      "slug": "tong-dai-tich-hop-helpdesk",
+      "parentRoute": "/giai-phap/",
+      "title": "Tích hợp Helpdesk",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Tổng đài tích hợp Helpdesk | Kết nối cuộc gọi & Ticket CSKH",
+        "description": "Gcalls kết nối tổng đài với Helpdesk để đội CSKH quản lý cuộc gọi, ticket và lịch sử hỗ trợ trong cùng quy trình, giảm việc chuyển đổi giữa nhiều công cụ."
+      }
+    },
+    {
+      "id": "web-009",
+      "kind": "page",
+      "route": "/tong-dai-tich-hop-pos/",
+      "slug": "tong-dai-tich-hop-pos",
+      "parentRoute": "/giai-phap/",
+      "title": "Tích hợp POS",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Tổng đài tích hợp POS | Kết nối cuộc gọi với dữ liệu bán hàng",
+        "description": "Gcalls kết nối tổng đài với POS để đội bán hàng và CSKH sử dụng customer context, dữ liệu bán hàng và lịch sử tương tác trong cùng quy trình chăm sóc."
+      }
+    },
+    {
+      "id": "web-010",
+      "kind": "page",
+      "route": "/tong-dai-quoc-te/",
+      "slug": "tong-dai-quoc-te",
+      "parentRoute": "/giai-phap/",
+      "title": "Tổng đài quốc tế",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Tổng đài quốc tế | Đầu số và liên lạc đa thị trường | Gcalls",
+        "description": "Giải pháp tổng đài quốc tế của Gcalls với đầu số và hạ tầng liên lạc theo từng thị trường doanh nghiệp cần hiện diện."
+      }
+    },
+    {
+      "id": "web-011",
+      "kind": "page",
+      "route": "/tich-hop/",
+      "slug": "tich-hop",
+      "parentRoute": "/",
+      "title": "Tổng quan tích hợp",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Tích hợp Gcalls | Kết nối tổng đài với hệ thống doanh nghiệp",
+        "description": "Danh mục tích hợp Gcalls với CRM, Helpdesk và các hệ thống doanh nghiệp đang sử dụng, theo phạm vi triển khai được xác nhận."
+      }
+    },
+    {
+      "id": "web-012",
+      "kind": "page",
+      "route": "/tich-hop/hubspot/",
+      "slug": "hubspot",
+      "parentRoute": "/tich-hop/",
+      "title": "HubSpot",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Tổng đài tích hợp HubSpot | Click-to-Call & dữ liệu cuộc gọi | Gcalls",
+        "description": "Gcalls tích hợp HubSpot giúp đội Sales và CSKH gọi từ CRM, nhận biết khách hàng khi có cuộc gọi và ghi nhận lịch sử tương tác theo cấu hình."
+      }
+    },
+    {
+      "id": "web-013",
+      "kind": "page",
+      "route": "/tich-hop/salesforce/",
+      "slug": "salesforce",
+      "parentRoute": "/tich-hop/",
+      "title": "Salesforce",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Tổng đài tích hợp Salesforce | Click-to-Call & dữ liệu cuộc gọi",
+        "description": "Gcalls tích hợp Salesforce giúp đội Sales và Service gọi từ CRM, nhận biết khách hàng khi có cuộc gọi và ghi nhận lịch sử tương tác theo cấu hình."
+      }
+    },
+    {
+      "id": "web-014",
+      "kind": "page",
+      "route": "/tich-hop/zoho-crm/",
+      "slug": "zoho-crm",
+      "parentRoute": "/tich-hop/",
+      "title": "Zoho CRM",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Tổng đài tích hợp Zoho CRM | Cuộc gọi & dữ liệu khách hàng",
+        "description": "Gcalls tích hợp Zoho CRM giúp đội Sales và CSKH kết nối hoạt động nghe gọi với customer context và lịch sử tương tác theo phạm vi cấu hình."
+      }
+    },
+    {
+      "id": "web-015",
+      "kind": "page",
+      "route": "/tich-hop/freshdesk/",
+      "slug": "freshdesk",
+      "parentRoute": "/tich-hop/",
+      "title": "Freshdesk",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Tổng đài tích hợp Freshdesk | Kết nối cuộc gọi với ticket CSKH",
+        "description": "Gcalls tích hợp Freshdesk giúp đội CSKH kết nối hoạt động nghe gọi với customer context, ticket và lịch sử hỗ trợ theo phạm vi cấu hình."
+      }
+    },
+    {
+      "id": "web-016",
+      "kind": "page",
+      "route": "/tich-hop/zendesk/",
+      "slug": "zendesk",
+      "parentRoute": "/tich-hop/",
+      "title": "Zendesk",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Tổng đài tích hợp Zendesk | Kết nối cuộc gọi với ticket CSKH",
+        "description": "Gcalls tích hợp Zendesk giúp đội CSKH kết nối hoạt động nghe gọi với customer context, ticket và lịch sử hỗ trợ theo phạm vi cấu hình."
+      }
+    },
+    {
+      "id": "web-017",
+      "kind": "page",
+      "route": "/nganh/",
+      "slug": "nganh",
+      "parentRoute": "/",
+      "title": "Giải pháp theo ngành",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Giải pháp Gcalls theo ngành | Bối cảnh vận hành từng lĩnh vực",
+        "description": "Cách Gcalls được áp dụng theo bối cảnh vận hành của từng ngành: giáo dục, tài chính, bảo hiểm, bất động sản, thương mại điện tử và BPO."
+      }
+    },
+    {
+      "id": "web-018",
+      "kind": "page",
+      "route": "/nganh/giao-duc/",
+      "slug": "giao-duc",
+      "parentRoute": "/nganh/",
+      "title": "Giáo dục",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Giải pháp tổng đài cho giáo dục | Tư vấn tuyển sinh | Gcalls",
+        "description": "Cách các tổ chức giáo dục sử dụng Gcalls để tư vấn tuyển sinh, theo dõi trao đổi với người học và giữ lại thông tin cần follow-up."
+      }
+    },
+    {
+      "id": "web-019",
+      "kind": "page",
+      "route": "/nganh/tai-chinh/",
+      "slug": "tai-chinh",
+      "parentRoute": "/nganh/",
+      "title": "Tài chính",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Giải pháp tổng đài cho ngành tài chính | Gcalls",
+        "description": "Cách doanh nghiệp tài chính sử dụng Gcalls để quản lý hoạt động liên hệ khách hàng và giữ lịch sử tương tác rõ ràng."
+      }
+    },
+    {
+      "id": "web-020",
+      "kind": "page",
+      "route": "/nganh/bao-hiem/",
+      "slug": "bao-hiem",
+      "parentRoute": "/nganh/",
+      "title": "Bảo hiểm",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Giải pháp tổng đài cho ngành bảo hiểm | Gcalls",
+        "description": "Cách doanh nghiệp bảo hiểm sử dụng Gcalls trong hoạt động tư vấn, chăm sóc khách hàng và theo dõi lịch sử trao đổi."
+      }
+    },
+    {
+      "id": "web-021",
+      "kind": "page",
+      "route": "/nganh/bat-dong-san/",
+      "slug": "bat-dong-san",
+      "parentRoute": "/nganh/",
+      "title": "Bất động sản",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Giải pháp tổng đài cho bất động sản | Quản lý lead | Gcalls",
+        "description": "Cách doanh nghiệp bất động sản sử dụng Gcalls để quản lý lead, theo dõi cuộc gọi và phối hợp giữa các agent."
+      }
+    },
+    {
+      "id": "web-022",
+      "kind": "page",
+      "route": "/nganh/thuong-mai-dien-tu/",
+      "slug": "thuong-mai-dien-tu",
+      "parentRoute": "/nganh/",
+      "title": "Thương mại điện tử",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Giải pháp tổng đài cho thương mại điện tử | Gcalls",
+        "description": "Cách doanh nghiệp thương mại điện tử sử dụng Gcalls để xử lý cuộc gọi liên quan tới đơn hàng và hỗ trợ khách hàng."
+      }
+    },
+    {
+      "id": "web-023",
+      "kind": "page",
+      "route": "/nganh/bpo/",
+      "slug": "bpo",
+      "parentRoute": "/nganh/",
+      "title": "BPO",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Giải pháp tổng đài cho BPO | Vận hành đội ngũ quy mô lớn | Gcalls",
+        "description": "Cách doanh nghiệp BPO sử dụng Gcalls để vận hành đội ngũ agent, theo dõi hoạt động và quản lý chất lượng cuộc gọi."
+      }
+    },
+    {
+      "id": "web-024",
+      "kind": "page",
+      "route": "/bang-gia/",
+      "slug": "bang-gia",
+      "parentRoute": "/",
+      "title": "Bảng giá Gcalls",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Bảng giá Gcalls | Gói tổng đài cho SME & giải pháp doanh nghiệp",
+        "description": "Xem bảng giá Gcalls cho Webphone SME, tích hợp CRM/Helpdesk, tổng đài quốc tế, Gcalls CX và giải pháp AI theo nhu cầu doanh nghiệp."
+      }
+    },
+    {
+      "id": "app-001",
+      "kind": "page",
+      "route": "/uoc-tinh-chi-phi/",
+      "slug": "uoc-tinh-chi-phi",
+      "parentRoute": "/bang-gia/",
+      "title": "Ước tính chi phí",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Ước tính chi phí Gcalls | Chọn cấu hình theo nhu cầu doanh nghiệp",
+        "description": "Chọn sản phẩm Gcalls, quy mô đội ngũ, lưu lượng sử dụng và nhu cầu tích hợp để chuẩn bị cấu hình và chi phí tham khảo trước khi nhận báo giá."
+      }
+    },
+    {
+      "id": "web-025",
+      "kind": "page",
+      "route": "/tai-nguyen/",
+      "slug": "tai-nguyen",
+      "parentRoute": "/",
+      "title": "Trung tâm tài nguyên",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Tài nguyên Gcalls | Kiến thức Call Center, CRM, CX và AI",
+        "description": "Trung tâm tài nguyên Gcalls: blog, guides, case studies, ebook, glossary và FAQ về Call Center, CRM, CX và AI."
+      }
+    },
+    {
+      "id": "web-026",
+      "kind": "page",
+      "route": "/blog/",
+      "slug": "blog",
+      "parentRoute": "/tai-nguyen/",
+      "title": "Blog",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Blog Gcalls | Kiến thức vận hành Call Center và CRM",
+        "description": "Phạm vi biên tập của blog Gcalls theo sáu danh mục: vận hành call center, tích hợp CRM và Helpdesk, giao tiếp quốc tế, trải nghiệm đa kênh, Voicebot và AI QC, vận hành theo ngành."
+      }
+    },
+    {
+      "id": "web-027",
+      "kind": "page",
+      "route": "/tai-nguyen/guides/",
+      "slug": "guides",
+      "parentRoute": "/tai-nguyen/",
+      "title": "Guides",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Guides Gcalls | Hướng dẫn triển khai tổng đài và tích hợp",
+        "description": "Sáu lộ trình đánh giá trước khi triển khai: chọn tổng đài trên trình duyệt, lập kế hoạch tích hợp CRM, đầu số quốc tế, chăm sóc đa kênh, Voicebot và giám sát chất lượng cuộc gọi."
+      }
+    },
+    {
+      "id": "web-028",
+      "kind": "page",
+      "route": "/tai-nguyen/case-studies/",
+      "slug": "case-studies",
+      "parentRoute": "/tai-nguyen/",
+      "title": "Case Studies",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Case Studies | Tiêu chuẩn bằng chứng triển khai của Gcalls",
+        "description": "Tám điều kiện bằng chứng bắt buộc trước khi Gcalls công bố một câu chuyện triển khai, kèm cấu trúc phân loại của thư viện case study đang được thu thập."
+      }
+    },
+    {
+      "id": "web-029",
+      "kind": "page",
+      "route": "/tai-nguyen/ebook/",
+      "slug": "ebook",
+      "parentRoute": "/tai-nguyen/",
+      "title": "Ebook",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Ebook Gcalls | Chủ đề tài liệu chuyên sâu đang chuẩn bị",
+        "description": "Năm nhóm chủ đề tài liệu chuyên sâu Gcalls đang chuẩn bị và tiêu chuẩn nội dung áp dụng cho chúng. Chưa có tài liệu nào được phát hành, nên trang không có nút tải."
+      }
+    },
+    {
+      "id": "web-030",
+      "kind": "page",
+      "route": "/tai-nguyen/glossary/",
+      "slug": "glossary",
+      "parentRoute": "/tai-nguyen/",
+      "title": "Glossary",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Glossary | Thuật ngữ Call Center, CRM và CX | Gcalls",
+        "description": "Hai mươi bốn thuật ngữ thường gặp khi triển khai tổng đài: tổng đài đám mây, IVR, call flow, Webphone, Click-to-Call, omnichannel, Voicebot, AI QC, SLA, API và SDK."
+      }
+    },
+    {
+      "id": "web-031",
+      "kind": "page",
+      "route": "/tai-nguyen/faq/",
+      "slug": "faq",
+      "parentRoute": "/tai-nguyen/",
+      "title": "FAQ",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "FAQ Gcalls | Câu hỏi thường gặp về tổng đài và tích hợp",
+        "description": "Hai mươi mốt câu hỏi thường gặp theo sáu nhóm: chọn giải pháp, tích hợp CRM và Helpdesk, gọi quốc tế, vận hành đa kênh, Voicebot và AI QC, triển khai và hỗ trợ."
+      }
+    },
+    {
+      "id": "web-032",
+      "kind": "page",
+      "route": "/cong-ty/",
+      "slug": "cong-ty",
+      "parentRoute": "/",
+      "title": "Về Gcalls",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Về Gcalls | Nền tảng giao tiếp cho doanh nghiệp Việt Nam",
+        "description": "Giới thiệu về Gcalls và định hướng xây dựng nền tảng giao tiếp tích hợp cho đội Sales, CSKH và QA của doanh nghiệp."
+      }
+    },
+    {
+      "id": "web-033",
+      "kind": "page",
+      "route": "/cong-ty/khach-hang/",
+      "slug": "khach-hang",
+      "parentRoute": "/cong-ty/",
+      "title": "Khách hàng",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Khách hàng của Gcalls | Mô hình vận hành được phục vụ",
+        "description": "Năm mô hình vận hành Gcalls phục vụ, các vấn đề nên làm rõ trước khi triển khai, và bảy giai đoạn làm việc từ khảo sát tới vận hành."
+      }
+    },
+    {
+      "id": "web-034",
+      "kind": "page",
+      "route": "/cong-ty/doi-tac/",
+      "slug": "doi-tac",
+      "parentRoute": "/cong-ty/",
+      "title": "Đối tác",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Đối tác Gcalls | Khung hợp tác và tiêu chí đánh giá",
+        "description": "Sáu nhóm hợp tác Gcalls sẵn sàng trao đổi, các hình thức hợp tác kèm điều kiện áp dụng, và chín hạng mục được làm rõ trước khi hai bên cam kết."
+      }
+    },
+    {
+      "id": "web-035",
+      "kind": "page",
+      "route": "/lien-he/",
+      "slug": "lien-he",
+      "parentRoute": "/",
+      "title": "Liên hệ",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Liên hệ Gcalls | Tư vấn giải pháp tổng đài cho doanh nghiệp",
+        "description": "Liên hệ đội ngũ Gcalls qua email sales@gcalls.co hoặc số 028 7302 5469 để được tư vấn giải pháp tổng đài phù hợp."
+      }
+    },
+    {
+      "id": "web-036",
+      "kind": "page",
+      "route": "/referral/",
+      "slug": "referral",
+      "parentRoute": "/",
+      "title": "Referral",
+      "status": "draft",
+      "isFrontPage": false,
+      "template": "page-templates/full-width.php",
+      "seo": {
+        "title": "Chương trình giới thiệu Gcalls | Referral",
+        "description": "Thông tin về chương trình giới thiệu của Gcalls dành cho cá nhân và tổ chức muốn giới thiệu giải pháp tới doanh nghiệp."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "id": "gc-b01-01",
+      "kind": "article",
+      "slug": "5-linh-vuc-rat-can-dich-vu-call-center-trung-tam-cuoc-goi",
+      "title": "Dịch vụ Call Center là gì và doanh nghiệp nào thực sự cần",
+      "excerpt": "Định nghĩa call center theo góc nhìn vận hành, và cách nhận ra doanh nghiệp đã vượt qua ngưỡng dùng máy lẻ cá nhân.",
+      "hub": "HUB-01",
+      "tier": "PILLAR",
+      "legacyPostId": 566,
+      "status": "publish",
+      "seo": {
+        "title": "Dịch vụ Call Center là gì và doanh nghiệp nào thực sự cần",
+        "description": "Call Center là gì, khác gì một nhóm nhân viên dùng điện thoại cá nhân, và bốn dấu hiệu cho thấy doanh nghiệp đã đến lúc cần một hệ thống tổng đài thật sự.",
+        "focus_keyword": "dịch vụ call center là gì"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-02",
+      "kind": "article",
+      "slug": "call-center-diem-khac-biet-giua-on-premises-va-cloud-call-center-phan-1",
+      "title": "Call Center On-Premises và Cloud khác nhau ở đâu",
+      "excerpt": "Bảy tiêu chí để chọn giữa tổng đài đặt tại chỗ và tổng đài đám mây, gồm cả những chi phí không nằm trên báo giá.",
+      "hub": "HUB-01",
+      "tier": "PILLAR",
+      "legacyPostId": 2768,
+      "status": "publish",
+      "seo": {
+        "title": "Call Center On-Premises và Cloud khác nhau ở đâu",
+        "description": "So sánh tổng đài đặt tại chỗ và tổng đài đám mây theo bảy tiêu chí vận hành thật: quyền kiểm soát, chi phí, thời gian thay đổi, tích hợp và rủi ro phụ thuộc.",
+        "focus_keyword": "on-premises và cloud call center"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-03",
+      "kind": "article",
+      "slug": "4-ly-do-su-dung-tong-dai-ao-call-center-la-can-thiet-voi-mot-doanh-nghiep",
+      "title": "Khi nào doanh nghiệp nên chuyển sang tổng đài ảo",
+      "excerpt": "Sáu dấu hiệu nên chuyển và ba tình huống nên hoãn — một khung quyết định thay cho danh sách lý do.",
+      "hub": "HUB-01",
+      "tier": "SUPPORTING",
+      "legacyPostId": 647,
+      "status": "publish",
+      "seo": {
+        "title": "Khi nào doanh nghiệp nên chuyển sang tổng đài ảo",
+        "description": "Sáu dấu hiệu cho thấy cách nghe gọi hiện tại đã hết dư địa, và ba tình huống nên hoãn việc chuyển đổi tổng đài ảo lại thay vì làm ngay.",
+        "focus_keyword": "khi nào nên chuyển sang tổng đài ảo"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-04",
+      "kind": "article",
+      "slug": "tong-dai-tren-trinh-duyet-hoat-dong-the-nao",
+      "title": "Tổng đài trên trình duyệt hoạt động thế nào trong một ngày làm việc",
+      "excerpt": "Webphone nhìn từ thao tác thật: nhận ca, gọi ra, ghi nhận, chuyển tiếp và bàn giao cuối ngày.",
+      "hub": "HUB-02",
+      "tier": "PILLAR",
+      "legacyPostId": null,
+      "status": "publish",
+      "seo": {
+        "title": "Tổng đài trên trình duyệt hoạt động thế nào trong một ngày",
+        "description": "Một ngày làm việc của nhân viên dùng webphone, từ ca sáng tới bàn giao cuối ngày, và những thao tác quyết định chất lượng dữ liệu cuộc gọi.",
+        "focus_keyword": "tổng đài trên trình duyệt"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-05",
+      "kind": "article",
+      "slug": "phan-mem-goi-tu-dong-va-loi-ich-doi-voi-chien-luoc-ban-hang",
+      "title": "Gọi ra theo danh sách: cách tổ chức và những giới hạn cần biết",
+      "excerpt": "Quy trình sáu bước cho một danh sách gọi ra, và bốn giới hạn phải biết trước khi bấm nút bắt đầu.",
+      "hub": "HUB-02",
+      "tier": "SUPPORTING",
+      "legacyPostId": 1368,
+      "status": "publish",
+      "seo": {
+        "title": "Gọi ra theo danh sách: cách tổ chức và giới hạn cần biết",
+        "description": "Cách chuẩn bị, phân bổ và kiểm soát một danh sách gọi ra, cùng bốn giới hạn kỹ thuật và pháp lý mà đội ngũ thường phát hiện quá muộn.",
+        "focus_keyword": "gọi ra theo danh sách"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-06",
+      "kind": "article",
+      "slug": "checklist-danh-gia-san-sang-tich-hop-tong-dai-voi-crm",
+      "title": "Checklist đánh giá mức độ sẵn sàng tích hợp tổng đài với CRM",
+      "excerpt": "Năm nhóm kiểm tra và một bảng chấm điểm để biết dự án tích hợp CRM đã sẵn sàng khởi động hay chưa.",
+      "hub": "HUB-03",
+      "tier": "PILLAR",
+      "legacyPostId": null,
+      "status": "publish",
+      "seo": {
+        "title": "Checklist đánh giá sẵn sàng tích hợp tổng đài với CRM",
+        "description": "Năm nhóm câu hỏi cần trả lời trước khi kết nối tổng đài với CRM: quyền truy cập, chất lượng dữ liệu, quy tắc trùng lặp, phạm vi API và người chịu trách nhiệm.",
+        "focus_keyword": "tích hợp tổng đài với CRM"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-07",
+      "kind": "article",
+      "slug": "dong-bo-hoa-du-lieu-la-gi-tai-sao-nen-dong-bo-du-lieu",
+      "title": "Đồng bộ dữ liệu giữa tổng đài và CRM: phạm vi và giới hạn",
+      "excerpt": "Những trường dữ liệu thực sự đi qua giữa tổng đài và CRM, và ranh giới mà API của mỗi nền tảng đặt ra.",
+      "hub": "HUB-03",
+      "tier": "SUPPORTING",
+      "legacyPostId": 15743,
+      "status": "publish",
+      "seo": {
+        "title": "Đồng bộ dữ liệu giữa tổng đài và CRM: phạm vi và giới hạn",
+        "description": "Đồng bộ dữ liệu tổng đài và CRM thực sự chuyển những trường nào, khác gì đồng bộ hai chiều, và vì sao phạm vi luôn phụ thuộc API của nền tảng.",
+        "focus_keyword": "đồng bộ dữ liệu tổng đài và CRM"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-08",
+      "kind": "article",
+      "slug": "du-lieu-dong-bo-giua-tong-dai-va-helpdesk",
+      "title": "Dữ liệu nào thực sự đồng bộ giữa tổng đài và Helpdesk",
+      "excerpt": "Ranh giới đồng bộ ở phía Helpdesk: cuộc gọi, ticket, vòng đời xử lý và những gì không nên đẩy qua.",
+      "hub": "HUB-03",
+      "tier": "SUPPORTING",
+      "legacyPostId": null,
+      "status": "publish",
+      "seo": {
+        "title": "Dữ liệu nào thực sự đồng bộ giữa tổng đài và Helpdesk",
+        "description": "Cuộc gọi trở thành ticket ở mức nào, trường nào đi kèm, trường nào không, và vì sao vòng đời ticket quyết định phạm vi đồng bộ với tổng đài.",
+        "focus_keyword": "đồng bộ dữ liệu tổng đài và helpdesk"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-09",
+      "kind": "article",
+      "slug": "hop-nhat-hoi-thoai-hotline-zalo-oa-va-facebook",
+      "title": "Hợp nhất hội thoại hotline, Zalo OA và Facebook về một nơi",
+      "excerpt": "Từ bốn hộp thư rời rạc tới một hàng đợi chung: mô hình dữ liệu, quy tắc phân công và cách giữ ngữ cảnh.",
+      "hub": "HUB-06",
+      "tier": "PILLAR",
+      "legacyPostId": null,
+      "status": "publish",
+      "seo": {
+        "title": "Hợp nhất hội thoại hotline, Zalo OA và Facebook về một nơi",
+        "description": "Cách gom hội thoại từ hotline, Zalo OA, Facebook và email vào một hàng đợi chung, giữ ngữ cảnh khi khách chuyển kênh và phân công không chồng chéo.",
+        "focus_keyword": "hợp nhất hội thoại đa kênh"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-10",
+      "kind": "article",
+      "slug": "khi-nao-doanh-nghiep-can-nen-tang-da-kenh",
+      "title": "Khi nào doanh nghiệp thực sự cần nền tảng đa kênh",
+      "excerpt": "Một khung ngưỡng thay cho lời khuyên chung: khi nào nên đầu tư nền tảng đa kênh, khi nào chưa.",
+      "hub": "HUB-06",
+      "tier": "SUPPORTING",
+      "legacyPostId": null,
+      "status": "publish",
+      "seo": {
+        "title": "Khi nào doanh nghiệp thực sự cần nền tảng đa kênh",
+        "description": "Bốn ngưỡng vận hành cho thấy đã đến lúc cần nền tảng đa kênh, và ba trường hợp một hộp thư dùng chung vẫn là lựa chọn đúng.",
+        "focus_keyword": "nền tảng đa kênh cho doanh nghiệp"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-11",
+      "kind": "article",
+      "slug": "xay-dung-bo-tieu-chi-danh-gia-chat-luong-cuoc-goi",
+      "title": "Xây dựng bộ tiêu chí đánh giá chất lượng cuộc gọi từ đầu",
+      "excerpt": "Bốn bước dựng bộ tiêu chí QA quan sát được, có trọng số và hiệu chuẩn được giữa nhiều người chấm.",
+      "hub": "HUB-07",
+      "tier": "PILLAR",
+      "legacyPostId": null,
+      "status": "publish",
+      "seo": {
+        "title": "Xây dựng bộ tiêu chí đánh giá chất lượng cuộc gọi từ đầu",
+        "description": "Cách dựng bộ tiêu chí QA từ con số không: chọn hành vi quan sát được, đặt trọng số, viết mô tả mức điểm và hiệu chuẩn giữa những người chấm.",
+        "focus_keyword": "bộ tiêu chí đánh giá chất lượng cuộc gọi"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-12",
+      "kind": "article",
+      "slug": "cham-diem-cuoc-goi-thu-cong-va-ho-tro-bang-ai",
+      "title": "Chấm điểm thủ công và hỗ trợ bằng AI khác nhau ở đâu",
+      "excerpt": "Việc nào AI làm được, việc nào bắt buộc còn người, và cách ghép hai cách chấm điểm vào một quy trình.",
+      "hub": "HUB-07",
+      "tier": "SUPPORTING",
+      "legacyPostId": null,
+      "status": "publish",
+      "seo": {
+        "title": "Chấm điểm thủ công và hỗ trợ bằng AI khác nhau ở đâu",
+        "description": "AI thay đổi độ phủ và tốc độ của hoạt động QA, nhưng không thay thế bước kiểm chứng của con người. Đây là ranh giới giữa hai cách làm.",
+        "focus_keyword": "chấm điểm cuộc gọi bằng AI"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-13",
+      "kind": "article",
+      "slug": "cai-thien-trai-nghiem-khach-hang-bang-bieu-mau-cham-diem-danh-gia-cuoc-goi",
+      "title": "Dùng biểu mẫu đánh giá cuộc gọi để cải thiện trải nghiệm khách hàng",
+      "excerpt": "Biểu mẫu là công cụ, vòng phản hồi mới là cơ chế. Cách nối hai thứ đó lại với nhau.",
+      "hub": "HUB-07",
+      "tier": "SUPPORTING",
+      "legacyPostId": 1828,
+      "status": "publish",
+      "seo": {
+        "title": "Dùng biểu mẫu đánh giá cuộc gọi để cải thiện trải nghiệm",
+        "description": "Biểu mẫu chấm điểm chỉ tạo ra thay đổi khi gắn với vòng phản hồi. Cách thiết kế biểu mẫu, trả kết quả và biến điểm số thành hành động cụ thể.",
+        "focus_keyword": "biểu mẫu đánh giá cuộc gọi"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-14",
+      "kind": "article",
+      "slug": "loai-cuoc-goi-phu-hop-dua-vao-kich-ban-voicebot",
+      "title": "Loại cuộc gọi nào phù hợp đưa vào kịch bản Voicebot",
+      "excerpt": "Một ma trận sàng lọc để biết cuộc gọi nào nên tự động hóa, cuộc gọi nào phải giữ cho người.",
+      "hub": "HUB-08",
+      "tier": "PILLAR",
+      "legacyPostId": null,
+      "status": "publish",
+      "seo": {
+        "title": "Loại cuộc gọi nào phù hợp đưa vào kịch bản Voicebot",
+        "description": "Bốn tiêu chí sàng lọc cuộc gọi phù hợp với Voicebot, ba nhóm cuộc gọi không nên tự động hóa, và cách thiết kế điểm chuyển tiếp sang nhân viên.",
+        "focus_keyword": "kịch bản voicebot"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-15",
+      "kind": "article",
+      "slug": "voicebot-ivr-va-tong-dai-tu-dong-khac-nhau-the-nao",
+      "title": "Voicebot, IVR và tổng đài tự động khác nhau thế nào",
+      "excerpt": "Tách ba khái niệm hay bị gộp làm một, bằng cách hỏi người gọi phải làm gì để hệ thống hiểu.",
+      "hub": "HUB-08",
+      "tier": "SUPPORTING",
+      "legacyPostId": null,
+      "status": "publish",
+      "seo": {
+        "title": "Voicebot, IVR và tổng đài tự động khác nhau thế nào",
+        "description": "Ba khái niệm thường bị dùng lẫn nhau. Bài viết tách rõ IVR bấm phím, tổng đài tự động và Voicebot hiểu ngôn ngữ, kèm bảng đối chiếu theo tình huống.",
+        "focus_keyword": "voicebot và IVR"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-16",
+      "kind": "article",
+      "slug": "doanh-nghiep-can-gi-khi-goi-ra-thi-truong-nuoc-ngoai",
+      "title": "Doanh nghiệp cần gì khi gọi ra thị trường nước ngoài",
+      "excerpt": "Năm nhóm điều kiện, từ đầu số và hồ sơ tới ca trực lệch múi giờ, cho lần đầu gọi ra nước ngoài.",
+      "hub": "HUB-09",
+      "tier": "PILLAR",
+      "legacyPostId": null,
+      "status": "publish",
+      "seo": {
+        "title": "Doanh nghiệp cần gì khi gọi ra thị trường nước ngoài",
+        "description": "Năm nhóm điều kiện phải chuẩn bị trước khi liên hệ khách hàng ngoài Việt Nam: đầu số, hồ sơ, chất lượng thoại, múi giờ và cách ghi nhận dữ liệu.",
+        "focus_keyword": "gọi ra thị trường nước ngoài"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-17",
+      "kind": "article",
+      "slug": "ho-so-dang-ky-dau-so-quoc-te",
+      "title": "Hồ sơ thường được yêu cầu khi đăng ký đầu số quốc tế",
+      "excerpt": "Bốn nhóm giấy tờ thường gặp, lý do yêu cầu khác nhau giữa các quốc gia, và cách chuẩn bị một lần cho đúng.",
+      "hub": "HUB-09",
+      "tier": "SUPPORTING",
+      "legacyPostId": null,
+      "status": "publish",
+      "seo": {
+        "title": "Hồ sơ thường được yêu cầu khi đăng ký đầu số quốc tế",
+        "description": "Các nhóm giấy tờ thường gặp khi xin cấp đầu số ở nước ngoài, vì sao yêu cầu khác nhau theo quốc gia, và cách chuẩn bị để không phải nộp lại.",
+        "focus_keyword": "đăng ký đầu số quốc tế"
+      },
+      "faq": []
+    },
+    {
+      "id": "gc-b01-18",
+      "kind": "article",
+      "slug": "tong-dai-quoc-te-mo-rong-thi-truong",
+      "title": "Mở rộng thị trường quốc tế: vai trò của hệ thống liên lạc",
+      "excerpt": "Ba giai đoạn mở rộng thị trường và thời điểm hệ thống liên lạc chuyển từ chi tiết phụ thành nút thắt.",
+      "hub": "HUB-09",
+      "tier": "SUPPORTING",
+      "legacyPostId": 1968,
+      "status": "publish",
+      "seo": {
+        "title": "Mở rộng thị trường quốc tế: vai trò của hệ thống liên lạc",
+        "description": "Hệ thống liên lạc quyết định điều gì trong một kế hoạch mở rộng thị trường, và ở giai đoạn nào nó chuyển từ chi phí phụ thành nút thắt thật sự.",
+        "focus_keyword": "mở rộng thị trường quốc tế"
+      },
+      "faq": []
+    }
+  ],
+  "media": [
+    {
+      "id": "GP-01",
+      "file": "public/images/products/gcalls-plus/gcalls-plus-webphone-active-call-mobile-v1.webp",
+      "alt": "Màn hình cuộc gọi đang diễn ra trên điện thoại với các nút tắt tiếng, bàn phím, chuyển tiếp và ghi chú; tên và số điện thoại đã được che",
+      "width": 553,
+      "height": 1084
+    },
+    {
+      "id": "GP-02",
+      "file": "public/images/products/gcalls-plus/gcalls-plus-activity-type-dropdown-desktop-v1.webp",
+      "alt": "Bộ chọn loại hoạt động trong Gcalls Plus với các mục cuộc gọi, ghi chú, nhắc nhở và tin nhắn",
+      "width": 808,
+      "height": 240
+    },
+    {
+      "id": "GP-03",
+      "file": "public/images/products/gcalls-plus/gcalls-plus-advanced-filter-desktop-v1.webp",
+      "alt": "Hộp thoại lọc nâng cao trong Gcalls Plus với bộ lọc theo khoảng thời gian, team, vai trò và đánh giá cuộc gọi; dữ liệu nhân viên đã được che",
+      "width": 821,
+      "height": 704
+    },
+    {
+      "id": "GP-05",
+      "file": "public/images/products/gcalls-plus/gcalls-plus-agent-status-log-desktop-v1.webp",
+      "alt": "Log trạng thái nhân viên trong Gcalls Plus theo trục thời gian trong ngày với các trạng thái online, nghỉ trưa, im lặng và offline; tên nhân viên đã được che",
+      "width": 809,
+      "height": 295
+    },
+    {
+      "id": "GP-07",
+      "file": "public/images/products/gcalls-plus/gcalls-plus-call-history-desktop-v1.webp",
+      "alt": "Bảng lịch sử cuộc gọi trong Gcalls Plus với cột nhân viên, danh bạ, số điện thoại, loại cuộc gọi, trạng thái kết nối, thời điểm và thời lượng; dữ liệu khách hàng đã được che",
+      "width": 808,
+      "height": 983
+    },
+    {
+      "id": "GP-08",
+      "file": "public/images/products/gcalls-plus/gcalls-plus-click-to-call-config-desktop-v1.webp",
+      "alt": "Bảng cấu hình nút gọi click-to-call trong Gcalls Plus với tiêu đề, nội dung, vị trí hiển thị và số nhận cuộc gọi; dữ liệu định danh đã được che",
+      "width": 809,
+      "height": 352
+    },
+    {
+      "id": "GP-09",
+      "file": "public/images/products/gcalls-plus/gcalls-plus-webphone-desktop-v1.webp",
+      "alt": "Giao diện webphone Gcalls Plus trên trình duyệt: danh sách liên hệ, hồ sơ khách hàng, ô ghi chú và bàn phím gọi trên cùng một màn hình; dữ liệu khách hàng đã được che",
+      "width": 809,
+      "height": 429
+    },
+    {
+      "id": "GP-10",
+      "file": "public/images/products/gcalls-plus/gcalls-plus-contact-profile-desktop-v1.webp",
+      "alt": "Hồ sơ khách hàng trong Gcalls Plus với thông tin liên hệ, ô ghi chú và lịch sử tương tác hiển thị cạnh nhau; dữ liệu khách hàng đã được che",
+      "width": 809,
+      "height": 440
+    },
+    {
+      "id": "GP-11",
+      "file": "public/images/products/gcalls-plus/gcalls-plus-integration-config-desktop-v1.webp",
+      "alt": "Màn hình cấu hình tích hợp trong Gcalls Plus với danh sách host, mô tả và trường dữ liệu được ánh xạ",
+      "width": 809,
+      "height": 446
+    },
+    {
+      "id": "GP-12",
+      "file": "public/images/products/gcalls-plus/gcalls-plus-integrations-desktop-v1.webp",
+      "alt": "Menu kết nối CRM trong Gcalls Plus cho phép mở hồ sơ khách hàng trên hệ thống CRM đang dùng; dữ liệu khách hàng đã được che",
+      "width": 809,
+      "height": 494
+    },
+    {
+      "id": "GP-13",
+      "file": "public/images/products/gcalls-plus/gcalls-plus-webphone-keypad-mobile-v1.webp",
+      "alt": "Bàn phím gọi của webphone Gcalls Plus trên điện thoại",
+      "width": 576,
+      "height": 1092
+    },
+    {
+      "id": "GP-14",
+      "file": "public/images/products/gcalls-plus/gcalls-plus-overview-activity-desktop-v1.webp",
+      "alt": "Màn hình tổng quan hoạt động của Gcalls Plus với nhóm danh bạ bên trái, bộ lọc hoạt động ở giữa và nhật ký cuộc gọi bên phải; tên nhóm đã được che",
+      "width": 810,
+      "height": 450
+    },
+    {
+      "id": "GP-15",
+      "file": "public/images/products/gcalls-plus/gcalls-plus-timeline-history-desktop-v1.webp",
+      "alt": "Dòng thời gian hoạt động cuộc gọi trong Gcalls Plus, mỗi mục kèm trạng thái, thời lượng và bản ghi âm; dữ liệu khách hàng đã được che",
+      "width": 809,
+      "height": 443
+    }
+  ],
+  "redirects": {}
+}

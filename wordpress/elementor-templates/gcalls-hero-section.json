@@ -1,0 +1,131 @@
+{
+  "version": "0.4",
+  "title": "Gcalls — Hero",
+  "type": "section",
+  "content": [
+    {
+      "id": "gc0hero1",
+      "elType": "section",
+      "settings": {
+        "layout": "boxed",
+        "content_width": { "unit": "px", "size": 1280 },
+        "gap": "no",
+        "padding": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": "48",
+          "right": "20",
+          "bottom": "48",
+          "left": "20",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#FAF9FC"
+      },
+      "elements": [
+        {
+          "id": "gc0herocol",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "gc0heroeyebrow",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Tổng đài ảo tích hợp CRM",
+                "header_size": "p",
+                "title_color": "#673AB7",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_size": { "unit": "px", "size": 14 },
+                "typography_font_weight": "700",
+                "typography_text_transform": "uppercase",
+                "typography_letter_spacing": { "unit": "px", "size": 1 }
+              },
+              "elements": []
+            },
+            {
+              "id": "gc0herotitle",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Đội Sales và CSKH nghe gọi ngay trên trình duyệt",
+                "header_size": "h1",
+                "title_color": "#1E2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_size": { "unit": "px", "size": 48 },
+                "typography_font_size_mobile": { "unit": "px", "size": 30 },
+                "typography_font_weight": "800",
+                "typography_line_height": { "unit": "em", "size": 1.25 }
+              },
+              "elements": []
+            },
+            {
+              "id": "gc0herotext",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Lưu lịch sử và ghi âm, quản lý khách hàng, theo dõi hiệu suất và kết nối với hệ thống quản trị doanh nghiệp.</p>",
+                "text_color": "#5B5F6B",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_size": { "unit": "px", "size": 18 },
+                "typography_line_height": { "unit": "em", "size": 1.65 }
+              },
+              "elements": []
+            },
+            {
+              "id": "gc0herocta",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Đăng ký tư vấn",
+                "link": { "url": "/lien-he/", "is_external": "", "nofollow": "" },
+                "align": "left",
+                "size": "md",
+                "background_color": "#673AB7",
+                "button_text_color": "#FFFFFF",
+                "hover_color": "#FFFFFF",
+                "button_background_hover_color": "#4A2391",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "10",
+                  "right": "10",
+                  "bottom": "10",
+                  "left": "10",
+                  "isLinked": true
+                },
+                "text_padding": {
+                  "unit": "px",
+                  "top": "14",
+                  "right": "28",
+                  "bottom": "14",
+                  "left": "28",
+                  "isLinked": false
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    }
+  ]
+}
