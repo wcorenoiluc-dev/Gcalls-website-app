@@ -261,6 +261,15 @@ check('importer reports created/updated/skipped/errors', /'created'/.test(import
 const cli = read(path.join(PLUGIN, 'includes/class-cli.php'))
 check('CLI defaults to dry-run', /\$dry_run = ! isset\( \$assoc_args\['execute'\] \)/.test(cli))
 
+// A REST route's array holds numeric handlers plus a 'schema' callable. Writing
+// a permission_callback into the callable fatals every REST request, which
+// takes the Elementor editor down with it.
+const hardening = read(path.join(PLUGIN, 'includes/class-hardening.php'))
+check(
+  'REST endpoint rewrite skips the schema entry',
+  /is_int\( \$index \)/.test(hardening) && /isset\( \$handler\['callback'\] \)/.test(hardening),
+)
+
 // The pipeline must not be able to reach a production system.
 const networkCalls = phpFiles
   .filter((f) => f.startsWith(PLUGIN))
@@ -294,6 +303,20 @@ check('wp-config.php denied', /wp-config\\\.php/.test(htaccess))
 check('xmlrpc.php denied', /xmlrpc\.php/.test(htaccess))
 check('PHP execution blocked in uploads', /wp-content\/uploads\/.*\\\.\(php/.test(htaccess))
 check('robots.txt disallows everything', /^User-agent: \*\nDisallow: \/$/m.test(robots))
+
+// WordPress finds its block by scanning for a line CONTAINING "# BEGIN
+// WordPress", not by matching a line exactly. A comment that quotes the marker
+// is therefore treated as the real marker, and everything below it is replaced
+// on the next permalink save — which silently deleted the redirects, the
+// security headers and the deny rules the first time this file was deployed.
+const beginMarkers = htaccess.split('\n').filter((line) => line.includes('# BEGIN WordPress'))
+const endMarkers = htaccess.split('\n').filter((line) => line.includes('# END WordPress'))
+check('exactly one # BEGIN WordPress line', beginMarkers.length === 1, `${beginMarkers.length} lines`)
+check('exactly one # END WordPress line', endMarkers.length === 1, `${endMarkers.length} lines`)
+check(
+  'the custom rules survive a permalink save',
+  beginMarkers.length === 1 && htaccess.indexOf(beginMarkers[0]) > htaccess.indexOf('X-Robots-Tag'),
+)
 
 /* ------------------------------------------------------------------ *
  * 8. Elementor

@@ -94,6 +94,17 @@ final class Hardening {
 			}
 
 			foreach ( $endpoints[ $route ] as $index => $handler ) {
+				// A route's array holds numerically-indexed handlers AND a
+				// 'schema' entry whose value is a callable, not a handler.
+				// Writing a permission_callback into that callable turns a valid
+				// two-element callable into an invalid three-element array, and
+				// WordPress then fatals on EVERY REST request — including the
+				// endpoints this rule was never meant to touch, which is what
+				// takes the Elementor editor down with it.
+				if ( ! is_int( $index ) || ! is_array( $handler ) || ! isset( $handler['callback'] ) ) {
+					continue;
+				}
+
 				$existing = $handler['permission_callback'] ?? null;
 
 				$endpoints[ $route ][ $index ]['permission_callback'] = static function ( $request ) use ( $existing ) {
