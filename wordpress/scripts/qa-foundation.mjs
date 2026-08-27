@@ -277,10 +277,88 @@ const networkCalls = phpFiles
 check('pipeline makes no outbound HTTP calls', networkCalls.length === 0, networkCalls.join(', '))
 
 /* ------------------------------------------------------------------ *
- * 7. Server configuration
+ * 7. User-enumeration hardening
+ *
+ * Regression cover for the leak found on the live host on 2026-08-27:
+ *
+ *   GET /?author=1  ->  301 Location: /author/admin/
+ *
+ * The 404 handler was already correct. It never ran, because it shared
+ * priority 10 on template_redirect with core's redirect_canonical(), and equal
+ * priorities run in registration order — core first. redirect_canonical()
+ * rewrites `?author=<id>` to the pretty URL only when count_user_posts() is
+ * non-zero, which is why `?author=2` (no posts) already 404d and `?author=1`
+ * (one post) did not. The leak follows post ownership, so attributing content
+ * to another administrator relocates it rather than closing it.
+ *
+ * These assertions read the source, not a running site. The live equivalents
+ * are in the NOT RUN list at the end.
  * ------------------------------------------------------------------ */
 
-console.log('\n7. Server configuration')
+console.log('\n7. User-enumeration hardening')
+
+check(
+  'author archive blocked before redirect_canonical (priority 0)',
+  /add_action\(\s*'template_redirect',\s*array\( self::class, 'block_author_archives' \),\s*0\s*\)/.test(hardening),
+  'a priority-10 registration loses to core and the 301 escapes',
+)
+check(
+  'canonical redirect cancelled on author requests',
+  /remove_action\( 'template_redirect', 'redirect_canonical' \)/.test(hardening),
+)
+check(
+  'canonical redirect cancelled per-request, not globally',
+  hardening.indexOf("remove_action( 'template_redirect', 'redirect_canonical' )") >
+    hardening.indexOf('public static function block_author_archives'),
+  'removing it at init would break permalinks site-wide',
+)
+check(
+  '404 permalink guessing disabled for author requests',
+  /do_redirect_guess_404_permalink/.test(hardening),
+)
+check('author archive still answers 404', /\$wp_query->set_404\(\);/.test(hardening) && /status_header\( 404 \)/.test(hardening))
+check(
+  'oEmbed drops author_name and author_url',
+  /'oembed_response_data'/.test(hardening) && /unset\( \$data\['author_name'\], \$data\['author_url'\] \)/.test(hardening),
+)
+check(
+  'core users sitemap provider removed',
+  /'wp_sitemaps_add_provider'/.test(hardening) && /'users' === \$name \? false : \$provider/.test(hardening),
+)
+check(
+  'REST users stay closed to anonymous callers',
+  /'rest_endpoints'/.test(hardening) && /is_user_logged_in\(\)/.test(hardening) && /rest_authorization_required_code\(\)/.test(hardening),
+)
+
+// The editor and wp-admin must survive all of the above. template_redirect does
+// not fire in wp-admin, so the only way this module could reach the editor is a
+// blanket REST filter — which is exactly what took the site down once already.
+check(
+  'no blanket REST authentication filter',
+  !/rest_authentication_errors/.test(hardening),
+  'gating all of REST breaks the Elementor editor',
+)
+check(
+  'hardening registers nothing on admin_init',
+  !/admin_init/.test(hardening),
+)
+check(
+  'author blocking is scoped to author queries only',
+  /if \( ! is_author\(\) \) \{\s*\n\s*return;/.test(hardening),
+)
+// Nothing in gcalls-theme prints author attribution today. If that changes, it
+// must use the template tags — not a hand-built /author/ URL, which now 404s.
+const themeSources = phpFiles.filter((f) => f.startsWith(THEME)).map(read).join('\n')
+check(
+  'theme builds no hand-rolled /author/ links',
+  !/["']\/author\//.test(themeSources),
+)
+
+/* ------------------------------------------------------------------ *
+ * 8. Server configuration
+ * ------------------------------------------------------------------ */
+
+console.log('\n8. Server configuration')
 const htaccess = read(path.join(WP, 'config/htaccess-wordpress.conf'))
 const robots = read(path.join(WP, 'config/robots.txt'))
 
@@ -319,10 +397,10 @@ check(
 )
 
 /* ------------------------------------------------------------------ *
- * 8. Elementor
+ * 9. Elementor
  * ------------------------------------------------------------------ */
 
-console.log('\n8. Elementor')
+console.log('\n9. Elementor')
 const elementor = read(path.join(THEME, 'inc/elementor.php'))
 check('Elementor integration is guarded', /did_action\( 'elementor\/loaded' \)/.test(elementor))
 check('Elementor limited to pages', /'page'/.test(elementor) && /get_public_post_types/.test(elementor))
@@ -337,10 +415,10 @@ for (const file of templates) {
 }
 
 /* ------------------------------------------------------------------ *
- * 9. Git hygiene
+ * 10. Git hygiene
  * ------------------------------------------------------------------ */
 
-console.log('\n9. Git hygiene')
+console.log('\n10. Git hygiene')
 const gitignore = read(path.join(REPO, '.gitignore'))
 for (const rule of ['wordpress/wp-content/uploads/', 'wordpress/wp-config.php', 'wordpress/core/']) {
   check(`.gitignore covers ${rule}`, gitignore.includes(rule))
@@ -373,6 +451,10 @@ for (const item of [
   'X-Robots-Tag on a real response',
   'WordPress Site Health',
   'PHP warnings on the rendered front end',
+  'GET /?author=1 returns 404 with no Location header',
+  'GET /author/<slug>/ returns 404',
+  'oEmbed response carries no author_name or author_url',
+  'GET /wp-json/wp/v2/users returns 401 to an anonymous caller',
 ]) {
   console.log(`  --   ${item}`)
 }
