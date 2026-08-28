@@ -8,7 +8,7 @@
  */
 import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
-import { cp, lstat, mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
+import { cp, lstat, mkdir, mkdtemp, readdir, readFile, rm, utimes, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
 
@@ -46,6 +46,26 @@ export const SECRET_PATTERNS = [
   { name: 'bearer token', re: /\bBearer\s+[A-Za-z0-9._-]{20,}/ },
   { name: 'WordPress salt constant', re: /define\(\s*['"](?:AUTH|SECURE_AUTH|LOGGED_IN|NONCE)_(?:KEY|SALT)['"]/ },
 ]
+
+/**
+ * The timestamp every packaged entry is stamped with.
+ *
+ * An arbitrary fixed instant, not "now" and not the commit date: the digest has
+ * to depend on the content alone, and a commit date would make an unchanged file
+ * hash differently in a rebuild from a later commit.
+ */
+const FIXED_MTIME = new Date('2020-01-01T00:00:00Z')
+
+/** Recursively stamps every file and directory with one mtime, depth-first. */
+async function stampTree(dir, mtime) {
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name)
+    if (entry.isDirectory()) await stampTree(full, mtime)
+    else await utimes(full, mtime, mtime)
+  }
+
+  await utimes(dir, mtime, mtime)
+}
 
 /** Formats that are size- and name-checked but not scanned for secrets. */
 const BINARY = new Set(['.png', '.jpg', '.jpeg', '.webp', '.gif', '.mo', '.woff', '.woff2'])
@@ -109,9 +129,18 @@ export async function vet(root, relativePaths, { maxFileBytes = 2 * 1024 * 1024 
  * files at the archive root, and the install either fails or scatters the
  * package across the directory.
  *
+ * REPRODUCIBLE: SAME INPUT, SAME SHA-256
+ * A zip entry stores its file's modification time, and `cp` stamps the staged
+ * copy with "now". Two builds of byte-identical content therefore produced two
+ * different digests. That is not a cosmetic problem: the install checklist tells
+ * the operator to verify the SHA-256 before uploading, and a digest that changes
+ * on every rebuild trains them to ignore the one time it changes because the
+ * content did. Every staged entry is stamped with one fixed timestamp instead,
+ * so the digest is a function of the content and nothing else.
+ *
  * @returns {Promise<{files: string[]}>}
  */
-export async function buildZip({ root, relativePaths, rootName, outPath }) {
+export async function buildZip({ root, relativePaths, rootName, outPath, mtime = FIXED_MTIME }) {
   await mkdir(path.dirname(outPath), { recursive: true })
   await rm(outPath, { force: true })
 
@@ -123,6 +152,10 @@ export async function buildZip({ root, relativePaths, rootName, outPath }) {
       await mkdir(path.dirname(target), { recursive: true })
       await cp(path.join(root, rel), target)
     }
+
+    // Directories are stamped after their contents, because writing into a
+    // directory updates its mtime again.
+    await stampTree(path.join(stage, rootName), mtime)
 
     // -X drops extended attributes and the macOS resource forks that would ride
     // along as ._ files; COPYFILE_DISABLE stops the OS re-adding them.
