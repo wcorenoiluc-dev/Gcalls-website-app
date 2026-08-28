@@ -751,20 +751,27 @@ final class Importer {
 			}
 		}
 
-		if ( 1 !== $front ) {
-			$problems[] = sprintf(
-				/* translators: %d: number of front pages found. */
-				__( 'Phải có đúng một trang chủ, manifest có %d.', 'gcalls-core' ),
-				$front
-			);
-		}
+		// The front-page and posts-page rules only apply to a manifest that
+		// actually carries pages. The full blog corpus carries articles and
+		// redirects and nothing else, and demanding a home page of it refused a
+		// perfectly valid import: a manifest with no pages makes no claim about
+		// Settings > Reading, so there is nothing to be wrong about.
+		if ( array() !== $pages ) {
+			if ( 1 !== $front ) {
+				$problems[] = sprintf(
+					/* translators: %d: number of front pages found. */
+					__( 'Phải có đúng một trang chủ, manifest có %d.', 'gcalls-core' ),
+					$front
+				);
+			}
 
-		if ( 1 !== $posts ) {
-			$problems[] = sprintf(
-				/* translators: %d: number of posts pages found. */
-				__( 'Phải có đúng một trang blog, manifest có %d.', 'gcalls-core' ),
-				$posts
-			);
+			if ( 1 !== $posts ) {
+				$problems[] = sprintf(
+					/* translators: %d: number of posts pages found. */
+					__( 'Phải có đúng một trang blog, manifest có %d.', 'gcalls-core' ),
+					$posts
+				);
+			}
 		}
 
 		// Posts use /%postname%/, so an article slug and a TOP-LEVEL page slug

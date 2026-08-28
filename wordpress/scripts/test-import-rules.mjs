@@ -104,8 +104,12 @@ function validate(manifest) {
     if (expected !== route) problems.push(`${page.id}: ${RULES.permalinkMismatch} ${expected} != ${route}`)
   }
 
-  if (front !== 1) problems.push(`${RULES.frontPageCount}, ${front}`)
-  if (posts !== 1) problems.push(`${RULES.postsPageCount}, ${posts}`)
+  // Only meaningful for a manifest that carries pages: the blog corpus carries
+  // articles and redirects, and has no home page to be missing.
+  if (pages.length > 0) {
+    if (front !== 1) problems.push(`${RULES.frontPageCount}, ${front}`)
+    if (posts !== 1) problems.push(`${RULES.postsPageCount}, ${posts}`)
+  }
 
   const topLevel = new Map()
   for (const page of byRoute.values()) {
@@ -183,9 +187,16 @@ const CASES = [
     expect: RULES.frontPageCount,
   },
   {
-    name: 'no posts page is rejected',
+    name: 'no posts page is rejected when the manifest has pages',
     manifest: { pages: [home], articles: [] },
     expect: RULES.postsPageCount,
+  },
+  {
+    name: 'a manifest with no pages is NOT asked for a home page',
+    // The full blog corpus: articles and redirects, no pages. It used to be
+    // refused for lacking a front page it never claimed to have.
+    manifest: { pages: [], articles: [{ id: 'a1', slug: 'x' }] },
+    expect: null,
   },
   {
     name: 'two pages on the same route are rejected',
@@ -214,6 +225,14 @@ console.log('1. Broken manifests must be refused')
 
 for (const testCase of CASES) {
   const problems = validate(testCase.manifest)
+
+  // `expect: null` asserts the opposite — that the manifest is ACCEPTED.
+  if (testCase.expect === null) {
+    if (problems.length === 0) ok(testCase.name)
+    else fail(testCase.name, problems.join('; '))
+    continue
+  }
+
   const matched = problems.some((problem) => problem.includes(testCase.expect))
 
   if (matched) ok(testCase.name)

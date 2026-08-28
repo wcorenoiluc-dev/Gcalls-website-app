@@ -3,7 +3,7 @@ Contributors: gcalls
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.1
-Stable tag: 0.4.2
+Stable tag: 0.4.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,12 @@ tag. Rank Math owns the document head. This plugin only feeds Rank Math's own
 post meta so migrated values stay editable in the Rank Math UI.
 
 == Changelog ==
+
+= 0.4.3 =
+* Fix: validation demanded a front page and a posts page of every manifest,
+  including one that carries no pages at all. That refused the full blog corpus
+  — articles and redirects only — for lacking something it never claimed to
+  have. The rule now applies only when the manifest carries pages.
 
 = 0.4.2 =
 * Fix: a page matched by ROLE — the existing front page or posts page — was
