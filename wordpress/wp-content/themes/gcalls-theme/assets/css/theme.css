@@ -962,3 +962,32 @@ body {
 .gcalls-card__title {
 	overflow-wrap: anywhere;
 }
+
+/* Form controls size themselves from attributes, not from their container. A
+ * <textarea> defaults to cols="20", which renders around 384px wide and ignores
+ * a 320px screen entirely — that is the comment form, and it was the last
+ * source of horizontal overflow on an article page after the box-sizing fix. */
+input,
+select,
+textarea,
+button {
+	max-width: 100%;
+}
+
+textarea {
+	width: 100%;
+}
+
+/* Imported legacy bodies contain hand-built markup with inline widths and long
+ * unbroken URLs. These stay inside their column rather than widening the page. */
+.gcalls-prose pre,
+.gcalls-prose code {
+	max-width: 100%;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.gcalls-prose [style*="width"] {
+	max-width: 100%;
+}
