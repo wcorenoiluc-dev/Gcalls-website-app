@@ -60,6 +60,25 @@ defined( 'ABSPATH' ) || exit;
 					)
 				);
 				?>
+
+				<?php
+				/**
+				 * The conversion button lives in the header, not in the menu.
+				 *
+				 * React renders `PRIMARY_CTA` beside the navigation rather than
+				 * as a menu item, and the distinction is not cosmetic: a menu
+				 * item is a link an editor can rename or drag into a submenu,
+				 * while this is the site's single conversion surface and has to
+				 * carry its attribution. It is inside the <nav> so the mobile
+				 * panel gets it too — a CTA that disappears on phones is the
+				 * half of the traffic that cannot convert.
+				 */
+				if ( shortcode_exists( 'gcalls_cta' ) ) {
+					echo '<div class="gcalls-nav__cta">';
+					echo do_shortcode( '[gcalls_cta label="Đăng ký tư vấn" intent="consultation" source="header"]' );
+					echo '</div>';
+				}
+				?>
 			</nav>
 		<?php endif; ?>
 	</div>

@@ -774,6 +774,86 @@ if (exists(shortcodes)) {
 }
 
 /* ------------------------------------------------------------------ *
+ * 17. UI parity — 006
+ * ------------------------------------------------------------------ */
+
+console.log('\n17. UI parity (006)')
+
+const productData = path.join(PLUGIN, 'data/product-pages.json')
+check('product page content generated', exists(productData))
+
+if (exists(productData)) {
+  const product = JSON.parse(read(productData))
+  const ids = Object.keys(product.pages ?? {})
+
+  check('four product pages', ids.length === 4, ids.join(', '))
+
+  for (const [id, page] of Object.entries(product.pages ?? {})) {
+    check(`${id}: hero + at least 8 sections`, Boolean(page.hero?.heading) && page.sections.length >= 8, `${page.sections.length} sections`)
+  }
+
+  // A Gcalls Plus screenshot under another product's name would show a reviewer
+  // the wrong software. Only gcalls-plus may carry media; the rest get diagrams.
+  const wrongMedia = Object.entries(product.pages ?? {})
+    .filter(([id]) => id !== 'gcalls-plus')
+    .flatMap(([id, page]) => page.sections.filter((s) => s.media).map((s) => `${id}:${s.media}`))
+  check('no product screenshot reused across products', wrongMedia.length === 0, wrongMedia.join(', '))
+
+  const diagrams = Object.values(product.pages ?? {}).flatMap((p) => p.sections.filter((s) => s.diagram).length)
+  check('CX / Voicebot / QA-QC carry diagrams', diagrams.reduce((a, b) => a + b, 0) >= 4)
+}
+
+if (exists(shortcodes)) {
+  const sc = read(shortcodes)
+  check('registers [gcalls_product_page]', sc.includes("add_shortcode( 'gcalls_product_page'"))
+  check('registers [gcalls_diagram]', sc.includes("add_shortcode( 'gcalls_diagram'"))
+  check('diagrams are inline SVG', sc.includes('<svg viewBox="0 0 715 275"'))
+  check('diagram carries an illustration caption', sc.includes('Hình minh họa giải pháp'))
+}
+
+const redirectsSrc = read(path.join(PLUGIN, 'includes/class-redirects.php'))
+// sanitize_text_field() strips percent-encoding by design; on a URL path that
+// silently mangles every non-ASCII rule.
+check('request path is not passed through sanitize_text_field', !redirectsSrc.includes("sanitize_text_field( wp_unslash( \$_SERVER['REQUEST_URI'] ) )"))
+check('redirect targets must look like a path', redirectsSrc.includes('đích không phải đường dẫn hợp lệ'))
+
+const parityThemeCss = read(path.join(THEME, 'assets/css/theme.css'))
+for (const [label, needle] of [
+  ['border-box reset', 'box-sizing: border-box'],
+  ['focus-visible ring', ':focus-visible'],
+  ['sticky header', 'position: sticky'],
+  ['scroll lock class', 'gcalls-nav-open'],
+  ['footer brand column', 'gcalls-footer__brand'],
+  ['heading scale via clamp', 'clamp('],
+]) {
+  check(`theme has ${label}`, parityThemeCss.includes(needle))
+}
+
+const navJs = read(path.join(THEME, 'assets/js/navigation.js'))
+check('menu closes on Escape', navJs.includes("'Escape'"))
+check('menu closes on outside click', navJs.includes('nav.contains( event.target )'))
+check('menu closes when crossing to desktop', navJs.includes('min-width: 1024px'))
+check('menu locks background scroll', navJs.includes('gcalls-nav-open'))
+
+const headerPhp = read(path.join(THEME, 'header.php'))
+check('header renders the conversion CTA', headerPhp.includes('gcalls_cta'))
+check('header CTA carries attribution', headerPhp.includes('source="header"'))
+
+const footerPhp = read(path.join(THEME, 'footer.php'))
+check('footer has the brand column', footerPhp.includes('gcalls-footer__brand'))
+check('footer gives the working contact channels', footerPhp.includes('sales@gcalls.co') && footerPhp.includes('028 7302 5469'))
+
+const singlePhp = read(path.join(THEME, 'single.php'))
+check('article ends with a CTA', singlePhp.includes('gcalls_cta'))
+check('article shows related posts from its hub', singlePhp.includes('gcalls-related'))
+
+if (exists(contentManifestPath)) {
+  const parityManifest = JSON.parse(read(contentManifestPath))
+  const primary = parityManifest.menus?.primary ?? []
+  check('Blog is a top-level header item', primary.some((g) => g.route === '/blog/'), primary.map((g) => g.label).join(' · '))
+}
+
+/* ------------------------------------------------------------------ *
  * Report
  * ------------------------------------------------------------------ */
 

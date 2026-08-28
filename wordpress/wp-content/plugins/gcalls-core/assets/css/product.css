@@ -1,0 +1,174 @@
+/**
+ * Product page sections.
+ *
+ * Tokens come from the theme with a literal fallback, so the shortcode still
+ * looks like Gcalls if it is ever placed on a page rendered without the theme's
+ * stylesheet — an Elementor Canvas template, for instance.
+ *
+ * Every grid is auto-fit rather than a fixed column count: one rule then covers
+ * 1440 down to 320 without a media query, which is what keeps the horizontal
+ * overflow gate at zero.
+ */
+.gcalls-product {
+	--p-brand: var(--gcalls-brand, #673ab7);
+	--p-dark: var(--gcalls-brand-dark, #4a2391);
+	--p-light: var(--gcalls-brand-light, #f5f1fc);
+	--p-border: var(--gcalls-border, #e8e5ef);
+	--p-muted: var(--gcalls-muted, #5b5f6b);
+	--p-ink: var(--gcalls-foreground, #1e2026);
+	font-family: var(--gcalls-font-sans, 'Open Sans', system-ui, sans-serif);
+}
+
+.gcalls-eyebrow {
+	color: var(--p-brand);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	margin: 0 0 0.5rem;
+	text-transform: uppercase;
+}
+
+.gcalls-product__hero {
+	background: var(--p-light);
+	border-radius: var(--gcalls-radius, 0.625rem);
+	margin-bottom: 2.5rem;
+	padding: 2rem;
+}
+
+.gcalls-product__hero-title {
+	color: var(--p-ink);
+	font-size: clamp(1.5rem, 3.2vw, 2.25rem);
+	font-weight: 800;
+	line-height: 1.2;
+	margin: 0 0 0.75rem;
+}
+
+.gcalls-product__hero-lead {
+	color: var(--p-muted);
+	margin: 0 0 1rem;
+	max-width: var(--gcalls-measure, 760px);
+}
+
+.gcalls-product__points {
+	display: grid;
+	gap: 0.5rem;
+	grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+	list-style: none;
+	margin: 0 0 1.25rem;
+	padding: 0;
+}
+
+.gcalls-product__points li {
+	padding-left: 1.5rem;
+	position: relative;
+}
+
+/* Drawn, so it needs no icon font and stays on-brand. */
+.gcalls-product__points li::before {
+	border-bottom: 2px solid var(--p-brand);
+	border-left: 2px solid var(--p-brand);
+	content: "";
+	height: 0.35rem;
+	left: 0;
+	position: absolute;
+	top: 0.5rem;
+	transform: rotate(-45deg);
+	width: 0.65rem;
+}
+
+.gcalls-product__section {
+	margin-bottom: 2.5rem;
+	padding-block: 0.5rem;
+}
+
+.gcalls-product__section--alt {
+	background: #faf9fc;
+	border-radius: var(--gcalls-radius, 0.625rem);
+	padding: 1.5rem;
+}
+
+.gcalls-product__heading {
+	color: var(--p-ink);
+	font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+	line-height: 1.25;
+	margin: 0 0 0.75rem;
+}
+
+.gcalls-product__lead {
+	color: var(--p-muted);
+	margin: 0 0 1.25rem;
+	max-width: var(--gcalls-measure, 760px);
+}
+
+.gcalls-product__grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+}
+
+.gcalls-product__card {
+	background: #fff;
+	border: 1px solid var(--p-border);
+	border-radius: var(--gcalls-radius, 0.625rem);
+	padding: 1.1rem;
+}
+
+.gcalls-badge {
+	background: var(--p-light);
+	border-radius: 999px;
+	color: var(--p-dark);
+	display: inline-block;
+	font-size: 0.75rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+	padding: 0.15rem 0.6rem;
+}
+
+.gcalls-product__card-title {
+	font-size: 1rem;
+	margin: 0 0 0.4rem;
+}
+
+.gcalls-product__card-body {
+	color: var(--p-muted);
+	font-size: 0.9375rem;
+	margin: 0;
+}
+
+.gcalls-product__final {
+	background: var(--p-light);
+	border-radius: var(--gcalls-radius, 0.625rem);
+	margin-top: 2.5rem;
+	padding: 2rem;
+}
+
+/* Diagrams. aspect-ratio reserves the box before the SVG paints, so nothing
+ * below it shifts on load — the same reason the images carry width/height. */
+.gcalls-diagram {
+	background: #fff;
+	border: 1px solid var(--p-border);
+	border-radius: var(--gcalls-radius, 0.625rem);
+	margin: 0 0 1.25rem;
+	padding: 1rem;
+}
+
+.gcalls-diagram svg {
+	aspect-ratio: 715 / 275;
+	display: block;
+	height: auto;
+	width: 100%;
+}
+
+.gcalls-diagram figcaption {
+	font-size: 0.8125rem;
+	margin-top: 0.5rem;
+	text-align: center;
+}
+
+.gcalls-product .gcalls-media {
+	border: 1px solid var(--p-border);
+	border-radius: var(--gcalls-radius, 0.625rem);
+	height: auto;
+	margin-bottom: 1.25rem;
+	max-width: 100%;
+}

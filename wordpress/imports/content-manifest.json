@@ -6,7 +6,7 @@
     "pages": 38,
     "articles": 18,
     "media": 13,
-    "menuItems": 61
+    "menuItems": 62
   },
   "hubs": [
     "HUB-01",
@@ -1249,6 +1249,11 @@
             "title": "Ước tính chi phí"
           }
         ]
+      },
+      {
+        "label": "Blog",
+        "route": "/blog/",
+        "children": []
       }
     ],
     "footer-nav": [

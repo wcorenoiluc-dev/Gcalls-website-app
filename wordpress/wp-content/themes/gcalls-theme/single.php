@@ -65,6 +65,78 @@ while ( have_posts() ) :
 			}
 			?>
 
+			<?php
+			/**
+			 * The ask, then where to read next.
+			 *
+			 * An article that ends at its last paragraph gives the reader
+			 * nowhere to go: the eighteen were commissioned as hub content, so
+			 * the next article in the same hub is the most useful thing on the
+			 * page after the body. The CTA carries the hub in `source`, which is
+			 * what makes it possible to tell later which topic actually converts.
+			 */
+			if ( shortcode_exists( 'gcalls_cta' ) ) {
+				$gcalls_hub_terms = get_the_terms( get_the_ID(), 'gcalls_hub' );
+				$gcalls_hub_slug  = ( is_array( $gcalls_hub_terms ) && isset( $gcalls_hub_terms[0] ) )
+					? $gcalls_hub_terms[0]->slug
+					: 'blog';
+
+				echo do_shortcode(
+					sprintf(
+						'[gcalls_cta label="Đăng ký tư vấn" intent="consultation" source="blog-%s" note="Gcalls trao đổi về quy mô và hệ thống đang dùng trước khi đề xuất cấu hình."]',
+						esc_attr( $gcalls_hub_slug )
+					)
+				);
+			}
+
+			if ( is_array( $gcalls_hub_terms ?? null ) && isset( $gcalls_hub_terms[0] ) ) :
+				$gcalls_related = new WP_Query(
+					array(
+						'post_type'              => 'post',
+						'post_status'            => 'publish',
+						'posts_per_page'         => 3,
+						'post__not_in'           => array( get_the_ID() ),
+						'ignore_sticky_posts'    => true,
+						'no_found_rows'          => true,
+						'update_post_meta_cache' => false,
+						'tax_query'              => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Three posts, one term.
+							array(
+								'taxonomy' => 'gcalls_hub',
+								'field'    => 'term_id',
+								'terms'    => $gcalls_hub_terms[0]->term_id,
+							),
+						),
+					)
+				);
+
+				if ( $gcalls_related->have_posts() ) :
+					?>
+					<section class="gcalls-related">
+						<h2 class="gcalls-related__title">
+							<?php
+							printf(
+								/* translators: %s: hub name. */
+								esc_html__( 'Đọc tiếp trong %s', 'gcalls-theme' ),
+								esc_html( $gcalls_hub_terms[0]->name )
+							);
+							?>
+						</h2>
+						<div class="gcalls-cards">
+							<?php
+							while ( $gcalls_related->have_posts() ) :
+								$gcalls_related->the_post();
+								get_template_part( 'template-parts/content', 'card' );
+							endwhile;
+							?>
+						</div>
+					</section>
+					<?php
+				endif;
+
+				wp_reset_postdata();
+			endif;
+			?>
+
 			<footer class="gcalls-article__footer">
 				<?php
 				the_post_navigation(

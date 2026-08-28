@@ -129,6 +129,18 @@ const masterById = new Map(master.map((row) => [row['Legacy Post ID'], row]))
 
 const problems = []
 
+/**
+ * Things worth printing that must NOT stop the run.
+ *
+ * A problem means "this manifest would damage the site if imported". A warning
+ * means "something upstream is incomplete and the export handled it". Two rows
+ * of the URL plan have a note where a destination should be; skipping their
+ * redirect leaves those URLs 404ing, which is exactly where they already are.
+ * Failing the whole corpus for that would block 250 posts over two rules that
+ * change nothing.
+ */
+const warnings = []
+
 if (master.length !== EXPECTED_ROWS) problems.push(`master map has ${master.length} rows, expected ${EXPECTED_ROWS}`)
 if (items.length !== EXPECTED_ROWS) problems.push(`WXR has ${items.length} items, expected ${EXPECTED_ROWS}`)
 
@@ -272,6 +284,7 @@ const counters = {
   imageReference: 0,
   noImageReference: 0,
   retiredWithoutPath: 0,
+  redirectTargetNotAUrl: 0,
   editedFromBatch1: 0,
   legacyBodies: 0,
   netNew: 0,
@@ -398,8 +411,17 @@ for (const row of master) {
 
   if (plan?.Redirect === '301 to primary' && plan['Final URL']) {
     const from = `/${(item.slug || slugify(item.title)).replace(/^\/|\/$/g, '')}/`
-    const to = plan['Final URL'].replace(/^https?:\/\/[^/]+/, '')
-    if (from !== to) {
+    const to = plan['Final URL'].replace(/^https?:\/\/[^/]+/, '').trim()
+
+    // The Final URL column is edited by hand and two rows carry a note rather
+    // than a URL — `(primary is draft — slug TBD)`. Emitted verbatim, that
+    // became a live 301 pointing at a page that does not exist, which is worse
+    // than no redirect: a crawler reads a 301 as a deliberate destination and
+    // follows it into a 404.
+    if (!/^\/[A-Za-z0-9%._~/-]*$/.test(to)) {
+      counters.redirectTargetNotAUrl += 1
+      warnings.push(`url plan row ${legacyId}: no redirect emitted — Final URL is not a path (${JSON.stringify(plan['Final URL'])})`)
+    } else if (from !== to) {
       redirects[from] = { type: '301', target: to, reason: 'MERGE_INTO_PRIMARY', legacyPostId: legacyId }
       counters.redirect301 += 1
     }
@@ -581,6 +603,7 @@ const manifest = {
     noImageReference: counters.noImageReference,
     imagesImportable: 0,
     retiredWithoutPath: counters.retiredWithoutPath,
+    redirectTargetNotAUrl: counters.redirectTargetNotAUrl,
     editedFromBatch1: counters.editedFromBatch1,
     netNewBatch1: counters.netNew,
     legacyBodies: counters.legacyBodies,
@@ -614,6 +637,7 @@ line('publish', counters.publish)
 line('draft', counters.draft)
 line('private', counters.private)
 line('redirect 301', counters.redirect301)
+line('  Final URL không phải path (bỏ)', counters.redirectTargetNotAUrl)
 line('410 (retire)', retiredCount)
 line('  trong đó không có path công khai', counters.retiredWithoutPath)
 line('410 (spam đã gỡ)', spamCount)
@@ -633,6 +657,11 @@ console.log('')
 line('manifest', path.relative(REPO, outPath))
 line('manifest bytes', fs.statSync(outPath).size.toLocaleString('en-US'))
 
+if (warnings.length) {
+  console.log('\nWARNINGS (không chặn — đã xử lý)')
+  for (const warning of warnings) console.log(`  ! ${warning}`)
+}
+
 if (problems.length) {
   console.log('\nPROBLEMS')
   for (const problem of problems) console.log(`  - ${problem}`)
@@ -640,4 +669,4 @@ if (problems.length) {
   process.exit(1)
 }
 
-console.log('\nDRY RUN: PASS')
+console.log(`\nDRY RUN: PASS${warnings.length ? ` (${warnings.length} cảnh báo)` : ''}`)

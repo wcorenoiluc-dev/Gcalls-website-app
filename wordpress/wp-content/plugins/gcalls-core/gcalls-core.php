@@ -3,7 +3,7 @@
  * Plugin Name:       Gcalls Core
  * Plugin URI:        https://gcalls.co/
  * Description:       Site behaviour that must survive a theme change: the HUB taxonomy for blog articles, FAQ structured data, breadcrumbs, the legacy route/redirect map and the WP-CLI content import pipeline.
- * Version:           0.4.3
+ * Version:           0.5.0
  * Requires at least: 6.4
  * Requires PHP:      8.1
  * Author:            Gcalls
@@ -34,7 +34,7 @@ namespace Gcalls\Core;
 
 defined( 'ABSPATH' ) || exit;
 
-const VERSION = '0.4.3';
+const VERSION = '0.5.0';
 
 /** Absolute path to this plugin's directory, trailing slash included. */
 define( 'GCALLS_CORE_FILE', __FILE__ );

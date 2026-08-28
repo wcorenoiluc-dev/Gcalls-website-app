@@ -86,6 +86,18 @@ final class Redirects {
 			$target = isset( $rule['target'] ) ? (string) $rule['target'] : '';
 
 			if ( '410' !== $type ) {
+				// A redirect target has to be a PATH, not prose. The editorial
+				// URL plan carries `(primary is draft — slug TBD)` in the Final
+				// URL column for two merged rows, and normalise_path() happily
+				// turned that into `/(primary is draft — slug TBD)/`: two live
+				// URLs 301'd to a page that does not exist. A redirect into a
+				// 404 is worse than no redirect, because a crawler treats it as
+				// a deliberate destination.
+				if ( 1 !== preg_match( '#^(?:https?://[^/]+)?/[A-Za-z0-9%._~/-]*$#', trim( $target ) ) ) {
+					$skipped[] = $path . ' (đích không phải đường dẫn hợp lệ: ' . $target . ')';
+					continue;
+				}
+
 				$target = self::normalise_path( $target );
 
 				if ( '' === $target ) {
@@ -169,7 +181,21 @@ final class Redirects {
 			return;
 		}
 
-		$request = isset( $_SERVER['REQUEST_URI'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '';
+		// NOT sanitize_text_field(). That function strips percent-encoded
+		// sequences on purpose — it is an XSS defence for display strings — and
+		// a URL path is exactly where percent-encoding is meaningful. Four
+		// retired Cyrillic spam URLs arrived as `/%d0%ba%d0%b0…/`, came out of
+		// the sanitiser as a row of hyphens, matched nothing, and answered 404
+		// where the map says 410. Every ASCII rule passed, which is why it took
+		// a full 44-URL audit to see.
+		//
+		// The raw value is used, then cut at the query string and filtered to
+		// the characters a path may contain. Nothing is echoed; it is only ever
+		// a lookup key.
+		$raw     = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
+		$raw     = is_string( $raw ) ? $raw : '';
+		$raw     = (string) preg_replace( '/[?#].*$/', '', $raw );
+		$request = (string) preg_replace( '#[^A-Za-z0-9%._~!$&\'()*+,;=:@/-]#', '', $raw );
 
 		if ( '' === $request ) {
 			return;

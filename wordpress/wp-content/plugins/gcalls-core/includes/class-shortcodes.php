@@ -49,6 +49,8 @@ final class Shortcodes {
 		add_shortcode( 'gcalls_lead_form', array( self::class, 'lead_form' ) );
 		add_shortcode( 'gcalls_media', array( self::class, 'media' ) );
 		add_shortcode( 'gcalls_estimator', array( self::class, 'estimator' ) );
+		add_shortcode( 'gcalls_diagram', array( self::class, 'diagram' ) );
+		add_shortcode( 'gcalls_product_page', array( self::class, 'product_page' ) );
 	}
 
 	/**
@@ -359,5 +361,263 @@ final class Shortcodes {
 		$markup .= '</div>';
 
 		return $markup;
+	}
+
+	/**
+	 * `[gcalls_diagram id="…"]` — a brand diagram, drawn not photographed.
+	 *
+	 * WHY THESE EXIST
+	 * Only Gcalls Plus has approved, masked product screenshots. Gcalls CX,
+	 * Voicebot and QA/QC have none. Reusing a Gcalls Plus screenshot on those
+	 * pages would show a reviewer a different product under the wrong name,
+	 * which is worse than showing nothing — so these pages get diagrams of their
+	 * own mechanism instead, labelled as illustrations.
+	 *
+	 * Inline SVG rather than image files: no upload step, no attachment id to go
+	 * stale between environments, scales at every breakpoint, and it is text in
+	 * the repository so a diff shows what changed.
+	 *
+	 * @param array<string, string>|string $atts Shortcode attributes.
+	 * @return string
+	 */
+	public static function diagram( $atts = array() ): string {
+		$atts = shortcode_atts( array( 'id' => '', 'caption' => '' ), (array) $atts, 'gcalls_diagram' );
+		$id   = sanitize_key( (string) $atts['id'] );
+
+		$brand = '#673ab7';
+		$dark  = '#4a2391';
+		$light = '#f5f1fc';
+		$muted = '#5b5f6b';
+
+		$node = static function ( float $x, float $y, float $w, string $label, bool $filled = false ) use ( $brand, $light, $dark ) {
+			$fill   = $filled ? $brand : $light;
+			$stroke = $filled ? $dark : $brand;
+			$text   = $filled ? '#ffffff' : $dark;
+
+			return sprintf(
+				'<g><rect x="%1$s" y="%2$s" width="%3$s" height="46" rx="10" fill="%4$s" stroke="%5$s" stroke-width="1.5"/>' .
+				'<text x="%6$s" y="%7$s" text-anchor="middle" font-family="Open Sans, sans-serif" font-size="13" fill="%8$s">%9$s</text></g>',
+				$x,
+				$y,
+				$w,
+				$fill,
+				$stroke,
+				$x + ( $w / 2 ),
+				$y + 28,
+				$text,
+				esc_html( $label )
+			);
+		};
+
+		$arrow = static function ( float $x1, float $y1, float $x2, float $y2 ) use ( $brand ) {
+			return sprintf(
+				'<line x1="%1$s" y1="%2$s" x2="%3$s" y2="%4$s" stroke="%5$s" stroke-width="1.5" marker-end="url(#gcallsArrow)"/>',
+				$x1,
+				$y1,
+				$x2,
+				$y2,
+				$brand
+			);
+		};
+
+		$body = '';
+
+		switch ( $id ) {
+			case 'omnichannel':
+				$body  = $node( 10, 20, 150, 'Hotline' ) . $node( 10, 86, 150, 'Zalo OA' ) . $node( 10, 152, 150, 'Facebook' ) . $node( 10, 218, 150, 'Email' );
+				$body .= $arrow( 165, 43, 245, 130 ) . $arrow( 165, 109, 245, 130 ) . $arrow( 165, 175, 245, 138 ) . $arrow( 165, 241, 245, 145 );
+				$body .= $node( 250, 108, 200, 'Inbox hợp nhất', true );
+				$body .= $arrow( 455, 131, 530, 88 ) . $arrow( 455, 131, 530, 178 );
+				$body .= $node( 535, 65, 165, 'Ngữ cảnh khách hàng' ) . $node( 535, 155, 165, 'Ticket & SLA' );
+				break;
+
+			case 'flow':
+				$steps = array( 'Tiếp nhận', 'Nhận diện', 'Xử lý', 'Ghi nhận', 'Báo cáo' );
+				$x     = 12;
+				foreach ( $steps as $index => $label ) {
+					$body .= $node( $x, 110, 122, $label, 0 === $index );
+					if ( $index < count( $steps ) - 1 ) {
+						$body .= $arrow( $x + 124, 133, $x + 136, 133 );
+					}
+					$x += 138;
+				}
+				break;
+
+			case 'handover':
+				$body  = $node( 20, 110, 170, 'Voicebot xử lý', true );
+				$body .= $arrow( 195, 133, 265, 133 );
+				$body .= $node( 270, 110, 170, 'Điều kiện chuyển' );
+				$body .= $arrow( 445, 122, 515, 78 ) . $arrow( 445, 145, 515, 188 );
+				$body .= $node( 520, 55, 170, 'Nhân viên tiếp nhận' ) . $node( 520, 165, 170, 'Kết thúc & ghi nhận' );
+				break;
+
+			case 'scoring':
+				$body  = $node( 15, 110, 150, 'Ghi âm cuộc gọi', true );
+				$body .= $arrow( 170, 133, 200, 133 );
+				$body .= $node( 205, 110, 150, 'Chuyển văn bản' );
+				$body .= $arrow( 360, 133, 390, 133 );
+				$body .= $node( 395, 110, 150, 'Chấm theo tiêu chí' );
+				$body .= $arrow( 550, 133, 580, 133 );
+				$body .= $node( 585, 110, 120, 'Tổng hợp' );
+				break;
+
+			default:
+				return '';
+		}
+
+		$caption = '' !== $atts['caption'] ? (string) $atts['caption'] : __( 'Hình minh họa giải pháp', 'gcalls-core' );
+
+		$markup  = '<figure class="gcalls-diagram">';
+		$markup .= '<svg viewBox="0 0 715 275" role="img" aria-label="' . esc_attr( $caption ) . '" preserveAspectRatio="xMidYMid meet">';
+		$markup .= '<defs><marker id="gcallsArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">';
+		$markup .= '<path d="M 0 0 L 10 5 L 0 10 z" fill="' . esc_attr( $brand ) . '"/></marker></defs>';
+		$markup .= $body;
+		$markup .= '</svg>';
+		$markup .= '<figcaption style="color:' . esc_attr( $muted ) . '">' . esc_html( $caption ) . '</figcaption>';
+		$markup .= '</figure>';
+
+		return $markup;
+	}
+
+	/**
+	 * `[gcalls_product_page id="cx"]` — a full product page body.
+	 *
+	 * The sections, their order and every sentence come from the React source
+	 * via wordpress/scripts/build-product-content.mjs. Rendering them from one
+	 * generated file rather than pasting them into four WordPress pages means an
+	 * editorial change in `src/data/*.ts` reaches the demo by rebuilding, and the
+	 * four pages cannot drift apart from each other or from React.
+	 *
+	 * @param array<string, string>|string $atts Shortcode attributes.
+	 * @return string
+	 */
+	public static function product_page( $atts = array() ): string {
+		$atts = shortcode_atts( array( 'id' => '' ), (array) $atts, 'gcalls_product_page' );
+		$id   = sanitize_key( str_replace( '-', '_', (string) $atts['id'] ) );
+		$id   = str_replace( '_', '-', $id );
+
+		$file = GCALLS_CORE_DIR . 'data/product-pages.json';
+
+		if ( ! is_readable( $file ) ) {
+			return '';
+		}
+
+		$data = json_decode( (string) file_get_contents( $file ), true ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Bundled plugin data file.
+
+		if ( ! is_array( $data ) || empty( $data['pages'][ $id ] ) ) {
+			return '';
+		}
+
+		$page = $data['pages'][ $id ];
+		$lead = (array) ( $page['lead'] ?? array() );
+
+		wp_enqueue_style( 'gcalls-product', GCALLS_CORE_URL . 'assets/css/product.css', array(), VERSION );
+
+		$out = '<div class="gcalls-product">';
+
+		/* --- hero --- */
+		$hero = (array) ( $page['hero'] ?? array() );
+
+		if ( ! empty( $hero['heading'] ) ) {
+			$out .= '<section class="gcalls-product__hero">';
+
+			if ( ! empty( $hero['eyebrow'] ) ) {
+				$out .= '<p class="gcalls-eyebrow">' . esc_html( $hero['eyebrow'] ) . '</p>';
+			}
+
+			$out .= '<p class="gcalls-product__hero-title">' . esc_html( $hero['heading'] ) . '</p>';
+
+			if ( ! empty( $hero['lead'] ) ) {
+				$out .= '<p class="gcalls-product__hero-lead">' . esc_html( $hero['lead'] ) . '</p>';
+			}
+
+			if ( ! empty( $hero['points'] ) ) {
+				$out .= '<ul class="gcalls-product__points">';
+				foreach ( (array) $hero['points'] as $point ) {
+					$out .= '<li>' . esc_html( (string) $point ) . '</li>';
+				}
+				$out .= '</ul>';
+			}
+
+			$out .= self::cta(
+				array(
+					'label'    => __( 'Đăng ký tư vấn', 'gcalls-core' ),
+					'intent'   => (string) ( $lead['intent'] ?? 'consultation' ),
+					'source'   => (string) ( $lead['source'] ?? '' ),
+					'product'  => (string) ( $lead['product'] ?? '' ),
+					'solution' => '',
+					'style'    => 'primary',
+					'note'     => '',
+				)
+			);
+
+			$out .= '</section>';
+		}
+
+		/* --- sections --- */
+		foreach ( (array) ( $page['sections'] ?? array() ) as $index => $section ) {
+			$alt  = 0 === $index % 2 ? '' : ' gcalls-product__section--alt';
+			$out .= '<section class="gcalls-product__section' . $alt . '">';
+
+			if ( ! empty( $section['eyebrow'] ) ) {
+				$out .= '<p class="gcalls-eyebrow">' . esc_html( $section['eyebrow'] ) . '</p>';
+			}
+			if ( ! empty( $section['heading'] ) ) {
+				$out .= '<h2 class="gcalls-product__heading">' . esc_html( $section['heading'] ) . '</h2>';
+			}
+			if ( ! empty( $section['lead'] ) ) {
+				$out .= '<p class="gcalls-product__lead">' . esc_html( $section['lead'] ) . '</p>';
+			}
+
+			// A screenshot only where one was actually produced and approved for
+			// THIS product; otherwise a diagram of the mechanism.
+			if ( ! empty( $section['media'] ) ) {
+				$out .= self::media( array( 'id' => (string) $section['media'], 'size' => 'large' ) );
+			} elseif ( ! empty( $section['diagram'] ) ) {
+				$out .= self::diagram( array( 'id' => (string) $section['diagram'] ) );
+			}
+
+			if ( ! empty( $section['items'] ) ) {
+				$out .= '<div class="gcalls-product__grid">';
+				foreach ( (array) $section['items'] as $item ) {
+					$out .= '<article class="gcalls-product__card">';
+					if ( ! empty( $item['label'] ) ) {
+						$out .= '<span class="gcalls-badge">' . esc_html( (string) $item['label'] ) . '</span>';
+					}
+					if ( ! empty( $item['title'] ) ) {
+						$out .= '<h3 class="gcalls-product__card-title">' . esc_html( (string) $item['title'] ) . '</h3>';
+					}
+					if ( ! empty( $item['body'] ) ) {
+						$out .= '<p class="gcalls-product__card-body">' . esc_html( (string) $item['body'] ) . '</p>';
+					}
+					$out .= '</article>';
+				}
+				$out .= '</div>';
+			}
+
+			$out .= '</section>';
+		}
+
+		/* --- FAQ, then the ask --- */
+		$out .= self::faq();
+
+		$out .= '<section class="gcalls-product__final">';
+		$out .= '<h2 class="gcalls-product__heading">' . esc_html__( 'Trao đổi cấu hình phù hợp với đội ngũ của bạn', 'gcalls-core' ) . '</h2>';
+		$out .= self::cta(
+			array(
+				'label'    => __( 'Đăng ký tư vấn', 'gcalls-core' ),
+				'intent'   => (string) ( $lead['intent'] ?? 'consultation' ),
+				'source'   => (string) ( $lead['source'] ?? '' ),
+				'product'  => (string) ( $lead['product'] ?? '' ),
+				'solution' => '',
+				'style'    => 'primary',
+				'note'     => __( 'Gcalls trao đổi về quy mô, hệ thống đang dùng và quy trình vận hành trước khi đề xuất cấu hình.', 'gcalls-core' ),
+			)
+		);
+		$out .= '</section>';
+
+		$out .= '</div>';
+
+		return $out;
 	}
 }

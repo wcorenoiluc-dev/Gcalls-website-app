@@ -3,7 +3,7 @@ Contributors: gcalls
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.1
-Stable tag: 0.4.3
+Stable tag: 0.5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,19 @@ tag. Rank Math owns the document head. This plugin only feeds Rank Math's own
 post meta so migrated values stay editable in the Rank Math UI.
 
 == Changelog ==
+
+= 0.5.0 =
+* Shortcode: [gcalls_product_page] renders a full product page — hero, sections,
+  cards, FAQ and CTA — from content generated out of the React data files.
+* Shortcode: [gcalls_diagram] draws brand SVG diagrams for Gcalls CX, Voicebot
+  and QA/QC, which have no approved screenshots. A Gcalls Plus screenshot is
+  never shown under another product's name.
+* Redirects: the request path is no longer passed through sanitize_text_field(),
+  which strips percent-encoding and made four Cyrillic spam URLs answer 404
+  where the map says 410.
+* Redirects: a target that is not a path is refused. The URL plan carries
+  "(primary is draft — slug TBD)" for two rows, and that had become a live 301
+  into a page that does not exist.
 
 = 0.4.3 =
 * Fix: validation demanded a front page and a posts page of every manifest,

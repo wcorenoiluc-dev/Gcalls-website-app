@@ -991,3 +991,122 @@ textarea {
 .gcalls-prose [style*="width"] {
 	max-width: 100%;
 }
+
+/* -------------------------------------------------------------------------
+ * Checkpoint 006 — design system, sticky header, footer brand
+ * ---------------------------------------------------------------------- */
+
+/* Heading scale. Declared once with clamp() rather than three media queries:
+ * the sizes then move continuously between 320 and 1440 instead of jumping at
+ * two arbitrary widths, and there is one number to change per level. */
+.gcalls-page-header__title,
+.gcalls-prose h1 { font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.15; }
+.gcalls-prose h2 { font-size: clamp(1.375rem, 2.6vw, 1.875rem); line-height: 1.25; margin-top: var(--gcalls-space-4); }
+.gcalls-prose h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); line-height: 1.3; margin-top: var(--gcalls-space-3); }
+
+/* Focus. A single visible ring on every interactive element — the demo has to
+ * be operable from the keyboard, and :focus-visible keeps it off mouse clicks. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+	outline: 2px solid var(--gcalls-brand);
+	outline-offset: 2px;
+	border-radius: var(--gcalls-radius-sm);
+}
+
+/* Sticky header, as in React. z-index sits above Elementor sections but below
+ * the mobile panel's own stacking so the panel cannot slide under the bar. */
+.gcalls-header {
+	position: sticky;
+	top: 0;
+	z-index: 30;
+	background: var(--gcalls-surface);
+}
+
+/* The admin bar is itself fixed at the top for logged-in users; without this
+ * the sticky header hides beneath it. */
+.admin-bar .gcalls-header { top: 32px; }
+@media (max-width: 782px) { .admin-bar .gcalls-header { top: 46px; } }
+
+/* Scroll lock while the mobile panel is open. */
+html.gcalls-nav-open,
+html.gcalls-nav-open body { overflow: hidden; }
+
+@media (min-width: 1024px) {
+	/* Belt and braces against both navigations rendering at once: above the
+	 * breakpoint the panel state is irrelevant and the bar always shows. */
+	html.gcalls-nav-open,
+	html.gcalls-nav-open body { overflow: auto; }
+	.gcalls-nav { display: flex; align-items: center; gap: var(--gcalls-space-3); }
+}
+
+/* Header CTA. */
+.gcalls-nav__cta .gcalls-cta-band { margin: 0; }
+.gcalls-nav__cta .gcalls-cta { min-height: 2.5rem; padding: 0 1.1rem; }
+
+@media (max-width: 1023px) {
+	.gcalls-nav__cta { margin-top: var(--gcalls-space-2); }
+	.gcalls-nav__cta .gcalls-cta { width: 100%; }
+}
+
+/* Footer brand column. It is a sibling of the menu, so the two sit side by side
+ * on desktop and stack on mobile. */
+.gcalls-footer__inner {
+	display: grid;
+	gap: var(--gcalls-space-4);
+	grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+	align-items: start;
+}
+
+.gcalls-footer__nav { grid-column: 1 / -1; }
+
+@media (min-width: 1024px) {
+	.gcalls-footer__inner { grid-template-columns: minmax(240px, 1fr) 3fr; }
+	.gcalls-footer__nav { grid-column: auto; }
+}
+
+.gcalls-footer__brand-name { font-weight: 800; font-size: 1.125rem; margin: 0 0 var(--gcalls-space-1); }
+.gcalls-footer__brand-desc { color: var(--gcalls-muted); font-size: 0.9375rem; margin: 0 0 var(--gcalls-space-2); max-width: 40ch; }
+.gcalls-footer__contact { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.3rem; font-weight: 600; }
+.gcalls-footer__contact a { color: var(--gcalls-brand); text-decoration: none; }
+.gcalls-footer__contact a:hover { text-decoration: underline; }
+.gcalls-footer__bottom { grid-column: 1 / -1; }
+
+/* Blog cards. Equal height whatever the excerpt length, and a designed
+ * text-only state — the 18 articles have no featured image and a card that just
+ * loses its top half looks broken rather than intentional. */
+.gcalls-cards {
+	display: grid;
+	gap: var(--gcalls-space-3);
+	grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+}
+
+.gcalls-card {
+	background: var(--gcalls-surface);
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.gcalls-card:hover { border-color: var(--gcalls-brand); box-shadow: 0 6px 20px rgba(103, 58, 183, 0.08); }
+.gcalls-card__body { display: flex; flex-direction: column; gap: 0.5rem; flex: 1; padding: var(--gcalls-space-2); }
+.gcalls-card__title { font-size: 1.0625rem; line-height: 1.35; margin: 0; }
+.gcalls-card__title a { color: var(--gcalls-foreground); text-decoration: none; }
+.gcalls-card__title a:hover { color: var(--gcalls-brand); }
+.gcalls-card__excerpt { color: var(--gcalls-muted); font-size: 0.9375rem; margin: 0; }
+.gcalls-card .gcalls-meta { margin-top: auto; padding-top: var(--gcalls-space-1); }
+
+/* The text-only card gets a brand strip so it reads as a deliberate style
+ * rather than a card whose image failed to load. */
+.gcalls-card:not(:has(.gcalls-card__media)) { border-top: 3px solid var(--gcalls-brand); }
+
+/* Related posts under an article. */
+.gcalls-related { margin-top: var(--gcalls-space-5); }
+.gcalls-related__title { font-size: 1.25rem; margin-bottom: var(--gcalls-space-2); }

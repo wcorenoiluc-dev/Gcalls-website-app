@@ -503,6 +503,22 @@ const footerMenu = entries(navSrc, 'export const FOOTER_COLUMNS: FooterColumn[] 
   })
   .filter((column) => column.label !== '')
 
+/**
+ * Blog is promoted to a top-level header item.
+ *
+ * `navigation.ts` files it inside the Tài nguyên mega menu, which is right for a
+ * mega menu and wrong for the WordPress header: the theme renders a two-level
+ * bar with no mega menu, so the blog — the only part of this demo with 250
+ * pieces of content behind it — was two hovers deep. It STAYS in the Tài nguyên
+ * group as well, because removing it there would break the grouping the sitemap
+ * defines.
+ */
+const blogPage = pageByRoute.get('/blog/')
+
+if (blogPage) {
+  primaryMenu.push({ label: blogPage.title, route: '/blog/', children: [] })
+}
+
 const menus = {
   primary: primaryMenu,
   'footer-nav': footerMenu,
