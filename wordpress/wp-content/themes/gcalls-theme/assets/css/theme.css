@@ -856,3 +856,89 @@ pre {
 	border-top: 1px solid var(--gcalls-border);
 	padding-top: var(--gcalls-space-2);
 }
+
+/* -------------------------------------------------------------------------
+ * Checkpoint 005 — footer columns
+ *
+ * The footer menu is a two-level nav: five top-level items (Sản phẩm, Giải
+ * pháp, Khám phá, Tài nguyên, Gcalls) each with children. Rendered with the
+ * shared list rules it came out as one flat row of 28 links, which is not a
+ * footer — it is a sentence. Each top-level item becomes a column, and the
+ * parent's own link becomes that column's heading.
+ *
+ * auto-fit rather than a fixed `repeat(5, …)`: the same rule then produces five
+ * columns at 1440, three at 768 and one at 390 with no extra breakpoints, which
+ * is what keeps the 320px case free of horizontal overflow.
+ * ---------------------------------------------------------------------- */
+.gcalls-footer__list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+	gap: var(--gcalls-space-3);
+	align-items: start;
+}
+
+/* The top-level item is a column, not a link in a row. */
+.gcalls-footer__list > li > a {
+	display: block;
+	margin-bottom: var(--gcalls-space-1);
+	color: var(--gcalls-foreground);
+	font-weight: 700;
+	font-size: 0.9375rem;
+}
+
+.gcalls-footer__list .sub-menu {
+	display: grid;
+	gap: 0.35rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gcalls-footer__list .sub-menu a {
+	display: block;
+	padding: 0;
+	color: var(--gcalls-muted);
+	font-weight: 400;
+	font-size: 0.9375rem;
+	text-decoration: none;
+}
+
+.gcalls-footer__list .sub-menu a:hover,
+.gcalls-footer__list .sub-menu a:focus-visible {
+	color: var(--gcalls-brand);
+}
+
+/* -------------------------------------------------------------------------
+ * Overflow guard
+ *
+ * The acceptance gate is zero horizontal overflow at 1440/1024/768/390/320.
+ * Long unbroken strings — a Vietnamese heading with no spaces near a narrow
+ * column, a raw URL in imported prose — are the usual cause, and they are
+ * cheaper to prevent globally than to hunt page by page. Wide blocks that
+ * genuinely need width scroll inside themselves rather than pushing the body.
+ * ---------------------------------------------------------------------- */
+html,
+body {
+	overflow-x: hidden;
+}
+
+.gcalls-prose img,
+.gcalls-prose iframe,
+.gcalls-media,
+.wp-block-image img {
+	max-width: 100%;
+	height: auto;
+}
+
+.gcalls-prose table,
+.wp-block-table {
+	display: block;
+	max-width: 100%;
+	overflow-x: auto;
+}
+
+.gcalls-prose a,
+.gcalls-page-header__title,
+.gcalls-card__title {
+	overflow-wrap: anywhere;
+}

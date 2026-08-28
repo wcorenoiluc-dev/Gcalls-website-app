@@ -3,7 +3,7 @@ Contributors: gcalls
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.1
-Stable tag: 0.4.1
+Stable tag: 0.4.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,12 @@ tag. Rank Math owns the document head. This plugin only feeds Rank Math's own
 post meta so migrated values stay editable in the Rank Math UI.
 
 == Changelog ==
+
+= 0.4.2 =
+* Fix: a page matched by ROLE — the existing front page or posts page — was
+  skipped and never got its route meta, so pass two could not find it again and
+  Settings > Reading was never applied. Identity meta is derived data and is now
+  written on the skip path too.
 
 = 0.4.1 =
 * Fix: the import screen could not read a manifest inside a package directory.

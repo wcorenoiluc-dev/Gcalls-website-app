@@ -267,8 +267,9 @@ final class Importer {
 
 			if ( $existing && ! $force ) {
 				// The object is already here and the run is not forcing an
-				// overwrite. Taxonomy, FAQ and SEO are still reconciled below,
-				// because those are derived data rather than editorial copy.
+				// overwrite. Taxonomy, FAQ, SEO, route and template are still
+				// reconciled below, because those are derived data rather than
+				// editorial copy.
 				++$counts['skipped'];
 
 				if ( ! $dry_run ) {
@@ -325,14 +326,6 @@ final class Importer {
 			update_post_meta( $post_id, self::META_SOURCE_KIND, $post_type );
 			update_post_meta( $post_id, self::META_CONTENT_HASH, self::content_hash( (string) $postarr['post_content'] ) );
 
-			if ( isset( $item['route'] ) ) {
-				update_post_meta( $post_id, self::META_ROUTE, self::normalise_route( (string) $item['route'] ) );
-			}
-
-			if ( isset( $item['template'] ) && 'page' === $post_type ) {
-				update_post_meta( $post_id, '_wp_page_template', sanitize_text_field( (string) $item['template'] ) );
-			}
-
 			if ( $existing ) {
 				++$counts['updated'];
 			} else {
@@ -361,6 +354,22 @@ final class Importer {
 	private static function apply_derived( int $post_id, array $item, bool $dry_run ): void {
 		if ( $dry_run ) {
 			return;
+		}
+
+		// IDENTITY IS DERIVED DATA, AND HAS TO BE WRITTEN EVEN ON A SKIP.
+		// The route meta is how pass two finds a page again — for its parent and
+		// for Settings > Reading. It used to be written only on the create/update
+		// path, so the two pages matched by ROLE rather than by source id (the
+		// existing front page and posts page) were skipped, never got the meta,
+		// and then could not be found: the live run reported
+		// "Không tìm thấy trang để gán trong Settings > Reading: /" for a page it
+		// had just matched successfully.
+		if ( isset( $item['route'] ) ) {
+			update_post_meta( $post_id, self::META_ROUTE, self::normalise_route( (string) $item['route'] ) );
+		}
+
+		if ( isset( $item['template'] ) && 'page' === get_post_type( $post_id ) ) {
+			update_post_meta( $post_id, '_wp_page_template', sanitize_text_field( (string) $item['template'] ) );
 		}
 
 		if ( isset( $item['hub'] ) ) {
