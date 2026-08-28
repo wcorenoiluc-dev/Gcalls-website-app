@@ -13,7 +13,8 @@
     "check": "npm run typecheck && npm run lint && npm run test && npm run build",
     "wp:lint": "node wordpress/scripts/php-lint.mjs",
     "wp:export": "node wordpress/scripts/export-content.mjs",
-    "wp:qa": "node wordpress/scripts/qa-foundation.mjs"
+    "wp:qa": "node wordpress/scripts/qa-foundation.mjs",
+    "wp:live-verify": "node wordpress/scripts/live-003a-verify.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "1.2.3",

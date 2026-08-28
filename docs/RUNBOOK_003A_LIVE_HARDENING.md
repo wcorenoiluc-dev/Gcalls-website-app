@@ -80,9 +80,37 @@ The fix (committed in this repo, `includes/class-hardening.php`):
 
 ---
 
+## 0. Two scripts do most of this
+
+| Script | Where | What it settles |
+| --- | --- | --- |
+| `wordpress/scripts/live-003a-backup.sh` | **on the host** (1Panel terminal or SSH) | §3 in full — root verification, filesystem archive, database dump, integrity checks, SHA-256, and §7.1 PHP 8.3 CLI discovery. Non-destructive; exits non-zero if any gate fails. |
+| `npm run wp:live-verify` | **on the laptop** | Every 003A gate answerable over plain HTTPS with no login. Run it after each live step. |
+
+```bash
+# host
+bash live-003a-backup.sh          # must exit 0 before §6, §7, §8, §9, §10
+
+# laptop, after each step
+npm run wp:live-verify
+```
+
+`wp:live-verify` measured **20/22** external gates passing on 2026-08-28. The
+two failures are `?author=1` and the oEmbed author fields — exactly what §6
+deploys. It ends with a NOT CHECKABLE list; those rows need wp-admin and are
+the operator's to confirm.
+
+The backup script never prints a database credential: it parses `wp-config.php`
+into a `0600` defaults-file, passes that to `mysqldump`, and deletes it on exit.
+Credentials never appear in argv, in the output, or in the archive listing.
+
+---
+
 ## 3. BACKUP — gate for everything destructive
 
-Nothing in §6–§9 may start until this section passes.
+Nothing in §6–§9 may start until this section passes. `live-003a-backup.sh`
+performs everything below; the commands are kept here so the script can be
+audited rather than trusted.
 
 ```bash
 # Prove the root rather than assuming it. There is no public_html here.
@@ -354,11 +382,11 @@ curl -sS -o /dev/null -w "post  %{http_code}\n" https://ashernguyenxuanthuy.com/
 | # | Check | Source | State |
 | --- | --- | --- | --- |
 | 1 | Homepage 200 | curl | [VERIFIED] |
-| 2 | `/blog/` 200 | curl | pending |
+| 2 | `/blog/` 200 | `wp:live-verify` | [VERIFIED] |
 | 3 | wp-admin works | browser | pending |
 | 4 | `gcalls_owner` login | §4 | pending |
 | 5 | old `admin` deleted, content attributed | §8 | pending |
-| 6 | front page id 13 · posts page id 16 | Settings → Reading | pending |
+| 6 | front page id 13 · posts page id 16 | `wp:live-verify` | [VERIFIED] |
 | 7 | permalinks `/%postname%/` | curl | [VERIFIED] |
 | 8 | Elementor editor opens | browser | pending |
 | 9 | Rank Math active | browser | pending |
@@ -371,8 +399,8 @@ curl -sS -o /dev/null -w "post  %{http_code}\n" https://ashernguyenxuanthuy.com/
 | 16 | `DISABLE_WP_CRON` only after cron PASS | §7.4 | pending |
 | 17 | WP 256M / PHP 512M | §5, §9 | pending |
 | 18 | Site Health free of scheduled-event errors | browser | pending |
-| 19 | noindex — all four layers | §1 + `blog_public=0` | 3 of 4 [VERIFIED]; `blog_public` needs wp-admin |
-| 20 | no PHP warning/fatal | error log | pending |
+| 19 | noindex — all four layers | `wp:live-verify` | [VERIFIED] — header, meta `noindex, nofollow`, robots.txt |
+| 20 | no PHP warning/fatal | `wp:live-verify` (rendered HTML) | [VERIFIED] on `/` and `/blog/`; error log still to check |
 | 21 | responsive 1440/1024/768/390/320 | browser | pending |
 | 22 | backup integrity | §3 | pending |
 
