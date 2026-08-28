@@ -405,8 +405,13 @@ final class Admin {
 	 * @return array<string, mixed>|null Report, or null when the input was rejected.
 	 */
 	private static function handle_submission(): ?array {
-		$name = isset( $_POST['manifest'] ) ? sanitize_file_name( wp_unslash( (string) $_POST['manifest'] ) ) : '';
-		$path = self::resolve( $name );
+		// NOT sanitize_file_name() here: it strips the directory separator, so
+		// `gcalls-content/content-manifest.json` would arrive at resolve() as
+		// `gcalls-contentcontent-manifest.json` and never match anything. The
+		// value is sanitised per SEGMENT inside resolve(), which is the only
+		// place that knows a segment is what it is dealing with.
+		$name = isset( $_POST['manifest'] ) ? wp_unslash( (string) $_POST['manifest'] ) : '';
+		$path = self::resolve( (string) $name );
 
 		if ( '' === $path ) {
 			echo '<div class="notice notice-error"><p>' . esc_html__( 'Không đọc được manifest đã chọn.', 'gcalls-core' ) . '</p></div>';

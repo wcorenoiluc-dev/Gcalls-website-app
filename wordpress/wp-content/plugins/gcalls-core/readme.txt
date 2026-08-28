@@ -3,7 +3,7 @@ Contributors: gcalls
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.1
-Stable tag: 0.4.0
+Stable tag: 0.4.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,12 @@ tag. Rank Math owns the document head. This plugin only feeds Rank Math's own
 post meta so migrated values stay editable in the Rank Math UI.
 
 == Changelog ==
+
+= 0.4.1 =
+* Fix: the import screen could not read a manifest inside a package directory.
+  sanitize_file_name() was applied to the whole submitted value, which strips
+  the directory separator, so `gcalls-content/content-manifest.json` arrived as
+  one impossible filename. Sanitising happens per path segment now.
 
 = 0.4.0 =
 * Admin: upload a packaged .zip straight from the import screen. The import
