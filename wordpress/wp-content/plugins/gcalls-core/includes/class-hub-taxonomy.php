@@ -31,11 +31,22 @@ final class Hub_Taxonomy {
 	public const META_HUB_ID = '_gcalls_hub_id';
 
 	/**
-	 * The seven hubs carrying Batch 1, transcribed from
-	 * src/data/blog/catalog.ts (BLOG_HUBS).
+	 * The thirteen editorial hubs, transcribed from
+	 * docs/content-review/blog/editorial-hub-summary.csv.
 	 *
-	 * HUB-04 and HUB-05 are absent on purpose: the editorial plan retired them
-	 * before Batch 1, and inventing them here would create empty archives.
+	 * WAS SEVEN UNTIL CHECKPOINT 004. Batch 1 only touched seven of them, so
+	 * only seven were registered, and the comment here said HUB-04 and HUB-05
+	 * had been retired. That was true of Batch 1 and false of the corpus: the
+	 * full 239-post migration files 77 posts under HUB-04, 35 under HUB-05, 49
+	 * under HUB-11 and 2 under HUB-10. Registered nowhere, those 163 posts would
+	 * have imported with no hub at all — no archive, no breadcrumb trail, and
+	 * nothing in the grouped blog index — and the import would have reported
+	 * success.
+	 *
+	 * HUB-12 and HUB-13 carry no legacy content and are registered anyway, so
+	 * the taxonomy matches the editorial model rather than the subset that
+	 * happens to have posts today. An empty term costs nothing: the archive
+	 * queries with `hide_empty`.
 	 *
 	 * @var array<string, array{slug: string, name: string}>
 	 */
@@ -43,10 +54,16 @@ final class Hub_Taxonomy {
 		'HUB-01' => array( 'slug' => 'tong-dai-va-call-center', 'name' => 'Tổng đài và Call Center' ),
 		'HUB-02' => array( 'slug' => 'gcalls-plus-webphone', 'name' => 'Gcalls Plus Webphone' ),
 		'HUB-03' => array( 'slug' => 'crm-helpdesk-va-tich-hop', 'name' => 'CRM, Helpdesk và tích hợp' ),
+		'HUB-04' => array( 'slug' => 'telesales-va-sales-operations', 'name' => 'Telesales và Sales Operations' ),
+		'HUB-05' => array( 'slug' => 'customer-service-va-customer-experience', 'name' => 'Customer Service và Customer Experience' ),
 		'HUB-06' => array( 'slug' => 'gcalls-cx', 'name' => 'Gcalls CX' ),
 		'HUB-07' => array( 'slug' => 'qa-qc-va-quan-tri-chat-luong', 'name' => 'QA/QC và quản trị chất lượng' ),
 		'HUB-08' => array( 'slug' => 'voicebot-ai-va-tu-dong-hoa', 'name' => 'Voicebot, AI và tự động hóa' ),
 		'HUB-09' => array( 'slug' => 'tong-dai-quoc-te', 'name' => 'Tổng đài quốc tế' ),
+		'HUB-10' => array( 'slug' => 'cloud-call-center-va-lam-viec-tu-xa', 'name' => 'Cloud Call Center và làm việc từ xa' ),
+		'HUB-11' => array( 'slug' => 'van-hanh-doanh-nghiep', 'name' => 'Vận hành doanh nghiệp' ),
+		'HUB-12' => array( 'slug' => 'huong-dan-su-dung-gcalls', 'name' => 'Hướng dẫn sử dụng Gcalls' ),
+		'HUB-13' => array( 'slug' => 'case-study', 'name' => 'Case study' ),
 	);
 
 	/**

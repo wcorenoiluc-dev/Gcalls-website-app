@@ -24,6 +24,21 @@ wordpress/
 └── README.md
 ```
 
+### The blog corpus export is not in here either
+
+`export-blog-corpus.mjs` reads a WordPress WXR file that is **deliberately not
+committed**: it is a 12 MB dump of a site that was serving injected gambling
+spam, and dumps do not belong in Git. Pass its path:
+
+```
+npm run wp:corpus -- --wxr ~/Downloads/<export>.xml
+```
+
+The manifest records the file's SHA-256, so a later run can prove it read the
+same export. The dry run must print `DRY RUN: PASS` before anything is packaged
+— `build-corpus-package.mjs` refuses to package a failing run, which is the only
+thing that makes the dry run a gate rather than a report.
+
 **Not in here, on purpose:** WordPress core, `wp-config.php`, uploads, caches,
 database dumps, and any third-party theme or plugin. Core is installed and
 updated on the host — a copy in Git goes stale and publishes the exact version

@@ -3,7 +3,7 @@ Contributors: gcalls
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.1
-Stable tag: 0.2.0
+Stable tag: 0.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,16 @@ tag. Rank Math owns the document head. This plugin only feeds Rank Math's own
 post meta so migrated values stay editable in the Rank Math UI.
 
 == Changelog ==
+
+= 0.3.0 =
+* Taxonomy: all thirteen editorial hubs registered, not the seven Batch 1 used.
+  163 corpus posts belong to HUB-04, 05, 10 and 11 and would have imported with
+  no hub at all.
+* Import: preserves the original publication date.
+* Import: keeps the legacy author, featured-image id, categories and editorial
+  decision as post meta. It creates no users and resolves no attachments.
+* Import: a manifest with no redirects leaves the stored map alone instead of
+  clearing it.
 
 = 0.2.0 =
 * Import: page hierarchy (post_parent), page template, front page and posts page.

@@ -177,13 +177,30 @@ final class Importer {
 		}
 
 		if ( in_array( 'redirects', $only, true ) ) {
-			$result                          = Redirects::set_map( (array) ( $manifest['redirects'] ?? array() ), $dry_run );
-			$report['sections']['redirects'] = array(
-				'created' => $result['stored'],
-				'updated' => 0,
-				'skipped' => count( $result['skipped'] ),
-				'errors'  => $result['skipped'],
-			);
+			$map = (array) ( $manifest['redirects'] ?? array() );
+
+			if ( array() === $map ) {
+				// Set_map REPLACES the stored map, so an empty one clears it.
+				// That is correct when someone deliberately clears the map, and
+				// catastrophic as a side effect: the 003B page manifest carries
+				// `redirects: {}`, so importing it after this corpus would wipe
+				// all 44 retired-URL rules and turn twenty former spam URLs back
+				// into soft 404s. Clearing is now something you have to ask for.
+				$report['sections']['redirects'] = array(
+					'created' => 0,
+					'updated' => 0,
+					'skipped' => 1,
+					'errors'  => array( __( 'Manifest không có redirect nào — giữ nguyên map hiện tại thay vì xoá.', 'gcalls-core' ) ),
+				);
+			} else {
+				$result                          = Redirects::set_map( $map, $dry_run );
+				$report['sections']['redirects'] = array(
+					'created' => $result['stored'],
+					'updated' => 0,
+					'skipped' => count( $result['skipped'] ),
+					'errors'  => $result['skipped'],
+				);
+			}
 		}
 
 		if ( ! $dry_run ) {
@@ -275,6 +292,22 @@ final class Importer {
 				'post_excerpt' => isset( $item['excerpt'] ) ? sanitize_text_field( (string) $item['excerpt'] ) : '',
 			);
 
+			// The original publication date, where the source has one. Without
+			// it the archive shows 239 posts all published on migration day,
+			// which destroys the chronology the hub archive is ordered by and
+			// tells every reader the whole blog was written in one afternoon.
+			$date = isset( $item['date'] ) ? trim( (string) $item['date'] ) : '';
+
+			if ( '' !== $date && 1 === preg_match( '/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/', $date ) ) {
+				$postarr['post_date'] = $date;
+
+				$gmt = isset( $item['dateGmt'] ) ? trim( (string) $item['dateGmt'] ) : '';
+
+				if ( '' !== $gmt && 1 === preg_match( '/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/', $gmt ) ) {
+					$postarr['post_date_gmt'] = $gmt;
+				}
+			}
+
 			if ( $existing ) {
 				$postarr['ID'] = $existing;
 			}
@@ -344,6 +377,60 @@ final class Importer {
 
 		if ( isset( $item['seo'] ) && is_array( $item['seo'] ) ) {
 			Seo::apply_meta( $post_id, $item['seo'] );
+		}
+
+		self::apply_legacy_meta( $post_id, $item );
+	}
+
+	/**
+	 * Records where an imported post came from.
+	 *
+	 * WHY THE AUTHOR IS META AND NOT AN AUTHOR
+	 * The legacy usernames are not users on this site, and this importer does
+	 * not create any. Checkpoint 003A deleted the original administrator on
+	 * purpose and closed the endpoints that disclosed login names; an importer
+	 * that quietly recreates five accounts to satisfy a byline undoes that, and
+	 * every account it creates is another password to attack. The name is kept
+	 * as data so a human can reassign posts deliberately.
+	 *
+	 * WHY THE THUMBNAIL IS A REFERENCE AND NOT AN IMAGE
+	 * The export is posts-only — it contains no `attachment` items — so
+	 * `_thumbnail_id` points at attachment rows that do not exist here. Writing
+	 * it into `_thumbnail_id` would make WordPress ask for an attachment that is
+	 * not there; on most themes that renders nothing, and on some it warns. It
+	 * is stored under our own key, so a later media migration can resolve it.
+	 *
+	 * @param int                  $post_id Target post.
+	 * @param array<string, mixed> $item    Manifest entry.
+	 */
+	private static function apply_legacy_meta( int $post_id, array $item ): void {
+		$fields = array(
+			'_gcalls_legacy_post_id'     => 'legacyPostId',
+			'_gcalls_legacy_author'      => 'legacyAuthor',
+			'_gcalls_legacy_thumbnail'   => 'legacyThumbnailId',
+			'_gcalls_editorial_decision' => 'decision',
+			'_gcalls_merge_into'         => 'mergeIntoSlug',
+		);
+
+		foreach ( $fields as $meta_key => $manifest_key ) {
+			$value = $item[ $manifest_key ] ?? null;
+
+			if ( null === $value || '' === $value ) {
+				delete_post_meta( $post_id, $meta_key );
+				continue;
+			}
+
+			update_post_meta( $post_id, $meta_key, sanitize_text_field( (string) $value ) );
+		}
+
+		if ( isset( $item['legacyCategories'] ) && is_array( $item['legacyCategories'] ) ) {
+			$categories = array_values( array_filter( array_map( 'sanitize_title', $item['legacyCategories'] ) ) );
+
+			if ( array() === $categories ) {
+				delete_post_meta( $post_id, '_gcalls_legacy_categories' );
+			} else {
+				update_post_meta( $post_id, '_gcalls_legacy_categories', implode( ',', $categories ) );
+			}
 		}
 	}
 

@@ -650,6 +650,67 @@ if (exists(homeTemplatePath)) {
 }
 
 /* ------------------------------------------------------------------ *
+ * 15. Full blog corpus — 004
+ * ------------------------------------------------------------------ */
+
+console.log('\n15. Full blog corpus (004)')
+
+const corpusScript = path.join(WP, 'scripts/export-blog-corpus.mjs')
+const wxrReader = path.join(WP, 'scripts/lib/wxr.mjs')
+
+check('corpus exporter present', exists(corpusScript))
+check('WXR reader present', exists(wxrReader))
+
+if (exists(wxrReader)) {
+  const reader = read(wxrReader)
+  // A plain indexOf('</item>') truncates the first body that contains that
+  // string and silently swallows every article after it.
+  check('WXR reader is CDATA-aware', reader.includes('indexOfOutsideCdata'))
+}
+
+if (exists(corpusScript)) {
+  const corpus = read(corpusScript)
+  check('corpus reads the editorial master map', corpus.includes('editorial-master-map.csv'))
+  check('corpus reads the URL plan', corpus.includes('editorial-url-plan.csv'))
+  check('corpus reads the security incident record', corpus.includes('blog-security-incident.csv'))
+  check('retire paths come from the URL plan, not a slugified title', corpus.includes("plan?.['Legacy URL']"))
+  check('merge sources get a distinct slug', corpus.includes('-merge-'))
+  check('merge sources claim no canonical', corpus.includes('if (!isMerge)'))
+  check('the WXR is not vendored, only hashed', corpus.includes('wxrSha'))
+  check('legacy authors are not turned into users', !/wp_(insert|create)_user/.test(corpus))
+  check('dry run exits non-zero on problems', corpus.includes('DRY RUN: FAIL'))
+}
+
+// The corpus files themselves are the decision source and must stay in the repo.
+for (const file of [
+  'editorial-master-map.csv',
+  'blog-inventory.csv',
+  'editorial-url-plan.csv',
+  'blog-security-incident.csv',
+  'editorial-hub-summary.csv',
+]) {
+  check(`${file} tracked`, exists(path.join(REPO, 'docs/content-review/blog', file)))
+}
+
+const hubTaxonomy = read(path.join(PLUGIN, 'includes/class-hub-taxonomy.php'))
+const hubIds = [...hubTaxonomy.matchAll(/'(HUB-\d+)' => array/g)].map((m) => m[1])
+check('all 13 editorial hubs registered', hubIds.length === 13, `${hubIds.length}: ${hubIds.join(', ')}`)
+
+for (const hub of ['HUB-04', 'HUB-05', 'HUB-10', 'HUB-11']) {
+  check(`${hub} registered (163 corpus posts depend on these)`, hubIds.includes(hub))
+}
+
+check('importer preserves the original publication date', importerSrc.includes("$postarr['post_date']"))
+check('importer keeps the legacy author as meta', importerSrc.includes('_gcalls_legacy_author'))
+check('importer keeps the featured image as a reference', importerSrc.includes('_gcalls_legacy_thumbnail'))
+check('importer records the editorial decision', importerSrc.includes('_gcalls_editorial_decision'))
+// Importing a manifest with no redirects must not clear the stored map.
+check(
+  'an empty redirect map never wipes the stored one',
+  importerSrc.includes('giữ nguyên map hiện tại thay vì xoá'),
+)
+
+/* ------------------------------------------------------------------ *
  * Report
  * ------------------------------------------------------------------ */
 
@@ -671,6 +732,9 @@ for (const item of [
   'Elementor renders the imported home page template',
   'the 18 articles appear under 7 hubs on /blog/',
   'nav menus assigned to the primary and footer locations',
+  'the full corpus import — 250 posts, 44 gone URLs',
+  'the 24 retired URLs answer 410',
+  'the 20 removed spam URLs answer 410',
 ]) {
   console.log(`  --   ${item}`)
 }
