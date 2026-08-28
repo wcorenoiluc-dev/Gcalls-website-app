@@ -1,0 +1,554 @@
+[
+  {
+    "target": "react",
+    "route": "/",
+    "width": 1440,
+    "overflow": 0,
+    "bytes": 4654305,
+    "file": "docs/content-review/parity-006/home-1440-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/gcalls-plus-webphone/",
+    "width": 1440,
+    "overflow": 0,
+    "bytes": 2236879,
+    "file": "docs/content-review/parity-006/gcalls-plus-1440-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/gcalls-cx/",
+    "width": 1440,
+    "overflow": 0,
+    "bytes": 2279772,
+    "file": "docs/content-review/parity-006/gcalls-cx-1440-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/voicebot-ai/",
+    "width": 1440,
+    "overflow": 0,
+    "bytes": 1829871,
+    "file": "docs/content-review/parity-006/voicebot-1440-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/qc-bot-ai/",
+    "width": 1440,
+    "overflow": 0,
+    "bytes": 2103671,
+    "file": "docs/content-review/parity-006/qa-qc-1440-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/uoc-tinh-chi-phi/",
+    "width": 1440,
+    "overflow": 0,
+    "bytes": 853271,
+    "file": "docs/content-review/parity-006/estimator-1440-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/blog/",
+    "width": 1440,
+    "overflow": 0,
+    "bytes": 1881400,
+    "file": "docs/content-review/parity-006/blog-1440-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/",
+    "width": 1024,
+    "overflow": 0,
+    "bytes": 4248028,
+    "file": "docs/content-review/parity-006/home-1024-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/gcalls-plus-webphone/",
+    "width": 1024,
+    "overflow": 0,
+    "bytes": 2110607,
+    "file": "docs/content-review/parity-006/gcalls-plus-1024-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/gcalls-cx/",
+    "width": 1024,
+    "overflow": 0,
+    "bytes": 2193115,
+    "file": "docs/content-review/parity-006/gcalls-cx-1024-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/voicebot-ai/",
+    "width": 1024,
+    "overflow": 0,
+    "bytes": 1764616,
+    "file": "docs/content-review/parity-006/voicebot-1024-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/qc-bot-ai/",
+    "width": 1024,
+    "overflow": 0,
+    "bytes": 2036224,
+    "file": "docs/content-review/parity-006/qa-qc-1024-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/uoc-tinh-chi-phi/",
+    "width": 1024,
+    "overflow": 0,
+    "bytes": 781926,
+    "file": "docs/content-review/parity-006/estimator-1024-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/blog/",
+    "width": 1024,
+    "overflow": 0,
+    "bytes": 1896361,
+    "file": "docs/content-review/parity-006/blog-1024-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/",
+    "width": 768,
+    "overflow": 0,
+    "bytes": 4216106,
+    "file": "docs/content-review/parity-006/home-768-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/gcalls-plus-webphone/",
+    "width": 768,
+    "overflow": 0,
+    "bytes": 2330604,
+    "file": "docs/content-review/parity-006/gcalls-plus-768-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/gcalls-cx/",
+    "width": 768,
+    "overflow": 0,
+    "bytes": 2111211,
+    "file": "docs/content-review/parity-006/gcalls-cx-768-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/voicebot-ai/",
+    "width": 768,
+    "overflow": 0,
+    "bytes": 1675076,
+    "file": "docs/content-review/parity-006/voicebot-768-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/qc-bot-ai/",
+    "width": 768,
+    "overflow": 0,
+    "bytes": 1877600,
+    "file": "docs/content-review/parity-006/qa-qc-768-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/uoc-tinh-chi-phi/",
+    "width": 768,
+    "overflow": 0,
+    "bytes": 701587,
+    "file": "docs/content-review/parity-006/estimator-768-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/blog/",
+    "width": 768,
+    "overflow": 0,
+    "bytes": 1796508,
+    "file": "docs/content-review/parity-006/blog-768-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/",
+    "width": 390,
+    "overflow": 0,
+    "bytes": 3790546,
+    "file": "docs/content-review/parity-006/home-390-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/gcalls-plus-webphone/",
+    "width": 390,
+    "overflow": 0,
+    "bytes": 1906442,
+    "file": "docs/content-review/parity-006/gcalls-plus-390-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/gcalls-cx/",
+    "width": 390,
+    "overflow": 0,
+    "bytes": 1822278,
+    "file": "docs/content-review/parity-006/gcalls-cx-390-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/voicebot-ai/",
+    "width": 390,
+    "overflow": 0,
+    "bytes": 1564223,
+    "file": "docs/content-review/parity-006/voicebot-390-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/qc-bot-ai/",
+    "width": 390,
+    "overflow": 0,
+    "bytes": 1717924,
+    "file": "docs/content-review/parity-006/qa-qc-390-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/uoc-tinh-chi-phi/",
+    "width": 390,
+    "overflow": 0,
+    "bytes": 579960,
+    "file": "docs/content-review/parity-006/estimator-390-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/blog/",
+    "width": 390,
+    "overflow": 0,
+    "bytes": 1722707,
+    "file": "docs/content-review/parity-006/blog-390-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/",
+    "width": 320,
+    "overflow": 0,
+    "bytes": 3879024,
+    "file": "docs/content-review/parity-006/home-320-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/gcalls-plus-webphone/",
+    "width": 320,
+    "overflow": 0,
+    "bytes": 1836634,
+    "file": "docs/content-review/parity-006/gcalls-plus-320-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/gcalls-cx/",
+    "width": 320,
+    "overflow": 0,
+    "bytes": 1877359,
+    "file": "docs/content-review/parity-006/gcalls-cx-320-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/voicebot-ai/",
+    "width": 320,
+    "overflow": 0,
+    "bytes": 1559401,
+    "file": "docs/content-review/parity-006/voicebot-320-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/qc-bot-ai/",
+    "width": 320,
+    "overflow": 0,
+    "bytes": 1726898,
+    "file": "docs/content-review/parity-006/qa-qc-320-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/uoc-tinh-chi-phi/",
+    "width": 320,
+    "overflow": 0,
+    "bytes": 574496,
+    "file": "docs/content-review/parity-006/estimator-320-react.png"
+  },
+  {
+    "target": "react",
+    "route": "/blog/",
+    "width": 320,
+    "overflow": 0,
+    "bytes": 1719673,
+    "file": "docs/content-review/parity-006/blog-320-react.png"
+  },
+  {
+    "target": "wp",
+    "route": "/",
+    "width": 1440,
+    "overflow": 0,
+    "bytes": 1162855,
+    "file": "docs/content-review/parity-006/home-1440-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/gcalls-plus-webphone/",
+    "width": 1440,
+    "overflow": 0,
+    "bytes": 898930,
+    "file": "docs/content-review/parity-006/gcalls-plus-1440-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/gcalls-cx/",
+    "width": 1440,
+    "overflow": 0,
+    "bytes": 889770,
+    "file": "docs/content-review/parity-006/gcalls-cx-1440-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/voicebot-ai/",
+    "width": 1440,
+    "overflow": 0,
+    "bytes": 894156,
+    "file": "docs/content-review/parity-006/voicebot-1440-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/qc-bot-ai/",
+    "width": 1440,
+    "overflow": 0,
+    "bytes": 794073,
+    "file": "docs/content-review/parity-006/qa-qc-1440-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/uoc-tinh-chi-phi/",
+    "width": 1440,
+    "overflow": null,
+    "error": "Error: page.goto: net::ERR_NETWORK_IO_SUSPENDED at https://ashernguyenxuanthuy.com/uoc-tinh-chi-phi/"
+  },
+  {
+    "target": "wp",
+    "route": "/blog/",
+    "width": 1440,
+    "overflow": null,
+    "error": "Error: page.goto: Navigation to \"https://ashernguyenxuanthuy.com/blog/\" is interrupted by another navigation to \"chrome-error://chromewebdata/\""
+  },
+  {
+    "target": "wp",
+    "route": "/",
+    "width": 1024,
+    "overflow": 0,
+    "bytes": 1077003,
+    "file": "docs/content-review/parity-006/home-1024-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/gcalls-plus-webphone/",
+    "width": 1024,
+    "overflow": 0,
+    "bytes": 894730,
+    "file": "docs/content-review/parity-006/gcalls-plus-1024-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/gcalls-cx/",
+    "width": 1024,
+    "overflow": 0,
+    "bytes": 873430,
+    "file": "docs/content-review/parity-006/gcalls-cx-1024-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/voicebot-ai/",
+    "width": 1024,
+    "overflow": 0,
+    "bytes": 880826,
+    "file": "docs/content-review/parity-006/voicebot-1024-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/qc-bot-ai/",
+    "width": 1024,
+    "overflow": 0,
+    "bytes": 796220,
+    "file": "docs/content-review/parity-006/qa-qc-1024-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/uoc-tinh-chi-phi/",
+    "width": 1024,
+    "overflow": 0,
+    "bytes": 140200,
+    "file": "docs/content-review/parity-006/estimator-1024-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/blog/",
+    "width": 1024,
+    "overflow": 0,
+    "bytes": 454508,
+    "file": "docs/content-review/parity-006/blog-1024-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/",
+    "width": 768,
+    "overflow": 0,
+    "bytes": 1038461,
+    "file": "docs/content-review/parity-006/home-768-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/gcalls-plus-webphone/",
+    "width": 768,
+    "overflow": null,
+    "error": "TimeoutError: page.goto: Timeout 45000ms exceeded."
+  },
+  {
+    "target": "wp",
+    "route": "/gcalls-cx/",
+    "width": 768,
+    "overflow": 0,
+    "bytes": 819096,
+    "file": "docs/content-review/parity-006/gcalls-cx-768-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/voicebot-ai/",
+    "width": 768,
+    "overflow": null,
+    "error": "TimeoutError: page.goto: Timeout 45000ms exceeded."
+  },
+  {
+    "target": "wp",
+    "route": "/qc-bot-ai/",
+    "width": 768,
+    "overflow": null,
+    "error": "Error: page.goto: Navigation to \"https://ashernguyenxuanthuy.com/qc-bot-ai/\" is interrupted by another navigation to \"https://ashernguyenxuanthuy.com/voicebot-ai/\""
+  },
+  {
+    "target": "wp",
+    "route": "/uoc-tinh-chi-phi/",
+    "width": 768,
+    "overflow": null,
+    "error": "Error: page.goto: Navigation to \"https://ashernguyenxuanthuy.com/uoc-tinh-chi-phi/\" is interrupted by another navigation to \"https://ashernguyenxuanthuy.com/qc-bot-ai/\""
+  },
+  {
+    "target": "wp",
+    "route": "/blog/",
+    "width": 768,
+    "overflow": null,
+    "error": "Error: page.goto: Navigation to \"https://ashernguyenxuanthuy.com/blog/\" is interrupted by another navigation to \"https://ashernguyenxuanthuy.com/uoc-tinh-chi-phi/\""
+  },
+  {
+    "target": "wp",
+    "route": "/",
+    "width": 390,
+    "overflow": 0,
+    "bytes": 956783,
+    "file": "docs/content-review/parity-006/home-390-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/gcalls-plus-webphone/",
+    "width": 390,
+    "overflow": 0,
+    "bytes": 665636,
+    "file": "docs/content-review/parity-006/gcalls-plus-390-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/gcalls-cx/",
+    "width": 390,
+    "overflow": 0,
+    "bytes": 808946,
+    "file": "docs/content-review/parity-006/gcalls-cx-390-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/voicebot-ai/",
+    "width": 390,
+    "overflow": 0,
+    "bytes": 844330,
+    "file": "docs/content-review/parity-006/voicebot-390-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/qc-bot-ai/",
+    "width": 390,
+    "overflow": 0,
+    "bytes": 726936,
+    "file": "docs/content-review/parity-006/qa-qc-390-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/uoc-tinh-chi-phi/",
+    "width": 390,
+    "overflow": 0,
+    "bytes": 141099,
+    "file": "docs/content-review/parity-006/estimator-390-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/blog/",
+    "width": 390,
+    "overflow": null,
+    "error": "TimeoutError: page.screenshot: Timeout 30000ms exceeded."
+  },
+  {
+    "target": "wp",
+    "route": "/",
+    "width": 320,
+    "overflow": 0,
+    "bytes": 920675,
+    "file": "docs/content-review/parity-006/home-320-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/gcalls-plus-webphone/",
+    "width": 320,
+    "overflow": 0,
+    "bytes": 702320,
+    "file": "docs/content-review/parity-006/gcalls-plus-320-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/gcalls-cx/",
+    "width": 320,
+    "overflow": 0,
+    "bytes": 810421,
+    "file": "docs/content-review/parity-006/gcalls-cx-320-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/voicebot-ai/",
+    "width": 320,
+    "overflow": 0,
+    "bytes": 853956,
+    "file": "docs/content-review/parity-006/voicebot-320-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/qc-bot-ai/",
+    "width": 320,
+    "overflow": 0,
+    "bytes": 737551,
+    "file": "docs/content-review/parity-006/qa-qc-320-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/uoc-tinh-chi-phi/",
+    "width": 320,
+    "overflow": 0,
+    "bytes": 138124,
+    "file": "docs/content-review/parity-006/estimator-320-wp.png"
+  },
+  {
+    "target": "wp",
+    "route": "/blog/",
+    "width": 320,
+    "overflow": 0,
+    "bytes": 520112,
+    "file": "docs/content-review/parity-006/blog-320-wp.png"
+  }
+]

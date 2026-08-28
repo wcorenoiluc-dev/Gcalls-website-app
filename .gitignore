@@ -56,6 +56,11 @@ wordpress/wp-content/plugins/*
 # Same rule for themes.
 wordpress/wp-content/themes/*
 !wordpress/wp-content/themes/gcalls-theme/
+# Parity screenshots. 70 full-page PNGs is 92 MB of evidence that is
+# regenerable from scripts/parity-shots.mjs; the measurements that matter are
+# committed as parity-results.json beside them.
+docs/content-review/parity-006/*.png
+
 # Build output of wp:package. The ZIP is a derivable artefact of a commit —
 # committing it doubles the source and lets the two drift.
 wordpress/dist/
