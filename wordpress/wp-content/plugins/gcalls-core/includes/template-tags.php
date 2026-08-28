@@ -62,3 +62,16 @@ function gcalls_core_is_elementor_page( ?int $post_id = null ): bool {
 
 	return $document instanceof \Elementor\Core\Base\Document && $document->is_built_with_elementor();
 }
+
+/**
+ * Renders the FAQ accordion for the current post.
+ *
+ * A template tag as well as a shortcode: `single.php` calls this directly,
+ * because a post body should not have to carry a shortcode for something that
+ * belongs to every article.
+ *
+ * @param int|null $post_id Defaults to the current post.
+ */
+function gcalls_core_faq( ?int $post_id = null ): void {
+	\Gcalls\Core\Faq::render( $post_id );
+}

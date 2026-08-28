@@ -3,7 +3,7 @@ Contributors: gcalls
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.1
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,18 @@ tag. Rank Math owns the document head. This plugin only feeds Rank Math's own
 post meta so migrated values stay editable in the Rank Math UI.
 
 == Changelog ==
+
+= 0.2.0 =
+* Import: page hierarchy (post_parent), page template, front page and posts page.
+* Import: refuses to run when the manifest's hierarchy would change a published
+  URL, instead of half-applying it.
+* Import: media library, matched by manifest id so templates stay portable.
+* Import: builds the header and footer navigation menus.
+* Import: never overwrites a body edited in WordPress without an explicit flag.
+* Admin: Tools > Gcalls Import — capability, nonce and confirmation checked.
+* Shortcodes: [gcalls_faq], [gcalls_cta] with lead attribution, [gcalls_media],
+  and a fail-closed [gcalls_lead_form].
+* Hardening: unchanged from 0.1.0, including the author-enumeration block.
 
 = 0.1.0 =
 * Foundation: taxonomy, FAQ, breadcrumbs, redirect map, import pipeline.

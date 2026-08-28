@@ -616,3 +616,243 @@ pre {
 .gcalls-widget__title {
 	font-size: 1.0625rem;
 }
+
+/* -------------------------------------------------------------------------
+ * Checkpoint 003B P0 — imported content and the shortcode layer
+ *
+ * Every value below is a token. A literal #673ab7 here would survive a rebrand
+ * of the token block above and quietly become the one purple that did not
+ * change, which is the failure mode elementor-templates/README.md warns about.
+ * ---------------------------------------------------------------------- */
+
+/* FAQ — rendered by gcalls-core from _gcalls_faq, with <details>/<summary> so
+ * it is keyboard accessible and open to find-in-page without JavaScript. */
+.gcalls-faq {
+	margin-block: var(--gcalls-space-4);
+	max-width: var(--gcalls-measure);
+}
+
+.gcalls-faq__title {
+	font-size: 1.5rem;
+	margin-bottom: var(--gcalls-space-2);
+}
+
+.gcalls-faq__item {
+	border-bottom: 1px solid var(--gcalls-border);
+}
+
+.gcalls-faq__question {
+	cursor: pointer;
+	font-weight: 600;
+	list-style: none;
+	padding: var(--gcalls-space-2) 2rem var(--gcalls-space-2) 0;
+	position: relative;
+}
+
+.gcalls-faq__question::-webkit-details-marker {
+	display: none;
+}
+
+/* The marker is drawn rather than typed so it rotates on open and needs no
+ * icon font. */
+.gcalls-faq__question::after {
+	border-bottom: 2px solid var(--gcalls-brand);
+	border-right: 2px solid var(--gcalls-brand);
+	content: "";
+	height: 0.5rem;
+	position: absolute;
+	right: 0.5rem;
+	top: 1.4rem;
+	transform: rotate(45deg);
+	transition: transform 150ms ease;
+	width: 0.5rem;
+}
+
+.gcalls-faq__item[open] .gcalls-faq__question::after {
+	transform: rotate(-135deg);
+}
+
+.gcalls-faq__answer {
+	color: var(--gcalls-muted);
+	padding-bottom: var(--gcalls-space-2);
+}
+
+/* CTA — the conversion button, always carrying its attribution query string. */
+.gcalls-cta-band {
+	margin-block: var(--gcalls-space-3);
+}
+
+.gcalls-cta {
+	align-items: center;
+	border-radius: var(--gcalls-radius-sm);
+	display: inline-flex;
+	font-weight: 600;
+	justify-content: center;
+	min-height: 3rem;
+	padding: 0 1.5rem;
+	text-decoration: none;
+	transition: background-color 150ms ease;
+}
+
+.gcalls-cta--primary {
+	background: var(--gcalls-brand);
+	color: #fff;
+}
+
+.gcalls-cta--primary:hover,
+.gcalls-cta--primary:focus-visible {
+	background: var(--gcalls-brand-dark);
+	color: #fff;
+}
+
+.gcalls-cta--secondary {
+	border: 1px solid var(--gcalls-brand);
+	color: var(--gcalls-brand);
+}
+
+.gcalls-cta-band__note {
+	color: var(--gcalls-muted);
+	font-size: 0.875rem;
+	margin-top: var(--gcalls-space-1);
+}
+
+/* Lead panel — deliberately disabled while no destination is approved. The
+ * reduced opacity is the visible half of that decision; the notice above it is
+ * the half that explains itself. */
+.gcalls-lead {
+	background: var(--gcalls-brand-light);
+	border-radius: var(--gcalls-radius);
+	margin-block: var(--gcalls-space-4);
+	padding: var(--gcalls-space-3);
+}
+
+.gcalls-lead__notice {
+	background: var(--gcalls-surface);
+	border-left: 3px solid var(--gcalls-brand);
+	border-radius: var(--gcalls-radius-sm);
+	margin-bottom: var(--gcalls-space-3);
+	padding: var(--gcalls-space-2);
+}
+
+.gcalls-lead__contact {
+	font-weight: 600;
+	margin-top: var(--gcalls-space-1);
+}
+
+.gcalls-lead__form fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.gcalls-lead__form fieldset[disabled] {
+	opacity: 0.6;
+}
+
+.gcalls-lead__field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	margin-bottom: var(--gcalls-space-2);
+}
+
+.gcalls-lead__field label {
+	font-size: 0.875rem;
+	font-weight: 600;
+}
+
+.gcalls-lead__field input,
+.gcalls-lead__field textarea {
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius-sm);
+	font: inherit;
+	padding: 0.6rem 0.75rem;
+	width: 100%;
+}
+
+/* Imported article furniture. */
+.gcalls-direct-answer {
+	background: var(--gcalls-brand-light);
+	border-left: 3px solid var(--gcalls-brand);
+	border-radius: var(--gcalls-radius-sm);
+	margin-block: var(--gcalls-space-3);
+	padding: var(--gcalls-space-2) var(--gcalls-space-3);
+}
+
+/* The article grammar has a checklist; WordPress core has no checklist block,
+ * so it is imported as a list with this class rather than as a custom block
+ * type that would render as a broken placeholder without the plugin. */
+.gcalls-checklist {
+	list-style: none;
+	padding-left: 0;
+}
+
+.gcalls-checklist li {
+	padding-left: 1.75rem;
+	position: relative;
+}
+
+.gcalls-checklist li::before {
+	border: 1px solid var(--gcalls-brand);
+	border-radius: 3px;
+	content: "";
+	height: 1rem;
+	left: 0;
+	position: absolute;
+	top: 0.35rem;
+	width: 1rem;
+}
+
+/* Hub-grouped blog archive. */
+.gcalls-hub-index__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gcalls-space-1);
+	list-style: none;
+	margin: 0 0 var(--gcalls-space-4);
+	padding: 0;
+}
+
+.gcalls-hub-index__list a {
+	align-items: center;
+	background: var(--gcalls-brand-light);
+	border-radius: 999px;
+	display: inline-flex;
+	gap: 0.4rem;
+	font-size: 0.875rem;
+	padding: 0.4rem 0.9rem;
+	text-decoration: none;
+}
+
+.gcalls-hub-index__count {
+	background: var(--gcalls-brand);
+	border-radius: 999px;
+	color: #fff;
+	font-size: 0.75rem;
+	min-width: 1.25rem;
+	padding: 0 0.35rem;
+	text-align: center;
+}
+
+.gcalls-hub-group {
+	margin-bottom: var(--gcalls-space-5);
+	/* The index links here; without this the sticky header covers the title. */
+	scroll-margin-top: var(--gcalls-space-4);
+}
+
+.gcalls-hub-group__title {
+	border-bottom: 2px solid var(--gcalls-brand-light);
+	font-size: 1.375rem;
+	margin-bottom: var(--gcalls-space-2);
+	padding-bottom: var(--gcalls-space-1);
+}
+
+.gcalls-hub-group__description {
+	color: var(--gcalls-muted);
+	margin-bottom: var(--gcalls-space-2);
+}
+
+.gcalls-hub-total {
+	border-top: 1px solid var(--gcalls-border);
+	padding-top: var(--gcalls-space-2);
+}

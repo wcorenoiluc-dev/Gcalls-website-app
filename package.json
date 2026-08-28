@@ -14,6 +14,12 @@
     "wp:lint": "node wordpress/scripts/php-lint.mjs",
     "wp:export": "node wordpress/scripts/export-content.mjs",
     "wp:qa": "node wordpress/scripts/qa-foundation.mjs",
+    "wp:package": "node wordpress/scripts/package-plugin.mjs",
+    "wp:homepage": "node wordpress/scripts/build-homepage-template.mjs",
+    "wp:test-import": "node wordpress/scripts/test-import-rules.mjs",
+    "wp:reconcile": "node wordpress/scripts/reconcile-articles.mjs",
+    "wp:release": "node wordpress/scripts/build-release.mjs",
+    "wp:check": "npm run wp:lint && npm run wp:qa && npm run wp:test-import && npm run wp:reconcile",
     "wp:live-verify": "node wordpress/scripts/live-003a-verify.mjs"
   },
   "dependencies": {

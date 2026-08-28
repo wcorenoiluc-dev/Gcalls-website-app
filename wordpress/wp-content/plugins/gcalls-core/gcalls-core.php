@@ -3,7 +3,7 @@
  * Plugin Name:       Gcalls Core
  * Plugin URI:        https://gcalls.co/
  * Description:       Site behaviour that must survive a theme change: the HUB taxonomy for blog articles, FAQ structured data, breadcrumbs, the legacy route/redirect map and the WP-CLI content import pipeline.
- * Version:           0.1.0
+ * Version:           0.2.0
  * Requires at least: 6.4
  * Requires PHP:      8.1
  * Author:            Gcalls
@@ -34,7 +34,7 @@ namespace Gcalls\Core;
 
 defined( 'ABSPATH' ) || exit;
 
-const VERSION = '0.1.0';
+const VERSION = '0.2.0';
 
 /** Absolute path to this plugin's directory, trailing slash included. */
 define( 'GCALLS_CORE_FILE', __FILE__ );
@@ -48,6 +48,7 @@ require_once GCALLS_CORE_DIR . 'includes/class-seo.php';
 require_once GCALLS_CORE_DIR . 'includes/class-redirects.php';
 require_once GCALLS_CORE_DIR . 'includes/class-hardening.php';
 require_once GCALLS_CORE_DIR . 'includes/class-importer.php';
+require_once GCALLS_CORE_DIR . 'includes/class-shortcodes.php';
 require_once GCALLS_CORE_DIR . 'includes/template-tags.php';
 
 /**
@@ -63,6 +64,16 @@ function bootstrap(): void {
 	Seo::init();
 	Redirects::init();
 	Hardening::init();
+	Shortcodes::init();
+
+	// The import screen registers a Tools submenu and nothing else. Loading it
+	// only in the admin keeps its code off every front-end request, and the
+	// importer itself is still reached exclusively through an explicit,
+	// nonce-checked POST — never a hook that fires on its own.
+	if ( is_admin() ) {
+		require_once GCALLS_CORE_DIR . 'includes/class-admin.php';
+		Admin::init();
+	}
 
 	if ( defined( 'WP_CLI' ) && \WP_CLI ) {
 		require_once GCALLS_CORE_DIR . 'includes/class-cli.php';

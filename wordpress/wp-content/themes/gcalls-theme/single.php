@@ -48,6 +48,23 @@ while ( have_posts() ) :
 				?>
 			</div>
 
+			<?php
+			/**
+			 * The FAQ block.
+			 *
+			 * Rendered by gcalls-core from `_gcalls_faq`, which is the same meta
+			 * that produces the FAQPage JSON-LD. Marking these up again in the
+			 * post body would put the questions on the page twice and give the
+			 * structured data a second, disagreeing source.
+			 *
+			 * Guarded because the theme has to render with the plugin switched
+			 * off — that is the whole reason the two are separate.
+			 */
+			if ( function_exists( 'gcalls_core_faq' ) ) {
+				gcalls_core_faq();
+			}
+			?>
+
 			<footer class="gcalls-article__footer">
 				<?php
 				the_post_navigation(

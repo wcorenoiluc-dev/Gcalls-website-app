@@ -36,8 +36,35 @@ wp elementor library import wordpress/elementor-templates/<file>.json
 - Re-export after editing in the UI; hand-editing the JSON is possible but the
   IDs are positional and easy to break.
 
-## Status — checkpoint 003A
+## Generated templates
 
-`gcalls-hero-section.json` is the only template here: one section proving the
-kit, the container width and the button style land correctly. The 38 page
-layouts are built in 003B, against the live site, not authored blind here.
+`gcalls-homepage.json` is **generated**, not exported from Elementor. Edit
+`wordpress/scripts/build-homepage-template.mjs` and run `npm run wp:homepage`;
+do not hand-edit the JSON, and re-generate rather than re-exporting after a UI
+edit unless you intend the UI to become the source.
+
+The reason is reviewability. An Elementor export is a few thousand lines of
+nested settings with positional ids: a diff of one changed sentence shows a
+hundred changed ids and hides the sentence. The generator's diff is the
+sentence. Ids are derived from a counter, so re-running produces a
+byte-identical file.
+
+### Images in a generated template
+
+Product screenshots are placed with `[gcalls_media id="GP-09"]`, never with an
+Elementor image widget. An image widget stores an attachment ID and an uploads
+URL, and both are specific to the site the template was exported from — imported
+anywhere else it renders a broken image, or whatever attachment now holds that
+ID. The shortcode resolves the attachment by its manifest id at render time, so
+the template carries no environment-specific value at all. See
+`class-shortcodes.php`.
+
+## Status — checkpoint 003B P0
+
+| File | What it is |
+| --- | --- |
+| `gcalls-hero-section.json` | 003A. One section proving the kit, container width and button style. |
+| `gcalls-homepage.json` | 003B P0. The full home page, 15 sections, generated. Elementor Free widgets only. |
+
+The remaining 37 page layouts are not built yet. `docs/INVENTORY_003B_SECTION_MAPPING.md`
+holds the section-by-section mapping and the build order they follow.

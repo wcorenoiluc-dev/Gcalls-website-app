@@ -56,6 +56,9 @@ wordpress/wp-content/plugins/*
 # Same rule for themes.
 wordpress/wp-content/themes/*
 !wordpress/wp-content/themes/gcalls-theme/
+# Build output of wp:package. The ZIP is a derivable artefact of a commit —
+# committing it doubles the source and lets the two drift.
+wordpress/dist/
 # Database dumps and backups.
 wordpress/**/*.sql
 wordpress/**/*.sql.gz

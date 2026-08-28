@@ -44,8 +44,14 @@ final class Cli {
 	 * : Overwrite title, body and SEO copy on objects that already exist.
 	 *   Off by default so a re-run never reverts an editor's correction.
 	 *
+	 * [--overwrite-edited]
+	 * : Also overwrite bodies that were edited in WordPress after import.
+	 *   Requires --force. This discards editorial work; it exists so that
+	 *   "refresh from source" and "throw away what the editor did" are two
+	 *   different decisions rather than one flag.
+	 *
 	 * [--only=<sections>]
-	 * : Comma-separated subset of hubs,pages,articles,redirects.
+	 * : Comma-separated subset of hubs,pages,articles,menus,redirects.
 	 *
 	 * ## EXAMPLES
 	 *
@@ -73,16 +79,27 @@ final class Cli {
 
 		$only = isset( $assoc_args['only'] )
 			? array_filter( array_map( 'trim', explode( ',', (string) $assoc_args['only'] ) ) )
-			: array( 'hubs', 'pages', 'articles', 'redirects' );
+			: Importer::sections();
 
 		$report = Importer::run(
 			$manifest,
 			array(
-				'dry_run' => $dry_run,
-				'force'   => isset( $assoc_args['force'] ),
-				'only'    => $only,
+				'dry_run'          => $dry_run,
+				'force'            => isset( $assoc_args['force'] ),
+				'overwrite_edited' => isset( $assoc_args['overwrite-edited'] ),
+				'only'             => $only,
 			)
 		);
+
+		// A refused run has no sections to tabulate — printing an empty table
+		// under a success message is how a failed migration gets signed off.
+		if ( ! empty( $report['aborted'] ) ) {
+			foreach ( (array) $report['errors'] as $problem ) {
+				\WP_CLI::log( '  - ' . $problem );
+			}
+
+			\WP_CLI::error( 'Manifest không hợp lệ — không ghi gì. Sửa các vấn đề trên rồi chạy lại.' );
+		}
 
 		$rows = array();
 
@@ -113,6 +130,52 @@ final class Cli {
 			sprintf(
 				'Đã import. Có thể hoàn tác %d đối tượng vừa tạo bằng: wp gcalls rollback --execute',
 				count( $report['rollback']['created_posts'] )
+			)
+		);
+	}
+
+	/**
+	 * Checks a manifest without touching WordPress at all.
+	 *
+	 * Useful in CI and before a handover: it answers "would this import produce
+	 * the URLs we published?" without needing a database in a known state.
+	 *
+	 * ## OPTIONS
+	 *
+	 * --manifest=<path>
+	 * : Path to the JSON manifest.
+	 *
+	 * @param array<int, string>    $args       Positional arguments.
+	 * @param array<string, string> $assoc_args Flags.
+	 */
+	public function validate( array $args, array $assoc_args ): void {
+		$path = (string) ( $assoc_args['manifest'] ?? '' );
+
+		if ( '' === $path || ! is_readable( $path ) ) {
+			\WP_CLI::error( sprintf( 'Không đọc được manifest: %s', $path ) );
+		}
+
+		$manifest = json_decode( (string) file_get_contents( $path ), true ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Local file read in a CLI context.
+
+		if ( ! is_array( $manifest ) ) {
+			\WP_CLI::error( 'Manifest không phải JSON hợp lệ.' );
+		}
+
+		$problems = Importer::validate( $manifest );
+
+		foreach ( $problems as $problem ) {
+			\WP_CLI::log( '  - ' . $problem );
+		}
+
+		if ( array() !== $problems ) {
+			\WP_CLI::error( sprintf( '%d vấn đề.', count( $problems ) ) );
+		}
+
+		\WP_CLI::success(
+			sprintf(
+				'Manifest hợp lệ: %d trang, %d bài viết.',
+				count( (array) ( $manifest['pages'] ?? array() ) ),
+				count( (array) ( $manifest['articles'] ?? array() ) )
 			)
 		);
 	}

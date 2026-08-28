@@ -36,7 +36,7 @@ const check = (label, condition, detail = '') => {
 const read = (file) => fs.readFileSync(file, 'utf8')
 const exists = (file) => fs.existsSync(file)
 
-console.log('QA FOUNDATION — GCALLS-WORDPRESS-MIGRATION-003A\n')
+console.log('QA FOUNDATION — GCALLS-WORDPRESS-MIGRATION-003A + 003B-P0\n')
 
 /* ------------------------------------------------------------------ *
  * 1. PHP syntax
@@ -438,6 +438,218 @@ if (tracked) {
 }
 
 /* ------------------------------------------------------------------ *
+ * 11. Import pipeline — 003B P0
+ * ------------------------------------------------------------------ */
+
+console.log('\n11. Import pipeline (003B P0)')
+
+const importerSrc = read(path.join(PLUGIN, 'includes/class-importer.php'))
+const adminScreen = path.join(PLUGIN, 'includes/class-admin.php')
+const shortcodes = path.join(PLUGIN, 'includes/class-shortcodes.php')
+
+check('importer consumes parentRoute', importerSrc.includes('parentRoute'))
+check('importer sets post_parent', importerSrc.includes("'post_parent'"))
+check('importer sets the page template', importerSrc.includes('_wp_page_template'))
+check('importer sets the front page', importerSrc.includes("'page_on_front'"))
+check('importer sets the posts page', importerSrc.includes("'page_for_posts'"))
+check('importer builds nav menus', importerSrc.includes('wp_update_nav_menu_item'))
+check('importer imports media by manifest id', importerSrc.includes('META_MEDIA_ID'))
+check('importer validates before writing', /public static function validate\(/.test(importerSrc))
+check('a failed validation aborts the whole run', importerSrc.includes("\$report['aborted'] = true"))
+check('importer detects editor changes', importerSrc.includes('was_edited'))
+check(
+  'overwriting an edited body needs its own flag',
+  importerSrc.includes('overwrite_edited') && importerSrc.includes('$overwrite_edited'),
+)
+
+// The importer must never be able to start on its own. This is the check that
+// would catch someone "helpfully" wiring it to a hook.
+const pluginPhp = read(path.join(PLUGIN, 'gcalls-core.php'))
+const autoRun = [pluginPhp, importerSrc, exists(adminScreen) ? read(adminScreen) : '']
+  .join('\n')
+  .match(/add_action\(\s*'(admin_init|init|wp_loaded|shutdown)'[^)]*Import/gi)
+check('importer is never hooked to run automatically', !autoRun, String(autoRun))
+
+check('admin screen exists', exists(adminScreen))
+if (exists(adminScreen)) {
+  const admin = read(adminScreen)
+  check('admin screen requires manage_options', admin.includes("current_user_can( 'manage_options' )"))
+  check('admin screen checks a nonce', admin.includes('check_admin_referer'))
+  check('admin screen requires explicit confirmation', admin.includes("\$_POST['confirm']"))
+  check('admin screen defaults to dry run', admin.includes("'dry_run'          => empty( \$_POST['confirm'] )"))
+  check('admin screen registers no admin_init hook', !admin.includes("add_action( 'admin_init'"))
+  check('manifest path is confined to one directory', admin.includes('realpath') && admin.includes('str_starts_with'))
+}
+
+/* ------------------------------------------------------------------ *
+ * 12. Shortcodes and CTA attribution
+ * ------------------------------------------------------------------ */
+
+console.log('\n12. Shortcodes and CTA attribution')
+
+check('shortcode module exists', exists(shortcodes))
+if (exists(shortcodes)) {
+  const sc = read(shortcodes)
+  for (const tag of ['gcalls_faq', 'gcalls_cta', 'gcalls_lead_form', 'gcalls_media']) {
+    check(`registers [${tag}]`, sc.includes(`add_shortcode( '${tag}'`))
+  }
+  check(
+    'CTA carries all four attribution keys',
+    ['intent', 'source', 'product', 'solution'].every((key) => sc.includes(`'${key}'`)),
+  )
+  // The lead pipeline has no approved destination. A shortcode that posts
+  // anywhere is the one change that must not slip in unnoticed.
+  check('lead form sends nothing anywhere', !/wp_remote_(post|get|request)|curl_exec/.test(sc))
+  check('lead form is disabled, not silently discarding input', sc.includes('<fieldset disabled>'))
+  check('lead form gives the working contact channels', sc.includes('sales@gcalls.co'))
+}
+
+/* ------------------------------------------------------------------ *
+ * 13. Content manifest — hierarchy, menus, articles
+ * ------------------------------------------------------------------ */
+
+console.log('\n13. Content manifest')
+
+const contentManifestPath = path.join(WP, 'imports/content-manifest.json')
+check('manifest present', exists(contentManifestPath))
+
+if (exists(contentManifestPath)) {
+  const manifest = JSON.parse(read(contentManifestPath))
+
+  check('38 pages', manifest.counts?.pages === 38, String(manifest.counts?.pages))
+  check('18 articles', manifest.counts?.articles === 18, String(manifest.counts?.articles))
+  check('13 media', manifest.counts?.media === 13, String(manifest.counts?.media))
+  check('7 hubs', manifest.hubs?.length === 7, String(manifest.hubs?.length))
+
+  const byRoute = new Map(manifest.pages.map((page) => [page.route, page]))
+
+  // Re-derive every permalink from the manifest's own hierarchy. This is the
+  // same rule the PHP importer enforces; agreeing here means a broken manifest
+  // fails in CI rather than on the host.
+  const wrong = []
+  for (const page of manifest.pages) {
+    if (page.isFrontPage) continue
+    const chain = []
+    let cursor = page
+    while (cursor?.parentRoute) {
+      chain.unshift(cursor.parentRoute.replace(/^\/|\/$/g, ''))
+      cursor = byRoute.get(cursor.parentRoute)
+      if (chain.length > 10) break
+    }
+    const expected = `/${[...chain, page.slug].filter(Boolean).join('/')}/`
+    if (expected !== page.route) wrong.push(`${page.id}: ${expected} != ${page.route}`)
+  }
+  check('every page permalink matches its route', wrong.length === 0, wrong.join('; '))
+
+  const blog = byRoute.get('/blog/')
+  check('/blog/ stays top level', blog?.parentRoute === null, String(blog?.parentRoute))
+  check('/blog/ is the posts page', blog?.isPostsPage === true)
+  check('/blog/ is still filed under Tài nguyên in navigation', blog?.navParentRoute === '/tai-nguyen/')
+
+  check('exactly one front page', manifest.pages.filter((page) => page.isFrontPage).length === 1)
+  check('exactly one posts page', manifest.pages.filter((page) => page.isPostsPage).length === 1)
+  check(
+    'every page carries the full-width template',
+    manifest.pages.every((page) => page.template === 'page-templates/full-width.php'),
+  )
+
+  // Posts live at /%postname%/, so an article slug and a top-level page slug
+  // compete for the same URL.
+  const topLevel = new Set(
+    manifest.pages.filter((page) => !page.parentRoute && !page.isFrontPage).map((page) => page.slug),
+  )
+  const clashes = manifest.articles.filter((article) => topLevel.has(article.slug)).map((a) => a.slug)
+  check('no article slug collides with a top-level page', clashes.length === 0, clashes.join(', '))
+
+  check('every article has a hub', manifest.articles.every((article) => article.hub))
+  check(
+    'every article is published',
+    manifest.articles.every((article) => article.status === 'publish'),
+  )
+  check(
+    'no article claims a featured image',
+    manifest.articles.every((article) => !article.featuredImage),
+  )
+
+  check('menus exported for both theme locations', Boolean(manifest.menus?.primary && manifest.menus?.['footer-nav']))
+  const menuRoutes = [
+    ...(manifest.menus?.primary ?? []),
+    ...(manifest.menus?.['footer-nav'] ?? []),
+  ].flatMap((group) => [group.route, ...(group.children ?? []).map((child) => child.route)])
+  const dangling = menuRoutes.filter((route) => route && !byRoute.has(route))
+  check('every menu item points at a real page', dangling.length === 0, dangling.join(', '))
+}
+
+/* ------------------------------------------------------------------ *
+ * 14. Elementor home page template
+ * ------------------------------------------------------------------ */
+
+console.log('\n14. Elementor home page template')
+
+const homeTemplatePath = path.join(WP, 'elementor-templates/gcalls-homepage.json')
+check('home page template present', exists(homeTemplatePath))
+
+if (exists(homeTemplatePath)) {
+  const raw = read(homeTemplatePath)
+  let template = null
+
+  try {
+    template = JSON.parse(raw)
+  } catch (error) {
+    check('template is valid JSON', false, String(error))
+  }
+
+  if (template) {
+    check('template is valid JSON', true)
+    check('envelope type is page', template.type === 'page', String(template.type))
+    check('envelope declares a version', Boolean(template.version))
+    check('content is a non-empty array', Array.isArray(template.content) && template.content.length > 0)
+    check('every top-level element is a section', template.content.every((el) => el.elType === 'section'))
+
+    const flat = JSON.stringify(template)
+    const widgetTypes = [...flat.matchAll(/"widgetType":"([^"]+)"/g)].map((m) => m[1])
+
+    // Elementor FREE only. A Pro widget imports as a blank box on this site.
+    const FREE = new Set([
+      'heading', 'text-editor', 'button', 'icon-list', 'image',
+      'shortcode', 'html', 'divider', 'spacer', 'video', 'icon',
+    ])
+    const proWidgets = [...new Set(widgetTypes)].filter((type) => !FREE.has(type))
+    check('no Elementor Pro widget', proWidgets.length === 0, proWidgets.join(', '))
+
+    const ids = [...flat.matchAll(/"id":"([0-9a-f]{6,8})"/g)].map((m) => m[1])
+    check('element ids are unique', new Set(ids).size === ids.length, `${ids.length} ids, ${new Set(ids).size} unique`)
+
+    // Colours must come from the approved token set.
+    const hexes = [...new Set([...flat.matchAll(/#[0-9a-fA-F]{6}/g)].map((m) => m[0].toLowerCase()))]
+    const allowed = new Set(['#673ab7', '#4a2391', '#f5f1fc', '#1e2026', '#5b5f6b', '#ffffff', '#faf9fc', '#e9defb', '#e8e5ef'])
+    const strayColours = hexes.filter((hex) => !allowed.has(hex))
+    check('only approved colours', strayColours.length === 0, strayColours.join(', '))
+
+    check('uses Open Sans', flat.includes('Open Sans'))
+
+    // Product screenshots must be placed by manifest id, never by an uploads
+    // URL or an attachment id, or the template only works on one site.
+    check('no hardcoded uploads URL', !/wp-content\\\/uploads/.test(flat))
+    check('images placed via [gcalls_media]', flat.includes('gcalls_media id='))
+
+    // Charts are static SVG: there is no chart library on this site.
+    check('charts are inline SVG', flat.includes('<svg'))
+    check('illustrative figures are labelled as such', flat.includes('dữ liệu minh họa'))
+
+    // Every conversion button has to carry its attribution, or the lead
+    // arrives with no record of the page that produced it.
+    const leadLinks = [...flat.matchAll(/\/lien-he\/(\?[^"]*)?/g)].map((m) => m[1] ?? '')
+    check('at least one conversion CTA', leadLinks.length > 0)
+    check(
+      'every conversion CTA carries attribution',
+      leadLinks.every((query) => query.includes('intent=') && query.includes('source=')),
+      leadLinks.filter((q) => !q.includes('intent=')).join(' | '),
+    )
+  }
+}
+
+/* ------------------------------------------------------------------ *
  * Report
  * ------------------------------------------------------------------ */
 
@@ -455,6 +667,10 @@ for (const item of [
   'GET /author/<slug>/ returns 404',
   'oEmbed response carries no author_name or author_url',
   'GET /wp-json/wp/v2/users returns 401 to an anonymous caller',
+  'the import itself — dry run then execute, from Tools > Gcalls Import',
+  'Elementor renders the imported home page template',
+  'the 18 articles appear under 7 hubs on /blog/',
+  'nav menus assigned to the primary and footer locations',
 ]) {
   console.log(`  --   ${item}`)
 }

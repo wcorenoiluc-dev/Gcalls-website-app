@@ -5,7 +5,8 @@
   "counts": {
     "pages": 38,
     "articles": 18,
-    "media": 13
+    "media": 13,
+    "menuItems": 61
   },
   "hubs": [
     "HUB-01",
@@ -23,10 +24,13 @@
       "route": "/",
       "slug": "trang-chu",
       "parentRoute": null,
+      "navParentRoute": null,
       "title": "Trang chủ",
       "status": "draft",
       "isFrontPage": true,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "",
       "seo": {
         "title": "Gcalls — Tổng đài ảo tích hợp CRM cho đội Sales và CSKH",
         "description": "Giải pháp tổng đài thông minh giúp đội Sales và CSKH gọi trên trình duyệt, lưu lịch sử và ghi âm, quản lý khách hàng, theo dõi hiệu suất và kết nối với hệ thống quản trị doanh nghiệp."
@@ -37,11 +41,14 @@
       "kind": "page",
       "route": "/san-pham/",
       "slug": "san-pham",
-      "parentRoute": "/",
+      "parentRoute": null,
+      "navParentRoute": "/",
       "title": "Tổng quan sản phẩm",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Toàn bộ sản phẩm Gcalls.",
       "seo": {
         "title": "Sản phẩm Gcalls | Webphone, QA QC Center và Contact Center",
         "description": "Tổng quan hệ sinh thái sản phẩm Gcalls: Gcalls Plus Webphone, QA QC Center, Gcalls CX và Gcalls Voicebot AI cho đội Sales, CSKH và QA."
@@ -52,11 +59,14 @@
       "kind": "page",
       "route": "/gcalls-plus-webphone/",
       "slug": "gcalls-plus-webphone",
-      "parentRoute": "/san-pham/",
+      "parentRoute": null,
+      "navParentRoute": "/san-pham/",
       "title": "Gcalls Plus Webphone",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Webphone & Call Center tinh gọn.",
       "seo": {
         "title": "Gcalls Plus Webphone | Tổng đài trên trình duyệt cho Sales & CSKH",
         "description": "Gcalls Plus Webphone giúp doanh nghiệp nghe gọi, quản lý danh bạ, lịch sử tương tác và hoạt động cuộc gọi ngay trên trình duyệt, phù hợp cho Sales và CSKH."
@@ -67,11 +77,14 @@
       "kind": "page",
       "route": "/qc-bot-ai/",
       "slug": "qc-bot-ai",
-      "parentRoute": "/san-pham/",
+      "parentRoute": null,
+      "navParentRoute": "/san-pham/",
       "title": "QA QC Center",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "QC Bot AI & Quality Management.",
       "seo": {
         "title": "QA QC Center | AI kiểm soát chất lượng cuộc gọi | Gcalls",
         "description": "QA QC Center của Gcalls sử dụng QC Bot AI để chuyển cuộc gọi thành transcript, hỗ trợ chấm điểm theo tiêu chí QA và làm nổi bật các tín hiệu cần kiểm tra."
@@ -82,11 +95,14 @@
       "kind": "page",
       "route": "/gcalls-cx/",
       "slug": "gcalls-cx",
-      "parentRoute": "/san-pham/",
+      "parentRoute": null,
+      "navParentRoute": "/san-pham/",
       "title": "Gcalls CX",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Omnichannel Contact Center.",
       "seo": {
         "title": "Gcalls CX | Contact Center đa kênh cho Zalo, Facebook, Hotline",
         "description": "Gcalls CX hợp nhất Zalo OA, Facebook Fanpage, SMS, Email và Hotline vào một màn hình để đội CSKH quản lý hội thoại, ticket và customer context tập trung hơn."
@@ -97,11 +113,14 @@
       "kind": "page",
       "route": "/voicebot-ai/",
       "slug": "voicebot-ai",
-      "parentRoute": "/san-pham/",
+      "parentRoute": null,
+      "navParentRoute": "/san-pham/",
       "title": "Gcalls Voicebot AI",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Tự động hóa cuộc gọi lặp lại.",
       "seo": {
         "title": "Voicebot AI cho doanh nghiệp | Tự động hóa cuộc gọi | Gcalls",
         "description": "Khám phá giải pháp Voicebot AI giúp doanh nghiệp tự động hóa các cuộc gọi lặp lại, ghi nhận phản hồi và chuyển những tình huống cần thiết cho nhân viên."
@@ -112,11 +131,14 @@
       "kind": "page",
       "route": "/giai-phap/",
       "slug": "giai-phap",
-      "parentRoute": "/",
+      "parentRoute": null,
+      "navParentRoute": "/",
       "title": "Tổng quan giải pháp",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Toàn bộ giải pháp Gcalls.",
       "seo": {
         "title": "Giải pháp Gcalls | Tích hợp hệ thống và tổng đài quốc tế",
         "description": "Giải pháp giao tiếp Gcalls theo bài toán vận hành: tích hợp CRM, Helpdesk, POS và tổng đài quốc tế cho doanh nghiệp."
@@ -127,11 +149,14 @@
       "kind": "page",
       "route": "/tong-dai-tich-hop-crm/",
       "slug": "tong-dai-tich-hop-crm",
-      "parentRoute": "/giai-phap/",
+      "parentRoute": null,
+      "navParentRoute": "/giai-phap/",
       "title": "Tích hợp CRM",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Kết nối cuộc gọi với dữ liệu và workflow CRM.",
       "seo": {
         "title": "Tổng đài tích hợp CRM | Click-to-Call & dữ liệu khách hàng",
         "description": "Gcalls kết nối tổng đài với CRM để đội Sales và CSKH gọi trực tiếp từ hệ thống, nhận diện khách hàng khi có cuộc gọi và đồng bộ lịch sử tương tác theo cấu hình."
@@ -142,11 +167,14 @@
       "kind": "page",
       "route": "/tong-dai-tich-hop-helpdesk/",
       "slug": "tong-dai-tich-hop-helpdesk",
-      "parentRoute": "/giai-phap/",
+      "parentRoute": null,
+      "navParentRoute": "/giai-phap/",
       "title": "Tích hợp Helpdesk",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Đưa cuộc gọi vào quy trình hỗ trợ và ticket.",
       "seo": {
         "title": "Tổng đài tích hợp Helpdesk | Kết nối cuộc gọi & Ticket CSKH",
         "description": "Gcalls kết nối tổng đài với Helpdesk để đội CSKH quản lý cuộc gọi, ticket và lịch sử hỗ trợ trong cùng quy trình, giảm việc chuyển đổi giữa nhiều công cụ."
@@ -157,11 +185,14 @@
       "kind": "page",
       "route": "/tong-dai-tich-hop-pos/",
       "slug": "tong-dai-tich-hop-pos",
-      "parentRoute": "/giai-phap/",
+      "parentRoute": null,
+      "navParentRoute": "/giai-phap/",
       "title": "Tích hợp POS",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Kết nối cuộc gọi với dữ liệu bán hàng.",
       "seo": {
         "title": "Tổng đài tích hợp POS | Kết nối cuộc gọi với dữ liệu bán hàng",
         "description": "Gcalls kết nối tổng đài với POS để đội bán hàng và CSKH sử dụng customer context, dữ liệu bán hàng và lịch sử tương tác trong cùng quy trình chăm sóc."
@@ -172,11 +203,14 @@
       "kind": "page",
       "route": "/tong-dai-quoc-te/",
       "slug": "tong-dai-quoc-te",
-      "parentRoute": "/giai-phap/",
+      "parentRoute": null,
+      "navParentRoute": "/giai-phap/",
       "title": "Tổng đài quốc tế",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Đầu số và liên lạc theo thị trường.",
       "seo": {
         "title": "Tổng đài quốc tế | Đầu số và liên lạc đa thị trường | Gcalls",
         "description": "Giải pháp tổng đài quốc tế của Gcalls với đầu số và hạ tầng liên lạc theo từng thị trường doanh nghiệp cần hiện diện."
@@ -187,11 +221,14 @@
       "kind": "page",
       "route": "/tich-hop/",
       "slug": "tich-hop",
-      "parentRoute": "/",
+      "parentRoute": null,
+      "navParentRoute": "/",
       "title": "Tổng quan tích hợp",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Danh mục nền tảng kết nối.",
       "seo": {
         "title": "Tích hợp Gcalls | Kết nối tổng đài với hệ thống doanh nghiệp",
         "description": "Danh mục tích hợp Gcalls với CRM, Helpdesk và các hệ thống doanh nghiệp đang sử dụng, theo phạm vi triển khai được xác nhận."
@@ -203,10 +240,13 @@
       "route": "/tich-hop/hubspot/",
       "slug": "hubspot",
       "parentRoute": "/tich-hop/",
+      "navParentRoute": "/tich-hop/",
       "title": "HubSpot",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Kết nối tổng đài với HubSpot.",
       "seo": {
         "title": "Tổng đài tích hợp HubSpot | Click-to-Call & dữ liệu cuộc gọi | Gcalls",
         "description": "Gcalls tích hợp HubSpot giúp đội Sales và CSKH gọi từ CRM, nhận biết khách hàng khi có cuộc gọi và ghi nhận lịch sử tương tác theo cấu hình."
@@ -218,10 +258,13 @@
       "route": "/tich-hop/salesforce/",
       "slug": "salesforce",
       "parentRoute": "/tich-hop/",
+      "navParentRoute": "/tich-hop/",
       "title": "Salesforce",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Kết nối tổng đài với Salesforce.",
       "seo": {
         "title": "Tổng đài tích hợp Salesforce | Click-to-Call & dữ liệu cuộc gọi",
         "description": "Gcalls tích hợp Salesforce giúp đội Sales và Service gọi từ CRM, nhận biết khách hàng khi có cuộc gọi và ghi nhận lịch sử tương tác theo cấu hình."
@@ -233,10 +276,13 @@
       "route": "/tich-hop/zoho-crm/",
       "slug": "zoho-crm",
       "parentRoute": "/tich-hop/",
+      "navParentRoute": "/tich-hop/",
       "title": "Zoho CRM",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Kết nối tổng đài với Zoho CRM.",
       "seo": {
         "title": "Tổng đài tích hợp Zoho CRM | Cuộc gọi & dữ liệu khách hàng",
         "description": "Gcalls tích hợp Zoho CRM giúp đội Sales và CSKH kết nối hoạt động nghe gọi với customer context và lịch sử tương tác theo phạm vi cấu hình."
@@ -248,10 +294,13 @@
       "route": "/tich-hop/freshdesk/",
       "slug": "freshdesk",
       "parentRoute": "/tich-hop/",
+      "navParentRoute": "/tich-hop/",
       "title": "Freshdesk",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Kết nối tổng đài với Freshdesk.",
       "seo": {
         "title": "Tổng đài tích hợp Freshdesk | Kết nối cuộc gọi với ticket CSKH",
         "description": "Gcalls tích hợp Freshdesk giúp đội CSKH kết nối hoạt động nghe gọi với customer context, ticket và lịch sử hỗ trợ theo phạm vi cấu hình."
@@ -263,10 +312,13 @@
       "route": "/tich-hop/zendesk/",
       "slug": "zendesk",
       "parentRoute": "/tich-hop/",
+      "navParentRoute": "/tich-hop/",
       "title": "Zendesk",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Kết nối tổng đài với Zendesk.",
       "seo": {
         "title": "Tổng đài tích hợp Zendesk | Kết nối cuộc gọi với ticket CSKH",
         "description": "Gcalls tích hợp Zendesk giúp đội CSKH kết nối hoạt động nghe gọi với customer context, ticket và lịch sử hỗ trợ theo phạm vi cấu hình."
@@ -277,11 +329,14 @@
       "kind": "page",
       "route": "/nganh/",
       "slug": "nganh",
-      "parentRoute": "/",
+      "parentRoute": null,
+      "navParentRoute": "/",
       "title": "Giải pháp theo ngành",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Giải pháp theo bối cảnh ngành.",
       "seo": {
         "title": "Giải pháp Gcalls theo ngành | Bối cảnh vận hành từng lĩnh vực",
         "description": "Cách Gcalls được áp dụng theo bối cảnh vận hành của từng ngành: giáo dục, tài chính, bảo hiểm, bất động sản, thương mại điện tử và BPO."
@@ -293,10 +348,13 @@
       "route": "/nganh/giao-duc/",
       "slug": "giao-duc",
       "parentRoute": "/nganh/",
+      "navParentRoute": "/nganh/",
       "title": "Giáo dục",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Tư vấn tuyển sinh và chăm sóc người học.",
       "seo": {
         "title": "Giải pháp tổng đài cho giáo dục | Tư vấn tuyển sinh | Gcalls",
         "description": "Cách các tổ chức giáo dục sử dụng Gcalls để tư vấn tuyển sinh, theo dõi trao đổi với người học và giữ lại thông tin cần follow-up."
@@ -308,10 +366,13 @@
       "route": "/nganh/tai-chinh/",
       "slug": "tai-chinh",
       "parentRoute": "/nganh/",
+      "navParentRoute": "/nganh/",
       "title": "Tài chính",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Quản lý liên hệ và lịch sử tương tác.",
       "seo": {
         "title": "Giải pháp tổng đài cho ngành tài chính | Gcalls",
         "description": "Cách doanh nghiệp tài chính sử dụng Gcalls để quản lý hoạt động liên hệ khách hàng và giữ lịch sử tương tác rõ ràng."
@@ -323,10 +384,13 @@
       "route": "/nganh/bao-hiem/",
       "slug": "bao-hiem",
       "parentRoute": "/nganh/",
+      "navParentRoute": "/nganh/",
       "title": "Bảo hiểm",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Tư vấn và chăm sóc theo vòng đời hợp đồng.",
       "seo": {
         "title": "Giải pháp tổng đài cho ngành bảo hiểm | Gcalls",
         "description": "Cách doanh nghiệp bảo hiểm sử dụng Gcalls trong hoạt động tư vấn, chăm sóc khách hàng và theo dõi lịch sử trao đổi."
@@ -338,10 +402,13 @@
       "route": "/nganh/bat-dong-san/",
       "slug": "bat-dong-san",
       "parentRoute": "/nganh/",
+      "navParentRoute": "/nganh/",
       "title": "Bất động sản",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Quản lý lead và theo dõi liên hệ.",
       "seo": {
         "title": "Giải pháp tổng đài cho bất động sản | Quản lý lead | Gcalls",
         "description": "Cách doanh nghiệp bất động sản sử dụng Gcalls để quản lý lead, theo dõi cuộc gọi và phối hợp giữa các agent."
@@ -353,10 +420,13 @@
       "route": "/nganh/thuong-mai-dien-tu/",
       "slug": "thuong-mai-dien-tu",
       "parentRoute": "/nganh/",
+      "navParentRoute": "/nganh/",
       "title": "Thương mại điện tử",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Hỗ trợ đơn hàng và sau bán.",
       "seo": {
         "title": "Giải pháp tổng đài cho thương mại điện tử | Gcalls",
         "description": "Cách doanh nghiệp thương mại điện tử sử dụng Gcalls để xử lý cuộc gọi liên quan tới đơn hàng và hỗ trợ khách hàng."
@@ -368,10 +438,13 @@
       "route": "/nganh/bpo/",
       "slug": "bpo",
       "parentRoute": "/nganh/",
+      "navParentRoute": "/nganh/",
       "title": "BPO",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Vận hành đội ngũ agent theo dự án.",
       "seo": {
         "title": "Giải pháp tổng đài cho BPO | Vận hành đội ngũ quy mô lớn | Gcalls",
         "description": "Cách doanh nghiệp BPO sử dụng Gcalls để vận hành đội ngũ agent, theo dõi hoạt động và quản lý chất lượng cuộc gọi."
@@ -382,11 +455,14 @@
       "kind": "page",
       "route": "/bang-gia/",
       "slug": "bang-gia",
-      "parentRoute": "/",
+      "parentRoute": null,
+      "navParentRoute": "/",
       "title": "Bảng giá Gcalls",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Xem mô hình chi phí theo sản phẩm và giải pháp.",
       "seo": {
         "title": "Bảng giá Gcalls | Gói tổng đài cho SME & giải pháp doanh nghiệp",
         "description": "Xem bảng giá Gcalls cho Webphone SME, tích hợp CRM/Helpdesk, tổng đài quốc tế, Gcalls CX và giải pháp AI theo nhu cầu doanh nghiệp."
@@ -397,11 +473,14 @@
       "kind": "page",
       "route": "/uoc-tinh-chi-phi/",
       "slug": "uoc-tinh-chi-phi",
-      "parentRoute": "/bang-gia/",
+      "parentRoute": null,
+      "navParentRoute": "/bang-gia/",
       "title": "Ước tính chi phí",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Chuẩn bị cấu hình theo nhu cầu doanh nghiệp.",
       "seo": {
         "title": "Ước tính chi phí Gcalls | Chọn cấu hình theo nhu cầu doanh nghiệp",
         "description": "Chọn sản phẩm Gcalls, quy mô đội ngũ, lưu lượng sử dụng và nhu cầu tích hợp để chuẩn bị cấu hình và chi phí tham khảo trước khi nhận báo giá."
@@ -412,11 +491,14 @@
       "kind": "page",
       "route": "/tai-nguyen/",
       "slug": "tai-nguyen",
-      "parentRoute": "/",
+      "parentRoute": null,
+      "navParentRoute": "/",
       "title": "Trung tâm tài nguyên",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Toàn bộ tài nguyên Gcalls.",
       "seo": {
         "title": "Tài nguyên Gcalls | Kiến thức Call Center, CRM, CX và AI",
         "description": "Trung tâm tài nguyên Gcalls: blog, guides, case studies, ebook, glossary và FAQ về Call Center, CRM, CX và AI."
@@ -427,11 +509,14 @@
       "kind": "page",
       "route": "/blog/",
       "slug": "blog",
-      "parentRoute": "/tai-nguyen/",
+      "parentRoute": null,
+      "navParentRoute": "/tai-nguyen/",
       "title": "Blog",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": true,
       "template": "page-templates/full-width.php",
+      "summary": "Phạm vi biên tập và góc nhìn vận hành.",
       "seo": {
         "title": "Blog Gcalls | Kiến thức vận hành Call Center và CRM",
         "description": "Phạm vi biên tập của blog Gcalls theo sáu danh mục: vận hành call center, tích hợp CRM và Helpdesk, giao tiếp quốc tế, trải nghiệm đa kênh, Voicebot và AI QC, vận hành theo ngành."
@@ -443,10 +528,13 @@
       "route": "/tai-nguyen/guides/",
       "slug": "guides",
       "parentRoute": "/tai-nguyen/",
+      "navParentRoute": "/tai-nguyen/",
       "title": "Guides",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Sáu lộ trình đánh giá trước triển khai.",
       "seo": {
         "title": "Guides Gcalls | Hướng dẫn triển khai tổng đài và tích hợp",
         "description": "Sáu lộ trình đánh giá trước khi triển khai: chọn tổng đài trên trình duyệt, lập kế hoạch tích hợp CRM, đầu số quốc tế, chăm sóc đa kênh, Voicebot và giám sát chất lượng cuộc gọi."
@@ -458,10 +546,13 @@
       "route": "/tai-nguyen/case-studies/",
       "slug": "case-studies",
       "parentRoute": "/tai-nguyen/",
+      "navParentRoute": "/tai-nguyen/",
       "title": "Case Studies",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Tiêu chuẩn bằng chứng triển khai.",
       "seo": {
         "title": "Case Studies | Tiêu chuẩn bằng chứng triển khai của Gcalls",
         "description": "Tám điều kiện bằng chứng bắt buộc trước khi Gcalls công bố một câu chuyện triển khai, kèm cấu trúc phân loại của thư viện case study đang được thu thập."
@@ -473,10 +564,13 @@
       "route": "/tai-nguyen/ebook/",
       "slug": "ebook",
       "parentRoute": "/tai-nguyen/",
+      "navParentRoute": "/tai-nguyen/",
       "title": "Ebook",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Chủ đề chuyên sâu đang chuẩn bị.",
       "seo": {
         "title": "Ebook Gcalls | Chủ đề tài liệu chuyên sâu đang chuẩn bị",
         "description": "Năm nhóm chủ đề tài liệu chuyên sâu Gcalls đang chuẩn bị và tiêu chuẩn nội dung áp dụng cho chúng. Chưa có tài liệu nào được phát hành, nên trang không có nút tải."
@@ -488,10 +582,13 @@
       "route": "/tai-nguyen/glossary/",
       "slug": "glossary",
       "parentRoute": "/tai-nguyen/",
+      "navParentRoute": "/tai-nguyen/",
       "title": "Glossary",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Hai mươi bốn thuật ngữ thường gặp.",
       "seo": {
         "title": "Glossary | Thuật ngữ Call Center, CRM và CX | Gcalls",
         "description": "Hai mươi bốn thuật ngữ thường gặp khi triển khai tổng đài: tổng đài đám mây, IVR, call flow, Webphone, Click-to-Call, omnichannel, Voicebot, AI QC, SLA, API và SDK."
@@ -503,10 +600,13 @@
       "route": "/tai-nguyen/faq/",
       "slug": "faq",
       "parentRoute": "/tai-nguyen/",
+      "navParentRoute": "/tai-nguyen/",
       "title": "FAQ",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Hai mươi mốt câu hỏi theo sáu nhóm.",
       "seo": {
         "title": "FAQ Gcalls | Câu hỏi thường gặp về tổng đài và tích hợp",
         "description": "Hai mươi mốt câu hỏi thường gặp theo sáu nhóm: chọn giải pháp, tích hợp CRM và Helpdesk, gọi quốc tế, vận hành đa kênh, Voicebot và AI QC, triển khai và hỗ trợ."
@@ -517,11 +617,14 @@
       "kind": "page",
       "route": "/cong-ty/",
       "slug": "cong-ty",
-      "parentRoute": "/",
+      "parentRoute": null,
+      "navParentRoute": "/",
       "title": "Về Gcalls",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Giới thiệu về Gcalls.",
       "seo": {
         "title": "Về Gcalls | Nền tảng giao tiếp cho doanh nghiệp Việt Nam",
         "description": "Giới thiệu về Gcalls và định hướng xây dựng nền tảng giao tiếp tích hợp cho đội Sales, CSKH và QA của doanh nghiệp."
@@ -533,10 +636,13 @@
       "route": "/cong-ty/khach-hang/",
       "slug": "khach-hang",
       "parentRoute": "/cong-ty/",
+      "navParentRoute": "/cong-ty/",
       "title": "Khách hàng",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Mô hình vận hành Gcalls phục vụ.",
       "seo": {
         "title": "Khách hàng của Gcalls | Mô hình vận hành được phục vụ",
         "description": "Năm mô hình vận hành Gcalls phục vụ, các vấn đề nên làm rõ trước khi triển khai, và bảy giai đoạn làm việc từ khảo sát tới vận hành."
@@ -548,10 +654,13 @@
       "route": "/cong-ty/doi-tac/",
       "slug": "doi-tac",
       "parentRoute": "/cong-ty/",
+      "navParentRoute": "/cong-ty/",
       "title": "Đối tác",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Khung hợp tác và tiêu chí đánh giá.",
       "seo": {
         "title": "Đối tác Gcalls | Khung hợp tác và tiêu chí đánh giá",
         "description": "Sáu nhóm hợp tác Gcalls sẵn sàng trao đổi, các hình thức hợp tác kèm điều kiện áp dụng, và chín hạng mục được làm rõ trước khi hai bên cam kết."
@@ -562,11 +671,14 @@
       "kind": "page",
       "route": "/lien-he/",
       "slug": "lien-he",
-      "parentRoute": "/",
+      "parentRoute": null,
+      "navParentRoute": "/",
       "title": "Liên hệ",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Liên hệ đội ngũ Gcalls.",
       "seo": {
         "title": "Liên hệ Gcalls | Tư vấn giải pháp tổng đài cho doanh nghiệp",
         "description": "Liên hệ đội ngũ Gcalls qua email sales@gcalls.co hoặc số 028 7302 5469 để được tư vấn giải pháp tổng đài phù hợp."
@@ -577,11 +689,14 @@
       "kind": "page",
       "route": "/referral/",
       "slug": "referral",
-      "parentRoute": "/",
+      "parentRoute": null,
+      "navParentRoute": "/",
       "title": "Referral",
       "status": "draft",
       "isFrontPage": false,
+      "isPostsPage": false,
       "template": "page-templates/full-width.php",
+      "summary": "Giới thiệu Gcalls tới doanh nghiệp.",
       "seo": {
         "title": "Chương trình giới thiệu Gcalls | Referral",
         "description": "Thông tin về chương trình giới thiệu của Gcalls dành cho cá nhân và tổ chức muốn giới thiệu giải pháp tới doanh nghiệp."
@@ -989,5 +1104,277 @@
       "height": 443
     }
   ],
+  "menus": {
+    "primary": [
+      {
+        "label": "Sản phẩm",
+        "route": "/san-pham/",
+        "children": [
+          {
+            "route": "/gcalls-plus-webphone/",
+            "title": "Gcalls Plus Webphone"
+          },
+          {
+            "route": "/qc-bot-ai/",
+            "title": "QA QC Center"
+          },
+          {
+            "route": "/gcalls-cx/",
+            "title": "Gcalls CX"
+          },
+          {
+            "route": "/voicebot-ai/",
+            "title": "Gcalls Voicebot AI"
+          }
+        ]
+      },
+      {
+        "label": "Giải pháp",
+        "route": "/giai-phap/",
+        "children": [
+          {
+            "route": "/tong-dai-tich-hop-crm/",
+            "title": "Tích hợp CRM"
+          },
+          {
+            "route": "/tong-dai-tich-hop-helpdesk/",
+            "title": "Tích hợp Helpdesk"
+          },
+          {
+            "route": "/tong-dai-tich-hop-pos/",
+            "title": "Tích hợp POS"
+          },
+          {
+            "route": "/tong-dai-quoc-te/",
+            "title": "Tổng đài quốc tế"
+          }
+        ]
+      },
+      {
+        "label": "Tích hợp",
+        "route": "/tich-hop/",
+        "children": [
+          {
+            "route": "/tich-hop/hubspot/",
+            "title": "HubSpot"
+          },
+          {
+            "route": "/tich-hop/salesforce/",
+            "title": "Salesforce"
+          },
+          {
+            "route": "/tich-hop/zoho-crm/",
+            "title": "Zoho CRM"
+          },
+          {
+            "route": "/tich-hop/freshdesk/",
+            "title": "Freshdesk"
+          },
+          {
+            "route": "/tich-hop/zendesk/",
+            "title": "Zendesk"
+          }
+        ]
+      },
+      {
+        "label": "Theo ngành",
+        "route": "/nganh/",
+        "children": [
+          {
+            "route": "/nganh/giao-duc/",
+            "title": "Giáo dục"
+          },
+          {
+            "route": "/nganh/tai-chinh/",
+            "title": "Tài chính"
+          },
+          {
+            "route": "/nganh/bao-hiem/",
+            "title": "Bảo hiểm"
+          },
+          {
+            "route": "/nganh/bat-dong-san/",
+            "title": "Bất động sản"
+          },
+          {
+            "route": "/nganh/thuong-mai-dien-tu/",
+            "title": "Thương mại điện tử"
+          },
+          {
+            "route": "/nganh/bpo/",
+            "title": "BPO"
+          }
+        ]
+      },
+      {
+        "label": "Tài nguyên",
+        "route": "/tai-nguyen/",
+        "children": [
+          {
+            "route": "/blog/",
+            "title": "Blog"
+          },
+          {
+            "route": "/tai-nguyen/guides/",
+            "title": "Guides"
+          },
+          {
+            "route": "/tai-nguyen/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "route": "/tai-nguyen/faq/",
+            "title": "FAQ"
+          },
+          {
+            "route": "/tai-nguyen/case-studies/",
+            "title": "Case Studies"
+          },
+          {
+            "route": "/tai-nguyen/ebook/",
+            "title": "Ebook"
+          }
+        ]
+      },
+      {
+        "label": "Bảng giá",
+        "route": null,
+        "children": [
+          {
+            "route": "/bang-gia/",
+            "title": "Bảng giá Gcalls"
+          },
+          {
+            "route": "/uoc-tinh-chi-phi/",
+            "title": "Ước tính chi phí"
+          }
+        ]
+      }
+    ],
+    "footer-nav": [
+      {
+        "label": "Sản phẩm",
+        "route": null,
+        "children": [
+          {
+            "route": "/gcalls-plus-webphone/",
+            "title": "Gcalls Plus"
+          },
+          {
+            "route": "/qc-bot-ai/",
+            "title": "QA QC Center"
+          },
+          {
+            "route": "/gcalls-cx/",
+            "title": "Gcalls CX"
+          },
+          {
+            "route": "/voicebot-ai/",
+            "title": "Gcalls Voicebot AI"
+          }
+        ]
+      },
+      {
+        "label": "Giải pháp",
+        "route": null,
+        "children": [
+          {
+            "route": "/tong-dai-tich-hop-crm/",
+            "title": "CRM Integration"
+          },
+          {
+            "route": "/tong-dai-tich-hop-helpdesk/",
+            "title": "Helpdesk Integration"
+          },
+          {
+            "route": "/tong-dai-tich-hop-pos/",
+            "title": "POS Integration"
+          },
+          {
+            "route": "/tong-dai-quoc-te/",
+            "title": "Tổng đài quốc tế"
+          }
+        ]
+      },
+      {
+        "label": "Khám phá",
+        "route": null,
+        "children": [
+          {
+            "route": "/tich-hop/",
+            "title": "Tích hợp"
+          },
+          {
+            "route": "/nganh/",
+            "title": "Theo ngành"
+          },
+          {
+            "route": "/bang-gia/",
+            "title": "Bảng giá"
+          },
+          {
+            "route": "/uoc-tinh-chi-phi/",
+            "title": "Ước tính chi phí"
+          }
+        ]
+      },
+      {
+        "label": "Tài nguyên",
+        "route": null,
+        "children": [
+          {
+            "route": "/blog/",
+            "title": "Blog"
+          },
+          {
+            "route": "/tai-nguyen/guides/",
+            "title": "Guides"
+          },
+          {
+            "route": "/tai-nguyen/case-studies/",
+            "title": "Case Studies"
+          },
+          {
+            "route": "/tai-nguyen/ebook/",
+            "title": "Ebook"
+          },
+          {
+            "route": "/tai-nguyen/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "route": "/tai-nguyen/faq/",
+            "title": "FAQ"
+          }
+        ]
+      },
+      {
+        "label": "Gcalls",
+        "route": null,
+        "children": [
+          {
+            "route": "/cong-ty/",
+            "title": "Về Gcalls"
+          },
+          {
+            "route": "/cong-ty/khach-hang/",
+            "title": "Khách hàng"
+          },
+          {
+            "route": "/cong-ty/doi-tac/",
+            "title": "Đối tác"
+          },
+          {
+            "route": "/referral/",
+            "title": "Referral"
+          },
+          {
+            "route": "/lien-he/",
+            "title": "Liên hệ"
+          }
+        ]
+      }
+    ]
+  },
   "redirects": {}
 }
