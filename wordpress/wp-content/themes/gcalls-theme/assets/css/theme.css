@@ -13,6 +13,26 @@
  * feeds the editor UI; this file styles the classic templates. They must agree.
  */
 
+/* -------------------------------------------------------------------------
+ * Border-box, and why its absence was the whole responsive problem
+ *
+ * Without this, `.gcalls-container` — `width: 100%` plus `padding-inline: var(
+ * --gcalls-gutter)` — computes to viewport + 2 × gutter. EVERY container on the
+ * site was wider than the screen by exactly that much: 64px at 1024 where the
+ * gutter is 2rem, 40px at 768 and below where it is 1.25rem. The measured
+ * overflow matched to the pixel.
+ *
+ * It was invisible during 003A/003B because the pages were nearly empty and
+ * nothing was measured. It is the single root cause of the horizontal
+ * scrolling at every breakpoint, so it is fixed here rather than patched
+ * container by container.
+ * ---------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 :root {
 	/* Brand */
 	--gcalls-brand: #673ab7;

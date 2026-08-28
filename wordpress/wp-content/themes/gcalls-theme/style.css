@@ -4,7 +4,7 @@ Theme URI: https://gcalls.co/
 Author: Gcalls
 Author URI: https://gcalls.co/
 Description: Classic PHP theme for the Gcalls website. Carries the Gcalls design tokens (primary #673ab7, Open Sans, 1280px container) and is built to be laid out with Elementor on pages and with the block editor on posts. Business logic that must survive a theme change lives in the Gcalls Core plugin, not here.
-Version: 0.3.0
+Version: 0.4.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.1

@@ -25,7 +25,12 @@ defined( 'ABSPATH' ) || exit;
  * it is passed as the $ver argument of every enqueue. Keep it in step with the
  * Version: header in style.css.
  */
-define( 'GCALLS_THEME_VERSION', '0.1.0' );
+// Read from style.css rather than hardcoded: the constant is the cache-busting
+// query string on every enqueued asset, and at 0.1.0 it stopped changing three
+// releases ago. Browsers went on serving the CSS they had cached under that
+// version while the file on disk had moved on — which is how a deployed
+// stylesheet fix appears not to have deployed.
+define( 'GCALLS_THEME_VERSION', wp_get_theme()->get( 'Version' ) ?: '0.1.0' );
 
 /** Absolute path, trailing slash included. */
 define( 'GCALLS_THEME_DIR', trailingslashit( get_template_directory() ) );
