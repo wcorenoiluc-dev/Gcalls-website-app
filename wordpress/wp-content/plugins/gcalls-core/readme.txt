@@ -3,7 +3,7 @@ Contributors: gcalls
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.1
-Stable tag: 0.3.0
+Stable tag: 0.4.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,15 @@ tag. Rank Math owns the document head. This plugin only feeds Rank Math's own
 post meta so migrated values stay editable in the Rank Math UI.
 
 == Changelog ==
+
+= 0.4.0 =
+* Admin: upload a packaged .zip straight from the import screen. The import
+  directory is unreachable from wp-admin otherwise — the Media Library rewrites
+  the path and refuses .json — so on a host with no SFTP there was no way in.
+  Extracted members are re-checked for traversal and file type.
+* Shortcode: [gcalls_estimator], the cost estimator ported from React. It shows
+  no price, because no rate table has been approved; the gate is carried over
+  rather than dropped.
 
 = 0.3.0 =
 * Taxonomy: all thirteen editorial hubs registered, not the seven Batch 1 used.

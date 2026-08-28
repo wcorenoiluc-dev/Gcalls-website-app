@@ -48,6 +48,7 @@ final class Shortcodes {
 		add_shortcode( 'gcalls_cta', array( self::class, 'cta' ) );
 		add_shortcode( 'gcalls_lead_form', array( self::class, 'lead_form' ) );
 		add_shortcode( 'gcalls_media', array( self::class, 'media' ) );
+		add_shortcode( 'gcalls_estimator', array( self::class, 'estimator' ) );
 	}
 
 	/**
@@ -285,5 +286,78 @@ final class Shortcodes {
 				'decoding' => 'async',
 			)
 		);
+	}
+
+	/**
+	 * `[gcalls_estimator]` — the cost estimator, ported from React.
+	 *
+	 * IT DOES NOT PRICE ANYTHING.
+	 * `src/lib/estimate.ts` gates every number behind `PRICING_CONFIGURED`,
+	 * which is false because no rate table has been approved, and says in as
+	 * many words that inventing one "would produce a number that looks
+	 * authoritative and is not". The port carries that gate rather than the
+	 * absence of it: the generated config records `pricingConfigured`, the
+	 * front end has no arithmetic, and the result panel ends on the
+	 * configuration state and a request to talk to Gcalls.
+	 *
+	 * The questionnaire is generated from the same source the React app reads —
+	 * see wordpress/scripts/build-estimator-config.mjs — so a question added
+	 * there appears here without anyone retyping it.
+	 *
+	 * @param array<string, string>|string $atts Shortcode attributes.
+	 * @return string
+	 */
+	public static function estimator( $atts = array() ): string {
+		unset( $atts );
+
+		$config_file = GCALLS_CORE_DIR . 'data/estimator-config.json';
+
+		if ( ! is_readable( $config_file ) ) {
+			return '';
+		}
+
+		$raw    = (string) file_get_contents( $config_file ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Bundled plugin data file.
+		$config = json_decode( $raw, true );
+
+		if ( ! is_array( $config ) || empty( $config['solutions'] ) ) {
+			return '';
+		}
+
+		// A last-line guard, independent of the build script's own check: if the
+		// config ever claims pricing is configured, this port still has no rate
+		// table, so it must not render as though it could produce a total.
+		if ( ! empty( $config['pricingConfigured'] ) ) {
+			return '<p>' . esc_html__( 'Công cụ ước tính đang được cập nhật.', 'gcalls-core' ) . '</p>';
+		}
+
+		wp_enqueue_style(
+			'gcalls-estimator',
+			GCALLS_CORE_URL . 'assets/css/estimator.css',
+			array(),
+			VERSION
+		);
+		wp_enqueue_script(
+			'gcalls-estimator',
+			GCALLS_CORE_URL . 'assets/js/estimator.js',
+			array(),
+			VERSION,
+			true
+		);
+
+		$markup  = '<div class="gcalls-est" data-gcalls-estimator';
+		$markup .= ' data-lead-url="' . esc_url( home_url( self::LEAD_ROUTE ) ) . '"';
+		$markup .= " data-config='" . esc_attr( wp_json_encode( $config ) ) . "'>";
+
+		// Without scripting the tool cannot work, so it says so and gives the
+		// route that does — rather than rendering an inert set of controls.
+		$markup .= '<noscript><div class="gcalls-est__noscript"><p>';
+		$markup .= esc_html__( 'Công cụ ước tính cần JavaScript. Anh/chị có thể liên hệ trực tiếp để được tư vấn cấu hình.', 'gcalls-core' );
+		$markup .= '</p><p><a class="gcalls-cta gcalls-cta--primary" href="';
+		$markup .= esc_url( self::lead_href( array( 'intent' => 'quote', 'source' => 'cost-estimator' ) ) );
+		$markup .= '">' . esc_html__( 'Nhận tư vấn cấu hình', 'gcalls-core' ) . '</a></p></div></noscript>';
+
+		$markup .= '</div>';
+
+		return $markup;
 	}
 }

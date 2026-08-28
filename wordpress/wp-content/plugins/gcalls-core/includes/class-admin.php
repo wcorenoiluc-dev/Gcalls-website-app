@@ -19,6 +19,19 @@
  * Manifests are read from `uploads/gcalls-import/` and the resolved path is
  * checked to still be inside it, so `../../` buys nothing.
  *
+ * THE ZIP UPLOADER
+ * That directory is unreachable from wp-admin: the Media Library rewrites the
+ * path to `uploads/YYYY/MM/` and refuses `.json` outright, so on a host where
+ * the operator has wp-admin but no SFTP there was no way to get a manifest in
+ * at all. The uploader below accepts the packaged `.zip` and extracts it there
+ * with WordPress' own `unzip_file()`.
+ *
+ * It is deliberately narrow. Only `.zip` is accepted, only into the one
+ * directory, and every extracted entry is checked afterwards: an archive is a
+ * list of paths an attacker chooses, and `unzip_file()` does not stop a member
+ * named `../../../wp-config.php`. Anything outside the directory, or with an
+ * extension not on the allowlist, is deleted and the upload is refused.
+ *
  * @package Gcalls\Core
  */
 
@@ -41,6 +54,15 @@ final class Admin {
 
 	/** Directory under uploads/ that may hold manifests. */
 	private const DIRECTORY = 'gcalls-import';
+
+	/** Nonce action for the upload form. */
+	private const NONCE_UPLOAD = 'gcalls_import_upload';
+
+	/** Largest archive accepted, before extraction. */
+	private const MAX_UPLOAD_BYTES = 32 * 1024 * 1024;
+
+	/** Extensions an extracted archive member may have. */
+	private const ALLOWED_MEMBER_EXTENSIONS = array( 'json', 'webp', 'png', 'jpg', 'jpeg', 'gif', 'txt', 'md' );
 
 	/**
 	 * Registers the screen.
@@ -78,31 +100,62 @@ final class Admin {
 	/**
 	 * Lists the manifests available to import.
 	 *
-	 * @return array<int, string> File names, not paths.
+	 * One level of nesting is searched as well as the top level, because the
+	 * packages extract to their own root directory — `gcalls-content/` and
+	 * `gcalls-content-full-blog/` — and requiring the operator to flatten them
+	 * by hand is exactly the manual step the uploader exists to remove.
+	 *
+	 * @return array<int, string> Paths relative to the import directory.
 	 */
 	private static function manifests(): array {
-		$found = glob( self::directory() . '/*.json' );
+		$base  = self::directory();
+		$found = array_merge(
+			(array) glob( $base . '/*.json' ),
+			(array) glob( $base . '/*/*.json' )
+		);
 
-		if ( false === $found ) {
-			return array();
+		$relative = array();
+
+		foreach ( array_filter( $found ) as $path ) {
+			$relative[] = ltrim( str_replace( $base, '', $path ), '/\\' );
 		}
 
-		return array_map( 'basename', $found );
+		sort( $relative );
+
+		return $relative;
 	}
 
 	/**
-	 * Resolves a submitted file name to a readable path inside the directory.
+	 * Resolves a submitted relative path to a readable file inside the directory.
 	 *
-	 * @param string $name Submitted file name.
+	 * The submitted value may now contain one directory segment, so basename()
+	 * alone is no longer the guard. Each segment is sanitised individually — a
+	 * `..` segment cannot survive `sanitize_file_name()` — and the assembled
+	 * path is then confirmed with realpath() to still be inside the directory,
+	 * which is what a symlink planted inside it cannot get past.
+	 *
+	 * @param string $name Submitted relative path.
 	 * @return string Absolute path, or '' when the name does not resolve safely.
 	 */
 	private static function resolve( string $name ): string {
-		// basename() first so a submitted `../../wp-config.php` cannot even be
-		// assembled, and realpath() after so a symlink inside the directory
-		// cannot point out of it either.
-		$candidate = self::directory() . '/' . basename( $name );
-		$real      = realpath( $candidate );
-		$base      = realpath( self::directory() );
+		$segments = array();
+
+		foreach ( explode( '/', str_replace( '\\', '/', $name ) ) as $segment ) {
+			$clean = sanitize_file_name( $segment );
+
+			if ( '' === $clean || '.' === $clean || '..' === $clean ) {
+				continue;
+			}
+
+			$segments[] = $clean;
+		}
+
+		if ( count( $segments ) < 1 || count( $segments ) > 2 ) {
+			return '';
+		}
+
+		$real = realpath( self::directory() . '/' . implode( '/', $segments ) );
+		$base = realpath( self::directory() );
 
 		if ( false === $real || false === $base || ! str_starts_with( $real, $base . DIRECTORY_SEPARATOR ) ) {
 			return '';
@@ -120,6 +173,12 @@ final class Admin {
 		}
 
 		$report = null;
+
+		if ( isset( $_POST['gcalls_import_upload'] ) ) {
+			check_admin_referer( self::NONCE_UPLOAD );
+
+			self::handle_upload();
+		}
 
 		if ( isset( $_POST['gcalls_import_submit'] ) ) {
 			check_admin_referer( self::NONCE );
@@ -146,6 +205,22 @@ final class Admin {
 			self::render_report( $report );
 		}
 
+		echo '<h2>' . esc_html__( 'Tải gói nội dung lên', 'gcalls-core' ) . '</h2>';
+		echo '<form method="post" enctype="multipart/form-data">';
+		wp_nonce_field( self::NONCE_UPLOAD );
+		echo '<p>';
+		echo '<input type="file" name="gcalls_package" accept=".zip">';
+		echo '</p>';
+		echo '<p class="description">' . sprintf(
+			/* translators: %s: maximum size. */
+			esc_html__( 'Chỉ nhận .zip, tối đa %s. Nội dung được giải nén vào thư mục import ở trên.', 'gcalls-core' ),
+			esc_html( size_format( self::MAX_UPLOAD_BYTES ) )
+		) . '</p>';
+		submit_button( __( 'Tải lên và giải nén', 'gcalls-core' ), 'secondary', 'gcalls_import_upload' );
+		echo '</form>';
+
+		echo '<hr>';
+		echo '<h2>' . esc_html__( 'Chạy import', 'gcalls-core' ) . '</h2>';
 		echo '<form method="post">';
 		wp_nonce_field( self::NONCE );
 
@@ -183,6 +258,148 @@ final class Admin {
 	}
 
 	/**
+	 * Accepts a packaged .zip and extracts it into the import directory.
+	 *
+	 * WHY THE EXTRACTED FILES ARE RE-CHECKED
+	 * A zip's member names are chosen by whoever built the archive, and
+	 * `unzip_file()` will happily write a member called `../../../wp-config.php`
+	 * relative to the destination. The capability check upstream means the
+	 * uploader is already an administrator, so this is not the main line of
+	 * defence — but "an administrator uploaded a file someone emailed them" is
+	 * the ordinary way this goes wrong, and the check costs one pass over the
+	 * extracted tree. Anything outside the directory, or carrying an extension
+	 * that is not on the allowlist, is deleted and the whole upload refused.
+	 */
+	private static function handle_upload(): void {
+		$notice = static function ( string $type, string $message ): void {
+			echo '<div class="notice notice-' . esc_attr( $type ) . '"><p>' . esc_html( $message ) . '</p></div>';
+		};
+
+		if ( empty( $_FILES['gcalls_package']['name'] ) ) {
+			$notice( 'error', __( 'Chưa chọn file nào.', 'gcalls-core' ) );
+			return;
+		}
+
+		$file = $_FILES['gcalls_package']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Fields are individually validated below.
+
+		if ( ! isset( $file['error'] ) || UPLOAD_ERR_OK !== (int) $file['error'] ) {
+			$notice( 'error', __( 'Tải lên thất bại.', 'gcalls-core' ) );
+			return;
+		}
+
+		if ( (int) $file['size'] > self::MAX_UPLOAD_BYTES ) {
+			$notice( 'error', __( 'File vượt quá dung lượng cho phép.', 'gcalls-core' ) );
+			return;
+		}
+
+		$name = sanitize_file_name( (string) $file['name'] );
+
+		if ( 'zip' !== strtolower( (string) pathinfo( $name, PATHINFO_EXTENSION ) ) ) {
+			$notice( 'error', __( 'Chỉ nhận file .zip.', 'gcalls-core' ) );
+			return;
+		}
+
+		$tmp = (string) $file['tmp_name'];
+
+		if ( ! is_uploaded_file( $tmp ) ) {
+			$notice( 'error', __( 'Nguồn tải lên không hợp lệ.', 'gcalls-core' ) );
+			return;
+		}
+
+		require_once ABSPATH . 'wp-admin/includes/file.php';
+
+		global $wp_filesystem;
+
+		if ( ! WP_Filesystem() ) {
+			$notice( 'error', __( 'Không truy cập được hệ thống tập tin.', 'gcalls-core' ) );
+			return;
+		}
+
+		$destination = self::directory();
+
+		if ( ! wp_mkdir_p( $destination ) ) {
+			$notice( 'error', __( 'Không tạo được thư mục import.', 'gcalls-core' ) );
+			return;
+		}
+
+		$result = unzip_file( $tmp, $destination );
+
+		if ( is_wp_error( $result ) ) {
+			$notice( 'error', sprintf(
+				/* translators: %s: error message. */
+				__( 'Giải nén thất bại: %s', 'gcalls-core' ),
+				$result->get_error_message()
+			) );
+			return;
+		}
+
+		$offenders = self::unsafe_members( $destination );
+
+		if ( array() !== $offenders ) {
+			foreach ( $offenders as $offender ) {
+				$wp_filesystem->delete( $offender, true );
+			}
+
+			$notice( 'error', sprintf(
+				/* translators: %d: number of rejected files. */
+				__( 'Gói chứa %d tập tin không hợp lệ — đã xoá và huỷ lần tải lên này.', 'gcalls-core' ),
+				count( $offenders )
+			) );
+			return;
+		}
+
+		$notice( 'success', sprintf(
+			/* translators: 1: file name, 2: destination. */
+			__( 'Đã giải nén %1$s vào %2$s.', 'gcalls-core' ),
+			$name,
+			$destination
+		) );
+	}
+
+	/**
+	 * Lists extracted paths that escape the directory or carry a disallowed type.
+	 *
+	 * @param string $root Directory the archive was extracted into.
+	 * @return array<int, string> Absolute paths to delete.
+	 */
+	private static function unsafe_members( string $root ): array {
+		$base = realpath( $root );
+
+		if ( false === $base ) {
+			return array();
+		}
+
+		$offenders = array();
+
+		$iterator = new \RecursiveIteratorIterator(
+			new \RecursiveDirectoryIterator( $base, \FilesystemIterator::SKIP_DOTS ),
+			\RecursiveIteratorIterator::SELF_FIRST
+		);
+
+		foreach ( $iterator as $item ) {
+			$real = $item->getRealPath();
+
+			// A symlink or a traversing member resolves outside the directory.
+			if ( false === $real || ! str_starts_with( $real, $base . DIRECTORY_SEPARATOR ) ) {
+				$offenders[] = $item->getPathname();
+				continue;
+			}
+
+			if ( $item->isDir() ) {
+				continue;
+			}
+
+			$extension = strtolower( (string) pathinfo( $real, PATHINFO_EXTENSION ) );
+
+			if ( ! in_array( $extension, self::ALLOWED_MEMBER_EXTENSIONS, true ) ) {
+				$offenders[] = $real;
+			}
+		}
+
+		return $offenders;
+	}
+
+	/**
 	 * Validates the POST and runs the importer.
 	 *
 	 * @return array<string, mixed>|null Report, or null when the input was rejected.
@@ -209,6 +426,10 @@ final class Admin {
 		return Importer::run(
 			$manifest,
 			array(
+				// Media ships beside the manifest inside the package, so the
+				// base directory follows the manifest rather than being
+				// configured separately and drifting from it.
+				'media_base'       => dirname( $path ) . '/media',
 				// The confirmation box is the ONLY thing that turns writing on.
 				// Everything else about this form is a dry run.
 				'dry_run'          => empty( $_POST['confirm'] ),

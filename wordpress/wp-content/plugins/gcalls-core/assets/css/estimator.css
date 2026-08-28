@@ -1,0 +1,120 @@
+/**
+ * Cost estimator styles.
+ *
+ * Uses the theme's tokens with a literal fallback, so the shortcode still looks
+ * like Gcalls if it is ever placed on a page rendered without the theme's
+ * stylesheet — an Elementor Canvas template, for instance.
+ */
+.gcalls-est {
+	--est-brand: var(--gcalls-brand, #673ab7);
+	--est-brand-dark: var(--gcalls-brand-dark, #4a2391);
+	--est-brand-light: var(--gcalls-brand-light, #f5f1fc);
+	--est-border: var(--gcalls-border, #e8e5ef);
+	--est-muted: var(--gcalls-muted, #5b5f6b);
+	font-family: var(--gcalls-font-sans, 'Open Sans', system-ui, sans-serif);
+	margin-block: 2rem;
+	max-width: 100%;
+}
+
+.gcalls-est__steps {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	list-style: none;
+	margin: 0 0 1.5rem;
+	padding: 0;
+}
+
+.gcalls-est__step {
+	align-items: center;
+	color: var(--est-muted);
+	display: flex;
+	font-size: 0.875rem;
+	gap: 0.5rem;
+}
+
+.gcalls-est__step + .gcalls-est__step::before {
+	color: var(--est-border);
+	content: "→";
+	margin-right: 0.25rem;
+}
+
+.gcalls-est__step-num {
+	align-items: center;
+	background: var(--est-border);
+	border-radius: 999px;
+	display: inline-flex;
+	height: 1.5rem;
+	justify-content: center;
+	width: 1.5rem;
+}
+
+.gcalls-est__step.is-current { color: var(--est-brand); font-weight: 600; }
+.gcalls-est__step.is-current .gcalls-est__step-num { background: var(--est-brand); color: #fff; }
+.gcalls-est__step.is-done .gcalls-est__step-num { background: var(--est-brand-light); color: var(--est-brand); }
+
+.gcalls-est__lead { color: var(--est-muted); margin-bottom: 1rem; }
+
+/* auto-fit rather than a fixed count, so the seven cards reflow at every
+ * breakpoint without a media query and never force horizontal scrolling. */
+.gcalls-est__cards {
+	display: grid;
+	gap: 0.75rem;
+	grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+}
+
+.gcalls-est__card {
+	background: #fff;
+	border: 1px solid var(--est-border);
+	border-radius: 10px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	padding: 1rem;
+	text-align: left;
+	transition: border-color 150ms ease, background 150ms ease;
+	width: 100%;
+}
+
+.gcalls-est__card:hover { border-color: var(--est-brand); }
+.gcalls-est__card.is-selected { background: var(--est-brand-light); border-color: var(--est-brand); }
+.gcalls-est__card-name { font-weight: 700; }
+.gcalls-est__card-use { color: var(--est-muted); font-size: 0.875rem; }
+
+.gcalls-est__field { margin-bottom: 1.25rem; }
+.gcalls-est__label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+.gcalls-est__hint { color: var(--est-muted); font-size: 0.875rem; margin: 0 0 0.5rem; }
+
+.gcalls-est__input {
+	border: 1px solid var(--est-border);
+	border-radius: 8px;
+	font: inherit;
+	max-width: 24rem;
+	padding: 0.55rem 0.7rem;
+	width: 100%;
+}
+
+.gcalls-est__multi { display: grid; gap: 0.4rem; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); }
+.gcalls-est__check { align-items: center; display: flex; gap: 0.5rem; }
+
+.gcalls-est__nav { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+
+.gcalls-est__result { background: var(--est-brand-light); border-radius: 12px; padding: 1.25rem; }
+.gcalls-est__result-title { margin: 0 0 1rem; }
+.gcalls-est__primary { margin-bottom: 1rem; }
+.gcalls-est__primary-label { color: var(--est-muted); display: block; font-size: 0.875rem; }
+.gcalls-est__primary-name { font-size: 1.25rem; }
+.gcalls-est__consider-label { color: var(--est-muted); font-size: 0.875rem; margin-bottom: 0.25rem; }
+.gcalls-est__consider { margin: 0 0 1rem 1.25rem; }
+
+.gcalls-est__summary { border-collapse: collapse; margin-bottom: 1rem; width: 100%; }
+.gcalls-est__summary th,
+.gcalls-est__summary td { border-bottom: 1px solid var(--est-border); padding: 0.5rem 0; text-align: left; vertical-align: top; }
+.gcalls-est__summary th { color: var(--est-muted); font-weight: 600; width: 45%; }
+
+.gcalls-est__price { background: #fff; border-left: 3px solid var(--est-brand); border-radius: 8px; margin-bottom: 1rem; padding: 0.85rem 1rem; }
+.gcalls-est__price-label { display: block; font-size: 1.125rem; font-weight: 700; }
+.gcalls-est__price-supporting { color: var(--est-muted); margin: 0.25rem 0 0; }
+
+.gcalls-est__noscript { background: #fff; border: 1px solid var(--est-border); border-radius: 8px; padding: 1rem; }

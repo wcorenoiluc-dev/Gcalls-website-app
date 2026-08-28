@@ -711,6 +711,69 @@ check(
 )
 
 /* ------------------------------------------------------------------ *
+ * 16. Live demo completion — 005
+ * ------------------------------------------------------------------ */
+
+console.log('\n16. Live demo completion (005)')
+
+if (exists(adminScreen)) {
+  const admin = read(adminScreen)
+  check('import screen accepts a packaged zip', admin.includes('unzip_file'))
+  check('upload has its own nonce', admin.includes('NONCE_UPLOAD'))
+  check('upload is size-capped', admin.includes('MAX_UPLOAD_BYTES'))
+  check('only .zip is accepted', admin.includes("'zip' !== strtolower"))
+  check('upload source is verified', admin.includes('is_uploaded_file'))
+  // unzip_file() will happily write a member named ../../../wp-config.php.
+  check('extracted members are re-checked for traversal', admin.includes('unsafe_members'))
+  check('extracted member types are allowlisted', admin.includes('ALLOWED_MEMBER_EXTENSIONS'))
+}
+
+const estimatorConfig = path.join(PLUGIN, 'data/estimator-config.json')
+const estimatorJs = path.join(PLUGIN, 'assets/js/estimator.js')
+
+check('estimator config generated', exists(estimatorConfig))
+check('estimator front end present', exists(estimatorJs))
+
+if (exists(estimatorConfig)) {
+  const config = JSON.parse(read(estimatorConfig))
+
+  check('7 solutions', config.solutions?.length === 7, String(config.solutions?.length))
+  check(
+    'every solution has fields and a recommendation rule',
+    config.solutions.every((s) => s.fields.length > 0 && s.id in config.recommendationRules),
+  )
+
+  // The React source gates every number behind PRICING_CONFIGURED === false.
+  // If the port ever claims otherwise it would be showing a total it has no
+  // rate table to compute.
+  const pricingSrc = read(path.join(REPO, 'src/data/pricing.ts'))
+  const reactConfigured = /export const PRICING_CONFIGURED = true/.test(pricingSrc)
+  check('pricing gate matches the React source', config.pricingConfigured === reactConfigured)
+  check('the port claims no pricing', config.pricingConfigured === false)
+
+  // The questionnaire must not drift from the React source.
+  const estimatorSrc = read(path.join(REPO, 'src/data/estimator.ts'))
+  const sourceIds = [...new Set([...estimatorSrc.matchAll(/^\s{4}id: '([a-z-]+)',$/gm)].map((m) => m[1]))]
+  const missing = config.solutions.map((s) => s.id).filter((id) => !sourceIds.includes(id))
+  check('every exported solution exists in the React source', missing.length === 0, missing.join(', '))
+}
+
+if (exists(estimatorJs)) {
+  const js = read(estimatorJs)
+  check('estimator front end computes no price', !/[*+]\s*(rate|price|cost)|toFixed|\bVND\b|₫/.test(js))
+  // Assignment, not the word: the file's own comment explains why it avoids it.
+  check('estimator renders via DOM, not innerHTML', !/\.innerHTML\s*[+]?=/.test(js))
+  check('estimator CTA carries attribution', js.includes('intent=quote&source=cost-estimator'))
+}
+
+if (exists(shortcodes)) {
+  const sc = read(shortcodes)
+  check('estimator shortcode registered', sc.includes("add_shortcode( 'gcalls_estimator'"))
+  check('shortcode refuses to render if pricing is ever claimed', sc.includes("! empty( \$config['pricingConfigured'] )"))
+  check('estimator degrades without JavaScript', sc.includes('<noscript>'))
+}
+
+/* ------------------------------------------------------------------ *
  * Report
  * ------------------------------------------------------------------ */
 
