@@ -722,7 +722,18 @@ final class Shortcodes {
 
 		if ( array() !== $faq ) {
 			$out .= '<section class="gcalls-product__faq">';
-			$out .= '<h2 class="gcalls-product__heading">' . esc_html__( 'Câu hỏi thường gặp', 'gcalls-core' ) . '</h2>';
+			$product = (string) ( $page['product'] ?? '' );
+			$out    .= '<h2 class="gcalls-product__heading">';
+			$out    .= '' === $product
+				? esc_html__( 'Câu hỏi thường gặp', 'gcalls-core' )
+				: esc_html(
+					sprintf(
+						/* translators: %s: product name. */
+						__( 'Câu hỏi thường gặp về %s', 'gcalls-core' ),
+						$product
+					)
+				);
+			$out    .= '</h2>';
 
 			foreach ( $faq as $item ) {
 				if ( empty( $item['question'] ) || empty( $item['answer'] ) ) {

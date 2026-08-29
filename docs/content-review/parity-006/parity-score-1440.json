@@ -248,12 +248,12 @@
   {
     "name": "blog",
     "route": "/blog/",
-    "score": 61.5,
+    "score": 64.4,
     "parts": {
-      "headings": 41.7,
+      "headings": 48.3,
       "visuals": 100,
       "ctas": 75,
-      "rhythm": 72.3
+      "rhythm": 69.7
     },
     "react": {
       "headings": 60,
@@ -262,10 +262,10 @@
       "height": 10504
     },
     "wp": {
-      "headings": 58,
+      "headings": 55,
       "visuals": 0,
       "ctas": 3,
-      "height": 7594
+      "height": 7320
     },
     "missingInWp": [
       "Góc nhìn vận hành về tổng đài, tích hợp hệ thống và chất lượng hội thoại",
@@ -282,8 +282,6 @@
       "Nội dung đã hoàn thiện, có thể đọc ngay",
       "Vì sao blog chưa có bài viết nào?",
       "Trong lúc chờ bài viết, có thể đọc gì?",
-      "Blog có nhận bài viết hoặc chủ đề đề xuất không?",
-      "Nội dung blog có thay thế được bước tư vấn triển khai không?",
       "Có câu hỏi vận hành chưa tìm được câu trả lời?"
     ],
     "extraInWp": [
@@ -296,11 +294,6 @@
       "Tổng đài và Call Center",
       "Voicebot, AI và tự động hóa",
       "Câu hỏi thường gặp",
-      "undefined",
-      "undefined",
-      "undefined",
-      "undefined",
-      "undefined",
       "undefined"
     ]
   }

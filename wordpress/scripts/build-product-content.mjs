@@ -149,7 +149,11 @@ function normalise(raw) {
       if (!item || typeof item !== 'object') return null
       return {
         label: pick(item, ['n', 'step', 'badge', 'tag']),
-        title: pick(item, ['title', 'name', 'label', 'question', 'heading']),
+        // `role` and `segment` are what the use-case and industry sections
+        // call their titles. Without them those sections rendered as a run of
+        // unlabelled paragraphs — five industries on Gcalls Plus and four on
+        // CX, each described but never named.
+        title: pick(item, ['title', 'name', 'role', 'segment', 'label', 'question', 'heading']),
         body: pick(item, ['detail', 'description', 'body', 'answer', 'text', 'copy']),
       }
     })
@@ -218,7 +222,18 @@ for (const page of PAGES) {
   if (direct && !(direct.question && direct.answer)) problems.push(`${page.id}: direct answer is incomplete`)
   if (faq.length === 0) problems.push(`${page.id}: no FAQ items`)
 
-  output.pages[page.id] = { route: page.route, hero, direct, faq, lead: page.lead, sections }
+  output.pages[page.id] = {
+    route: page.route,
+    // The FAQ heading names the product — "Câu hỏi thường gặp về Gcalls CX",
+    // not a bare "Câu hỏi thường gặp". On a page this long the reader has
+    // scrolled a long way from the title by the time they reach it.
+    product: page.lead.product ?? '',
+    hero,
+    direct,
+    faq,
+    lead: page.lead,
+    sections,
+  }
 }
 
 fs.mkdirSync(path.dirname(OUT), { recursive: true })

@@ -3,6 +3,7 @@
   "pages": {
     "gcalls-plus": {
       "route": "/gcalls-plus-webphone/",
+      "product": "Gcalls Plus Webphone",
       "hero": {
         "eyebrow": "GCALLS PLUS WEBPHONE",
         "heading": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình duyệt",
@@ -273,27 +274,27 @@
           "items": [
             {
               "label": "",
-              "title": "",
+              "title": "Sales",
               "body": "Quản lý hoạt động gọi lead, lịch sử liên hệ, ghi chú và follow-up trong một luồng làm việc gọn hơn."
             },
             {
               "label": "",
-              "title": "",
+              "title": "Chăm sóc khách hàng",
               "body": "Tiếp nhận cuộc gọi và xem lại lịch sử tương tác trước khi hỗ trợ khách hàng."
             },
             {
               "label": "",
-              "title": "",
+              "title": "Giáo dục",
               "body": "Phù hợp với đội tư vấn tuyển sinh và chăm sóc học viên cần xử lý lượng liên hệ thường xuyên."
             },
             {
               "label": "",
-              "title": "",
+              "title": "Dịch vụ",
               "body": "Phù hợp với các doanh nghiệp dịch vụ cần hotline và hệ thống quản lý hoạt động gọi tập trung."
             },
             {
               "label": "",
-              "title": "",
+              "title": "Thương mại điện tử",
               "body": "Hỗ trợ đội bán hàng hoặc CSKH xử lý cuộc gọi liên quan tới tư vấn, đơn hàng và chăm sóc sau bán."
             }
           ],
@@ -371,6 +372,7 @@
     },
     "cx": {
       "route": "/gcalls-cx/",
+      "product": "Gcalls CX",
       "hero": {
         "eyebrow": "GCALLS CX • OMNICHANNEL CONTACT CENTER",
         "heading": "Gcalls CX – hợp nhất mọi điểm chạm khách hàng trên một màn hình",
@@ -691,22 +693,22 @@
           "items": [
             {
               "label": "",
-              "title": "",
+              "title": "Tài chính",
               "body": "Hỗ trợ đội chăm sóc quản lý lượng tương tác lớn và theo dõi yêu cầu trên nhiều điểm chạm."
             },
             {
               "label": "",
-              "title": "",
+              "title": "Bảo hiểm",
               "body": "Tập trung hội thoại và quá trình follow-up khi khách hàng tương tác qua nhiều kênh."
             },
             {
               "label": "",
-              "title": "",
+              "title": "Bất động sản",
               "body": "Hỗ trợ đội tư vấn và CSKH theo dõi hội thoại, lead và quá trình chăm sóc trên nhiều điểm chạm."
             },
             {
               "label": "",
-              "title": "",
+              "title": "Doanh nghiệp tăng trưởng nhanh",
               "body": "Phù hợp khi số lượng kênh, nhân viên và tương tác tăng khiến mô hình xử lý riêng lẻ không còn dễ quản lý."
             }
           ]
@@ -793,6 +795,7 @@
     },
     "voicebot": {
       "route": "/voicebot-ai/",
+      "product": "Gcalls Voicebot AI",
       "hero": {
         "eyebrow": "VOICEBOT AI CHO DOANH NGHIỆP",
         "heading": "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI",
@@ -1114,6 +1117,7 @@
     },
     "qa-qc": {
       "route": "/qc-bot-ai/",
+      "product": "QA QC Center",
       "hero": {
         "eyebrow": "QA QC CENTER • POWERED BY QC BOT AI",
         "heading": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
@@ -1386,22 +1390,22 @@
           "items": [
             {
               "label": "",
-              "title": "",
+              "title": "Customer Service QA",
               "body": "Kiểm tra cách đội CSKH giao tiếp, xử lý tình huống và tuân thủ quy trình dịch vụ."
             },
             {
               "label": "",
-              "title": "",
+              "title": "Telesales QA",
               "body": "Theo dõi nội dung tư vấn, cách trình bày thông tin và những tín hiệu cần coaching trong cuộc gọi bán hàng."
             },
             {
               "label": "",
-              "title": "",
+              "title": "BPO / Contact Center",
               "body": "Hỗ trợ đội QA xử lý lượng lớn dữ liệu hội thoại và ưu tiên những cuộc gọi cần review."
             },
             {
               "label": "",
-              "title": "",
+              "title": "Finance & Insurance",
               "body": "Hỗ trợ quy trình QA đối với những cuộc gọi có tiêu chí đánh giá rõ ràng và yêu cầu kiểm tra nội dung hội thoại."
             }
           ]
