@@ -10,6 +10,18 @@
  * real buttons — which also means they are keyboard operable, which a screenshot
  * never is.
  *
+ * THE THREE EXCEPTIONS, AND WHY THEY ARE IMAGES
+ * `*_showcase` at the foot of this file are images, and only ever heroes. The
+ * argument above is about a panel a reader can reach and click; a hero is the
+ * first screen, judged at a glance and usually not touched. What it has to do
+ * is look like software, and a full application frame — sidebar, list, working
+ * pane — is what does that. The markup panels are deliberately small and
+ * single-purpose; stretched across a hero, one shows four rows and a lot of
+ * white. So each of CX, Voicebot and QC leads with a drawn frame and keeps its
+ * interactive panel further down the same page, where clicking it is possible
+ * and therefore worth having. The images are generated, not photographed —
+ * see wordpress/scripts/build-demo-imagery.mjs for the source and the rules.
+ *
  * WHY THE DATA IS FAKE AND SAYS SO
  * The React source uses plausible Vietnamese personal names and company names.
  * Carrying those onto a public demo would put invented people beside a real
@@ -408,9 +420,9 @@ final class Mockups {
 	/** QC Bot AI — transcript with scoring criteria. */
 	private static function mock_qc_transcript(): string {
 		$lines = array(
-			array( 'Nhân viên', 'Dạ em chào anh/chị, em gọi từ Công ty Demo ạ.' ),
-			array( 'Khách hàng', 'Vâng, em nói giúp anh về gói dịch vụ.' ),
-			array( 'Nhân viên', 'Dạ em xin phép trao đổi về nhu cầu hiện tại của bên mình.' ),
+			array( 'Nhân viên 01', 'Dạ em chào anh/chị, em gọi từ Công ty Demo ạ.' ),
+			array( 'Khách hàng A', 'Vâng, em nói giúp anh về yêu cầu hôm trước.' ),
+			array( 'Nhân viên 01', 'Dạ em xin phép trao đổi về nhu cầu hiện tại của bên mình.' ),
 		);
 		$criteria = array(
 			array( 'Chào hỏi đúng chuẩn', 'đạt' ),
@@ -430,5 +442,51 @@ final class Mockups {
 		$out .= '</ul></div>';
 
 		return $out . self::caption();
+	}
+
+	/* ------------------------------------------------- product hero shots */
+
+	/**
+	 * One demo image, filling its own reserved box.
+	 *
+	 * These three are heroes, so the image is eager and high priority: it is
+	 * the largest paint on the page and waiting for it is the page waiting.
+	 * Width and height are attributes, not CSS alone, so the box is reserved
+	 * before the bytes arrive and nothing below it moves.
+	 *
+	 * @param string $file Filename inside assets/images/product-gallery/.
+	 * @param string $alt  Alt text — describes the interface, not the file.
+	 */
+	private static function showcase( string $file, string $alt ): string {
+		$src = GCALLS_CORE_URL . 'assets/images/product-gallery/' . $file;
+
+		return '<figure class="gcalls-shot">'
+			. '<img src="' . esc_url( $src ) . '" width="1600" height="900" alt="' . esc_attr( $alt ) . '" fetchpriority="high" decoding="async">'
+			. '</figure>'
+			. self::caption( __( 'Hình minh họa giao diện – dữ liệu demo đã được ẩn danh', 'gcalls-core' ) );
+	}
+
+	/** Gcalls CX hero — the unified inbox, as a full application frame. */
+	private static function mock_cx_showcase(): string {
+		return self::showcase(
+			'gcalls-cx-omnichannel-demo.webp',
+			__( 'Giao diện demo Gcalls CX: hộp thư hợp nhất hotline, Zalo OA, Facebook và email trong một màn hình', 'gcalls-core' )
+		);
+	}
+
+	/** Voicebot AI hero — the script builder canvas. */
+	private static function mock_voicebot_showcase(): string {
+		return self::showcase(
+			'voicebot-flow-builder-demo.webp',
+			__( 'Giao diện demo Gcalls Voicebot AI: trình dựng kịch bản với các khối lời chào, điều kiện rẽ nhánh và chuyển nhân viên', 'gcalls-core' )
+		);
+	}
+
+	/** QC Bot AI hero — transcript beside the scorecard. */
+	private static function mock_qc_showcase(): string {
+		return self::showcase(
+			'qc-scoring-dashboard-demo.webp',
+			__( 'Giao diện demo Gcalls QC Bot AI: bản ghi hội thoại và bộ tiêu chí chấm điểm cuộc gọi', 'gcalls-core' )
+		);
 	}
 }

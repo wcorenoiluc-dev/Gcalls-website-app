@@ -66,6 +66,14 @@ async function load(file) {
  * invented and the caption says so. Each of those three products gets the three
  * the addendum asks for — a hero mockup, a workflow visual and a
  * dashboard/feature visual.
+ *
+ * Since 0.8.6 the hero slot on those three is a drawn demo image
+ * (`*_showcase`) rather than the interactive panel. The panels did not go
+ * away: cx_inbox, voicebot_builder and qc_transcript each still appear twice
+ * further down their own page, which is where a reader can actually click
+ * them. The hero's job is to look like software in the first screen, and a
+ * four-row panel stretched to full width does not. Gcalls Plus keeps
+ * plus_gallery — it has real screenshots and does not need a drawing.
  */
 const PAGES = [
   {
@@ -90,7 +98,7 @@ const PAGES = [
   },
   {
     id: 'cx',
-    heroMockup: 'cx_inbox',
+    heroMockup: 'cx_showcase',
     route: '/gcalls-cx/',
     file: 'gcallsCx.ts',
     lead: { intent: 'consultation', source: 'gcalls_cx', product: 'Gcalls CX' },
@@ -104,7 +112,7 @@ const PAGES = [
   },
   {
     id: 'voicebot',
-    heroMockup: 'voicebot_builder',
+    heroMockup: 'voicebot_showcase',
     route: '/voicebot-ai/',
     file: 'voicebotAi.ts',
     lead: { intent: 'consultation', source: 'voicebot_ai', product: 'Gcalls Voicebot AI' },
@@ -117,7 +125,7 @@ const PAGES = [
   },
   {
     id: 'qa-qc',
-    heroMockup: 'qc_transcript',
+    heroMockup: 'qc_showcase',
     route: '/qc-bot-ai/',
     file: 'qaQcCenter.ts',
     lead: { intent: 'consultation', source: 'qa_qc_center', product: 'QA QC Center' },

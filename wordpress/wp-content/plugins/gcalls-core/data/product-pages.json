@@ -409,7 +409,7 @@
       "route": "/gcalls-cx/",
       "product": "Gcalls CX",
       "hero": {
-        "mockup": "cx_inbox",
+        "mockup": "cx_showcase",
         "cta": {
           "label": "Yêu cầu demo Gcalls CX",
           "intent": "demo",
@@ -871,7 +871,7 @@
       "route": "/voicebot-ai/",
       "product": "Gcalls Voicebot AI",
       "hero": {
-        "mockup": "voicebot_builder",
+        "mockup": "voicebot_showcase",
         "cta": {
           "label": "Đăng ký tư vấn Voicebot",
           "intent": "consultation",
@@ -1221,7 +1221,7 @@
       "route": "/qc-bot-ai/",
       "product": "QA QC Center",
       "hero": {
-        "mockup": "qc_transcript",
+        "mockup": "qc_showcase",
         "cta": {
           "label": "Yêu cầu demo QA QC Center",
           "intent": "demo",

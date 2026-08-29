@@ -998,27 +998,93 @@ const GALLERY_FILES = [
 const missingGallery = GALLERY_FILES.filter((name) => !exists(path.join(GALLERY_DIR, name)))
 check('the six gallery images are present', missingGallery.length === 0, missingGallery.join(', '))
 
+// The 0.8.6 hero images: one per product that has no real screenshot. Built by
+// build-demo-imagery.mjs, which is where the anonymisation rules live.
+const DEMO_FILES = [
+  'gcalls-cx-omnichannel-demo.webp',
+  'voicebot-flow-builder-demo.webp',
+  'qc-scoring-dashboard-demo.webp',
+]
+
+const missingDemo = DEMO_FILES.filter((name) => !exists(path.join(GALLERY_DIR, name)))
+check('the three product demo images are present', missingDemo.length === 0, missingDemo.join(', '))
+
+const ALL_IMAGES = [...GALLERY_FILES, ...DEMO_FILES]
+
 // Half a megabyte each would be 3 MB of hero, on a page a phone loads first.
-const oversized = GALLERY_FILES.filter((name) => {
+const oversized = ALL_IMAGES.filter((name) => {
   const file = path.join(GALLERY_DIR, name)
   return exists(file) && fs.statSync(file).size > 500 * 1024
 })
-check('every gallery image is under 500 KB', oversized.length === 0, oversized.join(', '))
+check('every product image is under 500 KB', oversized.length === 0, oversized.join(', '))
 
 // WebP begins RIFF....WEBP. A PNG renamed .webp passes every other check here
 // and fails only in the browser.
-const notWebp = GALLERY_FILES.filter((name) => {
+const notWebp = ALL_IMAGES.filter((name) => {
   const file = path.join(GALLERY_DIR, name)
   if (!exists(file)) return false
   const head = fs.readFileSync(file).subarray(0, 12)
   return head.subarray(0, 4).toString() !== 'RIFF' || head.subarray(8, 12).toString() !== 'WEBP'
 })
-check('every gallery image really is WebP', notWebp.length === 0, notWebp.join(', '))
+check('every product image really is WebP', notWebp.length === 0, notWebp.join(', '))
+
+// The plugin header is what WordPress shows on the Plugins screen; VERSION is
+// what every wp_enqueue_* call appends to its asset URL. Bump one without the
+// other and the admin reports a new version while browsers keep serving the
+// old CSS from cache — which is exactly how a deployed fix looks like it did
+// not deploy.
+const bootstrapPhp = read(path.join(PLUGIN, 'gcalls-core.php'))
+const headerVersion = bootstrapPhp.match(/^\s*\*\s*Version:\s*(\S+)\s*$/m)?.[1]
+const constVersion = bootstrapPhp.match(/^const VERSION = '([^']+)';$/m)?.[1]
+
+check('the plugin declares a header version', Boolean(headerVersion), String(headerVersion))
+check('the plugin declares a VERSION constant', Boolean(constVersion), String(constVersion))
+check(
+  'the header version and VERSION agree',
+  Boolean(headerVersion) && headerVersion === constVersion,
+  `header ${headerVersion} vs const ${constVersion}`
+)
 
 const mockupsPhp = read(path.join(PLUGIN, 'includes/class-mockups.php'))
 const mockupsJs = read(path.join(PLUGIN, 'assets/js/mockups.js'))
 
 check('the gallery mockup exists', mockupsPhp.includes('mock_plus_gallery'))
+
+// The three hero shots. Each needs a renderer and each renderer needs to name
+// its own file — a showcase method that points at the wrong image would show
+// one product under another product's heading, which is the failure the
+// "no two products share a hero visual" check further down exists to catch.
+const SHOWCASES = [
+  ['mock_cx_showcase', 'gcalls-cx-omnichannel-demo.webp'],
+  ['mock_voicebot_showcase', 'voicebot-flow-builder-demo.webp'],
+  ['mock_qc_showcase', 'qc-scoring-dashboard-demo.webp'],
+]
+
+for (const [method, file] of SHOWCASES) {
+  check(`${method} exists`, mockupsPhp.includes(method))
+  check(`${method} names ${file}`, mockupsPhp.includes(file))
+}
+
+// A hero image with no alt is a hero that says nothing to a screen reader, and
+// the three of them are the only images on their pages.
+check(
+  'every showcase image carries alt text',
+  (mockupsPhp.match(/alt="' \. esc_attr\( \$alt \)/g) ?? []).length > 0 ||
+    /function showcase\([\s\S]*?alt=/.test(mockupsPhp)
+)
+
+// The interactive panels are the reason the hero could become a picture: they
+// still carry the clicking. If one disappeared, the picture would be all that
+// is left and the page would have no demo you can operate.
+for (const panel of ['mock_cx_inbox', 'mock_voicebot_builder', 'mock_qc_transcript']) {
+  check(`${panel} survives as an interactive panel`, mockupsPhp.includes(panel))
+}
+
+// The QC page names its speakers this way in the addendum, in the picture and
+// in the panel — three places that have to agree.
+for (const speaker of ['Khách hàng A', 'Nhân viên 01']) {
+  check(`the QC transcript says "${speaker}"`, mockupsPhp.includes(speaker))
+}
 
 const galleryStates = ['Tổng quan', 'Khách hàng', 'Lịch sử gọi', 'Thống kê', 'Hiệu suất', 'Click-to-Call']
 const missingStates = galleryStates.filter((label) => !mockupsPhp.includes(label))
@@ -1048,9 +1114,9 @@ if (!exists(productJson)) {
   const productPages = JSON.parse(read(productJson)).pages ?? {}
   const HERO_VISUAL = {
     'gcalls-plus': 'plus_gallery',
-    cx: 'cx_inbox',
-    voicebot: 'voicebot_builder',
-    'qa-qc': 'qc_transcript',
+    cx: 'cx_showcase',
+    voicebot: 'voicebot_showcase',
+    'qa-qc': 'qc_showcase',
   }
 
   const wrongHero = Object.entries(HERO_VISUAL)

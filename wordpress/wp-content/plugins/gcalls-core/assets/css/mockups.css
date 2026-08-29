@@ -266,3 +266,21 @@
 .gcalls-mock__mark--no { background: #fdeaea; color: #a01b1b; }
 
 .gcalls-mock__caption { background: #faf9fc; border-top: 1px solid var(--m-border); color: var(--m-muted); font-size: 0.75rem; margin: 0; padding: 0.5rem 0.9rem; text-align: center; }
+
+/* Product hero shot. One demo image, its box reserved by aspect-ratio so the
+ * copy below it never moves while the bytes are still arriving. Unlike the
+ * gallery there are no tabs: a hero has one frame to make its case. */
+.gcalls-shot {
+	aspect-ratio: 16 / 9;
+	background: linear-gradient(180deg, #fff, var(--m-light));
+	margin: 0;
+	width: 100%;
+}
+
+.gcalls-shot img {
+	border-radius: 0.75rem;
+	display: block;
+	height: 100%;
+	object-fit: contain;
+	width: 100%;
+}
