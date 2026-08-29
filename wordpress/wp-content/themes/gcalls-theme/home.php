@@ -141,9 +141,10 @@ $grouped       = taxonomy_exists( $hub_taxonomy ) && ! is_paged();
 					// h3 under the listing's h2, with the count in the heading —
 					// the hub name alone does not say how much is behind it.
 					?>
-					<h3 class="gcalls-hub-group__title">
-						<?php echo esc_html( $term->name ); ?>
-						<span class="gcalls-hub-group__count">
+					<?php // No whitespace between the name and the count: it is one
+						// phrase, and a stray text node puts a space in the middle
+						// of it for anything reading the document. ?>
+					<h3 class="gcalls-hub-group__title"><?php echo esc_html( $term->name ); ?><span class="gcalls-hub-group__count">
 							<?php
 							printf(
 								/* translators: %d: number of articles in this hub. */

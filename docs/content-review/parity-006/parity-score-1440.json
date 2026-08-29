@@ -27,12 +27,12 @@
   {
     "name": "gcalls-plus",
     "route": "/gcalls-plus-webphone/",
-    "score": 91.4,
+    "score": 94.4,
     "parts": {
       "headings": 96.4,
       "visuals": 100,
-      "ctas": 80,
-      "rhythm": 81.1
+      "ctas": 100,
+      "rhythm": 81.2
     },
     "react": {
       "headings": 55,
@@ -43,8 +43,8 @@
     "wp": {
       "headings": 54,
       "visuals": 13,
-      "ctas": 5,
-      "height": 16481
+      "ctas": 4,
+      "height": 16457
     },
     "missingInWp": [
       "PHÙ HỢP VỚI GCALLS PLUS",
@@ -172,12 +172,12 @@
   {
     "name": "blog",
     "route": "/blog/",
-    "score": 64.4,
+    "score": 71,
     "parts": {
-      "headings": 48.3,
+      "headings": 60,
       "visuals": 100,
       "ctas": 75,
-      "rhythm": 69.7
+      "rhythm": 73.5
     },
     "react": {
       "headings": 60,
@@ -186,15 +186,13 @@
       "height": 10504
     },
     "wp": {
-      "headings": 55,
+      "headings": 56,
       "visuals": 0,
       "ctas": 3,
-      "height": 7320
+      "height": 7723
     },
     "missingInWp": [
-      "Góc nhìn vận hành về tổng đài, tích hợp hệ thống và chất lượng hội thoại",
       "Sáu danh mục tài nguyên",
-      "Bài viết theo nhóm chủ đề",
       "Tổng đài và Call Center3 bài",
       "Gcalls Plus Webphone2 bài",
       "CRM, Helpdesk và tích hợp3 bài",
@@ -209,14 +207,13 @@
       "Có câu hỏi vận hành chưa tìm được câu trả lời?"
     ],
     "extraInWp": [
-      "\n\t\t\tBlog\t\t",
-      "CRM, Helpdesk và tích hợp",
-      "Gcalls CX",
-      "Gcalls Plus Webphone",
-      "QA/QC và quản trị chất lượng",
-      "Tổng đài quốc tế",
-      "Tổng đài và Call Center",
-      "Voicebot, AI và tự động hóa",
+      "\n\t\t\t\t\t\tCRM, Helpdesk và tích hợp\t\t\t\t\t\t\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
+      "\n\t\t\t\t\t\tGcalls CX\t\t\t\t\t\t\n\t\t\t\t\t\t\t2 bài\t\t\t\t\t\t\n\t\t\t\t\t",
+      "\n\t\t\t\t\t\tGcalls Plus Webphone\t\t\t\t\t\t\n\t\t\t\t\t\t\t2 bài\t\t\t\t\t\t\n\t\t\t\t\t",
+      "\n\t\t\t\t\t\tQA/QC và quản trị chất lượng\t\t\t\t\t\t\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
+      "\n\t\t\t\t\t\tTổng đài quốc tế\t\t\t\t\t\t\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
+      "\n\t\t\t\t\t\tTổng đài và Call Center\t\t\t\t\t\t\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
+      "\n\t\t\t\t\t\tVoicebot, AI và tự động hóa\t\t\t\t\t\t\n\t\t\t\t\t\t\t2 bài\t\t\t\t\t\t\n\t\t\t\t\t",
       "Câu hỏi thường gặp",
       "undefined"
     ]

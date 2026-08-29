@@ -139,8 +139,7 @@ async function costEstimatorBody(repo, routes) {
     ),
     list(QUOTE_DIFFERENCES.map((item) => esc(item))),
 
-    heading('Câu hỏi thường gặp về ước tính chi phí', 2, 'faq-uoc-tinh'),
-    shortcode('[gcalls_faq]'),
+    shortcode('[gcalls_faq title="Câu hỏi thường gặp về ước tính chi phí"]'),
 
     heading('Chưa chắc cấu hình nào phù hợp với doanh nghiệp?', 2, 'cta-uoc-tinh'),
     p(
@@ -252,8 +251,8 @@ async function blogBody(repo, routes) {
     }
   }
 
-  parts.push(heading('Câu hỏi thường gặp — Blog', 2, 'faq-blog'))
-  parts.push(shortcode('[gcalls_faq]'))
+  // One heading, not two: the shortcode prints its own unless told otherwise.
+  parts.push(shortcode('[gcalls_faq title="Câu hỏi thường gặp — Blog"]'))
 
   if (BLOG.finalCta) {
     parts.push(heading(BLOG.finalCta.title, 2, 'cta-blog'))

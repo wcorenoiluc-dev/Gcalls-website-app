@@ -180,7 +180,13 @@ final class Faq {
 	 *
 	 * @param int|null $post_id Defaults to the current post.
 	 */
-	public static function render( ?int $post_id = null ): void {
+	/**
+	 * @param int|null    $post_id Post to read the FAQ from.
+	 * @param string|null $title   Heading to print. Null uses the default; an
+	 *                             empty string prints none, for a page that has
+	 *                             already headed the section itself.
+	 */
+	public static function render( ?int $post_id = null, ?string $title = null ): void {
 		$post_id = $post_id ?? (int) get_the_ID();
 		$faq     = self::get( $post_id );
 
@@ -188,8 +194,15 @@ final class Faq {
 			return;
 		}
 
+		$heading = null === $title ? __( 'Câu hỏi thường gặp', 'gcalls-core' ) : $title;
+
 		echo '<section class="gcalls-faq">';
-		echo '<h2 class="gcalls-faq__title">' . esc_html__( 'Câu hỏi thường gặp', 'gcalls-core' ) . '</h2>';
+
+		// A page that has already headed this section gets no second heading.
+		// /blog/ carried two: its own "Câu hỏi thường gặp — Blog" and this one.
+		if ( '' !== $heading ) {
+			echo '<h2 class="gcalls-faq__title">' . esc_html( $heading ) . '</h2>';
+		}
 
 		foreach ( $faq as $item ) {
 			// `open`, and the question is a heading inside the summary.

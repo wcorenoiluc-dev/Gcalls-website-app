@@ -66,7 +66,7 @@ final class Shortcodes {
 	 * @return string
 	 */
 	public static function faq( $atts = array() ): string {
-		$atts = shortcode_atts( array( 'post_id' => 0 ), (array) $atts, 'gcalls_faq' );
+		$atts = shortcode_atts( array( 'post_id' => 0, 'title' => null ), (array) $atts, 'gcalls_faq' );
 
 		$post_id = (int) $atts['post_id'];
 
@@ -90,7 +90,7 @@ final class Shortcodes {
 		}
 
 		ob_start();
-		Faq::render( $post_id );
+		Faq::render( $post_id, null === $atts['title'] ? null : (string) $atts['title'] );
 
 		return (string) ob_get_clean();
 	}
