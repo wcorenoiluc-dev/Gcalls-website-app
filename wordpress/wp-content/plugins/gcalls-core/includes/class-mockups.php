@@ -132,6 +132,49 @@ final class Mockups {
 		return $out . self::caption();
 	}
 
+	/* --------------------------------------------- approved image gallery */
+
+	/**
+	 * Gcalls Plus visual gallery.
+	 *
+	 * These six frames came from the approved demo-image pack. They are bundled
+	 * with the plugin rather than stored as attachment ids, so an update remains
+	 * reproducible on every WordPress environment. The first image is eager and
+	 * the remaining states are lazy; JavaScript only switches the visible frame.
+	 */
+	private static function mock_plus_gallery(): string {
+		$frames = array(
+			'overview' => array( 'Tổng quan', 'webphone-overview.webp', 'Tổng quan hoạt động Gcalls Plus Webphone', 1600, 900 ),
+			'profile'  => array( 'Khách hàng', 'customer-profile.webp', 'Hồ sơ khách hàng và thao tác gọi trực tiếp', 1448, 1086 ),
+			'history'  => array( 'Lịch sử gọi', 'call-history.webp', 'Lịch sử tương tác và cuộc gọi', 1600, 900 ),
+			'analytics'=> array( 'Thống kê', 'analytics-dashboard.webp', 'Dashboard thống kê hiệu suất cuộc gọi', 1600, 900 ),
+			'agents'   => array( 'Hiệu suất', 'agent-performance.webp', 'Hiệu suất và trạng thái nhân viên', 1600, 900 ),
+			'click'    => array( 'Click-to-Call', 'click-to-call.webp', 'Cấu hình Click-to-Call trên website và CRM', 1600, 900 ),
+		);
+
+		$out  = '<div class="gcalls-gallery__tabs" role="tablist" aria-label="Xem giao diện Gcalls Plus">';
+		$first = true;
+		foreach ( $frames as $key => $frame ) {
+			$out .= '<button type="button" role="tab" data-gallery-tab="' . esc_attr( $key ) . '" aria-selected="' . ( $first ? 'true' : 'false' ) . '">' . esc_html( $frame[0] ) . '</button>';
+			$first = false;
+		}
+		$out .= '</div><div class="gcalls-gallery__stage">';
+
+		$first = true;
+		foreach ( $frames as $key => $frame ) {
+			$src  = GCALLS_CORE_URL . 'assets/images/product-gallery/' . $frame[1];
+			$out .= '<figure data-gallery-panel="' . esc_attr( $key ) . '"' . ( $first ? '' : ' hidden' ) . '>';
+			$out .= '<img src="' . esc_url( $src ) . '" width="' . esc_attr( (string) $frame[3] ) . '" height="' . esc_attr( (string) $frame[4] ) . '" alt="' . esc_attr( $frame[2] ) . '" ';
+			$out .= $first ? 'fetchpriority="high" decoding="async">' : 'loading="lazy" decoding="async">';
+			$out .= '<figcaption>' . esc_html( $frame[2] ) . '</figcaption></figure>';
+			$first = false;
+		}
+
+		$out .= '</div>';
+
+		return $out . self::caption( __( 'Hình minh họa giao diện – dữ liệu demo đã được ẩn danh', 'gcalls-core' ) );
+	}
+
 	/* --------------------------------------------------- 2. call timeline */
 
 	/** CallTimelineSection — filterable call log with a playback bar. */

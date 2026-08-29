@@ -26,15 +26,74 @@
 
 .gcalls-mock__bar {
 	align-items: center;
-	background: #faf9fc;
-	border-bottom: 1px solid var(--m-border);
+	background: linear-gradient(135deg, var(--m-dark), var(--m-brand));
+	border-bottom: 0;
 	display: flex;
 	gap: 0.4rem;
 	padding: 0.6rem 0.9rem;
 }
 
-.gcalls-mock__dot { background: var(--m-border); border-radius: 50%; height: 0.5rem; width: 0.5rem; }
-.gcalls-mock__title { color: var(--m-muted); font-size: 0.8125rem; margin-left: 0.5rem; }
+.gcalls-mock__dot { background: rgba(255, 255, 255, 0.58); border-radius: 50%; height: 0.5rem; width: 0.5rem; }
+.gcalls-mock__title { color: #fff; font-size: 0.8125rem; font-weight: 700; margin-left: 0.5rem; }
+
+/* Approved product-image gallery. The screenshots stay inside one reserved
+ * stage; changing a tab therefore never shifts the copy or the next section. */
+.gcalls-gallery__tabs {
+	display: flex;
+	gap: 0.4rem;
+	overflow-x: auto;
+	padding: 0.75rem;
+	scrollbar-width: thin;
+}
+
+.gcalls-gallery__tabs button {
+	background: #fff;
+	border: 1px solid var(--m-border);
+	border-radius: 999px;
+	color: var(--m-muted);
+	cursor: pointer;
+	flex: 0 0 auto;
+	font: inherit;
+	font-weight: 650;
+	min-height: 2.5rem;
+	padding: 0.45rem 0.85rem;
+}
+
+.gcalls-gallery__tabs button[aria-selected="true"] {
+	background: var(--m-brand);
+	border-color: var(--m-brand);
+	color: #fff;
+}
+
+.gcalls-gallery__stage {
+	aspect-ratio: 4 / 3;
+	background: linear-gradient(180deg, #fff, var(--m-light));
+	display: grid;
+	place-items: center;
+	padding: 0 0.75rem 0.75rem;
+}
+
+.gcalls-gallery__stage figure { margin: 0; width: 100%; }
+.gcalls-gallery__stage figure[hidden] { display: none; }
+.gcalls-gallery__stage img {
+	background: #fff;
+	border: 1px solid rgba(103, 58, 183, 0.12);
+	border-radius: 0.75rem;
+	display: block;
+	height: auto;
+	width: 100%;
+}
+
+.gcalls-gallery__stage figcaption {
+	color: var(--m-muted);
+	font-size: 0.75rem;
+	margin-top: 0.5rem;
+	text-align: center;
+}
+
+@media (max-width: 640px) {
+	.gcalls-gallery__stage figcaption { display: none; }
+}
 
 .gcalls-mock__strip {
 	align-items: center;

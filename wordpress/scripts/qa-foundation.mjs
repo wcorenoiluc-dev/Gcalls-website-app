@@ -975,6 +975,114 @@ for (const item of [
   console.log(`  --   ${item}`)
 }
 
+/* ------------------------------------------------------------------ *
+ * Checkpoint 008 — the interactive product visuals
+ *
+ * The 008 pack arrived as a plugin ZIP built outside this repository, so the
+ * things it added exist only as long as something here asserts them. Each of
+ * these is a defect that shipped once and would not have failed any other gate.
+ * ------------------------------------------------------------------ */
+
+console.log('\n19. Checkpoint 008 — product visuals')
+
+const GALLERY_DIR = path.join(PLUGIN, 'assets/images/product-gallery')
+const GALLERY_FILES = [
+  'webphone-overview.webp',
+  'customer-profile.webp',
+  'call-history.webp',
+  'analytics-dashboard.webp',
+  'agent-performance.webp',
+  'click-to-call.webp',
+]
+
+const missingGallery = GALLERY_FILES.filter((name) => !exists(path.join(GALLERY_DIR, name)))
+check('the six gallery images are present', missingGallery.length === 0, missingGallery.join(', '))
+
+// Half a megabyte each would be 3 MB of hero, on a page a phone loads first.
+const oversized = GALLERY_FILES.filter((name) => {
+  const file = path.join(GALLERY_DIR, name)
+  return exists(file) && fs.statSync(file).size > 500 * 1024
+})
+check('every gallery image is under 500 KB', oversized.length === 0, oversized.join(', '))
+
+// WebP begins RIFF....WEBP. A PNG renamed .webp passes every other check here
+// and fails only in the browser.
+const notWebp = GALLERY_FILES.filter((name) => {
+  const file = path.join(GALLERY_DIR, name)
+  if (!exists(file)) return false
+  const head = fs.readFileSync(file).subarray(0, 12)
+  return head.subarray(0, 4).toString() !== 'RIFF' || head.subarray(8, 12).toString() !== 'WEBP'
+})
+check('every gallery image really is WebP', notWebp.length === 0, notWebp.join(', '))
+
+const mockupsPhp = read(path.join(PLUGIN, 'includes/class-mockups.php'))
+const mockupsJs = read(path.join(PLUGIN, 'assets/js/mockups.js'))
+
+check('the gallery mockup exists', mockupsPhp.includes('mock_plus_gallery'))
+
+const galleryStates = ['Tổng quan', 'Khách hàng', 'Lịch sử gọi', 'Thống kê', 'Hiệu suất', 'Click-to-Call']
+const missingStates = galleryStates.filter((label) => !mockupsPhp.includes(label))
+check('the gallery has all six states', missingStates.length === 0, missingStates.join(', '))
+
+check('the gallery is wired up', mockupsJs.includes('wireGallery'))
+
+// A tab strip that only answers the mouse is not a tab strip.
+for (const key of ['ArrowLeft', 'ArrowRight']) {
+  check(`the gallery answers ${key}`, mockupsJs.includes(key))
+}
+check('the gallery marks the selected tab', mockupsJs.includes('aria-selected'))
+
+// Roving tabindex: exactly one tab in the strip is reachable by Tab, and the
+// arrows move it. Without it Tab walks through all six before leaving.
+check('the gallery uses a roving tabindex', /tabIndex|tabindex/.test(mockupsJs))
+
+// innerHTML with anything but a literal is how a mockup becomes an injection
+// point. The mockups build DOM nodes instead.
+check('the mockups never assign innerHTML', !mockupsJs.includes('innerHTML'))
+
+const productJson = path.join(PLUGIN, 'data/product-pages.json')
+
+if (!exists(productJson)) {
+  check('product-pages.json exists', false)
+} else {
+  const productPages = JSON.parse(read(productJson)).pages ?? {}
+  const HERO_VISUAL = {
+    'gcalls-plus': 'plus_gallery',
+    cx: 'cx_inbox',
+    voicebot: 'voicebot_builder',
+    'qa-qc': 'qc_transcript',
+  }
+
+  const wrongHero = Object.entries(HERO_VISUAL)
+    .filter(([id, want]) => (productPages[id]?.hero?.mockup ?? '') !== want)
+    .map(([id, want]) => `${id} wants ${want}, has "${productPages[id]?.hero?.mockup ?? ''}"`)
+
+  check('all four product heroes carry their own visual', wrongHero.length === 0, wrongHero.join('; '))
+
+  // Never the same visual twice: reusing the Gcalls Plus gallery on Voicebot
+  // would show one product and label it another, which the 007 addendum
+  // forbids in as many words.
+  const heroes = Object.values(HERO_VISUAL)
+  check('no two products share a hero visual', new Set(heroes).size === heroes.length)
+}
+
+const shortcodesSrc = read(path.join(PLUGIN, 'includes/class-shortcodes.php'))
+
+// One FAQ, from product-pages.json. The page rendered two for a while: the
+// manifest's, and a second from self::faq() reading post meta.
+check(
+  'the product page renders one FAQ, not two',
+  !/\$out \.= self::faq\(/.test(shortcodesSrc),
+)
+
+// A card title heads a description or it is not a heading. Both blanket
+// answers have shipped: all-h3 gave 76 headings against the reference's 59,
+// all-paragraph gave 31.
+check(
+  'card titles are headings only when they head a description',
+  /\$title_tag = empty\( \$item\['body'\] \) \? 'p' : 'h3'/.test(shortcodesSrc),
+)
+
 for (const note of notes) console.log(`\nnote: ${note}`)
 
 console.log(`\nfailures: ${failures.length}`)

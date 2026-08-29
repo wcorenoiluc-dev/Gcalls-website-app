@@ -19,7 +19,7 @@
       "headings": 41,
       "visuals": 9,
       "ctas": 11,
-      "height": 14007
+      "height": 14001
     },
     "missingInWp": [],
     "extraInWp": []
@@ -27,12 +27,12 @@
   {
     "name": "gcalls-plus",
     "route": "/gcalls-plus-webphone/",
-    "score": 86.1,
+    "score": 70.9,
     "parts": {
-      "headings": 75.4,
+      "headings": 49.1,
       "visuals": 100,
       "ctas": 100,
-      "rhythm": 92.1
+      "rhythm": 81.9
     },
     "react": {
       "headings": 55,
@@ -41,43 +41,53 @@
       "height": 13360
     },
     "wp": {
-      "headings": 69,
-      "visuals": 11,
+      "headings": 29,
+      "visuals": 13,
       "ctas": 4,
-      "height": 12303
+      "height": 16308
     },
     "missingInWp": [
+      "Thông tin cuộc gọi nằm rời rạc",
+      "Khó theo dõi những gì đã trao đổi",
+      "Quản lý khó nhìn thấy hoạt động của đội ngũ",
+      "Giải pháp quá phức tạp so với nhu cầu thực tế",
+      "Webphone",
+      "IVR & Call Flow",
+      "Quản lý danh bạ",
+      "Lịch sử tương tác",
+      "Ghi chú & Follow-up",
+      "Phân loại cuộc gọi",
+      "Tiếp nhận hoặc thực hiện cuộc gọi",
+      "Xem context liên hệ",
+      "Ghi lại nội dung quan trọng",
+      "Theo dõi lịch sử",
+      "Sales",
+      "Chăm sóc khách hàng",
+      "Giáo dục",
+      "Dịch vụ",
+      "Thương mại điện tử",
       "PHÙ HỢP VỚI GCALLS PLUS",
-      "KHI NHU CẦU MỞ RỘNG"
+      "KHI NHU CẦU MỞ RỘNG",
+      "Khảo sát nhu cầu",
+      "Xác định hotline và người dùng",
+      "Thiết lập call flow",
+      "Kiểm thử",
+      "Hướng dẫn sử dụng",
+      "Vận hành"
     ],
     "extraInWp": [
-      "Hoạt động trực tiếp trên trình duyệt",
-      "Tập trung vào hoạt động nghe gọi và quản lý tương tác",
-      "Gọn nhẹ hơn so với một Contact Center đa kênh đầy đủ",
-      "Phù hợp với đội Sales và Chăm sóc khách hàng",
-      "Lịch sử cuộc gọi",
-      "Thời gian tương tác",
-      "Ghi chú",
-      "Phân loại",
-      "Hoạt động liên quan",
-      "Thông tin liên hệ",
-      "Lịch sử cuộc gọi",
-      "Ghi chú",
-      "Lịch sử cuộc gọi của đội ngũ",
-      "Dữ liệu hoạt động tập trung",
-      "Trạng thái Agent trong quá trình vận hành",
       "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
     ]
   },
   {
     "name": "gcalls-cx",
     "route": "/gcalls-cx/",
-    "score": 74.7,
+    "score": 69.4,
     "parts": {
-      "headings": 72.5,
+      "headings": 49.2,
       "visuals": 100,
       "ctas": 66.7,
-      "rhythm": 67.5
+      "rhythm": 98.9
     },
     "react": {
       "headings": 59,
@@ -86,45 +96,55 @@
       "height": 13533
     },
     "wp": {
-      "headings": 80,
-      "visuals": 5,
+      "headings": 31,
+      "visuals": 6,
       "ctas": 4,
-      "height": 9131
+      "height": 13684
     },
-    "missingInWp": [],
+    "missingInWp": [
+      "Hội thoại nằm ở nhiều nơi",
+      "Tương tác dễ bị bỏ sót",
+      "Customer context bị phân mảnh",
+      "Quản lý khó theo dõi hiệu suất đa kênh",
+      "Voice / Hotline",
+      "Zalo OA",
+      "Facebook",
+      "SMS",
+      "Email",
+      "Khách hàng liên hệ qua kênh phù hợp",
+      "Gcalls CX tập trung hội thoại",
+      "Xác định context và trạng thái",
+      "Phân công hoặc tiếp tục xử lý",
+      "Theo dõi hoạt động và kết quả",
+      "Giảm phân mảnh công cụ",
+      "Giảm nguy cơ bỏ sót tương tác",
+      "Giữ customer context xuyên kênh",
+      "Có thêm dữ liệu cho quản lý",
+      "Tài chính",
+      "Bảo hiểm",
+      "Bất động sản",
+      "Doanh nghiệp tăng trưởng nhanh",
+      "Khảo sát các điểm chạm hiện tại",
+      "Xác định kênh cần kết nối",
+      "Thiết kế workflow xử lý",
+      "Cấu hình người dùng và phân quyền",
+      "Kiểm thử",
+      "Hướng dẫn vận hành",
+      "Go-live theo phạm vi đã thống nhất"
+    ],
     "extraInWp": [
-      "Xem hội thoại theo kênh",
-      "Theo dõi trạng thái xử lý",
-      "Xác định hội thoại cần tiếp tục",
-      "Hỗ trợ phân công xử lý khi workflow được cấu hình",
-      "Duy trì customer context liên quan",
-      "Tạo hoặc quản lý ticket theo workflow được triển khai",
-      "Theo dõi trạng thái xử lý",
-      "Phân công người phụ trách",
-      "Duy trì lịch sử liên quan",
-      "Hỗ trợ quá trình follow-up",
-      "Hồ sơ khách hàng",
-      "Lịch sử theo kênh",
-      "Tương tác gần đây",
-      "Lịch sử ticket",
-      "Trạng thái xử lý",
-      "Ghi chú và context liên quan",
-      "Khối lượng hội thoại",
-      "Trạng thái ticket",
-      "Phân bổ theo kênh",
-      "Workload của đội ngũ",
       "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
     ]
   },
   {
     "name": "voicebot",
     "route": "/voicebot-ai/",
-    "score": 87.4,
+    "score": 62.1,
     "parts": {
-      "headings": 87.3,
+      "headings": 35.6,
       "visuals": 100,
       "ctas": 80,
-      "rhythm": 83.9
+      "rhythm": 86.7
     },
     "react": {
       "headings": 59,
@@ -133,22 +153,51 @@
       "height": 10222
     },
     "wp": {
-      "headings": 63,
-      "visuals": 5,
+      "headings": 24,
+      "visuals": 6,
       "ctas": 4,
-      "height": 8580
+      "height": 11789
     },
     "missingInWp": [
+      "Thời gian dồn vào các cuộc gọi có kịch bản giống nhau",
+      "Khó mở rộng số lượng cuộc gọi trong giai đoạn cao điểm",
+      "Ít thời gian còn lại cho khách hàng cần tư vấn chuyên sâu",
+      "Nhắc lịch hẹn",
+      "Nhắc thanh toán",
+      "Xác nhận thông tin",
+      "Sàng lọc nhu cầu",
+      "Chiến dịch gọi hàng loạt",
+      "Xử lý bước đầu ngoài giờ",
+      "Xác định mục tiêu chiến dịch",
+      "Chuẩn bị dữ liệu và kịch bản",
+      "Voicebot thực hiện cuộc gọi",
+      "Ghi nhận kết quả phản hồi",
+      "Chuyển trường hợp cần thiết cho nhân viên",
+      "Theo dõi và tối ưu",
       "Voicebot đảm nhận",
       "Nhân viên tiếp nhận",
+      "Hệ thống tổng đài",
+      "CRM",
+      "Dữ liệu chiến dịch",
+      "Quy trình chăm sóc khách hàng",
+      "Hệ thống báo cáo",
+      "Tài chính và bảo hiểm",
+      "Giáo dục",
+      "Thương mại điện tử và bán lẻ",
+      "BPO và Outsourcing",
+      "Khảo sát nhu cầu",
+      "Xác định use case",
+      "Xây dựng kịch bản",
+      "Thiết lập và kiểm thử",
+      "Vận hành và tối ưu",
+      "Mở rộng khả năng xử lý cuộc gọi",
+      "Tăng tính nhất quán của tác vụ lặp lại",
+      "Giúp nhân viên tập trung vào tương tác quan trọng",
+      "Dữ liệu cuộc gọi rõ ràng hơn",
+      "Linh hoạt thử nghiệm theo từng use case",
       "Câu hỏi thường gặp về Voicebot AI"
     ],
     "extraInWp": [
-      "Thực hiện tác vụ gọi theo kịch bản đã thiết lập.",
-      "Ghi nhận phản hồi của khách hàng trong cuộc gọi.",
-      "Phân loại kết quả cuộc gọi theo các nhóm đã được cấu hình.",
-      "Chuyển các tình huống cần con người xử lý sang đội ngũ.",
-      "Cung cấp dữ liệu phục vụ theo dõi chiến dịch.",
       "Câu hỏi thường gặp về Gcalls Voicebot AI",
       "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
     ]
@@ -156,12 +205,12 @@
   {
     "name": "qa-qc",
     "route": "/qc-bot-ai/",
-    "score": 78.3,
+    "score": 67.8,
     "parts": {
-      "headings": 81,
+      "headings": 48.2,
       "visuals": 100,
       "ctas": 66.7,
-      "rhythm": 63.9
+      "rhythm": 93.4
     },
     "react": {
       "headings": 56,
@@ -170,26 +219,41 @@
       "height": 12783
     },
     "wp": {
-      "headings": 63,
-      "visuals": 4,
+      "headings": 30,
+      "visuals": 5,
       "ctas": 4,
-      "height": 8169
+      "height": 11939
     },
     "missingInWp": [
+      "Khó xem xét toàn bộ khối lượng hội thoại",
+      "Chấm điểm dễ phụ thuộc vào cách đánh giá của từng người",
+      "Tốn thời gian tìm cuộc gọi có vấn đề",
+      "Dữ liệu QA khó tổng hợp thành xu hướng",
+      "Tiếp nhận dữ liệu cuộc gọi",
+      "Chuyển giọng nói thành văn bản",
+      "Áp dụng tiêu chí QA",
+      "Phát hiện tín hiệu cần chú ý",
+      "QA xem lại và phân tích",
+      "Speech-to-Text",
+      "QA Criteria",
+      "AI-assisted Scoring",
+      "Keyword Analysis",
+      "Sentiment Signals",
+      "Conversation Review",
+      "Quality Dashboard",
       "AI hỗ trợ",
       "QA xác nhận",
-      "Manager cải thiện"
+      "Manager cải thiện",
+      "Giảm thời gian tìm cuộc gọi cần kiểm tra",
+      "Chuẩn hóa khung đánh giá",
+      "Dễ phát hiện xu hướng",
+      "Hỗ trợ coaching có context",
+      "Customer Service QA",
+      "Telesales QA",
+      "BPO / Contact Center",
+      "Finance & Insurance"
     ],
     "extraInWp": [
-      "Thiết lập tiêu chí QA",
-      "Gán trọng số theo mức độ quan trọng",
-      "Hỗ trợ scoring trên dữ liệu được phân tích",
-      "Đưa cuộc gọi cần chú ý vào luồng review",
-      "Cho phép QA xem lại context trước khi kết luận",
-      "Tìm từ khóa/cụm nội dung theo cấu hình",
-      "Làm nổi bật tín hiệu cảm xúc",
-      "Xác định hội thoại có dấu hiệu bất thường",
-      "Theo dõi xu hướng thay vì chỉ nhìn từng cuộc gọi riêng lẻ",
       "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
     ]
   },

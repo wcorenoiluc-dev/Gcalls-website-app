@@ -612,6 +612,7 @@ final class Shortcodes {
 
 		if ( ! empty( $hero['heading'] ) ) {
 			$out .= '<section class="gcalls-product__hero">';
+			$out .= '<div class="gcalls-product__hero-copy">';
 
 			if ( ! empty( $hero['eyebrow'] ) ) {
 				$out .= '<p class="gcalls-eyebrow">' . esc_html( $hero['eyebrow'] ) . '</p>';
@@ -647,6 +648,14 @@ final class Shortcodes {
 					'note'     => '',
 				)
 			);
+
+			$out .= '</div>';
+
+			if ( ! empty( $hero['mockup'] ) ) {
+				$out .= '<div class="gcalls-product__hero-visual">';
+				$out .= Mockups::render( array( 'id' => (string) $hero['mockup'] ) );
+				$out .= '</div>';
+			}
 
 			$out .= '</section>';
 		}
@@ -699,7 +708,27 @@ final class Shortcodes {
 						$out .= '<span class="gcalls-badge">' . esc_html( (string) $item['label'] ) . '</span>';
 					}
 					if ( ! empty( $item['title'] ) ) {
-						$out .= '<h3 class="gcalls-product__card-title">' . esc_html( (string) $item['title'] ) . '</h3>';
+						/*
+						 * A CARD WITH A DESCRIPTION IS A SUBSECTION. A BARE LABEL IS NOT.
+						 *
+						 * Both blanket answers are wrong, and this page has now shipped
+						 * each of them. Every title as h3 gave /gcalls-cx/ 76 headings
+						 * against the reference's 59 — an outline where the reference
+						 * has a product story. Every title as a paragraph took it to 31,
+						 * losing half the document structure a screen-reader user
+						 * navigates by.
+						 *
+						 * React draws the line by shape, and so does this: an item with
+						 * a title AND a body is a card, and its title heads the passage
+						 * under it. An item that is a title alone is a row in a list —
+						 * a channel name, an integration, a capability — and heading it
+						 * announces a section that has no content.
+						 */
+						$title_tag = empty( $item['body'] ) ? 'p' : 'h3';
+
+						$out .= '<' . $title_tag . ' class="gcalls-product__card-title">';
+						$out .= esc_html( (string) $item['title'] );
+						$out .= '</' . $title_tag . '>';
 					}
 					if ( ! empty( $item['body'] ) ) {
 						$out .= '<p class="gcalls-product__card-body">' . esc_html( (string) $item['body'] ) . '</p>';
@@ -713,10 +742,6 @@ final class Shortcodes {
 		}
 
 		/* --- FAQ, then the ask --- */
-		$out .= self::faq();
-
-		$out .= '<section class="gcalls-product__final">';
-		/* --- FAQ --- */
 
 		$faq = (array) ( $page['faq'] ?? array() );
 
@@ -753,6 +778,7 @@ final class Shortcodes {
 			$out .= '</section>';
 		}
 
+		$out .= '<section class="gcalls-product__final">';
 		$out .= '<h2 class="gcalls-product__heading">' . esc_html__( 'Trao đổi cấu hình phù hợp với đội ngũ của bạn', 'gcalls-core' ) . '</h2>';
 		$out .= self::cta(
 			array(

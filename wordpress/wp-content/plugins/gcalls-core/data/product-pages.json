@@ -5,6 +5,7 @@
       "route": "/gcalls-plus-webphone/",
       "product": "Gcalls Plus Webphone",
       "hero": {
+        "mockup": "plus_gallery",
         "eyebrow": "GCALLS PLUS WEBPHONE",
         "heading": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình duyệt",
         "lead": "Nghe gọi, quản lý danh bạ, theo dõi lịch sử tương tác và hoạt động của đội ngũ Sales/CSKH trong một giao diện Webphone tập trung.",
@@ -374,6 +375,7 @@
       "route": "/gcalls-cx/",
       "product": "Gcalls CX",
       "hero": {
+        "mockup": "cx_inbox",
         "eyebrow": "GCALLS CX • OMNICHANNEL CONTACT CENTER",
         "heading": "Gcalls CX – hợp nhất mọi điểm chạm khách hàng trên một màn hình",
         "lead": "Tập trung Voice, Zalo, Facebook, SMS, Email và quy trình hỗ trợ khách hàng vào một không gian làm việc để đội CSKH dễ theo dõi hội thoại, ticket và customer context hơn.",
@@ -797,6 +799,7 @@
       "route": "/voicebot-ai/",
       "product": "Gcalls Voicebot AI",
       "hero": {
+        "mockup": "voicebot_builder",
         "eyebrow": "VOICEBOT AI CHO DOANH NGHIỆP",
         "heading": "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI",
         "lead": "Gcalls giúp doanh nghiệp triển khai Voicebot cho các tác vụ như nhắc lịch, xác nhận thông tin, sàng lọc nhu cầu và xử lý bước đầu ngoài giờ — để đội ngũ tập trung vào những tương tác cần chuyên môn và sự thấu hiểu của con người.",
@@ -1119,6 +1122,7 @@
       "route": "/qc-bot-ai/",
       "product": "QA QC Center",
       "hero": {
+        "mockup": "qc_transcript",
         "eyebrow": "QA QC CENTER • POWERED BY QC BOT AI",
         "heading": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
         "lead": "Chuyển nội dung cuộc gọi thành dữ liệu có cấu trúc, áp dụng tiêu chí QA và làm nổi bật những tín hiệu cần kiểm tra để đội quản lý tập trung vào các hội thoại quan trọng.",

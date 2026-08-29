@@ -70,6 +70,7 @@ async function load(file) {
 const PAGES = [
   {
     id: 'gcalls-plus',
+    heroMockup: 'plus_gallery',
     route: '/gcalls-plus-webphone/',
     file: 'gcallsPlus.ts',
     lead: { intent: 'consultation', source: 'gcalls_plus', product: 'Gcalls Plus Webphone' },
@@ -89,6 +90,7 @@ const PAGES = [
   },
   {
     id: 'cx',
+    heroMockup: 'cx_inbox',
     route: '/gcalls-cx/',
     file: 'gcallsCx.ts',
     lead: { intent: 'consultation', source: 'gcalls_cx', product: 'Gcalls CX' },
@@ -102,6 +104,7 @@ const PAGES = [
   },
   {
     id: 'voicebot',
+    heroMockup: 'voicebot_builder',
     route: '/voicebot-ai/',
     file: 'voicebotAi.ts',
     lead: { intent: 'consultation', source: 'voicebot_ai', product: 'Gcalls Voicebot AI' },
@@ -114,6 +117,7 @@ const PAGES = [
   },
   {
     id: 'qa-qc',
+    heroMockup: 'qc_transcript',
     route: '/qc-bot-ai/',
     file: 'qaQcCenter.ts',
     lead: { intent: 'consultation', source: 'qa_qc_center', product: 'QA QC Center' },
@@ -171,7 +175,20 @@ for (const page of PAGES) {
   const module = await load(page.file)
 
   const heroRaw = module[Object.keys(module).find((k) => k.endsWith('_HERO'))]
+  /*
+   * THE HERO'S VISUAL IS PART OF THE HERO, AND HAS TO BE GENERATED WITH IT.
+   *
+   * Checkpoint 008 added a visual to each product hero by editing
+   * product-pages.json directly. That worked and made the file unreproducible:
+   * the next `npm run wp:product` — the ordinary way to push a copy fix —
+   * regenerated the JSON without the `mockup` key and silently removed all
+   * four hero visuals. Nothing would have failed; the pages would just have
+   * gone back to being walls of text.
+   */
+  if (!page.heroMockup) problems.push(`${page.id}: no heroMockup declared`)
+
   const hero = {
+    mockup: page.heroMockup ?? '',
     eyebrow: pick(heroRaw ?? {}, ['eyebrow']),
     heading: pick(heroRaw ?? {}, ['h1', 'title', 'heading']),
     lead: pick(heroRaw ?? {}, ['description', 'lead', 'subtitle', 'sub']),

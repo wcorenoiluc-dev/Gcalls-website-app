@@ -88,6 +88,34 @@
     })
   }
 
+  /** An approved screenshot gallery with tabs and arrow-key navigation. */
+  function wireGallery(root) {
+    var tabs = Array.prototype.slice.call(root.querySelectorAll('[data-gallery-tab]'))
+    if (!tabs.length) return
+
+    function activate(tab) {
+      var value = tab.getAttribute('data-gallery-tab')
+      selectIn(root, 'data-gallery-tab', value)
+      tabs.forEach(function (item) { item.tabIndex = item === tab ? 0 : -1 })
+      Array.prototype.forEach.call(root.querySelectorAll('[data-gallery-panel]'), function (panel) {
+        panel.hidden = panel.getAttribute('data-gallery-panel') !== value
+      })
+    }
+
+    tabs.forEach(function (tab, index) {
+      tab.tabIndex = index === 0 ? 0 : -1
+      tab.addEventListener('click', function () { activate(tab) })
+      tab.addEventListener('keydown', function (event) {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return
+        event.preventDefault()
+        var direction = event.key === 'ArrowRight' ? 1 : -1
+        var next = tabs[(index + direction + tabs.length) % tabs.length]
+        activate(next)
+        next.focus()
+      })
+    })
+  }
+
   /** The playback bar. Advances only while "playing". */
   function wirePlayer(root) {
     var play = root.querySelector('[data-mock-play]')
@@ -166,6 +194,7 @@
   Array.prototype.forEach.call(document.querySelectorAll('[data-gcalls-mock]'), function (root) {
     wireFilters(root)
     wirePanels(root)
+    wireGallery(root)
     wirePlayer(root)
     wireTimer(root)
     wireChart(root)
