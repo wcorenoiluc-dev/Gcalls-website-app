@@ -250,6 +250,36 @@ async function blogBody(repo, routes) {
 }
 
 /* ------------------------------------------------------------------ *
+ * The four product pages
+ * ------------------------------------------------------------------ */
+
+/**
+ * Each product page is one shortcode, rendered from `data/product-pages.json`.
+ *
+ * WHY THESE ARE HERE AT ALL WHEN THE SHORTCODE DOES THE WORK
+ * They were inserted into the live pages BY HAND. That worked, and it made
+ * every one of those pages unreproducible: the manifest still described them as
+ * a one-line placeholder, so re-running the import with --force — the ordinary
+ * way to push a content fix — would have replaced four finished product pages
+ * with a sentence each. The importer's edited-content guard is what caught it,
+ * and a guard catching this every time is not the same as it not being a
+ * problem. A page that only exists because somebody pasted something into
+ * wp-admin is a page nobody can rebuild.
+ */
+function productBodies(repo) {
+  const file = path.join(repo, 'wordpress/wp-content/plugins/gcalls-core/data/product-pages.json')
+  const data = JSON.parse(fs.readFileSync(file, 'utf8'))
+  const out = {}
+
+  for (const [id, page] of Object.entries(data.pages ?? {})) {
+    if (!page.route) throw new Error(`product page ${id} has no route`)
+    out[page.route] = { content: shortcode(`[gcalls_product_page id="${id}"]`) }
+  }
+
+  return out
+}
+
+/* ------------------------------------------------------------------ *
  * Public entry point
  * ------------------------------------------------------------------ */
 
@@ -262,6 +292,7 @@ export async function pageBodies(repo) {
   const routes = routeTable(repo)
 
   return {
+    ...productBodies(repo),
     '/uoc-tinh-chi-phi/': await costEstimatorBody(repo, routes),
     '/blog/': await blogBody(repo, routes),
   }

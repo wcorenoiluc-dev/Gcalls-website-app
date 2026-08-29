@@ -941,7 +941,11 @@ final class Importer {
 				continue;
 			}
 
-			$post_id = self::find_by_route( self::normalise_route( (string) ( $page['route'] ?? '' ) ) );
+			// resolve_route, not find_by_route: the route meta is written by
+			// this same run, so on a DRY run there is none to find and the
+			// report claimed it could not find pages it had just matched —
+			// two errors on every dry run, for something that always worked.
+			$post_id = self::resolve_route( self::normalise_route( (string) ( $page['route'] ?? '' ) ) );
 
 			if ( ! $post_id ) {
 				$counts['errors'][] = sprintf(
@@ -1162,6 +1166,12 @@ final class Importer {
 			$front = (int) get_option( 'page_on_front' );
 
 			return $front > 0 ? $front : null;
+		}
+
+		$posts = (int) get_option( 'page_for_posts' );
+
+		if ( $posts > 0 && self::normalise_route( (string) wp_parse_url( (string) get_permalink( $posts ), PHP_URL_PATH ) ) === $route ) {
+			return $posts;
 		}
 
 		$page = get_page_by_path( trim( $route, '/' ) );
