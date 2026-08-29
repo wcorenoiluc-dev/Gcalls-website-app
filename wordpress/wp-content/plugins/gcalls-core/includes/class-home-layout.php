@@ -242,20 +242,49 @@ final class Home_Layout {
 		 * Keep what is there before replacing it. Stored as an option rather
 		 * than a revision because Elementor data does not travel in revisions
 		 * reliably, and this has to be restorable from this same screen.
+		 *
+		 * THE FIRST SNAPSHOT IS THE ONLY ONE THAT MATTERS, AND IT IS IMMUTABLE.
+		 * This used to overwrite unconditionally. Press the button twice and
+		 * the second run captured what the FIRST run had just written — so the
+		 * site's original layout was gone, and "Hoàn tác" would have restored
+		 * this release's layout while reporting success. A rollback that
+		 * silently becomes a no-op is worse than no rollback, because nobody
+		 * checks it until they need it.
+		 *
+		 * The snapshot is therefore written once per page and never again. A
+		 * stored snapshot belonging to a DIFFERENT page is stale — the front
+		 * page has been repointed since — and is replaced, because it can no
+		 * longer restore anything.
 		 */
 		$previous = (string) get_post_meta( $page_id, '_elementor_data', true );
+		$existing = get_option( self::OPTION_ROLLBACK );
 
-		update_option(
-			self::OPTION_ROLLBACK,
-			array(
-				'page_id'       => $page_id,
-				'saved_at_gmt'  => gmdate( 'c' ),
-				'previous_data' => $previous,
-				'previous_hash' => '' === $previous ? '' : hash( 'sha256', $previous ),
-				'plugin_version' => VERSION,
-			),
-			false
-		);
+		$have_original = is_array( $existing )
+			&& (int) ( $existing['page_id'] ?? 0 ) === $page_id
+			&& array_key_exists( 'previous_data', $existing );
+
+		if ( $have_original ) {
+			// Record the re-run for the audit trail, but do not touch the
+			// bytes that rollback depends on.
+			$existing['runs']               = (int) ( $existing['runs'] ?? 1 ) + 1;
+			$existing['last_run_gmt']       = gmdate( 'c' );
+			$existing['last_replaced_hash'] = '' === $previous ? '' : hash( 'sha256', $previous );
+
+			update_option( self::OPTION_ROLLBACK, $existing, false );
+		} else {
+			update_option(
+				self::OPTION_ROLLBACK,
+				array(
+					'page_id'        => $page_id,
+					'saved_at_gmt'   => gmdate( 'c' ),
+					'previous_data'  => $previous,
+					'previous_hash'  => '' === $previous ? '' : hash( 'sha256', $previous ),
+					'plugin_version' => VERSION,
+					'runs'           => 1,
+				),
+				false
+			);
+		}
 
 		update_post_meta( $page_id, '_elementor_data', wp_slash( $encoded ) );
 
@@ -420,8 +449,20 @@ final class Home_Layout {
 			array(
 				__( 'Có bản lưu để hoàn tác', 'gcalls-core' ),
 				is_array( $rollback )
-					? sprintf( '%s (page ID %d)', (string) ( $rollback['saved_at_gmt'] ?? '?' ), (int) ( $rollback['page_id'] ?? 0 ) )
+					? sprintf(
+						/* translators: 1: timestamp, 2: page id, 3: number of runs. */
+						__( '%1$s (page ID %2$d) — đã ghi %3$d lần, bản lưu vẫn là bản GỐC', 'gcalls-core' ),
+						(string) ( $rollback['saved_at_gmt'] ?? '?' ),
+						(int) ( $rollback['page_id'] ?? 0 ),
+						(int) ( $rollback['runs'] ?? 1 )
+					)
 					: __( 'chưa có', 'gcalls-core' ),
+			),
+			array(
+				__( 'SHA-256 bản lưu (sẽ khôi phục về)', 'gcalls-core' ),
+				is_array( $rollback )
+					? ( (string) ( $rollback['previous_hash'] ?? '' ) ?: __( '(trang trước đó trống)', 'gcalls-core' ) )
+					: '—',
 			),
 		);
 

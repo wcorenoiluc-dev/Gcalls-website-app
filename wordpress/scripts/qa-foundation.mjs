@@ -1048,6 +1048,22 @@ if (exists(mockPhp)) {
     // duplicated sections impossible to express.
     check('the updater replaces _elementor_data', layout.includes("update_post_meta( \$page_id, '_elementor_data'"))
     check('the updater keeps a rollback copy', layout.includes('OPTION_ROLLBACK') && layout.includes('previous_data'))
+
+    /*
+     * The rollback snapshot must survive a second apply.
+     *
+     * The first cut overwrote it unconditionally, so pressing the button
+     * twice captured what the first press had just written: the site's
+     * original layout was gone and "Hoàn tác" would have restored this
+     * release's own layout while reporting success. A rollback that quietly
+     * becomes a no-op is worse than none, because nobody tests it until the
+     * moment they need it.
+     */
+    check(
+      'a second apply cannot overwrite the original snapshot',
+      layout.includes('$have_original') && /if \( \$have_original \)/.test(layout),
+    )
+    check('the updater counts its runs', layout.includes("'runs'"))
     check('the updater validates the envelope before writing', layout.includes("'type'") && layout.includes("'elType'"))
     check('the updater clears the page CSS cache', layout.includes('_elementor_css'))
 
