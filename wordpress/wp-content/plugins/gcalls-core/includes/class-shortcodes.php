@@ -709,22 +709,26 @@ final class Shortcodes {
 					}
 					if ( ! empty( $item['title'] ) ) {
 						/*
-						 * A CARD WITH A DESCRIPTION IS A SUBSECTION. A BARE LABEL IS NOT.
+						 * THE SOURCE DATA DECIDES WHETHER A TITLE IS A HEADING.
 						 *
-						 * Both blanket answers are wrong, and this page has now shipped
-						 * each of them. Every title as h3 gave /gcalls-cx/ 76 headings
+						 * Three answers have shipped here and the first two were both
+						 * guesses. Every title as h3 gave /gcalls-cx/ 76 headings
 						 * against the reference's 59 — an outline where the reference
-						 * has a product story. Every title as a paragraph took it to 31,
-						 * losing half the document structure a screen-reader user
-						 * navigates by.
+						 * has a product story. Every title as a paragraph took it to
+						 * 31, losing half the structure a screen-reader user navigates
+						 * by. Heading only titles that carry a description took it to
+						 * 53, dropping the deployment steps — which React heads and
+						 * which have no description.
 						 *
-						 * React draws the line by shape, and so does this: an item with
-						 * a title AND a body is a card, and its title heads the passage
-						 * under it. An item that is a title alone is a row in a list —
-						 * a channel name, an integration, a capability — and heading it
-						 * announces a section that has no content.
+						 * React renders `items`, `steps`, `rows` and `channels` as
+						 * cards, each title heading the passage beneath it, and
+						 * `capabilities`, `points` and `valuePoints` as a bullet list
+						 * inside one card, where a heading would announce a section with
+						 * no content. The exporter records which of the two it read, so
+						 * this stops guessing. See normalise() in
+						 * wordpress/scripts/build-product-content.mjs.
 						 */
-						$title_tag = empty( $item['body'] ) ? 'p' : 'h3';
+						$title_tag = empty( $section['cards'] ) ? 'p' : 'h3';
 
 						$out .= '<' . $title_tag . ' class="gcalls-product__card-title">';
 						$out .= esc_html( (string) $item['title'] );

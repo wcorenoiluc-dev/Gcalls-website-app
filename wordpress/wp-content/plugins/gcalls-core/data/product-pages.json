@@ -56,6 +56,7 @@
           "eyebrow": "BÀI TOÁN",
           "heading": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp",
           "lead": "Khi dữ liệu cuộc gọi, ghi chú và lịch sử khách hàng nằm rải rác, ngay cả một đội Sales hoặc CSKH nhỏ cũng có thể mất nhiều thời gian để theo dõi và tiếp tục từng cuộc hội thoại.",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -85,6 +86,7 @@
           "eyebrow": "GCALLS PLUS WEBPHONE",
           "heading": "Webphone đưa chức năng tổng đài vào trình duyệt",
           "lead": "Gcalls Plus tập trung các chức năng nghe gọi và quản lý tương tác vào giao diện Webphone để nhân viên có thể xử lý công việc trên máy tính.",
+          "cards": false,
           "items": [
             {
               "label": "",
@@ -114,6 +116,7 @@
           "eyebrow": "NĂNG LỰC CỐT LÕI",
           "heading": "Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày",
           "lead": "",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -153,6 +156,7 @@
           "eyebrow": "LỊCH SỬ TƯƠNG TÁC",
           "heading": "Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi riêng lẻ",
           "lead": "Lịch sử tương tác giúp nhân viên xem lại những lần liên hệ trước, nội dung đã ghi chú và các hoạt động liên quan trước khi tiếp tục xử lý khách hàng.",
+          "cards": false,
           "items": [
             {
               "label": "",
@@ -187,6 +191,7 @@
           "eyebrow": "CUSTOMER CONTEXT",
           "heading": "Hiểu khách hàng trước khi tiếp tục cuộc hội thoại",
           "lead": "Khi thông tin liên hệ, lịch sử cuộc gọi và ghi chú được tập trung trong cùng một giao diện, nhân viên có thể nhanh chóng xem lại những gì đã diễn ra trước khi tiếp tục trao đổi với khách hàng.",
+          "cards": false,
           "items": [
             {
               "label": "",
@@ -211,6 +216,7 @@
           "eyebrow": "QUY TRÌNH",
           "heading": "Từ cuộc gọi đến bước follow-up tiếp theo",
           "lead": "",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -240,6 +246,7 @@
           "eyebrow": "QUẢN LÝ HOẠT ĐỘNG",
           "heading": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung",
           "lead": "Lịch sử và dữ liệu hoạt động cuộc gọi giúp người quản lý có thêm cơ sở để theo dõi cách đội Sales/CSKH đang vận hành thay vì chỉ dựa vào báo cáo thủ công từ từng nhân viên.",
+          "cards": false,
           "items": [
             {
               "label": "",
@@ -264,6 +271,7 @@
           "eyebrow": "KẾT NỐI HỆ THỐNG",
           "heading": "Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần",
           "lead": "Khi quy trình Sales hoặc CSKH đã vận hành trên CRM, Gcalls có thể mở rộng từ Webphone sang mô hình tích hợp sâu hơn để hoạt động cuộc gọi gắn với dữ liệu và workflow hiện có của doanh nghiệp.",
+          "cards": false,
           "items": [],
           "media": "GP-12"
         },
@@ -272,6 +280,7 @@
           "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
           "heading": "Gcalls Plus phù hợp với những đội ngũ nào?",
           "lead": "",
+          "cards": true,
           "items": [
             {
               "label": "",
@@ -306,6 +315,7 @@
           "eyebrow": "PHẠM VI PHÙ HỢP",
           "heading": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Contact Center phức tạp",
           "lead": "",
+          "cards": false,
           "items": [],
           "media": "GP-02"
         },
@@ -314,6 +324,7 @@
           "eyebrow": "TRIỂN KHAI",
           "heading": "Triển khai theo nhu cầu vận hành thực tế",
           "lead": "Gcalls Plus được thiết kế theo mô hình Webphone để giảm độ phức tạp khi triển khai cho đội ngũ cần một hệ thống nghe gọi tập trung. Thời gian triển khai thực tế phụ thuộc vào cấu hình hotline, call flow, số lượng người dùng và yêu cầu tích hợp của doanh nghiệp.",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -353,6 +364,7 @@
           "eyebrow": "CẤU HÌNH & CHI PHÍ",
           "heading": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
           "lead": "Quy mô người dùng, hotline, lưu lượng gọi và yêu cầu tích hợp có thể ảnh hưởng đến cấu hình giải pháp. Sử dụng công cụ ước tính để mô tả nhu cầu trước khi nhận tư vấn.",
+          "cards": false,
           "items": []
         },
         {
@@ -360,6 +372,7 @@
           "eyebrow": "KHÁCH HÀNG",
           "heading": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
           "lead": "",
+          "cards": false,
           "items": []
         },
         {
@@ -367,6 +380,7 @@
           "eyebrow": "GCALLS PLUS WEBPHONE",
           "heading": "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ của bạn đang làm việc",
           "lead": "Chia sẻ quy mô Sales/CSKH, số hotline và quy trình hiện tại để Gcalls tư vấn cấu hình Webphone phù hợp.",
+          "cards": false,
           "items": []
         }
       ]
@@ -426,6 +440,7 @@
           "eyebrow": "BÀI TOÁN ĐA KÊNH",
           "heading": "Nhiều kênh giao tiếp không đồng nghĩa với một trải nghiệm liền mạch",
           "lead": "Khi mỗi kênh được vận hành trên một công cụ khác nhau, đội CSKH dễ mất context, khó theo dõi trạng thái xử lý và khó có một bức tranh thống nhất về hành trình tương tác của khách hàng.",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -454,6 +469,7 @@
           "eyebrow": "OMNICHANNEL WORKSPACE",
           "heading": "Một không gian làm việc cho nhiều điểm chạm khách hàng",
           "lead": "Gcalls CX tập trung các kênh giao tiếp và quy trình chăm sóc vào một workspace để nhân viên có thể theo dõi hội thoại, customer context và trạng thái xử lý thuận tiện hơn.",
+          "cards": false,
           "items": [],
           "mockup": "cx_inbox"
         },
@@ -462,6 +478,7 @@
           "eyebrow": "ĐIỂM CHẠM",
           "heading": "Kết nối những kênh khách hàng đang sử dụng",
           "lead": "",
+          "cards": true,
           "items": [
             {
               "label": "",
@@ -495,6 +512,7 @@
           "eyebrow": "OMNICHANNEL INBOX",
           "heading": "Giảm việc chuyển đổi giữa nhiều màn hình khi xử lý khách hàng",
           "lead": "Thay vì mở từng ứng dụng riêng lẻ, đội CSKH có thể làm việc trên một giao diện tập trung hơn để theo dõi hội thoại và trạng thái xử lý của các kênh được kết nối.",
+          "cards": false,
           "items": [
             {
               "label": "",
@@ -529,6 +547,7 @@
           "eyebrow": "TICKET & WORKFLOW",
           "heading": "Biến hội thoại thành công việc có trạng thái và người chịu trách nhiệm",
           "lead": "Khi một yêu cầu cần được theo dõi qua nhiều bước, ticket và workflow giúp đội ngũ tổ chức việc tiếp nhận, phân công và tiếp tục xử lý rõ ràng hơn.",
+          "cards": false,
           "items": [
             {
               "label": "",
@@ -562,6 +581,7 @@
           "eyebrow": "CUSTOMER CONTEXT",
           "heading": "Hiểu những gì đã xảy ra trước khi phản hồi khách hàng",
           "lead": "Lịch sử tương tác và dữ liệu liên quan giúp nhân viên có thêm bối cảnh khi tiếp nhận một hội thoại mới hoặc tiếp tục yêu cầu đang xử lý.",
+          "cards": false,
           "items": [
             {
               "label": "",
@@ -601,6 +621,7 @@
           "eyebrow": "CÁCH HOẠT ĐỘNG",
           "heading": "Từ nhiều điểm chạm đến một quy trình chăm sóc tập trung hơn",
           "lead": "",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -635,6 +656,7 @@
           "eyebrow": "BÁO CÁO VẬN HÀNH",
           "heading": "Theo dõi hoạt động đa kênh từ dữ liệu tập trung",
           "lead": "Dữ liệu từ các kênh và workflow được triển khai giúp người quản lý có thêm góc nhìn về workload, trạng thái xử lý và hoạt động của đội CSKH.",
+          "cards": false,
           "items": [
             {
               "label": "",
@@ -664,6 +686,7 @@
           "eyebrow": "GIÁ TRỊ VẬN HÀNH",
           "heading": "Giúp đội CSKH làm việc với ít điểm đứt gãy hơn",
           "lead": "",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -692,6 +715,7 @@
           "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
           "heading": "Gcalls CX phù hợp với những mô hình có nhiều điểm chạm khách hàng",
           "lead": "",
+          "cards": true,
           "items": [
             {
               "label": "",
@@ -720,6 +744,7 @@
           "eyebrow": "KẾT NỐI HỆ THỐNG",
           "heading": "Kết nối giao tiếp đa kênh với dữ liệu và quy trình doanh nghiệp",
           "lead": "Gcalls CX tập trung vào vận hành giao tiếp đa kênh. Khi doanh nghiệp cần kết nối sâu hoạt động cuộc gọi với CRM, Gcalls có giải pháp tích hợp riêng cho workflow Sales và Customer Service.",
+          "cards": false,
           "items": []
         },
         {
@@ -727,6 +752,7 @@
           "eyebrow": "CHỌN ĐÚNG GIẢI PHÁP",
           "heading": "Mỗi bài toán giao tiếp cần một lớp sản phẩm khác nhau",
           "lead": "",
+          "cards": true,
           "items": []
         },
         {
@@ -734,6 +760,7 @@
           "eyebrow": "TRIỂN KHAI",
           "heading": "Thiết kế cấu hình theo kênh và workflow doanh nghiệp đang sử dụng",
           "lead": "Phạm vi triển khai Gcalls CX phụ thuộc vào các kênh cần kết nối, quy trình ticket, số lượng người dùng và hệ thống doanh nghiệp liên quan.",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -777,6 +804,7 @@
           "eyebrow": "TRIỂN KHAI THEO BỐI CẢNH THỰC TẾ",
           "heading": "Mỗi hành trình khách hàng cần một workflow khác nhau",
           "lead": "Kênh giao tiếp, cấu trúc đội ngũ và cách xử lý ticket khác nhau giữa từng doanh nghiệp. Gcalls CX cần được cấu hình theo quy trình vận hành thực tế thay vì áp dụng một mô hình giống nhau cho mọi tổ chức.",
+          "cards": false,
           "items": []
         },
         {
@@ -784,6 +812,7 @@
           "eyebrow": "CẤU HÌNH & CHI PHÍ",
           "heading": "Chi phí phụ thuộc vào số kênh, người dùng và phạm vi triển khai",
           "lead": "Cấu hình Gcalls CX có thể thay đổi theo số lượng Agent, các kênh cần kết nối, workflow ticket và yêu cầu tích hợp hệ thống. Công cụ ước tính giúp doanh nghiệp mô tả nhu cầu trước khi nhận báo giá chính thức.",
+          "cards": false,
           "items": []
         },
         {
@@ -791,6 +820,7 @@
           "eyebrow": "GCALLS CX • OMNICHANNEL CONTACT CENTER",
           "heading": "Xem Gcalls CX hoạt động trên chính hành trình chăm sóc khách hàng của doanh nghiệp bạn",
           "lead": "Chia sẻ các kênh đang sử dụng, cấu trúc đội CSKH và workflow hiện tại để Gcalls tư vấn cấu hình Contact Center phù hợp.",
+          "cards": false,
           "items": []
         }
       ]
@@ -843,6 +873,7 @@
           "eyebrow": "BÀI TOÁN VẬN HÀNH",
           "heading": "Khi những cuộc gọi lặp lại chiếm quá nhiều nguồn lực",
           "lead": "Nhiều đội ngũ đang dùng cùng một nguồn lực cho hai loại cuộc gọi rất khác nhau: những cuộc gọi có kịch bản cố định và những cuộc trao đổi cần tư vấn thật sự.",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -866,6 +897,7 @@
           "eyebrow": "TÌNH HUỐNG ỨNG DỤNG",
           "heading": "Những tình huống cuộc gọi có thể cân nhắc đưa vào Voicebot",
           "lead": "Voicebot phù hợp nhất với các cuộc gọi có mục tiêu rõ ràng và kịch bản ổn định. Mỗi tình huống dưới đây cần được xem xét theo quy trình và dữ liệu thực tế của doanh nghiệp trước khi triển khai.",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -905,6 +937,7 @@
           "eyebrow": "QUY TRÌNH HOẠT ĐỘNG",
           "heading": "Một chiến dịch Voicebot diễn ra như thế nào",
           "lead": "Quy trình dưới đây mô tả cách một chiến dịch được chuẩn bị và vận hành. Việc bước nào được tự động hóa đến đâu phụ thuộc vào phạm vi triển khai được thống nhất với doanh nghiệp.",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -944,6 +977,7 @@
           "eyebrow": "KHẢ NĂNG GIẢI PHÁP",
           "heading": "Những gì một triển khai Voicebot được xây dựng xoay quanh",
           "lead": "Phạm vi cụ thể của từng khả năng được xác định trong quá trình khảo sát và kiểm thử, dựa trên use case và hệ thống hiện tại của doanh nghiệp.",
+          "cards": false,
           "items": [
             {
               "label": "",
@@ -978,6 +1012,7 @@
           "eyebrow": "CON NGƯỜI VÀ AI",
           "heading": "AI xử lý tác vụ lặp lại, con người xử lý tương tác có giá trị cao",
           "lead": "Voicebot được đặt vào quy trình để gánh phần việc có kịch bản rõ ràng. Những cuộc trao đổi cần chuyên môn, sự linh hoạt và khả năng đọc ngữ cảnh vẫn thuộc về đội ngũ.",
+          "cards": false,
           "items": [],
           "diagram": "handover"
         },
@@ -986,6 +1021,7 @@
           "eyebrow": "TÍCH HỢP VÀO QUY TRÌNH",
           "heading": "Voicebot có thể được khảo sát tích hợp vào hệ thống đang vận hành",
           "lead": "Phạm vi kết nối được xác định trong quá trình khảo sát. Gcalls đánh giá hệ thống hiện tại, dữ liệu sẵn có và cách đội ngũ đang làm việc trước khi đề xuất phương án tích hợp.",
+          "cards": true,
           "items": [
             {
               "label": "",
@@ -1019,6 +1055,7 @@
           "eyebrow": "NGÀNH PHÙ HỢP",
           "heading": "Những nhóm ngành thường có nhiều cuộc gọi lặp lại",
           "lead": "Mỗi ngành có một nhóm cuộc gọi thủ tục riêng. Đây là điểm bắt đầu thường gặp khi doanh nghiệp cân nhắc đưa Voicebot vào vận hành.",
+          "cards": true,
           "items": [
             {
               "label": "",
@@ -1047,6 +1084,7 @@
           "eyebrow": "QUY TRÌNH TRIỂN KHAI",
           "heading": "Từ khảo sát nhu cầu đến vận hành và tối ưu",
           "lead": "Thời gian của mỗi bước phụ thuộc vào use case, dữ liệu và mức độ tích hợp, nên được xác định cụ thể trong quá trình tư vấn.",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -1080,6 +1118,7 @@
           "eyebrow": "GIÁ TRỊ ĐẦU RA",
           "heading": "Những thay đổi doanh nghiệp có thể hướng tới",
           "lead": "Kết quả cụ thể phụ thuộc vào use case, chất lượng dữ liệu và cách chiến dịch được thiết kế. Dưới đây là những giá trị mà doanh nghiệp thường đặt làm mục tiêu khi bắt đầu.",
+          "cards": true,
           "items": [
             {
               "label": "",
@@ -1114,6 +1153,7 @@
           "eyebrow": "VOICEBOT AI CHO DOANH NGHIỆP",
           "heading": "Bắt đầu từ một tình huống cuộc gọi phù hợp với doanh nghiệp",
           "lead": "Chia sẻ quy trình hiện tại để đội ngũ Gcalls cùng bạn xác định use case, phạm vi tích hợp và phương án triển khai Voicebot phù hợp.",
+          "cards": false,
           "items": []
         }
       ]
@@ -1173,6 +1213,7 @@
           "eyebrow": "BÀI TOÁN QA",
           "heading": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ để kiểm soát chất lượng",
           "lead": "Đội QA thường phải chọn một phần nhỏ cuộc gọi để nghe lại, trong khi những cuộc hội thoại còn lại vẫn có thể chứa vấn đề về quy trình, trải nghiệm khách hàng hoặc cách nhân viên xử lý tình huống.",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -1201,6 +1242,7 @@
           "eyebrow": "QC BOT AI",
           "heading": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem lại",
           "lead": "QA QC Center kết hợp dữ liệu hội thoại với bộ tiêu chí đánh giá để hỗ trợ đội QA theo dõi chất lượng cuộc gọi theo một quy trình có cấu trúc hơn.",
+          "cards": false,
           "items": [],
           "mockup": "qc_transcript"
         },
@@ -1209,6 +1251,7 @@
           "eyebrow": "CÁCH HOẠT ĐỘNG",
           "heading": "Từ bản ghi cuộc gọi đến phiên đánh giá QA",
           "lead": "",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -1243,6 +1286,7 @@
           "eyebrow": "NĂNG LỰC AI",
           "heading": "Các năng lực cốt lõi hỗ trợ đội QA",
           "lead": "",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -1286,6 +1330,7 @@
           "eyebrow": "QA SCORING",
           "heading": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
           "lead": "Thay vì chỉ dựa vào cảm nhận khi nghe lại, doanh nghiệp có thể cấu hình bộ tiêu chí và trọng số để tạo một khung đánh giá nhất quán hơn.",
+          "cards": false,
           "items": [
             {
               "label": "",
@@ -1320,6 +1365,7 @@
           "eyebrow": "CONVERSATION SIGNALS",
           "heading": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
           "lead": "Không phải mọi cuộc gọi đều cần mức độ kiểm tra như nhau. Các tín hiệu từ nội dung hội thoại có thể giúp đội QA ưu tiên những cuộc gọi cần xem lại trước.",
+          "cards": false,
           "items": [
             {
               "label": "",
@@ -1348,6 +1394,7 @@
           "eyebrow": "AI + HUMAN QA",
           "heading": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh giá và cải thiện",
           "lead": "QA QC Center giúp tự động hóa các bước xử lý dữ liệu và làm nổi bật tín hiệu, nhưng quyết định đánh giá, coaching và thay đổi quy trình vẫn cần được đặt trong bối cảnh vận hành thực tế của doanh nghiệp.",
+          "cards": false,
           "items": []
         },
         {
@@ -1355,6 +1402,7 @@
           "eyebrow": "QUALITY DASHBOARD",
           "heading": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
           "lead": "Dashboard tập hợp dữ liệu đánh giá để QA Manager và người vận hành theo dõi các cuộc gọi cần chú ý, kết quả scoring và xu hướng chất lượng theo thời gian.",
+          "cards": false,
           "items": [],
           "mockup": "analytics"
         },
@@ -1363,6 +1411,7 @@
           "eyebrow": "GIÁ TRỊ VẬN HÀNH",
           "heading": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
           "lead": "",
+          "cards": true,
           "items": [
             {
               "label": "01",
@@ -1391,6 +1440,7 @@
           "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
           "heading": "QA QC Center phù hợp với những hoạt động nào?",
           "lead": "",
+          "cards": true,
           "items": [
             {
               "label": "",
@@ -1419,6 +1469,7 @@
           "eyebrow": "KẾT NỐI DỮ LIỆU",
           "heading": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
           "lead": "QA QC Center có thể nằm trong hệ sinh thái giao tiếp Gcalls và được triển khai cùng các giải pháp nghe gọi hoặc tích hợp hệ thống tùy theo kiến trúc của doanh nghiệp.",
+          "cards": false,
           "items": []
         },
         {
@@ -1426,6 +1477,7 @@
           "eyebrow": "CHỌN SẢN PHẨM",
           "heading": "Chọn đúng sản phẩm theo bài toán cần giải quyết",
           "lead": "",
+          "cards": true,
           "items": []
         },
         {
@@ -1433,6 +1485,7 @@
           "eyebrow": "CẤU HÌNH & CHI PHÍ",
           "heading": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
           "lead": "Cấu hình QA QC Center có thể phụ thuộc vào quy mô đội ngũ, khối lượng hội thoại cần phân tích và bộ tiêu chí QA cần áp dụng.",
+          "cards": false,
           "items": []
         },
         {
@@ -1440,6 +1493,7 @@
           "eyebrow": "QUY TRÌNH QA",
           "heading": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
           "lead": "Mỗi doanh nghiệp có bộ tiêu chí, quy trình kiểm tra và mục tiêu chất lượng khác nhau. QA QC Center cần được cấu hình theo bối cảnh vận hành thực tế trước khi dữ liệu được sử dụng cho đánh giá hoặc coaching.",
+          "cards": false,
           "items": []
         },
         {
@@ -1447,6 +1501,7 @@
           "eyebrow": "QA QC CENTER • POWERED BY QC BOT AI",
           "heading": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ngũ bạn",
           "lead": "Chia sẻ quy trình QA, tiêu chí đánh giá và cách đội ngũ đang kiểm tra cuộc gọi để Gcalls tư vấn cấu hình phù hợp.",
+          "cards": false,
           "items": []
         }
       ]

@@ -1078,10 +1078,16 @@ check(
 // A card title heads a description or it is not a heading. Both blanket
 // answers have shipped: all-h3 gave 76 headings against the reference's 59,
 // all-paragraph gave 31.
+// The exporter marks each section `cards` or not; the renderer must read that
+// mark rather than guess from the item's shape. Three different guesses have
+// shipped, each measurably wrong against the reference.
 check(
-  'card titles are headings only when they head a description',
-  /\$title_tag = empty\( \$item\['body'\] \) \? 'p' : 'h3'/.test(shortcodesSrc),
+  'card titles are headings only in card sections',
+  /\$title_tag = empty\( \$section\['cards'\] \) \? 'p' : 'h3'/.test(shortcodesSrc),
 )
+
+const productBuilder = read(path.join(WP, 'scripts/build-product-content.mjs'))
+check('the exporter classifies each section as cards or bullets', /const cards = CARD_KEYS\.includes\(listKey\)/.test(productBuilder))
 
 for (const note of notes) console.log(`\nnote: ${note}`)
 

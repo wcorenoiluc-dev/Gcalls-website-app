@@ -144,8 +144,29 @@ function normalise(raw) {
   const lead = pick(raw, ['description', 'lead', 'intro', 'body', 'detail'])
   const eyebrow = pick(raw, ['eyebrow', 'label'])
 
-  const list = [raw.items, raw.steps, raw.capabilities, raw.points, raw.valuePoints, raw.rows, raw.channels]
-    .find((candidate) => Array.isArray(candidate) && candidate.length)
+  /*
+   * WHICH KEY THE LIST CAME FROM DECIDES HOW IT IS RENDERED.
+   *
+   * React draws two different things from these sections. `items`, `steps`,
+   * `rows` and `channels` become CARDS — a title with a passage under it, and
+   * the title heads that passage. `capabilities`, `points` and `valuePoints`
+   * become a BULLET LIST inside one card, where each line is a row and heading
+   * it would announce a section with no content.
+   *
+   * Guessing at it from the item's shape does not work, and both guesses have
+   * shipped: heading every title gave /gcalls-cx/ 76 headings against the
+   * reference's 59, heading none gave 31, and heading only those with a body
+   * gave 53 — it drops the deployment steps, which React heads and which carry
+   * no description. The source data already knows the answer.
+   */
+  const CARD_KEYS = ['items', 'steps', 'rows', 'channels']
+  const BULLET_KEYS = ['capabilities', 'points', 'valuePoints']
+
+  const listKey = [...CARD_KEYS, ...BULLET_KEYS].find(
+    (key) => Array.isArray(raw[key]) && raw[key].length,
+  )
+  const list = listKey ? raw[listKey] : undefined
+  const cards = CARD_KEYS.includes(listKey)
 
   const items = (list ?? [])
     .map((item) => {
@@ -165,7 +186,7 @@ function normalise(raw) {
 
   if (!heading && !lead && items.length === 0) return null
 
-  return { eyebrow, heading, lead, items }
+  return { eyebrow, heading, lead, cards, items }
 }
 
 const problems = []

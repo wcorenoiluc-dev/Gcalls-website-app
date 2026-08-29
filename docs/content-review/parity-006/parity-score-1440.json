@@ -27,9 +27,9 @@
   {
     "name": "gcalls-plus",
     "route": "/gcalls-plus-webphone/",
-    "score": 70.9,
+    "score": 88.2,
     "parts": {
-      "headings": 49.1,
+      "headings": 83.6,
       "visuals": 100,
       "ctas": 100,
       "rhythm": 81.9
@@ -41,31 +41,12 @@
       "height": 13360
     },
     "wp": {
-      "headings": 29,
+      "headings": 48,
       "visuals": 13,
       "ctas": 4,
       "height": 16308
     },
     "missingInWp": [
-      "Thông tin cuộc gọi nằm rời rạc",
-      "Khó theo dõi những gì đã trao đổi",
-      "Quản lý khó nhìn thấy hoạt động của đội ngũ",
-      "Giải pháp quá phức tạp so với nhu cầu thực tế",
-      "Webphone",
-      "IVR & Call Flow",
-      "Quản lý danh bạ",
-      "Lịch sử tương tác",
-      "Ghi chú & Follow-up",
-      "Phân loại cuộc gọi",
-      "Tiếp nhận hoặc thực hiện cuộc gọi",
-      "Xem context liên hệ",
-      "Ghi lại nội dung quan trọng",
-      "Theo dõi lịch sử",
-      "Sales",
-      "Chăm sóc khách hàng",
-      "Giáo dục",
-      "Dịch vụ",
-      "Thương mại điện tử",
       "PHÙ HỢP VỚI GCALLS PLUS",
       "KHI NHU CẦU MỞ RỘNG",
       "Khảo sát nhu cầu",
@@ -82,9 +63,9 @@
   {
     "name": "gcalls-cx",
     "route": "/gcalls-cx/",
-    "score": 69.4,
+    "score": 88,
     "parts": {
-      "headings": 49.2,
+      "headings": 86.4,
       "visuals": 100,
       "ctas": 66.7,
       "rhythm": 98.9
@@ -96,34 +77,12 @@
       "height": 13533
     },
     "wp": {
-      "headings": 31,
+      "headings": 53,
       "visuals": 6,
       "ctas": 4,
       "height": 13684
     },
     "missingInWp": [
-      "Hội thoại nằm ở nhiều nơi",
-      "Tương tác dễ bị bỏ sót",
-      "Customer context bị phân mảnh",
-      "Quản lý khó theo dõi hiệu suất đa kênh",
-      "Voice / Hotline",
-      "Zalo OA",
-      "Facebook",
-      "SMS",
-      "Email",
-      "Khách hàng liên hệ qua kênh phù hợp",
-      "Gcalls CX tập trung hội thoại",
-      "Xác định context và trạng thái",
-      "Phân công hoặc tiếp tục xử lý",
-      "Theo dõi hoạt động và kết quả",
-      "Giảm phân mảnh công cụ",
-      "Giảm nguy cơ bỏ sót tương tác",
-      "Giữ customer context xuyên kênh",
-      "Có thêm dữ liệu cho quản lý",
-      "Tài chính",
-      "Bảo hiểm",
-      "Bất động sản",
-      "Doanh nghiệp tăng trưởng nhanh",
       "Khảo sát các điểm chạm hiện tại",
       "Xác định kênh cần kết nối",
       "Thiết kế workflow xử lý",
@@ -139,9 +98,9 @@
   {
     "name": "voicebot",
     "route": "/voicebot-ai/",
-    "score": 62.1,
+    "score": 91,
     "parts": {
-      "headings": 35.6,
+      "headings": 93.2,
       "visuals": 100,
       "ctas": 80,
       "rhythm": 86.7
@@ -153,48 +112,14 @@
       "height": 10222
     },
     "wp": {
-      "headings": 24,
+      "headings": 58,
       "visuals": 6,
       "ctas": 4,
       "height": 11789
     },
     "missingInWp": [
-      "Thời gian dồn vào các cuộc gọi có kịch bản giống nhau",
-      "Khó mở rộng số lượng cuộc gọi trong giai đoạn cao điểm",
-      "Ít thời gian còn lại cho khách hàng cần tư vấn chuyên sâu",
-      "Nhắc lịch hẹn",
-      "Nhắc thanh toán",
-      "Xác nhận thông tin",
-      "Sàng lọc nhu cầu",
-      "Chiến dịch gọi hàng loạt",
-      "Xử lý bước đầu ngoài giờ",
-      "Xác định mục tiêu chiến dịch",
-      "Chuẩn bị dữ liệu và kịch bản",
-      "Voicebot thực hiện cuộc gọi",
-      "Ghi nhận kết quả phản hồi",
-      "Chuyển trường hợp cần thiết cho nhân viên",
-      "Theo dõi và tối ưu",
       "Voicebot đảm nhận",
       "Nhân viên tiếp nhận",
-      "Hệ thống tổng đài",
-      "CRM",
-      "Dữ liệu chiến dịch",
-      "Quy trình chăm sóc khách hàng",
-      "Hệ thống báo cáo",
-      "Tài chính và bảo hiểm",
-      "Giáo dục",
-      "Thương mại điện tử và bán lẻ",
-      "BPO và Outsourcing",
-      "Khảo sát nhu cầu",
-      "Xác định use case",
-      "Xây dựng kịch bản",
-      "Thiết lập và kiểm thử",
-      "Vận hành và tối ưu",
-      "Mở rộng khả năng xử lý cuộc gọi",
-      "Tăng tính nhất quán của tác vụ lặp lại",
-      "Giúp nhân viên tập trung vào tương tác quan trọng",
-      "Dữ liệu cuộc gọi rõ ràng hơn",
-      "Linh hoạt thử nghiệm theo từng use case",
       "Câu hỏi thường gặp về Voicebot AI"
     ],
     "extraInWp": [
@@ -205,9 +130,9 @@
   {
     "name": "qa-qc",
     "route": "/qc-bot-ai/",
-    "score": 67.8,
+    "score": 89.2,
     "parts": {
-      "headings": 48.2,
+      "headings": 91.1,
       "visuals": 100,
       "ctas": 66.7,
       "rhythm": 93.4
@@ -219,39 +144,15 @@
       "height": 12783
     },
     "wp": {
-      "headings": 30,
+      "headings": 54,
       "visuals": 5,
       "ctas": 4,
       "height": 11939
     },
     "missingInWp": [
-      "Khó xem xét toàn bộ khối lượng hội thoại",
-      "Chấm điểm dễ phụ thuộc vào cách đánh giá của từng người",
-      "Tốn thời gian tìm cuộc gọi có vấn đề",
-      "Dữ liệu QA khó tổng hợp thành xu hướng",
-      "Tiếp nhận dữ liệu cuộc gọi",
-      "Chuyển giọng nói thành văn bản",
-      "Áp dụng tiêu chí QA",
-      "Phát hiện tín hiệu cần chú ý",
-      "QA xem lại và phân tích",
-      "Speech-to-Text",
-      "QA Criteria",
-      "AI-assisted Scoring",
-      "Keyword Analysis",
-      "Sentiment Signals",
-      "Conversation Review",
-      "Quality Dashboard",
       "AI hỗ trợ",
       "QA xác nhận",
-      "Manager cải thiện",
-      "Giảm thời gian tìm cuộc gọi cần kiểm tra",
-      "Chuẩn hóa khung đánh giá",
-      "Dễ phát hiện xu hướng",
-      "Hỗ trợ coaching có context",
-      "Customer Service QA",
-      "Telesales QA",
-      "BPO / Contact Center",
-      "Finance & Insurance"
+      "Manager cải thiện"
     ],
     "extraInWp": [
       "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
