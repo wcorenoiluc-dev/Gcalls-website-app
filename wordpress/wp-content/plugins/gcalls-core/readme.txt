@@ -3,7 +3,7 @@ Contributors: gcalls
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.1
-Stable tag: 0.5.0
+Stable tag: 0.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,14 @@ tag. Rank Math owns the document head. This plugin only feeds Rank Math's own
 post meta so migrated values stay editable in the Rank Math UI.
 
 == Changelog ==
+
+= 0.6.0 =
+* Mockups: the seven interactive visuals from the React home page, ported as
+  semantic HTML with real buttons — tabs, selectable lists, a playback bar and a
+  call timer. Reduced-motion and hidden-tab aware; nothing animated touches page
+  flow.
+* Mockups: three demo product visuals for Gcalls CX, Voicebot and QC Bot AI,
+  authorised by the 007 addendum. Data is invented and labelled as such.
 
 = 0.5.0 =
 * Shortcode: [gcalls_product_page] renders a full product page — hero, sections,

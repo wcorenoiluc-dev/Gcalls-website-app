@@ -1,0 +1,209 @@
+/**
+ * Product mockup styles.
+ *
+ * Every panel reserves its height with min-height before any script runs, so a
+ * mockup that starts animating cannot push the section below it down the page.
+ * Filtering a list hides rows, which does change the panel's height — so the
+ * list itself carries the min-height, not the page.
+ */
+.gcalls-mock {
+	--m-brand: var(--gcalls-brand, #673ab7);
+	--m-dark: var(--gcalls-brand-dark, #4a2391);
+	--m-light: var(--gcalls-brand-light, #f5f1fc);
+	--m-border: var(--gcalls-border, #e8e5ef);
+	--m-muted: var(--gcalls-muted, #5b5f6b);
+	--m-ink: var(--gcalls-foreground, #1e2026);
+	background: #fff;
+	border: 1px solid var(--m-border);
+	border-radius: var(--gcalls-radius, 0.625rem);
+	box-shadow: 0 8px 28px rgba(30, 32, 38, 0.06);
+	font-family: var(--gcalls-font-sans, 'Open Sans', system-ui, sans-serif);
+	font-size: 0.875rem;
+	margin-block: 1.25rem;
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.gcalls-mock__bar {
+	align-items: center;
+	background: #faf9fc;
+	border-bottom: 1px solid var(--m-border);
+	display: flex;
+	gap: 0.4rem;
+	padding: 0.6rem 0.9rem;
+}
+
+.gcalls-mock__dot { background: var(--m-border); border-radius: 50%; height: 0.5rem; width: 0.5rem; }
+.gcalls-mock__title { color: var(--m-muted); font-size: 0.8125rem; margin-left: 0.5rem; }
+
+.gcalls-mock__strip {
+	align-items: center;
+	background: var(--m-light);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding: 0.7rem 0.9rem;
+}
+
+/* The one decorative animation. It changes opacity only — never geometry — so
+ * it cannot shift anything, and it stops for reduced-motion users. */
+.gcalls-mock__pulse {
+	background: var(--m-brand);
+	border-radius: 50%;
+	flex: none;
+	height: 0.5rem;
+	width: 0.5rem;
+	animation: gcalls-mock-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes gcalls-mock-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+@media (prefers-reduced-motion: reduce) {
+	.gcalls-mock__pulse { animation: none; }
+	.gcalls-mock * { transition: none !important; }
+}
+
+.gcalls-mock__badge {
+	background: var(--m-brand);
+	border-radius: 999px;
+	color: #fff;
+	font-size: 0.6875rem;
+	font-weight: 700;
+	padding: 0.15rem 0.55rem;
+}
+
+.gcalls-mock__muted { color: var(--m-muted); }
+
+.gcalls-mock__kpis {
+	border-bottom: 1px solid var(--m-border);
+	display: grid;
+	gap: 1px;
+	grid-template-columns: repeat(auto-fit, minmax(min(120px, 100%), 1fr));
+	background: var(--m-border);
+}
+
+.gcalls-mock__kpi { background: #fff; display: grid; gap: 0.15rem; padding: 0.7rem 0.9rem; }
+.gcalls-mock__kpi span { color: var(--m-muted); font-size: 0.75rem; }
+.gcalls-mock__kpi strong { color: var(--m-ink); font-size: 1.125rem; }
+
+.gcalls-mock__tabs { display: flex; flex-wrap: wrap; gap: 0.35rem; padding: 0.7rem 0.9rem 0; }
+
+.gcalls-mock__tabs button,
+.gcalls-mock__api button,
+.gcalls-mock__side button {
+	background: #fff;
+	border: 1px solid var(--m-border);
+	border-radius: 999px;
+	color: var(--m-muted);
+	cursor: pointer;
+	font: inherit;
+	padding: 0.3rem 0.8rem;
+}
+
+.gcalls-mock__tabs button[aria-selected="true"] { background: var(--m-brand); border-color: var(--m-brand); color: #fff; font-weight: 600; }
+
+.gcalls-mock__list, .gcalls-mock__steps, .gcalls-mock__api, .gcalls-mock__side,
+.gcalls-mock__events, .gcalls-mock__ticks, .gcalls-mock__criteria, .gcalls-mock__script {
+	list-style: none; margin: 0; padding: 0;
+}
+
+/* The list keeps its own height so filtering does not move the page. */
+.gcalls-mock__list { min-height: 13rem; padding: 0.5rem 0.9rem 0.9rem; }
+
+.gcalls-mock__list li,
+.gcalls-mock__steps li {
+	align-items: center;
+	border-bottom: 1px solid var(--m-border);
+	display: flex;
+	gap: 0.6rem;
+	padding: 0.55rem 0;
+}
+
+.gcalls-mock__list li:last-child, .gcalls-mock__steps li:last-child { border-bottom: 0; }
+
+.gcalls-mock__avatar, .gcalls-mock__n {
+	align-items: center; background: var(--m-light); border-radius: 50%; color: var(--m-dark);
+	display: flex; flex: none; font-weight: 700; height: 1.9rem; justify-content: center; width: 1.9rem;
+}
+
+.gcalls-mock__who { display: grid; flex: 1; gap: 0.1rem; min-width: 0; }
+.gcalls-mock__who strong { color: var(--m-ink); font-size: 0.875rem; }
+.gcalls-mock__who small { color: var(--m-muted); font-size: 0.75rem; overflow-wrap: anywhere; }
+
+.gcalls-mock__kind { border-radius: 999px; font-size: 0.6875rem; padding: 0.1rem 0.5rem; }
+.gcalls-mock__kind--in { background: #e8f5ee; color: #1e7a4a; }
+.gcalls-mock__kind--out { background: var(--m-light); color: var(--m-dark); }
+.gcalls-mock__kind--missed { background: #fdeaea; color: #a01b1b; }
+
+.gcalls-mock__dur { color: var(--m-muted); flex: none; font-variant-numeric: tabular-nums; min-width: 3.2rem; text-align: right; }
+
+.gcalls-mock__status { border-radius: 50%; flex: none; height: 0.6rem; width: 0.6rem; }
+.gcalls-mock__status--available { background: #2f9e5f; }
+.gcalls-mock__status--in-call { background: var(--m-brand); }
+.gcalls-mock__status--away { background: #d9a441; }
+.gcalls-mock__status--offline { background: #b9b6c4; }
+
+.gcalls-mock__player { align-items: center; border-top: 1px solid var(--m-border); display: flex; gap: 0.7rem; padding: 0.7rem 0.9rem; }
+.gcalls-mock__play { background: var(--m-brand); border: 0; border-radius: 50%; color: #fff; cursor: pointer; flex: none; height: 2rem; width: 2rem; }
+.gcalls-mock__track { background: var(--m-border); border-radius: 999px; flex: 1; height: 0.35rem; overflow: hidden; }
+.gcalls-mock__fill { background: var(--m-brand); height: 100%; transition: width 300ms linear; }
+.gcalls-mock__time { color: var(--m-muted); font-variant-numeric: tabular-nums; min-width: 2.6rem; text-align: right; }
+
+.gcalls-mock__split { display: grid; gap: 1px; background: var(--m-border); grid-template-columns: 1fr; }
+@media (min-width: 640px) { .gcalls-mock__split { grid-template-columns: minmax(150px, 1fr) 1.6fr; } }
+
+.gcalls-mock__side { background: #fff; padding: 0.6rem; }
+.gcalls-mock__side button { display: grid; gap: 0.1rem; margin-bottom: 0.35rem; text-align: left; width: 100%; border-radius: var(--gcalls-radius-sm, 0.375rem); }
+.gcalls-mock__side button[aria-selected="true"] { background: var(--m-light); border-color: var(--m-brand); color: var(--m-dark); }
+.gcalls-mock__side small { color: var(--m-muted); font-size: 0.7rem; }
+
+.gcalls-mock__pane { background: #fff; padding: 0.9rem; min-height: 11rem; }
+.gcalls-mock__record-name { font-weight: 700; margin: 0 0 0.5rem; }
+.gcalls-mock__record dl { display: grid; gap: 0.2rem 0.7rem; grid-template-columns: auto 1fr; margin: 0 0 0.6rem; }
+.gcalls-mock__record dt { color: var(--m-muted); font-size: 0.75rem; }
+.gcalls-mock__record dd { margin: 0; font-size: 0.8125rem; overflow-wrap: anywhere; }
+.gcalls-mock__note { background: var(--m-light); border-radius: var(--gcalls-radius-sm, 0.375rem); font-size: 0.8125rem; margin: 0 0 0.6rem; padding: 0.5rem 0.6rem; }
+.gcalls-mock__events li { border-top: 1px solid var(--m-border); display: grid; gap: 0.1rem; padding: 0.4rem 0; }
+.gcalls-mock__events small { color: var(--m-muted); font-size: 0.75rem; }
+
+.gcalls-mock__chart { padding: 0.9rem; }
+.gcalls-mock__bars { align-items: flex-end; display: flex; gap: 0.5rem; height: 9rem; }
+.gcalls-mock__bar {
+	background: linear-gradient(180deg, var(--m-brand), var(--m-dark));
+	border-radius: 5px 5px 0 0; flex: 1; position: relative; transition: height 350ms ease;
+}
+.gcalls-mock__bar em { bottom: -1.3rem; color: var(--m-muted); font-size: 0.7rem; font-style: normal; left: 0; position: absolute; right: 0; text-align: center; }
+.gcalls-mock__chart { padding-bottom: 2.2rem; }
+
+.gcalls-mock__ticks li, .gcalls-mock__criteria li { border-bottom: 1px solid var(--m-border); padding: 0.45rem 0; }
+.gcalls-mock__record { padding: 0.9rem; }
+.gcalls-mock__ticks li { padding-left: 1.4rem; position: relative; }
+.gcalls-mock__ticks li::before { border-bottom: 2px solid var(--m-brand); border-left: 2px solid var(--m-brand); content: ""; height: 0.3rem; left: 0; position: absolute; top: 0.7rem; transform: rotate(-45deg); width: 0.6rem; }
+
+.gcalls-mock__api { padding: 0.7rem 0.9rem; }
+.gcalls-mock__api button { align-items: center; display: flex; gap: 0.5rem; margin-bottom: 0.3rem; text-align: left; width: 100%; border-radius: var(--gcalls-radius-sm, 0.375rem); }
+.gcalls-mock__api button[aria-selected="true"] { background: var(--m-light); border-color: var(--m-brand); }
+.gcalls-mock__verb { border-radius: 4px; color: #fff; flex: none; font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.35rem; }
+.gcalls-mock__verb--get { background: #2f9e5f; }
+.gcalls-mock__verb--post { background: var(--m-brand); }
+.gcalls-mock__verb--patch { background: #d9a441; }
+.gcalls-mock__api code { font-size: 0.75rem; }
+.gcalls-mock__api small { color: var(--m-muted); font-size: 0.7rem; margin-left: auto; }
+
+.gcalls-mock__code { background: #1e2026; border-radius: var(--gcalls-radius-sm, 0.375rem); color: #e8e5ef; font-size: 0.75rem; margin: 0 0.9rem 0.9rem; overflow-x: auto; padding: 0.7rem; }
+
+.gcalls-mock__chan { background: var(--m-light); border-radius: 4px; color: var(--m-dark); flex: none; font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.45rem; min-width: 4.6rem; text-align: center; }
+.gcalls-mock__list--threads { min-height: 11rem; }
+
+.gcalls-mock__steps { padding: 0.7rem 0.9rem; min-height: 11rem; }
+
+.gcalls-mock__script { padding: 0; }
+.gcalls-mock__script li { border-bottom: 1px solid var(--m-border); display: grid; gap: 0.15rem; padding: 0.45rem 0; }
+.gcalls-mock__role { color: var(--m-brand); font-size: 0.7rem; font-weight: 700; }
+.gcalls-mock__criteria { background: #fff; padding: 0.9rem; }
+.gcalls-mock__criteria li { align-items: center; display: flex; gap: 0.5rem; justify-content: space-between; }
+.gcalls-mock__mark { border-radius: 999px; font-size: 0.7rem; font-style: normal; padding: 0.1rem 0.5rem; }
+.gcalls-mock__mark--ok { background: #e8f5ee; color: #1e7a4a; }
+.gcalls-mock__mark--no { background: #fdeaea; color: #a01b1b; }
+
+.gcalls-mock__caption { background: #faf9fc; border-top: 1px solid var(--m-border); color: var(--m-muted); font-size: 0.75rem; margin: 0; padding: 0.5rem 0.9rem; text-align: center; }

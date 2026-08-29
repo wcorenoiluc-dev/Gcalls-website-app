@@ -56,9 +56,16 @@ async function load(file) {
 /**
  * Section order, transcribed from the React page components.
  *
- * `visual` names a media id or a diagram id to place with the section. Only
- * Gcalls Plus has approved product screenshots; CX, Voicebot and QA/QC get a
- * brand diagram, never a Gcalls Plus screenshot relabelled as another product.
+ * `visual` names a media id, a diagram id, or a demo mockup to place with the
+ * section. Only Gcalls Plus has approved product screenshots; CX, Voicebot and
+ * QA/QC get brand diagrams and DEMO mockups built from their own functionality,
+ * never a Gcalls Plus screenshot relabelled as another product.
+ *
+ * The demo mockups were authorised in the 007 addendum: a product with no
+ * screenshot may show a demonstration interface, provided the data is visibly
+ * invented and the caption says so. Each of those three products gets the three
+ * the addendum asks for — a hero mockup, a workflow visual and a
+ * dashboard/feature visual.
  */
 const PAGES = [
   {
@@ -67,11 +74,16 @@ const PAGES = [
     file: 'gcallsPlus.ts',
     lead: { intent: 'consultation', source: 'gcalls_plus', product: 'Gcalls Plus Webphone' },
     sections: [
-      ['GP_PROBLEMS'], ['GP_OVERVIEW', { media: 'GP-09' }], ['GP_FEATURES'],
+      // All thirteen approved screenshots land here, each beside the section it
+      // actually shows. Gcalls Plus is the only product with real screenshots,
+      // so spreading them thinly across other pages would mean showing the
+      // wrong product; concentrating them here is what makes this page the one
+      // with genuine evidence behind it.
+      ['GP_PROBLEMS', { media: 'GP-13' }], ['GP_OVERVIEW', { media: 'GP-09' }], ['GP_FEATURES', { media: 'GP-14' }],
       ['GP_HISTORY', { media: 'GP-15' }], ['GP_CONTEXT', { media: 'GP-10' }],
-      ['GP_WORKFLOW'], ['GP_PERFORMANCE', { media: 'GP-05' }],
-      ['GP_INTEGRATION', { media: 'GP-12' }], ['GP_USE_CASES'],
-      ['GP_BOUNDARIES'], ['GP_DEPLOYMENT'],
+      ['GP_WORKFLOW', { media: 'GP-07' }], ['GP_PERFORMANCE', { media: 'GP-05' }],
+      ['GP_INTEGRATION', { media: 'GP-12' }], ['GP_USE_CASES', { media: 'GP-03' }],
+      ['GP_BOUNDARIES', { media: 'GP-02' }], ['GP_DEPLOYMENT', { media: 'GP-11' }],
     ],
   },
   {
@@ -80,9 +92,9 @@ const PAGES = [
     file: 'gcallsCx.ts',
     lead: { intent: 'consultation', source: 'gcalls_cx', product: 'Gcalls CX' },
     sections: [
-      ['CX_PROBLEMS'], ['CX_OVERVIEW', { diagram: 'omnichannel' }], ['CX_CHANNELS'],
-      ['CX_INBOX'], ['CX_TICKETS'], ['CX_CONTEXT'],
-      ['CX_HOW_IT_WORKS', { diagram: 'flow' }], ['CX_REPORTING'], ['CX_BENEFITS'],
+      ['CX_PROBLEMS'], ['CX_OVERVIEW', { mockup: 'cx_inbox' }], ['CX_CHANNELS'],
+      ['CX_INBOX', { mockup: 'cx_inbox' }], ['CX_TICKETS'], ['CX_CONTEXT', { mockup: 'crm' }],
+      ['CX_HOW_IT_WORKS', { diagram: 'flow' }], ['CX_REPORTING', { mockup: 'analytics' }], ['CX_BENEFITS'],
       ['CX_USE_CASES'], ['CX_INTEGRATION'], ['CX_BOUNDARIES'], ['CX_DEPLOYMENT'], ['CX_TRUST'],
     ],
   },
@@ -92,9 +104,9 @@ const PAGES = [
     file: 'voicebotAi.ts',
     lead: { intent: 'consultation', source: 'voicebot_ai', product: 'Gcalls Voicebot AI' },
     sections: [
-      ['VB_PROBLEMS'], ['VB_USE_CASES'], ['VB_HOW_IT_WORKS', { diagram: 'flow' }],
-      ['VB_CAPABILITIES'], ['VB_HUMAN_AI', { diagram: 'handover' }],
-      ['VB_INTEGRATION'], ['VB_INDUSTRIES'], ['VB_DEPLOYMENT'], ['VB_OUTCOMES'],
+      ['VB_PROBLEMS'], ['VB_USE_CASES', { mockup: 'voicebot_builder' }], ['VB_HOW_IT_WORKS', { diagram: 'flow' }],
+      ['VB_CAPABILITIES', { mockup: 'voicebot_builder' }], ['VB_HUMAN_AI', { diagram: 'handover' }],
+      ['VB_INTEGRATION'], ['VB_INDUSTRIES'], ['VB_DEPLOYMENT'], ['VB_OUTCOMES', { mockup: 'analytics' }],
     ],
   },
   {
@@ -103,9 +115,9 @@ const PAGES = [
     file: 'qaQcCenter.ts',
     lead: { intent: 'consultation', source: 'qa_qc_center', product: 'QA QC Center' },
     sections: [
-      ['QQ_PROBLEMS'], ['QQ_OVERVIEW', { diagram: 'scoring' }], ['QQ_HOW_IT_WORKS', { diagram: 'flow' }],
-      ['QQ_CAPABILITIES'], ['QQ_SCORING'], ['QQ_SIGNALS'], ['QQ_HUMAN_LOOP'],
-      ['QQ_DASHBOARD'], ['QQ_BENEFITS'], ['QQ_USE_CASES'], ['QQ_INTEGRATION'], ['QQ_BOUNDARIES'],
+      ['QQ_PROBLEMS'], ['QQ_OVERVIEW', { mockup: 'qc_transcript' }], ['QQ_HOW_IT_WORKS', { diagram: 'flow' }],
+      ['QQ_CAPABILITIES'], ['QQ_SCORING', { mockup: 'qc_transcript' }], ['QQ_SIGNALS'], ['QQ_HUMAN_LOOP'],
+      ['QQ_DASHBOARD', { mockup: 'analytics' }], ['QQ_BENEFITS'], ['QQ_USE_CASES'], ['QQ_INTEGRATION'], ['QQ_BOUNDARIES'],
     ],
   },
 ]

@@ -176,6 +176,17 @@ const iconList = (items, extra = {}) =>
 
 const media = (id) => widget('shortcode', { shortcode: `[gcalls_media id="${id}" size="large"]` })
 
+/**
+ * A ported React mockup.
+ *
+ * Seven sections of the React home page are interactive components, not static
+ * art: tabs, selectable lists, a playback bar, a call timer. A screenshot of one
+ * is a picture of a single frame, and a reviewer who clicks it learns that the
+ * demo is a picture — so those seven sections carry the port, and the real
+ * masked screenshots go where React is genuinely static.
+ */
+const mockup = (id) => widget('shortcode', { shortcode: `[gcalls_mockup id="${id}"]` })
+
 const shortcode = (value) => widget('shortcode', { shortcode: value })
 
 const html = (markup) => widget('html', { html: markup })
@@ -270,7 +281,7 @@ const content = [
         ],
         50,
       ),
-      column([media('GP-09')], 50),
+      column([mockup('hero')], 50),
     ],
     tinted(BRAND_LIGHT),
   ),
@@ -392,14 +403,14 @@ const content = [
           'Lịch sử trao đổi, ghi âm, ghi chú và kết quả cuộc gọi được lưu lại giúp đội Sales và CSKH tiếp nối công việc với đầy đủ ngữ cảnh của lần liên hệ trước.',
         ),
       ], 50),
-      column([media('GP-15')], 50),
+      column([mockup('call_timeline')], 50),
     ],
     tinted('#faf9fc'),
   ),
 
   /* 6 — CRMSection.tsx */
   section([
-    column([media('GP-10')], 50),
+    column([mockup('crm')], 50),
     column(
       [
         heading('Mỗi khách hàng đều có một hồ sơ riêng'),
@@ -430,7 +441,7 @@ const content = [
         text(
           'Không cần tổng hợp báo cáo thủ công từ nhiều nguồn. Mọi chỉ số quan trọng đều được hiển thị trực quan giúp quản lý nhanh chóng nắm bắt tình hình vận hành.',
         ),
-        html(analyticsSvg),
+        mockup('analytics'),
       ]),
     ],
     tinted(BRAND_LIGHT),
@@ -446,12 +457,7 @@ const content = [
       text(
         'Cấu hình luồng cuộc gọi tới đúng bộ phận, đúng nhân viên hoặc đúng chi nhánh, kèm nhóm đổ chuông và chuyển tiếp cho trường hợp không có người nhận máy.',
       ),
-      iconList([
-        'Khách hàng gọi đến',
-        'IVR: Bấm phím theo cây menu doanh nghiệp cấu hình',
-        'Điều hướng tới đúng bộ phận hoặc chi nhánh',
-        'Agent nhận máy, ghi chú và ghi âm được lưu lại',
-      ]),
+      mockup('cloud'),
     ]),
   ]),
 
@@ -464,7 +470,9 @@ const content = [
           'Khi có cuộc gọi đến, nhân viên xem được thông tin khách hàng lấy từ hệ thống đã kết nối — trong phạm vi tích hợp được cấu hình cho doanh nghiệp.',
         ),
       ], 50),
-      column([media('GP-12')], 50),
+      // The mobile webphone, on the section about the agent seeing context the
+      // moment a call arrives.
+      column([media('GP-01')], 50),
     ],
     tinted('#faf9fc'),
   ),
@@ -481,6 +489,9 @@ const content = [
         'Thu thập số điện thoại và gọi lại tức thì',
         'Theo dõi nguồn cuộc gọi từ từng trang web',
       ]),
+      // React renders this section statically, so a real masked screenshot is
+      // the honest choice here rather than an invented interface.
+      media('GP-08'),
     ]),
   ]),
 
@@ -497,6 +508,7 @@ const content = [
           'Từ CRM, Helpdesk đến các hệ thống nội bộ — Gcalls kết nối qua API mở. Phạm vi và công việc cần thiết được đánh giá trong quá trình khảo sát kỹ thuật.',
           { text_color: '#e9defb' },
         ),
+        mockup('integrations'),
         cta('Trao đổi phạm vi tích hợp cùng đội ngũ Gcalls', {
           intent: 'consultation',
           source: 'homepage-integration',
@@ -527,7 +539,7 @@ const content = [
       ],
       50,
     ),
-    column([media('GP-05')], 50),
+    column([mockup('work_anywhere')], 50),
   ]),
 
   /* 13 — UseCasesFinalCtaSection.tsx */

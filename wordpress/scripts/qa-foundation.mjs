@@ -633,9 +633,13 @@ if (exists(homeTemplatePath)) {
     check('no hardcoded uploads URL', !/wp-content\\\/uploads/.test(flat))
     check('images placed via [gcalls_media]', flat.includes('gcalls_media id='))
 
-    // Charts are static SVG: there is no chart library on this site.
-    check('charts are inline SVG', flat.includes('<svg'))
-    check('illustrative figures are labelled as such', flat.includes('dữ liệu minh họa'))
+    // The chart moved in 007. It used to be a static inline SVG in this
+    // template; it is now the ported Analytics mockup, so the drawing and its
+    // "dữ liệu minh họa" caption live in class-mockups.php. What this template
+    // must still guarantee is that it pulls in that mockup rather than an
+    // invented chart of its own — and section 18 checks the caption at source.
+    check('the chart is the ported mockup, not a new one', flat.includes('gcalls_mockup id=\\"analytics'))
+    check('no chart library is loaded', !/recharts|chart\.js|d3\.min/.test(flat))
 
     // Every conversion button has to carry its attribution, or the lead
     // arrives with no record of the page that produced it.
@@ -851,6 +855,75 @@ if (exists(contentManifestPath)) {
   const parityManifest = JSON.parse(read(contentManifestPath))
   const primary = parityManifest.menus?.primary ?? []
   check('Blog is a top-level header item', primary.some((g) => g.route === '/blog/'), primary.map((g) => g.label).join(' · '))
+}
+
+/* ------------------------------------------------------------------ *
+ * 18. Ported mockups and demo visuals — 007
+ * ------------------------------------------------------------------ */
+
+console.log('\n18. Ported mockups (007)')
+
+const mockPhp = path.join(PLUGIN, 'includes/class-mockups.php')
+const mockJs = path.join(PLUGIN, 'assets/js/mockups.js')
+const mockCss = path.join(PLUGIN, 'assets/css/mockups.css')
+
+check('mockup module present', exists(mockPhp))
+check('mockup engine present', exists(mockJs))
+check('mockup styles present', exists(mockCss))
+
+if (exists(mockPhp)) {
+  const mock = read(mockPhp)
+  // The seven React components identified by scripts/mockup-audit.mjs.
+  for (const id of ['hero', 'call_timeline', 'crm', 'analytics', 'cloud', 'integrations', 'work_anywhere']) {
+    check(`ports ${id}`, mock.includes(`function mock_${id}(`))
+  }
+  // The three demo product visuals authorised by the 007 addendum.
+  for (const id of ['cx_inbox', 'voicebot_builder', 'qc_transcript']) {
+    check(`demo visual ${id}`, mock.includes(`function mock_${id}(`))
+  }
+
+  check('every mockup carries the demo caption', mock.includes('Giao diện minh họa – dữ liệu demo'))
+  // Fake data is the addendum's rule, and the React source's realistic personal
+  // names are exactly what must not be carried over.
+  check('uses demo contacts, not the React names', mock.includes('Khách hàng A') && !mock.includes('Nguyễn Văn Minh'))
+  check('uses example.com addresses', mock.includes('example.com'))
+  check('phone numbers are masked', /\d{3} \*\*\* \*\*\d{2}/.test(mock))
+  check('controls are real buttons', mock.includes('<button type="button"') && mock.includes('aria-selected'))
+}
+
+if (exists(mockJs)) {
+  const js = read(mockJs)
+  check('honours prefers-reduced-motion', js.includes('prefers-reduced-motion'))
+  check('pauses on a hidden tab', js.includes('visibilitychange') && js.includes('document.hidden'))
+  // The chart DOES set bar heights, and that is fine: the bars sit inside a
+  // container with a fixed height, so a taller bar cannot push the page. What
+  // must never be animated is anything that participates in page flow —
+  // position offsets, margins and padding — which is what this now checks, and
+  // the fixed container height is asserted against the CSS below.
+  check('animates nothing that participates in page flow', !/\.style\.(top|left|right|bottom|margin|padding)\s*=/.test(js))
+  check('renders no innerHTML', !/\.innerHTML\s*[+]?=/.test(js))
+}
+
+if (exists(mockCss)) {
+  const css = read(mockCss)
+  check('reduced-motion disables the pulse', css.includes('@media (prefers-reduced-motion: reduce)'))
+  check('lists reserve their height so filtering cannot shift the page', css.includes('min-height'))
+  // The one place a script changes a height is the chart bars; the container
+  // they grow inside is fixed, so the section below never moves.
+  check('the chart container has a fixed height', /\.gcalls-mock__bars\s*\{[^}]*height:\s*\d/.test(css))
+  const hexes = [...new Set([...css.matchAll(/#([0-9a-zA-Z]+)/g)].map((m) => m[1]))]
+  check('all colour literals are valid hex', hexes.every((h) => [3, 4, 6, 8].includes(h.length) && /^[0-9a-fA-F]+$/.test(h)), hexes.filter((h) => !/^[0-9a-fA-F]+$/.test(h)).join(', '))
+}
+
+const masterMap = path.join(REPO, 'docs/content-review/images/image-master-map-007.json')
+check('image master map generated', exists(masterMap))
+
+if (exists(masterMap)) {
+  const map = JSON.parse(read(masterMap))
+  check('every visual has a replacement rule', map.every((row) => row.replacement))
+  // A real screenshot must never appear under another product's name.
+  const wrong = map.filter((row) => row.type.startsWith('real') && !['Trang chủ', 'gcalls-plus'].includes(row.product))
+  check('real screenshots only on the home page and Gcalls Plus', wrong.length === 0, wrong.map((r) => `${r.product}:${r.filename}`).join(', '))
 }
 
 /* ------------------------------------------------------------------ *

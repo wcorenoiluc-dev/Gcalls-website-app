@@ -45,7 +45,8 @@
               "title": "Giải pháp quá phức tạp so với nhu cầu thực tế",
               "body": "SME có thể chỉ cần một hệ thống nghe gọi gọn nhẹ thay vì bắt đầu bằng một Contact Center với quá nhiều lớp vận hành."
             }
-          ]
+          ],
+          "media": "GP-13"
         },
         {
           "source": "GP_OVERVIEW",
@@ -112,7 +113,8 @@
               "title": "Phân loại cuộc gọi",
               "body": "Phân loại cuộc gọi theo nội dung hoặc mục đích để thuận tiện cho quản lý và báo cáo."
             }
-          ]
+          ],
+          "media": "GP-14"
         },
         {
           "source": "GP_HISTORY",
@@ -198,7 +200,8 @@
               "title": "Theo dõi lịch sử",
               "body": "Hoạt động được lưu trong lịch sử để đội ngũ có thể tiếp tục xử lý ở lần tương tác tiếp theo."
             }
-          ]
+          ],
+          "media": "GP-07"
         },
         {
           "source": "GP_PERFORMANCE",
@@ -263,14 +266,16 @@
               "title": "",
               "body": "Hỗ trợ đội bán hàng hoặc CSKH xử lý cuộc gọi liên quan tới tư vấn, đơn hàng và chăm sóc sau bán."
             }
-          ]
+          ],
+          "media": "GP-03"
         },
         {
           "source": "GP_BOUNDARIES",
           "eyebrow": "PHẠM VI PHÙ HỢP",
           "heading": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Contact Center phức tạp",
           "lead": "",
-          "items": []
+          "items": [],
+          "media": "GP-02"
         },
         {
           "source": "GP_DEPLOYMENT",
@@ -308,7 +313,8 @@
               "title": "Vận hành",
               "body": ""
             }
-          ]
+          ],
+          "media": "GP-11"
         }
       ]
     },
@@ -364,7 +370,7 @@
           "heading": "Một không gian làm việc cho nhiều điểm chạm khách hàng",
           "lead": "Gcalls CX tập trung các kênh giao tiếp và quy trình chăm sóc vào một workspace để nhân viên có thể theo dõi hội thoại, customer context và trạng thái xử lý thuận tiện hơn.",
           "items": [],
-          "diagram": "omnichannel"
+          "mockup": "cx_inbox"
         },
         {
           "source": "CX_CHANNELS",
@@ -430,7 +436,8 @@
               "title": "Duy trì customer context liên quan",
               "body": ""
             }
-          ]
+          ],
+          "mockup": "cx_inbox"
         },
         {
           "source": "CX_TICKETS",
@@ -501,7 +508,8 @@
               "title": "Ghi chú và context liên quan",
               "body": ""
             }
-          ]
+          ],
+          "mockup": "crm"
         },
         {
           "source": "CX_HOW_IT_WORKS",
@@ -563,7 +571,8 @@
               "title": "Workload của đội ngũ",
               "body": ""
             }
-          ]
+          ],
+          "mockup": "analytics"
         },
         {
           "source": "CX_BENEFITS",
@@ -760,7 +769,8 @@
               "title": "Xử lý bước đầu ngoài giờ",
               "body": "Tiếp nhận và ghi nhận nhu cầu ở bước đầu tiên ngoài khung giờ làm việc, sau đó chuyển lại cho đội ngũ xử lý trong giờ hành chính."
             }
-          ]
+          ],
+          "mockup": "voicebot_builder"
         },
         {
           "source": "VB_HOW_IT_WORKS",
@@ -832,7 +842,8 @@
               "title": "Cung cấp dữ liệu phục vụ theo dõi chiến dịch.",
               "body": ""
             }
-          ]
+          ],
+          "mockup": "voicebot_builder"
         },
         {
           "source": "VB_HUMAN_AI",
@@ -967,7 +978,8 @@
               "title": "Linh hoạt thử nghiệm theo từng use case",
               "body": "Doanh nghiệp có thể bắt đầu từ một tình huống cuộc gọi và mở rộng dần theo kết quả thực tế."
             }
-          ]
+          ],
+          "mockup": "analytics"
         }
       ]
     },
@@ -1023,7 +1035,7 @@
           "heading": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem lại",
           "lead": "QA QC Center kết hợp dữ liệu hội thoại với bộ tiêu chí đánh giá để hỗ trợ đội QA theo dõi chất lượng cuộc gọi theo một quy trình có cấu trúc hơn.",
           "items": [],
-          "diagram": "scoring"
+          "mockup": "qc_transcript"
         },
         {
           "source": "QQ_HOW_IT_WORKS",
@@ -1133,7 +1145,8 @@
               "title": "Cho phép QA xem lại context trước khi kết luận",
               "body": ""
             }
-          ]
+          ],
+          "mockup": "qc_transcript"
         },
         {
           "source": "QQ_SIGNALS",
@@ -1175,7 +1188,8 @@
           "eyebrow": "QUALITY DASHBOARD",
           "heading": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
           "lead": "Dashboard tập hợp dữ liệu đánh giá để QA Manager và người vận hành theo dõi các cuộc gọi cần chú ý, kết quả scoring và xu hướng chất lượng theo thời gian.",
-          "items": []
+          "items": [],
+          "mockup": "analytics"
         },
         {
           "source": "QQ_BENEFITS",

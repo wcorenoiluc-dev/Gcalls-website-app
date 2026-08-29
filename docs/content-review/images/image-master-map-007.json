@@ -1,0 +1,274 @@
+[
+  {
+    "product": "Trang chủ",
+    "route": "/",
+    "section": "section 1",
+    "filename": "mockup:hero",
+    "type": "demo (ported React component)",
+    "replacement": "replace [gcalls_mockup id=\"hero\"] with [gcalls_media id=\"<new id>\"]"
+  },
+  {
+    "product": "Trang chủ",
+    "route": "/",
+    "section": "section 2",
+    "filename": "mockup:call_timeline",
+    "type": "demo (ported React component)",
+    "replacement": "replace [gcalls_mockup id=\"call_timeline\"] with [gcalls_media id=\"<new id>\"]"
+  },
+  {
+    "product": "Trang chủ",
+    "route": "/",
+    "section": "section 3",
+    "filename": "mockup:crm",
+    "type": "demo (ported React component)",
+    "replacement": "replace [gcalls_mockup id=\"crm\"] with [gcalls_media id=\"<new id>\"]"
+  },
+  {
+    "product": "Trang chủ",
+    "route": "/",
+    "section": "section 4",
+    "filename": "mockup:analytics",
+    "type": "demo (ported React component)",
+    "replacement": "replace [gcalls_mockup id=\"analytics\"] with [gcalls_media id=\"<new id>\"]"
+  },
+  {
+    "product": "Trang chủ",
+    "route": "/",
+    "section": "section 5",
+    "filename": "mockup:cloud",
+    "type": "demo (ported React component)",
+    "replacement": "replace [gcalls_mockup id=\"cloud\"] with [gcalls_media id=\"<new id>\"]"
+  },
+  {
+    "product": "Trang chủ",
+    "route": "/",
+    "section": "section 6",
+    "filename": "gcalls-plus-webphone-active-call-mobile-v1.webp",
+    "type": "real (masked screenshot)",
+    "replacement": "swap the file, keep the media id"
+  },
+  {
+    "product": "Trang chủ",
+    "route": "/",
+    "section": "section 7",
+    "filename": "gcalls-plus-click-to-call-config-desktop-v1.webp",
+    "type": "real (masked screenshot)",
+    "replacement": "swap the file, keep the media id"
+  },
+  {
+    "product": "Trang chủ",
+    "route": "/",
+    "section": "section 8",
+    "filename": "mockup:integrations",
+    "type": "demo (ported React component)",
+    "replacement": "replace [gcalls_mockup id=\"integrations\"] with [gcalls_media id=\"<new id>\"]"
+  },
+  {
+    "product": "Trang chủ",
+    "route": "/",
+    "section": "section 9",
+    "filename": "mockup:work_anywhere",
+    "type": "demo (ported React component)",
+    "replacement": "replace [gcalls_mockup id=\"work_anywhere\"] with [gcalls_media id=\"<new id>\"]"
+  },
+  {
+    "product": "gcalls-plus",
+    "route": "/gcalls-plus-webphone/",
+    "section": "GP_PROBLEMS",
+    "filename": "gcalls-plus-webphone-keypad-mobile-v1.webp",
+    "type": "real (masked screenshot)",
+    "replacement": "swap the file, keep the media id"
+  },
+  {
+    "product": "gcalls-plus",
+    "route": "/gcalls-plus-webphone/",
+    "section": "GP_OVERVIEW",
+    "filename": "gcalls-plus-webphone-desktop-v1.webp",
+    "type": "real (masked screenshot)",
+    "replacement": "swap the file, keep the media id"
+  },
+  {
+    "product": "gcalls-plus",
+    "route": "/gcalls-plus-webphone/",
+    "section": "GP_FEATURES",
+    "filename": "gcalls-plus-overview-activity-desktop-v1.webp",
+    "type": "real (masked screenshot)",
+    "replacement": "swap the file, keep the media id"
+  },
+  {
+    "product": "gcalls-plus",
+    "route": "/gcalls-plus-webphone/",
+    "section": "GP_HISTORY",
+    "filename": "gcalls-plus-timeline-history-desktop-v1.webp",
+    "type": "real (masked screenshot)",
+    "replacement": "swap the file, keep the media id"
+  },
+  {
+    "product": "gcalls-plus",
+    "route": "/gcalls-plus-webphone/",
+    "section": "GP_CONTEXT",
+    "filename": "gcalls-plus-contact-profile-desktop-v1.webp",
+    "type": "real (masked screenshot)",
+    "replacement": "swap the file, keep the media id"
+  },
+  {
+    "product": "gcalls-plus",
+    "route": "/gcalls-plus-webphone/",
+    "section": "GP_WORKFLOW",
+    "filename": "gcalls-plus-call-history-desktop-v1.webp",
+    "type": "real (masked screenshot)",
+    "replacement": "swap the file, keep the media id"
+  },
+  {
+    "product": "gcalls-plus",
+    "route": "/gcalls-plus-webphone/",
+    "section": "GP_PERFORMANCE",
+    "filename": "gcalls-plus-agent-status-log-desktop-v1.webp",
+    "type": "real (masked screenshot)",
+    "replacement": "swap the file, keep the media id"
+  },
+  {
+    "product": "gcalls-plus",
+    "route": "/gcalls-plus-webphone/",
+    "section": "GP_INTEGRATION",
+    "filename": "gcalls-plus-integrations-desktop-v1.webp",
+    "type": "real (masked screenshot)",
+    "replacement": "swap the file, keep the media id"
+  },
+  {
+    "product": "gcalls-plus",
+    "route": "/gcalls-plus-webphone/",
+    "section": "GP_USE_CASES",
+    "filename": "gcalls-plus-advanced-filter-desktop-v1.webp",
+    "type": "real (masked screenshot)",
+    "replacement": "swap the file, keep the media id"
+  },
+  {
+    "product": "gcalls-plus",
+    "route": "/gcalls-plus-webphone/",
+    "section": "GP_BOUNDARIES",
+    "filename": "gcalls-plus-activity-type-dropdown-desktop-v1.webp",
+    "type": "real (masked screenshot)",
+    "replacement": "swap the file, keep the media id"
+  },
+  {
+    "product": "gcalls-plus",
+    "route": "/gcalls-plus-webphone/",
+    "section": "GP_DEPLOYMENT",
+    "filename": "gcalls-plus-integration-config-desktop-v1.webp",
+    "type": "real (masked screenshot)",
+    "replacement": "swap the file, keep the media id"
+  },
+  {
+    "product": "cx",
+    "route": "/gcalls-cx/",
+    "section": "CX_OVERVIEW",
+    "filename": "mockup:cx_inbox",
+    "type": "demo (mockup, fake data)",
+    "replacement": "replace the mockup entry in build-product-content.mjs with { media: '<new id>' }"
+  },
+  {
+    "product": "cx",
+    "route": "/gcalls-cx/",
+    "section": "CX_INBOX",
+    "filename": "mockup:cx_inbox",
+    "type": "demo (mockup, fake data)",
+    "replacement": "replace the mockup entry in build-product-content.mjs with { media: '<new id>' }"
+  },
+  {
+    "product": "cx",
+    "route": "/gcalls-cx/",
+    "section": "CX_CONTEXT",
+    "filename": "mockup:crm",
+    "type": "demo (mockup, fake data)",
+    "replacement": "replace the mockup entry in build-product-content.mjs with { media: '<new id>' }"
+  },
+  {
+    "product": "cx",
+    "route": "/gcalls-cx/",
+    "section": "CX_HOW_IT_WORKS",
+    "filename": "diagram:flow",
+    "type": "demo (brand diagram)",
+    "replacement": "replace the diagram entry in build-product-content.mjs with { media: '<new id>' }"
+  },
+  {
+    "product": "cx",
+    "route": "/gcalls-cx/",
+    "section": "CX_REPORTING",
+    "filename": "mockup:analytics",
+    "type": "demo (mockup, fake data)",
+    "replacement": "replace the mockup entry in build-product-content.mjs with { media: '<new id>' }"
+  },
+  {
+    "product": "voicebot",
+    "route": "/voicebot-ai/",
+    "section": "VB_USE_CASES",
+    "filename": "mockup:voicebot_builder",
+    "type": "demo (mockup, fake data)",
+    "replacement": "replace the mockup entry in build-product-content.mjs with { media: '<new id>' }"
+  },
+  {
+    "product": "voicebot",
+    "route": "/voicebot-ai/",
+    "section": "VB_HOW_IT_WORKS",
+    "filename": "diagram:flow",
+    "type": "demo (brand diagram)",
+    "replacement": "replace the diagram entry in build-product-content.mjs with { media: '<new id>' }"
+  },
+  {
+    "product": "voicebot",
+    "route": "/voicebot-ai/",
+    "section": "VB_CAPABILITIES",
+    "filename": "mockup:voicebot_builder",
+    "type": "demo (mockup, fake data)",
+    "replacement": "replace the mockup entry in build-product-content.mjs with { media: '<new id>' }"
+  },
+  {
+    "product": "voicebot",
+    "route": "/voicebot-ai/",
+    "section": "VB_HUMAN_AI",
+    "filename": "diagram:handover",
+    "type": "demo (brand diagram)",
+    "replacement": "replace the diagram entry in build-product-content.mjs with { media: '<new id>' }"
+  },
+  {
+    "product": "voicebot",
+    "route": "/voicebot-ai/",
+    "section": "VB_OUTCOMES",
+    "filename": "mockup:analytics",
+    "type": "demo (mockup, fake data)",
+    "replacement": "replace the mockup entry in build-product-content.mjs with { media: '<new id>' }"
+  },
+  {
+    "product": "qa-qc",
+    "route": "/qc-bot-ai/",
+    "section": "QQ_OVERVIEW",
+    "filename": "mockup:qc_transcript",
+    "type": "demo (mockup, fake data)",
+    "replacement": "replace the mockup entry in build-product-content.mjs with { media: '<new id>' }"
+  },
+  {
+    "product": "qa-qc",
+    "route": "/qc-bot-ai/",
+    "section": "QQ_HOW_IT_WORKS",
+    "filename": "diagram:flow",
+    "type": "demo (brand diagram)",
+    "replacement": "replace the diagram entry in build-product-content.mjs with { media: '<new id>' }"
+  },
+  {
+    "product": "qa-qc",
+    "route": "/qc-bot-ai/",
+    "section": "QQ_SCORING",
+    "filename": "mockup:qc_transcript",
+    "type": "demo (mockup, fake data)",
+    "replacement": "replace the mockup entry in build-product-content.mjs with { media: '<new id>' }"
+  },
+  {
+    "product": "qa-qc",
+    "route": "/qc-bot-ai/",
+    "section": "QQ_DASHBOARD",
+    "filename": "mockup:analytics",
+    "type": "demo (mockup, fake data)",
+    "replacement": "replace the mockup entry in build-product-content.mjs with { media: '<new id>' }"
+  }
+]

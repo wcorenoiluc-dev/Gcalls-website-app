@@ -573,6 +573,8 @@ final class Shortcodes {
 			// THIS product; otherwise a diagram of the mechanism.
 			if ( ! empty( $section['media'] ) ) {
 				$out .= self::media( array( 'id' => (string) $section['media'], 'size' => 'large' ) );
+			} elseif ( ! empty( $section['mockup'] ) ) {
+				$out .= Mockups::render( array( 'id' => (string) $section['mockup'] ) );
 			} elseif ( ! empty( $section['diagram'] ) ) {
 				$out .= self::diagram( array( 'id' => (string) $section['diagram'] ) );
 			}
