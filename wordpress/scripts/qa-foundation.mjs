@@ -882,6 +882,45 @@ check('redirect targets must look like a path', redirectsSrc.includes('đích kh
 
 const parityThemeCss = read(path.join(THEME, 'assets/css/theme.css'))
 /*
+ * The article body is filtered exactly once.
+ *
+ * the_content() applies every content filter and runs every shortcode. Calling
+ * it twice — once to render and once to scan for headings — renders every
+ * shortcode twice, which on these articles means two CTAs and two FAQ blocks
+ * on the page. The contents list is built from the captured output for that
+ * reason, and this counts the calls so it stays that way.
+ */
+{
+  const single = read(path.join(THEME, 'single.php'))
+  const contentCalls = (single.match(/(?<!\/\/[^\n]*)\bthe_content\(\)/g) ?? []).length
+  const commented = (single.match(/^\s*\*.*the_content\(\)/gm) ?? []).length
+  check(
+    'single.php filters the content exactly once',
+    contentCalls - commented === 1,
+    `${contentCalls} call(s), ${commented} in comments`,
+  )
+  check(
+    'single.php does not re-filter for the contents list',
+    !/apply_filters\(\s*'the_content'/.test(single),
+  )
+
+  const tags = read(path.join(THEME, 'inc/template-tags.php'))
+  check('the contents builder never filters', !/apply_filters\(\s*'the_content'/.test(tags))
+  check('the contents builder uses a DOM parser', tags.includes('DOMDocument'))
+  check('the contents builder has a no-DOM fallback', tags.includes('gcalls_article_contents_fallback'))
+  check('heading ids survive from the source', tags.includes("getAttribute( 'id' )"))
+
+  const fixtures = path.join(WP, 'tests/test-article-contents.php')
+  check('contents fixtures exist', exists(fixtures))
+  if (exists(fixtures)) {
+    const f = read(fixtures)
+    for (const shape of ['<strong>', 'Tổng quan', 'da-chia-se', 'gcalls_cta', 'chưa đóng']) {
+      check(`fixture covers ${shape}`, f.includes(shape))
+    }
+  }
+}
+
+/*
  * Same net as the plugin's: every class the theme's PHP emits must have a rule.
  * There is no PHP and no WordPress here, so a class that exists in the markup
  * and nowhere in the stylesheet would first be seen on the live site as an
@@ -1039,6 +1078,40 @@ if (exists(mockPhp)) {
   check('no generic mockup stands in on a product page', generic.length === 0, generic.join(', '))
 
   check('every mockup carries the demo caption', mock.includes('Giao diện minh họa – dữ liệu demo'))
+
+  /* ---------------------------------------------------------------- *
+   * SEO fallbacks — one <head> writer, never two
+   * ---------------------------------------------------------------- */
+  const seo = read(path.join(PLUGIN, 'includes/class-seo.php'))
+
+  check('SEO fallbacks hook Rank Math, not wp_head', seo.includes("'rank_math/frontend/title'") && seo.includes("'rank_math/frontend/description'"))
+  check('SEO fallbacks register only when Rank Math is active', /rank_math_active\(\)[\s\S]{0,400}rank_math\/frontend\/title/.test(seo))
+  // A second description tag is the failure this arrangement exists to avoid.
+  check('the plugin prints no meta description of its own', !/meta\s+name=.description/i.test(seo))
+  check('the plugin prints no canonical of its own', !/rel=.canonical/i.test(seo))
+  check('the title fallback defers to a non-empty value', /fallback_title[\s\S]{0,300}'' !== trim\( \$title \)/.test(seo))
+  check('the description fallback defers to a non-empty value', /fallback_description[\s\S]{0,300}'' !== trim\( \$description \)/.test(seo))
+  check('the description fallback prefers the excerpt', /post_excerpt/.test(seo))
+  check('the SEO fallbacks write nothing', !/fallback_(title|description)[\s\S]{0,900}update_post_meta/.test(seo))
+  // noindex must survive untouched: the demo is excluded from search and that
+  // is driven by the WordPress setting, not by anything added here.
+  check('robots handling is unchanged', seo.includes("add_filter( 'wp_robots'") && seo.includes("get_option( 'blog_public' )"))
+
+  /* ---------------------------------------------------------------- *
+   * Article renderers — CTA, related, FAQ
+   * ---------------------------------------------------------------- */
+  const themeTags = read(path.join(THEME, 'inc/template-tags.php'))
+  const singlePhp = read(path.join(THEME, 'single.php'))
+
+  check('a second CTA is suppressed when the body has one', singlePhp.includes('gcalls_article_has_cta'))
+  check('the CTA is added at render time, not written', !/update_post_meta|wp_update_post/.test(singlePhp))
+  check('related articles top up when a hub is thin', themeTags.includes('function gcalls_related_articles'))
+  check('related articles are published only', /gcalls_related_articles[\s\S]{0,900}'post_status'\s*=>\s*'publish'/.test(themeTags))
+  check('related articles exclude the current post', /gcalls_related_articles[\s\S]{0,600}\$exclude = array\( \$current \)/.test(themeTags))
+
+  const faq = read(path.join(PLUGIN, 'includes/class-faq.php'))
+  check('FAQ drops a pair missing either side', /'' === \$question \|\| '' === \$answer/.test(faq))
+  check('FAQ is never generated', !/lorem|auto.?generate/i.test(faq))
 
   /* ---------------------------------------------------------------- *
    * The home-page layout updater

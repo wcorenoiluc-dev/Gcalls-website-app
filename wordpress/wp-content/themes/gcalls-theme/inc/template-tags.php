@@ -392,27 +392,177 @@ function gcalls_post_cover( string $size = 'medium_large' ): void {
 /**
  * Splits rendered article HTML into a table of contents and a body with anchors.
  *
- * WHY THIS IS DONE AT RENDER TIME
- * The obvious implementation writes anchor ids into post_content once and
- * builds the list from them. That edits the article, and the eighteen
- * published articles are being edited by a person right now — their bodies and
- * modified dates must not move. So the ids are added to the OUTPUT of
- * the_content() and the post row is never touched. Turn this off and the
- * articles are byte-identical to what the editor saved.
+ * THE CONTENT IS FILTERED EXACTLY ONCE
+ * single.php captures one the_content() call and hands the result here. This
+ * function never filters, never runs a shortcode and never touches the post
+ * row — it is given HTML and returns HTML. That is what stops a second filter
+ * pass from rendering every shortcode twice, which on these articles would
+ * mean two CTAs and two FAQ blocks on the page.
  *
- * A heading that already carries an id keeps it: anything else would break a
- * link somebody has already shared.
+ * WHY THE IDS ARE ADDED TO THE OUTPUT
+ * The obvious implementation writes anchor ids into post_content once. That
+ * edits the article, and the eighteen published articles are being edited by a
+ * person right now — their bodies and modified dates must not move. So the ids
+ * are added to the rendered output and the post row is untouched. Turn this
+ * off and the articles are byte-identical to what the editor saved.
  *
- * @param string $html Rendered post content.
+ * WHY DOM AND NOT A REGULAR EXPRESSION
+ * A heading is not always `<h2>text</h2>`. It carries `<strong>`, `<em>`,
+ * links and entities, its attributes can contain a `>` inside a quoted value,
+ * and legacy imported bodies are not well-formed. A pattern that copes with
+ * all of that is a parser written badly, so this uses the one PHP ships.
+ * libxml is told to swallow the errors malformed legacy markup produces rather
+ * than warn on the page.
+ *
+ * A heading that already carries an id keeps it: someone may have shared that
+ * link. Duplicate slugs get a numeric suffix, so ids stay unique and stable
+ * for a given body.
+ *
+ * @param string $html    Rendered post content. Already filtered.
  * @param int    $minimum Headings required before a contents list is worth it.
  * @return array{toc: string, body: string}
  */
 function gcalls_article_contents( string $html, int $minimum = 3 ): array {
+	$plain = array(
+		'toc'  => '',
+		'body' => $html,
+	);
+
+	if ( '' === trim( $html ) ) {
+		return $plain;
+	}
+
+	if ( ! class_exists( 'DOMDocument' ) ) {
+		return gcalls_article_contents_fallback( $html, $minimum );
+	}
+
+	$document = new DOMDocument();
+
+	/*
+	 * The meta charset is what makes DOMDocument read this as UTF-8; without
+	 * it every Vietnamese heading comes back mojibake. The wrapper div gives a
+	 * single node to serialise back from, so the html/body elements libxml
+	 * inserts do not end up in the output.
+	 */
+	$previous = libxml_use_internal_errors( true );
+	$loaded   = $document->loadHTML(
+		'<?xml encoding="UTF-8"><!DOCTYPE html><html><body><div id="gcalls-root">' . $html . '</div></body></html>',
+		LIBXML_HTML_NODEFDTD | LIBXML_HTML_NOIMPLIED
+	);
+	libxml_clear_errors();
+	libxml_use_internal_errors( $previous );
+
+	if ( ! $loaded ) {
+		return gcalls_article_contents_fallback( $html, $minimum );
+	}
+
+	$root = $document->getElementById( 'gcalls-root' );
+
+	if ( ! $root instanceof DOMElement ) {
+		return gcalls_article_contents_fallback( $html, $minimum );
+	}
+
+	$entries = array();
+	$used    = array();
+
+	$headings = array();
+
+	foreach ( $root->getElementsByTagName( '*' ) as $node ) {
+		$tag = strtolower( $node->nodeName );
+
+		if ( 'h2' === $tag || 'h3' === $tag ) {
+			$headings[] = $node;
+		}
+	}
+
+	foreach ( $headings as $node ) {
+		$text = trim( (string) $node->textContent );
+
+		if ( '' === $text ) {
+			continue;
+		}
+
+		$id = $node->getAttribute( 'id' );
+
+		if ( '' === $id ) {
+			$id = sanitize_title( $text );
+			$id = '' === $id ? 'muc' : $id;
+
+			$base = $id;
+			$n    = 2;
+
+			while ( in_array( $id, $used, true ) ) {
+				$id = $base . '-' . $n;
+				++$n;
+			}
+
+			$node->setAttribute( 'id', $id );
+		}
+
+		$used[]    = $id;
+		$entries[] = array(
+			'id'    => $id,
+			'text'  => $text,
+			'level' => 'h3' === strtolower( $node->nodeName ) ? 3 : 2,
+		);
+	}
+
+	if ( count( $entries ) < $minimum ) {
+		return $plain;
+	}
+
+	/* Serialise the wrapper's children, so the wrapper itself is not output. */
+	$body = '';
+
+	foreach ( $root->childNodes as $child ) {
+		$body .= (string) $document->saveHTML( $child );
+	}
+
+	return array(
+		'toc'  => gcalls_article_toc_markup( $entries ),
+		'body' => $body,
+	);
+}
+
+/**
+ * Builds the contents list markup.
+ *
+ * @param array<int, array{id: string, text: string, level: int}> $entries Headings.
+ */
+function gcalls_article_toc_markup( array $entries ): string {
+	$toc = '<nav class="gcalls-toc" aria-labelledby="gcalls-toc-title">'
+		. '<p class="gcalls-toc__title" id="gcalls-toc-title">'
+		. esc_html__( 'Nội dung bài viết', 'gcalls-theme' ) . '</p><ol>';
+
+	foreach ( $entries as $entry ) {
+		$toc .= '<li class="' . ( 3 === $entry['level'] ? 'li--sub' : '' ) . '">'
+			. '<a href="#' . esc_attr( $entry['id'] ) . '">' . esc_html( $entry['text'] ) . '</a></li>';
+	}
+
+	return $toc . '</ol></nav>';
+}
+
+/**
+ * Contents list without DOMDocument.
+ *
+ * ext-dom is enabled on essentially every WordPress host, so this exists for
+ * the one that is not rather than as the main path. It is deliberately
+ * conservative: it only recognises a heading whose attributes contain no `>`,
+ * and if anything about a heading looks unusual it leaves that heading
+ * untouched rather than rewriting markup it did not fully understand. The body
+ * is returned with anchors added and nothing else changed — a fallback that
+ * mangles the article is worse than a page with no contents list.
+ *
+ * @param string $html    Rendered post content.
+ * @param int    $minimum Headings required.
+ * @return array{toc: string, body: string}
+ */
+function gcalls_article_contents_fallback( string $html, int $minimum = 3 ): array {
 	$entries = array();
 	$used    = array();
 
 	$body = (string) preg_replace_callback(
-		'#<(h[23])\b([^>]*)>(.*?)</\1>#is',
+		'#<(h[23])((?:\s+[a-zA-Z-]+="[^"]*")*)\s*>(.*?)</\1\s*>#is',
 		static function ( array $match ) use ( &$entries, &$used ): string {
 			list( , $tag, $attributes, $inner ) = $match;
 
@@ -422,8 +572,7 @@ function gcalls_article_contents( string $html, int $minimum = 3 ): array {
 				return $match[0];
 			}
 
-			// Keep an id the author already set; a shared link depends on it.
-			if ( preg_match( '/\bid="([^"]+)"/i', $attributes, $found ) ) {
+			if ( preg_match( '/\bid="([^"]*)"/i', $attributes, $found ) && '' !== $found[1] ) {
 				$id = $found[1];
 			} else {
 				$id   = sanitize_title( $text );
@@ -451,24 +600,107 @@ function gcalls_article_contents( string $html, int $minimum = 3 ): array {
 		$html
 	);
 
-	if ( count( $entries ) < $minimum ) {
+	if ( count( $entries ) < $minimum || null === $body ) {
 		return array(
 			'toc'  => '',
 			'body' => $html,
 		);
 	}
 
-	$toc = '<nav class="gcalls-toc" aria-labelledby="gcalls-toc-title">'
-		. '<p class="gcalls-toc__title" id="gcalls-toc-title">'
-		. esc_html__( 'Nội dung bài viết', 'gcalls-theme' ) . '</p><ol>';
-
-	foreach ( $entries as $entry ) {
-		$toc .= '<li class="' . ( 3 === $entry['level'] ? 'li--sub' : '' ) . '">'
-			. '<a href="#' . esc_attr( $entry['id'] ) . '">' . esc_html( $entry['text'] ) . '</a></li>';
-	}
-
 	return array(
-		'toc'  => $toc . '</ol></nav>',
+		'toc'  => gcalls_article_toc_markup( $entries ),
 		'body' => $body,
 	);
+}
+
+/**
+ * Whether an article already carries its own call to action.
+ *
+ * 238 of the 250 articles have no CTA, and the answer to that is a renderer
+ * that adds one — not an edit to 238 bodies. But twelve articles DO have one,
+ * and appending a second would give those a page that asks twice. This looks
+ * at the rendered body and reports what is there.
+ *
+ * A link to the contact page is the signal, whether it arrived as a shortcode
+ * or was typed by an editor: both are the reader being asked to get in touch.
+ *
+ * @param string $html Rendered article body.
+ */
+function gcalls_article_has_cta( string $html ): bool {
+	if ( false !== strpos( $html, 'gcalls-cta' ) ) {
+		return true;
+	}
+
+	return (bool) preg_match( '#href="[^"]*/lien-he/#i', $html );
+}
+
+/**
+ * Related articles for the current post.
+ *
+ * Same hub first, newest first, and topped up with recent articles when the
+ * hub cannot supply enough — four of the thirteen hubs hold two articles or
+ * fewer, so "same hub only" would leave those pages with one suggestion or
+ * none.
+ *
+ * Two queries at most, never one per post: the top-up is a second bounded
+ * query with the already-chosen ids excluded, not a loop.
+ *
+ * Published posts only, and `post_status` is stated rather than left to
+ * default — a logged-in editor's default query would otherwise surface their
+ * own drafts to them and make the page look different to different people.
+ *
+ * @param int $limit How many to return.
+ * @return array<int, WP_Post>
+ */
+function gcalls_related_articles( int $limit = 3 ): array {
+	$current = (int) get_the_ID();
+	$exclude = array( $current );
+	$found   = array();
+
+	$terms = taxonomy_exists( 'gcalls_hub' ) ? get_the_terms( $current, 'gcalls_hub' ) : array();
+
+	$common = array(
+		'post_type'              => 'post',
+		'post_status'            => 'publish',
+		'ignore_sticky_posts'    => true,
+		'no_found_rows'          => true,
+		'update_post_meta_cache' => false,
+		'orderby'                => 'date',
+		'order'                  => 'DESC',
+	);
+
+	if ( is_array( $terms ) && isset( $terms[0] ) ) {
+		$in_hub = get_posts(
+			$common + array(
+				'numberposts' => $limit,
+				'exclude'     => $exclude,
+				'tax_query'   => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Bounded by $limit, one term.
+					array(
+						'taxonomy' => 'gcalls_hub',
+						'field'    => 'term_id',
+						'terms'    => $terms[0]->term_id,
+					),
+				),
+			)
+		);
+
+		foreach ( $in_hub as $post ) {
+			$found[]   = $post;
+			$exclude[] = (int) $post->ID;
+		}
+	}
+
+	if ( count( $found ) >= $limit ) {
+		return $found;
+	}
+
+	/* Top up. One more query, not one per missing slot. */
+	$recent = get_posts(
+		$common + array(
+			'numberposts' => $limit - count( $found ),
+			'exclude'     => $exclude,
+		)
+	);
+
+	return array_merge( $found, $recent );
 }

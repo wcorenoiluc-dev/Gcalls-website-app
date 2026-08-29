@@ -75,3 +75,18 @@ function gcalls_core_is_elementor_page( ?int $post_id = null ): bool {
 function gcalls_core_faq( ?int $post_id = null ): void {
 	\Gcalls\Core\Faq::render( $post_id );
 }
+
+/**
+ * The canonical HUB list, in the order the plugin declares it.
+ *
+ * Exists so the theme can render a complete filter — including hubs that
+ * carry no article yet — without reaching into the class or hardcoding the
+ * thirteen slugs a second time. `get_terms()` cannot answer this: it returns
+ * what the database holds, in whatever order was asked for, and a hub that has
+ * never been used is indistinguishable from one that does not exist.
+ *
+ * @return array<string, array{slug: string, name: string}> Keyed by HUB id.
+ */
+function gcalls_core_hubs(): array {
+	return \Gcalls\Core\Hub_Taxonomy::hubs();
+}

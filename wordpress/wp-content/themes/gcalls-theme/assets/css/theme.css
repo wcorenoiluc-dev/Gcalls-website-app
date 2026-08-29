@@ -1706,3 +1706,74 @@ html.gcalls-nav-open body { overflow: hidden; }
 /* The article body's reading measure. */
 .gcalls-article__body { max-width: var(--gcalls-measure); }
 .gcalls-article__body > * { max-width: 100%; }
+
+/* ── Blog hub filter — 013 ────────────────────────────────────────────
+ * Hidden until the inline script marks the document as scripted. A row
+ * of buttons that cannot filter is a dead end; with the bar absent every
+ * group is on the page and nothing is lost. */
+.gcalls-hubfilter { display: none; }
+
+.gcalls-js .gcalls-hubfilter {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: var(--gcalls-space-3);
+}
+
+.gcalls-hubfilter__btn {
+	align-items: center;
+	background: var(--gcalls-surface);
+	border: 1px solid var(--gcalls-border);
+	border-radius: 999px;
+	color: var(--gcalls-muted);
+	cursor: pointer;
+	display: inline-flex;
+	font: inherit;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	gap: 0.4rem;
+	min-height: 2.25rem;
+	padding: 0.35rem 0.85rem;
+}
+
+.gcalls-hubfilter__btn:hover:not(:disabled) { border-color: var(--gcalls-brand); color: var(--gcalls-brand); }
+
+.gcalls-hubfilter__btn[aria-pressed="true"] {
+	background: var(--gcalls-brand);
+	border-color: var(--gcalls-brand);
+	color: #fff;
+}
+
+/* A hub with no article yet: shown, so the taxonomy reads complete, but
+ * not operable, because it could only ever return an empty list. */
+.gcalls-hubfilter__btn:disabled { cursor: not-allowed; opacity: 0.45; }
+
+.gcalls-hubfilter__count {
+	background: var(--gcalls-brand-light);
+	border-radius: 999px;
+	color: var(--gcalls-brand);
+	font-size: 0.6875rem;
+	font-variant-numeric: tabular-nums;
+	padding: 0.05rem 0.4rem;
+}
+
+.gcalls-hubfilter__btn[aria-pressed="true"] .gcalls-hubfilter__count {
+	background: rgba(255, 255, 255, 0.22);
+	color: #fff;
+}
+
+.gcalls-hubfilter__btn:disabled .gcalls-hubfilter__count { background: var(--gcalls-border); color: var(--gcalls-muted); }
+
+.gcalls-hubfilter__status {
+	color: var(--gcalls-muted);
+	font-size: 0.8125rem;
+	margin: 0 0 var(--gcalls-space-2);
+	min-height: 1.2em;
+}
+
+/* A tighter archive hero. The blog page's intro is body copy pulled from
+ * the page, and at full measure it filled the first screen before a
+ * single article was visible. */
+.blog .gcalls-page-header__intro,
+.gcalls-page-header__intro { font-size: 0.9375rem; max-width: var(--gcalls-measure); }
+.blog .gcalls-page-header { margin-bottom: var(--gcalls-space-3); }

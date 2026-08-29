@@ -108,9 +108,20 @@ while ( have_posts() ) :
 			 * page after the body. The CTA carries the hub in `source`, which is
 			 * what makes it possible to tell later which topic actually converts.
 			 */
-			if ( shortcode_exists( 'gcalls_cta' ) ) {
-				$gcalls_hub_terms = get_the_terms( get_the_ID(), 'gcalls_hub' );
-				$gcalls_hub_slug  = ( is_array( $gcalls_hub_terms ) && isset( $gcalls_hub_terms[0] ) )
+			$gcalls_hub_terms = get_the_terms( get_the_ID(), 'gcalls_hub' );
+
+			/*
+			 * The CTA is added at render time, never written into a body — 238
+			 * of the 250 articles have none, and editing 238 posts to fix that
+			 * would move hashes on articles somebody is still working on.
+			 *
+			 * Twelve articles DO already ask the reader to get in touch, and
+			 * appending to those would ask twice on one page. So the rendered
+			 * body is checked first and the runtime CTA stands down when the
+			 * article brought its own.
+			 */
+			if ( shortcode_exists( 'gcalls_cta' ) && ! gcalls_article_has_cta( $gcalls_article['body'] ) ) {
+				$gcalls_hub_slug = ( is_array( $gcalls_hub_terms ) && isset( $gcalls_hub_terms[0] ) )
 					? $gcalls_hub_terms[0]->slug
 					: 'blog';
 
@@ -122,51 +133,37 @@ while ( have_posts() ) :
 				);
 			}
 
-			if ( is_array( $gcalls_hub_terms ?? null ) && isset( $gcalls_hub_terms[0] ) ) :
-				$gcalls_related = new WP_Query(
-					array(
-						'post_type'              => 'post',
-						'post_status'            => 'publish',
-						'posts_per_page'         => 3,
-						'post__not_in'           => array( get_the_ID() ),
-						'ignore_sticky_posts'    => true,
-						'no_found_rows'          => true,
-						'update_post_meta_cache' => false,
-						'tax_query'              => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Three posts, one term.
-							array(
-								'taxonomy' => 'gcalls_hub',
-								'field'    => 'term_id',
-								'terms'    => $gcalls_hub_terms[0]->term_id,
-							),
-						),
-					)
-				);
+			/*
+			 * Related reading. Same hub first, topped up with recent articles
+			 * when the hub is thin — four of the thirteen hold two articles or
+			 * fewer, and "same hub only" left those pages suggesting nothing.
+			 */
+			$gcalls_related = gcalls_related_articles( 3 );
 
-				if ( $gcalls_related->have_posts() ) :
-					?>
-					<section class="gcalls-related">
-						<h2 class="gcalls-related__title">
-							<?php
-							printf(
-								/* translators: %s: hub name. */
-								esc_html__( 'Đọc tiếp trong %s', 'gcalls-theme' ),
-								esc_html( $gcalls_hub_terms[0]->name )
-							);
-							?>
-						</h2>
-						<div class="gcalls-cards">
-							<?php
-							while ( $gcalls_related->have_posts() ) :
-								$gcalls_related->the_post();
-								get_template_part( 'template-parts/content', 'card' );
-							endwhile;
-							?>
-						</div>
-					</section>
-					<?php
-				endif;
+			if ( array() !== $gcalls_related ) :
+				$gcalls_related_heading = ( is_array( $gcalls_hub_terms ) && isset( $gcalls_hub_terms[0] ) )
+					/* translators: %s: hub name. */
+					? sprintf( __( 'Đọc tiếp trong %s', 'gcalls-theme' ), $gcalls_hub_terms[0]->name )
+					: __( 'Bài viết mới nhất', 'gcalls-theme' );
+				?>
+				<section class="gcalls-related">
+					<h2 class="gcalls-related__title"><?php echo esc_html( $gcalls_related_heading ); ?></h2>
+					<div class="gcalls-cards">
+						<?php
+						global $post;
+						$gcalls_saved_post = $post;
 
-				wp_reset_postdata();
+						foreach ( $gcalls_related as $post ) {
+							setup_postdata( $post );
+							get_template_part( 'template-parts/content', 'card' );
+						}
+
+						$post = $gcalls_saved_post;
+						wp_reset_postdata();
+						?>
+					</div>
+				</section>
+				<?php
 			endif;
 			?>
 

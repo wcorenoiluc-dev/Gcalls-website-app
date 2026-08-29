@@ -125,3 +125,76 @@
 
 	document.querySelectorAll( '[data-gcalls-nav-toggle]' ).forEach( setup );
 } )();
+
+/**
+ * Blog HUB filter.
+ *
+ * Shows and hides the hub groups already on the page. It queries nothing,
+ * changes no URL and touches no post data — every article is in the document
+ * before this runs, and filtering only sets `hidden` on the groups.
+ *
+ * The bar itself is revealed by CSS only when `.gcalls-js` is on the root, so
+ * with scripting off there are no buttons that do nothing and every group is
+ * visible. That is why this file may assume the bar means business.
+ */
+( function () {
+	'use strict';
+
+	var bar = document.querySelector( '[data-gcalls-hubfilter]' );
+
+	if ( ! bar ) {
+		return;
+	}
+
+	var buttons = Array.prototype.slice.call( bar.querySelectorAll( '[data-hub-filter]' ) );
+	var groups = Array.prototype.slice.call( document.querySelectorAll( '[data-hub]' ) );
+	var status = document.querySelector( '[data-gcalls-hubfilter-status]' );
+
+	if ( ! buttons.length || ! groups.length ) {
+		return;
+	}
+
+	function apply( value ) {
+		var shown = 0;
+
+		groups.forEach( function ( group ) {
+			var match = value === 'all' || group.getAttribute( 'data-hub' ) === value;
+			group.hidden = ! match;
+			if ( match ) {
+				shown += 1;
+			}
+		} );
+
+		buttons.forEach( function ( button ) {
+			button.setAttribute(
+				'aria-pressed',
+				button.getAttribute( 'data-hub-filter' ) === value ? 'true' : 'false'
+			);
+		} );
+
+		/*
+		 * Announced through role="status". Hiding half the page with no spoken
+		 * confirmation leaves a screen-reader user with no idea the button did
+		 * anything — the change is entirely visual otherwise.
+		 */
+		if ( status ) {
+			var label = 'all' === value
+				? ''
+				: ( bar.querySelector( '[data-hub-filter="' + value + '"]' ) || {} ).textContent || '';
+
+			status.textContent = 'all' === value
+				? 'Đang hiển thị tất cả nhóm chủ đề.'
+				: 'Đang lọc theo ' + label.trim().replace( /\s+/g, ' ' ) + '. ' + shown + ' nhóm hiển thị.';
+		}
+	}
+
+	buttons.forEach( function ( button ) {
+		if ( button.disabled ) {
+			return;
+		}
+
+		button.addEventListener( 'click', function () {
+			apply( button.getAttribute( 'data-hub-filter' ) );
+		} );
+	} );
+}() );

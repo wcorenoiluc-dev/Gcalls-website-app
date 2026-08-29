@@ -38,6 +38,94 @@ final class Seo {
 	 */
 	public static function init(): void {
 		add_filter( 'wp_robots', array( self::class, 'filter_robots' ), 20 );
+
+		/*
+		 * Runtime fallbacks for articles Rank Math has no title or description
+		 * for — 46 and 21 of the 250 respectively.
+		 *
+		 * THESE ARE RANK MATH'S OWN FILTERS, NOT A SECOND <head> WRITER.
+		 * Printing a description tag of our own would put two on the page and
+		 * give the snippet two disagreeing sources; the same applies to the
+		 * canonical link, which is why nothing here touches it. Filtering the
+		 * value Rank Math is about to print keeps one tag, with a better value
+		 * in it.
+		 *
+		 * They are registered only when Rank Math is actually active. With no
+		 * SEO plugin these filters are never called by anyone, so registering
+		 * them would be dead weight that still has to be reasoned about.
+		 *
+		 * Nothing here writes to the database. A fallback is computed for the
+		 * request and discarded; the 18 published articles keep whatever meta
+		 * they have, unchanged, along with their modified dates.
+		 */
+		if ( self::rank_math_active() ) {
+			add_filter( 'rank_math/frontend/title', array( self::class, 'fallback_title' ), 20 );
+			add_filter( 'rank_math/frontend/description', array( self::class, 'fallback_description' ), 20 );
+		}
+	}
+
+	/**
+	 * Supplies a title when Rank Math has none.
+	 *
+	 * Only when the value arriving is genuinely empty. Rank Math's own
+	 * template — including one an editor has set by hand — always wins, which
+	 * is what "chỉ fallback khi metadata thực sự trống" means in code.
+	 *
+	 * @param string $title Title Rank Math is about to print.
+	 */
+	public static function fallback_title( $title ) {
+		if ( is_string( $title ) && '' !== trim( $title ) ) {
+			return $title;
+		}
+
+		if ( ! is_singular() ) {
+			return $title;
+		}
+
+		$post_title = get_the_title();
+
+		return '' !== trim( (string) $post_title ) ? $post_title : $title;
+	}
+
+	/**
+	 * Supplies a description when Rank Math has none.
+	 *
+	 * Prefers a hand-written excerpt; falls back to the opening of the article
+	 * only when there is no excerpt. The generated value is trimmed on a word
+	 * boundary — a description cut mid-word reads as broken to the one person
+	 * who sees it in a search result.
+	 *
+	 * Returns the empty string rather than a guess when the post has neither,
+	 * because no description is better than a description made of a heading
+	 * and half a sentence. Those articles are listed in the SEO backlog
+	 * instead, for an editor to write.
+	 *
+	 * @param string $description Description Rank Math is about to print.
+	 */
+	public static function fallback_description( $description ) {
+		if ( is_string( $description ) && '' !== trim( $description ) ) {
+			return $description;
+		}
+
+		if ( ! is_singular() ) {
+			return $description;
+		}
+
+		$post = get_post();
+
+		if ( ! $post instanceof \WP_Post ) {
+			return $description;
+		}
+
+		$excerpt = trim( (string) $post->post_excerpt );
+
+		if ( '' !== $excerpt ) {
+			return wp_trim_words( $excerpt, 32, '…' );
+		}
+
+		$body = trim( wp_strip_all_tags( strip_shortcodes( (string) $post->post_content ) ) );
+
+		return '' !== $body ? wp_trim_words( $body, 32, '…' ) : $description;
 	}
 
 	/**

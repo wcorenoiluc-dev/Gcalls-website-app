@@ -92,22 +92,90 @@ $grouped       = taxonomy_exists( $hub_taxonomy ) && ! is_paged();
 
 		$rendered = 0;
 
+		// Needed by the "Tất cả" chip, which is printed before the groups are
+		// walked, so it cannot use the running total.
+		$rendered_total = 0;
+
+		if ( ! is_wp_error( $hub_terms ) ) {
+			foreach ( $hub_terms as $term ) {
+				$rendered_total += (int) $term->count;
+			}
+		}
+
 		if ( ! is_wp_error( $hub_terms ) && array() !== $hub_terms ) :
 			?>
-			<nav class="gcalls-hub-index" aria-label="<?php esc_attr_e( 'Danh mục bài viết', 'gcalls-theme' ); ?>">
-				<ul class="gcalls-hub-index__list">
-					<h2 class="gcalls-hub-heading"><?php esc_html_e( 'Bài viết theo nhóm chủ đề', 'gcalls-theme' ); ?></h2>
+			<?php
+			/*
+			 * The filter bar.
+			 *
+			 * Every canonical hub is listed, including the two that carry no
+			 * article yet — those render disabled with a zero count. Hiding
+			 * them would make the taxonomy look smaller than it is, and an
+			 * enabled control that can only ever return nothing is worse.
+			 *
+			 * WITHOUT JAVASCRIPT THE BAR IS NOT SHOWN AT ALL.
+			 * The stylesheet reveals it only under `.gcalls-js`, a class the
+			 * inline script below sets. A row of buttons that do nothing is a
+			 * dead end; with the bar hidden, every group is on the page and
+			 * nothing is lost — which is the behaviour the no-JS case wants.
+			 */
+			$all_hubs = function_exists( 'gcalls_core_hubs' ) ? gcalls_core_hubs() : array();
+			?>
+			<script>document.documentElement.classList.add('gcalls-js');</script>
 
-			<?php foreach ( $hub_terms as $term ) : ?>
-						<li>
-							<a href="#hub-<?php echo esc_attr( $term->slug ); ?>">
-								<?php echo esc_html( $term->name ); ?>
-								<span class="gcalls-hub-index__count"><?php echo esc_html( (string) $term->count ); ?></span>
-							</a>
-						</li>
-					<?php endforeach; ?>
-				</ul>
-			</nav>
+			<h2 class="gcalls-hub-heading"><?php esc_html_e( 'Bài viết theo nhóm chủ đề', 'gcalls-theme' ); ?></h2>
+
+			<div class="gcalls-hubfilter" role="group" aria-label="<?php esc_attr_e( 'Lọc bài viết theo nhóm chủ đề', 'gcalls-theme' ); ?>" data-gcalls-hubfilter>
+				<button type="button" class="gcalls-hubfilter__btn" data-hub-filter="all" aria-pressed="true">
+					<?php esc_html_e( 'Tất cả', 'gcalls-theme' ); ?>
+					<span class="gcalls-hubfilter__count"><?php echo esc_html( (string) $rendered_total ); ?></span>
+				</button>
+
+				<?php
+				$counts = array();
+
+				foreach ( $hub_terms as $term ) {
+					$counts[ $term->slug ] = array(
+						'name'  => $term->name,
+						'count' => (int) $term->count,
+					);
+				}
+
+				// Canonical order when the plugin can supply it, so the bar does
+				// not reshuffle itself as article counts change.
+				$ordered = array();
+
+				foreach ( $all_hubs as $hub ) {
+					$slug             = (string) $hub['slug'];
+					$ordered[ $slug ] = array(
+						'name'  => isset( $counts[ $slug ] ) ? $counts[ $slug ]['name'] : (string) $hub['name'],
+						'count' => isset( $counts[ $slug ] ) ? $counts[ $slug ]['count'] : 0,
+					);
+				}
+
+				foreach ( $counts as $slug => $data ) {
+					if ( ! isset( $ordered[ $slug ] ) ) {
+						$ordered[ $slug ] = $data;
+					}
+				}
+
+				foreach ( $ordered as $slug => $data ) :
+					$empty = 0 === $data['count'];
+					?>
+					<button
+						type="button"
+						class="gcalls-hubfilter__btn"
+						data-hub-filter="<?php echo esc_attr( $slug ); ?>"
+						aria-pressed="false"
+						<?php disabled( $empty, true ); ?>
+					>
+						<?php echo esc_html( $data['name'] ); ?>
+						<span class="gcalls-hubfilter__count"><?php echo esc_html( (string) $data['count'] ); ?></span>
+					</button>
+				<?php endforeach; ?>
+			</div>
+
+			<p class="gcalls-hubfilter__status" role="status" data-gcalls-hubfilter-status></p>
 
 			<?php foreach ( $hub_terms as $term ) : ?>
 				<?php
@@ -136,7 +204,7 @@ $grouped       = taxonomy_exists( $hub_taxonomy ) && ! is_paged();
 					continue;
 				}
 				?>
-				<section class="gcalls-hub-group" id="hub-<?php echo esc_attr( $term->slug ); ?>">
+				<section class="gcalls-hub-group" id="hub-<?php echo esc_attr( $term->slug ); ?>" data-hub="<?php echo esc_attr( $term->slug ); ?>">
 					<?php
 					// h3 under the listing's h2, with the count in the heading —
 					// the hub name alone does not say how much is behind it.
