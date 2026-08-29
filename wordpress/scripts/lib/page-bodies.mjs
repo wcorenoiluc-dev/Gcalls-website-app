@@ -196,6 +196,11 @@ async function blogBody(repo, routes) {
 
   const parts = []
 
+  // The page's real title. WordPress uses the posts page's post_title, which
+  // is the menu label "Blog" — accurate and useless: it is the one heading a
+  // reader and a search engine both read first, and it says nothing about what
+  // the blog covers. React heads the page with the sentence that does.
+  if (BLOG.hero?.h1) parts.push(heading(BLOG.hero.h1, 1))
   if (BLOG.hero?.description) parts.push(p(BLOG.hero.description))
 
   if (BLOG.purpose) {
@@ -206,6 +211,20 @@ async function blogBody(repo, routes) {
     }
     if (BLOG.purpose.note) parts.push(p(BLOG.purpose.note))
   }
+
+  /*
+   * Where the article listing goes.
+   *
+   * Checkpoint 007 put the whole body below the listing, on the reasoning that
+   * burying eighteen articles under screens of scope notes is an odd way to
+   * publish an archive. Half right: the SIX CATEGORIES are screens of scope
+   * notes, but the purpose block above is four short paragraphs saying who the
+   * blog is written for, and React puts it first for a reason — it is what
+   * tells a reader whether the list below is for them.
+   *
+   * home.php splits the body here.
+   */
+  parts.push('<!-- gcalls:archive -->')
 
   if (BLOG.categories) {
     parts.push(heading(BLOG.categories.h2, 2, BLOG.categories.anchorId ?? null))

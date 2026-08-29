@@ -1132,3 +1132,17 @@ html.gcalls-nav-open body { overflow: hidden; }
 .gcalls-page__title {
 	margin: var(--gcalls-space-5) 0 var(--gcalls-space-3);
 }
+
+/* The listing's own heading, and the count that belongs with each hub name.
+   The count is the second half of the heading, not a separate label, so it
+   reads as one phrase to a screen reader. */
+.gcalls-hub-heading {
+	margin: var(--gcalls-space-5) 0 var(--gcalls-space-3);
+}
+
+.gcalls-hub-group__count {
+	margin-left: 0.5rem;
+	color: var(--gcalls-muted);
+	font-size: 0.8125rem;
+	font-weight: 500;
+}

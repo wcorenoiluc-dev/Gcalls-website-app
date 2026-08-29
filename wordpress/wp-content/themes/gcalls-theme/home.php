@@ -35,31 +35,46 @@ $grouped       = taxonomy_exists( $hub_taxonomy ) && ! is_paged();
 	<?php gcalls_breadcrumbs(); ?>
 
 	<header class="gcalls-page-header">
-		<h1 class="gcalls-page-header__title">
-			<?php echo $posts_page_id ? esc_html( get_the_title( $posts_page_id ) ) : esc_html__( 'Blog', 'gcalls-theme' ); ?>
-		</h1>
-
 		<?php
 		/**
 		 * The posts page cannot use the_content() inside the loop — the loop
 		 * holds posts, not the page — so its body is fetched explicitly.
 		 *
-		 * It is then split at its first heading. Everything above that heading
-		 * is the page's opening paragraph and belongs under the title; the
-		 * headed sections below it are editorial copy about the blog's scope,
-		 * and burying eighteen articles beneath four screens of it would be an
-		 * odd way to publish an archive. React puts the listing first for the
-		 * same reason, so this is also what makes the two orders match.
+		 * It is split at the marker the exporter leaves for exactly this: the
+		 * opening and the "who this is written for" block go above the listing,
+		 * and the six categories, the routing table and the FAQ go below it.
+		 * Checkpoint 007 put all of it below, which buried the purpose along
+		 * with the scope notes; React puts the purpose first because it is what
+		 * tells a reader whether the list underneath is for them.
+		 *
+		 * The title is printed only when the body brings no h1 — the same rule
+		 * page-templates/full-width.php applies, and for the same reason: the
+		 * post_title here is the menu label "Blog", which is accurate and says
+		 * nothing.
 		 */
-		$body  = $posts_page_id ? (string) get_post_field( 'post_content', $posts_page_id ) : '';
-		$split = false !== strpos( $body, '<!-- wp:heading' ) ? strpos( $body, '<!-- wp:heading' ) : strlen( $body );
-		$intro = substr( $body, 0, $split );
-		$rest  = substr( $body, $split );
+		$body   = $posts_page_id ? (string) get_post_field( 'post_content', $posts_page_id ) : '';
+		$marker = '<!-- gcalls:archive -->';
+		$split  = false !== strpos( $body, $marker )
+			? strpos( $body, $marker )
+			: ( false !== strpos( $body, '<!-- wp:heading' ) ? strpos( $body, '<!-- wp:heading' ) : strlen( $body ) );
 
-		if ( '' !== trim( $intro ) ) :
+		$intro = substr( $body, 0, $split );
+		$rest  = str_replace( $marker, '', substr( $body, $split ) );
+
+		$intro_html = '' !== trim( $intro ) ? (string) apply_filters( 'the_content', $intro ) : '';
+
+		if ( false === stripos( $intro_html, '<h1' ) ) :
+			?>
+			<h1 class="gcalls-page-header__title">
+				<?php echo $posts_page_id ? esc_html( get_the_title( $posts_page_id ) ) : esc_html__( 'Blog', 'gcalls-theme' ); ?>
+			</h1>
+			<?php
+		endif;
+
+		if ( '' !== $intro_html ) :
 			?>
 			<div class="gcalls-page-header__intro">
-				<?php echo wp_kses_post( apply_filters( 'the_content', $intro ) ); ?>
+				<?php echo wp_kses_post( $intro_html ); ?>
 			</div>
 			<?php
 		endif;
@@ -81,7 +96,9 @@ $grouped       = taxonomy_exists( $hub_taxonomy ) && ! is_paged();
 			?>
 			<nav class="gcalls-hub-index" aria-label="<?php esc_attr_e( 'Danh mục bài viết', 'gcalls-theme' ); ?>">
 				<ul class="gcalls-hub-index__list">
-					<?php foreach ( $hub_terms as $term ) : ?>
+					<h2 class="gcalls-hub-heading"><?php esc_html_e( 'Bài viết theo nhóm chủ đề', 'gcalls-theme' ); ?></h2>
+
+			<?php foreach ( $hub_terms as $term ) : ?>
 						<li>
 							<a href="#hub-<?php echo esc_attr( $term->slug ); ?>">
 								<?php echo esc_html( $term->name ); ?>
@@ -120,7 +137,22 @@ $grouped       = taxonomy_exists( $hub_taxonomy ) && ! is_paged();
 				}
 				?>
 				<section class="gcalls-hub-group" id="hub-<?php echo esc_attr( $term->slug ); ?>">
-					<h2 class="gcalls-hub-group__title"><?php echo esc_html( $term->name ); ?></h2>
+					<?php
+					// h3 under the listing's h2, with the count in the heading —
+					// the hub name alone does not say how much is behind it.
+					?>
+					<h3 class="gcalls-hub-group__title">
+						<?php echo esc_html( $term->name ); ?>
+						<span class="gcalls-hub-group__count">
+							<?php
+							printf(
+								/* translators: %d: number of articles in this hub. */
+								esc_html( _n( '%d bài', '%d bài', (int) $term->count, 'gcalls-theme' ) ),
+								(int) $term->count
+							);
+							?>
+						</span>
+					</h3>
 
 					<?php if ( '' !== trim( (string) $term->description ) ) : ?>
 						<p class="gcalls-hub-group__description"><?php echo esc_html( $term->description ); ?></p>

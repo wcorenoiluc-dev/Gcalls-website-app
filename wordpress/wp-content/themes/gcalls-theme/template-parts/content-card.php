@@ -24,9 +24,9 @@ defined( 'ABSPATH' ) || exit;
 	<div class="gcalls-card__body">
 		<?php gcalls_post_terms(); ?>
 
-		<h2 class="gcalls-card__title">
+		<h3 class="gcalls-card__title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-		</h2>
+		</h3>
 
 		<?php if ( has_excerpt() || get_the_excerpt() ) : ?>
 			<p class="gcalls-card__excerpt"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 32 ) ); ?></p>
