@@ -2,12 +2,12 @@
   {
     "name": "home",
     "route": "/",
-    "score": 55.3,
+    "score": 61.3,
     "parts": {
-      "headings": 39,
+      "headings": 51.2,
       "visuals": 100,
       "ctas": 54.5,
-      "rhythm": 63.3
+      "rhythm": 62.8
     },
     "react": {
       "headings": 41,
@@ -16,10 +16,10 @@
       "height": 18669
     },
     "wp": {
-      "headings": 30,
+      "headings": 35,
       "visuals": 9,
       "ctas": 6,
-      "height": 11811
+      "height": 11716
     },
     "missingInWp": [
       "“Khoảng Trống” Vận Hành Khiến Doanh Nghiệp Rò Rỉ Khách Hàng Và Thất Thoát Doanh Thu",
@@ -41,11 +41,7 @@
       "Chỉ cần trình duyệt là có thể bắt đầu",
       "Biết đội ngũ đang làm gì theo thời gian thực",
       "Tổng đài doanh nghiệp luôn đồng hành cùng đội ngũ của bạn",
-      "Gcalls phù hợp với mô hình đội ngũ nào",
-      "Sản phẩm",
-      "Giải pháp",
-      "Khám phá",
-      "Tài nguyên"
+      "Gcalls phù hợp với mô hình đội ngũ nào"
     ],
     "extraInWp": [
       "Những điểm nghẽn làm giảm hiệu suất nghe gọi của đội Sales và CSKH",
@@ -66,12 +62,12 @@
   {
     "name": "gcalls-plus",
     "route": "/gcalls-plus-webphone/",
-    "score": 74.4,
+    "score": 78.8,
     "parts": {
-      "headings": 56.4,
+      "headings": 65.5,
       "visuals": 100,
       "ctas": 100,
-      "rhythm": 81.1
+      "rhythm": 80.4
     },
     "react": {
       "headings": 55,
@@ -80,10 +76,10 @@
       "height": 13360
     },
     "wp": {
-      "headings": 47,
+      "headings": 52,
       "visuals": 11,
       "ctas": 4,
-      "height": 10841
+      "height": 10746
     },
     "missingInWp": [
       "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình duyệt",
@@ -104,12 +100,7 @@
       "Gcalls Plus có tích hợp CRM không?",
       "Gcalls Plus phù hợp với ai?",
       "Tôi có thể biết chi phí trước khi tư vấn không?",
-      "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ của bạn đang làm việc",
-      "Sản phẩm",
-      "Giải pháp",
-      "Khám phá",
-      "Tài nguyên",
-      "Gcalls"
+      "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ của bạn đang làm việc"
     ],
     "extraInWp": [
       "Hoạt động trực tiếp trên trình duyệt",
@@ -133,12 +124,12 @@
   {
     "name": "gcalls-cx",
     "route": "/gcalls-cx/",
-    "score": 69.1,
+    "score": 70.2,
     "parts": {
-      "headings": 65,
+      "headings": 67.7,
       "visuals": 100,
       "ctas": 66.7,
-      "rhythm": 58
+      "rhythm": 57
     },
     "react": {
       "headings": 59,
@@ -147,10 +138,10 @@
       "height": 13533
     },
     "wp": {
-      "headings": 60,
+      "headings": 65,
       "visuals": 5,
       "ctas": 4,
-      "height": 7849
+      "height": 7712
     },
     "missingInWp": [
       "Gcalls CX – hợp nhất mọi điểm chạm khách hàng trên một màn hình",
@@ -167,12 +158,7 @@
       "Gcalls CX khác Gcalls Plus như thế nào?",
       "Gcalls CX có thay thế CRM không?",
       "Gcalls CX phù hợp với doanh nghiệp nào?",
-      "Xem Gcalls CX hoạt động trên chính hành trình chăm sóc khách hàng của doanh nghiệp bạn",
-      "Sản phẩm",
-      "Giải pháp",
-      "Khám phá",
-      "Tài nguyên",
-      "Gcalls"
+      "Xem Gcalls CX hoạt động trên chính hành trình chăm sóc khách hàng của doanh nghiệp bạn"
     ],
     "extraInWp": [
       "Xem hội thoại theo kênh",
@@ -201,12 +187,12 @@
   {
     "name": "voicebot",
     "route": "/voicebot-ai/",
-    "score": 78.4,
+    "score": 82.4,
     "parts": {
-      "headings": 72.9,
+      "headings": 81.4,
       "visuals": 100,
       "ctas": 80,
-      "rhythm": 74.8
+      "rhythm": 73.5
     },
     "react": {
       "headings": 59,
@@ -215,10 +201,10 @@
       "height": 10222
     },
     "wp": {
-      "headings": 49,
+      "headings": 54,
       "visuals": 5,
       "ctas": 4,
-      "height": 7646
+      "height": 7509
     },
     "missingInWp": [
       "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI",
@@ -231,12 +217,7 @@
       "Khi nào cuộc gọi cần chuyển sang nhân viên?",
       "Doanh nghiệp bắt đầu triển khai như thế nào?",
       "Chi phí Voicebot được xác định ra sao?",
-      "Bắt đầu từ một tình huống cuộc gọi phù hợp với doanh nghiệp",
-      "Sản phẩm",
-      "Giải pháp",
-      "Khám phá",
-      "Tài nguyên",
-      "Gcalls"
+      "Bắt đầu từ một tình huống cuộc gọi phù hợp với doanh nghiệp"
     ],
     "extraInWp": [
       "Thực hiện tác vụ gọi theo kịch bản đã thiết lập.",
@@ -250,12 +231,12 @@
   {
     "name": "qa-qc",
     "route": "/qc-bot-ai/",
-    "score": 63.9,
+    "score": 68.2,
     "parts": {
-      "headings": 57.1,
+      "headings": 66.1,
       "visuals": 100,
       "ctas": 66.7,
-      "rhythm": 51.9
+      "rhythm": 50.8
     },
     "react": {
       "headings": 56,
@@ -264,10 +245,10 @@
       "height": 12783
     },
     "wp": {
-      "headings": 42,
+      "headings": 47,
       "visuals": 4,
       "ctas": 4,
-      "height": 6629
+      "height": 6492
     },
     "missingInWp": [
       "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
@@ -288,12 +269,7 @@
       "AI có thay thế hoàn toàn nhân viên QA không?",
       "QA QC Center phù hợp với doanh nghiệp nào?",
       "QA QC Center có phân tích tất cả cuộc gọi không?",
-      "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ngũ bạn",
-      "Sản phẩm",
-      "Giải pháp",
-      "Khám phá",
-      "Tài nguyên",
-      "Gcalls"
+      "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ngũ bạn"
     ],
     "extraInWp": [
       "Thiết lập tiêu chí QA",
@@ -311,12 +287,12 @@
   {
     "name": "estimator",
     "route": "/uoc-tinh-chi-phi/",
-    "score": 34.4,
+    "score": 65.7,
     "parts": {
-      "headings": 0,
+      "headings": 57.1,
       "visuals": 100,
-      "ctas": 100,
-      "rhythm": 21.9
+      "ctas": 66.7,
+      "rhythm": 60.7
     },
     "react": {
       "headings": 28,
@@ -325,52 +301,43 @@
       "height": 5197
     },
     "wp": {
-      "headings": 0,
+      "headings": 22,
       "visuals": 0,
-      "ctas": 2,
-      "height": 1140
+      "ctas": 3,
+      "height": 3153
     },
     "missingInWp": [
       "Ước tính cấu hình và chi phí Gcalls phù hợp với nhu cầu",
       "Công cụ ước tính cấu hình và chi phí",
-      "Chi phí thay đổi theo cách doanh nghiệp sử dụng Gcalls",
-      "Sản phẩm",
-      "Agent",
-      "Lưu lượng",
-      "Đầu số",
-      "Tích hợp",
-      "QA / Omnichannel",
-      "Công cụ ước tính hoạt động như thế nào?",
       "Chọn sản phẩm",
       "Nhập quy mô",
       "Xác định cấu hình",
       "Gcalls xác nhận và báo giá",
-      "Vì sao báo giá chính thức có thể khác?",
-      "Câu hỏi thường gặp về ước tính chi phí",
       "Công cụ này có phải báo giá chính thức không?",
       "Tôi có cần biết chính xác số phút gọi không?",
       "Có thể ước tính nhiều giải pháp không?",
       "QA QC Center được tính dựa trên yếu tố nào?",
       "Tổng đài quốc tế phụ thuộc vào yếu tố nào?",
-      "Khi nào tôi nhận được báo giá chính thức?",
-      "Chưa chắc cấu hình nào phù hợp với doanh nghiệp?",
-      "Sản phẩm",
-      "Giải pháp",
-      "Khám phá",
-      "Tài nguyên",
-      "Gcalls"
+      "Khi nào tôi nhận được báo giá chính thức?"
     ],
-    "extraInWp": []
+    "extraInWp": [
+      "Công cụ ước tính cấu hình",
+      "01. Chọn sản phẩm",
+      "02. Nhập quy mô",
+      "03. Xác định cấu hình",
+      "04. Gcalls xác nhận và báo giá",
+      "Câu hỏi thường gặp"
+    ]
   },
   {
     "name": "blog",
     "route": "/blog/",
-    "score": 32.5,
+    "score": 59.5,
     "parts": {
-      "headings": 6.7,
+      "headings": 40,
       "visuals": 100,
-      "ctas": 50,
-      "rhythm": 33.6
+      "ctas": 75,
+      "rhythm": 66.2
     },
     "react": {
       "headings": 60,
@@ -379,14 +346,13 @@
       "height": 10504
     },
     "wp": {
-      "headings": 26,
+      "headings": 49,
       "visuals": 0,
-      "ctas": 2,
-      "height": 3527
+      "ctas": 3,
+      "height": 6958
     },
     "missingInWp": [
       "Góc nhìn vận hành về tổng đài, tích hợp hệ thống và chất lượng hội thoại",
-      "Viết cho người phải trả lời câu hỏi \"đội mình đang vận hành thế nào?\"",
       "Trưởng nhóm Sales có đội gọi ra",
       "Quản lý chăm sóc khách hàng",
       "Người phụ trách chất lượng hội thoại",
@@ -400,33 +366,13 @@
       "QA/QC và quản trị chất lượng3 bài",
       "Voicebot, AI và tự động hóa2 bài",
       "Tổng đài quốc tế3 bài",
-      "Phạm vi biên tập của blog",
-      "Vận hành call center",
-      "Tích hợp CRM và Helpdesk",
-      "Giao tiếp quốc tế",
-      "Trải nghiệm khách hàng đa kênh",
-      "Voicebot và AI QC",
-      "Vận hành theo ngành",
       "Hiện chưa có bài viết nào được đăng tải",
       "Nội dung đã hoàn thiện, có thể đọc ngay",
-      "Bắt đầu từ vấn đề vận hành đang gặp",
-      "Đội ngũ gọi ra bằng máy cá nhân, quản lý không nắm được hoạt động",
-      "Cuộc gọi và dữ liệu khách hàng nằm ở hai hệ thống khác nhau",
-      "Yêu cầu khách hàng đến từ nhiều kênh và dễ bị bỏ sót",
-      "Cần liên hệ khách hàng ở thị trường nước ngoài",
-      "Không đủ nhân lực nghe lại và đánh giá chất lượng cuộc gọi",
-      "Bài toán mang đặc thù của một ngành cụ thể",
-      "Câu hỏi thường gặp — Blog",
       "Vì sao blog chưa có bài viết nào?",
       "Trong lúc chờ bài viết, có thể đọc gì?",
       "Blog có nhận bài viết hoặc chủ đề đề xuất không?",
       "Nội dung blog có thay thế được bước tư vấn triển khai không?",
-      "Có câu hỏi vận hành chưa tìm được câu trả lời?",
-      "Sản phẩm",
-      "Giải pháp",
-      "Khám phá",
-      "Tài nguyên",
-      "Gcalls"
+      "Có câu hỏi vận hành chưa tìm được câu trả lời?"
     ],
     "extraInWp": [
       "\n\t\t\tBlog\t\t",
@@ -436,7 +382,9 @@
       "QA/QC và quản trị chất lượng",
       "Tổng đài quốc tế",
       "Tổng đài và Call Center",
-      "Voicebot, AI và tự động hóa"
+      "Voicebot, AI và tự động hóa",
+      "Câu hỏi thường gặp",
+      "undefined"
     ]
   }
 ]

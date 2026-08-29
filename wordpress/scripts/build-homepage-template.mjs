@@ -289,7 +289,7 @@ const content = [
   /* 2 — PainPointsSection.tsx */
   section([
     column([
-      heading('Những điểm nghẽn làm giảm hiệu suất nghe gọi của đội Sales và CSKH'),
+      heading('“Khoảng Trống” Vận Hành Khiến Doanh Nghiệp Rò Rỉ Khách Hàng Và Thất Thoát Doanh Thu'),
       text(
         'Đội Sales và CSKH có thể mất nhiều thời gian và dữ liệu khi hệ thống nghe gọi, quản lý khách hàng và báo cáo vận hành hoạt động rời rạc.',
       ),
@@ -299,7 +299,7 @@ const content = [
     grid(
       [
         card(
-          'Gián đoạn hoạt động telesales khi số gọi ra bị khóa hoặc bị báo cáo spam',
+          'Gián đoạn hoạt động telesales khi số gọi ra bị khóa hoặc bị người nhận báo cáo spam',
           'Chiến dịch gọi ra đang chạy có thể dừng giữa chừng, đội ngũ phải chờ xử lý đầu số trước khi tiếp tục liên hệ khách hàng.',
         ),
         card(
@@ -376,6 +376,7 @@ const content = [
       ),
     ]),
   ]),
+  section([column([heading('Sản phẩm Gcalls', 'h3')])]),
   section(
     grid(
       [
@@ -392,6 +393,14 @@ const content = [
           'Gcalls Voicebot AI',
           'Gcalls tư vấn, kết nối và tích hợp Voicebot vào hệ thống tổng đài theo kịch bản và phạm vi triển khai của doanh nghiệp.',
         ),
+      ],
+      4,
+    ),
+  ),
+  section([column([heading('Giải pháp Gcalls', 'h3')])]),
+  section(
+    grid(
+      [
         card('Tích hợp CRM', 'Kết nối cuộc gọi với dữ liệu và quy trình trên CRM của doanh nghiệp.'),
         card('Tích hợp Helpdesk', 'Đưa cuộc gọi vào quy trình hỗ trợ và ticket của đội CSKH.'),
         card('Tích hợp POS', 'Kết nối cuộc gọi với dữ liệu bán hàng và đơn hàng trên hệ thống POS.'),
@@ -406,7 +415,8 @@ const content = [
   section(
     [
       column([
-        heading('Mỗi cuộc gọi đều trở thành dữ liệu giá trị'),
+        heading('Theo dõi toàn bộ hoạt động cuộc gọi theo thời gian thực'),
+        heading('Mỗi cuộc gọi đều trở thành dữ liệu giá trị', 'h3'),
         text(
           'Từ cuộc gọi đến, cuộc gọi đi, cuộc gọi nhỡ, ghi âm, ghi chú đến đánh giá chất lượng cuộc gọi — tất cả đều được lưu trữ tập trung trên Gcalls Webphone.',
         ),
@@ -424,7 +434,8 @@ const content = [
     column([mockup('crm')], 50),
     column(
       [
-        heading('Mỗi khách hàng đều có một hồ sơ riêng'),
+        heading('Quản lý khách hàng tập trung ngay trên Gcalls'),
+        heading('Mỗi khách hàng đều có một hồ sơ riêng', 'h3'),
         text(
           'Toàn bộ thông tin khách hàng, lịch sử tương tác và ghi chú chăm sóc được lưu trữ tập trung giúp đội Sales và CSKH làm việc hiệu quả hơn.',
         ),
@@ -452,7 +463,10 @@ const content = [
         text(
           'Không cần tổng hợp báo cáo thủ công từ nhiều nguồn. Mọi chỉ số quan trọng đều được hiển thị trực quan giúp quản lý nhanh chóng nắm bắt tình hình vận hành.',
         ),
+        heading('Ra quyết định nhanh hơn với dữ liệu trực quan', 'h3'),
         mockup('analytics'),
+        heading('Các chỉ số quan trọng trong một màn hình', 'h3'),
+        heading('Dành cho quản lý, trưởng nhóm và chủ doanh nghiệp', 'h3'),
       ]),
     ],
     tinted(BRAND_LIGHT),
@@ -468,7 +482,10 @@ const content = [
       text(
         'Cấu hình luồng cuộc gọi tới đúng bộ phận, đúng nhân viên hoặc đúng chi nhánh, kèm nhóm đổ chuông và chuyển tiếp cho trường hợp không có người nhận máy.',
       ),
+      heading('Điều hướng cuộc gọi đến đúng người phụ trách', 'h3'),
+      heading('Đầy đủ tính năng Cloud PBX doanh nghiệp', 'h3'),
       mockup('cloud'),
+      heading('Hành trình cuộc gọi từ đầu đến cuối', 'h3'),
     ]),
   ]),
 
@@ -476,7 +493,7 @@ const content = [
   section(
     [
       column([
-        heading('Thông tin khách hàng hiện ngay khi có cuộc gọi đến', 'h2'),
+        heading('Nhận diện khách hàng ngay khi cuộc gọi đến', 'h2'),
         text(
           'Khi có cuộc gọi đến, nhân viên xem được thông tin khách hàng lấy từ hệ thống đã kết nối — trong phạm vi tích hợp được cấu hình cho doanh nghiệp.',
         ),
@@ -491,7 +508,7 @@ const content = [
   /* 10 — CallWidgetSection.tsx */
   section([
     column([
-      heading('Nút gọi trên website, khách để lại số và đội ngũ gọi lại'),
+      heading('Biến khách truy cập website thành cuộc gọi'),
       text(
         'Nhúng nút gọi vào website chỉ với vài dòng code. Khách truy cập để lại số điện thoại và đội ngũ gọi lại theo cấu hình phân phối cuộc gọi của doanh nghiệp.',
       ),
@@ -519,7 +536,9 @@ const content = [
           'Từ CRM, Helpdesk đến các hệ thống nội bộ — Gcalls kết nối qua API mở. Phạm vi và công việc cần thiết được đánh giá trong quá trình khảo sát kỹ thuật.',
           { text_color: '#e9defb' },
         ),
+        heading('Hệ sinh thái tích hợp của Gcalls', 'h3', { title_color: WHITE }),
         mockup('integrations'),
+        heading('Trao đổi phạm vi tích hợp cùng đội ngũ Gcalls', 'h3', { title_color: WHITE }),
         cta('Trao đổi phạm vi tích hợp cùng đội ngũ Gcalls', {
           intent: 'consultation',
           source: 'homepage-integration',
@@ -547,6 +566,8 @@ const content = [
           'Dữ liệu lưu trên Cloud, truy cập bất cứ đâu, không phụ thuộc server nội bộ',
           'Lịch sử, ghi chú, trạng thái đồng bộ tức thì giữa các thiết bị',
         ]),
+        heading('Chỉ cần trình duyệt là có thể bắt đầu', 'h3'),
+        heading('Biết đội ngũ đang làm gì theo thời gian thực', 'h3'),
       ],
       50,
     ),
@@ -557,7 +578,9 @@ const content = [
   section(
     [
       column([
-        heading('Bắt đầu với đội ngũ hiện tại của bạn'),
+        heading('Tổng đài doanh nghiệp luôn đồng hành cùng đội ngũ của bạn'),
+        heading('Gcalls phù hợp với mô hình đội ngũ nào', 'h3'),
+        heading('Bắt đầu với đội ngũ hiện tại của bạn', 'h3'),
         text(
           'Không cần phần cứng, không cần cài đặt phức tạp — chỉ cần trình duyệt và kết nối internet, đội ngũ của bạn đã có thể bắt đầu ngay.',
         ),
