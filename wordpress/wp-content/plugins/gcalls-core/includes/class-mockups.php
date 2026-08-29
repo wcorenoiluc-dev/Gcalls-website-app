@@ -189,7 +189,7 @@ final class Mockups {
 		}
 
 		$analytics  = '<div class="gcalls-mock__cardhead"><strong>' . esc_html__( 'Hiệu suất tuần', 'gcalls-core' ) . '</strong></div>';
-		$analytics .= '<div class="gcalls-mock__bars" aria-hidden="true">' . $bars . '</div>';
+		$analytics .= '<div class="gcalls-stage__bars" aria-hidden="true">' . $bars . '</div>';
 
 		/* The identification moment, in miniature. */
 		$popup  = '<div class="gcalls-mock__cardhead"><strong>' . esc_html__( 'Cuộc gọi đến', 'gcalls-core' ) . '</strong>';
@@ -456,70 +456,419 @@ final class Mockups {
 
 	/* ------------------------------------------------- product demo visuals */
 
-	/** Gcalls CX — omnichannel inbox. */
+	/*
+	 * Eleven surfaces, ported one-for-one from the React product pages.
+	 *
+	 * WHY ONE PER SECTION AND NOT ONE REUSED
+	 * The port used to answer four CX sections with two panels and a pair of
+	 * generic CRM/analytics mockups, which meant "báo cáo vận hành" and
+	 * "hồ sơ khách hàng" showed the same picture with a different heading. A
+	 * visual that does not depict its own section is worse than none: it tells
+	 * the reader the screenshots are decorative. Each section now gets the
+	 * component the reference gives it.
+	 *
+	 * IDENTIFIERS
+	 * The reference already anonymises these — masked ids (KH #4821, #A-1042,
+	 * LH-2481) and role labels (Agent 02), never a person or a company. That is
+	 * carried across unchanged; nothing here needed inventing or scrubbing.
+	 *
+	 * THE NUMBERS
+	 * Every figure is demo data under the caption each mockup prints. None is
+	 * framed as a result: there is no percentage improvement, no saving and no
+	 * outcome attributed to Gcalls anywhere in this block.
+	 */
+
+	/** The five verified Gcalls CX channels. Nothing outside this list. */
+	private const CHANNELS = array(
+		'voice'    => 'Voice',
+		'zalo'     => 'Zalo',
+		'facebook' => 'Facebook',
+		'sms'      => 'SMS',
+		'email'    => 'Email',
+	);
+
+	/** One channel pill. Colour comes from the class, never from markup. */
+	private static function chan( string $key ): string {
+		$label = self::CHANNELS[ $key ] ?? $key;
+
+		return '<span class="gcalls-chan gcalls-chan--' . esc_attr( $key ) . '">' . esc_html( $label ) . '</span>';
+	}
+
+	/** A status pill: brand by default, amber when it needs attention. */
+	private static function state( string $label, bool $warn = false ): string {
+		return '<span class="gcalls-state' . ( $warn ? ' gcalls-state--warn' : '' ) . '">' . esc_html( $label ) . '</span>';
+	}
+
+	/** A two-up grid of figure tiles. */
+	private static function tiles( array $items ): string {
+		$out = '<ul class="gcalls-tiles">';
+		foreach ( $items as $item ) {
+			$out .= '<li class="gcalls-tile"><strong>' . esc_html( $item[1] ) . '</strong>'
+				. '<span>' . esc_html( $item[0] ) . '</span></li>';
+		}
+
+		return $out . '</ul>';
+	}
+
+	/** A titled sub-panel. */
+	private static function block( string $title, string $body ): string {
+		return '<div class="gcalls-block"><p class="gcalls-block__t">' . esc_html( $title ) . '</p>' . $body . '</div>';
+	}
+
+	/* ---- Gcalls CX ---------------------------------------------------- */
+
+	/** OmnichannelInboxMockup — conversations from the connected channels. */
 	private static function mock_cx_inbox(): string {
-		$threads = array(
-			array( 'Hotline', 'Khách hàng A', 'Cần hỗ trợ gia hạn dịch vụ', 'Mới' ),
-			array( 'Zalo OA', 'Khách hàng B', 'Hỏi về thời gian xử lý', 'Đang xử lý' ),
-			array( 'Facebook', 'Khách hàng C', 'Phản hồi sau khi dùng thử', 'Chờ phản hồi' ),
-			array( 'Email', 'Khách hàng D', 'Yêu cầu báo giá cấu hình', 'Mới' ),
+		$rows = array(
+			array( 'KH #4821', 'zalo', 'Đơn của mình khi nào giao?', 'Chờ xử lý', true ),
+			array( 'KH #4817', 'voice', 'Cuộc gọi đến · 2:14', 'Đang xử lý', false ),
+			array( 'KH #4813', 'facebook', 'Shop còn size M không ạ?', 'Đang xử lý', false ),
+			array( 'KH #4809', 'email', 'Yêu cầu xuất hóa đơn', 'Đã xong', false ),
+			array( 'KH #4804', 'sms', 'Xác nhận lịch hẹn', 'Đã xong', false ),
 		);
 
-		$out  = self::chrome( 'Gcalls CX — Inbox hợp nhất' );
-		$out .= '<ul class="gcalls-mock__list gcalls-mock__list--threads">';
-		foreach ( $threads as $thread ) {
-			$out .= '<li><span class="gcalls-mock__chan">' . esc_html( $thread[0] ) . '</span>';
-			$out .= '<span class="gcalls-mock__who"><strong>' . esc_html( $thread[1] ) . '</strong><small>' . esc_html( $thread[2] ) . '</small></span>';
-			$out .= '<span class="gcalls-mock__badge">' . esc_html( $thread[3] ) . '</span></li>';
+		$out  = self::chrome( 'Omnichannel Inbox' );
+		$out .= '<div class="gcalls-chanbar"><span class="gcalls-chanbar__all">Tất cả</span>';
+		foreach ( array_keys( self::CHANNELS ) as $key ) {
+			$out .= self::chan( $key );
+		}
+		$out .= '</div>';
+
+		$out .= '<ul class="gcalls-rows">';
+		foreach ( $rows as $row ) {
+			$out .= '<li class="gcalls-row"><span class="gcalls-row__main">';
+			$out .= '<span class="gcalls-row__head"><b>' . esc_html( $row[0] ) . '</b>' . self::chan( $row[1] ) . '</span>';
+			$out .= '<small>' . esc_html( $row[2] ) . '</small></span>';
+			$out .= self::state( $row[3], $row[4] ) . '</li>';
 		}
 
 		return $out . '</ul>' . self::caption();
 	}
 
-	/** Voicebot — the script builder. */
-	private static function mock_voicebot_builder(): string {
-		$steps = array(
-			array( '01', 'Lời chào', 'Xin chào, đây là tổng đài Công ty Demo.' ),
-			array( '02', 'Xác định nhu cầu', 'Anh/chị cần hỗ trợ về dịch vụ nào?' ),
-			array( '03', 'Nhánh xử lý', 'Chuyển tới kịch bản tương ứng.' ),
-			array( '04', 'Chuyển nhân viên', 'Điều kiện chuyển đạt — nối máy.' ),
+	/** TicketPanelMockup — status, assignee and the handling history. */
+	private static function mock_cx_ticket(): string {
+		$history = array(
+			array( '09:12', 'Tiếp nhận từ Zalo OA' ),
+			array( '09:20', 'Phân công cho Agent 02' ),
+			array( '10:05', 'Đã phản hồi khách hàng' ),
 		);
 
-		$out  = self::chrome( 'Trình dựng kịch bản Voicebot' );
-		$out .= '<ol class="gcalls-mock__steps">';
-		foreach ( $steps as $step ) {
-			$out .= '<li><span class="gcalls-mock__n">' . esc_html( $step[0] ) . '</span>';
-			$out .= '<span class="gcalls-mock__who"><strong>' . esc_html( $step[1] ) . '</strong><small>' . esc_html( $step[2] ) . '</small></span></li>';
+		$out  = self::chrome( 'Ticket #T-2043' );
+		$out .= '<div class="gcalls-pad">';
+		$out .= '<div class="gcalls-row__head">' . self::state( 'Đang xử lý', true ) . self::chan( 'zalo' );
+		$out .= '<span class="gcalls-row__by">Phụ trách: Agent 02</span></div>';
+		$out .= '<p class="gcalls-lead"><b>Yêu cầu kiểm tra tình trạng đơn hàng</b></p>';
+		$out .= '<p class="gcalls-sub">Khách hàng liên hệ qua Zalo OA và cần cập nhật thời gian giao dự kiến.</p>';
+
+		$out .= '<ul class="gcalls-hist">';
+		foreach ( $history as $item ) {
+			$out .= '<li><span class="gcalls-hist__at">' . esc_html( $item[0] ) . '</span>'
+				. '<span>' . esc_html( $item[1] ) . '</span></li>';
 		}
 
-		return $out . '</ol>' . self::caption();
+		return $out . '</ul></div>' . self::caption();
 	}
 
-	/** QC Bot AI — transcript with scoring criteria. */
-	private static function mock_qc_transcript(): string {
-		$lines = array(
-			array( 'Nhân viên 01', 'Dạ em chào anh/chị, em gọi từ Công ty Demo ạ.' ),
-			array( 'Khách hàng A', 'Vâng, em nói giúp anh về yêu cầu hôm trước.' ),
-			array( 'Nhân viên 01', 'Dạ em xin phép trao đổi về nhu cầu hiện tại của bên mình.' ),
-		);
-		$criteria = array(
-			array( 'Chào hỏi đúng chuẩn', 'đạt' ),
-			array( 'Xác nhận nhu cầu', 'đạt' ),
-			array( 'Tóm tắt trước khi kết thúc', 'chưa đạt' ),
+	/** CustomerContextMockup — one customer, every channel they used. */
+	private static function mock_cx_context(): string {
+		$recent = array(
+			array( 'zalo', 'Hỏi tình trạng đơn hàng', 'Hôm nay' ),
+			array( 'voice', 'Cuộc gọi đến · 2:14', 'Hôm qua' ),
+			array( 'email', 'Yêu cầu xuất hóa đơn', '3 ngày trước' ),
 		);
 
-		$out  = self::chrome( 'QC Bot AI — Transcript & chấm điểm' );
-		$out .= '<div class="gcalls-mock__split"><div class="gcalls-mock__pane"><ul class="gcalls-mock__script">';
-		foreach ( $lines as $line ) {
-			$out .= '<li><span class="gcalls-mock__role">' . esc_html( $line[0] ) . '</span><span>' . esc_html( $line[1] ) . '</span></li>';
+		$out  = self::chrome( 'Customer Context' );
+		$out .= '<div class="gcalls-pad">';
+		$out .= '<div class="gcalls-who"><span class="gcalls-mock__avatar">KH</span>';
+		$out .= '<span class="gcalls-mock__who"><strong>KH #4821</strong>'
+			. '<small>Khách hàng · 3 kênh đã tương tác</small></span></div>';
+
+		$out .= '<div class="gcalls-chanrow">' . self::chan( 'zalo' ) . self::chan( 'voice' ) . self::chan( 'email' ) . '</div>';
+
+		$out .= '<p class="gcalls-block__t">Tương tác gần đây</p><ul class="gcalls-recent">';
+		foreach ( $recent as $item ) {
+			$out .= '<li>' . self::chan( $item[0] ) . '<span>' . esc_html( $item[1] ) . '</span>'
+				. '<i>' . esc_html( $item[2] ) . '</i></li>';
 		}
-		$out .= '</ul></div><ul class="gcalls-mock__criteria">';
+		$out .= '</ul>';
+
+		$out .= '<div class="gcalls-note"><p class="gcalls-block__t">Ticket liên quan</p>'
+			. '<p>#T-2043 · Đang xử lý · Agent 02</p></div>';
+
+		return $out . '</div>' . self::caption();
+	}
+
+	/** CxReportingMockup — workload, ticket status, channel distribution. */
+	private static function mock_cx_report(): string {
+		$statuses = array(
+			array( 'Chờ xử lý', 12, 'warn' ),
+			array( 'Đang xử lý', 21, 'brand' ),
+			array( 'Đã xong', 14, 'ok' ),
+		);
+		$dist     = array(
+			array( 'voice', 34 ),
+			array( 'zalo', 28 ),
+			array( 'facebook', 19 ),
+			array( 'email', 12 ),
+			array( 'sms', 7 ),
+		);
+
+		$max = 0;
+		foreach ( $statuses as $status ) {
+			$max = max( $max, $status[1] );
+		}
+
+		$out  = self::chrome( 'Báo cáo vận hành' );
+		$out .= '<div class="gcalls-pad">';
+		$out .= self::tiles(
+			array(
+				array( 'Hội thoại hôm nay', '312' ),
+				array( 'Ticket đang mở', '47' ),
+			)
+		);
+
+		$bars = '<ul class="gcalls-meters">';
+		foreach ( $statuses as $status ) {
+			$width = 0 === $max ? 0 : (int) round( ( $status[1] / $max ) * 100 );
+			$bars .= '<li><span class="gcalls-meters__l">' . esc_html( $status[0] ) . '</span>';
+			$bars .= '<span class="gcalls-meters__track"><span class="gcalls-meters__fill gcalls-meters__fill--'
+				. esc_attr( $status[2] ) . '" style="width:' . esc_attr( (string) $width ) . '%"></span></span>';
+			$bars .= '<b>' . esc_html( (string) $status[1] ) . '</b></li>';
+		}
+		$bars .= '</ul>';
+		$out  .= self::block( 'Trạng thái ticket', $bars );
+
+		$rows = '<ul class="gcalls-meters gcalls-meters--chan">';
+		foreach ( $dist as $item ) {
+			$rows .= '<li>' . self::chan( $item[0] );
+			$rows .= '<span class="gcalls-meters__track"><span class="gcalls-meters__fill" style="width:'
+				. esc_attr( (string) $item[1] ) . '%"></span></span>';
+			$rows .= '<b>' . esc_html( (string) $item[1] ) . '%</b></li>';
+		}
+		$rows .= '</ul>';
+		$out  .= self::block( 'Phân bổ theo kênh', $rows );
+
+		return $out . '</div>' . self::caption();
+	}
+
+	/* ---- Voicebot AI --------------------------------------------------- */
+
+	/** VoicebotCampaignMockup — the campaign console. */
+	private static function mock_voicebot_builder(): string {
+		$outcomes = array(
+			array( 'Xác nhận lịch hẹn', 46, 'brand' ),
+			array( 'Đề nghị gọi lại', 27, 'brand' ),
+			array( 'Cần nhân viên hỗ trợ', 15, 'warn' ),
+			array( 'Không kết nối', 12, 'muted' ),
+		);
+		$history  = array(
+			array( 'LH-2481', '09:12', 'Đã xác nhận' ),
+			array( 'LH-2479', '09:08', 'Chuyển nhân viên' ),
+			array( 'LH-2476', '09:03', 'Hẹn gọi lại' ),
+		);
+
+		$out  = self::chrome( 'Voicebot · Chiến dịch nhắc lịch hẹn' );
+		$out .= '<div class="gcalls-chanbar"><span class="gcalls-mock__pulse" aria-hidden="true"></span>';
+		$out .= '<span class="gcalls-row__by">Chiến dịch đang chạy</span>';
+		$out .= '<span class="gcalls-state">Minh họa</span></div>';
+
+		$out .= '<div class="gcalls-pad">';
+		$out .= self::tiles(
+			array(
+				array( 'Trong danh sách', '480' ),
+				array( 'Đã gọi', '312' ),
+				array( 'Đã kết nối', '198' ),
+				array( 'Cần nhân viên', '24' ),
+			)
+		);
+
+		$bars = '<ul class="gcalls-outcomes">';
+		foreach ( $outcomes as $outcome ) {
+			$bars .= '<li><span class="gcalls-outcomes__head"><span>' . esc_html( $outcome[0] ) . '</span>'
+				. '<b>' . esc_html( (string) $outcome[1] ) . '%</b></span>';
+			$bars .= '<span class="gcalls-meters__track"><span class="gcalls-meters__fill gcalls-meters__fill--'
+				. esc_attr( $outcome[2] ) . '" style="width:' . esc_attr( (string) $outcome[1] ) . '%"></span></span></li>';
+		}
+		$bars .= '</ul>';
+		$out  .= self::block( 'Kết quả phản hồi', $bars );
+
+		$rows = '<ul class="gcalls-rows gcalls-rows--tight">';
+		foreach ( $history as $item ) {
+			$rows .= '<li class="gcalls-row"><b class="gcalls-row__id">' . esc_html( $item[0] ) . '</b>';
+			$rows .= '<span class="gcalls-hist__at">' . esc_html( $item[1] ) . '</span>';
+			$rows .= '<span class="gcalls-row__end">' . esc_html( $item[2] ) . '</span></li>';
+		}
+		$rows .= '</ul>';
+		$out  .= self::block( 'Lịch sử tương tác', $rows );
+
+		return $out . '</div>' . self::caption();
+	}
+
+	/** VoicebotHandoffMockup — the calls the bot routed to a person. */
+	private static function mock_voicebot_handoff(): string {
+		$rows = array(
+			array( 'LH-2479', 'Khách hỏi ngoài kịch bản', 'Tư vấn' ),
+			array( 'LH-2465', 'Đề nghị thương lượng điều khoản', 'Tư vấn' ),
+			array( 'LH-2452', 'Phản hồi cần xử lý riêng', 'CSKH' ),
+			array( 'LH-2440', 'Yêu cầu gặp nhân viên', 'CSKH' ),
+		);
+
+		$out  = self::chrome( 'Hàng đợi chuyển nhân viên' );
+		$out .= '<ul class="gcalls-rows">';
+		foreach ( $rows as $row ) {
+			$out .= '<li class="gcalls-row"><b class="gcalls-row__id">' . esc_html( $row[0] ) . '</b>';
+			$out .= '<span class="gcalls-row__main"><small>' . esc_html( $row[1] ) . '</small></span>';
+			$out .= self::state( $row[2] ) . '</li>';
+		}
+
+		return $out . '</ul>' . self::caption();
+	}
+
+	/* ---- QC Bot AI ----------------------------------------------------- */
+
+	/** TranscriptMockup — speech-to-text output with one flagged keyword. */
+	private static function mock_qc_transcript(): string {
+		$turns = array(
+			array( 'Nhân viên 01', '00:04', 'Dạ em nghe, em có thể hỗ trợ mình thông tin gì ạ?', '' ),
+			array( 'Khách hàng A', '00:11', 'Tôi gọi lần thứ hai rồi mà vẫn chưa được xử lý.', 'lặp lại liên hệ' ),
+			array( 'Nhân viên 01', '00:19', 'Em xin lỗi vì sự bất tiện này, em kiểm tra ngay giúp mình ạ.', '' ),
+			array( 'Khách hàng A', '00:31', 'Vậy bao lâu thì tôi nhận được phản hồi?', '' ),
+		);
+
+		$out  = self::chrome( 'Transcript · Cuộc gọi #A-1042' );
+		$out .= '<div class="gcalls-chanbar"><span class="gcalls-row__by">Tìm trong transcript…</span>';
+		$out .= '<span class="gcalls-state">Demo</span></div>';
+
+		$out .= '<ul class="gcalls-turns">';
+		foreach ( $turns as $turn ) {
+			$out .= '<li><span class="gcalls-hist__at">' . esc_html( $turn[1] ) . '</span><span>';
+			$out .= '<b class="gcalls-turns__who">' . esc_html( $turn[0] ) . '</b>';
+			$out .= '<span class="gcalls-turns__text">' . esc_html( $turn[2] ) . '</span>';
+			if ( '' !== $turn[3] ) {
+				$out .= '<span class="gcalls-state gcalls-state--warn">Từ khóa: ' . esc_html( $turn[3] ) . '</span>';
+			}
+			$out .= '</span></li>';
+		}
+
+		return $out . '</ul>' . self::caption();
+	}
+
+	/** ScoreCardMockup — criteria, weights and a score awaiting a human. */
+	private static function mock_qc_scorecard(): string {
+		$criteria = array(
+			array( 'Chào hỏi & xác minh', '20%', true ),
+			array( 'Tuân thủ kịch bản', '30%', true ),
+			array( 'Xử lý phản hồi', '30%', false ),
+			array( 'Kết thúc cuộc gọi', '20%', true ),
+		);
+
+		$out  = self::chrome( 'QA Scoring' );
+		$out .= '<div class="gcalls-pad">';
+		// "Điểm đề xuất … chờ QA xác nhận" is the reference's framing and it
+		// matters: the product proposes, a person decides. A bare score would
+		// claim the machine grades the call.
+		$out .= '<div class="gcalls-score"><span><b>Điểm đề xuất</b><small>Chờ QA xác nhận</small></span>';
+		$out .= '<em>78</em></div>';
+
+		$out .= '<ul class="gcalls-crit">';
 		foreach ( $criteria as $item ) {
-			$out .= '<li><span>' . esc_html( $item[0] ) . '</span><em class="gcalls-mock__mark gcalls-mock__mark--' . ( 'đạt' === $item[1] ? 'ok' : 'no' ) . '">' . esc_html( $item[1] ) . '</em></li>';
+			$out .= '<li><span class="gcalls-crit__i gcalls-crit__i--' . ( $item[2] ? 'ok' : 'no' ) . '" aria-hidden="true">'
+				. ( $item[2] ? '✓' : '!' ) . '</span>';
+			$out .= '<span class="gcalls-crit__l">' . esc_html( $item[0] ) . '</span>';
+			$out .= '<b>' . esc_html( $item[1] ) . '</b></li>';
+		}
+
+		return $out . '</ul></div>' . self::caption();
+	}
+
+	/** SignalsMockup — the flagged-call queue. */
+	private static function mock_qc_signals(): string {
+		$rows = array(
+			array( '#A-1042', 'Lặp lại liên hệ', 'Tiêu cực', true ),
+			array( '#A-1039', 'Yêu cầu hoàn tiền', 'Tiêu cực', true ),
+			array( '#A-1035', 'Hỏi chính sách', 'Trung tính', false ),
+			array( '#A-1028', 'Xác nhận đơn', 'Tích cực', false ),
+		);
+
+		$out  = self::chrome( 'Conversation Signals' );
+		$out .= '<div class="gcalls-chanbar"><span class="gcalls-row__by">Cuộc gọi cần xem lại</span>';
+		$out .= '<span class="gcalls-row__end">Dữ liệu mẫu</span></div>';
+
+		$out .= '<ul class="gcalls-rows">';
+		foreach ( $rows as $row ) {
+			$out .= '<li class="gcalls-row"><b class="gcalls-row__id">' . esc_html( $row[0] ) . '</b>';
+			$out .= '<span class="gcalls-row__main"><small>' . esc_html( $row[1] ) . '</small></span>';
+			$out .= self::state( $row[2], $row[3] ) . '</li>';
+		}
+
+		return $out . '</ul>' . self::caption();
+	}
+
+	/** QualityDashboardMockup — the aggregate view. */
+	private static function mock_qc_dashboard(): string {
+		$bars = array(
+			array( 'T2', 62 ),
+			array( 'T3', 74 ),
+			array( 'T4', 58 ),
+			array( 'T5', 88 ),
+			array( 'T6', 79 ),
+			array( 'T7', 41 ),
+		);
+
+		$out  = self::chrome( 'Quality Dashboard' );
+		$out .= '<div class="gcalls-pad">';
+		$out .= self::tiles(
+			array(
+				array( 'Cuộc gọi đã phân tích', '1.248' ),
+				array( 'Cần xem lại', '86' ),
+				array( 'Điểm QA trung bình', '81' ),
+				array( 'Phiên review tuần này', '34' ),
+			)
+		);
+
+		$trend = '<div class="gcalls-trend" aria-hidden="true">';
+		foreach ( $bars as $bar ) {
+			$trend .= '<span class="gcalls-trend__col"><span class="gcalls-trend__bar" style="height:'
+				. esc_attr( (string) $bar[1] ) . '%"></span><small>' . esc_html( $bar[0] ) . '</small></span>';
+		}
+		$trend .= '</div>';
+		$out   .= self::block( 'Xu hướng điểm QA', $trend );
+
+		return $out . '</div>' . self::caption();
+	}
+
+	/** ReviewWorkspaceMockup — transcript beside the criteria. */
+	private static function mock_qc_review(): string {
+		$turns = array(
+			array( 'Nhân viên 01', 'Dạ em nghe, em hỗ trợ mình ạ.' ),
+			array( 'Khách hàng A', 'Tôi gọi lần thứ hai rồi.' ),
+			array( 'Nhân viên 01', 'Em xin lỗi, em kiểm tra ngay ạ.' ),
+		);
+		$crit  = array(
+			array( 'Chào hỏi', true ),
+			array( 'Kịch bản', true ),
+			array( 'Xử lý phản hồi', false ),
+		);
+
+		$out  = self::chrome( 'Conversation Review' );
+		$out .= '<div class="gcalls-mock__split">';
+
+		$out .= '<div class="gcalls-mock__pane"><p class="gcalls-block__t">Transcript</p><ul class="gcalls-turns">';
+		foreach ( $turns as $turn ) {
+			$out .= '<li><span><b class="gcalls-turns__who">' . esc_html( $turn[0] ) . '</b>'
+				. '<span class="gcalls-turns__text">' . esc_html( $turn[1] ) . '</span></span></li>';
 		}
 		$out .= '</ul></div>';
 
-		return $out . self::caption();
+		$out .= '<div class="gcalls-mock__pane"><p class="gcalls-block__t">Tiêu chí QA</p><ul class="gcalls-crit">';
+		foreach ( $crit as $item ) {
+			$out .= '<li><span class="gcalls-crit__i gcalls-crit__i--' . ( $item[1] ? 'ok' : 'no' ) . '" aria-hidden="true">'
+				. ( $item[1] ? '✓' : '!' ) . '</span><span class="gcalls-crit__l">' . esc_html( $item[0] ) . '</span></li>';
+		}
+		$out .= '</ul><div class="gcalls-note"><p class="gcalls-block__t">Điểm đề xuất</p>'
+			. '<p class="gcalls-note__big">78</p><small>Chờ QA xác nhận</small></div></div>';
+
+		return $out . '</div>' . self::caption();
 	}
 
 	/* ------------------------------------- 9. customer popup / 10. widget */

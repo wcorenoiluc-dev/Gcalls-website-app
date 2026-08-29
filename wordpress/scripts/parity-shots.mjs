@@ -37,6 +37,18 @@ const ROUTES = arg('routes', '/,/gcalls-plus-webphone/,/gcalls-cx/,/voicebot-ai/
 
 const ONLY = arg('only', 'both')
 
+/**
+ * What to call the shot on disk.
+ *
+ * The label used to be hardwired to the origin's role — "react" for whatever
+ * REACT_ORIGIN pointed at. Pointing that at the WordPress preview renderer
+ * then produced files named `react-1440.png` that were in fact WordPress
+ * output, which is evidence that argues against itself. The label is now
+ * explicit, so a file called wp-preview-1440.png was produced by the
+ * WordPress renderer and nothing else.
+ */
+const LABEL = arg('label', '')
+
 // The dot matters: a route like /preview.html would otherwise name its output
 // directory "preview.html", and mkdir then collides with the file of that name
 // sitting beside it.
@@ -100,11 +112,12 @@ for (const route of ROUTES) {
   const dir = path.join(OUT, slug(route))
   await mkdir(dir, { recursive: true })
 
-  for (const [label, origin] of [
+  for (const [role, origin] of [
     ['react', REACT],
     ['wp', WP],
   ]) {
-    if (ONLY !== 'both' && ONLY !== label) continue
+    if (ONLY !== 'both' && ONLY !== role) continue
+    const label = LABEL || role
 
     for (const width of WIDTHS) {
       const ctx = await b.newContext({

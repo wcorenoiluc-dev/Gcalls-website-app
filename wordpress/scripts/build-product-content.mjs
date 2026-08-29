@@ -67,13 +67,22 @@ async function load(file) {
  * the addendum asks for — a hero mockup, a workflow visual and a
  * dashboard/feature visual.
  *
- * Since 0.8.6 the hero slot on those three is a drawn demo image
- * (`*_showcase`) rather than the interactive panel. The panels did not go
- * away: cx_inbox, voicebot_builder and qc_transcript each still appear twice
- * further down their own page, which is where a reader can actually click
- * them. The hero's job is to look like software in the first screen, and a
- * four-row panel stretched to full width does not. Gcalls Plus keeps
- * plus_gallery — it has real screenshots and does not need a drawing.
+ * 0.8.6 briefly made the hero on those three a drawn WebP. 0.9.0 puts the
+ * ported components back, because the React source is the reference and it
+ * leads each of those pages with an interactive panel, not a picture. The
+ * three images stay in the repository as a fallback for a product that ends
+ * up with no component at all; nothing renders them today.
+ *
+ * Every mockup below is now the component React places in that exact section
+ * — the mapping was read off src/components/<product>/sections.tsx. The port
+ * used to answer four CX sections with two panels plus a generic CRM and a
+ * generic analytics mockup, so "báo cáo vận hành" and "hồ sơ khách hàng" drew
+ * the same picture under different headings. A visual that does not depict
+ * its own section teaches the reader that the visuals are decorative.
+ *
+ * Where React places no visual, neither does this. VB_USE_CASES and
+ * VB_OUTCOMES lost theirs for that reason: both were the generic mockups
+ * again, and Voicebot has exactly two visuals in the reference.
  */
 const PAGES = [
   {
@@ -98,41 +107,41 @@ const PAGES = [
   },
   {
     id: 'cx',
-    heroMockup: 'cx_showcase',
+    heroMockup: 'cx_inbox',
     route: '/gcalls-cx/',
     file: 'gcallsCx.ts',
     lead: { intent: 'consultation', source: 'gcalls_cx', product: 'Gcalls CX' },
     sections: [
-      ['CX_PROBLEMS'], ['CX_OVERVIEW', { mockup: 'cx_inbox' }], ['CX_CHANNELS'],
-      ['CX_INBOX', { mockup: 'cx_inbox' }], ['CX_TICKETS'], ['CX_CONTEXT', { mockup: 'crm' }],
-      ['CX_HOW_IT_WORKS', { diagram: 'flow' }], ['CX_REPORTING', { mockup: 'analytics' }], ['CX_BENEFITS'],
+      ['CX_PROBLEMS'], ['CX_OVERVIEW', { mockup: 'cx_context' }], ['CX_CHANNELS'],
+      ['CX_INBOX', { mockup: 'cx_inbox' }], ['CX_TICKETS', { mockup: 'cx_ticket' }], ['CX_CONTEXT', { mockup: 'cx_context' }],
+      ['CX_HOW_IT_WORKS', { diagram: 'flow' }], ['CX_REPORTING', { mockup: 'cx_report' }], ['CX_BENEFITS'],
       ['CX_USE_CASES'], ['CX_INTEGRATION'], ['CX_BOUNDARIES'], ['CX_DEPLOYMENT'], ['CX_TRUST'],
       ['CX_PRICING'], ['CX_FINAL_CTA'],
     ],
   },
   {
     id: 'voicebot',
-    heroMockup: 'voicebot_showcase',
+    heroMockup: 'voicebot_builder',
     route: '/voicebot-ai/',
     file: 'voicebotAi.ts',
     lead: { intent: 'consultation', source: 'voicebot_ai', product: 'Gcalls Voicebot AI' },
     sections: [
-      ['VB_PROBLEMS'], ['VB_USE_CASES', { mockup: 'voicebot_builder' }], ['VB_HOW_IT_WORKS', { diagram: 'flow' }],
-      ['VB_CAPABILITIES', { mockup: 'voicebot_builder' }], ['VB_HUMAN_AI', { diagram: 'handover' }],
-      ['VB_INTEGRATION'], ['VB_INDUSTRIES'], ['VB_DEPLOYMENT'], ['VB_OUTCOMES', { mockup: 'analytics' }],
+      ['VB_PROBLEMS'], ['VB_USE_CASES'], ['VB_HOW_IT_WORKS', { diagram: 'flow' }],
+      ['VB_CAPABILITIES', { mockup: 'voicebot_handoff' }], ['VB_HUMAN_AI', { diagram: 'handover' }],
+      ['VB_INTEGRATION'], ['VB_INDUSTRIES'], ['VB_DEPLOYMENT'], ['VB_OUTCOMES'],
       ['VB_FINAL_CTA'],
     ],
   },
   {
     id: 'qa-qc',
-    heroMockup: 'qc_showcase',
+    heroMockup: 'qc_review',
     route: '/qc-bot-ai/',
     file: 'qaQcCenter.ts',
     lead: { intent: 'consultation', source: 'qa_qc_center', product: 'QA QC Center' },
     sections: [
       ['QQ_PROBLEMS'], ['QQ_OVERVIEW', { mockup: 'qc_transcript' }], ['QQ_HOW_IT_WORKS', { diagram: 'flow' }],
-      ['QQ_CAPABILITIES'], ['QQ_SCORING', { mockup: 'qc_transcript' }], ['QQ_SIGNALS'], ['QQ_HUMAN_LOOP'],
-      ['QQ_DASHBOARD', { mockup: 'analytics' }], ['QQ_BENEFITS'], ['QQ_USE_CASES'], ['QQ_INTEGRATION'], ['QQ_BOUNDARIES'],
+      ['QQ_CAPABILITIES'], ['QQ_SCORING', { mockup: 'qc_scorecard' }], ['QQ_SIGNALS', { mockup: 'qc_signals' }], ['QQ_HUMAN_LOOP'],
+      ['QQ_DASHBOARD', { mockup: 'qc_dashboard' }], ['QQ_BENEFITS'], ['QQ_USE_CASES'], ['QQ_INTEGRATION'], ['QQ_BOUNDARIES'],
       ['QQ_PRICING'], ['QQ_STORY'], ['QQ_FINAL_CTA'],
     ],
   },

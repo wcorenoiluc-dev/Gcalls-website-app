@@ -51,6 +51,27 @@ try {
   check('php-lint', false, String(error.stdout ?? error.message).trim())
 }
 
+/*
+ * CSS is parsed for the same reason PHP is: neither can be rendered on this
+ * machine, so a structural error would first surface on the live site. An
+ * unbalanced brace makes a browser discard everything from the mistake to the
+ * next rule it can resynchronise on, which deletes styling silently.
+ */
+try {
+  const out = execFileSync(process.execPath, [path.join(HERE, 'css-lint.mjs')], { encoding: 'utf8' })
+  const parsed = out.match(/css-lint: (\d+) file\(s\), (\d+) problem\(s\), (\d+) duplicate/)
+  check(`css-lint (${parsed?.[1] ?? '?'} files)`, parsed?.[2] === '0', out.trim().split('\n').slice(-6).join(' | '))
+  if (parsed?.[3] && parsed[3] !== '0') notes.push(`css-lint: ${parsed[3]} duplicate selector(s) — npm run wp:css to list`)
+} catch (error) {
+  const out = String(error.stdout ?? error.message)
+  const parsed = out.match(/css-lint: (\d+) file\(s\), (\d+) problem\(s\)/)
+  check(
+    `css-lint (${parsed?.[1] ?? '?'} files)`,
+    false,
+    `${parsed?.[2] ?? '?'} problem(s) — run npm run wp:css`,
+  )
+}
+
 /* ------------------------------------------------------------------ *
  * 2. Theme completeness — the file list checkpoint §F requires
  * ------------------------------------------------------------------ */
@@ -956,10 +977,44 @@ if (exists(mockPhp)) {
       // as the fixed prefix of a name finished at runtime. Trim the first and
       // drop the second — a modifier stub ending in "--" names no single rule.
       .map((c) => c.replace(/['"].*$/, ''))
-      .filter((c) => /^gcalls-(stage|pop|widget)/.test(c) && !c.endsWith('-')),
+      .filter((c) => c.startsWith('gcalls-') && !c.endsWith('-')),
   )
+  // `gcalls-mock` is the wrapper render() adds, not something a mockup emits.
+  emitted.delete('gcalls-mock')
   const unstyled = [...emitted].filter((c) => !mockCss.includes('.' + c))
-  check('every stage/popup/widget class has a rule', unstyled.length === 0, unstyled.join(', '))
+  check('every mockup class has a rule', unstyled.length === 0, unstyled.join(', '))
+
+  /*
+   * The nine visuals the 012 brief names, plus the two the port already had.
+   *
+   * Each has to exist AND be placed on the page React places it on. The
+   * failure this guards against is subtler than a missing method: the port
+   * previously satisfied "a visual exists" by pointing four different CX
+   * sections at two panels and two generic mockups, so every check passed
+   * while the reporting section showed a contact list.
+   */
+  const PRODUCT_VISUALS = [
+    'cx_inbox', 'cx_ticket', 'cx_context', 'cx_report',
+    'voicebot_builder', 'voicebot_handoff',
+    'qc_transcript', 'qc_scorecard', 'qc_signals', 'qc_dashboard', 'qc_review',
+  ]
+
+  for (const id of PRODUCT_VISUALS) {
+    check(`product visual ${id}`, mock.includes(`function mock_${id}(`))
+  }
+
+  const productJsonRaw = exists(path.join(PLUGIN, 'data/product-pages.json'))
+    ? read(path.join(PLUGIN, 'data/product-pages.json'))
+    : ''
+  const placed = new Set([...productJsonRaw.matchAll(/"mockup":\s*"([a-z_]+)"/g)].map((m) => m[1]))
+  const unplaced = PRODUCT_VISUALS.filter((id) => !placed.has(id))
+  check('every product visual is placed on a page', unplaced.length === 0, unplaced.join(', '))
+
+  // The generic CRM and analytics panels are for the home page. Reaching for
+  // them on a product page is how a section ends up illustrated by something
+  // that is not it.
+  const generic = ['crm', 'analytics'].filter((id) => placed.has(id))
+  check('no generic mockup stands in on a product page', generic.length === 0, generic.join(', '))
 
   check('every mockup carries the demo caption', mock.includes('Giao diện minh họa – dữ liệu demo'))
   // Fake data is the addendum's rule, and the React source's realistic personal
@@ -1173,9 +1228,9 @@ if (!exists(productJson)) {
   const productPages = JSON.parse(read(productJson)).pages ?? {}
   const HERO_VISUAL = {
     'gcalls-plus': 'plus_gallery',
-    cx: 'cx_showcase',
-    voicebot: 'voicebot_showcase',
-    'qa-qc': 'qc_showcase',
+    cx: 'cx_inbox',
+    voicebot: 'voicebot_builder',
+    'qa-qc': 'qc_review',
   }
 
   const wrongHero = Object.entries(HERO_VISUAL)

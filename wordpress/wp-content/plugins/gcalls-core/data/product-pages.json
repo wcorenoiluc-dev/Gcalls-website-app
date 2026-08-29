@@ -409,7 +409,7 @@
       "route": "/gcalls-cx/",
       "product": "Gcalls CX",
       "hero": {
-        "mockup": "cx_showcase",
+        "mockup": "cx_inbox",
         "cta": {
           "label": "Yêu cầu demo Gcalls CX",
           "intent": "demo",
@@ -513,7 +513,7 @@
           "lead": "Gcalls CX tập trung các kênh giao tiếp và quy trình chăm sóc vào một workspace để nhân viên có thể theo dõi hội thoại, customer context và trạng thái xử lý thuận tiện hơn.",
           "cards": false,
           "items": [],
-          "mockup": "cx_inbox"
+          "mockup": "cx_context"
         },
         {
           "source": "CX_CHANNELS",
@@ -616,7 +616,8 @@
               "title": "Hỗ trợ quá trình follow-up",
               "body": ""
             }
-          ]
+          ],
+          "mockup": "cx_ticket"
         },
         {
           "source": "CX_CONTEXT",
@@ -656,7 +657,7 @@
               "body": ""
             }
           ],
-          "mockup": "crm"
+          "mockup": "cx_context"
         },
         {
           "source": "CX_HOW_IT_WORKS",
@@ -721,7 +722,7 @@
               "body": ""
             }
           ],
-          "mockup": "analytics"
+          "mockup": "cx_report"
         },
         {
           "source": "CX_BENEFITS",
@@ -871,7 +872,7 @@
       "route": "/voicebot-ai/",
       "product": "Gcalls Voicebot AI",
       "hero": {
-        "mockup": "voicebot_showcase",
+        "mockup": "voicebot_builder",
         "cta": {
           "label": "Đăng ký tư vấn Voicebot",
           "intent": "consultation",
@@ -988,8 +989,7 @@
               "title": "Xử lý bước đầu ngoài giờ",
               "body": "Tiếp nhận và ghi nhận nhu cầu ở bước đầu tiên ngoài khung giờ làm việc, sau đó chuyển lại cho đội ngũ xử lý trong giờ hành chính."
             }
-          ],
-          "mockup": "voicebot_builder"
+          ]
         },
         {
           "source": "VB_HOW_IT_WORKS",
@@ -1064,7 +1064,7 @@
               "body": ""
             }
           ],
-          "mockup": "voicebot_builder"
+          "mockup": "voicebot_handoff"
         },
         {
           "source": "VB_HUMAN_AI",
@@ -1204,8 +1204,7 @@
               "title": "Linh hoạt thử nghiệm theo từng use case",
               "body": "Doanh nghiệp có thể bắt đầu từ một tình huống cuộc gọi và mở rộng dần theo kết quả thực tế."
             }
-          ],
-          "mockup": "analytics"
+          ]
         },
         {
           "source": "VB_FINAL_CTA",
@@ -1221,7 +1220,7 @@
       "route": "/qc-bot-ai/",
       "product": "QA QC Center",
       "hero": {
-        "mockup": "qc_showcase",
+        "mockup": "qc_review",
         "cta": {
           "label": "Yêu cầu demo QA QC Center",
           "intent": "demo",
@@ -1439,7 +1438,7 @@
               "body": ""
             }
           ],
-          "mockup": "qc_transcript"
+          "mockup": "qc_scorecard"
         },
         {
           "source": "QQ_SIGNALS",
@@ -1468,7 +1467,8 @@
               "title": "Theo dõi xu hướng thay vì chỉ nhìn từng cuộc gọi riêng lẻ",
               "body": ""
             }
-          ]
+          ],
+          "mockup": "qc_signals"
         },
         {
           "source": "QQ_HUMAN_LOOP",
@@ -1485,7 +1485,7 @@
           "lead": "Dashboard tập hợp dữ liệu đánh giá để QA Manager và người vận hành theo dõi các cuộc gọi cần chú ý, kết quả scoring và xu hướng chất lượng theo thời gian.",
           "cards": false,
           "items": [],
-          "mockup": "analytics"
+          "mockup": "qc_dashboard"
         },
         {
           "source": "QQ_BENEFITS",

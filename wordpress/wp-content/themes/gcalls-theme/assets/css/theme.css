@@ -255,10 +255,8 @@ pre {
 	font-weight: 800;
 }
 
-.gcalls-branding__text {
-	color: var(--gcalls-brand);
-	text-decoration: none;
-}
+/* .gcalls-branding__text is defined in the parity layer at the foot of this
+ * file, together with the mark it sits beside. */
 
 .gcalls-header__toggle {
 	display: inline-flex;

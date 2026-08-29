@@ -12,6 +12,7 @@
     "test": "node scripts/verify-loss-estimator.mjs",
     "check": "npm run typecheck && npm run lint && npm run test && npm run build",
     "wp:lint": "node wordpress/scripts/php-lint.mjs",
+    "wp:css": "node wordpress/scripts/css-lint.mjs",
     "wp:export": "node wordpress/scripts/export-content.mjs",
     "wp:qa": "node wordpress/scripts/qa-foundation.mjs",
     "wp:package": "node wordpress/scripts/package-plugin.mjs",
@@ -25,7 +26,7 @@
     "wp:product": "node wordpress/scripts/build-product-content.mjs",
     "wp:corpus": "node wordpress/scripts/export-blog-corpus.mjs",
     "wp:corpus-package": "node wordpress/scripts/build-corpus-package.mjs",
-    "wp:check": "npm run wp:estimator && npm run wp:loss && npm run wp:test-loss && npm run wp:product && npm run wp:lint && npm run wp:qa && npm run wp:test-import && npm run wp:reconcile",
+    "wp:check": "npm run wp:estimator && npm run wp:loss && npm run wp:test-loss && npm run wp:product && npm run wp:lint && npm run wp:css && npm run wp:qa && npm run wp:test-import && npm run wp:reconcile",
     "wp:live-verify": "node wordpress/scripts/live-003a-verify.mjs"
   },
   "dependencies": {

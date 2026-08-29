@@ -227,11 +227,15 @@
 
 .gcalls-mock__chart { padding: 0.9rem; }
 .gcalls-mock__bars { align-items: flex-end; display: flex; gap: 0.5rem; height: 9rem; }
-.gcalls-mock__bar {
+/* Scoped to the chart. Unscoped, this selector also matched the window
+ * chrome bar at the top of this file — same class name, two components — and
+ * being the later rule it repainted every mockup's title bar with the chart's
+ * vertical gradient and rounded its bottom corners off. */
+.gcalls-mock__bars .gcalls-mock__bar {
 	background: linear-gradient(180deg, var(--m-brand), var(--m-dark));
 	border-radius: 5px 5px 0 0; flex: 1; position: relative; transition: height 350ms ease;
 }
-.gcalls-mock__bar em { bottom: -1.3rem; color: var(--m-muted); font-size: 0.7rem; font-style: normal; left: 0; position: absolute; right: 0; text-align: center; }
+.gcalls-mock__bars .gcalls-mock__bar em { bottom: -1.3rem; color: var(--m-muted); font-size: 0.7rem; font-style: normal; left: 0; position: absolute; right: 0; text-align: center; }
 .gcalls-mock__chart { padding-bottom: 2.2rem; }
 
 .gcalls-mock__ticks li, .gcalls-mock__criteria li { border-bottom: 1px solid var(--m-border); padding: 0.45rem 0; }
@@ -348,8 +352,11 @@
 .gcalls-mock__wave span { background: var(--m-brand); border-radius: 2px; flex: 1; opacity: 0.55; }
 .gcalls-mock__wave span:nth-child(-n + 17) { opacity: 1; }
 
-.gcalls-mock__bars { align-items: flex-end; display: flex; gap: 4px; height: 52px; }
-.gcalls-mock__bars span { background: linear-gradient(180deg, var(--m-brand), var(--m-dark)); border-radius: 3px; flex: 1; }
+/* Named for the stage, not for the mockups namespace: `.gcalls-mock__bars`
+ * already belongs to the analytics chart at 9rem tall, and reusing it here
+ * silently cut that chart down to 52px wherever both were loaded. */
+.gcalls-stage__bars { align-items: flex-end; display: flex; gap: 4px; height: 52px; }
+.gcalls-stage__bars span { background: linear-gradient(180deg, var(--m-brand), var(--m-dark)); border-radius: 3px; flex: 1; }
 
 .gcalls-mock__dialnum {
 	color: var(--m-ink);
@@ -507,3 +514,160 @@
 	right: 0.9rem;
 	width: 3rem;
 }
+
+/* =====================================================================
+ * Product surfaces — 010 parity (CX / Voicebot / QC)
+ * =====================================================================
+ * Channel colours live here rather than in the PHP so the markup stays
+ * a description of the content and the palette stays in one file. The
+ * five channel tints are the reference's own.
+ * ===================================================================== */
+.gcalls-pad { padding: 0.9rem; }
+
+.gcalls-chanbar {
+	align-items: center;
+	border-bottom: 1px solid var(--m-border);
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 0.35rem;
+	overflow-x: auto;
+	padding: 0.6rem 0.9rem;
+	scrollbar-width: thin;
+}
+
+.gcalls-chanbar__all {
+	background: var(--m-brand);
+	border-radius: 999px;
+	color: #fff;
+	flex: none;
+	font-size: 0.625rem;
+	font-weight: 600;
+	padding: 0.1rem 0.5rem;
+}
+
+.gcalls-chan {
+	border-radius: 999px;
+	flex: none;
+	font-size: 0.625rem;
+	font-weight: 600;
+	padding: 0.1rem 0.5rem;
+	white-space: nowrap;
+}
+
+.gcalls-chan--voice { background: #f5f1fc; color: #673ab7; }
+.gcalls-chan--zalo { background: #ecfeff; color: #0e7490; }
+.gcalls-chan--facebook { background: #eff6ff; color: #1d4ed8; }
+.gcalls-chan--sms { background: #f0fdf4; color: #15803d; }
+.gcalls-chan--email { background: #fffbeb; color: #b45309; }
+
+.gcalls-chanrow { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.6rem; }
+
+.gcalls-state {
+	background: var(--m-light);
+	border-radius: 999px;
+	color: var(--m-brand);
+	flex: none;
+	font-size: 0.625rem;
+	font-weight: 600;
+	padding: 0.1rem 0.5rem;
+	white-space: nowrap;
+}
+
+/* Amber, not red: these states need attention, they are not errors. */
+.gcalls-state--warn { background: #fffbeb; color: #b45309; }
+
+.gcalls-rows { list-style: none; margin: 0; padding: 0; }
+
+.gcalls-row {
+	align-items: center;
+	border-bottom: 1px solid var(--m-border);
+	display: flex;
+	gap: 0.6rem;
+	padding: 0.6rem 0.9rem;
+}
+
+.gcalls-row:last-child { border-bottom: 0; }
+.gcalls-rows--tight .gcalls-row { padding: 0.45rem 0; }
+
+.gcalls-row__main { display: grid; flex: 1; gap: 0.15rem; min-width: 0; }
+.gcalls-row__main small { color: var(--m-muted); font-size: 0.75rem; overflow-wrap: anywhere; }
+.gcalls-row__head { align-items: center; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.gcalls-row__head b { color: var(--m-ink); font-size: 0.75rem; }
+.gcalls-row__by { color: var(--m-muted); font-size: 0.7rem; }
+.gcalls-row__id { color: var(--m-brand); flex: none; font-size: 0.75rem; }
+.gcalls-row__end { color: var(--m-ink); font-size: 0.7rem; font-weight: 600; margin-left: auto; }
+
+.gcalls-lead { margin: 0.7rem 0 0; }
+.gcalls-lead b { color: var(--m-ink); font-size: 0.8125rem; }
+.gcalls-sub { color: var(--m-muted); font-size: 0.75rem; line-height: 1.6; margin: 0.25rem 0 0; }
+
+.gcalls-hist { border-top: 1px solid var(--m-border); display: grid; gap: 0.5rem; list-style: none; margin: 0.8rem 0 0; padding: 0.7rem 0 0; }
+.gcalls-hist li { display: flex; gap: 0.6rem; }
+.gcalls-hist__at { color: var(--m-muted); flex: none; font-size: 0.7rem; font-variant-numeric: tabular-nums; min-width: 2.6rem; }
+.gcalls-hist li span:last-child { color: var(--m-ink); font-size: 0.75rem; }
+
+.gcalls-who { align-items: center; display: flex; gap: 0.6rem; }
+
+.gcalls-block { border: 1px solid var(--m-border); border-radius: 0.75rem; margin-top: 0.7rem; padding: 0.7rem; }
+.gcalls-block__t { color: var(--m-brand); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.04em; margin: 0 0 0.5rem; text-transform: uppercase; }
+
+.gcalls-tiles { display: grid; gap: 0.5rem; grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; }
+.gcalls-tile { border: 1px solid var(--m-border); border-radius: 0.75rem; display: grid; gap: 0.35rem; padding: 0.6rem 0.7rem; }
+.gcalls-tile strong { color: var(--m-brand); font-size: 1.05rem; font-variant-numeric: tabular-nums; line-height: 1; }
+.gcalls-tile span { color: var(--m-muted); font-size: 0.6875rem; line-height: 1.4; }
+
+.gcalls-meters { display: grid; gap: 0.5rem; list-style: none; margin: 0; padding: 0; }
+.gcalls-meters li { align-items: center; display: flex; gap: 0.5rem; }
+.gcalls-meters__l { color: var(--m-muted); flex: none; font-size: 0.6875rem; width: 4.5rem; }
+.gcalls-meters__track { background: var(--m-light); border-radius: 999px; flex: 1; height: 0.5rem; overflow: hidden; }
+.gcalls-meters__fill { background: var(--m-brand); border-radius: 999px; display: block; height: 100%; }
+.gcalls-meters__fill--warn { background: #d9a441; }
+.gcalls-meters__fill--ok { background: #2f9e5f; }
+.gcalls-meters__fill--brand { background: var(--m-brand); }
+.gcalls-meters__fill--muted { background: rgba(103, 58, 183, 0.25); }
+.gcalls-meters li b { color: var(--m-ink); flex: none; font-size: 0.6875rem; font-variant-numeric: tabular-nums; min-width: 2rem; text-align: right; }
+.gcalls-meters--chan .gcalls-chan { width: 4.5rem; }
+
+.gcalls-outcomes { display: grid; gap: 0.6rem; list-style: none; margin: 0; padding: 0; }
+.gcalls-outcomes__head { display: flex; gap: 0.5rem; justify-content: space-between; }
+.gcalls-outcomes__head span { color: var(--m-ink); font-size: 0.75rem; }
+.gcalls-outcomes__head b { color: var(--m-muted); font-size: 0.6875rem; font-variant-numeric: tabular-nums; }
+.gcalls-outcomes .gcalls-meters__track { display: block; margin-top: 0.25rem; width: 100%; }
+
+.gcalls-recent { display: grid; gap: 0.4rem; list-style: none; margin: 0.5rem 0 0; padding: 0; }
+.gcalls-recent li { align-items: center; border: 1px solid var(--m-border); border-radius: 0.6rem; display: flex; gap: 0.5rem; padding: 0.4rem 0.6rem; }
+.gcalls-recent li span { color: var(--m-ink); flex: 1; font-size: 0.75rem; min-width: 0; }
+.gcalls-recent li i { color: var(--m-muted); flex: none; font-size: 0.65rem; font-style: normal; }
+
+.gcalls-note { background: var(--m-light); border-radius: 0.6rem; margin-top: 0.6rem; padding: 0.5rem 0.7rem; }
+.gcalls-note p { color: var(--m-ink); font-size: 0.75rem; margin: 0; }
+.gcalls-note__big { color: var(--m-brand); font-size: 1.25rem; font-variant-numeric: tabular-nums; font-weight: 800; }
+.gcalls-note small { color: var(--m-muted); font-size: 0.65rem; }
+
+.gcalls-turns { display: grid; gap: 0.7rem; list-style: none; margin: 0; padding: 0.9rem; }
+.gcalls-turns li { display: flex; gap: 0.6rem; }
+.gcalls-turns li > span { display: grid; gap: 0.15rem; min-width: 0; }
+.gcalls-turns__who { color: var(--m-brand); font-size: 0.65rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.gcalls-turns__text { color: var(--m-ink); font-size: 0.8125rem; line-height: 1.6; }
+.gcalls-turns .gcalls-state { justify-self: start; margin-top: 0.2rem; }
+
+.gcalls-score { align-items: center; background: var(--m-light); border-radius: 0.75rem; display: flex; justify-content: space-between; padding: 0.7rem 0.9rem; }
+.gcalls-score span { display: grid; gap: 0.15rem; }
+.gcalls-score b { color: var(--m-brand); font-size: 0.6875rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.gcalls-score small { color: var(--m-muted); font-size: 0.6875rem; }
+.gcalls-score em { color: var(--m-brand); font-size: 1.5rem; font-style: normal; font-variant-numeric: tabular-nums; font-weight: 800; }
+
+.gcalls-crit { display: grid; gap: 0.4rem; list-style: none; margin: 0.7rem 0 0; padding: 0; }
+.gcalls-crit li { align-items: center; border: 1px solid var(--m-border); border-radius: 0.6rem; display: flex; gap: 0.5rem; padding: 0.4rem 0.6rem; }
+.gcalls-crit__i { align-items: center; border-radius: 50%; display: flex; flex: none; font-size: 0.65rem; font-weight: 700; height: 1.25rem; justify-content: center; width: 1.25rem; }
+.gcalls-crit__i--ok { background: var(--m-light); color: var(--m-brand); }
+.gcalls-crit__i--no { background: #fffbeb; color: #b45309; }
+.gcalls-crit__l { color: var(--m-ink); flex: 1; font-size: 0.8125rem; min-width: 0; }
+.gcalls-crit li b { color: var(--m-muted); flex: none; font-size: 0.6875rem; font-variant-numeric: tabular-nums; }
+
+/* Columns are full height so each bar's percentage has a containing block
+ * to resolve against — otherwise every bar collapses to nothing. */
+.gcalls-trend { align-items: stretch; display: flex; gap: 0.4rem; height: 6rem; }
+.gcalls-trend__col { display: flex; flex: 1; flex-direction: column; gap: 0.3rem; justify-content: flex-end; }
+.gcalls-trend__bar { background: rgba(103, 58, 183, 0.8); border-radius: 4px 4px 0 0; display: block; width: 100%; }
+.gcalls-trend__col small { color: var(--m-muted); font-size: 0.625rem; text-align: center; }
