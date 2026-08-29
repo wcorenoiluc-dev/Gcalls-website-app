@@ -75,6 +75,63 @@ export const LOSS_FIELDS = {
 
 export type LossFieldKey = keyof typeof LOSS_FIELDS
 
+/** Label, hint and unit for one field. */
+export interface LossFieldMeta {
+  key: LossFieldKey
+  label: string
+  hint: string
+  /** Rendered after the number box, e.g. "người" or "VNĐ". */
+  unit: string
+}
+
+/**
+ * The visible wording for each field.
+ *
+ * It lives here rather than in the component because the WordPress port renders
+ * the same widget from this same module: `build-loss-estimator-config.mjs`
+ * imports it to emit the plugin's config file. Wording kept in the TSX would
+ * have to be copied into the port by hand, and the copy would drift the first
+ * time an editor rephrased a hint.
+ */
+export const LOSS_FIELD_META: LossFieldMeta[] = [
+  {
+    key: 'employees',
+    label: 'Số nhân viên',
+    hint: 'Nhân sự Sales, Telesales hoặc CSKH tham gia nghe gọi.',
+    unit: 'người',
+  },
+  {
+    key: 'monthlySalary',
+    label: 'Chi phí nhân sự / tháng / người',
+    hint: 'Tổng chi phí doanh nghiệp trả cho một nhân sự mỗi tháng.',
+    unit: 'VNĐ',
+  },
+  {
+    key: 'wastedMinutesPerDay',
+    label: 'Thời gian thao tác thủ công',
+    hint: 'Nhập liệu, đối chiếu, tổng hợp báo cáo — mỗi người mỗi ngày.',
+    unit: 'phút/ngày',
+  },
+  {
+    key: 'errorRatePercent',
+    label: 'Tỷ lệ lỗi và làm lại',
+    hint: 'Phần công việc phải xử lý lại do sai sót dữ liệu.',
+    unit: '%',
+  },
+  {
+    key: 'workingDays',
+    label: 'Số ngày làm việc / tháng',
+    hint: 'Dùng để quy đổi chi phí theo giờ.',
+    unit: 'ngày',
+  },
+  {
+    key: 'workingHoursPerDay',
+    label: 'Số giờ làm việc / ngày',
+    hint: 'Dùng để quy đổi chi phí theo giờ.',
+    unit: 'giờ',
+  },
+]
+
 export const DEFAULT_LOSS_INPUT: LossEstimateInput = {
   employees: LOSS_FIELDS.employees.default,
   monthlySalary: LOSS_FIELDS.monthlySalary.default,

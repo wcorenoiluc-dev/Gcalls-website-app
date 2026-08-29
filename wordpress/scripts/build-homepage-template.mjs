@@ -325,6 +325,17 @@ const content = [
       ],
       3,
     ),
+    { padding: { unit: 'px', top: '0', right: '0', bottom: '40', left: '0', isLinked: false } },
+  ),
+  // Still PainPointsSection: React nests LossEstimator at the end of it rather
+  // than giving it a section, because the estimator quantifies the six problems
+  // above using the visitor's own numbers. Its disclaimer only reads honestly
+  // while it sits next to the problem statement — promoted into a standalone
+  // "savings" block it becomes a claim, which is exactly what the content
+  // checkpoint forbids. Elementor has no nesting that would reproduce the React
+  // DOM, so it is a section with the padding closed up instead.
+  section(
+    [column([shortcode('[gcalls_loss_estimator]')])],
     { padding: { unit: 'px', top: '0', right: '0', bottom: '72', left: '0', isLinked: false } },
   ),
 

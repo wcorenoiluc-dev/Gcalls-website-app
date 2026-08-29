@@ -11,8 +11,10 @@ import {
   formatNumber,
   formatVnd,
   roundHalfUpToStep,
+  LOSS_FIELD_META,
   type LossEstimateInput,
   type LossFieldKey,
+  type LossFieldMeta,
 } from "./lossEstimate";
 
 /**
@@ -33,60 +35,30 @@ import {
  *     disagree with the inputs shown.
  */
 
-interface FieldConfig {
-  key: LossFieldKey;
-  label: string;
-  hint: string;
-  /** Rendered after the number box, e.g. "người" or "VNĐ". */
-  unit: string;
+interface FieldConfig extends LossFieldMeta {
   /** Formats the value shown beside the slider. */
   display: (value: number) => string;
 }
 
-const FIELDS: FieldConfig[] = [
-  {
-    key: "employees",
-    label: "Số nhân viên",
-    hint: "Nhân sự Sales, Telesales hoặc CSKH tham gia nghe gọi.",
-    unit: "người",
-    display: (v) => `${formatNumber(v)} người`,
-  },
-  {
-    key: "monthlySalary",
-    label: "Chi phí nhân sự / tháng / người",
-    hint: "Tổng chi phí doanh nghiệp trả cho một nhân sự mỗi tháng.",
-    unit: "VNĐ",
-    display: (v) => formatVnd(v),
-  },
-  {
-    key: "wastedMinutesPerDay",
-    label: "Thời gian thao tác thủ công",
-    hint: "Nhập liệu, đối chiếu, tổng hợp báo cáo — mỗi người mỗi ngày.",
-    unit: "phút/ngày",
-    display: (v) => `${formatNumber(v)} phút/ngày`,
-  },
-  {
-    key: "errorRatePercent",
-    label: "Tỷ lệ lỗi và làm lại",
-    hint: "Phần công việc phải xử lý lại do sai sót dữ liệu.",
-    unit: "%",
-    display: (v) => `${formatNumber(v)}%`,
-  },
-  {
-    key: "workingDays",
-    label: "Số ngày làm việc / tháng",
-    hint: "Dùng để quy đổi chi phí theo giờ.",
-    unit: "ngày",
-    display: (v) => `${formatNumber(v)} ngày`,
-  },
-  {
-    key: "workingHoursPerDay",
-    label: "Số giờ làm việc / ngày",
-    hint: "Dùng để quy đổi chi phí theo giờ.",
-    unit: "giờ",
-    display: (v) => `${formatNumber(v)} giờ`,
-  },
-];
+/**
+ * Label, hint and unit come from `lossEstimate.ts` — the same module the
+ * WordPress port reads — so the two renderings cannot word a field differently.
+ * Only the display formatter lives here, because it is a function and does not
+ * survive the trip through JSON.
+ */
+const DISPLAY: Record<LossFieldKey, (value: number) => string> = {
+  employees: (v) => `${formatNumber(v)} người`,
+  monthlySalary: (v) => formatVnd(v),
+  wastedMinutesPerDay: (v) => `${formatNumber(v)} phút/ngày`,
+  errorRatePercent: (v) => `${formatNumber(v)}%`,
+  workingDays: (v) => `${formatNumber(v)} ngày`,
+  workingHoursPerDay: (v) => `${formatNumber(v)} giờ`,
+};
+
+const FIELDS: FieldConfig[] = LOSS_FIELD_META.map((meta) => ({
+  ...meta,
+  display: DISPLAY[meta.key],
+}));
 
 function EstimatorField({
   config,

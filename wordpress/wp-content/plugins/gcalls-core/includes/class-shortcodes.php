@@ -49,6 +49,7 @@ final class Shortcodes {
 		add_shortcode( 'gcalls_lead_form', array( self::class, 'lead_form' ) );
 		add_shortcode( 'gcalls_media', array( self::class, 'media' ) );
 		add_shortcode( 'gcalls_estimator', array( self::class, 'estimator' ) );
+		add_shortcode( 'gcalls_loss_estimator', array( self::class, 'loss_estimator' ) );
 		add_shortcode( 'gcalls_diagram', array( self::class, 'diagram' ) );
 		add_shortcode( 'gcalls_product_page', array( self::class, 'product_page' ) );
 	}
@@ -357,6 +358,78 @@ final class Shortcodes {
 		$markup .= '</p><p><a class="gcalls-cta gcalls-cta--primary" href="';
 		$markup .= esc_url( self::lead_href( array( 'intent' => 'quote', 'source' => 'cost-estimator' ) ) );
 		$markup .= '">' . esc_html__( 'Nhận tư vấn cấu hình', 'gcalls-core' ) . '</a></p></div></noscript>';
+
+		$markup .= '</div>';
+
+		return $markup;
+	}
+
+	/**
+	 * `[gcalls_loss_estimator]` — the homepage operational-loss estimator.
+	 *
+	 * WHY THIS IS NOT `[gcalls_estimator]`
+	 * They answer different questions and must never be swapped. That one prices
+	 * a Gcalls deployment and belongs on /uoc-tinh-chi-phi/; this one asks what
+	 * disjointed operations might be costing the visitor TODAY, from numbers the
+	 * visitor types about their own team. Nothing here is measured or
+	 * benchmarked by Gcalls, so the disclaimer travels with every result and no
+	 * wording around it may promise a saving or a payback period.
+	 *
+	 * The bounds, wording and disclaimer come from the same TypeScript module
+	 * the React app uses, via build-loss-estimator-config.mjs.
+	 *
+	 * @param array<string, string>|string $atts Unused.
+	 */
+	public static function loss_estimator( $atts = array() ): string {
+		unset( $atts );
+
+		$config_file = GCALLS_CORE_DIR . 'data/loss-estimator-config.json';
+
+		if ( ! is_readable( $config_file ) ) {
+			return '';
+		}
+
+		$raw    = (string) file_get_contents( $config_file ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Bundled plugin data file.
+		$config = json_decode( $raw, true );
+
+		if ( ! is_array( $config ) || empty( $config['fields'] ) || empty( $config['disclaimer'] ) ) {
+			return '';
+		}
+
+		wp_enqueue_style(
+			'gcalls-loss-estimator',
+			GCALLS_CORE_URL . 'assets/css/loss-estimator.css',
+			array(),
+			VERSION
+		);
+		wp_enqueue_script(
+			'gcalls-loss-estimator',
+			GCALLS_CORE_URL . 'assets/js/loss-estimator.js',
+			array(),
+			VERSION,
+			true
+		);
+
+		$cta_href = self::lead_href(
+			array(
+				'intent' => 'consultation',
+				'source' => 'consultation',
+			)
+		);
+
+		$markup  = '<div class="gcalls-loss-root" data-gcalls-loss-estimator';
+		$markup .= ' data-cta-url="' . esc_url( $cta_href ) . '"';
+		$markup .= " data-config='" . esc_attr( wp_json_encode( $config ) ) . "'>";
+
+		// Without scripting there is no calculator, so the fallback states the
+		// disclaimer and offers the route that does work — rather than rendering
+		// six inert sliders beside a figure that can never change.
+		$markup .= '<noscript><div class="gcalls-loss__noscript">';
+		$markup .= '<p>' . esc_html__( 'Công cụ ước tính cần JavaScript.', 'gcalls-core' ) . '</p>';
+		$markup .= '<p>' . esc_html( (string) $config['disclaimer'] ) . '</p>';
+		$markup .= '<p><a class="gcalls-cta gcalls-cta--primary" href="' . esc_url( $cta_href ) . '">';
+		$markup .= esc_html__( 'Nhận tư vấn tối ưu vận hành', 'gcalls-core' ) . '</a></p>';
+		$markup .= '</div></noscript>';
 
 		$markup .= '</div>';
 

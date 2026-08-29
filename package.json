@@ -20,10 +20,12 @@
     "wp:reconcile": "node wordpress/scripts/reconcile-articles.mjs",
     "wp:release": "node wordpress/scripts/build-release.mjs",
     "wp:estimator": "node wordpress/scripts/build-estimator-config.mjs",
+    "wp:loss": "node wordpress/scripts/build-loss-estimator-config.mjs",
+    "wp:test-loss": "node wordpress/scripts/test-loss-estimator.mjs",
     "wp:product": "node wordpress/scripts/build-product-content.mjs",
     "wp:corpus": "node wordpress/scripts/export-blog-corpus.mjs",
     "wp:corpus-package": "node wordpress/scripts/build-corpus-package.mjs",
-    "wp:check": "npm run wp:estimator && npm run wp:product && npm run wp:lint && npm run wp:qa && npm run wp:test-import && npm run wp:reconcile",
+    "wp:check": "npm run wp:estimator && npm run wp:loss && npm run wp:test-loss && npm run wp:product && npm run wp:lint && npm run wp:qa && npm run wp:test-import && npm run wp:reconcile",
     "wp:live-verify": "node wordpress/scripts/live-003a-verify.mjs"
   },
   "dependencies": {
