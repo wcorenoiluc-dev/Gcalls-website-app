@@ -821,6 +821,15 @@ final class Shortcodes {
 
 			$rendered_ask = true;
 
+			// A closing button that names its own destination is a link, not a
+			// lead ask, and must not be tagged as one.
+			if ( ! empty( $ask['data']['href'] ) ) {
+				$out .= '<a class="gcalls-cta gcalls-cta--' . esc_attr( (string) $ask['style'] ) . '" href="';
+				$out .= esc_url( home_url( (string) $ask['data']['href'] ) ) . '">';
+				$out .= esc_html( (string) $ask['data']['label'] ) . '</a>';
+				continue;
+			}
+
 			$out .= self::cta(
 				array(
 					'label'    => (string) $ask['data']['label'],

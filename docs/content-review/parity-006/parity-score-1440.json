@@ -27,12 +27,12 @@
   {
     "name": "gcalls-plus",
     "route": "/gcalls-plus-webphone/",
-    "score": 93.7,
+    "score": 91.4,
     "parts": {
-      "headings": 94.5,
+      "headings": 96.4,
       "visuals": 100,
-      "ctas": 100,
-      "rhythm": 81.9
+      "ctas": 80,
+      "rhythm": 81.1
     },
     "react": {
       "headings": 55,
@@ -43,26 +43,24 @@
     "wp": {
       "headings": 54,
       "visuals": 13,
-      "ctas": 4,
-      "height": 16308
+      "ctas": 5,
+      "height": 16481
     },
     "missingInWp": [
       "PHÙ HỢP VỚI GCALLS PLUS",
       "KHI NHU CẦU MỞ RỘNG"
     ],
-    "extraInWp": [
-      "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
-    ]
+    "extraInWp": []
   },
   {
     "name": "gcalls-cx",
     "route": "/gcalls-cx/",
-    "score": 93.1,
+    "score": 96.2,
     "parts": {
-      "headings": 96.7,
+      "headings": 98.3,
       "visuals": 100,
-      "ctas": 66.7,
-      "rhythm": 98.9
+      "ctas": 83.3,
+      "rhythm": 97.7
     },
     "react": {
       "headings": 59,
@@ -73,23 +71,21 @@
     "wp": {
       "headings": 60,
       "visuals": 6,
-      "ctas": 4,
-      "height": 13684
+      "ctas": 5,
+      "height": 13857
     },
     "missingInWp": [],
-    "extraInWp": [
-      "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
-    ]
+    "extraInWp": []
   },
   {
     "name": "voicebot",
     "route": "/voicebot-ai/",
-    "score": 91,
+    "score": 91.7,
     "parts": {
-      "headings": 93.2,
+      "headings": 94.9,
       "visuals": 100,
       "ctas": 80,
-      "rhythm": 86.7
+      "rhythm": 86.3
     },
     "react": {
       "headings": 59,
@@ -101,7 +97,7 @@
       "headings": 58,
       "visuals": 6,
       "ctas": 4,
-      "height": 11789
+      "height": 11839
     },
     "missingInWp": [
       "Voicebot đảm nhận",
@@ -109,19 +105,18 @@
       "Câu hỏi thường gặp về Voicebot AI"
     ],
     "extraInWp": [
-      "Câu hỏi thường gặp về Gcalls Voicebot AI",
-      "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
+      "Câu hỏi thường gặp về Gcalls Voicebot AI"
     ]
   },
   {
     "name": "qa-qc",
     "route": "/qc-bot-ai/",
-    "score": 89.2,
+    "score": 92.9,
     "parts": {
-      "headings": 91.1,
+      "headings": 92.9,
       "visuals": 100,
-      "ctas": 66.7,
-      "rhythm": 93.4
+      "ctas": 83.3,
+      "rhythm": 94.8
     },
     "react": {
       "headings": 56,
@@ -132,17 +127,15 @@
     "wp": {
       "headings": 54,
       "visuals": 5,
-      "ctas": 4,
-      "height": 11939
+      "ctas": 5,
+      "height": 12113
     },
     "missingInWp": [
       "AI hỗ trợ",
       "QA xác nhận",
       "Manager cải thiện"
     ],
-    "extraInWp": [
-      "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
-    ]
+    "extraInWp": []
   },
   {
     "name": "estimator",

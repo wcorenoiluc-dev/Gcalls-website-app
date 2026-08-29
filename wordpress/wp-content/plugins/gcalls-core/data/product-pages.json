@@ -32,9 +32,7 @@
         },
         "secondary": {
           "label": "Ước tính cấu hình",
-          "intent": "consultation",
-          "source": "gcalls_plus",
-          "product": "Gcalls Plus Webphone"
+          "href": "/uoc-tinh-chi-phi/?product=gcalls-plus"
         }
       },
       "direct": {
@@ -894,12 +892,7 @@
           "source": "voicebot_ai",
           "product": "Gcalls Voicebot AI"
         },
-        "secondary": {
-          "label": "",
-          "intent": "consultation",
-          "source": "voicebot_ai",
-          "product": "Gcalls Voicebot AI"
-        }
+        "secondary": null
       },
       "direct": null,
       "faq": [

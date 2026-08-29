@@ -236,24 +236,40 @@ for (const page of PAGES) {
    * the demo request entirely.
    */
   const finalRaw = module[Object.keys(module).find((k) => k.endsWith('_FINAL_CTA'))]
+
+  /**
+   * One closing button: a lead ask when it points at the contact page, a plain
+   * link to wherever else it points.
+   */
+  const ask = (raw, leadSource) => {
+    const label = pick(raw ?? {}, ['label'])
+
+    if (!label) return null
+
+    const target = String(raw?.path ?? '')
+    const isLead = target === '' || target.startsWith(routes.contact ?? '/lien-he/')
+
+    return isLead
+      ? {
+          label,
+          intent: leadSource?.intent ?? page.lead.intent,
+          source: leadSource?.source ?? page.lead.source,
+          product: leadSource?.product ?? page.lead.product,
+        }
+      : { label, href: target }
+  }
   const consultLead = module[Object.keys(module).find((k) => /_(CONSULT_LEAD|LEAD_CONTEXT)$/.test(k))]
 
   const finalCta = finalRaw
     ? {
         heading: pick(finalRaw, ['h2', 'title', 'heading']),
         lead: pick(finalRaw, ['description', 'lead']),
-        primary: {
-          label: pick(finalRaw.primaryCta ?? {}, ['label']),
-          intent: demoLead?.intent ?? page.lead.intent,
-          source: demoLead?.source ?? page.lead.source,
-          product: demoLead?.product ?? page.lead.product,
-        },
-        secondary: {
-          label: pick(finalRaw.secondaryCta ?? {}, ['label']),
-          intent: consultLead?.intent ?? page.lead.intent,
-          source: consultLead?.source ?? page.lead.source,
-          product: consultLead?.product ?? page.lead.product,
-        },
+        // NOT every closing button is a lead. Gcalls Plus offers "Ước tính cấu
+        // hình", which goes to the estimator; forcing lead attribution onto it
+        // turned a tool link into a fifth contact link on a page the reference
+        // gives four. The path decides.
+        primary: ask(finalRaw.primaryCta, demoLead ?? consultLead),
+        secondary: ask(finalRaw.secondaryCta, consultLead),
       }
     : null
 
