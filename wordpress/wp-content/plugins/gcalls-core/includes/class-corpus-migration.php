@@ -54,10 +54,30 @@ final class Corpus_Migration {
 	private const NONCE_STEP    = 'gcalls_corpus_step';
 	private const NONCE_CONTROL = 'gcalls_corpus_control';
 
-	/** Run state, media map, rollback journal. */
-	private const OPT_STATE    = 'gcalls_corpus_state';
-	private const OPT_MAP      = 'gcalls_corpus_media_map';
-	private const OPT_ROLLBACK = 'gcalls_corpus_rollback';
+	/** Run state and media map. Both autoload=false — see save_state(). */
+	private const OPT_STATE = 'gcalls_corpus_state';
+	private const OPT_MAP   = 'gcalls_corpus_media_map';
+
+	/**
+	 * Rollback journal, one option per post.
+	 *
+	 * NOT one option holding 170 bodies. That would be ~3 MB in a single row,
+	 * and a single row is also a single point of corruption: one bad write and
+	 * every article's rollback is gone at once. Per-post records also mean a
+	 * partial run leaves a partial, still-usable journal.
+	 *
+	 * Every record is autoload=false. An autoloaded option is fetched on every
+	 * request the site serves, so 170 of them holding article bodies would put
+	 * 3 MB of migration bookkeeping into the memory of every page view — and it
+	 * would stay there long after the migration finished.
+	 *
+	 * The run id is in the option name, so a second run cannot overwrite the
+	 * first one's journal and a rollback cannot mix two runs together.
+	 */
+	private const OPT_JOURNAL_PREFIX = 'gcalls_corpus_rb_';
+
+	/** Index of post ids journaled, per run. */
+	private const OPT_JOURNAL_INDEX = 'gcalls_corpus_rb_index_';
 
 	private const MANIFEST = 'data/corpus-migration.json';
 
@@ -69,6 +89,17 @@ final class Corpus_Migration {
 
 	/** Seconds allowed for one image download. */
 	private const DOWNLOAD_TIMEOUT = 20;
+
+	/**
+	 * Hard ceiling on a downloaded body.
+	 *
+	 * The large-file policy already holds anything over 2 MB for review, so
+	 * nothing the manifest approves comes close to this. It is here for the
+	 * case the manifest is wrong or the server sends something unexpected:
+	 * the transport stops reading rather than pulling an arbitrary amount of
+	 * data into a PHP process on a shared host.
+	 */
+	private const MAX_DOWNLOAD_BYTES = 8388608;
 
 	/** How many times one item may fail before the run pauses. */
 	private const MAX_RETRIES = 2;
@@ -224,21 +255,31 @@ final class Corpus_Migration {
 			'detail' => sprintf( 'manifest %s · plugin %s', (string) ( $manifest['plugin_version'] ?? '?' ), VERSION ),
 		);
 
-		/*
-		 * Free disk. The forecast in the manifest is originals plus every
-		 * derivative WordPress will generate, times a safety factor — an
-		 * import that fills the partition half way through leaves a media
-		 * library nobody planned.
-		 */
-		$required = (int) ( $manifest['forecast']['required_free_bytes'] ?? 0 );
-		$free     = function_exists( 'disk_free_space' ) ? @disk_free_space( WP_CONTENT_DIR ) : false; // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged -- open_basedir makes this throw on some hosts.
+		$disk = self::disk_check( $manifest );
 
 		$checks[] = array(
-			'label'  => __( 'Dung lượng trống đủ', 'gcalls-core' ),
-			'ok'     => is_float( $free ) && $free > $required,
-			'detail' => is_float( $free )
-				? sprintf( 'trống %s · cần %s', size_format( $free ), size_format( $required ) )
-				: __( 'NOT RUN — máy chủ không cho đọc dung lượng trống', 'gcalls-core' ),
+			'label'  => __( 'Đường dẫn uploads', 'gcalls-core' ),
+			'ok'     => '' !== $disk['uploads_path'],
+			'detail' => $disk['uploads_path'],
+		);
+
+		$checks[] = array(
+			'label'  => __( 'Phân vùng được đo', 'gcalls-core' ),
+			'ok'     => $disk['measured_path'] === $disk['uploads_path'],
+			'detail' => $disk['measured_path'] === $disk['uploads_path']
+				? $disk['measured_path']
+				: sprintf(
+					/* translators: 1: measured path, 2: uploads path. */
+					__( 'đo %1$s nhưng uploads ở %2$s — không chắc cùng phân vùng', 'gcalls-core' ),
+					$disk['measured_path'],
+					$disk['uploads_path']
+				),
+		);
+
+		$checks[] = array(
+			'label'  => __( 'Dung lượng trống', 'gcalls-core' ),
+			'ok'     => $disk['ok'],
+			'detail' => $disk['detail'],
 		);
 
 		$checks[] = array(
@@ -263,6 +304,83 @@ final class Corpus_Migration {
 		);
 
 		return $checks;
+	}
+
+	/**
+	 * Free disk, measured on the filesystem that actually holds uploads.
+	 *
+	 * WHY THE THRESHOLD IS NOT THE FORECAST
+	 * The forecast is originals plus every derivative WordPress generates. The
+	 * gate is deliberately well above it: an import that fills a partition
+	 * half way through leaves a media library nobody planned and a site that
+	 * cannot write a log line to say so. So the bar is the worst case — which
+	 * includes WebP copies the host may or may not make — times a further 1.2,
+	 * with a hard floor of 750 MB underneath it.
+	 *
+	 * WHY THERE IS NO OVERRIDE
+	 * disk_free_space() returns false when it is disabled, when open_basedir
+	 * forbids the path, and on some managed hosts always. Every one of those
+	 * means the same thing: the free space is unknown. A checkbox that let an
+	 * operator proceed anyway would turn "unknown" into "assumed fine", which
+	 * is the assumption this check exists to refuse.
+	 *
+	 * WP_CONTENT_DIR is not necessarily the uploads filesystem — uploads can
+	 * be moved, or mounted elsewhere — so the measurement is taken at the
+	 * uploads basedir itself and both paths are reported.
+	 *
+	 * @param array<string, mixed> $manifest Manifest.
+	 * @return array{ok: bool, detail: string, uploads_path: string, measured_path: string, free: float|false, required: int, worst_case: int}
+	 */
+	private static function disk_check( array $manifest ): array {
+		$uploads = wp_get_upload_dir();
+		$basedir = (string) ( $uploads['basedir'] ?? '' );
+
+		$worst    = (int) ( $manifest['forecast']['worst_case_bytes'] ?? 0 );
+		$required = max( 750 * 1024 * 1024, (int) ceil( $worst * 1.2 ) );
+
+		$measured = '' !== $basedir && is_dir( $basedir ) ? $basedir : WP_CONTENT_DIR;
+
+		$free = false;
+
+		if ( function_exists( 'disk_free_space' ) ) {
+			// Silenced deliberately: open_basedir turns this into a warning on
+			// hosts where the answer is simply not available.
+			$free = @disk_free_space( $measured ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+		}
+
+		if ( ! is_float( $free ) || $free <= 0.0 ) {
+			return array(
+				'ok'            => false,
+				'detail'        => sprintf(
+					/* translators: %s: required free space. */
+					__( 'NOT RUN — không đọc được dung lượng trống. Cần tối thiểu %s. Execute bị khóa.', 'gcalls-core' ),
+					size_format( $required )
+				),
+				'uploads_path'  => $basedir,
+				'measured_path' => $measured,
+				'free'          => false,
+				'required'      => $required,
+				'worst_case'    => $worst,
+			);
+		}
+
+		$ok = $free >= $required;
+
+		return array(
+			'ok'            => $ok,
+			'detail'        => sprintf(
+				/* translators: 1: free, 2: required, 3: worst case. */
+				__( 'trống %1$s · cần %2$s · worst-case %3$s', 'gcalls-core' ),
+				size_format( $free ),
+				size_format( $required ),
+				size_format( $worst )
+			),
+			'uploads_path'  => $basedir,
+			'measured_path' => $measured,
+			'free'          => $free,
+			'required'      => $required,
+			'worst_case'    => $worst,
+		);
 	}
 
 	/**
@@ -355,10 +473,65 @@ final class Corpus_Migration {
 			wp_send_json_error( array( 'message' => __( 'Chỉ chấp nhận POST.', 'gcalls-core' ) ), 405 );
 		}
 
+		/*
+		 * NOTHING IS READ FROM THE REQUEST BEYOND THE NONCE.
+		 *
+		 * There is no post id, no attachment id, no URL, no batch number and
+		 * no "next state" in this handler. The browser's only power is to ask
+		 * for one more step; what that step is comes entirely from the server's
+		 * own stored state and the bundled manifest. A worker that accepted an
+		 * index from the client would let a tampered page skip the baseline
+		 * check by claiming to be further along than it is.
+		 */
 		$state = self::state();
 
 		if ( self::S_PAUSED_ERROR === $state['state'] ) {
 			wp_send_json_success( self::progress( $state, __( 'Đã tạm dừng vì lỗi. Xem danh sách lỗi bên dưới.', 'gcalls-core' ) ) );
+		}
+
+		if ( self::S_COMPLETE === $state['state'] ) {
+			wp_send_json_success( self::progress( $state, __( 'Run đã hoàn tất.', 'gcalls-core' ) ) );
+		}
+
+		$manifest = self::manifest();
+
+		if ( null === $manifest ) {
+			$state['state']    = self::S_PAUSED_ERROR;
+			$state['errors'][] = __( 'Manifest không đọc được.', 'gcalls-core' );
+			self::save_state( $state );
+			wp_send_json_success( self::progress( $state ) );
+		}
+
+		/*
+		 * Re-checked on EVERY step, not once at the start.
+		 *
+		 * A run takes minutes. The plugin can be updated underneath it, and
+		 * the disk can fill precisely because of what this is doing — which is
+		 * the one failure a check at the start could never catch.
+		 */
+		if ( ( $manifest['plugin_version'] ?? '' ) !== VERSION ) {
+			$state['state']    = self::S_PAUSED_ERROR;
+			$state['errors'][] = sprintf( 'manifest %s != plugin %s', (string) ( $manifest['plugin_version'] ?? '?' ), VERSION );
+			self::save_state( $state );
+			wp_send_json_success( self::progress( $state ) );
+		}
+
+		if ( ! $state['dry_run'] ) {
+			$disk = self::disk_check( $manifest );
+
+			if ( ! $disk['ok'] ) {
+				$state['state']    = self::S_PAUSED_ERROR;
+				$state['errors'][] = 'disk: ' . $disk['detail'];
+				self::save_state( $state );
+				wp_send_json_success( self::progress( $state ) );
+			}
+
+			if ( '' === (string) $state['run_id'] ) {
+				$state['state']    = self::S_PAUSED_ERROR;
+				$state['errors'][] = __( 'Chưa có run ID — baseline chưa chạy.', 'gcalls-core' );
+				self::save_state( $state );
+				wp_send_json_success( self::progress( $state ) );
+			}
 		}
 
 		switch ( $state['state'] ) {
@@ -540,6 +713,57 @@ final class Corpus_Migration {
 	}
 
 	/**
+	 * Is this URL one the build approved?
+	 *
+	 * Three separate questions, because each catches a different mistake:
+	 * whether the exact URL is in the manifest at all (catches a tampered
+	 * loop), whether its host is one the manifest uses (catches a manifest
+	 * whose rows were edited), and whether it is HTTPS (catches a downgrade).
+	 *
+	 * @param string $url URL to check.
+	 */
+	private static function url_is_allowed( string $url ): bool {
+		$manifest = self::manifest();
+
+		if ( null === $manifest ) {
+			return false;
+		}
+
+		if ( 0 !== strpos( $url, 'https://' ) ) {
+			return false;
+		}
+
+		$host = wp_parse_url( $url, PHP_URL_HOST );
+
+		if ( ! is_string( $host ) || '' === $host ) {
+			return false;
+		}
+
+		static $allowed_urls = null;
+		static $allowed_hosts = null;
+
+		if ( null === $allowed_urls ) {
+			$allowed_urls  = array();
+			$allowed_hosts = array();
+
+			foreach ( $manifest['media'] as $row ) {
+				if ( 'LOCALIZE' !== $row['verdict'] ) {
+					continue;
+				}
+
+				$allowed_urls[ (string) $row['url'] ] = true;
+				$row_host                             = wp_parse_url( (string) $row['url'], PHP_URL_HOST );
+
+				if ( is_string( $row_host ) && '' !== $row_host ) {
+					$allowed_hosts[ strtolower( $row_host ) ] = true;
+				}
+			}
+		}
+
+		return isset( $allowed_urls[ $url ] ) && isset( $allowed_hosts[ strtolower( $host ) ] );
+	}
+
+	/**
 	 * Downloads one image and creates an attachment.
 	 *
 	 * The bytes are checked before anything is written: the type is decided by
@@ -555,11 +779,37 @@ final class Corpus_Migration {
 		require_once ABSPATH . 'wp-admin/includes/media.php';
 		require_once ABSPATH . 'wp-admin/includes/image.php';
 
-		$response = wp_remote_get(
+		/*
+		 * The URL must be one the manifest actually contains, on a host the
+		 * manifest actually uses, over HTTPS. The first is what stops this
+		 * fetching anything the build did not approve; the second and third
+		 * are what stop a compromised or edited manifest from turning this
+		 * into a request generator.
+		 */
+		if ( ! self::url_is_allowed( (string) $item['url'] ) ) {
+			return new \WP_Error( 'gcalls_url', 'URL is not on the manifest allowlist' );
+		}
+
+		/*
+		 * wp_safe_remote_get, not wp_remote_get. The safe variant sets
+		 * reject_unsafe_urls, which runs the URL — and every redirect target —
+		 * through wp_http_validate_url, refusing loopback, private and
+		 * link-local addresses. That is the protection that matters here: the
+		 * host resolves at request time, not at preflight, so a name that was
+		 * public five minutes ago pointing at 169.254.169.254 now is exactly
+		 * the case this has to survive.
+		 *
+		 * limit_response_size caps the body at the transport, so an
+		 * unexpectedly enormous file is abandoned rather than read into
+		 * memory. redirection is capped at 3.
+		 */
+		$response = wp_safe_remote_get(
 			$item['url'],
 			array(
-				'timeout'  => self::DOWNLOAD_TIMEOUT,
-				'headers'  => array( 'user-agent' => 'gcalls-corpus-migration' ),
+				'timeout'             => self::DOWNLOAD_TIMEOUT,
+				'redirection'         => 3,
+				'limit_response_size' => self::MAX_DOWNLOAD_BYTES,
+				'headers'             => array( 'user-agent' => 'gcalls-corpus-migration' ),
 			)
 		);
 
@@ -646,8 +896,6 @@ final class Corpus_Migration {
 		}
 
 		$state['state'] = self::S_POST_REWRITE;
-		$rollback       = get_option( self::OPT_ROLLBACK );
-		$rollback       = is_array( $rollback ) ? $rollback : array();
 		$processed      = 0;
 
 		while ( $processed < self::POST_BATCH && $index < count( $eligible ) ) {
@@ -689,20 +937,18 @@ final class Corpus_Migration {
 			}
 
 			if ( $changed > 0 && ! $state['dry_run'] ) {
-				/* The journal entry is written BEFORE the post, so a failure
-				 * between the two leaves a recoverable record rather than a
-				 * changed post nobody can put back. */
-				$rollback[ (string) $id ] = array(
-					'run_id'       => $state['run_id'],
-					'saved_at_gmt' => gmdate( 'c' ),
-					'status'       => $post->post_status,
-					'hub'          => $article['hub'],
-					'body'         => $body,
-					'body_sha256'  => $article['body_sha256'],
-					'urls_changed' => $changed,
-					'version'      => VERSION,
-				);
-				update_option( self::OPT_ROLLBACK, $rollback, false );
+				/*
+				 * The journal entry is written BEFORE the post, and the write
+				 * is verified by reading it straight back. A failure between
+				 * the two then leaves a recoverable record rather than a
+				 * changed post nobody can put back — which is the only
+				 * ordering that makes rollback a promise instead of a hope.
+				 */
+				if ( ! self::journal_write( (string) $state['run_id'], $id, $body, (string) $article['body_sha256'], $post->post_status, (string) $article['hub'], $changed ) ) {
+					$state['errors'][] = sprintf( '#%d — journal write failed, post not touched', $id );
+					$state['state']    = self::S_PAUSED_ERROR;
+					break;
+				}
 
 				/*
 				 * wp_update_post() with only these keys. post_status is not in
@@ -977,16 +1223,49 @@ final class Corpus_Migration {
 	 * on purpose.
 	 */
 	private static function rollback(): string {
-		$journal = get_option( self::OPT_ROLLBACK );
+		$state  = self::state();
+		$run_id = (string) $state['run_id'];
 
-		if ( ! is_array( $journal ) || array() === $journal ) {
-			return __( 'Không có gì để hoàn nguyên.', 'gcalls-core' );
+		if ( '' === $run_id ) {
+			return __( 'Không có run nào để hoàn nguyên.', 'gcalls-core' );
+		}
+
+		$ids = get_option( self::OPT_JOURNAL_INDEX . $run_id );
+
+		if ( ! is_array( $ids ) || array() === $ids ) {
+			return __( 'Run này chưa ghi gì, không có gì để hoàn nguyên.', 'gcalls-core' );
 		}
 
 		$restored = 0;
 		$skipped  = 0;
+		$corrupt  = array();
 
-		foreach ( $journal as $id => $entry ) {
+		foreach ( $ids as $id ) {
+			$entry = get_option( self::OPT_JOURNAL_PREFIX . $run_id . '_' . (int) $id );
+
+			if ( ! is_array( $entry ) || ! isset( $entry['body'], $entry['checksum'], $entry['run_id'] ) ) {
+				$corrupt[] = (int) $id;
+				continue;
+			}
+
+			/*
+			 * A record whose checksum does not match its body is not a record
+			 * — restoring from it would write whatever the corruption left
+			 * behind over a real article. Stop the whole rollback rather than
+			 * skip it quietly: if one record is damaged the others are
+			 * suspect too, and a half-finished rollback is worse than none.
+			 */
+			if ( hash( 'sha256', (string) $entry['body'] ) !== $entry['checksum'] ) {
+				$corrupt[] = (int) $id;
+				continue;
+			}
+
+			/* A journal from another run must never be applied here. */
+			if ( (string) $entry['run_id'] !== $run_id ) {
+				++$skipped;
+				continue;
+			}
+
 			$post = get_post( (int) $id );
 
 			if ( ! $post instanceof \WP_Post || 'publish' === $post->post_status ) {
@@ -1004,13 +1283,86 @@ final class Corpus_Migration {
 			++$restored;
 		}
 
-		delete_option( self::OPT_ROLLBACK );
+		if ( array() !== $corrupt ) {
+			return sprintf(
+				/* translators: 1: count, 2: post ids. */
+				__( 'DỪNG: %1$d bản ghi journal hỏng checksum (post %2$s). Không hoàn nguyên gì cả — cần kiểm tra thủ công.', 'gcalls-core' ),
+				count( $corrupt ),
+				implode( ', ', array_map( 'strval', $corrupt ) )
+			);
+		}
 
+		/*
+		 * The journal is kept, not deleted. It is the only record of what this
+		 * run changed, and the orphan report is built from it — throwing it
+		 * away the moment the bodies are back would discard the evidence of
+		 * which attachments are now unreferenced.
+		 */
 		return sprintf(
 			/* translators: 1: restored, 2: skipped. */
-			__( 'Đã hoàn nguyên %1$d bài, bỏ qua %2$d. Attachment không bị xóa — xem báo cáo orphan.', 'gcalls-core' ),
+			__( 'Đã hoàn nguyên %1$d bài, bỏ qua %2$d. Attachment KHÔNG bị xóa; journal được giữ để dựng báo cáo orphan.', 'gcalls-core' ),
 			$restored,
 			$skipped
 		);
 	}
+
+	/**
+	 * Writes one journal record and reads it back to prove it landed.
+	 *
+	 * @param string $run_id  Run this record belongs to.
+	 * @param int    $id      Post id.
+	 * @param string $body    Body being replaced.
+	 * @param string $hash    Hash the body was expected to have.
+	 * @param string $status  Post status at the time.
+	 * @param string $hub     Hub slug at the time.
+	 * @param int    $changed How many URLs are being rewritten.
+	 */
+	private static function journal_write( string $run_id, int $id, string $body, string $hash, string $status, string $hub, int $changed ): bool {
+		$key = self::OPT_JOURNAL_PREFIX . $run_id . '_' . $id;
+
+		/* A record already there for this run and post is not overwritten:
+		 * the first one holds the ORIGINAL body, and that is the one rollback
+		 * needs. */
+		$existing = get_option( $key );
+
+		if ( is_array( $existing ) && isset( $existing['body'] ) ) {
+			return true;
+		}
+
+		$record = array(
+			'run_id'       => $run_id,
+			'post_id'      => $id,
+			'saved_at_gmt' => gmdate( 'c' ),
+			'status'       => $status,
+			'hub'          => $hub,
+			'body'         => $body,
+			'body_sha256'  => $hash,
+			'checksum'     => hash( 'sha256', $body ),
+			'urls_changed' => $changed,
+			'version'      => VERSION,
+		);
+
+		// Explicit autoload=false: these hold article bodies and must never be
+		// loaded on a front-end request.
+		add_option( $key, $record, '', false );
+		update_option( $key, $record, false );
+
+		$written = get_option( $key );
+
+		if ( ! is_array( $written ) || ! isset( $written['checksum'] ) || $written['checksum'] !== $record['checksum'] ) {
+			return false;
+		}
+
+		$index = get_option( self::OPT_JOURNAL_INDEX . $run_id );
+		$index = is_array( $index ) ? $index : array();
+
+		if ( ! in_array( $id, $index, true ) ) {
+			$index[] = $id;
+			add_option( self::OPT_JOURNAL_INDEX . $run_id, $index, '', false );
+			update_option( self::OPT_JOURNAL_INDEX . $run_id, $index, false );
+		}
+
+		return true;
+	}
+
 }

@@ -334,9 +334,23 @@ const migration = read(path.join(PLUGIN, HTTP_EXEMPT))
 // GET only. A POST to gcalls.co from this site would be a write to production,
 // which is the thing the original rule existed to make impossible.
 check('the migration tool only ever GETs', !/wp_remote_post|wp_remote_request/.test(migration))
-check('the migration tool makes exactly one kind of call', (migration.match(/wp_remote_get\(/g) ?? []).length === 1)
+/*
+ * wp_safe_remote_get, not wp_remote_get. The safe variant sets
+ * reject_unsafe_urls, so WordPress runs the URL and every redirect target
+ * through wp_http_validate_url and refuses loopback, private and link-local
+ * addresses. The host resolves at request time, which is the only place that
+ * check is worth anything — a name that was public at preflight and points at
+ * a metadata address by the time the fetch happens is the case that matters.
+ */
+check('the migration tool uses the safe HTTP API', (migration.match(/wp_safe_remote_get\(/g) ?? []).length === 1)
+check('the migration tool never uses the unsafe one', !/[^_]wp_remote_get\(/.test(migration))
+check('redirects are capped', /'redirection'\s*=>\s*3/.test(migration))
+check('the response size is capped at the transport', /'limit_response_size'\s*=>\s*self::MAX_DOWNLOAD_BYTES/.test(migration))
 // The URL comes from the bundled manifest, never from a request.
-check('the fetched URL comes from the manifest', /wp_remote_get\(\s*\$item\['url'\]/.test(migration))
+check('the fetched URL comes from the manifest', /wp_safe_remote_get\(\s*\n?\s*\$item\['url'\]/.test(migration))
+check('the URL is checked against an allowlist first', /url_is_allowed\( \(string\) \$item\['url'\] \)/.test(migration))
+check('the allowlist requires HTTPS', /0 !== strpos\( \$url, 'https:\/\/' \)/.test(migration))
+check('the allowlist checks both URL and host', /isset\( \$allowed_urls\[ \$url \] \) && isset\( \$allowed_hosts/.test(migration))
 check('the migration tool never reads a URL from the request', !/\$_(POST|GET|REQUEST)\[[^\]]*url/i.test(migration))
 // The bytes must match what was probed, or the file is not what was approved.
 check('downloaded bytes are checked against the manifest hash', /hash\( 'sha256', \$body \) !== \$item\['sha256'\]/.test(migration))
@@ -1245,8 +1259,39 @@ if (exists(mockPhp)) {
   check('the rewrite cannot change status', !/wp_update_post\([\s\S]{0,300}'post_status'\s*=>/.test(mig))
   check('the rewrite cannot change title or slug', !/wp_update_post\([\s\S]{0,300}'post_(title|name)'\s*=>/.test(mig))
 
-  check('the rollback journal is written before the post', /update_option\( self::OPT_ROLLBACK[\s\S]{0,400}wp_update_post/.test(mig))
+  check('the rollback journal is written before the post', /self::journal_write\([\s\S]{0,700}wp_update_post/.test(mig))
   check('rollback deletes no attachment', !/wp_delete_attachment/.test(mig))
+
+  /* ---------------------------------------------------------------- *
+   * The twelve execution-safety cases from the 016 review
+   * ---------------------------------------------------------------- */
+
+  // 1-3. Disk. There is no bypass, the threshold has a hard floor, and an
+  // unreadable value is a failure rather than an assumption.
+  check('disk failure disables execute', /! is_float\( \$free \) \|\| \$free <= 0\.0[\s\S]{0,300}'ok'\s*=>\s*false/.test(mig))
+  check('the disk threshold has a 750 MB floor', /max\( 750 \* 1024 \* 1024/.test(mig))
+  check('the disk threshold scales the worst case by 1.2', /\$worst \* 1\.2/.test(mig))
+  check('there is no disk-check override', !/skip_disk|ignore_disk|force_disk|bo_qua_disk/i.test(mig))
+  check('disk is measured at the uploads directory', /disk_free_space\( \$measured \)/.test(mig) && /\$uploads\['basedir'\]/.test(mig))
+  check('execute is blocked while any preflight fails', /\$failed = array_filter\( self::preflight\(\)[\s\S]{0,200}array\(\) !== \$failed/.test(mig))
+
+  // 4-6. Journal.
+  check('journal records are per post, not one blob', mig.includes('OPT_JOURNAL_PREFIX') && !mig.includes("OPT_ROLLBACK "))
+  check('journal options are autoload=false', /add_option\( \$key, \$record, '', false \)/.test(mig))
+  check('journal records carry a checksum', /'checksum'\s*=>\s*hash\( 'sha256', \$body \)/.test(mig))
+  check('a corrupt checksum stops the rollback', /hash\( 'sha256', \(string\) \$entry\['body'\] \) !== \$entry\['checksum'\][\s\S]{0,200}\$corrupt\[\]/.test(mig))
+  check('rollback refuses a foreign run id', /\(string\) \$entry\['run_id'\] !== \$run_id/.test(mig))
+  check('the run id is in the option name', /self::OPT_JOURNAL_PREFIX \. \$run_id/.test(mig))
+  check('an existing journal record is never overwritten', /is_array\( \$existing \) && isset\( \$existing\['body'\] \)[\s\S]{0,80}return true/.test(mig))
+  check('the journal write is verified by reading back', /\$written = get_option\( \$key \)/.test(mig))
+
+  // 7-9. Download safety is asserted above, against the same file.
+
+  // 10-12. Idempotency and client trust.
+  check('a completed media item is not re-fetched', /isset\( \$map\['by_url'\]\[ \$item\['url'\] \] \)/.test(mig))
+  check('the AJAX worker reads nothing but the nonce from the request', !/\$_POST\[(?!'?nonce)/.test(mig.slice(mig.indexOf('function ajax_step'), mig.indexOf('function progress'))))
+  check('the manifest version is re-checked every step', /function ajax_step[\s\S]{0,2000}\$manifest\['plugin_version'\] \?\? '' \) !== VERSION/.test(mig))
+  check('disk is re-checked every step of a real run', /function ajax_step[\s\S]{0,2600}! \$state\['dry_run'\][\s\S]{0,200}self::disk_check/.test(mig))
 
   // Idempotency: an image already imported is found by URL or by identical
   // bytes and is not fetched again.
