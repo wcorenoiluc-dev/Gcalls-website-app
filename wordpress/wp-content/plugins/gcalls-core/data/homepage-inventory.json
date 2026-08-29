@@ -1,0 +1,228 @@
+{
+  "generated_from": "wordpress/scripts/build-homepage-template.mjs",
+  "sections": [
+    {
+      "index": 0,
+      "elementId": "34df847",
+      "component": "HeroSection.tsx",
+      "heading": "",
+      "classes": [
+        "gc-btn",
+        "gc-check",
+        "gc-check__i",
+        "gc-checks",
+        "gc-ctarow",
+        "gc-eyebrow",
+        "gc-eyebrow__dot",
+        "gc-fine",
+        "gc-grad",
+        "gc-h1",
+        "gc-hero",
+        "gc-hero-lede"
+      ],
+      "paddingTop": "104",
+      "paddingBottom": "104"
+    },
+    {
+      "index": 1,
+      "elementId": "77046cf",
+      "component": "PainPointsSection.tsx — heading",
+      "heading": "“Khoảng Trống” Vận Hành Khiến Doanh Nghiệp Rò Rỉ Khách Hàng Và Thất Thoát Doanh Thu",
+      "classes": [
+        "gc-eyebrow",
+        "gc-grad",
+        "gc-h2",
+        "gc-head",
+        "gc-head__lead"
+      ],
+      "paddingTop": "104",
+      "paddingBottom": "104"
+    },
+    {
+      "index": 2,
+      "elementId": "d131e08",
+      "component": "PainPointsSection.tsx — pain card grid",
+      "heading": "Gián đoạn hoạt động telesales khi số gọi ra bị khóa hoặc bị người nhận báo cáo spam",
+      "classes": [
+        "gc-card",
+        "gc-card__body",
+        "gc-card__icon",
+        "gc-card__n",
+        "gc-card__rule",
+        "gc-card__top",
+        "gc-cards"
+      ],
+      "paddingTop": "0",
+      "paddingBottom": "48"
+    },
+    {
+      "index": 3,
+      "elementId": "1f85ba5",
+      "component": "LossEstimator.tsx",
+      "heading": "",
+      "classes": [],
+      "paddingTop": "0",
+      "paddingBottom": "104"
+    },
+    {
+      "index": 4,
+      "elementId": "797897b",
+      "component": "SolutionBridgeSection.tsx",
+      "heading": "Tổng Đài Thông Minh Gcalls: Bứt Phá Doanh Số Đội Ngũ & Nâng Cao Trải Nghiệm Khách Hàng",
+      "classes": [],
+      "paddingTop": "104",
+      "paddingBottom": "104"
+    },
+    {
+      "index": 5,
+      "elementId": "d388508",
+      "component": "EcosystemSection.tsx — header",
+      "heading": "Hệ sinh thái sản phẩm và giải pháp Gcalls",
+      "classes": [],
+      "paddingTop": "104",
+      "paddingBottom": "0"
+    },
+    {
+      "index": 6,
+      "elementId": "2b52248",
+      "component": "EcosystemSection.tsx — product group (heading + grid)",
+      "heading": "Sản phẩm Gcalls",
+      "classes": [
+        "gc-eco-card",
+        "gc-eco-card__body",
+        "gc-eco-card__cta",
+        "gc-eco-card__icon",
+        "gc-eco-card__name",
+        "gc-eco-card__supporting",
+        "gc-eco-grid",
+        "gc-eco-group",
+        "gc-eco-group__head",
+        "gc-eco-group__lead",
+        "gc-eco-group__title",
+        "gc-eyebrow"
+      ],
+      "paddingTop": "56",
+      "paddingBottom": "0"
+    },
+    {
+      "index": 7,
+      "elementId": "67c54a9",
+      "component": "EcosystemSection.tsx — solution group (heading + grid)",
+      "heading": "Giải pháp Gcalls",
+      "classes": [
+        "gc-eco-card",
+        "gc-eco-card__body",
+        "gc-eco-card__cta",
+        "gc-eco-card__icon",
+        "gc-eco-card__name",
+        "gc-eco-grid",
+        "gc-eco-group",
+        "gc-eco-group__head",
+        "gc-eco-group__lead",
+        "gc-eco-group__title",
+        "gc-eyebrow"
+      ],
+      "paddingTop": "64",
+      "paddingBottom": "0"
+    },
+    {
+      "index": 8,
+      "elementId": "e371cf0",
+      "component": "EcosystemSection.tsx — overview CTAs",
+      "heading": "",
+      "classes": [
+        "gc-linkrow",
+        "gc-linkrow__btn"
+      ],
+      "paddingTop": "56",
+      "paddingBottom": "104"
+    },
+    {
+      "index": 9,
+      "elementId": "e2313d7",
+      "component": "CallTimelineSection.tsx",
+      "heading": "Theo dõi toàn bộ hoạt động cuộc gọi theo thời gian thực",
+      "classes": [],
+      "paddingTop": "104",
+      "paddingBottom": "104"
+    },
+    {
+      "index": 10,
+      "elementId": "756b457",
+      "component": "CRMSection.tsx",
+      "heading": "Quản lý khách hàng tập trung ngay trên Gcalls",
+      "classes": [],
+      "paddingTop": "104",
+      "paddingBottom": "104"
+    },
+    {
+      "index": 11,
+      "elementId": "ee2732a",
+      "component": "AnalyticsSection.tsx",
+      "heading": "Theo dõi hiệu suất đội ngũ theo thời gian thực",
+      "classes": [
+        "gc-subhead"
+      ],
+      "paddingTop": "104",
+      "paddingBottom": "104"
+    },
+    {
+      "index": 12,
+      "elementId": "16f49ed",
+      "component": "CloudSection.tsx",
+      "heading": "Xây dựng hệ thống tổng đài doanh nghiệp trên nền tảng Cloud",
+      "classes": [
+        "gc-linkrow",
+        "gc-linkrow__btn",
+        "gc-subhead"
+      ],
+      "paddingTop": "104",
+      "paddingBottom": "104"
+    },
+    {
+      "index": 13,
+      "elementId": "f6fe030",
+      "component": "CustomerPopupSection.tsx",
+      "heading": "Nhận diện khách hàng ngay khi cuộc gọi đến",
+      "classes": [],
+      "paddingTop": "104",
+      "paddingBottom": "104"
+    },
+    {
+      "index": 14,
+      "elementId": "6401f80",
+      "component": "CallWidgetSection.tsx",
+      "heading": "Biến khách truy cập website thành cuộc gọi",
+      "classes": [],
+      "paddingTop": "104",
+      "paddingBottom": "104"
+    },
+    {
+      "index": 15,
+      "elementId": "17cbfe1",
+      "component": "IntegrationsSection.tsx",
+      "heading": "Hệ sinh thái tích hợp của Gcalls",
+      "classes": [],
+      "paddingTop": "104",
+      "paddingBottom": "104"
+    },
+    {
+      "index": 16,
+      "elementId": "0bb94e7",
+      "component": "WorkFromAnywhereSection.tsx",
+      "heading": "Mang tổng đài doanh nghiệp theo bạn đến bất kỳ đâu",
+      "classes": [],
+      "paddingTop": "104",
+      "paddingBottom": "104"
+    },
+    {
+      "index": 17,
+      "elementId": "7652f60",
+      "component": "UseCasesFinalCtaSection.tsx",
+      "heading": "Tổng đài doanh nghiệp luôn đồng hành cùng đội ngũ của bạn",
+      "classes": [],
+      "paddingTop": "104",
+      "paddingBottom": "104"
+    }
+  ]
+}

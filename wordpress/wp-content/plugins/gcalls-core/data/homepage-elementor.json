@@ -505,7 +505,7 @@
               "elType": "widget",
               "widgetType": "html",
               "settings": {
-                "html": "<div class=\"gc-linkrow\"><a class=\"gc-eco-ctas__btn gc-linkrow__btn gc-linkrow__btn--primary\" href=\"/san-pham/\">Xem tất cả sản phẩm<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a><a class=\"gc-eco-ctas__btn gc-linkrow__btn gc-linkrow__btn--ghost\" href=\"/giai-phap/\">Xem tất cả giải pháp<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></div>"
+                "html": "<div class=\"gc-linkrow\"><a class=\"gc-linkrow__btn gc-linkrow__btn--primary\" href=\"/san-pham/\">Xem tất cả sản phẩm<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a><a class=\"gc-linkrow__btn gc-linkrow__btn--ghost\" href=\"/giai-phap/\">Xem tất cả giải pháp<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></div>"
               },
               "elements": []
             }
@@ -919,7 +919,7 @@
               "elType": "widget",
               "widgetType": "html",
               "settings": {
-                "html": "<div class=\"gc-linkrow\"><a class=\"gc-eco-ctas__btn gc-linkrow__btn gc-linkrow__btn--primary\" href=\"/gcalls-plus-webphone/\">Xem Cloud PBX<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></div>"
+                "html": "<div class=\"gc-linkrow\"><a class=\"gc-linkrow__btn gc-linkrow__btn--primary\" href=\"/gcalls-plus-webphone/\">Xem Cloud PBX<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></div>"
               },
               "elements": []
             }

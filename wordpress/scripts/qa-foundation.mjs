@@ -1337,24 +1337,43 @@ if (exists(mockPhp)) {
       'plugin copy differs from wordpress/elementor-templates/',
     )
     /*
-     * 19 -> 18 in GCALLS-020, and the drop is the fix, not a loss.
+     * The expected section count is NOT a literal here.
      *
-     * The ecosystem block was five sibling top sections: a header, a bare
-     * "Sản phẩm Gcalls" heading, the product grid, a bare "Giải pháp Gcalls"
-     * heading, and the solution grid. Every top section carries the 104px site
-     * rhythm and adjacent paddings stack, so each seam opened 208px of empty
-     * page and the two heading-only sections stood 250px tall to hold one line
-     * of text. Each group heading now travels in the same widget as its grid,
-     * which is four sections doing the work the five did.
+     * It is read from data/homepage-inventory.json, which the generator emits
+     * beside the layout: one reviewed entry per section naming the React
+     * component it ports. So this gate fails both ways — if the envelope gains
+     * or loses a section the inventory did not declare, and if the inventory is
+     * edited without the envelope following. Bumping a number to go green is
+     * not available; the inventory diff has to be read.
      *
-     * The number is asserted so a future edit cannot quietly split or duplicate
-     * a section. If it moves again, the reason belongs here.
+     * GCALLS-020 took the ecosystem run from five sections to four: the two
+     * heading-only sections merged into the grids they introduce (-2) and one
+     * was added for React's overview CTAs, which this page never carried (+1).
+     * Page total 19 -> 18.
      */
-    check(
-      'the shipped layout has 18 sections',
-      Array.isArray(parsedLayout.content) && parsedLayout.content.length === 18,
-      String(parsedLayout.content?.length),
-    )
+    const inventoryPath = path.join(PLUGIN, 'data/homepage-inventory.json')
+    check('the section inventory ships beside the layout', exists(inventoryPath))
+
+    if (exists(inventoryPath)) {
+      const inv = JSON.parse(read(inventoryPath))
+      const expected = inv.sections.length
+
+      check(
+        `the shipped layout has ${expected} sections, as the inventory declares`,
+        Array.isArray(parsedLayout.content) && parsedLayout.content.length === expected,
+        `${parsedLayout.content?.length} vs inventory ${expected}`,
+      )
+
+      const drift = inv.sections
+        .filter((row, i) => parsedLayout.content[i]?.id !== row.elementId)
+        .map((row) => `#${row.index} ${row.component}`)
+      check('every inventory row matches the envelope section at its index', drift.length === 0, drift.join(' | '))
+
+      check(
+        'every inventory row names a React component',
+        inv.sections.every((row) => typeof row.component === 'string' && row.component.length > 0),
+      )
+    }
   }
   // Fake data is the addendum's rule, and the React source's realistic personal
   // names are exactly what must not be carried over.

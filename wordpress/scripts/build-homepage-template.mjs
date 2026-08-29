@@ -417,7 +417,7 @@ const linkRow = (items) =>
       items
         .map(
           (i) =>
-            `<a class="gc-eco-ctas__btn gc-linkrow__btn gc-linkrow__btn--${i.variant}" href="${i.href}">` +
+            `<a class="gc-linkrow__btn gc-linkrow__btn--${i.variant}" href="${i.href}">` +
             `${i.label}${icon('arrow-right', 2)}</a>`,
         )
         .join('') +
@@ -1095,6 +1095,70 @@ await writeFile(outPath, `${JSON.stringify(template, null, 2)}\n`)
  * a template somewhere else on purpose, and that should not silently rewrite
  * what the plugin ships.
  */
+/* ------------------------------------------------------------------ *
+ * Top-level section inventory
+ * ------------------------------------------------------------------ *
+ * One entry per emitted top section, in order, naming the React component it
+ * ports. This exists so the section COUNT is never a magic number: the QA gate
+ * reads this inventory and the envelope and requires them to agree, which means
+ * adding or dropping a section is a deliberate edit here, reviewed as a diff,
+ * rather than a number quietly bumped until the test goes green.
+ *
+ * GCALLS-020 changed the ecosystem run from five entries to four:
+ *   - the two heading-only sections were MERGED into the grids they introduce
+ *   - one section was ADDED for React's two overview CTAs, which this page had
+ *     never carried
+ * Five minus two merges plus one addition is four, so the page total is 18.
+ */
+const SECTION_COMPONENTS = [
+  'HeroSection.tsx',
+  'PainPointsSection.tsx — heading',
+  'PainPointsSection.tsx — pain card grid',
+  'LossEstimator.tsx',
+  'SolutionBridgeSection.tsx',
+  'EcosystemSection.tsx — header',
+  'EcosystemSection.tsx — product group (heading + grid)',
+  'EcosystemSection.tsx — solution group (heading + grid)',
+  'EcosystemSection.tsx — overview CTAs',
+  'CallTimelineSection.tsx',
+  'CRMSection.tsx',
+  'AnalyticsSection.tsx',
+  'CloudSection.tsx',
+  'CustomerPopupSection.tsx',
+  'CallWidgetSection.tsx',
+  'IntegrationsSection.tsx',
+  'WorkFromAnywhereSection.tsx',
+  'UseCasesFinalCtaSection.tsx',
+]
+
+if (SECTION_COMPONENTS.length !== content.length) {
+  console.error(
+    `build-homepage-template: inventory lists ${SECTION_COMPONENTS.length} section(s) ` +
+      `but the template emits ${content.length}. Update SECTION_COMPONENTS deliberately.`,
+  )
+  process.exit(1)
+}
+
+const inventory = {
+  generated_from: 'wordpress/scripts/build-homepage-template.mjs',
+  sections: content.map((sec, i) => {
+    const blob = JSON.stringify(sec)
+    const headings = [...blob.matchAll(/"title":"((?:[^"\\]|\\.)*)"/g)].map((m) => m[1])
+    const inline = [...blob.matchAll(/<h([23])[^>]*>((?:[^<]|<(?!\/h[23]))*)<\/h\1>/g)].map((m) =>
+      m[2].replace(/<[^>]+>/g, '').trim(),
+    )
+    return {
+      index: i,
+      elementId: sec.id,
+      component: SECTION_COMPONENTS[i],
+      heading: headings[0] ?? inline[0] ?? '',
+      classes: [...new Set([...blob.matchAll(/class=\\?"(gc-[a-z0-9_-]+)/g)].map((m) => m[1]))].sort(),
+      paddingTop: sec.settings?.padding?.top ?? String(SECTION_PAD),
+      paddingBottom: sec.settings?.padding?.bottom ?? String(SECTION_PAD),
+    }
+  }),
+}
+
 if (outArg === -1) {
   const shipped = path.join(
     WP_DIR,
@@ -1102,6 +1166,11 @@ if (outArg === -1) {
   )
   await mkdir(path.dirname(shipped), { recursive: true })
   await writeFile(shipped, `${JSON.stringify(template, null, 2)}\n`)
+
+  await writeFile(
+    path.join(WP_DIR, 'wp-content/plugins/gcalls-core/data/homepage-inventory.json'),
+    `${JSON.stringify(inventory, null, 2)}\n`,
+  )
 }
 
 const widgets = JSON.stringify(content).match(/"elType":"widget"/g)?.length ?? 0
