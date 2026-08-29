@@ -48,8 +48,32 @@ const blog = await get(`${BASE}/blog/`)
 record('/blog/ 200', blog.status === 200, `got ${blog.status}`)
 const login = await get(`${BASE}/wp-login.php`)
 record('wp-login.php reachable', login.status === 200, `got ${login.status}`)
-const post = await get(`${BASE}/hello-world/`)
-record('permalink /%postname%/ resolves', post.status === 200, `/hello-world/ -> ${post.status}`)
+/*
+ * The permalink canary has to be a post that EXISTS.
+ *
+ * It was /hello-world/, WordPress's sample post — which checkpoint 007 moved
+ * to the Trash on purpose, so this gate and the oEmbed one below have been
+ * reporting FAIL for a deletion that was the point. A canary that fails when
+ * the site is correct trains everyone to ignore it.
+ *
+ * The site's own REST index names a published post, so the probe follows the
+ * live content instead of a fixture.
+ */
+const postsIndex = await get(`${BASE}/wp-json/wp/v2/posts?per_page=1&_fields=link`)
+const canary = (() => {
+  try {
+    return JSON.parse(postsIndex.body)?.[0]?.link ?? ''
+  } catch {
+    return ''
+  }
+})()
+
+const post = canary ? await get(canary) : { status: 0 }
+record(
+  'permalink /%postname%/ resolves',
+  post.status === 200,
+  canary ? `${canary} -> ${post.status}` : 'no published post to probe',
+)
 
 /* ------------------------------------------------------------------ redirects */
 section('2. Canonical host and scheme')
@@ -89,7 +113,7 @@ for (const id of [1, 2]) {
 const archive = await get(`${BASE}/author/admin/`)
 record('/author/admin/ returns 404', archive.status === 404, `got ${archive.status}`)
 
-const oembed = await get(`${BASE}/wp-json/oembed/1.0/embed?url=${encodeURIComponent(`${BASE}/hello-world/`)}`)
+const oembed = await get(`${BASE}/wp-json/oembed/1.0/embed?url=${encodeURIComponent(canary || `${BASE}/`)}`)
 let oembedClean = false
 try {
   const data = JSON.parse(oembed.body)

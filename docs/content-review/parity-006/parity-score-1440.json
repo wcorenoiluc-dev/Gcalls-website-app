@@ -171,9 +171,9 @@
   {
     "name": "blog",
     "route": "/blog/",
-    "score": 70.8,
+    "score": 75,
     "parts": {
-      "headings": 60,
+      "headings": 68.3,
       "visuals": 100,
       "ctas": 75,
       "rhythm": 72.9
@@ -192,28 +192,11 @@
     },
     "missingInWp": [
       "Sáu danh mục tài nguyên",
-      "Tổng đài và Call Center3 bài",
-      "Gcalls Plus Webphone2 bài",
-      "CRM, Helpdesk và tích hợp3 bài",
-      "Gcalls CX2 bài",
-      "QA/QC và quản trị chất lượng3 bài",
-      "Voicebot, AI và tự động hóa2 bài",
-      "Tổng đài quốc tế3 bài",
       "Hiện chưa có bài viết nào được đăng tải",
       "Nội dung đã hoàn thiện, có thể đọc ngay",
       "Vì sao blog chưa có bài viết nào?",
-      "Trong lúc chờ bài viết, có thể đọc gì?",
-      "Có câu hỏi vận hành chưa tìm được câu trả lời?"
+      "Trong lúc chờ bài viết, có thể đọc gì?"
     ],
-    "extraInWp": [
-      "CRM, Helpdesk và tích hợp\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
-      "Gcalls CX\n\t\t\t\t\t\t\t2 bài\t\t\t\t\t\t\n\t\t\t\t\t",
-      "Gcalls Plus Webphone\n\t\t\t\t\t\t\t2 bài\t\t\t\t\t\t\n\t\t\t\t\t",
-      "QA/QC và quản trị chất lượng\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
-      "Tổng đài quốc tế\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
-      "Tổng đài và Call Center\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
-      "Voicebot, AI và tự động hóa\n\t\t\t\t\t\t\t2 bài\t\t\t\t\t\t\n\t\t\t\t\t",
-      "undefined"
-    ]
+    "extraInWp": []
   }
 ]
