@@ -622,6 +622,11 @@ const manifest = {
   articles,
   media,
   menus,
+  // The home page's layout is generated from the React source by
+  // build-homepage-template.mjs. Naming it here lets the importer apply it in
+  // the same run that creates the page, instead of leaving a dozen manual
+  // Elementor steps between a rebuilt template and the live site.
+  elementor: [{ route: '/', file: 'wordpress/elementor-templates/gcalls-homepage.json' }],
   // Populated from the editorial decision file in 003B. An empty map is a
   // valid map: the importer stores it verbatim and nothing redirects.
   redirects: {},

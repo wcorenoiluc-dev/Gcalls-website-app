@@ -435,6 +435,9 @@ final class Admin {
 				// base directory follows the manifest rather than being
 				// configured separately and drifting from it.
 				'media_base'       => dirname( $path ) . '/media',
+				// The Elementor templates ship in a sibling directory, so the
+				// importer is given the package root and finds them from there.
+				'package_base'     => dirname( $path ),
 				// The confirmation box is the ONLY thing that turns writing on.
 				// Everything else about this form is a dry run.
 				'dry_run'          => empty( $_POST['confirm'] ),

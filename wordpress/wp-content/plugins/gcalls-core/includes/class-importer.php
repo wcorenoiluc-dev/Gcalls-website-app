@@ -71,6 +71,17 @@ final class Importer {
 	 */
 	public const META_CONTENT_HASH = '_gcalls_content_hash';
 
+	/**
+	 * Post meta holding a hash of the Elementor payload this importer last wrote.
+	 *
+	 * Elementor keeps its layout in `_elementor_data`, not in `post_content`, so
+	 * META_CONTENT_HASH says nothing about whether somebody has since rearranged
+	 * the page in the builder. This is the same guard for the other half of the
+	 * page: no recorded hash, or a hash that no longer matches, means a human
+	 * touched it and the importer keeps its hands off.
+	 */
+	public const META_ELEMENTOR_HASH = '_gcalls_elementor_hash';
+
 	/** Term meta marking a nav menu this importer created and may rebuild. */
 	public const TERM_MANAGED = '_gcalls_managed';
 
@@ -165,6 +176,15 @@ final class Importer {
 				$force,
 				$overwrite_edited,
 				$report
+			);
+		}
+
+		if ( in_array( 'elementor', $only, true ) ) {
+			$report['sections']['elementor'] = self::import_elementor(
+				(array) ( $manifest['elementor'] ?? array() ),
+				$dry_run,
+				(string) ( $options['package_base'] ?? '' ),
+				$overwrite_edited
 			);
 		}
 
@@ -595,7 +615,7 @@ final class Importer {
 
 	/** The sections a run may cover, in dependency order. */
 	public static function sections(): array {
-		return array( 'hubs', 'media', 'pages', 'articles', 'menus', 'redirects' );
+		return array( 'hubs', 'media', 'pages', 'articles', 'elementor', 'menus', 'redirects' );
 	}
 
 	/**
@@ -795,6 +815,31 @@ final class Importer {
 					$slug,
 					$top_level[ $slug ],
 					(string) ( $article['id'] ?? '?' )
+				);
+			}
+		}
+
+		// An Elementor entry naming a route the manifest does not create would
+		// apply a home page layout to nothing, and report a clean run doing it.
+		// The route has to be one of these pages, and the file has to be a JSON
+		// file inside the package rather than a path out of it.
+		foreach ( (array) ( $manifest['elementor'] ?? array() ) as $entry ) {
+			$route = isset( $entry['route'] ) ? self::normalise_route( (string) $entry['route'] ) : '';
+			$file  = isset( $entry['file'] ) ? (string) $entry['file'] : '';
+
+			if ( '' === $route || ! isset( $by_route[ $route ] ) ) {
+				$problems[] = sprintf(
+					/* translators: %s: route. */
+					__( 'Template Elementor trỏ tới route không có trong manifest: %s', 'gcalls-core' ),
+					'' === $route ? '(trống)' : $route
+				);
+			}
+
+			if ( '' === $file || '.json' !== substr( $file, -5 ) ) {
+				$problems[] = sprintf(
+					/* translators: %s: file name. */
+					__( 'Template Elementor không phải file .json: %s', 'gcalls-core' ),
+					'' === $file ? '(trống)' : $file
 				);
 			}
 		}
@@ -1091,6 +1136,163 @@ final class Importer {
 		);
 
 		return empty( $found ) ? null : (int) $found[0];
+	}
+
+	/**
+	 * Applies exported Elementor page templates to the pages that own them.
+	 *
+	 * WHY THIS IS NOT DONE THROUGH THE ELEMENTOR UI
+	 * The documented route is Templates → Saved Templates → Import, then open
+	 * the page in the builder, delete every section and insert the template.
+	 * That is a dozen manual steps that have to be repeated exactly whenever the
+	 * template is rebuilt, it leaves a stale copy in the library each time, and
+	 * on this host the import form silently discarded the upload twice — no
+	 * error, no new template, nothing to debug. A layout that is generated from
+	 * the React source by a script should be applied by a script too, or the
+	 * generated artefact and the live page drift apart with nobody noticing.
+	 *
+	 * WHY THE PAYLOAD GETS ITS OWN HASH
+	 * Elementor keeps the layout in `_elementor_data`; `post_content` holds only
+	 * a rendered fallback. META_CONTENT_HASH therefore cannot tell whether an
+	 * editor has moved a section in the builder. This compares the live payload
+	 * against the hash written by the last import: no hash, or a hash that no
+	 * longer matches, means a human has been in the builder and the page is left
+	 * exactly as they left it unless the operator asks otherwise.
+	 *
+	 * @param array<int, array<string, mixed>> $items            Manifest `elementor` entries.
+	 * @param bool                             $dry_run          Report only.
+	 * @param string                           $base             Package directory holding the manifest.
+	 * @param bool                             $overwrite_edited Replace layouts edited in the builder.
+	 * @return array{created: int, updated: int, skipped: int, errors: array<int, string>}
+	 */
+	private static function import_elementor( array $items, bool $dry_run, string $base, bool $overwrite_edited ): array {
+		$counts = array(
+			'created' => 0,
+			'updated' => 0,
+			'skipped' => 0,
+			'errors'  => array(),
+		);
+
+		if ( array() === $items ) {
+			return $counts;
+		}
+
+		if ( '' === $base ) {
+			$counts['errors'][] = __( 'Không xác định được thư mục gói — bỏ qua phần Elementor.', 'gcalls-core' );
+
+			return $counts;
+		}
+
+		if ( ! defined( 'ELEMENTOR_VERSION' ) ) {
+			$counts['errors'][] = __( 'Elementor chưa được kích hoạt — bỏ qua phần Elementor.', 'gcalls-core' );
+
+			return $counts;
+		}
+
+		foreach ( $items as $item ) {
+			$route = isset( $item['route'] ) ? self::normalise_route( (string) $item['route'] ) : '';
+			$file  = isset( $item['file'] ) ? (string) $item['file'] : '';
+
+			if ( '' === $route || '' === $file ) {
+				$counts['errors'][] = __( 'Mục Elementor thiếu route hoặc file.', 'gcalls-core' );
+				continue;
+			}
+
+			// basename() only, for the same reason as media: the manifest stores
+			// a repository-relative path and the package ships the templates
+			// flat inside one directory beside the manifest.
+			$source = trailingslashit( $base ) . 'elementor/' . basename( $file );
+
+			if ( ! is_readable( $source ) ) {
+				$counts['errors'][] = sprintf(
+					/* translators: 1: route, 2: expected path. */
+					__( 'Elementor %1$s: không đọc được %2$s', 'gcalls-core' ),
+					$route,
+					$source
+				);
+				continue;
+			}
+
+			$template = json_decode( (string) file_get_contents( $source ), true ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Local file inside the import directory.
+
+			if ( ! is_array( $template ) || ! isset( $template['content'] ) || ! is_array( $template['content'] ) || array() === $template['content'] ) {
+				$counts['errors'][] = sprintf(
+					/* translators: %s: route. */
+					__( 'Elementor %s: template không có section nào.', 'gcalls-core' ),
+					$route
+				);
+				continue;
+			}
+
+			$post_id = self::find_by_route( $route );
+
+			if ( ! $post_id ) {
+				$counts['errors'][] = sprintf(
+					/* translators: %s: route. */
+					__( 'Elementor %s: không tìm thấy trang tương ứng.', 'gcalls-core' ),
+					$route
+				);
+				continue;
+			}
+
+			$payload = (string) wp_json_encode( $template['content'] );
+			$wanted  = self::content_hash( $payload );
+			$live    = (string) get_post_meta( $post_id, '_elementor_data', true );
+			$stored  = (string) get_post_meta( $post_id, self::META_ELEMENTOR_HASH, true );
+
+			// Already the layout this package describes. Re-running the import
+			// must not report work it did not do.
+			if ( '' !== $live && self::content_hash( $live ) === $wanted ) {
+				++$counts['skipped'];
+				continue;
+			}
+
+			$edited = '' !== $live && ( '' === $stored || $stored !== self::content_hash( $live ) );
+
+			if ( $edited && ! $overwrite_edited ) {
+				++$counts['skipped'];
+				$counts['errors'][] = sprintf(
+					/* translators: %s: route. */
+					__( 'Elementor %s: layout đã được sửa trong builder — giữ nguyên. Chọn "ghi đè nội dung đã sửa" nếu muốn thay.', 'gcalls-core' ),
+					$route
+				);
+				continue;
+			}
+
+			if ( '' === $live ) {
+				++$counts['created'];
+			} else {
+				++$counts['updated'];
+			}
+
+			if ( $dry_run ) {
+				continue;
+			}
+
+			// wp_slash, because update_post_meta unslashes what it is given and
+			// the payload is JSON full of backslash-escaped sequences. Without
+			// it Elementor reads back a payload it cannot decode and renders an
+			// empty page.
+			update_post_meta( $post_id, '_elementor_data', wp_slash( $payload ) );
+			update_post_meta( $post_id, '_elementor_edit_mode', 'builder' );
+			update_post_meta( $post_id, '_elementor_template_type', 'wp-page' );
+			update_post_meta( $post_id, '_elementor_version', ELEMENTOR_VERSION );
+			update_post_meta( $post_id, self::META_ELEMENTOR_HASH, $wanted );
+
+			if ( isset( $template['page_settings'] ) && is_array( $template['page_settings'] ) ) {
+				update_post_meta( $post_id, '_elementor_page_settings', $template['page_settings'] );
+			}
+
+			// The generated stylesheet is keyed to the old layout. Leaving it in
+			// place is how a correct import still renders the previous page.
+			delete_post_meta( $post_id, '_elementor_css' );
+
+			if ( class_exists( '\Elementor\Core\Files\CSS\Post' ) ) {
+				( new \Elementor\Core\Files\CSS\Post( $post_id ) )->delete();
+			}
+		}
+
+		return $counts;
 	}
 
 	/**

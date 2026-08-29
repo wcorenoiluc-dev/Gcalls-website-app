@@ -52,6 +52,8 @@ const RULES = {
   frontPageCount: 'Phải có đúng một trang chủ',
   postsPageCount: 'Phải có đúng một trang blog',
   slugCollision: 'bị tranh chấp giữa trang',
+  elementorRoute: 'trỏ tới route không có trong manifest',
+  elementorFile: 'không phải file .json',
 }
 
 function validate(manifest) {
@@ -121,6 +123,16 @@ function validate(manifest) {
     }
   }
 
+  for (const entry of manifest.elementor ?? []) {
+    const route = entry.route ? normalise(entry.route) : ''
+    if (!route || !byRoute.has(route)) {
+      problems.push(`Template Elementor ${RULES.elementorRoute}: ${route || '(trống)'}`)
+    }
+    if (!entry.file || !String(entry.file).endsWith('.json')) {
+      problems.push(`Template Elementor ${RULES.elementorFile}: ${entry.file || '(trống)'}`)
+    }
+  }
+
   return problems
 }
 
@@ -145,6 +157,24 @@ const blog = page({ id: 'blog', slug: 'blog', route: '/blog/', isPostsPage: true
 const base = (pages, articles = []) => ({ pages: [home, blog, ...pages], articles })
 
 const CASES = [
+  {
+    name: 'an Elementor template pointing at a route no page creates is rejected',
+    // Silently applying a home page layout to nothing, and reporting a clean
+    // run while doing it, is worse than refusing: the operator would go looking
+    // for the layout on a page the importer never touched.
+    manifest: { ...base([]), elementor: [{ route: '/khong-co/', file: 'x.json' }] },
+    expect: RULES.elementorRoute,
+  },
+  {
+    name: 'an Elementor entry naming something other than a .json file is rejected',
+    manifest: { ...base([]), elementor: [{ route: '/', file: '../../wp-config.php' }] },
+    expect: RULES.elementorFile,
+  },
+  {
+    name: 'an Elementor entry naming the front page route is accepted',
+    manifest: { ...base([]), elementor: [{ route: '/', file: 'gcalls-homepage.json' }] },
+    expect: null,
+  },
   {
     name: 'the posts page filed under a nav parent is rejected',
     // The exact defect this whole rule exists for: /blog/ given the sitemap's

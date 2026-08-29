@@ -153,6 +153,12 @@ await packageTracked({
 const contentStage = path.join(REPO, 'wordpress/dist/content-stage')
 await rm(contentStage, { recursive: true, force: true })
 await mkdir(path.join(contentStage, 'media'), { recursive: true })
+await mkdir(path.join(contentStage, 'elementor'), { recursive: true })
+
+// The home page template is generated before the content package rather than
+// after it, because the package now ships it: the importer applies the layout
+// in the same run that creates the page, so the two cannot drift.
+execFileSync(process.execPath, [path.join(HERE, 'build-homepage-template.mjs')], { cwd: REPO, stdio: 'pipe' })
 
 execFileSync(
   process.execPath,
@@ -166,7 +172,15 @@ for (const item of manifest.media) {
   await copyFile(path.join(REPO, item.file), path.join(contentStage, 'media', path.basename(item.file)))
 }
 
-const contentFiles = ['content-manifest.json', ...manifest.media.map((item) => `media/${path.basename(item.file)}`)]
+for (const entry of manifest.elementor ?? []) {
+  await copyFile(path.join(REPO, entry.file), path.join(contentStage, 'elementor', path.basename(entry.file)))
+}
+
+const contentFiles = [
+  'content-manifest.json',
+  ...manifest.media.map((item) => `media/${path.basename(item.file)}`),
+  ...(manifest.elementor ?? []).map((entry) => `elementor/${path.basename(entry.file)}`),
+]
 const contentVetProblems = await vet(contentStage, contentFiles)
 
 if (contentVetProblems.length) {
@@ -200,7 +214,6 @@ if (contentVetProblems.length) {
  * 4. Elementor home page template
  * ------------------------------------------------------------------ */
 
-execFileSync(process.execPath, [path.join(HERE, 'build-homepage-template.mjs')], { cwd: REPO, stdio: 'pipe' })
 
 const templateSource = path.join(WP, 'elementor-templates/gcalls-homepage.json')
 const templateOut = path.join(OUT, 'gcalls-elementor-homepage-003b-p0.json')
