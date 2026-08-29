@@ -71,11 +71,22 @@ async function browser() {
 
 /**
  * Console noise from a browser extension is not the website's problem, and on
- * this machine there is plenty of it. Only errors that name the site's own
- * origin, or that are page errors thrown by its scripts, count.
+ * this machine there is plenty of it.
+ *
+ * Chrome's own message for a failed subresource — "Failed to load resource:
+ * the server responded with a status of 404" — does not name the URL, so
+ * filtering on the text alone cannot tell a missing favicon from a missing
+ * stylesheet. Failed requests are therefore judged from the response event,
+ * which does carry the URL, and the console listener is left for real script
+ * errors.
  */
 const isSiteError = (text) =>
-  !/extension|chrome-extension|devtools|favicon/i.test(text)
+  !/extension|chrome-extension|devtools|favicon/i.test(text) &&
+  !/Failed to load resource/i.test(text)
+
+/** A failed request that actually matters: not a favicon, not third-party. */
+const isSiteRequestFailure = (url, status) =>
+  status >= 400 && !/favicon|\.ico($|\?)/i.test(url) && url.includes('ashernguyenxuanthuy.com')
 
 async function settle(page) {
   await page.waitForLoadState('networkidle').catch(() => {})
@@ -148,6 +159,9 @@ for (const route of allRoutes) {
     const consoleErrors = []
     page.on('console', (m) => m.type() === 'error' && isSiteError(m.text()) && consoleErrors.push(m.text().slice(0, 140)))
     page.on('pageerror', (e) => consoleErrors.push('pageerror: ' + String(e).slice(0, 140)))
+    page.on('response', (r) => {
+      if (isSiteRequestFailure(r.url(), r.status())) consoleErrors.push(`${r.status()} ${r.url().slice(-70)}`)
+    })
 
     let status = 0
     try {
@@ -307,8 +321,14 @@ console.log('\n4. Interaction')
 
     await toggle.click()
     await page.waitForTimeout(200)
-    await page.mouse.click(5, 700)
-    await page.waitForTimeout(250)
+    /*
+     * Click inside the main content, computed from its box. A fixed (5, 700)
+     * can land on the open panel itself or on nothing at all depending on the
+     * viewport, and then this measures the click rather than the menu.
+     */
+    const mainBox = await page.locator('#gcalls-main, main').first().boundingBox()
+    await page.mouse.click(200, mainBox ? Math.round(mainBox.y + 300) : 700)
+    await page.waitForTimeout(350)
     record('interaction', 'menu closes on outside click', (await toggle.getAttribute('aria-expanded')) === 'false')
   }
 
@@ -385,11 +405,14 @@ console.log('\n4. Interaction')
   await settle(page)
 
   const m = await page.evaluate(() => ({
-    steps: document.querySelectorAll('[data-estimator-step], .gcalls-estimator__step').length,
-    controls: document.querySelectorAll('.gcalls-estimator button, [data-estimator-next], [data-estimator-back]').length,
+    // The rendered class is `gcalls-est`, not `gcalls-estimator`.
+    root: Boolean(document.querySelector('.gcalls-est')),
+    steps: document.querySelectorAll('.gcalls-est [class*="step"], .gcalls-est fieldset').length,
+    controls: document.querySelectorAll('.gcalls-est button, .gcalls-est input').length,
   }))
 
-  record('estimator', 'estimator renders', m.steps > 0 || m.controls > 0, `${m.steps} steps, ${m.controls} controls`)
+  record('estimator', 'estimator renders', m.root, `root=${m.root}`)
+  record('estimator', 'estimator has controls', m.controls > 0, `${m.steps} steps, ${m.controls} controls`)
 
   await ctx.close()
 }
@@ -408,9 +431,13 @@ console.log('\n4. Interaction')
     tocLinks: document.querySelectorAll('.gcalls-toc a').length,
     anchors: document.querySelectorAll('.gcalls-article__body h2[id], .gcalls-article__body h3[id]').length,
     related: document.querySelectorAll('.gcalls-related .gcalls-card').length,
-    cta: document.querySelectorAll('a[href*="/lien-he/"]').length,
     h1: document.querySelectorAll('h1').length,
-    ctaDuplicated: document.querySelectorAll('.gcalls-cta').length,
+    /*
+     * Scoped to the article. The header carries a site-wide CTA on every page
+     * — counting document-wide reported two and called a correct page a
+     * duplicate.
+     */
+    ctaInArticle: document.querySelectorAll('article .gcalls-cta, .gcalls-article .gcalls-cta').length,
   }))
 
   record('single', 'breadcrumb present', m.breadcrumb)
@@ -419,7 +446,7 @@ console.log('\n4. Interaction')
   record('single', 'headings carry anchors', m.anchors > 0, String(m.anchors))
   record('single', 'related articles present', m.related > 0, String(m.related))
   record('single', 'exactly one H1', m.h1 === 1, String(m.h1))
-  record('single', 'CTA is not duplicated', m.ctaDuplicated <= 1, String(m.ctaDuplicated))
+  record('single', 'the article carries exactly one CTA', m.ctaInArticle === 1, String(m.ctaInArticle))
 
   await ctx.close()
 }
@@ -454,7 +481,37 @@ const httpCheck = async (url, options = {}) => {
   const home = await fetch(ORIGIN + '/').catch(() => null)
   const homeText = home ? await home.text() : ''
   record('noindex', 'robots meta carries noindex', /name=["']robots["'][^>]*noindex/i.test(homeText))
-  record('noindex', 'X-Robots-Tag header', /noindex/i.test(home?.headers.get('x-robots-tag') ?? ''), home?.headers.get('x-robots-tag') ?? '(none)')
+
+  /*
+   * X-Robots-Tag, and why it is reported the way it is.
+   *
+   * The header comes from `Header always set` in .htaccess, so Apache adds it
+   * when the request reaches Apache. It does not reach Apache on a page-cache
+   * hit: the cache replays a stored body and the header is not part of it.
+   * Measured behaviour is exactly that — present on the first request after a
+   * purge, absent on every one after, which is most of them.
+   *
+   * This reports what a crawler actually receives and names the layer still
+   * carrying the weight. It is a real gap in one of the four noindex layers,
+   * and not a reason to pretend the header is there.
+   */
+  {
+    const ctx = await b.newContext()
+    const page = await ctx.newPage()
+    const resp = await page.goto(ORIGIN + '/', { waitUntil: 'domcontentloaded', timeout: 45000 })
+    const headers = await resp.allHeaders()
+    const xr = headers['x-robots-tag'] ?? ''
+
+    record(
+      'noindex',
+      'X-Robots-Tag header',
+      /noindex/i.test(xr),
+      xr ||
+        'absent on a page-cache hit — the .htaccess header does not survive a cached response. ' +
+          'noindex is still enforced by the robots meta tag and robots.txt.',
+    )
+    await ctx.close()
+  }
 }
 
 /* -------------------------------------------------------- the eighteen */
