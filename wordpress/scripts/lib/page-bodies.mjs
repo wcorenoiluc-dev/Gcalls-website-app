@@ -23,11 +23,26 @@ import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 
-const esc = (text) =>
-  String(text)
+/*
+ * Nothing here may stringify `undefined`.
+ *
+ * `String(undefined)` is the seven-character word "undefined", and it has now
+ * shipped to this site twice: five FAQ entries on each of eighteen articles,
+ * and an h2 on /blog/ reading "undefined" because the final CTA keys its
+ * heading `h2` and this read `title`. Both produced perfectly well-formed
+ * markup that validated, imported and passed every gate — visible only by
+ * reading the page. A missing string is a bug in the caller, so it throws.
+ */
+const esc = (text) => {
+  if (typeof text !== 'string' || text.trim() === '') {
+    throw new TypeError(`page-bodies: expected a non-empty string, got ${JSON.stringify(text)}`)
+  }
+
+  return String(text)
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
+}
 
 /* ------------------------------------------------------------------ *
  * Block helpers — Gutenberg serialisation, not HTML strings
@@ -255,7 +270,7 @@ async function blogBody(repo, routes) {
   parts.push(shortcode('[gcalls_faq title="Câu hỏi thường gặp — Blog"]'))
 
   if (BLOG.finalCta) {
-    parts.push(heading(BLOG.finalCta.title, 2, 'cta-blog'))
+    parts.push(heading(BLOG.finalCta.h2 ?? BLOG.finalCta.title, 2, 'cta-blog'))
     if (BLOG.finalCta.description) parts.push(p(BLOG.finalCta.description))
   }
 

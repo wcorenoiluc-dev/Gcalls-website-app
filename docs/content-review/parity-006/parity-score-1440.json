@@ -140,12 +140,12 @@
   {
     "name": "estimator",
     "route": "/uoc-tinh-chi-phi/",
-    "score": 84.4,
+    "score": 85.8,
     "parts": {
-      "headings": 89.7,
+      "headings": 92.9,
       "visuals": 100,
       "ctas": 66.7,
-      "rhythm": 72.8
+      "rhythm": 71.6
     },
     "react": {
       "headings": 28,
@@ -154,10 +154,10 @@
       "height": 5197
     },
     "wp": {
-      "headings": 29,
+      "headings": 28,
       "visuals": 0,
       "ctas": 3,
-      "height": 3783
+      "height": 3722
     },
     "missingInWp": [
       "Ước tính cấu hình và chi phí Gcalls phù hợp với nhu cầu",
@@ -165,19 +165,18 @@
     ],
     "extraInWp": [
       "Ước tính chi phí",
-      "Công cụ ước tính cấu hình",
-      "Câu hỏi thường gặp"
+      "Công cụ ước tính cấu hình"
     ]
   },
   {
     "name": "blog",
     "route": "/blog/",
-    "score": 71,
+    "score": 70.8,
     "parts": {
       "headings": 60,
       "visuals": 100,
       "ctas": 75,
-      "rhythm": 73.5
+      "rhythm": 72.9
     },
     "react": {
       "headings": 60,
@@ -186,10 +185,10 @@
       "height": 10504
     },
     "wp": {
-      "headings": 56,
+      "headings": 55,
       "visuals": 0,
       "ctas": 3,
-      "height": 7723
+      "height": 7662
     },
     "missingInWp": [
       "Sáu danh mục tài nguyên",
@@ -207,14 +206,13 @@
       "Có câu hỏi vận hành chưa tìm được câu trả lời?"
     ],
     "extraInWp": [
-      "\n\t\t\t\t\t\tCRM, Helpdesk và tích hợp\t\t\t\t\t\t\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
-      "\n\t\t\t\t\t\tGcalls CX\t\t\t\t\t\t\n\t\t\t\t\t\t\t2 bài\t\t\t\t\t\t\n\t\t\t\t\t",
-      "\n\t\t\t\t\t\tGcalls Plus Webphone\t\t\t\t\t\t\n\t\t\t\t\t\t\t2 bài\t\t\t\t\t\t\n\t\t\t\t\t",
-      "\n\t\t\t\t\t\tQA/QC và quản trị chất lượng\t\t\t\t\t\t\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
-      "\n\t\t\t\t\t\tTổng đài quốc tế\t\t\t\t\t\t\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
-      "\n\t\t\t\t\t\tTổng đài và Call Center\t\t\t\t\t\t\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
-      "\n\t\t\t\t\t\tVoicebot, AI và tự động hóa\t\t\t\t\t\t\n\t\t\t\t\t\t\t2 bài\t\t\t\t\t\t\n\t\t\t\t\t",
-      "Câu hỏi thường gặp",
+      "CRM, Helpdesk và tích hợp\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
+      "Gcalls CX\n\t\t\t\t\t\t\t2 bài\t\t\t\t\t\t\n\t\t\t\t\t",
+      "Gcalls Plus Webphone\n\t\t\t\t\t\t\t2 bài\t\t\t\t\t\t\n\t\t\t\t\t",
+      "QA/QC và quản trị chất lượng\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
+      "Tổng đài quốc tế\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
+      "Tổng đài và Call Center\n\t\t\t\t\t\t\t3 bài\t\t\t\t\t\t\n\t\t\t\t\t",
+      "Voicebot, AI và tự động hóa\n\t\t\t\t\t\t\t2 bài\t\t\t\t\t\t\n\t\t\t\t\t",
       "undefined"
     ]
   }

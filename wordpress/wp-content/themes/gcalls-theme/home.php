@@ -144,16 +144,7 @@ $grouped       = taxonomy_exists( $hub_taxonomy ) && ! is_paged();
 					<?php // No whitespace between the name and the count: it is one
 						// phrase, and a stray text node puts a space in the middle
 						// of it for anything reading the document. ?>
-					<h3 class="gcalls-hub-group__title"><?php echo esc_html( $term->name ); ?><span class="gcalls-hub-group__count">
-							<?php
-							printf(
-								/* translators: %d: number of articles in this hub. */
-								esc_html( _n( '%d bài', '%d bài', (int) $term->count, 'gcalls-theme' ) ),
-								(int) $term->count
-							);
-							?>
-						</span>
-					</h3>
+					<h3 class="gcalls-hub-group__title"><?php echo esc_html( $term->name ); ?><span class="gcalls-hub-group__count"><?php printf( esc_html( /* translators: %d: number of articles in this hub. */ _n( '%d bài', '%d bài', (int) $term->count, 'gcalls-theme' ) ), (int) $term->count ); ?></span></h3>
 
 					<?php if ( '' !== trim( (string) $term->description ) ) : ?>
 						<p class="gcalls-hub-group__description"><?php echo esc_html( $term->description ); ?></p>
