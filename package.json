@@ -13,6 +13,8 @@
     "check": "npm run typecheck && npm run lint && npm run test && npm run build",
     "wp:lint": "node wordpress/scripts/php-lint.mjs",
     "wp:css": "node wordpress/scripts/css-lint.mjs",
+    "wp:accept": "node wordpress/scripts/acceptance.mjs",
+    "wp:baseline": "node wordpress/scripts/live-baseline.mjs",
     "wp:export": "node wordpress/scripts/export-content.mjs",
     "wp:qa": "node wordpress/scripts/qa-foundation.mjs",
     "wp:package": "node wordpress/scripts/package-plugin.mjs",
