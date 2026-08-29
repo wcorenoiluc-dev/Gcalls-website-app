@@ -1,6 +1,50 @@
 # Lead Capture Architecture
 
-**Status:** frontend complete · **backend NOT connected** (see §Deployment requirement)
+**Status (React build):** frontend complete · backend NOT connected.
+**Status (WordPress build, Core 0.9.6):** **CONNECTED** — leads are stored in
+WordPress and notified by email. See §0.
+
+---
+
+## 0. The WordPress build stores leads (GCALLS-022)
+
+Everything below §1 describes the React/static build, where the statement "no
+lead reaches Gcalls" is still true because that build has no server.
+
+The WordPress build now has one. `includes/class-leads.php` provides:
+
+- a **private** custom post type `gcalls_lead` — not public, not queryable, not
+  in REST, not in the sitemap, readable only with `manage_options`
+- a POST-only `admin-post.php` endpoint guarded by nonce, same-origin check,
+  honeypot, minimum completion time, hourly rate limit, body-size cap and an
+  idempotency token
+- **store first, notify second.** Success is shown only after the lead is
+  written. `wp_mail()` failing marks `notification_status = failed` and raises
+  an admin notice; it never loses the lead and never fakes success
+- notification to a recipient held in an option (default `sales@gcalls.co`),
+  never taken from the request
+
+Raw IP addresses are not stored — only a per-site salted hash, for rate
+limiting.
+
+### Deployment requirement: exclude the contact page from full-page caching
+
+A WordPress nonce for an anonymous visitor expires in roughly a day. If
+`/lien-he/` is served from an edge cache older than that, every submission is
+refused with a stale-nonce error. The form says so in plain language and asks
+the visitor to reload, but the fix is infrastructural: **exclude `/lien-he/`
+from the OneShield page cache**, as is standard for any page carrying a form.
+
+This matters here specifically: measurement in GCALLS-021 showed the edge
+serving `x-osh-cache: hit` from the third consecutive request onward.
+
+### Not verified by the developer
+
+`wp_mail()` returning true means WordPress handed the message to the MTA. It is
+not proof of delivery. Nothing in this codebase claims delivery, and a test mail
+must be confirmed in the `sales@gcalls.co` mailbox before the pipeline is called
+working. If the host cannot deliver, that is `SMTP_REQUIRED`: storage keeps
+working and the leads are safe in wp-admin regardless.
 
 Every conversion surface on the GCALLS website uses one pipeline. Pages do not
 implement their own submit logic, validation or lead shape.

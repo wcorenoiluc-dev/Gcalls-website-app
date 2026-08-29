@@ -577,11 +577,75 @@ if (exists(shortcodes)) {
     'CTA carries all four attribution keys',
     ['intent', 'source', 'product', 'solution'].every((key) => sc.includes(`'${key}'`)),
   )
-  // The lead pipeline has no approved destination. A shortcode that posts
-  // anywhere is the one change that must not slip in unnoticed.
-  check('lead form sends nothing anywhere', !/wp_remote_(post|get|request)|curl_exec/.test(sc))
-  check('lead form is disabled, not silently discarding input', sc.includes('<fieldset disabled>'))
   check('lead form gives the working contact channels', sc.includes('sales@gcalls.co'))
+}
+
+/* ------------------------------------------------------------------ *
+ * 12b. Lead capture
+ * ------------------------------------------------------------------ *
+ * The form used to be fail-closed and this suite asserted `<fieldset disabled>`
+ * — the right check while there was nowhere to send a lead. GCALLS-022 gives it
+ * a destination inside WordPress, so that assertion is replaced rather than
+ * dropped: what has to hold now is that the destination is PRIVATE, that a
+ * visitor is never told "sent" unless a lead was stored, and that nothing
+ * leaves this server.
+ */
+
+console.log('\n12b. Lead capture')
+
+const leads = path.join(PLUGIN, 'includes/class-leads.php')
+check('lead module exists', exists(leads))
+
+if (exists(leads) && exists(shortcodes)) {
+  const lp = read(leads)
+  const sc2 = read(shortcodes)
+
+  // Still the most important line in the file. No lead reaches a third party.
+  check('lead pipeline sends nothing off this server', !/wp_remote_(post|get|request)|curl_exec|fsockopen/.test(lp + sc2))
+
+  // Matched against EMITTED markup, not prose: the docblock still explains why
+  // the form used to be disabled, and a naive substring search finds that
+  // sentence and reports the form as inert when it is not.
+  check(
+    'the form actually submits now',
+    !/\$markup\s*\.?=\s*'<fieldset disabled>'/.test(sc2) && sc2.includes("admin_url( 'admin-post.php' )"),
+  )
+  check('the form posts, and does not swallow its own submit', !sc2.includes("onsubmit=\"return false\""))
+
+  // Storage privacy. Each of these being wrong exposes contact details.
+  check('lead post type is not public', /'public'\s*=>\s*false/.test(lp))
+  check('lead post type is not publicly queryable', /'publicly_queryable'\s*=>\s*false/.test(lp))
+  check('lead post type is off the REST API', /'show_in_rest'\s*=>\s*false/.test(lp))
+  check('lead post type has no archive or rewrite', /'has_archive'\s*=>\s*false/.test(lp) && /'rewrite'\s*=>\s*false/.test(lp))
+  check('lead post type is excluded from search', /'exclude_from_search'\s*=>\s*true/.test(lp))
+  check('reading a lead requires manage_options', /'read_post'\s*=>\s*'manage_options'/.test(lp))
+  check('leads are stored private, never published', lp.includes("'post_status' => 'private'"))
+
+  // Submission guards.
+  check('endpoint is POST-only', lp.includes("'POST' !== ( $_SERVER['REQUEST_METHOD']"))
+  check('endpoint verifies a nonce', lp.includes('wp_verify_nonce'))
+  check('endpoint checks same origin', lp.includes('same_origin'))
+  check('endpoint has a honeypot', lp.includes('gcalls_website'))
+  check('endpoint enforces a minimum completion time', lp.includes('MIN_SECONDS'))
+  check('endpoint rate limits', lp.includes('RATE_LIMIT') && lp.includes('within_rate_limit'))
+  check('endpoint caps the body size', lp.includes('MAX_BODY_BYTES'))
+  check('endpoint is idempotent', lp.includes('idempotency_token'))
+
+  // The two that decide whether a visitor is lied to.
+  check('storage happens before notification', lp.indexOf('self::store(') < lp.indexOf('self::notify('))
+  check('a storage failure produces no success state', /is_wp_error\( \$post_id \)[\s\S]{0,200}self::reject/.test(lp))
+
+  // Recipient must never come from the request.
+  check('recipient is read from an option, not the payload', lp.includes('get_option( self::OPTION_RECIPIENT'))
+  check('no recipient is read from POST', !/\$_POST\[\s*'(to|recipient|email_to)'/.test(lp))
+
+  // Redirects.
+  check('redirects are validated against this host', lp.includes('wp_validate_redirect') && lp.includes('wp_safe_redirect'))
+
+  // PII discipline.
+  check('raw IP is never stored', !/update_post_meta\([^)]*REMOTE_ADDR/.test(lp) && lp.includes('hash_hmac'))
+  check('no PII is written to the error log', !/error_log/.test(lp))
+  check('notification email is plain text, not HTML', lp.includes('text/plain') && !lp.includes('text/html'))
 }
 
 /* ------------------------------------------------------------------ *

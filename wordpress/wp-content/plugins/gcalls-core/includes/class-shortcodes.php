@@ -158,19 +158,31 @@ final class Shortcodes {
 	}
 
 	/**
-	 * `[gcalls_lead_form]` — the conversion surface, deliberately fail-closed.
+	 * `[gcalls_lead_form]` — the conversion surface.
 	 *
-	 * THE FORM DOES NOT SUBMIT, AND THAT IS THE CORRECT BEHAVIOUR TODAY.
-	 * `docs/LEAD_CAPTURE_ARCHITECTURE.md` records that no lead submitted through
-	 * this website reaches Gcalls: there is no approved destination and no
-	 * credential to reach one with. A form that accepts a name and a phone number
-	 * and then drops them is worse than no form — the visitor believes they have
-	 * been contacted and waits. So the fields render disabled, the reason is
-	 * stated in plain Vietnamese, and the two channels that DO work are given.
+	 * THIS FORM USED TO BE FAIL-CLOSED, AND THAT WAS RIGHT AT THE TIME.
+	 * It rendered `<fieldset disabled>` because there was no destination and no
+	 * credential to reach one with, and a form that takes a phone number and
+	 * drops it is worse than no form: the visitor believes they have been
+	 * contacted, and waits.
 	 *
-	 * The attribution captured from the query string is preserved in a hidden
-	 * field so that wiring a destination later is one change here, not a hunt
-	 * through every page that links in.
+	 * That is fixed by giving it a destination, not by deleting the `disabled`
+	 * attribute. `Leads` stores every submission in WordPress before any email
+	 * is attempted, so the honest state is now "this works" — and the success
+	 * message is shown only after a lead has actually been written.
+	 *
+	 * The email and hotline stay on the page. They were the working channels
+	 * while the form was not, and they remain the faster route for someone who
+	 * would rather talk to a person.
+	 *
+	 * WHAT THE HIDDEN FIELDS ARE FOR
+	 * `intent`, `source`, `product` and `solution` arrive from the CTA that
+	 * sent the visitor here; the UTM values and the referrer come from the same
+	 * query string. Carrying them through the POST is what lets a lead say
+	 * which page and which campaign produced it. `gcalls_started`,
+	 * `gcalls_website` and `gcalls_idempotency` are the anti-abuse triad —
+	 * a timestamp, a honeypot, and a token that collapses a double click into
+	 * one lead. None of them is trusted on its own; see `class-leads.php`.
 	 *
 	 * @param array<string, string>|string $atts Shortcode attributes.
 	 * @return string
@@ -182,31 +194,11 @@ final class Shortcodes {
 			'gcalls_lead_form'
 		);
 
-		$attribution = array();
+		$attribution = self::lead_attribution();
+		$state       = self::lead_state();
 
-		foreach ( array( 'intent', 'source', 'product', 'solution' ) as $key ) {
-			// Read-only use of a GET parameter for display and a hidden field.
-			// No nonce applies: this is not an action, and the value is escaped
-			// on the way out.
-			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			if ( isset( $_GET[ $key ] ) ) {
-				// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-				$value = sanitize_text_field( wp_unslash( (string) $_GET[ $key ] ) );
+		$markup = '<section class="gcalls-lead" id="gcalls-lead">';
 
-				if ( '' !== $value ) {
-					$attribution[ $key ] = $value;
-				}
-			}
-		}
-
-		$fields = array(
-			'name'    => __( 'Họ và tên', 'gcalls-core' ),
-			'company' => __( 'Công ty', 'gcalls-core' ),
-			'email'   => __( 'Email', 'gcalls-core' ),
-			'phone'   => __( 'Số điện thoại', 'gcalls-core' ),
-		);
-
-		$markup  = '<section class="gcalls-lead">';
 		// h4, not h2. The panel sits inside a section that already has its own
 		// heading, so an h2 here inserts a second top-level heading into that
 		// section — on the home page it produced a forty-second heading React
@@ -214,45 +206,360 @@ final class Shortcodes {
 		// competing with. React labels the panel without promoting it.
 		$markup .= '<h4 class="gcalls-lead__title">' . esc_html( (string) $atts['title'] ) . '</h4>';
 
-		$markup .= '<div class="gcalls-lead__notice" role="status">';
-		$markup .= '<p>' . esc_html__( 'Biểu mẫu hiện chưa được kết nối hệ thống tiếp nhận, nên chưa gửi được. Vui lòng liên hệ Gcalls qua email hoặc hotline — hai kênh này hoạt động bình thường.', 'gcalls-core' ) . '</p>';
-		$markup .= '<p class="gcalls-lead__contact">';
-		$markup .= '<a href="mailto:' . esc_attr( self::CONTACT_EMAIL ) . '">' . esc_html( self::CONTACT_EMAIL ) . '</a>';
-		$markup .= ' · ';
-		$markup .= '<a href="tel:' . esc_attr( self::CONTACT_TEL ) . '">' . esc_html( self::CONTACT_PHONE ) . '</a>';
-		$markup .= '</p>';
-		$markup .= '</div>';
+		/*
+		 * Success is rendered INSTEAD of the form, and only when the server has
+		 * redirected back with a reference — which it does only after the lead
+		 * is stored. There is no client-side path to this state.
+		 */
+		if ( 'ok' === $state['status'] ) {
+			$markup .= '<div class="gcalls-lead__done" role="status" tabindex="-1" id="gcalls-lead-status">';
+			$markup .= '<p class="gcalls-lead__done-title">' . esc_html__( 'Đã nhận yêu cầu của bạn.', 'gcalls-core' ) . '</p>';
+			$markup .= '<p>' . esc_html__( 'Đội ngũ Gcalls sẽ liên hệ lại trong giờ làm việc.', 'gcalls-core' ) . '</p>';
 
-		// No action and no method: there is nowhere to send this, and an empty
-		// action would post the page back to itself, which looks like a failure.
-		$markup .= '<form class="gcalls-lead__form" onsubmit="return false">';
-		$markup .= '<fieldset disabled>';
+			if ( '' !== $state['reference'] ) {
+				$markup .= '<p class="gcalls-lead__ref">' . esc_html__( 'Mã tham chiếu:', 'gcalls-core' ) . ' <strong>' . esc_html( $state['reference'] ) . '</strong></p>';
+			}
+
+			$markup .= self::lead_contact_line();
+			$markup .= '</div></section>';
+
+			return $markup;
+		}
+
+		if ( 'error' === $state['status'] ) {
+			$markup .= '<div class="gcalls-lead__error" role="alert" tabindex="-1" id="gcalls-lead-status">';
+			$markup .= '<p>' . esc_html( self::lead_error_message( $state['code'] ) ) . '</p>';
+			$markup .= '</div>';
+		}
+
+		$markup .= '<form class="gcalls-lead__form" method="post" novalidate';
+		$markup .= ' action="' . esc_url( admin_url( 'admin-post.php' ) ) . '"';
+		$markup .= ' data-gcalls-lead-form>';
+
+		$markup .= '<input type="hidden" name="action" value="' . esc_attr( Leads::ACTION ) . '">';
+		$markup .= wp_nonce_field( Leads::ACTION, 'gcalls_lead_nonce', true, false );
+		$markup .= '<input type="hidden" name="_wp_http_referer" value="' . esc_attr( self::lead_current_path() ) . '">';
+
+		$markup .= '<fieldset>';
 		$markup .= '<legend class="screen-reader-text">' . esc_html__( 'Thông tin liên hệ', 'gcalls-core' ) . '</legend>';
 
-		foreach ( $fields as $name => $label ) {
+		$fields = array(
+			'name'    => array( __( 'Họ và tên', 'gcalls-core' ), 'text', true, 'name' ),
+			'phone'   => array( __( 'Số điện thoại', 'gcalls-core' ), 'tel', true, 'tel' ),
+			'email'   => array( __( 'Email công việc', 'gcalls-core' ), 'email', false, 'email' ),
+			'company' => array( __( 'Công ty', 'gcalls-core' ), 'text', false, 'organization' ),
+		);
+
+		foreach ( $fields as $name => $spec ) {
+			list( $label, $type, $required, $autocomplete ) = $spec;
+
 			$id      = 'gcalls-lead-' . $name;
-			$type    = 'email' === $name ? 'email' : ( 'phone' === $name ? 'tel' : 'text' );
-			$markup .= '<p class="gcalls-lead__field">';
-			$markup .= '<label for="' . esc_attr( $id ) . '">' . esc_html( $label ) . '</label>';
-			$markup .= '<input type="' . esc_attr( $type ) . '" id="' . esc_attr( $id ) . '" name="' . esc_attr( $name ) . '" autocomplete="off">';
+			$invalid = in_array( $name, $state['fields'], true );
+
+			$markup .= '<p class="gcalls-lead__field' . ( $invalid ? ' gcalls-lead__field--invalid' : '' ) . '">';
+			$markup .= '<label for="' . esc_attr( $id ) . '">' . esc_html( $label );
+
+			if ( $required ) {
+				$markup .= ' <span class="gcalls-lead__req" aria-hidden="true">*</span>';
+			}
+
+			$markup .= '</label>';
+			$markup .= '<input type="' . esc_attr( $type ) . '" id="' . esc_attr( $id ) . '"';
+			$markup .= ' name="' . esc_attr( $name ) . '"';
+			$markup .= ' value="' . esc_attr( $state['values'][ $name ] ?? '' ) . '"';
+			$markup .= ' autocomplete="' . esc_attr( $autocomplete ) . '"';
+			$markup .= ' maxlength="200"';
+
+			if ( $required ) {
+				$markup .= ' required aria-required="true"';
+			}
+
+			if ( $invalid ) {
+				$markup .= ' aria-invalid="true" aria-describedby="' . esc_attr( $id ) . '-err"';
+			}
+
+			$markup .= '>';
+
+			if ( $invalid ) {
+				$markup .= '<span class="gcalls-lead__fielderr" id="' . esc_attr( $id ) . '-err">';
+				$markup .= esc_html( self::lead_field_message( $name ) );
+				$markup .= '</span>';
+			}
+
 			$markup .= '</p>';
 		}
 
-		$markup .= '<p class="gcalls-lead__field">';
-		$markup .= '<label for="gcalls-lead-message">' . esc_html__( 'Nội dung cần tư vấn', 'gcalls-core' ) . '</label>';
-		$markup .= '<textarea id="gcalls-lead-message" name="message" rows="4"></textarea>';
+		$invalid_message = in_array( 'message', $state['fields'], true );
+
+		$markup .= '<p class="gcalls-lead__field' . ( $invalid_message ? ' gcalls-lead__field--invalid' : '' ) . '">';
+		$markup .= '<label for="gcalls-lead-message">' . esc_html__( 'Nội dung cần tư vấn', 'gcalls-core' );
+		$markup .= ' <span class="gcalls-lead__req" aria-hidden="true">*</span></label>';
+		$markup .= '<textarea id="gcalls-lead-message" name="message" rows="4" maxlength="4000" required aria-required="true"';
+
+		if ( $invalid_message ) {
+			$markup .= ' aria-invalid="true" aria-describedby="gcalls-lead-message-err"';
+		}
+
+		$markup .= '>' . esc_textarea( $state['values']['message'] ?? '' ) . '</textarea>';
+
+		if ( $invalid_message ) {
+			$markup .= '<span class="gcalls-lead__fielderr" id="gcalls-lead-message-err">';
+			$markup .= esc_html( self::lead_field_message( 'message' ) ) . '</span>';
+		}
+
 		$markup .= '</p>';
+
+		$invalid_consent = in_array( 'consent', $state['fields'], true );
+
+		$markup .= '<p class="gcalls-lead__consent' . ( $invalid_consent ? ' gcalls-lead__field--invalid' : '' ) . '">';
+		$markup .= '<input type="checkbox" id="gcalls-lead-consent" name="consent" value="1" required aria-required="true"';
+
+		if ( $invalid_consent ) {
+			$markup .= ' aria-invalid="true"';
+		}
+
+		$markup .= '>';
+		$markup .= '<label for="gcalls-lead-consent">';
+		$markup .= esc_html__( 'Tôi đồng ý để Gcalls sử dụng thông tin trên nhằm liên hệ tư vấn.', 'gcalls-core' );
+		$markup .= '</label></p>';
+
+		/*
+		 * The honeypot. Hidden from sight AND from the accessibility tree, and
+		 * taken out of the tab order, so no sighted or assistive-technology
+		 * user can reach it by accident — which would silently discard a real
+		 * person's lead. `display:none` alone is what most implementations use
+		 * and it is not enough, because some password managers fill it anyway;
+		 * the off-screen position plus autocomplete="off" is the safer pair.
+		 */
+		$markup .= '<div class="gcalls-lead__trap" aria-hidden="true">';
+		$markup .= '<label for="gcalls-lead-website">' . esc_html__( 'Để trống ô này', 'gcalls-core' ) . '</label>';
+		$markup .= '<input type="text" id="gcalls-lead-website" name="gcalls_website" tabindex="-1" autocomplete="off">';
+		$markup .= '</div>';
+
+		$markup .= '<input type="hidden" name="gcalls_started" value="' . esc_attr( (string) time() ) . '">';
+		$markup .= '<input type="hidden" name="gcalls_idempotency" value="' . esc_attr( wp_generate_password( 32, false, false ) ) . '">';
 
 		foreach ( $attribution as $key => $value ) {
 			$markup .= '<input type="hidden" name="' . esc_attr( $key ) . '" value="' . esc_attr( $value ) . '">';
 		}
 
-		$markup .= '<p><button type="submit" class="gcalls-cta gcalls-cta--primary">' . esc_html__( 'Chưa thể gửi', 'gcalls-core' ) . '</button></p>';
+		$markup .= '<p class="gcalls-lead__submit">';
+		$markup .= '<button type="submit" class="gcalls-cta gcalls-cta--primary" data-gcalls-lead-submit>';
+		$markup .= '<span data-gcalls-lead-label>' . esc_html__( 'Gửi yêu cầu tư vấn', 'gcalls-core' ) . '</span>';
+		$markup .= '</button></p>';
+
 		$markup .= '</fieldset>';
 		$markup .= '</form>';
+
+		$markup .= '<p class="gcalls-lead__alt">' . esc_html__( 'Hoặc liên hệ trực tiếp:', 'gcalls-core' ) . '</p>';
+		$markup .= self::lead_contact_line();
 		$markup .= '</section>';
 
 		return $markup;
+	}
+
+	/**
+	 * The email and hotline line.
+	 *
+	 * @return string
+	 */
+	private static function lead_contact_line(): string {
+		$markup  = '<p class="gcalls-lead__contact">';
+		$markup .= '<a href="mailto:' . esc_attr( self::CONTACT_EMAIL ) . '">' . esc_html( self::CONTACT_EMAIL ) . '</a>';
+		$markup .= ' · ';
+		$markup .= '<a href="tel:' . esc_attr( self::CONTACT_TEL ) . '">' . esc_html( self::CONTACT_PHONE ) . '</a>';
+		$markup .= '</p>';
+
+		return $markup;
+	}
+
+	/**
+	 * Attribution carried into the form's hidden fields.
+	 *
+	 * Read from the query string the CTA built. Only categorical values are
+	 * ever placed here: never a name, an email, a phone number or anything a
+	 * visitor typed, because a query string is logged, cached and shared.
+	 *
+	 * @return array<string, string>
+	 */
+	private static function lead_attribution(): array {
+		$keys = array(
+			'intent',
+			'source',
+			'product',
+			'solution',
+			'utm_source',
+			'utm_medium',
+			'utm_campaign',
+			'utm_content',
+			'utm_term',
+		);
+
+		$out = array();
+
+		foreach ( $keys as $key ) {
+			// Read-only use of a GET parameter, escaped on the way out.
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			if ( isset( $_GET[ $key ] ) ) {
+				// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				$value = sanitize_text_field( wp_unslash( (string) $_GET[ $key ] ) );
+
+				if ( '' !== $value ) {
+					$out[ $key ] = mb_substr( $value, 0, 300 );
+				}
+			}
+		}
+
+		$out['origin_url'] = home_url( self::lead_current_path() );
+
+		$referrer = isset( $_SERVER['HTTP_REFERER'] )
+			? esc_url_raw( wp_unslash( (string) $_SERVER['HTTP_REFERER'] ) )
+			: '';
+
+		if ( '' !== $referrer ) {
+			$out['referrer'] = mb_substr( $referrer, 0, 300 );
+		}
+
+		return $out;
+	}
+
+	/**
+	 * The current request path, for the return URL and origin attribution.
+	 *
+	 * @return string
+	 */
+	private static function lead_current_path(): string {
+		$uri = isset( $_SERVER['REQUEST_URI'] )
+			? sanitize_text_field( wp_unslash( (string) $_SERVER['REQUEST_URI'] ) )
+			: self::LEAD_ROUTE;
+
+		return '' === $uri ? self::LEAD_ROUTE : $uri;
+	}
+
+	/**
+	 * Reads the post-redirect state the submit handler set.
+	 *
+	 * @return array{status:string, code:string, reference:string, fields:array<int,string>, values:array<string,string>}
+	 */
+	private static function lead_state(): array {
+		$state = array(
+			'status'    => '',
+			'code'      => '',
+			'reference' => '',
+			'fields'    => array(),
+			'values'    => array(),
+		);
+
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$status = isset( $_GET['gcalls_lead'] ) ? sanitize_key( wp_unslash( (string) $_GET['gcalls_lead'] ) ) : '';
+
+		if ( 'ok' !== $status && 'error' !== $status ) {
+			return $state;
+		}
+
+		$state['status'] = $status;
+
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( isset( $_GET['ref'] ) ) {
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$state['reference'] = sanitize_text_field( wp_unslash( (string) $_GET['ref'] ) );
+		}
+
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( isset( $_GET['code'] ) ) {
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$state['code'] = sanitize_key( wp_unslash( (string) $_GET['code'] ) );
+		}
+
+		/*
+		 * What the visitor typed comes back from a server-side transient, not
+		 * from the URL. The token names nobody and the values never appear in
+		 * an access log, a Referer header or the browser history.
+		 */
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( isset( $_GET['draft'] ) ) {
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$state['values'] = Leads::take_draft( sanitize_text_field( wp_unslash( (string) $_GET['draft'] ) ) );
+		}
+
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( isset( $_GET['fields'] ) ) {
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$raw = sanitize_text_field( wp_unslash( (string) $_GET['fields'] ) );
+
+			$state['fields'] = array_values(
+				array_intersect(
+					array_map( 'sanitize_key', explode( ',', $raw ) ),
+					array( 'name', 'phone', 'email', 'message', 'consent' )
+				)
+			);
+		}
+
+		return $state;
+	}
+
+	/**
+	 * The message shown for a coarse failure code.
+	 *
+	 * @param string $code Failure code.
+	 * @return string
+	 */
+	private static function lead_error_message( string $code ): string {
+		switch ( $code ) {
+			case 'invalid':
+				return __( 'Vui lòng kiểm tra lại các ô được đánh dấu bên dưới.', 'gcalls-core' );
+
+			case 'rate_limited':
+				return __( 'Bạn đã gửi khá nhiều yêu cầu. Vui lòng thử lại sau hoặc gọi hotline.', 'gcalls-core' );
+
+			case 'too_fast':
+				return __( 'Biểu mẫu được gửi quá nhanh. Vui lòng thử lại.', 'gcalls-core' );
+
+			case 'storage':
+				return __( 'Chưa lưu được yêu cầu của bạn nên chưa gửi đi. Vui lòng thử lại hoặc liên hệ qua email/hotline bên dưới.', 'gcalls-core' );
+
+			/*
+			 * Almost always a STALE PAGE, not an attack. A WordPress nonce for
+			 * an anonymous visitor expires after about a day, so a copy of this
+			 * page served from an edge cache older than that carries a nonce
+			 * the server will refuse. Telling the visitor to reload is the
+			 * honest and effective instruction; see the caching note in
+			 * docs/LEAD_CAPTURE_ARCHITECTURE.md.
+			 */
+			case 'nonce':
+				return __( 'Phiên của biểu mẫu đã hết hạn. Vui lòng tải lại trang và gửi lại.', 'gcalls-core' );
+
+			default:
+				return __( 'Chưa gửi được yêu cầu. Vui lòng thử lại hoặc liên hệ qua email/hotline bên dưới.', 'gcalls-core' );
+		}
+	}
+
+	/**
+	 * The message shown under one invalid field.
+	 *
+	 * @param string $field Field key.
+	 * @return string
+	 */
+	private static function lead_field_message( string $field ): string {
+		switch ( $field ) {
+			case 'name':
+				return __( 'Vui lòng nhập họ và tên.', 'gcalls-core' );
+
+			case 'phone':
+				return __( 'Vui lòng nhập số điện thoại hợp lệ.', 'gcalls-core' );
+
+			case 'email':
+				return __( 'Email chưa đúng định dạng.', 'gcalls-core' );
+
+			case 'message':
+				return __( 'Vui lòng cho biết nội dung cần tư vấn.', 'gcalls-core' );
+
+			case 'consent':
+				return __( 'Vui lòng đồng ý để Gcalls liên hệ lại.', 'gcalls-core' );
+
+			default:
+				return __( 'Giá trị chưa hợp lệ.', 'gcalls-core' );
+		}
 	}
 
 	/**

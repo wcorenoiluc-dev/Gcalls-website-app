@@ -1,0 +1,167 @@
+/*
+ * Lead form.
+ *
+ * Sized in rem against the theme's own tokens, one column at every width. The
+ * form is narrow enough that a two-column layout would only help at 1440 and
+ * would cost a tab-order decision, so it stays single-column everywhere and
+ * cannot overflow at 320.
+ */
+
+.gcalls-lead__form fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.gcalls-lead__field,
+.gcalls-lead__consent,
+.gcalls-lead__submit {
+	margin: 0 0 1rem;
+}
+
+.gcalls-lead__field label {
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 600;
+	margin-bottom: 0.375rem;
+}
+
+.gcalls-lead__field input,
+.gcalls-lead__field textarea {
+	background: #fff;
+	border: 1px solid rgba(103, 58, 183, 0.25);
+	border-radius: 0.625rem;
+	color: inherit;
+	display: block;
+	font: inherit;
+	font-size: 0.9375rem;
+	padding: 0.625rem 0.75rem;
+	transition: border-color 150ms ease, box-shadow 150ms ease;
+	/* width:100% with border-box is what keeps this off the horizontal scroll
+	 * at 320px, where the label text alone is close to the viewport. */
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.gcalls-lead__field textarea {
+	resize: vertical;
+	min-height: 6rem;
+}
+
+.gcalls-lead__field input:focus-visible,
+.gcalls-lead__field textarea:focus-visible,
+.gcalls-lead__consent input:focus-visible {
+	outline: 2px solid #673ab7;
+	outline-offset: 1px;
+}
+
+.gcalls-lead__req {
+	color: #b32d2e;
+}
+
+/* An invalid field is marked by colour AND by the message beneath it, never by
+ * colour alone. */
+.gcalls-lead__field--invalid input,
+.gcalls-lead__field--invalid textarea {
+	border-color: #b32d2e;
+	box-shadow: 0 0 0 3px rgba(179, 45, 46, 0.1);
+}
+
+.gcalls-lead__fielderr {
+	color: #b32d2e;
+	display: block;
+	font-size: 0.8125rem;
+	margin-top: 0.375rem;
+}
+
+.gcalls-lead__consent {
+	align-items: flex-start;
+	display: flex;
+	gap: 0.5rem;
+}
+
+.gcalls-lead__consent input {
+	flex: none;
+	margin-top: 0.2rem;
+}
+
+.gcalls-lead__consent label {
+	font-size: 0.8125rem;
+	line-height: 1.6;
+}
+
+/*
+ * The honeypot.
+ *
+ * Positioned off-screen rather than display:none. A field that is display:none
+ * is skipped by some password managers and autofill heuristics, but so is one
+ * that is off-screen — and the off-screen version additionally survives a
+ * browser or extension that "unhides" hidden inputs to fill them, which is the
+ * failure that turns a real visitor's lead into a silently discarded one.
+ * aria-hidden and tabindex="-1" on the markup keep it out of assistive
+ * technology and the tab order.
+ */
+.gcalls-lead__trap {
+	height: 1px;
+	left: -9999px;
+	overflow: hidden;
+	position: absolute;
+	top: auto;
+	width: 1px;
+}
+
+.gcalls-lead__submit button[aria-disabled='true'] {
+	cursor: progress;
+	opacity: 0.72;
+}
+
+.gcalls-lead__done,
+.gcalls-lead__error {
+	border-radius: 0.75rem;
+	margin: 0 0 1rem;
+	padding: 1rem 1.125rem;
+}
+
+.gcalls-lead__done:focus-visible,
+.gcalls-lead__error:focus-visible {
+	outline: 2px solid #673ab7;
+	outline-offset: 2px;
+}
+
+.gcalls-lead__done {
+	background: #f0fdf4;
+	border: 1px solid rgba(22, 163, 74, 0.3);
+}
+
+.gcalls-lead__done-title {
+	font-weight: 700;
+	margin: 0 0 0.375rem;
+}
+
+.gcalls-lead__done p,
+.gcalls-lead__error p {
+	margin: 0 0 0.375rem;
+}
+
+.gcalls-lead__ref {
+	font-family: var(--gcalls-font-mono, ui-monospace, monospace);
+	font-size: 0.875rem;
+}
+
+.gcalls-lead__error {
+	background: #fff1f2;
+	border: 1px solid rgba(179, 45, 46, 0.3);
+}
+
+.gcalls-lead__alt {
+	font-size: 0.8125rem;
+	margin: 1.25rem 0 0.25rem;
+	opacity: 0.85;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gcalls-lead__field input,
+	.gcalls-lead__field textarea {
+		transition: none;
+	}
+}
