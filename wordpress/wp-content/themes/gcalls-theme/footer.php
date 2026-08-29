@@ -36,21 +36,7 @@ defined( 'ABSPATH' ) || exit;
 			</ul>
 		</div>
 
-		<?php if ( has_nav_menu( 'footer-nav' ) ) : ?>
-			<nav class="gcalls-footer__nav" aria-label="<?php esc_attr_e( 'Menu chân trang', 'gcalls-theme' ); ?>">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'footer-nav',
-						'container'      => false,
-						'menu_class'     => 'gcalls-footer__list',
-						'depth'          => 2,
-						'fallback_cb'    => false,
-					)
-				);
-				?>
-			</nav>
-		<?php endif; ?>
+		<?php gcalls_footer_columns(); ?>
 
 		<div class="gcalls-footer__bottom">
 			<p class="gcalls-footer__copyright">

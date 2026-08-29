@@ -878,35 +878,28 @@ pre {
 }
 
 /* -------------------------------------------------------------------------
- * Checkpoint 005 — footer columns
+ * Footer columns
  *
- * The footer menu is a two-level nav: five top-level items (Sản phẩm, Giải
- * pháp, Khám phá, Tài nguyên, Gcalls) each with children. Rendered with the
- * shared list rules it came out as one flat row of 28 links, which is not a
- * footer — it is a sentence. Each top-level item becomes a column, and the
- * parent's own link becomes that column's heading.
+ * The footer menu is five groups (Sản phẩm, Giải pháp, Khám phá, Tài nguyên,
+ * Gcalls) each with children. Rendered with the shared list rules it came out
+ * as one flat row of 28 links, which is not a footer — it is a sentence.
  *
- * auto-fit rather than a fixed `repeat(5, …)`: the same rule then produces five
- * columns at 1440, three at 768 and one at 390 with no extra breakpoints, which
- * is what keeps the 320px case free of horizontal overflow.
+ * Each group is now its own landmark with an h2 title, matching React: see
+ * gcalls_footer_columns() in inc/template-tags.php for why that difference is
+ * not cosmetic. The columns are laid out by the footer's own grid, so there is
+ * no inner auto-fit here — nesting one auto-fit inside another gave five
+ * columns of one link at 1440 and one column of five links at 1439.
  * ---------------------------------------------------------------------- */
-.gcalls-footer__list {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
-	gap: var(--gcalls-space-3);
-	align-items: start;
-}
-
-/* The top-level item is a column, not a link in a row. */
-.gcalls-footer__list > li > a {
-	display: block;
-	margin-bottom: var(--gcalls-space-1);
+.gcalls-footer__column-title {
+	margin: 0 0 var(--gcalls-space-1);
 	color: var(--gcalls-foreground);
 	font-weight: 700;
-	font-size: 0.9375rem;
+	font-size: 0.875rem;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
 }
 
-.gcalls-footer__list .sub-menu {
+.gcalls-footer__list {
 	display: grid;
 	gap: 0.35rem;
 	list-style: none;
@@ -914,17 +907,19 @@ pre {
 	padding: 0;
 }
 
-.gcalls-footer__list .sub-menu a {
-	display: block;
-	padding: 0;
+.gcalls-footer__list a {
+	/* 44px, so a footer link is a comfortable tap target on a phone. */
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
 	color: var(--gcalls-muted);
 	font-weight: 400;
 	font-size: 0.9375rem;
 	text-decoration: none;
 }
 
-.gcalls-footer__list .sub-menu a:hover,
-.gcalls-footer__list .sub-menu a:focus-visible {
+.gcalls-footer__list a:hover,
+.gcalls-footer__list a:focus-visible {
 	color: var(--gcalls-brand);
 }
 
@@ -1053,20 +1048,21 @@ html.gcalls-nav-open body { overflow: hidden; }
 	.gcalls-nav__cta .gcalls-cta { width: 100%; }
 }
 
-/* Footer brand column. It is a sibling of the menu, so the two sit side by side
- * on desktop and stack on mobile. */
+/* Footer layout: the brand block and five link columns.
+ *
+ * auto-fit below 1024 so the columns collapse from five to three to one with
+ * no extra breakpoints, which is what keeps 320px free of overflow. */
 .gcalls-footer__inner {
 	display: grid;
 	gap: var(--gcalls-space-4);
-	grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
 	align-items: start;
 }
 
-.gcalls-footer__nav { grid-column: 1 / -1; }
-
+/* The brand column carries a sentence, so it needs roughly twice the width of
+   a link column before the five columns line up beside it. */
 @media (min-width: 1024px) {
-	.gcalls-footer__inner { grid-template-columns: minmax(240px, 1fr) 3fr; }
-	.gcalls-footer__nav { grid-column: auto; }
+	.gcalls-footer__inner { grid-template-columns: 1.6fr repeat(5, minmax(0, 1fr)); }
 }
 
 .gcalls-footer__brand-name { font-weight: 800; font-size: 1.125rem; margin: 0 0 var(--gcalls-space-1); }

@@ -40,6 +40,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { bodyToWp, collectLinks, esc } from './lib/blocks.mjs'
+import { pageBodies } from './lib/page-bodies.mjs'
 
 const HERE = path.dirname(fileURLToPath(import.meta.url))
 const REPO = path.resolve(HERE, '../..')
@@ -286,6 +287,22 @@ function baselinePageContent(page, all) {
 
 if (withBodies) {
   for (const page of pages) page.content = baselinePageContent(page, pages)
+
+  // Two routes have several screens of real editorial copy in the React build,
+  // and a summary paragraph is not a baseline for those — it is a page that
+  // lost its content. See lib/page-bodies.mjs.
+  const bodies = await pageBodies(REPO)
+
+  for (const [route, body] of Object.entries(bodies)) {
+    const page = pages.find((candidate) => candidate.route === route)
+
+    // Not a content problem to collect and report at the end — a generated
+    // body for a route the manifest does not create is a bug in this script.
+    if (!page) throw new Error(`page body generated for ${route}, which is not in the manifest`)
+
+    page.content = body.content
+    if (body.faq?.length) page.faq = body.faq
+  }
 }
 
 /* ------------------------------------------------------------------ *

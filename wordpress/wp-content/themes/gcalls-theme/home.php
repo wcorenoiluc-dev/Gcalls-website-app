@@ -40,18 +40,28 @@ $grouped       = taxonomy_exists( $hub_taxonomy ) && ! is_paged();
 		</h1>
 
 		<?php
-		// The posts page cannot use the_content() inside the loop — the loop
-		// holds posts, not the page — so its intro is fetched explicitly.
-		if ( $posts_page_id ) :
-			$intro = get_post_field( 'post_content', $posts_page_id );
+		/**
+		 * The posts page cannot use the_content() inside the loop — the loop
+		 * holds posts, not the page — so its body is fetched explicitly.
+		 *
+		 * It is then split at its first heading. Everything above that heading
+		 * is the page's opening paragraph and belongs under the title; the
+		 * headed sections below it are editorial copy about the blog's scope,
+		 * and burying eighteen articles beneath four screens of it would be an
+		 * odd way to publish an archive. React puts the listing first for the
+		 * same reason, so this is also what makes the two orders match.
+		 */
+		$body  = $posts_page_id ? (string) get_post_field( 'post_content', $posts_page_id ) : '';
+		$split = false !== strpos( $body, '<!-- wp:heading' ) ? strpos( $body, '<!-- wp:heading' ) : strlen( $body );
+		$intro = substr( $body, 0, $split );
+		$rest  = substr( $body, $split );
 
-			if ( '' !== trim( (string) $intro ) ) :
-				?>
-				<div class="gcalls-page-header__intro">
-					<?php echo wp_kses_post( apply_filters( 'the_content', $intro ) ); ?>
-				</div>
-				<?php
-			endif;
+		if ( '' !== trim( $intro ) ) :
+			?>
+			<div class="gcalls-page-header__intro">
+				<?php echo wp_kses_post( apply_filters( 'the_content', $intro ) ); ?>
+			</div>
+			<?php
 		endif;
 		?>
 	</header>
@@ -158,6 +168,12 @@ $grouped       = taxonomy_exists( $hub_taxonomy ) && ! is_paged();
 		<?php gcalls_pagination(); ?>
 	<?php else : ?>
 		<?php get_template_part( 'template-parts/content', 'none' ); ?>
+	<?php endif; ?>
+
+	<?php if ( '' !== trim( $rest ) ) : ?>
+		<div class="gcalls-page-body">
+			<?php echo wp_kses_post( apply_filters( 'the_content', $rest ) ); ?>
+		</div>
 	<?php endif; ?>
 </div>
 

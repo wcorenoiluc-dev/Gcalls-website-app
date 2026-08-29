@@ -162,3 +162,79 @@ function gcalls_pagination(): void {
 		)
 	);
 }
+
+/**
+ * Renders the footer navigation as one column per top-level item.
+ *
+ * WHY NOT wp_nav_menu()
+ * `wp_nav_menu( depth 2 )` renders the five column titles as top-level LINKS
+ * with their children nested underneath. React renders each column as its own
+ * landmark with an `<h2>` title that is not a link — and that difference is not
+ * cosmetic: it is five headings per page, on every page, that a screen-reader
+ * user navigating by heading gets in one build and not the other. It is also
+ * why the footer read as one long list of ten links on a phone instead of five
+ * labelled groups.
+ *
+ * A walker could do it, but a walker that has to close one landmark and open
+ * another between siblings is harder to read than the tree it renders. The menu
+ * is five items deep by two; fetching it and rendering it is clearer.
+ */
+function gcalls_footer_columns(): void {
+	$location = 'footer-nav';
+	$locations = get_nav_menu_locations();
+
+	if ( empty( $locations[ $location ] ) ) {
+		return;
+	}
+
+	$items = wp_get_nav_menu_items( (int) $locations[ $location ] );
+
+	if ( ! is_array( $items ) || array() === $items ) {
+		return;
+	}
+
+	$children = array();
+
+	foreach ( $items as $item ) {
+		$parent = (int) $item->menu_item_parent;
+
+		if ( 0 !== $parent ) {
+			$children[ $parent ][] = $item;
+		}
+	}
+
+	foreach ( $items as $item ) {
+		if ( 0 !== (int) $item->menu_item_parent ) {
+			continue;
+		}
+
+		$column = $children[ (int) $item->ID ] ?? array();
+
+		// A column title with nothing under it is a link, not a heading. That
+		// happens when the menu is edited by hand, and rendering an empty
+		// group would leave a heading pointing at nothing.
+		if ( array() === $column ) {
+			continue;
+		}
+
+		printf(
+			'<nav class="gcalls-footer__column" aria-label="%s">',
+			esc_attr( (string) $item->title )
+		);
+		printf(
+			'<h2 class="gcalls-footer__column-title">%s</h2>',
+			esc_html( (string) $item->title )
+		);
+		echo '<ul class="gcalls-footer__list">';
+
+		foreach ( $column as $child ) {
+			printf(
+				'<li><a href="%s">%s</a></li>',
+				esc_url( (string) $child->url ),
+				esc_html( (string) $child->title )
+			);
+		}
+
+		echo '</ul></nav>';
+	}
+}
