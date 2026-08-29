@@ -618,7 +618,16 @@ if (exists(leads) && exists(shortcodes)) {
   check('lead post type is off the REST API', /'show_in_rest'\s*=>\s*false/.test(lp))
   check('lead post type has no archive or rewrite', /'has_archive'\s*=>\s*false/.test(lp) && /'rewrite'\s*=>\s*false/.test(lp))
   check('lead post type is excluded from search', /'exclude_from_search'\s*=>\s*true/.test(lp))
-  check('reading a lead requires manage_options', /'read_post'\s*=>\s*'manage_options'/.test(lp))
+  /*
+   * 0.9.6 remapped the META caps edit_post/read_post/delete_post to
+   * manage_options with map_meta_cap on. That corrupted WordPress's resolver
+   * site-wide: an administrator lost Settings and the admin menu truncated.
+   * This asserts the shape that replaced it and forbids the shape that broke.
+   */
+  check('leads use a custom capability_type, not a remap of core caps', /'capability_type'\s*=>\s*array\(\s*'gcalls_lead'/.test(lp))
+  check('no meta capability is pointed at a primitive', !/'(edit|read|delete)_post'\s*=>\s*'manage_options'/.test(lp))
+  check('lead capabilities are granted to the administrator role', lp.includes("get_role( 'administrator' )") && lp.includes('edit_others_gcalls_leads'))
+  check('leads cannot be authored in wp-admin', /'create_posts'\s*=>\s*'do_not_allow'/.test(lp))
   check('leads are stored private, never published', lp.includes("'post_status' => 'private'"))
 
   // Submission guards.

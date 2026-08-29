@@ -110,6 +110,7 @@ final class Leads {
 	public static function init(): void {
 		add_action( 'init', array( self::class, 'register_post_type' ) );
 		add_action( 'wp_enqueue_scripts', array( self::class, 'enqueue' ) );
+		add_action( 'admin_init', array( self::class, 'grant_capabilities' ) );
 
 		// Both are required: the first serves logged-out visitors, which is
 		// almost everyone, and the second stops a logged-in editor testing the
@@ -170,9 +171,25 @@ final class Leads {
 	 * guessing, and `show_in_rest => false` keeps the collection off
 	 * /wp-json/wp/v2/ entirely.
 	 *
-	 * `capability_type` is mapped so that reading a lead requires
-	 * `manage_options`, not `edit_posts` — an Author must not be able to browse
-	 * other people's contact details.
+	 * CAPABILITIES: A CUSTOM TYPE, NOT A REMAP OF THE CORE ONES.
+	 *
+	 * 0.9.6 tried to restrict this by pointing the post type's `edit_post`,
+	 * `read_post` and `delete_post` at `manage_options` while `map_meta_cap`
+	 * was on. Those three are META capabilities — WordPress resolves them
+	 * THROUGH map_meta_cap — so overriding them with a primitive corrupted the
+	 * resolver, and on the live site an administrator lost Settings, the whole
+	 * admin menu truncated after Tools, and every Gcalls screen 403'd. It was
+	 * caught by bisect and rolled back the same session.
+	 *
+	 * The supported way is a custom `capability_type`, which only ever
+	 * INTRODUCES new capability names — `edit_gcalls_leads` and friends — and
+	 * therefore cannot alter how core caps resolve for anything else. The
+	 * administrator role is granted them in `grant_capabilities()`, which is
+	 * idempotent and also runs on admin_init so an existing install heals
+	 * without a reactivation.
+	 *
+	 * `create_posts` is safe to override because it is primitive, not meta:
+	 * leads are written by the form, never typed into wp-admin.
 	 */
 	public static function register_post_type(): void {
 		register_post_type(
@@ -196,20 +213,50 @@ final class Leads {
 				'menu_icon'           => 'dashicons-email-alt',
 				'menu_position'       => 26,
 				'supports'            => array( 'title' ),
-				'capability_type'     => 'post',
+				'capability_type'     => array( 'gcalls_lead', 'gcalls_leads' ),
 				'map_meta_cap'        => true,
-				'capabilities'        => array(
-					'edit_post'          => 'manage_options',
-					'read_post'          => 'manage_options',
-					'delete_post'        => 'manage_options',
-					'edit_posts'         => 'manage_options',
-					'edit_others_posts'  => 'manage_options',
-					'publish_posts'      => 'manage_options',
-					'read_private_posts' => 'manage_options',
-					'create_posts'       => 'manage_options',
-				),
+				'capabilities'        => array( 'create_posts' => 'do_not_allow' ),
 			)
 		);
+	}
+
+	/**
+	 * Gives the administrator role the lead capabilities.
+	 *
+	 * Idempotent, and cheap: it returns immediately once the role already has
+	 * them, so running it on every admin request costs one role lookup. Doing
+	 * it here rather than only on activation means an install that updated the
+	 * plugin — which does not fire the activation hook — heals itself.
+	 *
+	 * Only `administrator` is granted. That is the whole access-control story
+	 * for leads: no Editor, Author or Contributor can list or read one.
+	 */
+	public static function grant_capabilities(): void {
+		$role = get_role( 'administrator' );
+
+		if ( ! $role instanceof \WP_Role || $role->has_cap( 'edit_others_gcalls_leads' ) ) {
+			return;
+		}
+
+		foreach (
+			array(
+				'edit_gcalls_lead',
+				'read_gcalls_lead',
+				'delete_gcalls_lead',
+				'edit_gcalls_leads',
+				'edit_others_gcalls_leads',
+				'publish_gcalls_leads',
+				'read_private_gcalls_leads',
+				'delete_gcalls_leads',
+				'delete_private_gcalls_leads',
+				'delete_published_gcalls_leads',
+				'delete_others_gcalls_leads',
+				'edit_private_gcalls_leads',
+				'edit_published_gcalls_leads',
+			) as $cap
+		) {
+			$role->add_cap( $cap );
+		}
 	}
 
 	/**

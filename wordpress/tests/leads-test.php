@@ -85,6 +85,7 @@ final class WP_Post {
 function add_action( ...$a ): void {}
 function add_filter( ...$a ): void {}
 function register_post_type( ...$a ): void {}
+function get_role( string $r ) { return null; }
 function add_submenu_page( ...$a ): void {}
 function register_setting( ...$a ): void {}
 function add_meta_box( ...$a ): void {}
@@ -161,7 +162,7 @@ function wp_safe_redirect( string $url, int $status = 302 ): void { throw new Re
 /* The module under test. */
 namespace Gcalls\Core {
 
-const VERSION = '0.9.6';
+const VERSION = '0.9.7';
 
 /** Minimal stand-in: Leads only reads the route constant. */
 final class Shortcodes {

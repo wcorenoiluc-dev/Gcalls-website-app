@@ -42,7 +42,33 @@ const SINGLE_POST = arg('post', '/du-lieu-dong-bo-giua-tong-dai-va-helpdesk/')
 
 const WIDTHS = [1440, 1024, 768, 390, 320]
 
-const EXPECT = { theme: '0.8.2', core: '0.9.4' }
+/*
+ * READ FROM THE REPO, not typed here.
+ *
+ * This gate exists to stop the suite measuring a release that is not live yet,
+ * and it was a pair of literals that had to be hand-edited after every deploy.
+ * A literal that must be edited to make a run proceed is a literal somebody
+ * eventually edits to make a run PASS. Reading the versions the working tree
+ * actually declares means the gate says "live does not match this checkout",
+ * which is the question worth asking, and it cannot be satisfied by editing it.
+ */
+const declaredVersion = (file, re) => {
+  const m = fs.readFileSync(path.join(HERE, '..', file), 'utf8').match(re)
+  if (!m) throw new Error(`cannot read version from ${file}`)
+  return m[1]
+}
+
+/*
+ * `--expect-theme` / `--expect-core` name a DIFFERENT release under test, for
+ * the case where live is deliberately not the checkout — a rollback, or a
+ * staged deploy. It is an explicit argument that shows up in the command and in
+ * the run header, not a quiet edit to a constant, which is the distinction that
+ * matters: the run still states which build it measured.
+ */
+const EXPECT = {
+  theme: arg('expect-theme', declaredVersion('wp-content/themes/gcalls-theme/style.css', /^Version:\s*([0-9.]+)/m)),
+  core: arg('expect-core', declaredVersion('wp-content/plugins/gcalls-core/gcalls-core.php', /^const VERSION = '([0-9.]+)';/m)),
+}
 
 const results = []
 let failures = 0
@@ -255,7 +281,18 @@ console.log('\n2. Home page structure')
     })(),
   }))
 
-  record('home', '19 Elementor root sections', m.topSections === 19, `${m.topSections} (all: ${m.sections})`)
+  /* Same rule as the QA gate: the number comes from the reviewed inventory
+   * that ships beside the layout, never from a literal here. */
+  const expectedSections = JSON.parse(
+    fs.readFileSync(path.join(HERE, '..', 'wp-content/plugins/gcalls-core/data/homepage-inventory.json'), 'utf8'),
+  ).sections.length
+
+  record(
+    'home',
+    `${expectedSections} Elementor root sections, as the inventory declares`,
+    m.topSections === expectedSections,
+    `${m.topSections} (all: ${m.sections})`,
+  )
   record('home', 'six pain cards', m.painCards === 6, String(m.painCards))
   record('home', 'pain cards are 3 across on desktop', m.cardGridCols === 3, `${m.cardGridCols} columns`)
   record('home', 'hero has two CTAs', m.ctaRow === 2, String(m.ctaRow))
@@ -333,12 +370,22 @@ for (const width of WIDTHS) {
           const next = c.querySelector('.gc-eco-card__supporting') || c.querySelector('.gc-eco-card__body')
           return Math.round(next.getBoundingClientRect().top - nm.bottom)
         }))],
+        /*
+         * Elementor puts `min-height: 1px` on every .elementor-column in its
+         * own stylesheet, site-wide. A 1px floor cannot hold a section open,
+         * and failing on it flagged all five breakpoints while the section was
+         * correct. What this check is for is a min-height big enough to create
+         * the empty band this ticket was filed about, so it looks for one.
+         */
         minHeights: (() => {
           const bad = []
           let cur = grid
           while (cur && cur !== document.body) {
             const mh = getComputedStyle(cur).minHeight
-            if (mh !== '0px' && mh !== 'auto' && mh !== 'none') bad.push(`${cur.className || cur.tagName}:${mh}`)
+            const px = parseFloat(mh)
+            if (mh !== 'auto' && mh !== 'none' && Number.isFinite(px) && px > 2) {
+              bad.push(`${cur.className || cur.tagName}:${mh}`)
+            }
             cur = cur.parentElement
           }
           return bad
@@ -347,8 +394,29 @@ for (const width of WIDTHS) {
       }
     }
 
-    /* Widest empty run between consecutive blocks of the ecosystem run. */
-    const blocks = [...document.querySelectorAll('.gc-eco-group__head, .gc-eco-grid, .gc-linkrow')]
+    /*
+     * Widest empty run between consecutive blocks OF THE ECOSYSTEM RUN.
+     *
+     * Scoped to the sections that hold the groups plus the one CTA row that
+     * follows them. A document-wide query also matched the Cloud section's
+     * link row much further down the page and reported the distance between
+     * two unrelated sections as a 2900px gap — the same document-wide mistake
+     * this suite already made once with `.gc-card`.
+     */
+    const ecoSections = [...new Set(
+      groups.map((g) => g.closest('.elementor-top-section')).filter(Boolean),
+    )]
+
+    const last = ecoSections[ecoSections.length - 1]
+    const after = last ? last.nextElementSibling : null
+
+    if (after && after.classList.contains('elementor-top-section') && after.querySelector('.gc-linkrow')) {
+      ecoSections.push(after)
+    }
+
+    const blocks = ecoSections.flatMap((sec) =>
+      [...sec.querySelectorAll('.gc-eco-group__head, .gc-eco-grid, .gc-linkrow')],
+    )
     let worst = 0
     let where = ''
     for (let i = 1; i < blocks.length; i++) {
