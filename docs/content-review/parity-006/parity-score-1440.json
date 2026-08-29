@@ -2,12 +2,12 @@
   {
     "name": "home",
     "route": "/",
-    "score": 91.2,
+    "score": 92.3,
     "parts": {
-      "headings": 93,
+      "headings": 95.2,
       "visuals": 100,
       "ctas": 100,
-      "rhythm": 73.7
+      "rhythm": 73.6
     },
     "react": {
       "headings": 41,
@@ -16,15 +16,13 @@
       "height": 18669
     },
     "wp": {
-      "headings": 43,
+      "headings": 42,
       "visuals": 9,
       "ctas": 11,
-      "height": 13755
+      "height": 13735
     },
     "missingInWp": [],
-    "extraInWp": [
-      "Đăng ký tư vấn"
-    ]
+    "extraInWp": []
   },
   {
     "name": "gcalls-plus",

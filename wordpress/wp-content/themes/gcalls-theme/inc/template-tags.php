@@ -22,7 +22,18 @@ defined( 'ABSPATH' ) || exit;
  * stays the single h1.
  */
 function gcalls_site_branding(): void {
-	$tag = ( is_front_page() && ! is_paged() ) ? 'h1' : 'p';
+	/*
+	 * ALWAYS A PARAGRAPH, NEVER AN H1.
+	 *
+	 * The classic-theme convention is to promote the site name to h1 on the
+	 * front page, on the reasoning that the front page has no other title. That
+	 * reasoning does not hold here: the front page is an Elementor layout whose
+	 * hero carries a real h1, so the convention produced TWO h1 elements — the
+	 * word "Gcalls" and the page's actual subject — with the brand first. A
+	 * screen-reader user asking what this page is about heard the company name.
+	 * React renders the logo as a link, and that is the correct shape.
+	 */
+	$tag = 'p';
 
 	echo '<' . esc_attr( $tag ) . ' class="gcalls-branding">';
 
