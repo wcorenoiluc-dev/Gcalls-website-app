@@ -2,12 +2,12 @@
   {
     "name": "home",
     "route": "/",
-    "score": 75.9,
+    "score": 90.4,
     "parts": {
-      "headings": 78.4,
+      "headings": 93,
       "visuals": 100,
-      "ctas": 54.5,
-      "rhythm": 67.6
+      "ctas": 100,
+      "rhythm": 69.3
     },
     "react": {
       "headings": 41,
@@ -16,21 +16,13 @@
       "height": 18669
     },
     "wp": {
-      "headings": 51,
+      "headings": 43,
       "visuals": 9,
-      "ctas": 6,
-      "height": 12628
+      "ctas": 11,
+      "height": 12931
     },
     "missingInWp": [],
     "extraInWp": [
-      "Gcalls Plus Webphone",
-      "QA QC Center",
-      "Gcalls CX",
-      "Gcalls Voicebot AI",
-      "Tích hợp CRM",
-      "Tích hợp Helpdesk",
-      "Tích hợp POS",
-      "Tổng đài quốc tế",
       "Đăng ký tư vấn"
     ]
   },

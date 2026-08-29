@@ -78,12 +78,22 @@ const column = (elements, size = 100, settings = {}) => ({
   isInner: false,
 })
 
+/**
+ * Vertical rhythm, measured off the reference rather than chosen.
+ *
+ * React's Section pads 96px on most of the page and 112px on the six
+ * content-heavy sections; this port shipped 72px everywhere, and across
+ * nineteen sections that is most of a screen of breathing room missing. 96 is
+ * the reference's most common value, so it is the default here too.
+ */
+const SECTION_PAD = '96'
+
 const section = (columns, settings = {}) => ({
   id: eid(),
   elType: 'section',
   settings: {
     content_width: 'boxed',
-    padding: { unit: 'px', top: '72', right: '0', bottom: '72', left: '0', isLinked: false },
+    padding: { unit: 'px', top: SECTION_PAD, right: '0', bottom: SECTION_PAD, left: '0', isLinked: false },
     ...settings,
   },
   elements: columns,
@@ -334,7 +344,7 @@ const content = [
       ],
       3,
     ),
-    { padding: { unit: 'px', top: '0', right: '0', bottom: '40', left: '0', isLinked: false } },
+    { padding: { unit: 'px', top: '0', right: '0', bottom: '48', left: '0', isLinked: false } },
   ),
   // Still PainPointsSection: React nests LossEstimator at the end of it rather
   // than giving it a section, because the estimator quantifies the six problems
@@ -353,7 +363,7 @@ const content = [
         }),
       ]),
     ],
-    { padding: { unit: 'px', top: '0', right: '0', bottom: '72', left: '0', isLinked: false } },
+    { padding: { unit: 'px', top: '0', right: '0', bottom: SECTION_PAD, left: '0', isLinked: false } },
   ),
 
   /* 3 — SolutionBridgeSection.tsx */
@@ -425,7 +435,7 @@ const content = [
       ],
       4,
     ),
-    { padding: { unit: 'px', top: '0', right: '0', bottom: '72', left: '0', isLinked: false } },
+    { padding: { unit: 'px', top: '0', right: '0', bottom: SECTION_PAD, left: '0', isLinked: false } },
   ),
 
   /* 5 — CallTimelineSection.tsx */
