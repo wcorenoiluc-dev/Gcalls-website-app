@@ -47,7 +47,9 @@ while ( have_posts() ) :
 			echo '<div class="gcalls-container"><h1 class="gcalls-page__title">' . esc_html( get_the_title() ) . '</h1></div>';
 		}
 
-		echo $gcalls_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- the_content() output, already filtered.
+		// gcalls-qa: raw output — the_content() is already filtered, and
+		// wp_kses_post() would strip the data attributes Elementor renders with.
+		echo $gcalls_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		?>
 	</article>
 	<?php

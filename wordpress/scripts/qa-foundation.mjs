@@ -144,16 +144,36 @@ walk(PLUGIN)
 // A bare `echo $var` in a template is an escaping defect. Calls that carry
 // their own escaping (the_content, the_title with wrapper args, esc_*) are not
 // matched by this.
+//
+// ONE ESCAPE HATCH, AND IT IS COUNTED.
+// A line marked `// gcalls-qa: raw output — <reason>` is allowed through. It
+// exists for output that is ALREADY filtered and would be damaged by escaping
+// it again: `the_content()` captured into a buffer is the case that forced it,
+// because wp_kses_post() strips the data attributes Elementor renders with.
+// The exemptions are listed on every run, so they cannot pile up unnoticed —
+// a rule nobody can see the exceptions to stops being a rule.
+const RAW_OK = /\/\/\s*gcalls-qa:\s*raw output\s*—/
 const rawEcho = []
+const rawAllowed = []
 for (const file of phpFiles) {
   const source = read(file)
-  source.split('\n').forEach((line, index) => {
-    if (/\becho\s+\$[a-z_]/i.test(line) && !/esc_|wp_kses|wp_json_encode/.test(line)) {
-      rawEcho.push(`${path.relative(REPO, file)}:${index + 1}`)
-    }
+  const lines = source.split('\n')
+  lines.forEach((line, index) => {
+    if (!/\becho\s+\$[a-z_]/i.test(line) || /esc_|wp_kses|wp_json_encode/.test(line)) return
+    const where = `${path.relative(REPO, file)}:${index + 1}`
+    // The marker may sit on the echo or on the comment lines just above it,
+    // because a reason worth writing rarely fits after the statement.
+    const context = lines.slice(Math.max(0, index - 3), index + 1).join('\n')
+    if (RAW_OK.test(context)) rawAllowed.push(where)
+    else rawEcho.push(where)
   })
 }
 check('no unescaped `echo $var`', rawEcho.length === 0, rawEcho.join(', '))
+check(
+  `raw-output exemptions are declared (${rawAllowed.length})`,
+  rawAllowed.length <= 2,
+  rawAllowed.join(', '),
+)
 
 const SECRET_PATTERNS = [
   /DB_PASSWORD\s*['"]?\s*[,=]\s*['"][^'"]{3,}/i,
