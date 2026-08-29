@@ -192,8 +192,15 @@ final class Faq {
 		echo '<h2 class="gcalls-faq__title">' . esc_html__( 'Câu hỏi thường gặp', 'gcalls-core' ) . '</h2>';
 
 		foreach ( $faq as $item ) {
-			echo '<details class="gcalls-faq__item">';
-			echo '<summary class="gcalls-faq__question">' . esc_html( $item['question'] ) . '</summary>';
+			// `open`, and the question is a heading inside the summary.
+			//
+			// Collapsed by default, the answers were invisible to find-in-page
+			// and absent from the document outline — on /uoc-tinh-chi-phi/ that
+			// was six questions a visitor had arrived with, none of which the
+			// page appeared to answer. <details> is kept so they can still be
+			// folded away; it just does not start that way.
+			echo '<details class="gcalls-faq__item" open>';
+			echo '<summary class="gcalls-faq__question"><h3>' . esc_html( $item['question'] ) . '</h3></summary>';
 			echo '<div class="gcalls-faq__answer">' . wp_kses_post( wpautop( $item['answer'] ) ) . '</div>';
 			echo '</details>';
 		}

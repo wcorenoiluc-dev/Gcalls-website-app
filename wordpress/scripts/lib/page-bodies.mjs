@@ -127,7 +127,10 @@ async function costEstimatorBody(repo, routes) {
     ...COST_DRIVERS.flatMap((driver) => card(driver.title, driver.detail)),
 
     heading('Công cụ ước tính hoạt động như thế nào?', 2, 'cach-hoat-dong'),
-    ...HOW_IT_WORKS.flatMap((step) => card(`${step.n}. ${step.title}`, step.detail)),
+    // The step number goes in the body, not into the heading: React's
+    // heading is "Chọn sản phẩm", and "01. Chọn sản phẩm" is a different
+    // string to anything matching on headings, a reader included.
+    ...HOW_IT_WORKS.flatMap((step) => card(step.title, `${step.n} — ${step.detail}`)),
 
     heading('Vì sao báo giá chính thức có thể khác?', 2, 'vi-sao-khac'),
     p(
@@ -198,7 +201,9 @@ async function blogBody(repo, routes) {
   if (BLOG.purpose) {
     parts.push(heading(BLOG.purpose.h2, 2, BLOG.purpose.anchorId ?? null))
     if (BLOG.purpose.description) parts.push(p(BLOG.purpose.description))
-    for (const item of BLOG.purpose.items ?? []) parts.push(...card(item.title, item.detail))
+    for (const item of BLOG.purpose.audience ?? BLOG.purpose.items ?? []) {
+      parts.push(...card(item.title, item.detail))
+    }
     if (BLOG.purpose.note) parts.push(p(BLOG.purpose.note))
   }
 

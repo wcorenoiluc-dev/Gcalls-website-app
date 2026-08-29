@@ -669,6 +669,17 @@ pre {
 	position: relative;
 }
 
+/* The question is an h3 inside the summary, so it carries the outline while
+   the summary carries the click target. It must not inherit the heading scale
+   or a question would out-size the section it sits under. */
+.gcalls-faq__question h3 {
+	display: inline;
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: inherit;
+}
+
 .gcalls-faq__question::-webkit-details-marker {
 	display: none;
 }
@@ -1114,4 +1125,10 @@ html.gcalls-nav-open body { overflow: hidden; }
 	font-size: 1.25rem;
 	font-weight: 800;
 	letter-spacing: -0.01em;
+}
+
+/* The fallback page title on a full-width template — printed only when the
+   content brings no h1 of its own. See page-templates/full-width.php. */
+.gcalls-page__title {
+	margin: var(--gcalls-space-5) 0 var(--gcalls-space-3);
 }

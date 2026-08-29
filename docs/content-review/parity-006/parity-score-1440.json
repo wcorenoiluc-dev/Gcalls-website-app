@@ -27,12 +27,12 @@
   {
     "name": "gcalls-plus",
     "route": "/gcalls-plus-webphone/",
-    "score": 78.8,
+    "score": 84.3,
     "parts": {
-      "headings": 65.5,
+      "headings": 71.9,
       "visuals": 100,
       "ctas": 100,
-      "rhythm": 80.4
+      "rhythm": 91.9
     },
     "react": {
       "headings": 55,
@@ -41,14 +41,12 @@
       "height": 13360
     },
     "wp": {
-      "headings": 52,
+      "headings": 64,
       "visuals": 11,
       "ctas": 4,
-      "height": 10746
+      "height": 12277
     },
     "missingInWp": [
-      "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình duyệt",
-      "Gcalls Plus Webphone là gì?",
       "Sales",
       "Chăm sóc khách hàng",
       "Giáo dục",
@@ -56,16 +54,7 @@
       "Thương mại điện tử",
       "PHÙ HỢP VỚI GCALLS PLUS",
       "KHI NHU CẦU MỞ RỘNG",
-      "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
-      "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
-      "Câu hỏi thường gặp về Gcalls Plus Webphone",
-      "Gcalls Plus Webphone là gì?",
-      "Gcalls Plus có cần điện thoại bàn không?",
-      "Gcalls Plus có lưu lịch sử cuộc gọi không?",
-      "Gcalls Plus có tích hợp CRM không?",
-      "Gcalls Plus phù hợp với ai?",
-      "Tôi có thể biết chi phí trước khi tư vấn không?",
-      "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ của bạn đang làm việc"
+      "Câu hỏi thường gặp về Gcalls Plus Webphone"
     ],
     "extraInWp": [
       "Hoạt động trực tiếp trên trình duyệt",
@@ -83,18 +72,19 @@
       "Lịch sử cuộc gọi của đội ngũ",
       "Dữ liệu hoạt động tập trung",
       "Trạng thái Agent trong quá trình vận hành",
+      "Câu hỏi thường gặp",
       "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
     ]
   },
   {
     "name": "gcalls-cx",
     "route": "/gcalls-cx/",
-    "score": 70.2,
+    "score": 73.3,
     "parts": {
-      "headings": 67.7,
+      "headings": 69.7,
       "visuals": 100,
       "ctas": 66.7,
-      "rhythm": 57
+      "rhythm": 67.3
     },
     "react": {
       "headings": 59,
@@ -103,27 +93,17 @@
       "height": 13533
     },
     "wp": {
-      "headings": 65,
+      "headings": 76,
       "visuals": 5,
       "ctas": 4,
-      "height": 7712
+      "height": 9105
     },
     "missingInWp": [
-      "Gcalls CX – hợp nhất mọi điểm chạm khách hàng trên một màn hình",
-      "Gcalls CX là gì?",
       "Tài chính",
       "Bảo hiểm",
       "Bất động sản",
       "Doanh nghiệp tăng trưởng nhanh",
-      "Chi phí phụ thuộc vào số kênh, người dùng và phạm vi triển khai",
-      "Câu hỏi thường gặp về Gcalls CX",
-      "Gcalls CX là gì?",
-      "Gcalls CX hỗ trợ những kênh nào?",
-      "Gcalls CX có quản lý ticket không?",
-      "Gcalls CX khác Gcalls Plus như thế nào?",
-      "Gcalls CX có thay thế CRM không?",
-      "Gcalls CX phù hợp với doanh nghiệp nào?",
-      "Xem Gcalls CX hoạt động trên chính hành trình chăm sóc khách hàng của doanh nghiệp bạn"
+      "Câu hỏi thường gặp về Gcalls CX"
     ],
     "extraInWp": [
       "Xem hội thoại theo kênh",
@@ -146,18 +126,19 @@
       "Trạng thái ticket",
       "Phân bổ theo kênh",
       "Workload của đội ngũ",
+      "Câu hỏi thường gặp",
       "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
     ]
   },
   {
     "name": "voicebot",
     "route": "/voicebot-ai/",
-    "score": 82.4,
+    "score": 87.4,
     "parts": {
-      "headings": 81.4,
+      "headings": 87.3,
       "visuals": 100,
       "ctas": 80,
-      "rhythm": 73.5
+      "rhythm": 83.9
     },
     "react": {
       "headings": 59,
@@ -166,23 +147,15 @@
       "height": 10222
     },
     "wp": {
-      "headings": 54,
+      "headings": 63,
       "visuals": 5,
       "ctas": 4,
-      "height": 7509
+      "height": 8580
     },
     "missingInWp": [
-      "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI",
       "Voicebot đảm nhận",
       "Nhân viên tiếp nhận",
-      "Câu hỏi thường gặp về Voicebot AI",
-      "Voicebot AI phù hợp với doanh nghiệp nào?",
-      "Voicebot có thể áp dụng cho tình huống nào?",
-      "Có thể kết nối Voicebot với hệ thống hiện tại không?",
-      "Khi nào cuộc gọi cần chuyển sang nhân viên?",
-      "Doanh nghiệp bắt đầu triển khai như thế nào?",
-      "Chi phí Voicebot được xác định ra sao?",
-      "Bắt đầu từ một tình huống cuộc gọi phù hợp với doanh nghiệp"
+      "Câu hỏi thường gặp về Voicebot AI"
     ],
     "extraInWp": [
       "Thực hiện tác vụ gọi theo kịch bản đã thiết lập.",
@@ -190,18 +163,19 @@
       "Phân loại kết quả cuộc gọi theo các nhóm đã được cấu hình.",
       "Chuyển các tình huống cần con người xử lý sang đội ngũ.",
       "Cung cấp dữ liệu phục vụ theo dõi chiến dịch.",
+      "Câu hỏi thường gặp",
       "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
     ]
   },
   {
     "name": "qa-qc",
     "route": "/qc-bot-ai/",
-    "score": 68.2,
+    "score": 76.7,
     "parts": {
-      "headings": 66.1,
+      "headings": 78,
       "visuals": 100,
       "ctas": 66.7,
-      "rhythm": 50.8
+      "rhythm": 63.7
     },
     "react": {
       "headings": 56,
@@ -210,14 +184,12 @@
       "height": 12783
     },
     "wp": {
-      "headings": 47,
+      "headings": 59,
       "visuals": 4,
       "ctas": 4,
-      "height": 6492
+      "height": 8142
     },
     "missingInWp": [
-      "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
-      "QA QC Center là gì?",
       "AI hỗ trợ",
       "QA xác nhận",
       "Manager cải thiện",
@@ -225,16 +197,7 @@
       "Telesales QA",
       "BPO / Contact Center",
       "Finance & Insurance",
-      "Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
-      "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
-      "Câu hỏi thường gặp về QA QC Center",
-      "QA QC Center là gì?",
-      "QC Bot AI có thể tự động chấm điểm cuộc gọi không?",
-      "QC Bot có phân tích từ khóa và cảm xúc không?",
-      "AI có thay thế hoàn toàn nhân viên QA không?",
-      "QA QC Center phù hợp với doanh nghiệp nào?",
-      "QA QC Center có phân tích tất cả cuộc gọi không?",
-      "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ngũ bạn"
+      "Câu hỏi thường gặp về QA QC Center"
     ],
     "extraInWp": [
       "Thiết lập tiêu chí QA",
@@ -246,6 +209,7 @@
       "Làm nổi bật tín hiệu cảm xúc",
       "Xác định hội thoại có dấu hiệu bất thường",
       "Theo dõi xu hướng thay vì chỉ nhìn từng cuộc gọi riêng lẻ",
+      "Câu hỏi thường gặp",
       "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
     ]
   },
