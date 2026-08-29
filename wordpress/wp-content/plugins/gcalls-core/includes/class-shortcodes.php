@@ -637,12 +637,19 @@ final class Shortcodes {
 				$out .= '</ul>';
 			}
 
+			// The hero's own ask, with its own wording and its own attribution —
+			// on three of the four products that is a demo request, which a
+			// generic "Đăng ký tư vấn" was quietly replacing with a weaker one.
+			$hero_cta = (array) ( $hero['cta'] ?? array() );
+
 			$out .= self::cta(
 				array(
-					'label'    => __( 'Đăng ký tư vấn', 'gcalls-core' ),
-					'intent'   => (string) ( $lead['intent'] ?? 'consultation' ),
-					'source'   => (string) ( $lead['source'] ?? '' ),
-					'product'  => (string) ( $lead['product'] ?? '' ),
+					'label'    => '' !== (string) ( $hero_cta['label'] ?? '' )
+						? (string) $hero_cta['label']
+						: __( 'Đăng ký tư vấn', 'gcalls-core' ),
+					'intent'   => (string) ( $hero_cta['intent'] ?? $lead['intent'] ?? 'consultation' ),
+					'source'   => (string) ( $hero_cta['source'] ?? $lead['source'] ?? '' ),
+					'product'  => (string) ( $hero_cta['product'] ?? $lead['product'] ?? '' ),
 					'solution' => '',
 					'style'    => 'primary',
 					'note'     => '',
@@ -783,18 +790,65 @@ final class Shortcodes {
 		}
 
 		$out .= '<section class="gcalls-product__final">';
-		$out .= '<h2 class="gcalls-product__heading">' . esc_html__( 'Trao đổi cấu hình phù hợp với đội ngũ của bạn', 'gcalls-core' ) . '</h2>';
-		$out .= self::cta(
-			array(
-				'label'    => __( 'Đăng ký tư vấn', 'gcalls-core' ),
-				'intent'   => (string) ( $lead['intent'] ?? 'consultation' ),
-				'source'   => (string) ( $lead['source'] ?? '' ),
-				'product'  => (string) ( $lead['product'] ?? '' ),
-				'solution' => '',
-				'style'    => 'primary',
-				'note'     => __( 'Gcalls trao đổi về quy mô, hệ thống đang dùng và quy trình vận hành trước khi đề xuất cấu hình.', 'gcalls-core' ),
-			)
+		// The closing band, in the product's own words. React ends each page with
+		// its own heading, its own sentence and TWO asks — a demo and a
+		// conversation. A single generic button ended the page more weakly than
+		// the reference and dropped the demo request, which is the higher-intent
+		// of the two.
+		$final = (array) ( $page['finalCta'] ?? array() );
+
+		$out .= '<h2 class="gcalls-product__heading">';
+		$out .= '' !== (string) ( $final['heading'] ?? '' )
+			? esc_html( (string) $final['heading'] )
+			: esc_html__( 'Trao đổi cấu hình phù hợp với đội ngũ của bạn', 'gcalls-core' );
+		$out .= '</h2>';
+
+		if ( ! empty( $final['lead'] ) ) {
+			$out .= '<p class="gcalls-product__lead">' . esc_html( (string) $final['lead'] ) . '</p>';
+		}
+
+		$asks = array(
+			array( 'data' => (array) ( $final['primary'] ?? array() ), 'style' => 'primary' ),
+			array( 'data' => (array) ( $final['secondary'] ?? array() ), 'style' => 'secondary' ),
 		);
+
+		$rendered_ask = false;
+
+		foreach ( $asks as $ask ) {
+			if ( empty( $ask['data']['label'] ) ) {
+				continue;
+			}
+
+			$rendered_ask = true;
+
+			$out .= self::cta(
+				array(
+					'label'    => (string) $ask['data']['label'],
+					'intent'   => (string) ( $ask['data']['intent'] ?? 'consultation' ),
+					'source'   => (string) ( $ask['data']['source'] ?? '' ),
+					'product'  => (string) ( $ask['data']['product'] ?? '' ),
+					'solution' => '',
+					'style'    => (string) $ask['style'],
+					'note'     => '',
+				)
+			);
+		}
+
+		// A product page that ends with no way to ask is not a product page, so
+		// the generic ask stays as the floor.
+		if ( ! $rendered_ask ) {
+			$out .= self::cta(
+				array(
+					'label'    => __( 'Đăng ký tư vấn', 'gcalls-core' ),
+					'intent'   => (string) ( $lead['intent'] ?? 'consultation' ),
+					'source'   => (string) ( $lead['source'] ?? '' ),
+					'product'  => (string) ( $lead['product'] ?? '' ),
+					'solution' => '',
+					'style'    => 'primary',
+					'note'     => __( 'Gcalls trao đổi về quy mô, hệ thống đang dùng và quy trình vận hành trước khi đề xuất cấu hình.', 'gcalls-core' ),
+				)
+			);
+		}
 		$out .= '</section>';
 
 		$out .= '</div>';

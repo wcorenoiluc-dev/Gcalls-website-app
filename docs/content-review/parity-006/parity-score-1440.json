@@ -27,9 +27,9 @@
   {
     "name": "gcalls-plus",
     "route": "/gcalls-plus-webphone/",
-    "score": 88.2,
+    "score": 93.7,
     "parts": {
-      "headings": 83.6,
+      "headings": 94.5,
       "visuals": 100,
       "ctas": 100,
       "rhythm": 81.9
@@ -41,20 +41,14 @@
       "height": 13360
     },
     "wp": {
-      "headings": 48,
+      "headings": 54,
       "visuals": 13,
       "ctas": 4,
       "height": 16308
     },
     "missingInWp": [
       "PHÙ HỢP VỚI GCALLS PLUS",
-      "KHI NHU CẦU MỞ RỘNG",
-      "Khảo sát nhu cầu",
-      "Xác định hotline và người dùng",
-      "Thiết lập call flow",
-      "Kiểm thử",
-      "Hướng dẫn sử dụng",
-      "Vận hành"
+      "KHI NHU CẦU MỞ RỘNG"
     ],
     "extraInWp": [
       "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
@@ -63,9 +57,9 @@
   {
     "name": "gcalls-cx",
     "route": "/gcalls-cx/",
-    "score": 88,
+    "score": 93.1,
     "parts": {
-      "headings": 86.4,
+      "headings": 96.7,
       "visuals": 100,
       "ctas": 66.7,
       "rhythm": 98.9
@@ -77,20 +71,12 @@
       "height": 13533
     },
     "wp": {
-      "headings": 53,
+      "headings": 60,
       "visuals": 6,
       "ctas": 4,
       "height": 13684
     },
-    "missingInWp": [
-      "Khảo sát các điểm chạm hiện tại",
-      "Xác định kênh cần kết nối",
-      "Thiết kế workflow xử lý",
-      "Cấu hình người dùng và phân quyền",
-      "Kiểm thử",
-      "Hướng dẫn vận hành",
-      "Go-live theo phạm vi đã thống nhất"
-    ],
+    "missingInWp": [],
     "extraInWp": [
       "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
     ]

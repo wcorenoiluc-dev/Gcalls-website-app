@@ -208,8 +208,60 @@ for (const page of PAGES) {
    */
   if (!page.heroMockup) problems.push(`${page.id}: no heroMockup declared`)
 
+  /*
+   * The hero's own call to action, with the attribution React gives it.
+   *
+   * The port rendered one generic "Đăng ký tư vấn" per hero, so the four
+   * product pages carried four lead links where React carries six — and the
+   * two missing ones are the DEMO asks, the highest-intent link on the page.
+   * Both the label and the intent come from the product's own data
+   * (`primaryCta.label` and `_DEMO_LEAD`), so nothing here is invented and the
+   * lead still arrives tagged with the page that produced it.
+   */
+  const demoLead = module[Object.keys(module).find((k) => k.endsWith('_DEMO_LEAD'))]
+
+  const heroCta = {
+    label: pick(heroRaw?.primaryCta ?? {}, ['label']),
+    intent: demoLead?.intent ?? page.lead.intent,
+    source: demoLead?.source ?? page.lead.source,
+    product: demoLead?.product ?? page.lead.product,
+  }
+
+  if (!heroCta.label) problems.push(`${page.id}: hero has no primary CTA label`)
+
+  /*
+   * The closing band, which React gives its own heading, its own sentence and
+   * TWO asks: a demo and a conversation. The port had one generic line and one
+   * generic button, so the page ended more weakly than the reference and lost
+   * the demo request entirely.
+   */
+  const finalRaw = module[Object.keys(module).find((k) => k.endsWith('_FINAL_CTA'))]
+  const consultLead = module[Object.keys(module).find((k) => /_(CONSULT_LEAD|LEAD_CONTEXT)$/.test(k))]
+
+  const finalCta = finalRaw
+    ? {
+        heading: pick(finalRaw, ['h2', 'title', 'heading']),
+        lead: pick(finalRaw, ['description', 'lead']),
+        primary: {
+          label: pick(finalRaw.primaryCta ?? {}, ['label']),
+          intent: demoLead?.intent ?? page.lead.intent,
+          source: demoLead?.source ?? page.lead.source,
+          product: demoLead?.product ?? page.lead.product,
+        },
+        secondary: {
+          label: pick(finalRaw.secondaryCta ?? {}, ['label']),
+          intent: consultLead?.intent ?? page.lead.intent,
+          source: consultLead?.source ?? page.lead.source,
+          product: consultLead?.product ?? page.lead.product,
+        },
+      }
+    : null
+
+  if (finalCta && !finalCta.heading) problems.push(`${page.id}: final CTA has no heading`)
+
   const hero = {
     mockup: page.heroMockup ?? '',
+    cta: heroCta,
     eyebrow: pick(heroRaw ?? {}, ['eyebrow']),
     heading: pick(heroRaw ?? {}, ['h1', 'title', 'heading']),
     lead: pick(heroRaw ?? {}, ['description', 'lead', 'subtitle', 'sub']),
@@ -267,6 +319,7 @@ for (const page of PAGES) {
     // scrolled a long way from the title by the time they reach it.
     product: page.lead.product ?? '',
     hero,
+    finalCta,
     direct,
     faq,
     lead: page.lead,

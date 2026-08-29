@@ -6,6 +6,12 @@
       "product": "Gcalls Plus Webphone",
       "hero": {
         "mockup": "plus_gallery",
+        "cta": {
+          "label": "Đăng ký tư vấn",
+          "intent": "consultation",
+          "source": "gcalls_plus",
+          "product": "Gcalls Plus Webphone"
+        },
         "eyebrow": "GCALLS PLUS WEBPHONE",
         "heading": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình duyệt",
         "lead": "Nghe gọi, quản lý danh bạ, theo dõi lịch sử tương tác và hoạt động của đội ngũ Sales/CSKH trong một giao diện Webphone tập trung.",
@@ -14,6 +20,22 @@
           "Theo dõi context khách hàng",
           "Quản lý hoạt động đội ngũ"
         ]
+      },
+      "finalCta": {
+        "heading": "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ của bạn đang làm việc",
+        "lead": "Chia sẻ quy mô Sales/CSKH, số hotline và quy trình hiện tại để Gcalls tư vấn cấu hình Webphone phù hợp.",
+        "primary": {
+          "label": "Đăng ký tư vấn",
+          "intent": "consultation",
+          "source": "gcalls_plus",
+          "product": "Gcalls Plus Webphone"
+        },
+        "secondary": {
+          "label": "Ước tính cấu hình",
+          "intent": "consultation",
+          "source": "gcalls_plus",
+          "product": "Gcalls Plus Webphone"
+        }
       },
       "direct": {
         "question": "Gcalls Plus Webphone là gì?",
@@ -390,6 +412,12 @@
       "product": "Gcalls CX",
       "hero": {
         "mockup": "cx_inbox",
+        "cta": {
+          "label": "Yêu cầu demo Gcalls CX",
+          "intent": "demo",
+          "source": "gcalls_cx",
+          "product": "Gcalls CX"
+        },
         "eyebrow": "GCALLS CX • OMNICHANNEL CONTACT CENTER",
         "heading": "Gcalls CX – hợp nhất mọi điểm chạm khách hàng trên một màn hình",
         "lead": "Tập trung Voice, Zalo, Facebook, SMS, Email và quy trình hỗ trợ khách hàng vào một không gian làm việc để đội CSKH dễ theo dõi hội thoại, ticket và customer context hơn.",
@@ -398,6 +426,22 @@
           "Quản lý xử lý rõ ràng hơn",
           "Có thêm context khi chăm sóc khách hàng"
         ]
+      },
+      "finalCta": {
+        "heading": "Xem Gcalls CX hoạt động trên chính hành trình chăm sóc khách hàng của doanh nghiệp bạn",
+        "lead": "Chia sẻ các kênh đang sử dụng, cấu trúc đội CSKH và workflow hiện tại để Gcalls tư vấn cấu hình Contact Center phù hợp.",
+        "primary": {
+          "label": "Yêu cầu demo Gcalls CX",
+          "intent": "demo",
+          "source": "gcalls_cx",
+          "product": "Gcalls CX"
+        },
+        "secondary": {
+          "label": "Đăng ký tư vấn",
+          "intent": "consultation",
+          "source": "gcalls_cx",
+          "product": "Gcalls CX"
+        }
       },
       "direct": {
         "question": "Gcalls CX là gì?",
@@ -830,10 +874,32 @@
       "product": "Gcalls Voicebot AI",
       "hero": {
         "mockup": "voicebot_builder",
+        "cta": {
+          "label": "Đăng ký tư vấn Voicebot",
+          "intent": "consultation",
+          "source": "voicebot_ai",
+          "product": "Gcalls Voicebot AI"
+        },
         "eyebrow": "VOICEBOT AI CHO DOANH NGHIỆP",
         "heading": "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI",
         "lead": "Gcalls giúp doanh nghiệp triển khai Voicebot cho các tác vụ như nhắc lịch, xác nhận thông tin, sàng lọc nhu cầu và xử lý bước đầu ngoài giờ — để đội ngũ tập trung vào những tương tác cần chuyên môn và sự thấu hiểu của con người.",
         "points": []
+      },
+      "finalCta": {
+        "heading": "Bắt đầu từ một tình huống cuộc gọi phù hợp với doanh nghiệp",
+        "lead": "Chia sẻ quy trình hiện tại để đội ngũ Gcalls cùng bạn xác định use case, phạm vi tích hợp và phương án triển khai Voicebot phù hợp.",
+        "primary": {
+          "label": "Đăng ký tư vấn Voicebot",
+          "intent": "consultation",
+          "source": "voicebot_ai",
+          "product": "Gcalls Voicebot AI"
+        },
+        "secondary": {
+          "label": "",
+          "intent": "consultation",
+          "source": "voicebot_ai",
+          "product": "Gcalls Voicebot AI"
+        }
       },
       "direct": null,
       "faq": [
@@ -1163,6 +1229,12 @@
       "product": "QA QC Center",
       "hero": {
         "mockup": "qc_transcript",
+        "cta": {
+          "label": "Yêu cầu demo QA QC Center",
+          "intent": "demo",
+          "source": "qa_qc_center",
+          "product": "QA QC Center"
+        },
         "eyebrow": "QA QC CENTER • POWERED BY QC BOT AI",
         "heading": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
         "lead": "Chuyển nội dung cuộc gọi thành dữ liệu có cấu trúc, áp dụng tiêu chí QA và làm nổi bật những tín hiệu cần kiểm tra để đội quản lý tập trung vào các hội thoại quan trọng.",
@@ -1171,6 +1243,22 @@
           "Chuẩn hóa tiêu chí đánh giá",
           "Ưu tiên cuộc gọi cần xem lại"
         ]
+      },
+      "finalCta": {
+        "heading": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ngũ bạn",
+        "lead": "Chia sẻ quy trình QA, tiêu chí đánh giá và cách đội ngũ đang kiểm tra cuộc gọi để Gcalls tư vấn cấu hình phù hợp.",
+        "primary": {
+          "label": "Yêu cầu demo QA QC Center",
+          "intent": "demo",
+          "source": "qa_qc_center",
+          "product": "QA QC Center"
+        },
+        "secondary": {
+          "label": "Đăng ký tư vấn",
+          "intent": "consultation",
+          "source": "qa_qc_center",
+          "product": "QA QC Center"
+        }
       },
       "direct": {
         "question": "QA QC Center là gì?",
