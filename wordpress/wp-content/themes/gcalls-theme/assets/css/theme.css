@@ -1106,3 +1106,12 @@ html.gcalls-nav-open body { overflow: hidden; }
 /* Related posts under an article. */
 .gcalls-related { margin-top: var(--gcalls-space-5); }
 .gcalls-related__title { font-size: 1.25rem; margin-bottom: var(--gcalls-space-2); }
+
+/* The lead panel's own label. An h4 by markup — it sits inside a section that
+   already has a heading — but sized like the panel title it is. */
+.gcalls-lead__title {
+	margin: 0 0 var(--gcalls-space-2);
+	font-size: 1.25rem;
+	font-weight: 800;
+	letter-spacing: -0.01em;
+}

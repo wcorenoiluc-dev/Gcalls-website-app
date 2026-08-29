@@ -193,7 +193,12 @@ final class Shortcodes {
 		);
 
 		$markup  = '<section class="gcalls-lead">';
-		$markup .= '<h2 class="gcalls-lead__title">' . esc_html( (string) $atts['title'] ) . '</h2>';
+		// h4, not h2. The panel sits inside a section that already has its own
+		// heading, so an h2 here inserts a second top-level heading into that
+		// section — on the home page it produced a forty-second heading React
+		// does not have, out of order, directly under the section title it was
+		// competing with. React labels the panel without promoting it.
+		$markup .= '<h4 class="gcalls-lead__title">' . esc_html( (string) $atts['title'] ) . '</h4>';
 
 		$markup .= '<div class="gcalls-lead__notice" role="status">';
 		$markup .= '<p>' . esc_html__( 'Biểu mẫu hiện chưa được kết nối hệ thống tiếp nhận, nên chưa gửi được. Vui lòng liên hệ Gcalls qua email hoặc hotline — hai kênh này hoạt động bình thường.', 'gcalls-core' ) . '</p>';

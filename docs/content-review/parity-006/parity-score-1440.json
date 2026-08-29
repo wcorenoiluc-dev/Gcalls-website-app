@@ -2,12 +2,12 @@
   {
     "name": "home",
     "route": "/",
-    "score": 90.4,
+    "score": 91.2,
     "parts": {
       "headings": 93,
       "visuals": 100,
       "ctas": 100,
-      "rhythm": 69.3
+      "rhythm": 73.7
     },
     "react": {
       "headings": 41,
@@ -19,7 +19,7 @@
       "headings": 43,
       "visuals": 9,
       "ctas": 11,
-      "height": 12931
+      "height": 13755
     },
     "missingInWp": [],
     "extraInWp": [
