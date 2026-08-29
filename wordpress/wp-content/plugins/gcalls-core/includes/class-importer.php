@@ -1139,6 +1139,37 @@ final class Importer {
 	}
 
 	/**
+	 * Resolves a manifest route to a page, by meta first and then by role.
+	 *
+	 * The route meta is written by the `pages` section, so a run scoped to
+	 * `elementor` alone finds nothing by meta on a site whose front page was set
+	 * up before this manifest existed — which is exactly the demo host. Falling
+	 * back to the page currently holding the role is the same reasoning that
+	 * makes find_existing() adopt it rather than create a second home page: the
+	 * page at `/` IS the front page, whatever its slug happens to be.
+	 *
+	 * @param string $route Normalised route.
+	 * @return int|null Post ID.
+	 */
+	private static function resolve_route( string $route ): ?int {
+		$found = self::find_by_route( $route );
+
+		if ( $found ) {
+			return $found;
+		}
+
+		if ( '/' === $route ) {
+			$front = (int) get_option( 'page_on_front' );
+
+			return $front > 0 ? $front : null;
+		}
+
+		$page = get_page_by_path( trim( $route, '/' ) );
+
+		return $page instanceof \WP_Post ? (int) $page->ID : null;
+	}
+
+	/**
 	 * Applies exported Elementor page templates to the pages that own them.
 	 *
 	 * WHY THIS IS NOT DONE THROUGH THE ELEMENTOR UI
@@ -1224,7 +1255,7 @@ final class Importer {
 				continue;
 			}
 
-			$post_id = self::find_by_route( $route );
+			$post_id = self::resolve_route( $route );
 
 			if ( ! $post_id ) {
 				$counts['errors'][] = sprintf(
