@@ -4,7 +4,7 @@
     "route": "/",
     "width": 1440,
     "overflow": 0,
-    "bytes": 4654305,
+    "bytes": 4655560,
     "file": "docs/content-review/parity-006/home-1440-react.png"
   },
   {
@@ -12,7 +12,7 @@
     "route": "/gcalls-plus-webphone/",
     "width": 1440,
     "overflow": 0,
-    "bytes": 2236879,
+    "bytes": 2238715,
     "file": "docs/content-review/parity-006/gcalls-plus-1440-react.png"
   },
   {
@@ -60,7 +60,7 @@
     "route": "/",
     "width": 1024,
     "overflow": 0,
-    "bytes": 4248028,
+    "bytes": 4249079,
     "file": "docs/content-review/parity-006/home-1024-react.png"
   },
   {
@@ -116,7 +116,7 @@
     "route": "/",
     "width": 768,
     "overflow": 0,
-    "bytes": 4216106,
+    "bytes": 4216201,
     "file": "docs/content-review/parity-006/home-768-react.png"
   },
   {
@@ -124,7 +124,7 @@
     "route": "/gcalls-plus-webphone/",
     "width": 768,
     "overflow": 0,
-    "bytes": 2330604,
+    "bytes": 2330591,
     "file": "docs/content-review/parity-006/gcalls-plus-768-react.png"
   },
   {
@@ -164,7 +164,7 @@
     "route": "/blog/",
     "width": 768,
     "overflow": 0,
-    "bytes": 1796508,
+    "bytes": 1796526,
     "file": "docs/content-review/parity-006/blog-768-react.png"
   },
   {
@@ -172,7 +172,7 @@
     "route": "/",
     "width": 390,
     "overflow": 0,
-    "bytes": 3790546,
+    "bytes": 3790558,
     "file": "docs/content-review/parity-006/home-390-react.png"
   },
   {
@@ -180,7 +180,7 @@
     "route": "/gcalls-plus-webphone/",
     "width": 390,
     "overflow": 0,
-    "bytes": 1906442,
+    "bytes": 1906445,
     "file": "docs/content-review/parity-006/gcalls-plus-390-react.png"
   },
   {
@@ -228,7 +228,7 @@
     "route": "/",
     "width": 320,
     "overflow": 0,
-    "bytes": 3879024,
+    "bytes": 3878996,
     "file": "docs/content-review/parity-006/home-320-react.png"
   },
   {
@@ -236,7 +236,7 @@
     "route": "/gcalls-plus-webphone/",
     "width": 320,
     "overflow": 0,
-    "bytes": 1836634,
+    "bytes": 1836636,
     "file": "docs/content-review/parity-006/gcalls-plus-320-react.png"
   },
   {
@@ -276,7 +276,7 @@
     "route": "/blog/",
     "width": 320,
     "overflow": 0,
-    "bytes": 1719673,
+    "bytes": 1721026,
     "file": "docs/content-review/parity-006/blog-320-react.png"
   },
   {
@@ -284,7 +284,7 @@
     "route": "/",
     "width": 1440,
     "overflow": 0,
-    "bytes": 1162855,
+    "bytes": 1448764,
     "file": "docs/content-review/parity-006/home-1440-wp.png"
   },
   {
@@ -292,7 +292,7 @@
     "route": "/gcalls-plus-webphone/",
     "width": 1440,
     "overflow": 0,
-    "bytes": 898930,
+    "bytes": 1044171,
     "file": "docs/content-review/parity-006/gcalls-plus-1440-wp.png"
   },
   {
@@ -300,7 +300,7 @@
     "route": "/gcalls-cx/",
     "width": 1440,
     "overflow": 0,
-    "bytes": 889770,
+    "bytes": 991575,
     "file": "docs/content-review/parity-006/gcalls-cx-1440-wp.png"
   },
   {
@@ -308,7 +308,7 @@
     "route": "/voicebot-ai/",
     "width": 1440,
     "overflow": 0,
-    "bytes": 894156,
+    "bytes": 998954,
     "file": "docs/content-review/parity-006/voicebot-1440-wp.png"
   },
   {
@@ -316,29 +316,31 @@
     "route": "/qc-bot-ai/",
     "width": 1440,
     "overflow": 0,
-    "bytes": 794073,
+    "bytes": 875312,
     "file": "docs/content-review/parity-006/qa-qc-1440-wp.png"
   },
   {
     "target": "wp",
     "route": "/uoc-tinh-chi-phi/",
     "width": 1440,
-    "overflow": null,
-    "error": "Error: page.goto: net::ERR_NETWORK_IO_SUSPENDED at https://ashernguyenxuanthuy.com/uoc-tinh-chi-phi/"
+    "overflow": 0,
+    "bytes": 142345,
+    "file": "docs/content-review/parity-006/estimator-1440-wp.png"
   },
   {
     "target": "wp",
     "route": "/blog/",
     "width": 1440,
-    "overflow": null,
-    "error": "Error: page.goto: Navigation to \"https://ashernguyenxuanthuy.com/blog/\" is interrupted by another navigation to \"chrome-error://chromewebdata/\""
+    "overflow": 0,
+    "bytes": 469914,
+    "file": "docs/content-review/parity-006/blog-1440-wp.png"
   },
   {
     "target": "wp",
     "route": "/",
     "width": 1024,
     "overflow": 0,
-    "bytes": 1077003,
+    "bytes": 1357819,
     "file": "docs/content-review/parity-006/home-1024-wp.png"
   },
   {
@@ -346,7 +348,7 @@
     "route": "/gcalls-plus-webphone/",
     "width": 1024,
     "overflow": 0,
-    "bytes": 894730,
+    "bytes": 845796,
     "file": "docs/content-review/parity-006/gcalls-plus-1024-wp.png"
   },
   {
@@ -354,7 +356,7 @@
     "route": "/gcalls-cx/",
     "width": 1024,
     "overflow": 0,
-    "bytes": 873430,
+    "bytes": 987374,
     "file": "docs/content-review/parity-006/gcalls-cx-1024-wp.png"
   },
   {
@@ -362,7 +364,7 @@
     "route": "/voicebot-ai/",
     "width": 1024,
     "overflow": 0,
-    "bytes": 880826,
+    "bytes": 979930,
     "file": "docs/content-review/parity-006/voicebot-1024-wp.png"
   },
   {
@@ -370,7 +372,7 @@
     "route": "/qc-bot-ai/",
     "width": 1024,
     "overflow": 0,
-    "bytes": 796220,
+    "bytes": 882928,
     "file": "docs/content-review/parity-006/qa-qc-1024-wp.png"
   },
   {
@@ -394,58 +396,63 @@
     "route": "/",
     "width": 768,
     "overflow": 0,
-    "bytes": 1038461,
+    "bytes": 1353813,
     "file": "docs/content-review/parity-006/home-768-wp.png"
   },
   {
     "target": "wp",
     "route": "/gcalls-plus-webphone/",
     "width": 768,
-    "overflow": null,
-    "error": "TimeoutError: page.goto: Timeout 45000ms exceeded."
+    "overflow": 0,
+    "bytes": 800832,
+    "file": "docs/content-review/parity-006/gcalls-plus-768-wp.png"
   },
   {
     "target": "wp",
     "route": "/gcalls-cx/",
     "width": 768,
     "overflow": 0,
-    "bytes": 819096,
+    "bytes": 936664,
     "file": "docs/content-review/parity-006/gcalls-cx-768-wp.png"
   },
   {
     "target": "wp",
     "route": "/voicebot-ai/",
     "width": 768,
-    "overflow": null,
-    "error": "TimeoutError: page.goto: Timeout 45000ms exceeded."
+    "overflow": 0,
+    "bytes": 949411,
+    "file": "docs/content-review/parity-006/voicebot-768-wp.png"
   },
   {
     "target": "wp",
     "route": "/qc-bot-ai/",
     "width": 768,
-    "overflow": null,
-    "error": "Error: page.goto: Navigation to \"https://ashernguyenxuanthuy.com/qc-bot-ai/\" is interrupted by another navigation to \"https://ashernguyenxuanthuy.com/voicebot-ai/\""
+    "overflow": 0,
+    "bytes": 830228,
+    "file": "docs/content-review/parity-006/qa-qc-768-wp.png"
   },
   {
     "target": "wp",
     "route": "/uoc-tinh-chi-phi/",
     "width": 768,
-    "overflow": null,
-    "error": "Error: page.goto: Navigation to \"https://ashernguyenxuanthuy.com/uoc-tinh-chi-phi/\" is interrupted by another navigation to \"https://ashernguyenxuanthuy.com/qc-bot-ai/\""
+    "overflow": 0,
+    "bytes": 132536,
+    "file": "docs/content-review/parity-006/estimator-768-wp.png"
   },
   {
     "target": "wp",
     "route": "/blog/",
     "width": 768,
-    "overflow": null,
-    "error": "Error: page.goto: Navigation to \"https://ashernguyenxuanthuy.com/blog/\" is interrupted by another navigation to \"https://ashernguyenxuanthuy.com/uoc-tinh-chi-phi/\""
+    "overflow": 0,
+    "bytes": 493997,
+    "file": "docs/content-review/parity-006/blog-768-wp.png"
   },
   {
     "target": "wp",
     "route": "/",
     "width": 390,
     "overflow": 0,
-    "bytes": 956783,
+    "bytes": 1280379,
     "file": "docs/content-review/parity-006/home-390-wp.png"
   },
   {
@@ -453,7 +460,7 @@
     "route": "/gcalls-plus-webphone/",
     "width": 390,
     "overflow": 0,
-    "bytes": 665636,
+    "bytes": 745635,
     "file": "docs/content-review/parity-006/gcalls-plus-390-wp.png"
   },
   {
@@ -461,7 +468,7 @@
     "route": "/gcalls-cx/",
     "width": 390,
     "overflow": 0,
-    "bytes": 808946,
+    "bytes": 934525,
     "file": "docs/content-review/parity-006/gcalls-cx-390-wp.png"
   },
   {
@@ -469,7 +476,7 @@
     "route": "/voicebot-ai/",
     "width": 390,
     "overflow": 0,
-    "bytes": 844330,
+    "bytes": 932212,
     "file": "docs/content-review/parity-006/voicebot-390-wp.png"
   },
   {
@@ -477,7 +484,7 @@
     "route": "/qc-bot-ai/",
     "width": 390,
     "overflow": 0,
-    "bytes": 726936,
+    "bytes": 819265,
     "file": "docs/content-review/parity-006/qa-qc-390-wp.png"
   },
   {
@@ -492,15 +499,16 @@
     "target": "wp",
     "route": "/blog/",
     "width": 390,
-    "overflow": null,
-    "error": "TimeoutError: page.screenshot: Timeout 30000ms exceeded."
+    "overflow": 0,
+    "bytes": 520142,
+    "file": "docs/content-review/parity-006/blog-390-wp.png"
   },
   {
     "target": "wp",
     "route": "/",
     "width": 320,
     "overflow": 0,
-    "bytes": 920675,
+    "bytes": 1368246,
     "file": "docs/content-review/parity-006/home-320-wp.png"
   },
   {
@@ -508,7 +516,7 @@
     "route": "/gcalls-plus-webphone/",
     "width": 320,
     "overflow": 0,
-    "bytes": 702320,
+    "bytes": 727652,
     "file": "docs/content-review/parity-006/gcalls-plus-320-wp.png"
   },
   {
@@ -516,7 +524,7 @@
     "route": "/gcalls-cx/",
     "width": 320,
     "overflow": 0,
-    "bytes": 810421,
+    "bytes": 937887,
     "file": "docs/content-review/parity-006/gcalls-cx-320-wp.png"
   },
   {
@@ -524,7 +532,7 @@
     "route": "/voicebot-ai/",
     "width": 320,
     "overflow": 0,
-    "bytes": 853956,
+    "bytes": 941173,
     "file": "docs/content-review/parity-006/voicebot-320-wp.png"
   },
   {
@@ -532,7 +540,7 @@
     "route": "/qc-bot-ai/",
     "width": 320,
     "overflow": 0,
-    "bytes": 737551,
+    "bytes": 829510,
     "file": "docs/content-review/parity-006/qa-qc-320-wp.png"
   },
   {
