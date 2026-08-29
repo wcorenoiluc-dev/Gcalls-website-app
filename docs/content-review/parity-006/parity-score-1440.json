@@ -27,12 +27,12 @@
   {
     "name": "gcalls-plus",
     "route": "/gcalls-plus-webphone/",
-    "score": 84.3,
+    "score": 86.1,
     "parts": {
-      "headings": 71.9,
+      "headings": 75.4,
       "visuals": 100,
       "ctas": 100,
-      "rhythm": 91.9
+      "rhythm": 92.1
     },
     "react": {
       "headings": 55,
@@ -41,20 +41,14 @@
       "height": 13360
     },
     "wp": {
-      "headings": 64,
+      "headings": 69,
       "visuals": 11,
       "ctas": 4,
-      "height": 12277
+      "height": 12303
     },
     "missingInWp": [
-      "Sales",
-      "Chăm sóc khách hàng",
-      "Giáo dục",
-      "Dịch vụ",
-      "Thương mại điện tử",
       "PHÙ HỢP VỚI GCALLS PLUS",
-      "KHI NHU CẦU MỞ RỘNG",
-      "Câu hỏi thường gặp về Gcalls Plus Webphone"
+      "KHI NHU CẦU MỞ RỘNG"
     ],
     "extraInWp": [
       "Hoạt động trực tiếp trên trình duyệt",
@@ -72,19 +66,18 @@
       "Lịch sử cuộc gọi của đội ngũ",
       "Dữ liệu hoạt động tập trung",
       "Trạng thái Agent trong quá trình vận hành",
-      "Câu hỏi thường gặp",
       "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
     ]
   },
   {
     "name": "gcalls-cx",
     "route": "/gcalls-cx/",
-    "score": 73.3,
+    "score": 74.7,
     "parts": {
-      "headings": 69.7,
+      "headings": 72.5,
       "visuals": 100,
       "ctas": 66.7,
-      "rhythm": 67.3
+      "rhythm": 67.5
     },
     "react": {
       "headings": 59,
@@ -93,18 +86,12 @@
       "height": 13533
     },
     "wp": {
-      "headings": 76,
+      "headings": 80,
       "visuals": 5,
       "ctas": 4,
-      "height": 9105
+      "height": 9131
     },
-    "missingInWp": [
-      "Tài chính",
-      "Bảo hiểm",
-      "Bất động sản",
-      "Doanh nghiệp tăng trưởng nhanh",
-      "Câu hỏi thường gặp về Gcalls CX"
-    ],
+    "missingInWp": [],
     "extraInWp": [
       "Xem hội thoại theo kênh",
       "Theo dõi trạng thái xử lý",
@@ -126,7 +113,6 @@
       "Trạng thái ticket",
       "Phân bổ theo kênh",
       "Workload của đội ngũ",
-      "Câu hỏi thường gặp",
       "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
     ]
   },
@@ -163,19 +149,19 @@
       "Phân loại kết quả cuộc gọi theo các nhóm đã được cấu hình.",
       "Chuyển các tình huống cần con người xử lý sang đội ngũ.",
       "Cung cấp dữ liệu phục vụ theo dõi chiến dịch.",
-      "Câu hỏi thường gặp",
+      "Câu hỏi thường gặp về Gcalls Voicebot AI",
       "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
     ]
   },
   {
     "name": "qa-qc",
     "route": "/qc-bot-ai/",
-    "score": 76.7,
+    "score": 78.3,
     "parts": {
-      "headings": 78,
+      "headings": 81,
       "visuals": 100,
       "ctas": 66.7,
-      "rhythm": 63.7
+      "rhythm": 63.9
     },
     "react": {
       "headings": 56,
@@ -184,20 +170,15 @@
       "height": 12783
     },
     "wp": {
-      "headings": 59,
+      "headings": 63,
       "visuals": 4,
       "ctas": 4,
-      "height": 8142
+      "height": 8169
     },
     "missingInWp": [
       "AI hỗ trợ",
       "QA xác nhận",
-      "Manager cải thiện",
-      "Customer Service QA",
-      "Telesales QA",
-      "BPO / Contact Center",
-      "Finance & Insurance",
-      "Câu hỏi thường gặp về QA QC Center"
+      "Manager cải thiện"
     ],
     "extraInWp": [
       "Thiết lập tiêu chí QA",
@@ -209,7 +190,6 @@
       "Làm nổi bật tín hiệu cảm xúc",
       "Xác định hội thoại có dấu hiệu bất thường",
       "Theo dõi xu hướng thay vì chỉ nhìn từng cuộc gọi riêng lẻ",
-      "Câu hỏi thường gặp",
       "Trao đổi cấu hình phù hợp với đội ngũ của bạn"
     ]
   },
