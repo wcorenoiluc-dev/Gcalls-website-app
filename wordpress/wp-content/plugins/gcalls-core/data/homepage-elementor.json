@@ -1,0 +1,1766 @@
+{
+  "version": "0.4",
+  "title": "Gcalls — Trang chủ",
+  "type": "page",
+  "content": [
+    {
+      "id": "34df847",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#f5f1fc"
+      },
+      "elements": [
+        {
+          "id": "03cfe53",
+          "elType": "column",
+          "settings": {
+            "_column_size": 50,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "4578a32",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div class=\"gc-hero\"><p class=\"gc-eyebrow gc-eyebrow--hero\"><span class=\"gc-eyebrow__dot\"></span>Gcalls Webphone</p><h1 class=\"gc-h1\">Tổng Đài Ảo Tích Hợp CRM - <span class=\"gc-grad\">Bứt Phá Doanh Số</span> Cho Đội Sales &amp; CSKH</h1><p class=\"gc-hero-lede\">Giải pháp tổng đài thông minh giúp đội Sales và CSKH thực hiện cuộc gọi trên trình duyệt, lưu lịch sử và ghi âm, quản lý thông tin khách hàng, theo dõi hiệu suất và kết nối với hệ thống quản trị doanh nghiệp.</p><div class=\"gc-ctarow\"><a class=\"gc-btn gc-btn--primary\" href=\"/lien-he/?intent=demo&source=consultation&product=Gcalls%20Plus%20Webphone\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z\"/></svg>Đăng ký demo</a><a class=\"gc-btn gc-btn--ghost\" href=\"/gcalls-plus-webphone/\">Khám phá Gcalls Webphone<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m9 18 6-6-6-6\"/></svg></a></div><div class=\"gc-checks\"><div class=\"gc-check\"><span class=\"gc-check__i\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span>Gọi trực tiếp trên trình duyệt</span></div><div class=\"gc-check\"><span class=\"gc-check__i\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span>Lưu lịch sử và ghi âm cuộc gọi</span></div><div class=\"gc-check\"><span class=\"gc-check__i\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span>Quản lý danh bạ khách hàng</span></div><div class=\"gc-check\"><span class=\"gc-check__i\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span>Theo dõi KPI realtime</span></div></div><div class=\"gc-fine\"><p>Phạm vi triển khai và cấu hình được xác nhận cùng đội ngũ Gcalls theo hệ thống thực tế của doanh nghiệp.</p><p>Hình ảnh giao diện và toàn bộ số liệu trong ảnh là minh họa, không phải kết quả vận hành của một doanh nghiệp cụ thể.</p></div></div>"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        },
+        {
+          "id": "026d020",
+          "elType": "column",
+          "settings": {
+            "_column_size": 50,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "3c89ba5",
+              "elType": "widget",
+              "widgetType": "shortcode",
+              "settings": {
+                "shortcode": "[gcalls_mockup id=\"hero\"]"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "77046cf",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "a5f9ea1",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "7a7e0da",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div class=\"gc-head\"><p class=\"gc-eyebrow\">Nỗi đau doanh nghiệp</p><h2 class=\"gc-h2\">“Khoảng Trống” Vận Hành Khiến Doanh Nghiệp <span class=\"gc-grad\">Rò Rỉ Khách Hàng Và Thất Thoát Doanh Thu</span></h2><p class=\"gc-head__lead\">Đội Sales và CSKH có thể mất nhiều thời gian và dữ liệu khi hệ thống nghe gọi, quản lý khách hàng và báo cáo vận hành hoạt động rời rạc.</p></div>"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "d131e08",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "48",
+          "left": "0",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "47910d8",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "8e7b54d",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div class=\"gc-cards gc-cards--3\"><article class=\"gc-card\"><div class=\"gc-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-3.33-2.67m-2.67-3.34a19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91\"/><line x1=\"22\" x2=\"2\" y1=\"2\" y2=\"22\"/></svg></div><div class=\"gc-card__top\"><h3>Gián đoạn hoạt động telesales khi số gọi ra bị khóa hoặc bị người nhận báo cáo spam</h3><span class=\"gc-card__n\" aria-hidden=\"true\">01</span></div><p class=\"gc-card__body\">Chiến dịch gọi ra đang chạy có thể dừng giữa chừng, đội ngũ phải chờ xử lý đầu số trước khi tiếp tục liên hệ khách hàng.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><line x1=\"17\" x2=\"22\" y1=\"8\" y2=\"13\"/><line x1=\"22\" x2=\"17\" y1=\"8\" y2=\"13\"/></svg></div><div class=\"gc-card__top\"><h3>Khách hàng e ngại và từ chối cuộc gọi đến từ số lạ</h3><span class=\"gc-card__n\" aria-hidden=\"true\">02</span></div><p class=\"gc-card__body\">Khi cuộc gọi không mang dấu hiệu nhận diện, người nhận khó biết ai đang gọi và thường bỏ qua trước khi nghe nội dung tư vấn.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\"/><path d=\"M12 8v4\"/><path d=\"M12 16h.01\"/></svg></div><div class=\"gc-card__top\"><h3>Quản lý khó kiểm soát chất lượng tư vấn thực tế</h3><span class=\"gc-card__n\" aria-hidden=\"true\">03</span></div><p class=\"gc-card__body\">Nếu không có ghi âm, ghi chú và tiêu chí đánh giá tập trung, quản lý chỉ nắm được một phần nội dung trao đổi giữa nhân viên và khách hàng.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M3 3v16a2 2 0 0 0 2 2h16\"/><path d=\"M18 17V9\"/><path d=\"M13 17V5\"/><path d=\"M8 17v-3\"/></svg></div><div class=\"gc-card__top\"><h3>Thiếu dữ liệu thời gian thực để đánh giá hiệu suất đội ngũ</h3><span class=\"gc-card__n\" aria-hidden=\"true\">04</span></div><p class=\"gc-card__body\">Báo cáo tổng hợp thủ công thường đến sau khi vấn đề đã xảy ra, khiến quản lý khó điều phối nguồn lực trong ngày.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20\"/><path d=\"M2 12h20\"/></svg></div><div class=\"gc-card__top\"><h3>Chi phí cao và tỷ lệ bắt máy thấp khi liên hệ thị trường quốc tế</h3><span class=\"gc-card__n\" aria-hidden=\"true\">05</span></div><p class=\"gc-card__body\">Gọi ra thị trường nước ngoài bằng đầu số không phù hợp làm tăng chi phí liên lạc và giảm khả năng khách hàng nhận máy.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><rect width=\"20\" height=\"16\" x=\"2\" y=\"4\" rx=\"2\"/><path d=\"M6 8h.01\"/><path d=\"M10 8h.01\"/><path d=\"M14 8h.01\"/><path d=\"M18 8h.01\"/><path d=\"M8 12h.01\"/><path d=\"M12 12h.01\"/><path d=\"M16 12h.01\"/><path d=\"M7 16h10\"/></svg></div><div class=\"gc-card__top\"><h3>Nhân viên mất thời gian nhập liệu và đối chiếu thông tin thủ công</h3><span class=\"gc-card__n\" aria-hidden=\"true\">06</span></div><p class=\"gc-card__body\">Mỗi cuộc gọi kéo theo thao tác sao chép, nhập lại và kiểm tra chéo giữa các hệ thống, làm chậm quy trình và dễ phát sinh sai sót.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article></div>"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "1f85ba5",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "9de5a87",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "6dae004",
+              "elType": "widget",
+              "widgetType": "shortcode",
+              "settings": {
+                "shortcode": "[gcalls_loss_estimator]"
+              },
+              "elements": []
+            },
+            {
+              "id": "56ea45f",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Hoặc trao đổi trực tiếp với đội ngũ Gcalls",
+                "link": {
+                  "url": "/lien-he/?intent=consultation&source=consultation",
+                  "is_external": "",
+                  "nofollow": ""
+                },
+                "align": "left",
+                "background_color": "#673ab7",
+                "button_text_color": "#ffffff",
+                "border_border": "",
+                "border_width": {},
+                "border_color": "",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "8",
+                  "bottom": "8",
+                  "left": "8",
+                  "isLinked": true
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "600"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "797897b",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#4a2391"
+      },
+      "elements": [
+        {
+          "id": "8679ef4",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "9b73133",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Tổng Đài Thông Minh Gcalls: Bứt Phá Doanh Số Đội Ngũ & Nâng Cao Trải Nghiệm Khách Hàng",
+                "header_size": "h2",
+                "title_color": "#ffffff",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "c433d56",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Gcalls kết nối hoạt động nghe gọi, dữ liệu khách hàng, lịch sử chăm sóc và báo cáo vận hành trong một hệ thống thống nhất, đồng thời hỗ trợ tích hợp với CRM, Helpdesk, POS và các giải pháp tự động hóa phù hợp.</p>",
+                "text_color": "#e9defb",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "08bb439",
+              "elType": "widget",
+              "widgetType": "icon-list",
+              "settings": {
+                "icon_list": [
+                  {
+                    "_id": "308effd",
+                    "text": "Vận hành trên trình duyệt",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "68b0737",
+                    "text": "Tích hợp CRM, POS và Helpdesk",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "b34b56a",
+                    "text": "Hỗ trợ nhu cầu liên lạc quốc tế",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "4db224d",
+                    "text": "Báo cáo theo thời gian thực",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  }
+                ],
+                "icon_color": "#ffffff",
+                "text_color": "#ffffff",
+                "space_between": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "294d8bb",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Đăng ký tư vấn",
+                "link": {
+                  "url": "/lien-he/?intent=consultation&source=homepage-bridge",
+                  "is_external": "",
+                  "nofollow": ""
+                },
+                "align": "left",
+                "background_color": "#673ab7",
+                "button_text_color": "#ffffff",
+                "border_border": "",
+                "border_width": {},
+                "border_color": "",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "8",
+                  "bottom": "8",
+                  "left": "8",
+                  "isLinked": true
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "600"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "d388508",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "aa01175",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "fb78ed1",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Hệ sinh thái sản phẩm và giải pháp Gcalls",
+                "header_size": "h2",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "7a7a338",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Doanh nghiệp có thể bắt đầu từ một sản phẩm phù hợp với nhu cầu hiện tại, sau đó mở rộng sang các giải pháp tích hợp khi quy mô vận hành thay đổi.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "2b52248",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "d9ca19c",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "e79f27e",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Sản phẩm Gcalls",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "67c54a9",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "99b0e93",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "b90daac",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div class=\"gc-cards gc-cards--4\"><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>Gcalls Plus Webphone</h3><span class=\"gc-card__n\" aria-hidden=\"true\">01</span></div><p class=\"gc-card__body\">Tổng đài trên trình duyệt hỗ trợ nghe gọi, lịch sử cuộc gọi, ghi âm, danh bạ và theo dõi hoạt động đội ngũ.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>QA QC Center</h3><span class=\"gc-card__n\" aria-hidden=\"true\">02</span></div><p class=\"gc-card__body\">Hỗ trợ chuyển giọng nói thành văn bản, phân tích từ khóa, chấm điểm theo tiêu chí và tổng hợp dữ liệu phục vụ kiểm soát chất lượng.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>Gcalls CX</h3><span class=\"gc-card__n\" aria-hidden=\"true\">03</span></div><p class=\"gc-card__body\">Nền tảng Contact Center hỗ trợ quản lý tương tác đa kênh và quy trình chăm sóc khách hàng.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>Gcalls Voicebot AI</h3><span class=\"gc-card__n\" aria-hidden=\"true\">04</span></div><p class=\"gc-card__body\">Gcalls tư vấn, kết nối và tích hợp Voicebot vào hệ thống tổng đài theo kịch bản và phạm vi triển khai của doanh nghiệp.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article></div>"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "e371cf0",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "2adfd8e",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "9da69a2",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Giải pháp Gcalls",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "3c72d4b",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "1f438aa",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "c0774c1",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div class=\"gc-cards gc-cards--4\"><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>Tích hợp CRM</h3><span class=\"gc-card__n\" aria-hidden=\"true\">01</span></div><p class=\"gc-card__body\">Kết nối cuộc gọi với dữ liệu và quy trình trên CRM của doanh nghiệp.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>Tích hợp Helpdesk</h3><span class=\"gc-card__n\" aria-hidden=\"true\">02</span></div><p class=\"gc-card__body\">Đưa cuộc gọi vào quy trình hỗ trợ và ticket của đội CSKH.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>Tích hợp POS</h3><span class=\"gc-card__n\" aria-hidden=\"true\">03</span></div><p class=\"gc-card__body\">Kết nối cuộc gọi với dữ liệu bán hàng và đơn hàng trên hệ thống POS.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>Tổng đài quốc tế</h3><span class=\"gc-card__n\" aria-hidden=\"true\">04</span></div><p class=\"gc-card__body\">Đầu số và phương án liên lạc theo từng thị trường doanh nghiệp phục vụ.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article></div>"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "d643d84",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#faf9fc"
+      },
+      "elements": [
+        {
+          "id": "e2313d7",
+          "elType": "column",
+          "settings": {
+            "_column_size": 50,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "1ba0fc2",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Theo dõi toàn bộ hoạt động cuộc gọi theo thời gian thực",
+                "header_size": "h2",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "17378f3",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Mỗi cuộc gọi đều trở thành dữ liệu giá trị",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "8e757b6",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Từ cuộc gọi đến, cuộc gọi đi, cuộc gọi nhỡ, ghi âm, ghi chú đến đánh giá chất lượng cuộc gọi — tất cả đều được lưu trữ tập trung trên Gcalls Webphone.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "7bec024",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Lịch sử trao đổi, ghi âm, ghi chú và kết quả cuộc gọi được lưu lại giúp đội Sales và CSKH tiếp nối công việc với đầy đủ ngữ cảnh của lần liên hệ trước.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        },
+        {
+          "id": "4d27873",
+          "elType": "column",
+          "settings": {
+            "_column_size": 50,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "67c6769",
+              "elType": "widget",
+              "widgetType": "shortcode",
+              "settings": {
+                "shortcode": "[gcalls_mockup id=\"call_timeline\"]"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "0d6630f",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "0bc38f1",
+          "elType": "column",
+          "settings": {
+            "_column_size": 50,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "2ec8da1",
+              "elType": "widget",
+              "widgetType": "shortcode",
+              "settings": {
+                "shortcode": "[gcalls_mockup id=\"crm\"]"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        },
+        {
+          "id": "1ccf8fe",
+          "elType": "column",
+          "settings": {
+            "_column_size": 50,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "a275f21",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Quản lý khách hàng tập trung ngay trên Gcalls",
+                "header_size": "h2",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "1d8e0bc",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Mỗi khách hàng đều có một hồ sơ riêng",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "61da6a6",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Toàn bộ thông tin khách hàng, lịch sử tương tác và ghi chú chăm sóc được lưu trữ tập trung giúp đội Sales và CSKH làm việc hiệu quả hơn.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "8c1635d",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Khi có cuộc gọi đến hoặc đi, nhân viên có thể xem ngay thông tin khách hàng, lịch sử chăm sóc, ghi chú và các hoạt động liên quan mà không cần chuyển đổi giữa nhiều hệ thống.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "57d453c",
+              "elType": "widget",
+              "widgetType": "icon-list",
+              "settings": {
+                "icon_list": [
+                  {
+                    "_id": "0b2b402",
+                    "text": "Quản lý tập trung trên Webphone",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "25e80c2",
+                    "text": "Tương tác được lưu trữ đầy đủ",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "756b457",
+                    "text": "Tích hợp sẵn trong nền tảng",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  }
+                ],
+                "icon_color": "#673ab7",
+                "text_color": "#5b5f6b",
+                "space_between": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "19c5434",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#f5f1fc"
+      },
+      "elements": [
+        {
+          "id": "d8a0a00",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "9735150",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Theo dõi hiệu suất đội ngũ theo thời gian thực",
+                "header_size": "h2",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "169c703",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Dashboard trực quan giúp quản lý theo dõi tình trạng cuộc gọi, hiệu suất nhân viên và chất lượng vận hành chỉ trong vài giây.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "6dd0303",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Không cần tổng hợp báo cáo thủ công từ nhiều nguồn. Mọi chỉ số quan trọng đều được hiển thị trực quan giúp quản lý nhanh chóng nắm bắt tình hình vận hành.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "71c909b",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Ra quyết định nhanh hơn với dữ liệu trực quan",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "ee2732a",
+              "elType": "widget",
+              "widgetType": "shortcode",
+              "settings": {
+                "shortcode": "[gcalls_mockup id=\"analytics\"]"
+              },
+              "elements": []
+            },
+            {
+              "id": "0ca3086",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Các chỉ số quan trọng trong một màn hình",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "55a013a",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Dành cho quản lý, trưởng nhóm và chủ doanh nghiệp",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "1f4666a",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "c6a6a6b",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "b37e755",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Xây dựng hệ thống tổng đài doanh nghiệp trên nền tảng Cloud",
+                "header_size": "h2",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "0df6f04",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Từ doanh nghiệp nhỏ đến Contact Center nhiều chi nhánh, Gcalls giúp triển khai hệ thống tổng đài linh hoạt, dễ mở rộng và vận hành hoàn toàn trên nền tảng điện toán đám mây.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "5a51f78",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Cấu hình luồng cuộc gọi tới đúng bộ phận, đúng nhân viên hoặc đúng chi nhánh, kèm nhóm đổ chuông và chuyển tiếp cho trường hợp không có người nhận máy.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "3224386",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Điều hướng cuộc gọi đến đúng người phụ trách",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "16f49ed",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Đầy đủ tính năng Cloud PBX doanh nghiệp",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "62d0f11",
+              "elType": "widget",
+              "widgetType": "shortcode",
+              "settings": {
+                "shortcode": "[gcalls_mockup id=\"cloud\"]"
+              },
+              "elements": []
+            },
+            {
+              "id": "0ea0ca0",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Hành trình cuộc gọi từ đầu đến cuối",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "139c3a7",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Cloud Call Center",
+                "link": {
+                  "url": "/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center",
+                  "is_external": "",
+                  "nofollow": ""
+                },
+                "align": "left",
+                "background_color": "#673ab7",
+                "button_text_color": "#ffffff",
+                "border_border": "",
+                "border_width": {},
+                "border_color": "",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "8",
+                  "bottom": "8",
+                  "left": "8",
+                  "isLinked": true
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "600"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "f81a21a",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#faf9fc"
+      },
+      "elements": [
+        {
+          "id": "6bdb3f1",
+          "elType": "column",
+          "settings": {
+            "_column_size": 50,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "f6fe030",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Nhận diện khách hàng ngay khi cuộc gọi đến",
+                "header_size": "h2",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "908c6ac",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Khi có cuộc gọi đến, nhân viên xem được thông tin khách hàng lấy từ hệ thống đã kết nối — trong phạm vi tích hợp được cấu hình cho doanh nghiệp.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        },
+        {
+          "id": "d3e75b5",
+          "elType": "column",
+          "settings": {
+            "_column_size": 50,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "33b9e52",
+              "elType": "widget",
+              "widgetType": "shortcode",
+              "settings": {
+                "shortcode": "[gcalls_mockup id=\"customer_popup\"]"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "d338bdb",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "5908a36",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "b24b439",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Biến khách truy cập website thành cuộc gọi",
+                "header_size": "h2",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "45d8d51",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Nhúng nút gọi vào website chỉ với vài dòng code. Khách truy cập để lại số điện thoại và đội ngũ gọi lại theo cấu hình phân phối cuộc gọi của doanh nghiệp.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "9b4e8db",
+              "elType": "widget",
+              "widgetType": "icon-list",
+              "settings": {
+                "icon_list": [
+                  {
+                    "_id": "55cb89d",
+                    "text": "Tăng tỷ lệ chuyển đổi từ visitor thành lead",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "b5b9657",
+                    "text": "Thu thập số điện thoại và gọi lại tức thì",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "6401f80",
+                    "text": "Theo dõi nguồn cuộc gọi từ từng trang web",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  }
+                ],
+                "icon_color": "#673ab7",
+                "text_color": "#5b5f6b",
+                "space_between": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "a220837",
+              "elType": "widget",
+              "widgetType": "shortcode",
+              "settings": {
+                "shortcode": "[gcalls_mockup id=\"widget\"]"
+              },
+              "elements": []
+            },
+            {
+              "id": "69aabcf",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Call Button Widget",
+                "link": {
+                  "url": "/lien-he/?intent=consultation&source=consultation&solution=Call%20Button%20Widget",
+                  "is_external": "",
+                  "nofollow": ""
+                },
+                "align": "left",
+                "background_color": "#673ab7",
+                "button_text_color": "#ffffff",
+                "border_border": "",
+                "border_width": {},
+                "border_color": "",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "8",
+                  "bottom": "8",
+                  "left": "8",
+                  "isLinked": true
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "600"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "baddcf5",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#673ab7"
+      },
+      "elements": [
+        {
+          "id": "4ad0aa1",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "e8e9460",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Hệ sinh thái tích hợp của Gcalls",
+                "header_size": "h3",
+                "title_color": "#ffffff",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "45b1106",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Kết nối Gcalls với hệ thống CRM của doanh nghiệp bạn",
+                "header_size": "h2",
+                "title_color": "#ffffff",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "26e7436",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Gcalls giúp doanh nghiệp đồng bộ dữ liệu khách hàng, cuộc gọi và hoạt động chăm sóc khách hàng với CRM, Helpdesk và các hệ thống nội bộ thông qua API mở và Webhook.</p>",
+                "text_color": "#e9defb",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "17cbfe1",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Từ CRM, Helpdesk đến các hệ thống nội bộ — Gcalls kết nối qua API mở. Phạm vi và công việc cần thiết được đánh giá trong quá trình khảo sát kỹ thuật.</p>",
+                "text_color": "#e9defb",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "2d4ceb3",
+              "elType": "widget",
+              "widgetType": "shortcode",
+              "settings": {
+                "shortcode": "[gcalls_mockup id=\"integrations\"]"
+              },
+              "elements": []
+            },
+            {
+              "id": "cd96722",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Trao đổi phạm vi tích hợp cùng đội ngũ Gcalls",
+                "header_size": "h3",
+                "title_color": "#ffffff",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "8cd36a7",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Trao đổi phạm vi tích hợp cùng đội ngũ Gcalls",
+                "link": {
+                  "url": "/lien-he/?intent=consultation&source=homepage-integration&solution=CRM%20Integration",
+                  "is_external": "",
+                  "nofollow": ""
+                },
+                "align": "left",
+                "background_color": "#673ab7",
+                "button_text_color": "#ffffff",
+                "border_border": "",
+                "border_width": {},
+                "border_color": "",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "8",
+                  "bottom": "8",
+                  "left": "8",
+                  "isLinked": true
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "600"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "7b99ca8",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "578fa75",
+          "elType": "column",
+          "settings": {
+            "_column_size": 50,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "9177efb",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Mang tổng đài doanh nghiệp theo bạn đến bất kỳ đâu",
+                "header_size": "h2",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "d411902",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Dù đang ở văn phòng, làm việc tại nhà hay di chuyển gặp khách hàng, đội ngũ vẫn có thể tiếp nhận và thực hiện cuộc gọi như đang ngồi tại tổng đài.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "979663f",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Quản lý theo dõi trạng thái từng nhân viên, lịch sử hoạt động và hiệu suất — dù đội ngũ đang làm việc từ bất kỳ đâu.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "0e63db4",
+              "elType": "widget",
+              "widgetType": "icon-list",
+              "settings": {
+                "icon_list": [
+                  {
+                    "_id": "b8bafd3",
+                    "text": "Gọi điện trực tiếp trên Chrome, Edge, Safari — không cài extension",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "e80649d",
+                    "text": "Chất lượng âm thanh HD, noise cancellation, dễ cấu hình",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "2a5cb4c",
+                    "text": "Dữ liệu lưu trên Cloud, truy cập bất cứ đâu, không phụ thuộc server nội bộ",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "3f76ca7",
+                    "text": "Lịch sử, ghi chú, trạng thái đồng bộ tức thì giữa các thiết bị",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  }
+                ],
+                "icon_color": "#673ab7",
+                "text_color": "#5b5f6b",
+                "space_between": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "0bb94e7",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Chỉ cần trình duyệt là có thể bắt đầu",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "86e1d24",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Biết đội ngũ đang làm gì theo thời gian thực",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        },
+        {
+          "id": "dc94f88",
+          "elType": "column",
+          "settings": {
+            "_column_size": 50,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "25e5662",
+              "elType": "widget",
+              "widgetType": "shortcode",
+              "settings": {
+                "shortcode": "[gcalls_mockup id=\"work_anywhere\"]"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "2500cf5",
+      "elType": "section",
+      "settings": {
+        "content_width": "boxed",
+        "padding": {
+          "unit": "px",
+          "top": "104",
+          "right": "0",
+          "bottom": "104",
+          "left": "0",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#f5f1fc"
+      },
+      "elements": [
+        {
+          "id": "f24c133",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "ef8c9f5",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Tổng đài doanh nghiệp luôn đồng hành cùng đội ngũ của bạn",
+                "header_size": "h2",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "a65ad71",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Gcalls phù hợp với mô hình đội ngũ nào",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "3e3b0be",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Bắt đầu với đội ngũ hiện tại của bạn",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "961bfd8",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Không cần phần cứng, không cần cài đặt phức tạp — chỉ cần trình duyệt và kết nối internet, đội ngũ của bạn đã có thể bắt đầu ngay.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "7652f60",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Đội ngũ Gcalls trao đổi về quy mô, hệ thống đang dùng và quy trình vận hành để đề xuất cấu hình phù hợp trước khi triển khai.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "9a9f973",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Đăng ký demo",
+                "link": {
+                  "url": "/lien-he/?intent=demo&source=consultation",
+                  "is_external": "",
+                  "nofollow": ""
+                },
+                "align": "left",
+                "background_color": "#673ab7",
+                "button_text_color": "#ffffff",
+                "border_border": "",
+                "border_width": {},
+                "border_color": "",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "8",
+                  "bottom": "8",
+                  "left": "8",
+                  "isLinked": true
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "600"
+              },
+              "elements": []
+            },
+            {
+              "id": "5d4fe9c",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Nhận tư vấn giải pháp",
+                "link": {
+                  "url": "/lien-he/?intent=consultation&source=consultation",
+                  "is_external": "",
+                  "nofollow": ""
+                },
+                "align": "left",
+                "background_color": "#673ab7",
+                "button_text_color": "#ffffff",
+                "border_border": "",
+                "border_width": {},
+                "border_color": "",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "8",
+                  "bottom": "8",
+                  "left": "8",
+                  "isLinked": true
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "600"
+              },
+              "elements": []
+            },
+            {
+              "id": "214ab0f",
+              "elType": "widget",
+              "widgetType": "shortcode",
+              "settings": {
+                "shortcode": "[gcalls_lead_form title=\"Đăng ký tư vấn\"]"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        }
+      ],
+      "isInner": false
+    }
+  ]
+}

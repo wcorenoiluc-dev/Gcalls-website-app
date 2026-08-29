@@ -1017,6 +1017,83 @@ if (exists(mockPhp)) {
   check('no generic mockup stands in on a product page', generic.length === 0, generic.join(', '))
 
   check('every mockup carries the demo caption', mock.includes('Giao diện minh họa – dữ liệu demo'))
+
+  /* ---------------------------------------------------------------- *
+   * The home-page layout updater
+   * ---------------------------------------------------------------- *
+   * This is the only thing in the plugin that writes to the database
+   * outside the importer, so its safety properties are gates rather than
+   * intentions. The failure it exists to prevent — applying an Elementor
+   * template by hand and INSERTING nineteen sections into a page that
+   * already has nineteen — is silent, and the page still loads.
+   */
+  const layoutPath = path.join(PLUGIN, 'includes/class-home-layout.php')
+  check('home-layout updater present', exists(layoutPath))
+
+  if (exists(layoutPath)) {
+    const layout = read(layoutPath)
+
+    // Anything that fires on its own turns a plugin update into a page
+    // rewrite. The screen may only be reached, never triggered.
+    for (const hook of ['admin_init', 'register_activation_hook', 'wp_schedule_event', 'init']) {
+      check(`the updater never hooks ${hook}`, !layout.includes(`'${hook}'`))
+    }
+    check('the updater hooks admin_menu only', (layout.match(/add_action\(/g) ?? []).length === 1)
+
+    check('the updater checks manage_options', layout.includes("current_user_can( 'manage_options' )"))
+    check('the updater checks a nonce', layout.includes('check_admin_referer('))
+    check('the updater requires explicit confirmation', layout.includes('gcalls_confirm'))
+
+    // Replace, never append: writing the meta key wholesale is what makes
+    // duplicated sections impossible to express.
+    check('the updater replaces _elementor_data', layout.includes("update_post_meta( \$page_id, '_elementor_data'"))
+    check('the updater keeps a rollback copy', layout.includes('OPTION_ROLLBACK') && layout.includes('previous_data'))
+    check('the updater validates the envelope before writing', layout.includes("'type'") && layout.includes("'elType'"))
+    check('the updater clears the page CSS cache', layout.includes('_elementor_css'))
+
+    // It writes to the CONFIGURED front page, not to a hardcoded id, so it
+    // cannot rewrite the wrong page if the site points somewhere else.
+    check('the updater targets the configured front page', layout.includes("get_option( 'page_on_front' )"))
+    check('the updater shares no code with the importer', !/\bImporter::/.test(layout))
+
+    const bootstrap = read(path.join(PLUGIN, 'gcalls-core.php'))
+    check('the updater loads only in the admin', /is_admin\(\)[\s\S]*class-home-layout\.php/.test(bootstrap))
+    /*
+     * The plugin does have an activation hook, and should: it registers the
+     * taxonomy and flushes rewrite rules once. What must never appear inside
+     * it is this updater — activation runs on every plugin update, so a call
+     * here would rewrite the front page whenever the plugin was upgraded.
+     */
+    const activateBody = bootstrap.slice(
+      bootstrap.indexOf('function activate()'),
+      bootstrap.indexOf('register_activation_hook'),
+    )
+    check(
+      'activation does not invoke the updater',
+      activateBody !== '' && !/Home_Layout/.test(activateBody),
+      activateBody.trim().slice(0, 80),
+    )
+  }
+
+  // The layout the updater writes ships inside the plugin, so the code and
+  // the layout can never come from different builds.
+  const shipped = path.join(PLUGIN, 'data/homepage-elementor.json')
+  check('the shipped home layout is present', exists(shipped))
+
+  if (exists(shipped)) {
+    const parsedLayout = JSON.parse(read(shipped))
+    check('the shipped layout is a page envelope', parsedLayout.type === 'page')
+    check(
+      'the shipped layout matches the template',
+      read(shipped) === read(homeTemplatePath),
+      'plugin copy differs from wordpress/elementor-templates/',
+    )
+    check(
+      'the shipped layout has 19 sections',
+      Array.isArray(parsedLayout.content) && parsedLayout.content.length === 19,
+      String(parsedLayout.content?.length),
+    )
+  }
   // Fake data is the addendum's rule, and the React source's realistic personal
   // names are exactly what must not be carried over.
   check('uses demo contacts, not the React names', mock.includes('Khách hàng A') && !mock.includes('Nguyễn Văn Minh'))

@@ -75,6 +75,14 @@ function bootstrap(): void {
 	if ( is_admin() ) {
 		require_once GCALLS_CORE_DIR . 'includes/class-admin.php';
 		Admin::init();
+
+		// The home-page layout screen. Same shape as the importer and just as
+		// inert: it adds a Tools submenu, and the only path that writes is a
+		// nonce-checked POST from an administrator who ticked the confirmation
+		// box. Deliberately NOT hooked to activation — a plugin update must
+		// never rewrite a page on its own.
+		require_once GCALLS_CORE_DIR . 'includes/class-home-layout.php';
+		Home_Layout::init();
 	}
 
 	if ( defined( 'WP_CLI' ) && \WP_CLI ) {

@@ -844,6 +844,30 @@ const outPath =
 await mkdir(path.dirname(outPath), { recursive: true })
 await writeFile(outPath, `${JSON.stringify(template, null, 2)}\n`)
 
+/*
+ * A second copy, inside the plugin.
+ *
+ * The home page is Elementor data in the database, so shipping plugin files
+ * alone cannot change it — the layout has to be written to page 13. Carrying
+ * the template inside the plugin means the operator uploads one ZIP and the
+ * layout it expects travels with it, instead of a JSON file that has to be
+ * matched to the right plugin build by hand. `Home_Layout` reads exactly this
+ * file, so the code and the layout it applies can never be from different
+ * builds.
+ *
+ * Only written when the default output path is used: `--out` is for producing
+ * a template somewhere else on purpose, and that should not silently rewrite
+ * what the plugin ships.
+ */
+if (outArg === -1) {
+  const shipped = path.join(
+    WP_DIR,
+    'wp-content/plugins/gcalls-core/data/homepage-elementor.json',
+  )
+  await mkdir(path.dirname(shipped), { recursive: true })
+  await writeFile(shipped, `${JSON.stringify(template, null, 2)}\n`)
+}
+
 const widgets = JSON.stringify(content).match(/"elType":"widget"/g)?.length ?? 0
 
 console.log(`build-homepage-template: ${path.relative(path.resolve(WP_DIR, '..'), outPath)}`)
