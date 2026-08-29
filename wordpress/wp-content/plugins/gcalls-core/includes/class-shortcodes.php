@@ -603,7 +603,12 @@ final class Shortcodes {
 				$out .= '<p class="gcalls-eyebrow">' . esc_html( $hero['eyebrow'] ) . '</p>';
 			}
 
-			$out .= '<p class="gcalls-product__hero-title">' . esc_html( $hero['heading'] ) . '</p>';
+			// h1, not a styled paragraph. These four pages had NO h1 at all —
+			// the page template does not print the title on a full-width page,
+			// and the hero title was a <p>. A product page with no h1 tells a
+			// search engine, and a screen-reader user asking what this page is,
+			// nothing at all.
+			$out .= '<h1 class="gcalls-product__hero-title">' . esc_html( $hero['heading'] ) . '</h1>';
 
 			if ( ! empty( $hero['lead'] ) ) {
 				$out .= '<p class="gcalls-product__hero-lead">' . esc_html( $hero['lead'] ) . '</p>';
@@ -629,6 +634,21 @@ final class Shortcodes {
 				)
 			);
 
+			$out .= '</section>';
+		}
+
+		/* --- direct answer --- */
+
+		// Immediately after the hero, as plain visible text. React places it
+		// there deliberately: it is the paragraph an answer engine quotes, and
+		// putting it inside an accordion — where it would fit tidily — is
+		// exactly what stops it being read.
+		$direct = (array) ( $page['direct'] ?? array() );
+
+		if ( ! empty( $direct['question'] ) && ! empty( $direct['answer'] ) ) {
+			$out .= '<section class="gcalls-product__direct">';
+			$out .= '<h2 class="gcalls-product__heading">' . esc_html( (string) $direct['question'] ) . '</h2>';
+			$out .= '<p>' . esc_html( (string) $direct['answer'] ) . '</p>';
 			$out .= '</section>';
 		}
 
@@ -682,6 +702,32 @@ final class Shortcodes {
 		$out .= self::faq();
 
 		$out .= '<section class="gcalls-product__final">';
+		/* --- FAQ --- */
+
+		$faq = (array) ( $page['faq'] ?? array() );
+
+		if ( array() !== $faq ) {
+			$out .= '<section class="gcalls-product__faq">';
+			$out .= '<h2 class="gcalls-product__heading">' . esc_html__( 'Câu hỏi thường gặp', 'gcalls-core' ) . '</h2>';
+
+			foreach ( $faq as $item ) {
+				if ( empty( $item['question'] ) || empty( $item['answer'] ) ) {
+					continue;
+				}
+
+				// Open by default, and not a <details>. The answers are the
+				// page's substance, and a visitor who has scrolled this far has
+				// already decided they want them; collapsing them hides content
+				// from find-in-page and from anything reading the document.
+				$out .= '<div class="gcalls-product__faq-item">';
+				$out .= '<h3 class="gcalls-product__faq-question">' . esc_html( (string) $item['question'] ) . '</h3>';
+				$out .= '<p class="gcalls-product__faq-answer">' . esc_html( (string) $item['answer'] ) . '</p>';
+				$out .= '</div>';
+			}
+
+			$out .= '</section>';
+		}
+
 		$out .= '<h2 class="gcalls-product__heading">' . esc_html__( 'Trao đổi cấu hình phù hợp với đội ngũ của bạn', 'gcalls-core' ) . '</h2>';
 		$out .= self::cta(
 			array(

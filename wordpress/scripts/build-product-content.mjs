@@ -84,6 +84,7 @@ const PAGES = [
       ['GP_WORKFLOW', { media: 'GP-07' }], ['GP_PERFORMANCE', { media: 'GP-05' }],
       ['GP_INTEGRATION', { media: 'GP-12' }], ['GP_USE_CASES', { media: 'GP-03' }],
       ['GP_BOUNDARIES', { media: 'GP-02' }], ['GP_DEPLOYMENT', { media: 'GP-11' }],
+      ['GP_PRICING'], ['GP_STORY'], ['GP_FINAL_CTA'],
     ],
   },
   {
@@ -96,6 +97,7 @@ const PAGES = [
       ['CX_INBOX', { mockup: 'cx_inbox' }], ['CX_TICKETS'], ['CX_CONTEXT', { mockup: 'crm' }],
       ['CX_HOW_IT_WORKS', { diagram: 'flow' }], ['CX_REPORTING', { mockup: 'analytics' }], ['CX_BENEFITS'],
       ['CX_USE_CASES'], ['CX_INTEGRATION'], ['CX_BOUNDARIES'], ['CX_DEPLOYMENT'], ['CX_TRUST'],
+      ['CX_PRICING'], ['CX_FINAL_CTA'],
     ],
   },
   {
@@ -107,6 +109,7 @@ const PAGES = [
       ['VB_PROBLEMS'], ['VB_USE_CASES', { mockup: 'voicebot_builder' }], ['VB_HOW_IT_WORKS', { diagram: 'flow' }],
       ['VB_CAPABILITIES', { mockup: 'voicebot_builder' }], ['VB_HUMAN_AI', { diagram: 'handover' }],
       ['VB_INTEGRATION'], ['VB_INDUSTRIES'], ['VB_DEPLOYMENT'], ['VB_OUTCOMES', { mockup: 'analytics' }],
+      ['VB_FINAL_CTA'],
     ],
   },
   {
@@ -118,6 +121,7 @@ const PAGES = [
       ['QQ_PROBLEMS'], ['QQ_OVERVIEW', { mockup: 'qc_transcript' }], ['QQ_HOW_IT_WORKS', { diagram: 'flow' }],
       ['QQ_CAPABILITIES'], ['QQ_SCORING', { mockup: 'qc_transcript' }], ['QQ_SIGNALS'], ['QQ_HUMAN_LOOP'],
       ['QQ_DASHBOARD', { mockup: 'analytics' }], ['QQ_BENEFITS'], ['QQ_USE_CASES'], ['QQ_INTEGRATION'], ['QQ_BOUNDARIES'],
+      ['QQ_PRICING'], ['QQ_STORY'], ['QQ_FINAL_CTA'],
     ],
   },
 ]
@@ -189,7 +193,32 @@ for (const page of PAGES) {
 
   if (sections.length < 6) problems.push(`${page.id}: only ${sections.length} sections`)
 
-  output.pages[page.id] = { route: page.route, hero, lead: page.lead, sections }
+  /*
+   * The direct answer and the FAQ were being dropped, and they are the two
+   * parts of these pages a visitor is most likely to have come for. The direct
+   * answer is the "X là gì?" paragraph React places immediately after the hero
+   * — plain visible text, never inside a tab or an accordion, because it is
+   * what an answer engine quotes. The FAQ is six to eight questions per page.
+   *
+   * They are carried apart from `sections` because their shapes are their own:
+   * one is a question and an answer, the other is a list of them, and folding
+   * either into the generic section renderer would lose that.
+   */
+  const directRaw = module[Object.keys(module).find((k) => k.endsWith('_DIRECT_ANSWER'))]
+  const faqRaw = module[Object.keys(module).find((k) => k.endsWith('_FAQ'))]
+
+  const direct = directRaw
+    ? { question: pick(directRaw, ['question', 'q', 'h2']), answer: pick(directRaw, ['answer', 'a', 'body']) }
+    : null
+
+  const faq = (Array.isArray(faqRaw) ? faqRaw : [])
+    .map((item) => ({ question: pick(item, ['q', 'question']), answer: pick(item, ['a', 'answer']) }))
+    .filter((item) => item.question && item.answer)
+
+  if (direct && !(direct.question && direct.answer)) problems.push(`${page.id}: direct answer is incomplete`)
+  if (faq.length === 0) problems.push(`${page.id}: no FAQ items`)
+
+  output.pages[page.id] = { route: page.route, hero, direct, faq, lead: page.lead, sections }
 }
 
 fs.mkdirSync(path.dirname(OUT), { recursive: true })
@@ -198,7 +227,10 @@ fs.writeFileSync(OUT, `${JSON.stringify(output, null, 2)}\n`)
 console.log(`build-product-content: ${path.relative(REPO, OUT)}`)
 for (const [id, page] of Object.entries(output.pages)) {
   const items = page.sections.reduce((n, s) => n + s.items.length, 0)
-  console.log(`  ${id.padEnd(12)} ${String(page.sections.length).padStart(2)} sections, ${String(items).padStart(3)} items, hero "${page.hero.heading.slice(0, 42)}…"`)
+  console.log(
+    `  ${id.padEnd(12)} ${String(page.sections.length).padStart(2)} sections, ${String(items).padStart(3)} items, ` +
+      `${String(page.faq.length).padStart(2)} faq, hero "${page.hero.heading.slice(0, 38)}…"`,
+  )
 }
 
 if (problems.length) {

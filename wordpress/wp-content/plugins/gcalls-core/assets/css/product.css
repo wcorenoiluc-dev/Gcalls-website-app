@@ -172,3 +172,29 @@
 	margin-bottom: 1.25rem;
 	max-width: 100%;
 }
+
+/* The direct answer sits right under the hero and is the page's short answer to
+   "what is this?" — set apart so it reads as an answer, not as body copy. */
+.gcalls-product__direct {
+	margin: 2rem 0 3rem;
+	padding: 1.5rem;
+	border-radius: 16px;
+	background: var(--gcalls-brand-light, #f5f1fc);
+}
+
+.gcalls-product__direct p { margin: 0; }
+
+.gcalls-product__faq { margin-top: 3rem; }
+
+.gcalls-product__faq-item {
+	padding: 1.25rem 0;
+	border-bottom: 1px solid rgba(103, 58, 183, 0.14);
+}
+
+.gcalls-product__faq-question {
+	margin: 0 0 0.5rem;
+	font-size: 1.0625rem;
+	font-weight: 700;
+}
+
+.gcalls-product__faq-answer { margin: 0; }

@@ -13,6 +13,36 @@
           "Quản lý hoạt động đội ngũ"
         ]
       },
+      "direct": {
+        "question": "Gcalls Plus Webphone là gì?",
+        "answer": "Gcalls Plus Webphone là phần mềm tổng đài Webphone hoạt động trực tiếp trên trình duyệt, giúp đội Sales và Chăm sóc khách hàng thực hiện cuộc gọi, quản lý danh bạ, theo dõi lịch sử tương tác, ghi chú và hoạt động cuộc gọi trên một giao diện tập trung. Giải pháp phù hợp với các đội ngũ cần triển khai kênh nghe gọi chuyên nghiệp nhưng muốn giữ quy trình vận hành đơn giản."
+      },
+      "faq": [
+        {
+          "question": "Gcalls Plus Webphone là gì?",
+          "answer": "Gcalls Plus Webphone là giải pháp tổng đài hoạt động trên trình duyệt giúp doanh nghiệp thực hiện cuộc gọi và quản lý các thông tin liên quan đến hoạt động tương tác trong một giao diện tập trung."
+        },
+        {
+          "question": "Gcalls Plus có cần điện thoại bàn không?",
+          "answer": "Webphone được thiết kế để hoạt động thông qua môi trường trình duyệt trên máy tính. Yêu cầu thiết bị và cấu hình thực tế sẽ tùy thuộc vào mô hình triển khai."
+        },
+        {
+          "question": "Gcalls Plus có lưu lịch sử cuộc gọi không?",
+          "answer": "Có. Gcalls Plus hỗ trợ theo dõi lịch sử và dữ liệu hoạt động cuộc gọi để nhân viên và người quản lý có thêm context trong quá trình làm việc."
+        },
+        {
+          "question": "Gcalls Plus có tích hợp CRM không?",
+          "answer": "Gcalls có khả năng kết nối hoạt động nghe gọi với CRM. Với doanh nghiệp cần workflow sâu hơn như Click-to-Call, context khách hàng hoặc đồng bộ lịch sử cuộc gọi, hãy tham khảo giải pháp Tổng đài tích hợp CRM."
+        },
+        {
+          "question": "Gcalls Plus phù hợp với ai?",
+          "answer": "Gcalls Plus hướng tới các SME và đội Sales/CSKH cần một hệ thống nghe gọi tập trung trên trình duyệt nhưng chưa cần một Contact Center đa kênh phức tạp."
+        },
+        {
+          "question": "Tôi có thể biết chi phí trước khi tư vấn không?",
+          "answer": "Doanh nghiệp có thể sử dụng công cụ Ước tính cấu hình & chi phí để mô tả quy mô và nhu cầu trước khi nhận báo giá chính thức."
+        }
+      ],
       "lead": {
         "intent": "consultation",
         "source": "gcalls_plus",
@@ -315,6 +345,27 @@
             }
           ],
           "media": "GP-11"
+        },
+        {
+          "source": "GP_PRICING",
+          "eyebrow": "CẤU HÌNH & CHI PHÍ",
+          "heading": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
+          "lead": "Quy mô người dùng, hotline, lưu lượng gọi và yêu cầu tích hợp có thể ảnh hưởng đến cấu hình giải pháp. Sử dụng công cụ ước tính để mô tả nhu cầu trước khi nhận tư vấn.",
+          "items": []
+        },
+        {
+          "source": "GP_STORY",
+          "eyebrow": "KHÁCH HÀNG",
+          "heading": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
+          "lead": "",
+          "items": []
+        },
+        {
+          "source": "GP_FINAL_CTA",
+          "eyebrow": "GCALLS PLUS WEBPHONE",
+          "heading": "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ của bạn đang làm việc",
+          "lead": "Chia sẻ quy mô Sales/CSKH, số hotline và quy trình hiện tại để Gcalls tư vấn cấu hình Webphone phù hợp.",
+          "items": []
         }
       ]
     },
@@ -330,6 +381,36 @@
           "Có thêm context khi chăm sóc khách hàng"
         ]
       },
+      "direct": {
+        "question": "Gcalls CX là gì?",
+        "answer": "Gcalls CX là giải pháp Contact Center đa kênh giúp doanh nghiệp tập trung các điểm chạm như Voice, Zalo, Facebook, SMS và Email vào một không gian quản lý. Nền tảng hỗ trợ đội CSKH theo dõi hội thoại, ticket, customer context và hoạt động vận hành tập trung hơn thay vì xử lý từng kênh trên các hệ thống rời rạc."
+      },
+      "faq": [
+        {
+          "question": "Gcalls CX là gì?",
+          "answer": "Gcalls CX là giải pháp Contact Center đa kênh giúp doanh nghiệp tập trung các điểm chạm giao tiếp và quy trình chăm sóc khách hàng trong một không gian làm việc thống nhất hơn."
+        },
+        {
+          "question": "Gcalls CX hỗ trợ những kênh nào?",
+          "answer": "Theo phạm vi sản phẩm hiện tại, Gcalls CX có thể hỗ trợ các điểm chạm như Voice/Hotline, Zalo OA, Facebook Fanpage, SMS và Email. Khả năng triển khai cụ thể phụ thuộc vào kênh, tài khoản và cấu hình của doanh nghiệp."
+        },
+        {
+          "question": "Gcalls CX có quản lý ticket không?",
+          "answer": "Có. Quản lý ticket là một trong những năng lực của Gcalls CX, giúp đội ngũ theo dõi trạng thái và quá trình xử lý yêu cầu theo workflow được cấu hình."
+        },
+        {
+          "question": "Gcalls CX khác Gcalls Plus như thế nào?",
+          "answer": "Gcalls Plus tập trung vào hoạt động nghe gọi Webphone gọn nhẹ, trong khi Gcalls CX được thiết kế cho bài toán Contact Center đa kênh với nhiều điểm chạm và quy trình chăm sóc khách hàng phức tạp hơn."
+        },
+        {
+          "question": "Gcalls CX có thay thế CRM không?",
+          "answer": "Gcalls CX tập trung vào giao tiếp và quy trình Contact Center đa kênh. CRM vẫn có vai trò quản lý dữ liệu và quy trình khách hàng; tùy mô hình triển khai, Gcalls có thể kết nối với CRM để hai hệ thống hỗ trợ nhau."
+        },
+        {
+          "question": "Gcalls CX phù hợp với doanh nghiệp nào?",
+          "answer": "Gcalls CX phù hợp với doanh nghiệp có lượng tương tác lớn hoặc nhiều kênh chăm sóc khách hàng và cần quản lý hội thoại, ticket, customer context và hoạt động đội ngũ tập trung hơn."
+        }
+      ],
       "lead": {
         "intent": "consultation",
         "source": "gcalls_cx",
@@ -693,6 +774,20 @@
           "heading": "Mỗi hành trình khách hàng cần một workflow khác nhau",
           "lead": "Kênh giao tiếp, cấu trúc đội ngũ và cách xử lý ticket khác nhau giữa từng doanh nghiệp. Gcalls CX cần được cấu hình theo quy trình vận hành thực tế thay vì áp dụng một mô hình giống nhau cho mọi tổ chức.",
           "items": []
+        },
+        {
+          "source": "CX_PRICING",
+          "eyebrow": "CẤU HÌNH & CHI PHÍ",
+          "heading": "Chi phí phụ thuộc vào số kênh, người dùng và phạm vi triển khai",
+          "lead": "Cấu hình Gcalls CX có thể thay đổi theo số lượng Agent, các kênh cần kết nối, workflow ticket và yêu cầu tích hợp hệ thống. Công cụ ước tính giúp doanh nghiệp mô tả nhu cầu trước khi nhận báo giá chính thức.",
+          "items": []
+        },
+        {
+          "source": "CX_FINAL_CTA",
+          "eyebrow": "GCALLS CX • OMNICHANNEL CONTACT CENTER",
+          "heading": "Xem Gcalls CX hoạt động trên chính hành trình chăm sóc khách hàng của doanh nghiệp bạn",
+          "lead": "Chia sẻ các kênh đang sử dụng, cấu trúc đội CSKH và workflow hiện tại để Gcalls tư vấn cấu hình Contact Center phù hợp.",
+          "items": []
         }
       ]
     },
@@ -704,6 +799,33 @@
         "lead": "Gcalls giúp doanh nghiệp triển khai Voicebot cho các tác vụ như nhắc lịch, xác nhận thông tin, sàng lọc nhu cầu và xử lý bước đầu ngoài giờ — để đội ngũ tập trung vào những tương tác cần chuyên môn và sự thấu hiểu của con người.",
         "points": []
       },
+      "direct": null,
+      "faq": [
+        {
+          "question": "Voicebot AI phù hợp với doanh nghiệp nào?",
+          "answer": "Voicebot phù hợp với doanh nghiệp có nhiều cuộc gọi lặp lại theo cùng một kịch bản, chẳng hạn nhắc lịch, xác nhận thông tin hoặc sàng lọc danh sách liên hệ. Mức độ phù hợp được xác định dựa trên quy trình và khối lượng cuộc gọi thực tế."
+        },
+        {
+          "question": "Voicebot có thể áp dụng cho tình huống nào?",
+          "answer": "Các tình huống thường được cân nhắc gồm nhắc lịch hẹn, nhắc thanh toán, xác nhận thông tin, sàng lọc nhu cầu, chiến dịch gọi hàng loạt và xử lý bước đầu ngoài giờ. Mỗi tình huống cần kịch bản riêng và được kiểm thử trước khi mở rộng."
+        },
+        {
+          "question": "Có thể kết nối Voicebot với hệ thống hiện tại không?",
+          "answer": "Khả năng kết nối với tổng đài, CRM, dữ liệu chiến dịch, quy trình chăm sóc khách hàng và hệ thống báo cáo có thể được khảo sát trong quá trình tư vấn. Phạm vi tích hợp cụ thể phụ thuộc vào hệ thống và dữ liệu hiện có của doanh nghiệp."
+        },
+        {
+          "question": "Khi nào cuộc gọi cần chuyển sang nhân viên?",
+          "answer": "Những tình huống nằm ngoài kịch bản, cần tư vấn chuyên sâu, thương lượng hoặc xử lý khiếu nại nên được chuyển cho nhân viên. Điều kiện chuyển tiếp được thống nhất khi xây dựng kịch bản chứ không cố định cho mọi doanh nghiệp."
+        },
+        {
+          "question": "Doanh nghiệp bắt đầu triển khai như thế nào?",
+          "answer": "Thông thường sẽ bắt đầu bằng việc khảo sát nhu cầu, chọn một use case cụ thể, xây dựng kịch bản, thiết lập và kiểm thử trên phạm vi giới hạn, sau đó mới vận hành và tối ưu theo kết quả thực tế."
+        },
+        {
+          "question": "Chi phí Voicebot được xác định ra sao?",
+          "answer": "Chi phí phụ thuộc vào use case được triển khai, lưu lượng cuộc gọi, mức độ tích hợp với hệ thống hiện tại và phạm vi triển khai. Gcalls xác định phương án phù hợp sau bước khảo sát thay vì áp dụng một mức giá chung."
+        }
+      ],
       "lead": {
         "intent": "consultation",
         "source": "voicebot_ai",
@@ -980,6 +1102,13 @@
             }
           ],
           "mockup": "analytics"
+        },
+        {
+          "source": "VB_FINAL_CTA",
+          "eyebrow": "VOICEBOT AI CHO DOANH NGHIỆP",
+          "heading": "Bắt đầu từ một tình huống cuộc gọi phù hợp với doanh nghiệp",
+          "lead": "Chia sẻ quy trình hiện tại để đội ngũ Gcalls cùng bạn xác định use case, phạm vi tích hợp và phương án triển khai Voicebot phù hợp.",
+          "items": []
         }
       ]
     },
@@ -995,6 +1124,36 @@
           "Ưu tiên cuộc gọi cần xem lại"
         ]
       },
+      "direct": {
+        "question": "QA QC Center là gì?",
+        "answer": "QA QC Center sử dụng năng lực QC Bot AI để chuyển nội dung cuộc gọi thành transcript, đánh giá theo các tiêu chí QA được cấu hình và làm nổi bật những tín hiệu cần kiểm tra như từ khóa, cảm xúc hoặc mức độ tuân thủ. Giải pháp giúp đội QA và quản lý tập trung vào các hội thoại cần được xem xét thay vì phụ thuộc hoàn toàn vào việc nghe lại thủ công."
+      },
+      "faq": [
+        {
+          "question": "QA QC Center là gì?",
+          "answer": "QA QC Center là giải pháp sử dụng QC Bot AI để chuyển cuộc gọi thành transcript, hỗ trợ đánh giá theo tiêu chí QA và làm nổi bật những tín hiệu cần được đội kiểm soát chất lượng xem xét."
+        },
+        {
+          "question": "QC Bot AI có thể tự động chấm điểm cuộc gọi không?",
+          "answer": "QC Bot AI có thể hỗ trợ chấm điểm trên dữ liệu cuộc gọi dựa trên bộ tiêu chí và trọng số được cấu hình. Kết quả cần được sử dụng phù hợp với quy trình QA và bối cảnh vận hành của doanh nghiệp."
+        },
+        {
+          "question": "QC Bot có phân tích từ khóa và cảm xúc không?",
+          "answer": "QA QC Center có thể làm nổi bật từ khóa và các tín hiệu cảm xúc trong hội thoại để hỗ trợ đội QA xác định những cuộc gọi cần chú ý."
+        },
+        {
+          "question": "AI có thay thế hoàn toàn nhân viên QA không?",
+          "answer": "Không nên xem QA QC Center là công cụ thay thế hoàn toàn vai trò QA. AI hỗ trợ xử lý dữ liệu, scoring và phát hiện tín hiệu; đội QA vẫn cần xem xét context, xác nhận kết quả và thực hiện coaching hoặc cải thiện quy trình."
+        },
+        {
+          "question": "QA QC Center phù hợp với doanh nghiệp nào?",
+          "answer": "Giải pháp phù hợp với doanh nghiệp có lượng cuộc gọi đáng kể và cần một quy trình có cấu trúc để theo dõi chất lượng hội thoại, đặc biệt ở Customer Service, Telesales, Contact Center và BPO."
+        },
+        {
+          "question": "QA QC Center có phân tích tất cả cuộc gọi không?",
+          "answer": "Phạm vi phân tích phụ thuộc vào dữ liệu cuộc gọi được đưa vào hệ thống, cấu hình triển khai và điều kiện kỹ thuật thực tế. Gcalls sẽ xác định phạm vi phù hợp trong quá trình tư vấn và kiểm thử."
+        }
+      ],
       "lead": {
         "intent": "consultation",
         "source": "qa_qc_center",
@@ -1259,6 +1418,27 @@
           "eyebrow": "CHỌN SẢN PHẨM",
           "heading": "Chọn đúng sản phẩm theo bài toán cần giải quyết",
           "lead": "",
+          "items": []
+        },
+        {
+          "source": "QQ_PRICING",
+          "eyebrow": "CẤU HÌNH & CHI PHÍ",
+          "heading": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+          "lead": "Cấu hình QA QC Center có thể phụ thuộc vào quy mô đội ngũ, khối lượng hội thoại cần phân tích và bộ tiêu chí QA cần áp dụng.",
+          "items": []
+        },
+        {
+          "source": "QQ_STORY",
+          "eyebrow": "QUY TRÌNH QA",
+          "heading": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+          "lead": "Mỗi doanh nghiệp có bộ tiêu chí, quy trình kiểm tra và mục tiêu chất lượng khác nhau. QA QC Center cần được cấu hình theo bối cảnh vận hành thực tế trước khi dữ liệu được sử dụng cho đánh giá hoặc coaching.",
+          "items": []
+        },
+        {
+          "source": "QQ_FINAL_CTA",
+          "eyebrow": "QA QC CENTER • POWERED BY QC BOT AI",
+          "heading": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ngũ bạn",
+          "lead": "Chia sẻ quy trình QA, tiêu chí đánh giá và cách đội ngũ đang kiểm tra cuộc gọi để Gcalls tư vấn cấu hình phù hợp.",
           "items": []
         }
       ]
