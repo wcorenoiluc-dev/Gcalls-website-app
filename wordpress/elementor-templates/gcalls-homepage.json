@@ -10,9 +10,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         },
@@ -160,9 +160,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         }
@@ -367,7 +367,7 @@
           "unit": "px",
           "top": "0",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         }
@@ -434,9 +434,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         },
@@ -572,9 +572,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         }
@@ -627,9 +627,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         }
@@ -670,9 +670,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         }
@@ -776,9 +776,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         }
@@ -821,7 +821,7 @@
           "unit": "px",
           "top": "0",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         }
@@ -925,9 +925,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         },
@@ -1028,9 +1028,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         }
@@ -1171,9 +1171,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         },
@@ -1291,9 +1291,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         }
@@ -1440,9 +1440,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         },
@@ -1517,9 +1517,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         }
@@ -1654,9 +1654,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         },
@@ -1677,6 +1677,20 @@
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
+                "title": "Hệ sinh thái tích hợp của Gcalls",
+                "header_size": "h3",
+                "title_color": "#ffffff",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "7652f60",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
                 "title": "Kết nối Gcalls với hệ thống CRM của doanh nghiệp bạn",
                 "header_size": "h2",
                 "title_color": "#ffffff",
@@ -1687,7 +1701,7 @@
               "elements": []
             },
             {
-              "id": "7652f60",
+              "id": "9a9f973",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1699,7 +1713,7 @@
               "elements": []
             },
             {
-              "id": "9a9f973",
+              "id": "5d4fe9c",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1707,20 +1721,6 @@
                 "text_color": "#e9defb",
                 "typography_typography": "custom",
                 "typography_font_family": "Open Sans"
-              },
-              "elements": []
-            },
-            {
-              "id": "5d4fe9c",
-              "elType": "widget",
-              "widgetType": "heading",
-              "settings": {
-                "title": "Hệ sinh thái tích hợp của Gcalls",
-                "header_size": "h3",
-                "title_color": "#ffffff",
-                "typography_typography": "custom",
-                "typography_font_family": "Open Sans",
-                "typography_font_weight": "700"
               },
               "elements": []
             },
@@ -1791,9 +1791,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         }
@@ -1956,9 +1956,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "96",
+          "top": "104",
           "right": "0",
-          "bottom": "96",
+          "bottom": "104",
           "left": "0",
           "isLinked": false
         },

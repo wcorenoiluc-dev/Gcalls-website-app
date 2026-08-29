@@ -81,12 +81,17 @@ const column = (elements, size = 100, settings = {}) => ({
 /**
  * Vertical rhythm, measured off the reference rather than chosen.
  *
- * React's Section pads 96px on most of the page and 112px on the six
- * content-heavy sections; this port shipped 72px everywhere, and across
- * nineteen sections that is most of a screen of breathing room missing. 96 is
- * the reference's most common value, so it is the default here too.
+ * React's Section pads 96px on six of its thirteen sections and 112px on the
+ * seven content-heavy ones; this port shipped 72px everywhere, and across
+ * nineteen sections that is most of a screen of breathing room missing.
+ *
+ * 104 is the reference's mean, and one value is right here rather than two:
+ * React's split follows ITS thirteen sections, and this template splits four of
+ * those in half to work around Elementor's lack of nesting, so copying the
+ * per-section values would apply "content-heavy" padding to a section holding
+ * one sub-heading.
  */
-const SECTION_PAD = '96'
+const SECTION_PAD = '104'
 
 const section = (columns, settings = {}) => ({
   id: eid(),
@@ -564,6 +569,9 @@ const content = [
   section(
     [
       column([
+        // React opens this section with the ecosystem sub-heading and only then
+        // names the integration, so the order here follows it.
+        heading('Hệ sinh thái tích hợp của Gcalls', 'h3', { title_color: WHITE }),
         heading('Kết nối Gcalls với hệ thống CRM của doanh nghiệp bạn', 'h2', { title_color: WHITE }),
         text(
           'Gcalls giúp doanh nghiệp đồng bộ dữ liệu khách hàng, cuộc gọi và hoạt động chăm sóc khách hàng với CRM, Helpdesk và các hệ thống nội bộ thông qua API mở và Webhook.',
@@ -573,7 +581,6 @@ const content = [
           'Từ CRM, Helpdesk đến các hệ thống nội bộ — Gcalls kết nối qua API mở. Phạm vi và công việc cần thiết được đánh giá trong quá trình khảo sát kỹ thuật.',
           { text_color: '#e9defb' },
         ),
-        heading('Hệ sinh thái tích hợp của Gcalls', 'h3', { title_color: WHITE }),
         mockup('integrations'),
         heading('Trao đổi phạm vi tích hợp cùng đội ngũ Gcalls', 'h3', { title_color: WHITE }),
         cta('Trao đổi phạm vi tích hợp cùng đội ngũ Gcalls', {

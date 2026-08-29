@@ -2,9 +2,9 @@
   {
     "name": "home",
     "route": "/",
-    "score": 92.3,
+    "score": 93.5,
     "parts": {
-      "headings": 95.2,
+      "headings": 97.6,
       "visuals": 100,
       "ctas": 100,
       "rhythm": 73.6
@@ -16,7 +16,7 @@
       "height": 18669
     },
     "wp": {
-      "headings": 42,
+      "headings": 41,
       "visuals": 9,
       "ctas": 11,
       "height": 13735
