@@ -881,6 +881,28 @@ check('request path is not passed through sanitize_text_field', !redirectsSrc.in
 check('redirect targets must look like a path', redirectsSrc.includes('đích không phải đường dẫn hợp lệ'))
 
 const parityThemeCss = read(path.join(THEME, 'assets/css/theme.css'))
+/*
+ * Same net as the plugin's: every class the theme's PHP emits must have a rule.
+ * There is no PHP and no WordPress here, so a class that exists in the markup
+ * and nowhere in the stylesheet would first be seen on the live site as an
+ * unstyled block where a cover should be.
+ */
+{
+  const themePhp = phpFiles
+    .filter((f) => f.startsWith(THEME))
+    .map((f) => read(f))
+    .join('\n')
+
+  const emittedTheme = new Set(
+    [...themePhp.matchAll(/class="([^"$]+)"/g)]
+      .flatMap((m) => m[1].split(/\s+/))
+      .filter((c) => /^gcalls-(cover|toc|card|article|adjacent|related|terms|meta|branding)/.test(c) && !c.endsWith('-')),
+  )
+
+  const unstyledTheme = [...emittedTheme].filter((c) => !parityThemeCss.includes('.' + c))
+  check('every theme class has a rule', unstyledTheme.length === 0, unstyledTheme.join(', '))
+}
+
 for (const [label, needle] of [
   ['border-box reset', 'box-sizing: border-box'],
   ['focus-visible ring', ':focus-visible'],

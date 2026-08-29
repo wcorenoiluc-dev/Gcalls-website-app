@@ -1522,3 +1522,187 @@ html.gcalls-nav-open body { overflow: hidden; }
 		transform: translateY(0.06em) rotate(-135deg);
 	}
 }
+
+/* =====================================================================
+ * Drawn covers, blog cards and the article page — 012
+ * =====================================================================
+ * Not one of the 250 articles has a featured image, and every inline
+ * image points at a host this site does not control. So the cover is
+ * drawn here: a hue rotated per HUB over the brand gradient, one glyph,
+ * and the hub name. No attachment, no upload, no database write — and
+ * the instant a real featured image exists, gcalls_post_cover() uses it
+ * and none of this renders.
+ * ===================================================================== */
+.gcalls-cover {
+	align-items: center;
+	aspect-ratio: 16 / 9;
+	background:
+		radial-gradient(circle at 78% 18%, hsl(var(--gcalls-cover-hue, 262) 70% 62% / 0.45), transparent 58%),
+		linear-gradient(135deg, hsl(var(--gcalls-cover-hue, 262) 58% 32%), hsl(var(--gcalls-cover-hue, 262) 62% 46%));
+	border-radius: var(--gcalls-radius);
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	justify-content: center;
+	overflow: hidden;
+	padding: 1rem;
+	position: relative;
+	width: 100%;
+}
+
+/* A faint grid, so the panel reads as artwork rather than as a colour
+ * swatch that failed to load an image. */
+.gcalls-cover::after {
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+	background-size: 28px 28px;
+	content: "";
+	inset: 0;
+	position: absolute;
+}
+
+.gcalls-cover__glyph {
+	height: 2.5rem;
+	opacity: 0.95;
+	position: relative;
+	width: 2.5rem;
+}
+
+.gcalls-cover__label {
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	line-height: 1.3;
+	position: relative;
+	text-align: center;
+	text-wrap: balance;
+}
+
+.gcalls-cover__img { border-radius: var(--gcalls-radius); display: block; height: auto; width: 100%; }
+
+/* ── Blog cards ──────────────────────────────────────────────────────── */
+/* .gcalls-card itself already flexes in a column and hides overflow, twice
+ * over, further up this file — a third copy here would be pure drift. Only
+ * what the cover and the read-more link add is defined. */
+.gcalls-card__media {
+	display: block;
+	line-height: 0;
+	text-decoration: none;
+}
+
+.gcalls-card__media .gcalls-cover { border-radius: 0; }
+
+.gcalls-card__more {
+	align-items: center;
+	color: var(--gcalls-brand);
+	display: inline-flex;
+	font-size: 0.8125rem;
+	font-weight: 700;
+	gap: 0.25rem;
+	margin-top: auto;
+	padding-top: 0.75rem;
+}
+
+.gcalls-card__more svg { height: 14px; width: 14px; }
+
+/* The two halves of the byline. Both were emitted by gcalls_posted_on() and
+ * neither had a rule, so an updated article looked exactly like a new one —
+ * which is the distinction that function exists to draw. */
+.gcalls-meta__date { color: var(--gcalls-muted); }
+
+.gcalls-meta__updated {
+	color: var(--gcalls-brand);
+	font-weight: 600;
+}
+
+.gcalls-meta__updated::before {
+	color: var(--gcalls-border);
+	content: "·";
+	margin-right: 0.4rem;
+}
+
+/* ── Article page ────────────────────────────────────────────────────── */
+.gcalls-article__cover { margin: 0 0 var(--gcalls-space-3); }
+/* A cap as well as a ratio: at 1280px the 21/8 box alone is nearly 500px of
+ * purple before the first sentence, which pushes the article off the screen
+ * on a laptop. */
+.gcalls-article__cover .gcalls-cover { aspect-ratio: 21 / 8; max-height: 280px; }
+.gcalls-article__cover .gcalls-cover__glyph { height: 3rem; width: 3rem; }
+.gcalls-article__cover .gcalls-cover__label { font-size: 1rem; }
+
+.gcalls-article__meta {
+	align-items: center;
+	color: var(--gcalls-muted);
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 0.875rem;
+	gap: 0.75rem;
+	margin-bottom: var(--gcalls-space-3);
+}
+
+/* The table of contents. Built from the headings already in the body —
+ * nothing is written into post_content to produce it. */
+.gcalls-toc {
+	background: var(--gcalls-surface-alt);
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius);
+	margin: 0 0 var(--gcalls-space-4);
+	padding: 1rem 1.25rem;
+}
+
+.gcalls-toc__title {
+	color: var(--gcalls-muted);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	margin: 0 0 0.5rem;
+	text-transform: uppercase;
+}
+
+.gcalls-toc ol { list-style: none; margin: 0; padding: 0; counter-reset: gcalls-toc; }
+.gcalls-toc li { counter-increment: gcalls-toc; padding: 0.2rem 0 0.2rem 1.75rem; position: relative; }
+.gcalls-toc li::before {
+	color: var(--gcalls-brand);
+	content: counter(gcalls-toc, decimal-leading-zero);
+	font-family: var(--gcalls-font-mono);
+	font-size: 0.75rem;
+	left: 0;
+	position: absolute;
+	top: 0.3rem;
+}
+.gcalls-toc li--sub { padding-left: 3rem; }
+.gcalls-toc a { color: var(--gcalls-foreground); text-decoration: none; }
+.gcalls-toc a:hover { color: var(--gcalls-brand); text-decoration: underline; }
+
+/* Related articles and prev/next. */
+.gcalls-related { margin-top: var(--gcalls-space-5); }
+.gcalls-related__title { font-size: 1.125rem; margin-bottom: var(--gcalls-space-2); }
+
+.gcalls-adjacent {
+	border-top: 1px solid var(--gcalls-border);
+	display: grid;
+	gap: 1rem;
+	margin-top: var(--gcalls-space-4);
+	padding-top: var(--gcalls-space-3);
+}
+
+@media (min-width: 768px) { .gcalls-adjacent { grid-template-columns: 1fr 1fr; } }
+
+.gcalls-adjacent a {
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius);
+	display: block;
+	padding: 0.75rem 1rem;
+	text-decoration: none;
+}
+
+.gcalls-adjacent a:hover { border-color: var(--gcalls-brand); }
+.gcalls-adjacent__dir { color: var(--gcalls-muted); display: block; font-size: 0.75rem; }
+.gcalls-adjacent__title { color: var(--gcalls-foreground); font-weight: 600; }
+.gcalls-adjacent__next { text-align: right; }
+
+/* The article body's reading measure. */
+.gcalls-article__body { max-width: var(--gcalls-measure); }
+.gcalls-article__body > * { max-width: 100%; }

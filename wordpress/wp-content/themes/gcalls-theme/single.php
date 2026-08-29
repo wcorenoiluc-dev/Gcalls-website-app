@@ -33,11 +33,44 @@ while ( have_posts() ) :
 				</p>
 			</header>
 
-			<?php gcalls_post_thumbnail( 'large' ); ?>
+			<?php
+			/*
+			 * Every article gets a cover. None of the 250 has a featured image
+			 * and every inline image is hotlinked to a host this site does not
+			 * control, so gcalls_post_thumbnail() rendered nothing at all here
+			 * — the article opened on a wall of text. gcalls_post_cover() draws
+			 * one from the HUB and steps aside as soon as a real image exists.
+			 */
+			?>
+			<figure class="gcalls-article__cover">
+				<?php gcalls_post_cover( 'large' ); ?>
+			</figure>
 
-			<div class="gcalls-prose">
+			<?php
+			/*
+			 * The contents list is built from the rendered HTML, not written
+			 * into the article. The eighteen published bodies are being edited
+			 * by a person and their hashes must not move, so nothing here
+			 * touches post_content — the anchors are added to the output.
+			 *
+			 * the_content() is captured rather than echoed for that reason.
+			 * The result is already filtered, so it is printed as-is;
+			 * wp_kses_post() here would strip the attributes blocks render with.
+			 */
+			ob_start();
+			the_content();
+			$gcalls_rendered = (string) ob_get_clean();
+
+			$gcalls_article = gcalls_article_contents( $gcalls_rendered );
+
+			echo $gcalls_article['toc']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Built from esc_html/esc_attr above.
+			?>
+
+			<div class="gcalls-prose gcalls-article__body">
 				<?php
-				the_content();
+				// gcalls-qa: raw output — the_content() output, already filtered;
+				// escaping it again strips block and Elementor attributes.
+				echo $gcalls_article['body'];
 
 				wp_link_pages(
 					array(
