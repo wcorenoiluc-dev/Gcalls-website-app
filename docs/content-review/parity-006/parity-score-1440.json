@@ -216,12 +216,12 @@
   {
     "name": "estimator",
     "route": "/uoc-tinh-chi-phi/",
-    "score": 65.7,
+    "score": 84.4,
     "parts": {
-      "headings": 57.1,
+      "headings": 89.7,
       "visuals": 100,
       "ctas": 66.7,
-      "rhythm": 60.7
+      "rhythm": 72.8
     },
     "react": {
       "headings": 28,
@@ -230,43 +230,30 @@
       "height": 5197
     },
     "wp": {
-      "headings": 22,
+      "headings": 29,
       "visuals": 0,
       "ctas": 3,
-      "height": 3153
+      "height": 3783
     },
     "missingInWp": [
       "Ước tính cấu hình và chi phí Gcalls phù hợp với nhu cầu",
-      "Công cụ ước tính cấu hình và chi phí",
-      "Chọn sản phẩm",
-      "Nhập quy mô",
-      "Xác định cấu hình",
-      "Gcalls xác nhận và báo giá",
-      "Công cụ này có phải báo giá chính thức không?",
-      "Tôi có cần biết chính xác số phút gọi không?",
-      "Có thể ước tính nhiều giải pháp không?",
-      "QA QC Center được tính dựa trên yếu tố nào?",
-      "Tổng đài quốc tế phụ thuộc vào yếu tố nào?",
-      "Khi nào tôi nhận được báo giá chính thức?"
+      "Công cụ ước tính cấu hình và chi phí"
     ],
     "extraInWp": [
+      "Ước tính chi phí",
       "Công cụ ước tính cấu hình",
-      "01. Chọn sản phẩm",
-      "02. Nhập quy mô",
-      "03. Xác định cấu hình",
-      "04. Gcalls xác nhận và báo giá",
       "Câu hỏi thường gặp"
     ]
   },
   {
     "name": "blog",
     "route": "/blog/",
-    "score": 59.5,
+    "score": 61.5,
     "parts": {
-      "headings": 40,
+      "headings": 41.7,
       "visuals": 100,
       "ctas": 75,
-      "rhythm": 66.2
+      "rhythm": 72.3
     },
     "react": {
       "headings": 60,
@@ -275,17 +262,13 @@
       "height": 10504
     },
     "wp": {
-      "headings": 49,
+      "headings": 58,
       "visuals": 0,
       "ctas": 3,
-      "height": 6958
+      "height": 7594
     },
     "missingInWp": [
       "Góc nhìn vận hành về tổng đài, tích hợp hệ thống và chất lượng hội thoại",
-      "Trưởng nhóm Sales có đội gọi ra",
-      "Quản lý chăm sóc khách hàng",
-      "Người phụ trách chất lượng hội thoại",
-      "Người phụ trách hệ thống và tích hợp",
       "Sáu danh mục tài nguyên",
       "Bài viết theo nhóm chủ đề",
       "Tổng đài và Call Center3 bài",
@@ -313,6 +296,11 @@
       "Tổng đài và Call Center",
       "Voicebot, AI và tự động hóa",
       "Câu hỏi thường gặp",
+      "undefined",
+      "undefined",
+      "undefined",
+      "undefined",
+      "undefined",
       "undefined"
     ]
   }

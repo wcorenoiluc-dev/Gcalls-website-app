@@ -200,7 +200,24 @@ for (const block of catalogSrc.split(/\n\s*\{\s*\n/).slice(1)) {
       focus_keyword: catalogField(block, 'primaryKeyword') ?? '',
     },
     content: bodyToWp(parseBody(body.body), body.directAnswer),
-    faq: (body.faq ?? []).map((item) => ({ question: String(item.question), answer: String(item.answer) })),
+    // `q`/`a`, which is what the article modules use — NOT question/answer.
+    //
+    // String(undefined) is "undefined", so reading the wrong key produced a
+    // perfectly well-formed FAQ entry reading "undefined / undefined", and
+    // eighteen published articles shipped five of them each. Nothing failed:
+    // the manifest validated, the import succeeded, and the defect was only
+    // visible by reading the live page. Missing text now stops the build.
+    faq: (body.faq ?? []).map((item, index) => {
+      const question = item.q ?? item.question
+      const answer = item.a ?? item.answer
+
+      if (typeof question !== 'string' || typeof answer !== 'string' || !question.trim() || !answer.trim()) {
+        problems.push(`${slug}: FAQ item ${index + 1} has no question or no answer`)
+        return null
+      }
+
+      return { question: question.trim(), answer: answer.trim() }
+    }).filter(Boolean),
   })
 }
 

@@ -69,6 +69,20 @@ final class Shortcodes {
 		$atts = shortcode_atts( array( 'post_id' => 0 ), (array) $atts, 'gcalls_faq' );
 
 		$post_id = (int) $atts['post_id'];
+
+		/*
+		 * On the posts page, get_the_ID() is a POST, not the page.
+		 *
+		 * The blog page's body runs through the_content() outside the loop, so
+		 * this shortcode was reading whichever article the loop had left behind
+		 * and rendering ITS faq meta — six questions from an article, in a
+		 * shape this renderer does not use, so /blog/ published six accordions
+		 * headed "undefined". The posts page has to be asked for by role.
+		 */
+		if ( $post_id <= 0 && is_home() && ! is_front_page() ) {
+			$post_id = (int) get_option( 'page_for_posts' );
+		}
+
 		$post_id = $post_id > 0 ? $post_id : (int) get_the_ID();
 
 		if ( ! $post_id ) {
