@@ -191,6 +191,60 @@
     })
   }
 
+  /**
+   * The incoming-call popup: ringing → connected, or ringing → ended.
+   *
+   * The reference also drops out of ringing on a timer after 2.8s. That is
+   * not reproduced: a state that changes on its own while nobody is looking
+   * is a distraction on a marketing page, and the point of porting this as
+   * markup rather than a screenshot is that the visitor can cause the change
+   * themselves. Answering is what demonstrates the moment.
+   */
+  function wirePopup(root) {
+    var pop = root.querySelector('[data-mock-pop]')
+    if (!pop) return
+
+    var label = pop.querySelector('[data-mock-pop-state]')
+    var answer = pop.querySelector('[data-mock-pop-answer]')
+    var reject = pop.querySelector('[data-mock-pop-reject]')
+
+    function setState(cls, text) {
+      pop.classList.remove('is-connected', 'is-ended')
+      if (cls) pop.classList.add(cls)
+      // textContent only. Every mockup in this file builds text and DOM
+      // nodes rather than assigning markup, and that rule has no exceptions.
+      if (label) label.textContent = text
+    }
+
+    if (answer) {
+      answer.addEventListener('click', function () {
+        setState('is-connected', 'Đã kết nối')
+      })
+    }
+
+    if (reject) {
+      reject.addEventListener('click', function () {
+        setState('is-ended', 'Đã kết thúc')
+      })
+    }
+  }
+
+  /** The call-button widget: the fab opens and closes the callback panel. */
+  function wireWidget(root) {
+    var widget = root.querySelector('[data-mock-widget]')
+    if (!widget) return
+
+    var toggle = widget.querySelector('[data-mock-widget-toggle]')
+    var panel = widget.querySelector('[data-mock-widget-panel]')
+    if (!toggle || !panel) return
+
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') === 'true'
+      toggle.setAttribute('aria-expanded', open ? 'false' : 'true')
+      panel.hidden = open
+    })
+  }
+
   Array.prototype.forEach.call(document.querySelectorAll('[data-gcalls-mock]'), function (root) {
     wireFilters(root)
     wirePanels(root)
@@ -198,6 +252,8 @@
     wirePlayer(root)
     wireTimer(root)
     wireChart(root)
+    wirePopup(root)
+    wireWidget(root)
   })
 
   document.addEventListener('visibilitychange', function () {

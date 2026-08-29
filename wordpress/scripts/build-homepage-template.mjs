@@ -223,10 +223,118 @@ const card = (title, body) =>
     typography_font_family: 'Open Sans',
   })
 
-/** Lays a list of widgets into equal columns. */
+/**
+ * Lays a list of widgets into equal columns.
+ *
+ * CAUTION: Elementor columns in one section do not wrap. `perRow` sets each
+ * column's width and nothing else, so passing six widgets with perRow 3 gives
+ * six columns across at every width, not 3×2 — which is exactly what shipped
+ * on the pain-point cards. Use `cardGrid()` for anything that has to wrap;
+ * this stays for the two ecosystem rows, where the item count already equals
+ * perRow and Elementor's own mobile stacking is enough.
+ */
 const grid = (widgets, perRow) => {
   const size = Math.round(100 / perRow)
   return widgets.map((w) => column([w], size))
+}
+
+/* ------------------------------------------------------------------ *
+ * React parity primitives
+ * ------------------------------------------------------------------ *
+ * These emit semantic HTML carrying class names only. No colour literal
+ * appears in any of them: the look resolves in the theme stylesheet, which
+ * is what keeps the "only approved colours" gate meaningful while still
+ * letting the design use the reference's off-palette tints.
+ */
+
+/**
+ * Icon geometry lifted from the exact lucide icons the reference imports
+ * (lucide-react 0.487, ISC licence). Inlined rather than fetched: the
+ * reference compiles them into its bundle, and adding an icon font or an SVG
+ * sprite request to draw nine glyphs would buy a round trip and a flash of
+ * missing icons on a page that currently has neither.
+ */
+const ICON = {
+  'phone-off':
+    '<path d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-3.33-2.67m-2.67-3.34a19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91"/><line x1="22" x2="2" y1="2" y2="22"/>',
+  'user-x':
+    '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="17" x2="22" y1="8" y2="13"/><line x1="22" x2="17" y1="8" y2="13"/>',
+  'shield-alert':
+    '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/>',
+  'bar-chart':
+    '<path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>',
+  globe:
+    '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
+  keyboard:
+    '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="M6 8h.01"/><path d="M10 8h.01"/><path d="M14 8h.01"/><path d="M18 8h.01"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/><path d="M7 16h10"/>',
+  check: '<path d="M20 6 9 17l-5-5"/>',
+  phone:
+    '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
+  'chevron-right': '<path d="m9 18 6-6-6-6"/>',
+}
+
+const icon = (name, width = 2) =>
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${width}" ` +
+  `stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${ICON[name]}</svg>`
+
+/** The uppercase pill above a heading. */
+const eyebrowHtml = (label, { hero = false } = {}) =>
+  `<p class="gc-eyebrow${hero ? ' gc-eyebrow--hero' : ''}">` +
+  (hero ? '<span class="gc-eyebrow__dot"></span>' : '') +
+  `${label}</p>`
+
+/**
+ * A heading whose emphasised phrase carries the clipped gradient.
+ *
+ * The reference colours only the middle span, not the whole line — so the
+ * gradient reads as emphasis on the words that carry the claim rather than as
+ * a coat of paint over the sentence.
+ */
+const gradHeadingHtml = (tag, before, accent, after = '') =>
+  `<${tag} class="gc-${tag}">${before}<span class="gc-grad">${accent}</span>${after}</${tag}>`
+
+/** Centred eyebrow + gradient heading + lead paragraph. */
+const sectionHead = (eyebrowLabel, [before, accent, after], lead) =>
+  html(
+    `<div class="gc-head">${eyebrowHtml(eyebrowLabel)}` +
+      gradHeadingHtml('h2', before, accent, after) +
+      (lead ? `<p class="gc-head__lead">${lead}</p>` : '') +
+      `</div>`,
+  )
+
+/**
+ * A wrapping card grid, in one widget.
+ *
+ * Each item is { icon, title, body }. The title is a real h3 because it heads
+ * the paragraph beneath it; the index is decorative and hidden from the
+ * accessibility tree, matching the reference's aria-hidden number badge.
+ */
+const cardGrid = (items, perRow = 3) =>
+  html(
+    `<div class="gc-cards gc-cards--${perRow}">` +
+      items
+        .map(
+          (item, i) =>
+            `<article class="gc-card">` +
+            (item.icon ? `<div class="gc-card__icon">${icon(item.icon, 1.8)}</div>` : '') +
+            `<div class="gc-card__top"><h3>${item.title}</h3>` +
+            `<span class="gc-card__n" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span></div>` +
+            `<p class="gc-card__body">${item.body}</p>` +
+            `<div class="gc-card__rule" aria-hidden="true"></div>` +
+            `</article>`,
+        )
+        .join('') +
+      `</div>`,
+  )
+
+/** Builds the `/lien-he/` href exactly as leadCtaHref() does in React. */
+const leadHref = (attribution) => {
+  const query = Object.entries(attribution)
+    .filter(([, value]) => value)
+    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+    .join('&')
+
+  return query ? `/lien-he/?${query}` : '/lien-he/'
 }
 
 /* ------------------------------------------------------------------ *
@@ -288,20 +396,58 @@ const analyticsSvg = `
  * ------------------------------------------------------------------ */
 
 const content = [
-  /* 1 — HeroSection.tsx */
+  /* 1 — HeroSection.tsx
+   *
+   * One html widget, not six stacked Elementor widgets. The reference's left
+   * column is a single flex stack whose parts have fixed relationships — the
+   * badge sits on the heading, the two buttons share a row and wrap together,
+   * the fine print hangs off a hairline under the checks. Expressed as
+   * separate widgets each one becomes a block with its own margin, which is
+   * how the port ended up with the buttons on two rows and no badge, checks
+   * or fine print at all.
+   *
+   * The CTA href is built by leadHref() from the same attribution object
+   * HeroSection passes to leadCtaHref(), so the lead still arrives labelled. */
   section(
     [
       column(
         [
-          heading('Tổng Đài Ảo Tích Hợp CRM - Bứt Phá Doanh Số Cho Đội Sales & CSKH', 'h1', {
-            typography_font_size: { unit: 'px', size: 48 },
-          }),
-          text(
-            'Giải pháp tổng đài thông minh giúp đội Sales và CSKH thực hiện cuộc gọi trên trình duyệt, lưu lịch sử và ghi âm, quản lý thông tin khách hàng, theo dõi hiệu suất và kết nối với hệ thống quản trị doanh nghiệp.',
+          html(
+            `<div class="gc-hero">` +
+              eyebrowHtml('Gcalls Webphone', { hero: true }) +
+              gradHeadingHtml(
+                'h1',
+                'Tổng Đài Ảo Tích Hợp CRM - ',
+                'Bứt Phá Doanh Số',
+                ' Cho Đội Sales &amp; CSKH',
+              ) +
+              `<p class="gc-hero-lede">Giải pháp tổng đài thông minh giúp đội Sales và CSKH thực hiện cuộc gọi trên trình duyệt, lưu lịch sử và ghi âm, quản lý thông tin khách hàng, theo dõi hiệu suất và kết nối với hệ thống quản trị doanh nghiệp.</p>` +
+              `<div class="gc-ctarow">` +
+              `<a class="gc-btn gc-btn--primary" href="${leadHref({ intent: 'demo', source: 'consultation', product: 'Gcalls Plus Webphone' })}">${icon('phone')}Đăng ký demo</a>` +
+              `<a class="gc-btn gc-btn--ghost" href="/gcalls-plus-webphone/">Khám phá Gcalls Webphone${icon('chevron-right')}</a>` +
+              `</div>` +
+              `<div class="gc-checks">` +
+              [
+                'Gọi trực tiếp trên trình duyệt',
+                'Lưu lịch sử và ghi âm cuộc gọi',
+                'Quản lý danh bạ khách hàng',
+                'Theo dõi KPI realtime',
+              ]
+                .map(
+                  (item) =>
+                    `<div class="gc-check"><span class="gc-check__i">${icon('check', 3)}</span><span>${item}</span></div>`,
+                )
+                .join('') +
+              `</div>` +
+              // Both lines are claim-safety copy, and the second is repeated
+              // out here on purpose: the same label inside the mockup frame is
+              // covered by the overlapping cards at desktop widths, and a
+              // label a layout can hide is not a label.
+              `<div class="gc-fine">` +
+              `<p>Phạm vi triển khai và cấu hình được xác nhận cùng đội ngũ Gcalls theo hệ thống thực tế của doanh nghiệp.</p>` +
+              `<p>Hình ảnh giao diện và toàn bộ số liệu trong ảnh là minh họa, không phải kết quả vận hành của một doanh nghiệp cụ thể.</p>` +
+              `</div></div>`,
           ),
-          // Exactly the attribution HeroSection passes to leadCtaHref().
-          cta('Đăng ký demo', { intent: 'demo', source: 'consultation', product: 'Gcalls Plus Webphone' }),
-          linkButton('Khám phá Gcalls Webphone', '/gcalls-plus-webphone/'),
         ],
         50,
       ),
@@ -310,45 +456,65 @@ const content = [
     tinted(BRAND_LIGHT),
   ),
 
-  /* 2 — PainPointsSection.tsx */
+  /* 2 — PainPointsSection.tsx
+   *
+   * The six cards are one CSS grid, not six Elementor columns — see the
+   * caution on grid(). The icons and the accent cycle are the reference's
+   * own: painPoints[] assigns three accents in rotation, which the stylesheet
+   * reproduces with :nth-child rather than by writing colour into the
+   * template. */
   section([
     column([
-      heading('“Khoảng Trống” Vận Hành Khiến Doanh Nghiệp Rò Rỉ Khách Hàng Và Thất Thoát Doanh Thu'),
-      text(
+      sectionHead(
+        'Nỗi đau doanh nghiệp',
+        [
+          '“Khoảng Trống” Vận Hành Khiến Doanh Nghiệp ',
+          'Rò Rỉ Khách Hàng Và Thất Thoát Doanh Thu',
+        ],
         'Đội Sales và CSKH có thể mất nhiều thời gian và dữ liệu khi hệ thống nghe gọi, quản lý khách hàng và báo cáo vận hành hoạt động rời rạc.',
       ),
     ]),
   ]),
   section(
-    grid(
-      [
-        card(
-          'Gián đoạn hoạt động telesales khi số gọi ra bị khóa hoặc bị người nhận báo cáo spam',
-          'Chiến dịch gọi ra đang chạy có thể dừng giữa chừng, đội ngũ phải chờ xử lý đầu số trước khi tiếp tục liên hệ khách hàng.',
+    [
+      column([
+        cardGrid(
+          [
+            {
+              icon: 'phone-off',
+              title: 'Gián đoạn hoạt động telesales khi số gọi ra bị khóa hoặc bị người nhận báo cáo spam',
+              body: 'Chiến dịch gọi ra đang chạy có thể dừng giữa chừng, đội ngũ phải chờ xử lý đầu số trước khi tiếp tục liên hệ khách hàng.',
+            },
+            {
+              icon: 'user-x',
+              title: 'Khách hàng e ngại và từ chối cuộc gọi đến từ số lạ',
+              body: 'Khi cuộc gọi không mang dấu hiệu nhận diện, người nhận khó biết ai đang gọi và thường bỏ qua trước khi nghe nội dung tư vấn.',
+            },
+            {
+              icon: 'shield-alert',
+              title: 'Quản lý khó kiểm soát chất lượng tư vấn thực tế',
+              body: 'Nếu không có ghi âm, ghi chú và tiêu chí đánh giá tập trung, quản lý chỉ nắm được một phần nội dung trao đổi giữa nhân viên và khách hàng.',
+            },
+            {
+              icon: 'bar-chart',
+              title: 'Thiếu dữ liệu thời gian thực để đánh giá hiệu suất đội ngũ',
+              body: 'Báo cáo tổng hợp thủ công thường đến sau khi vấn đề đã xảy ra, khiến quản lý khó điều phối nguồn lực trong ngày.',
+            },
+            {
+              icon: 'globe',
+              title: 'Chi phí cao và tỷ lệ bắt máy thấp khi liên hệ thị trường quốc tế',
+              body: 'Gọi ra thị trường nước ngoài bằng đầu số không phù hợp làm tăng chi phí liên lạc và giảm khả năng khách hàng nhận máy.',
+            },
+            {
+              icon: 'keyboard',
+              title: 'Nhân viên mất thời gian nhập liệu và đối chiếu thông tin thủ công',
+              body: 'Mỗi cuộc gọi kéo theo thao tác sao chép, nhập lại và kiểm tra chéo giữa các hệ thống, làm chậm quy trình và dễ phát sinh sai sót.',
+            },
+          ],
+          3,
         ),
-        card(
-          'Khách hàng e ngại và từ chối cuộc gọi đến từ số lạ',
-          'Khi cuộc gọi không mang dấu hiệu nhận diện, người nhận khó biết ai đang gọi và thường bỏ qua trước khi nghe nội dung tư vấn.',
-        ),
-        card(
-          'Quản lý khó kiểm soát chất lượng tư vấn thực tế',
-          'Nếu không có ghi âm, ghi chú và tiêu chí đánh giá tập trung, quản lý chỉ nắm được một phần nội dung trao đổi giữa nhân viên và khách hàng.',
-        ),
-        card(
-          'Thiếu dữ liệu thời gian thực để đánh giá hiệu suất đội ngũ',
-          'Báo cáo tổng hợp thủ công thường đến sau khi vấn đề đã xảy ra, khiến quản lý khó điều phối nguồn lực trong ngày.',
-        ),
-        card(
-          'Chi phí cao và tỷ lệ bắt máy thấp khi liên hệ thị trường quốc tế',
-          'Gọi ra thị trường nước ngoài bằng đầu số không phù hợp làm tăng chi phí liên lạc và giảm khả năng khách hàng nhận máy.',
-        ),
-        card(
-          'Nhân viên mất thời gian nhập liệu và đối chiếu thông tin thủ công',
-          'Mỗi cuộc gọi kéo theo thao tác sao chép, nhập lại và kiểm tra chéo giữa các hệ thống, làm chậm quy trình và dễ phát sinh sai sót.',
-        ),
-      ],
-      3,
-    ),
+      ]),
+    ],
     { padding: { unit: 'px', top: '0', right: '0', bottom: '48', left: '0', isLinked: false } },
   ),
   // Still PainPointsSection: React nests LossEstimator at the end of it rather
@@ -409,37 +575,46 @@ const content = [
     ]),
   ]),
   section([column([heading('Sản phẩm Gcalls', 'h3')])]),
-  section(
-    grid(
-      [
-        plainCard(
-          'Gcalls Plus Webphone',
-          'Tổng đài trên trình duyệt hỗ trợ nghe gọi, lịch sử cuộc gọi, ghi âm, danh bạ và theo dõi hoạt động đội ngũ.',
-        ),
-        plainCard(
-          'QA QC Center',
-          'Hỗ trợ chuyển giọng nói thành văn bản, phân tích từ khóa, chấm điểm theo tiêu chí và tổng hợp dữ liệu phục vụ kiểm soát chất lượng.',
-        ),
-        plainCard('Gcalls CX', 'Nền tảng Contact Center hỗ trợ quản lý tương tác đa kênh và quy trình chăm sóc khách hàng.'),
-        plainCard(
-          'Gcalls Voicebot AI',
-          'Gcalls tư vấn, kết nối và tích hợp Voicebot vào hệ thống tổng đài theo kịch bản và phạm vi triển khai của doanh nghiệp.',
-        ),
-      ],
-      4,
-    ),
-  ),
+  section([
+    column([
+      cardGrid(
+        [
+          {
+            title: 'Gcalls Plus Webphone',
+            body: 'Tổng đài trên trình duyệt hỗ trợ nghe gọi, lịch sử cuộc gọi, ghi âm, danh bạ và theo dõi hoạt động đội ngũ.',
+          },
+          {
+            title: 'QA QC Center',
+            body: 'Hỗ trợ chuyển giọng nói thành văn bản, phân tích từ khóa, chấm điểm theo tiêu chí và tổng hợp dữ liệu phục vụ kiểm soát chất lượng.',
+          },
+          {
+            title: 'Gcalls CX',
+            body: 'Nền tảng Contact Center hỗ trợ quản lý tương tác đa kênh và quy trình chăm sóc khách hàng.',
+          },
+          {
+            title: 'Gcalls Voicebot AI',
+            body: 'Gcalls tư vấn, kết nối và tích hợp Voicebot vào hệ thống tổng đài theo kịch bản và phạm vi triển khai của doanh nghiệp.',
+          },
+        ],
+        4,
+      ),
+    ]),
+  ]),
   section([column([heading('Giải pháp Gcalls', 'h3')])]),
   section(
-    grid(
-      [
-        plainCard('Tích hợp CRM', 'Kết nối cuộc gọi với dữ liệu và quy trình trên CRM của doanh nghiệp.'),
-        plainCard('Tích hợp Helpdesk', 'Đưa cuộc gọi vào quy trình hỗ trợ và ticket của đội CSKH.'),
-        plainCard('Tích hợp POS', 'Kết nối cuộc gọi với dữ liệu bán hàng và đơn hàng trên hệ thống POS.'),
-        plainCard('Tổng đài quốc tế', 'Đầu số và phương án liên lạc theo từng thị trường doanh nghiệp phục vụ.'),
-      ],
-      4,
-    ),
+    [
+      column([
+        cardGrid(
+          [
+            { title: 'Tích hợp CRM', body: 'Kết nối cuộc gọi với dữ liệu và quy trình trên CRM của doanh nghiệp.' },
+            { title: 'Tích hợp Helpdesk', body: 'Đưa cuộc gọi vào quy trình hỗ trợ và ticket của đội CSKH.' },
+            { title: 'Tích hợp POS', body: 'Kết nối cuộc gọi với dữ liệu bán hàng và đơn hàng trên hệ thống POS.' },
+            { title: 'Tổng đài quốc tế', body: 'Đầu số và phương án liên lạc theo từng thị trường doanh nghiệp phục vụ.' },
+          ],
+          4,
+        ),
+      ]),
+    ],
     { padding: { unit: 'px', top: '0', right: '0', bottom: SECTION_PAD, left: '0', isLinked: false } },
   ),
 
@@ -535,9 +710,11 @@ const content = [
           'Khi có cuộc gọi đến, nhân viên xem được thông tin khách hàng lấy từ hệ thống đã kết nối — trong phạm vi tích hợp được cấu hình cho doanh nghiệp.',
         ),
       ], 50),
-      // The mobile webphone, on the section about the agent seeing context the
-      // moment a call arrives.
-      column([media('GP-01')], 50),
+      // The ported CustomerPopupMockup, not the mobile screenshot that used to
+      // sit here. This section's argument is the moment a call arrives and the
+      // agent sees who it is — a still frame cannot show a moment, and the
+      // reference makes it answerable on purpose.
+      column([mockup('customer_popup')], 50),
     ],
     tinted('#faf9fc'),
   ),
@@ -554,9 +731,11 @@ const content = [
         'Thu thập số điện thoại và gọi lại tức thì',
         'Theo dõi nguồn cuộc gọi từ từng trang web',
       ]),
-      // React renders this section statically, so a real masked screenshot is
-      // the honest choice here rather than an invented interface.
-      media('GP-08'),
+      // The ported WidgetMockup. The screenshot that used to sit here showed
+      // the click-to-call ADMIN configuration screen; this section sells what
+      // the website VISITOR sees, which is the button and the callback panel.
+      // Right subject, wrong end of it.
+      mockup('widget'),
       cta('Call Button Widget', {
         intent: 'consultation',
         source: 'consultation',

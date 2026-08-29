@@ -115,31 +115,109 @@ final class Mockups {
 	 * KPI values are shapes, not measurements, and the caption says so.
 	 */
 	private static function mock_hero(): string {
+		/*
+		 * Four KPIs, because the reference's strip is a four-column grid and a
+		 * three-column port reads as a different component.
+		 *
+		 * The reference also prints a delta beside each one (+12%, +4%, −0:18).
+		 * Those are NOT reproduced. A value like "73%" under a caption saying
+		 * the data is illustrative reads as a shape; "+12%" reads as an
+		 * improvement this product delivered, and there is no measurement in
+		 * this repository behind it. Same layout, one claim fewer.
+		 */
 		$kpis = array(
-			array( 'Cuộc gọi hôm nay', '128' ),
+			array( 'Cuộc gọi hôm nay', '84' ),
 			array( 'Tỷ lệ nghe máy', '73%' ),
 			array( 'Thời gian TB', '5:24' ),
+			array( 'Đã chốt deal', '11' ),
 		);
 
-		$out = self::chrome( 'Gcalls Webphone — Dashboard' );
+		/* The dashboard, which is the stage's main card. */
+		$main  = self::chrome( 'Gcalls Webphone — Dashboard' );
+		$main .= '<div class="gcalls-mock__strip gcalls-mock__strip--in"><span class="gcalls-mock__pulse" aria-hidden="true"></span>';
+		$main .= '<span><strong>Cuộc gọi đến</strong> · ' . esc_html( self::CONTACTS[0]['name'] ) . '</span>';
+		$main .= '<span class="gcalls-mock__muted">' . esc_html( self::CONTACTS[0]['phone'] ) . '</span>';
+		$main .= '<span class="gcalls-mock__badge">Đang đổ chuông</span></div>';
 
-		$out .= '<div class="gcalls-mock__strip"><span class="gcalls-mock__pulse" aria-hidden="true"></span>';
-		$out .= '<span><strong>Cuộc gọi đến</strong> · ' . esc_html( self::CONTACTS[0]['name'] ) . '</span>';
-		$out .= '<span class="gcalls-mock__muted">' . esc_html( self::CONTACTS[0]['phone'] ) . '</span>';
-		$out .= '<span class="gcalls-mock__badge">Đang đổ chuông</span></div>';
-
-		$out .= '<div class="gcalls-mock__kpis">';
+		$main .= '<div class="gcalls-mock__kpis">';
 		foreach ( $kpis as $kpi ) {
-			$out .= '<div class="gcalls-mock__kpi"><span>' . esc_html( $kpi[0] ) . '</span><strong>' . esc_html( $kpi[1] ) . '</strong></div>';
+			$main .= '<div class="gcalls-mock__kpi"><span>' . esc_html( $kpi[0] ) . '</span><strong>' . esc_html( $kpi[1] ) . '</strong></div>';
 		}
-		$out .= '</div>';
+		$main .= '</div>';
 
-		// The progress bar the interval drives. Starts at the React value so the
-		// no-JavaScript rendering is the same frame, not an empty track.
-		$out .= '<div class="gcalls-mock__player"><button type="button" class="gcalls-mock__play" data-mock-play aria-pressed="false">';
-		$out .= '<span class="screen-reader-text">Phát bản ghi minh họa</span><span aria-hidden="true">▶</span></button>';
-		$out .= '<div class="gcalls-mock__track"><div class="gcalls-mock__fill" data-mock-progress style="width:38%"></div></div>';
-		$out .= '<span class="gcalls-mock__time" data-mock-elapsed>0:38</span></div>';
+		/* A short call list, so the frame reads as a working screen. */
+		$rows = array(
+			array( 'A', 'Khách hàng A', 'Gọi đi · 3:42', '09:14', 'out' ),
+			array( 'B', 'Khách hàng B', 'Gọi đến · 7:18', '09:31', 'in' ),
+			array( 'C', 'Khách hàng C', 'Nhỡ', '09:52', 'missed' ),
+		);
+
+		$main .= '<ul class="gcalls-mock__list gcalls-mock__list--calls">';
+		foreach ( $rows as $row ) {
+			$main .= '<li><span class="gcalls-mock__avatar">' . esc_html( $row[0] ) . '</span>';
+			$main .= '<span class="gcalls-mock__who"><strong>' . esc_html( $row[1] ) . '</strong>';
+			$main .= '<small>' . esc_html( $row[2] ) . '</small></span>';
+			$main .= '<span class="gcalls-mock__kind gcalls-mock__kind--' . esc_attr( $row[4] ) . '">' . esc_html( $row[3] ) . '</span></li>';
+		}
+		$main .= '</ul>';
+
+		/*
+		 * The recording card. This is the one float the reference keeps below
+		 * `lg`; the other three are desktop-only because at 390px they overlap
+		 * each other and clip their own contents.
+		 */
+		$wave = '';
+		for ( $i = 0; $i < 34; $i++ ) {
+			// Deterministic, not random: the reference had to stop re-rolling
+			// these on every playback tick because the waveform visibly boiled.
+			$h     = (int) max( 4, 10 + sin( $i * 0.7 ) * 6 + sin( $i * 1.3 ) * 8 );
+			$wave .= '<span style="height:' . esc_attr( (string) $h ) . 'px"></span>';
+		}
+
+		$timeline  = '<div class="gcalls-mock__cardhead"><strong>' . esc_html__( 'Bản ghi cuộc gọi', 'gcalls-core' ) . '</strong>';
+		$timeline .= '<span class="gcalls-mock__badge">Đã nghe</span></div>';
+		$timeline .= '<div class="gcalls-mock__wave" aria-hidden="true">' . $wave . '</div>';
+		$timeline .= '<div class="gcalls-mock__player"><button type="button" class="gcalls-mock__play" data-mock-play aria-pressed="false">';
+		$timeline .= '<span class="screen-reader-text">Phát bản ghi minh họa</span><span aria-hidden="true">▶</span></button>';
+		$timeline .= '<div class="gcalls-mock__track"><div class="gcalls-mock__fill" data-mock-progress style="width:38%"></div></div>';
+		$timeline .= '<span class="gcalls-mock__time" data-mock-elapsed>0:38</span></div>';
+
+		/* Weekly shape — bars only, no axis values. */
+		$bars = '';
+		foreach ( array( 46, 62, 78, 54, 88, 40, 28 ) as $pct ) {
+			$bars .= '<span style="height:' . esc_attr( (string) $pct ) . '%"></span>';
+		}
+
+		$analytics  = '<div class="gcalls-mock__cardhead"><strong>' . esc_html__( 'Hiệu suất tuần', 'gcalls-core' ) . '</strong></div>';
+		$analytics .= '<div class="gcalls-mock__bars" aria-hidden="true">' . $bars . '</div>';
+
+		/* The identification moment, in miniature. */
+		$popup  = '<div class="gcalls-mock__cardhead"><strong>' . esc_html__( 'Cuộc gọi đến', 'gcalls-core' ) . '</strong>';
+		$popup .= '<span class="gcalls-mock__pulse" aria-hidden="true"></span></div>';
+		$popup .= '<div class="gcalls-mock__who"><strong>' . esc_html( self::CONTACTS[0]['name'] ) . '</strong>';
+		$popup .= '<small>' . esc_html( self::CONTACTS[0]['org'] ) . ' · ' . esc_html( self::CONTACTS[0]['phone'] ) . '</small></div>';
+
+		/* Dialpad. */
+		$keys = '';
+		foreach ( array( '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '0', '#' ) as $key ) {
+			$keys .= '<span>' . esc_html( $key ) . '</span>';
+		}
+
+		$dialpad  = '<div class="gcalls-mock__dialnum">090 *** **12</div>';
+		$dialpad .= '<div class="gcalls-mock__keys" aria-hidden="true">' . $keys . '</div>';
+
+		$float = static function ( string $name, string $body, bool $lg_only = false ): string {
+			return '<div class="gcalls-stage__float gcalls-stage__float--' . esc_attr( $name )
+				. ( $lg_only ? ' gcalls-stage__float--lg' : '' ) . '">' . $body . '</div>';
+		};
+
+		$out  = '<div class="gcalls-stage">';
+		$out .= '<div class="gcalls-stage__main">' . $main . '</div>';
+		$out .= $float( 'timeline', $timeline );
+		$out .= $float( 'analytics', $analytics, true );
+		$out .= $float( 'popup', $popup, true );
+		$out .= $float( 'dialpad', $dialpad, true );
+		$out .= '</div>';
 
 		return $out . self::caption();
 	}
@@ -440,6 +518,92 @@ final class Mockups {
 			$out .= '<li><span>' . esc_html( $item[0] ) . '</span><em class="gcalls-mock__mark gcalls-mock__mark--' . ( 'đạt' === $item[1] ? 'ok' : 'no' ) . '">' . esc_html( $item[1] ) . '</em></li>';
 		}
 		$out .= '</ul></div>';
+
+		return $out . self::caption();
+	}
+
+	/* ------------------------------------- 9. customer popup / 10. widget */
+
+	/**
+	 * CustomerPopupSection — the screen pop when a call arrives.
+	 *
+	 * Ported from IntegrationsSection.tsx's CustomerPopupMockup, which is an
+	 * interactive component: it opens ringing, and answering it switches the
+	 * bar to "Đã kết nối". The port previously showed a static screenshot
+	 * instead, which meant the one section whose whole argument is "this
+	 * happens the moment a call arrives" could not demonstrate the moment.
+	 *
+	 * The reference's invented personal name and company are NOT carried over;
+	 * this uses the anonymous demo contacts like every other mockup here. See
+	 * the file header for why that rule exists.
+	 */
+	private static function mock_customer_popup(): string {
+		$history = array(
+			array( 'Gọi đi · 3:42', 'Hôm nay 09:14' ),
+			array( 'Ghi chú: cần gửi báo giá', 'Hôm nay 09:35' ),
+		);
+
+		$out  = '<div class="gcalls-pop" data-mock-pop>';
+		$out .= '<div class="gcalls-pop__bar">';
+		$out .= '<span class="gcalls-pop__ring" aria-hidden="true"></span>';
+		$out .= '<span class="gcalls-pop__state"><strong data-mock-pop-state>Cuộc gọi đến…</strong>';
+		$out .= '<small>' . esc_html( self::CONTACTS[0]['phone'] ) . ' · Hotline demo</small></span>';
+		$out .= '<span class="gcalls-pop__acts">';
+		$out .= '<button type="button" class="gcalls-pop__btn gcalls-pop__btn--yes" data-mock-pop-answer>'
+			. '<span class="screen-reader-text">' . esc_html__( 'Bắt máy', 'gcalls-core' ) . '</span><span aria-hidden="true">✆</span></button>';
+		$out .= '<button type="button" class="gcalls-pop__btn gcalls-pop__btn--no" data-mock-pop-reject>'
+			. '<span class="screen-reader-text">' . esc_html__( 'Từ chối cuộc gọi', 'gcalls-core' ) . '</span><span aria-hidden="true">✕</span></button>';
+		$out .= '</span></div>';
+
+		$out .= '<div class="gcalls-pop__body">';
+		$out .= '<div class="gcalls-pop__who"><span class="gcalls-mock__avatar">A</span>';
+		$out .= '<span class="gcalls-mock__who"><strong>' . esc_html( self::CONTACTS[0]['name'] ) . '</strong>';
+		$out .= '<small>' . esc_html( self::CONTACTS[0]['org'] ) . '</small></span>';
+		$out .= '<span class="gcalls-mock__badge">' . esc_html( self::CONTACTS[0]['tag'] ) . '</span></div>';
+
+		$out .= '<div class="gcalls-pop__hist"><span class="gcalls-pop__histhead">Lịch sử gần nhất</span>';
+		foreach ( $history as $item ) {
+			$out .= '<span class="gcalls-pop__row"><em>' . esc_html( $item[0] ) . '</em><i>' . esc_html( $item[1] ) . '</i></span>';
+		}
+		$out .= '</div>';
+
+		$out .= '<div class="gcalls-pop__quick">';
+		foreach ( array( 'Ghi chú', 'Gắn tag', 'Xem hồ sơ' ) as $action ) {
+			$out .= '<button type="button">' . esc_html( $action ) . '</button>';
+		}
+		$out .= '</div></div></div>';
+
+		return $out . self::caption();
+	}
+
+	/**
+	 * CallWidgetSection — the call button a visitor opens on a website.
+	 *
+	 * Ported from WidgetMockup, which opens and closes and takes a number.
+	 * The port showed a configuration screenshot: correct subject, wrong
+	 * argument — the section sells what the VISITOR sees, not what the admin
+	 * configures.
+	 */
+	private static function mock_widget(): string {
+		$out  = '<div class="gcalls-widget" data-mock-widget>';
+		$out .= '<div class="gcalls-widget__page" aria-hidden="true">';
+		$out .= '<span class="gcalls-widget__bar"></span><span class="gcalls-widget__line"></span>';
+		$out .= '<span class="gcalls-widget__line gcalls-widget__line--short"></span>';
+		$out .= '</div>';
+
+		$out .= '<div class="gcalls-widget__panel" data-mock-widget-panel hidden>';
+		$out .= '<div class="gcalls-widget__head"><strong>' . esc_html__( 'Gọi lại cho tôi', 'gcalls-core' ) . '</strong>';
+		$out .= '<small>' . esc_html__( 'Để lại số điện thoại, đội ngũ sẽ liên hệ lại.', 'gcalls-core' ) . '</small></div>';
+		// A demo field: it is deliberately not a form and posts nowhere, so no
+		// visitor can believe they have submitted a number to anyone.
+		$out .= '<div class="gcalls-widget__field" aria-hidden="true">090 *** **12</div>';
+		$out .= '<span class="gcalls-widget__send">' . esc_html__( 'Yêu cầu gọi lại', 'gcalls-core' ) . '</span>';
+		$out .= '</div>';
+
+		$out .= '<button type="button" class="gcalls-widget__fab" data-mock-widget-toggle aria-expanded="false">';
+		$out .= '<span aria-hidden="true">✆</span><span class="screen-reader-text">'
+			. esc_html__( 'Mở khung gọi lại minh họa', 'gcalls-core' ) . '</span></button>';
+		$out .= '</div>';
 
 		return $out . self::caption();
 	}

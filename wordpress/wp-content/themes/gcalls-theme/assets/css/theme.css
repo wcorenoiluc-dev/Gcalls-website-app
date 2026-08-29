@@ -1146,3 +1146,381 @@ html.gcalls-nav-open body { overflow: hidden; }
 	font-size: 0.8125rem;
 	font-weight: 500;
 }
+
+/* =====================================================================
+ * React parity layer — 010
+ * =====================================================================
+ * The Elementor template carries structure and words; everything below
+ * carries the look. The split is deliberate and load-bearing:
+ * qa-foundation enforces an approved-colour list against the template
+ * JSON, and the reference design legitimately uses tints outside it
+ * (#9c63d6 in the heading gradient, three card accents). Putting those
+ * in the template would either fail that gate or force it to be
+ * loosened, and a loosened gate stops catching the stray colours it
+ * exists for. So the template emits class names and this file resolves
+ * them — which also means a palette change is one file, not a
+ * regenerated page.
+ *
+ * Every rule here is measured off src/components/home/*.tsx. Where a
+ * comment cites a Tailwind class, that is the class in the reference.
+ * ===================================================================== */
+
+/* Eyebrow pill. Reference: PainPointsSection header and Hero label badge —
+ * rgba brand wash, brand text, uppercase, 0.08em tracking. */
+.gc-eyebrow {
+	align-items: center;
+	background: rgba(103, 58, 183, 0.08);
+	border-radius: 999px;
+	color: var(--gcalls-brand);
+	display: inline-flex;
+	font-size: 0.75rem;
+	font-weight: 700;
+	gap: 0.5rem;
+	letter-spacing: 0.08em;
+	line-height: 1.4;
+	padding: 0.375rem 0.875rem;
+	text-transform: uppercase;
+}
+
+/* The hero's badge sits on a tinted section, so it carries a touch more
+ * fill to stay legible, plus the live dot. */
+.gc-eyebrow--hero { background: rgba(103, 58, 183, 0.1); }
+
+.gc-eyebrow__dot {
+	background: var(--gcalls-brand);
+	border-radius: 50%;
+	flex: none;
+	height: 0.375rem;
+	width: 0.375rem;
+	animation: gc-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes gc-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+@media (prefers-reduced-motion: reduce) {
+	.gc-eyebrow__dot { animation: none; }
+}
+
+/* Headings. The reference sets a fluid size with clamp() and keeps the
+ * body of the line in ink, colouring only the emphasised span — so the
+ * gradient reads as emphasis rather than as decoration on everything. */
+.gc-h1,
+.gc-h2 {
+	color: var(--gcalls-foreground);
+	font-family: var(--gcalls-font-sans);
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	margin: 0;
+}
+
+.gc-h1 { font-size: clamp(32px, 4.5vw, 54px); line-height: 1.12; }
+.gc-h2 { font-size: clamp(28px, 3.5vw, 44px); line-height: 1.15; }
+
+/* Clipped-gradient emphasis. -webkit-text-fill-color is what actually
+ * hides the solid colour; the plain `color` above is the fallback for
+ * engines without background-clip:text, which then render brand ink
+ * rather than an invisible line. */
+.gc-grad {
+	background-image: linear-gradient(135deg, #673ab7 0%, #9c63d6 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: var(--gcalls-brand);
+}
+
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+	.gc-grad { -webkit-text-fill-color: currentColor; color: var(--gcalls-brand); }
+}
+
+/* Centred section header: max-w-3xl mx-auto text-center mb-16. */
+.gc-head {
+	margin: 0 auto 4rem;
+	max-width: 48rem;
+	text-align: center;
+}
+
+.gc-head .gc-h2 { margin-top: 1.5rem; }
+
+.gc-head__lead {
+	color: var(--gcalls-muted);
+	font-size: 1.0625rem;
+	line-height: 1.7;
+	margin: 1.25rem 0 0;
+}
+
+/* ── Card grid ───────────────────────────────────────────────────────
+ * Reference: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5.
+ *
+ * This is a CSS grid inside ONE widget, not a row of Elementor columns.
+ * Elementor columns in a single section never wrap — they only get
+ * narrower — so six "33%" columns rendered as six across at every width
+ * instead of 3×2, which is what the audit found. A grid wraps by
+ * definition and needs no per-breakpoint column maths. */
+.gc-cards {
+	display: grid;
+	gap: 1.25rem;
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) { .gc-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .gc-cards--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .gc-cards--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+.gc-card {
+	--gc-accent: #673ab7;
+	--gc-accent-bg: #f5f0fd;
+	background: var(--gcalls-surface);
+	border: 1px solid rgba(103, 58, 183, 0.1);
+	border-radius: 20px;
+	box-shadow: 0 2px 12px rgba(103, 58, 183, 0.06), 0 1px 4px rgba(0, 0, 0, 0.03);
+	display: flex;
+	flex-direction: column;
+	padding: 1.75rem;
+	transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+/* Three accents, cycling, exactly as the reference data assigns them. */
+.gc-card:nth-child(3n + 2) { --gc-accent: #7c3aed; --gc-accent-bg: #f3f0fe; }
+.gc-card:nth-child(3n + 3) { --gc-accent: #5b21b6; --gc-accent-bg: #f0ebfd; }
+
+.gc-card:hover {
+	box-shadow: 0 20px 48px rgba(103, 58, 183, 0.14), 0 4px 12px rgba(0, 0, 0, 0.05);
+	transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gc-card, .gc-card:hover { transform: none; transition: none; }
+}
+
+.gc-card__icon {
+	align-items: center;
+	background: var(--gc-accent-bg);
+	border-radius: 1rem;
+	color: var(--gc-accent);
+	display: flex;
+	height: 3rem;
+	justify-content: center;
+	margin-bottom: 1.25rem;
+	transition: background-color 200ms ease, color 200ms ease;
+	width: 3rem;
+}
+
+.gc-card:hover .gc-card__icon { background: var(--gc-accent); color: #fff; }
+.gc-card__icon svg { height: 22px; width: 22px; }
+
+.gc-card__top {
+	align-items: flex-start;
+	display: flex;
+	gap: 0.5rem;
+	justify-content: space-between;
+	margin-bottom: 0.75rem;
+}
+
+/* A heading here is a real h3 — the card title heads the paragraph under
+ * it, so it is a heading in the document outline and not a styled div. */
+.gc-card__top h3 {
+	color: var(--gcalls-foreground);
+	font-size: 0.9375rem;
+	font-weight: 700;
+	line-height: 1.4;
+	margin: 0;
+}
+
+.gc-card__n {
+	color: rgba(103, 58, 183, 0.25);
+	flex: none;
+	font-family: var(--gcalls-font-mono);
+	font-size: 0.75rem;
+	font-weight: 700;
+	margin-top: 0.125rem;
+}
+
+.gc-card__body {
+	color: var(--gcalls-muted);
+	font-size: 0.875rem;
+	line-height: 1.7;
+	margin: 0;
+}
+
+.gc-card__rule {
+	background: linear-gradient(90deg, var(--gc-accent), transparent);
+	border-radius: 999px;
+	height: 2px;
+	margin-top: 1.25rem;
+	opacity: 0;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.gc-card:hover .gc-card__rule { opacity: 1; transform: scaleX(1); }
+
+/* ── Hero left column ───────────────────────────────────────────────── */
+
+.gc-hero-lede {
+	color: var(--gcalls-muted);
+	font-size: 1.0625rem;
+	line-height: 1.7;
+	margin: 1.25rem 0 0;
+	max-width: 560px;
+}
+
+/* flex-wrap gap-3: the two buttons sit side by side and wrap together on
+ * a narrow screen rather than each taking a full row, which is how the
+ * port rendered them. */
+.gc-ctarow {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 1.75rem;
+}
+
+.gc-btn {
+	align-items: center;
+	border-radius: 0.75rem;
+	display: inline-flex;
+	font-size: 0.9375rem;
+	font-weight: 700;
+	gap: 0.5rem;
+	line-height: 1;
+	padding: 0.875rem 1.75rem;
+	text-decoration: none;
+	transition: background-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.gc-btn svg { height: 16px; width: 16px; }
+
+.gc-btn--primary {
+	background: var(--gcalls-brand);
+	box-shadow: 0 4px 24px rgba(103, 58, 183, 0.35);
+	color: #fff;
+}
+
+.gc-btn--primary:hover {
+	background: #5929a8;
+	box-shadow: 0 6px 32px rgba(103, 58, 183, 0.45);
+	color: #fff;
+	transform: translateY(-1px);
+}
+
+.gc-btn--ghost {
+	background: var(--gcalls-surface);
+	border: 1.5px solid rgba(103, 58, 183, 0.25);
+	box-shadow: 0 2px 8px rgba(103, 58, 183, 0.06);
+	color: var(--gcalls-brand);
+}
+
+.gc-btn--ghost:hover {
+	background: #f6f3fc;
+	border-color: var(--gcalls-brand);
+	transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gc-btn:hover { transform: none; }
+}
+
+.gc-checks {
+	display: flex;
+	flex-direction: column;
+	gap: 0.625rem;
+	margin-top: 1.75rem;
+}
+
+.gc-check { align-items: center; display: flex; gap: 0.625rem; }
+
+.gc-check__i {
+	align-items: center;
+	background: rgba(103, 58, 183, 0.12);
+	border-radius: 50%;
+	color: var(--gcalls-brand);
+	display: flex;
+	flex: none;
+	height: 1.25rem;
+	justify-content: center;
+	width: 1.25rem;
+}
+
+.gc-check__i svg { height: 11px; width: 11px; }
+
+.gc-check span {
+	color: var(--gcalls-muted);
+	font-size: 0.875rem;
+	font-weight: 500;
+}
+
+/* The claim-safety fine print. Two lines, the second dimmer, above a
+ * hairline — and never inside the mockup frame, where the layered cards
+ * cover it at desktop widths. */
+.gc-fine {
+	border-top: 1px solid rgba(103, 58, 183, 0.1);
+	margin-top: 1.75rem;
+	padding-top: 0.75rem;
+}
+
+.gc-fine p { color: var(--gcalls-muted); font-size: 0.75rem; line-height: 1.6; margin: 0; }
+.gc-fine p + p { color: #8b8f9a; margin-top: 0.375rem; }
+
+/* ── Branding mark and dropdown affordance — 010 parity ───────────────
+ * The port rendered the site title as one word of brand-coloured text.
+ * The reference is a 32px brand tile with a phone glyph beside a
+ * two-tone wordmark, and parent nav items announce their submenu with a
+ * chevron. Without the chevron the only way to discover a submenu is to
+ * hover every item and see what happens. */
+.gcalls-branding__link {
+	align-items: center;
+	display: inline-flex;
+	gap: 0.5rem;
+	min-height: 44px; /* tap target, without growing the 32px mark */
+	text-decoration: none;
+}
+
+.gcalls-branding__mark {
+	align-items: center;
+	background: var(--gcalls-brand);
+	border-radius: 0.5rem;
+	color: #fff;
+	display: flex;
+	flex: none;
+	height: 2rem;
+	justify-content: center;
+	width: 2rem;
+}
+
+.gcalls-branding__mark svg { height: 15px; width: 15px; }
+
+.gcalls-branding__text {
+	color: var(--gcalls-foreground);
+	font-size: 1.0625rem;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	text-decoration: none;
+}
+
+.gcalls-branding__text span { color: var(--gcalls-brand); }
+
+/* Chevron drawn in CSS rather than injected into the menu markup: the
+ * menu is editable in wp-admin, and a glyph added to a label there would
+ * be lost the moment someone renames the item. */
+.gcalls-nav__list .menu-item-has-children > a {
+	align-items: center;
+	display: inline-flex;
+	gap: 0.3rem;
+}
+
+.gcalls-nav__list .menu-item-has-children > a::after {
+	border-bottom: 1.5px solid currentColor;
+	border-right: 1.5px solid currentColor;
+	content: "";
+	display: inline-block;
+	height: 0.4em;
+	transform: translateY(-0.12em) rotate(45deg);
+	width: 0.4em;
+}
+
+@media (min-width: 1024px) {
+	.gcalls-nav__list > .menu-item-has-children:hover > a::after,
+	.gcalls-nav__list > .menu-item-has-children:focus-within > a::after {
+		transform: translateY(0.06em) rotate(-135deg);
+	}
+}

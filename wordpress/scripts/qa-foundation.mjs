@@ -650,8 +650,26 @@ if (exists(homeTemplatePath)) {
 
     // Product screenshots must be placed by manifest id, never by an uploads
     // URL or an attachment id, or the template only works on one site.
+    //
+    // Since 010 the home page places no screenshot at all: the reference's
+    // home page is thirteen sections of ported mockups and zero product
+    // photography, and the last two screenshots here (the mobile webphone on
+    // §9, the click-to-call config on §10) stood where the reference has
+    // interactive components. So this can no longer demand that an image
+    // exists — only that any image placed goes through the manifest, and that
+    // none is placed by attachment id, which is the portability bug the gate
+    // was really written for.
     check('no hardcoded uploads URL', !/wp-content\\\/uploads/.test(flat))
-    check('images placed via [gcalls_media]', flat.includes('gcalls_media id='))
+
+    const imageWidgets = (flat.match(/"widgetType":"image"/g) ?? []).length
+    check('no screenshot placed by attachment id', imageWidgets === 0, `${imageWidgets} image widget(s)`)
+
+    const mediaCalls = [...flat.matchAll(/gcalls_media\s+([^\\"]*)/g)].map((m) => m[1])
+    check(
+      'any placed screenshot names a manifest id',
+      mediaCalls.every((call) => call.includes('id=')),
+      mediaCalls.filter((c) => !c.includes('id=')).join(' | '),
+    )
 
     // The chart moved in 007. It used to be a static inline SVG in this
     // template; it is now the ported Analytics mockup, so the drawing and its
@@ -901,6 +919,47 @@ if (exists(mockPhp)) {
   for (const id of ['cx_inbox', 'voicebot_builder', 'qc_transcript']) {
     check(`demo visual ${id}`, mock.includes(`function mock_${id}(`))
   }
+
+  // 010: the two home-page components that used to be screenshots. Both are
+  // interactive in the reference, and the sections they sit on are precisely
+  // the ones whose argument is a moment — a call arriving, a visitor opening
+  // the call button — which a still frame cannot make.
+  for (const id of ['customer_popup', 'widget']) {
+    check(`ported visual ${id}`, mock.includes(`function mock_${id}(`))
+  }
+
+  const homeFlat = exists(homeTemplatePath) ? read(homeTemplatePath) : ''
+  for (const id of ['customer_popup', 'widget', 'hero']) {
+    check(`the home page places mockup ${id}`, homeFlat.includes(`gcalls_mockup id=\\"${id}\\"`))
+  }
+
+  // The hero is a composition, not a single panel: the reference pins four
+  // cards around the dashboard and keeps one of them below lg.
+  check('the hero is a layered stage', mock.includes('gcalls-stage__main') && mock.includes('gcalls-stage__float'))
+
+  /*
+   * Every class the PHP emits has a rule behind it.
+   *
+   * There is no PHP binary on the build machine, so these mockups cannot be
+   * rendered locally and a class name that exists in the markup but not in
+   * the stylesheet would first be visible on the live site, as an unstyled
+   * pile of text where a card should be. Comparing the two files catches
+   * exactly that, which is the failure this arrangement is actually exposed
+   * to — a typo in one of two places that are edited together.
+   */
+  const mockCss = read(path.join(PLUGIN, 'assets/css/mockups.css'))
+  const emitted = new Set(
+    [...mock.matchAll(/class="([^"]+)"/g)]
+      .flatMap((m) => m[1].split(/\s+/))
+      // PHP builds some class attributes by concatenation, so a token can
+      // arrive with the opening quote of the next string still attached, or
+      // as the fixed prefix of a name finished at runtime. Trim the first and
+      // drop the second — a modifier stub ending in "--" names no single rule.
+      .map((c) => c.replace(/['"].*$/, ''))
+      .filter((c) => /^gcalls-(stage|pop|widget)/.test(c) && !c.endsWith('-')),
+  )
+  const unstyled = [...emitted].filter((c) => !mockCss.includes('.' + c))
+  check('every stage/popup/widget class has a rule', unstyled.length === 0, unstyled.join(', '))
 
   check('every mockup carries the demo caption', mock.includes('Giao diện minh họa – dữ liệu demo'))
   // Fake data is the addendum's rule, and the React source's realistic personal

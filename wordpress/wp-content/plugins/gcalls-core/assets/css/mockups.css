@@ -284,3 +284,226 @@
 	object-fit: contain;
 	width: 100%;
 }
+
+/* =====================================================================
+ * Hero stage, customer popup and call widget — 010 parity
+ * =====================================================================
+ * The reference composes the hero from a main dashboard plus four cards
+ * pinned around it. Below `lg` it keeps ONE of those cards and drops the
+ * other three: at 390px they overlapped each other and clipped their own
+ * contents, so the reflow is a deliberate behaviour, not a fallback.
+ * ===================================================================== */
+.gcalls-stage {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	position: relative;
+	width: 100%;
+}
+
+.gcalls-stage__main { width: 100%; }
+
+/* Below lg the floats are ordinary blocks in the column. */
+.gcalls-stage__float {
+	background: #fff;
+	border: 1px solid rgba(103, 58, 183, 0.12);
+	border-radius: 0.9rem;
+	box-shadow: 0 12px 32px rgba(103, 58, 183, 0.14);
+	padding: 0.75rem 0.9rem;
+}
+
+.gcalls-stage__float--lg { display: none; }
+
+@media (min-width: 1024px) {
+	.gcalls-stage {
+		display: block;
+		min-height: 560px;
+		padding: 2rem 0;
+	}
+
+	.gcalls-stage__main { margin: 0 auto; max-width: 540px; }
+
+	.gcalls-stage__float { position: absolute; width: max-content; }
+	.gcalls-stage__float--lg { display: block; }
+
+	.gcalls-stage__float--timeline { top: 0; right: -2%; transform: rotate(1.5deg); width: 230px; z-index: 10; }
+	.gcalls-stage__float--analytics { bottom: 0; left: -2%; transform: rotate(-1.5deg); width: 180px; z-index: 10; }
+	.gcalls-stage__float--popup { top: 46%; left: -4%; transform: translateY(-50%) rotate(-1deg); width: 210px; z-index: 9; }
+	.gcalls-stage__float--dialpad { bottom: 6%; right: 0; transform: rotate(2deg); width: 150px; z-index: 10; }
+}
+
+.gcalls-mock__cardhead {
+	align-items: center;
+	display: flex;
+	gap: 0.4rem;
+	justify-content: space-between;
+	margin-bottom: 0.5rem;
+}
+
+.gcalls-mock__cardhead strong { color: var(--m-ink); font-size: 0.75rem; }
+
+/* Waveform and bar shapes. Neither carries a value label: an unlabelled
+ * shape reads as an illustration, a labelled one reads as a measurement. */
+.gcalls-mock__wave { align-items: center; display: flex; gap: 2px; height: 36px; }
+.gcalls-mock__wave span { background: var(--m-brand); border-radius: 2px; flex: 1; opacity: 0.55; }
+.gcalls-mock__wave span:nth-child(-n + 17) { opacity: 1; }
+
+.gcalls-mock__bars { align-items: flex-end; display: flex; gap: 4px; height: 52px; }
+.gcalls-mock__bars span { background: linear-gradient(180deg, var(--m-brand), var(--m-dark)); border-radius: 3px; flex: 1; }
+
+.gcalls-mock__dialnum {
+	color: var(--m-ink);
+	font-family: var(--gcalls-font-mono, monospace);
+	font-size: 0.8rem;
+	margin-bottom: 0.5rem;
+	text-align: center;
+}
+
+.gcalls-mock__keys { display: grid; gap: 4px; grid-template-columns: repeat(3, 1fr); }
+.gcalls-mock__keys span {
+	background: var(--m-light);
+	border-radius: 6px;
+	color: var(--m-dark);
+	font-size: 0.7rem;
+	font-weight: 600;
+	padding: 0.3rem 0;
+	text-align: center;
+}
+
+.gcalls-mock__strip--in { background: #f6fdf8; }
+.gcalls-mock__list--calls { min-height: 0; }
+
+/* ── Customer popup ─────────────────────────────────────────────────── */
+.gcalls-pop { max-width: 320px; }
+
+.gcalls-pop__bar {
+	align-items: center;
+	background: var(--m-brand);
+	display: flex;
+	gap: 0.6rem;
+	padding: 0.6rem 0.8rem;
+	transition: background-color 200ms ease;
+}
+
+/* Answered state, set by the script. Green is the universal "connected"
+ * signal and the reference switches to it on answer. */
+.gcalls-pop.is-connected .gcalls-pop__bar { background: #16a34a; }
+.gcalls-pop.is-ended .gcalls-pop__bar { background: #5b5f6b; }
+
+.gcalls-pop__ring {
+	background: rgba(255, 255, 255, 0.25);
+	border-radius: 50%;
+	flex: none;
+	height: 1.75rem;
+	width: 1.75rem;
+	animation: gcalls-mock-pulse 1.6s ease-in-out infinite;
+}
+
+.gcalls-pop.is-connected .gcalls-pop__ring,
+.gcalls-pop.is-ended .gcalls-pop__ring { animation: none; }
+
+.gcalls-pop__state { display: grid; flex: 1; min-width: 0; }
+.gcalls-pop__state strong { color: #fff; font-size: 0.75rem; }
+.gcalls-pop__state small { color: rgba(255, 255, 255, 0.78); font-size: 0.65rem; }
+
+.gcalls-pop__acts { display: flex; flex: none; gap: 0.35rem; }
+
+.gcalls-pop__btn {
+	background: rgba(255, 255, 255, 0.22);
+	border: 0;
+	border-radius: 50%;
+	color: #fff;
+	cursor: pointer;
+	font-size: 0.7rem;
+	height: 1.75rem;
+	width: 1.75rem;
+}
+
+.gcalls-pop__btn--yes { background: #22c55e; }
+
+/* Reject keeps the translucent base treatment the reference gives it — the
+ * rule is written out rather than left implicit so the button is not the one
+ * class in this file with no home. */
+.gcalls-pop__btn--no { background: rgba(255, 255, 255, 0.22); }
+.gcalls-pop__body { padding: 0.8rem; }
+.gcalls-pop__who { align-items: center; display: flex; gap: 0.6rem; margin-bottom: 0.6rem; }
+
+.gcalls-pop__hist { background: var(--m-light); border-radius: 0.6rem; display: grid; gap: 0.3rem; padding: 0.6rem; }
+.gcalls-pop__histhead { color: var(--m-muted); font-size: 0.6rem; font-weight: 700; text-transform: uppercase; }
+.gcalls-pop__row { display: flex; gap: 0.5rem; justify-content: space-between; }
+.gcalls-pop__row em { color: var(--m-ink); font-size: 0.7rem; font-style: normal; }
+.gcalls-pop__row i { color: var(--m-muted); font-size: 0.65rem; font-style: normal; }
+
+.gcalls-pop__quick { display: flex; gap: 0.35rem; margin-top: 0.6rem; }
+.gcalls-pop__quick button {
+	background: var(--m-light);
+	border: 0;
+	border-radius: 0.6rem;
+	color: var(--m-dark);
+	cursor: pointer;
+	flex: 1;
+	font: inherit;
+	font-size: 0.65rem;
+	font-weight: 600;
+	padding: 0.4rem 0;
+}
+
+/* ── Call button widget ─────────────────────────────────────────────── */
+.gcalls-widget { padding: 0.9rem; position: relative; min-height: 230px; }
+
+.gcalls-widget__page { display: grid; gap: 0.5rem; opacity: 0.5; }
+.gcalls-widget__bar { background: var(--m-light); border-radius: 6px; height: 1.5rem; }
+.gcalls-widget__line { background: var(--m-border); border-radius: 4px; height: 0.6rem; }
+.gcalls-widget__line--short { width: 60%; }
+
+.gcalls-widget__panel {
+	background: #fff;
+	border: 1px solid var(--m-border);
+	border-radius: 0.9rem;
+	bottom: 3.75rem;
+	box-shadow: 0 16px 40px rgba(103, 58, 183, 0.18);
+	padding: 0.8rem;
+	position: absolute;
+	right: 0.9rem;
+	width: min(240px, calc(100% - 1.8rem));
+}
+
+.gcalls-widget__head { display: grid; gap: 0.15rem; margin-bottom: 0.6rem; }
+.gcalls-widget__head strong { color: var(--m-ink); font-size: 0.8rem; }
+.gcalls-widget__head small { color: var(--m-muted); font-size: 0.65rem; }
+
+.gcalls-widget__field {
+	background: var(--m-light);
+	border-radius: 0.5rem;
+	color: var(--m-muted);
+	font-family: var(--gcalls-font-mono, monospace);
+	font-size: 0.72rem;
+	padding: 0.5rem 0.6rem;
+}
+
+.gcalls-widget__send {
+	background: var(--m-brand);
+	border-radius: 0.5rem;
+	color: #fff;
+	display: block;
+	font-size: 0.72rem;
+	font-weight: 700;
+	margin-top: 0.5rem;
+	padding: 0.45rem 0;
+	text-align: center;
+}
+
+.gcalls-widget__fab {
+	background: var(--m-brand);
+	border: 0;
+	border-radius: 50%;
+	bottom: 0.9rem;
+	box-shadow: 0 8px 24px rgba(103, 58, 183, 0.4);
+	color: #fff;
+	cursor: pointer;
+	font-size: 1.1rem;
+	height: 3rem;
+	position: absolute;
+	right: 0.9rem;
+	width: 3rem;
+}

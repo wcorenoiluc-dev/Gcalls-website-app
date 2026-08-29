@@ -40,10 +40,30 @@ function gcalls_site_branding(): void {
 	if ( has_custom_logo() ) {
 		the_custom_logo();
 	} else {
+		/*
+		 * The reference mark, not the site title.
+		 *
+		 * React's <Logo> is a 32px brand tile carrying a phone glyph, followed
+		 * by the wordmark with "g" in ink and "calls" in brand. The port
+		 * printed get_bloginfo('name') instead, which rendered as the single
+		 * word "Gcalls" in one colour — recognisably not the same logo, on
+		 * every page of the site.
+		 *
+		 * The glyph is inline SVG rather than an uploaded image on purpose: an
+		 * attachment id would not survive a migration to another site, and this
+		 * has to render identically on a fresh install with no media library.
+		 * aria-label carries the accessible name, so the SVG is decorative.
+		 */
 		printf(
-			'<a class="gcalls-branding__text" href="%1$s" rel="home">%2$s</a>',
+			'<a class="gcalls-branding__link" href="%1$s" rel="home" aria-label="%2$s">'
+				. '<span class="gcalls-branding__mark" aria-hidden="true">'
+				. '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false">'
+				. '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>'
+				. '</svg></span>'
+				. '<span class="gcalls-branding__text">g<span>calls</span></span>'
+				. '</a>',
 			esc_url( home_url( '/' ) ),
-			esc_html( get_bloginfo( 'name' ) )
+			esc_attr__( 'Gcalls — về trang chủ', 'gcalls-theme' )
 		);
 	}
 
