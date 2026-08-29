@@ -1324,9 +1324,18 @@ final class Importer {
 				update_post_meta( $post_id, '_elementor_page_settings', $template['page_settings'] );
 			}
 
-			// The generated stylesheet is keyed to the old layout. Leaving it in
+			// Two caches are keyed to the old layout, and leaving either in
 			// place is how a correct import still renders the previous page.
+			//
+			// `_elementor_element_cache` cost an hour to find. The import
+			// reported "updated", then "skipped" on a re-run — so the stored
+			// payload really was the new one — while the front page kept
+			// serving the previous nineteen-versus-sixteen sections, with no
+			// cache headers on the response to suggest why. Elementor's element
+			// cache holds RENDERED HTML in post meta, so the page can be
+			// correct in the database and wrong on screen indefinitely.
 			delete_post_meta( $post_id, '_elementor_css' );
+			delete_post_meta( $post_id, '_elementor_element_cache' );
 
 			if ( class_exists( '\Elementor\Core\Files\CSS\Post' ) ) {
 				( new \Elementor\Core\Files\CSS\Post( $post_id ) )->delete();

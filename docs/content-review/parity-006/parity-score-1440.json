@@ -2,12 +2,12 @@
   {
     "name": "home",
     "route": "/",
-    "score": 61.3,
+    "score": 75.9,
     "parts": {
-      "headings": 51.2,
+      "headings": 78.4,
       "visuals": 100,
       "ctas": 54.5,
-      "rhythm": 62.8
+      "rhythm": 67.6
     },
     "react": {
       "headings": 41,
@@ -16,36 +16,13 @@
       "height": 18669
     },
     "wp": {
-      "headings": 35,
+      "headings": 51,
       "visuals": 9,
       "ctas": 6,
-      "height": 11716
+      "height": 12628
     },
-    "missingInWp": [
-      "“Khoảng Trống” Vận Hành Khiến Doanh Nghiệp Rò Rỉ Khách Hàng Và Thất Thoát Doanh Thu",
-      "Gián đoạn hoạt động telesales khi số gọi ra bị khóa hoặc bị người nhận báo cáo spam",
-      "Sản phẩm Gcalls",
-      "Giải pháp Gcalls",
-      "Theo dõi toàn bộ hoạt động cuộc gọi theo thời gian thực",
-      "Quản lý khách hàng tập trung ngay trên Gcalls",
-      "Ra quyết định nhanh hơn với dữ liệu trực quan",
-      "Các chỉ số quan trọng trong một màn hình",
-      "Dành cho quản lý, trưởng nhóm và chủ doanh nghiệp",
-      "Điều hướng cuộc gọi đến đúng người phụ trách",
-      "Đầy đủ tính năng Cloud PBX doanh nghiệp",
-      "Hành trình cuộc gọi từ đầu đến cuối",
-      "Nhận diện khách hàng ngay khi cuộc gọi đến",
-      "Biến khách truy cập website thành cuộc gọi",
-      "Hệ sinh thái tích hợp của Gcalls",
-      "Trao đổi phạm vi tích hợp cùng đội ngũ Gcalls",
-      "Chỉ cần trình duyệt là có thể bắt đầu",
-      "Biết đội ngũ đang làm gì theo thời gian thực",
-      "Tổng đài doanh nghiệp luôn đồng hành cùng đội ngũ của bạn",
-      "Gcalls phù hợp với mô hình đội ngũ nào"
-    ],
+    "missingInWp": [],
     "extraInWp": [
-      "Những điểm nghẽn làm giảm hiệu suất nghe gọi của đội Sales và CSKH",
-      "Gián đoạn hoạt động telesales khi số gọi ra bị khóa hoặc bị báo cáo spam",
       "Gcalls Plus Webphone",
       "QA QC Center",
       "Gcalls CX",
@@ -54,8 +31,6 @@
       "Tích hợp Helpdesk",
       "Tích hợp POS",
       "Tổng đài quốc tế",
-      "Thông tin khách hàng hiện ngay khi có cuộc gọi đến",
-      "Nút gọi trên website, khách để lại số và đội ngũ gọi lại",
       "Đăng ký tư vấn"
     ]
   },

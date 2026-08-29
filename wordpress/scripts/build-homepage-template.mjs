@@ -192,6 +192,15 @@ const shortcode = (value) => widget('shortcode', { shortcode: value })
 const html = (markup) => widget('html', { html: markup })
 
 /** A titled card, used where React renders a grid of problem/product cards. */
+const plainCard = (title, body) =>
+  widget('text-editor', {
+    editor:
+      `<div style="font-size:.95rem;font-weight:700;color:${INK};margin:0 0 .5rem">${title}</div>` +
+      `<p style="margin:0;color:${MUTED}">${body}</p>`,
+    typography_typography: 'custom',
+    typography_font_family: 'Open Sans',
+  })
+
 const card = (title, body) =>
   widget('text-editor', {
     editor: `<h3 style="font-size:1.05rem;font-weight:700;color:${INK};margin:0 0 .5rem">${title}</h3><p style="margin:0;color:${MUTED}">${body}</p>`,
@@ -335,7 +344,15 @@ const content = [
   // checkpoint forbids. Elementor has no nesting that would reproduce the React
   // DOM, so it is a section with the padding closed up instead.
   section(
-    [column([shortcode('[gcalls_loss_estimator]')])],
+    [
+      column([
+        shortcode('[gcalls_loss_estimator]'),
+        cta('Hoặc trao đổi trực tiếp với đội ngũ Gcalls', {
+          intent: 'consultation',
+          source: 'consultation',
+        }),
+      ]),
+    ],
     { padding: { unit: 'px', top: '0', right: '0', bottom: '72', left: '0', isLinked: false } },
   ),
 
@@ -380,16 +397,16 @@ const content = [
   section(
     grid(
       [
-        card(
+        plainCard(
           'Gcalls Plus Webphone',
           'Tổng đài trên trình duyệt hỗ trợ nghe gọi, lịch sử cuộc gọi, ghi âm, danh bạ và theo dõi hoạt động đội ngũ.',
         ),
-        card(
+        plainCard(
           'QA QC Center',
           'Hỗ trợ chuyển giọng nói thành văn bản, phân tích từ khóa, chấm điểm theo tiêu chí và tổng hợp dữ liệu phục vụ kiểm soát chất lượng.',
         ),
-        card('Gcalls CX', 'Nền tảng Contact Center hỗ trợ quản lý tương tác đa kênh và quy trình chăm sóc khách hàng.'),
-        card(
+        plainCard('Gcalls CX', 'Nền tảng Contact Center hỗ trợ quản lý tương tác đa kênh và quy trình chăm sóc khách hàng.'),
+        plainCard(
           'Gcalls Voicebot AI',
           'Gcalls tư vấn, kết nối và tích hợp Voicebot vào hệ thống tổng đài theo kịch bản và phạm vi triển khai của doanh nghiệp.',
         ),
@@ -401,10 +418,10 @@ const content = [
   section(
     grid(
       [
-        card('Tích hợp CRM', 'Kết nối cuộc gọi với dữ liệu và quy trình trên CRM của doanh nghiệp.'),
-        card('Tích hợp Helpdesk', 'Đưa cuộc gọi vào quy trình hỗ trợ và ticket của đội CSKH.'),
-        card('Tích hợp POS', 'Kết nối cuộc gọi với dữ liệu bán hàng và đơn hàng trên hệ thống POS.'),
-        card('Tổng đài quốc tế', 'Đầu số và phương án liên lạc theo từng thị trường doanh nghiệp phục vụ.'),
+        plainCard('Tích hợp CRM', 'Kết nối cuộc gọi với dữ liệu và quy trình trên CRM của doanh nghiệp.'),
+        plainCard('Tích hợp Helpdesk', 'Đưa cuộc gọi vào quy trình hỗ trợ và ticket của đội CSKH.'),
+        plainCard('Tích hợp POS', 'Kết nối cuộc gọi với dữ liệu bán hàng và đơn hàng trên hệ thống POS.'),
+        plainCard('Tổng đài quốc tế', 'Đầu số và phương án liên lạc theo từng thị trường doanh nghiệp phục vụ.'),
       ],
       4,
     ),
@@ -486,6 +503,11 @@ const content = [
       heading('Đầy đủ tính năng Cloud PBX doanh nghiệp', 'h3'),
       mockup('cloud'),
       heading('Hành trình cuộc gọi từ đầu đến cuối', 'h3'),
+      cta('Cloud Call Center', {
+        intent: 'consultation',
+        source: 'consultation',
+        solution: 'Cloud Call Center',
+      }),
     ]),
   ]),
 
@@ -520,6 +542,11 @@ const content = [
       // React renders this section statically, so a real masked screenshot is
       // the honest choice here rather than an invented interface.
       media('GP-08'),
+      cta('Call Button Widget', {
+        intent: 'consultation',
+        source: 'consultation',
+        solution: 'Call Button Widget',
+      }),
     ]),
   ]),
 
@@ -587,6 +614,12 @@ const content = [
         text(
           'Đội ngũ Gcalls trao đổi về quy mô, hệ thống đang dùng và quy trình vận hành để đề xuất cấu hình phù hợp trước khi triển khai.',
         ),
+        // React closes with two buttons beside the panel: one for a demo, one
+        // for a conversation. Both matter here because the lead form is
+        // fail-closed until a destination is approved, so these links are the
+        // only route a visitor has out of this section.
+        cta('Đăng ký demo', { intent: 'demo', source: 'consultation' }, 'primary'),
+        cta('Nhận tư vấn giải pháp', { intent: 'consultation', source: 'consultation' }),
         // The lead panel itself, fail-closed until a destination is approved.
         shortcode('[gcalls_lead_form title="Đăng ký tư vấn"]'),
       ]),

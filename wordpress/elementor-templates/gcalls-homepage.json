@@ -359,7 +359,7 @@
       "isInner": false
     },
     {
-      "id": "aa01175",
+      "id": "d388508",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -374,7 +374,7 @@
       },
       "elements": [
         {
-          "id": "7a7a338",
+          "id": "aa01175",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -389,6 +389,37 @@
                 "shortcode": "[gcalls_loss_estimator]"
               },
               "elements": []
+            },
+            {
+              "id": "7a7a338",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Hoặc trao đổi trực tiếp với đội ngũ Gcalls",
+                "link": {
+                  "url": "/lien-he/?intent=consultation&source=consultation",
+                  "is_external": "",
+                  "nofollow": ""
+                },
+                "align": "left",
+                "background_color": "#673ab7",
+                "button_text_color": "#ffffff",
+                "border_border": "",
+                "border_width": {},
+                "border_color": "",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "8",
+                  "bottom": "8",
+                  "left": "8",
+                  "isLinked": true
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "600"
+              },
+              "elements": []
             }
           ],
           "isInner": false
@@ -397,7 +428,7 @@
       "isInner": false
     },
     {
-      "id": "e371cf0",
+      "id": "c0774c1",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -414,7 +445,7 @@
       },
       "elements": [
         {
-          "id": "2adfd8e",
+          "id": "e371cf0",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -422,7 +453,7 @@
           },
           "elements": [
             {
-              "id": "d388508",
+              "id": "e79f27e",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -436,7 +467,7 @@
               "elements": []
             },
             {
-              "id": "e79f27e",
+              "id": "d9ca19c",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -448,13 +479,13 @@
               "elements": []
             },
             {
-              "id": "67c54a9",
+              "id": "9da69a2",
               "elType": "widget",
               "widgetType": "icon-list",
               "settings": {
                 "icon_list": [
                   {
-                    "_id": "d9ca19c",
+                    "_id": "2b52248",
                     "text": "Vận hành trên trình duyệt",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -462,7 +493,7 @@
                     }
                   },
                   {
-                    "_id": "2b52248",
+                    "_id": "b90daac",
                     "text": "Tích hợp CRM, POS và Helpdesk",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -470,7 +501,7 @@
                     }
                   },
                   {
-                    "_id": "b90daac",
+                    "_id": "99b0e93",
                     "text": "Hỗ trợ nhu cầu liên lạc quốc tế",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -478,7 +509,7 @@
                     }
                   },
                   {
-                    "_id": "99b0e93",
+                    "_id": "67c54a9",
                     "text": "Báo cáo theo thời gian thực",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -498,7 +529,7 @@
               "elements": []
             },
             {
-              "id": "9da69a2",
+              "id": "2adfd8e",
               "elType": "widget",
               "widgetType": "button",
               "settings": {
@@ -535,7 +566,7 @@
       "isInner": false
     },
     {
-      "id": "1ba0fc2",
+      "id": "17378f3",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -550,7 +581,7 @@
       },
       "elements": [
         {
-          "id": "3c72d4b",
+          "id": "1ba0fc2",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -558,7 +589,7 @@
           },
           "elements": [
             {
-              "id": "c0774c1",
+              "id": "1f438aa",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -572,7 +603,7 @@
               "elements": []
             },
             {
-              "id": "1f438aa",
+              "id": "3c72d4b",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -590,7 +621,7 @@
       "isInner": false
     },
     {
-      "id": "7bec024",
+      "id": "e2313d7",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -605,7 +636,7 @@
       },
       "elements": [
         {
-          "id": "8e757b6",
+          "id": "7bec024",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -613,7 +644,7 @@
           },
           "elements": [
             {
-              "id": "17378f3",
+              "id": "8e757b6",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -633,7 +664,7 @@
       "isInner": false
     },
     {
-      "id": "61da6a6",
+      "id": "8c1635d",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -648,28 +679,6 @@
       },
       "elements": [
         {
-          "id": "2ec8da1",
-          "elType": "column",
-          "settings": {
-            "_column_size": 25,
-            "_inline_size": null
-          },
-          "elements": [
-            {
-              "id": "e2313d7",
-              "elType": "widget",
-              "widgetType": "text-editor",
-              "settings": {
-                "editor": "<h3 style=\"font-size:1.05rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">Gcalls Plus Webphone</h3><p style=\"margin:0;color:#5b5f6b\">Tổng đài trên trình duyệt hỗ trợ nghe gọi, lịch sử cuộc gọi, ghi âm, danh bạ và theo dõi hoạt động đội ngũ.</p>",
-                "typography_typography": "custom",
-                "typography_font_family": "Open Sans"
-              },
-              "elements": []
-            }
-          ],
-          "isInner": false
-        },
-        {
           "id": "0bc38f1",
           "elType": "column",
           "settings": {
@@ -682,7 +691,7 @@
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
-                "editor": "<h3 style=\"font-size:1.05rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">QA QC Center</h3><p style=\"margin:0;color:#5b5f6b\">Hỗ trợ chuyển giọng nói thành văn bản, phân tích từ khóa, chấm điểm theo tiêu chí và tổng hợp dữ liệu phục vụ kiểm soát chất lượng.</p>",
+                "editor": "<div style=\"font-size:.95rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">Gcalls Plus Webphone</div><p style=\"margin:0;color:#5b5f6b\">Tổng đài trên trình duyệt hỗ trợ nghe gọi, lịch sử cuộc gọi, ghi âm, danh bạ và theo dõi hoạt động đội ngũ.</p>",
                 "typography_typography": "custom",
                 "typography_font_family": "Open Sans"
               },
@@ -704,7 +713,7 @@
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
-                "editor": "<h3 style=\"font-size:1.05rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">Gcalls CX</h3><p style=\"margin:0;color:#5b5f6b\">Nền tảng Contact Center hỗ trợ quản lý tương tác đa kênh và quy trình chăm sóc khách hàng.</p>",
+                "editor": "<div style=\"font-size:.95rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">QA QC Center</div><p style=\"margin:0;color:#5b5f6b\">Hỗ trợ chuyển giọng nói thành văn bản, phân tích từ khóa, chấm điểm theo tiêu chí và tổng hợp dữ liệu phục vụ kiểm soát chất lượng.</p>",
                 "typography_typography": "custom",
                 "typography_font_family": "Open Sans"
               },
@@ -726,7 +735,29 @@
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
-                "editor": "<h3 style=\"font-size:1.05rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">Gcalls Voicebot AI</h3><p style=\"margin:0;color:#5b5f6b\">Gcalls tư vấn, kết nối và tích hợp Voicebot vào hệ thống tổng đài theo kịch bản và phạm vi triển khai của doanh nghiệp.</p>",
+                "editor": "<div style=\"font-size:.95rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">Gcalls CX</div><p style=\"margin:0;color:#5b5f6b\">Nền tảng Contact Center hỗ trợ quản lý tương tác đa kênh và quy trình chăm sóc khách hàng.</p>",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        },
+        {
+          "id": "61da6a6",
+          "elType": "column",
+          "settings": {
+            "_column_size": 25,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "2ec8da1",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<div style=\"font-size:.95rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">Gcalls Voicebot AI</div><p style=\"margin:0;color:#5b5f6b\">Gcalls tư vấn, kết nối và tích hợp Voicebot vào hệ thống tổng đài theo kịch bản và phạm vi triển khai của doanh nghiệp.</p>",
                 "typography_typography": "custom",
                 "typography_font_family": "Open Sans"
               },
@@ -739,7 +770,7 @@
       "isInner": false
     },
     {
-      "id": "25e80c2",
+      "id": "756b457",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -754,7 +785,7 @@
       },
       "elements": [
         {
-          "id": "0b2b402",
+          "id": "25e80c2",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -762,7 +793,7 @@
           },
           "elements": [
             {
-              "id": "8c1635d",
+              "id": "0b2b402",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -782,7 +813,7 @@
       "isInner": false
     },
     {
-      "id": "ee2732a",
+      "id": "0ca3086",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -797,28 +828,6 @@
       },
       "elements": [
         {
-          "id": "9735150",
-          "elType": "column",
-          "settings": {
-            "_column_size": 25,
-            "_inline_size": null
-          },
-          "elements": [
-            {
-              "id": "756b457",
-              "elType": "widget",
-              "widgetType": "text-editor",
-              "settings": {
-                "editor": "<h3 style=\"font-size:1.05rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">Tích hợp CRM</h3><p style=\"margin:0;color:#5b5f6b\">Kết nối cuộc gọi với dữ liệu và quy trình trên CRM của doanh nghiệp.</p>",
-                "typography_typography": "custom",
-                "typography_font_family": "Open Sans"
-              },
-              "elements": []
-            }
-          ],
-          "isInner": false
-        },
-        {
           "id": "169c703",
           "elType": "column",
           "settings": {
@@ -831,7 +840,7 @@
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
-                "editor": "<h3 style=\"font-size:1.05rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">Tích hợp Helpdesk</h3><p style=\"margin:0;color:#5b5f6b\">Đưa cuộc gọi vào quy trình hỗ trợ và ticket của đội CSKH.</p>",
+                "editor": "<div style=\"font-size:.95rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">Tích hợp CRM</div><p style=\"margin:0;color:#5b5f6b\">Kết nối cuộc gọi với dữ liệu và quy trình trên CRM của doanh nghiệp.</p>",
                 "typography_typography": "custom",
                 "typography_font_family": "Open Sans"
               },
@@ -853,7 +862,7 @@
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
-                "editor": "<h3 style=\"font-size:1.05rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">Tích hợp POS</h3><p style=\"margin:0;color:#5b5f6b\">Kết nối cuộc gọi với dữ liệu bán hàng và đơn hàng trên hệ thống POS.</p>",
+                "editor": "<div style=\"font-size:.95rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">Tích hợp Helpdesk</div><p style=\"margin:0;color:#5b5f6b\">Đưa cuộc gọi vào quy trình hỗ trợ và ticket của đội CSKH.</p>",
                 "typography_typography": "custom",
                 "typography_font_family": "Open Sans"
               },
@@ -875,7 +884,29 @@
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
-                "editor": "<h3 style=\"font-size:1.05rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">Tổng đài quốc tế</h3><p style=\"margin:0;color:#5b5f6b\">Đầu số và phương án liên lạc theo từng thị trường doanh nghiệp phục vụ.</p>",
+                "editor": "<div style=\"font-size:.95rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">Tích hợp POS</div><p style=\"margin:0;color:#5b5f6b\">Kết nối cuộc gọi với dữ liệu bán hàng và đơn hàng trên hệ thống POS.</p>",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        },
+        {
+          "id": "ee2732a",
+          "elType": "column",
+          "settings": {
+            "_column_size": 25,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "9735150",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<div style=\"font-size:.95rem;font-weight:700;color:#1e2026;margin:0 0 .5rem\">Tổng đài quốc tế</div><p style=\"margin:0;color:#5b5f6b\">Đầu số và phương án liên lạc theo từng thị trường doanh nghiệp phục vụ.</p>",
                 "typography_typography": "custom",
                 "typography_font_family": "Open Sans"
               },
@@ -888,7 +919,7 @@
       "isInner": false
     },
     {
-      "id": "3224386",
+      "id": "16f49ed",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -905,7 +936,7 @@
       },
       "elements": [
         {
-          "id": "b37e755",
+          "id": "0df6f04",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -913,7 +944,7 @@
           },
           "elements": [
             {
-              "id": "0ca3086",
+              "id": "55a013a",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -927,7 +958,7 @@
               "elements": []
             },
             {
-              "id": "55a013a",
+              "id": "d8a0a00",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -941,7 +972,7 @@
               "elements": []
             },
             {
-              "id": "d8a0a00",
+              "id": "19c5434",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -953,7 +984,7 @@
               "elements": []
             },
             {
-              "id": "19c5434",
+              "id": "b37e755",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -968,7 +999,7 @@
           "isInner": false
         },
         {
-          "id": "5a51f78",
+          "id": "3224386",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -976,7 +1007,7 @@
           },
           "elements": [
             {
-              "id": "0df6f04",
+              "id": "5a51f78",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
@@ -991,7 +1022,7 @@
       "isInner": false
     },
     {
-      "id": "f81a21a",
+      "id": "b24b439",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -1006,7 +1037,7 @@
       },
       "elements": [
         {
-          "id": "62d0f11",
+          "id": "0ea0ca0",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -1014,7 +1045,7 @@
           },
           "elements": [
             {
-              "id": "16f49ed",
+              "id": "62d0f11",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
@@ -1026,7 +1057,7 @@
           "isInner": false
         },
         {
-          "id": "d3e75b5",
+          "id": "f81a21a",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -1034,7 +1065,7 @@
           },
           "elements": [
             {
-              "id": "0ea0ca0",
+              "id": "139c3a7",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1048,7 +1079,7 @@
               "elements": []
             },
             {
-              "id": "139c3a7",
+              "id": "c6a6a6b",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1062,7 +1093,7 @@
               "elements": []
             },
             {
-              "id": "c6a6a6b",
+              "id": "1f4666a",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1074,7 +1105,7 @@
               "elements": []
             },
             {
-              "id": "1f4666a",
+              "id": "f6fe030",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1086,13 +1117,13 @@
               "elements": []
             },
             {
-              "id": "33b9e52",
+              "id": "d3e75b5",
               "elType": "widget",
               "widgetType": "icon-list",
               "settings": {
                 "icon_list": [
                   {
-                    "_id": "f6fe030",
+                    "_id": "908c6ac",
                     "text": "Quản lý tập trung trên Webphone",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1100,7 +1131,7 @@
                     }
                   },
                   {
-                    "_id": "908c6ac",
+                    "_id": "6bdb3f1",
                     "text": "Tương tác được lưu trữ đầy đủ",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1108,7 +1139,7 @@
                     }
                   },
                   {
-                    "_id": "6bdb3f1",
+                    "_id": "33b9e52",
                     "text": "Tích hợp sẵn trong nền tảng",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1134,7 +1165,7 @@
       "isInner": false
     },
     {
-      "id": "5908a36",
+      "id": "d338bdb",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -1151,7 +1182,7 @@
       },
       "elements": [
         {
-          "id": "69aabcf",
+          "id": "5908a36",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -1159,7 +1190,7 @@
           },
           "elements": [
             {
-              "id": "b24b439",
+              "id": "45d8d51",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1173,7 +1204,7 @@
               "elements": []
             },
             {
-              "id": "45d8d51",
+              "id": "55cb89d",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1185,7 +1216,7 @@
               "elements": []
             },
             {
-              "id": "55cb89d",
+              "id": "b5b9657",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1197,7 +1228,7 @@
               "elements": []
             },
             {
-              "id": "b5b9657",
+              "id": "6401f80",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1211,7 +1242,7 @@
               "elements": []
             },
             {
-              "id": "6401f80",
+              "id": "9b4e8db",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
@@ -1220,7 +1251,7 @@
               "elements": []
             },
             {
-              "id": "9b4e8db",
+              "id": "a220837",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1234,7 +1265,7 @@
               "elements": []
             },
             {
-              "id": "a220837",
+              "id": "69aabcf",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1254,7 +1285,7 @@
       "isInner": false
     },
     {
-      "id": "4ad0aa1",
+      "id": "9177efb",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -1269,7 +1300,7 @@
       },
       "elements": [
         {
-          "id": "8cd36a7",
+          "id": "baddcf5",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -1277,7 +1308,7 @@
           },
           "elements": [
             {
-              "id": "d338bdb",
+              "id": "e8e9460",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1291,7 +1322,7 @@
               "elements": []
             },
             {
-              "id": "e8e9460",
+              "id": "45b1106",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1303,7 +1334,7 @@
               "elements": []
             },
             {
-              "id": "45b1106",
+              "id": "26e7436",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1315,7 +1346,7 @@
               "elements": []
             },
             {
-              "id": "26e7436",
+              "id": "17cbfe1",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1329,7 +1360,7 @@
               "elements": []
             },
             {
-              "id": "17cbfe1",
+              "id": "2d4ceb3",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1343,7 +1374,7 @@
               "elements": []
             },
             {
-              "id": "2d4ceb3",
+              "id": "cd96722",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
@@ -1352,7 +1383,7 @@
               "elements": []
             },
             {
-              "id": "cd96722",
+              "id": "8cd36a7",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1364,6 +1395,37 @@
                 "typography_font_weight": "700"
               },
               "elements": []
+            },
+            {
+              "id": "4ad0aa1",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Cloud Call Center",
+                "link": {
+                  "url": "/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center",
+                  "is_external": "",
+                  "nofollow": ""
+                },
+                "align": "left",
+                "background_color": "#673ab7",
+                "button_text_color": "#ffffff",
+                "border_border": "",
+                "border_width": {},
+                "border_color": "",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "8",
+                  "bottom": "8",
+                  "left": "8",
+                  "isLinked": true
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "600"
+              },
+              "elements": []
             }
           ],
           "isInner": false
@@ -1372,7 +1434,7 @@
       "isInner": false
     },
     {
-      "id": "e80649d",
+      "id": "3f76ca7",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -1389,7 +1451,7 @@
       },
       "elements": [
         {
-          "id": "d411902",
+          "id": "b8bafd3",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -1397,7 +1459,7 @@
           },
           "elements": [
             {
-              "id": "baddcf5",
+              "id": "d411902",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1411,7 +1473,7 @@
               "elements": []
             },
             {
-              "id": "9177efb",
+              "id": "979663f",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1426,7 +1488,7 @@
           "isInner": false
         },
         {
-          "id": "b8bafd3",
+          "id": "2a5cb4c",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -1434,7 +1496,7 @@
           },
           "elements": [
             {
-              "id": "979663f",
+              "id": "e80649d",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
@@ -1449,7 +1511,7 @@
       "isInner": false
     },
     {
-      "id": "7b99ca8",
+      "id": "3e3b0be",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -1464,7 +1526,7 @@
       },
       "elements": [
         {
-          "id": "dc94f88",
+          "id": "a65ad71",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -1472,7 +1534,7 @@
           },
           "elements": [
             {
-              "id": "2a5cb4c",
+              "id": "0e63db4",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1486,7 +1548,7 @@
               "elements": []
             },
             {
-              "id": "3f76ca7",
+              "id": "0bb94e7",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1498,13 +1560,13 @@
               "elements": []
             },
             {
-              "id": "578fa75",
+              "id": "dc94f88",
               "elType": "widget",
               "widgetType": "icon-list",
               "settings": {
                 "icon_list": [
                   {
-                    "_id": "0e63db4",
+                    "_id": "86e1d24",
                     "text": "Tăng tỷ lệ chuyển đổi từ visitor thành lead",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1512,7 +1574,7 @@
                     }
                   },
                   {
-                    "_id": "0bb94e7",
+                    "_id": "578fa75",
                     "text": "Thu thập số điện thoại và gọi lại tức thì",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1520,7 +1582,7 @@
                     }
                   },
                   {
-                    "_id": "86e1d24",
+                    "_id": "25e5662",
                     "text": "Theo dõi nguồn cuộc gọi từ từng trang web",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1540,11 +1602,42 @@
               "elements": []
             },
             {
-              "id": "25e5662",
+              "id": "7b99ca8",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
                 "shortcode": "[gcalls_media id=\"GP-08\" size=\"large\"]"
+              },
+              "elements": []
+            },
+            {
+              "id": "ef8c9f5",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Call Button Widget",
+                "link": {
+                  "url": "/lien-he/?intent=consultation&source=consultation&solution=Call%20Button%20Widget",
+                  "is_external": "",
+                  "nofollow": ""
+                },
+                "align": "left",
+                "background_color": "#673ab7",
+                "button_text_color": "#ffffff",
+                "border_border": "",
+                "border_width": {},
+                "border_color": "",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "8",
+                  "bottom": "8",
+                  "left": "8",
+                  "isLinked": true
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "600"
               },
               "elements": []
             }
@@ -1555,7 +1648,7 @@
       "isInner": false
     },
     {
-      "id": "f24c133",
+      "id": "63deeeb",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -1572,7 +1665,7 @@
       },
       "elements": [
         {
-          "id": "214ab0f",
+          "id": "5fbcef4",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -1580,7 +1673,7 @@
           },
           "elements": [
             {
-              "id": "ef8c9f5",
+              "id": "961bfd8",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1594,7 +1687,7 @@
               "elements": []
             },
             {
-              "id": "a65ad71",
+              "id": "7652f60",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1606,7 +1699,7 @@
               "elements": []
             },
             {
-              "id": "3e3b0be",
+              "id": "9a9f973",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1618,7 +1711,7 @@
               "elements": []
             },
             {
-              "id": "961bfd8",
+              "id": "5d4fe9c",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1632,7 +1725,7 @@
               "elements": []
             },
             {
-              "id": "7652f60",
+              "id": "214ab0f",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
@@ -1641,7 +1734,7 @@
               "elements": []
             },
             {
-              "id": "9a9f973",
+              "id": "f24c133",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1655,7 +1748,7 @@
               "elements": []
             },
             {
-              "id": "5d4fe9c",
+              "id": "2500cf5",
               "elType": "widget",
               "widgetType": "button",
               "settings": {
@@ -1692,7 +1785,7 @@
       "isInner": false
     },
     {
-      "id": "96df524",
+      "id": "23786c9",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -1707,7 +1800,7 @@
       },
       "elements": [
         {
-          "id": "bc43b2b",
+          "id": "96df524",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -1715,7 +1808,7 @@
           },
           "elements": [
             {
-              "id": "2500cf5",
+              "id": "d92da82",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1729,7 +1822,7 @@
               "elements": []
             },
             {
-              "id": "5fbcef4",
+              "id": "a348e3b",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1741,7 +1834,7 @@
               "elements": []
             },
             {
-              "id": "63deeeb",
+              "id": "113c315",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1753,13 +1846,13 @@
               "elements": []
             },
             {
-              "id": "0cde749",
+              "id": "bc43b2b",
               "elType": "widget",
               "widgetType": "icon-list",
               "settings": {
                 "icon_list": [
                   {
-                    "_id": "d92da82",
+                    "_id": "b378c9d",
                     "text": "Gọi điện trực tiếp trên Chrome, Edge, Safari — không cài extension",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1767,7 +1860,7 @@
                     }
                   },
                   {
-                    "_id": "a348e3b",
+                    "_id": "0cde749",
                     "text": "Chất lượng âm thanh HD, noise cancellation, dễ cấu hình",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1775,7 +1868,7 @@
                     }
                   },
                   {
-                    "_id": "113c315",
+                    "_id": "4f52cb9",
                     "text": "Dữ liệu lưu trên Cloud, truy cập bất cứ đâu, không phụ thuộc server nội bộ",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1783,7 +1876,7 @@
                     }
                   },
                   {
-                    "_id": "b378c9d",
+                    "_id": "51a6c03",
                     "text": "Lịch sử, ghi chú, trạng thái đồng bộ tức thì giữa các thiết bị",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1803,7 +1896,7 @@
               "elements": []
             },
             {
-              "id": "4f52cb9",
+              "id": "f9eff8e",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1817,7 +1910,7 @@
               "elements": []
             },
             {
-              "id": "51a6c03",
+              "id": "68f1214",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1834,7 +1927,7 @@
           "isInner": false
         },
         {
-          "id": "68f1214",
+          "id": "bd88bdb",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -1842,7 +1935,7 @@
           },
           "elements": [
             {
-              "id": "f9eff8e",
+              "id": "0ab72df",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
@@ -1857,7 +1950,7 @@
       "isInner": false
     },
     {
-      "id": "b24f743",
+      "id": "5bba406",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -1874,7 +1967,7 @@
       },
       "elements": [
         {
-          "id": "2fa6f74",
+          "id": "0e2704e",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -1882,7 +1975,7 @@
           },
           "elements": [
             {
-              "id": "0ab72df",
+              "id": "71a4a4f",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1896,7 +1989,7 @@
               "elements": []
             },
             {
-              "id": "bd88bdb",
+              "id": "3e7f835",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1910,7 +2003,7 @@
               "elements": []
             },
             {
-              "id": "23786c9",
+              "id": "ac95906",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1924,7 +2017,7 @@
               "elements": []
             },
             {
-              "id": "71a4a4f",
+              "id": "2fa6f74",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1936,7 +2029,7 @@
               "elements": []
             },
             {
-              "id": "3e7f835",
+              "id": "b24f743",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1948,7 +2041,69 @@
               "elements": []
             },
             {
-              "id": "ac95906",
+              "id": "06979b2",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Đăng ký demo",
+                "link": {
+                  "url": "/lien-he/?intent=demo&source=consultation",
+                  "is_external": "",
+                  "nofollow": ""
+                },
+                "align": "left",
+                "background_color": "#673ab7",
+                "button_text_color": "#ffffff",
+                "border_border": "",
+                "border_width": {},
+                "border_color": "",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "8",
+                  "bottom": "8",
+                  "left": "8",
+                  "isLinked": true
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "600"
+              },
+              "elements": []
+            },
+            {
+              "id": "3eecd79",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Nhận tư vấn giải pháp",
+                "link": {
+                  "url": "/lien-he/?intent=consultation&source=consultation",
+                  "is_external": "",
+                  "nofollow": ""
+                },
+                "align": "left",
+                "background_color": "#673ab7",
+                "button_text_color": "#ffffff",
+                "border_border": "",
+                "border_width": {},
+                "border_color": "",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "8",
+                  "bottom": "8",
+                  "left": "8",
+                  "isLinked": true
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "600"
+              },
+              "elements": []
+            },
+            {
+              "id": "ca5fee8",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
