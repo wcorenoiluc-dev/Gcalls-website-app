@@ -3,7 +3,7 @@
  * Plugin Name:       Gcalls Core
  * Plugin URI:        https://gcalls.co/
  * Description:       Site behaviour that must survive a theme change: the HUB taxonomy for blog articles, FAQ structured data, breadcrumbs, the legacy route/redirect map and the WP-CLI content import pipeline.
- * Version:           0.9.2
+ * Version:           0.9.3
  * Requires at least: 6.4
  * Requires PHP:      8.1
  * Author:            Gcalls
@@ -34,7 +34,7 @@ namespace Gcalls\Core;
 
 defined( 'ABSPATH' ) || exit;
 
-const VERSION = '0.9.2';
+const VERSION = '0.9.3';
 
 /** Absolute path to this plugin's directory, trailing slash included. */
 define( 'GCALLS_CORE_FILE', __FILE__ );
@@ -83,6 +83,14 @@ function bootstrap(): void {
 		// never rewrite a page on its own.
 		require_once GCALLS_CORE_DIR . 'includes/class-home-layout.php';
 		Home_Layout::init();
+
+		// The corpus media migration screen. Same shape again: a Tools
+		// submenu plus one authenticated AJAX action, both behind
+		// manage_options and a nonce. Admin-only, so its AJAX handler is not
+		// reachable from a front-end request, and registered with wp_ajax_
+		// alone — never wp_ajax_nopriv_.
+		require_once GCALLS_CORE_DIR . 'includes/class-corpus-migration.php';
+		Corpus_Migration::init();
 	}
 
 	if ( defined( 'WP_CLI' ) && \WP_CLI ) {

@@ -311,11 +311,36 @@ check(
   /is_int\( \$index \)/.test(hardening) && /isset\( \$handler\['callback'\] \)/.test(hardening),
 )
 
-// The pipeline must not be able to reach a production system.
+/*
+ * The pipeline must not be able to reach a production system.
+ *
+ * ONE FILE IS EXEMPT, AND IT IS HELD TO MORE, NOT LESS.
+ * class-corpus-migration.php fetches article images from gcalls.co on purpose:
+ * that is the whole point of the screen, it was approved in as many words, and
+ * it is read-only. The exemption is named here rather than the rule being
+ * dropped, and the checks under it are stricter than the blanket ban was — a
+ * general "no HTTP" rule would have said nothing about whether the one file
+ * that does make requests makes safe ones.
+ */
+const HTTP_EXEMPT = 'includes/class-corpus-migration.php'
+
 const networkCalls = phpFiles
-  .filter((f) => f.startsWith(PLUGIN))
+  .filter((f) => f.startsWith(PLUGIN) && !f.endsWith(HTTP_EXEMPT))
   .filter((f) => /wp_remote_(get|post|request)|curl_exec|file_get_contents\(\s*['"]https?:/.test(read(f)))
 check('pipeline makes no outbound HTTP calls', networkCalls.length === 0, networkCalls.join(', '))
+
+const migration = read(path.join(PLUGIN, HTTP_EXEMPT))
+
+// GET only. A POST to gcalls.co from this site would be a write to production,
+// which is the thing the original rule existed to make impossible.
+check('the migration tool only ever GETs', !/wp_remote_post|wp_remote_request/.test(migration))
+check('the migration tool makes exactly one kind of call', (migration.match(/wp_remote_get\(/g) ?? []).length === 1)
+// The URL comes from the bundled manifest, never from a request.
+check('the fetched URL comes from the manifest', /wp_remote_get\(\s*\$item\['url'\]/.test(migration))
+check('the migration tool never reads a URL from the request', !/\$_(POST|GET|REQUEST)\[[^\]]*url/i.test(migration))
+// The bytes must match what was probed, or the file is not what was approved.
+check('downloaded bytes are checked against the manifest hash', /hash\( 'sha256', \$body \) !== \$item\['sha256'\]/.test(migration))
+check('the file type is decided by the file', migration.includes('wp_check_filetype_and_ext'))
 
 /* ------------------------------------------------------------------ *
  * 7. User-enumeration hardening
@@ -1188,6 +1213,73 @@ if (exists(mockPhp)) {
 
   // The layout the updater writes ships inside the plugin, so the code and
   // the layout can never come from different builds.
+  /* ---------------------------------------------------------------- *
+   * Corpus migration tool
+   * ---------------------------------------------------------------- *
+   * The only thing in this plugin that downloads files and rewrites post
+   * bodies in bulk. Its safety properties are gates, not intentions.
+   */
+  const mig = read(path.join(PLUGIN, 'includes/class-corpus-migration.php'))
+
+  check('the migration tool checks manage_options', (mig.match(/current_user_can\( 'manage_options' \)/g) ?? []).length >= 2)
+  check('the AJAX worker checks a nonce', mig.includes('check_ajax_referer('))
+  check('the control form checks a nonce', mig.includes('check_admin_referer('))
+  check('the AJAX worker is POST-only', mig.includes("'POST' !== ( \$_SERVER['REQUEST_METHOD']"))
+  // The unauthenticated variant is how an admin-ajax action becomes a public
+  // endpoint. Match the registration, not the string — the file discusses the
+  // hook in a comment precisely because it is the thing being avoided.
+  check('the AJAX action is not public', !/add_action\(\s*'wp_ajax_nopriv_/.test(mig))
+  check('the tool never hooks itself to run', !/'admin_init'|'init'|wp_schedule|register_activation_hook/.test(mig))
+  check('the tool registers no REST route', !/register_rest_route/.test(mig))
+
+  // Published articles are protected in the manifest AND re-checked at the
+  // last moment, because a batch can take minutes and a status can change.
+  check('published posts are re-checked before every write', (mig.match(/'publish' === \$post->post_status/g) ?? []).length >= 2)
+  check('the hash is re-checked before every write', (mig.match(/hash\( 'sha256', \(string\) \$post->post_content \)/g) ?? []).length >= 2)
+  /*
+   * post_status is absent from every update array, so status cannot change.
+   * The test looks for the quoted ARRAY KEY, not the word: the file mentions
+   * post_status in a comment and reads $post->post_status to check it, and
+   * neither of those writes anything.
+   */
+  check('the rewrite cannot change status', !/wp_update_post\([\s\S]{0,300}'post_status'\s*=>/.test(mig))
+  check('the rewrite cannot change title or slug', !/wp_update_post\([\s\S]{0,300}'post_(title|name)'\s*=>/.test(mig))
+
+  check('the rollback journal is written before the post', /update_option\( self::OPT_ROLLBACK[\s\S]{0,400}wp_update_post/.test(mig))
+  check('rollback deletes no attachment', !/wp_delete_attachment/.test(mig))
+
+  // Idempotency: an image already imported is found by URL or by identical
+  // bytes and is not fetched again.
+  check(
+    'media import is idempotent by URL and hash',
+    /isset\( \$map\['by_url'\]\[ \$item\['url'\] \] \)\s*\|\|\s*isset\( \$map\['by_hash'\]\[ \$item\['sha256'\] \] \)/.test(mig),
+  )
+  check('progress is persisted between requests', mig.includes('OPT_STATE') && mig.includes('media_index') && mig.includes('post_index'))
+  check('the run is chunked', /MEDIA_BATCH = \d+/.test(mig) && /POST_BATCH = \d+/.test(mig))
+  check('the tool does not use WP-Cron', !/wp_schedule_(single_)?event/.test(mig))
+  check('dry run is the default', /'dry_run'\s*=>\s*true/.test(mig))
+
+  // The state machine must not skip from media straight to rewriting.
+  for (const s of ['PREPARED', 'BASELINE_VERIFIED', 'MEDIA_IMPORTING', 'MEDIA_COMPLETE', 'POST_REWRITE', 'VERIFYING', 'COMPLETE', 'PAUSED_ERROR']) {
+    check(`state ${s} exists`, mig.includes(`'${s}'`))
+  }
+
+  const migManifest = path.join(PLUGIN, 'data/corpus-migration.json')
+  check('the corpus manifest ships with the plugin', exists(migManifest))
+
+  if (exists(migManifest)) {
+    const mf = JSON.parse(read(migManifest))
+    // Read the version here rather than reuse the one parsed further down —
+    // that binding does not exist yet at this point in the file.
+    const pluginVersion = read(path.join(PLUGIN, 'gcalls-core.php')).match(/^const VERSION = '([^']+)';$/m)?.[1] ?? ''
+    check('the manifest matches the plugin version', mf.plugin_version === pluginVersion, `${mf.plugin_version} vs ${pluginVersion}`)
+    check('the manifest protects the eighteen', (mf.policy?.protected_ids ?? []).length === 18)
+    check('the manifest never publishes a draft', mf.policy?.never_publish_draft === true)
+    const protectedRows = mf.articles.filter((a) => a.outcome === 'PROTECTED_PUBLISH')
+    check('every protected article is marked so', protectedRows.length === 18, String(protectedRows.length))
+    check('no protected article has rewritable URLs', protectedRows.every((a) => a.rewritable.length === 0))
+  }
+
   const shipped = path.join(PLUGIN, 'data/homepage-elementor.json')
   check('the shipped home layout is present', exists(shipped))
 
