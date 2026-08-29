@@ -355,7 +355,7 @@
           "unit": "px",
           "top": "104",
           "right": "0",
-          "bottom": "104",
+          "bottom": "0",
           "left": "0",
           "isLinked": false
         }
@@ -408,9 +408,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "104",
+          "top": "56",
           "right": "0",
-          "bottom": "104",
+          "bottom": "0",
           "left": "0",
           "isLinked": false
         }
@@ -427,14 +427,9 @@
             {
               "id": "e79f27e",
               "elType": "widget",
-              "widgetType": "heading",
+              "widgetType": "html",
               "settings": {
-                "title": "Sản phẩm Gcalls",
-                "header_size": "h3",
-                "title_color": "#1e2026",
-                "typography_typography": "custom",
-                "typography_font_family": "Open Sans",
-                "typography_font_weight": "700"
+                "html": "<div class=\"gc-eco-group\"><div class=\"gc-eco-group__head\"><div><p class=\"gc-eyebrow\">Sản phẩm</p><h3 class=\"gc-eco-group__title\">Sản phẩm Gcalls</h3></div><p class=\"gc-eco-group__lead\">Ba nền tảng Gcalls xây dựng cho hoạt động nghe gọi, kiểm soát chất lượng và chăm sóc khách hàng đa kênh.</p></div><div class=\"gc-eco-grid gc-eco-grid--3\"><a class=\"gc-eco-card gc-eco-card--violet\" href=\"/gcalls-plus-webphone/\"><span class=\"gc-eco-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8\"/><path d=\"M10 19v-3.96 3.15\"/><path d=\"M7 19h5\"/><rect width=\"6\" height=\"10\" x=\"16\" y=\"12\" rx=\"2\"/></svg></span><span class=\"gc-eco-card__name\">Gcalls Plus Webphone</span><span class=\"gc-eco-card__body\">Tổng đài trên trình duyệt hỗ trợ nghe gọi, lịch sử cuộc gọi, ghi âm, danh bạ và theo dõi hoạt động đội ngũ.</span><span class=\"gc-eco-card__cta\">Tìm hiểu thêm<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"gc-eco-card gc-eco-card--cyan\" href=\"/qc-bot-ai/\"><span class=\"gc-eco-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z\"/><path d=\"M20 3v4\"/><path d=\"M22 5h-4\"/><path d=\"M4 17v2\"/><path d=\"M5 18H3\"/></svg></span><span class=\"gc-eco-card__name\">QA/QC Center</span><span class=\"gc-eco-card__supporting\">QC Bot AI</span><span class=\"gc-eco-card__body\">Hỗ trợ chuyển giọng nói thành văn bản, phân tích từ khóa, chấm điểm theo tiêu chí và tổng hợp dữ liệu phục vụ kiểm soát chất lượng.</span><span class=\"gc-eco-card__cta\">Tìm hiểu thêm<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"gc-eco-card gc-eco-card--amber\" href=\"/gcalls-cx/\"><span class=\"gc-eco-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3\"/></svg></span><span class=\"gc-eco-card__name\">Gcalls CX</span><span class=\"gc-eco-card__body\">Nền tảng Contact Center hỗ trợ quản lý tương tác đa kênh và quy trình chăm sóc khách hàng.</span><span class=\"gc-eco-card__cta\">Tìm hiểu thêm<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a></div></div>"
               },
               "elements": []
             }
@@ -451,9 +446,9 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "104",
+          "top": "64",
           "right": "0",
-          "bottom": "104",
+          "bottom": "0",
           "left": "0",
           "isLinked": false
         }
@@ -472,7 +467,7 @@
               "elType": "widget",
               "widgetType": "html",
               "settings": {
-                "html": "<div class=\"gc-cards gc-cards--4\"><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>Gcalls Plus Webphone</h3><span class=\"gc-card__n\" aria-hidden=\"true\">01</span></div><p class=\"gc-card__body\">Tổng đài trên trình duyệt hỗ trợ nghe gọi, lịch sử cuộc gọi, ghi âm, danh bạ và theo dõi hoạt động đội ngũ.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>QA QC Center</h3><span class=\"gc-card__n\" aria-hidden=\"true\">02</span></div><p class=\"gc-card__body\">Hỗ trợ chuyển giọng nói thành văn bản, phân tích từ khóa, chấm điểm theo tiêu chí và tổng hợp dữ liệu phục vụ kiểm soát chất lượng.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>Gcalls CX</h3><span class=\"gc-card__n\" aria-hidden=\"true\">03</span></div><p class=\"gc-card__body\">Nền tảng Contact Center hỗ trợ quản lý tương tác đa kênh và quy trình chăm sóc khách hàng.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>Gcalls Voicebot AI</h3><span class=\"gc-card__n\" aria-hidden=\"true\">04</span></div><p class=\"gc-card__body\">Gcalls tư vấn, kết nối và tích hợp Voicebot vào hệ thống tổng đài theo kịch bản và phạm vi triển khai của doanh nghiệp.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article></div>"
+                "html": "<div class=\"gc-eco-group\"><div class=\"gc-eco-group__head\"><div><p class=\"gc-eyebrow\">Giải pháp</p><h3 class=\"gc-eco-group__title\">Giải pháp Gcalls</h3></div><p class=\"gc-eco-group__lead\">Các cấu hình triển khai theo hệ thống, thị trường và nhu cầu tự động hóa doanh nghiệp đang vận hành.</p></div><div class=\"gc-eco-grid gc-eco-grid--3\"><a class=\"gc-eco-card gc-eco-card--green\" href=\"/voicebot-ai/\"><span class=\"gc-eco-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 8V4H8\"/><rect width=\"16\" height=\"12\" x=\"4\" y=\"8\" rx=\"2\"/><path d=\"M2 14h2\"/><path d=\"M20 14h2\"/><path d=\"M15 13v2\"/><path d=\"M9 13v2\"/></svg></span><span class=\"gc-eco-card__name\">Giải pháp tích hợp Voicebot AI</span><span class=\"gc-eco-card__body\">Gcalls tư vấn, kết nối và tích hợp Voicebot vào hệ thống tổng đài theo kịch bản và phạm vi triển khai của doanh nghiệp.</span><span class=\"gc-eco-card__cta\">Tìm hiểu thêm<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"gc-eco-card gc-eco-card--violet\" href=\"/tong-dai-tich-hop-crm/\"><span class=\"gc-eco-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"/><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"/></svg></span><span class=\"gc-eco-card__name\">Tổng đài tích hợp CRM</span><span class=\"gc-eco-card__body\">Kết nối cuộc gọi với dữ liệu và quy trình trên CRM của doanh nghiệp.</span><span class=\"gc-eco-card__cta\">Tìm hiểu thêm<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"gc-eco-card gc-eco-card--cyan\" href=\"/tong-dai-tich-hop-helpdesk/\"><span class=\"gc-eco-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m4.93 4.93 4.24 4.24\"/><path d=\"m14.83 9.17 4.24-4.24\"/><path d=\"m14.83 14.83 4.24 4.24\"/><path d=\"m9.17 14.83-4.24 4.24\"/><circle cx=\"12\" cy=\"12\" r=\"4\"/></svg></span><span class=\"gc-eco-card__name\">Tổng đài tích hợp Helpdesk</span><span class=\"gc-eco-card__body\">Đưa cuộc gọi vào quy trình hỗ trợ và ticket của đội CSKH.</span><span class=\"gc-eco-card__cta\">Tìm hiểu thêm<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"gc-eco-card gc-eco-card--green\" href=\"/tong-dai-tich-hop-pos/\"><span class=\"gc-eco-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"8\" cy=\"21\" r=\"1\"/><circle cx=\"19\" cy=\"21\" r=\"1\"/><path d=\"M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12\"/></svg></span><span class=\"gc-eco-card__name\">Tổng đài tích hợp POS</span><span class=\"gc-eco-card__body\">Kết nối cuộc gọi với dữ liệu bán hàng và đơn hàng trên hệ thống POS.</span><span class=\"gc-eco-card__cta\">Tìm hiểu thêm<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"gc-eco-card gc-eco-card--sky\" href=\"/tong-dai-quoc-te/\"><span class=\"gc-eco-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M21.54 15H17a2 2 0 0 0-2 2v4.54\"/><path d=\"M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17\"/><path d=\"M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05\"/><circle cx=\"12\" cy=\"12\" r=\"10\"/></svg></span><span class=\"gc-eco-card__name\">Tổng đài quốc tế</span><span class=\"gc-eco-card__body\">Đầu số và phương án liên lạc theo từng thị trường doanh nghiệp phục vụ.</span><span class=\"gc-eco-card__cta\">Tìm hiểu thêm<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"gc-eco-card gc-eco-card--purple\" href=\"/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center\"><span class=\"gc-eco-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\"/></svg></span><span class=\"gc-eco-card__name\">Cloud Call Center</span><span class=\"gc-eco-card__body\">Hệ thống tổng đài vận hành trên nền tảng Cloud với SIP, IVR và điều hướng cuộc gọi.</span><span class=\"gc-eco-card__cta\">Nhận tư vấn<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a><a class=\"gc-eco-card gc-eco-card--amber\" href=\"/lien-he/?intent=consultation&source=consultation&solution=Call%20Button%20Widget\"><span class=\"gc-eco-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M14 4.1 12 6\"/><path d=\"m5.1 8-2.9-.8\"/><path d=\"m6 12-1.9 2\"/><path d=\"M7.2 2.2 8 5.1\"/><path d=\"M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z\"/></svg></span><span class=\"gc-eco-card__name\">Call Button Widget</span><span class=\"gc-eco-card__body\">Nút gọi nhúng vào website để khách truy cập để lại số điện thoại cho đội ngũ liên hệ lại.</span><span class=\"gc-eco-card__cta\">Nhận tư vấn<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a></div></div>"
               },
               "elements": []
             }
@@ -489,7 +484,7 @@
         "content_width": "boxed",
         "padding": {
           "unit": "px",
-          "top": "104",
+          "top": "56",
           "right": "0",
           "bottom": "104",
           "left": "0",
@@ -508,52 +503,9 @@
             {
               "id": "9da69a2",
               "elType": "widget",
-              "widgetType": "heading",
-              "settings": {
-                "title": "Giải pháp Gcalls",
-                "header_size": "h3",
-                "title_color": "#1e2026",
-                "typography_typography": "custom",
-                "typography_font_family": "Open Sans",
-                "typography_font_weight": "700"
-              },
-              "elements": []
-            }
-          ],
-          "isInner": false
-        }
-      ],
-      "isInner": false
-    },
-    {
-      "id": "3c72d4b",
-      "elType": "section",
-      "settings": {
-        "content_width": "boxed",
-        "padding": {
-          "unit": "px",
-          "top": "0",
-          "right": "0",
-          "bottom": "104",
-          "left": "0",
-          "isLinked": false
-        }
-      },
-      "elements": [
-        {
-          "id": "1f438aa",
-          "elType": "column",
-          "settings": {
-            "_column_size": 100,
-            "_inline_size": null
-          },
-          "elements": [
-            {
-              "id": "c0774c1",
-              "elType": "widget",
               "widgetType": "html",
               "settings": {
-                "html": "<div class=\"gc-cards gc-cards--4\"><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>Tích hợp CRM</h3><span class=\"gc-card__n\" aria-hidden=\"true\">01</span></div><p class=\"gc-card__body\">Kết nối cuộc gọi với dữ liệu và quy trình trên CRM của doanh nghiệp.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>Tích hợp Helpdesk</h3><span class=\"gc-card__n\" aria-hidden=\"true\">02</span></div><p class=\"gc-card__body\">Đưa cuộc gọi vào quy trình hỗ trợ và ticket của đội CSKH.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>Tích hợp POS</h3><span class=\"gc-card__n\" aria-hidden=\"true\">03</span></div><p class=\"gc-card__body\">Kết nối cuộc gọi với dữ liệu bán hàng và đơn hàng trên hệ thống POS.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article><article class=\"gc-card\"><div class=\"gc-card__top\"><h3>Tổng đài quốc tế</h3><span class=\"gc-card__n\" aria-hidden=\"true\">04</span></div><p class=\"gc-card__body\">Đầu số và phương án liên lạc theo từng thị trường doanh nghiệp phục vụ.</p><div class=\"gc-card__rule\" aria-hidden=\"true\"></div></article></div>"
+                "html": "<div class=\"gc-linkrow\"><a class=\"gc-eco-ctas__btn gc-linkrow__btn gc-linkrow__btn--primary\" href=\"/san-pham/\">Xem tất cả sản phẩm<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a><a class=\"gc-eco-ctas__btn gc-linkrow__btn gc-linkrow__btn--ghost\" href=\"/giai-phap/\">Xem tất cả giải pháp<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></div>"
               },
               "elements": []
             }
@@ -564,7 +516,7 @@
       "isInner": false
     },
     {
-      "id": "d643d84",
+      "id": "e2313d7",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -581,7 +533,7 @@
       },
       "elements": [
         {
-          "id": "e2313d7",
+          "id": "17378f3",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -589,7 +541,7 @@
           },
           "elements": [
             {
-              "id": "1ba0fc2",
+              "id": "c0774c1",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -603,7 +555,7 @@
               "elements": []
             },
             {
-              "id": "17378f3",
+              "id": "1f438aa",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -617,7 +569,7 @@
               "elements": []
             },
             {
-              "id": "8e757b6",
+              "id": "3c72d4b",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -629,7 +581,7 @@
               "elements": []
             },
             {
-              "id": "7bec024",
+              "id": "1ba0fc2",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -644,7 +596,7 @@
           "isInner": false
         },
         {
-          "id": "4d27873",
+          "id": "7bec024",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -652,7 +604,7 @@
           },
           "elements": [
             {
-              "id": "67c6769",
+              "id": "8e757b6",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
@@ -667,7 +619,7 @@
       "isInner": false
     },
     {
-      "id": "0d6630f",
+      "id": "756b457",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -682,7 +634,7 @@
       },
       "elements": [
         {
-          "id": "0bc38f1",
+          "id": "4d27873",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -690,7 +642,7 @@
           },
           "elements": [
             {
-              "id": "2ec8da1",
+              "id": "67c6769",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
@@ -702,7 +654,7 @@
           "isInner": false
         },
         {
-          "id": "1ccf8fe",
+          "id": "25e80c2",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -710,7 +662,7 @@
           },
           "elements": [
             {
-              "id": "a275f21",
+              "id": "d643d84",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -724,7 +676,7 @@
               "elements": []
             },
             {
-              "id": "1d8e0bc",
+              "id": "2ec8da1",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -738,7 +690,7 @@
               "elements": []
             },
             {
-              "id": "61da6a6",
+              "id": "0bc38f1",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -750,7 +702,7 @@
               "elements": []
             },
             {
-              "id": "8c1635d",
+              "id": "a275f21",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -762,13 +714,13 @@
               "elements": []
             },
             {
-              "id": "57d453c",
+              "id": "0b2b402",
               "elType": "widget",
               "widgetType": "icon-list",
               "settings": {
                 "icon_list": [
                   {
-                    "_id": "0b2b402",
+                    "_id": "1d8e0bc",
                     "text": "Quản lý tập trung trên Webphone",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -776,7 +728,7 @@
                     }
                   },
                   {
-                    "_id": "25e80c2",
+                    "_id": "61da6a6",
                     "text": "Tương tác được lưu trữ đầy đủ",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -784,7 +736,7 @@
                     }
                   },
                   {
-                    "_id": "756b457",
+                    "_id": "8c1635d",
                     "text": "Tích hợp sẵn trong nền tảng",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -810,7 +762,7 @@
       "isInner": false
     },
     {
-      "id": "19c5434",
+      "id": "ee2732a",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -827,15 +779,15 @@
       },
       "elements": [
         {
-          "id": "d8a0a00",
+          "id": "9735150",
           "elType": "column",
           "settings": {
-            "_column_size": 100,
+            "_column_size": 50,
             "_inline_size": null
           },
           "elements": [
             {
-              "id": "9735150",
+              "id": "57d453c",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -849,7 +801,7 @@
               "elements": []
             },
             {
-              "id": "169c703",
+              "id": "1ccf8fe",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -861,65 +813,40 @@
               "elements": []
             },
             {
+              "id": "0d6630f",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div class=\"gc-subhead\"><h3>Ra quyết định nhanh hơn với dữ liệu trực quan</h3><p>Không cần tổng hợp báo cáo thủ công từ nhiều nguồn. Mọi chỉ số quan trọng đều được hiển thị trực quan giúp quản lý nhanh chóng nắm bắt tình hình vận hành.</p></div>"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        },
+        {
+          "id": "71c909b",
+          "elType": "column",
+          "settings": {
+            "_column_size": 50,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "169c703",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div class=\"gc-subhead\"><h3>Các chỉ số quan trọng trong một màn hình</h3><p>Các chỉ số Gcalls Analytics theo dõi. Số liệu bên dưới là dữ liệu minh họa, không phải kết quả đo được của một doanh nghiệp cụ thể.</p></div>"
+              },
+              "elements": []
+            },
+            {
               "id": "6dd0303",
-              "elType": "widget",
-              "widgetType": "text-editor",
-              "settings": {
-                "editor": "<p>Không cần tổng hợp báo cáo thủ công từ nhiều nguồn. Mọi chỉ số quan trọng đều được hiển thị trực quan giúp quản lý nhanh chóng nắm bắt tình hình vận hành.</p>",
-                "text_color": "#5b5f6b",
-                "typography_typography": "custom",
-                "typography_font_family": "Open Sans"
-              },
-              "elements": []
-            },
-            {
-              "id": "71c909b",
-              "elType": "widget",
-              "widgetType": "heading",
-              "settings": {
-                "title": "Ra quyết định nhanh hơn với dữ liệu trực quan",
-                "header_size": "h3",
-                "title_color": "#1e2026",
-                "typography_typography": "custom",
-                "typography_font_family": "Open Sans",
-                "typography_font_weight": "700"
-              },
-              "elements": []
-            },
-            {
-              "id": "ee2732a",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
                 "shortcode": "[gcalls_mockup id=\"analytics\"]"
-              },
-              "elements": []
-            },
-            {
-              "id": "0ca3086",
-              "elType": "widget",
-              "widgetType": "heading",
-              "settings": {
-                "title": "Các chỉ số quan trọng trong một màn hình",
-                "header_size": "h3",
-                "title_color": "#1e2026",
-                "typography_typography": "custom",
-                "typography_font_family": "Open Sans",
-                "typography_font_weight": "700"
-              },
-              "elements": []
-            },
-            {
-              "id": "55a013a",
-              "elType": "widget",
-              "widgetType": "heading",
-              "settings": {
-                "title": "Dành cho quản lý, trưởng nhóm và chủ doanh nghiệp",
-                "header_size": "h3",
-                "title_color": "#1e2026",
-                "typography_typography": "custom",
-                "typography_font_family": "Open Sans",
-                "typography_font_weight": "700"
               },
               "elements": []
             }
@@ -930,7 +857,7 @@
       "isInner": false
     },
     {
-      "id": "1f4666a",
+      "id": "16f49ed",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -945,15 +872,15 @@
       },
       "elements": [
         {
-          "id": "c6a6a6b",
+          "id": "b37e755",
           "elType": "column",
           "settings": {
-            "_column_size": 100,
+            "_column_size": 50,
             "_inline_size": null
           },
           "elements": [
             {
-              "id": "b37e755",
+              "id": "0ca3086",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -967,7 +894,7 @@
               "elements": []
             },
             {
-              "id": "0df6f04",
+              "id": "55a013a",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -979,96 +906,49 @@
               "elements": []
             },
             {
+              "id": "d8a0a00",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div class=\"gc-subhead\"><h3>Điều hướng cuộc gọi đến đúng người phụ trách</h3><p>Cấu hình luồng cuộc gọi tới đúng bộ phận, đúng nhân viên hoặc đúng chi nhánh, kèm nhóm đổ chuông và chuyển tiếp cho trường hợp không có người nhận máy.</p></div>"
+              },
+              "elements": []
+            },
+            {
+              "id": "19c5434",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div class=\"gc-linkrow\"><a class=\"gc-eco-ctas__btn gc-linkrow__btn gc-linkrow__btn--primary\" href=\"/gcalls-plus-webphone/\">Xem Cloud PBX<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></div>"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": false
+        },
+        {
+          "id": "3224386",
+          "elType": "column",
+          "settings": {
+            "_column_size": 50,
+            "_inline_size": null
+          },
+          "elements": [
+            {
+              "id": "0df6f04",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div class=\"gc-subhead\"><h3>Hành trình cuộc gọi từ đầu đến cuối</h3><p>Các bước một cuộc gọi đi qua, theo luồng doanh nghiệp cấu hình.</p></div>"
+              },
+              "elements": []
+            },
+            {
               "id": "5a51f78",
-              "elType": "widget",
-              "widgetType": "text-editor",
-              "settings": {
-                "editor": "<p>Cấu hình luồng cuộc gọi tới đúng bộ phận, đúng nhân viên hoặc đúng chi nhánh, kèm nhóm đổ chuông và chuyển tiếp cho trường hợp không có người nhận máy.</p>",
-                "text_color": "#5b5f6b",
-                "typography_typography": "custom",
-                "typography_font_family": "Open Sans"
-              },
-              "elements": []
-            },
-            {
-              "id": "3224386",
-              "elType": "widget",
-              "widgetType": "heading",
-              "settings": {
-                "title": "Điều hướng cuộc gọi đến đúng người phụ trách",
-                "header_size": "h3",
-                "title_color": "#1e2026",
-                "typography_typography": "custom",
-                "typography_font_family": "Open Sans",
-                "typography_font_weight": "700"
-              },
-              "elements": []
-            },
-            {
-              "id": "16f49ed",
-              "elType": "widget",
-              "widgetType": "heading",
-              "settings": {
-                "title": "Đầy đủ tính năng Cloud PBX doanh nghiệp",
-                "header_size": "h3",
-                "title_color": "#1e2026",
-                "typography_typography": "custom",
-                "typography_font_family": "Open Sans",
-                "typography_font_weight": "700"
-              },
-              "elements": []
-            },
-            {
-              "id": "62d0f11",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
                 "shortcode": "[gcalls_mockup id=\"cloud\"]"
-              },
-              "elements": []
-            },
-            {
-              "id": "0ea0ca0",
-              "elType": "widget",
-              "widgetType": "heading",
-              "settings": {
-                "title": "Hành trình cuộc gọi từ đầu đến cuối",
-                "header_size": "h3",
-                "title_color": "#1e2026",
-                "typography_typography": "custom",
-                "typography_font_family": "Open Sans",
-                "typography_font_weight": "700"
-              },
-              "elements": []
-            },
-            {
-              "id": "139c3a7",
-              "elType": "widget",
-              "widgetType": "button",
-              "settings": {
-                "text": "Cloud Call Center",
-                "link": {
-                  "url": "/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center",
-                  "is_external": "",
-                  "nofollow": ""
-                },
-                "align": "left",
-                "background_color": "#673ab7",
-                "button_text_color": "#ffffff",
-                "border_border": "",
-                "border_width": {},
-                "border_color": "",
-                "border_radius": {
-                  "unit": "px",
-                  "top": "8",
-                  "right": "8",
-                  "bottom": "8",
-                  "left": "8",
-                  "isLinked": true
-                },
-                "typography_typography": "custom",
-                "typography_font_family": "Open Sans",
-                "typography_font_weight": "600"
               },
               "elements": []
             }
@@ -1079,7 +959,7 @@
       "isInner": false
     },
     {
-      "id": "f81a21a",
+      "id": "f6fe030",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -1096,7 +976,7 @@
       },
       "elements": [
         {
-          "id": "6bdb3f1",
+          "id": "139c3a7",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -1104,7 +984,7 @@
           },
           "elements": [
             {
-              "id": "f6fe030",
+              "id": "62d0f11",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1118,7 +998,7 @@
               "elements": []
             },
             {
-              "id": "908c6ac",
+              "id": "0ea0ca0",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1133,7 +1013,7 @@
           "isInner": false
         },
         {
-          "id": "d3e75b5",
+          "id": "1f4666a",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -1141,7 +1021,7 @@
           },
           "elements": [
             {
-              "id": "33b9e52",
+              "id": "c6a6a6b",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
@@ -1156,7 +1036,7 @@
       "isInner": false
     },
     {
-      "id": "d338bdb",
+      "id": "6401f80",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -1171,7 +1051,7 @@
       },
       "elements": [
         {
-          "id": "5908a36",
+          "id": "b5b9657",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -1179,7 +1059,7 @@
           },
           "elements": [
             {
-              "id": "b24b439",
+              "id": "908c6ac",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1193,7 +1073,7 @@
               "elements": []
             },
             {
-              "id": "45d8d51",
+              "id": "6bdb3f1",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1205,13 +1085,13 @@
               "elements": []
             },
             {
-              "id": "9b4e8db",
+              "id": "b24b439",
               "elType": "widget",
               "widgetType": "icon-list",
               "settings": {
                 "icon_list": [
                   {
-                    "_id": "55cb89d",
+                    "_id": "33b9e52",
                     "text": "Tăng tỷ lệ chuyển đổi từ visitor thành lead",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1219,7 +1099,7 @@
                     }
                   },
                   {
-                    "_id": "b5b9657",
+                    "_id": "d3e75b5",
                     "text": "Thu thập số điện thoại và gọi lại tức thì",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1227,7 +1107,7 @@
                     }
                   },
                   {
-                    "_id": "6401f80",
+                    "_id": "f81a21a",
                     "text": "Theo dõi nguồn cuộc gọi từ từng trang web",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1247,7 +1127,7 @@
               "elements": []
             },
             {
-              "id": "a220837",
+              "id": "45d8d51",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
@@ -1256,7 +1136,7 @@
               "elements": []
             },
             {
-              "id": "69aabcf",
+              "id": "55cb89d",
               "elType": "widget",
               "widgetType": "button",
               "settings": {
@@ -1293,7 +1173,7 @@
       "isInner": false
     },
     {
-      "id": "baddcf5",
+      "id": "17cbfe1",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -1310,7 +1190,7 @@
       },
       "elements": [
         {
-          "id": "4ad0aa1",
+          "id": "26e7436",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -1318,7 +1198,7 @@
           },
           "elements": [
             {
-              "id": "e8e9460",
+              "id": "9b4e8db",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1332,7 +1212,7 @@
               "elements": []
             },
             {
-              "id": "45b1106",
+              "id": "a220837",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1346,7 +1226,7 @@
               "elements": []
             },
             {
-              "id": "26e7436",
+              "id": "69aabcf",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1358,7 +1238,7 @@
               "elements": []
             },
             {
-              "id": "17cbfe1",
+              "id": "5908a36",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1370,7 +1250,7 @@
               "elements": []
             },
             {
-              "id": "2d4ceb3",
+              "id": "d338bdb",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
@@ -1379,7 +1259,7 @@
               "elements": []
             },
             {
-              "id": "cd96722",
+              "id": "e8e9460",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1393,7 +1273,7 @@
               "elements": []
             },
             {
-              "id": "8cd36a7",
+              "id": "45b1106",
               "elType": "widget",
               "widgetType": "button",
               "settings": {
@@ -1430,7 +1310,7 @@
       "isInner": false
     },
     {
-      "id": "7b99ca8",
+      "id": "0bb94e7",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -1445,7 +1325,7 @@
       },
       "elements": [
         {
-          "id": "578fa75",
+          "id": "2a5cb4c",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -1453,7 +1333,7 @@
           },
           "elements": [
             {
-              "id": "9177efb",
+              "id": "2d4ceb3",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1467,7 +1347,7 @@
               "elements": []
             },
             {
-              "id": "d411902",
+              "id": "cd96722",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1479,7 +1359,7 @@
               "elements": []
             },
             {
-              "id": "979663f",
+              "id": "8cd36a7",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1491,13 +1371,13 @@
               "elements": []
             },
             {
-              "id": "0e63db4",
+              "id": "979663f",
               "elType": "widget",
               "widgetType": "icon-list",
               "settings": {
                 "icon_list": [
                   {
-                    "_id": "b8bafd3",
+                    "_id": "4ad0aa1",
                     "text": "Gọi điện trực tiếp trên Chrome, Edge, Safari — không cài extension",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1505,7 +1385,7 @@
                     }
                   },
                   {
-                    "_id": "e80649d",
+                    "_id": "baddcf5",
                     "text": "Chất lượng âm thanh HD, noise cancellation, dễ cấu hình",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1513,7 +1393,7 @@
                     }
                   },
                   {
-                    "_id": "2a5cb4c",
+                    "_id": "9177efb",
                     "text": "Dữ liệu lưu trên Cloud, truy cập bất cứ đâu, không phụ thuộc server nội bộ",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1521,7 +1401,7 @@
                     }
                   },
                   {
-                    "_id": "3f76ca7",
+                    "_id": "d411902",
                     "text": "Lịch sử, ghi chú, trạng thái đồng bộ tức thì giữa các thiết bị",
                     "selected_icon": {
                       "value": "fas fa-check",
@@ -1541,7 +1421,7 @@
               "elements": []
             },
             {
-              "id": "0bb94e7",
+              "id": "b8bafd3",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1555,7 +1435,7 @@
               "elements": []
             },
             {
-              "id": "86e1d24",
+              "id": "e80649d",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1572,7 +1452,7 @@
           "isInner": false
         },
         {
-          "id": "dc94f88",
+          "id": "0e63db4",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -1580,7 +1460,7 @@
           },
           "elements": [
             {
-              "id": "25e5662",
+              "id": "3f76ca7",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
@@ -1595,7 +1475,7 @@
       "isInner": false
     },
     {
-      "id": "2500cf5",
+      "id": "7652f60",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -1612,7 +1492,7 @@
       },
       "elements": [
         {
-          "id": "f24c133",
+          "id": "961bfd8",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -1620,7 +1500,7 @@
           },
           "elements": [
             {
-              "id": "ef8c9f5",
+              "id": "86e1d24",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1634,7 +1514,7 @@
               "elements": []
             },
             {
-              "id": "a65ad71",
+              "id": "578fa75",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1648,7 +1528,7 @@
               "elements": []
             },
             {
-              "id": "3e3b0be",
+              "id": "25e5662",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1662,7 +1542,7 @@
               "elements": []
             },
             {
-              "id": "961bfd8",
+              "id": "dc94f88",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1674,7 +1554,7 @@
               "elements": []
             },
             {
-              "id": "7652f60",
+              "id": "7b99ca8",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1686,7 +1566,7 @@
               "elements": []
             },
             {
-              "id": "9a9f973",
+              "id": "ef8c9f5",
               "elType": "widget",
               "widgetType": "button",
               "settings": {
@@ -1717,7 +1597,7 @@
               "elements": []
             },
             {
-              "id": "5d4fe9c",
+              "id": "a65ad71",
               "elType": "widget",
               "widgetType": "button",
               "settings": {
@@ -1748,7 +1628,7 @@
               "elements": []
             },
             {
-              "id": "214ab0f",
+              "id": "3e3b0be",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {

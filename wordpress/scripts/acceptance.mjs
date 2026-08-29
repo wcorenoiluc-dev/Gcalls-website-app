@@ -226,7 +226,15 @@ console.log('\n2. Home page structure')
     sections: document.querySelectorAll('.elementor-section, .elementor-top-section').length,
     topSections: document.querySelectorAll('.elementor-top-section').length,
     mockups: [...document.querySelectorAll('[data-gcalls-mock]')].map((e) => e.getAttribute('data-gcalls-mock')),
-    painCards: document.querySelectorAll('.gc-card').length,
+    /*
+     * SCOPED. This counted `.gc-card` across the whole document and reported
+     * 14 for a section that has six, because two later feature grids use the
+     * same class. A count is only meaningful against the grid it belongs to.
+     */
+    painCards: (() => {
+      const first = document.querySelector('.gc-cards')
+      return first ? first.querySelectorAll('.gc-card').length : 0
+    })(),
     ctaRow: document.querySelectorAll('.gc-ctarow .gc-btn').length,
     ctaInline: (() => {
       const row = document.querySelector('.gc-ctarow')
@@ -264,9 +272,162 @@ console.log('\n2. Home page structure')
   await ctx.close()
 }
 
+/* ------------------------------------------------------------ ecosystem */
+
+/*
+ * GCALLS-020. The product/solution ecosystem, measured on its own terms.
+ *
+ * Every query below is rooted at a .gc-eco-group, never at the document: the
+ * defect that hid here for a release was a document-wide `.gc-card` count that
+ * summed three unrelated grids and reported a section as broken that was not.
+ *
+ * The dead-space assertion is the one that matters. The block used to be five
+ * sibling top sections each carrying the 104px site rhythm, so 208px of empty
+ * page opened at every seam. GAP_MAX is the threshold for empty vertical run
+ * between two consecutive rendered blocks with nothing visible between them.
+ */
+
+console.log('\n3. Product / solution ecosystem')
+
+const ECO_COLUMNS = { 1440: 3, 1024: 3, 768: 2, 390: 1, 320: 1 }
+const GAP_MAX = 120
+const NAME_GAP_MAX = 12
+
+for (const width of WIDTHS) {
+  const ctx = await b.newContext({ viewport: { width, height: 900 } })
+  const page = await ctx.newPage()
+  await page.goto(ORIGIN + '/', { waitUntil: 'domcontentloaded', timeout: 45000 })
+  await settle(page)
+
+  const eco = await page.evaluate(() => {
+    const groups = [...document.querySelectorAll('.gc-eco-group')]
+    if (!groups.length) return null
+
+    const read = (n) => {
+      const grid = n.querySelector('.gc-eco-grid')
+      const head = n.querySelector('.gc-eco-group__head')
+      const cards = [...grid.querySelectorAll('.gc-eco-card')]
+      const tops = [...new Set(cards.map((c) => Math.round(c.getBoundingClientRect().top)))]
+      return {
+        title: (n.querySelector('.gc-eco-group__title') || {}).textContent?.trim() ?? '',
+        cards: cards.length,
+        cols: getComputedStyle(grid).gridTemplateColumns.split(' ').length,
+        perRow: cards.filter((c) => Math.round(c.getBoundingClientRect().top) === tops[0]).length,
+        headToGrid: Math.round(grid.getBoundingClientRect().top - head.getBoundingClientRect().bottom),
+        rowsEqual: tops.every((t) => {
+          const hs = cards
+            .filter((c) => Math.round(c.getBoundingClientRect().top) === t)
+            .map((c) => Math.round(c.getBoundingClientRect().height))
+          return new Set(hs).size <= 1
+        }),
+        linked: cards.filter((c) => c.tagName === 'A' && (c.getAttribute('href') || '').startsWith('/')).length,
+        iconed: cards.filter((c) => c.querySelector('.gc-eco-card__icon svg')).length,
+        ctaed: cards.filter((c) => c.querySelector('.gc-eco-card__cta')).length,
+        headings: n.querySelectorAll('h1, h2').length,
+        /* Name to the next rendered thing: the supporting label where a card
+         * carries one, the body otherwise. Measuring to the body regardless
+         * would flag the one card with a "QC Bot AI" label as inconsistent
+         * when what fills the gap is an element, not empty space. */
+        nameGaps: [...new Set(cards.map((c) => {
+          const nm = c.querySelector('.gc-eco-card__name').getBoundingClientRect()
+          const next = c.querySelector('.gc-eco-card__supporting') || c.querySelector('.gc-eco-card__body')
+          return Math.round(next.getBoundingClientRect().top - nm.bottom)
+        }))],
+        minHeights: (() => {
+          const bad = []
+          let cur = grid
+          while (cur && cur !== document.body) {
+            const mh = getComputedStyle(cur).minHeight
+            if (mh !== '0px' && mh !== 'auto' && mh !== 'none') bad.push(`${cur.className || cur.tagName}:${mh}`)
+            cur = cur.parentElement
+          }
+          return bad
+        })(),
+        hrefs: cards.map((c) => c.getAttribute('href')),
+      }
+    }
+
+    /* Widest empty run between consecutive blocks of the ecosystem run. */
+    const blocks = [...document.querySelectorAll('.gc-eco-group__head, .gc-eco-grid, .gc-linkrow')]
+    let worst = 0
+    let where = ''
+    for (let i = 1; i < blocks.length; i++) {
+      if (blocks[i - 1].contains(blocks[i]) || blocks[i].contains(blocks[i - 1])) continue
+      const gap = Math.round(blocks[i].getBoundingClientRect().top - blocks[i - 1].getBoundingClientRect().bottom)
+      if (gap > worst) {
+        worst = gap
+        where = `${blocks[i - 1].className} -> ${blocks[i].className}`
+      }
+    }
+
+    return { groups: groups.map(read), worst, where }
+  })
+
+  if (!eco) {
+    record('ecosystem', `@${width} ecosystem section is present`, false, 'no .gc-eco-group')
+    await ctx.close()
+    continue
+  }
+
+  record('ecosystem', `@${width} two groups`, eco.groups.length === 2, String(eco.groups.length))
+
+  const [products, solutions] = eco.groups
+  const expectCols = ECO_COLUMNS[width]
+
+  record('ecosystem', `@${width} product cards = 3`, products.cards === 3, String(products.cards))
+  record('ecosystem', `@${width} solution cards = 7`, solutions.cards === 7, String(solutions.cards))
+
+  for (const g of eco.groups) {
+    const tag = `@${width} ${g.title}`
+    record('ecosystem', `${tag} grid is ${expectCols} across`, g.cols === expectCols, `${g.cols} columns`)
+    record('ecosystem', `${tag} first row holds ${expectCols}`, g.perRow === Math.min(expectCols, g.cards), String(g.perRow))
+    record('ecosystem', `${tag} heading sits on its grid`, g.headToGrid > 0 && g.headToGrid <= 48, `${g.headToGrid}px`)
+    record('ecosystem', `${tag} cards level within a row`, g.rowsEqual)
+    record('ecosystem', `${tag} every card links to a route`, g.linked === g.cards, `${g.linked}/${g.cards}`)
+    record('ecosystem', `${tag} every card carries an icon`, g.iconed === g.cards, `${g.iconed}/${g.cards}`)
+    record('ecosystem', `${tag} every card carries a CTA`, g.ctaed === g.cards, `${g.ctaed}/${g.cards}`)
+    record('ecosystem', `${tag} name-to-body spacing is consistent`,
+      g.nameGaps.every((n) => n >= 0 && n <= NAME_GAP_MAX), g.nameGaps.join(','))
+    record('ecosystem', `${tag} no min-height on any ancestor`, g.minHeights.length === 0, g.minHeights.join(' '))
+    record('ecosystem', `${tag} no h1/h2 inside the group`, g.headings === 0, String(g.headings))
+  }
+
+  record('ecosystem', `@${width} no dead space between blocks`, eco.worst <= GAP_MAX, `${eco.worst}px ${eco.where}`)
+
+  /* Every href must resolve, not merely exist. */
+  if (width === 1440) {
+    const hrefs = [...new Set(eco.groups.flatMap((g) => g.hrefs))]
+    for (const href of hrefs) {
+      const res = await page.request.get(new URL(href, ORIGIN).toString())
+      record('ecosystem', `link ${href.split('?')[0]} is 200`, res.status() === 200, String(res.status()))
+    }
+
+    /* focus-visible must produce a real, visible ring on the card itself. */
+    const focus = await page.evaluate(() => {
+      const card = document.querySelector('.gc-eco-card')
+      card.focus()
+      const cs = getComputedStyle(card)
+      return {
+        focused: document.activeElement === card,
+        outlineWidth: cs.outlineWidth,
+        outlineStyle: cs.outlineStyle,
+      }
+    })
+    record('ecosystem', 'a card takes keyboard focus', focus.focused)
+    record('ecosystem', 'focus-visible draws a ring',
+      focus.outlineStyle !== 'none' && parseFloat(focus.outlineWidth) >= 2,
+      `${focus.outlineStyle} ${focus.outlineWidth}`)
+  }
+
+  const overflows = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)
+  record('ecosystem', `@${width} no horizontal overflow`, !overflows)
+
+  await ctx.close()
+}
+
 /* ------------------------------------------------------- product visuals */
 
-console.log('\n3. Product visuals')
+console.log('\n4. Product visuals')
 
 const PRODUCT_VISUALS = {
   '/gcalls-cx/': ['cx_inbox', 'cx_context', 'cx_ticket', 'cx_report'],
@@ -296,7 +457,7 @@ for (const [route, expected] of Object.entries(PRODUCT_VISUALS)) {
 
 /* ------------------------------------------------------------ interaction */
 
-console.log('\n4. Interaction')
+console.log('\n5. Interaction')
 
 {
   /* Mobile menu: click, Escape, outside click, scroll lock. */
@@ -453,7 +614,7 @@ console.log('\n4. Interaction')
 
 /* --------------------------------------------------------------- hardening */
 
-console.log('\n5. Hardening, redirects, noindex')
+console.log('\n6. Hardening, redirects, noindex')
 
 const httpCheck = async (url, options = {}) => {
   const res = await fetch(url, { redirect: 'manual', ...options }).catch(() => null)
@@ -516,7 +677,7 @@ const httpCheck = async (url, options = {}) => {
 
 /* -------------------------------------------------------- the eighteen */
 
-console.log('\n6. The eighteen published articles')
+console.log('\n7. The eighteen published articles')
 
 {
   const beforePath = path.join(HERE, '..', 'dist', 'live-baseline-before-deploy.json')

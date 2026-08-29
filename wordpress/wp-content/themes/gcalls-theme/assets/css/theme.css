@@ -1353,6 +1353,221 @@ html.gcalls-nav-open body { overflow: hidden; }
 
 .gc-card:hover .gc-card__rule { opacity: 1; transform: scaleX(1); }
 
+/* ── Product / solution ecosystem ───────────────────────────────────────
+ *
+ * Parity target: src/components/home/EcosystemSection.tsx.
+ *
+ * The vertical rhythm lives here and in the generator's section padding, not
+ * in a fixed height: every box below is sized by its content. The group head
+ * and its grid are one block (.gc-eco-group) precisely so no section padding
+ * can ever open between a heading and the cards it introduces again.
+ */
+
+.gc-eco-group__head {
+	align-items: flex-end;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: space-between;
+	/* React: mb-7. This is the whole distance from group title to cards. */
+	margin-bottom: 1.75rem;
+}
+
+.gc-eco-group__head .gc-eyebrow { margin: 0 0 0.75rem; }
+
+.gc-eco-group__title {
+	color: var(--gcalls-foreground);
+	font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+	font-weight: 800;
+	line-height: 1.25;
+	margin: 0;
+}
+
+.gc-eco-group__lead {
+	color: var(--gcalls-muted);
+	font-size: 0.875rem;
+	line-height: 1.7;
+	margin: 0;
+	max-width: 24rem;
+}
+
+@media (min-width: 640px) { .gc-eco-group__lead { text-align: right; } }
+
+.gc-eco-grid {
+	display: grid;
+	gap: 1.25rem;
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) { .gc-eco-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .gc-eco-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .gc-eco-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* The whole card is the link — one tab stop, one hit area. `height: 100%`
+ * against the grid track is what keeps a row of cards level regardless of
+ * how long the longest description runs. */
+.gc-eco-card {
+	--gc-accent: #673ab7;
+	--gc-accent-bg: #f5f0fd;
+	background: var(--gcalls-surface);
+	border: 1px solid color-mix(in srgb, var(--gc-accent) 12%, transparent);
+	border-radius: 1rem;
+	box-shadow: 0 2px 12px rgba(103, 58, 183, 0.05);
+	color: inherit;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 1.5rem;
+	text-decoration: none;
+	transition: box-shadow 200ms ease, transform 200ms ease, border-color 200ms ease;
+}
+
+.gc-eco-card--violet { --gc-accent: #673ab7; --gc-accent-bg: #f5f0fd; }
+.gc-eco-card--cyan   { --gc-accent: #0891b2; --gc-accent-bg: #f0f9ff; }
+.gc-eco-card--amber  { --gc-accent: #d97706; --gc-accent-bg: #fffbeb; }
+.gc-eco-card--green  { --gc-accent: #16a34a; --gc-accent-bg: #f0fdf4; }
+.gc-eco-card--sky    { --gc-accent: #0284c7; --gc-accent-bg: #e0f2fe; }
+.gc-eco-card--purple { --gc-accent: #7c3aed; --gc-accent-bg: #f3f0fe; }
+
+.gc-eco-card:hover {
+	border-color: color-mix(in srgb, var(--gc-accent) 38%, transparent);
+	box-shadow: 0 16px 40px color-mix(in srgb, var(--gc-accent) 14%, transparent);
+	transform: translateY(-3px);
+}
+
+.gc-eco-card:focus-visible {
+	outline: 2px solid var(--gc-accent);
+	outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gc-eco-card, .gc-eco-card:hover { transform: none; transition: none; }
+}
+
+.gc-eco-card__icon {
+	align-items: center;
+	background: var(--gc-accent-bg);
+	border-radius: 0.875rem;
+	color: var(--gc-accent);
+	display: flex;
+	flex: none;
+	height: 2.75rem;
+	justify-content: center;
+	margin-bottom: 1rem;
+	width: 2.75rem;
+}
+
+.gc-eco-card__icon svg { height: 20px; width: 20px; }
+
+.gc-eco-card__name {
+	color: var(--gcalls-foreground);
+	font-size: 0.9375rem;
+	font-weight: 700;
+	line-height: 1.35;
+}
+
+.gc-eco-card__supporting {
+	color: var(--gc-accent);
+	font-size: 0.75rem;
+	font-weight: 600;
+	margin-top: 0.25rem;
+}
+
+/* flex: 1 pushes the CTA to the bottom edge of every card, so the CTAs in a
+ * row line up even when the descriptions differ in length. */
+.gc-eco-card__body {
+	color: var(--gcalls-muted);
+	flex: 1;
+	font-size: 0.875rem;
+	line-height: 1.7;
+	margin-top: 0.625rem;
+}
+
+.gc-eco-card__cta {
+	align-items: center;
+	color: var(--gc-accent);
+	display: inline-flex;
+	font-size: 0.75rem;
+	font-weight: 700;
+	gap: 0.375rem;
+	margin-top: 1.25rem;
+}
+
+.gc-eco-card__cta svg {
+	height: 13px;
+	transition: transform 150ms ease;
+	width: 13px;
+}
+
+.gc-eco-card:hover .gc-eco-card__cta svg { transform: translateX(4px); }
+
+@media (prefers-reduced-motion: reduce) {
+	.gc-eco-card:hover .gc-eco-card__cta svg { transform: none; }
+}
+
+/* ── Sub-heading bound to the copy it introduces ────────────────────── */
+
+.gc-subhead h3 {
+	color: var(--gcalls-foreground);
+	font-size: clamp(1.125rem, 2.2vw, 1.625rem);
+	font-weight: 800;
+	line-height: 1.3;
+	margin: 0;
+}
+
+.gc-subhead p {
+	color: var(--gcalls-muted);
+	font-size: 0.9375rem;
+	line-height: 1.7;
+	/* The whole distance from an h3 to its paragraph, and the only one. */
+	margin: 0.625rem 0 0;
+	max-width: 34rem;
+}
+
+/* ── Plain link-button row ────────────────────────────────────────── */
+
+.gc-linkrow {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: center;
+}
+
+.gc-linkrow__btn {
+	align-items: center;
+	border-radius: 0.75rem;
+	display: inline-flex;
+	font-size: 0.875rem;
+	font-weight: 700;
+	gap: 0.5rem;
+	padding: 0.875rem 1.75rem;
+	text-decoration: none;
+	transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.gc-linkrow__btn svg { height: 15px; width: 15px; }
+
+.gc-linkrow__btn--primary {
+	background: #673ab7;
+	box-shadow: 0 4px 20px rgba(103, 58, 183, 0.3);
+	color: #fff;
+}
+
+.gc-linkrow__btn--primary:hover { background: #5929a8; }
+
+.gc-linkrow__btn--ghost {
+	background: var(--gcalls-surface);
+	border: 1.5px solid rgba(103, 58, 183, 0.25);
+	color: #673ab7;
+}
+
+.gc-linkrow__btn--ghost:hover { border-color: #673ab7; }
+
+.gc-linkrow__btn:focus-visible {
+	outline: 2px solid #673ab7;
+	outline-offset: 2px;
+}
+
 /* ── Hero left column ───────────────────────────────────────────────── */
 
 .gc-hero-lede {

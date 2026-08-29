@@ -1336,9 +1336,23 @@ if (exists(mockPhp)) {
       read(shipped) === read(homeTemplatePath),
       'plugin copy differs from wordpress/elementor-templates/',
     )
+    /*
+     * 19 -> 18 in GCALLS-020, and the drop is the fix, not a loss.
+     *
+     * The ecosystem block was five sibling top sections: a header, a bare
+     * "Sản phẩm Gcalls" heading, the product grid, a bare "Giải pháp Gcalls"
+     * heading, and the solution grid. Every top section carries the 104px site
+     * rhythm and adjacent paddings stack, so each seam opened 208px of empty
+     * page and the two heading-only sections stood 250px tall to hold one line
+     * of text. Each group heading now travels in the same widget as its grid,
+     * which is four sections doing the work the five did.
+     *
+     * The number is asserted so a future edit cannot quietly split or duplicate
+     * a section. If it moves again, the reason belongs here.
+     */
     check(
-      'the shipped layout has 19 sections',
-      Array.isArray(parsedLayout.content) && parsedLayout.content.length === 19,
+      'the shipped layout has 18 sections',
+      Array.isArray(parsedLayout.content) && parsedLayout.content.length === 18,
       String(parsedLayout.content?.length),
     )
   }

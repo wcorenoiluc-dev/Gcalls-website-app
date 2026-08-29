@@ -271,6 +271,28 @@ const ICON = {
   phone:
     '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
   'chevron-right': '<path d="m9 18 6-6-6-6"/>',
+  'arrow-right': '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+  layers:
+    '<path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/>',
+  'monitor-smartphone':
+    '<path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"/><path d="M10 19v-3.96 3.15"/><path d="M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/>',
+  sparkles:
+    '<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/>',
+  headphones:
+    '<path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/>',
+  bot:
+    '<path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/>',
+  users:
+    '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  'life-buoy':
+    '<circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="4"/>',
+  'shopping-cart':
+    '<circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>',
+  'globe-2':
+    '<path d="M21.54 15H17a2 2 0 0 0-2 2v4.54"/><path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17"/><path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"/><circle cx="12" cy="12" r="10"/>',
+  cloud: '<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>',
+  'mouse-pointer-click':
+    '<path d="M14 4.1 12 6"/><path d="m5.1 8-2.9-.8"/><path d="m6 12-1.9 2"/><path d="M7.2 2.2 8 5.1"/><path d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z"/>',
 }
 
 const icon = (name, width = 2) =>
@@ -322,6 +344,81 @@ const cardGrid = (items, perRow = 3) =>
             `<p class="gc-card__body">${item.body}</p>` +
             `<div class="gc-card__rule" aria-hidden="true"></div>` +
             `</article>`,
+        )
+        .join('') +
+      `</div>`,
+  )
+
+/* ------------------------------------------------------------------ *
+ * The product / solution ecosystem
+ * ------------------------------------------------------------------ *
+ * Parity target: src/components/home/EcosystemSection.tsx.
+ *
+ * That file is the source of truth for BOTH the roster and the shape, and it
+ * carries a checkpoint the generator had drifted from: Voicebot is a solution
+ * Gcalls integrates, not a product Gcalls builds. It had been rebuilt here as
+ * a fourth "Gcalls Voicebot AI" product, which is the exact ownership claim
+ * the checkpoint forbids, and two solution cards had been dropped. Both are
+ * restored below from the React roster — three products, seven solutions.
+ *
+ * Every card is a link. React makes the whole card a <Link>; the same is done
+ * here with an <a>, so the target is reachable by pointer and by keyboard in
+ * one tab stop rather than a separate CTA control inside a non-interactive
+ * box. `href` is a real path — a sitemap route, or the lead form carrying the
+ * offering as attribution for the two that have no page of their own.
+ *
+ * The card NAME is deliberately not a heading. The group title above it is the
+ * h3; making each name an h3 too, as cardGrid() does, puts eight same-level
+ * headings under a heading of the same level and flattens the outline.
+ */
+const ecoCard = (card) =>
+  `<a class="gc-eco-card gc-eco-card--${card.accent}" href="${card.href}">` +
+  `<span class="gc-eco-card__icon">${icon(card.icon, 1.8)}</span>` +
+  `<span class="gc-eco-card__name">${card.name}</span>` +
+  (card.supporting ? `<span class="gc-eco-card__supporting">${card.supporting}</span>` : '') +
+  `<span class="gc-eco-card__body">${card.body}</span>` +
+  `<span class="gc-eco-card__cta">${card.ctaLabel ?? 'Tìm hiểu thêm'}` +
+  `${icon('arrow-right', 2)}</span>` +
+  `</a>`
+
+/**
+ * A group header (eyebrow + h3 + lead) sitting directly above its own grid, in
+ * ONE widget. Keeping the pair together is the fix for the dead space: the two
+ * were previously separate top-level sections, so the site's 104px section
+ * rhythm was applied twice between a heading and the cards it introduces.
+ */
+const ecoGroup = ({ eyebrow, title, lead, cards, perRow = 3 }) =>
+  html(
+    `<div class="gc-eco-group">` +
+      `<div class="gc-eco-group__head">` +
+      `<div>${eyebrowHtml(eyebrow)}<h3 class="gc-eco-group__title">${title}</h3></div>` +
+      `<p class="gc-eco-group__lead">${lead}</p>` +
+      `</div>` +
+      `<div class="gc-eco-grid gc-eco-grid--${perRow}">${cards.map(ecoCard).join('')}</div>` +
+      `</div>`,
+  )
+
+/**
+ * A sub-heading and the paragraph it introduces, emitted as ONE widget.
+ *
+ * These used to be separate `heading()` and `text()` widgets stacked in a
+ * column, which is how "Ra quyết định nhanh hơn với dữ liệu trực quan" ended
+ * up floating with the section's widget spacing above and below it and no
+ * visible tie to the copy or the mockup it belongs to. Binding the pair in one
+ * widget means no column gap can ever open between them.
+ */
+const subhead = (title, lead) =>
+  html(`<div class="gc-subhead"><h3>${title}</h3>` + (lead ? `<p>${lead}</p>` : '') + `</div>`)
+
+/** A row of plain link buttons. Used by the ecosystem and by Cloud. */
+const linkRow = (items) =>
+  html(
+    `<div class="gc-linkrow">` +
+      items
+        .map(
+          (i) =>
+            `<a class="gc-eco-ctas__btn gc-linkrow__btn gc-linkrow__btn--${i.variant}" href="${i.href}">` +
+            `${i.label}${icon('arrow-right', 2)}</a>`,
         )
         .join('') +
       `</div>`,
@@ -566,57 +663,151 @@ const content = [
   ),
 
   /* 4 — EcosystemSection.tsx */
-  section([
-    column([
-      heading('Hệ sinh thái sản phẩm và giải pháp Gcalls'),
-      text(
-        'Doanh nghiệp có thể bắt đầu từ một sản phẩm phù hợp với nhu cầu hiện tại, sau đó mở rộng sang các giải pháp tích hợp khi quy mô vận hành thay đổi.',
-      ),
-    ]),
-  ]),
-  section([column([heading('Sản phẩm Gcalls', 'h3')])]),
-  section([
-    column([
-      cardGrid(
-        [
-          {
-            title: 'Gcalls Plus Webphone',
-            body: 'Tổng đài trên trình duyệt hỗ trợ nghe gọi, lịch sử cuộc gọi, ghi âm, danh bạ và theo dõi hoạt động đội ngũ.',
-          },
-          {
-            title: 'QA QC Center',
-            body: 'Hỗ trợ chuyển giọng nói thành văn bản, phân tích từ khóa, chấm điểm theo tiêu chí và tổng hợp dữ liệu phục vụ kiểm soát chất lượng.',
-          },
-          {
-            title: 'Gcalls CX',
-            body: 'Nền tảng Contact Center hỗ trợ quản lý tương tác đa kênh và quy trình chăm sóc khách hàng.',
-          },
-          {
-            title: 'Gcalls Voicebot AI',
-            body: 'Gcalls tư vấn, kết nối và tích hợp Voicebot vào hệ thống tổng đài theo kịch bản và phạm vi triển khai của doanh nghiệp.',
-          },
-        ],
-        4,
-      ),
-    ]),
-  ]),
-  section([column([heading('Giải pháp Gcalls', 'h3')])]),
+  /*
+   * Five sections become four, and the homepage root count 19 -> 18.
+   *
+   * The header, "Sản phẩm Gcalls", the product grid, "Giải pháp Gcalls" and the
+   * solution grid were five siblings each carrying the site's 104px section
+   * padding. Adjacent paddings stack, so every seam opened 208px and the two
+   * heading-only sections stood 250px tall to hold one 42px line — the dead
+   * space this section was reported for.
+   *
+   * Each group heading now travels inside the same widget as the grid it
+   * introduces (ecoGroup), and the interior paddings are set from React's own
+   * spacing: 28px heading-to-grid (mb-7) and 64px between groups (gap-16). The
+   * outer 104px is kept only where the section meets its neighbours.
+   */
   section(
     [
       column([
-        cardGrid(
-          [
-            { title: 'Tích hợp CRM', body: 'Kết nối cuộc gọi với dữ liệu và quy trình trên CRM của doanh nghiệp.' },
-            { title: 'Tích hợp Helpdesk', body: 'Đưa cuộc gọi vào quy trình hỗ trợ và ticket của đội CSKH.' },
-            { title: 'Tích hợp POS', body: 'Kết nối cuộc gọi với dữ liệu bán hàng và đơn hàng trên hệ thống POS.' },
-            { title: 'Tổng đài quốc tế', body: 'Đầu số và phương án liên lạc theo từng thị trường doanh nghiệp phục vụ.' },
-          ],
-          4,
+        heading('Hệ sinh thái sản phẩm và giải pháp Gcalls'),
+        text(
+          'Doanh nghiệp có thể bắt đầu từ một sản phẩm phù hợp với nhu cầu hiện tại, sau đó mở rộng sang các giải pháp tích hợp khi quy mô vận hành thay đổi.',
         ),
       ]),
     ],
-    { padding: { unit: 'px', top: '0', right: '0', bottom: SECTION_PAD, left: '0', isLinked: false } },
+    { padding: { unit: 'px', top: SECTION_PAD, right: '0', bottom: '0', left: '0', isLinked: false } },
   ),
+  section(
+    [
+      column([
+        ecoGroup({
+          eyebrow: 'Sản phẩm',
+          title: 'Sản phẩm Gcalls',
+          lead: 'Ba nền tảng Gcalls xây dựng cho hoạt động nghe gọi, kiểm soát chất lượng và chăm sóc khách hàng đa kênh.',
+          cards: [
+            {
+              name: 'Gcalls Plus Webphone',
+              icon: 'monitor-smartphone',
+              accent: 'violet',
+              href: '/gcalls-plus-webphone/',
+              body: 'Tổng đài trên trình duyệt hỗ trợ nghe gọi, lịch sử cuộc gọi, ghi âm, danh bạ và theo dõi hoạt động đội ngũ.',
+            },
+            {
+              name: 'QA/QC Center',
+              supporting: 'QC Bot AI',
+              icon: 'sparkles',
+              accent: 'cyan',
+              href: '/qc-bot-ai/',
+              body: 'Hỗ trợ chuyển giọng nói thành văn bản, phân tích từ khóa, chấm điểm theo tiêu chí và tổng hợp dữ liệu phục vụ kiểm soát chất lượng.',
+            },
+            {
+              name: 'Gcalls CX',
+              icon: 'headphones',
+              accent: 'amber',
+              href: '/gcalls-cx/',
+              body: 'Nền tảng Contact Center hỗ trợ quản lý tương tác đa kênh và quy trình chăm sóc khách hàng.',
+            },
+          ],
+        }),
+      ]),
+    ],
+    { padding: { unit: 'px', top: '56', right: '0', bottom: '0', left: '0', isLinked: false } },
+  ),
+  section(
+    [
+      column([
+        ecoGroup({
+          eyebrow: 'Giải pháp',
+          title: 'Giải pháp Gcalls',
+          lead: 'Các cấu hình triển khai theo hệ thống, thị trường và nhu cầu tự động hóa doanh nghiệp đang vận hành.',
+          cards: [
+            /*
+             * Voicebot sits HERE, not in the group above. Gcalls advises,
+             * connects and integrates it; it does not build the engine. The
+             * name carries that and must not be shortened back to a product
+             * label. See the checkpoint note in EcosystemSection.tsx.
+             */
+            {
+              name: 'Giải pháp tích hợp Voicebot AI',
+              icon: 'bot',
+              accent: 'green',
+              href: '/voicebot-ai/',
+              body: 'Gcalls tư vấn, kết nối và tích hợp Voicebot vào hệ thống tổng đài theo kịch bản và phạm vi triển khai của doanh nghiệp.',
+            },
+            {
+              name: 'Tổng đài tích hợp CRM',
+              icon: 'users',
+              accent: 'violet',
+              href: '/tong-dai-tich-hop-crm/',
+              body: 'Kết nối cuộc gọi với dữ liệu và quy trình trên CRM của doanh nghiệp.',
+            },
+            {
+              name: 'Tổng đài tích hợp Helpdesk',
+              icon: 'life-buoy',
+              accent: 'cyan',
+              href: '/tong-dai-tich-hop-helpdesk/',
+              body: 'Đưa cuộc gọi vào quy trình hỗ trợ và ticket của đội CSKH.',
+            },
+            {
+              name: 'Tổng đài tích hợp POS',
+              icon: 'shopping-cart',
+              accent: 'green',
+              href: '/tong-dai-tich-hop-pos/',
+              body: 'Kết nối cuộc gọi với dữ liệu bán hàng và đơn hàng trên hệ thống POS.',
+            },
+            {
+              name: 'Tổng đài quốc tế',
+              icon: 'globe-2',
+              accent: 'sky',
+              href: '/tong-dai-quoc-te/',
+              body: 'Đầu số và phương án liên lạc theo từng thị trường doanh nghiệp phục vụ.',
+            },
+            /*
+             * These two have no page of their own. React routes them to the
+             * lead form carrying the offering as attribution rather than
+             * inventing a plausible path, and so does this.
+             */
+            {
+              name: 'Cloud Call Center',
+              icon: 'cloud',
+              accent: 'purple',
+              href: leadHref({ intent: 'consultation', source: 'consultation', solution: 'Cloud Call Center' }),
+              ctaLabel: 'Nhận tư vấn',
+              body: 'Hệ thống tổng đài vận hành trên nền tảng Cloud với SIP, IVR và điều hướng cuộc gọi.',
+            },
+            {
+              name: 'Call Button Widget',
+              icon: 'mouse-pointer-click',
+              accent: 'amber',
+              href: leadHref({ intent: 'consultation', source: 'consultation', solution: 'Call Button Widget' }),
+              ctaLabel: 'Nhận tư vấn',
+              body: 'Nút gọi nhúng vào website để khách truy cập để lại số điện thoại cho đội ngũ liên hệ lại.',
+            },
+          ],
+        }),
+      ]),
+    ],
+    { padding: { unit: 'px', top: '64', right: '0', bottom: '0', left: '0', isLinked: false } },
+  ),
+  section(
+    [column([linkRow([
+      { label: 'Xem tất cả sản phẩm', href: '/san-pham/', variant: 'primary' },
+      { label: 'Xem tất cả giải pháp', href: '/giai-phap/', variant: 'ghost' },
+    ])])],
+    { padding: { unit: 'px', top: '56', right: '0', bottom: SECTION_PAD, left: '0', isLinked: false } },
+  ),
+
 
   /* 5 — CallTimelineSection.tsx */
   section(
@@ -660,45 +851,90 @@ const content = [
   ]),
 
   /* 7 — AnalyticsSection.tsx */
+  /*
+   * React lays this out as copy beside the dashboard, not copy stacked on top
+   * of it. Built here as the same two-column composition the CallTimeline and
+   * CRM sections already use, so the heading, the lead and the supporting
+   * paragraph read against the visual they describe.
+   *
+   * Two h3s stood at the end of the old stack with nothing beneath them. In
+   * React both head content this page does not carry — a six-card metric grid
+   * and a use-case grid — so as headings here they introduced nothing.
+   * "Các chỉ số quan trọng trong một màn hình" now captions the dashboard,
+   * which is literally what it describes, and carries React's illustrative-data
+   * disclaimer with it. "Dành cho quản lý, trưởng nhóm và chủ doanh nghiệp"
+   * appears nowhere in src/ and headed nothing; it is dropped rather than left
+   * floating.
+   */
   section(
     [
-      column([
-        heading('Theo dõi hiệu suất đội ngũ theo thời gian thực'),
-        text(
-          'Dashboard trực quan giúp quản lý theo dõi tình trạng cuộc gọi, hiệu suất nhân viên và chất lượng vận hành chỉ trong vài giây.',
-        ),
-        text(
-          'Không cần tổng hợp báo cáo thủ công từ nhiều nguồn. Mọi chỉ số quan trọng đều được hiển thị trực quan giúp quản lý nhanh chóng nắm bắt tình hình vận hành.',
-        ),
-        heading('Ra quyết định nhanh hơn với dữ liệu trực quan', 'h3'),
-        mockup('analytics'),
-        heading('Các chỉ số quan trọng trong một màn hình', 'h3'),
-        heading('Dành cho quản lý, trưởng nhóm và chủ doanh nghiệp', 'h3'),
-      ]),
+      column(
+        [
+          heading('Theo dõi hiệu suất đội ngũ theo thời gian thực'),
+          text(
+            'Dashboard trực quan giúp quản lý theo dõi tình trạng cuộc gọi, hiệu suất nhân viên và chất lượng vận hành chỉ trong vài giây.',
+          ),
+          subhead(
+            'Ra quyết định nhanh hơn với dữ liệu trực quan',
+            'Không cần tổng hợp báo cáo thủ công từ nhiều nguồn. Mọi chỉ số quan trọng đều được hiển thị trực quan giúp quản lý nhanh chóng nắm bắt tình hình vận hành.',
+          ),
+        ],
+        50,
+      ),
+      column(
+        [
+          subhead(
+            'Các chỉ số quan trọng trong một màn hình',
+            'Các chỉ số Gcalls Analytics theo dõi. Số liệu bên dưới là dữ liệu minh họa, không phải kết quả đo được của một doanh nghiệp cụ thể.',
+          ),
+          mockup('analytics'),
+        ],
+        50,
+      ),
     ],
     tinted(BRAND_LIGHT),
   ),
 
   /* 8 — CloudSection.tsx */
+  /*
+   * Same treatment as Analytics, and one content correction.
+   *
+   * The section ended with a lead-form button labelled "Cloud Call Center",
+   * standing alone under the mockup. React has no such control: its CTA here
+   * reads "Xem Cloud PBX" and goes to the Gcalls Plus page. "Cloud Call Center"
+   * is an OFFERING, and it is now a card in the ecosystem section above, which
+   * is where a reader can act on it. So the button takes React's label and
+   * destination and moves up beside the routing copy it belongs to.
+   *
+   * "Đầy đủ tính năng Cloud PBX doanh nghiệp" heads an eight-card feature grid
+   * in React that this page does not carry, so it headed nothing here and is
+   * dropped rather than left floating.
+   */
   section([
-    column([
-      heading('Xây dựng hệ thống tổng đài doanh nghiệp trên nền tảng Cloud'),
-      text(
-        'Từ doanh nghiệp nhỏ đến Contact Center nhiều chi nhánh, Gcalls giúp triển khai hệ thống tổng đài linh hoạt, dễ mở rộng và vận hành hoàn toàn trên nền tảng điện toán đám mây.',
-      ),
-      text(
-        'Cấu hình luồng cuộc gọi tới đúng bộ phận, đúng nhân viên hoặc đúng chi nhánh, kèm nhóm đổ chuông và chuyển tiếp cho trường hợp không có người nhận máy.',
-      ),
-      heading('Điều hướng cuộc gọi đến đúng người phụ trách', 'h3'),
-      heading('Đầy đủ tính năng Cloud PBX doanh nghiệp', 'h3'),
-      mockup('cloud'),
-      heading('Hành trình cuộc gọi từ đầu đến cuối', 'h3'),
-      cta('Cloud Call Center', {
-        intent: 'consultation',
-        source: 'consultation',
-        solution: 'Cloud Call Center',
-      }),
-    ]),
+    column(
+      [
+        heading('Xây dựng hệ thống tổng đài doanh nghiệp trên nền tảng Cloud'),
+        text(
+          'Từ doanh nghiệp nhỏ đến Contact Center nhiều chi nhánh, Gcalls giúp triển khai hệ thống tổng đài linh hoạt, dễ mở rộng và vận hành hoàn toàn trên nền tảng điện toán đám mây.',
+        ),
+        subhead(
+          'Điều hướng cuộc gọi đến đúng người phụ trách',
+          'Cấu hình luồng cuộc gọi tới đúng bộ phận, đúng nhân viên hoặc đúng chi nhánh, kèm nhóm đổ chuông và chuyển tiếp cho trường hợp không có người nhận máy.',
+        ),
+        linkRow([{ label: 'Xem Cloud PBX', href: '/gcalls-plus-webphone/', variant: 'primary' }]),
+      ],
+      50,
+    ),
+    column(
+      [
+        subhead(
+          'Hành trình cuộc gọi từ đầu đến cuối',
+          'Các bước một cuộc gọi đi qua, theo luồng doanh nghiệp cấu hình.',
+        ),
+        mockup('cloud'),
+      ],
+      50,
+    ),
   ]),
 
   /* 9 — CustomerPopupSection.tsx */
