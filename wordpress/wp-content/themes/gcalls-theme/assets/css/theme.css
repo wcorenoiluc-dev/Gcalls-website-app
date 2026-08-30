@@ -1556,6 +1556,79 @@ html.gcalls-nav-open body { overflow: hidden; }
 	}
 }
 
+/* ── Sub-page vertical rhythm: 50px ─────────────────────────────────────
+ *
+ * The home page is EXCLUDED, and by body class rather than by section index
+ * or page id: `body.home` is set by WordPress itself and survives the front
+ * page being repointed, which an id would not. Its 104px Elementor rhythm and
+ * its hero, ecosystem, analytics and cloud geometry are all signed off and must
+ * not move by a pixel.
+ *
+ * WHERE THE SPACE ACTUALLY IS
+ * On the product pages the rhythm is not padding at all — it is
+ * `margin-bottom: clamp(3.75rem, 7vw, 6.5rem)` on each section, which resolves
+ * to 101px at 1440 and does not drop below 60px until the viewport is under
+ * 860px. Setting a padding here and leaving that margin would have added space
+ * rather than removed it, which is what measuring first was for.
+ *
+ * Blog and estimator carry their own rhythm as margins on the hub groups and
+ * headings. Same treatment.
+ *
+ * NOT TOUCHED, deliberately: card padding, FAQ items, form fields, mockup
+ * canvases, article body paragraphs, the header, and the footer's internals.
+ * Only the gap BETWEEN content sections, and the last section's gap to the
+ * footer, are the rhythm this is about.
+ *
+ * product.css and the blog styles load after theme.css, so every rule below
+ * carries the body scope partly to win on specificity rather than order.
+ */
+
+body:not(.home) .gcalls-product__hero,
+body:not(.home) .gcalls-product__section,
+body:not(.home) .gcalls-product__direct {
+	margin-bottom: 50px;
+}
+
+body:not(.home) .gcalls-product__final,
+body:not(.home) .gcalls-product__faq {
+	margin-top: 50px;
+}
+
+/*
+ * `.gcalls-product__section--alt` is NOT given the 50px block padding.
+ *
+ * It is a panel with its own background and radius, and its padding is uniform
+ * card padding: 56px at 1440 but 20px at 390, where it is also the horizontal
+ * inset. Forcing 50px on the block axis measured as an INCREASE on mobile —
+ * 20px to 50px, and the product pages grew by ~200px each at 390 — for a panel
+ * whose inline padding would still be 20px. That is the "do not blindly apply
+ * 50px to cards" case, so the rhythm rule stops at the gap BETWEEN sections and
+ * leaves panel interiors alone.
+ */
+
+/* Blog archive: hub groups and their headings carry the rhythm. */
+body:not(.home) .gcalls-hub-group {
+	margin-bottom: 50px;
+}
+
+body:not(.home) .gcalls-hub-heading {
+	margin-top: 50px;
+}
+
+body:not(.home) .gcalls-faq {
+	margin-block: 50px;
+}
+
+/* Estimator page title sits directly under the header. */
+body:not(.home) .gcalls-page__title {
+	margin-top: 50px;
+}
+
+/* Last content block to the footer. */
+body:not(.home) .gcalls-footer {
+	margin-top: 50px;
+}
+
 /* ── Sub-heading bound to the copy it introduces ────────────────────── */
 
 .gc-subhead h3 {
