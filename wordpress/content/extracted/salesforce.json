@@ -1,0 +1,436 @@
+{
+ "slug": "salesforce",
+ "family": "integration-detail",
+ "sources": [
+  {
+   "file": "src/data/salesforceIntegration.ts",
+   "sha256": "86ab29eb054bfa7d8069330fe5899ad893bec08fbbe53d958d1194c687c3cd54",
+   "exportCount": 21
+  }
+ ],
+ "exports": {
+  "salesforceIntegration.ts::SALESFORCE_CONSULT_LEAD": {
+   "intent": "consultation",
+   "source": "crm_integration",
+   "product": "Salesforce",
+   "solution": "Tích hợp CRM"
+  },
+  "salesforceIntegration.ts::SALESFORCE_DEMO_LEAD": {
+   "intent": "demo",
+   "source": "crm_integration",
+   "product": "Salesforce",
+   "solution": "Tích hợp CRM"
+  },
+  "salesforceIntegration.ts::SF_BEFORE_AFTER": {
+   "eyebrow": "TRƯỚC & SAU TÍCH HỢP",
+   "h2": "Giảm những bước chuyển đổi thủ công giữa Salesforce và hệ thống gọi",
+   "before": {
+    "label": "Trước tích hợp",
+    "steps": [
+     "Salesforce record",
+     "Copy phone number",
+     "Call tool",
+     "Conversation",
+     "Manual note",
+     "Quay lại Salesforce",
+     "Cập nhật follow-up"
+    ]
+   },
+   "after": {
+    "label": "Sau tích hợp",
+    "steps": [
+     "Salesforce record",
+     "Click-to-Call",
+     "Conversation",
+     "Call activity",
+     "Workflow tiếp tục"
+    ]
+   }
+  },
+  "salesforceIntegration.ts::SF_BENEFITS": {
+   "eyebrow": "GIÁ TRỊ VẬN HÀNH",
+   "h2": "Giữ dữ liệu cuộc gọi gần hơn với quy trình Sales và Service",
+   "items": [
+    "Giảm thao tác copy số",
+    "Có customer context trước cuộc hội thoại",
+    "Theo dõi call activity tập trung hơn",
+    "Dễ tiếp tục xử lý khi ownership thay đổi"
+   ]
+  },
+  "salesforceIntegration.ts::SF_CAPABILITIES": {
+   "eyebrow": "TÍNH NĂNG TÍCH HỢP",
+   "h2": "Những năng lực cốt lõi khi kết nối Gcalls với Salesforce",
+   "items": [
+    {
+     "n": "01",
+     "title": "Click-to-Call",
+     "detail": "Bắt đầu cuộc gọi từ số điện thoại hoặc customer record trong Salesforce khi integration được cấu hình phù hợp."
+    },
+    {
+     "n": "02",
+     "title": "Incoming Customer Context",
+     "detail": "Thông tin liên quan hỗ trợ nhân viên nhận biết khách hàng khi cuộc gọi đến và truy cập customer record phù hợp."
+    },
+    {
+     "n": "03",
+     "title": "Call Activity",
+     "detail": "Dữ liệu cuộc gọi phù hợp có thể được ghi nhận hoặc liên kết theo phạm vi tích hợp."
+    },
+    {
+     "n": "04",
+     "title": "Interaction History",
+     "detail": "Lịch sử tương tác giúp Sales và Service tiếp tục xử lý với nhiều bối cảnh hơn thay vì duy trì một lịch sử riêng bên ngoài CRM."
+    }
+   ]
+  },
+  "salesforceIntegration.ts::SF_DIRECT_ANSWER": {
+   "question": "Tổng đài tích hợp Salesforce là gì?",
+   "answer": "Tổng đài tích hợp Salesforce kết nối chức năng nghe gọi của Gcalls với quy trình CRM Salesforce để nhân viên có thể thực hiện cuộc gọi từ customer record, nhận biết khách hàng khi có cuộc gọi và ghi nhận dữ liệu tương tác phù hợp vào workflow đang sử dụng. Phạm vi chức năng phụ thuộc vào cấu hình Gcalls, Salesforce và yêu cầu triển khai của doanh nghiệp."
+  },
+  "salesforceIntegration.ts::SF_FAQ": [
+   {
+    "q": "Tổng đài tích hợp Salesforce là gì?",
+    "a": "Đây là mô hình kết nối chức năng nghe gọi của Gcalls với Salesforce để nhân viên có thể thực hiện cuộc gọi, nhận biết customer context và ghi nhận dữ liệu tương tác phù hợp trong workflow CRM."
+   },
+   {
+    "q": "Gcalls có hỗ trợ Click-to-Call trên Salesforce không?",
+    "a": "Trong cấu hình tích hợp phù hợp, nhân viên có thể bắt đầu cuộc gọi từ số điện thoại hoặc customer record đang xử lý trong Salesforce."
+   },
+   {
+    "q": "Khi khách hàng gọi đến có thể xem thông tin Salesforce không?",
+    "a": "Khả năng hiển thị customer context phụ thuộc vào dữ liệu, quyền truy cập và cấu hình tích hợp. Gcalls sẽ xác định phạm vi phù hợp trong quá trình khảo sát."
+   },
+   {
+    "q": "Lịch sử cuộc gọi có được ghi nhận trong Salesforce không?",
+    "a": "Dữ liệu cuộc gọi phù hợp có thể được ghi nhận hoặc liên kết theo phạm vi tích hợp và khả năng của hệ thống."
+   },
+   {
+    "q": "Ghi âm có được đồng bộ vào Salesforce không?",
+    "a": "Khả năng đồng bộ hoặc liên kết bản ghi phụ thuộc vào cấu hình Gcalls, Salesforce và phạm vi triển khai. Gcalls cần kiểm tra hệ thống trước khi xác nhận."
+   },
+   {
+    "q": "Gcalls có thay thế Salesforce không?",
+    "a": "Không. Salesforce tiếp tục là hệ thống CRM của doanh nghiệp; Gcalls bổ sung lớp giao tiếp thoại và dữ liệu cuộc gọi vào workflow đang sử dụng."
+   },
+   {
+    "q": "Tích hợp Salesforce mất bao lâu?",
+    "a": "Thời gian phụ thuộc vào object, permission, số lượng người dùng, hotline, capability cần triển khai và yêu cầu kiểm thử."
+   }
+  ],
+  "salesforceIntegration.ts::SF_FINAL_CTA": {
+   "eyebrow": "GCALLS × SALESFORCE",
+   "h2": "Xem hoạt động nghe gọi vận hành trong workflow Salesforce của doanh nghiệp",
+   "description": "Chia sẻ object, user role và quy trình Sales/Service hiện tại để Gcalls xác định phạm vi tích hợp và demo phù hợp.",
+   "primaryCta": {
+    "label": "Xem demo tích hợp Salesforce"
+   },
+   "secondaryCta": {
+    "label": "Tư vấn tích hợp"
+   }
+  },
+  "salesforceIntegration.ts::SF_HERO": {
+   "eyebrow": "GCALLS × SALESFORCE",
+   "h1": "Tổng đài tích hợp Salesforce cho đội Sales và Customer Service",
+   "description": "Kết nối chức năng nghe gọi của Gcalls với Salesforce để nhân viên có thể thực hiện cuộc gọi, nhận biết customer context và theo dõi hoạt động tương tác gần hơn với quy trình CRM đang sử dụng.",
+   "valuePoints": [
+    {
+     "title": "Gọi từ customer record",
+     "detail": "Click-to-Call giúp nhân viên bắt đầu cuộc gọi từ dữ liệu đang xử lý trong Salesforce khi tích hợp được cấu hình."
+    },
+    {
+     "title": "Có context khi cuộc gọi bắt đầu",
+     "detail": "Thông tin liên quan giúp nhân viên nhận biết khách hàng trước hoặc trong quá trình trao đổi."
+    },
+    {
+     "title": "Giữ call activity gần CRM",
+     "detail": "Dữ liệu tương tác phù hợp có thể được ghi nhận theo phạm vi tích hợp để đội ngũ tiếp tục follow-up trong Salesforce."
+    }
+   ],
+   "primaryCta": {
+    "label": "Xem demo tích hợp Salesforce"
+   },
+   "secondaryCta": {
+    "label": "Xem workflow tích hợp",
+    "href": "#workflow-salesforce"
+   }
+  },
+  "salesforceIntegration.ts::SF_LINKS": {
+   "h2": "Xem thêm",
+   "items": [
+    {
+     "label": "Gcalls CX",
+     "path": "/gcalls-cx/"
+    },
+    {
+     "label": "Bảng giá Gcalls",
+     "path": "/bang-gia/"
+    },
+    {
+     "label": "Ước tính chi phí",
+     "path": "/uoc-tinh-chi-phi/"
+    },
+    {
+     "label": "Blog Gcalls",
+     "path": "/blog/"
+    },
+    {
+     "label": "Liên hệ",
+     "path": "/lien-he/"
+    }
+   ]
+  },
+  "salesforceIntegration.ts::SF_OVERVIEW": {
+   "eyebrow": "GCALLS FOR SALESFORCE",
+   "h2": "Đưa lớp giao tiếp thoại vào workflow Salesforce",
+   "description": "Salesforce tiếp tục là hệ thống quản lý khách hàng và quy trình. Gcalls bổ sung lớp nghe gọi để cuộc hội thoại và dữ liệu tương tác được đặt gần hơn với customer record đang được xử lý.",
+   "flow": [
+    {
+     "n": "01",
+     "label": "Salesforce record",
+     "detail": "Nhân viên làm việc trên dữ liệu đang được quản lý trong Salesforce."
+    },
+    {
+     "n": "02",
+     "label": "Click-to-Call",
+     "detail": "Cuộc gọi bắt đầu từ customer record khi tích hợp được cấu hình."
+    },
+    {
+     "n": "03",
+     "label": "Gcalls conversation",
+     "detail": "Gcalls xử lý lớp giao tiếp thoại."
+    },
+    {
+     "n": "04",
+     "label": "Customer context",
+     "detail": "Thông tin liên quan hỗ trợ nhân viên trong cuộc trao đổi."
+    },
+    {
+     "n": "05",
+     "label": "Call activity",
+     "detail": "Dữ liệu tương tác phù hợp được ghi nhận theo phạm vi tích hợp."
+    },
+    {
+     "n": "06",
+     "label": "Sales / Service follow-up",
+     "detail": "Đội ngũ tiếp tục workflow trong Salesforce."
+    }
+   ]
+  },
+  "salesforceIntegration.ts::SF_PROBLEMS": {
+   "eyebrow": "BÀI TOÁN ENTERPRISE CRM",
+   "h2": "Salesforce quản lý quy trình khách hàng, nhưng cuộc gọi vẫn có thể nằm ngoài dữ liệu CRM",
+   "items": [
+    {
+     "n": "01",
+     "title": "Nhân viên phải copy số để gọi",
+     "detail": "Customer record nằm trong Salesforce nhưng thao tác nghe gọi diễn ra ở một hệ thống riêng, tạo thêm bước trong quy trình Sales và Service."
+    },
+    {
+     "n": "02",
+     "title": "Cuộc gọi đến thiếu customer context",
+     "detail": "Khi call system chưa kết nối phù hợp, nhân viên cần tìm lại hồ sơ trước khi hiểu người đang liên hệ."
+    },
+    {
+     "n": "03",
+     "title": "Call history bị phân mảnh",
+     "detail": "Thông tin cuộc gọi nằm ngoài Salesforce khiến đội ngũ khó nhìn lại đầy đủ quá trình tương tác với khách hàng."
+    },
+    {
+     "n": "04",
+     "title": "Dữ liệu khó tiếp tục khi ownership thay đổi",
+     "detail": "Khi lịch sử liên hệ không nằm gần customer record, nhân viên tiếp nhận mới có thể thiếu bối cảnh để tiếp tục follow-up."
+    }
+   ]
+  },
+  "salesforceIntegration.ts::SF_RELATED": {
+   "h2": "Doanh nghiệp đang sử dụng CRM khác?",
+   "description": "Mỗi nền tảng CRM có cấu trúc dữ liệu và cách kết nối riêng. Xem trang tương ứng với hệ thống doanh nghiệp đang sử dụng.",
+   "items": [
+    {
+     "name": "HubSpot",
+     "detail": "Kết nối hoạt động nghe gọi với workflow HubSpot.",
+     "path": "/tich-hop/hubspot/"
+    },
+    {
+     "name": "Zoho CRM",
+     "detail": "Kết nối hoạt động nghe gọi với workflow Zoho CRM.",
+     "path": "/tich-hop/zoho-crm/"
+    },
+    {
+     "name": "Danh mục tích hợp",
+     "detail": "Xem toàn bộ nền tảng đang có trang tích hợp riêng.",
+     "path": "/tich-hop/"
+    }
+   ]
+  },
+  "salesforceIntegration.ts::SF_RELATIONSHIPS": {
+   "eyebrow": "PHÂN BIỆT SẢN PHẨM",
+   "h2": "Salesforce Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+   "items": [
+    {
+     "product": "Gcalls Plus",
+     "need": "Lớp nghe gọi trên trình duyệt — phần thực hiện cuộc gọi của doanh nghiệp.",
+     "path": "/gcalls-plus-webphone/"
+    },
+    {
+     "product": "CRM Integration",
+     "need": "Giải pháp tích hợp CRM nói chung, khi doanh nghiệp chưa xác định nền tảng.",
+     "path": "/tong-dai-tich-hop-crm/"
+    },
+    {
+     "product": "Salesforce Integration",
+     "need": "Workflow riêng cho doanh nghiệp đã sử dụng Salesforce làm hệ thống khách hàng.",
+     "path": "/tich-hop/salesforce/",
+     "current": true
+    },
+    {
+     "product": "QA QC Center",
+     "need": "Đánh giá chất lượng cuộc gọi với hỗ trợ của AI — không phải chức năng của lớp tích hợp CRM.",
+     "path": "/qc-bot-ai/"
+    }
+   ]
+  },
+  "salesforceIntegration.ts::SF_SETUP": {
+   "eyebrow": "THIẾT LẬP",
+   "h2": "Tích hợp theo cấu hình Salesforce và workflow doanh nghiệp đang sử dụng",
+   "steps": [
+    {
+     "n": "01",
+     "title": "Khảo sát Salesforce workflow"
+    },
+    {
+     "n": "02",
+     "title": "Xác định object/record liên quan"
+    },
+    {
+     "n": "03",
+     "title": "Xác định user và hotline"
+    },
+    {
+     "n": "04",
+     "title": "Xác định capability cần tích hợp"
+    },
+    {
+     "n": "05",
+     "title": "Kiểm tra quyền truy cập/API"
+    },
+    {
+     "n": "06",
+     "title": "Cấu hình integration"
+    },
+    {
+     "n": "07",
+     "title": "Kiểm thử cuộc gọi và dữ liệu"
+    },
+    {
+     "n": "08",
+     "title": "Hướng dẫn người dùng"
+    },
+    {
+     "n": "09",
+     "title": "Go-live"
+    }
+   ],
+   "note": "Phạm vi và thời gian triển khai phụ thuộc vào object, permission, số lượng người dùng, hotline và capability cần sử dụng, nên được xác định sau bước khảo sát thay vì theo một mốc cố định. Gcalls không mặc định mọi edition hoặc gói Salesforce đều hỗ trợ cùng một phạm vi tích hợp."
+  },
+  "salesforceIntegration.ts::SF_TRUST": {
+   "eyebrow": "PHẠM VI TRIỂN KHAI",
+   "h2": "Tích hợp Salesforce cần bắt đầu từ object, permission và workflow thực tế",
+   "description": "Object, field, permission, user role và quy trình Sales/Service có thể khác nhau giữa từng Salesforce organization. Phạm vi tích hợp cần được xác định qua khảo sát và kiểm thử thay vì áp dụng một cấu hình giống nhau cho mọi doanh nghiệp.",
+   "cta": {
+    "label": "Trao đổi về Salesforce workflow hiện tại"
+   },
+   "links": [
+    {
+     "label": "Ước tính cấu hình & chi phí",
+     "path": "/uoc-tinh-chi-phi/?product=crm-integration"
+    },
+    {
+     "label": "Xem bảng giá Gcalls",
+     "path": "/bang-gia/"
+    }
+   ]
+  },
+  "salesforceIntegration.ts::SF_UI_PREVIEW": {
+   "eyebrow": "GIAO DIỆN TÍCH HỢP",
+   "h2": "Giữ customer context gần hoạt động nghe gọi",
+   "description": "Các giao diện dưới đây là bề mặt phía Gcalls trong luồng tích hợp: customer context khi có cuộc gọi đến, thao tác gọi từ customer record và hoạt động tương tác được ghi nhận.",
+   "note": "Giao diện minh họa phía Gcalls với dữ liệu mẫu. Đây không phải ảnh chụp màn hình Salesforce, và bố cục thực tế phụ thuộc vào cấu hình tích hợp của doanh nghiệp."
+  },
+  "salesforceIntegration.ts::SF_USE_CASES": {
+   "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
+   "h2": "Gcalls × Salesforce phù hợp với những workflow nào?",
+   "items": [
+    {
+     "role": "Enterprise Sales",
+     "flow": "Sales làm việc với lead và opportunity trong Salesforce, thực hiện cuộc gọi và tiếp tục follow-up từ customer context hiện có."
+    },
+    {
+     "role": "Sales Operations",
+     "flow": "Đội vận hành có thêm dữ liệu cuộc gọi phù hợp để theo dõi quy trình tương tác gần hơn với CRM."
+    },
+    {
+     "role": "Customer Service",
+     "flow": "Agent sử dụng customer record và lịch sử liên quan để có thêm context khi tiếp nhận cuộc gọi."
+    },
+    {
+     "role": "Account Management",
+     "flow": "Người phụ trách tài khoản có thể giữ hoạt động liên hệ gần hơn với dữ liệu và quá trình chăm sóc khách hàng."
+    }
+   ],
+   "qaNote": {
+    "lead": "Đánh giá chất lượng cuộc gọi không phải là chức năng của lớp tích hợp Salesforce. Nhu cầu này thuộc về",
+    "link": {
+     "label": "QA QC Center",
+     "path": "/qc-bot-ai/"
+    }
+   }
+  },
+  "salesforceIntegration.ts::SF_VS_CRM": {
+   "eyebrow": "SALESFORCE-SPECIFIC WORKFLOW",
+   "h2": "Trang này dành cho doanh nghiệp đã sử dụng Salesforce",
+   "description": "Nếu doanh nghiệp đang đánh giá tổng đài tích hợp CRM nói chung, hãy xem giải pháp CRM Integration. Trang này tập trung vào cách Gcalls hỗ trợ workflow khi Salesforce đã là hệ thống quản lý khách hàng hiện tại.",
+   "cta": {
+    "label": "Xem giải pháp Tổng đài tích hợp CRM",
+    "path": "/tong-dai-tich-hop-crm/"
+   }
+  },
+  "salesforceIntegration.ts::SF_WORKFLOW": {
+   "anchorId": "workflow-salesforce",
+   "eyebrow": "QUY TRÌNH",
+   "h2": "Từ Salesforce record đến cuộc gọi và bước xử lý tiếp theo",
+   "steps": [
+    {
+     "n": "01",
+     "title": "Mở lead, contact hoặc customer record",
+     "detail": "Nhân viên tiếp tục làm việc trên dữ liệu được quản lý trong Salesforce."
+    },
+    {
+     "n": "02",
+     "title": "Bắt đầu hoặc tiếp nhận cuộc gọi",
+     "detail": "Click-to-Call hoặc lớp call integration hỗ trợ hoạt động thoại theo cấu hình triển khai."
+    },
+    {
+     "n": "03",
+     "title": "Xem customer context",
+     "detail": "Thông tin liên quan giúp nhân viên hiểu khách hàng và lịch sử trước đó."
+    },
+    {
+     "n": "04",
+     "title": "Thực hiện cuộc hội thoại",
+     "detail": "Gcalls xử lý lớp giao tiếp thoại trong workflow được triển khai."
+    },
+    {
+     "n": "05",
+     "title": "Ghi nhận call activity phù hợp",
+     "detail": "Dữ liệu cuộc gọi có thể được liên kết hoặc ghi nhận theo phạm vi tích hợp."
+    },
+    {
+     "n": "06",
+     "title": "Tiếp tục Sales hoặc Service workflow",
+     "detail": "Nhân viên follow-up trong Salesforce thay vì duy trì dữ liệu cuộc gọi ở một luồng riêng."
+    }
+   ]
+  }
+ }
+}

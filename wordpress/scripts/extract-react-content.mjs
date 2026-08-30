@@ -26,6 +26,17 @@ const ROUTES = [
   { slug: 'san-pham', family: 'product-overview', data: ['gcallsPlus.ts', 'qaQcCenter.ts', 'gcallsCx.ts'] },
   { slug: 'giai-phap', family: 'solution-overview',
     data: ['crmIntegration.ts', 'helpdeskIntegration.ts', 'posIntegration.ts', 'internationalCalling.ts', 'voicebotAi.ts'] },
+
+  /* Batch 2 — the five integration vendors and their hub. Same two shapes as
+   * Batch 1, so they need no new family and no sixth copy of the renderer:
+   * one data file per detail page, and a hub that aggregates all five. */
+  { slug: 'hubspot', family: 'integration-detail', data: ['hubspotIntegration.ts'] },
+  { slug: 'salesforce', family: 'integration-detail', data: ['salesforceIntegration.ts'] },
+  { slug: 'zoho-crm', family: 'integration-detail', data: ['zohoCrmIntegration.ts'] },
+  { slug: 'freshdesk', family: 'integration-detail', data: ['freshdeskIntegration.ts'] },
+  { slug: 'zendesk', family: 'integration-detail', data: ['zendeskIntegration.ts'] },
+  { slug: 'tich-hop', family: 'integration-overview',
+    data: ['hubspotIntegration.ts', 'salesforceIntegration.ts', 'zohoCrmIntegration.ts', 'freshdeskIntegration.ts', 'zendeskIntegration.ts'] },
 ]
 
 const sha = async (f) => {

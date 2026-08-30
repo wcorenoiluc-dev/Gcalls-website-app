@@ -1,0 +1,445 @@
+{
+ "slug": "zendesk",
+ "family": "integration-detail",
+ "sources": [
+  {
+   "file": "src/data/zendeskIntegration.ts",
+   "sha256": "d5e232e8f54a95729c5d9d5c8cfef5b45b3f1da02a54c35398d5bf9acc29df28",
+   "exportCount": 23
+  }
+ ],
+ "exports": {
+  "zendeskIntegration.ts::ZD_BEFORE_AFTER": {
+   "eyebrow": "TRƯỚC & SAU TÍCH HỢP",
+   "h2": "Giảm những bước chuyển đổi thủ công giữa Zendesk và hệ thống gọi",
+   "before": {
+    "label": "Trước tích hợp",
+    "steps": [
+     "Zendesk ticket",
+     "Copy phone number",
+     "Call tool",
+     "Conversation",
+     "Manual note",
+     "Quay lại Zendesk",
+     "Cập nhật ticket"
+    ]
+   },
+   "after": {
+    "label": "Sau tích hợp",
+    "steps": [
+     "Zendesk contact / ticket",
+     "Configured call action",
+     "Conversation",
+     "Support activity",
+     "Ticket workflow tiếp tục"
+    ]
+   }
+  },
+  "zendeskIntegration.ts::ZD_BENEFITS": {
+   "eyebrow": "GIÁ TRỊ VẬN HÀNH",
+   "h2": "Giữ cuộc gọi gần hơn với quy trình ticket và customer support",
+   "items": [
+    "Giảm chuyển đổi giữa nhiều công cụ",
+    "Có thêm context khi tiếp nhận yêu cầu",
+    "Theo dõi lịch sử hỗ trợ tập trung hơn",
+    "Dễ tiếp tục xử lý khi ticket thay đổi người phụ trách"
+   ]
+  },
+  "zendeskIntegration.ts::ZD_BOUNDARY": {
+   "eyebrow": "PHÂN BIỆT SẢN PHẨM",
+   "h2": "Zendesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+   "items": [
+    {
+     "product": "Gcalls Plus",
+     "need": "Lớp nghe gọi trên trình duyệt — phần thực hiện cuộc gọi của doanh nghiệp.",
+     "path": "/gcalls-plus-webphone/"
+    },
+    {
+     "product": "Helpdesk Integration",
+     "need": "Giải pháp tích hợp Helpdesk nói chung, khi doanh nghiệp chưa xác định nền tảng.",
+     "path": "/tong-dai-tich-hop-helpdesk/"
+    },
+    {
+     "product": "Zendesk Integration",
+     "need": "Workflow riêng cho đội Support đã sử dụng Zendesk để quản lý ticket.",
+     "path": "/tich-hop/zendesk/",
+     "current": true
+    },
+    {
+     "product": "Gcalls CX",
+     "need": "Quản lý giao tiếp đa kênh khi doanh nghiệp cần hợp nhất nhiều điểm chạm khách hàng.",
+     "path": "/gcalls-cx/"
+    },
+    {
+     "product": "QA QC Center",
+     "need": "Đánh giá chất lượng cuộc gọi với hỗ trợ của AI — không phải chức năng của lớp tích hợp Helpdesk.",
+     "path": "/qc-bot-ai/"
+    }
+   ]
+  },
+  "zendeskIntegration.ts::ZD_CAPABILITIES": {
+   "eyebrow": "NĂNG LỰC TÍCH HỢP",
+   "h2": "Những năng lực được xác nhận khi kết nối Gcalls với Zendesk",
+   "items": [
+    {
+     "n": "01",
+     "title": "Customer Context",
+     "detail": "Agent có thể nắm thông tin khách hàng liên quan trước khi trả lời, trong phạm vi mà dữ liệu, permission và cấu hình tích hợp cho phép."
+    },
+    {
+     "n": "02",
+     "title": "Ticket / Support Record Context",
+     "detail": "Cuộc gọi có thể được đặt cạnh và liên kết với ticket hoặc hồ sơ hỗ trợ đang tồn tại, khi nền tảng và cấu hình tích hợp cho phép."
+    },
+    {
+     "n": "03",
+     "title": "Call Activity",
+     "detail": "Lịch sử và dữ liệu hoạt động cuộc gọi được lưu trong Gcalls. Việc đưa dữ liệu đó sang Zendesk phụ thuộc vào phạm vi tích hợp và khả năng của nền tảng."
+    },
+    {
+     "n": "04",
+     "title": "Support Workflow Continuity",
+     "detail": "Khi một yêu cầu đi qua nhiều người phụ trách, bối cảnh cuộc hội thoại nằm gần ticket thay vì ở một luồng dữ liệu riêng ngoài Zendesk."
+    }
+   ]
+  },
+  "zendeskIntegration.ts::ZD_DIRECT_ANSWER": {
+   "question": "Tổng đài tích hợp Zendesk là gì?",
+   "answer": "Tổng đài tích hợp Zendesk kết nối hoạt động nghe gọi của Gcalls với quy trình hỗ trợ trên Zendesk để nhân viên có thể sử dụng customer context, ticket liên quan và dữ liệu tương tác phù hợp trong cùng workflow CSKH. Phạm vi chức năng phụ thuộc vào cấu hình Gcalls, Zendesk, API và yêu cầu triển khai của doanh nghiệp."
+  },
+  "zendeskIntegration.ts::ZD_ESTIMATOR_HREF": "/uoc-tinh-chi-phi/?product=helpdesk-integration",
+  "zendeskIntegration.ts::ZD_FAQ": [
+   {
+    "q": "Tổng đài tích hợp Zendesk là gì?",
+    "a": "Đây là mô hình kết nối hoạt động nghe gọi của Gcalls với Zendesk để đội Support có thể sử dụng customer context, ticket liên quan và dữ liệu tương tác phù hợp trong cùng workflow CSKH."
+   },
+   {
+    "q": "Gcalls có hỗ trợ Click-to-Call trên Zendesk không?",
+    "a": "Khả năng thực hiện cuộc gọi từ Zendesk phụ thuộc vào phương thức tích hợp và cấu hình triển khai hiện tại. Gcalls sẽ xác định capability phù hợp trong quá trình khảo sát."
+   },
+   {
+    "q": "Khi khách hàng gọi đến có thể xem ticket liên quan không?",
+    "a": "Khả năng hiển thị ticket và customer context phụ thuộc vào dữ liệu, permission và cấu hình tích hợp. Phạm vi thông tin cần được xác định trong bước khảo sát kỹ thuật."
+   },
+   {
+    "q": "Gcalls có tự động tạo ticket sau cuộc gọi không?",
+    "a": "Khả năng tạo hoặc cập nhật ticket phụ thuộc vào workflow và cấu hình tích hợp hiện tại. Gcalls cần khảo sát hệ thống trước khi xác nhận luồng có thể triển khai."
+   },
+   {
+    "q": "Lịch sử cuộc gọi có được lưu trong Zendesk không?",
+    "a": "Dữ liệu cuộc gọi có thể được lưu trong Gcalls hoặc được liên kết với Zendesk theo phạm vi tích hợp. Cần xác định rõ trường dữ liệu và nơi lưu trong quá trình khảo sát."
+   },
+   {
+    "q": "Ghi âm có được đồng bộ vào Zendesk không?",
+    "a": "Ghi âm có thể được lưu trong hệ thống Gcalls khi cấu hình dịch vụ hỗ trợ. Việc đồng bộ hoặc liên kết bản ghi với Zendesk cần được xác minh riêng theo phạm vi triển khai."
+   },
+   {
+    "q": "Zendesk Integration khác Gcalls CX như thế nào?",
+    "a": "Zendesk Integration tập trung kết nối hoạt động thoại với ticket và support workflow hiện có. Gcalls CX giải quyết bài toán rộng hơn về quản lý giao tiếp đa kênh trên một Contact Center tập trung.",
+    "link": {
+     "label": "Gcalls CX",
+     "path": "/gcalls-cx/"
+    }
+   }
+  ],
+  "zendeskIntegration.ts::ZD_FINAL_CTA": {
+   "eyebrow": "GCALLS × ZENDESK",
+   "h2": "Xem hoạt động nghe gọi vận hành trong workflow Zendesk của đội Support",
+   "description": "Chia sẻ cấu trúc ticket, user và quy trình CSKH hiện tại để Gcalls xác định phạm vi tích hợp và demo phù hợp.",
+   "primaryCta": {
+    "label": "Xem demo tích hợp Zendesk"
+   },
+   "secondaryCta": {
+    "label": "Tư vấn tích hợp"
+   }
+  },
+  "zendeskIntegration.ts::ZD_HERO": {
+   "eyebrow": "GCALLS × ZENDESK",
+   "h1": "Tổng đài tích hợp Zendesk cho đội CSKH và Support",
+   "description": "Kết nối hoạt động nghe gọi của Gcalls với Zendesk để nhân viên có thể sử dụng customer context, ticket liên quan và dữ liệu hỗ trợ gần hơn với quy trình đang xử lý.",
+   "valuePoints": [
+    {
+     "title": "Đưa cuộc gọi gần ticket workflow",
+     "detail": "Hoạt động thoại được đặt gần hơn với hồ sơ và quy trình hỗ trợ đang được quản lý trong Zendesk."
+    },
+    {
+     "title": "Có customer context khi hỗ trợ",
+     "detail": "Thông tin liên quan giúp nhân viên hiểu khách hàng và yêu cầu trước khi tiếp tục cuộc hội thoại."
+    },
+    {
+     "title": "Theo dõi lịch sử hỗ trợ tập trung hơn",
+     "detail": "Dữ liệu phù hợp có thể được liên kết hoặc ghi nhận theo phạm vi tích hợp để đội ngũ tiếp tục follow-up."
+    }
+   ],
+   "primaryCta": {
+    "label": "Xem demo tích hợp Zendesk"
+   },
+   "secondaryCta": {
+    "label": "Xem workflow tích hợp",
+    "href": "#workflow-zendesk"
+   }
+  },
+  "zendeskIntegration.ts::ZD_LINKS": {
+   "h2": "Xem thêm",
+   "items": [
+    {
+     "label": "Tổng đài cho BPO",
+     "path": "/nganh/bpo/"
+    },
+    {
+     "label": "Tổng đài cho Thương mại điện tử",
+     "path": "/nganh/thuong-mai-dien-tu/"
+    },
+    {
+     "label": "Blog Gcalls",
+     "path": "/blog/"
+    },
+    {
+     "label": "Liên hệ",
+     "path": "/lien-he/"
+    }
+   ]
+  },
+  "zendeskIntegration.ts::ZD_OVERVIEW": {
+   "eyebrow": "GCALLS FOR ZENDESK",
+   "h2": "Đưa lớp giao tiếp thoại vào nơi đội Support đang quản lý ticket",
+   "description": "Zendesk tiếp tục quản lý ticket và support workflow. Gcalls bổ sung lớp nghe gọi để customer context, call activity và bước follow-up được đặt gần hơn với quy trình hỗ trợ hiện tại.",
+   "flow": [
+    {
+     "n": "01",
+     "label": "Zendesk contact / ticket",
+     "detail": "Yêu cầu hỗ trợ đang được quản lý trong Zendesk."
+    },
+    {
+     "n": "02",
+     "label": "Configured call action",
+     "detail": "Cuộc gọi diễn ra theo capability và cấu hình đã triển khai."
+    },
+    {
+     "n": "03",
+     "label": "Gcalls conversation",
+     "detail": "Lớp giao tiếp thoại do Gcalls xử lý."
+    },
+    {
+     "n": "04",
+     "label": "Customer context",
+     "detail": "Thông tin liên quan giúp agent nắm tình huống."
+    },
+    {
+     "n": "05",
+     "label": "Support activity",
+     "detail": "Dữ liệu phù hợp được ghi nhận hoặc liên kết theo phạm vi tích hợp."
+    },
+    {
+     "n": "06",
+     "label": "Ticket follow-up",
+     "detail": "Người phụ trách tiếp theo tiếp tục xử lý trong Zendesk."
+    }
+   ]
+  },
+  "zendeskIntegration.ts::ZD_PROBLEMS": {
+   "eyebrow": "BÀI TOÁN SUPPORT",
+   "h2": "Zendesk quản lý ticket, nhưng cuộc gọi vẫn có thể nằm ngoài lịch sử hỗ trợ",
+   "items": [
+    {
+     "n": "01",
+     "title": "Nhân viên phải chuyển đổi giữa nhiều công cụ",
+     "detail": "Agent quản lý ticket trong Zendesk nhưng thực hiện cuộc gọi ở một hệ thống riêng, khiến quy trình hỗ trợ bị chia thành nhiều bước."
+    },
+    {
+     "n": "02",
+     "title": "Thiếu customer context khi cuộc gọi bắt đầu",
+     "detail": "Nếu dữ liệu Zendesk và hoạt động gọi chưa kết nối phù hợp, nhân viên phải tự tìm contact hoặc ticket trong lúc khách hàng chờ."
+    },
+    {
+     "n": "03",
+     "title": "Lịch sử cuộc hội thoại bị phân mảnh",
+     "detail": "Call activity nằm ngoài ticket workflow khiến nhân viên tiếp nhận sau có thể thiếu bối cảnh để tiếp tục xử lý."
+    },
+    {
+     "n": "04",
+     "title": "Follow-up phụ thuộc vào ghi chú thủ công",
+     "detail": "Nhân viên có thể phải nhập lại nội dung sau cuộc gọi để giữ lịch sử hỗ trợ cập nhật."
+    }
+   ]
+  },
+  "zendeskIntegration.ts::ZD_RELATED": {
+   "h2": "Doanh nghiệp đang sử dụng Helpdesk khác?",
+   "description": "Mỗi nền tảng Helpdesk có cấu trúc ticket và cách kết nối riêng. Xem trang tương ứng với hệ thống doanh nghiệp đang sử dụng.",
+   "items": [
+    {
+     "name": "Freshdesk",
+     "detail": "Kết nối hoạt động nghe gọi với quy trình hỗ trợ trên Freshdesk.",
+     "path": "/tich-hop/freshdesk/"
+    },
+    {
+     "name": "Danh mục tích hợp",
+     "detail": "Xem toàn bộ nền tảng đang có trang tích hợp riêng.",
+     "path": "/tich-hop/"
+    }
+   ]
+  },
+  "zendeskIntegration.ts::ZD_SETUP": {
+   "eyebrow": "THIẾT LẬP",
+   "h2": "Tích hợp theo cấu hình Zendesk và workflow hỗ trợ đang sử dụng",
+   "steps": [
+    {
+     "n": "01",
+     "title": "Khảo sát Zendesk workflow"
+    },
+    {
+     "n": "02",
+     "title": "Xác định contact, ticket và dữ liệu liên quan"
+    },
+    {
+     "n": "03",
+     "title": "Xác định user và hotline"
+    },
+    {
+     "n": "04",
+     "title": "Xác định capability cần triển khai"
+    },
+    {
+     "n": "05",
+     "title": "Kiểm tra permission, API và phương thức kết nối hiện hành"
+    },
+    {
+     "n": "06",
+     "title": "Cấu hình integration"
+    },
+    {
+     "n": "07",
+     "title": "Kiểm thử cuộc gọi, context và ticket workflow"
+    },
+    {
+     "n": "08",
+     "title": "Hướng dẫn đội Support"
+    },
+    {
+     "n": "09",
+     "title": "Go-live"
+    }
+   ],
+   "note": "Phạm vi và thời gian triển khai phụ thuộc vào ticket form, field, permission, API, số lượng người dùng, hotline và capability cần sử dụng, nên được xác định sau bước khảo sát thay vì theo một mốc cố định. Gcalls không mặc định mọi gói Zendesk đều hỗ trợ cùng một phạm vi tích hợp, và phương thức kết nối cần được xác nhận theo hệ thống thực tế."
+  },
+  "zendeskIntegration.ts::ZD_SUPPORT_CONTEXT": {
+   "eyebrow": "CUSTOMER & TICKET CONTEXT",
+   "h2": "Hiểu yêu cầu hỗ trợ trước khi tiếp tục cuộc hội thoại",
+   "description": "Khi customer context, ticket liên quan và lịch sử hỗ trợ được đặt gần hoạt động gọi, agent có thể hiểu tình huống tốt hơn trước khi phản hồi hoặc follow-up.",
+   "points": [
+    "Customer identity",
+    "Ticket đang xử lý",
+    "Ticket trước đó",
+    "Tương tác gần đây",
+    "Trạng thái hỗ trợ",
+    "Ghi chú"
+   ],
+   "scopeNote": "Đây là các nhóm dữ liệu agent có thể xem, không phải danh sách trường được đồng bộ mặc định và không bao gồm việc Gcalls cập nhật trạng thái hay tag trên ticket. Phạm vi thông tin thực tế phụ thuộc vào dữ liệu, permission và cấu hình tích hợp, cần được xác định trong bước khảo sát kỹ thuật."
+  },
+  "zendeskIntegration.ts::ZD_TRUST": {
+   "eyebrow": "PHẠM VI TRIỂN KHAI",
+   "h2": "Tích hợp Zendesk cần bắt đầu từ ticket structure, permission và workflow thực tế",
+   "description": "Field, ticket form, permission, user role và support workflow có thể khác nhau giữa từng tài khoản Zendesk. Phạm vi tích hợp cần được xác định qua khảo sát và kiểm thử thay vì áp dụng cùng một cấu hình cho mọi doanh nghiệp.",
+   "cta": {
+    "label": "Trao đổi về workflow Zendesk hiện tại"
+   },
+   "links": [
+    {
+     "label": "Ước tính cấu hình & chi phí",
+     "path": "/uoc-tinh-chi-phi/?product=helpdesk-integration"
+    },
+    {
+     "label": "Xem bảng giá Gcalls",
+     "path": "/bang-gia/"
+    }
+   ]
+  },
+  "zendeskIntegration.ts::ZD_UI_PREVIEW": {
+   "eyebrow": "GIAO DIỆN TÍCH HỢP",
+   "h2": "Giữ customer context và ticket gần hoạt động nghe gọi",
+   "description": "Sơ đồ dưới đây minh họa lớp tích hợp phía Gcalls: cuộc gọi được xử lý trên Gcalls và liên kết với hồ sơ hỗ trợ đang tồn tại, cùng bối cảnh mà người phụ trách tiếp theo có thể xem lại.",
+   "layerNote": "Khối \"GCALLS · LỚP NGHE GỌI\" là lớp nghe gọi của Gcalls, không phải call box được nhúng trong Zendesk. Trang này không tuyên bố khả năng trả lời cuộc gọi ngay trong giao diện Zendesk.",
+   "note": "Đây là sơ đồ khái niệm phía Gcalls với dữ liệu mẫu đã ẩn thông tin nhận dạng, không phải ảnh chụp màn hình Zendesk và không mô phỏng giao diện Zendesk. Bố cục cùng phạm vi dữ liệu thực tế phụ thuộc vào cấu hình tích hợp của doanh nghiệp."
+  },
+  "zendeskIntegration.ts::ZD_USE_CASES": {
+   "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
+   "h2": "Gcalls × Zendesk phù hợp với những workflow hỗ trợ nào?",
+   "items": [
+    {
+     "role": "Inbound Customer Support",
+     "flow": "Agent tiếp nhận yêu cầu trong bối cảnh contact và ticket đang được quản lý trong Zendesk."
+    },
+    {
+     "role": "Ticket Follow-up",
+     "flow": "Nhân viên gọi lại cho khách hàng và tiếp tục xử lý ticket từ context hiện có."
+    },
+    {
+     "role": "SaaS Support",
+     "flow": "Đội Support theo dõi cuộc gọi và ticket gần hơn khi xử lý vấn đề sản phẩm hoặc dịch vụ."
+    },
+    {
+     "role": "Enterprise Customer Service",
+     "flow": "Đội CSKH duy trì customer và support context khi nhiều nhân viên cùng tham gia xử lý một yêu cầu."
+    }
+   ]
+  },
+  "zendeskIntegration.ts::ZD_VS_HELPDESK": {
+   "eyebrow": "ZENDESK-SPECIFIC WORKFLOW",
+   "h2": "Trang này dành cho doanh nghiệp đã sử dụng Zendesk",
+   "description": "Nếu doanh nghiệp đang đánh giá tổng đài tích hợp Helpdesk nói chung, hãy xem giải pháp Helpdesk Integration. Trang này tập trung vào workflow khi Zendesk đã là hệ thống quản lý ticket và hỗ trợ hiện tại.",
+   "cta": {
+    "label": "Xem giải pháp Tổng đài tích hợp Helpdesk",
+    "path": "/tong-dai-tich-hop-helpdesk/"
+   }
+  },
+  "zendeskIntegration.ts::ZD_WORKFLOW": {
+   "anchorId": "workflow-zendesk",
+   "eyebrow": "QUY TRÌNH",
+   "h2": "Từ Zendesk contact hoặc ticket đến cuộc gọi và bước hỗ trợ tiếp theo",
+   "steps": [
+    {
+     "n": "01",
+     "title": "Mở contact hoặc ticket",
+     "detail": "Nhân viên tiếp tục làm việc trên yêu cầu hỗ trợ đang được quản lý trong Zendesk."
+    },
+    {
+     "n": "02",
+     "title": "Bắt đầu hoặc tiếp nhận cuộc gọi",
+     "detail": "Hoạt động thoại được thực hiện theo capability và cấu hình tích hợp đã triển khai."
+    },
+    {
+     "n": "03",
+     "title": "Sử dụng customer context",
+     "detail": "Thông tin liên quan giúp agent hiểu khách hàng, ticket hoặc lịch sử hỗ trợ trước đó."
+    },
+    {
+     "n": "04",
+     "title": "Thực hiện cuộc hội thoại",
+     "detail": "Gcalls xử lý lớp giao tiếp thoại trong workflow được cấu hình."
+    },
+    {
+     "n": "05",
+     "title": "Ghi nhận dữ liệu phù hợp",
+     "detail": "Call activity hoặc dữ liệu liên quan có thể được ghi nhận hay liên kết theo phạm vi tích hợp."
+    },
+    {
+     "n": "06",
+     "title": "Tiếp tục ticket workflow",
+     "detail": "Agent follow-up trong Zendesk thay vì duy trì lịch sử hỗ trợ ở một luồng riêng ngoài Helpdesk."
+    }
+   ]
+  },
+  "zendeskIntegration.ts::ZENDESK_CONSULT_LEAD": {
+   "intent": "consultation",
+   "source": "helpdesk_integration",
+   "product": "Zendesk",
+   "solution": "Tích hợp Helpdesk"
+  },
+  "zendeskIntegration.ts::ZENDESK_DEMO_LEAD": {
+   "intent": "demo",
+   "source": "helpdesk_integration",
+   "product": "Zendesk",
+   "solution": "Tích hợp Helpdesk"
+  }
+ }
+}

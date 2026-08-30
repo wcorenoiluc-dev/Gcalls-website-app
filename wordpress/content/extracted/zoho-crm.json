@@ -1,0 +1,425 @@
+{
+ "slug": "zoho-crm",
+ "family": "integration-detail",
+ "sources": [
+  {
+   "file": "src/data/zohoCrmIntegration.ts",
+   "sha256": "e0f117c6d93cd7a78d68476ee5a817b7d9fdafddb502a98f858e1463c7323050",
+   "exportCount": 21
+  }
+ ],
+ "exports": {
+  "zohoCrmIntegration.ts::ZH_BEFORE_AFTER": {
+   "eyebrow": "TRƯỚC & SAU TÍCH HỢP",
+   "h2": "Giảm những bước thủ công giữa Zoho CRM và hệ thống gọi",
+   "before": {
+    "label": "Trước tích hợp",
+    "steps": [
+     "Zoho CRM",
+     "Copy phone number",
+     "Call tool",
+     "Conversation",
+     "Manual note",
+     "Quay lại CRM",
+     "Follow-up"
+    ]
+   },
+   "after": {
+    "label": "Sau tích hợp",
+    "steps": [
+     "Zoho CRM record",
+     "Configured call action",
+     "Conversation",
+     "Call activity",
+     "CRM workflow tiếp tục"
+    ]
+   }
+  },
+  "zohoCrmIntegration.ts::ZH_BENEFITS": {
+   "eyebrow": "GIÁ TRỊ VẬN HÀNH",
+   "h2": "Giữ hoạt động gọi gần hơn với dữ liệu Sales và CSKH",
+   "items": [
+    "Giảm thao tác chuyển đổi giữa nhiều công cụ",
+    "Có thêm customer context khi trao đổi",
+    "Theo dõi tương tác tập trung hơn",
+    "Dễ tiếp tục follow-up khi người phụ trách thay đổi"
+   ]
+  },
+  "zohoCrmIntegration.ts::ZH_BOUNDARY": {
+   "eyebrow": "PHÂN BIỆT SẢN PHẨM",
+   "h2": "Zoho CRM Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+   "items": [
+    {
+     "product": "Gcalls Plus",
+     "need": "Lớp nghe gọi trên trình duyệt — phần thực hiện cuộc gọi của doanh nghiệp.",
+     "path": "/gcalls-plus-webphone/"
+    },
+    {
+     "product": "CRM Integration",
+     "need": "Giải pháp tích hợp CRM nói chung, khi doanh nghiệp chưa xác định nền tảng.",
+     "path": "/tong-dai-tich-hop-crm/"
+    },
+    {
+     "product": "Zoho CRM Integration",
+     "need": "Workflow riêng cho doanh nghiệp đã sử dụng Zoho CRM làm hệ thống khách hàng.",
+     "path": "/tich-hop/zoho-crm/",
+     "current": true
+    },
+    {
+     "product": "Gcalls CX",
+     "need": "Giao tiếp đa kênh khi doanh nghiệp cần hợp nhất nhiều điểm chạm khách hàng.",
+     "path": "/gcalls-cx/"
+    }
+   ]
+  },
+  "zohoCrmIntegration.ts::ZH_CAPABILITIES": {
+   "eyebrow": "NĂNG LỰC TÍCH HỢP",
+   "h2": "Những năng lực được xác nhận khi kết nối Gcalls với Zoho CRM",
+   "items": [
+    {
+     "n": "01",
+     "title": "Click-to-Call",
+     "detail": "Nhân viên có thể bắt đầu cuộc gọi từ số điện thoại hoặc customer record trong Zoho CRM khi integration được cấu hình phù hợp."
+    },
+    {
+     "n": "02",
+     "title": "Customer Context",
+     "detail": "Thông tin khách hàng liên quan hỗ trợ đội ngũ có thêm bối cảnh khi xử lý cuộc gọi, và nhận biết khách hàng ở nơi dữ liệu cùng cấu hình tích hợp hỗ trợ."
+    },
+    {
+     "n": "03",
+     "title": "Call Activity / Interaction History",
+     "detail": "Dữ liệu cuộc gọi phù hợp có thể được ghi nhận hoặc liên kết theo phạm vi tích hợp để đội ngũ nhìn lại quá trình tương tác."
+    },
+    {
+     "n": "04",
+     "title": "CRM Workflow Continuity",
+     "detail": "Sales và CSKH tiếp tục follow-up trong Zoho CRM thay vì duy trì một luồng dữ liệu cuộc gọi riêng bên ngoài hệ thống."
+    }
+   ]
+  },
+  "zohoCrmIntegration.ts::ZH_DIRECT_ANSWER": {
+   "question": "Tổng đài tích hợp Zoho CRM là gì?",
+   "answer": "Tổng đài tích hợp Zoho CRM kết nối hoạt động nghe gọi của Gcalls với quy trình quản lý khách hàng trên Zoho CRM để nhân viên có thể sử dụng customer context, theo dõi dữ liệu cuộc gọi phù hợp và tiếp tục follow-up trong workflow đang sử dụng. Phạm vi chức năng phụ thuộc vào cấu hình Gcalls, Zoho CRM và yêu cầu triển khai của doanh nghiệp."
+  },
+  "zohoCrmIntegration.ts::ZH_FAQ": [
+   {
+    "q": "Tổng đài tích hợp Zoho CRM là gì?",
+    "a": "Đây là mô hình kết nối hoạt động nghe gọi của Gcalls với Zoho CRM để đội ngũ có thể sử dụng customer context, dữ liệu cuộc gọi phù hợp và tiếp tục follow-up trong workflow CRM."
+   },
+   {
+    "q": "Gcalls có hỗ trợ Click-to-Call trên Zoho CRM không?",
+    "a": "Có. Khi integration được cấu hình phù hợp, nhân viên có thể bắt đầu cuộc gọi từ số điện thoại hoặc customer record trong Zoho CRM. Phương thức kết nối cụ thể được Gcalls xác định trong quá trình khảo sát hệ thống."
+   },
+   {
+    "q": "Khi khách hàng gọi đến có thể xem thông tin Zoho CRM không?",
+    "a": "Khả năng hiển thị customer context phụ thuộc vào dữ liệu, permission và cấu hình tích hợp. Gcalls sẽ xác định phạm vi phù hợp trong quá trình khảo sát."
+   },
+   {
+    "q": "Lịch sử cuộc gọi có được ghi nhận trong Zoho CRM không?",
+    "a": "Dữ liệu cuộc gọi phù hợp có thể được ghi nhận hoặc liên kết theo phạm vi tích hợp và khả năng của hệ thống."
+   },
+   {
+    "q": "Gcalls có hỗ trợ gửi SMS từ Zoho CRM không?",
+    "a": "Khả năng gửi SMS phụ thuộc vào cấu hình, nhà cung cấp dịch vụ và phạm vi tích hợp. Gcalls cần kiểm tra hệ thống trước khi xác nhận."
+   },
+   {
+    "q": "Ghi âm có được đồng bộ vào Zoho CRM không?",
+    "a": "Khả năng đồng bộ hoặc liên kết bản ghi phụ thuộc vào cấu hình Gcalls, Zoho CRM và phạm vi triển khai."
+   },
+   {
+    "q": "Gcalls có thay thế Zoho CRM không?",
+    "a": "Không. Zoho CRM tiếp tục là hệ thống quản lý khách hàng; Gcalls bổ sung lớp giao tiếp thoại và dữ liệu tương tác vào workflow đang sử dụng."
+   }
+  ],
+  "zohoCrmIntegration.ts::ZH_FINAL_CTA": {
+   "eyebrow": "GCALLS × ZOHO CRM",
+   "h2": "Xem hoạt động nghe gọi vận hành trong workflow Zoho CRM của doanh nghiệp",
+   "description": "Chia sẻ module, user và quy trình Sales/CSKH hiện tại để Gcalls xác định phạm vi tích hợp và demo phù hợp.",
+   "primaryCta": {
+    "label": "Xem demo tích hợp Zoho CRM"
+   },
+   "secondaryCta": {
+    "label": "Tư vấn tích hợp"
+   }
+  },
+  "zohoCrmIntegration.ts::ZH_HERO": {
+   "eyebrow": "GCALLS × ZOHO CRM",
+   "h1": "Tổng đài tích hợp Zoho CRM cho đội Sales và CSKH",
+   "description": "Kết nối hoạt động nghe gọi của Gcalls với Zoho CRM để đội ngũ có thể sử dụng customer context, theo dõi lịch sử tương tác và tiếp tục follow-up gần hơn với quy trình CRM đang sử dụng.",
+   "valuePoints": [
+    {
+     "title": "Đưa cuộc gọi gần customer record",
+     "detail": "Nhân viên có thể làm việc với cuộc gọi trong bối cảnh dữ liệu khách hàng đang được quản lý trên Zoho CRM theo phạm vi tích hợp."
+    },
+    {
+     "title": "Có thêm context khi trao đổi",
+     "detail": "Thông tin liên quan giúp Sales và CSKH hiểu khách hàng trước hoặc trong quá trình xử lý cuộc gọi."
+    },
+    {
+     "title": "Theo dõi tương tác tập trung hơn",
+     "detail": "Call activity phù hợp có thể được ghi nhận hoặc liên kết để đội ngũ tiếp tục follow-up trong CRM."
+    }
+   ],
+   "primaryCta": {
+    "label": "Xem demo tích hợp Zoho CRM"
+   },
+   "secondaryCta": {
+    "label": "Xem workflow tích hợp",
+    "href": "#workflow-zoho-crm"
+   }
+  },
+  "zohoCrmIntegration.ts::ZH_LINKS": {
+   "h2": "Xem thêm",
+   "items": [
+    {
+     "label": "Bảng giá Gcalls",
+     "path": "/bang-gia/"
+    },
+    {
+     "label": "Ước tính chi phí",
+     "path": "/uoc-tinh-chi-phi/"
+    },
+    {
+     "label": "Blog Gcalls",
+     "path": "/blog/"
+    },
+    {
+     "label": "Liên hệ",
+     "path": "/lien-he/"
+    }
+   ]
+  },
+  "zohoCrmIntegration.ts::ZH_OVERVIEW": {
+   "eyebrow": "GCALLS FOR ZOHO CRM",
+   "h2": "Kết nối lớp giao tiếp thoại với CRM đội ngũ đang sử dụng",
+   "description": "Zoho CRM tiếp tục quản lý customer record và workflow. Gcalls bổ sung lớp nghe gọi để cuộc hội thoại và dữ liệu tương tác được đặt gần hơn với quá trình Sales và CSKH.",
+   "flow": [
+    {
+     "n": "01",
+     "label": "Zoho CRM record",
+     "detail": "Đội ngũ làm việc trên dữ liệu khách hàng đang được quản lý."
+    },
+    {
+     "n": "02",
+     "label": "Call action",
+     "detail": "Cuộc gọi bắt đầu theo capability và cấu hình được triển khai."
+    },
+    {
+     "n": "03",
+     "label": "Gcalls conversation",
+     "detail": "Gcalls xử lý lớp giao tiếp thoại."
+    },
+    {
+     "n": "04",
+     "label": "Customer context",
+     "detail": "Thông tin liên quan hỗ trợ nhân viên trong cuộc trao đổi."
+    },
+    {
+     "n": "05",
+     "label": "Call activity",
+     "detail": "Dữ liệu tương tác phù hợp được ghi nhận theo phạm vi tích hợp."
+    },
+    {
+     "n": "06",
+     "label": "CRM follow-up",
+     "detail": "Đội ngũ tiếp tục workflow trong Zoho CRM."
+    }
+   ]
+  },
+  "zohoCrmIntegration.ts::ZH_PROBLEMS": {
+   "eyebrow": "BÀI TOÁN",
+   "h2": "Zoho CRM quản lý khách hàng, nhưng hoạt động gọi vẫn có thể nằm ngoài workflow",
+   "items": [
+    {
+     "n": "01",
+     "title": "Phải chuyển đổi giữa CRM và công cụ gọi",
+     "detail": "Nhân viên làm việc với contact trong Zoho CRM nhưng lại thực hiện cuộc gọi trên một hệ thống riêng."
+    },
+    {
+     "n": "02",
+     "title": "Thiếu customer context khi cuộc gọi bắt đầu",
+     "detail": "Khi dữ liệu CRM và cuộc gọi chưa kết nối phù hợp, nhân viên cần tự tìm hồ sơ trước khi tiếp tục trao đổi."
+    },
+    {
+     "n": "03",
+     "title": "Lịch sử tương tác bị phân mảnh",
+     "detail": "Call activity nằm ngoài CRM khiến đội ngũ khó nhìn lại toàn bộ quá trình tư vấn và chăm sóc khách hàng."
+    },
+    {
+     "n": "04",
+     "title": "Follow-up phụ thuộc vào ghi chú thủ công",
+     "detail": "Nhân viên có thể phải nhập lại dữ liệu sau cuộc gọi để giữ Zoho CRM cập nhật."
+    }
+   ]
+  },
+  "zohoCrmIntegration.ts::ZH_RELATED": {
+   "h2": "Doanh nghiệp đang sử dụng CRM khác?",
+   "description": "Mỗi nền tảng CRM có cấu trúc dữ liệu và cách kết nối riêng. Xem trang tương ứng với hệ thống doanh nghiệp đang sử dụng.",
+   "items": [
+    {
+     "name": "HubSpot",
+     "detail": "Kết nối hoạt động nghe gọi với workflow HubSpot.",
+     "path": "/tich-hop/hubspot/"
+    },
+    {
+     "name": "Salesforce",
+     "detail": "Kết nối hoạt động nghe gọi với workflow Salesforce.",
+     "path": "/tich-hop/salesforce/"
+    },
+    {
+     "name": "Danh mục tích hợp",
+     "detail": "Xem toàn bộ nền tảng đang có trang tích hợp riêng.",
+     "path": "/tich-hop/"
+    }
+   ]
+  },
+  "zohoCrmIntegration.ts::ZH_SETUP": {
+   "eyebrow": "THIẾT LẬP",
+   "h2": "Tích hợp theo cấu hình Zoho CRM và workflow doanh nghiệp đang sử dụng",
+   "steps": [
+    {
+     "n": "01",
+     "title": "Khảo sát quy trình Zoho CRM"
+    },
+    {
+     "n": "02",
+     "title": "Xác định module/record liên quan"
+    },
+    {
+     "n": "03",
+     "title": "Xác định user và hotline"
+    },
+    {
+     "n": "04",
+     "title": "Xác định capability cần tích hợp"
+    },
+    {
+     "n": "05",
+     "title": "Kiểm tra permission/API"
+    },
+    {
+     "n": "06",
+     "title": "Cấu hình integration"
+    },
+    {
+     "n": "07",
+     "title": "Kiểm thử cuộc gọi và dữ liệu"
+    },
+    {
+     "n": "08",
+     "title": "Hướng dẫn đội ngũ"
+    },
+    {
+     "n": "09",
+     "title": "Go-live"
+    }
+   ],
+   "note": "Phạm vi và thời gian triển khai phụ thuộc vào module, permission, số lượng người dùng, hotline và capability cần sử dụng, nên được xác định sau bước khảo sát thay vì theo một mốc cố định. Gcalls không mặc định mọi gói hoặc edition Zoho CRM đều hỗ trợ cùng một phạm vi tích hợp."
+  },
+  "zohoCrmIntegration.ts::ZH_TRUST": {
+   "eyebrow": "PHẠM VI TRIỂN KHAI",
+   "h2": "Tích hợp Zoho CRM cần bắt đầu từ module, permission và workflow thực tế",
+   "description": "Module, field, permission, user role và workflow có thể khác nhau giữa từng tài khoản Zoho CRM. Phạm vi tích hợp cần được xác định qua khảo sát và kiểm thử thay vì áp dụng cùng một cấu hình cho mọi doanh nghiệp.",
+   "cta": {
+    "label": "Trao đổi về workflow Zoho CRM hiện tại"
+   },
+   "links": [
+    {
+     "label": "Ước tính cấu hình & chi phí",
+     "path": "/uoc-tinh-chi-phi/?product=crm-integration"
+    },
+    {
+     "label": "Xem bảng giá Gcalls",
+     "path": "/bang-gia/"
+    }
+   ]
+  },
+  "zohoCrmIntegration.ts::ZH_UI_PREVIEW": {
+   "eyebrow": "GIAO DIỆN TÍCH HỢP",
+   "h2": "Giữ customer context gần hoạt động gọi",
+   "description": "Giao diện dưới đây là bề mặt phía Gcalls trong luồng tích hợp: thông tin khách hàng liên quan và các nhóm dữ liệu lịch sử tương tác được đặt cạnh hoạt động nghe gọi.",
+   "note": "Giao diện minh họa phía Gcalls với dữ liệu mẫu đã ẩn thông tin nhận dạng. Đây không phải ảnh chụp màn hình Zoho CRM, và bố cục thực tế phụ thuộc vào cấu hình tích hợp của doanh nghiệp."
+  },
+  "zohoCrmIntegration.ts::ZH_USE_CASES": {
+   "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
+   "h2": "Gcalls × Zoho CRM phù hợp với những workflow nào?",
+   "items": [
+    {
+     "role": "SME Sales",
+     "flow": "Đội Sales làm việc với lead/contact trong Zoho CRM và tiếp tục follow-up dựa trên customer context đang có."
+    },
+    {
+     "role": "Startup Sales Operations",
+     "flow": "Đội vận hành có thể tổ chức hoạt động gọi gần hơn với dữ liệu CRM thay vì duy trì các danh sách rời rạc."
+    },
+    {
+     "role": "Customer Service",
+     "flow": "Agent sử dụng thông tin khách hàng và lịch sử liên quan để có thêm bối cảnh khi xử lý cuộc gọi."
+    },
+    {
+     "role": "Customer Success",
+     "flow": "Đội CS giữ hoạt động liên hệ gần hơn với dữ liệu vòng đời khách hàng đang theo dõi trong Zoho CRM."
+    }
+   ]
+  },
+  "zohoCrmIntegration.ts::ZH_VS_CRM": {
+   "eyebrow": "ZOHO CRM WORKFLOW",
+   "h2": "Trang này dành cho doanh nghiệp đã sử dụng Zoho CRM",
+   "description": "Nếu doanh nghiệp đang đánh giá tổng đài tích hợp CRM nói chung, hãy xem giải pháp CRM Integration. Trang này tập trung vào workflow khi Zoho CRM đã là hệ thống quản lý khách hàng hiện tại.",
+   "cta": {
+    "label": "Xem giải pháp Tổng đài tích hợp CRM",
+    "path": "/tong-dai-tich-hop-crm/"
+   }
+  },
+  "zohoCrmIntegration.ts::ZH_WORKFLOW": {
+   "anchorId": "workflow-zoho-crm",
+   "eyebrow": "QUY TRÌNH",
+   "h2": "Từ Zoho CRM record đến cuộc gọi và bước follow-up tiếp theo",
+   "steps": [
+    {
+     "n": "01",
+     "title": "Mở lead hoặc contact",
+     "detail": "Nhân viên tiếp tục làm việc trên dữ liệu khách hàng đang được quản lý trong Zoho CRM."
+    },
+    {
+     "n": "02",
+     "title": "Bắt đầu hoặc tiếp nhận cuộc gọi",
+     "detail": "Hoạt động thoại được thực hiện theo capability và cấu hình tích hợp được triển khai."
+    },
+    {
+     "n": "03",
+     "title": "Sử dụng customer context",
+     "detail": "Thông tin liên quan giúp nhân viên hiểu khách hàng và lịch sử trước đó."
+    },
+    {
+     "n": "04",
+     "title": "Thực hiện cuộc hội thoại",
+     "detail": "Gcalls xử lý lớp giao tiếp thoại trong workflow được cấu hình."
+    },
+    {
+     "n": "05",
+     "title": "Ghi nhận dữ liệu phù hợp",
+     "detail": "Call activity hoặc dữ liệu liên quan có thể được ghi nhận theo phạm vi tích hợp."
+    },
+    {
+     "n": "06",
+     "title": "Tiếp tục Sales / CSKH workflow",
+     "detail": "Nhân viên follow-up trong Zoho CRM thay vì duy trì lịch sử riêng bên ngoài hệ thống."
+    }
+   ]
+  },
+  "zohoCrmIntegration.ts::ZOHO_CONSULT_LEAD": {
+   "intent": "consultation",
+   "source": "crm_integration",
+   "product": "Zoho CRM",
+   "solution": "Tích hợp CRM"
+  },
+  "zohoCrmIntegration.ts::ZOHO_DEMO_LEAD": {
+   "intent": "demo",
+   "source": "crm_integration",
+   "product": "Zoho CRM",
+   "solution": "Tích hợp CRM"
+  }
+ }
+}

@@ -1,0 +1,396 @@
+{
+ "slug": "hubspot",
+ "family": "integration-detail",
+ "sources": [
+  {
+   "file": "src/data/hubspotIntegration.ts",
+   "sha256": "570b3a67fdb017285556e8e028e899a0889b575a01e9e517de5cf918dfde46e2",
+   "exportCount": 19
+  }
+ ],
+ "exports": {
+  "hubspotIntegration.ts::HS_BENEFITS": {
+   "eyebrow": "GIÁ TRỊ VẬN HÀNH",
+   "h2": "Giảm những điểm chuyển đổi không cần thiết trong quy trình HubSpot",
+   "items": [
+    {
+     "n": "01",
+     "title": "Giảm thao tác copy số",
+     "detail": "Click-to-Call giúp đưa thao tác gọi gần hơn với customer record đang được xử lý."
+    },
+    {
+     "n": "02",
+     "title": "Có context trước cuộc hội thoại",
+     "detail": "Thông tin khách hàng giúp agent chuẩn bị tốt hơn trước khi tư vấn hoặc hỗ trợ."
+    },
+    {
+     "n": "03",
+     "title": "Theo dõi tương tác tập trung hơn",
+     "detail": "Call activity phù hợp được đặt gần workflow CRM để đội ngũ dễ tiếp tục follow-up."
+    },
+    {
+     "n": "04",
+     "title": "Giảm dữ liệu bị phân mảnh",
+     "detail": "Kết nối hai hệ thống giúp hạn chế việc duy trì lịch sử khách hàng ở những luồng tách rời."
+    }
+   ]
+  },
+  "hubspotIntegration.ts::HS_CAPABILITIES": {
+   "eyebrow": "TÍNH NĂNG TÍCH HỢP",
+   "h2": "Những năng lực giúp kết nối cuộc gọi với workflow HubSpot",
+   "items": [
+    {
+     "n": "01",
+     "title": "Click-to-Call",
+     "detail": "Cho phép bắt đầu cuộc gọi từ số điện thoại hoặc contact trong HubSpot khi extension/integration được cấu hình."
+    },
+    {
+     "n": "02",
+     "title": "Incoming Call Notification",
+     "detail": "Khi có cuộc gọi đến, Gcalls có thể cung cấp call box để nhân viên tiếp nhận cuộc gọi trong môi trường làm việc tích hợp."
+    },
+    {
+     "n": "03",
+     "title": "Customer Context",
+     "detail": "Thông tin liên quan giúp nhân viên nhận biết khách hàng và truy cập customer record trước hoặc trong quá trình trao đổi."
+    },
+    {
+     "n": "04",
+     "title": "Call Activity / History",
+     "detail": "Thông tin cuộc gọi phù hợp có thể được ghi nhận để đội ngũ tiếp tục theo dõi quá trình tương tác."
+    }
+   ]
+  },
+  "hubspotIntegration.ts::HS_DIRECT_ANSWER": {
+   "question": "Tổng đài tích hợp HubSpot là gì?",
+   "answer": "Tổng đài tích hợp HubSpot kết nối chức năng nghe gọi của Gcalls với quy trình CRM HubSpot để nhân viên có thể thực hiện cuộc gọi từ CRM, nhận biết khách hàng khi có cuộc gọi và ghi nhận dữ liệu tương tác phù hợp vào workflow đang sử dụng. Phạm vi chức năng phụ thuộc vào cấu hình Gcalls, HubSpot và yêu cầu triển khai của doanh nghiệp."
+  },
+  "hubspotIntegration.ts::HS_FAQ": [
+   {
+    "q": "Tổng đài tích hợp HubSpot là gì?",
+    "a": "Đây là mô hình kết nối chức năng nghe gọi của Gcalls với workflow HubSpot để nhân viên có thể thực hiện cuộc gọi, nhận biết customer context và ghi nhận dữ liệu tương tác phù hợp trong quy trình CRM."
+   },
+   {
+    "q": "Gcalls có hỗ trợ Click-to-Call trên HubSpot không?",
+    "a": "Có. Trong cấu hình tích hợp phù hợp, nhân viên có thể bắt đầu cuộc gọi từ số điện thoại hoặc customer record trên HubSpot thông qua lớp tích hợp Gcalls."
+   },
+   {
+    "q": "Khi khách hàng gọi đến có thể xem thông tin HubSpot không?",
+    "a": "Gcalls có thể hỗ trợ hiển thị thông tin liên quan để nhân viên nhận biết khách hàng và truy cập customer record khi cấu hình tích hợp phù hợp."
+   },
+   {
+    "q": "Dữ liệu cuộc gọi có được lưu lại không?",
+    "a": "Thông tin cuộc gọi phù hợp có thể được ghi nhận hoặc liên kết theo phạm vi tích hợp để đội ngũ tiếp tục theo dõi lịch sử tương tác."
+   },
+   {
+    "q": "Gcalls có thể tạo Ticket trên HubSpot không?",
+    "a": "Khả năng tạo hoặc cập nhật Ticket phụ thuộc vào workflow và cấu hình tích hợp hiện tại. Gcalls sẽ xác định luồng phù hợp trong quá trình khảo sát hệ thống.",
+    "link": {
+     "label": "Tổng đài tích hợp Helpdesk",
+     "path": "/tong-dai-tich-hop-helpdesk/"
+    }
+   },
+   {
+    "q": "Gcalls tích hợp HubSpot có thay thế HubSpot không?",
+    "a": "Không. HubSpot tiếp tục là hệ thống CRM của doanh nghiệp; Gcalls bổ sung lớp giao tiếp thoại và dữ liệu tương tác vào workflow đang sử dụng."
+   },
+   {
+    "q": "Tích hợp HubSpot mất bao lâu?",
+    "a": "Thời gian phụ thuộc vào hotline, số lượng người dùng, quyền truy cập, capability cần triển khai và yêu cầu kiểm thử. Gcalls sẽ xác định phạm vi sau khi khảo sát hệ thống."
+   }
+  ],
+  "hubspotIntegration.ts::HS_FINAL_CTA": {
+   "eyebrow": "GCALLS × HUBSPOT",
+   "h2": "Xem hoạt động nghe gọi vận hành ngay trong workflow HubSpot của doanh nghiệp bạn",
+   "description": "Chia sẻ cách đội Sales/CSKH đang sử dụng HubSpot để Gcalls tư vấn phạm vi tích hợp và demo workflow phù hợp.",
+   "primaryCta": {
+    "label": "Xem demo tích hợp HubSpot"
+   },
+   "secondaryCta": {
+    "label": "Tư vấn tích hợp"
+   }
+  },
+  "hubspotIntegration.ts::HS_HERO": {
+   "eyebrow": "GCALLS × HUBSPOT",
+   "h1": "Tổng đài Gcalls tích hợp HubSpot – đưa cuộc gọi vào quy trình CRM",
+   "description": "Kết nối chức năng nghe gọi của Gcalls với HubSpot để đội Sales và CSKH có thể thực hiện cuộc gọi, nhận biết customer context và theo dõi hoạt động tương tác mà không phải tách quy trình làm việc thành nhiều hệ thống rời rạc.",
+   "valuePoints": [
+    {
+     "title": "Gọi trực tiếp từ HubSpot",
+     "detail": "Click-to-Call giúp nhân viên bắt đầu cuộc gọi từ số điện thoại hoặc hồ sơ khách hàng trong CRM khi tích hợp được cấu hình."
+    },
+    {
+     "title": "Nhận biết khách hàng khi có cuộc gọi",
+     "detail": "Thông tin liên quan từ HubSpot giúp nhân viên có thêm context trước khi tiếp tục cuộc hội thoại."
+    },
+    {
+     "title": "Giữ hoạt động cuộc gọi gần CRM",
+     "detail": "Dữ liệu tương tác phù hợp có thể được ghi nhận trong workflow HubSpot để đội ngũ tiếp tục follow-up thuận tiện hơn."
+    }
+   ],
+   "primaryCta": {
+    "label": "Xem demo tích hợp HubSpot"
+   },
+   "secondaryCta": {
+    "label": "Xem cách hoạt động",
+    "href": "#workflow-hubspot"
+   }
+  },
+  "hubspotIntegration.ts::HS_LINKS": {
+   "h2": "Xem thêm",
+   "items": [
+    {
+     "label": "Gcalls Plus Webphone",
+     "path": "/gcalls-plus-webphone/"
+    },
+    {
+     "label": "Gcalls CX",
+     "path": "/gcalls-cx/"
+    },
+    {
+     "label": "Bảng giá Gcalls",
+     "path": "/bang-gia/"
+    },
+    {
+     "label": "Ước tính chi phí",
+     "path": "/uoc-tinh-chi-phi/"
+    },
+    {
+     "label": "Blog Gcalls",
+     "path": "/blog/"
+    },
+    {
+     "label": "Liên hệ",
+     "path": "/lien-he/"
+    }
+   ]
+  },
+  "hubspotIntegration.ts::HS_OVERVIEW": {
+   "eyebrow": "GCALLS FOR HUBSPOT",
+   "h2": "Đưa lớp giao tiếp thoại vào nơi đội ngũ đang quản lý khách hàng",
+   "description": "Gcalls không thay thế HubSpot. Giải pháp bổ sung lớp giao tiếp thoại để cuộc gọi trở thành một phần gần hơn với customer record và workflow Sales/Customer Service hiện tại.",
+   "flow": [
+    {
+     "n": "01",
+     "label": "HubSpot Contact",
+     "detail": "Nhân viên làm việc trên dữ liệu khách hàng đang quản lý."
+    },
+    {
+     "n": "02",
+     "label": "Click-to-Call",
+     "detail": "Cuộc gọi bắt đầu từ hồ sơ khi tích hợp được cấu hình."
+    },
+    {
+     "n": "03",
+     "label": "Gcalls conversation",
+     "detail": "Gcalls xử lý lớp giao tiếp thoại."
+    },
+    {
+     "n": "04",
+     "label": "Customer context",
+     "detail": "Thông tin liên quan hỗ trợ agent trong cuộc trao đổi."
+    },
+    {
+     "n": "05",
+     "label": "Call activity",
+     "detail": "Dữ liệu tương tác phù hợp được ghi nhận."
+    },
+    {
+     "n": "06",
+     "label": "Follow-up in HubSpot",
+     "detail": "Đội ngũ tiếp tục workflow trong CRM."
+    }
+   ]
+  },
+  "hubspotIntegration.ts::HS_PROBLEMS": {
+   "eyebrow": "BÀI TOÁN",
+   "h2": "HubSpot quản lý khách hàng, nhưng cuộc gọi vẫn có thể nằm ngoài workflow",
+   "items": [
+    {
+     "n": "01",
+     "title": "Phải copy số điện thoại để gọi",
+     "detail": "Nhân viên tìm contact trong HubSpot nhưng lại thực hiện cuộc gọi trên một công cụ khác, tạo thêm thao tác trong mỗi lần follow-up."
+    },
+    {
+     "n": "02",
+     "title": "Không biết ngay ai đang gọi",
+     "detail": "Khi cuộc gọi đến không gắn với customer context, agent cần tìm lại hồ sơ trước khi hiểu lịch sử khách hàng."
+    },
+    {
+     "n": "03",
+     "title": "Call activity bị tách khỏi CRM",
+     "detail": "Nếu hoạt động gọi không được ghi nhận cùng customer record, Sales và CSKH khó nhìn lại toàn bộ quá trình tương tác."
+    },
+    {
+     "n": "04",
+     "title": "Follow-up dễ trở thành quy trình thủ công",
+     "detail": "Nhân viên phải tự ghi chú hoặc cập nhật lại HubSpot sau cuộc gọi nếu hai hệ thống chưa được kết nối phù hợp."
+    }
+   ]
+  },
+  "hubspotIntegration.ts::HS_RELATED": {
+   "h2": "Doanh nghiệp đang sử dụng CRM khác?",
+   "description": "Mỗi nền tảng CRM có cấu trúc dữ liệu và cách kết nối riêng. Xem trang tương ứng với hệ thống doanh nghiệp đang sử dụng.",
+   "items": [
+    {
+     "name": "Salesforce",
+     "detail": "Kết nối hoạt động nghe gọi với workflow Salesforce.",
+     "path": "/tich-hop/salesforce/"
+    },
+    {
+     "name": "Zoho CRM",
+     "detail": "Kết nối hoạt động nghe gọi với workflow Zoho CRM.",
+     "path": "/tich-hop/zoho-crm/"
+    },
+    {
+     "name": "Danh mục tích hợp",
+     "detail": "Xem toàn bộ nền tảng đang có trang tích hợp riêng.",
+     "path": "/tich-hop/"
+    }
+   ]
+  },
+  "hubspotIntegration.ts::HS_SETUP": {
+   "eyebrow": "THIẾT LẬP",
+   "h2": "Tích hợp theo cấu hình HubSpot và workflow doanh nghiệp đang sử dụng",
+   "steps": [
+    {
+     "n": "01",
+     "title": "Khảo sát workflow HubSpot hiện tại"
+    },
+    {
+     "n": "02",
+     "title": "Xác định user và hotline"
+    },
+    {
+     "n": "03",
+     "title": "Xác định capability cần sử dụng"
+    },
+    {
+     "n": "04",
+     "title": "Kiểm tra quyền truy cập và phương thức kết nối hiện hành"
+    },
+    {
+     "n": "05",
+     "title": "Cấu hình integration / extension cần thiết"
+    },
+    {
+     "n": "06",
+     "title": "Kiểm thử Click-to-Call, incoming call và dữ liệu"
+    },
+    {
+     "n": "07",
+     "title": "Hướng dẫn người dùng"
+    },
+    {
+     "n": "08",
+     "title": "Go-live"
+    }
+   ],
+   "note": "Phạm vi và thời gian triển khai phụ thuộc vào hotline, số lượng người dùng, quyền truy cập và capability cần sử dụng, nên được xác định sau bước khảo sát thay vì theo một mốc cố định."
+  },
+  "hubspotIntegration.ts::HS_TRUST": {
+   "eyebrow": "PHẠM VI TRIỂN KHAI",
+   "h2": "Tích hợp cần bắt đầu từ workflow và dữ liệu doanh nghiệp đang sử dụng",
+   "description": "Permission, cấu trúc dữ liệu, user, hotline và yêu cầu đồng bộ có thể khác nhau giữa từng tài khoản HubSpot. Vì vậy phạm vi triển khai cần được xác định trong bước khảo sát và kiểm thử.",
+   "cta": {
+    "label": "Trao đổi về workflow HubSpot hiện tại"
+   },
+   "links": [
+    {
+     "label": "Ước tính cấu hình & chi phí",
+     "path": "/uoc-tinh-chi-phi/?product=crm-integration"
+    },
+    {
+     "label": "Xem bảng giá Gcalls",
+     "path": "/bang-gia/"
+    }
+   ]
+  },
+  "hubspotIntegration.ts::HS_UI_PREVIEW": {
+   "eyebrow": "GIAO DIỆN TÍCH HỢP",
+   "h2": "Giữ customer context gần cuộc gọi",
+   "description": "Các giao diện dưới đây là bề mặt phía Gcalls trong luồng tích hợp: thao tác gọi từ hồ sơ khách hàng, call box khi có cuộc gọi đến và hoạt động tương tác được ghi nhận.",
+   "note": "Giao diện minh họa phía Gcalls với dữ liệu mẫu. Đây không phải ảnh chụp màn hình HubSpot, và bố cục thực tế phụ thuộc vào cấu hình tích hợp của doanh nghiệp."
+  },
+  "hubspotIntegration.ts::HS_USE_CASES": {
+   "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
+   "h2": "Gcalls × HubSpot phù hợp với những workflow nào?",
+   "items": [
+    {
+     "role": "Inbound Sales",
+     "flow": "Sales nhận lead trong HubSpot, thực hiện cuộc gọi và tiếp tục follow-up từ customer context hiện có."
+    },
+    {
+     "role": "Lead Follow-up",
+     "flow": "Nhân viên làm việc với danh sách lead/contact và gọi theo quy trình thay vì duy trì danh sách số điện thoại riêng."
+    },
+    {
+     "role": "Customer Service",
+     "flow": "Agent sử dụng customer record và lịch sử liên quan để có thêm bối cảnh khi khách hàng gọi đến."
+    },
+    {
+     "role": "Customer Success",
+     "flow": "Đội CS có thể giữ hoạt động gọi gần hơn với dữ liệu vòng đời khách hàng đang quản lý trên HubSpot."
+    }
+   ]
+  },
+  "hubspotIntegration.ts::HS_VS_CRM": {
+   "eyebrow": "HUBSPOT-SPECIFIC WORKFLOW",
+   "h2": "Trang này dành cho doanh nghiệp đã chọn HubSpot làm CRM",
+   "description": "Nếu doanh nghiệp đang đánh giá cách tích hợp tổng đài với CRM nói chung, hãy xem giải pháp Tổng đài tích hợp CRM. Trang này tập trung vào workflow khi HubSpot đã là hệ thống quản lý khách hàng hiện tại.",
+   "cta": {
+    "label": "Xem giải pháp Tổng đài tích hợp CRM",
+    "path": "/tong-dai-tich-hop-crm/"
+   }
+  },
+  "hubspotIntegration.ts::HS_WORKFLOW": {
+   "anchorId": "workflow-hubspot",
+   "eyebrow": "QUY TRÌNH",
+   "h2": "Từ HubSpot contact đến cuộc gọi và follow-up",
+   "steps": [
+    {
+     "n": "01",
+     "title": "Mở contact hoặc customer record",
+     "detail": "Nhân viên tiếp tục làm việc trên dữ liệu đang được quản lý trong HubSpot."
+    },
+    {
+     "n": "02",
+     "title": "Bắt đầu hoặc tiếp nhận cuộc gọi",
+     "detail": "Click-to-Call hoặc call box hỗ trợ hoạt động thoại theo cấu hình tích hợp."
+    },
+    {
+     "n": "03",
+     "title": "Xem customer context",
+     "detail": "Thông tin liên quan giúp agent hiểu người đang trao đổi và lịch sử trước đó."
+    },
+    {
+     "n": "04",
+     "title": "Thực hiện cuộc hội thoại",
+     "detail": "Gcalls xử lý lớp giao tiếp thoại trong workflow được triển khai."
+    },
+    {
+     "n": "05",
+     "title": "Ghi nhận hoạt động phù hợp",
+     "detail": "Call activity và dữ liệu liên quan có thể được ghi nhận theo phạm vi tích hợp."
+    },
+    {
+     "n": "06",
+     "title": "Tiếp tục Sales / Service workflow",
+     "detail": "Nhân viên follow-up trong HubSpot thay vì duy trì một luồng dữ liệu riêng bên ngoài CRM."
+    }
+   ]
+  },
+  "hubspotIntegration.ts::HUBSPOT_CONSULT_LEAD": {
+   "intent": "consultation",
+   "source": "crm_integration",
+   "product": "HubSpot",
+   "solution": "Tích hợp CRM"
+  },
+  "hubspotIntegration.ts::HUBSPOT_DEMO_LEAD": {
+   "intent": "demo",
+   "source": "crm_integration",
+   "product": "HubSpot",
+   "solution": "Tích hợp CRM"
+  }
+ }
+}

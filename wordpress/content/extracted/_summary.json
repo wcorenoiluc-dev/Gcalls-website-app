@@ -46,5 +46,53 @@
   "exports": 94,
   "bytes": 65991,
   "headings": 218
+ },
+ {
+  "slug": "hubspot",
+  "family": "integration-detail",
+  "sources": 1,
+  "exports": 18,
+  "bytes": 11871,
+  "headings": 43
+ },
+ {
+  "slug": "salesforce",
+  "family": "integration-detail",
+  "sources": 1,
+  "exports": 20,
+  "bytes": 12945,
+  "headings": 42
+ },
+ {
+  "slug": "zoho-crm",
+  "family": "integration-detail",
+  "sources": 1,
+  "exports": 20,
+  "bytes": 12463,
+  "headings": 42
+ },
+ {
+  "slug": "freshdesk",
+  "family": "integration-detail",
+  "sources": 1,
+  "exports": 22,
+  "bytes": 14221,
+  "headings": 43
+ },
+ {
+  "slug": "zendesk",
+  "family": "integration-detail",
+  "sources": 1,
+  "exports": 22,
+  "bytes": 14288,
+  "headings": 43
+ },
+ {
+  "slug": "tich-hop",
+  "family": "integration-overview",
+  "sources": 5,
+  "exports": 102,
+  "bytes": 65784,
+  "headings": 213
  }
 ]
