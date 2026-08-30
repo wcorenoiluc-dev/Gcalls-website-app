@@ -309,6 +309,158 @@ console.log('\n2. Home page structure')
   await ctx.close()
 }
 
+/* ----------------------------------------------------------------- hero */
+
+/*
+ * GCALLS-024. The hero's layered composition, measured against the box that
+ * actually clips it.
+ *
+ * The first version of this measurement compared each floating card to the
+ * Elementor COLUMN and reported 94-100% visible, which was reassuring and
+ * wrong: the real clipper is `.gcalls-mock`, the framed card the stage is
+ * nested inside, and against that box the incoming-call card was 90% visible
+ * with 22px of its left edge — border, corner and the first letter of every
+ * line — cut off.
+ *
+ * So this gate finds the clipping ancestor by walking up from the stage rather
+ * than assuming one, and fails on CUT PIXELS, not on a ratio that a shadow
+ * could flatter. Two pixels are tolerated because a rotated card's bounding box
+ * includes its shadow; content and border are not allowed to lose any.
+ */
+
+console.log('\n3. Hero composition')
+
+const HERO_CUT_TOLERANCE = 2
+
+for (const width of [1440, 1366, 1024, 768, 390, 320]) {
+  const ctx = await b.newContext({ viewport: { width, height: 900 } })
+  const page = await ctx.newPage()
+  await page.goto(ORIGIN + '/', { waitUntil: 'domcontentloaded', timeout: 45000 })
+  await settle(page)
+
+  const hero = await page.evaluate(() => {
+    const section = document.querySelectorAll('.elementor-top-section')[0]
+    const stage = section ? section.querySelector('.gcalls-stage') : null
+    if (!stage) return null
+
+    /* Walk up for the box that really clips, instead of assuming the column. */
+    let clip = stage.parentElement
+    while (clip && getComputedStyle(clip).overflow === 'visible') clip = clip.parentElement
+    if (!clip) clip = document.documentElement
+    const cb = clip.getBoundingClientRect()
+
+    const cuts = (el) => {
+      const r = el.getBoundingClientRect()
+      return {
+        left: Math.max(0, Math.round(cb.left - r.left)),
+        right: Math.max(0, Math.round(r.right - cb.right)),
+        top: Math.max(0, Math.round(cb.top - r.top)),
+        bottom: Math.max(0, Math.round(r.bottom - cb.bottom)),
+        visible: r.width * r.height
+          ? Math.round(
+              (Math.max(0, Math.min(r.right, cb.right) - Math.max(r.left, cb.left)) *
+                Math.max(0, Math.min(r.bottom, cb.bottom) - Math.max(r.top, cb.top))) /
+                (r.width * r.height) * 100,
+            )
+          : 0,
+      }
+    }
+
+    const surfaces = [{ name: 'dashboard', el: stage.querySelector('.gcalls-stage__main') }]
+
+    for (const f of stage.querySelectorAll('.gcalls-stage__float')) {
+      /* Below lg three of the four are display:none by design; a zero box is
+       * not a clipped box, so they are not measured as one. */
+      if (f.getBoundingClientRect().width === 0) continue
+      const name = ([...f.classList].find((c) => c.startsWith('gcalls-stage__float--')) || 'float')
+        .replace('gcalls-stage__float--', '')
+      surfaces.push({ name, el: f })
+    }
+
+    const next = document.querySelectorAll('.elementor-top-section')[1]
+
+    return {
+      clipper: (clip.className || clip.tagName).toString().split(' ')[0],
+      surfaces: surfaces.filter((s) => s.el).map((s) => ({ name: s.name, ...cuts(s.el) })),
+      overflowX: document.documentElement.scrollWidth > innerWidth + 1,
+      scrollWidth: document.documentElement.scrollWidth,
+      overlapNext: next
+        ? Math.round(section.getBoundingClientRect().bottom - next.getBoundingClientRect().top)
+        : 0,
+      stageInsideHero:
+        Math.round(section.getBoundingClientRect().bottom - stage.getBoundingClientRect().bottom) >= 0,
+      h1: document.querySelectorAll('h1').length,
+      ctas: section.querySelectorAll('.gc-ctarow .gc-btn').length,
+      brokenImages: [...section.querySelectorAll('img')].filter(
+        (i) => i.complete && i.naturalWidth === 0,
+      ).length,
+      rawShortcode: /\[[a-z_]+[^\]]*\]/.test(section.innerText),
+    }
+  })
+
+  if (!hero) {
+    record('hero', `@${width} hero stage is present`, false, 'no .gcalls-stage')
+    await ctx.close()
+    continue
+  }
+
+  for (const s of hero.surfaces) {
+    const worst = Math.max(s.left, s.right, s.top, s.bottom)
+    record(
+      'hero',
+      `@${width} ${s.name} is not clipped`,
+      worst <= HERO_CUT_TOLERANCE,
+      `${s.visible}% visible, cut L${s.left} R${s.right} T${s.top} B${s.bottom} by .${hero.clipper}`,
+    )
+  }
+
+  record('hero', `@${width} document does not scroll sideways`, !hero.overflowX, `${hero.scrollWidth} vs ${width}`)
+  record('hero', `@${width} hero does not overlap the next section`, hero.overlapNext <= 0, `${hero.overlapNext}px`)
+  record('hero', `@${width} hero contains the whole stage`, hero.stageInsideHero)
+  record('hero', `@${width} exactly one H1`, hero.h1 === 1, String(hero.h1))
+  record('hero', `@${width} two hero CTAs`, hero.ctas === 2, String(hero.ctas))
+  record('hero', `@${width} no broken image`, hero.brokenImages === 0, String(hero.brokenImages))
+  record('hero', `@${width} no raw shortcode`, !hero.rawShortcode)
+
+  await ctx.close()
+}
+
+/*
+ * The stage CSS is shared, so a hero fix can break the product heroes. These
+ * four carry the same composition on their own pages.
+ */
+for (const route of ['/gcalls-cx/', '/voicebot-ai/', '/qc-bot-ai/', '/gcalls-plus-webphone/']) {
+  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } })
+  const page = await ctx.newPage()
+  await page.goto(ORIGIN + route, { waitUntil: 'domcontentloaded', timeout: 45000 })
+  await settle(page)
+
+  const worst = await page.evaluate(() => {
+    const stages = [...document.querySelectorAll('.gcalls-stage')]
+    let worst = 0
+    let where = ''
+    for (const stage of stages) {
+      let clip = stage.parentElement
+      while (clip && getComputedStyle(clip).overflow === 'visible') clip = clip.parentElement
+      if (!clip) continue
+      const cb = clip.getBoundingClientRect()
+      const parts = [stage.querySelector('.gcalls-stage__main'), ...stage.querySelectorAll('.gcalls-stage__float')]
+      for (const el of parts) {
+        if (!el || el.getBoundingClientRect().width === 0) continue
+        const r = el.getBoundingClientRect()
+        const cut = Math.max(cb.left - r.left, r.right - cb.right, cb.top - r.top, r.bottom - cb.bottom)
+        if (cut > worst) { worst = Math.round(cut); where = el.className.toString().slice(0, 40) }
+      }
+    }
+    return { worst, where, stages: stages.length, overflowX: document.documentElement.scrollWidth > innerWidth + 1 }
+  })
+
+  record('hero', `${route} product stage is not clipped`, worst.worst <= HERO_CUT_TOLERANCE, `${worst.worst}px ${worst.where}`)
+  record('hero', `${route} no horizontal overflow`, !worst.overflowX)
+
+  await ctx.close()
+}
+
 /* ------------------------------------------------------------ ecosystem */
 
 /*
@@ -324,7 +476,7 @@ console.log('\n2. Home page structure')
  * between two consecutive rendered blocks with nothing visible between them.
  */
 
-console.log('\n3. Product / solution ecosystem')
+console.log('\n4. Product / solution ecosystem')
 
 const ECO_COLUMNS = { 1440: 3, 1024: 3, 768: 2, 390: 1, 320: 1 }
 const GAP_MAX = 120
@@ -495,7 +647,7 @@ for (const width of WIDTHS) {
 
 /* ------------------------------------------------------- product visuals */
 
-console.log('\n4. Product visuals')
+console.log('\n5. Product visuals')
 
 const PRODUCT_VISUALS = {
   '/gcalls-cx/': ['cx_inbox', 'cx_context', 'cx_ticket', 'cx_report'],
@@ -525,7 +677,7 @@ for (const [route, expected] of Object.entries(PRODUCT_VISUALS)) {
 
 /* ------------------------------------------------------------ interaction */
 
-console.log('\n5. Interaction')
+console.log('\n6. Interaction')
 
 {
   /* Mobile menu: click, Escape, outside click, scroll lock. */
@@ -682,7 +834,7 @@ console.log('\n5. Interaction')
 
 /* --------------------------------------------------------------- hardening */
 
-console.log('\n6. Hardening, redirects, noindex')
+console.log('\n7. Hardening, redirects, noindex')
 
 const httpCheck = async (url, options = {}) => {
   const res = await fetch(url, { redirect: 'manual', ...options }).catch(() => null)
@@ -745,7 +897,7 @@ const httpCheck = async (url, options = {}) => {
 
 /* -------------------------------------------------------- the eighteen */
 
-console.log('\n7. The eighteen published articles')
+console.log('\n8. The eighteen published articles')
 
 {
   const beforePath = path.join(HERE, '..', 'dist', 'live-baseline-before-deploy.json')

@@ -1505,6 +1505,57 @@ html.gcalls-nav-open body { overflow: hidden; }
 	.gc-eco-card:hover .gc-eco-card__cta svg { transform: none; }
 }
 
+/* ── Hero stage safe area ───────────────────────────────────────────────
+ *
+ * The hero's layered composition sits inside `.gcalls-mock`, which sets
+ * `overflow: hidden` so a mockup card can clip its own contents to its rounded
+ * corners. React has no such wrapper around this composition, so its floats
+ * overhang freely (top:-30px, right:-40px, left:-44px). Ported into the mock
+ * card, those same negative offsets fall outside the clip box and get cut: the
+ * incoming-call card lost 22px off its left edge, including its border and the
+ * first letter of every line.
+ *
+ * The clipping is not removed — other mockups rely on it, and switching it off
+ * to hide a layout problem is the thing not to do here. Instead the composition
+ * is made small enough to hold its own overhang: the dashboard gives up 34px on
+ * each side, and the floats move from negative offsets to a 6px inset. The
+ * overlap that makes it read as layered is preserved (28px, against 26px
+ * before); the difference is that all of it is now inside the canvas.
+ *
+ * The 6px absorbs the bounding-box growth from each float's rotation, which is
+ * what was clipping the recording card's top edge by 2px even at `top: 0`.
+ *
+ * Specificity note: mockups.css loads AFTER theme.css, so these overrides are
+ * written with the parent class to win on specificity rather than order.
+ */
+
+@media (min-width: 1024px) {
+	.gcalls-mock .gcalls-stage__main {
+		/* Never wider than the stage minus a safe band on both sides, so the
+		 * overhang has somewhere to live at every desktop width. */
+		max-width: min(480px, calc(100% - 68px));
+	}
+
+	.gcalls-mock .gcalls-stage__float--timeline {
+		top: 6px;
+		right: 6px;
+	}
+
+	.gcalls-mock .gcalls-stage__float--analytics {
+		bottom: 6px;
+		left: 6px;
+	}
+
+	.gcalls-mock .gcalls-stage__float--popup {
+		left: 6px;
+	}
+
+	.gcalls-mock .gcalls-stage__float--dialpad {
+		bottom: 8%;
+		right: 6px;
+	}
+}
+
 /* ── Sub-heading bound to the copy it introduces ────────────────────── */
 
 .gc-subhead h3 {
