@@ -49,6 +49,7 @@ require_once GCALLS_CORE_DIR . 'includes/class-redirects.php';
 require_once GCALLS_CORE_DIR . 'includes/class-hardening.php';
 require_once GCALLS_CORE_DIR . 'includes/class-importer.php';
 require_once GCALLS_CORE_DIR . 'includes/class-shortcodes.php';
+require_once GCALLS_CORE_DIR . 'includes/class-content-pages.php';
 require_once GCALLS_CORE_DIR . 'includes/class-mockups.php';
 require_once GCALLS_CORE_DIR . 'includes/template-tags.php';
 
@@ -66,6 +67,7 @@ function bootstrap(): void {
 	Redirects::init();
 	Hardening::init();
 	Shortcodes::init();
+	Content_Pages::init();
 	Mockups::init();
 
 	// The import screen registers a Tools submenu and nothing else. Loading it
