@@ -12,7 +12,7 @@ name: PHP tests
 
 on:
   push:
-    branches: [feature/gcalls-all-pages-content]
+    branches: [feature/gcalls-all-pages-content, feature/gcalls-batch2-integrations]
   pull_request:
     branches: [main, feature/gcalls-all-pages-content]
   workflow_dispatch:
