@@ -1,4 +1,96 @@
 {
+ "freshdesk": {
+  "320": {
+   "sections": 19,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=helpdesk_integration&product=Freshdesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 14116
+  },
+  "390": {
+   "sections": 19,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=helpdesk_integration&product=Freshdesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 12744
+  },
+  "768": {
+   "sections": 19,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 2,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=helpdesk_integration&product=Freshdesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 8083
+  },
+  "1024": {
+   "sections": 19,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=helpdesk_integration&product=Freshdesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 7817
+  },
+  "1440": {
+   "sections": 19,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=helpdesk_integration&product=Freshdesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 7857
+  }
+ },
  "giai-phap": {
   "320": {
    "sections": 6,
@@ -151,6 +243,98 @@
    "docH": 2880
   }
  },
+ "hubspot": {
+  "320": {
+   "sections": 16,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&product=HubSpot&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 12535
+  },
+  "390": {
+   "sections": 16,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&product=HubSpot&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 11213
+  },
+  "768": {
+   "sections": 16,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 2,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&product=HubSpot&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 7109
+  },
+  "1024": {
+   "sections": 16,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&product=HubSpot&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 6696
+  },
+  "1440": {
+   "sections": 16,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&product=HubSpot&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 6710
+  }
+ },
  "lien-he": {
   "320": {
    "sections": 3,
@@ -231,6 +415,98 @@
    "placeholder": false,
    "rawShortcode": false,
    "docH": 624
+  }
+ },
+ "salesforce": {
+  "320": {
+   "sections": 18,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&product=Salesforce&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 13571
+  },
+  "390": {
+   "sections": 18,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&product=Salesforce&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 12202
+  },
+  "768": {
+   "sections": 18,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 2,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&product=Salesforce&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 7902
+  },
+  "1024": {
+   "sections": 18,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&product=Salesforce&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 7383
+  },
+  "1440": {
+   "sections": 18,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&product=Salesforce&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 7473
   }
  },
  "san-pham": {
@@ -363,6 +639,148 @@
    "placeholder": false,
    "rawShortcode": false,
    "docH": 2222
+  }
+ },
+ "tich-hop": {
+  "320": {
+   "sections": 6,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/tich-hop/hubspot/",
+    "/tich-hop/salesforce/",
+    "/tich-hop/zoho-crm/",
+    "/tich-hop/freshdesk/",
+    "/tich-hop/zendesk/",
+    "/giai-phap/",
+    "/gcalls-plus-webphone/",
+    "/tong-dai-quoc-te/",
+    "/uoc-tinh-chi-phi/",
+    "/bang-gia/",
+    "/lien-he/?intent=integration&source=consultation"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 4418
+  },
+  "390": {
+   "sections": 6,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/tich-hop/hubspot/",
+    "/tich-hop/salesforce/",
+    "/tich-hop/zoho-crm/",
+    "/tich-hop/freshdesk/",
+    "/tich-hop/zendesk/",
+    "/giai-phap/",
+    "/gcalls-plus-webphone/",
+    "/tong-dai-quoc-te/",
+    "/uoc-tinh-chi-phi/",
+    "/bang-gia/",
+    "/lien-he/?intent=integration&source=consultation"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 4015
+  },
+  "768": {
+   "sections": 6,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 2,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/tich-hop/hubspot/",
+    "/tich-hop/salesforce/",
+    "/tich-hop/zoho-crm/",
+    "/tich-hop/freshdesk/",
+    "/tich-hop/zendesk/",
+    "/giai-phap/",
+    "/gcalls-plus-webphone/",
+    "/tong-dai-quoc-te/",
+    "/uoc-tinh-chi-phi/",
+    "/bang-gia/",
+    "/lien-he/?intent=integration&source=consultation"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 2629
+  },
+  "1024": {
+   "sections": 6,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/tich-hop/hubspot/",
+    "/tich-hop/salesforce/",
+    "/tich-hop/zoho-crm/",
+    "/tich-hop/freshdesk/",
+    "/tich-hop/zendesk/",
+    "/giai-phap/",
+    "/gcalls-plus-webphone/",
+    "/tong-dai-quoc-te/",
+    "/uoc-tinh-chi-phi/",
+    "/bang-gia/",
+    "/lien-he/?intent=integration&source=consultation"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 2305
+  },
+  "1440": {
+   "sections": 6,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/tich-hop/hubspot/",
+    "/tich-hop/salesforce/",
+    "/tich-hop/zoho-crm/",
+    "/tich-hop/freshdesk/",
+    "/tich-hop/zendesk/",
+    "/giai-phap/",
+    "/gcalls-plus-webphone/",
+    "/tong-dai-quoc-te/",
+    "/uoc-tinh-chi-phi/",
+    "/bang-gia/",
+    "/lien-he/?intent=integration&source=consultation"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 2376
   }
  },
  "tong-dai-quoc-te": {
@@ -731,6 +1149,190 @@
    "placeholder": false,
    "rawShortcode": false,
    "docH": 6743
+  }
+ },
+ "zendesk": {
+  "320": {
+   "sections": 19,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=helpdesk_integration&product=Zendesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 14095
+  },
+  "390": {
+   "sections": 19,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=helpdesk_integration&product=Zendesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 12711
+  },
+  "768": {
+   "sections": 19,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 2,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=helpdesk_integration&product=Zendesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 8057
+  },
+  "1024": {
+   "sections": 19,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=helpdesk_integration&product=Zendesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 7751
+  },
+  "1440": {
+   "sections": 19,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=helpdesk_integration&product=Zendesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 7841
+  }
+ },
+ "zoho-crm": {
+  "320": {
+   "sections": 18,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&product=Zoho%20CRM&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 13417
+  },
+  "390": {
+   "sections": 18,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&product=Zoho%20CRM&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 12090
+  },
+  "768": {
+   "sections": 18,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 2,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&product=Zoho%20CRM&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 7746
+  },
+  "1024": {
+   "sections": 18,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&product=Zoho%20CRM&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 7319
+  },
+  "1440": {
+   "sections": 18,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&product=Zoho%20CRM&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 7465
   }
  }
 }
