@@ -70,6 +70,10 @@ const rewrite = (obj, key, from, to, reason) => {
 
 const P = structuredClone(hubs.PRODUCTS_HUB)
 const S = structuredClone(hubs.SOLUTIONS_HUB)
+/* Not cloned-and-rewritten like the two above: the integration hub carries no
+ * GCALLS-028 override. Its five platform cards are the five that have an
+ * approved vendor page, which is what its own CLAIM GUARD requires. */
+const I = structuredClone(hubs.INTEGRATIONS_HUB)
 
 const REASON = 'GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution)'
 
@@ -137,7 +141,7 @@ const cardsOf = (items) => items.map((i) => ({
   supporting: str(i.supportingLabel),
 }))
 
-function hubPage(h, slug) {
+function hubPage(h, slug, family, overridePrefix) {
   const sections = []
 
   if (h.directAnswer?.answer) {
@@ -163,12 +167,12 @@ function hubPage(h, slug) {
   }
 
   return {
-    slug, family: slug === 'san-pham' ? 'product-overview' : 'solution-overview',
+    slug, family,
     sources: [{ file: 'src/data/hubs.ts', sha256: sha(HUBS_FILE) }],
     taxonomy_override: {
       source: 'GCALLS-020 / src/components/home/EcosystemSection.tsx',
       roster_source: 'wordpress/wp-content/plugins/gcalls-core/data/homepage-elementor.json (live-verified)',
-      changes: OVERRIDES.filter((o) => o.field.startsWith(slug === 'san-pham' ? 'PRODUCTS' : 'SOLUTIONS') || !o.field.includes('_HUB')),
+      changes: OVERRIDES.filter((o) => o.field.startsWith(overridePrefix) || !o.field.includes('_HUB')),
     },
     hero: { eyebrow: str(h.hero.eyebrow), h1: str(h.hero.h1), description: str(h.hero.description), points: [] },
     sections,
@@ -209,9 +213,15 @@ function contactPage() {
 /* --------------------------------------------------------------- emit */
 
 const existing = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')).pages : []
-const keep = existing.filter((p) => p.family === 'solution-detail')
+/* Every detail family. Naming one meant that adding a second detail family
+ * silently dropped its pages from the manifest on the next hub build. */
+const keep = existing.filter((p) => p.family.endsWith('-detail'))
 
-const pages = [...keep, hubPage(P, 'san-pham'), hubPage(S, 'giai-phap'), contactPage()]
+const pages = [...keep,
+  hubPage(P, 'san-pham', 'product-overview', 'PRODUCTS'),
+  hubPage(S, 'giai-phap', 'solution-overview', 'SOLUTIONS'),
+  hubPage(I, 'tich-hop', 'integration-overview', 'INTEGRATIONS'),
+  contactPage()]
   .sort((a, b) => a.slug.localeCompare(b.slug))
 
 fs.writeFileSync(OUT, JSON.stringify({

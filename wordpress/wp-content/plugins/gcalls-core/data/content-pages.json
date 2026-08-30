@@ -1,8 +1,488 @@
 {
   "schema": 1,
-  "generated_at_gmt": "2026-08-30T02:50:42.748Z",
+  "generated_at_gmt": "2026-08-30T03:35:25.378Z",
   "note": "Rendered read-only at request time. Nothing here is written to the database. See docs/CONTENT-RENDER-ADR.md.",
   "pages": [
+    {
+      "slug": "freshdesk",
+      "family": "integration-detail",
+      "sources": [
+        {
+          "file": "src/data/freshdeskIntegration.ts",
+          "sha256": "b0f68a72da80bcbb4ac4ddb4fc7f629fcfa358e48beb9fb27d057bde5b2aa270",
+          "exportCount": 23
+        }
+      ],
+      "hero": {
+        "eyebrow": "GCALLS × FRESHDESK",
+        "h1": "Tổng đài tích hợp Freshdesk cho đội CSKH và Support",
+        "description": "Kết nối hoạt động nghe gọi của Gcalls với Freshdesk để nhân viên có thể sử dụng customer context, ticket liên quan và lịch sử hỗ trợ gần hơn với quy trình đang xử lý.",
+        "points": [
+          {
+            "title": "Đưa cuộc gọi vào workflow hỗ trợ",
+            "body": "Hoạt động thoại được đặt gần hơn với hồ sơ và quy trình hỗ trợ đang được quản lý trong Freshdesk.",
+            "href": ""
+          },
+          {
+            "title": "Có customer context khi tiếp nhận cuộc gọi",
+            "body": "Thông tin liên quan giúp nhân viên hiểu khách hàng và yêu cầu hỗ trợ trước khi tiếp tục xử lý.",
+            "href": ""
+          },
+          {
+            "title": "Theo dõi cuộc gọi và ticket tập trung hơn",
+            "body": "Dữ liệu phù hợp có thể được liên kết hoặc ghi nhận theo phạm vi tích hợp để đội ngũ tiếp tục follow-up.",
+            "href": ""
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "comparison",
+          "from": "FD_BEFORE_AFTER",
+          "eyebrow": "TRƯỚC & SAU TÍCH HỢP",
+          "heading": "Giảm những bước chuyển đổi thủ công giữa Freshdesk và hệ thống gọi",
+          "before": {
+            "label": "Trước tích hợp",
+            "steps": [
+              "Freshdesk ticket",
+              "Copy phone number",
+              "Call tool",
+              "Conversation",
+              "Manual note",
+              "Quay lại Freshdesk",
+              "Cập nhật ticket"
+            ]
+          },
+          "after": {
+            "label": "Sau tích hợp",
+            "steps": [
+              "Freshdesk contact / ticket",
+              "Configured call action",
+              "Conversation",
+              "Support activity",
+              "Ticket workflow tiếp tục"
+            ]
+          }
+        },
+        {
+          "type": "cards",
+          "from": "FD_BENEFITS",
+          "heading": "Giữ cuộc gọi gần hơn với quy trình ticket và customer support",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "Giảm chuyển đổi giữa nhiều công cụ"
+            },
+            {
+              "title": "",
+              "body": "Có thêm context khi tiếp nhận cuộc gọi"
+            },
+            {
+              "title": "",
+              "body": "Theo dõi lịch sử hỗ trợ tập trung hơn"
+            },
+            {
+              "title": "",
+              "body": "Dễ tiếp tục xử lý khi ticket chuyển người phụ trách"
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "FD_BOUNDARY",
+          "heading": "Freshdesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "FD_CAPABILITIES",
+          "heading": "Những năng lực được xác nhận khi kết nối Gcalls với Freshdesk",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Customer Context",
+              "body": "Thông tin khách hàng liên quan hỗ trợ agent nhận biết người đang liên hệ và yêu cầu hỗ trợ, ở phạm vi mà dữ liệu, permission và cấu hình tích hợp cho phép.",
+              "href": ""
+            },
+            {
+              "title": "Call Activity",
+              "body": "Gcalls lưu lịch sử và dữ liệu hoạt động cuộc gọi. Việc đưa dữ liệu đó vào Freshdesk có thể được thực hiện theo phạm vi tích hợp và khả năng của nền tảng.",
+              "href": ""
+            },
+            {
+              "title": "Ticket / Support Record Context",
+              "body": "Dữ liệu cuộc gọi có thể được liên kết với ticket hoặc hồ sơ hỗ trợ đang tồn tại khi nền tảng và cấu hình tích hợp cho phép.",
+              "href": ""
+            },
+            {
+              "title": "Support Workflow Continuity",
+              "body": "Đội Support tiếp tục xử lý trong Freshdesk thay vì duy trì lịch sử hỗ trợ ở một luồng dữ liệu riêng bên ngoài Helpdesk.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "FD_DIRECT_ANSWER",
+          "heading": "",
+          "body": "Tổng đài tích hợp Freshdesk kết nối hoạt động nghe gọi của Gcalls với quy trình hỗ trợ trên Freshdesk để nhân viên có thể sử dụng customer context, ticket liên quan và dữ liệu tương tác phù hợp trong cùng workflow CSKH. Phạm vi chức năng phụ thuộc vào cấu hình Gcalls, Freshdesk, API và yêu cầu triển khai của doanh nghiệp."
+        },
+        {
+          "type": "cards",
+          "from": "FD_LINKS",
+          "heading": "Xem thêm",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Tổng đài cho Thương mại điện tử",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Tổng đài cho BPO",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Blog Gcalls",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Liên hệ",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "FD_OVERVIEW",
+          "heading": "Đưa lớp giao tiếp thoại vào nơi đội Support đang quản lý yêu cầu khách hàng",
+          "lead": "Freshdesk tiếp tục quản lý ticket và support workflow. Gcalls bổ sung lớp nghe gọi để customer context, cuộc gọi và bước follow-up được đặt gần hơn với quy trình hỗ trợ hiện tại.",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Freshdesk contact / ticket",
+              "body": "Agent làm việc trên yêu cầu hỗ trợ đang được quản lý.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Call action / incoming call",
+              "body": "Hoạt động thoại diễn ra theo capability và cấu hình đã triển khai.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Gcalls conversation",
+              "body": "Gcalls xử lý lớp giao tiếp thoại.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Customer context",
+              "body": "Thông tin liên quan hỗ trợ agent trong cuộc trao đổi.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Support activity",
+              "body": "Dữ liệu phù hợp được ghi nhận hoặc liên kết theo phạm vi tích hợp.",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Ticket follow-up",
+              "body": "Đội Support tiếp tục workflow trong Freshdesk.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "FD_PROBLEMS",
+          "heading": "Freshdesk quản lý ticket, nhưng cuộc gọi vẫn có thể nằm ngoài lịch sử hỗ trợ",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Nhân viên phải chuyển đổi giữa hai hệ thống",
+              "body": "Agent xử lý ticket trong Freshdesk nhưng lại thực hiện cuộc gọi bằng một công cụ riêng, khiến workflow bị chia thành nhiều bước.",
+              "href": ""
+            },
+            {
+              "title": "Cuộc gọi đến thiếu customer context",
+              "body": "Khi Freshdesk và hệ thống gọi chưa được kết nối phù hợp, nhân viên phải tự tìm contact hoặc ticket trong lúc khách hàng đang chờ.",
+              "href": ""
+            },
+            {
+              "title": "Ticket thiếu lịch sử cuộc hội thoại",
+              "body": "Nếu dữ liệu cuộc gọi nằm ngoài workflow hỗ trợ, nhân viên tiếp nhận sau có thể thiếu bối cảnh để tiếp tục xử lý.",
+              "href": ""
+            },
+            {
+              "title": "Follow-up phụ thuộc vào ghi chú thủ công",
+              "body": "Nhân viên có thể phải nhập lại thông tin sau cuộc gọi để giữ lịch sử hỗ trợ cập nhật.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "FD_RELATED",
+          "heading": "Doanh nghiệp đang sử dụng Helpdesk khác?",
+          "lead": "Mỗi nền tảng Helpdesk có cấu trúc ticket và cách kết nối riêng. Xem trang tương ứng với hệ thống doanh nghiệp đang sử dụng.",
+          "cards": [
+            {
+              "title": "Zendesk",
+              "body": "Kết nối hoạt động nghe gọi với quy trình hỗ trợ trên Zendesk.",
+              "href": ""
+            },
+            {
+              "title": "Danh mục tích hợp",
+              "body": "Xem toàn bộ nền tảng đang có trang tích hợp riêng.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "FD_SETUP",
+          "heading": "Tích hợp theo cấu hình Freshdesk và workflow hỗ trợ đang sử dụng",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Khảo sát Freshdesk workflow",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Xác định contact, ticket và dữ liệu liên quan",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Xác định user và hotline",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Xác định capability cần triển khai",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Kiểm tra permission, API và phương thức kết nối hiện hành",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Cấu hình integration",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 7,
+              "title": "Kiểm thử cuộc gọi, context và ticket workflow",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 8,
+              "title": "Hướng dẫn đội Support",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 9,
+              "title": "Go-live",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "taglist",
+          "from": "FD_SUPPORT_CONTEXT",
+          "eyebrow": "CUSTOMER & TICKET CONTEXT",
+          "heading": "Hiểu yêu cầu hỗ trợ trước khi tiếp tục cuộc hội thoại",
+          "lead": "Khi customer context, ticket liên quan và lịch sử hỗ trợ được đặt gần hoạt động gọi, agent có thể hiểu tình huống tốt hơn trước khi phản hồi hoặc follow-up.",
+          "tags": [
+            "Customer identity",
+            "Ticket đang xử lý",
+            "Ticket trước đó",
+            "Tương tác gần đây",
+            "Ghi chú",
+            "Trạng thái hiện tại"
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "FD_TRUST",
+          "heading": "Tích hợp Freshdesk cần bắt đầu từ ticket structure, permission và workflow thực tế",
+          "body": "Field, ticket type, permission, user role và quy trình hỗ trợ có thể khác nhau giữa từng tài khoản Freshdesk. Phạm vi tích hợp cần được xác định qua khảo sát và kiểm thử thay vì áp dụng cùng một cấu hình cho mọi doanh nghiệp."
+        },
+        {
+          "type": "prose",
+          "from": "FD_UI_PREVIEW",
+          "heading": "Giữ customer context và ticket gần hoạt động nghe gọi",
+          "body": "Sơ đồ dưới đây minh họa lớp tích hợp phía Gcalls: cuộc gọi được xử lý trên Gcalls và liên kết với hồ sơ hỗ trợ đang tồn tại, cùng những nhóm dữ liệu context mà agent có thể sử dụng."
+        },
+        {
+          "type": "cards",
+          "from": "FD_USE_CASES",
+          "heading": "Gcalls × Freshdesk phù hợp với những workflow hỗ trợ nào?",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "FD_VS_HELPDESK",
+          "heading": "Trang này dành cho doanh nghiệp đã sử dụng Freshdesk",
+          "body": "Nếu doanh nghiệp đang đánh giá tổng đài tích hợp Helpdesk nói chung, hãy xem giải pháp Helpdesk Integration. Trang này tập trung vào workflow khi Freshdesk đã là hệ thống quản lý ticket và hỗ trợ hiện tại."
+        },
+        {
+          "type": "steps",
+          "from": "FD_WORKFLOW",
+          "heading": "Từ Freshdesk contact hoặc ticket đến cuộc gọi và bước hỗ trợ tiếp theo",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Mở contact hoặc ticket",
+              "body": "Nhân viên tiếp tục làm việc trên yêu cầu hỗ trợ đang được quản lý trong Freshdesk.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Bắt đầu hoặc tiếp nhận cuộc gọi",
+              "body": "Hoạt động thoại được thực hiện theo capability và cấu hình tích hợp đã triển khai.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Sử dụng customer context",
+              "body": "Thông tin liên quan giúp agent hiểu khách hàng, ticket hoặc lịch sử hỗ trợ trước đó.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Thực hiện cuộc hội thoại",
+              "body": "Gcalls xử lý lớp giao tiếp thoại trong workflow được cấu hình.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Ghi nhận dữ liệu phù hợp",
+              "body": "Call activity hoặc dữ liệu liên quan có thể được ghi nhận hay liên kết theo phạm vi tích hợp.",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Tiếp tục ticket workflow",
+              "body": "Agent follow-up trong Freshdesk thay vì duy trì lịch sử hỗ trợ ở một luồng riêng bên ngoài Helpdesk.",
+              "href": ""
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Tổng đài tích hợp Freshdesk là gì?",
+          "a": "Đây là mô hình kết nối hoạt động nghe gọi của Gcalls với Freshdesk để đội Support có thể sử dụng customer context, ticket liên quan và dữ liệu tương tác phù hợp trong cùng workflow CSKH."
+        },
+        {
+          "q": "Gcalls có hỗ trợ Click-to-Call trên Freshdesk không?",
+          "a": "Khả năng thực hiện cuộc gọi từ Freshdesk phụ thuộc vào phương thức tích hợp và cấu hình triển khai hiện tại. Gcalls sẽ xác định capability phù hợp trong quá trình khảo sát."
+        },
+        {
+          "q": "Khi khách hàng gọi đến có thể xem ticket gần nhất không?",
+          "a": "Khả năng hiển thị ticket và customer context phụ thuộc vào dữ liệu, permission và cấu hình tích hợp. Phạm vi thông tin cần được xác định trong bước khảo sát kỹ thuật."
+        },
+        {
+          "q": "Gcalls có tự động tạo ticket sau mỗi cuộc gọi không?",
+          "a": "Khả năng tạo hoặc cập nhật ticket phụ thuộc vào workflow và cấu hình tích hợp hiện tại. Gcalls cần khảo sát hệ thống trước khi xác nhận luồng có thể triển khai."
+        },
+        {
+          "q": "Lịch sử cuộc gọi có được lưu trong Freshdesk không?",
+          "a": "Dữ liệu cuộc gọi có thể được lưu trong Gcalls hoặc được liên kết với Freshdesk theo phạm vi tích hợp. Cần xác định rõ trường dữ liệu và nơi lưu trong quá trình khảo sát."
+        },
+        {
+          "q": "Ghi âm có được đồng bộ vào Freshdesk không?",
+          "a": "Ghi âm có thể được lưu trong hệ thống Gcalls khi cấu hình dịch vụ hỗ trợ. Việc đồng bộ hoặc liên kết bản ghi với Freshdesk cần được xác minh riêng theo phạm vi triển khai."
+        },
+        {
+          "q": "Freshdesk Integration khác Gcalls CX như thế nào?",
+          "a": "Freshdesk Integration tập trung kết nối hoạt động thoại với ticket và workflow hỗ trợ hiện có. Gcalls CX giải quyết bài toán rộng hơn về quản lý giao tiếp đa kênh trên một Contact Center tập trung."
+        }
+      ],
+      "cta": {
+        "heading": "Xem hoạt động nghe gọi vận hành trong workflow Freshdesk của đội Support",
+        "body": "Chia sẻ cấu trúc ticket, user và quy trình CSKH hiện tại để Gcalls xác định phạm vi tích hợp và demo phù hợp.",
+        "label": ""
+      },
+      "attribution": {
+        "intent": "consultation",
+        "source": "helpdesk_integration",
+        "product": "Freshdesk",
+        "solution": "Tích hợp Helpdesk"
+      }
+    },
     {
       "slug": "giai-phap",
       "family": "solution-overview",
@@ -250,6 +730,423 @@
       }
     },
     {
+      "slug": "hubspot",
+      "family": "integration-detail",
+      "sources": [
+        {
+          "file": "src/data/hubspotIntegration.ts",
+          "sha256": "570b3a67fdb017285556e8e028e899a0889b575a01e9e517de5cf918dfde46e2",
+          "exportCount": 19
+        }
+      ],
+      "hero": {
+        "eyebrow": "GCALLS × HUBSPOT",
+        "h1": "Tổng đài Gcalls tích hợp HubSpot – đưa cuộc gọi vào quy trình CRM",
+        "description": "Kết nối chức năng nghe gọi của Gcalls với HubSpot để đội Sales và CSKH có thể thực hiện cuộc gọi, nhận biết customer context và theo dõi hoạt động tương tác mà không phải tách quy trình làm việc thành nhiều hệ thống rời rạc.",
+        "points": [
+          {
+            "title": "Gọi trực tiếp từ HubSpot",
+            "body": "Click-to-Call giúp nhân viên bắt đầu cuộc gọi từ số điện thoại hoặc hồ sơ khách hàng trong CRM khi tích hợp được cấu hình.",
+            "href": ""
+          },
+          {
+            "title": "Nhận biết khách hàng khi có cuộc gọi",
+            "body": "Thông tin liên quan từ HubSpot giúp nhân viên có thêm context trước khi tiếp tục cuộc hội thoại.",
+            "href": ""
+          },
+          {
+            "title": "Giữ hoạt động cuộc gọi gần CRM",
+            "body": "Dữ liệu tương tác phù hợp có thể được ghi nhận trong workflow HubSpot để đội ngũ tiếp tục follow-up thuận tiện hơn.",
+            "href": ""
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "cards",
+          "from": "HS_BENEFITS",
+          "heading": "Giảm những điểm chuyển đổi không cần thiết trong quy trình HubSpot",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Giảm thao tác copy số",
+              "body": "Click-to-Call giúp đưa thao tác gọi gần hơn với customer record đang được xử lý.",
+              "href": ""
+            },
+            {
+              "title": "Có context trước cuộc hội thoại",
+              "body": "Thông tin khách hàng giúp agent chuẩn bị tốt hơn trước khi tư vấn hoặc hỗ trợ.",
+              "href": ""
+            },
+            {
+              "title": "Theo dõi tương tác tập trung hơn",
+              "body": "Call activity phù hợp được đặt gần workflow CRM để đội ngũ dễ tiếp tục follow-up.",
+              "href": ""
+            },
+            {
+              "title": "Giảm dữ liệu bị phân mảnh",
+              "body": "Kết nối hai hệ thống giúp hạn chế việc duy trì lịch sử khách hàng ở những luồng tách rời.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "HS_CAPABILITIES",
+          "heading": "Những năng lực giúp kết nối cuộc gọi với workflow HubSpot",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Click-to-Call",
+              "body": "Cho phép bắt đầu cuộc gọi từ số điện thoại hoặc contact trong HubSpot khi extension/integration được cấu hình.",
+              "href": ""
+            },
+            {
+              "title": "Incoming Call Notification",
+              "body": "Khi có cuộc gọi đến, Gcalls có thể cung cấp call box để nhân viên tiếp nhận cuộc gọi trong môi trường làm việc tích hợp.",
+              "href": ""
+            },
+            {
+              "title": "Customer Context",
+              "body": "Thông tin liên quan giúp nhân viên nhận biết khách hàng và truy cập customer record trước hoặc trong quá trình trao đổi.",
+              "href": ""
+            },
+            {
+              "title": "Call Activity / History",
+              "body": "Thông tin cuộc gọi phù hợp có thể được ghi nhận để đội ngũ tiếp tục theo dõi quá trình tương tác.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "HS_DIRECT_ANSWER",
+          "heading": "",
+          "body": "Tổng đài tích hợp HubSpot kết nối chức năng nghe gọi của Gcalls với quy trình CRM HubSpot để nhân viên có thể thực hiện cuộc gọi từ CRM, nhận biết khách hàng khi có cuộc gọi và ghi nhận dữ liệu tương tác phù hợp vào workflow đang sử dụng. Phạm vi chức năng phụ thuộc vào cấu hình Gcalls, HubSpot và yêu cầu triển khai của doanh nghiệp."
+        },
+        {
+          "type": "cards",
+          "from": "HS_LINKS",
+          "heading": "Xem thêm",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Gcalls Plus Webphone",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Gcalls CX",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Bảng giá Gcalls",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Ước tính chi phí",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Blog Gcalls",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Liên hệ",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "HS_OVERVIEW",
+          "heading": "Đưa lớp giao tiếp thoại vào nơi đội ngũ đang quản lý khách hàng",
+          "lead": "Gcalls không thay thế HubSpot. Giải pháp bổ sung lớp giao tiếp thoại để cuộc gọi trở thành một phần gần hơn với customer record và workflow Sales/Customer Service hiện tại.",
+          "steps": [
+            {
+              "n": 1,
+              "title": "HubSpot Contact",
+              "body": "Nhân viên làm việc trên dữ liệu khách hàng đang quản lý.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Click-to-Call",
+              "body": "Cuộc gọi bắt đầu từ hồ sơ khi tích hợp được cấu hình.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Gcalls conversation",
+              "body": "Gcalls xử lý lớp giao tiếp thoại.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Customer context",
+              "body": "Thông tin liên quan hỗ trợ agent trong cuộc trao đổi.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Call activity",
+              "body": "Dữ liệu tương tác phù hợp được ghi nhận.",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Follow-up in HubSpot",
+              "body": "Đội ngũ tiếp tục workflow trong CRM.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "HS_PROBLEMS",
+          "heading": "HubSpot quản lý khách hàng, nhưng cuộc gọi vẫn có thể nằm ngoài workflow",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Phải copy số điện thoại để gọi",
+              "body": "Nhân viên tìm contact trong HubSpot nhưng lại thực hiện cuộc gọi trên một công cụ khác, tạo thêm thao tác trong mỗi lần follow-up.",
+              "href": ""
+            },
+            {
+              "title": "Không biết ngay ai đang gọi",
+              "body": "Khi cuộc gọi đến không gắn với customer context, agent cần tìm lại hồ sơ trước khi hiểu lịch sử khách hàng.",
+              "href": ""
+            },
+            {
+              "title": "Call activity bị tách khỏi CRM",
+              "body": "Nếu hoạt động gọi không được ghi nhận cùng customer record, Sales và CSKH khó nhìn lại toàn bộ quá trình tương tác.",
+              "href": ""
+            },
+            {
+              "title": "Follow-up dễ trở thành quy trình thủ công",
+              "body": "Nhân viên phải tự ghi chú hoặc cập nhật lại HubSpot sau cuộc gọi nếu hai hệ thống chưa được kết nối phù hợp.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "HS_RELATED",
+          "heading": "Doanh nghiệp đang sử dụng CRM khác?",
+          "lead": "Mỗi nền tảng CRM có cấu trúc dữ liệu và cách kết nối riêng. Xem trang tương ứng với hệ thống doanh nghiệp đang sử dụng.",
+          "cards": [
+            {
+              "title": "Salesforce",
+              "body": "Kết nối hoạt động nghe gọi với workflow Salesforce.",
+              "href": ""
+            },
+            {
+              "title": "Zoho CRM",
+              "body": "Kết nối hoạt động nghe gọi với workflow Zoho CRM.",
+              "href": ""
+            },
+            {
+              "title": "Danh mục tích hợp",
+              "body": "Xem toàn bộ nền tảng đang có trang tích hợp riêng.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "HS_SETUP",
+          "heading": "Tích hợp theo cấu hình HubSpot và workflow doanh nghiệp đang sử dụng",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Khảo sát workflow HubSpot hiện tại",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Xác định user và hotline",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Xác định capability cần sử dụng",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Kiểm tra quyền truy cập và phương thức kết nối hiện hành",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Cấu hình integration / extension cần thiết",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Kiểm thử Click-to-Call, incoming call và dữ liệu",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 7,
+              "title": "Hướng dẫn người dùng",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 8,
+              "title": "Go-live",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "HS_TRUST",
+          "heading": "Tích hợp cần bắt đầu từ workflow và dữ liệu doanh nghiệp đang sử dụng",
+          "body": "Permission, cấu trúc dữ liệu, user, hotline và yêu cầu đồng bộ có thể khác nhau giữa từng tài khoản HubSpot. Vì vậy phạm vi triển khai cần được xác định trong bước khảo sát và kiểm thử."
+        },
+        {
+          "type": "prose",
+          "from": "HS_UI_PREVIEW",
+          "heading": "Giữ customer context gần cuộc gọi",
+          "body": "Các giao diện dưới đây là bề mặt phía Gcalls trong luồng tích hợp: thao tác gọi từ hồ sơ khách hàng, call box khi có cuộc gọi đến và hoạt động tương tác được ghi nhận."
+        },
+        {
+          "type": "cards",
+          "from": "HS_USE_CASES",
+          "heading": "Gcalls × HubSpot phù hợp với những workflow nào?",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "HS_VS_CRM",
+          "heading": "Trang này dành cho doanh nghiệp đã chọn HubSpot làm CRM",
+          "body": "Nếu doanh nghiệp đang đánh giá cách tích hợp tổng đài với CRM nói chung, hãy xem giải pháp Tổng đài tích hợp CRM. Trang này tập trung vào workflow khi HubSpot đã là hệ thống quản lý khách hàng hiện tại."
+        },
+        {
+          "type": "steps",
+          "from": "HS_WORKFLOW",
+          "heading": "Từ HubSpot contact đến cuộc gọi và follow-up",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Mở contact hoặc customer record",
+              "body": "Nhân viên tiếp tục làm việc trên dữ liệu đang được quản lý trong HubSpot.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Bắt đầu hoặc tiếp nhận cuộc gọi",
+              "body": "Click-to-Call hoặc call box hỗ trợ hoạt động thoại theo cấu hình tích hợp.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Xem customer context",
+              "body": "Thông tin liên quan giúp agent hiểu người đang trao đổi và lịch sử trước đó.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Thực hiện cuộc hội thoại",
+              "body": "Gcalls xử lý lớp giao tiếp thoại trong workflow được triển khai.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Ghi nhận hoạt động phù hợp",
+              "body": "Call activity và dữ liệu liên quan có thể được ghi nhận theo phạm vi tích hợp.",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Tiếp tục Sales / Service workflow",
+              "body": "Nhân viên follow-up trong HubSpot thay vì duy trì một luồng dữ liệu riêng bên ngoài CRM.",
+              "href": ""
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Tổng đài tích hợp HubSpot là gì?",
+          "a": "Đây là mô hình kết nối chức năng nghe gọi của Gcalls với workflow HubSpot để nhân viên có thể thực hiện cuộc gọi, nhận biết customer context và ghi nhận dữ liệu tương tác phù hợp trong quy trình CRM."
+        },
+        {
+          "q": "Gcalls có hỗ trợ Click-to-Call trên HubSpot không?",
+          "a": "Có. Trong cấu hình tích hợp phù hợp, nhân viên có thể bắt đầu cuộc gọi từ số điện thoại hoặc customer record trên HubSpot thông qua lớp tích hợp Gcalls."
+        },
+        {
+          "q": "Khi khách hàng gọi đến có thể xem thông tin HubSpot không?",
+          "a": "Gcalls có thể hỗ trợ hiển thị thông tin liên quan để nhân viên nhận biết khách hàng và truy cập customer record khi cấu hình tích hợp phù hợp."
+        },
+        {
+          "q": "Dữ liệu cuộc gọi có được lưu lại không?",
+          "a": "Thông tin cuộc gọi phù hợp có thể được ghi nhận hoặc liên kết theo phạm vi tích hợp để đội ngũ tiếp tục theo dõi lịch sử tương tác."
+        },
+        {
+          "q": "Gcalls có thể tạo Ticket trên HubSpot không?",
+          "a": "Khả năng tạo hoặc cập nhật Ticket phụ thuộc vào workflow và cấu hình tích hợp hiện tại. Gcalls sẽ xác định luồng phù hợp trong quá trình khảo sát hệ thống."
+        },
+        {
+          "q": "Gcalls tích hợp HubSpot có thay thế HubSpot không?",
+          "a": "Không. HubSpot tiếp tục là hệ thống CRM của doanh nghiệp; Gcalls bổ sung lớp giao tiếp thoại và dữ liệu tương tác vào workflow đang sử dụng."
+        },
+        {
+          "q": "Tích hợp HubSpot mất bao lâu?",
+          "a": "Thời gian phụ thuộc vào hotline, số lượng người dùng, quyền truy cập, capability cần triển khai và yêu cầu kiểm thử. Gcalls sẽ xác định phạm vi sau khi khảo sát hệ thống."
+        }
+      ],
+      "cta": {
+        "heading": "Xem hoạt động nghe gọi vận hành ngay trong workflow HubSpot của doanh nghiệp bạn",
+        "body": "Chia sẻ cách đội Sales/CSKH đang sử dụng HubSpot để Gcalls tư vấn phạm vi tích hợp và demo workflow phù hợp.",
+        "label": ""
+      },
+      "attribution": {
+        "intent": "consultation",
+        "source": "crm_integration",
+        "product": "HubSpot",
+        "solution": "Tích hợp CRM"
+      }
+    },
+    {
       "slug": "lien-he",
       "family": "contact",
       "sources": [
@@ -296,6 +1193,476 @@
       "attribution": {
         "intent": "consultation",
         "source": "contact"
+      }
+    },
+    {
+      "slug": "salesforce",
+      "family": "integration-detail",
+      "sources": [
+        {
+          "file": "src/data/salesforceIntegration.ts",
+          "sha256": "86ab29eb054bfa7d8069330fe5899ad893bec08fbbe53d958d1194c687c3cd54",
+          "exportCount": 21
+        }
+      ],
+      "hero": {
+        "eyebrow": "GCALLS × SALESFORCE",
+        "h1": "Tổng đài tích hợp Salesforce cho đội Sales và Customer Service",
+        "description": "Kết nối chức năng nghe gọi của Gcalls với Salesforce để nhân viên có thể thực hiện cuộc gọi, nhận biết customer context và theo dõi hoạt động tương tác gần hơn với quy trình CRM đang sử dụng.",
+        "points": [
+          {
+            "title": "Gọi từ customer record",
+            "body": "Click-to-Call giúp nhân viên bắt đầu cuộc gọi từ dữ liệu đang xử lý trong Salesforce khi tích hợp được cấu hình.",
+            "href": ""
+          },
+          {
+            "title": "Có context khi cuộc gọi bắt đầu",
+            "body": "Thông tin liên quan giúp nhân viên nhận biết khách hàng trước hoặc trong quá trình trao đổi.",
+            "href": ""
+          },
+          {
+            "title": "Giữ call activity gần CRM",
+            "body": "Dữ liệu tương tác phù hợp có thể được ghi nhận theo phạm vi tích hợp để đội ngũ tiếp tục follow-up trong Salesforce.",
+            "href": ""
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "comparison",
+          "from": "SF_BEFORE_AFTER",
+          "eyebrow": "TRƯỚC & SAU TÍCH HỢP",
+          "heading": "Giảm những bước chuyển đổi thủ công giữa Salesforce và hệ thống gọi",
+          "before": {
+            "label": "Trước tích hợp",
+            "steps": [
+              "Salesforce record",
+              "Copy phone number",
+              "Call tool",
+              "Conversation",
+              "Manual note",
+              "Quay lại Salesforce",
+              "Cập nhật follow-up"
+            ]
+          },
+          "after": {
+            "label": "Sau tích hợp",
+            "steps": [
+              "Salesforce record",
+              "Click-to-Call",
+              "Conversation",
+              "Call activity",
+              "Workflow tiếp tục"
+            ]
+          }
+        },
+        {
+          "type": "cards",
+          "from": "SF_BENEFITS",
+          "heading": "Giữ dữ liệu cuộc gọi gần hơn với quy trình Sales và Service",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "Giảm thao tác copy số"
+            },
+            {
+              "title": "",
+              "body": "Có customer context trước cuộc hội thoại"
+            },
+            {
+              "title": "",
+              "body": "Theo dõi call activity tập trung hơn"
+            },
+            {
+              "title": "",
+              "body": "Dễ tiếp tục xử lý khi ownership thay đổi"
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "SF_CAPABILITIES",
+          "heading": "Những năng lực cốt lõi khi kết nối Gcalls với Salesforce",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Click-to-Call",
+              "body": "Bắt đầu cuộc gọi từ số điện thoại hoặc customer record trong Salesforce khi integration được cấu hình phù hợp.",
+              "href": ""
+            },
+            {
+              "title": "Incoming Customer Context",
+              "body": "Thông tin liên quan hỗ trợ nhân viên nhận biết khách hàng khi cuộc gọi đến và truy cập customer record phù hợp.",
+              "href": ""
+            },
+            {
+              "title": "Call Activity",
+              "body": "Dữ liệu cuộc gọi phù hợp có thể được ghi nhận hoặc liên kết theo phạm vi tích hợp.",
+              "href": ""
+            },
+            {
+              "title": "Interaction History",
+              "body": "Lịch sử tương tác giúp Sales và Service tiếp tục xử lý với nhiều bối cảnh hơn thay vì duy trì một lịch sử riêng bên ngoài CRM.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "SF_DIRECT_ANSWER",
+          "heading": "",
+          "body": "Tổng đài tích hợp Salesforce kết nối chức năng nghe gọi của Gcalls với quy trình CRM Salesforce để nhân viên có thể thực hiện cuộc gọi từ customer record, nhận biết khách hàng khi có cuộc gọi và ghi nhận dữ liệu tương tác phù hợp vào workflow đang sử dụng. Phạm vi chức năng phụ thuộc vào cấu hình Gcalls, Salesforce và yêu cầu triển khai của doanh nghiệp."
+        },
+        {
+          "type": "cards",
+          "from": "SF_LINKS",
+          "heading": "Xem thêm",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Gcalls CX",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Bảng giá Gcalls",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Ước tính chi phí",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Blog Gcalls",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Liên hệ",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "SF_OVERVIEW",
+          "heading": "Đưa lớp giao tiếp thoại vào workflow Salesforce",
+          "lead": "Salesforce tiếp tục là hệ thống quản lý khách hàng và quy trình. Gcalls bổ sung lớp nghe gọi để cuộc hội thoại và dữ liệu tương tác được đặt gần hơn với customer record đang được xử lý.",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Salesforce record",
+              "body": "Nhân viên làm việc trên dữ liệu đang được quản lý trong Salesforce.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Click-to-Call",
+              "body": "Cuộc gọi bắt đầu từ customer record khi tích hợp được cấu hình.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Gcalls conversation",
+              "body": "Gcalls xử lý lớp giao tiếp thoại.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Customer context",
+              "body": "Thông tin liên quan hỗ trợ nhân viên trong cuộc trao đổi.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Call activity",
+              "body": "Dữ liệu tương tác phù hợp được ghi nhận theo phạm vi tích hợp.",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Sales / Service follow-up",
+              "body": "Đội ngũ tiếp tục workflow trong Salesforce.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "SF_PROBLEMS",
+          "heading": "Salesforce quản lý quy trình khách hàng, nhưng cuộc gọi vẫn có thể nằm ngoài dữ liệu CRM",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Nhân viên phải copy số để gọi",
+              "body": "Customer record nằm trong Salesforce nhưng thao tác nghe gọi diễn ra ở một hệ thống riêng, tạo thêm bước trong quy trình Sales và Service.",
+              "href": ""
+            },
+            {
+              "title": "Cuộc gọi đến thiếu customer context",
+              "body": "Khi call system chưa kết nối phù hợp, nhân viên cần tìm lại hồ sơ trước khi hiểu người đang liên hệ.",
+              "href": ""
+            },
+            {
+              "title": "Call history bị phân mảnh",
+              "body": "Thông tin cuộc gọi nằm ngoài Salesforce khiến đội ngũ khó nhìn lại đầy đủ quá trình tương tác với khách hàng.",
+              "href": ""
+            },
+            {
+              "title": "Dữ liệu khó tiếp tục khi ownership thay đổi",
+              "body": "Khi lịch sử liên hệ không nằm gần customer record, nhân viên tiếp nhận mới có thể thiếu bối cảnh để tiếp tục follow-up.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "SF_RELATED",
+          "heading": "Doanh nghiệp đang sử dụng CRM khác?",
+          "lead": "Mỗi nền tảng CRM có cấu trúc dữ liệu và cách kết nối riêng. Xem trang tương ứng với hệ thống doanh nghiệp đang sử dụng.",
+          "cards": [
+            {
+              "title": "HubSpot",
+              "body": "Kết nối hoạt động nghe gọi với workflow HubSpot.",
+              "href": ""
+            },
+            {
+              "title": "Zoho CRM",
+              "body": "Kết nối hoạt động nghe gọi với workflow Zoho CRM.",
+              "href": ""
+            },
+            {
+              "title": "Danh mục tích hợp",
+              "body": "Xem toàn bộ nền tảng đang có trang tích hợp riêng.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "SF_RELATIONSHIPS",
+          "heading": "Salesforce Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "SF_SETUP",
+          "heading": "Tích hợp theo cấu hình Salesforce và workflow doanh nghiệp đang sử dụng",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Khảo sát Salesforce workflow",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Xác định object/record liên quan",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Xác định user và hotline",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Xác định capability cần tích hợp",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Kiểm tra quyền truy cập/API",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Cấu hình integration",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 7,
+              "title": "Kiểm thử cuộc gọi và dữ liệu",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 8,
+              "title": "Hướng dẫn người dùng",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 9,
+              "title": "Go-live",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "SF_TRUST",
+          "heading": "Tích hợp Salesforce cần bắt đầu từ object, permission và workflow thực tế",
+          "body": "Object, field, permission, user role và quy trình Sales/Service có thể khác nhau giữa từng Salesforce organization. Phạm vi tích hợp cần được xác định qua khảo sát và kiểm thử thay vì áp dụng một cấu hình giống nhau cho mọi doanh nghiệp."
+        },
+        {
+          "type": "prose",
+          "from": "SF_UI_PREVIEW",
+          "heading": "Giữ customer context gần hoạt động nghe gọi",
+          "body": "Các giao diện dưới đây là bề mặt phía Gcalls trong luồng tích hợp: customer context khi có cuộc gọi đến, thao tác gọi từ customer record và hoạt động tương tác được ghi nhận."
+        },
+        {
+          "type": "cards",
+          "from": "SF_USE_CASES",
+          "heading": "Gcalls × Salesforce phù hợp với những workflow nào?",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "SF_VS_CRM",
+          "heading": "Trang này dành cho doanh nghiệp đã sử dụng Salesforce",
+          "body": "Nếu doanh nghiệp đang đánh giá tổng đài tích hợp CRM nói chung, hãy xem giải pháp CRM Integration. Trang này tập trung vào cách Gcalls hỗ trợ workflow khi Salesforce đã là hệ thống quản lý khách hàng hiện tại."
+        },
+        {
+          "type": "steps",
+          "from": "SF_WORKFLOW",
+          "heading": "Từ Salesforce record đến cuộc gọi và bước xử lý tiếp theo",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Mở lead, contact hoặc customer record",
+              "body": "Nhân viên tiếp tục làm việc trên dữ liệu được quản lý trong Salesforce.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Bắt đầu hoặc tiếp nhận cuộc gọi",
+              "body": "Click-to-Call hoặc lớp call integration hỗ trợ hoạt động thoại theo cấu hình triển khai.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Xem customer context",
+              "body": "Thông tin liên quan giúp nhân viên hiểu khách hàng và lịch sử trước đó.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Thực hiện cuộc hội thoại",
+              "body": "Gcalls xử lý lớp giao tiếp thoại trong workflow được triển khai.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Ghi nhận call activity phù hợp",
+              "body": "Dữ liệu cuộc gọi có thể được liên kết hoặc ghi nhận theo phạm vi tích hợp.",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Tiếp tục Sales hoặc Service workflow",
+              "body": "Nhân viên follow-up trong Salesforce thay vì duy trì dữ liệu cuộc gọi ở một luồng riêng.",
+              "href": ""
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Tổng đài tích hợp Salesforce là gì?",
+          "a": "Đây là mô hình kết nối chức năng nghe gọi của Gcalls với Salesforce để nhân viên có thể thực hiện cuộc gọi, nhận biết customer context và ghi nhận dữ liệu tương tác phù hợp trong workflow CRM."
+        },
+        {
+          "q": "Gcalls có hỗ trợ Click-to-Call trên Salesforce không?",
+          "a": "Trong cấu hình tích hợp phù hợp, nhân viên có thể bắt đầu cuộc gọi từ số điện thoại hoặc customer record đang xử lý trong Salesforce."
+        },
+        {
+          "q": "Khi khách hàng gọi đến có thể xem thông tin Salesforce không?",
+          "a": "Khả năng hiển thị customer context phụ thuộc vào dữ liệu, quyền truy cập và cấu hình tích hợp. Gcalls sẽ xác định phạm vi phù hợp trong quá trình khảo sát."
+        },
+        {
+          "q": "Lịch sử cuộc gọi có được ghi nhận trong Salesforce không?",
+          "a": "Dữ liệu cuộc gọi phù hợp có thể được ghi nhận hoặc liên kết theo phạm vi tích hợp và khả năng của hệ thống."
+        },
+        {
+          "q": "Ghi âm có được đồng bộ vào Salesforce không?",
+          "a": "Khả năng đồng bộ hoặc liên kết bản ghi phụ thuộc vào cấu hình Gcalls, Salesforce và phạm vi triển khai. Gcalls cần kiểm tra hệ thống trước khi xác nhận."
+        },
+        {
+          "q": "Gcalls có thay thế Salesforce không?",
+          "a": "Không. Salesforce tiếp tục là hệ thống CRM của doanh nghiệp; Gcalls bổ sung lớp giao tiếp thoại và dữ liệu cuộc gọi vào workflow đang sử dụng."
+        },
+        {
+          "q": "Tích hợp Salesforce mất bao lâu?",
+          "a": "Thời gian phụ thuộc vào object, permission, số lượng người dùng, hotline, capability cần triển khai và yêu cầu kiểm thử."
+        }
+      ],
+      "cta": {
+        "heading": "Xem hoạt động nghe gọi vận hành trong workflow Salesforce của doanh nghiệp",
+        "body": "Chia sẻ object, user role và quy trình Sales/Service hiện tại để Gcalls xác định phạm vi tích hợp và demo phù hợp.",
+        "label": ""
+      },
+      "attribution": {
+        "intent": "consultation",
+        "source": "crm_integration",
+        "product": "Salesforce",
+        "solution": "Tích hợp CRM"
       }
     },
     {
@@ -496,6 +1863,205 @@
       },
       "attribution": {
         "intent": "product_information",
+        "source": "consultation"
+      }
+    },
+    {
+      "slug": "tich-hop",
+      "family": "integration-overview",
+      "sources": [
+        {
+          "file": "src/data/hubs.ts",
+          "sha256": "69440c641bb0c4db9863028a9d0d93a7989865fac933f97f91f3191f096ce492"
+        }
+      ],
+      "taxonomy_override": {
+        "source": "GCALLS-020 / src/components/home/EcosystemSection.tsx",
+        "roster_source": "wordpress/wp-content/plugins/gcalls-core/data/homepage-elementor.json (live-verified)",
+        "changes": [
+          {
+            "field": "description",
+            "from": "Gcalls có bốn sản phẩm phục vụ bốn bài toán khác nhau trong hoạt động giao tiếp với khách hàng: kênh nghe gọi cho đội ngũ, kiểm soát chất lượng hội thoại, vận hành chăm sóc khách hàng đa kênh, và tự động hóa các cuộc gọi lặp lại.",
+            "to": "Gcalls có ba sản phẩm phục vụ ba bài toán khác nhau trong hoạt động giao tiếp với khách hàng: kênh nghe gọi cho đội ngũ, kiểm soát chất lượng hội thoại, và vận hành chăm sóc khách hàng đa kênh.",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution) — the automation clause described Voicebot, which is now a solution"
+          },
+          {
+            "field": "answer",
+            "from": "Gcalls có bốn sản phẩm: Gcalls Plus Webphone là kênh nghe gọi và quản lý hoạt động cuộc gọi trên trình duyệt; QA QC Center sử dụng QC Bot AI để hỗ trợ đánh giá chất lượng hội thoại; Gcalls CX là nền tảng chăm sóc khách hàng đa kênh; Gcalls Voicebot AI dành cho các cuộc gọi lặp lại theo kịch bản đã thiết lập. Bốn sản phẩm giải quyết các bài toán khác nhau, không phải bốn mức giá của cùng một sản phẩm, và được chọn theo nhu cầu vận hành thực tế của doanh nghiệp.",
+            "to": "Gcalls có ba sản phẩm: Gcalls Plus Webphone là kênh nghe gọi và quản lý hoạt động cuộc gọi trên trình duyệt; QA QC Center sử dụng QC Bot AI để hỗ trợ đánh giá chất lượng hội thoại; Gcalls CX là nền tảng chăm sóc khách hàng đa kênh. Ba sản phẩm giải quyết các bài toán khác nhau, không phải ba mức giá của cùng một sản phẩm, và được chọn theo nhu cầu vận hành thực tế của doanh nghiệp.",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution) — the Voicebot clause moves to /giai-phap/"
+          },
+          {
+            "field": "eyebrow",
+            "from": "BỐN SẢN PHẨM",
+            "to": "BA SẢN PHẨM",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution)"
+          },
+          {
+            "field": "note",
+            "from": "Bốn sản phẩm có thể dùng độc lập hoặc cùng nhau. Cấu hình phù hợp phụ thuộc vào quy mô đội ngũ, kênh giao tiếp và nhu cầu kiểm soát chất lượng của doanh nghiệp.",
+            "to": "Ba sản phẩm có thể dùng độc lập hoặc cùng nhau. Cấu hình phù hợp phụ thuộc vào quy mô đội ngũ, kênh giao tiếp và nhu cầu kiểm soát chất lượng của doanh nghiệp.",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution)"
+          },
+          {
+            "field": "h2",
+            "from": "Ranh giới giữa bốn sản phẩm",
+            "to": "Ranh giới giữa ba sản phẩm",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution)"
+          },
+          {
+            "field": "eyebrow",
+            "from": "BỐN NHÓM GIẢI PHÁP",
+            "to": "BẢY GIẢI PHÁP",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution)"
+          },
+          {
+            "field": "answer",
+            "from": "Gcalls có bốn nhóm giải pháp. Ba nhóm đầu là tích hợp hệ thống: kết nối tổng đài với CRM, với Helpdesk và với hệ thống bán hàng/POS, để cuộc gọi hoạt động cùng dữ liệu và quy trình doanh nghiệp đang sử dụng. Nhóm thứ tư là tổng đài quốc tế, dành cho doanh nghiệp cần đầu số và cấu hình liên lạc tại thị trường nước ngoài. Phạm vi triển khai của mỗi giải pháp được xác định theo hệ thống, dữ liệu và quy định thực tế.",
+            "to": "Gcalls có bảy giải pháp. Ba nhóm đầu là tích hợp hệ thống: kết nối tổng đài với CRM, với Helpdesk và với hệ thống bán hàng/POS, để cuộc gọi hoạt động cùng dữ liệu và quy trình doanh nghiệp đang sử dụng. Tổng đài quốc tế dành cho doanh nghiệp cần đầu số và cấu hình liên lạc tại thị trường nước ngoài. Ba giải pháp còn lại là tích hợp Voicebot AI, Cloud Call Center và Call Button Widget. Phạm vi triển khai của mỗi giải pháp được xác định theo hệ thống, dữ liệu và quy định thực tế.",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution) — enumerates the same seven cards shown below it"
+          },
+          {
+            "field": "voicebot card title",
+            "from": "Gcalls Voicebot AI",
+            "to": "Giải pháp tích hợp Voicebot AI",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution) — the old title asserts Gcalls owns the voicebot engine, which the checkpoint forbids"
+          }
+        ]
+      },
+      "hero": {
+        "eyebrow": "TÍCH HỢP GCALLS",
+        "h1": "Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng",
+        "description": "Gcalls có thể kết nối với các hệ thống doanh nghiệp đang dùng để đưa cuộc gọi và ngữ cảnh khách hàng vào workflow hiện tại, thay vì buộc đội ngũ chuyển sang một công cụ mới.",
+        "points": []
+      },
+      "sections": [
+        {
+          "type": "prose",
+          "from": "directAnswer",
+          "heading": "Gcalls tích hợp được với những hệ thống nào?",
+          "body": "Gcalls hướng tới kết nối tổng đài với hai nhóm hệ thống chính: CRM, nơi đội Sales quản lý lead và khách hàng, và Helpdesk, nơi đội CSKH xử lý ticket. Ngoài ra còn có hệ thống bán hàng/POS theo phạm vi triển khai. Khả năng kết nối và phạm vi dữ liệu khác nhau giữa các nền tảng, phụ thuộc vào API, quyền truy cập và cấu hình thực tế, nên Gcalls xác nhận phạm vi theo hệ thống cụ thể của doanh nghiệp."
+        },
+        {
+          "type": "cards",
+          "from": "cards",
+          "eyebrow": "NỀN TẢNG",
+          "heading": "Các nền tảng đang có trang tích hợp riêng",
+          "cards": [
+            {
+              "title": "HubSpot",
+              "body": "Đưa hoạt động nghe gọi vào workflow dữ liệu khách hàng trong HubSpot.",
+              "href": "/tich-hop/hubspot/",
+              "cta": "Xem tích hợp HubSpot",
+              "tags": [],
+              "supporting": "CRM"
+            },
+            {
+              "title": "Salesforce",
+              "body": "Đưa hoạt động nghe gọi vào workflow dữ liệu khách hàng trong Salesforce.",
+              "href": "/tich-hop/salesforce/",
+              "cta": "Xem tích hợp Salesforce",
+              "tags": [],
+              "supporting": "CRM"
+            },
+            {
+              "title": "Zoho CRM",
+              "body": "Đưa hoạt động nghe gọi vào workflow dữ liệu khách hàng trong Zoho CRM.",
+              "href": "/tich-hop/zoho-crm/",
+              "cta": "Xem tích hợp Zoho CRM",
+              "tags": [],
+              "supporting": "CRM"
+            },
+            {
+              "title": "Freshdesk",
+              "body": "Gắn hoạt động nghe gọi vào quy trình hỗ trợ và ticket Freshdesk.",
+              "href": "/tich-hop/freshdesk/",
+              "cta": "Xem tích hợp Freshdesk",
+              "tags": [],
+              "supporting": "Helpdesk"
+            },
+            {
+              "title": "Zendesk",
+              "body": "Gắn hoạt động nghe gọi vào quy trình hỗ trợ và ticket Zendesk.",
+              "href": "/tich-hop/zendesk/",
+              "cta": "Xem tích hợp Zendesk",
+              "tags": [],
+              "supporting": "Helpdesk"
+            }
+          ],
+          "note": "Tên nền tảng ở đây chỉ để mô tả hệ thống doanh nghiệp có thể đang sử dụng. Khả năng kết nối, trường dữ liệu và hành vi cụ thể có thể khác nhau giữa các nền tảng, và được Gcalls xác nhận theo hệ thống thực tế trước khi triển khai."
+        },
+        {
+          "type": "steps",
+          "from": "decisionGuide",
+          "eyebrow": "BẮT ĐẦU TỪ LOẠI HỆ THỐNG",
+          "heading": "Nếu chưa rõ nên bắt đầu từ đâu",
+          "lead": "Trang tổng quan theo loại hệ thống mô tả cách tích hợp hoạt động, trước khi đi vào từng nền tảng cụ thể.",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Tổng quan tích hợp CRM",
+              "body": "Đội Sales làm việc quanh lead, contact và pipeline trong một CRM. Mô tả luồng Click-to-Call, nhận diện khách hàng và ghi nhận lịch sử tương tác."
+            },
+            {
+              "n": 2,
+              "title": "Tổng quan tích hợp Helpdesk",
+              "body": "Đội CSKH làm việc quanh ticket và quy trình xử lý yêu cầu. Mô tả cách cuộc gọi gắn vào ticket và lịch sử hỗ trợ."
+            },
+            {
+              "n": 3,
+              "title": "Tổng quan tích hợp POS",
+              "body": "Doanh nghiệp có hoạt động bán lẻ hoặc thương mại và dữ liệu nằm ở hệ thống bán hàng. Mô tả cách customer context và dữ liệu bán hàng đến gần cuộc gọi."
+            },
+            {
+              "n": 4,
+              "title": "Trao đổi với Gcalls",
+              "body": "Hệ thống doanh nghiệp đang dùng không nằm trong danh sách nền tảng ở trên. Khả năng kết nối phụ thuộc vào API và quyền truy cập của hệ thống đó, cần khảo sát kỹ thuật để xác định."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "type": "cards",
+          "from": "links",
+          "heading": "Xem thêm",
+          "cards": [
+            {
+              "title": "Tất cả giải pháp",
+              "body": "",
+              "href": "/giai-phap/"
+            },
+            {
+              "title": "Gcalls Plus Webphone",
+              "body": "",
+              "href": "/gcalls-plus-webphone/"
+            },
+            {
+              "title": "Tổng đài quốc tế",
+              "body": "",
+              "href": "/tong-dai-quoc-te/"
+            },
+            {
+              "title": "Ước tính chi phí",
+              "body": "",
+              "href": "/uoc-tinh-chi-phi/"
+            },
+            {
+              "title": "Bảng giá Gcalls",
+              "body": "",
+              "href": "/bang-gia/"
+            }
+          ]
+        }
+      ],
+      "faq": [],
+      "cta": {
+        "heading": "Cho Gcalls biết hệ thống doanh nghiệp đang sử dụng",
+        "body": "",
+        "label": ""
+      },
+      "attribution": {
+        "intent": "integration",
         "source": "consultation"
       }
     },
@@ -2117,6 +3683,951 @@
         "intent": "consultation",
         "source": "pos_integration",
         "solution": "Tích hợp POS"
+      }
+    },
+    {
+      "slug": "zendesk",
+      "family": "integration-detail",
+      "sources": [
+        {
+          "file": "src/data/zendeskIntegration.ts",
+          "sha256": "d5e232e8f54a95729c5d9d5c8cfef5b45b3f1da02a54c35398d5bf9acc29df28",
+          "exportCount": 23
+        }
+      ],
+      "hero": {
+        "eyebrow": "GCALLS × ZENDESK",
+        "h1": "Tổng đài tích hợp Zendesk cho đội CSKH và Support",
+        "description": "Kết nối hoạt động nghe gọi của Gcalls với Zendesk để nhân viên có thể sử dụng customer context, ticket liên quan và dữ liệu hỗ trợ gần hơn với quy trình đang xử lý.",
+        "points": [
+          {
+            "title": "Đưa cuộc gọi gần ticket workflow",
+            "body": "Hoạt động thoại được đặt gần hơn với hồ sơ và quy trình hỗ trợ đang được quản lý trong Zendesk.",
+            "href": ""
+          },
+          {
+            "title": "Có customer context khi hỗ trợ",
+            "body": "Thông tin liên quan giúp nhân viên hiểu khách hàng và yêu cầu trước khi tiếp tục cuộc hội thoại.",
+            "href": ""
+          },
+          {
+            "title": "Theo dõi lịch sử hỗ trợ tập trung hơn",
+            "body": "Dữ liệu phù hợp có thể được liên kết hoặc ghi nhận theo phạm vi tích hợp để đội ngũ tiếp tục follow-up.",
+            "href": ""
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "comparison",
+          "from": "ZD_BEFORE_AFTER",
+          "eyebrow": "TRƯỚC & SAU TÍCH HỢP",
+          "heading": "Giảm những bước chuyển đổi thủ công giữa Zendesk và hệ thống gọi",
+          "before": {
+            "label": "Trước tích hợp",
+            "steps": [
+              "Zendesk ticket",
+              "Copy phone number",
+              "Call tool",
+              "Conversation",
+              "Manual note",
+              "Quay lại Zendesk",
+              "Cập nhật ticket"
+            ]
+          },
+          "after": {
+            "label": "Sau tích hợp",
+            "steps": [
+              "Zendesk contact / ticket",
+              "Configured call action",
+              "Conversation",
+              "Support activity",
+              "Ticket workflow tiếp tục"
+            ]
+          }
+        },
+        {
+          "type": "cards",
+          "from": "ZD_BENEFITS",
+          "heading": "Giữ cuộc gọi gần hơn với quy trình ticket và customer support",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "Giảm chuyển đổi giữa nhiều công cụ"
+            },
+            {
+              "title": "",
+              "body": "Có thêm context khi tiếp nhận yêu cầu"
+            },
+            {
+              "title": "",
+              "body": "Theo dõi lịch sử hỗ trợ tập trung hơn"
+            },
+            {
+              "title": "",
+              "body": "Dễ tiếp tục xử lý khi ticket thay đổi người phụ trách"
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "ZD_BOUNDARY",
+          "heading": "Zendesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "ZD_CAPABILITIES",
+          "heading": "Những năng lực được xác nhận khi kết nối Gcalls với Zendesk",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Customer Context",
+              "body": "Agent có thể nắm thông tin khách hàng liên quan trước khi trả lời, trong phạm vi mà dữ liệu, permission và cấu hình tích hợp cho phép.",
+              "href": ""
+            },
+            {
+              "title": "Ticket / Support Record Context",
+              "body": "Cuộc gọi có thể được đặt cạnh và liên kết với ticket hoặc hồ sơ hỗ trợ đang tồn tại, khi nền tảng và cấu hình tích hợp cho phép.",
+              "href": ""
+            },
+            {
+              "title": "Call Activity",
+              "body": "Lịch sử và dữ liệu hoạt động cuộc gọi được lưu trong Gcalls. Việc đưa dữ liệu đó sang Zendesk phụ thuộc vào phạm vi tích hợp và khả năng của nền tảng.",
+              "href": ""
+            },
+            {
+              "title": "Support Workflow Continuity",
+              "body": "Khi một yêu cầu đi qua nhiều người phụ trách, bối cảnh cuộc hội thoại nằm gần ticket thay vì ở một luồng dữ liệu riêng ngoài Zendesk.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "ZD_DIRECT_ANSWER",
+          "heading": "",
+          "body": "Tổng đài tích hợp Zendesk kết nối hoạt động nghe gọi của Gcalls với quy trình hỗ trợ trên Zendesk để nhân viên có thể sử dụng customer context, ticket liên quan và dữ liệu tương tác phù hợp trong cùng workflow CSKH. Phạm vi chức năng phụ thuộc vào cấu hình Gcalls, Zendesk, API và yêu cầu triển khai của doanh nghiệp."
+        },
+        {
+          "type": "cards",
+          "from": "ZD_LINKS",
+          "heading": "Xem thêm",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Tổng đài cho BPO",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Tổng đài cho Thương mại điện tử",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Blog Gcalls",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Liên hệ",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "ZD_OVERVIEW",
+          "heading": "Đưa lớp giao tiếp thoại vào nơi đội Support đang quản lý ticket",
+          "lead": "Zendesk tiếp tục quản lý ticket và support workflow. Gcalls bổ sung lớp nghe gọi để customer context, call activity và bước follow-up được đặt gần hơn với quy trình hỗ trợ hiện tại.",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Zendesk contact / ticket",
+              "body": "Yêu cầu hỗ trợ đang được quản lý trong Zendesk.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Configured call action",
+              "body": "Cuộc gọi diễn ra theo capability và cấu hình đã triển khai.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Gcalls conversation",
+              "body": "Lớp giao tiếp thoại do Gcalls xử lý.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Customer context",
+              "body": "Thông tin liên quan giúp agent nắm tình huống.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Support activity",
+              "body": "Dữ liệu phù hợp được ghi nhận hoặc liên kết theo phạm vi tích hợp.",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Ticket follow-up",
+              "body": "Người phụ trách tiếp theo tiếp tục xử lý trong Zendesk.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "ZD_PROBLEMS",
+          "heading": "Zendesk quản lý ticket, nhưng cuộc gọi vẫn có thể nằm ngoài lịch sử hỗ trợ",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Nhân viên phải chuyển đổi giữa nhiều công cụ",
+              "body": "Agent quản lý ticket trong Zendesk nhưng thực hiện cuộc gọi ở một hệ thống riêng, khiến quy trình hỗ trợ bị chia thành nhiều bước.",
+              "href": ""
+            },
+            {
+              "title": "Thiếu customer context khi cuộc gọi bắt đầu",
+              "body": "Nếu dữ liệu Zendesk và hoạt động gọi chưa kết nối phù hợp, nhân viên phải tự tìm contact hoặc ticket trong lúc khách hàng chờ.",
+              "href": ""
+            },
+            {
+              "title": "Lịch sử cuộc hội thoại bị phân mảnh",
+              "body": "Call activity nằm ngoài ticket workflow khiến nhân viên tiếp nhận sau có thể thiếu bối cảnh để tiếp tục xử lý.",
+              "href": ""
+            },
+            {
+              "title": "Follow-up phụ thuộc vào ghi chú thủ công",
+              "body": "Nhân viên có thể phải nhập lại nội dung sau cuộc gọi để giữ lịch sử hỗ trợ cập nhật.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "ZD_RELATED",
+          "heading": "Doanh nghiệp đang sử dụng Helpdesk khác?",
+          "lead": "Mỗi nền tảng Helpdesk có cấu trúc ticket và cách kết nối riêng. Xem trang tương ứng với hệ thống doanh nghiệp đang sử dụng.",
+          "cards": [
+            {
+              "title": "Freshdesk",
+              "body": "Kết nối hoạt động nghe gọi với quy trình hỗ trợ trên Freshdesk.",
+              "href": ""
+            },
+            {
+              "title": "Danh mục tích hợp",
+              "body": "Xem toàn bộ nền tảng đang có trang tích hợp riêng.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "ZD_SETUP",
+          "heading": "Tích hợp theo cấu hình Zendesk và workflow hỗ trợ đang sử dụng",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Khảo sát Zendesk workflow",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Xác định contact, ticket và dữ liệu liên quan",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Xác định user và hotline",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Xác định capability cần triển khai",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Kiểm tra permission, API và phương thức kết nối hiện hành",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Cấu hình integration",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 7,
+              "title": "Kiểm thử cuộc gọi, context và ticket workflow",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 8,
+              "title": "Hướng dẫn đội Support",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 9,
+              "title": "Go-live",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "taglist",
+          "from": "ZD_SUPPORT_CONTEXT",
+          "eyebrow": "CUSTOMER & TICKET CONTEXT",
+          "heading": "Hiểu yêu cầu hỗ trợ trước khi tiếp tục cuộc hội thoại",
+          "lead": "Khi customer context, ticket liên quan và lịch sử hỗ trợ được đặt gần hoạt động gọi, agent có thể hiểu tình huống tốt hơn trước khi phản hồi hoặc follow-up.",
+          "tags": [
+            "Customer identity",
+            "Ticket đang xử lý",
+            "Ticket trước đó",
+            "Tương tác gần đây",
+            "Trạng thái hỗ trợ",
+            "Ghi chú"
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "ZD_TRUST",
+          "heading": "Tích hợp Zendesk cần bắt đầu từ ticket structure, permission và workflow thực tế",
+          "body": "Field, ticket form, permission, user role và support workflow có thể khác nhau giữa từng tài khoản Zendesk. Phạm vi tích hợp cần được xác định qua khảo sát và kiểm thử thay vì áp dụng cùng một cấu hình cho mọi doanh nghiệp."
+        },
+        {
+          "type": "prose",
+          "from": "ZD_UI_PREVIEW",
+          "heading": "Giữ customer context và ticket gần hoạt động nghe gọi",
+          "body": "Sơ đồ dưới đây minh họa lớp tích hợp phía Gcalls: cuộc gọi được xử lý trên Gcalls và liên kết với hồ sơ hỗ trợ đang tồn tại, cùng bối cảnh mà người phụ trách tiếp theo có thể xem lại."
+        },
+        {
+          "type": "cards",
+          "from": "ZD_USE_CASES",
+          "heading": "Gcalls × Zendesk phù hợp với những workflow hỗ trợ nào?",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "ZD_VS_HELPDESK",
+          "heading": "Trang này dành cho doanh nghiệp đã sử dụng Zendesk",
+          "body": "Nếu doanh nghiệp đang đánh giá tổng đài tích hợp Helpdesk nói chung, hãy xem giải pháp Helpdesk Integration. Trang này tập trung vào workflow khi Zendesk đã là hệ thống quản lý ticket và hỗ trợ hiện tại."
+        },
+        {
+          "type": "steps",
+          "from": "ZD_WORKFLOW",
+          "heading": "Từ Zendesk contact hoặc ticket đến cuộc gọi và bước hỗ trợ tiếp theo",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Mở contact hoặc ticket",
+              "body": "Nhân viên tiếp tục làm việc trên yêu cầu hỗ trợ đang được quản lý trong Zendesk.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Bắt đầu hoặc tiếp nhận cuộc gọi",
+              "body": "Hoạt động thoại được thực hiện theo capability và cấu hình tích hợp đã triển khai.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Sử dụng customer context",
+              "body": "Thông tin liên quan giúp agent hiểu khách hàng, ticket hoặc lịch sử hỗ trợ trước đó.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Thực hiện cuộc hội thoại",
+              "body": "Gcalls xử lý lớp giao tiếp thoại trong workflow được cấu hình.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Ghi nhận dữ liệu phù hợp",
+              "body": "Call activity hoặc dữ liệu liên quan có thể được ghi nhận hay liên kết theo phạm vi tích hợp.",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Tiếp tục ticket workflow",
+              "body": "Agent follow-up trong Zendesk thay vì duy trì lịch sử hỗ trợ ở một luồng riêng ngoài Helpdesk.",
+              "href": ""
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Tổng đài tích hợp Zendesk là gì?",
+          "a": "Đây là mô hình kết nối hoạt động nghe gọi của Gcalls với Zendesk để đội Support có thể sử dụng customer context, ticket liên quan và dữ liệu tương tác phù hợp trong cùng workflow CSKH."
+        },
+        {
+          "q": "Gcalls có hỗ trợ Click-to-Call trên Zendesk không?",
+          "a": "Khả năng thực hiện cuộc gọi từ Zendesk phụ thuộc vào phương thức tích hợp và cấu hình triển khai hiện tại. Gcalls sẽ xác định capability phù hợp trong quá trình khảo sát."
+        },
+        {
+          "q": "Khi khách hàng gọi đến có thể xem ticket liên quan không?",
+          "a": "Khả năng hiển thị ticket và customer context phụ thuộc vào dữ liệu, permission và cấu hình tích hợp. Phạm vi thông tin cần được xác định trong bước khảo sát kỹ thuật."
+        },
+        {
+          "q": "Gcalls có tự động tạo ticket sau cuộc gọi không?",
+          "a": "Khả năng tạo hoặc cập nhật ticket phụ thuộc vào workflow và cấu hình tích hợp hiện tại. Gcalls cần khảo sát hệ thống trước khi xác nhận luồng có thể triển khai."
+        },
+        {
+          "q": "Lịch sử cuộc gọi có được lưu trong Zendesk không?",
+          "a": "Dữ liệu cuộc gọi có thể được lưu trong Gcalls hoặc được liên kết với Zendesk theo phạm vi tích hợp. Cần xác định rõ trường dữ liệu và nơi lưu trong quá trình khảo sát."
+        },
+        {
+          "q": "Ghi âm có được đồng bộ vào Zendesk không?",
+          "a": "Ghi âm có thể được lưu trong hệ thống Gcalls khi cấu hình dịch vụ hỗ trợ. Việc đồng bộ hoặc liên kết bản ghi với Zendesk cần được xác minh riêng theo phạm vi triển khai."
+        },
+        {
+          "q": "Zendesk Integration khác Gcalls CX như thế nào?",
+          "a": "Zendesk Integration tập trung kết nối hoạt động thoại với ticket và support workflow hiện có. Gcalls CX giải quyết bài toán rộng hơn về quản lý giao tiếp đa kênh trên một Contact Center tập trung."
+        }
+      ],
+      "cta": {
+        "heading": "Xem hoạt động nghe gọi vận hành trong workflow Zendesk của đội Support",
+        "body": "Chia sẻ cấu trúc ticket, user và quy trình CSKH hiện tại để Gcalls xác định phạm vi tích hợp và demo phù hợp.",
+        "label": ""
+      },
+      "attribution": {
+        "intent": "consultation",
+        "source": "helpdesk_integration",
+        "product": "Zendesk",
+        "solution": "Tích hợp Helpdesk"
+      }
+    },
+    {
+      "slug": "zoho-crm",
+      "family": "integration-detail",
+      "sources": [
+        {
+          "file": "src/data/zohoCrmIntegration.ts",
+          "sha256": "e0f117c6d93cd7a78d68476ee5a817b7d9fdafddb502a98f858e1463c7323050",
+          "exportCount": 21
+        }
+      ],
+      "hero": {
+        "eyebrow": "GCALLS × ZOHO CRM",
+        "h1": "Tổng đài tích hợp Zoho CRM cho đội Sales và CSKH",
+        "description": "Kết nối hoạt động nghe gọi của Gcalls với Zoho CRM để đội ngũ có thể sử dụng customer context, theo dõi lịch sử tương tác và tiếp tục follow-up gần hơn với quy trình CRM đang sử dụng.",
+        "points": [
+          {
+            "title": "Đưa cuộc gọi gần customer record",
+            "body": "Nhân viên có thể làm việc với cuộc gọi trong bối cảnh dữ liệu khách hàng đang được quản lý trên Zoho CRM theo phạm vi tích hợp.",
+            "href": ""
+          },
+          {
+            "title": "Có thêm context khi trao đổi",
+            "body": "Thông tin liên quan giúp Sales và CSKH hiểu khách hàng trước hoặc trong quá trình xử lý cuộc gọi.",
+            "href": ""
+          },
+          {
+            "title": "Theo dõi tương tác tập trung hơn",
+            "body": "Call activity phù hợp có thể được ghi nhận hoặc liên kết để đội ngũ tiếp tục follow-up trong CRM.",
+            "href": ""
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "comparison",
+          "from": "ZH_BEFORE_AFTER",
+          "eyebrow": "TRƯỚC & SAU TÍCH HỢP",
+          "heading": "Giảm những bước thủ công giữa Zoho CRM và hệ thống gọi",
+          "before": {
+            "label": "Trước tích hợp",
+            "steps": [
+              "Zoho CRM",
+              "Copy phone number",
+              "Call tool",
+              "Conversation",
+              "Manual note",
+              "Quay lại CRM",
+              "Follow-up"
+            ]
+          },
+          "after": {
+            "label": "Sau tích hợp",
+            "steps": [
+              "Zoho CRM record",
+              "Configured call action",
+              "Conversation",
+              "Call activity",
+              "CRM workflow tiếp tục"
+            ]
+          }
+        },
+        {
+          "type": "cards",
+          "from": "ZH_BENEFITS",
+          "heading": "Giữ hoạt động gọi gần hơn với dữ liệu Sales và CSKH",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "Giảm thao tác chuyển đổi giữa nhiều công cụ"
+            },
+            {
+              "title": "",
+              "body": "Có thêm customer context khi trao đổi"
+            },
+            {
+              "title": "",
+              "body": "Theo dõi tương tác tập trung hơn"
+            },
+            {
+              "title": "",
+              "body": "Dễ tiếp tục follow-up khi người phụ trách thay đổi"
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "ZH_BOUNDARY",
+          "heading": "Zoho CRM Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "ZH_CAPABILITIES",
+          "heading": "Những năng lực được xác nhận khi kết nối Gcalls với Zoho CRM",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Click-to-Call",
+              "body": "Nhân viên có thể bắt đầu cuộc gọi từ số điện thoại hoặc customer record trong Zoho CRM khi integration được cấu hình phù hợp.",
+              "href": ""
+            },
+            {
+              "title": "Customer Context",
+              "body": "Thông tin khách hàng liên quan hỗ trợ đội ngũ có thêm bối cảnh khi xử lý cuộc gọi, và nhận biết khách hàng ở nơi dữ liệu cùng cấu hình tích hợp hỗ trợ.",
+              "href": ""
+            },
+            {
+              "title": "Call Activity / Interaction History",
+              "body": "Dữ liệu cuộc gọi phù hợp có thể được ghi nhận hoặc liên kết theo phạm vi tích hợp để đội ngũ nhìn lại quá trình tương tác.",
+              "href": ""
+            },
+            {
+              "title": "CRM Workflow Continuity",
+              "body": "Sales và CSKH tiếp tục follow-up trong Zoho CRM thay vì duy trì một luồng dữ liệu cuộc gọi riêng bên ngoài hệ thống.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "ZH_DIRECT_ANSWER",
+          "heading": "",
+          "body": "Tổng đài tích hợp Zoho CRM kết nối hoạt động nghe gọi của Gcalls với quy trình quản lý khách hàng trên Zoho CRM để nhân viên có thể sử dụng customer context, theo dõi dữ liệu cuộc gọi phù hợp và tiếp tục follow-up trong workflow đang sử dụng. Phạm vi chức năng phụ thuộc vào cấu hình Gcalls, Zoho CRM và yêu cầu triển khai của doanh nghiệp."
+        },
+        {
+          "type": "cards",
+          "from": "ZH_LINKS",
+          "heading": "Xem thêm",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Bảng giá Gcalls",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Ước tính chi phí",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Blog Gcalls",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "Liên hệ",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "ZH_OVERVIEW",
+          "heading": "Kết nối lớp giao tiếp thoại với CRM đội ngũ đang sử dụng",
+          "lead": "Zoho CRM tiếp tục quản lý customer record và workflow. Gcalls bổ sung lớp nghe gọi để cuộc hội thoại và dữ liệu tương tác được đặt gần hơn với quá trình Sales và CSKH.",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Zoho CRM record",
+              "body": "Đội ngũ làm việc trên dữ liệu khách hàng đang được quản lý.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Call action",
+              "body": "Cuộc gọi bắt đầu theo capability và cấu hình được triển khai.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Gcalls conversation",
+              "body": "Gcalls xử lý lớp giao tiếp thoại.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Customer context",
+              "body": "Thông tin liên quan hỗ trợ nhân viên trong cuộc trao đổi.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Call activity",
+              "body": "Dữ liệu tương tác phù hợp được ghi nhận theo phạm vi tích hợp.",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "CRM follow-up",
+              "body": "Đội ngũ tiếp tục workflow trong Zoho CRM.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "ZH_PROBLEMS",
+          "heading": "Zoho CRM quản lý khách hàng, nhưng hoạt động gọi vẫn có thể nằm ngoài workflow",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Phải chuyển đổi giữa CRM và công cụ gọi",
+              "body": "Nhân viên làm việc với contact trong Zoho CRM nhưng lại thực hiện cuộc gọi trên một hệ thống riêng.",
+              "href": ""
+            },
+            {
+              "title": "Thiếu customer context khi cuộc gọi bắt đầu",
+              "body": "Khi dữ liệu CRM và cuộc gọi chưa kết nối phù hợp, nhân viên cần tự tìm hồ sơ trước khi tiếp tục trao đổi.",
+              "href": ""
+            },
+            {
+              "title": "Lịch sử tương tác bị phân mảnh",
+              "body": "Call activity nằm ngoài CRM khiến đội ngũ khó nhìn lại toàn bộ quá trình tư vấn và chăm sóc khách hàng.",
+              "href": ""
+            },
+            {
+              "title": "Follow-up phụ thuộc vào ghi chú thủ công",
+              "body": "Nhân viên có thể phải nhập lại dữ liệu sau cuộc gọi để giữ Zoho CRM cập nhật.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "ZH_RELATED",
+          "heading": "Doanh nghiệp đang sử dụng CRM khác?",
+          "lead": "Mỗi nền tảng CRM có cấu trúc dữ liệu và cách kết nối riêng. Xem trang tương ứng với hệ thống doanh nghiệp đang sử dụng.",
+          "cards": [
+            {
+              "title": "HubSpot",
+              "body": "Kết nối hoạt động nghe gọi với workflow HubSpot.",
+              "href": ""
+            },
+            {
+              "title": "Salesforce",
+              "body": "Kết nối hoạt động nghe gọi với workflow Salesforce.",
+              "href": ""
+            },
+            {
+              "title": "Danh mục tích hợp",
+              "body": "Xem toàn bộ nền tảng đang có trang tích hợp riêng.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "ZH_SETUP",
+          "heading": "Tích hợp theo cấu hình Zoho CRM và workflow doanh nghiệp đang sử dụng",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Khảo sát quy trình Zoho CRM",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Xác định module/record liên quan",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Xác định user và hotline",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Xác định capability cần tích hợp",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Kiểm tra permission/API",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Cấu hình integration",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 7,
+              "title": "Kiểm thử cuộc gọi và dữ liệu",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 8,
+              "title": "Hướng dẫn đội ngũ",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 9,
+              "title": "Go-live",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "ZH_TRUST",
+          "heading": "Tích hợp Zoho CRM cần bắt đầu từ module, permission và workflow thực tế",
+          "body": "Module, field, permission, user role và workflow có thể khác nhau giữa từng tài khoản Zoho CRM. Phạm vi tích hợp cần được xác định qua khảo sát và kiểm thử thay vì áp dụng cùng một cấu hình cho mọi doanh nghiệp."
+        },
+        {
+          "type": "prose",
+          "from": "ZH_UI_PREVIEW",
+          "heading": "Giữ customer context gần hoạt động gọi",
+          "body": "Giao diện dưới đây là bề mặt phía Gcalls trong luồng tích hợp: thông tin khách hàng liên quan và các nhóm dữ liệu lịch sử tương tác được đặt cạnh hoạt động nghe gọi."
+        },
+        {
+          "type": "cards",
+          "from": "ZH_USE_CASES",
+          "heading": "Gcalls × Zoho CRM phù hợp với những workflow nào?",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "ZH_VS_CRM",
+          "heading": "Trang này dành cho doanh nghiệp đã sử dụng Zoho CRM",
+          "body": "Nếu doanh nghiệp đang đánh giá tổng đài tích hợp CRM nói chung, hãy xem giải pháp CRM Integration. Trang này tập trung vào workflow khi Zoho CRM đã là hệ thống quản lý khách hàng hiện tại."
+        },
+        {
+          "type": "steps",
+          "from": "ZH_WORKFLOW",
+          "heading": "Từ Zoho CRM record đến cuộc gọi và bước follow-up tiếp theo",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Mở lead hoặc contact",
+              "body": "Nhân viên tiếp tục làm việc trên dữ liệu khách hàng đang được quản lý trong Zoho CRM.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Bắt đầu hoặc tiếp nhận cuộc gọi",
+              "body": "Hoạt động thoại được thực hiện theo capability và cấu hình tích hợp được triển khai.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Sử dụng customer context",
+              "body": "Thông tin liên quan giúp nhân viên hiểu khách hàng và lịch sử trước đó.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Thực hiện cuộc hội thoại",
+              "body": "Gcalls xử lý lớp giao tiếp thoại trong workflow được cấu hình.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Ghi nhận dữ liệu phù hợp",
+              "body": "Call activity hoặc dữ liệu liên quan có thể được ghi nhận theo phạm vi tích hợp.",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Tiếp tục Sales / CSKH workflow",
+              "body": "Nhân viên follow-up trong Zoho CRM thay vì duy trì lịch sử riêng bên ngoài hệ thống.",
+              "href": ""
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Tổng đài tích hợp Zoho CRM là gì?",
+          "a": "Đây là mô hình kết nối hoạt động nghe gọi của Gcalls với Zoho CRM để đội ngũ có thể sử dụng customer context, dữ liệu cuộc gọi phù hợp và tiếp tục follow-up trong workflow CRM."
+        },
+        {
+          "q": "Gcalls có hỗ trợ Click-to-Call trên Zoho CRM không?",
+          "a": "Có. Khi integration được cấu hình phù hợp, nhân viên có thể bắt đầu cuộc gọi từ số điện thoại hoặc customer record trong Zoho CRM. Phương thức kết nối cụ thể được Gcalls xác định trong quá trình khảo sát hệ thống."
+        },
+        {
+          "q": "Khi khách hàng gọi đến có thể xem thông tin Zoho CRM không?",
+          "a": "Khả năng hiển thị customer context phụ thuộc vào dữ liệu, permission và cấu hình tích hợp. Gcalls sẽ xác định phạm vi phù hợp trong quá trình khảo sát."
+        },
+        {
+          "q": "Lịch sử cuộc gọi có được ghi nhận trong Zoho CRM không?",
+          "a": "Dữ liệu cuộc gọi phù hợp có thể được ghi nhận hoặc liên kết theo phạm vi tích hợp và khả năng của hệ thống."
+        },
+        {
+          "q": "Gcalls có hỗ trợ gửi SMS từ Zoho CRM không?",
+          "a": "Khả năng gửi SMS phụ thuộc vào cấu hình, nhà cung cấp dịch vụ và phạm vi tích hợp. Gcalls cần kiểm tra hệ thống trước khi xác nhận."
+        },
+        {
+          "q": "Ghi âm có được đồng bộ vào Zoho CRM không?",
+          "a": "Khả năng đồng bộ hoặc liên kết bản ghi phụ thuộc vào cấu hình Gcalls, Zoho CRM và phạm vi triển khai."
+        },
+        {
+          "q": "Gcalls có thay thế Zoho CRM không?",
+          "a": "Không. Zoho CRM tiếp tục là hệ thống quản lý khách hàng; Gcalls bổ sung lớp giao tiếp thoại và dữ liệu tương tác vào workflow đang sử dụng."
+        }
+      ],
+      "cta": {
+        "heading": "Xem hoạt động nghe gọi vận hành trong workflow Zoho CRM của doanh nghiệp",
+        "body": "Chia sẻ module, user và quy trình Sales/CSKH hiện tại để Gcalls xác định phạm vi tích hợp và demo phù hợp.",
+        "label": ""
+      },
+      "attribution": {
+        "intent": "consultation",
+        "source": "crm_integration",
+        "product": "Zoho CRM",
+        "solution": "Tích hợp CRM"
       }
     }
   ]

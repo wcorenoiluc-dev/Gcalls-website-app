@@ -114,7 +114,11 @@ const built = []
 
 for (const file of fs.readdirSync(IN).filter((f) => f.endsWith('.json') && !f.startsWith('_'))) {
   const src = JSON.parse(fs.readFileSync(path.join(IN, file), 'utf8'))
-  if (src.family !== 'solution-detail') continue
+  /* Every detail family, not one named family. The classifier below reads
+   * shapes, so a vendor page maps on the same rules a solution page does —
+   * which is the point of doing it by shape, and the reason Batch 2 needs no
+   * second copy of this file. */
+  if (!src.family.endsWith('-detail')) continue
 
   const ex = src.exports
   const get = (suffix) => {

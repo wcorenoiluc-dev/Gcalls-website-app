@@ -1,312 +1,312 @@
 [
- {
-  "route": "/san-pham/",
-  "family": "product-overview",
-  "batch": "P0",
-  "react_page": "ProductsHubPage.tsx",
-  "react_page_lines": 13,
-  "react_data": "gcallsPlus.ts, qaQcCenter.ts, gcallsCx.ts",
-  "react_data_lines": 1644,
-  "source_available": true
- },
- {
-  "route": "/giai-phap/",
-  "family": "solution-overview",
-  "batch": "P0",
-  "react_page": "SolutionsHubPage.tsx",
-  "react_page_lines": 14,
-  "react_data": "crmIntegration.ts, helpdeskIntegration.ts, posIntegration.ts, internationalCalling.ts, voicebotAi.ts",
-  "react_data_lines": 2965,
-  "source_available": true
- },
- {
-  "route": "/lien-he/",
-  "family": "contact",
-  "batch": "P0 form-blocked",
-  "react_page": "ContactPage.tsx",
-  "react_page_lines": 70,
-  "react_data": "lib/leads/*",
-  "react_data_lines": 0,
-  "source_available": true
- },
- {
-  "route": "/tong-dai-tich-hop-crm/",
-  "family": "solution-detail",
-  "batch": "P0",
-  "react_page": "CRMIntegrationPage.tsx",
-  "react_page_lines": 439,
-  "react_data": "crmIntegration.ts",
-  "react_data_lines": 562,
-  "source_available": true
- },
- {
-  "route": "/tong-dai-tich-hop-helpdesk/",
-  "family": "solution-detail",
-  "batch": "P0",
-  "react_page": "HelpdeskIntegrationPage.tsx",
-  "react_page_lines": 360,
-  "react_data": "helpdeskIntegration.ts",
-  "react_data_lines": 574,
-  "source_available": true
- },
- {
-  "route": "/tong-dai-tich-hop-pos/",
-  "family": "solution-detail",
-  "batch": "P0",
-  "react_page": "POSIntegrationPage.tsx",
-  "react_page_lines": 428,
-  "react_data": "posIntegration.ts",
-  "react_data_lines": 559,
-  "source_available": true
- },
- {
-  "route": "/tong-dai-quoc-te/",
-  "family": "solution-detail",
-  "batch": "P0",
-  "react_page": "InternationalCallingPage.tsx",
-  "react_page_lines": 521,
-  "react_data": "internationalCalling.ts",
-  "react_data_lines": 686,
-  "source_available": true
- },
- {
-  "route": "/tich-hop/",
-  "family": "integration-overview",
-  "batch": "BATCH2",
-  "react_page": "IntegrationsHubPage.tsx",
-  "react_page_lines": 13,
-  "react_data": "hubspot/salesforce/zohoCrm/freshdesk/zendesk Integration.ts",
-  "react_data_lines": 0,
-  "source_available": true
- },
- {
-  "route": "/hubspot/",
-  "family": "integration-detail",
-  "batch": "BATCH2",
-  "react_page": "HubspotIntegrationPage.tsx",
-  "react_page_lines": 447,
-  "react_data": "hubspotIntegration.ts",
-  "react_data_lines": 626,
-  "source_available": true
- },
- {
-  "route": "/salesforce/",
-  "family": "integration-detail",
-  "batch": "BATCH2",
-  "react_page": "SalesforceIntegrationPage.tsx",
-  "react_page_lines": 493,
-  "react_data": "salesforceIntegration.ts",
-  "react_data_lines": 748,
-  "source_available": true
- },
- {
-  "route": "/zoho-crm/",
-  "family": "integration-detail",
-  "batch": "BATCH2",
-  "react_page": "ZohoCrmIntegrationPage.tsx",
-  "react_page_lines": 468,
-  "react_data": "zohoCrmIntegration.ts",
-  "react_data_lines": 776,
-  "source_available": true
- },
- {
-  "route": "/freshdesk/",
-  "family": "integration-detail",
-  "batch": "BATCH2",
-  "react_page": "FreshdeskIntegrationPage.tsx",
-  "react_page_lines": 521,
-  "react_data": "freshdeskIntegration.ts",
-  "react_data_lines": 881,
-  "source_available": true
- },
- {
-  "route": "/zendesk/",
-  "family": "integration-detail",
-  "batch": "BATCH2",
-  "react_page": "ZendeskIntegrationPage.tsx",
-  "react_page_lines": 519,
-  "react_data": "zendeskIntegration.ts",
-  "react_data_lines": 886,
-  "source_available": true
- },
- {
-  "route": "/nganh/",
-  "family": "industry-overview",
-  "batch": "BATCH3",
-  "react_page": "IndustriesHubPage.tsx",
-  "react_page_lines": 13,
-  "react_data": "industries/index.ts",
-  "react_data_lines": 104,
-  "source_available": true
- },
- {
-  "route": "/giao-duc/",
-  "family": "industry-detail",
-  "batch": "BATCH3",
-  "react_page": "IndustryPage.tsx",
-  "react_page_lines": 97,
-  "react_data": "industries/education.ts",
-  "react_data_lines": 270,
-  "source_available": true
- },
- {
-  "route": "/tai-chinh/",
-  "family": "industry-detail",
-  "batch": "BATCH3",
-  "react_page": "IndustryPage.tsx",
-  "react_page_lines": 97,
-  "react_data": "industries/finance.ts",
-  "react_data_lines": 278,
-  "source_available": true
- },
- {
-  "route": "/bao-hiem/",
-  "family": "industry-detail",
-  "batch": "BATCH3",
-  "react_page": "IndustryPage.tsx",
-  "react_page_lines": 97,
-  "react_data": "industries/insurance.ts",
-  "react_data_lines": 272,
-  "source_available": true
- },
- {
-  "route": "/bat-dong-san/",
-  "family": "industry-detail",
-  "batch": "BATCH3",
-  "react_page": "IndustryPage.tsx",
-  "react_page_lines": 97,
-  "react_data": "industries/realEstate.ts",
-  "react_data_lines": 276,
-  "source_available": true
- },
- {
-  "route": "/thuong-mai-dien-tu/",
-  "family": "industry-detail",
-  "batch": "BATCH3",
-  "react_page": "IndustryPage.tsx",
-  "react_page_lines": 97,
-  "react_data": "industries/ecommerce.ts",
-  "react_data_lines": 304,
-  "source_available": true
- },
- {
-  "route": "/bpo/",
-  "family": "industry-detail",
-  "batch": "BATCH3",
-  "react_page": "IndustryPage.tsx",
-  "react_page_lines": 97,
-  "react_data": "industries/bpo.ts",
-  "react_data_lines": 285,
-  "source_available": true
- },
- {
-  "route": "/bang-gia/",
-  "family": "pricing",
-  "batch": "BATCH4",
-  "react_page": "PricingPage.tsx",
-  "react_page_lines": 332,
-  "react_data": "pricing.ts",
-  "react_data_lines": 487,
-  "source_available": true
- },
- {
-  "route": "/tai-nguyen/",
-  "family": "resource-listing",
-  "batch": "BATCH4",
-  "react_page": "ResourcesHubPage.tsx",
-  "react_page_lines": 13,
-  "react_data": "resources/index.ts",
-  "react_data_lines": 228,
-  "source_available": true
- },
- {
-  "route": "/guides/",
-  "family": "resource-listing",
-  "batch": "BATCH4",
-  "react_page": "GuidesPage.tsx",
-  "react_page_lines": 43,
-  "react_data": "resources/guides.ts",
-  "react_data_lines": 278,
-  "source_available": true
- },
- {
-  "route": "/case-studies/",
-  "family": "resource-listing",
-  "batch": "BATCH4",
-  "react_page": "CaseStudiesPage.tsx",
-  "react_page_lines": 50,
-  "react_data": "resources/caseStudies.ts",
-  "react_data_lines": 323,
-  "source_available": true
- },
- {
-  "route": "/ebook/",
-  "family": "knowledge-download",
-  "batch": "BATCH4",
-  "react_page": "EbookPage.tsx",
-  "react_page_lines": 43,
-  "react_data": "resources/ebook.ts",
-  "react_data_lines": 266,
-  "source_available": true
- },
- {
-  "route": "/glossary/",
-  "family": "knowledge",
-  "batch": "BATCH4",
-  "react_page": "GlossaryPage.tsx",
-  "react_page_lines": 44,
-  "react_data": "resources/glossary.ts",
-  "react_data_lines": 425,
-  "source_available": true
- },
- {
-  "route": "/faq/",
-  "family": "knowledge",
-  "batch": "BATCH4",
-  "react_page": "FaqPage.tsx",
-  "react_page_lines": 37,
-  "react_data": "resources/faq.ts",
-  "react_data_lines": 278,
-  "source_available": true
- },
- {
-  "route": "/cong-ty/",
-  "family": "about-brand",
-  "batch": "BATCH4",
-  "react_page": "CompanyHubPage.tsx",
-  "react_page_lines": 62,
-  "react_data": "company/index.ts",
-  "react_data_lines": 102,
-  "source_available": true
- },
- {
-  "route": "/khach-hang/",
-  "family": "about-brand",
-  "batch": "BATCH4",
-  "react_page": "CustomersPage.tsx",
-  "react_page_lines": 81,
-  "react_data": "company/customers.ts",
-  "react_data_lines": 487,
-  "source_available": true
- },
- {
-  "route": "/doi-tac/",
-  "family": "about-brand",
-  "batch": "BATCH4",
-  "react_page": "PartnersPage.tsx",
-  "react_page_lines": 88,
-  "react_data": "company/partners.ts",
-  "react_data_lines": 523,
-  "source_available": true
- },
- {
-  "route": "/referral/",
-  "family": "referral",
-  "batch": "BATCH4",
-  "react_page": "ReferralPage.tsx",
-  "react_page_lines": 96,
-  "react_data": "ReferralPage.tsx (inline)",
-  "react_data_lines": 0,
-  "source_available": true
- }
+  {
+    "route": "/san-pham/",
+    "family": "product-overview",
+    "batch": "P0",
+    "react_page": "ProductsHubPage.tsx",
+    "react_page_lines": 13,
+    "react_data": "gcallsPlus.ts, qaQcCenter.ts, gcallsCx.ts",
+    "react_data_lines": 1644,
+    "source_available": true
+  },
+  {
+    "route": "/giai-phap/",
+    "family": "solution-overview",
+    "batch": "P0",
+    "react_page": "SolutionsHubPage.tsx",
+    "react_page_lines": 14,
+    "react_data": "crmIntegration.ts, helpdeskIntegration.ts, posIntegration.ts, internationalCalling.ts, voicebotAi.ts",
+    "react_data_lines": 2965,
+    "source_available": true
+  },
+  {
+    "route": "/lien-he/",
+    "family": "contact",
+    "batch": "P0 form-blocked",
+    "react_page": "ContactPage.tsx",
+    "react_page_lines": 70,
+    "react_data": "lib/leads/*",
+    "react_data_lines": 0,
+    "source_available": true
+  },
+  {
+    "route": "/tong-dai-tich-hop-crm/",
+    "family": "solution-detail",
+    "batch": "P0",
+    "react_page": "CRMIntegrationPage.tsx",
+    "react_page_lines": 439,
+    "react_data": "crmIntegration.ts",
+    "react_data_lines": 562,
+    "source_available": true
+  },
+  {
+    "route": "/tong-dai-tich-hop-helpdesk/",
+    "family": "solution-detail",
+    "batch": "P0",
+    "react_page": "HelpdeskIntegrationPage.tsx",
+    "react_page_lines": 360,
+    "react_data": "helpdeskIntegration.ts",
+    "react_data_lines": 574,
+    "source_available": true
+  },
+  {
+    "route": "/tong-dai-tich-hop-pos/",
+    "family": "solution-detail",
+    "batch": "P0",
+    "react_page": "POSIntegrationPage.tsx",
+    "react_page_lines": 428,
+    "react_data": "posIntegration.ts",
+    "react_data_lines": 559,
+    "source_available": true
+  },
+  {
+    "route": "/tong-dai-quoc-te/",
+    "family": "solution-detail",
+    "batch": "P0",
+    "react_page": "InternationalCallingPage.tsx",
+    "react_page_lines": 521,
+    "react_data": "internationalCalling.ts",
+    "react_data_lines": 686,
+    "source_available": true
+  },
+  {
+    "route": "/tich-hop/",
+    "family": "integration-overview",
+    "batch": "BATCH2",
+    "react_page": "IntegrationsHubPage.tsx",
+    "react_page_lines": 13,
+    "react_data": "hubspotIntegration.ts, salesforceIntegration.ts, zohoCrmIntegration.ts, freshdeskIntegration.ts, zendeskIntegration.ts",
+    "react_data_lines": 3917,
+    "source_available": true
+  },
+  {
+    "route": "/hubspot/",
+    "family": "integration-detail",
+    "batch": "BATCH2",
+    "react_page": "HubspotIntegrationPage.tsx",
+    "react_page_lines": 447,
+    "react_data": "hubspotIntegration.ts",
+    "react_data_lines": 626,
+    "source_available": true
+  },
+  {
+    "route": "/salesforce/",
+    "family": "integration-detail",
+    "batch": "BATCH2",
+    "react_page": "SalesforceIntegrationPage.tsx",
+    "react_page_lines": 493,
+    "react_data": "salesforceIntegration.ts",
+    "react_data_lines": 748,
+    "source_available": true
+  },
+  {
+    "route": "/zoho-crm/",
+    "family": "integration-detail",
+    "batch": "BATCH2",
+    "react_page": "ZohoCrmIntegrationPage.tsx",
+    "react_page_lines": 468,
+    "react_data": "zohoCrmIntegration.ts",
+    "react_data_lines": 776,
+    "source_available": true
+  },
+  {
+    "route": "/freshdesk/",
+    "family": "integration-detail",
+    "batch": "BATCH2",
+    "react_page": "FreshdeskIntegrationPage.tsx",
+    "react_page_lines": 521,
+    "react_data": "freshdeskIntegration.ts",
+    "react_data_lines": 881,
+    "source_available": true
+  },
+  {
+    "route": "/zendesk/",
+    "family": "integration-detail",
+    "batch": "BATCH2",
+    "react_page": "ZendeskIntegrationPage.tsx",
+    "react_page_lines": 519,
+    "react_data": "zendeskIntegration.ts",
+    "react_data_lines": 886,
+    "source_available": true
+  },
+  {
+    "route": "/nganh/",
+    "family": "industry-overview",
+    "batch": "BATCH3",
+    "react_page": "IndustriesHubPage.tsx",
+    "react_page_lines": 13,
+    "react_data": "industries/index.ts",
+    "react_data_lines": 104,
+    "source_available": true
+  },
+  {
+    "route": "/giao-duc/",
+    "family": "industry-detail",
+    "batch": "BATCH3",
+    "react_page": "IndustryPage.tsx",
+    "react_page_lines": 97,
+    "react_data": "industries/education.ts",
+    "react_data_lines": 270,
+    "source_available": true
+  },
+  {
+    "route": "/tai-chinh/",
+    "family": "industry-detail",
+    "batch": "BATCH3",
+    "react_page": "IndustryPage.tsx",
+    "react_page_lines": 97,
+    "react_data": "industries/finance.ts",
+    "react_data_lines": 278,
+    "source_available": true
+  },
+  {
+    "route": "/bao-hiem/",
+    "family": "industry-detail",
+    "batch": "BATCH3",
+    "react_page": "IndustryPage.tsx",
+    "react_page_lines": 97,
+    "react_data": "industries/insurance.ts",
+    "react_data_lines": 272,
+    "source_available": true
+  },
+  {
+    "route": "/bat-dong-san/",
+    "family": "industry-detail",
+    "batch": "BATCH3",
+    "react_page": "IndustryPage.tsx",
+    "react_page_lines": 97,
+    "react_data": "industries/realEstate.ts",
+    "react_data_lines": 276,
+    "source_available": true
+  },
+  {
+    "route": "/thuong-mai-dien-tu/",
+    "family": "industry-detail",
+    "batch": "BATCH3",
+    "react_page": "IndustryPage.tsx",
+    "react_page_lines": 97,
+    "react_data": "industries/ecommerce.ts",
+    "react_data_lines": 304,
+    "source_available": true
+  },
+  {
+    "route": "/bpo/",
+    "family": "industry-detail",
+    "batch": "BATCH3",
+    "react_page": "IndustryPage.tsx",
+    "react_page_lines": 97,
+    "react_data": "industries/bpo.ts",
+    "react_data_lines": 285,
+    "source_available": true
+  },
+  {
+    "route": "/bang-gia/",
+    "family": "pricing",
+    "batch": "BATCH4",
+    "react_page": "PricingPage.tsx",
+    "react_page_lines": 332,
+    "react_data": "pricing.ts",
+    "react_data_lines": 487,
+    "source_available": true
+  },
+  {
+    "route": "/tai-nguyen/",
+    "family": "resource-listing",
+    "batch": "BATCH4",
+    "react_page": "ResourcesHubPage.tsx",
+    "react_page_lines": 13,
+    "react_data": "resources/index.ts",
+    "react_data_lines": 228,
+    "source_available": true
+  },
+  {
+    "route": "/guides/",
+    "family": "resource-listing",
+    "batch": "BATCH4",
+    "react_page": "GuidesPage.tsx",
+    "react_page_lines": 43,
+    "react_data": "resources/guides.ts",
+    "react_data_lines": 278,
+    "source_available": true
+  },
+  {
+    "route": "/case-studies/",
+    "family": "resource-listing",
+    "batch": "BATCH4",
+    "react_page": "CaseStudiesPage.tsx",
+    "react_page_lines": 50,
+    "react_data": "resources/caseStudies.ts",
+    "react_data_lines": 323,
+    "source_available": true
+  },
+  {
+    "route": "/ebook/",
+    "family": "knowledge-download",
+    "batch": "BATCH4",
+    "react_page": "EbookPage.tsx",
+    "react_page_lines": 43,
+    "react_data": "resources/ebook.ts",
+    "react_data_lines": 266,
+    "source_available": true
+  },
+  {
+    "route": "/glossary/",
+    "family": "knowledge",
+    "batch": "BATCH4",
+    "react_page": "GlossaryPage.tsx",
+    "react_page_lines": 44,
+    "react_data": "resources/glossary.ts",
+    "react_data_lines": 425,
+    "source_available": true
+  },
+  {
+    "route": "/faq/",
+    "family": "knowledge",
+    "batch": "BATCH4",
+    "react_page": "FaqPage.tsx",
+    "react_page_lines": 37,
+    "react_data": "resources/faq.ts",
+    "react_data_lines": 278,
+    "source_available": true
+  },
+  {
+    "route": "/cong-ty/",
+    "family": "about-brand",
+    "batch": "BATCH4",
+    "react_page": "CompanyHubPage.tsx",
+    "react_page_lines": 62,
+    "react_data": "company/index.ts",
+    "react_data_lines": 102,
+    "source_available": true
+  },
+  {
+    "route": "/khach-hang/",
+    "family": "about-brand",
+    "batch": "BATCH4",
+    "react_page": "CustomersPage.tsx",
+    "react_page_lines": 81,
+    "react_data": "company/customers.ts",
+    "react_data_lines": 487,
+    "source_available": true
+  },
+  {
+    "route": "/doi-tac/",
+    "family": "about-brand",
+    "batch": "BATCH4",
+    "react_page": "PartnersPage.tsx",
+    "react_page_lines": 88,
+    "react_data": "company/partners.ts",
+    "react_data_lines": 523,
+    "source_available": true
+  },
+  {
+    "route": "/referral/",
+    "family": "referral",
+    "batch": "BATCH4",
+    "react_page": "ReferralPage.tsx",
+    "react_page_lines": 96,
+    "react_data": "ReferralPage.tsx (inline)",
+    "react_data_lines": 0,
+    "source_available": true
+  }
 ]
