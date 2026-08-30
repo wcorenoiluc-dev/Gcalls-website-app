@@ -78,6 +78,17 @@ function page(p) {
       `</header>`
     : ''
 
+  /*
+   * The form slot renders as a clearly BLOCKED area, never as a form.
+   * No inputs exist, so nothing can be typed and nothing can appear to send —
+   * the failure this whole project has been avoiding is a visitor believing a
+   * message got through when there is no backend to receive it.
+   */
+  const slot = p.form_slot
+    ? `<section class="cp-section"><div class="cp-slot" role="note"><p class="cp-slot__title">Biểu mẫu đăng ký tư vấn</p>` +
+      `<p class="cp-slot__body">Biểu mẫu sẽ được bật trong một bản phát hành riêng. Trong lúc này, vui lòng liên hệ qua email hoặc hotline ở trên.</p></div></section>`
+    : ''
+
   const faq = p.faq?.length
     ? `<section class="cp-section" data-from="FAQ"><h2 class="cp-h2">Câu hỏi thường gặp</h2><div class="cp-faq">` +
       p.faq.map((f) => `<div class="cp-faq__item"><h3 class="cp-faq__q">${esc(f.q)}</h3><p class="cp-faq__a">${esc(f.a)}</p></div>`).join('') +
@@ -95,7 +106,7 @@ function page(p) {
       `<a class="cp-btn" href="${esc(ctaHref)}">${esc(p.cta.label || 'Đăng ký tư vấn')}</a></section>`
     : ''
 
-  return `<main class="cp-page">${hero}${p.sections.map(section).join('')}${faq}${cta}</main>`
+  return `<main class="cp-page">${hero}${p.sections.map(section).join('')}${slot}${faq}${cta}</main>`
 }
 const hero_eyebrow = (p) => p.hero && p.hero.eyebrow
 
@@ -139,6 +150,9 @@ body{margin:0;background:#faf9fc;color:var(--ink);font:16px/1.6 'Open Sans',syst
 .cp-btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;border-radius:12px;padding:14px 28px;font-weight:700;font-size:14px;text-decoration:none}
 .cp-tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
 .cp-tag{background:var(--surf);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:14px;color:var(--ink)}
+.cp-slot{border:1px dashed rgba(103,58,183,.45);background:#faf8ff;border-radius:16px;padding:24px}
+.cp-slot__title{font-weight:700;margin:0 0 8px}
+.cp-slot__body{color:var(--muted);font-size:14px;margin:0}
 .cp-note{color:var(--muted);font-size:13px;margin:16px 0 0}
 `
 

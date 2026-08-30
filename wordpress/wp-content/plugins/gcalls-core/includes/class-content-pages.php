@@ -186,6 +186,7 @@ final class Content_Pages {
 			$html .= self::section( (array) $section );
 		}
 
+		$html .= self::form_slot( $page );
 		$html .= self::faq( $page );
 		$html .= self::cta( $page );
 
@@ -430,6 +431,32 @@ final class Content_Pages {
 		}
 
 		return '';
+	}
+
+	/**
+	 * The contact page's form area, while the form itself is not shipped.
+	 *
+	 * Renders as a NOTE, not a form. There are no inputs, so nothing can be
+	 * typed and nothing can appear to send. A form that looks like it works and
+	 * has no backend is the exact failure this project has spent two releases
+	 * avoiding, and a disabled-looking form is only one CSS change away from
+	 * being an enabled one.
+	 *
+	 * @param array<string, mixed> $page Page entry.
+	 * @return string
+	 */
+	private static function form_slot( array $page ): string {
+		$slot = (array) ( $page['form_slot'] ?? array() );
+
+		if ( array() === $slot ) {
+			return '';
+		}
+
+		$out  = '<section class="gcalls-cp__section"><div class="gcalls-cp__slot" role="note">';
+		$out .= '<p class="gcalls-cp__slot-title">' . esc_html__( 'Biểu mẫu đăng ký tư vấn', 'gcalls-core' ) . '</p>';
+		$out .= '<p class="gcalls-cp__slot-body">' . esc_html__( 'Biểu mẫu sẽ được bật trong một bản phát hành riêng. Trong lúc này, vui lòng liên hệ qua email hoặc hotline ở trên.', 'gcalls-core' ) . '</p>';
+
+		return $out . '</div></section>';
 	}
 
 	/**

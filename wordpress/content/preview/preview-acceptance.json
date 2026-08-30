@@ -1,4 +1,370 @@
 {
+ "giai-phap": {
+  "320": {
+   "sections": 6,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/voicebot-ai/",
+    "/tong-dai-tich-hop-crm/",
+    "/tong-dai-tich-hop-helpdesk/",
+    "/tong-dai-tich-hop-pos/",
+    "/tong-dai-quoc-te/",
+    "/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center",
+    "/lien-he/?intent=consultation&source=consultation&solution=Call%20Button%20Widget",
+    "/san-pham/",
+    "/tich-hop/",
+    "/nganh/",
+    "/bang-gia/",
+    "/uoc-tinh-chi-phi/",
+    "/lien-he/?intent=consultation&source=consultation"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 5564
+  },
+  "390": {
+   "sections": 6,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/voicebot-ai/",
+    "/tong-dai-tich-hop-crm/",
+    "/tong-dai-tich-hop-helpdesk/",
+    "/tong-dai-tich-hop-pos/",
+    "/tong-dai-quoc-te/",
+    "/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center",
+    "/lien-he/?intent=consultation&source=consultation&solution=Call%20Button%20Widget",
+    "/san-pham/",
+    "/tich-hop/",
+    "/nganh/",
+    "/bang-gia/",
+    "/uoc-tinh-chi-phi/",
+    "/lien-he/?intent=consultation&source=consultation"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 4967
+  },
+  "768": {
+   "sections": 6,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 2,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/voicebot-ai/",
+    "/tong-dai-tich-hop-crm/",
+    "/tong-dai-tich-hop-helpdesk/",
+    "/tong-dai-tich-hop-pos/",
+    "/tong-dai-quoc-te/",
+    "/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center",
+    "/lien-he/?intent=consultation&source=consultation&solution=Call%20Button%20Widget",
+    "/san-pham/",
+    "/tich-hop/",
+    "/nganh/",
+    "/bang-gia/",
+    "/uoc-tinh-chi-phi/",
+    "/lien-he/?intent=consultation&source=consultation"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 3277
+  },
+  "1024": {
+   "sections": 6,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/voicebot-ai/",
+    "/tong-dai-tich-hop-crm/",
+    "/tong-dai-tich-hop-helpdesk/",
+    "/tong-dai-tich-hop-pos/",
+    "/tong-dai-quoc-te/",
+    "/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center",
+    "/lien-he/?intent=consultation&source=consultation&solution=Call%20Button%20Widget",
+    "/san-pham/",
+    "/tich-hop/",
+    "/nganh/",
+    "/bang-gia/",
+    "/uoc-tinh-chi-phi/",
+    "/lien-he/?intent=consultation&source=consultation"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 2876
+  },
+  "1440": {
+   "sections": 6,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/voicebot-ai/",
+    "/tong-dai-tich-hop-crm/",
+    "/tong-dai-tich-hop-helpdesk/",
+    "/tong-dai-tich-hop-pos/",
+    "/tong-dai-quoc-te/",
+    "/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center",
+    "/lien-he/?intent=consultation&source=consultation&solution=Call%20Button%20Widget",
+    "/san-pham/",
+    "/tich-hop/",
+    "/nganh/",
+    "/bang-gia/",
+    "/uoc-tinh-chi-phi/",
+    "/lien-he/?intent=consultation&source=consultation"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 2880
+  }
+ },
+ "lien-he": {
+  "320": {
+   "sections": 3,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 781
+  },
+  "390": {
+   "sections": 3,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 759
+  },
+  "768": {
+   "sections": 3,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 2,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 616
+  },
+  "1024": {
+   "sections": 3,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 607
+  },
+  "1440": {
+   "sections": 3,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 624
+  }
+ },
+ "san-pham": {
+  "320": {
+   "sections": 6,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/gcalls-plus-webphone/",
+    "/qc-bot-ai/",
+    "/gcalls-cx/",
+    "/giai-phap/",
+    "/tich-hop/",
+    "/bang-gia/",
+    "/uoc-tinh-chi-phi/",
+    "/nganh/",
+    "/lien-he/?intent=product_information&source=consultation"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 4143
+  },
+  "390": {
+   "sections": 6,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/gcalls-plus-webphone/",
+    "/qc-bot-ai/",
+    "/gcalls-cx/",
+    "/giai-phap/",
+    "/tich-hop/",
+    "/bang-gia/",
+    "/uoc-tinh-chi-phi/",
+    "/nganh/",
+    "/lien-he/?intent=product_information&source=consultation"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 3744
+  },
+  "768": {
+   "sections": 6,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 2,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/gcalls-plus-webphone/",
+    "/qc-bot-ai/",
+    "/gcalls-cx/",
+    "/giai-phap/",
+    "/tich-hop/",
+    "/bang-gia/",
+    "/uoc-tinh-chi-phi/",
+    "/nganh/",
+    "/lien-he/?intent=product_information&source=consultation"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 2541
+  },
+  "1024": {
+   "sections": 6,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/gcalls-plus-webphone/",
+    "/qc-bot-ai/",
+    "/gcalls-cx/",
+    "/giai-phap/",
+    "/tich-hop/",
+    "/bang-gia/",
+    "/uoc-tinh-chi-phi/",
+    "/nganh/",
+    "/lien-he/?intent=product_information&source=consultation"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 2194
+  },
+  "1440": {
+   "sections": 6,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/gcalls-plus-webphone/",
+    "/qc-bot-ai/",
+    "/gcalls-cx/",
+    "/giai-phap/",
+    "/tich-hop/",
+    "/bang-gia/",
+    "/uoc-tinh-chi-phi/",
+    "/nganh/",
+    "/lien-he/?intent=product_information&source=consultation"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 2222
+  }
+ },
  "tong-dai-quoc-te": {
   "320": {
    "sections": 17,

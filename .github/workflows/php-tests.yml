@@ -1,0 +1,129 @@
+name: PHP tests
+
+# Test-only. This workflow never deploys, never touches the live site, and needs
+# no secret: everything it runs is in the repository. That is deliberate — the
+# reason it exists is that there is no PHP on the development machine, so the
+# lead-form release and the content renderer have both been shipped-or-held on
+# static analysis alone. A runner with PHP is the smallest thing that fixes it.
+#
+# Third-party actions are pinned to a full commit SHA with the tag noted beside
+# it. A tag is a moving pointer; a SHA is not, and this workflow runs on pushes
+# to a branch that will become a plugin release.
+
+on:
+  push:
+    branches: [feature/gcalls-all-pages-content]
+  pull_request:
+    branches: [main, feature/gcalls-all-pages-content]
+  workflow_dispatch:
+
+# Read-only by default. Nothing here writes to the repository, publishes a
+# package, or comments on a pull request.
+permissions:
+  contents: read
+
+concurrency:
+  group: php-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  php:
+    name: PHP ${{ matrix.php }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      # Every version is worth seeing. A failure on 8.1 alone is exactly the
+      # kind of thing that would otherwise reach the host, which runs 8.1.
+      fail-fast: false
+      matrix:
+        php: ['8.1', '8.2', '8.3']
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up PHP ${{ matrix.php }}
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          tools: none
+
+      - name: Set up Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: PHP version
+        run: php -v
+
+      # The repo's own parser gate runs on Node and covers every PHP file. This
+      # is the real `php -l`, which is a different thing: the parser can be
+      # wrong about a version-specific construct, and 8.1 is what the host runs.
+      - name: PHP syntax lint — every plugin and theme file
+        run: |
+          set -euo pipefail
+          fail=0
+          count=0
+          while IFS= read -r -d '' f; do
+            count=$((count + 1))
+            if ! php -l "$f" > /dev/null; then
+              echo "::error file=$f::php -l failed"
+              php -l "$f" || true
+              fail=1
+            fi
+          done < <(find wordpress/wp-content wordpress/tests -name '*.php' -print0)
+          echo "checked $count PHP file(s)"
+          exit $fail
+
+      # The fixtures. These assert, among other things, that the renderer
+      # performs zero database writes across every code path.
+      - name: Content pages fixtures
+        run: npm run wp:test-content-pages
+
+      # The lead form is NOT part of this branch, and its absence is a release
+      # condition rather than an accident. Assert it rather than trust it.
+      - name: Assert the lead form is absent from this branch
+        run: |
+          set -euo pipefail
+          missing=0
+          for f in \
+            wordpress/wp-content/plugins/gcalls-core/includes/class-leads.php \
+            wordpress/wp-content/plugins/gcalls-core/assets/js/lead-form.js \
+            wordpress/wp-content/plugins/gcalls-core/assets/css/lead-form.css \
+            wordpress/tests/leads-test.php
+          do
+            if [ -e "$f" ]; then echo "::error::$f must not exist on the content branch"; missing=1; fi
+          done
+          if grep -rq 'Leads::init' wordpress/wp-content/plugins/gcalls-core/; then
+            echo "::error::Leads::init must not be wired on the content branch"; missing=1
+          fi
+          exit $missing
+
+      # "It writes nothing" is the whole architecture. Comment lines are
+      # stripped first, because the file's own docblock names these functions to
+      # say it does not call them.
+      - name: Assert the renderer contains no database writer
+        run: |
+          set -euo pipefail
+          f=wordpress/wp-content/plugins/gcalls-core/includes/class-content-pages.php
+          writers=$(grep -vE '^\s*(\*|//|/\*)' "$f" \
+            | grep -cE 'wp_insert_post|wp_update_post|update_post_meta|update_option\(|\$wpdb' || true)
+          echo "writer calls in code: $writers"
+          if [ "$writers" != "0" ]; then echo "::error::the read-only renderer must contain no writer"; exit 1; fi
+
+      - name: Repository checks
+        run: npm run wp:check
+
+      - name: QA foundation
+        run: npm run wp:qa
+
+      - name: Taxonomy 3+7
+        run: npm run wp:check-taxonomy
+
+      - name: Content completeness
+        run: npm run wp:check-content

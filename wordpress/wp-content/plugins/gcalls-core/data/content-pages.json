@@ -1,8 +1,504 @@
 {
   "schema": 1,
-  "generated_at_gmt": "2026-08-30T02:28:46.294Z",
+  "generated_at_gmt": "2026-08-30T02:50:42.748Z",
   "note": "Rendered read-only at request time. Nothing here is written to the database. See docs/CONTENT-RENDER-ADR.md.",
   "pages": [
+    {
+      "slug": "giai-phap",
+      "family": "solution-overview",
+      "sources": [
+        {
+          "file": "src/data/hubs.ts",
+          "sha256": "69440c641bb0c4db9863028a9d0d93a7989865fac933f97f91f3191f096ce492"
+        }
+      ],
+      "taxonomy_override": {
+        "source": "GCALLS-020 / src/components/home/EcosystemSection.tsx",
+        "roster_source": "wordpress/wp-content/plugins/gcalls-core/data/homepage-elementor.json (live-verified)",
+        "changes": [
+          {
+            "field": "description",
+            "from": "Gcalls có bốn sản phẩm phục vụ bốn bài toán khác nhau trong hoạt động giao tiếp với khách hàng: kênh nghe gọi cho đội ngũ, kiểm soát chất lượng hội thoại, vận hành chăm sóc khách hàng đa kênh, và tự động hóa các cuộc gọi lặp lại.",
+            "to": "Gcalls có ba sản phẩm phục vụ ba bài toán khác nhau trong hoạt động giao tiếp với khách hàng: kênh nghe gọi cho đội ngũ, kiểm soát chất lượng hội thoại, và vận hành chăm sóc khách hàng đa kênh.",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution) — the automation clause described Voicebot, which is now a solution"
+          },
+          {
+            "field": "answer",
+            "from": "Gcalls có bốn sản phẩm: Gcalls Plus Webphone là kênh nghe gọi và quản lý hoạt động cuộc gọi trên trình duyệt; QA QC Center sử dụng QC Bot AI để hỗ trợ đánh giá chất lượng hội thoại; Gcalls CX là nền tảng chăm sóc khách hàng đa kênh; Gcalls Voicebot AI dành cho các cuộc gọi lặp lại theo kịch bản đã thiết lập. Bốn sản phẩm giải quyết các bài toán khác nhau, không phải bốn mức giá của cùng một sản phẩm, và được chọn theo nhu cầu vận hành thực tế của doanh nghiệp.",
+            "to": "Gcalls có ba sản phẩm: Gcalls Plus Webphone là kênh nghe gọi và quản lý hoạt động cuộc gọi trên trình duyệt; QA QC Center sử dụng QC Bot AI để hỗ trợ đánh giá chất lượng hội thoại; Gcalls CX là nền tảng chăm sóc khách hàng đa kênh. Ba sản phẩm giải quyết các bài toán khác nhau, không phải ba mức giá của cùng một sản phẩm, và được chọn theo nhu cầu vận hành thực tế của doanh nghiệp.",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution) — the Voicebot clause moves to /giai-phap/"
+          },
+          {
+            "field": "eyebrow",
+            "from": "BỐN SẢN PHẨM",
+            "to": "BA SẢN PHẨM",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution)"
+          },
+          {
+            "field": "note",
+            "from": "Bốn sản phẩm có thể dùng độc lập hoặc cùng nhau. Cấu hình phù hợp phụ thuộc vào quy mô đội ngũ, kênh giao tiếp và nhu cầu kiểm soát chất lượng của doanh nghiệp.",
+            "to": "Ba sản phẩm có thể dùng độc lập hoặc cùng nhau. Cấu hình phù hợp phụ thuộc vào quy mô đội ngũ, kênh giao tiếp và nhu cầu kiểm soát chất lượng của doanh nghiệp.",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution)"
+          },
+          {
+            "field": "h2",
+            "from": "Ranh giới giữa bốn sản phẩm",
+            "to": "Ranh giới giữa ba sản phẩm",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution)"
+          },
+          {
+            "field": "eyebrow",
+            "from": "BỐN NHÓM GIẢI PHÁP",
+            "to": "BẢY GIẢI PHÁP",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution)"
+          },
+          {
+            "field": "answer",
+            "from": "Gcalls có bốn nhóm giải pháp. Ba nhóm đầu là tích hợp hệ thống: kết nối tổng đài với CRM, với Helpdesk và với hệ thống bán hàng/POS, để cuộc gọi hoạt động cùng dữ liệu và quy trình doanh nghiệp đang sử dụng. Nhóm thứ tư là tổng đài quốc tế, dành cho doanh nghiệp cần đầu số và cấu hình liên lạc tại thị trường nước ngoài. Phạm vi triển khai của mỗi giải pháp được xác định theo hệ thống, dữ liệu và quy định thực tế.",
+            "to": "Gcalls có bảy giải pháp. Ba nhóm đầu là tích hợp hệ thống: kết nối tổng đài với CRM, với Helpdesk và với hệ thống bán hàng/POS, để cuộc gọi hoạt động cùng dữ liệu và quy trình doanh nghiệp đang sử dụng. Tổng đài quốc tế dành cho doanh nghiệp cần đầu số và cấu hình liên lạc tại thị trường nước ngoài. Ba giải pháp còn lại là tích hợp Voicebot AI, Cloud Call Center và Call Button Widget. Phạm vi triển khai của mỗi giải pháp được xác định theo hệ thống, dữ liệu và quy định thực tế.",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution) — enumerates the same seven cards shown below it"
+          },
+          {
+            "field": "voicebot card title",
+            "from": "Gcalls Voicebot AI",
+            "to": "Giải pháp tích hợp Voicebot AI",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution) — the old title asserts Gcalls owns the voicebot engine, which the checkpoint forbids"
+          },
+          {
+            "field": "SOLUTIONS_HUB.cards.items",
+            "from": "4 items",
+            "to": "7 items",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution) — Voicebot moved in; Cloud Call Center and Call Button Widget taken from the live homepage roster"
+          }
+        ]
+      },
+      "hero": {
+        "eyebrow": "GIẢI PHÁP GCALLS",
+        "h1": "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp",
+        "description": "Giải pháp Gcalls được tổ chức theo bài toán thực tế, không theo danh sách tính năng: kết nối cuộc gọi với hệ thống doanh nghiệp đang dùng, và thiết lập liên lạc cho các thị trường doanh nghiệp cần phục vụ.",
+        "points": []
+      },
+      "sections": [
+        {
+          "type": "prose",
+          "from": "directAnswer",
+          "heading": "Giải pháp Gcalls gồm những gì?",
+          "body": "Gcalls có bảy giải pháp. Ba nhóm đầu là tích hợp hệ thống: kết nối tổng đài với CRM, với Helpdesk và với hệ thống bán hàng/POS, để cuộc gọi hoạt động cùng dữ liệu và quy trình doanh nghiệp đang sử dụng. Tổng đài quốc tế dành cho doanh nghiệp cần đầu số và cấu hình liên lạc tại thị trường nước ngoài. Ba giải pháp còn lại là tích hợp Voicebot AI, Cloud Call Center và Call Button Widget. Phạm vi triển khai của mỗi giải pháp được xác định theo hệ thống, dữ liệu và quy định thực tế."
+        },
+        {
+          "type": "cards",
+          "from": "cards",
+          "eyebrow": "BẢY GIẢI PHÁP",
+          "heading": "Chọn theo hệ thống và thị trường doanh nghiệp đang vận hành",
+          "cards": [
+            {
+              "title": "Giải pháp tích hợp Voicebot AI",
+              "body": "Tự động hóa những cuộc gọi lặp lại theo kịch bản đã thiết lập — nhắc lịch, xác nhận thông tin, sàng lọc nhu cầu — và chuyển tình huống cần chuyên môn cho nhân viên.",
+              "href": "/voicebot-ai/",
+              "cta": "Xem Gcalls Voicebot AI",
+              "tags": [
+                "Kịch bản cuộc gọi",
+                "Chiến dịch tự động",
+                "Chuyển tiếp nhân viên"
+              ],
+              "supporting": "Voicebot AI"
+            },
+            {
+              "title": "Tổng đài tích hợp CRM",
+              "body": "Kết nối cuộc gọi với dữ liệu và workflow bán hàng: gọi trực tiếp từ hệ thống, nhận diện khách hàng và ghi nhận lịch sử tương tác theo cấu hình.",
+              "href": "/tong-dai-tich-hop-crm/",
+              "cta": "Xem tích hợp CRM",
+              "tags": [
+                "Click-to-Call",
+                "Customer context",
+                "Lead workflow"
+              ],
+              "supporting": ""
+            },
+            {
+              "title": "Tổng đài tích hợp Helpdesk",
+              "body": "Đưa hoạt động nghe gọi vào quy trình hỗ trợ và ticket để đội CSKH xử lý yêu cầu với ngữ cảnh đầy đủ hơn.",
+              "href": "/tong-dai-tich-hop-helpdesk/",
+              "cta": "Xem tích hợp Helpdesk",
+              "tags": [
+                "Ticket workflow",
+                "Support context",
+                "Lịch sử hỗ trợ"
+              ],
+              "supporting": ""
+            },
+            {
+              "title": "Tổng đài tích hợp POS",
+              "body": "Kết nối cuộc gọi với dữ liệu khách hàng và thông tin bán hàng phù hợp để đội ngũ có thêm context khi tư vấn hoặc chăm sóc sau mua.",
+              "href": "/tong-dai-tich-hop-pos/",
+              "cta": "Xem tích hợp POS",
+              "tags": [
+                "Customer context",
+                "Sales data",
+                "Follow-up"
+              ],
+              "supporting": ""
+            },
+            {
+              "title": "Tổng đài quốc tế",
+              "body": "Thiết lập đầu số và cấu hình liên lạc cho thị trường nước ngoài, kèm khảo sát thủ tục và hồ sơ theo quy định từng quốc gia.",
+              "href": "/tong-dai-quoc-te/",
+              "cta": "Xem tổng đài quốc tế",
+              "tags": [
+                "Đầu số quốc tế",
+                "Inbound / Outbound",
+                "Hồ sơ đăng ký"
+              ],
+              "supporting": ""
+            },
+            {
+              "title": "Cloud Call Center",
+              "body": "Hệ thống tổng đài vận hành trên nền tảng Cloud với SIP, IVR và điều hướng cuộc gọi.",
+              "href": "/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center",
+              "cta": "Nhận tư vấn",
+              "tags": [],
+              "supporting": ""
+            },
+            {
+              "title": "Call Button Widget",
+              "body": "Nút gọi nhúng vào website để khách truy cập để lại số điện thoại cho đội ngũ liên hệ lại.",
+              "href": "/lien-he/?intent=consultation&source=consultation&solution=Call%20Button%20Widget",
+              "cta": "Nhận tư vấn",
+              "tags": [],
+              "supporting": ""
+            }
+          ],
+          "note": "Các giải pháp trên đều triển khai cùng lớp nghe gọi của Gcalls. Phạm vi dữ liệu, khả năng kết nối và điều kiện triển khai được Gcalls xác nhận theo hệ thống và thị trường thực tế của doanh nghiệp."
+        },
+        {
+          "type": "steps",
+          "from": "decisionGuide",
+          "eyebrow": "BÀI TOÁN → GIẢI PHÁP",
+          "heading": "Bắt đầu từ bài toán của đội ngũ",
+          "lead": "Sales, Customer Service và Quality Assurance là cách mô tả nhu cầu vận hành. Mỗi nhu cầu được giải quyết bằng sản phẩm và giải pháp tương ứng.",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Tổng đài tích hợp CRM",
+              "body": "Sales — đội ngũ gọi ra nhiều, quản lý lead và cần theo dõi follow-up trên dữ liệu khách hàng. Cuộc gọi cần gắn với lead và contact trong CRM, cùng lớp nghe gọi của Gcalls Plus."
+            },
+            {
+              "n": 2,
+              "title": "Tổng đài tích hợp Helpdesk",
+              "body": "Customer Service — tiếp nhận và xử lý yêu cầu khách hàng, cần ngữ cảnh đầy đủ cho từng lần liên hệ. Cuộc gọi cần nằm trong quy trình ticket. Nếu khách hàng liên hệ qua nhiều kênh, xem thêm Gcalls CX."
+            },
+            {
+              "n": 3,
+              "title": "QA QC Center",
+              "body": "Quality Assurance — cần đánh giá và kiểm soát chất lượng hội thoại của đội ngũ một cách có hệ thống. Đây là bài toán sản phẩm, không phải tích hợp: cần transcript và bộ tiêu chí để chấm điểm."
+            },
+            {
+              "n": 4,
+              "title": "Tổng đài quốc tế",
+              "body": "Mở rộng thị trường — doanh nghiệp cần khách hàng ở nước ngoài liên hệ được và đội ngũ gọi ra tới các thị trường đó. Bài toán nằm ở đầu số và quy định từng quốc gia, cần khảo sát trước khi triển khai."
+            },
+            {
+              "n": 5,
+              "title": "Giải pháp tích hợp Voicebot AI",
+              "body": "Một phần lớn cuộc gọi lặp lại gần như nguyên vẹn mỗi lần — nhắc lịch, xác nhận thông tin, sàng lọc danh sách. Bài toán nằm ở lớp tự động hóa tác vụ có kịch bản rõ ràng, để nhân viên còn thời gian cho những cuộc trao đổi cần tư vấn thật sự."
+            }
+          ],
+          "note": "Nếu doanh nghiệp có nhiều bài toán cùng lúc, các giải pháp trên có thể triển khai kết hợp. Gcalls xác định thứ tự ưu tiên trong quá trình khảo sát."
+        },
+        {
+          "type": "cards",
+          "from": "links",
+          "heading": "Xem thêm",
+          "cards": [
+            {
+              "title": "Tất cả sản phẩm",
+              "body": "",
+              "href": "/san-pham/"
+            },
+            {
+              "title": "Danh mục tích hợp",
+              "body": "",
+              "href": "/tich-hop/"
+            },
+            {
+              "title": "Giải pháp theo ngành",
+              "body": "",
+              "href": "/nganh/"
+            },
+            {
+              "title": "Bảng giá Gcalls",
+              "body": "",
+              "href": "/bang-gia/"
+            },
+            {
+              "title": "Ước tính chi phí",
+              "body": "",
+              "href": "/uoc-tinh-chi-phi/"
+            }
+          ]
+        }
+      ],
+      "faq": [],
+      "cta": {
+        "heading": "Cần xác định giải pháp phù hợp với hệ thống hiện tại?",
+        "body": "",
+        "label": ""
+      },
+      "attribution": {
+        "intent": "consultation",
+        "source": "consultation"
+      }
+    },
+    {
+      "slug": "lien-he",
+      "family": "contact",
+      "sources": [
+        {
+          "file": "src/pages/ContactPage.tsx",
+          "sha256": "97f8cc9e623c07ef597319699960074d5f26910f0bd56c5525164779834fe31e"
+        },
+        {
+          "file": "src/config/navigation.ts (CONTACT)",
+          "sha256": "6372eb2ed77626d9d70bc1d1675aec1b7a3db0fb65ee89d21b434dfa1335db2d"
+        }
+      ],
+      "hero": {
+        "eyebrow": "",
+        "h1": "Liên hệ Gcalls",
+        "description": "",
+        "points": []
+      },
+      "sections": [
+        {
+          "type": "cards",
+          "from": "ContactPage.tsx — direct contact card",
+          "heading": "Liên hệ trực tiếp",
+          "cards": [
+            {
+              "title": "Email",
+              "body": "sales@gcalls.co",
+              "href": ""
+            },
+            {
+              "title": "Hotline",
+              "body": "028 7302 5469",
+              "href": ""
+            }
+          ]
+        }
+      ],
+      "form_slot": {
+        "state": "blocked_runtime",
+        "note": "The lead form ships in a separate Core release and is not in this one. Rendered here as a blocked slot; never as a form that appears to send."
+      },
+      "faq": [],
+      "cta": null,
+      "attribution": {
+        "intent": "consultation",
+        "source": "contact"
+      }
+    },
+    {
+      "slug": "san-pham",
+      "family": "product-overview",
+      "sources": [
+        {
+          "file": "src/data/hubs.ts",
+          "sha256": "69440c641bb0c4db9863028a9d0d93a7989865fac933f97f91f3191f096ce492"
+        }
+      ],
+      "taxonomy_override": {
+        "source": "GCALLS-020 / src/components/home/EcosystemSection.tsx",
+        "roster_source": "wordpress/wp-content/plugins/gcalls-core/data/homepage-elementor.json (live-verified)",
+        "changes": [
+          {
+            "field": "description",
+            "from": "Gcalls có bốn sản phẩm phục vụ bốn bài toán khác nhau trong hoạt động giao tiếp với khách hàng: kênh nghe gọi cho đội ngũ, kiểm soát chất lượng hội thoại, vận hành chăm sóc khách hàng đa kênh, và tự động hóa các cuộc gọi lặp lại.",
+            "to": "Gcalls có ba sản phẩm phục vụ ba bài toán khác nhau trong hoạt động giao tiếp với khách hàng: kênh nghe gọi cho đội ngũ, kiểm soát chất lượng hội thoại, và vận hành chăm sóc khách hàng đa kênh.",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution) — the automation clause described Voicebot, which is now a solution"
+          },
+          {
+            "field": "answer",
+            "from": "Gcalls có bốn sản phẩm: Gcalls Plus Webphone là kênh nghe gọi và quản lý hoạt động cuộc gọi trên trình duyệt; QA QC Center sử dụng QC Bot AI để hỗ trợ đánh giá chất lượng hội thoại; Gcalls CX là nền tảng chăm sóc khách hàng đa kênh; Gcalls Voicebot AI dành cho các cuộc gọi lặp lại theo kịch bản đã thiết lập. Bốn sản phẩm giải quyết các bài toán khác nhau, không phải bốn mức giá của cùng một sản phẩm, và được chọn theo nhu cầu vận hành thực tế của doanh nghiệp.",
+            "to": "Gcalls có ba sản phẩm: Gcalls Plus Webphone là kênh nghe gọi và quản lý hoạt động cuộc gọi trên trình duyệt; QA QC Center sử dụng QC Bot AI để hỗ trợ đánh giá chất lượng hội thoại; Gcalls CX là nền tảng chăm sóc khách hàng đa kênh. Ba sản phẩm giải quyết các bài toán khác nhau, không phải ba mức giá của cùng một sản phẩm, và được chọn theo nhu cầu vận hành thực tế của doanh nghiệp.",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution) — the Voicebot clause moves to /giai-phap/"
+          },
+          {
+            "field": "eyebrow",
+            "from": "BỐN SẢN PHẨM",
+            "to": "BA SẢN PHẨM",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution)"
+          },
+          {
+            "field": "note",
+            "from": "Bốn sản phẩm có thể dùng độc lập hoặc cùng nhau. Cấu hình phù hợp phụ thuộc vào quy mô đội ngũ, kênh giao tiếp và nhu cầu kiểm soát chất lượng của doanh nghiệp.",
+            "to": "Ba sản phẩm có thể dùng độc lập hoặc cùng nhau. Cấu hình phù hợp phụ thuộc vào quy mô đội ngũ, kênh giao tiếp và nhu cầu kiểm soát chất lượng của doanh nghiệp.",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution)"
+          },
+          {
+            "field": "h2",
+            "from": "Ranh giới giữa bốn sản phẩm",
+            "to": "Ranh giới giữa ba sản phẩm",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution)"
+          },
+          {
+            "field": "PRODUCTS_HUB.cards.items",
+            "from": "4 items incl. \"Gcalls Voicebot AI\"",
+            "to": "3 items",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution) — card moved to SOLUTIONS_HUB intact"
+          },
+          {
+            "field": "eyebrow",
+            "from": "BỐN NHÓM GIẢI PHÁP",
+            "to": "BẢY GIẢI PHÁP",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution)"
+          },
+          {
+            "field": "answer",
+            "from": "Gcalls có bốn nhóm giải pháp. Ba nhóm đầu là tích hợp hệ thống: kết nối tổng đài với CRM, với Helpdesk và với hệ thống bán hàng/POS, để cuộc gọi hoạt động cùng dữ liệu và quy trình doanh nghiệp đang sử dụng. Nhóm thứ tư là tổng đài quốc tế, dành cho doanh nghiệp cần đầu số và cấu hình liên lạc tại thị trường nước ngoài. Phạm vi triển khai của mỗi giải pháp được xác định theo hệ thống, dữ liệu và quy định thực tế.",
+            "to": "Gcalls có bảy giải pháp. Ba nhóm đầu là tích hợp hệ thống: kết nối tổng đài với CRM, với Helpdesk và với hệ thống bán hàng/POS, để cuộc gọi hoạt động cùng dữ liệu và quy trình doanh nghiệp đang sử dụng. Tổng đài quốc tế dành cho doanh nghiệp cần đầu số và cấu hình liên lạc tại thị trường nước ngoài. Ba giải pháp còn lại là tích hợp Voicebot AI, Cloud Call Center và Call Button Widget. Phạm vi triển khai của mỗi giải pháp được xác định theo hệ thống, dữ liệu và quy định thực tế.",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution) — enumerates the same seven cards shown below it"
+          },
+          {
+            "field": "voicebot card title",
+            "from": "Gcalls Voicebot AI",
+            "to": "Giải pháp tích hợp Voicebot AI",
+            "reason": "GCALLS-028 DECISION 1 — taxonomy governed by EcosystemSection.tsx / GCALLS-020 (3 products, 7 solutions, Voicebot is a solution) — the old title asserts Gcalls owns the voicebot engine, which the checkpoint forbids"
+          }
+        ]
+      },
+      "hero": {
+        "eyebrow": "SẢN PHẨM GCALLS",
+        "h1": "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA",
+        "description": "Gcalls có ba sản phẩm phục vụ ba bài toán khác nhau trong hoạt động giao tiếp với khách hàng: kênh nghe gọi cho đội ngũ, kiểm soát chất lượng hội thoại, và vận hành chăm sóc khách hàng đa kênh.",
+        "points": []
+      },
+      "sections": [
+        {
+          "type": "prose",
+          "from": "directAnswer",
+          "heading": "Gcalls có những sản phẩm nào?",
+          "body": "Gcalls có ba sản phẩm: Gcalls Plus Webphone là kênh nghe gọi và quản lý hoạt động cuộc gọi trên trình duyệt; QA QC Center sử dụng QC Bot AI để hỗ trợ đánh giá chất lượng hội thoại; Gcalls CX là nền tảng chăm sóc khách hàng đa kênh. Ba sản phẩm giải quyết các bài toán khác nhau, không phải ba mức giá của cùng một sản phẩm, và được chọn theo nhu cầu vận hành thực tế của doanh nghiệp."
+        },
+        {
+          "type": "cards",
+          "from": "cards",
+          "eyebrow": "BA SẢN PHẨM",
+          "heading": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+          "cards": [
+            {
+              "title": "Gcalls Plus Webphone",
+              "body": "Kênh nghe gọi trên trình duyệt cho đội Sales và CSKH, kèm danh bạ, lịch sử tương tác, ghi chú và theo dõi hoạt động cuộc gọi.",
+              "href": "/gcalls-plus-webphone/",
+              "cta": "Xem Gcalls Plus Webphone",
+              "tags": [
+                "Webphone",
+                "Call management",
+                "Interaction history"
+              ],
+              "supporting": ""
+            },
+            {
+              "title": "QA QC Center",
+              "body": "Đưa hội thoại thành dữ liệu có thể đánh giá: transcript, hỗ trợ chấm điểm theo bộ tiêu chí QA và làm nổi bật các tín hiệu cần kiểm tra.",
+              "href": "/qc-bot-ai/",
+              "cta": "Xem QA QC Center",
+              "tags": [
+                "Transcript",
+                "QA scoring",
+                "Quality signals"
+              ],
+              "supporting": "Powered by QC Bot AI"
+            },
+            {
+              "title": "Gcalls CX",
+              "body": "Hợp nhất hội thoại từ nhiều kênh giao tiếp vào một màn hình để đội CSKH quản lý yêu cầu và ngữ cảnh khách hàng tập trung hơn.",
+              "href": "/gcalls-cx/",
+              "cta": "Xem Gcalls CX",
+              "tags": [
+                "Omnichannel",
+                "Ticket",
+                "Customer context"
+              ],
+              "supporting": ""
+            }
+          ],
+          "note": "Ba sản phẩm có thể dùng độc lập hoặc cùng nhau. Cấu hình phù hợp phụ thuộc vào quy mô đội ngũ, kênh giao tiếp và nhu cầu kiểm soát chất lượng của doanh nghiệp."
+        },
+        {
+          "type": "steps",
+          "from": "decisionGuide",
+          "eyebrow": "CHỌN ĐÚNG SẢN PHẨM",
+          "heading": "Ranh giới giữa ba sản phẩm",
+          "lead": "Nếu bài toán hiện tại thuộc một trong các trường hợp dưới đây, đây là sản phẩm nên xem trước.",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Gcalls Plus Webphone",
+              "body": "Đội ngũ cần một kênh nghe gọi ổn định và cần biết ai đã gọi cho khách hàng, khi nào, nội dung ra sao. Bài toán nằm ở lớp thực hiện cuộc gọi và quản lý hoạt động nghe gọi hằng ngày."
+            },
+            {
+              "n": 2,
+              "title": "QA QC Center",
+              "body": "Quản lý cần đánh giá chất lượng hội thoại của đội ngũ nhưng không thể nghe lại toàn bộ cuộc gọi. Bài toán nằm ở lớp kiểm soát chất lượng: cần transcript và bộ tiêu chí để đánh giá có hệ thống."
+            },
+            {
+              "n": 3,
+              "title": "Gcalls CX",
+              "body": "Khách hàng liên hệ qua nhiều kênh khác nhau và đội CSKH phải mở nhiều công cụ để trả lời. Bài toán nằm ở lớp vận hành đa kênh, rộng hơn kênh thoại đơn thuần."
+            },
+            {
+              "n": 4,
+              "title": "Xem các giải pháp tích hợp",
+              "body": "Doanh nghiệp cần cuộc gọi hoạt động cùng dữ liệu trong CRM, Helpdesk hoặc hệ thống bán hàng đang dùng. Đây là bài toán giải pháp, không phải chọn sản phẩm: sản phẩm giữ nguyên và được kết nối với hệ thống hiện có."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "type": "cards",
+          "from": "links",
+          "heading": "Xem thêm",
+          "cards": [
+            {
+              "title": "Tất cả giải pháp",
+              "body": "",
+              "href": "/giai-phap/"
+            },
+            {
+              "title": "Danh mục tích hợp",
+              "body": "",
+              "href": "/tich-hop/"
+            },
+            {
+              "title": "Bảng giá Gcalls",
+              "body": "",
+              "href": "/bang-gia/"
+            },
+            {
+              "title": "Ước tính chi phí",
+              "body": "",
+              "href": "/uoc-tinh-chi-phi/"
+            },
+            {
+              "title": "Giải pháp theo ngành",
+              "body": "",
+              "href": "/nganh/"
+            }
+          ]
+        }
+      ],
+      "faq": [],
+      "cta": {
+        "heading": "Chưa rõ sản phẩm nào phù hợp với đội ngũ hiện tại?",
+        "body": "",
+        "label": ""
+      },
+      "attribution": {
+        "intent": "product_information",
+        "source": "consultation"
+      }
+    },
     {
       "slug": "tong-dai-quoc-te",
       "family": "solution-detail",

@@ -29,7 +29,13 @@
     "wp:corpus": "node wordpress/scripts/export-blog-corpus.mjs",
     "wp:corpus-package": "node wordpress/scripts/build-corpus-package.mjs",
     "wp:check": "npm run wp:estimator && npm run wp:loss && npm run wp:test-loss && npm run wp:product && npm run wp:lint && npm run wp:css && npm run wp:qa && npm run wp:test-import && npm run wp:reconcile",
-    "wp:live-verify": "node wordpress/scripts/live-003a-verify.mjs"
+    "wp:live-verify": "node wordpress/scripts/live-003a-verify.mjs",
+    "wp:test-content-pages": "php wordpress/tests/content-pages-test.php",
+    "wp:check-taxonomy": "node wordpress/scripts/check-taxonomy.mjs",
+    "wp:check-content": "node wordpress/scripts/check-content-completeness.mjs",
+    "wp:extract-content": "node --import ./wordpress/scripts/register-alias.mjs wordpress/scripts/extract-react-content.mjs wordpress/content/extracted",
+    "wp:build-pages": "node --import ./wordpress/scripts/register-alias.mjs wordpress/scripts/build-hub-manifest.mjs",
+    "wp:preview-pages": "node wordpress/scripts/preview-content-pages.mjs wordpress/content/preview"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "1.2.3",
