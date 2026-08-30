@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_at_gmt": "2026-08-29T16:24:02.835Z",
   "built_from": "gc-db.sql",
-  "plugin_version": "0.9.5",
+  "plugin_version": "0.10.0",
   "policy": {
     "protected_ids": [
       "100",
