@@ -1,0 +1,50 @@
+[
+ {
+  "slug": "tong-dai-tich-hop-crm",
+  "family": "solution-detail",
+  "sources": 1,
+  "exports": 22,
+  "bytes": 12290,
+  "headings": 37
+ },
+ {
+  "slug": "tong-dai-tich-hop-helpdesk",
+  "family": "solution-detail",
+  "sources": 1,
+  "exports": 20,
+  "bytes": 12273,
+  "headings": 41
+ },
+ {
+  "slug": "tong-dai-tich-hop-pos",
+  "family": "solution-detail",
+  "sources": 1,
+  "exports": 19,
+  "bytes": 12021,
+  "headings": 40
+ },
+ {
+  "slug": "tong-dai-quoc-te",
+  "family": "solution-detail",
+  "sources": 1,
+  "exports": 20,
+  "bytes": 16642,
+  "headings": 55
+ },
+ {
+  "slug": "san-pham",
+  "family": "product-overview",
+  "sources": 3,
+  "exports": 62,
+  "bytes": 36824,
+  "headings": 117
+ },
+ {
+  "slug": "giai-phap",
+  "family": "solution-overview",
+  "sources": 5,
+  "exports": 94,
+  "bytes": 65991,
+  "headings": 218
+ }
+]

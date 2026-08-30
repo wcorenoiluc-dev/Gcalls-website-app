@@ -1,0 +1,370 @@
+{
+ "tong-dai-quoc-te": {
+  "320": {
+   "sections": 17,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=international&solution=T%E1%BB%95ng%20%C4%91%C3%A0i%20qu%E1%BB%91c%20t%E1%BA%BF"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 14849
+  },
+  "390": {
+   "sections": 17,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=international&solution=T%E1%BB%95ng%20%C4%91%C3%A0i%20qu%E1%BB%91c%20t%E1%BA%BF"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 12982
+  },
+  "768": {
+   "sections": 17,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 2,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=international&solution=T%E1%BB%95ng%20%C4%91%C3%A0i%20qu%E1%BB%91c%20t%E1%BA%BF"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 8201
+  },
+  "1024": {
+   "sections": 17,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=international&solution=T%E1%BB%95ng%20%C4%91%C3%A0i%20qu%E1%BB%91c%20t%E1%BA%BF"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 7752
+  },
+  "1440": {
+   "sections": 17,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=international&solution=T%E1%BB%95ng%20%C4%91%C3%A0i%20qu%E1%BB%91c%20t%E1%BA%BF"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 7874
+  }
+ },
+ "tong-dai-tich-hop-crm": {
+  "320": {
+   "sections": 17,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 12678
+  },
+  "390": {
+   "sections": 17,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 11327
+  },
+  "768": {
+   "sections": 17,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 2,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 7360
+  },
+  "1024": {
+   "sections": 17,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 6888
+  },
+  "1440": {
+   "sections": 17,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=crm_integration&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 6927
+  }
+ },
+ "tong-dai-tich-hop-helpdesk": {
+  "320": {
+   "sections": 15,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=helpdesk_integration&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 11783
+  },
+  "390": {
+   "sections": 15,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=helpdesk_integration&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 10667
+  },
+  "768": {
+   "sections": 15,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 2,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=helpdesk_integration&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 6856
+  },
+  "1024": {
+   "sections": 15,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=helpdesk_integration&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 6421
+  },
+  "1440": {
+   "sections": 15,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=helpdesk_integration&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 6549
+  }
+ },
+ "tong-dai-tich-hop-pos": {
+  "320": {
+   "sections": 16,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=pos_integration&solution=T%C3%ADch%20h%E1%BB%A3p%20POS"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 12189
+  },
+  "390": {
+   "sections": 16,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 1,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=pos_integration&solution=T%C3%ADch%20h%E1%BB%A3p%20POS"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 10827
+  },
+  "768": {
+   "sections": 16,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 2,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=pos_integration&solution=T%C3%ADch%20h%E1%BB%A3p%20POS"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 6890
+  },
+  "1024": {
+   "sections": 16,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=pos_integration&solution=T%C3%ADch%20h%E1%BB%A3p%20POS"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 6612
+  },
+  "1440": {
+   "sections": 16,
+   "h1": 1,
+   "pads": [
+    "50/50"
+   ],
+   "worstGap": 0,
+   "cols": 3,
+   "equalHeight": true,
+   "overflowX": false,
+   "emptySections": 0,
+   "links": [
+    "/lien-he/?intent=consultation&source=pos_integration&solution=T%C3%ADch%20h%E1%BB%A3p%20POS"
+   ],
+   "placeholder": false,
+   "rawShortcode": false,
+   "docH": 6743
+  }
+ }
+}

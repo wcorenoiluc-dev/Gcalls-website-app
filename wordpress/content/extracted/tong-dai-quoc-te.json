@@ -1,0 +1,458 @@
+{
+ "slug": "tong-dai-quoc-te",
+ "family": "solution-detail",
+ "sources": [
+  {
+   "file": "src/data/internationalCalling.ts",
+   "sha256": "5a0eacb788651455b3af491340b0d02abcc3839528cfcf9769315918fe1961f5",
+   "exportCount": 21
+  }
+ ],
+ "exports": {
+  "internationalCalling.ts::INTL_BOUNDARIES": {
+   "eyebrow": "CHỌN ĐÚNG GIẢI PHÁP",
+   "h2": "Tổng đài quốc tế giải quyết bài toán thị trường, không thay thế các luồng tích hợp",
+   "items": [
+    {
+     "product": "Tổng đài quốc tế",
+     "need": "Doanh nghiệp cần đầu số và cấu hình liên lạc cho một hoặc nhiều thị trường nước ngoài.",
+     "path": "/tong-dai-quoc-te/",
+     "current": true
+    },
+    {
+     "product": "Gcalls Plus Webphone",
+     "need": "Đội ngũ cần kênh nghe gọi trên trình duyệt và quản lý hoạt động cuộc gọi.",
+     "path": "/gcalls-plus-webphone/"
+    },
+    {
+     "product": "CRM Integration",
+     "need": "Sales/CSKH vận hành quanh lead, contact và workflow quản lý khách hàng.",
+     "path": "/tong-dai-tich-hop-crm/"
+    },
+    {
+     "product": "Gcalls CX",
+     "need": "Doanh nghiệp cần hội thoại tập trung trên nhiều kênh giao tiếp, không chỉ kênh thoại.",
+     "path": "/gcalls-cx/"
+    }
+   ],
+   "related": {
+    "lead": "Các luồng liên quan khác:",
+    "links": [
+     {
+      "label": "Tích hợp Helpdesk",
+      "path": "/tong-dai-tich-hop-helpdesk/"
+     },
+     {
+      "label": "Tích hợp POS",
+      "path": "/tong-dai-tich-hop-pos/"
+     },
+     {
+      "label": "Xem tất cả giải pháp",
+      "path": "/giai-phap/"
+     }
+    ]
+   }
+  },
+  "internationalCalling.ts::INTL_DEPLOYMENT": {
+   "eyebrow": "TRIỂN KHAI",
+   "h2": "Triển khai theo từng thị trường và theo quy định áp dụng",
+   "steps": [
+    {
+     "n": "01",
+     "title": "Trao đổi nhu cầu và thị trường mục tiêu"
+    },
+    {
+     "n": "02",
+     "title": "Khảo sát quy định và loại đầu số theo từng quốc gia"
+    },
+    {
+     "n": "03",
+     "title": "Xác định phạm vi triển khai và cấu hình cần thiết"
+    },
+    {
+     "n": "04",
+     "title": "Chuẩn bị và gửi hồ sơ đăng ký đầu số"
+    },
+    {
+     "n": "05",
+     "title": "Cấu hình luồng gọi vào và gọi ra"
+    },
+    {
+     "n": "06",
+     "title": "Kiểm thử theo từng đầu số và từng thị trường"
+    },
+    {
+     "n": "07",
+     "title": "Hướng dẫn đội Sales/CSKH sử dụng"
+    },
+    {
+     "n": "08",
+     "title": "Đưa vào vận hành và theo dõi"
+    }
+   ]
+  },
+  "internationalCalling.ts::INTL_DIRECT_ANSWER": {
+   "question": "Tổng đài quốc tế là gì?",
+   "answer": "Tổng đài quốc tế là mô hình tổng đài doanh nghiệp sử dụng đầu số và cấu hình liên lạc gắn với các thị trường nước ngoài, để đội ngũ có thể nhận cuộc gọi từ khách hàng quốc tế và gọi ra tới các thị trường đó trong cùng một hệ thống. Loại đầu số có thể sử dụng, hồ sơ cần chuẩn bị và điều kiện vận hành khác nhau tùy quốc gia và tùy quy định của từng thị trường, nên phạm vi triển khai được xác định theo từng yêu cầu cụ thể."
+  },
+  "internationalCalling.ts::INTL_ESTIMATOR_HREF": "/uoc-tinh-chi-phi/?product=international",
+  "internationalCalling.ts::INTL_FAQ": [
+   {
+    "q": "Tổng đài quốc tế là gì?",
+    "a": "Tổng đài quốc tế là mô hình tổng đài doanh nghiệp sử dụng đầu số và cấu hình liên lạc gắn với thị trường nước ngoài, để đội ngũ nhận và thực hiện cuộc gọi với khách hàng quốc tế trong cùng một hệ thống."
+   },
+   {
+    "q": "Gcalls hỗ trợ đầu số tại những quốc gia nào?",
+    "a": "Khả năng cung cấp đầu số phụ thuộc vào quy định và điều kiện tại từng quốc gia, nên Gcalls xác nhận theo từng yêu cầu cụ thể thay vì công bố một danh sách chung. Doanh nghiệp cho biết thị trường cần triển khai, Gcalls sẽ khảo sát và phản hồi phạm vi khả thi."
+   },
+   {
+    "q": "Doanh nghiệp cần chuẩn bị hồ sơ gì để đăng ký đầu số quốc tế?",
+    "a": "Danh mục giấy tờ khác nhau tùy quốc gia và tùy loại đầu số. Thông thường liên quan tới hồ sơ pháp lý của doanh nghiệp và thông tin về mục đích sử dụng. Gcalls hỗ trợ khảo sát thủ tục và cung cấp danh mục cụ thể cho thị trường được yêu cầu."
+   },
+   {
+    "q": "Mất bao lâu để có đầu số quốc tế?",
+    "a": "Thời gian phụ thuộc vào quốc gia, loại đầu số và tính đầy đủ của hồ sơ, nên không có mốc thời gian áp dụng cho mọi thị trường. Gcalls thông báo yêu cầu và tiến độ theo từng hồ sơ cụ thể."
+   },
+   {
+    "q": "Chi phí tổng đài quốc tế được tính như thế nào?",
+    "a": "Chi phí phụ thuộc vào quốc gia, loại đầu số, hồ sơ đăng ký và lưu lượng sử dụng tại từng thị trường. Doanh nghiệp có thể dùng công cụ ước tính để chuẩn bị cấu hình trước khi nhận báo giá chính thức.",
+    "link": {
+     "label": "Ước tính chi phí",
+     "path": "/uoc-tinh-chi-phi/?product=international"
+    }
+   },
+   {
+    "q": "Khách hàng ở nước ngoài sẽ thấy số nào khi doanh nghiệp gọi ra?",
+    "a": "Số hiển thị phụ thuộc vào cấu hình đầu số và quy định về hiển thị số tại quốc gia được gọi đến. Gcalls sẽ xác nhận cách hiển thị khả thi cho từng thị trường trong quá trình khảo sát."
+   },
+   {
+    "q": "Tổng đài quốc tế khác gì so với Gcalls Plus Webphone?",
+    "a": "Gcalls Plus là lớp nghe gọi và quản lý hoạt động cuộc gọi cho đội ngũ. Tổng đài quốc tế giải quyết bài toán đầu số và cấu hình liên lạc cho thị trường nước ngoài, và được triển khai cùng lớp nghe gọi đó.",
+    "link": {
+     "label": "Gcalls Plus Webphone",
+     "path": "/gcalls-plus-webphone/"
+    }
+   }
+  ],
+  "internationalCalling.ts::INTL_FINAL_CTA": {
+   "eyebrow": "INTERNATIONAL CALLING",
+   "h2": "Cho Gcalls biết thị trường doanh nghiệp cần, phần thủ tục để Gcalls khảo sát",
+   "description": "Chia sẻ quốc gia cần hiện diện, mục đích sử dụng và quy mô đội ngũ để Gcalls xác định loại đầu số, hồ sơ cần chuẩn bị và phạm vi triển khai phù hợp.",
+   "primaryCta": {
+    "label": "Đăng ký tư vấn tổng đài quốc tế",
+    "path": "/lien-he/"
+   },
+   "secondaryCta": {
+    "label": "Ước tính cấu hình",
+    "path": "/uoc-tinh-chi-phi/?product=international"
+   }
+  },
+  "internationalCalling.ts::INTL_HERO": {
+   "eyebrow": "GCALLS • INTERNATIONAL CALLING",
+   "h1": "Tổng đài quốc tế – kết nối doanh nghiệp với khách hàng tại nhiều thị trường",
+   "description": "Gcalls hỗ trợ doanh nghiệp thiết lập và vận hành hoạt động nghe gọi cho thị trường quốc tế: xác định đầu số phù hợp, chuẩn bị hồ sơ đăng ký theo quy định từng quốc gia và đưa cuộc gọi vào quy trình làm việc của đội ngũ.",
+   "valuePoints": [
+    {
+     "title": "Hiện diện tại thị trường mục tiêu",
+     "detail": "Sử dụng đầu số phù hợp với từng thị trường để khách hàng liên hệ theo cách quen thuộc tại quốc gia của họ."
+    },
+    {
+     "title": "Cấu hình theo quy định từng quốc gia",
+     "detail": "Loại đầu số, hồ sơ và điều kiện sử dụng khác nhau tùy quốc gia. Gcalls hỗ trợ khảo sát thủ tục trước khi triển khai."
+    },
+    {
+     "title": "Vận hành trên cùng một hệ thống",
+     "detail": "Đội ngũ nghe gọi, theo dõi hoạt động và quản lý đầu số quốc tế trong cùng nền tảng đang sử dụng."
+    }
+   ],
+   "primaryCta": {
+    "label": "Tư vấn tổng đài quốc tế"
+   },
+   "secondaryCta": {
+    "label": "Khám phá cách triển khai",
+    "href": "#cach-hoat-dong"
+   }
+  },
+  "internationalCalling.ts::INTL_HOW_IT_WORKS": {
+   "anchorId": "cach-hoat-dong",
+   "eyebrow": "CÁCH TRIỂN KHAI HOẠT ĐỘNG",
+   "h2": "Từ thị trường mục tiêu đến đầu số hoạt động trong quy trình của đội ngũ",
+   "steps": [
+    {
+     "n": "01",
+     "title": "Xác định thị trường mục tiêu",
+     "detail": "Doanh nghiệp cho biết cần hiện diện hoặc liên lạc tại những quốc gia nào và phục vụ nhu cầu gì."
+    },
+    {
+     "n": "02",
+     "title": "Khảo sát quy định và loại đầu số",
+     "detail": "Gcalls kiểm tra loại đầu số khả dụng, điều kiện sử dụng và hồ sơ cần chuẩn bị theo quy định từng thị trường."
+    },
+    {
+     "n": "03",
+     "title": "Chuẩn bị hồ sơ đăng ký",
+     "detail": "Doanh nghiệp cung cấp giấy tờ theo danh mục đã được xác định. Gcalls hỗ trợ hoàn thiện và gửi hồ sơ."
+    },
+    {
+     "n": "04",
+     "title": "Cấp và cấu hình đầu số",
+     "detail": "Sau khi hồ sơ được chấp thuận, đầu số được cấu hình trên hệ thống Gcalls theo luồng gọi vào và gọi ra đã thống nhất."
+    },
+    {
+     "n": "05",
+     "title": "Kiểm thử luồng gọi",
+     "detail": "Cuộc gọi đến và cuộc gọi ra được kiểm thử theo từng thị trường trước khi đưa vào vận hành."
+    },
+    {
+     "n": "06",
+     "title": "Vận hành và theo dõi",
+     "detail": "Đội ngũ nghe gọi trên nền tảng Gcalls; hoạt động cuộc gọi và lịch sử tương tác được theo dõi theo cấu hình."
+    }
+   ]
+  },
+  "internationalCalling.ts::INTL_INBOUND": {
+   "eyebrow": "CUỘC GỌI ĐẾN",
+   "h2": "Nhận cuộc gọi từ khách hàng quốc tế trên cùng hệ thống với đội ngũ trong nước",
+   "description": "Cuộc gọi tới đầu số quốc tế được đưa về hệ thống Gcalls và phân phối cho đội ngũ theo cấu hình doanh nghiệp thiết lập, thay vì phải bố trí một tổng đài riêng cho từng thị trường.",
+   "points": [
+    "Định tuyến cuộc gọi theo đầu số hoặc theo thị trường",
+    "Phân phối tới nhóm hoặc người phụ trách phù hợp",
+    "Ghi nhận hoạt động cuộc gọi theo cấu hình",
+    "Xử lý cuộc gọi ngoài giờ theo thiết lập"
+   ],
+   "note": "Cách định tuyến và các thiết lập ngoài giờ được cấu hình theo quy trình vận hành của doanh nghiệp và theo điều kiện của từng đầu số."
+  },
+  "internationalCalling.ts::INTL_LEAD": {
+   "intent": "consultation",
+   "source": "international",
+   "solution": "Tổng đài quốc tế"
+  },
+  "internationalCalling.ts::INTL_MARKETS": {
+   "eyebrow": "THỊ TRƯỜNG THƯỜNG ĐƯỢC YÊU CẦU",
+   "h2": "Doanh nghiệp Việt Nam thường bắt đầu từ những thị trường nào",
+   "description": "Đây là các thị trường doanh nghiệp thường nêu khi trao đổi với Gcalls, cũng là các lựa chọn trong công cụ ước tính chi phí. Danh sách này mô tả nhu cầu thường gặp, không phải danh sách quốc gia được cam kết cung cấp đầu số.",
+   "items": [
+    "Mỹ",
+    "Anh",
+    "Singapore",
+    "Úc",
+    "Nhật Bản",
+    "Hàn Quốc",
+    "Thị trường khác"
+   ],
+   "qualifier": "Cần khảo sát",
+   "note": "Khả năng cung cấp đầu số, loại đầu số và hồ sơ cần thiết tại mỗi thị trường được Gcalls xác nhận theo từng yêu cầu cụ thể, dựa trên quy định hiện hành tại quốc gia đó."
+  },
+  "internationalCalling.ts::INTL_NUMBER_CONCEPT": {
+   "eyebrow": "ĐẦU SỐ QUỐC TẾ",
+   "h2": "Đầu số quốc tế là cách doanh nghiệp hiện diện tại một thị trường mà không cần đặt tổng đài ở đó",
+   "description": "Đầu số quốc tế là số điện thoại thuộc một quốc gia hoặc vùng lãnh thổ, được cấu hình để cuộc gọi đi và đến được xử lý trên hệ thống tổng đài của doanh nghiệp. Khách hàng tại thị trường đó liên hệ theo cách quen thuộc, còn đội ngũ vẫn làm việc trên nền tảng hiện tại.",
+   "types": [
+    {
+     "n": "01",
+     "title": "Đầu số nội địa của thị trường",
+     "detail": "Số gắn với một quốc gia hoặc khu vực cụ thể, thường dùng khi doanh nghiệp muốn khách hàng tại thị trường đó liên hệ như với một số trong nước."
+    },
+    {
+     "n": "02",
+     "title": "Đầu số miễn phí cuộc gọi đến",
+     "detail": "Loại đầu số mà người gọi không phải trả phí. Điều kiện cung cấp và cách tính cước khác nhau tùy quốc gia."
+    },
+    {
+     "n": "03",
+     "title": "Đầu số phạm vi toàn quốc",
+     "detail": "Số không gắn với một khu vực cụ thể trong quốc gia đó, phù hợp khi doanh nghiệp phục vụ khách hàng trên toàn thị trường."
+    }
+   ],
+   "note": "Không phải quốc gia nào cũng cung cấp đủ các loại đầu số trên, và điều kiện để doanh nghiệp nước ngoài được sử dụng từng loại cũng khác nhau. Gcalls xác định loại đầu số phù hợp theo từng thị trường trong quá trình khảo sát."
+  },
+  "internationalCalling.ts::INTL_OPERATIONS": {
+   "eyebrow": "QUẢN LÝ VẬN HÀNH",
+   "h2": "Quản lý đầu số, đội ngũ và hoạt động gọi ở nhiều thị trường trong một nền tảng",
+   "description": "Khi doanh nghiệp vận hành nhiều thị trường, phần khó không chỉ là có đầu số mà là quản lý hoạt động liên lạc một cách thống nhất.",
+   "items": [
+    {
+     "n": "01",
+     "title": "Quản lý danh mục đầu số",
+     "detail": "Theo dõi các đầu số đang sử dụng và mục đích sử dụng của từng đầu số theo thị trường."
+    },
+    {
+     "n": "02",
+     "title": "Phân quyền và phân công đội ngũ",
+     "detail": "Gán đầu số hoặc luồng gọi cho nhóm phụ trách tương ứng theo cấu hình doanh nghiệp thiết lập."
+    },
+    {
+     "n": "03",
+     "title": "Theo dõi hoạt động cuộc gọi",
+     "detail": "Xem hoạt động nghe gọi và lưu lượng theo đầu số hoặc theo nhóm, theo phạm vi dữ liệu hệ thống ghi nhận."
+    },
+    {
+     "n": "04",
+     "title": "Lịch sử tương tác tập trung",
+     "detail": "Giữ lịch sử trao đổi với khách hàng ở các thị trường khác nhau trong cùng một nơi để đội ngũ tiếp tục follow-up."
+    }
+   ]
+  },
+  "internationalCalling.ts::INTL_OUTBOUND": {
+   "eyebrow": "CUỘC GỌI RA",
+   "h2": "Gọi ra thị trường quốc tế từ chính công cụ đội ngũ đang dùng",
+   "description": "Đội Sales và CSKH thực hiện cuộc gọi ra tới khách hàng ở thị trường nước ngoài trên nền tảng Gcalls, không cần chuyển sang thiết bị hay ứng dụng khác.",
+   "points": [
+    "Gọi ra từ giao diện làm việc hằng ngày",
+    "Chọn đầu số sử dụng cho cuộc gọi theo cấu hình",
+    "Ghi nhận lịch sử cuộc gọi cho từng khách hàng",
+    "Theo dõi lưu lượng gọi ra theo thị trường"
+   ],
+   "note": "Số hiển thị với người nhận phụ thuộc vào cấu hình đầu số và quy định về hiển thị số tại quốc gia được gọi đến. Cước gọi ra thay đổi theo thị trường và được xác nhận trong báo giá."
+  },
+  "internationalCalling.ts::INTL_PRICING": {
+   "eyebrow": "CẤU HÌNH & CHI PHÍ",
+   "h2": "Chi phí phụ thuộc vào quốc gia, loại đầu số, hồ sơ đăng ký và lưu lượng sử dụng",
+   "description": "Mỗi thị trường có mức cước và yêu cầu hồ sơ riêng, nên chi phí được xác định theo phạm vi triển khai thực tế: số thị trường, số đầu số, loại đầu số và lưu lượng gọi dự kiến. Gcalls xác nhận yêu cầu trước khi đưa ra báo giá chính thức.",
+   "factors": [
+    "Quốc gia / thị trường",
+    "Loại đầu số",
+    "Hồ sơ đăng ký",
+    "Lưu lượng gọi"
+   ],
+   "primaryCta": {
+    "label": "Ước tính cấu hình & chi phí",
+    "path": "/uoc-tinh-chi-phi/?product=international"
+   },
+   "secondaryCta": {
+    "label": "Xem bảng giá Gcalls",
+    "path": "/bang-gia/"
+   }
+  },
+  "internationalCalling.ts::INTL_PROBLEMS": {
+   "eyebrow": "BÀI TOÁN ĐA THỊ TRƯỜNG",
+   "h2": "Khi khách hàng ở nhiều quốc gia, hoạt động liên lạc dễ bị phân mảnh theo từng thị trường",
+   "items": [
+    {
+     "n": "01",
+     "title": "Khách hàng quốc tế khó liên hệ lại",
+     "detail": "Nếu doanh nghiệp chỉ có đầu số trong nước, khách hàng tại thị trường khác phải gọi quốc tế và thường ngần ngại liên hệ."
+    },
+    {
+     "n": "02",
+     "title": "Mỗi thị trường một cách làm khác nhau",
+     "detail": "Đầu số, quy định sử dụng và hồ sơ đăng ký khác nhau tùy quốc gia, khiến việc mở rộng sang thị trường mới mất nhiều thời gian tìm hiểu."
+    },
+    {
+     "n": "03",
+     "title": "Hoạt động nghe gọi nằm rải rác",
+     "detail": "Khi mỗi thị trường dùng một kênh liên lạc riêng, doanh nghiệp khó theo dõi hoạt động và lịch sử trao đổi một cách thống nhất."
+    },
+    {
+     "n": "04",
+     "title": "Thủ tục đăng ký đầu số không rõ ràng",
+     "detail": "Yêu cầu giấy tờ và điều kiện sử dụng đầu số thay đổi theo quy định từng quốc gia, nên đội ngũ nội bộ khó tự xác định cần chuẩn bị những gì."
+    }
+   ]
+  },
+  "internationalCalling.ts::INTL_REGISTRATION": {
+   "eyebrow": "ĐĂNG KÝ ĐẦU SỐ",
+   "h2": "Quy trình chuẩn bị hồ sơ và đăng ký đầu số theo từng thị trường",
+   "description": "Đăng ký đầu số quốc tế là một quy trình có hồ sơ, không phải một thao tác cấu hình. Gcalls hỗ trợ doanh nghiệp xác định và hoàn thiện các bước dưới đây.",
+   "steps": [
+    {
+     "n": "01",
+     "title": "Xác định thị trường và loại đầu số cần đăng ký"
+    },
+    {
+     "n": "02",
+     "title": "Nhận danh mục giấy tờ theo yêu cầu của thị trường đó"
+    },
+    {
+     "n": "03",
+     "title": "Doanh nghiệp chuẩn bị hồ sơ pháp lý và thông tin sử dụng"
+    },
+    {
+     "n": "04",
+     "title": "Gcalls rà soát hồ sơ trước khi gửi"
+    },
+    {
+     "n": "05",
+     "title": "Gửi hồ sơ tới nhà cung cấp hoặc cơ quan quản lý liên quan"
+    },
+    {
+     "n": "06",
+     "title": "Bổ sung thông tin nếu hồ sơ được yêu cầu làm rõ"
+    },
+    {
+     "n": "07",
+     "title": "Đầu số được cấp và bàn giao để cấu hình"
+    }
+   ],
+   "note": "Thời gian xử lý phụ thuộc vào quốc gia, loại đầu số và tính đầy đủ của hồ sơ, nên không có mốc thời gian chung cho mọi thị trường. Gcalls thông báo yêu cầu và tiến độ theo từng hồ sơ cụ thể."
+  },
+  "internationalCalling.ts::INTL_REGULATION": {
+   "eyebrow": "KHÁC BIỆT THEO QUỐC GIA",
+   "h2": "Mỗi thị trường có quy định riêng về đầu số và điều kiện sử dụng",
+   "description": "Viễn thông được quản lý ở cấp quốc gia, nên cùng một nhu cầu có thể cần cách triển khai khác nhau ở hai thị trường. Bốn nhóm khác biệt dưới đây là những yếu tố cần xác định trước khi triển khai.",
+   "items": [
+    {
+     "n": "01",
+     "title": "Hồ sơ doanh nghiệp",
+     "detail": "Giấy tờ pháp lý cần cung cấp để đăng ký đầu số khác nhau tùy quốc gia và tùy loại đầu số."
+    },
+    {
+     "n": "02",
+     "title": "Yêu cầu hiện diện tại thị trường",
+     "detail": "Một số thị trường yêu cầu doanh nghiệp có địa chỉ, pháp nhân hoặc đại diện tại quốc gia đó mới được sử dụng đầu số nội địa."
+    },
+    {
+     "n": "03",
+     "title": "Loại đầu số được phép sử dụng",
+     "detail": "Không phải loại đầu số nào cũng mở cho doanh nghiệp nước ngoài. Danh mục khả dụng cần được kiểm tra theo từng thị trường."
+    },
+    {
+     "n": "04",
+     "title": "Điều kiện vận hành và thời gian xử lý",
+     "detail": "Quy định về mục đích sử dụng, cách hiển thị số gọi ra và thời gian xét hồ sơ phụ thuộc vào cơ quan quản lý và nhà cung cấp tại từng quốc gia."
+    }
+   ],
+   "note": "Gcalls hỗ trợ khảo sát thủ tục và chuẩn bị hồ sơ theo yêu cầu của từng thị trường. Gcalls không thay thế tư vấn pháp lý, và điều kiện cuối cùng do quy định tại quốc gia đó quyết định."
+  },
+  "internationalCalling.ts::INTL_TRUST": {
+   "eyebrow": "CÁCH GCALLS LÀM VIỆC",
+   "h2": "Mỗi thị trường được khảo sát trước khi cam kết phạm vi triển khai",
+   "description": "Thay vì đưa ra một danh sách quốc gia chung, Gcalls kiểm tra điều kiện thực tế của từng thị trường doanh nghiệp cần: loại đầu số khả dụng, hồ sơ theo quy định hiện hành và cấu hình phù hợp với quy trình vận hành. Phạm vi và chi phí chỉ được xác nhận sau bước này.",
+   "cta": {
+    "label": "Trao đổi về thị trường doanh nghiệp cần"
+   },
+   "links": [
+    {
+     "label": "Gcalls Plus Webphone",
+     "path": "/gcalls-plus-webphone/"
+    },
+    {
+     "label": "Xem tất cả giải pháp",
+     "path": "/giai-phap/"
+    }
+   ]
+  },
+  "internationalCalling.ts::INTL_USE_CASES": {
+   "eyebrow": "NHU CẦU THƯỜNG GẶP",
+   "h2": "Doanh nghiệp dùng tổng đài quốc tế cho những bài toán nào",
+   "items": [
+    {
+     "role": "Local presence",
+     "flow": "Doanh nghiệp muốn khách hàng tại thị trường nước ngoài thấy một đầu số quen thuộc để dễ liên hệ."
+    },
+    {
+     "role": "Sales",
+     "flow": "Đội bán hàng gọi ra tới khách hàng và đối tác ở thị trường quốc tế từ cùng một hệ thống."
+    },
+    {
+     "role": "Customer Service",
+     "flow": "Đội CSKH tiếp nhận yêu cầu từ khách hàng nước ngoài và theo dõi lịch sử hỗ trợ tập trung."
+    },
+    {
+     "role": "BPO / Operations",
+     "flow": "Đơn vị vận hành dịch vụ cho khách hàng ở nhiều quốc gia cần nhiều đầu số và phân công theo dự án."
+    }
+   ]
+  }
+ }
+}

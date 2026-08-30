@@ -1,0 +1,400 @@
+{
+ "slug": "tong-dai-tich-hop-pos",
+ "family": "solution-detail",
+ "sources": [
+  {
+   "file": "src/data/posIntegration.ts",
+   "sha256": "8820b73aef25b976648384114a8e922aba28be072c431f8208de2349a200d576",
+   "exportCount": 20
+  }
+ ],
+ "exports": {
+  "posIntegration.ts::POS_BEFORE_AFTER": {
+   "eyebrow": "TRƯỚC & SAU TÍCH HỢP",
+   "h2": "Giảm việc tra cứu thủ công giữa cuộc gọi và hệ thống bán hàng",
+   "before": {
+    "label": "Trước tích hợp",
+    "steps": [
+     "Cuộc gọi",
+     "Hỏi lại thông tin khách hàng",
+     "Mở hệ thống bán hàng",
+     "Tra cứu thủ công",
+     "Xem sales context",
+     "Quay lại quy trình gọi",
+     "Ghi chú tương tác thủ công"
+    ]
+   },
+   "after": {
+    "label": "Sau tích hợp",
+    "steps": [
+     "Cuộc gọi",
+     "Customer identification",
+     "Sales context phù hợp",
+     "Cuộc hội thoại",
+     "Lịch sử tương tác",
+     "Follow-up"
+    ]
+   }
+  },
+  "posIntegration.ts::POS_BOUNDARIES": {
+   "eyebrow": "CHỌN ĐÚNG LUỒNG TÍCH HỢP",
+   "h2": "CRM, Helpdesk và POS cung cấp những loại customer context khác nhau",
+   "items": [
+    {
+     "product": "POS Integration",
+     "need": "Đội ngũ cần customer context và dữ liệu bán hàng từ workflow bán lẻ hoặc quản lý đơn hàng.",
+     "path": "/tong-dai-tich-hop-pos/",
+     "current": true
+    },
+    {
+     "product": "CRM Integration",
+     "need": "Sales/CSKH vận hành quanh lead, contact và workflow quản lý khách hàng.",
+     "path": "/tong-dai-tich-hop-crm/"
+    },
+    {
+     "product": "Helpdesk Integration",
+     "need": "Đội hỗ trợ vận hành quanh ticket và quy trình xử lý yêu cầu.",
+     "path": "/tong-dai-tich-hop-helpdesk/"
+    },
+    {
+     "product": "Gcalls CX",
+     "need": "Doanh nghiệp cần hội thoại tập trung trên nhiều kênh giao tiếp.",
+     "path": "/gcalls-cx/"
+    }
+   ],
+   "related": {
+    "lead": "Các luồng liên quan khác:",
+    "links": [
+     {
+      "label": "Xem tất cả giải pháp",
+      "path": "/giai-phap/"
+     },
+     {
+      "label": "QA QC Center",
+      "path": "/qc-bot-ai/"
+     }
+    ]
+   }
+  },
+  "posIntegration.ts::POS_CAPABILITIES": {
+   "eyebrow": "NĂNG LỰC TÍCH HỢP",
+   "h2": "Kết nối cuộc gọi với những dữ liệu đội bán hàng và CSKH cần",
+   "items": [
+    {
+     "n": "01",
+     "title": "Customer Identification",
+     "detail": "Hỗ trợ nhận biết khách hàng hoặc hồ sơ liên quan khi dữ liệu và nền tảng tích hợp cho phép."
+    },
+    {
+     "n": "02",
+     "title": "Customer Context",
+     "detail": "Đưa thông tin khách hàng phù hợp vào bối cảnh cuộc gọi để nhân viên hiểu người đang liên hệ."
+    },
+    {
+     "n": "03",
+     "title": "Sales Data Context",
+     "detail": "Hiển thị dữ liệu bán hàng phù hợp theo khả năng của nền tảng và phạm vi tích hợp được cấu hình."
+    },
+    {
+     "n": "04",
+     "title": "Interaction History",
+     "detail": "Ghi nhận hoặc liên kết lịch sử tương tác để hỗ trợ quá trình tư vấn và chăm sóc tiếp theo."
+    }
+   ]
+  },
+  "posIntegration.ts::POS_DEPLOYMENT": {
+   "eyebrow": "TRIỂN KHAI",
+   "h2": "Tích hợp theo hệ thống bán hàng và dữ liệu doanh nghiệp đang sử dụng",
+   "steps": [
+    {
+     "n": "01",
+     "title": "Khảo sát hệ thống POS / sales system"
+    },
+    {
+     "n": "02",
+     "title": "Xác định dữ liệu cần sử dụng trong call workflow"
+    },
+    {
+     "n": "03",
+     "title": "Kiểm tra API và khả năng kết nối"
+    },
+    {
+     "n": "04",
+     "title": "Thiết kế luồng customer identification / context"
+    },
+    {
+     "n": "05",
+     "title": "Cấu hình tích hợp"
+    },
+    {
+     "n": "06",
+     "title": "Kiểm thử dữ liệu và cuộc gọi"
+    },
+    {
+     "n": "07",
+     "title": "Hướng dẫn đội Sales/CSKH"
+    },
+    {
+     "n": "08",
+     "title": "Đưa vào vận hành"
+    }
+   ]
+  },
+  "posIntegration.ts::POS_DIRECT_ANSWER": {
+   "question": "Tổng đài tích hợp POS là gì?",
+   "answer": "Tổng đài tích hợp POS là mô hình kết nối hoạt động nghe gọi với hệ thống bán hàng để nhân viên có thể sử dụng thông tin khách hàng, dữ liệu bán hàng phù hợp và lịch sử tương tác trong cùng quy trình chăm sóc. Phạm vi dữ liệu hiển thị hoặc đồng bộ phụ thuộc vào nền tảng POS, API và cấu hình tích hợp thực tế của doanh nghiệp."
+  },
+  "posIntegration.ts::POS_ECOMMERCE": {
+   "eyebrow": "THƯƠNG MẠI ĐIỆN TỬ",
+   "h2": "Giữ cuộc gọi gần hơn với quy trình bán hàng trực tuyến",
+   "description": "Khi khách hàng liên hệ qua điện thoại, đội ngũ có thể sử dụng dữ liệu bán hàng phù hợp để hỗ trợ quá trình tư vấn hoặc chăm sóc tiếp theo.",
+   "link": {
+    "label": "Giải pháp cho Thương mại điện tử",
+    "path": "/nganh/thuong-mai-dien-tu/"
+   }
+  },
+  "posIntegration.ts::POS_ESTIMATOR_HREF": "/uoc-tinh-chi-phi/?product=pos-integration",
+  "posIntegration.ts::POS_FAQ": [
+   {
+    "q": "Tổng đài tích hợp POS là gì?",
+    "a": "Tổng đài tích hợp POS kết nối hoạt động nghe gọi với hệ thống bán hàng để nhân viên có thể sử dụng customer context, dữ liệu bán hàng phù hợp và lịch sử tương tác trong cùng quy trình chăm sóc."
+   },
+   {
+    "q": "Tích hợp POS giúp nhân viên nhận biết khách hàng như thế nào?",
+    "a": "Khả năng nhận biết khách hàng phụ thuộc vào dữ liệu và API của hệ thống POS. Khi cấu hình phù hợp, thông tin liên quan có thể được sử dụng để hỗ trợ agent xác định customer context khi xử lý cuộc gọi."
+   },
+   {
+    "q": "Nhân viên có xem được thông tin đơn hàng khi khách gọi không?",
+    "a": "Phạm vi thông tin bán hàng hoặc đơn hàng hiển thị phụ thuộc vào hệ thống POS, API và dữ liệu doanh nghiệp cho phép tích hợp. Gcalls sẽ xác định các trường dữ liệu cụ thể trong quá trình khảo sát kỹ thuật."
+   },
+   {
+    "q": "Lịch sử cuộc gọi có được lưu cùng dữ liệu khách hàng không?",
+    "a": "Lịch sử tương tác phù hợp có thể được ghi nhận hoặc liên kết theo phạm vi tích hợp và khả năng của hệ thống bán hàng."
+   },
+   {
+    "q": "Gcalls tích hợp được những phần mềm POS nào?",
+    "a": "Khả năng tích hợp cần được xác định theo nền tảng, API và yêu cầu triển khai. Gcalls sẽ kiểm tra hệ thống doanh nghiệp đang sử dụng trước khi xác nhận phạm vi kết nối."
+   },
+   {
+    "q": "POS Integration khác CRM Integration như thế nào?",
+    "a": "CRM Integration tập trung vào lead, contact và workflow quản lý khách hàng; POS Integration tập trung vào customer context và dữ liệu bán hàng liên quan tới quy trình retail hoặc thương mại điện tử.",
+    "link": {
+     "label": "Tổng đài tích hợp CRM",
+     "path": "/tong-dai-tich-hop-crm/"
+    }
+   }
+  ],
+  "posIntegration.ts::POS_FINAL_CTA": {
+   "eyebrow": "POS INTEGRATION",
+   "h2": "Đưa customer context và dữ liệu bán hàng vào đúng lúc đội ngũ đang trao đổi với khách hàng",
+   "description": "Chia sẻ hệ thống bán hàng, dữ liệu cần sử dụng và workflow hiện tại để Gcalls xác định phạm vi tích hợp phù hợp.",
+   "primaryCta": {
+    "label": "Tư vấn tích hợp POS",
+    "path": "/lien-he/"
+   },
+   "secondaryCta": {
+    "label": "Ước tính cấu hình",
+    "path": "/uoc-tinh-chi-phi/?product=pos-integration"
+   }
+  },
+  "posIntegration.ts::POS_HERO": {
+   "eyebrow": "GCALLS • POS INTEGRATION",
+   "h1": "Tổng đài tích hợp POS – kết nối cuộc gọi với dữ liệu bán hàng",
+   "description": "Kết nối hoạt động nghe gọi với dữ liệu khách hàng và thông tin bán hàng phù hợp để đội Sales/CSKH có thêm context khi tư vấn, xử lý đơn hàng hoặc chăm sóc sau mua.",
+   "valuePoints": [
+    {
+     "title": "Nhận biết customer context",
+     "detail": "Thông tin liên quan giúp nhân viên hiểu khách hàng trước hoặc trong quá trình trao đổi."
+    },
+    {
+     "title": "Tra cứu dữ liệu bán hàng thuận tiện hơn",
+     "detail": "Khi hệ thống và cấu hình tích hợp hỗ trợ, dữ liệu liên quan tới khách hàng hoặc giao dịch có thể được đưa gần hơn với quy trình gọi."
+    },
+    {
+     "title": "Theo dõi quá trình chăm sóc",
+     "detail": "Lịch sử tương tác phù hợp có thể được ghi nhận để đội ngũ tiếp tục follow-up trong quy trình đang sử dụng."
+    }
+   ],
+   "primaryCta": {
+    "label": "Tư vấn tích hợp POS"
+   },
+   "secondaryCta": {
+    "label": "Khám phá cách tích hợp hoạt động",
+    "href": "#cach-hoat-dong"
+   }
+  },
+  "posIntegration.ts::POS_HOW_IT_WORKS": {
+   "anchorId": "cach-hoat-dong",
+   "eyebrow": "CÁCH TÍCH HỢP HOẠT ĐỘNG",
+   "h2": "Từ cuộc gọi đến customer context và bước chăm sóc tiếp theo",
+   "steps": [
+    {
+     "n": "01",
+     "title": "Khách hàng liên hệ",
+     "detail": "Khách hàng gọi đến hoặc nhân viên thực hiện cuộc gọi trong quy trình bán hàng/chăm sóc."
+    },
+    {
+     "n": "02",
+     "title": "Xác định khách hàng",
+     "detail": "Dữ liệu liên quan hỗ trợ hệ thống xác định hồ sơ khách hàng khi nền tảng và cấu hình tích hợp cho phép."
+    },
+    {
+     "n": "03",
+     "title": "Hiển thị sales context phù hợp",
+     "detail": "Nhân viên có thể xem thông tin liên quan từ hệ thống bán hàng theo phạm vi dữ liệu được tích hợp."
+    },
+    {
+     "n": "04",
+     "title": "Thực hiện cuộc hội thoại",
+     "detail": "Agent tư vấn, xử lý yêu cầu hoặc chăm sóc khách hàng với nhiều context hơn."
+    },
+    {
+     "n": "05",
+     "title": "Ghi nhận tương tác",
+     "detail": "Lịch sử cuộc gọi hoặc dữ liệu phù hợp có thể được ghi nhận theo phạm vi tích hợp."
+    },
+    {
+     "n": "06",
+     "title": "Tiếp tục follow-up",
+     "detail": "Đội ngũ tiếp tục quá trình bán hàng hoặc chăm sóc trong workflow doanh nghiệp đang sử dụng."
+    }
+   ]
+  },
+  "posIntegration.ts::POS_LEAD": {
+   "intent": "consultation",
+   "source": "pos_integration",
+   "solution": "Tích hợp POS"
+  },
+  "posIntegration.ts::POS_OVERVIEW": {
+   "eyebrow": "POS + CALLING",
+   "h2": "Đưa dữ liệu bán hàng vào đúng thời điểm khách hàng đang tương tác",
+   "description": "Gcalls tập trung vào việc kết nối lớp nghe gọi với dữ liệu bán hàng phù hợp để đội ngũ có thêm context khi tư vấn, hỗ trợ đơn hàng hoặc chăm sóc khách hàng sau giao dịch.",
+   "flow": [
+    {
+     "n": "01",
+     "label": "Customer",
+     "detail": "Khách hàng cần tư vấn hoặc hỗ trợ."
+    },
+    {
+     "n": "02",
+     "label": "Call",
+     "detail": "Cuộc gọi diễn ra qua hệ thống Gcalls."
+    },
+    {
+     "n": "03",
+     "label": "Identification",
+     "detail": "Hồ sơ liên quan được xác định khi cấu hình cho phép."
+    },
+    {
+     "n": "04",
+     "label": "Sales / Order Context",
+     "detail": "Dữ liệu bán hàng phù hợp được đưa gần quy trình gọi."
+    },
+    {
+     "n": "05",
+     "label": "Conversation",
+     "detail": "Nhân viên trao đổi với nhiều context hơn."
+    },
+    {
+     "n": "06",
+     "label": "Interaction History",
+     "detail": "Lịch sử tương tác phù hợp được ghi nhận."
+    },
+    {
+     "n": "07",
+     "label": "Follow-up",
+     "detail": "Đội ngũ tiếp tục chăm sóc khách hàng."
+    }
+   ]
+  },
+  "posIntegration.ts::POS_PLUS_RELATION": {
+   "eyebrow": "LỚP NGHE GỌI",
+   "h2": "Kết nối tổng đài với dữ liệu bán hàng khi đội ngũ cần nhiều context hơn",
+   "description": "Gcalls Plus giải quyết nhu cầu Webphone và quản lý hoạt động nghe gọi. POS Integration mở rộng luồng này bằng cách đưa dữ liệu bán hàng phù hợp vào workflow khi doanh nghiệp cần kết nối với hệ thống bán hàng.",
+   "link": {
+    "label": "Gcalls Plus Webphone",
+    "path": "/gcalls-plus-webphone/"
+   }
+  },
+  "posIntegration.ts::POS_PRICING": {
+   "eyebrow": "CẤU HÌNH & CHI PHÍ",
+   "h2": "Chi phí phụ thuộc vào hệ thống, người dùng và phạm vi dữ liệu tích hợp",
+   "description": "Phạm vi triển khai có thể thay đổi theo hệ thống bán hàng doanh nghiệp đang sử dụng, số lượng người dùng, hotline, dữ liệu cần kết nối và workflow chăm sóc. Gcalls sẽ xác định yêu cầu kỹ thuật trước khi đưa ra báo giá chính thức.",
+   "primaryCta": {
+    "label": "Ước tính cấu hình & chi phí",
+    "path": "/uoc-tinh-chi-phi/?product=pos-integration"
+   },
+   "secondaryCta": {
+    "label": "Xem bảng giá Gcalls",
+    "path": "/bang-gia/"
+   }
+  },
+  "posIntegration.ts::POS_PROBLEMS": {
+   "eyebrow": "BÀI TOÁN BÁN HÀNG",
+   "h2": "Khi dữ liệu bán hàng và cuộc gọi nằm ở hai nơi, nhân viên phải tự tìm context trong lúc khách hàng đang chờ",
+   "items": [
+    {
+     "n": "01",
+     "title": "Khó nhận biết khách hàng khi có cuộc gọi",
+     "detail": "Nếu hệ thống nghe gọi không kết nối với dữ liệu bán hàng, nhân viên cần tra cứu thủ công trước khi hiểu khách hàng đang liên hệ."
+    },
+    {
+     "n": "02",
+     "title": "Dữ liệu mua hàng không nằm cạnh cuộc hội thoại",
+     "detail": "Thông tin giao dịch và lịch sử gọi bị tách rời khiến nhân viên mất thêm thời gian tìm context phù hợp."
+    },
+    {
+     "n": "03",
+     "title": "Chăm sóc sau mua bị phân mảnh",
+     "detail": "Lịch sử bán hàng và lịch sử tương tác nằm ở nhiều nơi khiến quá trình follow-up khó được theo dõi liên tục."
+    },
+    {
+     "n": "04",
+     "title": "Nhập lại thông tin tạo thêm thao tác",
+     "detail": "Nhân viên có thể phải ghi chép hoặc chuyển dữ liệu giữa hệ thống gọi và phần mềm bán hàng nếu hai luồng không kết nối."
+    }
+   ]
+  },
+  "posIntegration.ts::POS_RETAIL": {
+   "eyebrow": "BÁN LẺ",
+   "h2": "Kết nối cuộc gọi với quá trình chăm sóc khách hàng tại cửa hàng hoặc chuỗi",
+   "description": "Đội bán hàng và CSKH có thể sử dụng customer context liên quan để hiểu khách hàng trước khi tư vấn hoặc tiếp tục hỗ trợ sau mua.",
+   "points": [
+    "Customer inquiry",
+    "Tư vấn sản phẩm / dịch vụ",
+    "Hỗ trợ sau mua",
+    "Follow-up"
+   ]
+  },
+  "posIntegration.ts::POS_SALES_CONTEXT": {
+   "eyebrow": "SALES CONTEXT",
+   "h2": "Sử dụng dữ liệu phù hợp để hiểu khách hàng trước khi tư vấn",
+   "description": "Thông tin khách hàng và dữ liệu bán hàng liên quan giúp nhân viên có thêm bối cảnh khi tư vấn, hỗ trợ hoặc tiếp tục quá trình chăm sóc.",
+   "points": [
+    "Hồ sơ khách hàng liên quan",
+    "Dữ liệu bán hàng phù hợp",
+    "Lịch sử tương tác",
+    "Ghi chú liên quan"
+   ],
+   "note": "Các trường dữ liệu cụ thể phụ thuộc vào hệ thống bán hàng, API và phạm vi tích hợp, và được Gcalls xác định trong quá trình khảo sát kỹ thuật."
+  },
+  "posIntegration.ts::POS_TRUST": {
+   "eyebrow": "TÍCH HỢP THEO DỮ LIỆU THỰC TẾ",
+   "h2": "Mỗi hệ thống bán hàng có cấu trúc dữ liệu và API khác nhau",
+   "description": "Customer fields, dữ liệu bán hàng, permission và workflow khác nhau giữa từng nền tảng. Phạm vi tích hợp cần được xác định từ hệ thống doanh nghiệp đang sử dụng.",
+   "cta": {
+    "label": "Trao đổi về hệ thống bán hàng hiện tại"
+   },
+   "links": [
+    {
+     "label": "Xem các tích hợp Gcalls",
+     "path": "/tich-hop/"
+    },
+    {
+     "label": "Đọc bài viết trên Blog Gcalls",
+     "path": "/blog/"
+    }
+   ]
+  }
+ }
+}

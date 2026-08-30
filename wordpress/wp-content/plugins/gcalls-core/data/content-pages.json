@@ -1,0 +1,1627 @@
+{
+  "schema": 1,
+  "generated_at_gmt": "2026-08-30T02:28:46.294Z",
+  "note": "Rendered read-only at request time. Nothing here is written to the database. See docs/CONTENT-RENDER-ADR.md.",
+  "pages": [
+    {
+      "slug": "tong-dai-quoc-te",
+      "family": "solution-detail",
+      "sources": [
+        {
+          "file": "src/data/internationalCalling.ts",
+          "sha256": "5a0eacb788651455b3af491340b0d02abcc3839528cfcf9769315918fe1961f5",
+          "exportCount": 21
+        }
+      ],
+      "hero": {
+        "eyebrow": "GCALLS • INTERNATIONAL CALLING",
+        "h1": "Tổng đài quốc tế – kết nối doanh nghiệp với khách hàng tại nhiều thị trường",
+        "description": "Gcalls hỗ trợ doanh nghiệp thiết lập và vận hành hoạt động nghe gọi cho thị trường quốc tế: xác định đầu số phù hợp, chuẩn bị hồ sơ đăng ký theo quy định từng quốc gia và đưa cuộc gọi vào quy trình làm việc của đội ngũ.",
+        "points": [
+          {
+            "title": "Hiện diện tại thị trường mục tiêu",
+            "body": "Sử dụng đầu số phù hợp với từng thị trường để khách hàng liên hệ theo cách quen thuộc tại quốc gia của họ.",
+            "href": ""
+          },
+          {
+            "title": "Cấu hình theo quy định từng quốc gia",
+            "body": "Loại đầu số, hồ sơ và điều kiện sử dụng khác nhau tùy quốc gia. Gcalls hỗ trợ khảo sát thủ tục trước khi triển khai.",
+            "href": ""
+          },
+          {
+            "title": "Vận hành trên cùng một hệ thống",
+            "body": "Đội ngũ nghe gọi, theo dõi hoạt động và quản lý đầu số quốc tế trong cùng nền tảng đang sử dụng.",
+            "href": ""
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "cards",
+          "from": "INTL_BOUNDARIES",
+          "heading": "Tổng đài quốc tế giải quyết bài toán thị trường, không thay thế các luồng tích hợp",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "INTL_DEPLOYMENT",
+          "heading": "Triển khai theo từng thị trường và theo quy định áp dụng",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Trao đổi nhu cầu và thị trường mục tiêu",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Khảo sát quy định và loại đầu số theo từng quốc gia",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Xác định phạm vi triển khai và cấu hình cần thiết",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Chuẩn bị và gửi hồ sơ đăng ký đầu số",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Cấu hình luồng gọi vào và gọi ra",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Kiểm thử theo từng đầu số và từng thị trường",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 7,
+              "title": "Hướng dẫn đội Sales/CSKH sử dụng",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 8,
+              "title": "Đưa vào vận hành và theo dõi",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "INTL_DIRECT_ANSWER",
+          "heading": "",
+          "body": "Tổng đài quốc tế là mô hình tổng đài doanh nghiệp sử dụng đầu số và cấu hình liên lạc gắn với các thị trường nước ngoài, để đội ngũ có thể nhận cuộc gọi từ khách hàng quốc tế và gọi ra tới các thị trường đó trong cùng một hệ thống. Loại đầu số có thể sử dụng, hồ sơ cần chuẩn bị và điều kiện vận hành khác nhau tùy quốc gia và tùy quy định của từng thị trường, nên phạm vi triển khai được xác định theo từng yêu cầu cụ thể."
+        },
+        {
+          "type": "steps",
+          "from": "INTL_HOW_IT_WORKS",
+          "heading": "Từ thị trường mục tiêu đến đầu số hoạt động trong quy trình của đội ngũ",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Xác định thị trường mục tiêu",
+              "body": "Doanh nghiệp cho biết cần hiện diện hoặc liên lạc tại những quốc gia nào và phục vụ nhu cầu gì.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Khảo sát quy định và loại đầu số",
+              "body": "Gcalls kiểm tra loại đầu số khả dụng, điều kiện sử dụng và hồ sơ cần chuẩn bị theo quy định từng thị trường.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Chuẩn bị hồ sơ đăng ký",
+              "body": "Doanh nghiệp cung cấp giấy tờ theo danh mục đã được xác định. Gcalls hỗ trợ hoàn thiện và gửi hồ sơ.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Cấp và cấu hình đầu số",
+              "body": "Sau khi hồ sơ được chấp thuận, đầu số được cấu hình trên hệ thống Gcalls theo luồng gọi vào và gọi ra đã thống nhất.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Kiểm thử luồng gọi",
+              "body": "Cuộc gọi đến và cuộc gọi ra được kiểm thử theo từng thị trường trước khi đưa vào vận hành.",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Vận hành và theo dõi",
+              "body": "Đội ngũ nghe gọi trên nền tảng Gcalls; hoạt động cuộc gọi và lịch sử tương tác được theo dõi theo cấu hình.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "taglist",
+          "from": "INTL_INBOUND",
+          "eyebrow": "CUỘC GỌI ĐẾN",
+          "heading": "Nhận cuộc gọi từ khách hàng quốc tế trên cùng hệ thống với đội ngũ trong nước",
+          "lead": "Cuộc gọi tới đầu số quốc tế được đưa về hệ thống Gcalls và phân phối cho đội ngũ theo cấu hình doanh nghiệp thiết lập, thay vì phải bố trí một tổng đài riêng cho từng thị trường.",
+          "tags": [
+            "Định tuyến cuộc gọi theo đầu số hoặc theo thị trường",
+            "Phân phối tới nhóm hoặc người phụ trách phù hợp",
+            "Ghi nhận hoạt động cuộc gọi theo cấu hình",
+            "Xử lý cuộc gọi ngoài giờ theo thiết lập"
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "INTL_MARKETS",
+          "heading": "Doanh nghiệp Việt Nam thường bắt đầu từ những thị trường nào",
+          "lead": "Đây là các thị trường doanh nghiệp thường nêu khi trao đổi với Gcalls, cũng là các lựa chọn trong công cụ ước tính chi phí. Danh sách này mô tả nhu cầu thường gặp, không phải danh sách quốc gia được cam kết cung cấp đầu số.",
+          "cards": [
+            {
+              "title": "",
+              "body": "Mỹ"
+            },
+            {
+              "title": "",
+              "body": "Anh"
+            },
+            {
+              "title": "",
+              "body": "Singapore"
+            },
+            {
+              "title": "",
+              "body": "Úc"
+            },
+            {
+              "title": "",
+              "body": "Nhật Bản"
+            },
+            {
+              "title": "",
+              "body": "Hàn Quốc"
+            },
+            {
+              "title": "",
+              "body": "Thị trường khác"
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "INTL_NUMBER_CONCEPT",
+          "heading": "Đầu số quốc tế là cách doanh nghiệp hiện diện tại một thị trường mà không cần đặt tổng đài ở đó",
+          "body": "Đầu số quốc tế là số điện thoại thuộc một quốc gia hoặc vùng lãnh thổ, được cấu hình để cuộc gọi đi và đến được xử lý trên hệ thống tổng đài của doanh nghiệp. Khách hàng tại thị trường đó liên hệ theo cách quen thuộc, còn đội ngũ vẫn làm việc trên nền tảng hiện tại."
+        },
+        {
+          "type": "cards",
+          "from": "INTL_OPERATIONS",
+          "heading": "Quản lý đầu số, đội ngũ và hoạt động gọi ở nhiều thị trường trong một nền tảng",
+          "lead": "Khi doanh nghiệp vận hành nhiều thị trường, phần khó không chỉ là có đầu số mà là quản lý hoạt động liên lạc một cách thống nhất.",
+          "cards": [
+            {
+              "title": "Quản lý danh mục đầu số",
+              "body": "Theo dõi các đầu số đang sử dụng và mục đích sử dụng của từng đầu số theo thị trường.",
+              "href": ""
+            },
+            {
+              "title": "Phân quyền và phân công đội ngũ",
+              "body": "Gán đầu số hoặc luồng gọi cho nhóm phụ trách tương ứng theo cấu hình doanh nghiệp thiết lập.",
+              "href": ""
+            },
+            {
+              "title": "Theo dõi hoạt động cuộc gọi",
+              "body": "Xem hoạt động nghe gọi và lưu lượng theo đầu số hoặc theo nhóm, theo phạm vi dữ liệu hệ thống ghi nhận.",
+              "href": ""
+            },
+            {
+              "title": "Lịch sử tương tác tập trung",
+              "body": "Giữ lịch sử trao đổi với khách hàng ở các thị trường khác nhau trong cùng một nơi để đội ngũ tiếp tục follow-up.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "taglist",
+          "from": "INTL_OUTBOUND",
+          "eyebrow": "CUỘC GỌI RA",
+          "heading": "Gọi ra thị trường quốc tế từ chính công cụ đội ngũ đang dùng",
+          "lead": "Đội Sales và CSKH thực hiện cuộc gọi ra tới khách hàng ở thị trường nước ngoài trên nền tảng Gcalls, không cần chuyển sang thiết bị hay ứng dụng khác.",
+          "tags": [
+            "Gọi ra từ giao diện làm việc hằng ngày",
+            "Chọn đầu số sử dụng cho cuộc gọi theo cấu hình",
+            "Ghi nhận lịch sử cuộc gọi cho từng khách hàng",
+            "Theo dõi lưu lượng gọi ra theo thị trường"
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "INTL_PROBLEMS",
+          "heading": "Khi khách hàng ở nhiều quốc gia, hoạt động liên lạc dễ bị phân mảnh theo từng thị trường",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Khách hàng quốc tế khó liên hệ lại",
+              "body": "Nếu doanh nghiệp chỉ có đầu số trong nước, khách hàng tại thị trường khác phải gọi quốc tế và thường ngần ngại liên hệ.",
+              "href": ""
+            },
+            {
+              "title": "Mỗi thị trường một cách làm khác nhau",
+              "body": "Đầu số, quy định sử dụng và hồ sơ đăng ký khác nhau tùy quốc gia, khiến việc mở rộng sang thị trường mới mất nhiều thời gian tìm hiểu.",
+              "href": ""
+            },
+            {
+              "title": "Hoạt động nghe gọi nằm rải rác",
+              "body": "Khi mỗi thị trường dùng một kênh liên lạc riêng, doanh nghiệp khó theo dõi hoạt động và lịch sử trao đổi một cách thống nhất.",
+              "href": ""
+            },
+            {
+              "title": "Thủ tục đăng ký đầu số không rõ ràng",
+              "body": "Yêu cầu giấy tờ và điều kiện sử dụng đầu số thay đổi theo quy định từng quốc gia, nên đội ngũ nội bộ khó tự xác định cần chuẩn bị những gì.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "INTL_REGISTRATION",
+          "heading": "Quy trình chuẩn bị hồ sơ và đăng ký đầu số theo từng thị trường",
+          "lead": "Đăng ký đầu số quốc tế là một quy trình có hồ sơ, không phải một thao tác cấu hình. Gcalls hỗ trợ doanh nghiệp xác định và hoàn thiện các bước dưới đây.",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Xác định thị trường và loại đầu số cần đăng ký",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Nhận danh mục giấy tờ theo yêu cầu của thị trường đó",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Doanh nghiệp chuẩn bị hồ sơ pháp lý và thông tin sử dụng",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Gcalls rà soát hồ sơ trước khi gửi",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Gửi hồ sơ tới nhà cung cấp hoặc cơ quan quản lý liên quan",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Bổ sung thông tin nếu hồ sơ được yêu cầu làm rõ",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 7,
+              "title": "Đầu số được cấp và bàn giao để cấu hình",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "INTL_REGULATION",
+          "heading": "Mỗi thị trường có quy định riêng về đầu số và điều kiện sử dụng",
+          "lead": "Viễn thông được quản lý ở cấp quốc gia, nên cùng một nhu cầu có thể cần cách triển khai khác nhau ở hai thị trường. Bốn nhóm khác biệt dưới đây là những yếu tố cần xác định trước khi triển khai.",
+          "cards": [
+            {
+              "title": "Hồ sơ doanh nghiệp",
+              "body": "Giấy tờ pháp lý cần cung cấp để đăng ký đầu số khác nhau tùy quốc gia và tùy loại đầu số.",
+              "href": ""
+            },
+            {
+              "title": "Yêu cầu hiện diện tại thị trường",
+              "body": "Một số thị trường yêu cầu doanh nghiệp có địa chỉ, pháp nhân hoặc đại diện tại quốc gia đó mới được sử dụng đầu số nội địa.",
+              "href": ""
+            },
+            {
+              "title": "Loại đầu số được phép sử dụng",
+              "body": "Không phải loại đầu số nào cũng mở cho doanh nghiệp nước ngoài. Danh mục khả dụng cần được kiểm tra theo từng thị trường.",
+              "href": ""
+            },
+            {
+              "title": "Điều kiện vận hành và thời gian xử lý",
+              "body": "Quy định về mục đích sử dụng, cách hiển thị số gọi ra và thời gian xét hồ sơ phụ thuộc vào cơ quan quản lý và nhà cung cấp tại từng quốc gia.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "INTL_TRUST",
+          "heading": "Mỗi thị trường được khảo sát trước khi cam kết phạm vi triển khai",
+          "body": "Thay vì đưa ra một danh sách quốc gia chung, Gcalls kiểm tra điều kiện thực tế của từng thị trường doanh nghiệp cần: loại đầu số khả dụng, hồ sơ theo quy định hiện hành và cấu hình phù hợp với quy trình vận hành. Phạm vi và chi phí chỉ được xác nhận sau bước này."
+        },
+        {
+          "type": "cards",
+          "from": "INTL_USE_CASES",
+          "heading": "Doanh nghiệp dùng tổng đài quốc tế cho những bài toán nào",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Tổng đài quốc tế là gì?",
+          "a": "Tổng đài quốc tế là mô hình tổng đài doanh nghiệp sử dụng đầu số và cấu hình liên lạc gắn với thị trường nước ngoài, để đội ngũ nhận và thực hiện cuộc gọi với khách hàng quốc tế trong cùng một hệ thống."
+        },
+        {
+          "q": "Gcalls hỗ trợ đầu số tại những quốc gia nào?",
+          "a": "Khả năng cung cấp đầu số phụ thuộc vào quy định và điều kiện tại từng quốc gia, nên Gcalls xác nhận theo từng yêu cầu cụ thể thay vì công bố một danh sách chung. Doanh nghiệp cho biết thị trường cần triển khai, Gcalls sẽ khảo sát và phản hồi phạm vi khả thi."
+        },
+        {
+          "q": "Doanh nghiệp cần chuẩn bị hồ sơ gì để đăng ký đầu số quốc tế?",
+          "a": "Danh mục giấy tờ khác nhau tùy quốc gia và tùy loại đầu số. Thông thường liên quan tới hồ sơ pháp lý của doanh nghiệp và thông tin về mục đích sử dụng. Gcalls hỗ trợ khảo sát thủ tục và cung cấp danh mục cụ thể cho thị trường được yêu cầu."
+        },
+        {
+          "q": "Mất bao lâu để có đầu số quốc tế?",
+          "a": "Thời gian phụ thuộc vào quốc gia, loại đầu số và tính đầy đủ của hồ sơ, nên không có mốc thời gian áp dụng cho mọi thị trường. Gcalls thông báo yêu cầu và tiến độ theo từng hồ sơ cụ thể."
+        },
+        {
+          "q": "Chi phí tổng đài quốc tế được tính như thế nào?",
+          "a": "Chi phí phụ thuộc vào quốc gia, loại đầu số, hồ sơ đăng ký và lưu lượng sử dụng tại từng thị trường. Doanh nghiệp có thể dùng công cụ ước tính để chuẩn bị cấu hình trước khi nhận báo giá chính thức."
+        },
+        {
+          "q": "Khách hàng ở nước ngoài sẽ thấy số nào khi doanh nghiệp gọi ra?",
+          "a": "Số hiển thị phụ thuộc vào cấu hình đầu số và quy định về hiển thị số tại quốc gia được gọi đến. Gcalls sẽ xác nhận cách hiển thị khả thi cho từng thị trường trong quá trình khảo sát."
+        },
+        {
+          "q": "Tổng đài quốc tế khác gì so với Gcalls Plus Webphone?",
+          "a": "Gcalls Plus là lớp nghe gọi và quản lý hoạt động cuộc gọi cho đội ngũ. Tổng đài quốc tế giải quyết bài toán đầu số và cấu hình liên lạc cho thị trường nước ngoài, và được triển khai cùng lớp nghe gọi đó."
+        }
+      ],
+      "cta": {
+        "heading": "Cho Gcalls biết thị trường doanh nghiệp cần, phần thủ tục để Gcalls khảo sát",
+        "body": "Chia sẻ quốc gia cần hiện diện, mục đích sử dụng và quy mô đội ngũ để Gcalls xác định loại đầu số, hồ sơ cần chuẩn bị và phạm vi triển khai phù hợp.",
+        "label": ""
+      },
+      "attribution": {
+        "intent": "consultation",
+        "source": "international",
+        "solution": "Tổng đài quốc tế"
+      }
+    },
+    {
+      "slug": "tong-dai-tich-hop-crm",
+      "family": "solution-detail",
+      "sources": [
+        {
+          "file": "src/data/crmIntegration.ts",
+          "sha256": "1b238366181e5d614ce670fcab9bf7e9ef9ecbf5e30405535c9f47d374b252cd",
+          "exportCount": 23
+        }
+      ],
+      "hero": {
+        "eyebrow": "GCALLS • CRM INTEGRATION",
+        "h1": "Tổng đài tích hợp CRM – kết nối cuộc gọi với dữ liệu khách hàng",
+        "description": "Đưa hoạt động nghe gọi vào quy trình CRM để đội Sales và CSKH có thể gọi trực tiếp từ hệ thống, nhận biết khách hàng khi có cuộc gọi và lưu lại lịch sử tương tác tập trung hơn.",
+        "points": [
+          {
+            "title": "Gọi trực tiếp từ CRM",
+            "body": "Click-to-Call giúp nhân viên bắt đầu cuộc gọi ngay trong quy trình đang làm việc thay vì nhập lại số điện thoại.",
+            "href": ""
+          },
+          {
+            "title": "Nhận biết khách hàng khi có cuộc gọi",
+            "body": "Popup thông tin hỗ trợ nhân viên xem customer context trước hoặc trong quá trình trao đổi.",
+            "href": ""
+          },
+          {
+            "title": "Giữ lịch sử tương tác tập trung",
+            "body": "Dữ liệu cuộc gọi và thông tin liên quan có thể được đồng bộ về CRM theo phạm vi tích hợp được cấu hình.",
+            "href": ""
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "comparison",
+          "from": "CRM_BEFORE_AFTER",
+          "eyebrow": "TRƯỚC & SAU TÍCH HỢP",
+          "heading": "Giảm những điểm chuyển đổi thủ công trong quy trình Sales và CSKH",
+          "before": {
+            "label": "Trước tích hợp",
+            "steps": [
+              "CRM",
+              "Copy số điện thoại",
+              "Công cụ gọi",
+              "Cuộc gọi",
+              "Ghi chú thủ công",
+              "Quay lại CRM",
+              "Cập nhật thủ công"
+            ]
+          },
+          "after": {
+            "label": "Sau tích hợp",
+            "steps": [
+              "CRM",
+              "Click-to-Call",
+              "Cuộc gọi",
+              "Dữ liệu tương tác",
+              "Workflow CRM tiếp tục"
+            ]
+          }
+        },
+        {
+          "type": "cards",
+          "from": "CRM_BOUNDARIES",
+          "heading": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "CRM_CAPABILITIES",
+          "heading": "Ba năng lực cốt lõi giúp kết nối cuộc gọi với CRM",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Click-to-Call",
+              "body": "Thực hiện cuộc gọi từ CRM khi nền tảng và cấu hình tích hợp hỗ trợ, giúp giảm thao tác nhập số thủ công.",
+              "href": ""
+            },
+            {
+              "title": "Customer Popup",
+              "body": "Hiển thị thông tin khách hàng liên quan khi có cuộc gọi để nhân viên có thêm context trước khi trao đổi.",
+              "href": ""
+            },
+            {
+              "title": "Interaction History Sync",
+              "body": "Đồng bộ lịch sử liên hệ và dữ liệu cuộc gọi phù hợp về CRM theo phạm vi tích hợp được cấu hình.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "taglist",
+          "from": "CRM_CONTEXT",
+          "eyebrow": "CUSTOMER CONTEXT",
+          "heading": "Biết khách hàng đang nói chuyện với mình là ai trước khi tiếp tục xử lý",
+          "lead": "Khi CRM và cuộc gọi được kết nối, nhân viên có thể sử dụng thông tin khách hàng và lịch sử liên quan để hiểu bối cảnh thay vì bắt đầu mỗi cuộc hội thoại từ đầu.",
+          "tags": [
+            "Contact profile",
+            "Lead / company context",
+            "Hoạt động gần đây",
+            "Lịch sử tương tác",
+            "Thông tin cuộc gọi"
+          ]
+        },
+        {
+          "type": "taglist",
+          "from": "CRM_DATA_SYNC",
+          "eyebrow": "DỮ LIỆU TƯƠNG TÁC",
+          "heading": "Giữ dữ liệu cuộc gọi gần với hồ sơ khách hàng",
+          "lead": "Tùy nền tảng và phạm vi tích hợp, lịch sử cuộc gọi và dữ liệu liên quan có thể được ghi nhận vào CRM để đội ngũ theo dõi hành trình khách hàng tập trung hơn.",
+          "tags": [
+            "Phạm vi dữ liệu được xác định theo cấu hình tích hợp",
+            "Khả năng ghi nhận tùy thuộc nền tảng CRM",
+            "Chỉ đồng bộ dữ liệu phù hợp với quy trình doanh nghiệp",
+            "Các trường cụ thể được thống nhất trong khảo sát kỹ thuật"
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "CRM_DEPLOYMENT",
+          "heading": "Từ kết nối đến vận hành theo quy trình rõ ràng",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Khảo sát hệ thống và quy trình hiện tại",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Xác định nền tảng CRM và capability cần tích hợp",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Kết nối hoặc cấu hình theo nhu cầu",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Kiểm thử dữ liệu và luồng làm việc",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Hướng dẫn người dùng",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Đưa vào vận hành và theo dõi",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "CRM_DIRECT_ANSWER",
+          "heading": "",
+          "body": "Tổng đài tích hợp CRM là mô hình kết nối chức năng nghe gọi với hệ thống quản lý khách hàng để nhân viên có thể thực hiện cuộc gọi ngay trong CRM, nhận biết khách hàng khi có cuộc gọi và lưu lịch sử tương tác về cùng một quy trình dữ liệu. Với Gcalls, phạm vi đồng bộ phụ thuộc vào nền tảng CRM và cấu hình tích hợp thực tế của doanh nghiệp."
+        },
+        {
+          "type": "steps",
+          "from": "CRM_HOW_IT_WORKS",
+          "heading": "Từ dữ liệu CRM đến cuộc gọi và lịch sử tương tác",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Nhân viên làm việc trên CRM",
+              "body": "Thông tin khách hàng, lead hoặc contact tiếp tục được quản lý trong hệ thống CRM doanh nghiệp đang sử dụng.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Bắt đầu cuộc gọi",
+              "body": "Khi nền tảng hỗ trợ và tích hợp được cấu hình, nhân viên có thể thực hiện cuộc gọi trực tiếp từ giao diện CRM.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Hiển thị customer context",
+              "body": "Thông tin khách hàng liên quan hỗ trợ nhân viên xác định bối cảnh trước hoặc trong quá trình trao đổi.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Ghi nhận hoạt động",
+              "body": "Lịch sử liên hệ và dữ liệu cuộc gọi phù hợp có thể được đưa trở lại CRM theo cấu hình tích hợp.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Tiếp tục workflow",
+              "body": "Sales hoặc CSKH tiếp tục follow-up trong hệ thống đang quản lý khách hàng thay vì xây dựng một luồng dữ liệu riêng bên ngoài.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "CRM_OVERVIEW",
+          "heading": "Đưa hoạt động cuộc gọi vào nơi đội Sales và CSKH đang làm việc",
+          "lead": "Thay vì bắt nhân viên chuyển qua lại giữa CRM và hệ thống nghe gọi, Gcalls tập trung vào việc kết nối hai luồng để cuộc gọi trở thành một phần của quy trình quản lý khách hàng.",
+          "steps": [
+            {
+              "n": 1,
+              "title": "CRM record",
+              "body": "Dữ liệu khách hàng nằm trong CRM.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Click-to-Call",
+              "body": "Bắt đầu cuộc gọi từ quy trình đang làm việc.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Call",
+              "body": "Cuộc gọi được thực hiện qua hệ thống Gcalls.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Customer context",
+              "body": "Thông tin liên quan hỗ trợ nhân viên khi trao đổi.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Interaction history",
+              "body": "Dữ liệu tương tác được ghi nhận theo cấu hình.",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Follow-up",
+              "body": "Đội ngũ tiếp tục chăm sóc trong CRM.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "CRM_PLATFORMS",
+          "heading": "",
+          "lead": "",
+          "cards": [
+            {
+              "title": "HubSpot",
+              "body": "Kết nối hoạt động nghe gọi với dữ liệu khách hàng trên HubSpot theo phạm vi tích hợp được xác nhận.",
+              "href": ""
+            },
+            {
+              "title": "Salesforce",
+              "body": "Kết nối hoạt động nghe gọi với dữ liệu khách hàng trên Salesforce theo phạm vi tích hợp được xác nhận.",
+              "href": ""
+            },
+            {
+              "title": "Zoho CRM",
+              "body": "Kết nối hoạt động nghe gọi với dữ liệu khách hàng trên Zoho CRM theo phạm vi tích hợp được xác nhận.",
+              "href": ""
+            },
+            {
+              "title": "Khác",
+              "body": "Với hệ thống CRM khác, Gcalls sẽ khảo sát khả năng kết nối trước khi đề xuất phương án tích hợp.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "CRM_PROBLEMS",
+          "heading": "Khi CRM và tổng đài hoạt động riêng, nhân viên phải tự nối hai quy trình bằng thao tác thủ công",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Nhập lại số điện thoại",
+              "body": "Nhân viên phải copy số từ CRM sang công cụ gọi, tạo thêm thao tác không cần thiết trong mỗi lần liên hệ.",
+              "href": ""
+            },
+            {
+              "title": "Không có customer context khi chuông reo",
+              "body": "Nếu dữ liệu khách hàng và cuộc gọi nằm ở hai hệ thống khác nhau, nhân viên cần mất thêm thời gian để xác định người đang liên hệ.",
+              "href": ""
+            },
+            {
+              "title": "Lịch sử cuộc gọi nằm ngoài CRM",
+              "body": "Khi hoạt động gọi không được ghi nhận cùng dữ liệu khách hàng, đội Sales và CSKH khó theo dõi toàn bộ hành trình tương tác trong một nơi.",
+              "href": ""
+            },
+            {
+              "title": "Quản lý khó theo dõi quy trình xuyên hệ thống",
+              "body": "Dữ liệu phân mảnh khiến việc kiểm tra lịch sử chăm sóc, follow-up và hoạt động đội ngũ trở nên phức tạp hơn.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "taglist",
+          "from": "CRM_SALES_USE_CASE",
+          "eyebrow": "SALES",
+          "heading": "Giảm thao tác giữa gọi điện và quản lý cơ hội bán hàng",
+          "lead": "Sales có thể bắt đầu cuộc gọi từ context của lead hoặc contact và tiếp tục follow-up trong CRM sau tương tác, thay vì duy trì một lịch sử cuộc gọi tách biệt.",
+          "tags": [
+            "Prospecting",
+            "Follow-up",
+            "Lead context",
+            "Call activity",
+            "Pipeline workflow"
+          ]
+        },
+        {
+          "type": "taglist",
+          "from": "CRM_SERVICE_USE_CASE",
+          "eyebrow": "CUSTOMER SERVICE",
+          "heading": "Đưa customer context vào quy trình tiếp nhận cuộc gọi",
+          "lead": "Đội CSKH có thể sử dụng thông tin khách hàng và lịch sử tương tác từ CRM để hiểu bối cảnh trước khi tiếp tục hỗ trợ.",
+          "tags": [
+            "Customer identification",
+            "Previous interaction",
+            "Context",
+            "Follow-up",
+            "Activity history"
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "CRM_TRUST",
+          "heading": "Tích hợp cần bắt đầu từ workflow thực tế của doanh nghiệp",
+          "body": "Mỗi CRM có cấu trúc dữ liệu, permission và quy trình vận hành khác nhau. Vì vậy phạm vi tích hợp cần được xác định từ hệ thống đang sử dụng thay vì áp dụng một cấu hình giống nhau cho mọi doanh nghiệp."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Tổng đài tích hợp CRM là gì?",
+          "a": "Tổng đài tích hợp CRM kết nối chức năng nghe gọi với hệ thống quản lý khách hàng để nhân viên có thể thực hiện cuộc gọi, nhận biết khách hàng và theo dõi lịch sử tương tác trong cùng quy trình dữ liệu."
+        },
+        {
+          "q": "Gcalls tích hợp được những CRM nào?",
+          "a": "Gcalls có kinh nghiệm tích hợp với nhiều nền tảng CRM. Khả năng cụ thể cần được xác định theo nền tảng, phiên bản, API và phạm vi tính năng doanh nghiệp cần triển khai."
+        },
+        {
+          "q": "Click-to-Call là gì?",
+          "a": "Click-to-Call cho phép nhân viên bắt đầu cuộc gọi từ số điện thoại hoặc hồ sơ khách hàng trong CRM khi tính năng này được hỗ trợ và cấu hình."
+        },
+        {
+          "q": "Khi có cuộc gọi đến, CRM có thể hiển thị thông tin khách hàng không?",
+          "a": "Với nền tảng và cấu hình phù hợp, hệ thống có thể hỗ trợ hiển thị thông tin khách hàng liên quan để nhân viên có thêm context khi tiếp nhận cuộc gọi."
+        },
+        {
+          "q": "Lịch sử cuộc gọi có được đồng bộ về CRM không?",
+          "a": "Dữ liệu lịch sử cuộc gọi có thể được đồng bộ theo phạm vi tích hợp và khả năng của nền tảng CRM. Các trường dữ liệu cụ thể cần được xác định trong quá trình khảo sát kỹ thuật."
+        },
+        {
+          "q": "Tích hợp CRM có thay thế CRM hiện tại không?",
+          "a": "Không. Mục tiêu của giải pháp là kết nối hoạt động nghe gọi với CRM doanh nghiệp đang sử dụng, thay vì yêu cầu đội ngũ thay đổi toàn bộ hệ thống quản lý khách hàng."
+        }
+      ],
+      "cta": {
+        "heading": "Đưa cuộc gọi vào đúng quy trình Sales và CSKH đang sử dụng",
+        "body": "Chia sẻ nền tảng CRM, số lượng người dùng và workflow hiện tại để Gcalls xác định cách kết nối phù hợp.",
+        "label": ""
+      },
+      "attribution": {
+        "intent": "consultation",
+        "source": "crm_integration",
+        "solution": "Tích hợp CRM"
+      }
+    },
+    {
+      "slug": "tong-dai-tich-hop-helpdesk",
+      "family": "solution-detail",
+      "sources": [
+        {
+          "file": "src/data/helpdeskIntegration.ts",
+          "sha256": "6ffebde717b7d73f5617d8c5194c63856737bdd0152b19a0b106a4bdeff0251e",
+          "exportCount": 21
+        }
+      ],
+      "hero": {
+        "eyebrow": "GCALLS • HELPDESK INTEGRATION",
+        "h1": "Tổng đài tích hợp Helpdesk – kết nối cuộc gọi với ticket và lịch sử hỗ trợ",
+        "description": "Đưa cuộc gọi vào quy trình hỗ trợ để nhân viên có thêm context khách hàng, theo dõi ticket và lịch sử tương tác tập trung hơn thay vì phải chuyển đổi liên tục giữa Helpdesk và hệ thống nghe gọi.",
+        "points": [
+          {
+            "title": "Cuộc gọi gắn với quy trình hỗ trợ",
+            "body": "Kết nối hoạt động nghe gọi với hồ sơ hoặc ticket hỗ trợ theo khả năng của nền tảng và cấu hình tích hợp.",
+            "href": ""
+          },
+          {
+            "title": "Có thêm context khi xử lý ticket",
+            "body": "Giúp nhân viên xem thông tin và lịch sử liên quan trước khi tiếp tục hỗ trợ khách hàng.",
+            "href": ""
+          },
+          {
+            "title": "Theo dõi lịch sử hỗ trợ tập trung hơn",
+            "body": "Dữ liệu cuộc gọi phù hợp có thể được ghi nhận cùng workflow Helpdesk để đội ngũ tiếp tục xử lý thuận tiện hơn.",
+            "href": ""
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "comparison",
+          "from": "HD_BEFORE_AFTER",
+          "eyebrow": "TRƯỚC & SAU TÍCH HỢP",
+          "heading": "Giảm những bước chuyển đổi thủ công trong quy trình CSKH",
+          "before": {
+            "label": "Trước tích hợp",
+            "steps": [
+              "Hệ thống nghe gọi",
+              "Xác định khách hàng thủ công",
+              "Mở Helpdesk",
+              "Tìm ticket",
+              "Nhập ghi chú",
+              "Tiếp tục hỗ trợ"
+            ]
+          },
+          "after": {
+            "label": "Sau tích hợp",
+            "steps": [
+              "Cuộc gọi / workflow Helpdesk",
+              "Customer context",
+              "Ticket hoặc hồ sơ hỗ trợ liên quan",
+              "Lịch sử tương tác",
+              "Follow-up"
+            ]
+          }
+        },
+        {
+          "type": "cards",
+          "from": "HD_BOUNDARIES",
+          "heading": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "HD_CAPABILITIES",
+          "heading": "Kết nối cuộc gọi với những dữ liệu đội CSKH cần để xử lý ticket",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Call Context",
+              "body": "Đưa thông tin liên quan đến cuộc gọi vào bối cảnh hỗ trợ để agent dễ xác định khách hàng và yêu cầu đang xử lý.",
+              "href": ""
+            },
+            {
+              "title": "Ticket / Support Record Connection",
+              "body": "Liên kết dữ liệu cuộc gọi với ticket hoặc hồ sơ hỗ trợ khi nền tảng Helpdesk và cấu hình tích hợp cho phép.",
+              "href": ""
+            },
+            {
+              "title": "Interaction History",
+              "body": "Ghi nhận lịch sử liên hệ phù hợp trong workflow hỗ trợ để nhân viên có thể tiếp tục xử lý với nhiều context hơn.",
+              "href": ""
+            },
+            {
+              "title": "Customer Identification",
+              "body": "Hỗ trợ nhận biết khách hàng hoặc hồ sơ liên quan khi dữ liệu và nền tảng tích hợp cho phép.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "HD_DEPLOYMENT",
+          "heading": "Kết nối Helpdesk theo workflow hỗ trợ doanh nghiệp đang sử dụng",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Khảo sát Helpdesk và quy trình hiện tại",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Xác định dữ liệu/capability cần kết nối",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Thiết kế luồng cuộc gọi và ticket",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Cấu hình tích hợp",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Kiểm thử dữ liệu và workflow",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Hướng dẫn đội CSKH",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 7,
+              "title": "Đưa vào vận hành",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "HD_DIRECT_ANSWER",
+          "heading": "",
+          "body": "Tổng đài tích hợp Helpdesk là mô hình kết nối hoạt động nghe gọi với hệ thống quản lý yêu cầu hỗ trợ để nhân viên có thể sử dụng cuộc gọi, ticket và lịch sử tương tác trong cùng một quy trình chăm sóc khách hàng. Phạm vi đồng bộ phụ thuộc vào nền tảng Helpdesk, API và cấu hình tích hợp thực tế của doanh nghiệp."
+        },
+        {
+          "type": "steps",
+          "from": "HD_HOW_IT_WORKS",
+          "heading": "Từ cuộc gọi đến ticket và bước xử lý tiếp theo",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Khách hàng liên hệ",
+              "body": "Khách hàng gọi đến hoặc nhân viên thực hiện cuộc gọi trong phạm vi giải pháp được triển khai.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Xác định customer context",
+              "body": "Thông tin liên quan giúp nhân viên hiểu khách hàng hoặc yêu cầu hỗ trợ đang xử lý.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Kết nối với hồ sơ Helpdesk",
+              "body": "Dữ liệu cuộc gọi phù hợp được liên kết với workflow hỗ trợ theo khả năng nền tảng và cấu hình tích hợp.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Cập nhật lịch sử tương tác",
+              "body": "Thông tin liên quan đến cuộc gọi có thể được ghi nhận để đội ngũ tiếp tục theo dõi trong quy trình hỗ trợ.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Tiếp tục ticket / follow-up",
+              "body": "Agent xử lý các bước tiếp theo trong Helpdesk thay vì duy trì một lịch sử riêng bên ngoài hệ thống.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "HD_OVERVIEW",
+          "heading": "Đưa cuộc gọi vào quy trình xử lý yêu cầu hỗ trợ",
+          "lead": "Gcalls kết nối lớp giao tiếp thoại với Helpdesk để đội CSKH có thể xử lý cuộc gọi trong bối cảnh ticket, lịch sử hỗ trợ và customer context đang có.",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Customer",
+              "body": "Khách hàng cần được hỗ trợ.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Call",
+              "body": "Cuộc gọi diễn ra qua hệ thống Gcalls.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Identification / Context",
+              "body": "Thông tin liên quan giúp agent xác định bối cảnh.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Support record / ticket",
+              "body": "Cuộc gọi được gắn với hồ sơ hỗ trợ theo cấu hình.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Interaction history",
+              "body": "Lịch sử liên hệ phù hợp được ghi nhận.",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Follow-up",
+              "body": "Đội ngũ tiếp tục xử lý trong Helpdesk.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "HD_PLATFORMS",
+          "heading": "",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Freshdesk",
+              "body": "Kết nối hoạt động nghe gọi với quy trình hỗ trợ trên Freshdesk theo phạm vi tích hợp được xác nhận.",
+              "href": ""
+            },
+            {
+              "title": "Zendesk",
+              "body": "Kết nối hoạt động nghe gọi với quy trình hỗ trợ trên Zendesk theo phạm vi tích hợp được xác nhận.",
+              "href": ""
+            },
+            {
+              "title": "Khác",
+              "body": "Với Helpdesk khác, Gcalls sẽ khảo sát API và khả năng kết nối trước khi đề xuất phương án tích hợp.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "HD_PROBLEMS",
+          "heading": "Khi cuộc gọi và ticket nằm ở hai nơi, đội CSKH phải tự ghép lại hành trình hỗ trợ",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Nhân viên phải chuyển đổi giữa nhiều công cụ",
+              "body": "Agent tiếp nhận cuộc gọi trên một hệ thống nhưng lại quản lý yêu cầu hỗ trợ trên Helpdesk, khiến workflow bị chia thành nhiều bước.",
+              "href": ""
+            },
+            {
+              "title": "Ticket thiếu context cuộc gọi",
+              "body": "Nếu dữ liệu nghe gọi không gắn với hồ sơ hỗ trợ, nhân viên có thể phải tìm lại thông tin trước khi tiếp tục xử lý.",
+              "href": ""
+            },
+            {
+              "title": "Lịch sử hỗ trợ bị phân mảnh",
+              "body": "Cuộc gọi, ticket, ghi chú và các lần tương tác khác nằm ở nhiều nơi khiến quá trình hỗ trợ khó được theo dõi xuyên suốt.",
+              "href": ""
+            },
+            {
+              "title": "Nhập lại thông tin làm tăng thao tác thủ công",
+              "body": "Khi hai hệ thống không kết nối, nhân viên có thể phải ghi lại cùng một nội dung nhiều lần để duy trì lịch sử hỗ trợ.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "taglist",
+          "from": "HD_SUPPORT_CONTEXT",
+          "eyebrow": "SUPPORT CONTEXT",
+          "heading": "Hiểu lịch sử hỗ trợ trước khi tiếp tục cuộc hội thoại",
+          "lead": "Khi ticket, thông tin khách hàng và lịch sử liên quan được đặt gần dữ liệu cuộc gọi, agent có thể hiểu bối cảnh tốt hơn trước khi phản hồi hoặc follow-up.",
+          "tags": [
+            "Customer identity",
+            "Ticket đang xử lý",
+            "Ticket trước đó",
+            "Tương tác gần đây",
+            "Ghi chú",
+            "Trạng thái hiện tại"
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "HD_TRUST",
+          "heading": "Mỗi Helpdesk có cấu trúc ticket và dữ liệu khác nhau",
+          "body": "Field, permission, API và quy trình xử lý khác nhau giữa từng nền tảng. Vì vậy phạm vi tích hợp cần được xác định từ hệ thống doanh nghiệp đang sử dụng thay vì áp dụng cùng một cấu hình cho mọi tổ chức."
+        },
+        {
+          "type": "cards",
+          "from": "HD_USE_CASES",
+          "heading": "Phù hợp với những đội hỗ trợ cần theo dõi cuộc gọi và ticket trong cùng hành trình",
+          "lead": "",
+          "cards": [
+            {
+              "title": "SaaS Customer Support",
+              "body": "Hỗ trợ agent theo dõi cuộc gọi cùng ticket và lịch sử xử lý khi khách hàng cần hỗ trợ sản phẩm hoặc dịch vụ.",
+              "href": ""
+            },
+            {
+              "title": "E-commerce Customer Service",
+              "body": "Giúp đội CSKH kết nối cuộc gọi với yêu cầu hỗ trợ để tiếp tục quá trình xử lý khách hàng có context hơn.",
+              "href": ""
+            },
+            {
+              "title": "Service Operations",
+              "body": "Phù hợp với doanh nghiệp dịch vụ có nhiều yêu cầu cần follow-up sau khi khách hàng gọi đến.",
+              "href": ""
+            },
+            {
+              "title": "BPO / Support Center",
+              "body": "Hỗ trợ đội vận hành xử lý lượng lớn cuộc gọi và ticket theo workflow có cấu trúc hơn.",
+              "href": ""
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Tổng đài tích hợp Helpdesk là gì?",
+          "a": "Tổng đài tích hợp Helpdesk kết nối hoạt động nghe gọi với hệ thống quản lý yêu cầu hỗ trợ để nhân viên có thể sử dụng cuộc gọi, ticket và lịch sử tương tác trong cùng một quy trình CSKH."
+        },
+        {
+          "q": "Gcalls có thể tích hợp với Helpdesk nào?",
+          "a": "Khả năng tích hợp phụ thuộc vào nền tảng, API và yêu cầu triển khai. Gcalls hiện có các trang giải pháp riêng cho những nền tảng đã được xác nhận như Freshdesk và Zendesk."
+        },
+        {
+          "q": "Cuộc gọi có thể được gắn với ticket không?",
+          "a": "Với nền tảng và cấu hình phù hợp, dữ liệu cuộc gọi có thể được liên kết với ticket hoặc hồ sơ hỗ trợ để agent có thêm context khi xử lý yêu cầu."
+        },
+        {
+          "q": "Gcalls có tự động tạo ticket sau cuộc gọi không?",
+          "a": "Khả năng tạo hoặc cập nhật ticket phụ thuộc vào nền tảng Helpdesk và workflow tích hợp. Gcalls cần khảo sát hệ thống hiện tại để xác định luồng xử lý có thể triển khai."
+        },
+        {
+          "q": "Lịch sử cuộc gọi có được lưu trong Helpdesk không?",
+          "a": "Dữ liệu lịch sử cuộc gọi có thể được ghi nhận hoặc liên kết theo phạm vi tích hợp và khả năng của nền tảng. Các trường dữ liệu cụ thể cần được xác định trong quá trình khảo sát kỹ thuật."
+        },
+        {
+          "q": "Helpdesk Integration khác Gcalls CX như thế nào?",
+          "a": "Helpdesk Integration tập trung kết nối cuộc gọi với ticket và workflow hỗ trợ hiện có. Gcalls CX giải quyết bài toán rộng hơn về quản lý giao tiếp đa kênh trên một Contact Center tập trung."
+        }
+      ],
+      "cta": {
+        "heading": "Đưa cuộc gọi vào đúng quy trình hỗ trợ đội CSKH đang sử dụng",
+        "body": "Chia sẻ nền tảng Helpdesk, cấu trúc ticket và workflow hiện tại để Gcalls xác định cách tích hợp phù hợp.",
+        "label": ""
+      },
+      "attribution": {
+        "intent": "consultation",
+        "source": "helpdesk_integration",
+        "solution": "Tích hợp Helpdesk"
+      }
+    },
+    {
+      "slug": "tong-dai-tich-hop-pos",
+      "family": "solution-detail",
+      "sources": [
+        {
+          "file": "src/data/posIntegration.ts",
+          "sha256": "8820b73aef25b976648384114a8e922aba28be072c431f8208de2349a200d576",
+          "exportCount": 20
+        }
+      ],
+      "hero": {
+        "eyebrow": "GCALLS • POS INTEGRATION",
+        "h1": "Tổng đài tích hợp POS – kết nối cuộc gọi với dữ liệu bán hàng",
+        "description": "Kết nối hoạt động nghe gọi với dữ liệu khách hàng và thông tin bán hàng phù hợp để đội Sales/CSKH có thêm context khi tư vấn, xử lý đơn hàng hoặc chăm sóc sau mua.",
+        "points": [
+          {
+            "title": "Nhận biết customer context",
+            "body": "Thông tin liên quan giúp nhân viên hiểu khách hàng trước hoặc trong quá trình trao đổi.",
+            "href": ""
+          },
+          {
+            "title": "Tra cứu dữ liệu bán hàng thuận tiện hơn",
+            "body": "Khi hệ thống và cấu hình tích hợp hỗ trợ, dữ liệu liên quan tới khách hàng hoặc giao dịch có thể được đưa gần hơn với quy trình gọi.",
+            "href": ""
+          },
+          {
+            "title": "Theo dõi quá trình chăm sóc",
+            "body": "Lịch sử tương tác phù hợp có thể được ghi nhận để đội ngũ tiếp tục follow-up trong quy trình đang sử dụng.",
+            "href": ""
+          }
+        ]
+      },
+      "sections": [
+        {
+          "type": "comparison",
+          "from": "POS_BEFORE_AFTER",
+          "eyebrow": "TRƯỚC & SAU TÍCH HỢP",
+          "heading": "Giảm việc tra cứu thủ công giữa cuộc gọi và hệ thống bán hàng",
+          "before": {
+            "label": "Trước tích hợp",
+            "steps": [
+              "Cuộc gọi",
+              "Hỏi lại thông tin khách hàng",
+              "Mở hệ thống bán hàng",
+              "Tra cứu thủ công",
+              "Xem sales context",
+              "Quay lại quy trình gọi",
+              "Ghi chú tương tác thủ công"
+            ]
+          },
+          "after": {
+            "label": "Sau tích hợp",
+            "steps": [
+              "Cuộc gọi",
+              "Customer identification",
+              "Sales context phù hợp",
+              "Cuộc hội thoại",
+              "Lịch sử tương tác",
+              "Follow-up"
+            ]
+          }
+        },
+        {
+          "type": "cards",
+          "from": "POS_BOUNDARIES",
+          "heading": "CRM, Helpdesk và POS cung cấp những loại customer context khác nhau",
+          "lead": "",
+          "cards": [
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            },
+            {
+              "title": "",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "from": "POS_CAPABILITIES",
+          "heading": "Kết nối cuộc gọi với những dữ liệu đội bán hàng và CSKH cần",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Customer Identification",
+              "body": "Hỗ trợ nhận biết khách hàng hoặc hồ sơ liên quan khi dữ liệu và nền tảng tích hợp cho phép.",
+              "href": ""
+            },
+            {
+              "title": "Customer Context",
+              "body": "Đưa thông tin khách hàng phù hợp vào bối cảnh cuộc gọi để nhân viên hiểu người đang liên hệ.",
+              "href": ""
+            },
+            {
+              "title": "Sales Data Context",
+              "body": "Hiển thị dữ liệu bán hàng phù hợp theo khả năng của nền tảng và phạm vi tích hợp được cấu hình.",
+              "href": ""
+            },
+            {
+              "title": "Interaction History",
+              "body": "Ghi nhận hoặc liên kết lịch sử tương tác để hỗ trợ quá trình tư vấn và chăm sóc tiếp theo.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "POS_DEPLOYMENT",
+          "heading": "Tích hợp theo hệ thống bán hàng và dữ liệu doanh nghiệp đang sử dụng",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Khảo sát hệ thống POS / sales system",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Xác định dữ liệu cần sử dụng trong call workflow",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Kiểm tra API và khả năng kết nối",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Thiết kế luồng customer identification / context",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Cấu hình tích hợp",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Kiểm thử dữ liệu và cuộc gọi",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 7,
+              "title": "Hướng dẫn đội Sales/CSKH",
+              "body": "",
+              "href": ""
+            },
+            {
+              "n": 8,
+              "title": "Đưa vào vận hành",
+              "body": "",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "POS_DIRECT_ANSWER",
+          "heading": "",
+          "body": "Tổng đài tích hợp POS là mô hình kết nối hoạt động nghe gọi với hệ thống bán hàng để nhân viên có thể sử dụng thông tin khách hàng, dữ liệu bán hàng phù hợp và lịch sử tương tác trong cùng quy trình chăm sóc. Phạm vi dữ liệu hiển thị hoặc đồng bộ phụ thuộc vào nền tảng POS, API và cấu hình tích hợp thực tế của doanh nghiệp."
+        },
+        {
+          "type": "prose",
+          "from": "POS_ECOMMERCE",
+          "heading": "Giữ cuộc gọi gần hơn với quy trình bán hàng trực tuyến",
+          "body": "Khi khách hàng liên hệ qua điện thoại, đội ngũ có thể sử dụng dữ liệu bán hàng phù hợp để hỗ trợ quá trình tư vấn hoặc chăm sóc tiếp theo."
+        },
+        {
+          "type": "steps",
+          "from": "POS_HOW_IT_WORKS",
+          "heading": "Từ cuộc gọi đến customer context và bước chăm sóc tiếp theo",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Khách hàng liên hệ",
+              "body": "Khách hàng gọi đến hoặc nhân viên thực hiện cuộc gọi trong quy trình bán hàng/chăm sóc.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Xác định khách hàng",
+              "body": "Dữ liệu liên quan hỗ trợ hệ thống xác định hồ sơ khách hàng khi nền tảng và cấu hình tích hợp cho phép.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Hiển thị sales context phù hợp",
+              "body": "Nhân viên có thể xem thông tin liên quan từ hệ thống bán hàng theo phạm vi dữ liệu được tích hợp.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Thực hiện cuộc hội thoại",
+              "body": "Agent tư vấn, xử lý yêu cầu hoặc chăm sóc khách hàng với nhiều context hơn.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Ghi nhận tương tác",
+              "body": "Lịch sử cuộc gọi hoặc dữ liệu phù hợp có thể được ghi nhận theo phạm vi tích hợp.",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Tiếp tục follow-up",
+              "body": "Đội ngũ tiếp tục quá trình bán hàng hoặc chăm sóc trong workflow doanh nghiệp đang sử dụng.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "POS_OVERVIEW",
+          "heading": "Đưa dữ liệu bán hàng vào đúng thời điểm khách hàng đang tương tác",
+          "lead": "Gcalls tập trung vào việc kết nối lớp nghe gọi với dữ liệu bán hàng phù hợp để đội ngũ có thêm context khi tư vấn, hỗ trợ đơn hàng hoặc chăm sóc khách hàng sau giao dịch.",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Customer",
+              "body": "Khách hàng cần tư vấn hoặc hỗ trợ.",
+              "href": ""
+            },
+            {
+              "n": 2,
+              "title": "Call",
+              "body": "Cuộc gọi diễn ra qua hệ thống Gcalls.",
+              "href": ""
+            },
+            {
+              "n": 3,
+              "title": "Identification",
+              "body": "Hồ sơ liên quan được xác định khi cấu hình cho phép.",
+              "href": ""
+            },
+            {
+              "n": 4,
+              "title": "Sales / Order Context",
+              "body": "Dữ liệu bán hàng phù hợp được đưa gần quy trình gọi.",
+              "href": ""
+            },
+            {
+              "n": 5,
+              "title": "Conversation",
+              "body": "Nhân viên trao đổi với nhiều context hơn.",
+              "href": ""
+            },
+            {
+              "n": 6,
+              "title": "Interaction History",
+              "body": "Lịch sử tương tác phù hợp được ghi nhận.",
+              "href": ""
+            },
+            {
+              "n": 7,
+              "title": "Follow-up",
+              "body": "Đội ngũ tiếp tục chăm sóc khách hàng.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "POS_PLUS_RELATION",
+          "heading": "Kết nối tổng đài với dữ liệu bán hàng khi đội ngũ cần nhiều context hơn",
+          "body": "Gcalls Plus giải quyết nhu cầu Webphone và quản lý hoạt động nghe gọi. POS Integration mở rộng luồng này bằng cách đưa dữ liệu bán hàng phù hợp vào workflow khi doanh nghiệp cần kết nối với hệ thống bán hàng."
+        },
+        {
+          "type": "cards",
+          "from": "POS_PROBLEMS",
+          "heading": "Khi dữ liệu bán hàng và cuộc gọi nằm ở hai nơi, nhân viên phải tự tìm context trong lúc khách hàng đang chờ",
+          "lead": "",
+          "cards": [
+            {
+              "title": "Khó nhận biết khách hàng khi có cuộc gọi",
+              "body": "Nếu hệ thống nghe gọi không kết nối với dữ liệu bán hàng, nhân viên cần tra cứu thủ công trước khi hiểu khách hàng đang liên hệ.",
+              "href": ""
+            },
+            {
+              "title": "Dữ liệu mua hàng không nằm cạnh cuộc hội thoại",
+              "body": "Thông tin giao dịch và lịch sử gọi bị tách rời khiến nhân viên mất thêm thời gian tìm context phù hợp.",
+              "href": ""
+            },
+            {
+              "title": "Chăm sóc sau mua bị phân mảnh",
+              "body": "Lịch sử bán hàng và lịch sử tương tác nằm ở nhiều nơi khiến quá trình follow-up khó được theo dõi liên tục.",
+              "href": ""
+            },
+            {
+              "title": "Nhập lại thông tin tạo thêm thao tác",
+              "body": "Nhân viên có thể phải ghi chép hoặc chuyển dữ liệu giữa hệ thống gọi và phần mềm bán hàng nếu hai luồng không kết nối.",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "type": "taglist",
+          "from": "POS_RETAIL",
+          "eyebrow": "BÁN LẺ",
+          "heading": "Kết nối cuộc gọi với quá trình chăm sóc khách hàng tại cửa hàng hoặc chuỗi",
+          "lead": "Đội bán hàng và CSKH có thể sử dụng customer context liên quan để hiểu khách hàng trước khi tư vấn hoặc tiếp tục hỗ trợ sau mua.",
+          "tags": [
+            "Customer inquiry",
+            "Tư vấn sản phẩm / dịch vụ",
+            "Hỗ trợ sau mua",
+            "Follow-up"
+          ]
+        },
+        {
+          "type": "taglist",
+          "from": "POS_SALES_CONTEXT",
+          "eyebrow": "SALES CONTEXT",
+          "heading": "Sử dụng dữ liệu phù hợp để hiểu khách hàng trước khi tư vấn",
+          "lead": "Thông tin khách hàng và dữ liệu bán hàng liên quan giúp nhân viên có thêm bối cảnh khi tư vấn, hỗ trợ hoặc tiếp tục quá trình chăm sóc.",
+          "tags": [
+            "Hồ sơ khách hàng liên quan",
+            "Dữ liệu bán hàng phù hợp",
+            "Lịch sử tương tác",
+            "Ghi chú liên quan"
+          ]
+        },
+        {
+          "type": "prose",
+          "from": "POS_TRUST",
+          "heading": "Mỗi hệ thống bán hàng có cấu trúc dữ liệu và API khác nhau",
+          "body": "Customer fields, dữ liệu bán hàng, permission và workflow khác nhau giữa từng nền tảng. Phạm vi tích hợp cần được xác định từ hệ thống doanh nghiệp đang sử dụng."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Tổng đài tích hợp POS là gì?",
+          "a": "Tổng đài tích hợp POS kết nối hoạt động nghe gọi với hệ thống bán hàng để nhân viên có thể sử dụng customer context, dữ liệu bán hàng phù hợp và lịch sử tương tác trong cùng quy trình chăm sóc."
+        },
+        {
+          "q": "Tích hợp POS giúp nhân viên nhận biết khách hàng như thế nào?",
+          "a": "Khả năng nhận biết khách hàng phụ thuộc vào dữ liệu và API của hệ thống POS. Khi cấu hình phù hợp, thông tin liên quan có thể được sử dụng để hỗ trợ agent xác định customer context khi xử lý cuộc gọi."
+        },
+        {
+          "q": "Nhân viên có xem được thông tin đơn hàng khi khách gọi không?",
+          "a": "Phạm vi thông tin bán hàng hoặc đơn hàng hiển thị phụ thuộc vào hệ thống POS, API và dữ liệu doanh nghiệp cho phép tích hợp. Gcalls sẽ xác định các trường dữ liệu cụ thể trong quá trình khảo sát kỹ thuật."
+        },
+        {
+          "q": "Lịch sử cuộc gọi có được lưu cùng dữ liệu khách hàng không?",
+          "a": "Lịch sử tương tác phù hợp có thể được ghi nhận hoặc liên kết theo phạm vi tích hợp và khả năng của hệ thống bán hàng."
+        },
+        {
+          "q": "Gcalls tích hợp được những phần mềm POS nào?",
+          "a": "Khả năng tích hợp cần được xác định theo nền tảng, API và yêu cầu triển khai. Gcalls sẽ kiểm tra hệ thống doanh nghiệp đang sử dụng trước khi xác nhận phạm vi kết nối."
+        },
+        {
+          "q": "POS Integration khác CRM Integration như thế nào?",
+          "a": "CRM Integration tập trung vào lead, contact và workflow quản lý khách hàng; POS Integration tập trung vào customer context và dữ liệu bán hàng liên quan tới quy trình retail hoặc thương mại điện tử."
+        }
+      ],
+      "cta": {
+        "heading": "Đưa customer context và dữ liệu bán hàng vào đúng lúc đội ngũ đang trao đổi với khách hàng",
+        "body": "Chia sẻ hệ thống bán hàng, dữ liệu cần sử dụng và workflow hiện tại để Gcalls xác định phạm vi tích hợp phù hợp.",
+        "label": ""
+      },
+      "attribution": {
+        "intent": "consultation",
+        "source": "pos_integration",
+        "solution": "Tích hợp POS"
+      }
+    }
+  ]
+}
