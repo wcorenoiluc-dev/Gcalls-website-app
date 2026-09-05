@@ -1,0 +1,26 @@
+/**
+ * /nganh/ — page-scoped layout.
+ *
+ * The 1180px container and 50px section rhythm are applied through a scope class
+ * on the page wrapper, the same approach `src/styles/gcalls-plus.css` and
+ * `src/styles/voicebot.css` use. Shared primitives (`Container`, `Section`) are
+ * not modified — every other route keeps its own width and rhythm.
+ *
+ * 25px block padding on each side of a section boundary = 50px between two
+ * compositions at every breakpoint. Card padding and gutters are internal
+ * spacing and are left alone.
+ */
+
+.ind-page > section {
+  padding-block: 25px;
+}
+
+/** Hero keeps a larger top inset under the fixed header; its bottom joins the rhythm. */
+.ind-page > section:first-of-type {
+  padding-block: 40px 25px;
+}
+
+/** Container 1280px -> 1180px, this page only. Matches the utility the shared Container emits. */
+.ind-page .max-w-\[1280px\] {
+  max-width: 1180px;
+}
