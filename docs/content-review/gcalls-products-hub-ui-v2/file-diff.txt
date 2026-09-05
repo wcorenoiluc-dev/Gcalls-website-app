@@ -1,0 +1,173 @@
+ src/data/hubs.ts              | 53 +++++++++++++++++++------------------------
+ src/pages/ProductsHubPage.tsx | 17 ++++++++++----
+ src/styles/index.css          |  1 +
+ 3 files changed, 36 insertions(+), 35 deletions(-)
+
+UNTRACKED (new files)
+  A  docs/content-review/gcalls-products-hub-ui-v2/file-diff.txt
+  A  docs/content-review/gcalls-products-hub-ui-v2/media-hashes.md
+  A  docs/content-review/gcalls-products-hub-ui-v2/preview/card-01-gcalls-plus-webphone.png
+  A  docs/content-review/gcalls-products-hub-ui-v2/preview/card-02-qa-qc-center.png
+  A  docs/content-review/gcalls-products-hub-ui-v2/preview/card-03-gcalls-cx.png
+  A  docs/content-review/gcalls-products-hub-ui-v2/preview/fullpage-1024.png
+  A  docs/content-review/gcalls-products-hub-ui-v2/preview/fullpage-1280.png
+  A  docs/content-review/gcalls-products-hub-ui-v2/preview/fullpage-1440.png
+  A  docs/content-review/gcalls-products-hub-ui-v2/preview/fullpage-320.png
+  A  docs/content-review/gcalls-products-hub-ui-v2/preview/fullpage-390.png
+  A  docs/content-review/gcalls-products-hub-ui-v2/preview/fullpage-768.png
+  A  docs/content-review/gcalls-products-hub-ui-v2/preview/hero-1440.png
+  A  docs/content-review/gcalls-products-hub-ui-v2/preview/hero-390.png
+  A  docs/content-review/gcalls-products-hub-ui-v2/preview/metrics.json
+  A  docs/content-review/gcalls-products-hub-ui-v2/preview/section-decision-guide.png
+  A  docs/content-review/gcalls-products-hub-ui-v2/preview/section-product-cards.png
+  A  docs/content-review/gcalls-products-hub-ui-v2/regression-report.txt
+  A  docs/content-review/gcalls-products-hub-ui-v2/verify-output.txt
+  A  scripts/products-hub-preview.mjs
+  A  scripts/products-hub-regression.mjs
+  A  scripts/verify-products-hub.mjs
+  A  src/components/products-hub/ProductsHubLayout.tsx
+  A  src/components/products-hub/productMedia.tsx
+  A  src/components/products-hub/productVisuals.tsx
+  A  src/styles/products-hub.css
+
+FULL DIFF
+diff --git a/src/data/hubs.ts b/src/data/hubs.ts
+index 851099a..b9aa56c 100644
+--- a/src/data/hubs.ts
++++ b/src/data/hubs.ts
+@@ -119,17 +119,27 @@ export interface HubContent {
+  * ------------------------------------------------------------------ */
+ 
+ /**
+- * Four products, and the boundary between them stated plainly.
++ * Three products, and the boundary between them stated plainly.
+  *
+  * The boundary is the point of this hub: the most common reason a visitor picks
+- * wrong is assuming Gcalls Plus, QA QC Center, Gcalls CX and Voicebot AI are
+- * tiers of one product. They are not — they answer different questions.
++ * wrong is assuming Gcalls Plus, QA QC Center and Gcalls CX are tiers of one
++ * product. They are not — they answer different questions.
+  *
+- * Voicebot AI joined in Checkpoint WEB-IND-001. Its card inherits the claim
+- * guard at the head of `src/data/voicebotAi.ts`: Gcalls is presented as the
+- * party that consults, connects and integrates a Voicebot, never as the author
+- * of the engine, and no accuracy, concurrency, language or saving figure
+- * appears here either.
++ * ---------------------------------------------------------------------------
++ * VOICEBOT AI IS NOT A PRODUCT AT THIS HUB
++ * ---------------------------------------------------------------------------
++ * Voicebot AI joined the product cards in Checkpoint WEB-IND-001 (`b26db78`)
++ * and was removed again by the Products-hub UI v2 checkpoint, on an explicit
++ * owner decision: this hub carries the three products, and Voicebot belongs to
++ * the solutions grouping.
++ *
++ * Its route `/voicebot-ai/` still exists and is still reachable from the
++ * header, so nothing is orphaned by the removal — but `SOLUTIONS_HUB` does not
++ * yet carry a Voicebot card, so until one is added Voicebot has no hub card of
++ * its own. That is tracked as follow-up, NOT fixed here: this checkpoint may
++ * only touch `PRODUCTS_HUB`, and adding a solutions card would mean writing new
++ * approved copy for a different hub.
++ * ---------------------------------------------------------------------------
+  */
+ export const PRODUCTS_HUB: HubContent = {
+   id: 'products',
+@@ -140,7 +150,7 @@ export const PRODUCTS_HUB: HubContent = {
+     eyebrow: 'SẢN PHẨM GCALLS',
+     h1: 'Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA',
+     description:
+-      'Gcalls có bốn sản phẩm phục vụ bốn bài toán khác nhau trong hoạt động giao tiếp với khách hàng: kênh nghe gọi cho đội ngũ, kiểm soát chất lượng hội thoại, vận hành chăm sóc khách hàng đa kênh, và tự động hóa các cuộc gọi lặp lại.',
++      'Gcalls có ba sản phẩm phục vụ ba bài toán khác nhau trong hoạt động giao tiếp với khách hàng: kênh nghe gọi cho đội ngũ, kiểm soát chất lượng hội thoại, và vận hành chăm sóc khách hàng đa kênh.',
+     primaryCta: { label: 'Đăng ký tư vấn sản phẩm' },
+     secondaryCta: { label: 'Xem bảng giá', path: ROUTES.pricing },
+   },
+@@ -148,10 +158,10 @@ export const PRODUCTS_HUB: HubContent = {
+     eyebrow: 'Tổng quan',
+     question: 'Gcalls có những sản phẩm nào?',
+     answer:
+-      'Gcalls có bốn sản phẩm: Gcalls Plus Webphone là kênh nghe gọi và quản lý hoạt động cuộc gọi trên trình duyệt; QA QC Center sử dụng QC Bot AI để hỗ trợ đánh giá chất lượng hội thoại; Gcalls CX là nền tảng chăm sóc khách hàng đa kênh; Gcalls Voicebot AI dành cho các cuộc gọi lặp lại theo kịch bản đã thiết lập. Bốn sản phẩm giải quyết các bài toán khác nhau, không phải bốn mức giá của cùng một sản phẩm, và được chọn theo nhu cầu vận hành thực tế của doanh nghiệp.',
++      'Gcalls có ba sản phẩm: Gcalls Plus Webphone là kênh nghe gọi và quản lý hoạt động cuộc gọi trên trình duyệt; QA QC Center sử dụng QC Bot AI để hỗ trợ đánh giá chất lượng hội thoại; Gcalls CX là nền tảng chăm sóc khách hàng đa kênh. Ba sản phẩm giải quyết các bài toán khác nhau, không phải ba mức giá của cùng một sản phẩm, và được chọn theo nhu cầu vận hành thực tế của doanh nghiệp.',
+   },
+   cards: {
+-    eyebrow: 'BỐN SẢN PHẨM',
++    eyebrow: 'BA SẢN PHẨM',
+     h2: 'Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau',
+     items: [
+       {
+@@ -179,21 +189,12 @@ export const PRODUCTS_HUB: HubContent = {
+         path: ROUTES.gcallsCx,
+         cta: 'Xem Gcalls CX',
+       },
+-      {
+-        title: 'Gcalls Voicebot AI',
+-        supportingLabel: 'Voicebot AI',
+-        detail:
+-          'Tự động hóa những cuộc gọi lặp lại theo kịch bản đã thiết lập — nhắc lịch, xác nhận thông tin, sàng lọc nhu cầu — và chuyển tình huống cần chuyên môn cho nhân viên.',
+-        points: ['Kịch bản cuộc gọi', 'Chiến dịch tự động', 'Chuyển tiếp nhân viên'],
+-        path: ROUTES.voicebotAi,
+-        cta: 'Xem Gcalls Voicebot AI',
+-      },
+     ],
+-    note: 'Bốn sản phẩm có thể dùng độc lập hoặc cùng nhau. Cấu hình phù hợp phụ thuộc vào quy mô đội ngũ, kênh giao tiếp và nhu cầu kiểm soát chất lượng của doanh nghiệp.',
++    note: 'Ba sản phẩm có thể dùng độc lập hoặc cùng nhau. Cấu hình phù hợp phụ thuộc vào quy mô đội ngũ, kênh giao tiếp và nhu cầu kiểm soát chất lượng của doanh nghiệp.',
+   },
+   decisionGuide: {
+     eyebrow: 'CHỌN ĐÚNG SẢN PHẨM',
+-    h2: 'Ranh giới giữa bốn sản phẩm',
++    h2: 'Ranh giới giữa ba sản phẩm',
+     lead: 'Nếu bài toán hiện tại thuộc một trong các trường hợp dưới đây, đây là sản phẩm nên xem trước.',
+     rows: [
+       {
+@@ -220,14 +221,6 @@ export const PRODUCTS_HUB: HubContent = {
+           'Bài toán nằm ở lớp vận hành đa kênh, rộng hơn kênh thoại đơn thuần.',
+         path: ROUTES.gcallsCx,
+       },
+-      {
+-        problem:
+-          'Một phần lớn cuộc gọi lặp lại gần như nguyên vẹn mỗi lần — nhắc lịch, xác nhận thông tin, sàng lọc danh sách.',
+-        solution: 'Gcalls Voicebot AI',
+-        reason:
+-          'Bài toán nằm ở lớp tự động hóa tác vụ có kịch bản rõ ràng, để nhân viên còn thời gian cho những cuộc trao đổi cần tư vấn thật sự.',
+-        path: ROUTES.voicebotAi,
+-      },
+       {
+         problem:
+           'Doanh nghiệp cần cuộc gọi hoạt động cùng dữ liệu trong CRM, Helpdesk hoặc hệ thống bán hàng đang dùng.',
+diff --git a/src/pages/ProductsHubPage.tsx b/src/pages/ProductsHubPage.tsx
+index 48b6569..3537a36 100644
+--- a/src/pages/ProductsHubPage.tsx
++++ b/src/pages/ProductsHubPage.tsx
+@@ -1,13 +1,20 @@
+-import { HubLayout } from '@/components/hub/HubLayout'
++import { ProductsHubLayout } from '@/components/products-hub/ProductsHubLayout'
+ import { PRODUCTS_HUB } from '@/data/hubs'
+ 
+ /**
+  * `/san-pham/` — product hub.
+  *
+- * Prominently carries all three products (Gcalls Plus Webphone, QA QC Center
+- * powered by QC Bot AI, Gcalls CX) and states the boundary between them. Copy
+- * lives in `src/data/hubs.ts`.
++ * Carries the three products (Gcalls Plus Webphone, QA QC Center powered by QC
++ * Bot AI, Gcalls CX) and states the boundary between them. Copy lives in
++ * `src/data/hubs.ts`; the media slots live in
++ * `src/components/products-hub/productMedia.tsx`.
++ *
++ * Voicebot AI is not a product at this hub — see the note above `PRODUCTS_HUB`.
++ *
++ * Uses the page-local `ProductsHubLayout`, not `hub/HubLayout`: the products
++ * hub needs a media slot per card, a tiled hero and a three-column decision
++ * guide, and the shared layout also renders five other approved routes.
+  */
+ export function ProductsHubPage() {
+-  return <HubLayout content={PRODUCTS_HUB} trail={[{ label: 'Sản phẩm' }]} />
++  return <ProductsHubLayout content={PRODUCTS_HUB} trail={[{ label: 'Sản phẩm' }]} />
+ }
+diff --git a/src/styles/index.css b/src/styles/index.css
+index 0f9d1a4..10c586e 100644
+--- a/src/styles/index.css
++++ b/src/styles/index.css
+@@ -3,3 +3,4 @@
+ @import './theme.css';
+ @import './responsive.css';
+ @import './gcalls-plus.css';
++@import './products-hub.css';

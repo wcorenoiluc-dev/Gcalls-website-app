@@ -1,0 +1,13 @@
+route                    height           cont         sec      h1     img      err
+/                        18669->18669     null->null   13->13   1->1   0->0     0->0 IDENTICAL
+/giai-phap/              4671->4671       1280->1280   6->6     1->1   0->0     0->0 IDENTICAL
+/tich-hop/               4773->4773       1280->1280   6->6     1->1   0->0     0->0 IDENTICAL
+/nganh/                  3579->3579       1280->1280   5->5     1->1   0->0     0->0 IDENTICAL
+/tai-nguyen/             3575->3575       1280->1280   5->5     1->1   0->0     0->0 IDENTICAL
+/cong-ty/                4562->4562       1280->1280   7->7     1->1   0->0     0->0 IDENTICAL
+/gcalls-plus-webphone/   10578->10578     1180->1180   17->17   1->1   8->8     0->0 IDENTICAL
+/qc-bot-ai/              12783->12783     1280->1280   18->18   1->1   0->0     0->0 IDENTICAL
+/gcalls-cx/              13533->13533     1280->1280   19->19   1->1   0->0     0->0 IDENTICAL
+/san-pham/               4916->3996       1280->1180   6->6     1->1   0->1     0->0 CHANGED (in scope)
+
+unexpected route changes: 0

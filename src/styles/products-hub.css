@@ -1,0 +1,42 @@
+/**
+ * /san-pham/ — page-scoped layout.
+ *
+ * Same approach, and the same reason, as `gcalls-plus.css` and `qa-qc.css`:
+ * `Container`, `Section`, `SectionHeader` and `FinalCtaBand` are shared with
+ * every other route, and this checkpoint may not move them. The container width
+ * and the seam are therefore applied through a scope class the page owns.
+ *
+ * The seam between two compositions is 50px — 25px on each side of a section
+ * boundary — because the space between sections here is each section's own
+ * block padding, not a margin.
+ *
+ * NOT TOUCHED: card padding, the direct-answer panel interior, the media frame,
+ * and the horizontal gutter. Those are internal spacing (32-44px per the
+ * brief), not the seam this rule is about.
+ */
+
+.ph-page > section {
+  padding-block: 25px;
+}
+
+/**
+ * The hero is the first painted band under a fixed header and carries no top
+ * padding of its own, so it gets a larger inset here. Its BOTTOM joins the
+ * rhythm. The brief asks for a light hero, so this is deliberately smaller than
+ * the product pages' 40px.
+ */
+.ph-page > section:first-of-type {
+  padding-block: 32px 25px;
+}
+
+/**
+ * Container: 1280px -> 1180px, for this page only.
+ *
+ * Matches the utility class the shared `Container` emits. That coupling to a
+ * literal value is asserted in `scripts/verify-products-hub.mjs`, so if
+ * `Container` stops emitting `max-w-[1280px]` the check fails loudly rather
+ * than the page silently reverting to full width.
+ */
+.ph-page .max-w-\[1280px\] {
+  max-width: 1180px;
+}

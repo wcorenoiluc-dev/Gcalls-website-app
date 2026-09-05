@@ -1,0 +1,538 @@
+{
+  "320": {
+    "pageHeight": 8518,
+    "docWidth": 320,
+    "viewportWidth": 320,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 10,
+    "sectionCount": 7,
+    "images": [
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-desktop-v1.webp",
+        "natural": "809x429",
+        "rendered": "246x131",
+        "upscaled": false,
+        "altLength": 166
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 124
+      },
+      {
+        "tag": "section",
+        "label": "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA",
+        "top": 124,
+        "height": 971
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls có những sản phẩm nào?",
+        "top": 1095,
+        "height": 579
+      },
+      {
+        "tag": "section",
+        "label": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+        "top": 1674,
+        "height": 2205
+      },
+      {
+        "tag": "section",
+        "label": "Ranh giới giữa ba sản phẩm",
+        "top": 3880,
+        "height": 1818
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 5698,
+        "height": 343
+      },
+      {
+        "tag": "section",
+        "label": "Chưa rõ sản phẩm nào phù hợp với đội ngũ hiện tại?",
+        "top": 6041,
+        "height": 686
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA",
+        "gap": 0
+      },
+      {
+        "between": "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA → Gcalls có những sản phẩm nào?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls có những sản phẩm nào? → Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+        "gap": 0
+      },
+      {
+        "between": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau → Ranh giới giữa ba sản phẩm",
+        "gap": 1
+      },
+      {
+        "between": "Ranh giới giữa ba sản phẩm → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Chưa rõ sản phẩm nào phù hợp với đội ngũ hiện tại?",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "390": {
+    "pageHeight": 8011,
+    "docWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 10,
+    "sectionCount": 7,
+    "images": [
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-desktop-v1.webp",
+        "natural": "809x429",
+        "rendered": "316x169",
+        "upscaled": false,
+        "altLength": 166
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 124
+      },
+      {
+        "tag": "section",
+        "label": "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA",
+        "top": 124,
+        "height": 887
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls có những sản phẩm nào?",
+        "top": 1011,
+        "height": 501
+      },
+      {
+        "tag": "section",
+        "label": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+        "top": 1513,
+        "height": 2185
+      },
+      {
+        "tag": "section",
+        "label": "Ranh giới giữa ba sản phẩm",
+        "top": 3697,
+        "height": 1646
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 5344,
+        "height": 247
+      },
+      {
+        "tag": "section",
+        "label": "Chưa rõ sản phẩm nào phù hợp với đội ngũ hiện tại?",
+        "top": 5591,
+        "height": 629
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA",
+        "gap": 0
+      },
+      {
+        "between": "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA → Gcalls có những sản phẩm nào?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls có những sản phẩm nào? → Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+        "gap": 1
+      },
+      {
+        "between": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau → Ranh giới giữa ba sản phẩm",
+        "gap": -1
+      },
+      {
+        "between": "Ranh giới giữa ba sản phẩm → Xem thêm",
+        "gap": 1
+      },
+      {
+        "between": "Xem thêm → Chưa rõ sản phẩm nào phù hợp với đội ngũ hiện tại?",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "768": {
+    "pageHeight": 5412,
+    "docWidth": 768,
+    "viewportWidth": 768,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 10,
+    "sectionCount": 7,
+    "images": [
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-desktop-v1.webp",
+        "natural": "809x429",
+        "rendered": "320x171",
+        "upscaled": false,
+        "altLength": 166
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA",
+        "top": 140,
+        "height": 731
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls có những sản phẩm nào?",
+        "top": 871,
+        "height": 324
+      },
+      {
+        "tag": "section",
+        "label": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+        "top": 1195,
+        "height": 1524
+      },
+      {
+        "tag": "section",
+        "label": "Ranh giới giữa ba sản phẩm",
+        "top": 2719,
+        "height": 964
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 3683,
+        "height": 198
+      },
+      {
+        "tag": "section",
+        "label": "Chưa rõ sản phẩm nào phù hợp với đội ngũ hiện tại?",
+        "top": 3881,
+        "height": 539
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA",
+        "gap": 0
+      },
+      {
+        "between": "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA → Gcalls có những sản phẩm nào?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls có những sản phẩm nào? → Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+        "gap": 0
+      },
+      {
+        "between": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau → Ranh giới giữa ba sản phẩm",
+        "gap": 0
+      },
+      {
+        "between": "Ranh giới giữa ba sản phẩm → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Chưa rõ sản phẩm nào phù hợp với đội ngũ hiện tại?",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "1024": {
+    "pageHeight": 4370,
+    "docWidth": 1024,
+    "viewportWidth": 1024,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 10,
+    "sectionCount": 7,
+    "images": [
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-desktop-v1.webp",
+        "natural": "809x429",
+        "rendered": "273x146",
+        "upscaled": false,
+        "altLength": 166
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA",
+        "top": 140,
+        "height": 733
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls có những sản phẩm nào?",
+        "top": 873,
+        "height": 330
+      },
+      {
+        "tag": "section",
+        "label": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+        "top": 1202,
+        "height": 894
+      },
+      {
+        "tag": "section",
+        "label": "Ranh giới giữa ba sản phẩm",
+        "top": 2096,
+        "height": 809
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 2905,
+        "height": 150
+      },
+      {
+        "tag": "section",
+        "label": "Chưa rõ sản phẩm nào phù hợp với đội ngũ hiện tại?",
+        "top": 3055,
+        "height": 552
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA",
+        "gap": 0
+      },
+      {
+        "between": "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA → Gcalls có những sản phẩm nào?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls có những sản phẩm nào? → Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+        "gap": -1
+      },
+      {
+        "between": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau → Ranh giới giữa ba sản phẩm",
+        "gap": 0
+      },
+      {
+        "between": "Ranh giới giữa ba sản phẩm → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Chưa rõ sản phẩm nào phù hợp với đội ngũ hiện tại?",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "1280": {
+    "pageHeight": 3996,
+    "docWidth": 1280,
+    "viewportWidth": 1280,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 10,
+    "sectionCount": 7,
+    "images": [
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-desktop-v1.webp",
+        "natural": "809x429",
+        "rendered": "325x173",
+        "upscaled": false,
+        "altLength": 166
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA",
+        "top": 140,
+        "height": 579
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls có những sản phẩm nào?",
+        "top": 719,
+        "height": 330
+      },
+      {
+        "tag": "section",
+        "label": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+        "top": 1049,
+        "height": 923
+      },
+      {
+        "tag": "section",
+        "label": "Ranh giới giữa ba sản phẩm",
+        "top": 1971,
+        "height": 809
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 2780,
+        "height": 150
+      },
+      {
+        "tag": "section",
+        "label": "Chưa rõ sản phẩm nào phù hợp với đội ngũ hiện tại?",
+        "top": 2930,
+        "height": 552
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA",
+        "gap": 0
+      },
+      {
+        "between": "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA → Gcalls có những sản phẩm nào?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls có những sản phẩm nào? → Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+        "gap": 0
+      },
+      {
+        "between": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau → Ranh giới giữa ba sản phẩm",
+        "gap": -1
+      },
+      {
+        "between": "Ranh giới giữa ba sản phẩm → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Chưa rõ sản phẩm nào phù hợp với đội ngũ hiện tại?",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "1440": {
+    "pageHeight": 3996,
+    "docWidth": 1440,
+    "viewportWidth": 1440,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 10,
+    "sectionCount": 7,
+    "images": [
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-desktop-v1.webp",
+        "natural": "809x429",
+        "rendered": "325x173",
+        "upscaled": false,
+        "altLength": 166
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA",
+        "top": 140,
+        "height": 579
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls có những sản phẩm nào?",
+        "top": 719,
+        "height": 330
+      },
+      {
+        "tag": "section",
+        "label": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+        "top": 1049,
+        "height": 923
+      },
+      {
+        "tag": "section",
+        "label": "Ranh giới giữa ba sản phẩm",
+        "top": 1971,
+        "height": 809
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 2780,
+        "height": 150
+      },
+      {
+        "tag": "section",
+        "label": "Chưa rõ sản phẩm nào phù hợp với đội ngũ hiện tại?",
+        "top": 2930,
+        "height": 552
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA",
+        "gap": 0
+      },
+      {
+        "between": "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA → Gcalls có những sản phẩm nào?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls có những sản phẩm nào? → Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+        "gap": 0
+      },
+      {
+        "between": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau → Ranh giới giữa ba sản phẩm",
+        "gap": -1
+      },
+      {
+        "between": "Ranh giới giữa ba sản phẩm → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Chưa rõ sản phẩm nào phù hợp với đội ngũ hiện tại?",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  }
+}
