@@ -44,7 +44,7 @@
  */
 
 import { ROUTES, type RoutePath } from '@/config/navigation'
-import type { LeadCtaContext } from '@/lib/leads/ctaLink'
+import { leadCtaHref, type LeadCtaContext } from '@/lib/leads/ctaLink'
 
 /* ------------------------------------------------------------------ *
  * Shape
@@ -256,13 +256,56 @@ export const PRODUCTS_HUB: HubContent = {
  * ------------------------------------------------------------------ */
 
 /**
- * Four solutions, organised as a decision guide.
+ * Seven solutions, organised as a decision guide.
+ *
+ * ---------------------------------------------------------------------------
+ * THE ROSTER IS THE HOMEPAGE'S, NOT A SECOND OPINION
+ * ---------------------------------------------------------------------------
+ * `src/components/home/EcosystemSection.tsx` holds the approved `solutions`
+ * roster. This hub used to list only the four integration/market solutions,
+ * which meant the homepage offered seven and the hub they clicked through to
+ * offered four — three of them, including Voicebot, simply disappeared.
+ *
+ * The seven titles, descriptions, destinations and lead attribution below are
+ * ported from that roster. It is a module-private `const` and the homepage is
+ * out of scope for this checkpoint, so it cannot be imported; instead
+ * `scripts/verify-solutions-hub.mjs` reads that file and fails if any of the
+ * seven drifts out of sync with what is written here.
+ *
+ * VOICEBOT IS A SOLUTION, NOT A PRODUCT. It carries the approved solution name
+ * "Giải pháp tích hợp Voicebot AI" — never "Gcalls Voicebot AI", which reads as
+ * a Gcalls-built engine. Gcalls advises, connects and integrates; it does not
+ * author the voicebot. See the guard comment on the homepage card.
+ *
+ * CLOUD CALL CENTER and CALL BUTTON WIDGET have no child route. Their `path`
+ * is the canonical lead href carrying each one's `solution` attribution, built
+ * with `leadCtaHref` exactly as the homepage builds it — never a hand-joined
+ * query string, and never an invented route.
  *
  * Sales, Customer Service and Quality Assurance are deliberately NOT routes
  * (see the scope note at the head of `src/config/sitemap.ts`). They appear in
  * the decision guide as ways of describing a need, each mapping onto real
  * pages, without minting pages that would compete for the same queries.
+ * ---------------------------------------------------------------------------
  */
+
+/**
+ * Lead context for the two offerings with no page of their own.
+ *
+ * Identical to the homepage's, field for field, so a visitor arriving from
+ * either surface produces the same attribution.
+ */
+const CLOUD_CALL_CENTER_LEAD: LeadCtaContext = {
+  intent: 'consultation',
+  source: 'consultation',
+  solution: 'Cloud Call Center',
+}
+
+const CALL_BUTTON_WIDGET_LEAD: LeadCtaContext = {
+  intent: 'consultation',
+  source: 'consultation',
+  solution: 'Call Button Widget',
+}
 export const SOLUTIONS_HUB: HubContent = {
   id: 'solutions',
   route: ROUTES.solutions,
@@ -272,7 +315,7 @@ export const SOLUTIONS_HUB: HubContent = {
     eyebrow: 'GIẢI PHÁP GCALLS',
     h1: 'Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp',
     description:
-      'Giải pháp Gcalls được tổ chức theo bài toán thực tế, không theo danh sách tính năng: kết nối cuộc gọi với hệ thống doanh nghiệp đang dùng, và thiết lập liên lạc cho các thị trường doanh nghiệp cần phục vụ.',
+      'Giải pháp Gcalls được tổ chức theo bài toán thực tế, không theo danh sách tính năng: kết nối cuộc gọi với hệ thống doanh nghiệp đang dùng, thiết lập liên lạc cho các thị trường doanh nghiệp cần phục vụ, và bổ sung các khả năng tự động hóa hoặc mở rộng kênh tiếp nhận khi cần.',
     primaryCta: { label: 'Đăng ký tư vấn giải pháp' },
     secondaryCta: { label: 'Ước tính chi phí', path: ROUTES.costEstimator },
   },
@@ -280,11 +323,11 @@ export const SOLUTIONS_HUB: HubContent = {
     eyebrow: 'Tổng quan',
     question: 'Giải pháp Gcalls gồm những gì?',
     answer:
-      'Gcalls có bốn nhóm giải pháp. Ba nhóm đầu là tích hợp hệ thống: kết nối tổng đài với CRM, với Helpdesk và với hệ thống bán hàng/POS, để cuộc gọi hoạt động cùng dữ liệu và quy trình doanh nghiệp đang sử dụng. Nhóm thứ tư là tổng đài quốc tế, dành cho doanh nghiệp cần đầu số và cấu hình liên lạc tại thị trường nước ngoài. Phạm vi triển khai của mỗi giải pháp được xác định theo hệ thống, dữ liệu và quy định thực tế.',
+      'Gcalls có bảy giải pháp. Bốn giải pháp gắn với hệ thống và thị trường: kết nối tổng đài với CRM, với Helpdesk và với hệ thống bán hàng/POS để cuộc gọi hoạt động cùng dữ liệu và quy trình doanh nghiệp đang sử dụng, cùng tổng đài quốc tế cho doanh nghiệp cần đầu số và cấu hình liên lạc tại thị trường nước ngoài. Ba giải pháp còn lại bổ sung khả năng vận hành: tích hợp Voicebot AI cho các cuộc gọi có kịch bản, Cloud Call Center cho hệ thống tổng đài trên nền tảng Cloud, và Call Button Widget cho kênh tiếp nhận từ website. Phạm vi triển khai của mỗi giải pháp được xác định theo hệ thống, dữ liệu và quy định thực tế.',
   },
   cards: {
-    eyebrow: 'BỐN NHÓM GIẢI PHÁP',
-    h2: 'Chọn theo hệ thống và thị trường doanh nghiệp đang vận hành',
+    eyebrow: 'BẢY GIẢI PHÁP',
+    h2: 'Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành',
     items: [
       {
         title: 'Tổng đài tích hợp CRM',
@@ -318,6 +361,33 @@ export const SOLUTIONS_HUB: HubContent = {
         path: ROUTES.internationalCalling,
         cta: 'Xem tổng đài quốc tế',
       },
+      {
+        /* Ported verbatim from the homepage roster. The name is the approved
+           solution label; "Gcalls Voicebot AI" is not usable here. */
+        title: 'Giải pháp tích hợp Voicebot AI',
+        detail:
+          'Gcalls tư vấn, kết nối và tích hợp Voicebot vào hệ thống tổng đài theo kịch bản và phạm vi triển khai của doanh nghiệp.',
+        path: ROUTES.voicebotAi,
+        cta: 'Xem giải pháp Voicebot AI',
+      },
+      {
+        /* No child route. `leadCtaHref` builds the canonical lead destination
+           carrying this solution's attribution — the same call the homepage
+           makes, so both surfaces produce an identical href. */
+        title: 'Cloud Call Center',
+        detail:
+          'Hệ thống tổng đài vận hành trên nền tảng Cloud với SIP, IVR và điều hướng cuộc gọi.',
+        path: leadCtaHref(CLOUD_CALL_CENTER_LEAD),
+        cta: 'Nhận tư vấn',
+      },
+      {
+        /* No child route — see above. */
+        title: 'Call Button Widget',
+        detail:
+          'Nút gọi nhúng vào website để khách truy cập để lại số điện thoại cho đội ngũ liên hệ lại.',
+        path: leadCtaHref(CALL_BUTTON_WIDGET_LEAD),
+        cta: 'Nhận tư vấn',
+      },
     ],
     note: 'Các giải pháp trên đều triển khai cùng lớp nghe gọi của Gcalls. Phạm vi dữ liệu, khả năng kết nối và điều kiện triển khai được Gcalls xác nhận theo hệ thống và thị trường thực tế của doanh nghiệp.',
   },
@@ -349,6 +419,17 @@ export const SOLUTIONS_HUB: HubContent = {
         reason:
           'Đây là bài toán sản phẩm, không phải tích hợp: cần transcript và bộ tiêu chí để chấm điểm.',
         path: ROUTES.qcCenter,
+      },
+      {
+        /* Approved copy, moved here from PRODUCTS_HUB when Voicebot was
+           reclassified from product to solution. Wording unchanged; only the
+           link label carries the approved solution name. */
+        problem:
+          'Một phần lớn cuộc gọi lặp lại gần như nguyên vẹn mỗi lần — nhắc lịch, xác nhận thông tin, sàng lọc danh sách.',
+        solution: 'Giải pháp tích hợp Voicebot AI',
+        reason:
+          'Bài toán nằm ở lớp tự động hóa tác vụ có kịch bản rõ ràng, để nhân viên còn thời gian cho những cuộc trao đổi cần tư vấn thật sự.',
+        path: ROUTES.voicebotAi,
       },
       {
         problem:

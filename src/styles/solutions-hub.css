@@ -1,0 +1,41 @@
+/**
+ * /giai-phap/ — page-scoped layout.
+ *
+ * Same approach, and the same reason, as `gcalls-plus.css`, `qa-qc.css` and
+ * `products-hub.css`: `Container`, `Section`, `SectionHeader` and
+ * `FinalCtaBand` are shared with every other route and may not move, so the
+ * container width and the seam are applied through a scope class the page owns.
+ *
+ * 25px on each side of a section boundary is the 50px seam between two
+ * compositions — the space between sections here is each section's own block
+ * padding, not a margin.
+ *
+ * NOT TOUCHED: card padding, the direct-answer panel interior, the gap between
+ * the two card groups, and the horizontal gutter. Those are internal spacing
+ * (32-44px per the brief), not the seam this rule is about.
+ */
+
+.sh-page > section {
+  padding-block: 25px;
+}
+
+/**
+ * The hero is the first painted band under a fixed header and carries no top
+ * padding of its own, so it gets a larger inset. Its BOTTOM joins the rhythm.
+ * The brief asks for a light hero, so this stays small.
+ */
+.sh-page > section:first-of-type {
+  padding-block: 32px 25px;
+}
+
+/**
+ * Container: 1280px -> 1180px, for this page only.
+ *
+ * Matches the utility class the shared `Container` emits. That coupling to a
+ * literal value is asserted in `scripts/verify-solutions-hub.mjs`, so if
+ * `Container` stops emitting `max-w-[1280px]` the check fails loudly rather
+ * than the page silently reverting to full width.
+ */
+.sh-page .max-w-\[1280px\] {
+  max-width: 1180px;
+}

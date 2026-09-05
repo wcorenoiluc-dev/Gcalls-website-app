@@ -1,0 +1,490 @@
+{
+  "320": {
+    "pageHeight": 10018,
+    "docWidth": 320,
+    "viewportWidth": 320,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 10,
+    "sectionCount": 7,
+    "images": [],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 124
+      },
+      {
+        "tag": "section",
+        "label": "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp",
+        "top": 124,
+        "height": 621
+      },
+      {
+        "tag": "section",
+        "label": "Giải pháp Gcalls gồm những gì?",
+        "top": 745,
+        "height": 761
+      },
+      {
+        "tag": "section",
+        "label": "Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành",
+        "top": 1507,
+        "height": 3345
+      },
+      {
+        "tag": "section",
+        "label": "Bắt đầu từ bài toán của đội ngũ",
+        "top": 4851,
+        "height": 2378
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 7229,
+        "height": 343
+      },
+      {
+        "tag": "section",
+        "label": "Cần xác định giải pháp phù hợp với hệ thống hiện tại?",
+        "top": 7572,
+        "height": 655
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp",
+        "gap": 0
+      },
+      {
+        "between": "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp → Giải pháp Gcalls gồm những gì?",
+        "gap": 0
+      },
+      {
+        "between": "Giải pháp Gcalls gồm những gì? → Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành",
+        "gap": 1
+      },
+      {
+        "between": "Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành → Bắt đầu từ bài toán của đội ngũ",
+        "gap": -1
+      },
+      {
+        "between": "Bắt đầu từ bài toán của đội ngũ → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Cần xác định giải pháp phù hợp với hệ thống hiện tại?",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "390": {
+    "pageHeight": 9115,
+    "docWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 10,
+    "sectionCount": 7,
+    "images": [],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 124
+      },
+      {
+        "tag": "section",
+        "label": "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp",
+        "top": 124,
+        "height": 595
+      },
+      {
+        "tag": "section",
+        "label": "Giải pháp Gcalls gồm những gì?",
+        "top": 719,
+        "height": 631
+      },
+      {
+        "tag": "section",
+        "label": "Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành",
+        "top": 1351,
+        "height": 2943
+      },
+      {
+        "tag": "section",
+        "label": "Bắt đầu từ bài toán của đội ngũ",
+        "top": 4293,
+        "height": 2155
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 6448,
+        "height": 247
+      },
+      {
+        "tag": "section",
+        "label": "Cần xác định giải pháp phù hợp với hệ thống hiện tại?",
+        "top": 6695,
+        "height": 629
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp",
+        "gap": 0
+      },
+      {
+        "between": "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp → Giải pháp Gcalls gồm những gì?",
+        "gap": 0
+      },
+      {
+        "between": "Giải pháp Gcalls gồm những gì? → Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành",
+        "gap": 1
+      },
+      {
+        "between": "Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành → Bắt đầu từ bài toán của đội ngũ",
+        "gap": -1
+      },
+      {
+        "between": "Bắt đầu từ bài toán của đội ngũ → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Cần xác định giải pháp phù hợp với hệ thống hiện tại?",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "768": {
+    "pageHeight": 5780,
+    "docWidth": 768,
+    "viewportWidth": 768,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 10,
+    "sectionCount": 7,
+    "images": [],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp",
+        "top": 140,
+        "height": 489
+      },
+      {
+        "tag": "section",
+        "label": "Giải pháp Gcalls gồm những gì?",
+        "top": 629,
+        "height": 376
+      },
+      {
+        "tag": "section",
+        "label": "Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành",
+        "top": 1004,
+        "height": 1825
+      },
+      {
+        "tag": "section",
+        "label": "Bắt đầu từ bài toán của đội ngũ",
+        "top": 2829,
+        "height": 1222
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 4051,
+        "height": 198
+      },
+      {
+        "tag": "section",
+        "label": "Cần xác định giải pháp phù hợp với hệ thống hiện tại?",
+        "top": 4249,
+        "height": 539
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp",
+        "gap": 0
+      },
+      {
+        "between": "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp → Giải pháp Gcalls gồm những gì?",
+        "gap": 0
+      },
+      {
+        "between": "Giải pháp Gcalls gồm những gì? → Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành",
+        "gap": -1
+      },
+      {
+        "between": "Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành → Bắt đầu từ bài toán của đội ngũ",
+        "gap": 0
+      },
+      {
+        "between": "Bắt đầu từ bài toán của đội ngũ → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Cần xác định giải pháp phù hợp với hệ thống hiện tại?",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "1024": {
+    "pageHeight": 5008,
+    "docWidth": 1024,
+    "viewportWidth": 1024,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 10,
+    "sectionCount": 7,
+    "images": [],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp",
+        "top": 140,
+        "height": 515
+      },
+      {
+        "tag": "section",
+        "label": "Giải pháp Gcalls gồm những gì?",
+        "top": 655,
+        "height": 382
+      },
+      {
+        "tag": "section",
+        "label": "Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành",
+        "top": 1036,
+        "height": 1442
+      },
+      {
+        "tag": "section",
+        "label": "Bắt đầu từ bài toán của đội ngũ",
+        "top": 2478,
+        "height": 1064
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 3542,
+        "height": 150
+      },
+      {
+        "tag": "section",
+        "label": "Cần xác định giải pháp phù hợp với hệ thống hiện tại?",
+        "top": 3692,
+        "height": 552
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp",
+        "gap": 0
+      },
+      {
+        "between": "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp → Giải pháp Gcalls gồm những gì?",
+        "gap": 0
+      },
+      {
+        "between": "Giải pháp Gcalls gồm những gì? → Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành",
+        "gap": -1
+      },
+      {
+        "between": "Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành → Bắt đầu từ bài toán của đội ngũ",
+        "gap": 0
+      },
+      {
+        "between": "Bắt đầu từ bài toán của đội ngũ → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Cần xác định giải pháp phù hợp với hệ thống hiện tại?",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "1280": {
+    "pageHeight": 4642,
+    "docWidth": 1280,
+    "viewportWidth": 1280,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 10,
+    "sectionCount": 7,
+    "images": [],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp",
+        "top": 140,
+        "height": 515
+      },
+      {
+        "tag": "section",
+        "label": "Giải pháp Gcalls gồm những gì?",
+        "top": 655,
+        "height": 382
+      },
+      {
+        "tag": "section",
+        "label": "Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành",
+        "top": 1036,
+        "height": 1365
+      },
+      {
+        "tag": "section",
+        "label": "Bắt đầu từ bài toán của đội ngũ",
+        "top": 2401,
+        "height": 1025
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 3426,
+        "height": 150
+      },
+      {
+        "tag": "section",
+        "label": "Cần xác định giải pháp phù hợp với hệ thống hiện tại?",
+        "top": 3576,
+        "height": 552
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp",
+        "gap": 0
+      },
+      {
+        "between": "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp → Giải pháp Gcalls gồm những gì?",
+        "gap": 0
+      },
+      {
+        "between": "Giải pháp Gcalls gồm những gì? → Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành",
+        "gap": -1
+      },
+      {
+        "between": "Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành → Bắt đầu từ bài toán của đội ngũ",
+        "gap": 0
+      },
+      {
+        "between": "Bắt đầu từ bài toán của đội ngũ → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Cần xác định giải pháp phù hợp với hệ thống hiện tại?",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "1440": {
+    "pageHeight": 4642,
+    "docWidth": 1440,
+    "viewportWidth": 1440,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 10,
+    "sectionCount": 7,
+    "images": [],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp",
+        "top": 140,
+        "height": 515
+      },
+      {
+        "tag": "section",
+        "label": "Giải pháp Gcalls gồm những gì?",
+        "top": 655,
+        "height": 382
+      },
+      {
+        "tag": "section",
+        "label": "Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành",
+        "top": 1036,
+        "height": 1365
+      },
+      {
+        "tag": "section",
+        "label": "Bắt đầu từ bài toán của đội ngũ",
+        "top": 2401,
+        "height": 1025
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 3426,
+        "height": 150
+      },
+      {
+        "tag": "section",
+        "label": "Cần xác định giải pháp phù hợp với hệ thống hiện tại?",
+        "top": 3576,
+        "height": 552
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp",
+        "gap": 0
+      },
+      {
+        "between": "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp → Giải pháp Gcalls gồm những gì?",
+        "gap": 0
+      },
+      {
+        "between": "Giải pháp Gcalls gồm những gì? → Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành",
+        "gap": -1
+      },
+      {
+        "between": "Chọn theo hệ thống, thị trường và cách đội ngũ đang vận hành → Bắt đầu từ bài toán của đội ngũ",
+        "gap": 0
+      },
+      {
+        "between": "Bắt đầu từ bài toán của đội ngũ → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Cần xác định giải pháp phù hợp với hệ thống hiện tại?",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  }
+}
