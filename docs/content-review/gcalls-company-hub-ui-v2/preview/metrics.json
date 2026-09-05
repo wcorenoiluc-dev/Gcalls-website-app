@@ -1,0 +1,598 @@
+{
+  "320": {
+    "pageHeight": 7891,
+    "docWidth": 320,
+    "viewportWidth": 320,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 11,
+    "sectionCount": 8,
+    "images": [
+      {
+        "src": "/images/brand/gcalls-official-logo-137x40.png",
+        "natural": "137x40",
+        "rendered": "137x40",
+        "upscaled": false,
+        "altLength": 26
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 124
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam",
+        "top": 124,
+        "height": 1118
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls là công ty gì?",
+        "top": 1242,
+        "height": 548
+      },
+      {
+        "tag": "section",
+        "label": "Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p",
+        "top": 1790,
+        "height": 1404
+      },
+      {
+        "tag": "section",
+        "label": "Các trang thông tin về Gcalls",
+        "top": 3194,
+        "height": 1408
+      },
+      {
+        "tag": "section",
+        "label": "Cách liên hệ với đội ngũ Gcalls",
+        "top": 4602,
+        "height": 591
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 5193,
+        "height": 247
+      },
+      {
+        "tag": "section",
+        "label": "Trao đổi với Gcalls về bài toán giao tiếp của doanh nghiệp",
+        "top": 5440,
+        "height": 660
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam → Gcalls là công ty gì?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls là công ty gì? → Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p",
+        "gap": 0
+      },
+      {
+        "between": "Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p → Các trang thông tin về Gcalls",
+        "gap": 0
+      },
+      {
+        "between": "Các trang thông tin về Gcalls → Cách liên hệ với đội ngũ Gcalls",
+        "gap": 0
+      },
+      {
+        "between": "Cách liên hệ với đội ngũ Gcalls → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Trao đổi với Gcalls về bài toán giao tiếp của doanh nghiệp",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "390": {
+    "pageHeight": 7271,
+    "docWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 11,
+    "sectionCount": 8,
+    "images": [
+      {
+        "src": "/images/brand/gcalls-official-logo-137x40.png",
+        "natural": "137x40",
+        "rendered": "137x40",
+        "upscaled": false,
+        "altLength": 26
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 124
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam",
+        "top": 124,
+        "height": 1003
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls là công ty gì?",
+        "top": 1127,
+        "height": 444
+      },
+      {
+        "tag": "section",
+        "label": "Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p",
+        "top": 1571,
+        "height": 1219
+      },
+      {
+        "tag": "section",
+        "label": "Các trang thông tin về Gcalls",
+        "top": 2791,
+        "height": 1296
+      },
+      {
+        "tag": "section",
+        "label": "Cách liên hệ với đội ngũ Gcalls",
+        "top": 4087,
+        "height": 591
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 4678,
+        "height": 199
+      },
+      {
+        "tag": "section",
+        "label": "Trao đổi với Gcalls về bài toán giao tiếp của doanh nghiệp",
+        "top": 4877,
+        "height": 603
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam → Gcalls là công ty gì?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls là công ty gì? → Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p",
+        "gap": 0
+      },
+      {
+        "between": "Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p → Các trang thông tin về Gcalls",
+        "gap": 1
+      },
+      {
+        "between": "Các trang thông tin về Gcalls → Cách liên hệ với đội ngũ Gcalls",
+        "gap": 0
+      },
+      {
+        "between": "Cách liên hệ với đội ngũ Gcalls → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Trao đổi với Gcalls về bài toán giao tiếp của doanh nghiệp",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "768": {
+    "pageHeight": 5464,
+    "docWidth": 768,
+    "viewportWidth": 768,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 11,
+    "sectionCount": 8,
+    "images": [
+      {
+        "src": "/images/brand/gcalls-official-logo-137x40.png",
+        "natural": "137x40",
+        "rendered": "137x40",
+        "upscaled": false,
+        "altLength": 26
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam",
+        "top": 140,
+        "height": 961
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls là công ty gì?",
+        "top": 1101,
+        "height": 324
+      },
+      {
+        "tag": "section",
+        "label": "Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p",
+        "top": 1425,
+        "height": 896
+      },
+      {
+        "tag": "section",
+        "label": "Các trang thông tin về Gcalls",
+        "top": 2321,
+        "height": 1099
+      },
+      {
+        "tag": "section",
+        "label": "Cách liên hệ với đội ngũ Gcalls",
+        "top": 3420,
+        "height": 364
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 3784,
+        "height": 150
+      },
+      {
+        "tag": "section",
+        "label": "Trao đổi với Gcalls về bài toán giao tiếp của doanh nghiệp",
+        "top": 3934,
+        "height": 539
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam → Gcalls là công ty gì?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls là công ty gì? → Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p",
+        "gap": 0
+      },
+      {
+        "between": "Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p → Các trang thông tin về Gcalls",
+        "gap": 0
+      },
+      {
+        "between": "Các trang thông tin về Gcalls → Cách liên hệ với đội ngũ Gcalls",
+        "gap": 0
+      },
+      {
+        "between": "Cách liên hệ với đội ngũ Gcalls → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Trao đổi với Gcalls về bài toán giao tiếp của doanh nghiệp",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "1024": {
+    "pageHeight": 4217,
+    "docWidth": 1024,
+    "viewportWidth": 1024,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 11,
+    "sectionCount": 8,
+    "images": [
+      {
+        "src": "/images/brand/gcalls-official-logo-137x40.png",
+        "natural": "137x40",
+        "rendered": "137x40",
+        "upscaled": false,
+        "altLength": 26
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam",
+        "top": 140,
+        "height": 639
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls là công ty gì?",
+        "top": 779,
+        "height": 330
+      },
+      {
+        "tag": "section",
+        "label": "Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p",
+        "top": 1109,
+        "height": 601
+      },
+      {
+        "tag": "section",
+        "label": "Các trang thông tin về Gcalls",
+        "top": 1710,
+        "height": 681
+      },
+      {
+        "tag": "section",
+        "label": "Cách liên hệ với đội ngũ Gcalls",
+        "top": 2390,
+        "height": 361
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 2751,
+        "height": 150
+      },
+      {
+        "tag": "section",
+        "label": "Trao đổi với Gcalls về bài toán giao tiếp của doanh nghiệp",
+        "top": 2901,
+        "height": 552
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam → Gcalls là công ty gì?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls là công ty gì? → Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p",
+        "gap": 0
+      },
+      {
+        "between": "Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p → Các trang thông tin về Gcalls",
+        "gap": 0
+      },
+      {
+        "between": "Các trang thông tin về Gcalls → Cách liên hệ với đội ngũ Gcalls",
+        "gap": -1
+      },
+      {
+        "between": "Cách liên hệ với đội ngũ Gcalls → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Trao đổi với Gcalls về bài toán giao tiếp của doanh nghiệp",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "1280": {
+    "pageHeight": 3850,
+    "docWidth": 1280,
+    "viewportWidth": 1280,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 11,
+    "sectionCount": 8,
+    "images": [
+      {
+        "src": "/images/brand/gcalls-official-logo-137x40.png",
+        "natural": "137x40",
+        "rendered": "137x40",
+        "upscaled": false,
+        "altLength": 26
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam",
+        "top": 140,
+        "height": 550
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls là công ty gì?",
+        "top": 690,
+        "height": 330
+      },
+      {
+        "tag": "section",
+        "label": "Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p",
+        "top": 1019,
+        "height": 573
+      },
+      {
+        "tag": "section",
+        "label": "Các trang thông tin về Gcalls",
+        "top": 1593,
+        "height": 681
+      },
+      {
+        "tag": "section",
+        "label": "Cách liên hệ với đội ngũ Gcalls",
+        "top": 2273,
+        "height": 361
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 2634,
+        "height": 150
+      },
+      {
+        "tag": "section",
+        "label": "Trao đổi với Gcalls về bài toán giao tiếp của doanh nghiệp",
+        "top": 2784,
+        "height": 552
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam → Gcalls là công ty gì?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls là công ty gì? → Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p",
+        "gap": -1
+      },
+      {
+        "between": "Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p → Các trang thông tin về Gcalls",
+        "gap": 1
+      },
+      {
+        "between": "Các trang thông tin về Gcalls → Cách liên hệ với đội ngũ Gcalls",
+        "gap": -1
+      },
+      {
+        "between": "Cách liên hệ với đội ngũ Gcalls → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Trao đổi với Gcalls về bài toán giao tiếp của doanh nghiệp",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "1440": {
+    "pageHeight": 3850,
+    "docWidth": 1440,
+    "viewportWidth": 1440,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 11,
+    "sectionCount": 8,
+    "images": [
+      {
+        "src": "/images/brand/gcalls-official-logo-137x40.png",
+        "natural": "137x40",
+        "rendered": "137x40",
+        "upscaled": false,
+        "altLength": 26
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam",
+        "top": 140,
+        "height": 550
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls là công ty gì?",
+        "top": 690,
+        "height": 330
+      },
+      {
+        "tag": "section",
+        "label": "Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p",
+        "top": 1019,
+        "height": 573
+      },
+      {
+        "tag": "section",
+        "label": "Các trang thông tin về Gcalls",
+        "top": 1593,
+        "height": 681
+      },
+      {
+        "tag": "section",
+        "label": "Cách liên hệ với đội ngũ Gcalls",
+        "top": 2273,
+        "height": 361
+      },
+      {
+        "tag": "section",
+        "label": "Xem thêm",
+        "top": 2634,
+        "height": 150
+      },
+      {
+        "tag": "section",
+        "label": "Trao đổi với Gcalls về bài toán giao tiếp của doanh nghiệp",
+        "top": 2784,
+        "height": 552
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam → Gcalls là công ty gì?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls là công ty gì? → Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p",
+        "gap": -1
+      },
+      {
+        "between": "Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản p → Các trang thông tin về Gcalls",
+        "gap": 1
+      },
+      {
+        "between": "Các trang thông tin về Gcalls → Cách liên hệ với đội ngũ Gcalls",
+        "gap": -1
+      },
+      {
+        "between": "Cách liên hệ với đội ngũ Gcalls → Xem thêm",
+        "gap": 0
+      },
+      {
+        "between": "Xem thêm → Trao đổi với Gcalls về bài toán giao tiếp của doanh nghiệp",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  }
+}

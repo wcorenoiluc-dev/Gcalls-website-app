@@ -1,0 +1,40 @@
+/**
+ * /cong-ty/ — page-scoped layout.
+ *
+ * Same approach, and the same reason, as the other page-scoped sheets:
+ * `Container`, `Section`, `SectionHeader` and `FinalCtaBand` are shared with
+ * every other route and may not move, so the container width and the seam are
+ * applied through a scope class the page owns.
+ *
+ * 25px on each side of a section boundary is the 50px seam between two
+ * compositions — the space between sections here is each section's own block
+ * padding, not a margin.
+ *
+ * NOT TOUCHED: card padding, the direct-answer panel interior, the brand
+ * visual's interior, and the horizontal gutter. Those are internal spacing
+ * (32-44px per the brief), not the seam this rule is about.
+ */
+
+.ch-page > section {
+  padding-block: 25px;
+}
+
+/**
+ * The hero is the first painted band under a fixed header and carries no top
+ * padding of its own, so it gets a larger inset. Its BOTTOM joins the rhythm.
+ */
+.ch-page > section:first-of-type {
+  padding-block: 32px 25px;
+}
+
+/**
+ * Container: 1280px -> 1180px, for this page only.
+ *
+ * Matches the utility class the shared `Container` emits. That coupling to a
+ * literal value is asserted in `scripts/verify-company-hub.mjs`, so if
+ * `Container` stops emitting `max-w-[1280px]` the check fails loudly rather
+ * than the page silently reverting to full width.
+ */
+.ch-page .max-w-\[1280px\] {
+  max-width: 1180px;
+}

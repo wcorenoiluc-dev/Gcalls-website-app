@@ -1,0 +1,14 @@
+route                    height           cont         sec      h1     img      err
+/                        18669->18669     null->null   13->13   1->1   0->0     0->0 IDENTICAL
+/san-pham/               3996->3996       1180->1180   6->6     1->1   1->1     0->0 IDENTICAL
+/giai-phap/              4642->4642       1180->1180   6->6     1->1   0->0     0->0 IDENTICAL
+/tich-hop/               4773->4773       1280->1280   6->6     1->1   0->0     0->0 IDENTICAL
+/nganh/                  3579->3579       1280->1280   5->5     1->1   0->0     0->0 IDENTICAL
+/tai-nguyen/             3575->3575       1280->1280   5->5     1->1   0->0     0->0 IDENTICAL
+/cong-ty/khach-hang/     11828->11828     1280->1280   12->12   1->1   0->0     0->0 IDENTICAL
+/cong-ty/doi-tac/        12037->12037     1280->1280   12->12   1->1   0->0     0->0 IDENTICAL
+/referral/               2312->2312       1280->1280   3->3     1->1   0->0     0->0 IDENTICAL
+/lien-he/                2798->2798       1280->1280   3->3     1->1   0->0     0->0 IDENTICAL
+/cong-ty/                4562->3850       1280->1180   7->7     1->1   0->1     0->0 CHANGED (in scope)
+
+unexpected route changes: 0

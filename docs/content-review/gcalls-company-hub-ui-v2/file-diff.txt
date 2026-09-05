@@ -1,0 +1,117 @@
+ src/pages/CompanyHubPage.tsx | 58 +++++++++-----------------------------------
+ src/styles/index.css         |  1 +
+ 2 files changed, 13 insertions(+), 46 deletions(-)
+
+UNTRACKED (new files)
+  A  docs/content-review/gcalls-company-hub-ui-v2/child-route-audit.md
+  A  docs/content-review/gcalls-company-hub-ui-v2/file-diff.txt
+  A  docs/content-review/gcalls-company-hub-ui-v2/official-logo-manifest.json
+  A  docs/content-review/gcalls-company-hub-ui-v2/preview/fullpage-1024.png
+  A  docs/content-review/gcalls-company-hub-ui-v2/preview/fullpage-1280.png
+  A  docs/content-review/gcalls-company-hub-ui-v2/preview/fullpage-1440.png
+  A  docs/content-review/gcalls-company-hub-ui-v2/preview/fullpage-320.png
+  A  docs/content-review/gcalls-company-hub-ui-v2/preview/fullpage-390.png
+  A  docs/content-review/gcalls-company-hub-ui-v2/preview/fullpage-768.png
+  A  docs/content-review/gcalls-company-hub-ui-v2/preview/hero-1440.png
+  A  docs/content-review/gcalls-company-hub-ui-v2/preview/hero-390.png
+  A  docs/content-review/gcalls-company-hub-ui-v2/preview/metrics.json
+  A  docs/content-review/gcalls-company-hub-ui-v2/preview/section-contact.png
+  A  docs/content-review/gcalls-company-hub-ui-v2/preview/section-info-pages.png
+  A  docs/content-review/gcalls-company-hub-ui-v2/preview/section-principles.png
+  A  docs/content-review/gcalls-company-hub-ui-v2/regression-report.txt
+  A  docs/content-review/gcalls-company-hub-ui-v2/verify-output.txt
+  A  public/images/brand/gcalls-official-logo-137x40.png
+  A  scripts/company-child-route-audit.mjs
+  A  scripts/company-hub-preview.mjs
+  A  scripts/company-hub-regression.mjs
+  A  scripts/verify-company-hub.mjs
+  A  src/components/company-hub/BrandVisual.tsx
+  A  src/components/company-hub/CompanyHubLayout.tsx
+  A  src/styles/company-hub.css
+
+FULL DIFF (text files; the PNG is binary and hashed in the manifest)
+diff --git a/src/pages/CompanyHubPage.tsx b/src/pages/CompanyHubPage.tsx
+index dfb4e59..311fb6a 100644
+--- a/src/pages/CompanyHubPage.tsx
++++ b/src/pages/CompanyHubPage.tsx
+@@ -1,6 +1,5 @@
+ import { CONTACT } from '@/config/navigation'
+-import { Card, Container, Eyebrow, Section } from '@/components/common/primitives'
+-import { HubLayout } from '@/components/hub/HubLayout'
++import { CompanyHubLayout } from '@/components/company-hub/CompanyHubLayout'
+ import { COMPANY_HUB } from '@/data/hubs'
+ 
+ /**
+@@ -11,52 +10,19 @@ import { COMPANY_HUB } from '@/data/hubs'
+  * headcount, funding and awards are all WITHHELD — none is verified here. See
+  * the company block in `src/data/hubs.ts`.
+  *
+- * The one hub-specific section is the contact block below: real, verifiable
+- * contact details are the most credible thing this page can offer, and they
+- * already exist in `src/config/navigation.ts`.
++ * The contact block is the most credible thing this page can offer, and it
++ * reads `CONTACT` directly rather than restating the address or the number.
++ *
++ * Uses the page-local `CompanyHubLayout`, not `hub/HubLayout`: the hero carries
++ * the official logo and the contact block is hub-specific, and the shared
++ * layout also renders five other approved routes.
+  */
+ export function CompanyHubPage() {
+   return (
+-    <HubLayout content={COMPANY_HUB} trail={[{ label: 'Về Gcalls' }]}>
+-      <Section ariaLabelledBy="company-contact">
+-        <Container>
+-          <div className="mx-auto max-w-3xl text-center">
+-            <Eyebrow>LIÊN HỆ TRỰC TIẾP</Eyebrow>
+-            <h2
+-              id="company-contact"
+-              className="mt-4 text-[26px] font-extrabold tracking-tight text-foreground sm:text-[32px]"
+-            >
+-              Cách liên hệ với đội ngũ Gcalls
+-            </h2>
+-          </div>
+-
+-          <ul className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-5 sm:grid-cols-2">
+-            <Card as="li" className="flex h-full flex-col p-6 text-center">
+-              <p className="text-[13px] font-bold uppercase tracking-wider text-muted-foreground">
+-                Email
+-              </p>
+-              <a
+-                href={`mailto:${CONTACT.email}`}
+-                className="mt-2 inline-flex min-h-11 items-center justify-center text-lg font-extrabold tracking-tight text-brand underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+-              >
+-                {CONTACT.email}
+-              </a>
+-            </Card>
+-
+-            <Card as="li" className="flex h-full flex-col p-6 text-center">
+-              <p className="text-[13px] font-bold uppercase tracking-wider text-muted-foreground">
+-                Điện thoại
+-              </p>
+-              <a
+-                href={CONTACT.phoneHref}
+-                className="mt-2 inline-flex min-h-11 items-center justify-center text-lg font-extrabold tracking-tight text-brand underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+-              >
+-                {CONTACT.phone}
+-              </a>
+-            </Card>
+-          </ul>
+-        </Container>
+-      </Section>
+-    </HubLayout>
++    <CompanyHubLayout
++      content={COMPANY_HUB}
++      contact={CONTACT}
++      trail={[{ label: 'Về Gcalls' }]}
++    />
+   )
+ }
+diff --git a/src/styles/index.css b/src/styles/index.css
+index 1339e96..db2ac00 100644
+--- a/src/styles/index.css
++++ b/src/styles/index.css
+@@ -5,3 +5,4 @@
+ @import './gcalls-plus.css';
+ @import './products-hub.css';
+ @import './solutions-hub.css';
++@import './company-hub.css';

@@ -1,0 +1,41 @@
+{
+  "asset": "Gcalls official wordmark",
+  "sourceUrl": "https://gcalls.co/wp-content/uploads/2019/07/logo@2x.png",
+  "fetchedAt": "2026-09-05T08:05:29Z",
+  "sha256": "17b080c3988ac97617c394ce3cb51c135c5f00785dfe187b482a319b124f4d21",
+  "mimeType": "image/png",
+  "width": 137,
+  "height": 40,
+  "variant": "primary-on-light",
+  "approvedUsage": "Company hub (/cong-ty/) hero brand visual only. Page-local. Not used in the global header, footer or logo component, none of which this checkpoint may touch.",
+  "localPath": "public/images/brand/gcalls-official-logo-137x40.png",
+  "hotlinkFalse": true,
+
+  "verification": {
+    "method": "The homepage of gcalls.co declares this exact file as the Organization logo in its own schema.org JSON-LD: Organization.logo is an ImageObject whose url and contentUrl are this URL, with width 137 and height 40 — matching the fetched file's intrinsic dimensions exactly.",
+    "schemaDeclaredWidth": 137,
+    "schemaDeclaredHeight": 40,
+    "intrinsicMatchesSchema": true,
+    "renderedAtNaturalSize": true,
+    "upscaled": false,
+    "recoloured": false,
+    "redrawn": false
+  },
+
+  "rejectedCandidates": [
+    {
+      "url": "https://gcalls.co/wp-content/uploads/2019/07/logolight@2x.png",
+      "sha256": "b7e8fb39862de622407956844013b3617d9b0439b5c2b861443fa6396255776b",
+      "width": 137,
+      "height": 40,
+      "reason": "Light-on-dark variant. The company hub renders on a light ground, and the site's schema declares the primary file above as the Organization logo, so this variant is not the one to use here."
+    },
+    {
+      "url": "https://gcalls.co/wp-content/uploads/2022/04/Untitled-design-1.svg",
+      "sha256": "bf06c98cc38d9aa4",
+      "width": 512,
+      "height": 512,
+      "reason": "This is the site favicon, not the wordmark: a 512x512 square mark. It is also not a true vector logo — 183 KB of SVG containing two <image> elements, i.e. raster data wrapped in SVG. The brief's SVG preference applies to a genuine vector logo file, which this is not."
+    }
+  ]
+}

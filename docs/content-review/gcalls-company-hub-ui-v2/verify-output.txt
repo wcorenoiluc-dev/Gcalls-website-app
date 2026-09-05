@@ -1,0 +1,10 @@
+
+  109 passed, 0 failed
+
+  NOTE  site-wide: /favicon.ico 404s on every route. Out of scope here.
+
+  COMPANY_HUB_CONTENT_PASS
+  COMPANY_HUB_CLAIM_GUARD_PASS
+  GCALLS_OFFICIAL_LOGO_LOCAL_PASS
+  COMPANY_CONTACT_PASS
+  COMPANY_HUB_UI_LOCAL_PASS
