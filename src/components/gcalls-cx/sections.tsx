@@ -49,11 +49,19 @@ import {
   CX_USE_CASES,
 } from '@/data/gcallsCx'
 import {
-  CustomerContextMockup,
-  CxReportingMockup,
-  OmnichannelInboxMockup,
-  TicketPanelMockup,
+  CustomerContextDiagram,
+  InboxDiagram,
+  ReportingDiagram,
+  TicketDiagram,
 } from './visuals'
+
+/**
+ * Shared caption for every product visual on this page. The visuals are neutral
+ * layout diagrams, not screenshots — see the header of `./visuals.tsx` and
+ * `docs/content-review/gcalls-cx-ui-v2/pii-branding-report.md`.
+ */
+const DIAGRAM_NOTE =
+  'Giao diện minh họa — sơ đồ bố cục, không phải ảnh chụp sản phẩm và không hiển thị số liệu hay dữ liệu khách hàng thật.'
 
 const PRIMARY_BTN =
   'inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto'
@@ -102,7 +110,7 @@ export function CxHero() {
       }}
     >
       <Container>
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[44fr_56fr] lg:gap-14">
           <div>
             <Eyebrow>{CX_HERO.eyebrow}</Eyebrow>
 
@@ -145,8 +153,8 @@ export function CxHero() {
             </div>
           </div>
 
-          <ProductVisual maxWidth="560px">
-            <OmnichannelInboxMockup />
+          <ProductVisual maxWidth="560px" note={DIAGRAM_NOTE}>
+            <InboxDiagram />
           </ProductVisual>
         </div>
       </Container>
@@ -258,8 +266,8 @@ export function CxOverview() {
             </ul>
           </div>
 
-          <ProductVisual maxWidth="520px">
-            <CustomerContextMockup />
+          <ProductVisual maxWidth="520px" note={DIAGRAM_NOTE}>
+            <CustomerContextDiagram />
           </ProductVisual>
         </div>
       </Container>
@@ -313,11 +321,8 @@ export function CxInbox() {
       description={CX_INBOX.description}
       points={CX_INBOX.points}
       visual={
-        <ProductVisual
-          maxWidth="520px"
-          note="Giao diện minh họa. Mã khách hàng, hội thoại và trạng thái hiển thị là dữ liệu mẫu."
-        >
-          <OmnichannelInboxMockup />
+        <ProductVisual maxWidth="520px" note={DIAGRAM_NOTE}>
+          <InboxDiagram />
         </ProductVisual>
       }
     />
@@ -338,11 +343,8 @@ export function CxTickets() {
       description={CX_TICKETS.description}
       points={CX_TICKETS.points}
       visual={
-        <ProductVisual
-          maxWidth="480px"
-          note="Giao diện minh họa. Mã ticket, người phụ trách và lịch sử hiển thị là dữ liệu mẫu."
-        >
-          <TicketPanelMockup />
+        <ProductVisual maxWidth="480px" note={DIAGRAM_NOTE}>
+          <TicketDiagram />
         </ProductVisual>
       }
     />
@@ -361,11 +363,8 @@ export function CxCustomerContext() {
       description={CX_CONTEXT.description}
       points={CX_CONTEXT.points}
       visual={
-        <ProductVisual
-          maxWidth="480px"
-          note="Giao diện minh họa. Thông tin khách hàng hiển thị là dữ liệu mẫu, không phải dữ liệu thật."
-        >
-          <CustomerContextMockup />
+        <ProductVisual maxWidth="480px" note={DIAGRAM_NOTE}>
+          <CustomerContextDiagram />
         </ProductVisual>
       }
     />
@@ -425,9 +424,9 @@ export function CxReporting() {
       visual={
         <ProductVisual
           maxWidth="460px"
-          note="Giao diện minh họa. Toàn bộ số liệu, trạng thái và phân bổ kênh hiển thị là dữ liệu mẫu, không phải kết quả vận hành của khách hàng Gcalls."
+          note="Giao diện minh họa — sơ đồ bố cục báo cáo. Không hiển thị số liệu, tỷ lệ hay kết quả vận hành nào; các ô nội dung chỉ là khối minh họa."
         >
-          <CxReportingMockup />
+          <ReportingDiagram />
         </ProductVisual>
       }
     />
