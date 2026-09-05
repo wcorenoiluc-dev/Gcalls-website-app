@@ -1,0 +1,553 @@
+{
+  "url": "http://127.0.0.1:5213/tich-hop/",
+  "breakpoints": {
+    "320": {
+      "h1Count": 1,
+      "h1Text": [
+        "Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng"
+      ],
+      "sectionCount": 7,
+      "sections": [
+        {
+          "tag": "div",
+          "label": "(none)",
+          "height": 124
+        },
+        {
+          "tag": "section",
+          "label": "Kết nối Gcalls với hệ thống doanh nghiệp",
+          "height": 1387
+        },
+        {
+          "tag": "section",
+          "label": "Gcalls tích hợp được với những hệ thống ",
+          "height": 673
+        },
+        {
+          "tag": "section",
+          "label": "Các nền tảng đang có trang tích hợp riên",
+          "height": 1975
+        },
+        {
+          "tag": "section",
+          "label": "Nếu chưa rõ nên bắt đầu từ đâu",
+          "height": 1850
+        },
+        {
+          "tag": "section",
+          "label": "Xem thêm",
+          "height": 405
+        },
+        {
+          "tag": "section",
+          "label": "Cho Gcalls biết hệ thống doanh nghiệp đa",
+          "height": 722
+        }
+      ],
+      "imageCount": 0,
+      "brokenImages": 0,
+      "upscaledImages": 0,
+      "hashLinks": 0,
+      "platformLinksFound": [
+        "/tich-hop/hubspot/",
+        "/tich-hop/salesforce/",
+        "/tich-hop/zoho-crm/",
+        "/tich-hop/freshdesk/",
+        "/tich-hop/zendesk/"
+      ],
+      "scrollWidth": 320,
+      "clientWidth": 320,
+      "horizontalOverflow": 0,
+      "maxContainer": 320,
+      "consoleErrors": [],
+      "bannedFound": []
+    },
+    "390": {
+      "h1Count": 1,
+      "h1Text": [
+        "Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng"
+      ],
+      "sectionCount": 7,
+      "sections": [
+        {
+          "tag": "div",
+          "label": "(none)",
+          "height": 124
+        },
+        {
+          "tag": "section",
+          "label": "Kết nối Gcalls với hệ thống doanh nghiệp",
+          "height": 1282
+        },
+        {
+          "tag": "section",
+          "label": "Gcalls tích hợp được với những hệ thống ",
+          "height": 563
+        },
+        {
+          "tag": "section",
+          "label": "Các nền tảng đang có trang tích hợp riên",
+          "height": 1827
+        },
+        {
+          "tag": "section",
+          "label": "Nếu chưa rõ nên bắt đầu từ đâu",
+          "height": 1625
+        },
+        {
+          "tag": "section",
+          "label": "Xem thêm",
+          "height": 309
+        },
+        {
+          "tag": "section",
+          "label": "Cho Gcalls biết hệ thống doanh nghiệp đa",
+          "height": 691
+        }
+      ],
+      "imageCount": 0,
+      "brokenImages": 0,
+      "upscaledImages": 0,
+      "hashLinks": 0,
+      "platformLinksFound": [
+        "/tich-hop/hubspot/",
+        "/tich-hop/salesforce/",
+        "/tich-hop/zoho-crm/",
+        "/tich-hop/freshdesk/",
+        "/tich-hop/zendesk/"
+      ],
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "horizontalOverflow": 0,
+      "maxContainer": 390,
+      "consoleErrors": [],
+      "bannedFound": []
+    },
+    "768": {
+      "h1Count": 1,
+      "h1Text": [
+        "Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng"
+      ],
+      "sectionCount": 7,
+      "sections": [
+        {
+          "tag": "div",
+          "label": "(none)",
+          "height": 140
+        },
+        {
+          "tag": "section",
+          "label": "Kết nối Gcalls với hệ thống doanh nghiệp",
+          "height": 1175
+        },
+        {
+          "tag": "section",
+          "label": "Gcalls tích hợp được với những hệ thống ",
+          "height": 475
+        },
+        {
+          "tag": "section",
+          "label": "Các nền tảng đang có trang tích hợp riên",
+          "height": 1323
+        },
+        {
+          "tag": "section",
+          "label": "Nếu chưa rõ nên bắt đầu từ đâu",
+          "height": 1424
+        },
+        {
+          "tag": "section",
+          "label": "Xem thêm",
+          "height": 308
+        },
+        {
+          "tag": "section",
+          "label": "Cho Gcalls biết hệ thống doanh nghiệp đa",
+          "height": 649
+        }
+      ],
+      "imageCount": 0,
+      "brokenImages": 0,
+      "upscaledImages": 0,
+      "hashLinks": 0,
+      "platformLinksFound": [
+        "/tich-hop/hubspot/",
+        "/tich-hop/salesforce/",
+        "/tich-hop/zoho-crm/",
+        "/tich-hop/freshdesk/",
+        "/tich-hop/zendesk/"
+      ],
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "horizontalOverflow": 0,
+      "maxContainer": 768,
+      "consoleErrors": [],
+      "bannedFound": []
+    },
+    "1024": {
+      "h1Count": 1,
+      "h1Text": [
+        "Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng"
+      ],
+      "sectionCount": 7,
+      "sections": [
+        {
+          "tag": "div",
+          "label": "(none)",
+          "height": 140
+        },
+        {
+          "tag": "section",
+          "label": "Kết nối Gcalls với hệ thống doanh nghiệp",
+          "height": 904
+        },
+        {
+          "tag": "section",
+          "label": "Gcalls tích hợp được với những hệ thống ",
+          "height": 520
+        },
+        {
+          "tag": "section",
+          "label": "Các nền tảng đang có trang tích hợp riên",
+          "height": 1129
+        },
+        {
+          "tag": "section",
+          "label": "Nếu chưa rõ nên bắt đầu từ đâu",
+          "height": 986
+        },
+        {
+          "tag": "section",
+          "label": "Xem thêm",
+          "height": 292
+        },
+        {
+          "tag": "section",
+          "label": "Cho Gcalls biết hệ thống doanh nghiệp đa",
+          "height": 694
+        }
+      ],
+      "imageCount": 0,
+      "brokenImages": 0,
+      "upscaledImages": 0,
+      "hashLinks": 0,
+      "platformLinksFound": [
+        "/tich-hop/hubspot/",
+        "/tich-hop/salesforce/",
+        "/tich-hop/zoho-crm/",
+        "/tich-hop/freshdesk/",
+        "/tich-hop/zendesk/"
+      ],
+      "scrollWidth": 1024,
+      "clientWidth": 1024,
+      "horizontalOverflow": 0,
+      "maxContainer": 1024,
+      "consoleErrors": [],
+      "bannedFound": []
+    },
+    "1280": {
+      "h1Count": 1,
+      "h1Text": [
+        "Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng"
+      ],
+      "sectionCount": 7,
+      "sections": [
+        {
+          "tag": "div",
+          "label": "(none)",
+          "height": 140
+        },
+        {
+          "tag": "section",
+          "label": "Kết nối Gcalls với hệ thống doanh nghiệp",
+          "height": 621
+        },
+        {
+          "tag": "section",
+          "label": "Gcalls tích hợp được với những hệ thống ",
+          "height": 520
+        },
+        {
+          "tag": "section",
+          "label": "Các nền tảng đang có trang tích hợp riên",
+          "height": 1081
+        },
+        {
+          "tag": "section",
+          "label": "Nếu chưa rõ nên bắt đầu từ đâu",
+          "height": 939
+        },
+        {
+          "tag": "section",
+          "label": "Xem thêm",
+          "height": 292
+        },
+        {
+          "tag": "section",
+          "label": "Cho Gcalls biết hệ thống doanh nghiệp đa",
+          "height": 694
+        }
+      ],
+      "imageCount": 0,
+      "brokenImages": 0,
+      "upscaledImages": 0,
+      "hashLinks": 0,
+      "platformLinksFound": [
+        "/tich-hop/hubspot/",
+        "/tich-hop/salesforce/",
+        "/tich-hop/zoho-crm/",
+        "/tich-hop/freshdesk/",
+        "/tich-hop/zendesk/"
+      ],
+      "scrollWidth": 1280,
+      "clientWidth": 1280,
+      "horizontalOverflow": 0,
+      "maxContainer": 1280,
+      "consoleErrors": [],
+      "bannedFound": []
+    },
+    "1440": {
+      "h1Count": 1,
+      "h1Text": [
+        "Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng"
+      ],
+      "sectionCount": 7,
+      "sections": [
+        {
+          "tag": "div",
+          "label": "(none)",
+          "height": 140
+        },
+        {
+          "tag": "section",
+          "label": "Kết nối Gcalls với hệ thống doanh nghiệp",
+          "height": 621
+        },
+        {
+          "tag": "section",
+          "label": "Gcalls tích hợp được với những hệ thống ",
+          "height": 520
+        },
+        {
+          "tag": "section",
+          "label": "Các nền tảng đang có trang tích hợp riên",
+          "height": 1081
+        },
+        {
+          "tag": "section",
+          "label": "Nếu chưa rõ nên bắt đầu từ đâu",
+          "height": 939
+        },
+        {
+          "tag": "section",
+          "label": "Xem thêm",
+          "height": 292
+        },
+        {
+          "tag": "section",
+          "label": "Cho Gcalls biết hệ thống doanh nghiệp đa",
+          "height": 694
+        }
+      ],
+      "imageCount": 0,
+      "brokenImages": 0,
+      "upscaledImages": 0,
+      "hashLinks": 0,
+      "platformLinksFound": [
+        "/tich-hop/hubspot/",
+        "/tich-hop/salesforce/",
+        "/tich-hop/zoho-crm/",
+        "/tich-hop/freshdesk/",
+        "/tich-hop/zendesk/"
+      ],
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "horizontalOverflow": 0,
+      "maxContainer": 1440,
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "bannedFound": []
+    }
+  },
+  "gate": {
+    "h1_exactly_1": true,
+    "overflow_zero": true,
+    "brokenImages_zero": true,
+    "upscaledImages_zero": true,
+    "hashLinks_zero": true,
+    "platformLinks_5": true,
+    "bannedPhrases_zero": true,
+    "consoleErrors_zero": false,
+    "mainChildren_1440": 7
+  },
+  "routeVerify": {
+    "/tich-hop/": {
+      "httpStatus": 200,
+      "finalPath": "/tich-hop/",
+      "noRedirect": true,
+      "h1Count": 1,
+      "h1": "Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng",
+      "looks404": false,
+      "consoleErrors": 0
+    },
+    "/tich-hop/hubspot/": {
+      "httpStatus": 200,
+      "finalPath": "/tich-hop/hubspot/",
+      "noRedirect": true,
+      "h1Count": 1,
+      "h1": "Tổng đài Gcalls tích hợp HubSpot – đưa cuộc gọi vào quy trình CRM",
+      "looks404": false,
+      "consoleErrors": 0
+    },
+    "/tich-hop/salesforce/": {
+      "httpStatus": 200,
+      "finalPath": "/tich-hop/salesforce/",
+      "noRedirect": true,
+      "h1Count": 1,
+      "h1": "Tổng đài tích hợp Salesforce cho đội Sales và Customer Service",
+      "looks404": false,
+      "consoleErrors": 0
+    },
+    "/tich-hop/zoho-crm/": {
+      "httpStatus": 200,
+      "finalPath": "/tich-hop/zoho-crm/",
+      "noRedirect": true,
+      "h1Count": 1,
+      "h1": "Tổng đài tích hợp Zoho CRM cho đội Sales và CSKH",
+      "looks404": false,
+      "consoleErrors": 0
+    },
+    "/tich-hop/freshdesk/": {
+      "httpStatus": 200,
+      "finalPath": "/tich-hop/freshdesk/",
+      "noRedirect": true,
+      "h1Count": 1,
+      "h1": "Tổng đài tích hợp Freshdesk cho đội CSKH và Support",
+      "looks404": false,
+      "consoleErrors": 0
+    },
+    "/tich-hop/zendesk/": {
+      "httpStatus": 200,
+      "finalPath": "/tich-hop/zendesk/",
+      "noRedirect": true,
+      "h1Count": 1,
+      "h1": "Tổng đài tích hợp Zendesk cho đội CSKH và Support",
+      "looks404": false,
+      "consoleErrors": 0
+    }
+  },
+  "routesAllPass": true,
+  "regression": {
+    "/": {
+      "sectionCount": 13,
+      "h1Count": 1,
+      "pageHeight": 18155,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "maxContainer": 1440,
+      "horizontalOverflow": 0,
+      "consoleErrors": 0
+    },
+    "/san-pham/": {
+      "sectionCount": 7,
+      "h1Count": 1,
+      "pageHeight": 4402,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "maxContainer": 1440,
+      "horizontalOverflow": 0,
+      "consoleErrors": 0
+    },
+    "/giai-phap/": {
+      "sectionCount": 7,
+      "h1Count": 1,
+      "pageHeight": 4157,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "maxContainer": 1440,
+      "horizontalOverflow": 0,
+      "consoleErrors": 0
+    },
+    "/nganh/": {
+      "sectionCount": 6,
+      "h1Count": 1,
+      "pageHeight": 3066,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "maxContainer": 1440,
+      "horizontalOverflow": 0,
+      "consoleErrors": 0
+    },
+    "/tai-nguyen/": {
+      "sectionCount": 6,
+      "h1Count": 1,
+      "pageHeight": 3062,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "maxContainer": 1440,
+      "horizontalOverflow": 0,
+      "consoleErrors": 0
+    },
+    "/cong-ty/": {
+      "sectionCount": 8,
+      "h1Count": 1,
+      "pageHeight": 4048,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "maxContainer": 1440,
+      "horizontalOverflow": 0,
+      "consoleErrors": 0
+    },
+    "/tich-hop/hubspot/": {
+      "sectionCount": 18,
+      "h1Count": 1,
+      "pageHeight": 10978,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "maxContainer": 1440,
+      "horizontalOverflow": 0,
+      "consoleErrors": 0
+    },
+    "/tich-hop/salesforce/": {
+      "sectionCount": 21,
+      "h1Count": 1,
+      "pageHeight": 13122,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "maxContainer": 1440,
+      "horizontalOverflow": 0,
+      "consoleErrors": 0
+    },
+    "/tich-hop/zoho-crm/": {
+      "sectionCount": 20,
+      "h1Count": 1,
+      "pageHeight": 12574,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "maxContainer": 1440,
+      "horizontalOverflow": 0,
+      "consoleErrors": 0
+    },
+    "/tich-hop/freshdesk/": {
+      "sectionCount": 21,
+      "h1Count": 1,
+      "pageHeight": 13919,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "maxContainer": 1440,
+      "horizontalOverflow": 0,
+      "consoleErrors": 0
+    },
+    "/tich-hop/zendesk/": {
+      "sectionCount": 21,
+      "h1Count": 1,
+      "pageHeight": 14138,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "maxContainer": 1440,
+      "horizontalOverflow": 0,
+      "consoleErrors": 0
+    }
+  }
+}
