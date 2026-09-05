@@ -1,0 +1,524 @@
+[
+  {
+    "source": "Dashboard V2 Agent Dashboard.png",
+    "sha256": "db2a1fa1bb3a1abb9c7321662931aa47a371724c6e9a47068db34cf7b3a0f4e1",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 751103,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Dashboard V2 CSAT.png",
+    "sha256": "c397cab10791ab107a625d88eb2996b8a73331b34f8a7f660851f0b424f53932",
+    "width": 7680,
+    "height": 5572,
+    "bytes": 867505,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Dashboard V2 Daily Trend.png",
+    "sha256": "7f9a635b01c5ffa998c10c6531426bd14c3ffaec9fb2b92cfc4144743a55d924",
+    "width": 7680,
+    "height": 5832,
+    "bytes": 833022,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Dashboard V2 FCR.png",
+    "sha256": "1c53032f28971797772aaff90a86d61a2210bcc84d467054096f356a105a8a37",
+    "width": 7680,
+    "height": 5584,
+    "bytes": 851454,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Dashboard V2 Response.png",
+    "sha256": "bb316f371465ddef70876b8c69cec325f57d9fcea31556578e0689862354021d",
+    "width": 7680,
+    "height": 5584,
+    "bytes": 849586,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Dashboard V2 SLA.png",
+    "sha256": "5fdc1b22a7c252e1c178d376786bc6126b9d0483665bec7ed44cbf21a57b63bc",
+    "width": 7680,
+    "height": 5584,
+    "bytes": 851190,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Dashboard V2 Team rank.png",
+    "sha256": "53dac9bf822115e4593b36966b1c1c1c2d657d9789e47474caf06c6c3eca41ee",
+    "width": 7680,
+    "height": 6568,
+    "bytes": 1016430,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Dashboard V2 Time (7day).png",
+    "sha256": "26fee9ac63e564e7dd846de9dd0c3d1f2e0b20e4c7a9f01a8cbf7ba1192ea0db",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1057300,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Dashboard V2 Time (today) month.png",
+    "sha256": "b64bfbe3ba0da2cb7e363b05b69268e6725b0ea40e4dfbb481350698063323e8",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1079201,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Dashboard V2 Time (today).png",
+    "sha256": "f9f84f1f195338cf9d1c26421b8e6b78303ac65ad45614dee81bcee2e0084955",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1059972,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Dashboard V2 Today Progress.png",
+    "sha256": "dd57b93463d252b80fb66198ac89b1f81c4020c2d8bf5dfb65f9934c4449994b",
+    "width": 7680,
+    "height": 5092,
+    "bytes": 851197,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Dashboard V2 Urgent items (more).png",
+    "sha256": "173f202ce1a0044eee084dbe4334103a0882ef1c179c7ad7cfa921eebe828667",
+    "width": 7680,
+    "height": 5092,
+    "bytes": 899354,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Dashboard V2 Urgent items.png",
+    "sha256": "9b052894af940666c04eba2750fcb7496e2c252cfaf384a3f4971f1c03e6b5b5",
+    "width": 7680,
+    "height": 5092,
+    "bytes": 892658,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Ghi chú.png",
+    "sha256": "e0ba28e8b4a876cba533c7e1d77f734de160f1c3a0380aa74af3346cb2467131",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1063089,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Login.png",
+    "sha256": "54d024f1442da170bf8ae8981f99837bff21ef96f4e271458032f4fd735807b8",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 636478,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Ticket.png",
+    "sha256": "dff6003e2c4f87dfd053c1baec605f793c37264f74e1059efddcf4ba27f80cde",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1119106,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Timeline Call.png",
+    "sha256": "0450f3a0929f9f91610987c819f25e4770212129fa368bd4631ac06dbceae9ca",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1127410,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Timeline Email.png",
+    "sha256": "df8baa31489f0518d21a64fa62c06fcf7a0fade6548c4475e5d28bc0ac1b497b",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1151106,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Timeline Zalo.png",
+    "sha256": "44823d6ef90035c01eb877fbd660f991bdfab0c612435aac3ca4d29be5b9262f",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1137462,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Back to.png",
+    "sha256": "8ab8eca396eeaed4ddab5d519e39a102125e1efd0cfd2f2c289af6b6e1ddb2c3",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1149475,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Call Fill Information.png",
+    "sha256": "a9d1468778ba02ed633ff59231d1d7e1fd970f95b94b8602e75f65b7cc7bbef0",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 879777,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Call accept 2.png",
+    "sha256": "e6d2d9b09ac005deb60926b9d1564f5061fcf7715aa17861180e49b64237ba88",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1872267,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Call accept.png",
+    "sha256": "3fb5b73e6d4f12a1603f6d190b6953c911154d12ecb22d180b85187c9055ee36",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1872923,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Call end.png",
+    "sha256": "dd951f910355b8cf0aeb1acc167dd18a96ab5b98daa0af2b6d9c6ca580ae808f",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 906767,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Call in progress.png",
+    "sha256": "58b032ca1c87a7263ee67fd866e661d9c0d3bed106de5021b53fb1486ce6b96c",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 760451,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Chat.png",
+    "sha256": "e8de4cbc149f8b458df7d6c4677e7a80df291d8a08908f8969fd4870393363bf",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1179036,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Clickbutton.png",
+    "sha256": "40d735affc9040d3645fac91f1b8f9bd7a3ef403ff76ce05f21b7f9b714ce25b",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1185708,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Coming Call.png",
+    "sha256": "5664e7de0203e8529653e2be14508f466a4303545aff88437c4f887f86f936d3",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 2020226,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Create Customer (Sucess).png",
+    "sha256": "cd094ddcaca1decf4066a9ef0184c5a835b63a6cfd97ef6460f0f89dce81185b",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 2047653,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Create Customer.png",
+    "sha256": "ab04a2c739e35ebcc0bae1db2d1e6176a6088078011e1672486cb480150b3a5f",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 943506,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Create Ticket (Success).png",
+    "sha256": "845bfaeae01840fd96736af41b8cae70007d0422fb722e4d4ad847190b548d29",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 2142069,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Create Ticket.png",
+    "sha256": "020cd55495c7e2f424de3711a3105cecee8f6ce99b16011789890f8a54926370",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1109453,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Customer Ghi chú.png",
+    "sha256": "06e56e5cb9c97760642a4c0ced123fdbd126d8675e78684ed16146d1d750e7e7",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 882063,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Customer Hoạt động.png",
+    "sha256": "45dd86748e8b548e959ad5d839bd3e43bbfc0a6e021a67d34780e351cfa0cc2f",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 877793,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Customer Hợp đồng.png",
+    "sha256": "e7a1ca414e0d69d3038e679533792eb971690889f7aaf1793a3d4fdbf6f2bdbc",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 718542,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Customer Ticket.png",
+    "sha256": "2eaeaadf86481cf698a3932cfa7061d62c54cbf6ee5f99d1bf769868f419c0c8",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 828507,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Customer Tài liệu.png",
+    "sha256": "e48b104de59560cc8d60afea0fe62f4632c7eb524979967ae2396eecccd83ae6",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 704404,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Customer Tổng quan.png",
+    "sha256": "a8dac64041e5cb72e74eb770e8d0466d14a1969413d13a08510b3bca359c75d5",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 988168,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Customer.png",
+    "sha256": "ac9ba3028f820ab4a05eb7ca878d2792bb7c67294237c444e6752c3a183269d1",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1737627,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Done.png",
+    "sha256": "6c58b684d6e80e2313a8c4ff32460070ecd48419d5b6b1ef7ebe00e6419eb731",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 907643,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Ticket (Chi tiết).png",
+    "sha256": "e7b92642ba436cc770af4ca6b1cfc790e5460fe10584dc6a8ffc1607e6c6b4f2",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1190545,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Ticket Hoạt động.png",
+    "sha256": "bb3ad07112ef9441fbc089faf000d6472e60f34f542c17e97fb5183a1a1f5e5a",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1100926,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Ticket Liên quan.png",
+    "sha256": "49b1d15ba523129e288a61ee384507f982162db5413024b62c615cc89005389c",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1027643,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace Ticket.png",
+    "sha256": "f1ce02522b77caebccfe37075232ad729266a559735d25ab910878bdcfff2ffd",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1478680,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace V.2 Call Detail.png",
+    "sha256": "fa2360e110e638a5536a5d42950242cb7f3efadcf80be69dfc53d348d666161e",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1042282,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace V.2 Call action (call in progress).png",
+    "sha256": "30cf0b2373bc9525fc2f937ceb35aca791b3b1de333beb9fd508ecda7f2e8c0d",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1172603,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace V.2 Call action (connect).png",
+    "sha256": "228b762aae650486752ea54f0b70e0fa9b0d30129a34d7757210af2e93e3219e",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1145204,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace V.2 Call action (endcall).png",
+    "sha256": "6ad95c4829216a51cff348e3f869e4b818ec80af53ac85d13d452b5cc1ce9a9e",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1148528,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace V.2 Call action auto (endcall).png",
+    "sha256": "e36190f2b4dbb08717fe1a5925bab17df6982d71f548a13fda3725162a68d37c",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1158224,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace V.2 Call action.png",
+    "sha256": "bf16d79d8d387f5a7ed7cfc4e3e42672306d09aa1aaab9559c5029c31e3d1019",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1145034,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace V.2 Call list.png",
+    "sha256": "59dfe47daa3b2d7dbeef5acb40df7a2e8a9e42004fa4b87231544b6fd3d7c715",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1160749,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace V.2 Email.png",
+    "sha256": "478bbc63c1ac7d565f903189e359f22470a97a5536c941b2ddf42915d6fb5deb",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1209495,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace V.2 Forward.png",
+    "sha256": "da261f8d1d7d2bade28eb7cae34bc65b857f74e36ab73c10fb457adf6de79915",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1215829,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace V.2 List Email.png",
+    "sha256": "c05bd01209c3b70dcdd97c5e68f54f27c55a4aa61411120ee39cf9fdf2085e47",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1160121,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace V.2 Send Email.png",
+    "sha256": "e7fd90cdbaff7b5102bec996b861957b3a3fbb4786ceab83fd47b1176fb8a593",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1470747,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace create ticket (action).png",
+    "sha256": "7c96271d1912e09ac2d70075efe0fc42ef31840b55c4d46bb629fe55bb66b504",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 973857,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace create ticket (done).png",
+    "sha256": "4a403a6f397c7e0198cc184877391a2f8f73771040ce6b4646c965bde6a95828",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 2303140,
+    "hasEXIF": false,
+    "format": "png"
+  },
+  {
+    "source": "Workspace.png",
+    "sha256": "d7cb5d6d027414744c18c018a2f074110906d3c4838dd734115f7e8932edc9aa",
+    "width": 7680,
+    "height": 4320,
+    "bytes": 1147671,
+    "hasEXIF": false,
+    "format": "png"
+  }
+]

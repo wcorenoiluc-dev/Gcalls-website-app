@@ -1,0 +1,13 @@
+# PII-bearing / third-product-imagery artifacts — LOCAL REVIEW ONLY, never commit.
+# These derive from the owner-supplied PitelCX capture ZIP and contain names,
+# phone numbers, emails, company names and KPI values. The neutral page ships no
+# media; nothing here belongs in version control.
+media/source-private/
+media/preview/
+media/ocr/
+media/_ocr-summary.json
+pii-branding-report.md
+
+# Safe to commit (aggregate only, no literal PII): checkpoint.md, before-after.md,
+# regression-report.md, content-reconciliation.md, file-diff.md, media-inventory.md,
+# media/inventory-raw.json, media/manifest.json, tools/, screenshots/ (neutral page).

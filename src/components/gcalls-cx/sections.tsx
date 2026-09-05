@@ -52,8 +52,10 @@ import {
   CustomerContextDiagram,
   InboxDiagram,
   ReportingDiagram,
-  TicketDiagram,
 } from './visuals'
+import { CxProductStage } from './CxProductStage'
+import { CxScreenshotFrame } from './CxScreenshotFrame'
+import { GCALLS_CX_IMAGES } from '@/data/productImages'
 
 /**
  * Shared caption for every product visual on this page. The visuals are neutral
@@ -153,9 +155,7 @@ export function CxHero() {
             </div>
           </div>
 
-          <ProductVisual maxWidth="560px" note={DIAGRAM_NOTE}>
-            <InboxDiagram />
-          </ProductVisual>
+          <CxProductStage />
         </div>
       </Container>
     </section>
@@ -266,8 +266,8 @@ export function CxOverview() {
             </ul>
           </div>
 
-          <ProductVisual maxWidth="520px" note={DIAGRAM_NOTE}>
-            <CustomerContextDiagram />
+          <ProductVisual maxWidth="360px" note={false}>
+            <CxScreenshotFrame image={GCALLS_CX_IMAGES.omnichannelActivity} />
           </ProductVisual>
         </div>
       </Container>
@@ -343,8 +343,8 @@ export function CxTickets() {
       description={CX_TICKETS.description}
       points={CX_TICKETS.points}
       visual={
-        <ProductVisual maxWidth="480px" note={DIAGRAM_NOTE}>
-          <TicketDiagram />
+        <ProductVisual maxWidth="560px" note={false}>
+          <CxScreenshotFrame image={GCALLS_CX_IMAGES.ticketFull} />
         </ProductVisual>
       }
     />

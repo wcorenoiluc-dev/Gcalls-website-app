@@ -150,55 +150,6 @@ export function InboxDiagram() {
 }
 
 /**
- * Ticket panel — the layout of a ticket: a state + channel + owner header, a
- * subject/description block, and an activity trail of workflow stages. No
- * ticket number, no timestamps, no names.
- */
-export function TicketDiagram() {
-  const stages = ['Tiếp nhận', 'Phân công', 'Đang xử lý', 'Phản hồi']
-
-  return (
-    <div className={SHELL}>
-      <Chrome label="Ticket" />
-
-      <div className="p-4">
-        <div className="flex flex-wrap items-center gap-2">
-          <StateChip state="Đang xử lý" />
-          <ChannelBadge channel="zalo" />
-          <span className="ml-auto flex items-center gap-1.5">
-            <span className="text-[11px] text-muted-foreground">Phụ trách</span>
-            <span className="h-5 w-5 rounded-full bg-brand-light" aria-hidden="true" />
-          </span>
-        </div>
-
-        <div className="mt-4 flex flex-col gap-2">
-          <Bar w="w-2/3" className="!h-2.5" />
-          <Bar w="w-full !h-1.5" />
-          <Bar w="w-5/6 !h-1.5" />
-        </div>
-
-        <p className="mt-5 text-[11px] font-bold uppercase tracking-wide text-brand">
-          Lịch sử xử lý
-        </p>
-        <ul className="mt-3 flex flex-col gap-3 border-t border-brand-border pt-3">
-          {stages.map((s, i) => (
-            <li key={s} className="flex items-center gap-3">
-              <span
-                className={`h-2.5 w-2.5 shrink-0 rounded-full ${
-                  i < 3 ? 'bg-brand' : 'bg-brand-light'
-                }`}
-                aria-hidden="true"
-              />
-              <span className="text-[12px] leading-snug text-foreground">{s}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  )
-}
-
-/**
  * Customer context — the layout of a profile: identity block, channels touched,
  * a recent-interaction list and a related-ticket slot. Identity, interaction
  * text and dates are skeletoned; no personal data of any kind.

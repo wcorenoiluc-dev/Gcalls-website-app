@@ -130,3 +130,59 @@ export const GCALLS_PLUS_IMAGES = {
     alt: 'Màn hình tổng quan hoạt động của Gcalls Plus với nhóm danh bạ bên trái, bộ lọc hoạt động ở giữa và nhật ký cuộc gọi bên phải; tên nhóm đã được che',
   },
 } as const satisfies Record<string, ProductImage>
+
+/**
+ * Gcalls CX — page-local sanitized crops (GCALLS_CX).
+ *
+ * PROVENANCE: crops of owner-provided screenshots (source ZIP sha256
+ * c246cd27…0663a). Every crop is taken over already PII-masked pixels — customer
+ * names, phones, e-mails, company names, KPI values and record IDs are gone
+ * (destructive fill, re-verified by eye), and each region deliberately excludes
+ * the source product's top-left wordmark. The raw ZIP and unmasked files are
+ * never committed. `width`/`height` are the crop's real pixel size — nothing is
+ * upscaled. See `docs/content-review/gcalls-cx-ui-v2/media/crops-manifest.json`.
+ *
+ * The application shown is the owner's contact-center product; these are framed
+ * externally with a "Gcalls CX" caption (CxScreenshotFrame) rather than having
+ * their pixels repainted with a Gcalls logo. Product equivalence is still
+ * `GCALLS_CX_BRANDING_DECISION_REQUIRED`.
+ */
+const CX_BASE = '/images/products/gcalls-cx'
+
+export const GCALLS_CX_IMAGES = {
+  /** Left channel rail: Voice/Social/Email/SMS with assignment filters. */
+  channelsRail: {
+    src: `${CX_BASE}/cx-channels-rail-v1.webp`,
+    width: 318,
+    height: 366,
+    alt: 'Cột kênh của Gcalls CX với các kênh Cuộc gọi, Social, Email, SMS và bộ lọc phân công; dữ liệu mẫu, đã ẩn thông tin',
+  },
+  /** Unified activity timeline across channels. */
+  omnichannelActivity: {
+    src: `${CX_BASE}/cx-omnichannel-activity-v1.webp`,
+    width: 292,
+    height: 388,
+    alt: 'Dòng hoạt động đa kênh trong Gcalls CX với sự kiện Zalo, cuộc gọi, email và Facebook trên một timeline; dữ liệu mẫu, đã ẩn thông tin',
+  },
+  /** Ticket detail: SLA tracking, problem description, ticket metadata. */
+  ticketFull: {
+    src: `${CX_BASE}/cx-ticket-full-v1.webp`,
+    width: 948,
+    height: 804,
+    alt: 'Chi tiết ticket trong Gcalls CX với theo dõi SLA, mô tả vấn đề và thông tin ticket; các trường nhận dạng đã được ẩn',
+  },
+  /** Ticket header: SLA tracking + problem description only. */
+  ticketCompact: {
+    src: `${CX_BASE}/cx-ticket-compact-v1.webp`,
+    width: 948,
+    height: 430,
+    alt: 'Theo dõi SLA và mô tả vấn đề của một ticket trong Gcalls CX; dữ liệu mẫu, đã ẩn thông tin',
+  },
+  /** Inbound call info card, phone and agent masked. */
+  callInfo: {
+    src: `${CX_BASE}/cx-call-info-v1.webp`,
+    width: 948,
+    height: 250,
+    alt: 'Thẻ thông tin cuộc gọi đến trong Gcalls CX với chiều gọi, hàng đợi và thời gian chờ; số điện thoại và nhân viên đã được ẩn',
+  },
+} as const satisfies Record<string, ProductImage>

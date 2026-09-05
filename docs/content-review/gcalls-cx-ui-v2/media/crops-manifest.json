@@ -1,0 +1,77 @@
+[
+  {
+    "out": "cx-channels-rail-v1.webp",
+    "src": "workspace",
+    "region": [
+      46,
+      40,
+      318,
+      366
+    ],
+    "width": 318,
+    "height": 366,
+    "bytes": 6830,
+    "sha256": "c8bc6ce01919fa3e38a38aa731ccef73bcf104746d3b03bc9a16516d1287575a",
+    "alt": "Cột kênh của Gcalls CX: các kênh Cuộc gọi, Social, Email, SMS và bộ lọc phân công; dữ liệu mẫu, đã ẩn thông tin"
+  },
+  {
+    "out": "cx-omnichannel-activity-v1.webp",
+    "src": "workspace",
+    "region": [
+      1308,
+      396,
+      292,
+      388
+    ],
+    "width": 292,
+    "height": 388,
+    "bytes": 12710,
+    "sha256": "aca8d34ec934f2c76ed8b1aec4447362f6d125b4c7750e9ee430f2257e2476e0",
+    "alt": "Dòng hoạt động đa kênh trong Gcalls CX: sự kiện Zalo, cuộc gọi, email và Facebook trên một timeline; dữ liệu mẫu, đã ẩn thông tin"
+  },
+  {
+    "out": "cx-ticket-full-v1.webp",
+    "src": "workspace-ticket-chi-tiet",
+    "region": [
+      358,
+      96,
+      948,
+      804
+    ],
+    "width": 948,
+    "height": 804,
+    "bytes": 38300,
+    "sha256": "06125147ca966a2704dfa49047fe6c8380be6ac4ac2b4f27edbd803f7f1ef259",
+    "alt": "Chi tiết ticket trong Gcalls CX: theo dõi SLA, mô tả vấn đề và thông tin ticket; các trường nhận dạng đã được ẩn"
+  },
+  {
+    "out": "cx-ticket-compact-v1.webp",
+    "src": "workspace-ticket-chi-tiet",
+    "region": [
+      358,
+      96,
+      948,
+      430
+    ],
+    "width": 948,
+    "height": 430,
+    "bytes": 29330,
+    "sha256": "8c8206576fdb5cd3cbc25615a34ef514b68c1f124376c4dd1f40eb99097f9cda",
+    "alt": "Theo dõi SLA và mô tả vấn đề của một ticket trong Gcalls CX; dữ liệu mẫu, đã ẩn thông tin"
+  },
+  {
+    "out": "cx-call-info-v1.webp",
+    "src": "workspace-call-in-progress",
+    "region": [
+      358,
+      116,
+      948,
+      250
+    ],
+    "width": 948,
+    "height": 250,
+    "bytes": 9126,
+    "sha256": "a4708b63b5e90950fe851f12c58c95c9d1597a7affc3411dd472c2bd4e6e00f5",
+    "alt": "Thẻ thông tin cuộc gọi đến trong Gcalls CX: chiều gọi, hàng đợi và thời gian chờ; số điện thoại và nhân viên đã được ẩn"
+  }
+]
