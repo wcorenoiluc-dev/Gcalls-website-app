@@ -1,0 +1,79 @@
+{
+  "note": "Each industry child route loaded directly.",
+  "results": {
+    "Giáo dục": {
+      "route": "/nganh/giao-duc/",
+      "status": 200,
+      "finalPath": "/nganh/giao-duc/",
+      "redirectedAway": false,
+      "h1Count": 1,
+      "h1": "Giữ liên lạc xuyên suốt hành trình tuyển sinh và chăm sóc người học"
+    },
+    "Tài chính": {
+      "route": "/nganh/tai-chinh/",
+      "status": 200,
+      "finalPath": "/nganh/tai-chinh/",
+      "redirectedAway": false,
+      "h1Count": 1,
+      "h1": "Cuộc gọi và dữ liệu khách hàng trong cùng một luồng làm việc"
+    },
+    "Bảo hiểm": {
+      "route": "/nganh/bao-hiem/",
+      "status": 200,
+      "finalPath": "/nganh/bao-hiem/",
+      "redirectedAway": false,
+      "h1Count": 0,
+      "h1": null
+    },
+    "Bất động sản": {
+      "route": "/nganh/bat-dong-san/",
+      "status": 200,
+      "finalPath": "/nganh/bat-dong-san/",
+      "redirectedAway": false,
+      "h1Count": 1,
+      "h1": "Quản lý lượng lead lớn mà không mất dấu khách hàng nào"
+    },
+    "Thương mại điện tử": {
+      "route": "/nganh/thuong-mai-dien-tu/",
+      "status": 200,
+      "finalPath": "/nganh/thuong-mai-dien-tu/",
+      "redirectedAway": false,
+      "h1Count": 1,
+      "h1": "Gọi cho khách hàng của chính mình mà vẫn được nhận ra"
+    },
+    "BPO": {
+      "route": "/nganh/bpo/",
+      "status": 200,
+      "finalPath": "/nganh/bpo/",
+      "redirectedAway": false,
+      "h1Count": 1,
+      "h1": "Vận hành nhiều nhóm agent với cùng một mức kiểm soát chất lượng"
+    }
+  },
+  "expectedTags": {
+    "Giáo dục": [
+      "Gcalls Plus",
+      "Tích hợp CRM"
+    ],
+    "Tài chính": [
+      "Gcalls Plus",
+      "QA QC Center"
+    ],
+    "Bảo hiểm": [
+      "Gcalls Plus",
+      "QA QC Center"
+    ],
+    "Bất động sản": [
+      "Gcalls Plus",
+      "Tích hợp CRM"
+    ],
+    "Thương mại điện tử": [
+      "Tích hợp POS",
+      "Gcalls CX"
+    ],
+    "BPO": [
+      "Gcalls CX",
+      "QA QC Center"
+    ]
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "url": "http://127.0.0.1:5213/nganh/",
+  "breakpoints": {
+    "320": {
+      "h1Count": 1,
+      "h1Text": [
+        "Giải pháp giao tiếp theo bối cảnh vận hành của từng ngành"
+      ],
+      "containerWidth": 320,
+      "cards": [
+        {
+          "title": "Giáo dục",
+          "tags": [
+            "Gcalls Plus",
+            "Tích hợp CRM"
+          ],
+          "cta": "/nganh/giao-duc/"
+        },
+        {
+          "title": "Tài chính",
+          "tags": [
+            "Gcalls Plus",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/tai-chinh/"
+        },
+        {
+          "title": "Bảo hiểm",
+          "tags": [
+            "Gcalls Plus",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/bao-hiem/"
+        },
+        {
+          "title": "Bất động sản",
+          "tags": [
+            "Gcalls Plus",
+            "Tích hợp CRM"
+          ],
+          "cta": "/nganh/bat-dong-san/"
+        },
+        {
+          "title": "Thương mại điện tử",
+          "tags": [
+            "Tích hợp POS",
+            "Gcalls CX"
+          ],
+          "cta": "/nganh/thuong-mai-dien-tu/"
+        },
+        {
+          "title": "BPO",
+          "tags": [
+            "Gcalls CX",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/bpo/"
+        }
+      ],
+      "imageCount": 0,
+      "brokenImages": 0,
+      "hashHrefs": 0,
+      "overflow": 0,
+      "pageHeight": 7123,
+      "sectionCount": 5,
+      "rawShortcode": false,
+      "consoleErrors": []
+    },
+    "390": {
+      "h1Count": 1,
+      "h1Text": [
+        "Giải pháp giao tiếp theo bối cảnh vận hành của từng ngành"
+      ],
+      "containerWidth": 390,
+      "cards": [
+        {
+          "title": "Giáo dục",
+          "tags": [
+            "Gcalls Plus",
+            "Tích hợp CRM"
+          ],
+          "cta": "/nganh/giao-duc/"
+        },
+        {
+          "title": "Tài chính",
+          "tags": [
+            "Gcalls Plus",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/tai-chinh/"
+        },
+        {
+          "title": "Bảo hiểm",
+          "tags": [
+            "Gcalls Plus",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/bao-hiem/"
+        },
+        {
+          "title": "Bất động sản",
+          "tags": [
+            "Gcalls Plus",
+            "Tích hợp CRM"
+          ],
+          "cta": "/nganh/bat-dong-san/"
+        },
+        {
+          "title": "Thương mại điện tử",
+          "tags": [
+            "Tích hợp POS",
+            "Gcalls CX"
+          ],
+          "cta": "/nganh/thuong-mai-dien-tu/"
+        },
+        {
+          "title": "BPO",
+          "tags": [
+            "Gcalls CX",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/bpo/"
+        }
+      ],
+      "imageCount": 0,
+      "brokenImages": 0,
+      "hashHrefs": 0,
+      "overflow": 0,
+      "pageHeight": 6743,
+      "sectionCount": 5,
+      "rawShortcode": false,
+      "consoleErrors": []
+    },
+    "768": {
+      "h1Count": 1,
+      "h1Text": [
+        "Giải pháp giao tiếp theo bối cảnh vận hành của từng ngành"
+      ],
+      "containerWidth": 768,
+      "cards": [
+        {
+          "title": "Giáo dục",
+          "tags": [
+            "Gcalls Plus",
+            "Tích hợp CRM"
+          ],
+          "cta": "/nganh/giao-duc/"
+        },
+        {
+          "title": "Tài chính",
+          "tags": [
+            "Gcalls Plus",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/tai-chinh/"
+        },
+        {
+          "title": "Bảo hiểm",
+          "tags": [
+            "Gcalls Plus",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/bao-hiem/"
+        },
+        {
+          "title": "Bất động sản",
+          "tags": [
+            "Gcalls Plus",
+            "Tích hợp CRM"
+          ],
+          "cta": "/nganh/bat-dong-san/"
+        },
+        {
+          "title": "Thương mại điện tử",
+          "tags": [
+            "Tích hợp POS",
+            "Gcalls CX"
+          ],
+          "cta": "/nganh/thuong-mai-dien-tu/"
+        },
+        {
+          "title": "BPO",
+          "tags": [
+            "Gcalls CX",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/bpo/"
+        }
+      ],
+      "imageCount": 0,
+      "brokenImages": 0,
+      "hashHrefs": 0,
+      "overflow": 0,
+      "pageHeight": 4562,
+      "sectionCount": 5,
+      "rawShortcode": false,
+      "consoleErrors": []
+    },
+    "1024": {
+      "h1Count": 1,
+      "h1Text": [
+        "Giải pháp giao tiếp theo bối cảnh vận hành của từng ngành"
+      ],
+      "containerWidth": 1024,
+      "cards": [
+        {
+          "title": "Giáo dục",
+          "tags": [
+            "Gcalls Plus",
+            "Tích hợp CRM"
+          ],
+          "cta": "/nganh/giao-duc/"
+        },
+        {
+          "title": "Tài chính",
+          "tags": [
+            "Gcalls Plus",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/tai-chinh/"
+        },
+        {
+          "title": "Bảo hiểm",
+          "tags": [
+            "Gcalls Plus",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/bao-hiem/"
+        },
+        {
+          "title": "Bất động sản",
+          "tags": [
+            "Gcalls Plus",
+            "Tích hợp CRM"
+          ],
+          "cta": "/nganh/bat-dong-san/"
+        },
+        {
+          "title": "Thương mại điện tử",
+          "tags": [
+            "Tích hợp POS",
+            "Gcalls CX"
+          ],
+          "cta": "/nganh/thuong-mai-dien-tu/"
+        },
+        {
+          "title": "BPO",
+          "tags": [
+            "Gcalls CX",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/bpo/"
+        }
+      ],
+      "imageCount": 0,
+      "brokenImages": 0,
+      "hashHrefs": 0,
+      "overflow": 0,
+      "pageHeight": 3630,
+      "sectionCount": 5,
+      "rawShortcode": false,
+      "consoleErrors": []
+    },
+    "1280": {
+      "h1Count": 1,
+      "h1Text": [
+        "Giải pháp giao tiếp theo bối cảnh vận hành của từng ngành"
+      ],
+      "containerWidth": 1180,
+      "cards": [
+        {
+          "title": "Giáo dục",
+          "tags": [
+            "Gcalls Plus",
+            "Tích hợp CRM"
+          ],
+          "cta": "/nganh/giao-duc/"
+        },
+        {
+          "title": "Tài chính",
+          "tags": [
+            "Gcalls Plus",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/tai-chinh/"
+        },
+        {
+          "title": "Bảo hiểm",
+          "tags": [
+            "Gcalls Plus",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/bao-hiem/"
+        },
+        {
+          "title": "Bất động sản",
+          "tags": [
+            "Gcalls Plus",
+            "Tích hợp CRM"
+          ],
+          "cta": "/nganh/bat-dong-san/"
+        },
+        {
+          "title": "Thương mại điện tử",
+          "tags": [
+            "Tích hợp POS",
+            "Gcalls CX"
+          ],
+          "cta": "/nganh/thuong-mai-dien-tu/"
+        },
+        {
+          "title": "BPO",
+          "tags": [
+            "Gcalls CX",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/bpo/"
+        }
+      ],
+      "imageCount": 0,
+      "brokenImages": 0,
+      "hashHrefs": 0,
+      "overflow": 0,
+      "pageHeight": 3241,
+      "sectionCount": 5,
+      "rawShortcode": false,
+      "consoleErrors": []
+    },
+    "1440": {
+      "h1Count": 1,
+      "h1Text": [
+        "Giải pháp giao tiếp theo bối cảnh vận hành của từng ngành"
+      ],
+      "containerWidth": 1180,
+      "cards": [
+        {
+          "title": "Giáo dục",
+          "tags": [
+            "Gcalls Plus",
+            "Tích hợp CRM"
+          ],
+          "cta": "/nganh/giao-duc/"
+        },
+        {
+          "title": "Tài chính",
+          "tags": [
+            "Gcalls Plus",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/tai-chinh/"
+        },
+        {
+          "title": "Bảo hiểm",
+          "tags": [
+            "Gcalls Plus",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/bao-hiem/"
+        },
+        {
+          "title": "Bất động sản",
+          "tags": [
+            "Gcalls Plus",
+            "Tích hợp CRM"
+          ],
+          "cta": "/nganh/bat-dong-san/"
+        },
+        {
+          "title": "Thương mại điện tử",
+          "tags": [
+            "Tích hợp POS",
+            "Gcalls CX"
+          ],
+          "cta": "/nganh/thuong-mai-dien-tu/"
+        },
+        {
+          "title": "BPO",
+          "tags": [
+            "Gcalls CX",
+            "QA QC Center"
+          ],
+          "cta": "/nganh/bpo/"
+        }
+      ],
+      "imageCount": 0,
+      "brokenImages": 0,
+      "hashHrefs": 0,
+      "overflow": 0,
+      "pageHeight": 3241,
+      "sectionCount": 5,
+      "rawShortcode": false,
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ]
+    }
+  }
+}

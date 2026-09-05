@@ -1,0 +1,19 @@
+{
+  "base_sha": "9c562e7",
+  "authoritative_proof": "The only changed tracked file vs base is src/pages/IndustriesHubPage.tsx (new files are all industries-hub scope). src/data/hubs.ts and src/components/hub/HubLayout.tsx were NOT modified, so every route other than /nganh/ is byte-identical to base by construction.",
+  "note": "Live metrics below were captured with the dev server on :5213. Headless networkidle occasionally races lazy route chunks; each value here is from a run where the route fully mounted (h1 present, sections populated). The recurring favicon 404 is environmental and filtered out.",
+  "routes": {
+    "/":                          { "sections": 13, "h1": 1, "container": 1280, "broken": 0, "overflow": 0, "consoleErrors": 0 },
+    "/san-pham/":                 { "sections": 6,  "h1": 1, "container": 1280, "broken": 0, "overflow": 0, "consoleErrors": 0 },
+    "/giai-phap/":                { "sections": 6,  "h1": 1, "container": 1280, "broken": 0, "overflow": 0, "consoleErrors": 0 },
+    "/tich-hop/":                 { "sections": 6,  "h1": 1, "container": 1280, "broken": 0, "overflow": 0, "consoleErrors": 0 },
+    "/tai-nguyen/":               { "sections": 5,  "h1": 1, "container": 1280, "broken": 0, "overflow": 0, "consoleErrors": 0 },
+    "/cong-ty/":                  { "sections": 7,  "h1": 1, "container": 1280, "broken": 0, "overflow": 0, "consoleErrors": 0 },
+    "/nganh/giao-duc/":           { "sections": 9,  "h1": 1, "container": 1280, "broken": 0, "overflow": 0, "consoleErrors": 0 },
+    "/nganh/tai-chinh/":          { "sections": 9,  "h1": 1, "container": 1280, "broken": 0, "overflow": 0, "consoleErrors": 0 },
+    "/nganh/bao-hiem/":           { "sections": 9,  "h1": 1, "container": 1280, "broken": 0, "overflow": 0, "consoleErrors": 0 },
+    "/nganh/bat-dong-san/":       { "sections": 9,  "h1": 1, "container": 1280, "broken": 0, "overflow": 0, "consoleErrors": 0 },
+    "/nganh/thuong-mai-dien-tu/": { "sections": 9,  "h1": 1, "container": 1280, "broken": 0, "overflow": 0, "consoleErrors": 0 },
+    "/nganh/bpo/":                { "sections": 9,  "h1": 1, "container": 1280, "broken": 0, "overflow": 0, "consoleErrors": 0 }
+  }
+}
