@@ -1,0 +1,218 @@
+{
+  "url": "http://127.0.0.1:5217/lien-he/",
+  "breakpoints": {
+    "320": {
+      "h1Count": 1,
+      "h1Text": [
+        "Liên hệ"
+      ],
+      "h2Count": 6,
+      "horizontalOverflow": 0,
+      "maxContainer": 280,
+      "brokenImages": 0,
+      "honeypotVisible": false,
+      "disabledFields": 0,
+      "mailtoHref": "mailto:sales@gcalls.co",
+      "telHref": "tel:+842873025469",
+      "mailtoName": "Gửi email tới Gcalls: sales@gcalls.co",
+      "telName": "Gọi hotline Gcalls: 028 7302 5469",
+      "hasDevNotice": false,
+      "hasRawShortcode": false,
+      "consoleErrors": []
+    },
+    "390": {
+      "h1Count": 1,
+      "h1Text": [
+        "Liên hệ"
+      ],
+      "h2Count": 6,
+      "horizontalOverflow": 0,
+      "maxContainer": 350,
+      "brokenImages": 0,
+      "honeypotVisible": false,
+      "disabledFields": 0,
+      "mailtoHref": "mailto:sales@gcalls.co",
+      "telHref": "tel:+842873025469",
+      "mailtoName": "Gửi email tới Gcalls: sales@gcalls.co",
+      "telName": "Gọi hotline Gcalls: 028 7302 5469",
+      "hasDevNotice": false,
+      "hasRawShortcode": false,
+      "consoleErrors": []
+    },
+    "768": {
+      "h1Count": 1,
+      "h1Text": [
+        "Liên hệ"
+      ],
+      "h2Count": 6,
+      "horizontalOverflow": 0,
+      "maxContainer": 728,
+      "brokenImages": 0,
+      "honeypotVisible": false,
+      "disabledFields": 0,
+      "mailtoHref": "mailto:sales@gcalls.co",
+      "telHref": "tel:+842873025469",
+      "mailtoName": "Gửi email tới Gcalls: sales@gcalls.co",
+      "telName": "Gọi hotline Gcalls: 028 7302 5469",
+      "hasDevNotice": false,
+      "hasRawShortcode": false,
+      "consoleErrors": []
+    },
+    "1024": {
+      "h1Count": 1,
+      "h1Text": [
+        "Liên hệ"
+      ],
+      "h2Count": 6,
+      "horizontalOverflow": 0,
+      "maxContainer": 960,
+      "brokenImages": 0,
+      "honeypotVisible": false,
+      "disabledFields": 0,
+      "mailtoHref": "mailto:sales@gcalls.co",
+      "telHref": "tel:+842873025469",
+      "mailtoName": "Gửi email tới Gcalls: sales@gcalls.co",
+      "telName": "Gọi hotline Gcalls: 028 7302 5469",
+      "hasDevNotice": false,
+      "hasRawShortcode": false,
+      "consoleErrors": []
+    },
+    "1280": {
+      "h1Count": 1,
+      "h1Text": [
+        "Liên hệ"
+      ],
+      "h2Count": 6,
+      "horizontalOverflow": 0,
+      "maxContainer": 1180,
+      "brokenImages": 0,
+      "honeypotVisible": false,
+      "disabledFields": 0,
+      "mailtoHref": "mailto:sales@gcalls.co",
+      "telHref": "tel:+842873025469",
+      "mailtoName": "Gửi email tới Gcalls: sales@gcalls.co",
+      "telName": "Gọi hotline Gcalls: 028 7302 5469",
+      "hasDevNotice": false,
+      "hasRawShortcode": false,
+      "consoleErrors": []
+    },
+    "1440": {
+      "h1Count": 1,
+      "h1Text": [
+        "Liên hệ"
+      ],
+      "h2Count": 6,
+      "horizontalOverflow": 0,
+      "maxContainer": 1180,
+      "brokenImages": 0,
+      "honeypotVisible": false,
+      "disabledFields": 0,
+      "mailtoHref": "mailto:sales@gcalls.co",
+      "telHref": "tel:+842873025469",
+      "mailtoName": "Gửi email tới Gcalls: sales@gcalls.co",
+      "telName": "Gọi hotline Gcalls: 028 7302 5469",
+      "hasDevNotice": false,
+      "hasRawShortcode": false,
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ]
+    }
+  },
+  "gate": {
+    "h1_exactly_1": true,
+    "overflow_zero": true,
+    "brokenImages_zero": true,
+    "honeypot_hidden": true,
+    "noDisabledFields_default": true,
+    "container_max_1180": true,
+    "mailto_present": true,
+    "tel_present": true,
+    "noDevNotice": true,
+    "noRawShortcode": true,
+    "consoleErrors_zero": false,
+    "noSuccessOnContact": true,
+    "notConfiguredShown": true,
+    "fieldsPreservedAfterError": true,
+    "pii_not_in_url": true,
+    "pii_not_in_console": true,
+    "attr_clean_shows": true,
+    "attr_hostile_no_injection": true,
+    "attr_unlisted_suppressed": true
+  },
+  "states": {
+    "production": {
+      "validationErrors": 3,
+      "notConfiguredText": true,
+      "successAfterSubmit": false,
+      "urlAfter": "http://127.0.0.1:5217/lien-he/",
+      "piiInUrl": [],
+      "piiInConsoleCount": 0,
+      "fieldsPreserved": "Nguyen Van Test"
+    }
+  },
+  "attribution": {
+    "clean": {
+      "h1Count": 1,
+      "hasScriptText": false,
+      "interested": true,
+      "bodyMentionsXYZ": false
+    },
+    "hostile": {
+      "h1Count": 1,
+      "hasScriptText": false,
+      "interested": false,
+      "bodyMentionsXYZ": false
+    },
+    "unlisted": {
+      "h1Count": 1,
+      "hasScriptText": false,
+      "interested": false,
+      "bodyMentionsXYZ": false
+    }
+  },
+  "regression": {
+    "/": {
+      "h1Count": 1,
+      "overflow": 0,
+      "hasForm": false,
+      "consoleErrors": 0
+    },
+    "/lien-he/": {
+      "h1Count": 1,
+      "overflow": 0,
+      "hasForm": true,
+      "consoleErrors": 0
+    },
+    "/uoc-tinh-chi-phi/": {
+      "h1Count": 1,
+      "overflow": 0,
+      "hasForm": false,
+      "consoleErrors": 0
+    },
+    "/gcalls-plus-webphone/": {
+      "h1Count": 1,
+      "overflow": 0,
+      "hasForm": false,
+      "consoleErrors": 0
+    },
+    "/gcalls-cx/": {
+      "h1Count": 1,
+      "overflow": 0,
+      "hasForm": false,
+      "consoleErrors": 0
+    },
+    "/qc-bot-ai/": {
+      "h1Count": 1,
+      "overflow": 0,
+      "hasForm": false,
+      "consoleErrors": 0
+    },
+    "/voicebot-ai/": {
+      "h1Count": 1,
+      "overflow": 0,
+      "hasForm": false,
+      "consoleErrors": 0
+    }
+  },
+  "regressionAllPass": true
+}

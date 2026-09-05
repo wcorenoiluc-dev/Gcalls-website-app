@@ -1,70 +1,101 @@
+import { useMemo } from 'react'
 import { useLocation } from 'react-router'
-import { Mail, Phone } from 'lucide-react'
-import { Card } from '@/components/common/primitives'
-import { RouteShell } from '@/components/layout/RouteShell'
-import { CONTACT } from '@/config/navigation'
+import { Section } from '@/components/common/primitives'
+import { Breadcrumb } from '@/components/layout/Breadcrumb'
+import { JsonLd } from '@/components/common/JsonLd'
 import { LeadForm } from '@/components/lead/LeadForm'
+import { ContactInfoPanel } from '@/components/contact/ContactInfoPanel'
+import { ROUTES } from '@/config/navigation'
+import { getBreadcrumbTrail, getEntry } from '@/config/sitemap'
+import { SITE_ORIGIN } from '@/config/seo'
 import { parseLeadCtaContext } from '@/lib/leads/ctaLink'
 
 /**
  * `/lien-he/` — the canonical lead route.
  *
- * Every conversion CTA on the site lands here carrying categorical context
- * (`?intent=&source=&product=`), which pre-scopes the form and records where
- * the lead came from. Nothing a visitor typed ever appears in the URL.
+ * A dedicated two-column contact layout (left: purpose + direct channels; right:
+ * the shared lead form) rather than the generic `RouteShell`, so the page has one
+ * H1, no eyebrow/heading duplication and no generic closing CTA band repeating
+ * the contact intent.
  *
- * `intent` and `source` are validated against typed allow-lists on parse.
- * `product` is not enumerable at parse time (pricing passes plan names), so it
- * is length-capped for use and separately allow-listed before it is ever
- * DISPLAYED — see `displayableLeadProduct`.
+ * Copy is not authored here: the H1 is the approved sitemap label and the lead
+ * paragraph is the approved `intro`. SEO/title/meta come from the app-level
+ * <Seo/> (pathname-driven), so dropping RouteShell does not change them.
  *
- * The form itself is the shared `LeadForm` — this page owns no submit logic.
+ * The form is the shared `LeadForm` — this page owns no submit logic and shows a
+ * success state only if that transport returns one (there is no backend, so it
+ * cannot on this route). Attribution reaching the URL is validated by
+ * `parseLeadCtaContext`; nothing a visitor typed is ever placed in the URL or DOM.
  */
 export function ContactPage() {
   const { search } = useLocation()
   const context = parseLeadCtaContext(search)
+  const entry = getEntry(ROUTES.contact)
+  const intro =
+    entry?.intro ??
+    'Chia sẻ nhu cầu hiện tại để đội ngũ Gcalls có thêm thông tin trước khi trao đổi cùng doanh nghiệp.'
+
+  const trail = getBreadcrumbTrail(ROUTES.contact)
+  const breadcrumb = trail.map((crumb, index) => ({
+    label: crumb.label,
+    path: index < trail.length - 1 ? crumb.route : undefined,
+  }))
+
+  const breadcrumbJsonLd = useMemo(
+    () => ({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Trang chủ', item: `${SITE_ORIGIN}${ROUTES.home}` },
+            ...trail.map((crumb, index) => ({
+              '@type': 'ListItem',
+              position: index + 2,
+              name: crumb.label,
+              item: `${SITE_ORIGIN}${crumb.route}`,
+            })),
+          ],
+        },
+      ],
+    }),
+    [trail],
+  )
 
   return (
-    <RouteShell>
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-5">
-        {/* Direct contact details stay available regardless of form state. */}
-        <Card className="h-fit bg-brand-light p-6 sm:p-8 lg:col-span-2">
-          <h2 className="text-lg font-extrabold text-foreground sm:text-xl">
-            Liên hệ trực tiếp
-          </h2>
+    <>
+      <JsonLd id="contact" data={breadcrumbJsonLd} />
 
-          <ul className="mt-5 flex flex-col gap-2">
-            <li>
-              <a
-                href={`mailto:${CONTACT.email}`}
-                className="inline-flex min-h-12 items-center gap-2.5 rounded-[10px] text-base font-medium text-foreground transition-colors duration-150 hover:text-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-              >
-                <Mail size={18} className="text-brand" aria-hidden="true" />
-                {CONTACT.email}
-              </a>
-            </li>
-            <li>
-              <a
-                href={CONTACT.phoneHref}
-                className="inline-flex min-h-12 items-center gap-2.5 rounded-[10px] text-base font-medium text-foreground transition-colors duration-150 hover:text-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-              >
-                <Phone size={18} className="text-brand" aria-hidden="true" />
-                {CONTACT.phone}
-              </a>
-            </li>
-          </ul>
-        </Card>
-
-        <div className="lg:col-span-3">
-          <LeadForm
-            variant="contact"
-            source={context.source ?? 'contact'}
-            intent={context.intent ?? 'consultation'}
-            product={context.product}
-            solution={context.solution}
-          />
+      {/* Page-local 1180 container (visual contract) instead of the shared 1280
+          Container, so no ancestor exceeds 1180 on this route. */}
+      <div className="bg-brand-light/60 pt-20 sm:pt-24">
+        <div className="mx-auto w-full max-w-[1180px] px-5 lg:px-8">
+          <Breadcrumb trail={breadcrumb} />
         </div>
       </div>
-    </RouteShell>
+
+      <Section>
+        <div className="mx-auto w-full max-w-[1180px] px-5 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-12">
+            {/* Left ~40% — purpose + direct channels; first in DOM so mobile
+                reads contact-then-form. */}
+            <div className="lg:col-span-2">
+              <ContactInfoPanel intro={intro} product={context.product} />
+            </div>
+
+            {/* Right ~60% — the shared lead form in its own panel. */}
+            <div className="lg:col-span-3">
+              <LeadForm
+                variant="contact"
+                source={context.source ?? 'contact'}
+                intent={context.intent ?? 'consultation'}
+                product={context.product}
+                solution={context.solution}
+              />
+            </div>
+          </div>
+        </div>
+      </Section>
+    </>
   )
 }
