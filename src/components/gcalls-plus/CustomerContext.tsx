@@ -1,7 +1,7 @@
 import { Users } from 'lucide-react'
-import { ProductVisualWithSupport } from '@/components/common/ProductVisual'
 import { ProductScreenshot } from '@/components/common/ProductScreenshot'
 import { GCALLS_PLUS_IMAGES } from '@/data/productImages'
+import { StageWithSupport } from '@/components/gcalls-plus/ProductStage'
 import { GP_CONTEXT } from '@/data/gcallsPlus'
 import { FeatureSplit } from '@/components/common/FeatureSplit'
 
@@ -12,9 +12,11 @@ import { FeatureSplit } from '@/components/common/FeatureSplit'
  * supporting card. Both are real captures with customer data masked out of the
  * file. Deliberately not labelled "CRM": this is the Gcalls side of the
  * workflow, not a CRM product.
+ *
+ * Uses the page-local `StageWithSupport`. Under the shared component the
+ * keypad rendered 300px wide and covered the contact profile — the one thing
+ * this section is about — while leaving a dead band underneath.
  */
-const MASKED_SCREENSHOT_NOTE =
-  'Ảnh chụp thật từ môi trường demo nội bộ. Dữ liệu khách hàng và nhân viên đã được che vĩnh viễn.'
 
 export function CustomerContext() {
   return (
@@ -27,11 +29,10 @@ export function CustomerContext() {
       description={GP_CONTEXT.description}
       points={GP_CONTEXT.points}
       visual={
-        <ProductVisualWithSupport
+        <StageWithSupport
           main={<ProductScreenshot image={GCALLS_PLUS_IMAGES.contactProfileDesktop} />}
           support={<ProductScreenshot image={GCALLS_PLUS_IMAGES.keypadMobile} />}
           mainMaxWidth="560px"
-          note={MASKED_SCREENSHOT_NOTE}
         />
       }
     />

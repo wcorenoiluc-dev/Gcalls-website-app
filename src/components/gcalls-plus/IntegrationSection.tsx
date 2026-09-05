@@ -1,8 +1,8 @@
 import { ArrowRight, Plug } from 'lucide-react'
 import { Link } from 'react-router'
-import { ProductVisual } from '@/components/common/ProductVisual'
 import { ProductScreenshot } from '@/components/common/ProductScreenshot'
 import { GCALLS_PLUS_IMAGES } from '@/data/productImages'
+import { Stage } from '@/components/gcalls-plus/ProductStage'
 import { GP_INTEGRATION } from '@/data/gcallsPlus'
 import { FeatureSplit } from '@/components/common/FeatureSplit'
 
@@ -22,9 +22,6 @@ import { FeatureSplit } from '@/components/common/FeatureSplit'
  * it states the boundary and hands off. Do not grow it into a second CRM
  * landing page (P01-B §10).
  */
-const MASKED_SCREENSHOT_NOTE =
-  'Ảnh chụp thật từ môi trường demo nội bộ. Dữ liệu khách hàng và nhân viên đã được che vĩnh viễn.'
-
 export function IntegrationSection() {
   return (
     <FeatureSplit
@@ -35,9 +32,9 @@ export function IntegrationSection() {
       titleId="tich-hop-he-thong"
       description={GP_INTEGRATION.description}
       visual={
-        <ProductVisual maxWidth="560px" note={MASKED_SCREENSHOT_NOTE}>
+        <Stage maxWidth="560px">
           <ProductScreenshot image={GCALLS_PLUS_IMAGES.integrationsDesktop} />
-        </ProductVisual>
+        </Stage>
       }
     >
       <Link

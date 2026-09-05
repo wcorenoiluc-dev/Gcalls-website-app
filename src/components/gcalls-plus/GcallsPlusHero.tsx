@@ -1,9 +1,9 @@
 import { ArrowRight, Check } from 'lucide-react'
 import { Link } from 'react-router'
 import { Container, Eyebrow, GradientHeading } from '@/components/common/primitives'
-import { ProductVisualWithSupport } from '@/components/common/ProductVisual'
 import { ProductScreenshot } from '@/components/common/ProductScreenshot'
 import { GCALLS_PLUS_IMAGES } from '@/data/productImages'
+import { StageWithSupport, MASKED_CAPTURE_NOTE } from '@/components/gcalls-plus/ProductStage'
 import { track } from '@/lib/analytics'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
 import { GP_HERO, GP_LEAD_CONTEXT } from '@/data/gcallsPlus'
@@ -20,8 +20,18 @@ import { GP_HERO, GP_LEAD_CONTEXT } from '@/data/gcallsPlus'
  * fetchpriority=high. The supporting card sits above the fold from `lg` up, so
  * it is eager too — but without the priority hint, so it does not compete with
  * the LCP image.
- * Desktop shows both, supporting card overlapping. Mobile stacks them — one
- * main visual, then the supporting card below. Never 3–4 floating screenshots.
+ * Desktop shows both, the phone overlapping the webphone capture's lower-right
+ * corner only. Mobile stacks them — one main visual, then the supporting card
+ * below. Never 3–4 floating screenshots.
+ *
+ * The composition uses the page-local `StageWithSupport`, not the shared
+ * `ProductVisualWithSupport`: measured at 1440, the shared one rendered the
+ * phone 300px wide, which covered half the webphone interface this hero exists
+ * to show and reached up over the fixed header. See `ProductStage.tsx`.
+ *
+ * The desktop split is 44% copy / 56% media per the brief, so the webphone
+ * capture gets 609px — still below its own 809px intrinsic width, so it is
+ * shown at scale rather than upscaled.
  *
  * Content order is text-first, visual-second at every breakpoint.
  */
@@ -35,7 +45,7 @@ export function GcallsPlusHero() {
       }}
     >
       <Container>
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[44fr_56fr] lg:gap-14">
           {/* Text first in DOM order → first on mobile. */}
           <div>
             <Eyebrow>{GP_HERO.eyebrow}</Eyebrow>
@@ -96,7 +106,7 @@ export function GcallsPlusHero() {
           </div>
 
           {/* Visual second. */}
-          <ProductVisualWithSupport
+          <StageWithSupport
             main={
               <ProductScreenshot
                 image={GCALLS_PLUS_IMAGES.webphoneDesktop}
@@ -109,8 +119,8 @@ export function GcallsPlusHero() {
                 aboveFold
               />
             }
-            mainMaxWidth="580px"
-            note="Ảnh chụp thật từ môi trường demo nội bộ. Dữ liệu khách hàng và nhân viên đã được che vĩnh viễn."
+            mainMaxWidth="609px"
+            note={MASKED_CAPTURE_NOTE}
           />
         </div>
       </Container>

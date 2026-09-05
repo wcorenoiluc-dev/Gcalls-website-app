@@ -1,0 +1,56 @@
+/**
+ * /gcalls-plus-webphone/ — page-scoped layout.
+ *
+ * ---------------------------------------------------------------------------
+ * WHY THIS IS CSS AND NOT PROPS
+ * ---------------------------------------------------------------------------
+ * `Container`, `Section`, `FeatureSplit`, `SectionHeader`, `FaqAccordion`,
+ * `PricingCtaBand` and `FinalCtaBand` are shared with every other route. This
+ * checkpoint covers one page and is explicitly not allowed to move the others,
+ * so the rhythm and container width are applied through a scope class on the
+ * page wrapper instead of by editing those components.
+ *
+ * This mirrors what the WordPress theme already does for the same brief
+ * (`body:not(.home)` in theme.css, commit d8d8615): scope by a class the page
+ * owns, leave the shared component alone.
+ * ---------------------------------------------------------------------------
+ *
+ * WHERE THE 50px COMES FROM
+ * The brief asks for 50px between two compositions. On this page the space
+ * between sections is not a margin — it is each section's own block padding
+ * (`py-14 sm:py-20 lg:py-24`), so two adjacent sections put 112px between
+ * their content at 390px and 192px at 1440px. Half of 50 on each side of the
+ * boundary gives exactly 50px between compositions at every breakpoint, which
+ * is what the rule below does.
+ *
+ * NOT TOUCHED, deliberately: card padding, the FAQ items, the direct-answer
+ * panel's interior, and the horizontal gutter. Those are internal spacing
+ * (24-44px per the brief), not the rhythm this rule is about — the same
+ * boundary the WordPress rule drew.
+ */
+
+.gp-page > section {
+  padding-block: 25px;
+}
+
+/**
+ * The hero keeps a larger top inset: it is the first painted band under a
+ * fixed header, and 25px would tuck the eyebrow under it. Its BOTTOM still
+ * joins the rhythm.
+ */
+.gp-page > section:first-of-type {
+  padding-block: 40px 25px;
+}
+
+/**
+ * Container: 1280px -> 1180px, for this page only.
+ *
+ * The selector matches the utility class the shared `Container` emits. That is
+ * a deliberate coupling to one literal value, so it is asserted in
+ * `scripts/verify-gcalls-plus.mjs`: if `Container` ever stops emitting
+ * `max-w-[1280px]`, the check fails loudly rather than the page silently
+ * reverting to full width.
+ */
+.gp-page .max-w-\[1280px\] {
+  max-width: 1180px;
+}

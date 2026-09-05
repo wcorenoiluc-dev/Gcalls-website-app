@@ -1,0 +1,1244 @@
+{
+  "320": {
+    "pageHeight": 19479,
+    "docWidth": 320,
+    "viewportWidth": 320,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 21,
+    "sectionCount": 18,
+    "images": [
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-desktop-v1.webp",
+        "natural": "809x429",
+        "rendered": "280x149",
+        "upscaled": false,
+        "altLength": 166
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-active-call-mobile-v1.webp",
+        "natural": "553x1084",
+        "rendered": "190x371",
+        "upscaled": false,
+        "altLength": 136
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-overview-activity-desktop-v1.webp",
+        "natural": "810x450",
+        "rendered": "280x156",
+        "upscaled": false,
+        "altLength": 146
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-timeline-history-desktop-v1.webp",
+        "natural": "809x443",
+        "rendered": "280x154",
+        "upscaled": false,
+        "altLength": 133
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-contact-profile-desktop-v1.webp",
+        "natural": "809x440",
+        "rendered": "280x153",
+        "upscaled": false,
+        "altLength": 139
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-keypad-mobile-v1.webp",
+        "natural": "576x1092",
+        "rendered": "190x358",
+        "upscaled": false,
+        "altLength": 53
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-agent-status-log-desktop-v1.webp",
+        "natural": "809x295",
+        "rendered": "280x103",
+        "upscaled": false,
+        "altLength": 157
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-integrations-desktop-v1.webp",
+        "natural": "809x494",
+        "rendered": "280x172",
+        "upscaled": false,
+        "altLength": 123
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 148
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình",
+        "top": 148,
+        "height": 1636
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls Plus Webphone là gì?",
+        "top": 1784,
+        "height": 606
+      },
+      {
+        "tag": "section",
+        "label": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp",
+        "top": 2390,
+        "height": 1451
+      },
+      {
+        "tag": "section",
+        "label": "Webphone đưa chức năng tổng đài vào trình duyệt",
+        "top": 3841,
+        "height": 861
+      },
+      {
+        "tag": "section",
+        "label": "Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày",
+        "top": 4702,
+        "height": 1729
+      },
+      {
+        "tag": "section",
+        "label": "Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi",
+        "top": 6431,
+        "height": 856
+      },
+      {
+        "tag": "section",
+        "label": "Hiểu khách hàng trước khi tiếp tục cuộc hội thoại",
+        "top": 7287,
+        "height": 1142
+      },
+      {
+        "tag": "section",
+        "label": "Từ cuộc gọi đến bước follow-up tiếp theo",
+        "top": 8429,
+        "height": 1112
+      },
+      {
+        "tag": "section",
+        "label": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung",
+        "top": 9541,
+        "height": 718
+      },
+      {
+        "tag": "section",
+        "label": "Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần",
+        "top": 10259,
+        "height": 741
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls Plus phù hợp với những đội ngũ nào?",
+        "top": 11000,
+        "height": 1369
+      },
+      {
+        "tag": "section",
+        "label": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Co",
+        "top": 12368,
+        "height": 1090
+      },
+      {
+        "tag": "section",
+        "label": "Triển khai theo nhu cầu vận hành thực tế",
+        "top": 13458,
+        "height": 1339
+      },
+      {
+        "tag": "section",
+        "label": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
+        "top": 14798,
+        "height": 626
+      },
+      {
+        "tag": "section",
+        "label": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
+        "top": 15423,
+        "height": 609
+      },
+      {
+        "tag": "section",
+        "label": "Câu hỏi thường gặp về Gcalls Plus Webphone",
+        "top": 16032,
+        "height": 964
+      },
+      {
+        "tag": "section",
+        "label": "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ c",
+        "top": 16996,
+        "height": 691
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình → Gcalls Plus Webphone là gì?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls Plus Webphone là gì? → Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp",
+        "gap": 0
+      },
+      {
+        "between": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp → Webphone đưa chức năng tổng đài vào trình duyệt",
+        "gap": 0
+      },
+      {
+        "between": "Webphone đưa chức năng tổng đài vào trình duyệt → Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày",
+        "gap": 0
+      },
+      {
+        "between": "Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày → Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi",
+        "gap": 0
+      },
+      {
+        "between": "Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi → Hiểu khách hàng trước khi tiếp tục cuộc hội thoại",
+        "gap": 0
+      },
+      {
+        "between": "Hiểu khách hàng trước khi tiếp tục cuộc hội thoại → Từ cuộc gọi đến bước follow-up tiếp theo",
+        "gap": 0
+      },
+      {
+        "between": "Từ cuộc gọi đến bước follow-up tiếp theo → Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung",
+        "gap": 0
+      },
+      {
+        "between": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung → Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần",
+        "gap": 0
+      },
+      {
+        "between": "Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần → Gcalls Plus phù hợp với những đội ngũ nào?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls Plus phù hợp với những đội ngũ nào? → Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Co",
+        "gap": -1
+      },
+      {
+        "between": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Co → Triển khai theo nhu cầu vận hành thực tế",
+        "gap": 0
+      },
+      {
+        "between": "Triển khai theo nhu cầu vận hành thực tế → Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
+        "gap": 1
+      },
+      {
+        "between": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng → Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
+        "gap": -1
+      },
+      {
+        "between": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau → Câu hỏi thường gặp về Gcalls Plus Webphone",
+        "gap": 0
+      },
+      {
+        "between": "Câu hỏi thường gặp về Gcalls Plus Webphone → Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ c",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "390": {
+    "pageHeight": 18024,
+    "docWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 21,
+    "sectionCount": 18,
+    "images": [
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-desktop-v1.webp",
+        "natural": "809x429",
+        "rendered": "350x187",
+        "upscaled": false,
+        "altLength": 166
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-active-call-mobile-v1.webp",
+        "natural": "553x1084",
+        "rendered": "190x371",
+        "upscaled": false,
+        "altLength": 136
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-overview-activity-desktop-v1.webp",
+        "natural": "810x450",
+        "rendered": "350x195",
+        "upscaled": false,
+        "altLength": 146
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-timeline-history-desktop-v1.webp",
+        "natural": "809x443",
+        "rendered": "350x193",
+        "upscaled": false,
+        "altLength": 133
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-contact-profile-desktop-v1.webp",
+        "natural": "809x440",
+        "rendered": "350x191",
+        "upscaled": false,
+        "altLength": 139
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-keypad-mobile-v1.webp",
+        "natural": "576x1092",
+        "rendered": "190x358",
+        "upscaled": false,
+        "altLength": 53
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-agent-status-log-desktop-v1.webp",
+        "natural": "809x295",
+        "rendered": "350x129",
+        "upscaled": false,
+        "altLength": 157
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-integrations-desktop-v1.webp",
+        "natural": "809x494",
+        "rendered": "350x214",
+        "upscaled": false,
+        "altLength": 123
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 124
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình",
+        "top": 124,
+        "height": 1541
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls Plus Webphone là gì?",
+        "top": 1665,
+        "height": 471
+      },
+      {
+        "tag": "section",
+        "label": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp",
+        "top": 2136,
+        "height": 1186
+      },
+      {
+        "tag": "section",
+        "label": "Webphone đưa chức năng tổng đài vào trình duyệt",
+        "top": 3322,
+        "height": 820
+      },
+      {
+        "tag": "section",
+        "label": "Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày",
+        "top": 4142,
+        "height": 1651
+      },
+      {
+        "tag": "section",
+        "label": "Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi",
+        "top": 5793,
+        "height": 764
+      },
+      {
+        "tag": "section",
+        "label": "Hiểu khách hàng trước khi tiếp tục cuộc hội thoại",
+        "top": 6557,
+        "height": 1101
+      },
+      {
+        "tag": "section",
+        "label": "Từ cuộc gọi đến bước follow-up tiếp theo",
+        "top": 7658,
+        "height": 1041
+      },
+      {
+        "tag": "section",
+        "label": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung",
+        "top": 8698,
+        "height": 669
+      },
+      {
+        "tag": "section",
+        "label": "Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần",
+        "top": 9367,
+        "height": 731
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls Plus phù hợp với những đội ngũ nào?",
+        "top": 10098,
+        "height": 1206
+      },
+      {
+        "tag": "section",
+        "label": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Co",
+        "top": 11304,
+        "height": 1012
+      },
+      {
+        "tag": "section",
+        "label": "Triển khai theo nhu cầu vận hành thực tế",
+        "top": 12316,
+        "height": 1265
+      },
+      {
+        "tag": "section",
+        "label": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
+        "top": 13582,
+        "height": 565
+      },
+      {
+        "tag": "section",
+        "label": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
+        "top": 14146,
+        "height": 609
+      },
+      {
+        "tag": "section",
+        "label": "Câu hỏi thường gặp về Gcalls Plus Webphone",
+        "top": 14755,
+        "height": 844
+      },
+      {
+        "tag": "section",
+        "label": "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ c",
+        "top": 15599,
+        "height": 634
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình → Gcalls Plus Webphone là gì?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls Plus Webphone là gì? → Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp",
+        "gap": 0
+      },
+      {
+        "between": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp → Webphone đưa chức năng tổng đài vào trình duyệt",
+        "gap": 0
+      },
+      {
+        "between": "Webphone đưa chức năng tổng đài vào trình duyệt → Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày",
+        "gap": 0
+      },
+      {
+        "between": "Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày → Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi",
+        "gap": 0
+      },
+      {
+        "between": "Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi → Hiểu khách hàng trước khi tiếp tục cuộc hội thoại",
+        "gap": 0
+      },
+      {
+        "between": "Hiểu khách hàng trước khi tiếp tục cuộc hội thoại → Từ cuộc gọi đến bước follow-up tiếp theo",
+        "gap": 0
+      },
+      {
+        "between": "Từ cuộc gọi đến bước follow-up tiếp theo → Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung",
+        "gap": -1
+      },
+      {
+        "between": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung → Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần",
+        "gap": 0
+      },
+      {
+        "between": "Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần → Gcalls Plus phù hợp với những đội ngũ nào?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls Plus phù hợp với những đội ngũ nào? → Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Co",
+        "gap": 0
+      },
+      {
+        "between": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Co → Triển khai theo nhu cầu vận hành thực tế",
+        "gap": 0
+      },
+      {
+        "between": "Triển khai theo nhu cầu vận hành thực tế → Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
+        "gap": 1
+      },
+      {
+        "between": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng → Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
+        "gap": -1
+      },
+      {
+        "between": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau → Câu hỏi thường gặp về Gcalls Plus Webphone",
+        "gap": 0
+      },
+      {
+        "between": "Câu hỏi thường gặp về Gcalls Plus Webphone → Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ c",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "768": {
+    "pageHeight": 14613,
+    "docWidth": 768,
+    "viewportWidth": 768,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 21,
+    "sectionCount": 18,
+    "images": [
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-desktop-v1.webp",
+        "natural": "809x429",
+        "rendered": "609x324",
+        "upscaled": false,
+        "altLength": 166
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-active-call-mobile-v1.webp",
+        "natural": "553x1084",
+        "rendered": "190x371",
+        "upscaled": false,
+        "altLength": 136
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-overview-activity-desktop-v1.webp",
+        "natural": "810x450",
+        "rendered": "560x312",
+        "upscaled": false,
+        "altLength": 146
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-timeline-history-desktop-v1.webp",
+        "natural": "809x443",
+        "rendered": "728x400",
+        "upscaled": false,
+        "altLength": 133
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-contact-profile-desktop-v1.webp",
+        "natural": "809x440",
+        "rendered": "560x305",
+        "upscaled": false,
+        "altLength": 139
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-keypad-mobile-v1.webp",
+        "natural": "576x1092",
+        "rendered": "190x358",
+        "upscaled": false,
+        "altLength": 53
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-agent-status-log-desktop-v1.webp",
+        "natural": "809x295",
+        "rendered": "560x205",
+        "upscaled": false,
+        "altLength": 157
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-integrations-desktop-v1.webp",
+        "natural": "809x494",
+        "rendered": "560x343",
+        "upscaled": false,
+        "altLength": 123
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình",
+        "top": 140,
+        "height": 1495
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls Plus Webphone là gì?",
+        "top": 1635,
+        "height": 408
+      },
+      {
+        "tag": "section",
+        "label": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp",
+        "top": 2043,
+        "height": 767
+      },
+      {
+        "tag": "section",
+        "label": "Webphone đưa chức năng tổng đài vào trình duyệt",
+        "top": 2811,
+        "height": 815
+      },
+      {
+        "tag": "section",
+        "label": "Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày",
+        "top": 3626,
+        "height": 933
+      },
+      {
+        "tag": "section",
+        "label": "Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi",
+        "top": 4558,
+        "height": 840
+      },
+      {
+        "tag": "section",
+        "label": "Hiểu khách hàng trước khi tiếp tục cuộc hội thoại",
+        "top": 5399,
+        "height": 1169
+      },
+      {
+        "tag": "section",
+        "label": "Từ cuộc gọi đến bước follow-up tiếp theo",
+        "top": 6568,
+        "height": 626
+      },
+      {
+        "tag": "section",
+        "label": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung",
+        "top": 7194,
+        "height": 695
+      },
+      {
+        "tag": "section",
+        "label": "Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần",
+        "top": 7888,
+        "height": 782
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls Plus phù hợp với những đội ngũ nào?",
+        "top": 8670,
+        "height": 839
+      },
+      {
+        "tag": "section",
+        "label": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Co",
+        "top": 9509,
+        "height": 959
+      },
+      {
+        "tag": "section",
+        "label": "Triển khai theo nhu cầu vận hành thực tế",
+        "top": 10468,
+        "height": 749
+      },
+      {
+        "tag": "section",
+        "label": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
+        "top": 11217,
+        "height": 542
+      },
+      {
+        "tag": "section",
+        "label": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
+        "top": 11759,
+        "height": 543
+      },
+      {
+        "tag": "section",
+        "label": "Câu hỏi thường gặp về Gcalls Plus Webphone",
+        "top": 12302,
+        "height": 740
+      },
+      {
+        "tag": "section",
+        "label": "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ c",
+        "top": 13041,
+        "height": 580
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình → Gcalls Plus Webphone là gì?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls Plus Webphone là gì? → Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp",
+        "gap": 0
+      },
+      {
+        "between": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp → Webphone đưa chức năng tổng đài vào trình duyệt",
+        "gap": 1
+      },
+      {
+        "between": "Webphone đưa chức năng tổng đài vào trình duyệt → Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày",
+        "gap": 0
+      },
+      {
+        "between": "Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày → Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi",
+        "gap": -1
+      },
+      {
+        "between": "Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi → Hiểu khách hàng trước khi tiếp tục cuộc hội thoại",
+        "gap": 1
+      },
+      {
+        "between": "Hiểu khách hàng trước khi tiếp tục cuộc hội thoại → Từ cuộc gọi đến bước follow-up tiếp theo",
+        "gap": 0
+      },
+      {
+        "between": "Từ cuộc gọi đến bước follow-up tiếp theo → Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung",
+        "gap": 0
+      },
+      {
+        "between": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung → Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần",
+        "gap": -1
+      },
+      {
+        "between": "Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần → Gcalls Plus phù hợp với những đội ngũ nào?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls Plus phù hợp với những đội ngũ nào? → Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Co",
+        "gap": 0
+      },
+      {
+        "between": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Co → Triển khai theo nhu cầu vận hành thực tế",
+        "gap": 0
+      },
+      {
+        "between": "Triển khai theo nhu cầu vận hành thực tế → Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
+        "gap": 0
+      },
+      {
+        "between": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng → Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
+        "gap": 0
+      },
+      {
+        "between": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau → Câu hỏi thường gặp về Gcalls Plus Webphone",
+        "gap": 0
+      },
+      {
+        "between": "Câu hỏi thường gặp về Gcalls Plus Webphone → Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ c",
+        "gap": -1
+      }
+    ],
+    "consoleErrors": []
+  },
+  "1024": {
+    "pageHeight": 11269,
+    "docWidth": 1024,
+    "viewportWidth": 1024,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 21,
+    "sectionCount": 18,
+    "images": [
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-desktop-v1.webp",
+        "natural": "809x429",
+        "rendered": "506x269",
+        "upscaled": false,
+        "altLength": 166
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-active-call-mobile-v1.webp",
+        "natural": "553x1084",
+        "rendered": "150x292",
+        "upscaled": false,
+        "altLength": 136
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-overview-activity-desktop-v1.webp",
+        "natural": "810x450",
+        "rendered": "452x252",
+        "upscaled": false,
+        "altLength": 146
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-timeline-history-desktop-v1.webp",
+        "natural": "809x443",
+        "rendered": "809x444",
+        "upscaled": false,
+        "altLength": 133
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-contact-profile-desktop-v1.webp",
+        "natural": "809x440",
+        "rendered": "452x247",
+        "upscaled": false,
+        "altLength": 139
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-keypad-mobile-v1.webp",
+        "natural": "576x1092",
+        "rendered": "150x283",
+        "upscaled": false,
+        "altLength": 53
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-agent-status-log-desktop-v1.webp",
+        "natural": "809x295",
+        "rendered": "452x166",
+        "upscaled": false,
+        "altLength": 157
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-integrations-desktop-v1.webp",
+        "natural": "809x494",
+        "rendered": "452x277",
+        "upscaled": false,
+        "altLength": 123
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình",
+        "top": 140,
+        "height": 1036
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls Plus Webphone là gì?",
+        "top": 1176,
+        "height": 378
+      },
+      {
+        "tag": "section",
+        "label": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp",
+        "top": 1553,
+        "height": 674
+      },
+      {
+        "tag": "section",
+        "label": "Webphone đưa chức năng tổng đài vào trình duyệt",
+        "top": 2227,
+        "height": 541
+      },
+      {
+        "tag": "section",
+        "label": "Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày",
+        "top": 2769,
+        "height": 728
+      },
+      {
+        "tag": "section",
+        "label": "Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi",
+        "top": 3496,
+        "height": 847
+      },
+      {
+        "tag": "section",
+        "label": "Hiểu khách hàng trước khi tiếp tục cuộc hội thoại",
+        "top": 4343,
+        "height": 505
+      },
+      {
+        "tag": "section",
+        "label": "Từ cuộc gọi đến bước follow-up tiếp theo",
+        "top": 4848,
+        "height": 423
+      },
+      {
+        "tag": "section",
+        "label": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung",
+        "top": 5271,
+        "height": 505
+      },
+      {
+        "tag": "section",
+        "label": "Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần",
+        "top": 5775,
+        "height": 455
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls Plus phù hợp với những đội ngũ nào?",
+        "top": 6230,
+        "height": 659
+      },
+      {
+        "tag": "section",
+        "label": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Co",
+        "top": 6888,
+        "height": 664
+      },
+      {
+        "tag": "section",
+        "label": "Triển khai theo nhu cầu vận hành thực tế",
+        "top": 7552,
+        "height": 573
+      },
+      {
+        "tag": "section",
+        "label": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
+        "top": 8125,
+        "height": 521
+      },
+      {
+        "tag": "section",
+        "label": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
+        "top": 8645,
+        "height": 556
+      },
+      {
+        "tag": "section",
+        "label": "Câu hỏi thường gặp về Gcalls Plus Webphone",
+        "top": 9201,
+        "height": 705
+      },
+      {
+        "tag": "section",
+        "label": "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ c",
+        "top": 9905,
+        "height": 600
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình → Gcalls Plus Webphone là gì?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls Plus Webphone là gì? → Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp",
+        "gap": -1
+      },
+      {
+        "between": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp → Webphone đưa chức năng tổng đài vào trình duyệt",
+        "gap": 0
+      },
+      {
+        "between": "Webphone đưa chức năng tổng đài vào trình duyệt → Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày",
+        "gap": 1
+      },
+      {
+        "between": "Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày → Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi",
+        "gap": -1
+      },
+      {
+        "between": "Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi → Hiểu khách hàng trước khi tiếp tục cuộc hội thoại",
+        "gap": 0
+      },
+      {
+        "between": "Hiểu khách hàng trước khi tiếp tục cuộc hội thoại → Từ cuộc gọi đến bước follow-up tiếp theo",
+        "gap": 0
+      },
+      {
+        "between": "Từ cuộc gọi đến bước follow-up tiếp theo → Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung",
+        "gap": 0
+      },
+      {
+        "between": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung → Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần",
+        "gap": -1
+      },
+      {
+        "between": "Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần → Gcalls Plus phù hợp với những đội ngũ nào?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls Plus phù hợp với những đội ngũ nào? → Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Co",
+        "gap": -1
+      },
+      {
+        "between": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Co → Triển khai theo nhu cầu vận hành thực tế",
+        "gap": 0
+      },
+      {
+        "between": "Triển khai theo nhu cầu vận hành thực tế → Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
+        "gap": 0
+      },
+      {
+        "between": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng → Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
+        "gap": -1
+      },
+      {
+        "between": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau → Câu hỏi thường gặp về Gcalls Plus Webphone",
+        "gap": 0
+      },
+      {
+        "between": "Câu hỏi thường gặp về Gcalls Plus Webphone → Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ c",
+        "gap": -1
+      }
+    ],
+    "consoleErrors": []
+  },
+  "1440": {
+    "pageHeight": 10578,
+    "docWidth": 1440,
+    "viewportWidth": 1440,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 21,
+    "sectionCount": 18,
+    "images": [
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-desktop-v1.webp",
+        "natural": "809x429",
+        "rendered": "594x316",
+        "upscaled": false,
+        "altLength": 166
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-active-call-mobile-v1.webp",
+        "natural": "553x1084",
+        "rendered": "150x292",
+        "upscaled": false,
+        "altLength": 136
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-overview-activity-desktop-v1.webp",
+        "natural": "810x450",
+        "rendered": "530x295",
+        "upscaled": false,
+        "altLength": 146
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-timeline-history-desktop-v1.webp",
+        "natural": "809x443",
+        "rendered": "809x444",
+        "upscaled": false,
+        "altLength": 133
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-contact-profile-desktop-v1.webp",
+        "natural": "809x440",
+        "rendered": "530x289",
+        "upscaled": false,
+        "altLength": 139
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-webphone-keypad-mobile-v1.webp",
+        "natural": "576x1092",
+        "rendered": "150x283",
+        "upscaled": false,
+        "altLength": 53
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-agent-status-log-desktop-v1.webp",
+        "natural": "809x295",
+        "rendered": "530x195",
+        "upscaled": false,
+        "altLength": 157
+      },
+      {
+        "src": "/images/products/gcalls-plus/gcalls-plus-integrations-desktop-v1.webp",
+        "natural": "809x494",
+        "rendered": "530x324",
+        "upscaled": false,
+        "altLength": 123
+      }
+    ],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình",
+        "top": 140,
+        "height": 918
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls Plus Webphone là gì?",
+        "top": 1058,
+        "height": 378
+      },
+      {
+        "tag": "section",
+        "label": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp",
+        "top": 1436,
+        "height": 624
+      },
+      {
+        "tag": "section",
+        "label": "Webphone đưa chức năng tổng đài vào trình duyệt",
+        "top": 2059,
+        "height": 467
+      },
+      {
+        "tag": "section",
+        "label": "Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày",
+        "top": 2527,
+        "height": 702
+      },
+      {
+        "tag": "section",
+        "label": "Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi",
+        "top": 3228,
+        "height": 847
+      },
+      {
+        "tag": "section",
+        "label": "Hiểu khách hàng trước khi tiếp tục cuộc hội thoại",
+        "top": 4075,
+        "height": 457
+      },
+      {
+        "tag": "section",
+        "label": "Từ cuộc gọi đến bước follow-up tiếp theo",
+        "top": 4532,
+        "height": 423
+      },
+      {
+        "tag": "section",
+        "label": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung",
+        "top": 4955,
+        "height": 475
+      },
+      {
+        "tag": "section",
+        "label": "Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần",
+        "top": 5430,
+        "height": 455
+      },
+      {
+        "tag": "section",
+        "label": "Gcalls Plus phù hợp với những đội ngũ nào?",
+        "top": 5885,
+        "height": 659
+      },
+      {
+        "tag": "section",
+        "label": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Co",
+        "top": 6543,
+        "height": 664
+      },
+      {
+        "tag": "section",
+        "label": "Triển khai theo nhu cầu vận hành thực tế",
+        "top": 7207,
+        "height": 573
+      },
+      {
+        "tag": "section",
+        "label": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
+        "top": 7780,
+        "height": 473
+      },
+      {
+        "tag": "section",
+        "label": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
+        "top": 8252,
+        "height": 508
+      },
+      {
+        "tag": "section",
+        "label": "Câu hỏi thường gặp về Gcalls Plus Webphone",
+        "top": 8760,
+        "height": 705
+      },
+      {
+        "tag": "section",
+        "label": "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ c",
+        "top": 9464,
+        "height": 600
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình → Gcalls Plus Webphone là gì?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls Plus Webphone là gì? → Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp",
+        "gap": 0
+      },
+      {
+        "between": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp → Webphone đưa chức năng tổng đài vào trình duyệt",
+        "gap": -1
+      },
+      {
+        "between": "Webphone đưa chức năng tổng đài vào trình duyệt → Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày",
+        "gap": 1
+      },
+      {
+        "between": "Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày → Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi",
+        "gap": -1
+      },
+      {
+        "between": "Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi → Hiểu khách hàng trước khi tiếp tục cuộc hội thoại",
+        "gap": 0
+      },
+      {
+        "between": "Hiểu khách hàng trước khi tiếp tục cuộc hội thoại → Từ cuộc gọi đến bước follow-up tiếp theo",
+        "gap": 0
+      },
+      {
+        "between": "Từ cuộc gọi đến bước follow-up tiếp theo → Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung",
+        "gap": 0
+      },
+      {
+        "between": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung → Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần",
+        "gap": 0
+      },
+      {
+        "between": "Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần → Gcalls Plus phù hợp với những đội ngũ nào?",
+        "gap": 0
+      },
+      {
+        "between": "Gcalls Plus phù hợp với những đội ngũ nào? → Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Co",
+        "gap": -1
+      },
+      {
+        "between": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Co → Triển khai theo nhu cầu vận hành thực tế",
+        "gap": 0
+      },
+      {
+        "between": "Triển khai theo nhu cầu vận hành thực tế → Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
+        "gap": 0
+      },
+      {
+        "between": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng → Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
+        "gap": -1
+      },
+      {
+        "between": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau → Câu hỏi thường gặp về Gcalls Plus Webphone",
+        "gap": 0
+      },
+      {
+        "between": "Câu hỏi thường gặp về Gcalls Plus Webphone → Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ c",
+        "gap": -1
+      }
+    ],
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  }
+}

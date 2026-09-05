@@ -35,9 +35,24 @@ import { CustomerStory } from '@/components/gcalls-plus/CustomerStory'
  * positioning belongs to Home and is not repeated here.
  *
  * All copy is locked and lives in `src/data/gcallsPlus.ts`, taken verbatim
- * from the approved SEO/AIO + Website Master source. All product visuals are
- * existing Gcalls demo mockups from `@/components/product-ui`, each labelled
- * as demo data so no dashboard figure reads as a marketing claim.
+ * from the approved SEO/AIO + Website Master source.
+ *
+ * ---------------------------------------------------------------------------
+ * VISUALS: REAL CAPTURES ONLY
+ * ---------------------------------------------------------------------------
+ * Every product visual on this page is a real capture of the Gcalls Plus
+ * console, irreversibly masked before it entered the repo. This page renders
+ * NO drawn mockup from `@/components/product-ui`, which is a change: the
+ * overview and team-activity sections used to, and between them they showed
+ * invented customers, invented staff, invented phone numbers and invented KPIs
+ * behind a demo-data caption. See `GcallsPlusOverview` and
+ * `PerformanceSection` for what each replaced. `scripts/verify-gcalls-plus.mjs`
+ * asserts the barrel stays unimported here.
+ * ---------------------------------------------------------------------------
+ *
+ * The `gp-page` class is the scope for `src/styles/gcalls-plus.css`, which
+ * carries this page's 1180px container and 50px section rhythm without
+ * touching the shared primitives that every other route also renders.
  *
  * Exactly one H1, in GcallsPlusHero.
  */
@@ -45,7 +60,7 @@ export function GcallsPlusPage() {
   const jsonLd = useMemo(() => buildGcallsPlusJsonLd(SITE_ORIGIN), [])
 
   return (
-    <>
+    <div className="gp-page">
       <JsonLd id="gcalls-plus" data={jsonLd} />
 
       <div className="bg-brand-light/60 pt-20 sm:pt-24">
@@ -99,6 +114,6 @@ export function GcallsPlusPage() {
           showPhone
         />
       </Section>
-    </>
+    </div>
   )
 }

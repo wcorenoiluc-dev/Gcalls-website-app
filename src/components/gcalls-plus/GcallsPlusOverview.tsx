@@ -1,14 +1,25 @@
 import { Check, Layers } from 'lucide-react'
 import { Container, Eyebrow, GradientHeading, Section } from '@/components/common/primitives'
-import { ProductVisual } from '@/components/common/ProductVisual'
-import { DashboardMain } from '@/components/product-ui'
+import { ProductScreenshot } from '@/components/common/ProductScreenshot'
+import { GCALLS_PLUS_IMAGES } from '@/data/productImages'
+import { Stage } from '@/components/gcalls-plus/ProductStage'
 import { GP_OVERVIEW } from '@/data/gcallsPlus'
 
 /**
  * What Gcalls Plus is.
  *
- * Uses the Overview Activity dashboard visual. Text-left / visual-right at
- * desktop; text-then-visual in one column on mobile.
+ * The visual is the real activity console — contact groups, the activity
+ * filter and the call log on one screen — captured from the product and masked
+ * before it entered the repo.
+ *
+ * It replaces `DashboardMain`, a drawn mockup that rendered invented customer
+ * names, invented phone numbers and invented KPI tiles ("84 cuộc gọi hôm nay",
+ * "73% tỷ lệ nghe máy", "11 đã chốt deal", each with a trend arrow). A caption
+ * calling that illustrative does not make it safe to show: the brief forbids
+ * inventing customers, phone numbers and KPIs at all, and forbids redrawing an
+ * interface when a real capture of it exists. One does.
+ *
+ * Text-left / visual-right at desktop; text-then-visual in one column below.
  */
 export function GcallsPlusOverview() {
   return (
@@ -45,9 +56,9 @@ export function GcallsPlusOverview() {
             </ul>
           </div>
 
-          <ProductVisual maxWidth="560px">
-            <DashboardMain />
-          </ProductVisual>
+          <Stage maxWidth="560px">
+            <ProductScreenshot image={GCALLS_PLUS_IMAGES.overviewActivityDesktop} />
+          </Stage>
         </div>
       </Container>
     </Section>
