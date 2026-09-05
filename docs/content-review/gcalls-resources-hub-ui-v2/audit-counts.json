@@ -1,0 +1,79 @@
+{
+  "blog": {
+    "source": "blog.ts",
+    "hash": "d544172e160385dd",
+    "articles_published": 0,
+    "categories": 6,
+    "hasArticleCards": false,
+    "status_field": {
+      "eyebrow": "TRẠNG THÁI NỘI DUNG",
+      "h2": "Hiện chưa có bài viết nào được đăng tải",
+      "description": "Gcalls chọn không hiển thị bài viết mẫu, tiêu đề giả hay thẻ bài viết trống để trang trông có nội dung. Dưới đây là tình trạng thật của blog tại thời điểm này.",
+      "points": [
+        "Không có bài viết, tác giả hoặc ngày đăng nào được hiển thị, vì chưa có bài viết nào được duyệt đăng.",
+        "Sáu danh mục phía trên mô tả phạm vi biên tập đã được xác định, không phải nội dung đã hoàn thành.",
+        "Trang này không phát sinh dữ liệu có cấu trúc dạng bài viết, để công cụ tìm kiếm không ghi nhận nội dung không tồn tại."
+      ],
+      "linksHeading": "Nội dung đã hoàn thiện, có thể đọc ngay",
+      "links": [
+        {
+          "label": "Gcalls Plus Webphone",
+          "path": "/gcalls-plus-webphone/"
+        },
+        {
+          "label": "Tổng đài tích hợp CRM",
+          "path": "/tong-dai-tich-hop-crm/"
+        },
+        {
+          "label": "Tổng đài quốc tế",
+          "path": "/tong-dai-quoc-te/"
+        },
+        {
+          "label": "Guides — lộ trình triển khai",
+          "path": "/tai-nguyen/guides/"
+        },
+        {
+          "label": "Glossary — thuật ngữ",
+          "path": "/tai-nguyen/glossary/"
+        },
+        {
+          "label": "FAQ — câu hỏi thường gặp",
+          "path": "/tai-nguyen/faq/"
+        }
+      ],
+      "note": "Nếu có chủ đề bạn muốn Gcalls viết trước, gửi câu hỏi qua trang liên hệ — câu hỏi được nhiều doanh nghiệp quan tâm sẽ được ưu tiên đưa vào kế hoạch biên tập."
+    }
+  },
+  "guides": {
+    "source": "guides.ts",
+    "hash": "e3cbc6c4a8233382",
+    "paths": 6,
+    "checkpoints_total": 30,
+    "isDownloadable": "MENTIONS_DOWNLOAD"
+  },
+  "caseStudies": {
+    "source": "caseStudies.ts",
+    "hash": "cae97ae152572ce5",
+    "approved_stories": 0,
+    "hasCustomerNames": "none-visible"
+  },
+  "ebook": {
+    "source": "ebook.ts",
+    "hash": "b87130570cd6bc3c",
+    "topics": 5,
+    "hasDownloadableFile": "none",
+    "hasDownloadButton": "CHECK"
+  },
+  "glossary": {
+    "source": "glossary.ts",
+    "hash": "02badfb4e6d6ca62",
+    "groups": 6,
+    "terms_total": 24
+  },
+  "faq": {
+    "source": "faq.ts",
+    "hash": "b6b97022bebcab5f",
+    "groups": 6,
+    "questions_total": 21
+  }
+}

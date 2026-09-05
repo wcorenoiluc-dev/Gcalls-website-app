@@ -1,4 +1,4 @@
-import { HubLayout } from '@/components/hub/HubLayout'
+import { ResourcesHubLayout } from '@/components/resources-hub/ResourcesHubLayout'
 import { RESOURCES_HUB } from '@/data/hubs'
 
 /**
@@ -9,5 +9,5 @@ import { RESOURCES_HUB } from '@/data/hubs'
  * content say so. Copy lives in `src/data/hubs.ts`.
  */
 export function ResourcesHubPage() {
-  return <HubLayout content={RESOURCES_HUB} trail={[{ label: 'Tài nguyên' }]} />
+  return <ResourcesHubLayout content={RESOURCES_HUB} trail={[{ label: 'Tài nguyên' }]} />
 }

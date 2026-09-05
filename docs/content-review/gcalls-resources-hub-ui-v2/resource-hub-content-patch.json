@@ -1,0 +1,40 @@
+{
+  "note": "Resources Hub content audit + patch proposal. Base 9c562e7. RESOURCES_HUB lives in src/data/hubs.ts (LOCKED by Solutions Hub worker — read-only here). Evidence hashes are sha256[:16] of the child source files.",
+  "audit_summary": {
+    "stale_copy_found": 0,
+    "verdict": "RESOURCES_HUB copy is accurate. Every category status and count matches the actual child content. No stale status string was found.",
+    "stale_gate_strings_checked": ["Đang biên tập", "Chờ duyệt công bố", "Trong lúc chờ nội dung", "sẽ được đăng tải"],
+    "stale_gate_strings_found": 0,
+    "counts_verified": {
+      "blog": "0 published articles, 6 editorial categories — card 'Chưa có bài viết' ACCURATE",
+      "guides": "6 paths, 30 checkpoints, web-only (no download) — card 'Đã có nội dung' / 'Sáu lộ trình' ACCURATE",
+      "caseStudies": "0 approved stories, no customer names — card 'Đang thu thập bằng chứng' ACCURATE",
+      "ebook": "5 topic groups, 0 files, no download button — card 'Chưa phát hành tài liệu' ACCURATE",
+      "glossary": "6 groups, 24 terms — card 'Hai mươi bốn thuật ngữ' ACCURATE",
+      "faq": "6 groups, 21 questions — card 'Hai mươi mốt câu hỏi theo sáu nhóm' ACCURATE"
+    }
+  },
+  "required_corrections": [],
+  "optional_proposals": [
+    {
+      "field": "RESOURCES_HUB.cards.items[Glossary].detail",
+      "current": "Hai mươi bốn thuật ngữ thường gặp trong Call Center, CRM, CX và quản lý chất lượng.",
+      "proposed": "Thuật ngữ thường gặp trong Call Center, CRM, CX và quản lý chất lượng, chia theo sáu nhóm.",
+      "evidenceRoute": "/tai-nguyen/glossary/",
+      "evidenceSource": "src/data/resources/glossary.ts",
+      "evidenceHash": "02badfb4e6d6ca62",
+      "reason": "PREVENTIVE, not a correction — '24 terms' is CURRENTLY ACCURATE. Hardcoding an exact count risks future staleness if a term is added/removed (content rule: 'Không đưa số lượng nếu số đó có thể thay đổi thường xuyên'). Group count (6) is more stable.",
+      "requiresOwnerDecision": true
+    },
+    {
+      "field": "RESOURCES_HUB.cards.items[FAQ].detail",
+      "current": "Hai mươi mốt câu hỏi theo sáu nhóm: chọn giải pháp, tích hợp, quốc tế, đa kênh, AI, triển khai.",
+      "proposed": "Câu hỏi thường gặp theo sáu nhóm: chọn giải pháp, tích hợp, quốc tế, đa kênh, AI, triển khai.",
+      "evidenceRoute": "/tai-nguyen/faq/",
+      "evidenceSource": "src/data/resources/faq.ts",
+      "evidenceHash": "b6b97022bebcab5f",
+      "reason": "PREVENTIVE, not a correction — '21 questions' is CURRENTLY ACCURATE. Same future-staleness risk as glossary; the six-group framing is stable and carries the same information.",
+      "requiresOwnerDecision": true
+    }
+  ]
+}

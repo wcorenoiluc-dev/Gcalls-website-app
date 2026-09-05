@@ -1,0 +1,634 @@
+{
+  "base": "http://127.0.0.1:5214",
+  "mode": "preview",
+  "hub": {
+    "320": {
+      "url": "http://127.0.0.1:5214/tai-nguyen/",
+      "status": 200,
+      "overflow": 0,
+      "errors": [],
+      "h1Count": 1,
+      "h1Text": [
+        "Kiến thức về Call Center, CRM, CX và AI cho đội ngũ vận hành"
+      ],
+      "sectionCount": 5,
+      "mainChildren": 6,
+      "scrollW": 320,
+      "clientW": 320,
+      "brokenImages": 0,
+      "upscaled": 0,
+      "links": [
+        {
+          "href": "/",
+          "name": "Trang chủ"
+        },
+        {
+          "href": "/lien-he/?intent=product_information&source=consultation",
+          "name": "Đăng ký tư vấn"
+        },
+        {
+          "href": "/san-pham/",
+          "name": "Xem tất cả sản phẩm"
+        },
+        {
+          "href": "/blog/",
+          "name": "Xem Blog — bài viết"
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "Xem Guides — lộ trình"
+        },
+        {
+          "href": "/tai-nguyen/case-studies/",
+          "name": "Xem Case Studies — tình huống triển khai"
+        },
+        {
+          "href": "/tai-nguyen/ebook/",
+          "name": "Xem Ebook — tài liệu chuyên sâu"
+        },
+        {
+          "href": "/tai-nguyen/glossary/",
+          "name": "Xem Glossary — thuật ngữ"
+        },
+        {
+          "href": "/tai-nguyen/faq/",
+          "name": "Xem FAQ — câu hỏi"
+        },
+        {
+          "href": "/gcalls-plus-webphone/",
+          "name": "Gcalls Plus Webphone"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "QA QC Center"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Gcalls CX"
+        },
+        {
+          "href": "/giai-phap/",
+          "name": "Tất cả giải pháp"
+        },
+        {
+          "href": "/bang-gia/",
+          "name": "Bảng giá Gcalls"
+        },
+        {
+          "href": "/lien-he/?intent=product_information&source=consultation",
+          "name": "Đặt câu hỏi cho Gcalls"
+        },
+        {
+          "href": "/bang-gia/",
+          "name": "Xem bảng giá"
+        },
+        {
+          "href": "tel:+842873025469",
+          "name": "028 7302 5469"
+        }
+      ]
+    },
+    "390": {
+      "url": "http://127.0.0.1:5214/tai-nguyen/",
+      "status": 200,
+      "overflow": 0,
+      "errors": [],
+      "h1Count": 1,
+      "h1Text": [
+        "Kiến thức về Call Center, CRM, CX và AI cho đội ngũ vận hành"
+      ],
+      "sectionCount": 5,
+      "mainChildren": 6,
+      "scrollW": 390,
+      "clientW": 390,
+      "brokenImages": 0,
+      "upscaled": 0,
+      "links": [
+        {
+          "href": "/",
+          "name": "Trang chủ"
+        },
+        {
+          "href": "/lien-he/?intent=product_information&source=consultation",
+          "name": "Đăng ký tư vấn"
+        },
+        {
+          "href": "/san-pham/",
+          "name": "Xem tất cả sản phẩm"
+        },
+        {
+          "href": "/blog/",
+          "name": "Xem Blog — bài viết"
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "Xem Guides — lộ trình"
+        },
+        {
+          "href": "/tai-nguyen/case-studies/",
+          "name": "Xem Case Studies — tình huống triển khai"
+        },
+        {
+          "href": "/tai-nguyen/ebook/",
+          "name": "Xem Ebook — tài liệu chuyên sâu"
+        },
+        {
+          "href": "/tai-nguyen/glossary/",
+          "name": "Xem Glossary — thuật ngữ"
+        },
+        {
+          "href": "/tai-nguyen/faq/",
+          "name": "Xem FAQ — câu hỏi"
+        },
+        {
+          "href": "/gcalls-plus-webphone/",
+          "name": "Gcalls Plus Webphone"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "QA QC Center"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Gcalls CX"
+        },
+        {
+          "href": "/giai-phap/",
+          "name": "Tất cả giải pháp"
+        },
+        {
+          "href": "/bang-gia/",
+          "name": "Bảng giá Gcalls"
+        },
+        {
+          "href": "/lien-he/?intent=product_information&source=consultation",
+          "name": "Đặt câu hỏi cho Gcalls"
+        },
+        {
+          "href": "/bang-gia/",
+          "name": "Xem bảng giá"
+        },
+        {
+          "href": "tel:+842873025469",
+          "name": "028 7302 5469"
+        }
+      ]
+    },
+    "768": {
+      "url": "http://127.0.0.1:5214/tai-nguyen/",
+      "status": 200,
+      "overflow": 0,
+      "errors": [],
+      "h1Count": 1,
+      "h1Text": [
+        "Kiến thức về Call Center, CRM, CX và AI cho đội ngũ vận hành"
+      ],
+      "sectionCount": 5,
+      "mainChildren": 6,
+      "scrollW": 768,
+      "clientW": 768,
+      "brokenImages": 0,
+      "upscaled": 0,
+      "links": [
+        {
+          "href": "/",
+          "name": "Trang chủ"
+        },
+        {
+          "href": "/lien-he/?intent=product_information&source=consultation",
+          "name": "Đăng ký tư vấn"
+        },
+        {
+          "href": "/san-pham/",
+          "name": "Xem tất cả sản phẩm"
+        },
+        {
+          "href": "/blog/",
+          "name": "Xem Blog — bài viết"
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "Xem Guides — lộ trình"
+        },
+        {
+          "href": "/tai-nguyen/case-studies/",
+          "name": "Xem Case Studies — tình huống triển khai"
+        },
+        {
+          "href": "/tai-nguyen/ebook/",
+          "name": "Xem Ebook — tài liệu chuyên sâu"
+        },
+        {
+          "href": "/tai-nguyen/glossary/",
+          "name": "Xem Glossary — thuật ngữ"
+        },
+        {
+          "href": "/tai-nguyen/faq/",
+          "name": "Xem FAQ — câu hỏi"
+        },
+        {
+          "href": "/gcalls-plus-webphone/",
+          "name": "Gcalls Plus Webphone"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "QA QC Center"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Gcalls CX"
+        },
+        {
+          "href": "/giai-phap/",
+          "name": "Tất cả giải pháp"
+        },
+        {
+          "href": "/bang-gia/",
+          "name": "Bảng giá Gcalls"
+        },
+        {
+          "href": "/lien-he/?intent=product_information&source=consultation",
+          "name": "Đặt câu hỏi cho Gcalls"
+        },
+        {
+          "href": "/bang-gia/",
+          "name": "Xem bảng giá"
+        },
+        {
+          "href": "tel:+842873025469",
+          "name": "028 7302 5469"
+        }
+      ]
+    },
+    "1024": {
+      "url": "http://127.0.0.1:5214/tai-nguyen/",
+      "status": 200,
+      "overflow": 0,
+      "errors": [],
+      "h1Count": 1,
+      "h1Text": [
+        "Kiến thức về Call Center, CRM, CX và AI cho đội ngũ vận hành"
+      ],
+      "sectionCount": 5,
+      "mainChildren": 6,
+      "scrollW": 1024,
+      "clientW": 1024,
+      "brokenImages": 0,
+      "upscaled": 0,
+      "links": [
+        {
+          "href": "/",
+          "name": "Trang chủ"
+        },
+        {
+          "href": "/lien-he/?intent=product_information&source=consultation",
+          "name": "Đăng ký tư vấn"
+        },
+        {
+          "href": "/san-pham/",
+          "name": "Xem tất cả sản phẩm"
+        },
+        {
+          "href": "/blog/",
+          "name": "Xem Blog — bài viết"
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "Xem Guides — lộ trình"
+        },
+        {
+          "href": "/tai-nguyen/case-studies/",
+          "name": "Xem Case Studies — tình huống triển khai"
+        },
+        {
+          "href": "/tai-nguyen/ebook/",
+          "name": "Xem Ebook — tài liệu chuyên sâu"
+        },
+        {
+          "href": "/tai-nguyen/glossary/",
+          "name": "Xem Glossary — thuật ngữ"
+        },
+        {
+          "href": "/tai-nguyen/faq/",
+          "name": "Xem FAQ — câu hỏi"
+        },
+        {
+          "href": "/gcalls-plus-webphone/",
+          "name": "Gcalls Plus Webphone"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "QA QC Center"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Gcalls CX"
+        },
+        {
+          "href": "/giai-phap/",
+          "name": "Tất cả giải pháp"
+        },
+        {
+          "href": "/bang-gia/",
+          "name": "Bảng giá Gcalls"
+        },
+        {
+          "href": "/lien-he/?intent=product_information&source=consultation",
+          "name": "Đặt câu hỏi cho Gcalls"
+        },
+        {
+          "href": "/bang-gia/",
+          "name": "Xem bảng giá"
+        },
+        {
+          "href": "tel:+842873025469",
+          "name": "028 7302 5469"
+        }
+      ]
+    },
+    "1280": {
+      "url": "http://127.0.0.1:5214/tai-nguyen/",
+      "status": 200,
+      "overflow": 0,
+      "errors": [],
+      "h1Count": 1,
+      "h1Text": [
+        "Kiến thức về Call Center, CRM, CX và AI cho đội ngũ vận hành"
+      ],
+      "sectionCount": 5,
+      "mainChildren": 6,
+      "scrollW": 1280,
+      "clientW": 1280,
+      "brokenImages": 0,
+      "upscaled": 0,
+      "links": [
+        {
+          "href": "/",
+          "name": "Trang chủ"
+        },
+        {
+          "href": "/lien-he/?intent=product_information&source=consultation",
+          "name": "Đăng ký tư vấn"
+        },
+        {
+          "href": "/san-pham/",
+          "name": "Xem tất cả sản phẩm"
+        },
+        {
+          "href": "/blog/",
+          "name": "Xem Blog — bài viết"
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "Xem Guides — lộ trình"
+        },
+        {
+          "href": "/tai-nguyen/case-studies/",
+          "name": "Xem Case Studies — tình huống triển khai"
+        },
+        {
+          "href": "/tai-nguyen/ebook/",
+          "name": "Xem Ebook — tài liệu chuyên sâu"
+        },
+        {
+          "href": "/tai-nguyen/glossary/",
+          "name": "Xem Glossary — thuật ngữ"
+        },
+        {
+          "href": "/tai-nguyen/faq/",
+          "name": "Xem FAQ — câu hỏi"
+        },
+        {
+          "href": "/gcalls-plus-webphone/",
+          "name": "Gcalls Plus Webphone"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "QA QC Center"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Gcalls CX"
+        },
+        {
+          "href": "/giai-phap/",
+          "name": "Tất cả giải pháp"
+        },
+        {
+          "href": "/bang-gia/",
+          "name": "Bảng giá Gcalls"
+        },
+        {
+          "href": "/lien-he/?intent=product_information&source=consultation",
+          "name": "Đặt câu hỏi cho Gcalls"
+        },
+        {
+          "href": "/bang-gia/",
+          "name": "Xem bảng giá"
+        },
+        {
+          "href": "tel:+842873025469",
+          "name": "028 7302 5469"
+        }
+      ]
+    },
+    "1440": {
+      "url": "http://127.0.0.1:5214/tai-nguyen/",
+      "status": 200,
+      "overflow": 0,
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "h1Count": 1,
+      "h1Text": [
+        "Kiến thức về Call Center, CRM, CX và AI cho đội ngũ vận hành"
+      ],
+      "sectionCount": 5,
+      "mainChildren": 6,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "brokenImages": 0,
+      "upscaled": 0,
+      "links": [
+        {
+          "href": "/",
+          "name": "Trang chủ"
+        },
+        {
+          "href": "/lien-he/?intent=product_information&source=consultation",
+          "name": "Đăng ký tư vấn"
+        },
+        {
+          "href": "/san-pham/",
+          "name": "Xem tất cả sản phẩm"
+        },
+        {
+          "href": "/blog/",
+          "name": "Xem Blog — bài viết"
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "Xem Guides — lộ trình"
+        },
+        {
+          "href": "/tai-nguyen/case-studies/",
+          "name": "Xem Case Studies — tình huống triển khai"
+        },
+        {
+          "href": "/tai-nguyen/ebook/",
+          "name": "Xem Ebook — tài liệu chuyên sâu"
+        },
+        {
+          "href": "/tai-nguyen/glossary/",
+          "name": "Xem Glossary — thuật ngữ"
+        },
+        {
+          "href": "/tai-nguyen/faq/",
+          "name": "Xem FAQ — câu hỏi"
+        },
+        {
+          "href": "/gcalls-plus-webphone/",
+          "name": "Gcalls Plus Webphone"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "QA QC Center"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Gcalls CX"
+        },
+        {
+          "href": "/giai-phap/",
+          "name": "Tất cả giải pháp"
+        },
+        {
+          "href": "/bang-gia/",
+          "name": "Bảng giá Gcalls"
+        },
+        {
+          "href": "/lien-he/?intent=product_information&source=consultation",
+          "name": "Đặt câu hỏi cho Gcalls"
+        },
+        {
+          "href": "/bang-gia/",
+          "name": "Xem bảng giá"
+        },
+        {
+          "href": "tel:+842873025469",
+          "name": "028 7302 5469"
+        }
+      ]
+    }
+  },
+  "regression": [
+    {
+      "route": "/",
+      "status": 200,
+      "h1": 1,
+      "sections": 13,
+      "overflow": 0,
+      "broken": 0,
+      "errors": 0
+    },
+    {
+      "route": "/san-pham/",
+      "status": 200,
+      "h1": 1,
+      "sections": 6,
+      "overflow": 0,
+      "broken": 0,
+      "errors": 0
+    },
+    {
+      "route": "/giai-phap/",
+      "status": 200,
+      "h1": 1,
+      "sections": 6,
+      "overflow": 0,
+      "broken": 0,
+      "errors": 0
+    },
+    {
+      "route": "/tich-hop/",
+      "status": 200,
+      "h1": 1,
+      "sections": 6,
+      "overflow": 0,
+      "broken": 0,
+      "errors": 0
+    },
+    {
+      "route": "/nganh/",
+      "status": 200,
+      "h1": 1,
+      "sections": 5,
+      "overflow": 0,
+      "broken": 0,
+      "errors": 0
+    },
+    {
+      "route": "/cong-ty/",
+      "status": 200,
+      "h1": 1,
+      "sections": 7,
+      "overflow": 0,
+      "broken": 0,
+      "errors": 0
+    },
+    {
+      "route": "/blog/",
+      "status": 200,
+      "h1": 1,
+      "sections": 16,
+      "overflow": 0,
+      "broken": 0,
+      "errors": 0
+    },
+    {
+      "route": "/tai-nguyen/guides/",
+      "status": 200,
+      "h1": 1,
+      "sections": 8,
+      "overflow": 0,
+      "broken": 0,
+      "errors": 0
+    },
+    {
+      "route": "/tai-nguyen/case-studies/",
+      "status": 200,
+      "h1": 1,
+      "sections": 10,
+      "overflow": 0,
+      "broken": 0,
+      "errors": 0
+    },
+    {
+      "route": "/tai-nguyen/ebook/",
+      "status": 200,
+      "h1": 1,
+      "sections": 9,
+      "overflow": 0,
+      "broken": 0,
+      "errors": 0
+    },
+    {
+      "route": "/tai-nguyen/glossary/",
+      "status": 200,
+      "h1": 1,
+      "sections": 13,
+      "overflow": 0,
+      "broken": 0,
+      "errors": 0
+    },
+    {
+      "route": "/tai-nguyen/faq/",
+      "status": 200,
+      "h1": 1,
+      "sections": 12,
+      "overflow": 0,
+      "broken": 0,
+      "errors": 0
+    }
+  ]
+}

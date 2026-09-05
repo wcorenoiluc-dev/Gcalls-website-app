@@ -1,0 +1,1084 @@
+{
+  "base": "http://127.0.0.1:5214",
+  "mode": "audit",
+  "childRoutes": [
+    {
+      "url": "http://127.0.0.1:5214/blog/",
+      "status": 200,
+      "overflow": 0,
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "h1Count": 1,
+      "h1Text": [
+        "Góc nhìn vận hành về tổng đài, tích hợp hệ thống và chất lượng hội thoại"
+      ],
+      "sectionCount": 16,
+      "mainChildren": 10,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "brokenImages": 0,
+      "upscaled": 0,
+      "links": [
+        {
+          "href": "/",
+          "name": "Trang chủ"
+        },
+        {
+          "href": "/tai-nguyen/",
+          "name": "Tài nguyên"
+        },
+        {
+          "href": "/lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+v%E1%BA%ADn+h%C3%A0nh",
+          "name": "Đăng ký tư vấn vận hành"
+        },
+        {
+          "href": "#chu-de-bien-tap",
+          "name": "Xem các chủ đề biên tập"
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "GuidesSáu lộ trình đánh giá trước khi triển khai."
+        },
+        {
+          "href": "/tai-nguyen/case-studies/",
+          "name": "Case StudiesTiêu chuẩn bằng chứng cho câu chuyện triển khai."
+        },
+        {
+          "href": "/tai-nguyen/ebook/",
+          "name": "EbookChủ đề chuyên sâu đang được chuẩn bị."
+        },
+        {
+          "href": "/tai-nguyen/glossary/",
+          "name": "GlossaryHai mươi bốn thuật ngữ thường gặp."
+        },
+        {
+          "href": "/tai-nguyen/faq/",
+          "name": "FAQHai mươi mốt câu hỏi theo sáu nhóm chủ đề."
+        },
+        {
+          "href": "/tai-nguyen/",
+          "name": "Về trung tâm tài nguyên"
+        },
+        {
+          "href": "/5-linh-vuc-rat-can-dich-vu-call-center-trung-tam-cuoc-goi/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/call-center-diem-khac-biet-giua-on-premises-va-cloud-call-center-phan-1/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/4-ly-do-su-dung-tong-dai-ao-call-center-la-can-thiet-voi-mot-doanh-nghiep/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/tong-dai-tren-trinh-duyet-hoat-dong-the-nao/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/phan-mem-goi-tu-dong-va-loi-ich-doi-voi-chien-luoc-ban-hang/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/checklist-danh-gia-san-sang-tich-hop-tong-dai-voi-crm/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/dong-bo-hoa-du-lieu-la-gi-tai-sao-nen-dong-bo-du-lieu/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/du-lieu-dong-bo-giua-tong-dai-va-helpdesk/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/hop-nhat-hoi-thoai-hotline-zalo-oa-va-facebook/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/khi-nao-doanh-nghiep-can-nen-tang-da-kenh/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/xay-dung-bo-tieu-chi-danh-gia-chat-luong-cuoc-goi/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/cham-diem-cuoc-goi-thu-cong-va-ho-tro-bang-ai/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/cai-thien-trai-nghiem-khach-hang-bang-bieu-mau-cham-diem-danh-gia-cuoc-goi/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/loai-cuoc-goi-phu-hop-dua-vao-kich-ban-voicebot/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/voicebot-ivr-va-tong-dai-tu-dong-khac-nhau-the-nao/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/doanh-nghiep-can-gi-khi-goi-ra-thi-truong-nuoc-ngoai/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/ho-so-dang-ky-dau-so-quoc-te/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/tong-dai-quoc-te-mo-rong-thi-truong/",
+          "name": "Đọc bài này"
+        },
+        {
+          "href": "/gcalls-plus-webphone/",
+          "name": "Gcalls Plus Webphone"
+        },
+        {
+          "href": "/bang-gia/",
+          "name": "Bảng giá Gcalls"
+        },
+        {
+          "href": "/tong-dai-tich-hop-crm/",
+          "name": "Tổng đài tích hợp CRM"
+        },
+        {
+          "href": "/tong-dai-tich-hop-helpdesk/",
+          "name": "Tổng đài tích hợp Helpdesk"
+        },
+        {
+          "href": "/tich-hop/",
+          "name": "Tất cả nền tảng tích hợp"
+        },
+        {
+          "href": "/tong-dai-quoc-te/",
+          "name": "Tổng đài quốc tế"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Gcalls CX"
+        },
+        {
+          "href": "/tong-dai-tich-hop-helpdesk/",
+          "name": "Tổng đài tích hợp Helpdesk"
+        },
+        {
+          "href": "/voicebot-ai/",
+          "name": "Gcalls Voicebot AI"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "QA QC Center"
+        },
+        {
+          "href": "/nganh/",
+          "name": "Giải pháp theo ngành"
+        },
+        {
+          "href": "/gcalls-plus-webphone/",
+          "name": "Gcalls Plus Webphone"
+        },
+        {
+          "href": "/tong-dai-tich-hop-crm/",
+          "name": "Tổng đài tích hợp CRM"
+        },
+        {
+          "href": "/tong-dai-quoc-te/",
+          "name": "Tổng đài quốc tế"
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "Guides — lộ trình triển khai"
+        },
+        {
+          "href": "/tai-nguyen/glossary/",
+          "name": "Glossary — thuật ngữ"
+        },
+        {
+          "href": "/tai-nguyen/faq/",
+          "name": "FAQ — câu hỏi thường gặp"
+        },
+        {
+          "href": "/gcalls-plus-webphone/",
+          "name": "Xem Gcalls Plus Webphone"
+        },
+        {
+          "href": "/tong-dai-tich-hop-crm/",
+          "name": "Xem tổng đài tích hợp CRM"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Xem Gcalls CX"
+        },
+        {
+          "href": "/tong-dai-quoc-te/",
+          "name": "Xem tổng đài quốc tế"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "Xem QA QC Center"
+        },
+        {
+          "href": "/nganh/",
+          "name": "Xem giải pháp theo ngành"
+        },
+        {
+          "href": "/lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+v%E1%BA%ADn+h%C3%A0nh",
+          "name": "Đăng ký tư vấn vận hành"
+        },
+        {
+          "href": "tel:+842873025469",
+          "name": "028 7302 5469"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:5214/tai-nguyen/guides/",
+      "status": 200,
+      "overflow": 0,
+      "errors": [],
+      "h1Count": 1,
+      "h1Text": [
+        "Lộ trình đánh giá trước khi triển khai hệ thống liên lạc với khách hàng"
+      ],
+      "sectionCount": 8,
+      "mainChildren": 9,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "brokenImages": 0,
+      "upscaled": 0,
+      "links": [
+        {
+          "href": "/",
+          "name": "Trang chủ"
+        },
+        {
+          "href": "/tai-nguyen/",
+          "name": "Tài nguyên"
+        },
+        {
+          "href": "/lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+tri%E1%BB%83n+khai",
+          "name": "Đăng ký tư vấn theo lộ trình"
+        },
+        {
+          "href": "#sau-lo-trinh",
+          "name": "Xem sáu lộ trình"
+        },
+        {
+          "href": "/blog/",
+          "name": "BlogGóc nhìn vận hành theo sáu danh mục biên tập."
+        },
+        {
+          "href": "/tai-nguyen/case-studies/",
+          "name": "Case StudiesTiêu chuẩn bằng chứng cho câu chuyện triển khai."
+        },
+        {
+          "href": "/tai-nguyen/ebook/",
+          "name": "EbookChủ đề chuyên sâu đang được chuẩn bị."
+        },
+        {
+          "href": "/tai-nguyen/glossary/",
+          "name": "GlossaryHai mươi bốn thuật ngữ thường gặp."
+        },
+        {
+          "href": "/tai-nguyen/faq/",
+          "name": "FAQHai mươi mốt câu hỏi theo sáu nhóm chủ đề."
+        },
+        {
+          "href": "/tai-nguyen/",
+          "name": "Về trung tâm tài nguyên"
+        },
+        {
+          "href": "/gcalls-plus-webphone/",
+          "name": "Gcalls Plus Webphone"
+        },
+        {
+          "href": "/bang-gia/",
+          "name": "Bảng giá Gcalls"
+        },
+        {
+          "href": "/uoc-tinh-chi-phi/",
+          "name": "Ước tính chi phí theo quy mô đội ngũ"
+        },
+        {
+          "href": "/tong-dai-tich-hop-crm/",
+          "name": "Tổng đài tích hợp CRM"
+        },
+        {
+          "href": "/tong-dai-tich-hop-helpdesk/",
+          "name": "Tổng đài tích hợp Helpdesk"
+        },
+        {
+          "href": "/tich-hop/",
+          "name": "Tất cả nền tảng tích hợp"
+        },
+        {
+          "href": "/tich-hop/",
+          "name": "Xem các nền tảng đã có trang tích hợp"
+        },
+        {
+          "href": "/tong-dai-quoc-te/",
+          "name": "Tổng đài quốc tế"
+        },
+        {
+          "href": "/lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+tri%E1%BB%83n+khai",
+          "name": "Trao đổi về thị trường cần triển khai"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Gcalls CX"
+        },
+        {
+          "href": "/tong-dai-tich-hop-helpdesk/",
+          "name": "Tổng đài tích hợp Helpdesk"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Xem Gcalls CX"
+        },
+        {
+          "href": "/voicebot-ai/",
+          "name": "Gcalls Voicebot AI"
+        },
+        {
+          "href": "/voicebot-ai/",
+          "name": "Xem Gcalls Voicebot AI"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "QA QC Center"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "Xem QA QC Center"
+        },
+        {
+          "href": "/gcalls-plus-webphone/",
+          "name": "Gcalls Plus Webphone"
+        },
+        {
+          "href": "/tong-dai-tich-hop-crm/",
+          "name": "Tổng đài tích hợp CRM"
+        },
+        {
+          "href": "/tong-dai-quoc-te/",
+          "name": "Tổng đài quốc tế"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Gcalls CX"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "QA QC Center"
+        },
+        {
+          "href": "/voicebot-ai/",
+          "name": "Gcalls Voicebot AI"
+        },
+        {
+          "href": "/nganh/",
+          "name": "Xem giải pháp theo ngành"
+        },
+        {
+          "href": "/uoc-tinh-chi-phi/",
+          "name": "Ước tính chi phí"
+        },
+        {
+          "href": "/tai-nguyen/glossary/",
+          "name": "Xem Glossary"
+        },
+        {
+          "href": "/lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+tri%E1%BB%83n+khai",
+          "name": "Đăng ký tư vấn theo lộ trình"
+        },
+        {
+          "href": "tel:+842873025469",
+          "name": "028 7302 5469"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:5214/tai-nguyen/case-studies/",
+      "status": 200,
+      "overflow": 0,
+      "errors": [],
+      "h1Count": 1,
+      "h1Text": [
+        "Tiêu chuẩn bằng chứng trước khi Gcalls công bố một câu chuyện triển khai"
+      ],
+      "sectionCount": 10,
+      "mainChildren": 11,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "brokenImages": 0,
+      "upscaled": 0,
+      "links": [
+        {
+          "href": "/",
+          "name": "Trang chủ"
+        },
+        {
+          "href": "/tai-nguyen/",
+          "name": "Tài nguyên"
+        },
+        {
+          "href": "/lien-he/?intent=consultation&source=consultation&solution=Trao+%C4%91%E1%BB%95i+tri%E1%BB%83n+khai+th%E1%BB%B1c+t%E1%BA%BF",
+          "name": "Trao đổi về triển khai thực tế"
+        },
+        {
+          "href": "#tieu-chuan-bang-chung",
+          "name": "Xem tiêu chuẩn bằng chứng"
+        },
+        {
+          "href": "/blog/",
+          "name": "BlogGóc nhìn vận hành theo sáu danh mục biên tập."
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "GuidesSáu lộ trình đánh giá trước khi triển khai."
+        },
+        {
+          "href": "/tai-nguyen/ebook/",
+          "name": "EbookChủ đề chuyên sâu đang được chuẩn bị."
+        },
+        {
+          "href": "/tai-nguyen/glossary/",
+          "name": "GlossaryHai mươi bốn thuật ngữ thường gặp."
+        },
+        {
+          "href": "/tai-nguyen/faq/",
+          "name": "FAQHai mươi mốt câu hỏi theo sáu nhóm chủ đề."
+        },
+        {
+          "href": "/tai-nguyen/",
+          "name": "Về trung tâm tài nguyên"
+        },
+        {
+          "href": "/gcalls-plus-webphone/",
+          "name": "Gcalls Plus Webphone"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Gcalls CX"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "QA QC Center"
+        },
+        {
+          "href": "/nganh/",
+          "name": "Giải pháp theo ngành"
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "Guides — lộ trình đánh giá"
+        },
+        {
+          "href": "/san-pham/",
+          "name": "Xem tất cả sản phẩm"
+        },
+        {
+          "href": "/tich-hop/",
+          "name": "Xem các nền tảng tích hợp"
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "Xem Guides"
+        },
+        {
+          "href": "/lien-he/?intent=consultation&source=consultation&solution=Trao+%C4%91%E1%BB%95i+tri%E1%BB%83n+khai+th%E1%BB%B1c+t%E1%BA%BF",
+          "name": "Trao đổi về triển khai thực tế"
+        },
+        {
+          "href": "tel:+842873025469",
+          "name": "028 7302 5469"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:5214/tai-nguyen/ebook/",
+      "status": 200,
+      "overflow": 0,
+      "errors": [],
+      "h1Count": 1,
+      "h1Text": [
+        "Tài liệu chuyên sâu về tổ chức hoạt động liên lạc với khách hàng"
+      ],
+      "sectionCount": 9,
+      "mainChildren": 10,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "brokenImages": 0,
+      "upscaled": 0,
+      "links": [
+        {
+          "href": "/",
+          "name": "Trang chủ"
+        },
+        {
+          "href": "/tai-nguyen/",
+          "name": "Tài nguyên"
+        },
+        {
+          "href": "/lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+chuy%C3%AAn+s%C3%A2u",
+          "name": "Đăng ký tư vấn chuyên sâu"
+        },
+        {
+          "href": "#nhom-chu-de",
+          "name": "Xem năm nhóm chủ đề"
+        },
+        {
+          "href": "/blog/",
+          "name": "BlogGóc nhìn vận hành theo sáu danh mục biên tập."
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "GuidesSáu lộ trình đánh giá trước khi triển khai."
+        },
+        {
+          "href": "/tai-nguyen/case-studies/",
+          "name": "Case StudiesTiêu chuẩn bằng chứng cho câu chuyện triển khai."
+        },
+        {
+          "href": "/tai-nguyen/glossary/",
+          "name": "GlossaryHai mươi bốn thuật ngữ thường gặp."
+        },
+        {
+          "href": "/tai-nguyen/faq/",
+          "name": "FAQHai mươi mốt câu hỏi theo sáu nhóm chủ đề."
+        },
+        {
+          "href": "/tai-nguyen/",
+          "name": "Về trung tâm tài nguyên"
+        },
+        {
+          "href": "/tong-dai-tich-hop-crm/",
+          "name": "Tổng đài tích hợp CRM"
+        },
+        {
+          "href": "/tich-hop/",
+          "name": "Các nền tảng đã có trang tích hợp"
+        },
+        {
+          "href": "/tong-dai-quoc-te/",
+          "name": "Tổng đài quốc tế"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Gcalls CX"
+        },
+        {
+          "href": "/tong-dai-tich-hop-helpdesk/",
+          "name": "Tổng đài tích hợp Helpdesk"
+        },
+        {
+          "href": "/voicebot-ai/",
+          "name": "Gcalls Voicebot AI"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "QA QC Center"
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "Guides — sáu lộ trình đánh giá"
+        },
+        {
+          "href": "/tai-nguyen/glossary/",
+          "name": "Glossary — thuật ngữ"
+        },
+        {
+          "href": "/tai-nguyen/faq/",
+          "name": "FAQ — câu hỏi thường gặp"
+        },
+        {
+          "href": "/tong-dai-tich-hop-crm/",
+          "name": "Tổng đài tích hợp CRM"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Gcalls CX"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "QA QC Center"
+        },
+        {
+          "href": "/tong-dai-tich-hop-crm/",
+          "name": "Xem tổng đài tích hợp CRM"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Xem Gcalls CX"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "Xem QA QC Center"
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "Xem Guides"
+        },
+        {
+          "href": "/lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+chuy%C3%AAn+s%C3%A2u",
+          "name": "Đăng ký tư vấn chuyên sâu"
+        },
+        {
+          "href": "tel:+842873025469",
+          "name": "028 7302 5469"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:5214/tai-nguyen/glossary/",
+      "status": 200,
+      "overflow": 0,
+      "errors": [],
+      "h1Count": 1,
+      "h1Text": [
+        "Thuật ngữ tổng đài, tích hợp hệ thống và chất lượng hội thoại"
+      ],
+      "sectionCount": 13,
+      "mainChildren": 14,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "brokenImages": 0,
+      "upscaled": 0,
+      "links": [
+        {
+          "href": "/",
+          "name": "Trang chủ"
+        },
+        {
+          "href": "/tai-nguyen/",
+          "name": "Tài nguyên"
+        },
+        {
+          "href": "/lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+gi%E1%BA%A3i+ph%C3%A1p",
+          "name": "Đăng ký tư vấn giải pháp"
+        },
+        {
+          "href": "#danh-muc-thuat-ngu",
+          "name": "Xem danh mục thuật ngữ"
+        },
+        {
+          "href": "/blog/",
+          "name": "BlogGóc nhìn vận hành theo sáu danh mục biên tập."
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "GuidesSáu lộ trình đánh giá trước khi triển khai."
+        },
+        {
+          "href": "/tai-nguyen/case-studies/",
+          "name": "Case StudiesTiêu chuẩn bằng chứng cho câu chuyện triển khai."
+        },
+        {
+          "href": "/tai-nguyen/ebook/",
+          "name": "EbookChủ đề chuyên sâu đang được chuẩn bị."
+        },
+        {
+          "href": "/tai-nguyen/faq/",
+          "name": "FAQHai mươi mốt câu hỏi theo sáu nhóm chủ đề."
+        },
+        {
+          "href": "/tai-nguyen/",
+          "name": "Về trung tâm tài nguyên"
+        },
+        {
+          "href": "#nen-tang-tong-dai",
+          "name": "Nền tảng tổng đài"
+        },
+        {
+          "href": "#tong-dai-dam-may",
+          "name": "Tổng đài đám mây"
+        },
+        {
+          "href": "#call-center",
+          "name": "Call Center"
+        },
+        {
+          "href": "#contact-center",
+          "name": "Contact Center"
+        },
+        {
+          "href": "#webphone",
+          "name": "Webphone"
+        },
+        {
+          "href": "#luong-tuong-tac",
+          "name": "Luồng cuộc gọi và kênh tương tác"
+        },
+        {
+          "href": "#ivr",
+          "name": "IVR"
+        },
+        {
+          "href": "#call-flow",
+          "name": "Call Flow"
+        },
+        {
+          "href": "#click-to-call",
+          "name": "Click-to-Call"
+        },
+        {
+          "href": "#goi-ra",
+          "name": "Gọi ra (Outbound calling)"
+        },
+        {
+          "href": "#omnichannel",
+          "name": "Omnichannel"
+        },
+        {
+          "href": "#goi-ra-quy-mo",
+          "name": "Gọi ra quy mô lớn và nhận diện cuộc gọi"
+        },
+        {
+          "href": "#auto-dialer",
+          "name": "Auto Dialer"
+        },
+        {
+          "href": "#voice-brandname",
+          "name": "Voice Brandname"
+        },
+        {
+          "href": "#so-dien-thoai-quoc-te",
+          "name": "Số điện thoại quốc tế"
+        },
+        {
+          "href": "#tich-hop-he-thong",
+          "name": "Tích hợp hệ thống"
+        },
+        {
+          "href": "#tich-hop-crm",
+          "name": "Tích hợp CRM"
+        },
+        {
+          "href": "#tich-hop-helpdesk",
+          "name": "Tích hợp Helpdesk"
+        },
+        {
+          "href": "#popup-thong-tin-khach-hang",
+          "name": "Popup thông tin khách hàng"
+        },
+        {
+          "href": "#dong-bo-lich-su-cuoc-goi",
+          "name": "Đồng bộ lịch sử cuộc gọi"
+        },
+        {
+          "href": "#ai-chat-luong",
+          "name": "AI và chất lượng hội thoại"
+        },
+        {
+          "href": "#voicebot",
+          "name": "Voicebot"
+        },
+        {
+          "href": "#ai-qc",
+          "name": "AI QC (QC Bot)"
+        },
+        {
+          "href": "#speech-to-text",
+          "name": "Speech-to-Text"
+        },
+        {
+          "href": "#cham-diem-cuoc-goi",
+          "name": "Chấm điểm cuộc gọi"
+        },
+        {
+          "href": "#phan-tich-cam-xuc",
+          "name": "Phân tích cảm xúc"
+        },
+        {
+          "href": "#ky-thuat-cam-ket",
+          "name": "Kỹ thuật và cam kết dịch vụ"
+        },
+        {
+          "href": "#api",
+          "name": "API"
+        },
+        {
+          "href": "#sdk",
+          "name": "SDK"
+        },
+        {
+          "href": "#sla",
+          "name": "SLA"
+        },
+        {
+          "href": "#tong-dai-dam-may",
+          "name": "Liên kết tới mục Tổng đài đám mây"
+        },
+        {
+          "href": "/gcalls-plus-webphone/",
+          "name": "Gcalls Plus Webphone"
+        },
+        {
+          "href": "#call-center",
+          "name": "Liên kết tới mục Call Center"
+        },
+        {
+          "href": "#contact-center",
+          "name": "Liên kết tới mục Contact Center"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Gcalls CX"
+        },
+        {
+          "href": "#webphone",
+          "name": "Liên kết tới mục Webphone"
+        },
+        {
+          "href": "/gcalls-plus-webphone/",
+          "name": "Gcalls Plus Webphone"
+        },
+        {
+          "href": "#ivr",
+          "name": "Liên kết tới mục IVR"
+        },
+        {
+          "href": "#call-flow",
+          "name": "Liên kết tới mục Call Flow"
+        },
+        {
+          "href": "#click-to-call",
+          "name": "Liên kết tới mục Click-to-Call"
+        },
+        {
+          "href": "/tong-dai-tich-hop-crm/",
+          "name": "Tổng đài tích hợp CRM"
+        },
+        {
+          "href": "#goi-ra",
+          "name": "Liên kết tới mục Gọi ra (Outbound calling)"
+        },
+        {
+          "href": "#omnichannel",
+          "name": "Liên kết tới mục Omnichannel"
+        },
+        {
+          "href": "/gcalls-cx/",
+          "name": "Gcalls CX"
+        },
+        {
+          "href": "#auto-dialer",
+          "name": "Liên kết tới mục Auto Dialer"
+        },
+        {
+          "href": "#voice-brandname",
+          "name": "Liên kết tới mục Voice Brandname"
+        },
+        {
+          "href": "#so-dien-thoai-quoc-te",
+          "name": "Liên kết tới mục Số điện thoại quốc tế"
+        },
+        {
+          "href": "/tong-dai-quoc-te/",
+          "name": "Tổng đài quốc tế"
+        },
+        {
+          "href": "#tich-hop-crm",
+          "name": "Liên kết tới mục Tích hợp CRM"
+        },
+        {
+          "href": "/tong-dai-tich-hop-crm/",
+          "name": "Tổng đài tích hợp CRM"
+        },
+        {
+          "href": "#tich-hop-helpdesk",
+          "name": "Liên kết tới mục Tích hợp Helpdesk"
+        },
+        {
+          "href": "/tong-dai-tich-hop-helpdesk/",
+          "name": "Tổng đài tích hợp Helpdesk"
+        },
+        {
+          "href": "#popup-thong-tin-khach-hang",
+          "name": "Liên kết tới mục Popup thông tin khách hàng"
+        },
+        {
+          "href": "/tong-dai-tich-hop-crm/",
+          "name": "Tổng đài tích hợp CRM"
+        },
+        {
+          "href": "#dong-bo-lich-su-cuoc-goi",
+          "name": "Liên kết tới mục Đồng bộ lịch sử cuộc gọi"
+        },
+        {
+          "href": "#voicebot",
+          "name": "Liên kết tới mục Voicebot"
+        },
+        {
+          "href": "/voicebot-ai/",
+          "name": "Gcalls Voicebot AI"
+        },
+        {
+          "href": "#ai-qc",
+          "name": "Liên kết tới mục AI QC (QC Bot)"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "QA QC Center"
+        },
+        {
+          "href": "#speech-to-text",
+          "name": "Liên kết tới mục Speech-to-Text"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "QA QC Center"
+        },
+        {
+          "href": "#cham-diem-cuoc-goi",
+          "name": "Liên kết tới mục Chấm điểm cuộc gọi"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "QA QC Center"
+        },
+        {
+          "href": "#phan-tich-cam-xuc",
+          "name": "Liên kết tới mục Phân tích cảm xúc"
+        },
+        {
+          "href": "#api",
+          "name": "Liên kết tới mục API"
+        },
+        {
+          "href": "#sdk",
+          "name": "Liên kết tới mục SDK"
+        },
+        {
+          "href": "#sla",
+          "name": "Liên kết tới mục SLA"
+        },
+        {
+          "href": "/gcalls-plus-webphone/",
+          "name": "Xem Gcalls Plus Webphone"
+        },
+        {
+          "href": "/tong-dai-tich-hop-crm/",
+          "name": "Xem tổng đài tích hợp CRM"
+        },
+        {
+          "href": "/qc-bot-ai/",
+          "name": "Xem QA QC Center"
+        },
+        {
+          "href": "/lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+gi%E1%BA%A3i+ph%C3%A1p",
+          "name": "Đăng ký tư vấn giải pháp"
+        },
+        {
+          "href": "tel:+842873025469",
+          "name": "028 7302 5469"
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:5214/tai-nguyen/faq/",
+      "status": 200,
+      "overflow": 0,
+      "errors": [],
+      "h1Count": 1,
+      "h1Text": [
+        "Câu hỏi thường gặp về giải pháp, tích hợp và triển khai Gcalls"
+      ],
+      "sectionCount": 12,
+      "mainChildren": 13,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "brokenImages": 0,
+      "upscaled": 0,
+      "links": [
+        {
+          "href": "/",
+          "name": "Trang chủ"
+        },
+        {
+          "href": "/tai-nguyen/",
+          "name": "Tài nguyên"
+        },
+        {
+          "href": "/lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+gi%E1%BA%A3i+ph%C3%A1p",
+          "name": "Đăng ký tư vấn giải pháp"
+        },
+        {
+          "href": "#nhom-cau-hoi",
+          "name": "Xem sáu nhóm câu hỏi"
+        },
+        {
+          "href": "/blog/",
+          "name": "BlogGóc nhìn vận hành theo sáu danh mục biên tập."
+        },
+        {
+          "href": "/tai-nguyen/guides/",
+          "name": "GuidesSáu lộ trình đánh giá trước khi triển khai."
+        },
+        {
+          "href": "/tai-nguyen/case-studies/",
+          "name": "Case StudiesTiêu chuẩn bằng chứng cho câu chuyện triển khai."
+        },
+        {
+          "href": "/tai-nguyen/ebook/",
+          "name": "EbookChủ đề chuyên sâu đang được chuẩn bị."
+        },
+        {
+          "href": "/tai-nguyen/glossary/",
+          "name": "GlossaryHai mươi bốn thuật ngữ thường gặp."
+        },
+        {
+          "href": "/tai-nguyen/",
+          "name": "Về trung tâm tài nguyên"
+        },
+        {
+          "href": "#chon-giai-phap",
+          "name": "Chọn giải phápPhân biệt các sản phẩm và xác định đâu là điểm bắt đầu phù hợp với bài toán hiện tại.4 câu hỏi"
+        },
+        {
+          "href": "#tich-hop",
+          "name": "Tích hợp CRM và HelpdeskPhạm vi kết nối giữa hoạt động nghe gọi và các hệ thống doanh nghiệp đang sử dụng.4 câu hỏi"
+        },
+        {
+          "href": "#goi-quoc-te",
+          "name": "Gọi quốc tếĐầu số theo quốc gia, điều kiện đăng ký và cách tổ chức liên lạc xuyên biên giới.3 câu hỏi"
+        },
+        {
+          "href": "#da-kenh",
+          "name": "Vận hành đa kênhHợp nhất hội thoại từ hotline, Zalo, Facebook, email và SMS trong một luồng làm việc.3 câu hỏi"
+        },
+        {
+          "href": "#voicebot-ai-qc",
+          "name": "Voicebot và AI QCVai trò và giới hạn của tự động hóa cuộc gọi và đánh giá chất lượng có hỗ trợ AI.3 câu hỏi"
+        },
+        {
+          "href": "#trien-khai-bao-mat",
+          "name": "Triển khai, bảo mật và hỗ trợQuá trình đưa hệ thống vào vận hành và những gì diễn ra sau khi hệ thống chạy.4 câu hỏi"
+        },
+        {
+          "href": "/san-pham/",
+          "name": "Xem tất cả sản phẩm"
+        },
+        {
+          "href": "/giai-phap/",
+          "name": "Xem tất cả giải pháp"
+        },
+        {
+          "href": "/nganh/",
+          "name": "Xem giải pháp theo ngành"
+        },
+        {
+          "href": "/lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+gi%E1%BA%A3i+ph%C3%A1p",
+          "name": "Đăng ký tư vấn giải pháp"
+        },
+        {
+          "href": "tel:+842873025469",
+          "name": "028 7302 5469"
+        }
+      ]
+    }
+  ]
+}
