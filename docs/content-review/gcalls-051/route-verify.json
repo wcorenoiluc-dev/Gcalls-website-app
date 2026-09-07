@@ -1,0 +1,1337 @@
+{
+  "base": "http://localhost:5180",
+  "at": "2026-09-07T09:42:28.177Z",
+  "breakpoints": [
+    1440
+  ],
+  "results": [
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 13,
+      "url": "/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 18669,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "đăng ký demo -> /lien-he/?intent=demo&source=consultation",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [
+        {
+          "label": "VN phone",
+          "sample": "0901 234 567"
+        },
+        {
+          "label": "non-gcalls.co e-mail",
+          "sample": "minh.nv@binhminh.vn"
+        }
+      ],
+      "notFound": false,
+      "route": "/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 6,
+      "url": "/san-pham/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 3996,
+      "images": 1,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "ước tính chi phí -> /uoc-tinh-chi-phi/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/san-pham/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 17,
+      "url": "/gcalls-plus-webphone/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 10578,
+      "images": 8,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "đăng ký tư vấn -> /lien-he/?intent=consultation&source=gcalls_plus&product=Gcalls+Plus+Webphone",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/gcalls-plus-webphone/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 18,
+      "url": "/qc-bot-ai/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 10556,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "yêu cầu demo qa qc center -> /lien-he/?intent=demo&source=qa_qc_center&product=QA+QC+Center",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/qc-bot-ai/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 19,
+      "url": "/gcalls-cx/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 13610,
+      "images": 5,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "yêu cầu demo gcalls cx -> /lien-he/?intent=demo&source=gcalls_cx&product=Gcalls+CX",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/gcalls-cx/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 12,
+      "url": "/voicebot-ai/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 8587,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "đăng ký tư vấn voicebot -> /lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls+Voicebot+AI",
+          "n": 3
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/voicebot-ai/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 6,
+      "url": "/giai-phap/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 4642,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "ước tính chi phí -> /uoc-tinh-chi-phi/",
+          "n": 3
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/giai-phap/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 20,
+      "url": "/tong-dai-tich-hop-crm/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 12980,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "tư vấn tích hợp crm -> /lien-he/?intent=consultation&source=crm_integration&solution=T%C3%ADch+h%E1%BB%A3p+CRM",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [
+        {
+          "label": "VN phone",
+          "sample": "0901 234 567"
+        },
+        {
+          "label": "non-gcalls.co e-mail",
+          "sample": "minh.nv@binhminh.vn"
+        }
+      ],
+      "notFound": false,
+      "route": "/tong-dai-tich-hop-crm/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 16,
+      "url": "/tong-dai-tich-hop-helpdesk/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 12018,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "tư vấn tích hợp helpdesk -> /lien-he/?intent=consultation&source=helpdesk_integration&solution=T%C3%ADch+h%E1%BB%A3p+Helpdesk",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/tong-dai-tich-hop-helpdesk/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 18,
+      "url": "/tong-dai-tich-hop-pos/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 11860,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "tư vấn tích hợp pos -> /lien-he/?intent=consultation&source=pos_integration&solution=T%C3%ADch+h%E1%BB%A3p+POS",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/tong-dai-tich-hop-pos/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 18,
+      "url": "/tong-dai-quoc-te/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 15043,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "xem tất cả giải pháp -> /giai-phap/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/tong-dai-quoc-te/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 6,
+      "url": "/tich-hop/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 4800,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "ước tính chi phí -> /uoc-tinh-chi-phi/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/tich-hop/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 17,
+      "url": "/tich-hop/hubspot/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 11520,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "xem demo tích hợp hubspot -> /lien-he/?intent=demo&source=crm_integration&product=HubSpot&solution=T%C3%ADch+h%E1%BB%A3p+CRM",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [
+        {
+          "label": "VN phone",
+          "sample": "0901 234 567"
+        }
+      ],
+      "notFound": false,
+      "route": "/tich-hop/hubspot/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 20,
+      "url": "/tich-hop/salesforce/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 13695,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "xem demo tích hợp salesforce -> /lien-he/?intent=demo&source=crm_integration&product=Salesforce&solution=T%C3%ADch+h%E1%BB%A3p+CRM",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [
+        {
+          "label": "VN phone",
+          "sample": "0901 234 567"
+        }
+      ],
+      "notFound": false,
+      "route": "/tich-hop/salesforce/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 19,
+      "url": "/tich-hop/zoho-crm/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 13116,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "xem demo tích hợp zoho crm -> /lien-he/?intent=demo&source=crm_integration&product=Zoho+CRM&solution=T%C3%ADch+h%E1%BB%A3p+CRM",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/tich-hop/zoho-crm/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 20,
+      "url": "/tich-hop/freshdesk/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 14461,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "xem demo tích hợp freshdesk -> /lien-he/?intent=demo&source=helpdesk_integration&product=Freshdesk&solution=T%C3%ADch+h%E1%BB%A3p+Helpdesk",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/tich-hop/freshdesk/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 20,
+      "url": "/tich-hop/zendesk/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 14680,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "xem demo tích hợp zendesk -> /lien-he/?intent=demo&source=helpdesk_integration&product=Zendesk&solution=T%C3%ADch+h%E1%BB%A3p+Helpdesk",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/tich-hop/zendesk/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 5,
+      "url": "/nganh/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 3241,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/nganh/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 9,
+      "url": "/nganh/giao-duc/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 7053,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "đăng ký tư vấn cho tổ chức giáo dục -> /lien-he/?intent=consultation&source=consultation&solution=Gi%E1%BA%A3i+ph%C3%A1p+cho+ng%C3%A0nh+gi%C3%A1o+d%E1%BB%A5c",
+          "n": 2
+        },
+        {
+          "label": "xem gcalls plus webphone -> /gcalls-plus-webphone/",
+          "n": 2
+        },
+        {
+          "label": "xem tổng đài tích hợp crm -> /tong-dai-tich-hop-crm/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/nganh/giao-duc/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 9,
+      "url": "/nganh/tai-chinh/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 6986,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "đăng ký tư vấn cho doanh nghiệp tài chính -> /lien-he/?intent=consultation&source=consultation&solution=Gi%E1%BA%A3i+ph%C3%A1p+cho+ng%C3%A0nh+t%C3%A0i+ch%C3%ADnh",
+          "n": 2
+        },
+        {
+          "label": "xem tổng đài tích hợp crm -> /tong-dai-tich-hop-crm/",
+          "n": 2
+        },
+        {
+          "label": "xem qa qc center -> /qc-bot-ai/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/nganh/tai-chinh/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 9,
+      "url": "/nganh/bao-hiem/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 6975,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "đăng ký tư vấn cho doanh nghiệp bảo hiểm -> /lien-he/?intent=consultation&source=consultation&solution=Gi%E1%BA%A3i+ph%C3%A1p+cho+ng%C3%A0nh+b%E1%BA%A3o+hi%E1%BB%83m",
+          "n": 2
+        },
+        {
+          "label": "xem gcalls plus webphone -> /gcalls-plus-webphone/",
+          "n": 2
+        },
+        {
+          "label": "xem tổng đài tích hợp crm -> /tong-dai-tich-hop-crm/",
+          "n": 2
+        },
+        {
+          "label": "xem qa qc center -> /qc-bot-ai/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/nganh/bao-hiem/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 9,
+      "url": "/nganh/bat-dong-san/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 7007,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "đăng ký tư vấn cho doanh nghiệp bất động sản -> /lien-he/?intent=consultation&source=consultation&solution=Gi%E1%BA%A3i+ph%C3%A1p+cho+ng%C3%A0nh+b%E1%BA%A5t+%C4%91%E1%BB%99ng+s%E1%BA%A3n",
+          "n": 2
+        },
+        {
+          "label": "xem gcalls plus webphone -> /gcalls-plus-webphone/",
+          "n": 2
+        },
+        {
+          "label": "xem tổng đài tích hợp crm -> /tong-dai-tich-hop-crm/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/nganh/bat-dong-san/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 9,
+      "url": "/nganh/thuong-mai-dien-tu/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 7123,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "đăng ký tư vấn cho doanh nghiệp thương mại điện tử -> /lien-he/?intent=consultation&source=consultation&solution=Gi%E1%BA%A3i+ph%C3%A1p+cho+ng%C3%A0nh+th%C6%B0%C6%A1ng+m%E1%BA%A1i+%C4%91i%E1%BB%87n+t%E1%BB%AD",
+          "n": 2
+        },
+        {
+          "label": "xem tổng đài tích hợp pos -> /tong-dai-tich-hop-pos/",
+          "n": 2
+        },
+        {
+          "label": "xem gcalls cx -> /gcalls-cx/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/nganh/thuong-mai-dien-tu/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 9,
+      "url": "/nganh/bpo/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 7011,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "đăng ký tư vấn cho doanh nghiệp bpo -> /lien-he/?intent=consultation&source=consultation&solution=Gi%E1%BA%A3i+ph%C3%A1p+cho+doanh+nghi%E1%BB%87p+BPO",
+          "n": 2
+        },
+        {
+          "label": "xem qa qc center -> /qc-bot-ai/",
+          "n": 2
+        },
+        {
+          "label": "xem gcalls cx -> /gcalls-cx/",
+          "n": 2
+        },
+        {
+          "label": "xem tổng đài quốc tế -> /tong-dai-quoc-te/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/nganh/bpo/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 10,
+      "url": "/bang-gia/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 8869,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "ước tính chi phí -> /uoc-tinh-chi-phi/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/bang-gia/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 7,
+      "url": "/uoc-tinh-chi-phi/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 5197,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "xem bảng giá -> /bang-gia/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/uoc-tinh-chi-phi/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 5,
+      "url": "/tai-nguyen/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 3264,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/tai-nguyen/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 16,
+      "url": "/blog/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 10504,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "đăng ký tư vấn vận hành -> /lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+v%E1%BA%ADn+h%C3%A0nh",
+          "n": 2
+        },
+        {
+          "label": "gcalls plus webphone -> /gcalls-plus-webphone/",
+          "n": 2
+        },
+        {
+          "label": "tổng đài tích hợp crm -> /tong-dai-tich-hop-crm/",
+          "n": 2
+        },
+        {
+          "label": "tổng đài tích hợp helpdesk -> /tong-dai-tich-hop-helpdesk/",
+          "n": 2
+        },
+        {
+          "label": "tổng đài quốc tế -> /tong-dai-quoc-te/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/blog/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 8,
+      "url": "/tai-nguyen/guides/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 8452,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "đăng ký tư vấn theo lộ trình -> /lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+tri%E1%BB%83n+khai",
+          "n": 2
+        },
+        {
+          "label": "gcalls plus webphone -> /gcalls-plus-webphone/",
+          "n": 2
+        },
+        {
+          "label": "tổng đài tích hợp crm -> /tong-dai-tich-hop-crm/",
+          "n": 2
+        },
+        {
+          "label": "tổng đài tích hợp helpdesk -> /tong-dai-tich-hop-helpdesk/",
+          "n": 2
+        },
+        {
+          "label": "tổng đài quốc tế -> /tong-dai-quoc-te/",
+          "n": 2
+        },
+        {
+          "label": "gcalls cx -> /gcalls-cx/",
+          "n": 2
+        },
+        {
+          "label": "gcalls voicebot ai -> /voicebot-ai/",
+          "n": 2
+        },
+        {
+          "label": "qa qc center -> /qc-bot-ai/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/tai-nguyen/guides/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 10,
+      "url": "/tai-nguyen/case-studies/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 8995,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "trao đổi về triển khai thực tế -> /lien-he/?intent=consultation&source=consultation&solution=Trao+%C4%91%E1%BB%95i+tri%E1%BB%83n+khai+th%E1%BB%B1c+t%E1%BA%BF",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/tai-nguyen/case-studies/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 9,
+      "url": "/tai-nguyen/ebook/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 8594,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "đăng ký tư vấn chuyên sâu -> /lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+chuy%C3%AAn+s%C3%A2u",
+          "n": 2
+        },
+        {
+          "label": "tổng đài tích hợp crm -> /tong-dai-tich-hop-crm/",
+          "n": 2
+        },
+        {
+          "label": "gcalls cx -> /gcalls-cx/",
+          "n": 2
+        },
+        {
+          "label": "qa qc center -> /qc-bot-ai/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/tai-nguyen/ebook/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 13,
+      "url": "/tai-nguyen/glossary/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 13585,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "đăng ký tư vấn giải pháp -> /lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+gi%E1%BA%A3i+ph%C3%A1p",
+          "n": 2
+        },
+        {
+          "label": "gcalls plus webphone -> /gcalls-plus-webphone/",
+          "n": 2
+        },
+        {
+          "label": "gcalls cx -> /gcalls-cx/",
+          "n": 2
+        },
+        {
+          "label": "tổng đài tích hợp crm -> /tong-dai-tich-hop-crm/",
+          "n": 3
+        },
+        {
+          "label": "qa qc center -> /qc-bot-ai/",
+          "n": 3
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/tai-nguyen/glossary/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 12,
+      "url": "/tai-nguyen/faq/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 8622,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "đăng ký tư vấn giải pháp -> /lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+gi%E1%BA%A3i+ph%C3%A1p",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/tai-nguyen/faq/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 7,
+      "url": "/cong-ty/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 3850,
+      "images": 1,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/cong-ty/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 12,
+      "url": "/cong-ty/khach-hang/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 11828,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "đăng ký tư vấn cho đội ngũ của bạn -> /lien-he/?intent=consultation&source=consultation&solution=T%C6%B0+v%E1%BA%A5n+ph%C3%B9+h%E1%BB%A3p+gi%E1%BA%A3i+ph%C3%A1p",
+          "n": 2
+        },
+        {
+          "label": "gcalls plus webphone -> /gcalls-plus-webphone/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/cong-ty/khach-hang/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 12,
+      "url": "/cong-ty/doi-tac/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 12037,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [
+        {
+          "label": "trao đổi về hợp tác -> /lien-he/?intent=partnership&source=contact&solution=H%E1%BB%A3p+t%C3%A1c+v%C3%A0+t%C3%ADch+h%E1%BB%A3p",
+          "n": 2
+        },
+        {
+          "label": "tổng đài tích hợp crm -> /tong-dai-tich-hop-crm/",
+          "n": 2
+        },
+        {
+          "label": "tổng đài tích hợp helpdesk -> /tong-dai-tich-hop-helpdesk/",
+          "n": 2
+        },
+        {
+          "label": "tổng đài quốc tế -> /tong-dai-quoc-te/",
+          "n": 2
+        },
+        {
+          "label": "các nền tảng đã có trang tích hợp -> /tich-hop/",
+          "n": 2
+        },
+        {
+          "label": "chương trình giới thiệu -> /referral/",
+          "n": 2
+        }
+      ],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/cong-ty/doi-tac/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 1,
+      "url": "/lien-he/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 1721,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/lien-he/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "h1": 1,
+      "h1Empty": false,
+      "sections": 3,
+      "url": "/referral/",
+      "scrollW": 1440,
+      "clientW": 1440,
+      "overflow": false,
+      "pageHeight": 2312,
+      "images": 0,
+      "broken": 0,
+      "upscaled": [],
+      "hashHrefs": 0,
+      "dupCtas": [],
+      "repeatedCtas": [],
+      "rawShortcode": false,
+      "pii": [],
+      "notFound": false,
+      "route": "/referral/",
+      "bp": 1440,
+      "status": 200,
+      "consoleErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  ],
+  "failures": [
+    {
+      "route": "/",
+      "bp": 1440,
+      "failures": [
+        "PII: VN phone \"0901 234 567\", non-gcalls.co e-mail \"minh.nv@binhminh.vn\""
+      ]
+    },
+    {
+      "route": "/tong-dai-tich-hop-crm/",
+      "bp": 1440,
+      "failures": [
+        "PII: VN phone \"0901 234 567\", non-gcalls.co e-mail \"minh.nv@binhminh.vn\""
+      ]
+    },
+    {
+      "route": "/tich-hop/hubspot/",
+      "bp": 1440,
+      "failures": [
+        "PII: VN phone \"0901 234 567\""
+      ]
+    },
+    {
+      "route": "/tich-hop/salesforce/",
+      "bp": 1440,
+      "failures": [
+        "PII: VN phone \"0901 234 567\""
+      ]
+    }
+  ],
+  "faviconOnly": []
+}
