@@ -1,0 +1,66 @@
+{
+  "base_sha": "9c562e7",
+  "note": "Only Voicebot-scope files changed vs base; these routes are byte-identical to base. Live metrics below are a sanity check.",
+  "routes": {
+    "/": {
+      "sectionCount": 13,
+      "h1Count": 1,
+      "containerWidth": 1280,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "overflow": 0,
+      "pageHeight": 18669,
+      "consoleErrors": []
+    },
+    "/gcalls-plus-webphone/": {
+      "sectionCount": 17,
+      "h1Count": 1,
+      "containerWidth": 1180,
+      "imageCount": 8,
+      "brokenImages": 0,
+      "overflow": 0,
+      "pageHeight": 10578,
+      "consoleErrors": []
+    },
+    "/qc-bot-ai/": {
+      "sectionCount": 18,
+      "h1Count": 1,
+      "containerWidth": 1280,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "overflow": 0,
+      "pageHeight": 12783,
+      "consoleErrors": []
+    },
+    "/gcalls-cx/": {
+      "sectionCount": 19,
+      "h1Count": 1,
+      "containerWidth": 1280,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "overflow": 0,
+      "pageHeight": 13533,
+      "consoleErrors": []
+    },
+    "/san-pham/": {
+      "sectionCount": 6,
+      "h1Count": 1,
+      "containerWidth": 1280,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "overflow": 0,
+      "pageHeight": 4916,
+      "consoleErrors": []
+    },
+    "/giai-phap/": {
+      "sectionCount": 6,
+      "h1Count": 1,
+      "containerWidth": 1280,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "overflow": 0,
+      "pageHeight": 4671,
+      "consoleErrors": []
+    }
+  }
+}

@@ -5,6 +5,7 @@ import { FaqAccordion } from '@/components/common/FaqAccordion'
 import { FinalCtaBand } from '@/components/common/FinalCtaBand'
 import { Breadcrumb } from '@/components/layout/Breadcrumb'
 import { ROUTES } from '@/config/navigation'
+import '@/styles/voicebot.css'
 import { SITE_ORIGIN } from '@/config/seo'
 import {
   VB_CONSULT_LEAD,
@@ -47,7 +48,7 @@ export function VoicebotAiPage() {
   const jsonLd = useMemo(() => buildVoicebotJsonLd(SITE_ORIGIN), [])
 
   return (
-    <>
+    <div className="vb-page">
       <JsonLd id="voicebot-ai" data={jsonLd} />
 
       <div className="bg-brand-light/60 pt-20 sm:pt-24">
@@ -99,6 +100,6 @@ export function VoicebotAiPage() {
           showPhone
         />
       </Section>
-    </>
+    </div>
   )
 }

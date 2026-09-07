@@ -1,0 +1,30 @@
+{
+  "page": "/voicebot-ai/",
+  "branch": "feature/gcalls-voicebot-ui-v2",
+  "base_sha": "9c562e7",
+  "note": "The repository holds NO real Voicebot screenshot. Every slot below currently renders a neutral diagram fallback. Real images must be product-genuine, PII-cleared, and must NOT be borrowed from Gcalls Plus, QA/QC or Gcalls CX. All slots reserve a stable 16:10 desktop box so a real image swaps in without layout shift.",
+  "slots": [
+    {
+      "section": "01 Hero",
+      "purpose": "Show the shape of a Voicebot campaign: input list → Voicebot (by script) → confirm / call-back / hand to agent",
+      "currentType": "diagram",
+      "realImageRequired": true,
+      "approvedSource": null,
+      "piiStatus": "n/a (diagram, no data)",
+      "fallbackType": "process-flow diagram (VoicebotProcessDiagram)",
+      "replacementWithoutLayoutChange": true,
+      "status": "VOICEBOT_REAL_MEDIA_SOURCE_REQUIRED"
+    },
+    {
+      "section": "05 Capabilities",
+      "purpose": "Division of labour: what the Voicebot handles vs what routes to the team",
+      "currentType": "diagram",
+      "realImageRequired": true,
+      "approvedSource": null,
+      "piiStatus": "n/a (diagram, no data)",
+      "fallbackType": "two-lane handoff diagram (VoicebotHandoffDiagram), lanes sourced from VB_HUMAN_AI approved copy",
+      "replacementWithoutLayoutChange": true,
+      "status": "VOICEBOT_REAL_MEDIA_SOURCE_REQUIRED"
+    }
+  ]
+}

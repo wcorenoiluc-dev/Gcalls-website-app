@@ -1,0 +1,103 @@
+{
+  "url": "http://127.0.0.1:5176/voicebot-ai/",
+  "breakpoints": {
+    "320": {
+      "sectionCount": 12,
+      "h1Count": 1,
+      "h1Empty": false,
+      "containerWidth": 320,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "hashHrefs": 0,
+      "finalCtaCount": 1,
+      "breadcrumbCount": 7,
+      "overflow": 0,
+      "pageHeight": 19230,
+      "rawShortcode": false,
+      "consoleErrors": [],
+      "bannedHits": []
+    },
+    "390": {
+      "sectionCount": 12,
+      "h1Count": 1,
+      "h1Empty": false,
+      "containerWidth": 390,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "hashHrefs": 0,
+      "finalCtaCount": 1,
+      "breadcrumbCount": 7,
+      "overflow": 0,
+      "pageHeight": 17088,
+      "rawShortcode": false,
+      "consoleErrors": [],
+      "bannedHits": []
+    },
+    "768": {
+      "sectionCount": 12,
+      "h1Count": 1,
+      "h1Empty": false,
+      "containerWidth": 768,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "hashHrefs": 0,
+      "finalCtaCount": 1,
+      "breadcrumbCount": 7,
+      "overflow": 0,
+      "pageHeight": 11821,
+      "rawShortcode": false,
+      "consoleErrors": [],
+      "bannedHits": []
+    },
+    "1024": {
+      "sectionCount": 12,
+      "h1Count": 1,
+      "h1Empty": false,
+      "containerWidth": 1024,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "hashHrefs": 0,
+      "finalCtaCount": 1,
+      "breadcrumbCount": 7,
+      "overflow": 0,
+      "pageHeight": 9444,
+      "rawShortcode": false,
+      "consoleErrors": [],
+      "bannedHits": []
+    },
+    "1280": {
+      "sectionCount": 12,
+      "h1Count": 1,
+      "h1Empty": false,
+      "containerWidth": 1180,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "hashHrefs": 0,
+      "finalCtaCount": 1,
+      "breadcrumbCount": 7,
+      "overflow": 0,
+      "pageHeight": 8587,
+      "rawShortcode": false,
+      "consoleErrors": [],
+      "bannedHits": []
+    },
+    "1440": {
+      "sectionCount": 12,
+      "h1Count": 1,
+      "h1Empty": false,
+      "containerWidth": 1180,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "hashHrefs": 0,
+      "finalCtaCount": 1,
+      "breadcrumbCount": 7,
+      "overflow": 0,
+      "pageHeight": 8587,
+      "rawShortcode": false,
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "bannedHits": []
+    }
+  }
+}

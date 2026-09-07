@@ -1,0 +1,44 @@
+/**
+ * /voicebot-ai/ — page-scoped layout.
+ *
+ * ---------------------------------------------------------------------------
+ * WHY THIS IS CSS AND NOT PROPS
+ * ---------------------------------------------------------------------------
+ * `Container`, `Section`, `FeatureSplit`, `SectionHeader`, `FaqAccordion` and
+ * `FinalCtaBand` are shared with every other route. This track covers one page
+ * and is explicitly barred from moving the shared primitives, so the 1180px
+ * container and 50px section rhythm are applied through a scope class on the
+ * page wrapper — the same approach `src/styles/gcalls-plus.css` already uses,
+ * and the same one the WordPress theme uses (`body:not(.home)`, commit d8d8615).
+ * ---------------------------------------------------------------------------
+ *
+ * WHERE THE 50px COMES FROM
+ * The gap between two sections is each section's own block padding, not a
+ * margin. 25px on each side of a boundary gives exactly 50px between two
+ * compositions at every breakpoint. Card padding, FAQ interiors and the
+ * horizontal gutter are internal spacing (24-44px) and are deliberately left
+ * alone.
+ */
+
+.vb-page > section {
+  padding-block: 25px;
+}
+
+/**
+ * The hero keeps a larger top inset: it is the first painted band under a fixed
+ * header, so 25px would tuck the eyebrow under it. Its BOTTOM still joins the
+ * rhythm.
+ */
+.vb-page > section:first-of-type {
+  padding-block: 40px 25px;
+}
+
+/**
+ * Container: 1280px -> 1180px, for this page only. The selector matches the
+ * utility class the shared `Container` emits; `scripts/voicebot-fabricated-scan`
+ * and the QA capture both assert the rendered container is 1180 so this coupling
+ * fails loudly rather than silently reverting to full width.
+ */
+.vb-page .max-w-\[1280px\] {
+  max-width: 1180px;
+}

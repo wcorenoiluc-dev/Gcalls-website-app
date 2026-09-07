@@ -24,7 +24,6 @@ import {
   SectionHeader,
 } from '@/components/common/primitives'
 import { FeatureSplit } from '@/components/common/FeatureSplit'
-import { ProductVisual } from '@/components/common/ProductVisual'
 import { track } from '@/lib/analytics'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
 import {
@@ -40,7 +39,8 @@ import {
   VB_PROBLEMS,
   VB_USE_CASES,
 } from '@/data/voicebotAi'
-import { VoicebotCampaignMockup, VoicebotHandoffMockup } from './visuals'
+import { VoicebotMediaSlot } from './MediaSlot'
+import { VoicebotHandoffDiagram, VoicebotProcessDiagram } from './visuals'
 
 const PRIMARY_BTN =
   'inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto'
@@ -92,7 +92,7 @@ export function VoicebotHero() {
       }}
     >
       <Container>
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[44fr_56fr] lg:gap-14">
           {/* Text first in DOM order → first on mobile. */}
           <div>
             <Eyebrow>{VB_HERO.eyebrow}</Eyebrow>
@@ -120,13 +120,11 @@ export function VoicebotHero() {
             </p>
           </div>
 
-          {/* Visual second. Caption states plainly that it is an illustration. */}
-          <ProductVisual
-            maxWidth="560px"
-            note="Minh họa giao diện. Đây là hình minh họa được dựng lại, không phải ảnh chụp hệ thống đang vận hành; toàn bộ số liệu là dữ liệu mẫu."
-          >
-            <VoicebotCampaignMockup />
-          </ProductVisual>
+          {/* Visual second. A stable media slot, classified as a diagram until a
+              real Voicebot screenshot exists. No fabricated data inside. */}
+          <VoicebotMediaSlot classification="Sơ đồ quy trình minh họa" maxWidth="560px">
+            <VoicebotProcessDiagram />
+          </VoicebotMediaSlot>
         </div>
       </Container>
     </section>
@@ -265,12 +263,9 @@ export function VoicebotCapabilities() {
       description={VB_CAPABILITIES.description}
       points={VB_CAPABILITIES.points}
       visual={
-        <ProductVisual
-          maxWidth="480px"
-          note="Minh họa giao diện. Mã liên hệ và lý do chuyển tiếp là dữ liệu mẫu."
-        >
-          <VoicebotHandoffMockup />
-        </ProductVisual>
+        <VoicebotMediaSlot classification="Sơ đồ quy trình minh họa" maxWidth="480px">
+          <VoicebotHandoffDiagram />
+        </VoicebotMediaSlot>
       }
     >
       <p className="mt-6 flex max-w-xl items-start gap-2 text-[15px] leading-relaxed text-muted-foreground">

@@ -1,214 +1,181 @@
-import { Clock, PhoneCall, Repeat, UserCheck } from 'lucide-react'
+import { ArrowRight, ListChecks, Phone, PhoneForwarded, RotateCcw, Sparkles, UserCheck } from 'lucide-react'
+import { VB_HUMAN_AI } from '@/data/voicebotAi'
 
 /**
- * Voicebot AI illustrative product UI.
+ * Voicebot AI illustrative visuals — NEUTRAL DIAGRAMS ONLY.
  *
  * ---------------------------------------------------------------------------
- * DEMO_VISUAL_REPLACE_LATER — AND READ THIS FIRST
+ * NO FABRICATED DATA. READ THIS FIRST.
  * ---------------------------------------------------------------------------
- * This repository holds NO Voicebot screenshot, sanitized or otherwise. These
- * are conceptual surfaces built from the design system, not a picture of a
- * running product. Both are rendered inside `ProductVisual` with an explicit
- * "Minh họa giao diện" caption so no reader can mistake them for a live Gcalls
- * console. This file is the single swap point once real screenshots exist.
+ * The previous versions of this file (`VoicebotCampaignMockup`,
+ * `VoicebotHandoffMockup`) rendered a fake campaign console and a fake handoff
+ * queue: quantities (480/312/198/24), response percentages (46/27/15/12),
+ * invented lead IDs (LH-24xx), timestamps and customer statuses. None of it was
+ * real, and "Minh họa" on a realistic dashboard is not enough to keep dressed-up
+ * numbers on a page. They are gone.
  *
- * RULES THESE MOCKUPS FOLLOW (WEB-PRO-004 §5, §6):
- *  - They depict ONLY what the approved copy already says: chiến dịch cuộc
- *    gọi, trạng thái kết nối, kết quả phản hồi, nhóm cần chuyển nhân viên,
- *    lịch sử tương tác. No capability is invented for the sake of a visual.
- *  - No concurrency figure, no accuracy figure, no language count, no SLA, no
- *    saving — every one of those is on the unverified list.
- *  - No real PII and no fabricated customer names. Contacts are masked IDs.
+ * What remains are process diagrams built only from the approved copy in
+ * `src/data/voicebotAi.ts`. They contain NO quantity, NO percentage, NO lead ID,
+ * NO timestamp, NO customer identity, and NO status implying a real result. A
+ * standing check (`scripts/voicebot-fabricated-scan.mjs`) fails the build if any
+ * of the retired values reappears anywhere in the Voicebot source.
  * ---------------------------------------------------------------------------
  */
 
-const SHELL =
-  'w-full overflow-hidden rounded-[18px] border border-brand-border bg-white shadow-[0_18px_50px_rgba(103,58,183,0.13)]'
-
-/** Window chrome shared by every mockup, matching the other product pages. */
-function Chrome({ label }: { label: string }) {
+/** A labelled node in a flow diagram. */
+function FlowNode({
+  icon,
+  label,
+  sublabel,
+  emphasis = false,
+}: {
+  icon: React.ReactNode
+  label: string
+  sublabel?: string
+  emphasis?: boolean
+}) {
   return (
-    <div className="flex items-center gap-2.5 bg-brand px-4 py-3">
-      <div className="flex gap-1.5" aria-hidden="true">
-        {[0, 1, 2].map((i) => (
-          <span key={i} className="h-2.5 w-2.5 rounded-full bg-white/25" />
-        ))}
-      </div>
-      <span className="ml-1 text-xs font-medium text-white/80">{label}</span>
+    <div
+      className={`flex w-full items-center gap-3 rounded-[14px] border px-4 py-3 ${
+        emphasis
+          ? 'border-brand bg-brand text-white shadow-[0_10px_30px_rgba(103,58,183,0.25)]'
+          : 'border-brand-border bg-white text-foreground'
+      }`}
+    >
+      <span
+        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] ${
+          emphasis ? 'bg-white/15 text-white' : 'bg-brand-light text-brand'
+        }`}
+        aria-hidden="true"
+      >
+        {icon}
+      </span>
+      <span className="min-w-0">
+        <span className="block text-sm font-bold leading-tight">{label}</span>
+        {sublabel && (
+          <span
+            className={`mt-0.5 block text-[12px] leading-snug ${
+              emphasis ? 'text-white/80' : 'text-muted-foreground'
+            }`}
+          >
+            {sublabel}
+          </span>
+        )}
+      </span>
     </div>
   )
 }
 
 /**
- * Campaign console — the hero visual.
+ * Hero diagram — the shape of a Voicebot campaign, as a process flow.
  *
- * Shows a campaign, connection status, response outcomes, the group that needs
- * a human, and a short interaction history. Nothing else.
+ *   Danh sách đầu vào → Voicebot (theo kịch bản) → Xác nhận / Gọi lại /
+ *   Chuyển nhân viên
+ *
+ * The three outcome branches are the approved response types; the "chuyển
+ * nhân viên" branch resolves to the team, which is the whole point of the page.
+ * No counts, rates, IDs, times or statuses.
  */
-export function VoicebotCampaignMockup() {
-  const tiles = [
-    { label: 'Trong danh sách', value: '480' },
-    { label: 'Đã gọi', value: '312' },
-    { label: 'Đã kết nối', value: '198' },
-    { label: 'Cần nhân viên', value: '24' },
-  ]
-
-  const outcomes = [
-    { label: 'Xác nhận lịch hẹn', share: 46, tone: 'brand' as const },
-    { label: 'Đề nghị gọi lại', share: 27, tone: 'brand' as const },
-    { label: 'Cần nhân viên hỗ trợ', share: 15, tone: 'amber' as const },
-    { label: 'Không kết nối', share: 12, tone: 'muted' as const },
-  ]
-
-  const history = [
-    { id: 'LH-2481', at: '09:12', status: 'Đã xác nhận' },
-    { id: 'LH-2479', at: '09:08', status: 'Chuyển nhân viên' },
-    { id: 'LH-2476', at: '09:03', status: 'Hẹn gọi lại' },
+export function VoicebotProcessDiagram() {
+  const branches = [
+    { label: 'Xác nhận', icon: <UserCheck size={16} aria-hidden="true" /> },
+    { label: 'Gọi lại', icon: <RotateCcw size={16} aria-hidden="true" /> },
+    { label: 'Chuyển nhân viên', icon: <PhoneForwarded size={16} aria-hidden="true" /> },
   ]
 
   return (
-    <div className={SHELL}>
-      <Chrome label="Voicebot · Chiến dịch nhắc lịch hẹn" />
+    <div className="flex w-full max-w-[380px] flex-col items-stretch gap-2.5">
+      <FlowNode
+        icon={<ListChecks size={18} aria-hidden="true" />}
+        label="Danh sách đầu vào"
+        sublabel="Dữ liệu và kịch bản do doanh nghiệp duyệt"
+      />
 
-      <div className="flex items-center gap-2 border-b border-brand-border px-4 py-2.5">
-        <PhoneCall size={14} className="text-brand" aria-hidden="true" />
-        <span className="text-xs font-semibold text-foreground">
-          Chiến dịch đang chạy
-        </span>
-        <span className="ml-auto rounded-full bg-brand-light px-2 py-0.5 text-[11px] font-semibold text-brand">
-          Minh họa
-        </span>
-      </div>
+      <span className="mx-auto text-brand/60" aria-hidden="true">↓</span>
 
-      <div className="p-4">
-        <ul className="grid grid-cols-2 gap-2.5">
-          {tiles.map((t) => (
-            <li
-              key={t.label}
-              className="rounded-[12px] border border-brand-border px-3 py-2.5"
-            >
-              <p className="text-lg font-extrabold leading-none tabular-nums text-brand">
-                {t.value}
-              </p>
-              <p className="mt-1.5 text-[11px] leading-snug text-muted-foreground">
-                {t.label}
-              </p>
-            </li>
-          ))}
-        </ul>
+      <FlowNode
+        icon={<Phone size={18} aria-hidden="true" />}
+        label="Voicebot"
+        sublabel="Gọi theo kịch bản đã thiết lập"
+        emphasis
+      />
 
-        <div className="mt-4 rounded-[12px] border border-brand-border p-3">
-          <p className="text-[11px] font-bold uppercase tracking-wide text-brand">
-            Kết quả phản hồi
-          </p>
+      <span className="mx-auto text-brand/60" aria-hidden="true">↓</span>
 
-          <ul className="mt-3 flex flex-col gap-2.5">
-            {outcomes.map((o) => (
-              <li key={o.label}>
-                <div className="flex items-center justify-between gap-3">
-                  <span className="min-w-0 truncate text-[12px] text-foreground">
-                    {o.label}
-                  </span>
-                  <span className="shrink-0 text-[11px] font-semibold tabular-nums text-muted-foreground">
-                    {o.share}%
-                  </span>
-                </div>
-                {/* Track is full-width so the fill has a definite basis. */}
-                <div
-                  className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-brand-light"
-                  aria-hidden="true"
-                >
-                  <div
-                    className={`h-full rounded-full ${
-                      o.tone === 'amber'
-                        ? 'bg-amber-400'
-                        : o.tone === 'muted'
-                          ? 'bg-brand/25'
-                          : 'bg-brand/80'
-                    }`}
-                    style={{ width: `${o.share}%` }}
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="mt-4 rounded-[12px] border border-brand-border p-3">
-          <p className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide text-brand">
-            <Clock size={12} aria-hidden="true" />
-            Lịch sử tương tác
-          </p>
-
-          <ul className="mt-2.5 flex flex-col divide-y divide-brand-border">
-            {history.map((h) => (
-              <li key={h.id} className="flex items-center gap-3 py-2 first:pt-0 last:pb-0">
-                <span className="shrink-0 text-[12px] font-bold tabular-nums text-brand">
-                  {h.id}
-                </span>
-                <span className="shrink-0 text-[11px] tabular-nums text-muted-foreground">
-                  {h.at}
-                </span>
-                <span className="ml-auto min-w-0 truncate text-[11px] font-semibold text-foreground">
-                  {h.status}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-/**
- * Handoff queue — calls the bot classified as needing a person.
- *
- * The point of the visual is the handoff, which is why the queue is the only
- * thing on screen: it is the section's argument in picture form.
- */
-export function VoicebotHandoffMockup() {
-  const rows = [
-    { id: 'LH-2479', reason: 'Khách hỏi ngoài kịch bản', route: 'Tư vấn' },
-    { id: 'LH-2465', reason: 'Đề nghị thương lượng điều khoản', route: 'Tư vấn' },
-    { id: 'LH-2452', reason: 'Phản hồi cần xử lý riêng', route: 'CSKH' },
-    { id: 'LH-2440', reason: 'Yêu cầu gặp nhân viên', route: 'CSKH' },
-  ]
-
-  return (
-    <div className={SHELL}>
-      <Chrome label="Phân luồng · Cần nhân viên xử lý" />
-
-      <div className="flex items-center gap-2 border-b border-brand-border px-4 py-2.5">
-        <UserCheck size={14} className="text-brand" aria-hidden="true" />
-        <span className="text-xs font-semibold text-foreground">
-          Cuộc gọi chuyển sang đội ngũ
-        </span>
-        <span className="ml-auto text-[11px] text-muted-foreground">Minh họa</span>
-      </div>
-
-      <ul className="flex flex-col divide-y divide-brand-border">
-        {rows.map((r) => (
-          <li key={r.id} className="flex items-center gap-3 px-4 py-3">
-            <span className="shrink-0 text-[12px] font-bold tabular-nums text-brand">
-              {r.id}
+      <ul className="grid grid-cols-3 gap-2">
+        {branches.map((b) => (
+          <li
+            key={b.label}
+            className="flex flex-col items-center gap-1.5 rounded-[12px] border border-brand-border bg-white px-2 py-2.5 text-center"
+          >
+            <span className="text-brand" aria-hidden="true">
+              {b.icon}
             </span>
-            <span className="min-w-0 flex-1 truncate text-[12px] text-foreground">
-              {r.reason}
-            </span>
-            <span className="shrink-0 rounded-full bg-brand-light px-2 py-0.5 text-[11px] font-semibold text-brand">
-              {r.route}
+            <span className="text-[12px] font-semibold leading-tight text-foreground">
+              {b.label}
             </span>
           </li>
         ))}
       </ul>
+    </div>
+  )
+}
 
-      <div className="flex items-center gap-2 border-t border-brand-border px-4 py-2.5">
-        <Repeat size={13} className="text-brand" aria-hidden="true" />
-        <span className="text-[11px] leading-snug text-muted-foreground">
-          Điều kiện chuyển tiếp được thiết lập theo từng kịch bản.
-        </span>
+/**
+ * Capability / handoff diagram — division of labour, two lanes.
+ *
+ *   Voicebot xử lý   →   Đội ngũ tiếp nhận
+ *
+ * Both lanes are populated ONLY from approved copy (`VB_HUMAN_AI.columns`), so
+ * nothing here is a capability the copy does not already state.
+ */
+export function VoicebotHandoffDiagram() {
+  const [bot, human] = VB_HUMAN_AI.columns
+
+  const lanes = [
+    { title: 'Voicebot xử lý', icon: <Sparkles size={16} aria-hidden="true" />, items: bot.items, emphasis: true },
+    { title: 'Đội ngũ tiếp nhận', icon: <UserCheck size={16} aria-hidden="true" />, items: human.items, emphasis: false },
+  ]
+
+  return (
+    <div className="flex w-full max-w-[420px] flex-col gap-2.5">
+      <div className="grid grid-cols-[1fr_auto_1fr] items-stretch gap-2">
+        {lanes.map((lane, i) => (
+          <div key={lane.title} className="contents">
+            <div
+              className={`flex flex-col rounded-[14px] border p-3 ${
+                lane.emphasis ? 'border-brand bg-brand-light' : 'border-brand-border bg-white'
+              }`}
+            >
+              <p className="flex items-center gap-1.5 text-[12px] font-bold text-brand">
+                {lane.icon}
+                {lane.title}
+              </p>
+              <ul className="mt-2 flex flex-col gap-1.5">
+                {lane.items.map((it) => (
+                  <li
+                    key={it}
+                    className="rounded-[9px] border border-brand-border/70 bg-white px-2.5 py-1.5 text-[12px] leading-snug text-foreground"
+                  >
+                    {it}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Handoff arrow sits between the two lanes. */}
+            {i === 0 && (
+              <div className="flex items-center justify-center text-brand" aria-hidden="true">
+                <ArrowRight size={18} />
+              </div>
+            )}
+          </div>
+        ))}
       </div>
+
+      <p className="text-center text-[12px] leading-snug text-muted-foreground">
+        Điều kiện chuyển tiếp được thiết lập theo từng kịch bản.
+      </p>
     </div>
   )
 }
