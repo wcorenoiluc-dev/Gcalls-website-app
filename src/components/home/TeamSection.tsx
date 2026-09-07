@@ -5,12 +5,12 @@ import { stageClass, stageMainClass, stageFloatClass } from "@/components/common
 // ─── Section 5: Team Management ──────────────────────────────────────────────
 
 const teamMembers = [
-  { id: 1, name: "Nguyễn Hằng",    email: "hang.n@gcalls.vn",    role: "Sales",        group: "Nhóm Bắc",   status: "online",  calls: 24, avatar: "NH", color: "#673ab7" },
-  { id: 2, name: "Trần Minh Tuấn", email: "tuan.tm@gcalls.vn",   role: "Telesales",    group: "Nhóm Nam",   status: "on-call", calls: 18, avatar: "TT", color: "#0891b2" },
-  { id: 3, name: "Lê Phương Linh", email: "linh.lp@gcalls.vn",   role: "CSKH",         group: "Nhóm Trung", status: "online",  calls: 31, avatar: "LL", color: "#16a34a" },
-  { id: 4, name: "Phạm Đức Dương", email: "duong.pd@gcalls.vn",  role: "Team Leader",  group: "Nhóm Bắc",   status: "away",    calls: 9,  avatar: "PD", color: "#d97706" },
-  { id: 5, name: "Võ Thị Thanh",   email: "thanh.vt@gcalls.vn",  role: "Sales",        group: "Nhóm Nam",   status: "online",  calls: 22, avatar: "VT", color: "#7c3aed" },
-  { id: 6, name: "Đỗ Quang Hải",   email: "hai.dq@gcalls.vn",    role: "Manager",      group: "Ban quản lý", status: "offline", calls: 5,  avatar: "DH", color: "#64748b" },
+  { id: 1, name: "Nhân viên 01",    email: "hang.n@example.com",    role: "Sales",        group: "Nhóm Bắc",   status: "online",  calls: 24, avatar: "NH", color: "#673ab7" },
+  { id: 2, name: "Nhân viên 02", email: "tuan.tm@example.com",   role: "Telesales",    group: "Nhóm Nam",   status: "on-call", calls: 18, avatar: "TT", color: "#0891b2" },
+  { id: 3, name: "Nhân viên 03", email: "linh.lp@example.com",   role: "CSKH",         group: "Nhóm Trung", status: "online",  calls: 31, avatar: "LL", color: "#16a34a" },
+  { id: 4, name: "Nhân viên 04", email: "duong.pd@example.com",  role: "Team Leader",  group: "Nhóm Bắc",   status: "away",    calls: 9,  avatar: "PD", color: "#d97706" },
+  { id: 5, name: "Nhân viên 05",   email: "thanh.vt@example.com",  role: "Sales",        group: "Nhóm Nam",   status: "online",  calls: 22, avatar: "VT", color: "#7c3aed" },
+  { id: 6, name: "Nhân viên 06",   email: "hai.dq@example.com",    role: "Manager",      group: "Ban quản lý", status: "offline", calls: 5,  avatar: "DH", color: "#64748b" },
 ];
 
 const rolePermissions = [

@@ -1,0 +1,133 @@
+/**
+ * / — page-scoped layout for the homepage.
+ *
+ * ---------------------------------------------------------------------------
+ * WHY THIS IS CSS AND NOT PROPS
+ * ---------------------------------------------------------------------------
+ * Same approach, and the same reason, as `gcalls-plus.css`, `qa-qc.css`,
+ * `products-hub.css`, `solutions-hub.css` and `company-hub.css`: the rhythm and
+ * the container width are applied through a scope class the page owns, so the
+ * shared primitives keep behaving exactly as the other 37 routes expect.
+ *
+ * ---------------------------------------------------------------------------
+ * ONE DIFFERENCE FROM EVERY OTHER PAGE-LOCAL SHEET — READ BEFORE EDITING
+ * ---------------------------------------------------------------------------
+ * The other sheets narrow `.max-w-\[1280px\]`, the utility the shared
+ * `Container` emits. The homepage does NOT use `Container`: all thirteen
+ * sections hand-roll `max-w-7xl mx-auto px-5 lg:px-8`. So the selector here is
+ * `.max-w-7xl`, and it would silently stop matching if a section were ever
+ * migrated to `Container`. `scripts/verify-home-ui.mjs` asserts the measured
+ * container is 1180px for exactly that reason — the coupling fails loudly
+ * instead of the page quietly reverting to 1280.
+ * ---------------------------------------------------------------------------
+ */
+
+/**
+ * WHERE THE 50px COMES FROM
+ * Thirteen sections make twelve seams. The space between two sections here is
+ * not a margin — it is each section's own block padding (`py-24`/`py-28`), so
+ * adjacent sections put 192-224px between their content. Half of 50 on each
+ * side of every boundary gives exactly 50px between compositions at every
+ * breakpoint.
+ *
+ * Two sections carried `pb-*` with no `pt-*` (§3 and §13), which is where the
+ * two `padding-top: 0` readings in the audit came from. `padding-block` sets
+ * both, so those two join the rhythm without touching their components.
+ */
+.home-page > section {
+  padding-block: 25px;
+}
+
+/**
+ * The hero keeps a larger top inset: it is the first painted band under a fixed
+ * header, and 25px would tuck the eyebrow under it. Its BOTTOM still joins the
+ * rhythm, so seam §1→§2 is 50px like the other eleven.
+ *
+ * `min-h-screen` on the hero is left alone — it sets the hero's height, not the
+ * seam, and a full-height opening band is the intended design.
+ */
+.home-page > section:first-of-type {
+  padding-block: 40px 25px;
+}
+
+/**
+ * Container: 1280px -> 1180px, for this page only. See the note above about why
+ * this selector is `.max-w-7xl` and not `.max-w-\[1280px\]`.
+ */
+.home-page .max-w-7xl {
+  max-width: 1180px;
+}
+
+/**
+ * NOT TOUCHED, deliberately: card padding, the estimator's interior, the
+ * mockup frames and the horizontal gutter. Those are internal spacing (the
+ * brief's 44px), not the rhythm this sheet is about.
+ */
+
+/**
+ * ---------------------------------------------------------------------------
+ * 320px: the mockup stage goes to ONE column
+ * ---------------------------------------------------------------------------
+ * `ResponsiveProductVisual` reflows a mockup and its floating badges into a
+ * two-column grid below `lg`. That is right down to 390px, and it is already
+ * why `stageFloatFullClass` exists — the component's own note says a two-column
+ * reflow "would squeeze these to ~187px at 390px and clip their internals".
+ *
+ * At 320px the same squeeze reaches the small badges: each cell is ~150px, and
+ * the pills inside them (hotline chips, "Dashboard"/"Realtime" labels, table
+ * column heads) are wider than that. The sections clip rather than scroll, so
+ * the page never scrolls sideways — the text is simply cut off, which is worse
+ * than reflowing it.
+ *
+ * One column below 400px, for this page only. The shared component is not
+ * touched, so the other 37 routes keep the two-column reflow they were gated
+ * against.
+ */
+@media (max-width: 400px) {
+  .home-page .max-lg\:grid-cols-2\! {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Badge rows that push a chip to the right edge with `ml-auto` are allowed to
+     wrap instead of overhanging the frame. */
+  .home-page .ml-auto {
+    flex-wrap: wrap;
+  }
+}
+
+/**
+ * Still at 320px, two cases the stage rule above does not reach.
+ *
+ * The "quick benefits" pairs sit in a plain two-column grid, which leaves each
+ * card ~134px; the status chip inside is `ml-auto flex-shrink-0`, so it hangs
+ * past the card rather than compressing. One column gives it the width it needs.
+ *
+ * The analytics mockup's agent table is a fixed six-column grid
+ * (`1fr 44px 44px 36px 52px 48px` plus gaps) that cannot fit 278px. Rather than
+ * clip the last column silently, the frame is allowed to scroll — the same rule
+ * the rest of the site applies to wide content.
+ */
+@media (max-width: 400px) {
+  .home-page .grid.grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* The analytics agent table and the presence table are fixed-column grids
+     (`1fr 44px 44px 36px 52px 48px` and similar) that overrun 320px by ~12px.
+     The header row and the body rows carry the SAME px-4/px-5 padding, so
+     trimming the gutter here moves both together and the columns stay aligned.
+     Nothing outside a mockup frame is touched. */
+  .home-page .rounded-3xl .grid.px-5,
+  .home-page .rounded-3xl .grid.px-4 {
+    padding-inline: 8px;
+  }
+
+  /* CloudSection's SIP table is `52px 1fr 110px 80px 40px` plus four 8px gaps —
+     314px of fixed track before padding, which cannot fit 320. The header row
+     and the body rows share this selector, so both are re-tracked together and
+     the columns stay aligned. `!important` is required: the template is an
+     inline style. 236px of track + gaps now fits with room to spare. */
+  .home-page .rounded-3xl .grid.px-4 {
+    grid-template-columns: 40px 1fr 80px 56px 28px !important;
+  }
+}

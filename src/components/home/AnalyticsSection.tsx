@@ -3,6 +3,7 @@ import { ROUTES } from '@/config/navigation';
 import { Link } from "react-router";
 import { Activity, ArrowRight, ArrowUpRight, BarChart2, Check, ChevronRight, Clock, HeadphonesIcon, PhoneCall, PhoneIncoming, PhoneMissed, PhoneOutgoing, Settings, Star, TrendingUp } from "lucide-react";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
+import { MockupCaption } from "./MockupCaption";
 
 // ─── Section 6: Analytics ────────────────────────────────────────────────────
 
@@ -35,10 +36,10 @@ const barData = [
 const maxBar = 100;
 
 const agentRows = [
-  { name: "Nguyễn Hằng",    avatar: "NH", color: "#673ab7", out: 38, in: 29, missed: 2, rate: "97%",  dur: "3:52" },
-  { name: "Trần M. Tuấn",   avatar: "TT", color: "#0891b2", out: 31, in: 22, missed: 4, rate: "92%",  dur: "4:10" },
-  { name: "Lê P. Linh",     avatar: "LL", color: "#16a34a", out: 44, in: 35, missed: 1, rate: "98%",  dur: "3:18" },
-  { name: "Phạm Đ. Dương",  avatar: "PD", color: "#d97706", out: 19, in: 14, missed: 6, rate: "86%",  dur: "5:04" },
+  { name: "Nhân viên 01",    avatar: "NH", color: "#673ab7", out: 38, in: 29, missed: 2, rate: "97%",  dur: "3:52" },
+  { name: "Nhân viên 02",   avatar: "TT", color: "#0891b2", out: 31, in: 22, missed: 4, rate: "92%",  dur: "4:10" },
+  { name: "Nhân viên 03",     avatar: "LL", color: "#16a34a", out: 44, in: 35, missed: 1, rate: "98%",  dur: "3:18" },
+  { name: "Nhân viên 04",  avatar: "PD", color: "#d97706", out: 19, in: 14, missed: 6, rate: "86%",  dur: "5:04" },
 ];
 
 const metricCards = [
@@ -226,6 +227,7 @@ export function AnalyticsDashboardMockup() {
           </div>
         ))}
       </div>
+      <MockupCaption />
     </div>
   );
 }

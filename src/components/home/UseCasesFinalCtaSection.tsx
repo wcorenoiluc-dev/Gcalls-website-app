@@ -2,6 +2,7 @@ import { Check, Phone, Sparkles } from "lucide-react";
 import { Link } from "react-router";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { remoteUseCases, wfaStats } from "./sectionData";
+import { LeadForm } from "@/components/lead/LeadForm";
 
 // ─── Section 13: Use Cases & Final CTA ───────────────────────────────────────
 
@@ -218,6 +219,30 @@ export function UseCasesFinalCtaSection() {
               </p>
             </div>
           </div>
+        </div>
+
+        {/*
+          The page's own lead form, at the end of the page.
+
+          It is INSIDE §13 on purpose: the approved homepage is thirteen
+          sections, and giving the form its own <section> would make fourteen.
+
+          This is the shared `LeadForm` — the homepage implements no submit
+          logic and no form markup of its own. It is not `compact`, so it keeps
+          its own heading: a form that a screen reader reaches with no label,
+          under a heading about use cases, is not a labelled form.
+
+          It cannot fake a success. `LeadForm` shows the success state only on a
+          confirmed `ok: true` from the transport, and with no backend
+          configured it renders the honest not-connected state with working
+          mailto:/tel: fallbacks instead.
+        */}
+        <div className="mt-14 max-w-3xl mx-auto">
+          <LeadForm
+            variant="consultation"
+            source="consultation"
+            intent="consultation"
+          />
         </div>
 
       </div>

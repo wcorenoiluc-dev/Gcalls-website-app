@@ -3,15 +3,16 @@ import { ROUTES } from '@/config/navigation';
 import { Link } from "react-router";
 import { ArrowRight, Check, Clock, Download, FileText, Mic, Pause, PhoneCall, PhoneIncoming, PhoneMissed, PhoneOutgoing, Play, Search, SlidersHorizontal, Star, Tag, Voicemail, Volume2 } from "lucide-react";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
+import { MockupCaption } from "./MockupCaption";
 
 // ─── Section 3: Call Timeline ────────────────────────────────────────────────
 
 const timelineItems = [
   {
     id: 1,
-    name: "Nguyễn Văn Minh",
-    phone: "0901 234 567",
-    hotline: "1900 1234",
+    name: "Khách hàng 01",
+    phone: "0900 000 001",
+    hotline: "1900 0000",
     type: "out" as const,
     status: "answered" as const,
     duration: "3:42",
@@ -24,9 +25,9 @@ const timelineItems = [
   },
   {
     id: 2,
-    name: "Trần Thị Lan",
-    phone: "0912 345 678",
-    hotline: "1900 5678",
+    name: "Khách hàng 02",
+    phone: "0900 000 002",
+    hotline: "1900 0001",
     type: "in" as const,
     status: "answered" as const,
     duration: "7:18",
@@ -39,9 +40,9 @@ const timelineItems = [
   },
   {
     id: 3,
-    name: "Lê Hoàng Phúc",
-    phone: "0888 901 234",
-    hotline: "1900 1234",
+    name: "Khách hàng 03",
+    phone: "0900 000 003",
+    hotline: "1900 0000",
     type: "out" as const,
     status: "missed" as const,
     duration: "—",
@@ -54,9 +55,9 @@ const timelineItems = [
   },
   {
     id: 4,
-    name: "Phạm Thu Hà",
-    phone: "0976 543 210",
-    hotline: "1900 5678",
+    name: "Khách hàng 04",
+    phone: "0900 000 004",
+    hotline: "1900 0001",
     type: "in" as const,
     status: "answered" as const,
     duration: "12:05",
@@ -69,9 +70,9 @@ const timelineItems = [
   },
   {
     id: 5,
-    name: "Võ Minh Tuấn",
-    phone: "0933 210 987",
-    hotline: "1900 1234",
+    name: "Khách hàng 05",
+    phone: "0900 000 005",
+    hotline: "1900 0000",
     type: "out" as const,
     status: "answered" as const,
     duration: "5:20",
@@ -184,8 +185,8 @@ export function CallTimelineMockup() {
         ))}
         <div className="ml-auto flex items-center gap-1 pb-2">
           <span className="text-[10px]" style={{ color: "#9ca3af" }}>Hotline:</span>
-          <span className="text-[10px] font-medium px-2 py-0.5 rounded-full" style={{ background: "#f0ecf9", color: "#673ab7" }}>1900 1234</span>
-          <span className="text-[10px] font-medium px-2 py-0.5 rounded-full" style={{ background: "#f0ecf9", color: "#673ab7" }}>1900 5678</span>
+          <span className="text-[10px] font-medium px-2 py-0.5 rounded-full" style={{ background: "#f0ecf9", color: "#673ab7" }}>1900 0000</span>
+          <span className="text-[10px] font-medium px-2 py-0.5 rounded-full" style={{ background: "#f0ecf9", color: "#673ab7" }}>1900 0001</span>
         </div>
       </div>
 
@@ -335,6 +336,7 @@ export function CallTimelineMockup() {
           )}
         </div>
       )}
+      <MockupCaption />
     </div>
   );
 }

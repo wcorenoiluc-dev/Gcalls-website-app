@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 import { ecosystemGroups } from "./sectionData";
+import { MockupCaption } from "./MockupCaption";
 
 // ─── Section 11: Integration CTA (+ shared integration mockups) ──────────────
 
@@ -161,7 +162,7 @@ export function APIManagerMockup() {
       <div style={{ borderBottom: "1px solid rgba(103,58,183,0.08)" }}>
         <div className="flex items-center justify-between px-5 py-2.5">
           <span className="text-xs font-bold" style={{ color: "#1e2026" }}>Endpoints</span>
-          <span className="text-[10px]" style={{ color: "#9ca3af" }}>Base URL: api.gcalls.vn</span>
+          <span className="text-[10px]" style={{ color: "#9ca3af" }}>Base URL: api.example.com</span>
         </div>
         {apiEndpoints.map((ep, i) => {
           const mc = methodColor[ep.method];
@@ -191,14 +192,15 @@ export function APIManagerMockup() {
         <pre className="text-[10px] leading-relaxed overflow-x-auto" style={{ color: "#a78bfa", fontFamily: "'DM Mono',monospace" }}>
 {`{
   "id": "call_8f3kd9",
-  "contact": "Nguyễn Văn Minh",
-  "phone": "0901234567",
+  "contact": "Khách hàng 01",
+  "phone": "0900000001",
   "status": "answered",
   "duration": 222,
   "recording_url": "https://..."
 }`}
         </pre>
       </div>
+      <MockupCaption />
     </div>
   );
 }
@@ -231,7 +233,7 @@ export function CustomerPopupMockup() {
         </div>
         <div>
           <div className="text-xs font-bold text-white">{ringing ? "Cuộc gọi đến..." : "Đã kết nối"}</div>
-          <div className="text-[10px]" style={{ color: "rgba(255,255,255,0.75)" }}>1900 1234 · Hà Nội</div>
+          <div className="text-[10px]" style={{ color: "rgba(255,255,255,0.75)" }}>1900 0000 · Hà Nội</div>
         </div>
         <div className="ml-auto flex gap-1.5">
           {ringing ? (
@@ -250,8 +252,8 @@ export function CustomerPopupMockup() {
         <div className="flex items-start gap-3 mb-3">
           <div className="w-10 h-10 rounded-2xl flex items-center justify-center text-sm font-bold flex-shrink-0" style={{ background: "#ede8f9", color: "#673ab7" }}>NM</div>
           <div className="flex-1 min-w-0">
-            <div className="text-sm font-bold" style={{ color: "#1e2026" }}>Nguyễn Văn Minh</div>
-            <div className="text-[11px]" style={{ color: "#5b5f6b" }}>Công ty TNHH Bình Minh</div>
+            <div className="text-sm font-bold" style={{ color: "#1e2026" }}>Khách hàng 01</div>
+            <div className="text-[11px]" style={{ color: "#5b5f6b" }}>Công ty A</div>
             <div className="flex items-center gap-1 mt-1">
               <span className="text-[9px] px-1.5 py-0.5 rounded-full font-bold" style={{ background: "#ede8f9", color: "#673ab7" }}>Demo</span>
               <span className="text-[9px] px-1.5 py-0.5 rounded-full font-bold" style={{ background: "#dcfce7", color: "#16a34a" }}>VIP</span>
@@ -286,6 +288,7 @@ export function CustomerPopupMockup() {
           ))}
         </div>
       </div>
+      <MockupCaption />
     </div>
   );
 }

@@ -57,7 +57,13 @@ import { UseCasesFinalCtaSection } from '@/components/home/UseCasesFinalCtaSecti
  */
 export function HomePage() {
   return (
-    <>
+    /**
+     * `home-page` is the scope for `src/styles/home.css` (1180px container,
+     * 25px block padding = the 50px seam). It must stay the DIRECT parent of
+     * the thirteen sections — the stylesheet uses `>` so that only this page's
+     * own bands are affected and nothing nested inside them is.
+     */
+    <div className="home-page">
       <Hero />
       <PainPointsSection />
       <SolutionBridgeSection />
@@ -71,6 +77,6 @@ export function HomePage() {
       <IntegrationCtaSection />
       <WorkFromAnywhereSection />
       <UseCasesFinalCtaSection />
-    </>
+    </div>
   )
 }

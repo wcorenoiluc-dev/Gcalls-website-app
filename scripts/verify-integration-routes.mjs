@@ -37,8 +37,12 @@ const BREAKPOINTS = ALL_BP ? [1440, 1280, 1024, 768, 390, 320] : [1440]
 
 // PII shapes: VN mobile/landline, +84, and any e-mail that is not the verified domain
 // or an obvious placeholder.
+// The approved masking convention (product-media-manifest.json, used by the
+// sanitized captures): customer numbers are 0900 000 0NN and hotlines are
+// 1900 000N. Those are reserved placeholders, not PII — everything else is.
+const MASKED_PHONE = /^(?:0900[ .-]?000[ .-]?0\d\d|1900[ .-]?000\d)$/
 const PII = [
-  { label: 'VN phone', re: /\b0(?:3|5|7|8|9)\d(?:[ .-]?\d){7}\b/ },
+  { label: 'VN phone', re: /\b0(?:3|5|7|8|9)\d(?:[ .-]?\d){7}\b/, allow: MASKED_PHONE },
   { label: '+84 phone', re: /\+84[ .-]?\d[\d .-]{7,}/ },
   { label: 'non-gcalls.co e-mail', re: /\b[A-Za-z0-9._%+-]+@(?!gcalls\.co\b)(?!example\.)[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/ },
 ]
@@ -53,10 +57,24 @@ async function measure(page, route, bp) {
   let status = 0
   const resp = await page.goto(BASE + route, { waitUntil: 'networkidle', timeout: 45000 })
   status = resp ? resp.status() : 0
-  await page.waitForTimeout(250)
+  // Wait for the SPA to actually mount. Under a long batch the dev server can
+  // serve the shell before React renders, and a fixed delay turns that race into
+  // a phantom "0 H1". Waiting on the rendered heading makes the gate deterministic.
+  await page.waitForFunction(
+    () => {
+      const m = document.querySelector('main')
+      return !!m && m.innerText.trim().length > 100 && document.querySelectorAll('h1').length > 0
+    },
+    { timeout: 20000 },
+  ).catch(() => {})
+  await page.waitForTimeout(150)
 
   return await page.evaluate((piiSrc) => {
-    const piiRes = piiSrc.map((p) => ({ label: p.label, re: new RegExp(p.source, p.flags) }))
+    const piiRes = piiSrc.map((p) => ({
+      label: p.label,
+      re: new RegExp(p.source, p.flags.includes('g') ? p.flags : p.flags + 'g'),
+      allow: p.allow ? new RegExp(p.allow.source, p.allow.flags) : null,
+    }))
     const text = document.body.innerText
     const de = document.documentElement
     const imgs = [...document.images]
@@ -108,12 +126,17 @@ async function measure(page, route, bp) {
       dupCtas: consecutiveDupes.map((t) => ({ label: t, n: 2 })),
       repeatedCtas: Object.entries(counts).filter(([, n]) => n > 1).map(([t, n]) => ({ label: t, n })),
       rawShortcode: /\[(?:gcalls|contact)[a-z_]*\b/i.test(text),
-      pii: piiRes.filter((p) => p.re.test(text)).map((p) => ({
-        label: p.label, sample: (text.match(p.re) || [''])[0],
-      })),
+      pii: piiRes.flatMap((p) => {
+        const hits = [...new Set(text.match(p.re) || [])]
+          .filter((h) => !(p.allow && p.allow.test(h.trim())))
+        return hits.length ? [{ label: p.label, sample: hits.slice(0, 3).join(', '), n: hits.length }] : []
+      }),
       notFound: /404|không tìm thấy trang/i.test(text.slice(0, 400)),
     }
-  }, PII.map((p) => ({ label: p.label, source: p.re.source, flags: p.re.flags })))
+  }, PII.map((p) => ({
+    label: p.label, source: p.re.source, flags: p.re.flags,
+    allow: p.allow ? { source: p.allow.source, flags: p.allow.flags } : null,
+  })))
     .then((m) => ({ ...m, route, bp, status, consoleErrors: errors, failedRequests: failed, badResponses }))
 }
 

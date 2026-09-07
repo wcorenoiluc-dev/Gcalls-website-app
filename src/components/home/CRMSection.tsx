@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { Activity, Briefcase, Building2, Check, ExternalLink, FileText, Filter, HeadphonesIcon, Mail, MoreHorizontal, Phone, PhoneCall, PhoneIncoming, PhoneOutgoing, Plug, Plus, Search, ShieldCheck, Tag, Users } from "lucide-react";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
+import { MockupCaption } from "./MockupCaption";
 
 // ─── Section 4: CRM ──────────────────────────────────────────────────────────
 
 const crmContacts = [
   {
     id: 1,
-    name: "Nguyễn Văn Minh",
-    company: "Công ty TNHH Bình Minh",
-    phone: "0901 234 567",
-    email: "minh.nv@binhminh.vn",
+    name: "Khách hàng 01",
+    company: "Công ty A",
+    phone: "0900 000 001",
+    email: "kh01@example.com",
     avatar: "NM",
     avatarColor: "#673ab7",
     tags: ["Khách hàng mới", "Demo"],
@@ -22,10 +23,10 @@ const crmContacts = [
   },
   {
     id: 2,
-    name: "Trần Thị Lan",
-    company: "CTCP Việt Phát",
-    phone: "0912 345 678",
-    email: "lan.tt@vietphat.com",
+    name: "Khách hàng 02",
+    company: "Công ty B",
+    phone: "0900 000 002",
+    email: "kh02@example.com",
     avatar: "TL",
     avatarColor: "#0891b2",
     tags: ["Gia hạn", "VIP"],
@@ -37,10 +38,10 @@ const crmContacts = [
   },
   {
     id: 3,
-    name: "Phạm Thu Hà",
-    company: "Tập đoàn Sao Việt",
-    phone: "0976 543 210",
-    email: "ha.pt@saoviet.vn",
+    name: "Khách hàng 04",
+    company: "Công ty C",
+    phone: "0900 000 004",
+    email: "kh04@example.com",
     avatar: "PH",
     avatarColor: "#16a34a",
     tags: ["Đề xuất", "Hot"],
@@ -52,10 +53,10 @@ const crmContacts = [
   },
   {
     id: 4,
-    name: "Võ Minh Tuấn",
-    company: "StartupHub Việt Nam",
-    phone: "0933 210 987",
-    email: "tuan.vm@startuphub.vn",
+    name: "Khách hàng 05",
+    company: "Công ty D",
+    phone: "0900 000 005",
+    email: "kh05@example.com",
     avatar: "VT",
     avatarColor: "#7c3aed",
     tags: ["Upsell"],
@@ -124,7 +125,7 @@ export function CRMMockup() {
 
   return (
     <div
-      className="rounded-3xl overflow-hidden w-full flex"
+      className="rounded-3xl overflow-hidden w-full flex flex-wrap"
       style={{
         background: "#fff",
         boxShadow: "0 32px 80px rgba(103,58,183,0.16), 0 4px 16px rgba(0,0,0,0.06)",
@@ -323,6 +324,7 @@ export function CRMMockup() {
           </div>
         </div>
       </div>
+      <MockupCaption />
     </div>
   );
 }

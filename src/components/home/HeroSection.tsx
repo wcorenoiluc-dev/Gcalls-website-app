@@ -6,17 +6,17 @@ import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { stageClass, stageMainClass, stageFloatFullClass, hideBelowLgClass } from "@/components/common/ResponsiveProductVisual";
 
 const callLog = [
-  { id: 1, name: "Nguyễn Văn Minh", phone: "0901 234 567", type: "out", duration: "3:42", status: "answered", time: "09:14", tag: "Khách hàng mới" },
-  { id: 2, name: "Trần Thị Lan", phone: "0912 345 678", type: "in", duration: "7:18", status: "answered", time: "09:31", tag: "Gia hạn" },
-  { id: 3, name: "Lê Hoàng Phúc", phone: "0888 901 234", type: "out", duration: "—", status: "missed", time: "09:52", tag: null },
-  { id: 4, name: "Phạm Thu Hà", phone: "0976 543 210", type: "in", duration: "12:05", status: "answered", time: "10:08", tag: "Demo" },
-  { id: 5, name: "Võ Minh Tuấn", phone: "0933 210 987", type: "out", duration: "5:20", status: "answered", time: "10:45", tag: "Upsell" },
+  { id: 1, name: "Khách hàng 01", phone: "0900 000 001", type: "out", duration: "3:42", status: "answered", time: "09:14", tag: "Khách hàng mới" },
+  { id: 2, name: "Khách hàng 02", phone: "0900 000 002", type: "in", duration: "7:18", status: "answered", time: "09:31", tag: "Gia hạn" },
+  { id: 3, name: "Khách hàng 03", phone: "0900 000 003", type: "out", duration: "—", status: "missed", time: "09:52", tag: null },
+  { id: 4, name: "Khách hàng 04", phone: "0900 000 004", type: "in", duration: "12:05", status: "answered", time: "10:08", tag: "Demo" },
+  { id: 5, name: "Khách hàng 05", phone: "0900 000 005", type: "out", duration: "5:20", status: "answered", time: "10:45", tag: "Upsell" },
 ];
 
 const contacts = [
-  { id: 1, name: "Công ty TNHH Bình Minh", contact: "Nguyễn Văn Minh", calls: 12, lastCall: "Hôm nay 09:14", stage: "Demo", avatar: "BM" },
-  { id: 2, name: "CTCP Việt Phát", contact: "Trần Thị Lan", calls: 8, lastCall: "Hôm nay 09:31", stage: "Đàm phán", avatar: "VP" },
-  { id: 3, name: "Tập đoàn Sao Việt", contact: "Phạm Thu Hà", calls: 24, lastCall: "Hôm nay 10:08", stage: "Đề xuất", avatar: "SV" },
+  { id: 1, name: "Công ty A", contact: "Khách hàng 01", calls: 12, lastCall: "Hôm nay 09:14", stage: "Demo", avatar: "BM" },
+  { id: 2, name: "Công ty B", contact: "Khách hàng 02", calls: 8, lastCall: "Hôm nay 09:31", stage: "Đàm phán", avatar: "VP" },
+  { id: 3, name: "Công ty C", contact: "Khách hàng 04", calls: 24, lastCall: "Hôm nay 10:08", stage: "Đề xuất", avatar: "SV" },
 ];
 
 const kpiData = [
@@ -27,10 +27,10 @@ const kpiData = [
 ];
 
 const agentStatus = [
-  { name: "Hằng N.", status: "on-call", duration: "04:12", color: "#22c55e" },
-  { name: "Tuấn V.", status: "on-call", duration: "01:48", color: "#22c55e" },
-  { name: "Linh P.", status: "available", duration: null, color: "#673ab7" },
-  { name: "Dương M.", status: "break", duration: null, color: "#f59e0b" },
+  { name: "NV 01", status: "on-call", duration: "04:12", color: "#22c55e" },
+  { name: "NV 02", status: "on-call", duration: "01:48", color: "#22c55e" },
+  { name: "NV 03", status: "available", duration: null, color: "#673ab7" },
+  { name: "NV 04", status: "break", duration: null, color: "#f59e0b" },
 ];
 
 // ─── Sub-components ─────────────────────────────────────────────────────────
@@ -97,10 +97,10 @@ export function DashboardMain() {
         </div>
         <div className="flex-1 min-w-0">
           <div className="text-xs font-semibold truncate" style={{ color: "#1e2026" }}>
-            Cuộc gọi đến · Nguyễn Văn Minh
+            Cuộc gọi đến · Khách hàng 01
           </div>
           <div className="text-[10px]" style={{ color: "#5b5f6b" }}>
-            0901 234 567 · Hotline 1900 1234
+            0900 000 001 · Hotline 1900 0000
           </div>
         </div>
         <span
@@ -265,7 +265,7 @@ export function FloatingCustomerPopup() {
       >
         <PhoneIncoming size={12} color="#fff" aria-hidden="true" />
         <span className="text-[11px] font-semibold text-white">Cuộc gọi đến</span>
-        <span className="ml-auto text-[9px]" style={{ color: "rgba(255,255,255,0.8)" }}>1900 1234</span>
+        <span className="ml-auto text-[9px]" style={{ color: "rgba(255,255,255,0.8)" }}>1900 0000</span>
       </div>
 
       <div className="p-3.5">
@@ -277,8 +277,8 @@ export function FloatingCustomerPopup() {
             BM
           </div>
           <div className="min-w-0">
-            <div className="text-xs font-bold truncate" style={{ color: "#1e2026" }}>Nguyễn Văn Minh</div>
-            <div className="text-[10px] truncate" style={{ color: "#5b5f6b" }}>Công ty TNHH Bình Minh</div>
+            <div className="text-xs font-bold truncate" style={{ color: "#1e2026" }}>Khách hàng 01</div>
+            <div className="text-[10px] truncate" style={{ color: "#5b5f6b" }}>Công ty A</div>
           </div>
         </div>
 
@@ -359,7 +359,7 @@ export function FloatingTimeline() {
           <Voicemail size={11} color="#673ab7" />
         </div>
         <div>
-          <div className="text-xs font-semibold" style={{ color: "#1e2026" }}>Trần Thị Lan</div>
+          <div className="text-xs font-semibold" style={{ color: "#1e2026" }}>Khách hàng 02</div>
           <div className="text-[10px]" style={{ color: "#5b5f6b" }}>Cuộc gọi đến · 7:18 phút</div>
         </div>
         <span className="ml-auto text-[9px] px-1.5 py-0.5 rounded-full font-medium" style={{ background: "#dcfce7", color: "#16a34a" }}>Đã nghe</span>
