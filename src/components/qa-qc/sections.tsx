@@ -25,7 +25,7 @@ import {
   SectionHeader,
 } from '@/components/common/primitives'
 import { FeatureSplit } from '@/components/common/FeatureSplit'
-import { ProductVisual } from '@/components/common/ProductVisual'
+import { QaQcStage } from './QaQcStage'
 import { track } from '@/lib/analytics'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
 import {
@@ -48,17 +48,17 @@ import {
 } from '@/data/qaQcCenter'
 import {
   QualityDashboardMockup,
-  ReviewWorkspaceMockup,
+  ReviewPipelineMockup,
   ScoreCardMockup,
   SignalsMockup,
   TranscriptMockup,
 } from './visuals'
 
 const PRIMARY_BTN =
-  'inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto'
+  'inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 sm:whitespace-nowrap text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto'
 
 const SECONDARY_BTN =
-  'inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-7 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto'
+  'inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-7 sm:whitespace-nowrap text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto'
 
 const INLINE_LINK =
   'inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-brand underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand'
@@ -101,7 +101,7 @@ export function QaQcHero() {
       }}
     >
       <Container>
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[44fr_56fr] lg:gap-14">
           {/* Text first in DOM order → first on mobile. */}
           <div>
             <Eyebrow>{QQ_HERO.eyebrow}</Eyebrow>
@@ -135,7 +135,10 @@ export function QaQcHero() {
               ))}
             </ul>
 
-            <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
+            {/* `flex-wrap` + `whitespace-nowrap`: the 44% copy column is too
+                narrow for both CTAs on one row, and without this the labels
+                broke mid-phrase inside the buttons. */}
+            <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
               <DemoCta label={QQ_HERO.primaryCta.label} />
 
               <a href={QQ_HERO.secondaryCta.href} className={SECONDARY_BTN}>
@@ -146,9 +149,9 @@ export function QaQcHero() {
           </div>
 
           {/* Visual second. */}
-          <ProductVisual maxWidth="580px">
-            <ReviewWorkspaceMockup />
-          </ProductVisual>
+          <QaQcStage maxWidth="560px">
+            <ReviewPipelineMockup />
+          </QaQcStage>
         </div>
       </Container>
     </section>
@@ -268,9 +271,9 @@ export function QaQcOverview() {
             </ul>
           </div>
 
-          <ProductVisual maxWidth="560px">
+          <QaQcStage maxWidth="520px">
             <TranscriptMockup />
-          </ProductVisual>
+          </QaQcStage>
         </div>
       </Container>
     </Section>
@@ -364,12 +367,12 @@ export function QaQcScoring() {
       description={QQ_SCORING.description}
       points={QQ_SCORING.points}
       visual={
-        <ProductVisual
+        <QaQcStage
           maxWidth="480px"
-          note="Giao diện minh họa. Tiêu chí, trọng số và điểm hiển thị là dữ liệu mẫu, không phải kết quả đánh giá thực tế."
+          note="Giao diện minh họa. Tiêu chí và trọng số là một cấu hình ví dụ tổng 100%; các giá trị kết quả để trống vì chưa có dữ liệu đánh giá được duyệt."
         >
           <ScoreCardMockup />
-        </ProductVisual>
+        </QaQcStage>
       }
     />
   )
@@ -388,12 +391,9 @@ export function QaQcSignals() {
       description={QQ_SIGNALS.description}
       points={QQ_SIGNALS.points}
       visual={
-        <ProductVisual
-          maxWidth="480px"
-          note="Giao diện minh họa. Mã cuộc gọi và tín hiệu hiển thị là dữ liệu mẫu."
-        >
+        <QaQcStage maxWidth="480px">
           <SignalsMockup />
-        </ProductVisual>
+        </QaQcStage>
       }
     />
   )
@@ -451,12 +451,12 @@ export function QaQcDashboard() {
       titleId="quality-dashboard"
       description={QQ_DASHBOARD.description}
       visual={
-        <ProductVisual
+        <QaQcStage
           maxWidth="520px"
-          note="Giao diện minh họa. Toàn bộ chỉ số, điểm số và xu hướng hiển thị là dữ liệu mẫu, không phải kết quả vận hành của khách hàng Gcalls."
+          note="Giao diện minh họa ở trạng thái rỗng. Các chỉ số chỉ hiển thị khi có dữ liệu của doanh nghiệp; không có số liệu vận hành nào được dựng sẵn ở đây."
         >
           <QualityDashboardMockup />
-        </ProductVisual>
+        </QaQcStage>
       }
     />
   )

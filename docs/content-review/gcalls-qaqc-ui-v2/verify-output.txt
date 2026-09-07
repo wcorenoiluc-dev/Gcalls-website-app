@@ -1,0 +1,9 @@
+
+  89 passed, 0 failed
+
+  NOTE  site-wide: /favicon.ico 404s on every route. Out of scope here.
+
+  QAQC_CONTENT_PASS
+  QAQC_FABRICATED_DATA_ZERO
+  QAQC_PII_ZERO
+  QAQC_UI_LOCAL_PASS

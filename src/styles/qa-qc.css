@@ -1,0 +1,44 @@
+/**
+ * /qc-bot-ai/ — page-scoped layout.
+ *
+ * Same approach, and the same reason, as `gcalls-plus.css`: `Container`,
+ * `Section`, `FeatureSplit`, `SectionHeader`, `FaqAccordion`, `PricingCtaBand`
+ * and `FinalCtaBand` are shared with every other route, and this checkpoint may
+ * not move them. The rhythm and container width are therefore applied through a
+ * scope class the page owns.
+ *
+ * WHERE THE 50px COMES FROM
+ * The space between sections here is each section's own block padding
+ * (`py-14 sm:py-20 lg:py-24`), so two adjacent sections put 192px between their
+ * content at 1440. 25px on each side of the boundary is 50px between
+ * compositions, at every breakpoint.
+ *
+ * NOT TOUCHED: card padding, FAQ items, the direct-answer panel interior, the
+ * story card interior, and the horizontal gutter — those are internal spacing
+ * (32-44px per the brief), not the seam this rule is about.
+ */
+
+.qq-page > section {
+  padding-block: 25px;
+}
+
+/**
+ * The hero keeps a larger top inset: it is the first painted band under a
+ * fixed header, and 25px would tuck the eyebrow beneath it. Its BOTTOM joins
+ * the rhythm.
+ */
+.qq-page > section:first-of-type {
+  padding-block: 40px 25px;
+}
+
+/**
+ * Container: 1280px -> 1180px, for this page only.
+ *
+ * Matches the utility class the shared `Container` emits. That coupling to a
+ * literal value is asserted in `scripts/verify-qaqc-ui.mjs`, so if `Container`
+ * stops emitting `max-w-[1280px]` the check fails loudly rather than the page
+ * silently reverting to full width.
+ */
+.qq-page .max-w-\[1280px\] {
+  max-width: 1180px;
+}

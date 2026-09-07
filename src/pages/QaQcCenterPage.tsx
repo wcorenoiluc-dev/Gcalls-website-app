@@ -48,13 +48,28 @@ import {
  * the claim guard: nothing on this page may assert 100% coverage, guaranteed
  * accuracy, compliance certification, or that AI replaces human QA.
  *
+ * ---------------------------------------------------------------------------
+ * VISUALS: NO SIMULATED PRODUCT DATA
+ * ---------------------------------------------------------------------------
+ * No QA/QC product capture exists — the image master map records this route as
+ * `PRODUCT_SCREENSHOT_REQUIRED / NOT DELIVERED`, "do not stage a fake scoring
+ * screen". The five surfaces in `qa-qc/visuals.tsx` therefore illustrate the
+ * WORKFLOW and carry no operating figures at all: no suggested score, no call
+ * identifiers, no invented conversation, no dashboard totals, no trend chart.
+ * `scripts/verify-qaqc-ui.mjs` asserts each of those stays absent.
+ * ---------------------------------------------------------------------------
+ *
+ * The `qq-page` class is the scope for `src/styles/qa-qc.css`, which carries
+ * this page's 1180px container and 50px section seam without touching the
+ * shared primitives every other route renders.
+ *
  * Exactly one H1, in QaQcHero.
  */
 export function QaQcCenterPage() {
   const jsonLd = useMemo(() => buildQaQcJsonLd(SITE_ORIGIN), [])
 
   return (
-    <>
+    <div className="qq-page">
       <JsonLd id="qa-qc-center" data={jsonLd} />
 
       <div className="bg-brand-light/60 pt-20 sm:pt-24">
@@ -121,6 +136,6 @@ export function QaQcCenterPage() {
           showPhone
         />
       </Section>
-    </>
+    </div>
   )
 }

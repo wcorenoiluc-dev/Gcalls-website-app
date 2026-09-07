@@ -1,0 +1,1210 @@
+{
+  "320": {
+    "pageHeight": 20793,
+    "docWidth": 320,
+    "viewportWidth": 320,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 22,
+    "sectionCount": 19,
+    "images": [],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 124
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+        "top": 124,
+        "height": 1545
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center là gì?",
+        "top": 1669,
+        "height": 549
+      },
+      {
+        "tag": "section",
+        "label": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ",
+        "top": 2218,
+        "height": 1511
+      },
+      {
+        "tag": "section",
+        "label": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem",
+        "top": 3729,
+        "height": 1289
+      },
+      {
+        "tag": "section",
+        "label": "Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+        "top": 5017,
+        "height": 1473
+      },
+      {
+        "tag": "section",
+        "label": "Các năng lực cốt lõi hỗ trợ đội QA",
+        "top": 6491,
+        "height": 1941
+      },
+      {
+        "tag": "section",
+        "label": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+        "top": 8432,
+        "height": 1206
+      },
+      {
+        "tag": "section",
+        "label": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+        "top": 9638,
+        "height": 1042
+      },
+      {
+        "tag": "section",
+        "label": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g",
+        "top": 10679,
+        "height": 1070
+      },
+      {
+        "tag": "section",
+        "label": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+        "top": 11749,
+        "height": 927
+      },
+      {
+        "tag": "section",
+        "label": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+        "top": 12675,
+        "height": 984
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center phù hợp với những hoạt động nào?",
+        "top": 13659,
+        "height": 1106
+      },
+      {
+        "tag": "section",
+        "label": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+        "top": 14765,
+        "height": 523
+      },
+      {
+        "tag": "section",
+        "label": "Chọn đúng sản phẩm theo bài toán cần giải quyết",
+        "top": 15288,
+        "height": 795
+      },
+      {
+        "tag": "section",
+        "label": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+        "top": 16082,
+        "height": 675
+      },
+      {
+        "tag": "section",
+        "label": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+        "top": 16757,
+        "height": 600
+      },
+      {
+        "tag": "section",
+        "label": "Câu hỏi thường gặp về QA QC Center",
+        "top": 17357,
+        "height": 933
+      },
+      {
+        "tag": "section",
+        "label": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ng",
+        "top": 18289,
+        "height": 712
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi → QA QC Center là gì?",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center là gì? → Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ",
+        "gap": 0
+      },
+      {
+        "between": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ → Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem",
+        "gap": 0
+      },
+      {
+        "between": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem → Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+        "gap": -1
+      },
+      {
+        "between": "Từ bản ghi cuộc gọi đến phiên đánh giá QA → Các năng lực cốt lõi hỗ trợ đội QA",
+        "gap": 1
+      },
+      {
+        "between": "Các năng lực cốt lõi hỗ trợ đội QA → Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+        "gap": 0
+      },
+      {
+        "between": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng → Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+        "gap": 0
+      },
+      {
+        "between": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý → AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g",
+        "gap": -1
+      },
+      {
+        "between": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g → Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+        "gap": 0
+      },
+      {
+        "between": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ → Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+        "gap": -1
+      },
+      {
+        "between": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý → QA QC Center phù hợp với những hoạt động nào?",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center phù hợp với những hoạt động nào? → Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+        "gap": 0
+      },
+      {
+        "between": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần → Chọn đúng sản phẩm theo bài toán cần giải quyết",
+        "gap": 0
+      },
+      {
+        "between": "Chọn đúng sản phẩm theo bài toán cần giải quyết → Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+        "gap": -1
+      },
+      {
+        "between": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại → Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+        "gap": 0
+      },
+      {
+        "between": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA → Câu hỏi thường gặp về QA QC Center",
+        "gap": 0
+      },
+      {
+        "between": "Câu hỏi thường gặp về QA QC Center → Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ng",
+        "gap": -1
+      }
+    ],
+    "consoleErrors": []
+  },
+  "390": {
+    "pageHeight": 19023,
+    "docWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 22,
+    "sectionCount": 19,
+    "images": [],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 124
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+        "top": 124,
+        "height": 1389
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center là gì?",
+        "top": 1513,
+        "height": 471
+      },
+      {
+        "tag": "section",
+        "label": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ",
+        "top": 1984,
+        "height": 1317
+      },
+      {
+        "tag": "section",
+        "label": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem",
+        "top": 3300,
+        "height": 1183
+      },
+      {
+        "tag": "section",
+        "label": "Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+        "top": 4483,
+        "height": 1347
+      },
+      {
+        "tag": "section",
+        "label": "Các năng lực cốt lõi hỗ trợ đội QA",
+        "top": 5830,
+        "height": 1837
+      },
+      {
+        "tag": "section",
+        "label": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+        "top": 7668,
+        "height": 1084
+      },
+      {
+        "tag": "section",
+        "label": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+        "top": 8751,
+        "height": 920
+      },
+      {
+        "tag": "section",
+        "label": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g",
+        "top": 9671,
+        "height": 961
+      },
+      {
+        "tag": "section",
+        "label": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+        "top": 10632,
+        "height": 880
+      },
+      {
+        "tag": "section",
+        "label": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+        "top": 11511,
+        "height": 911
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center phù hợp với những hoạt động nào?",
+        "top": 12422,
+        "height": 1002
+      },
+      {
+        "tag": "section",
+        "label": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+        "top": 13424,
+        "height": 409
+      },
+      {
+        "tag": "section",
+        "label": "Chọn đúng sản phẩm theo bài toán cần giải quyết",
+        "top": 13833,
+        "height": 743
+      },
+      {
+        "tag": "section",
+        "label": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+        "top": 14576,
+        "height": 599
+      },
+      {
+        "tag": "section",
+        "label": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+        "top": 15174,
+        "height": 539
+      },
+      {
+        "tag": "section",
+        "label": "Câu hỏi thường gặp về QA QC Center",
+        "top": 15713,
+        "height": 864
+      },
+      {
+        "tag": "section",
+        "label": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ng",
+        "top": 16577,
+        "height": 655
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi → QA QC Center là gì?",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center là gì? → Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ",
+        "gap": 0
+      },
+      {
+        "between": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ → Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem",
+        "gap": -1
+      },
+      {
+        "between": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem → Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+        "gap": 0
+      },
+      {
+        "between": "Từ bản ghi cuộc gọi đến phiên đánh giá QA → Các năng lực cốt lõi hỗ trợ đội QA",
+        "gap": 0
+      },
+      {
+        "between": "Các năng lực cốt lõi hỗ trợ đội QA → Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+        "gap": 1
+      },
+      {
+        "between": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng → Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+        "gap": -1
+      },
+      {
+        "between": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý → AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g",
+        "gap": 0
+      },
+      {
+        "between": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g → Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+        "gap": 0
+      },
+      {
+        "between": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ → Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+        "gap": -1
+      },
+      {
+        "between": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý → QA QC Center phù hợp với những hoạt động nào?",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center phù hợp với những hoạt động nào? → Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+        "gap": 0
+      },
+      {
+        "between": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần → Chọn đúng sản phẩm theo bài toán cần giải quyết",
+        "gap": 0
+      },
+      {
+        "between": "Chọn đúng sản phẩm theo bài toán cần giải quyết → Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+        "gap": 0
+      },
+      {
+        "between": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại → Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+        "gap": -1
+      },
+      {
+        "between": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA → Câu hỏi thường gặp về QA QC Center",
+        "gap": 0
+      },
+      {
+        "between": "Câu hỏi thường gặp về QA QC Center → Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ng",
+        "gap": 0
+      }
+    ],
+    "consoleErrors": []
+  },
+  "768": {
+    "pageHeight": 14030,
+    "docWidth": 768,
+    "viewportWidth": 768,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 22,
+    "sectionCount": 19,
+    "images": [],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+        "top": 140,
+        "height": 1168
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center là gì?",
+        "top": 1308,
+        "height": 379
+      },
+      {
+        "tag": "section",
+        "label": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ",
+        "top": 1687,
+        "height": 860
+      },
+      {
+        "tag": "section",
+        "label": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem",
+        "top": 2547,
+        "height": 998
+      },
+      {
+        "tag": "section",
+        "label": "Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+        "top": 3545,
+        "height": 884
+      },
+      {
+        "tag": "section",
+        "label": "Các năng lực cốt lõi hỗ trợ đội QA",
+        "top": 4429,
+        "height": 1136
+      },
+      {
+        "tag": "section",
+        "label": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+        "top": 5565,
+        "height": 1007
+      },
+      {
+        "tag": "section",
+        "label": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+        "top": 6571,
+        "height": 822
+      },
+      {
+        "tag": "section",
+        "label": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g",
+        "top": 7393,
+        "height": 548
+      },
+      {
+        "tag": "section",
+        "label": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+        "top": 7942,
+        "height": 764
+      },
+      {
+        "tag": "section",
+        "label": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+        "top": 8705,
+        "height": 573
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center phù hợp với những hoạt động nào?",
+        "top": 9278,
+        "height": 623
+      },
+      {
+        "tag": "section",
+        "label": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+        "top": 9901,
+        "height": 327
+      },
+      {
+        "tag": "section",
+        "label": "Chọn đúng sản phẩm theo bài toán cần giải quyết",
+        "top": 10228,
+        "height": 541
+      },
+      {
+        "tag": "section",
+        "label": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+        "top": 10769,
+        "height": 518
+      },
+      {
+        "tag": "section",
+        "label": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+        "top": 11287,
+        "height": 513
+      },
+      {
+        "tag": "section",
+        "label": "Câu hỏi thường gặp về QA QC Center",
+        "top": 11801,
+        "height": 699
+      },
+      {
+        "tag": "section",
+        "label": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ng",
+        "top": 12499,
+        "height": 539
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi → QA QC Center là gì?",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center là gì? → Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ",
+        "gap": 0
+      },
+      {
+        "between": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ → Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem",
+        "gap": 0
+      },
+      {
+        "between": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem → Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+        "gap": 0
+      },
+      {
+        "between": "Từ bản ghi cuộc gọi đến phiên đánh giá QA → Các năng lực cốt lõi hỗ trợ đội QA",
+        "gap": 0
+      },
+      {
+        "between": "Các năng lực cốt lõi hỗ trợ đội QA → Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+        "gap": 0
+      },
+      {
+        "between": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng → Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+        "gap": -1
+      },
+      {
+        "between": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý → AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g",
+        "gap": 0
+      },
+      {
+        "between": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g → Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+        "gap": 1
+      },
+      {
+        "between": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ → Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+        "gap": -1
+      },
+      {
+        "between": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý → QA QC Center phù hợp với những hoạt động nào?",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center phù hợp với những hoạt động nào? → Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+        "gap": 0
+      },
+      {
+        "between": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần → Chọn đúng sản phẩm theo bài toán cần giải quyết",
+        "gap": 0
+      },
+      {
+        "between": "Chọn đúng sản phẩm theo bài toán cần giải quyết → Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+        "gap": 0
+      },
+      {
+        "between": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại → Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+        "gap": 0
+      },
+      {
+        "between": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA → Câu hỏi thường gặp về QA QC Center",
+        "gap": 1
+      },
+      {
+        "between": "Câu hỏi thường gặp về QA QC Center → Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ng",
+        "gap": -1
+      }
+    ],
+    "consoleErrors": []
+  },
+  "1024": {
+    "pageHeight": 11229,
+    "docWidth": 1024,
+    "viewportWidth": 1024,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 22,
+    "sectionCount": 19,
+    "images": [],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+        "top": 140,
+        "height": 1008
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center là gì?",
+        "top": 1148,
+        "height": 378
+      },
+      {
+        "tag": "section",
+        "label": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ",
+        "top": 1525,
+        "height": 728
+      },
+      {
+        "tag": "section",
+        "label": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem",
+        "top": 2253,
+        "height": 613
+      },
+      {
+        "tag": "section",
+        "label": "Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+        "top": 2866,
+        "height": 567
+      },
+      {
+        "tag": "section",
+        "label": "Các năng lực cốt lõi hỗ trợ đội QA",
+        "top": 3433,
+        "height": 898
+      },
+      {
+        "tag": "section",
+        "label": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+        "top": 4331,
+        "height": 551
+      },
+      {
+        "tag": "section",
+        "label": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+        "top": 4882,
+        "height": 513
+      },
+      {
+        "tag": "section",
+        "label": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g",
+        "top": 5395,
+        "height": 535
+      },
+      {
+        "tag": "section",
+        "label": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+        "top": 5931,
+        "height": 494
+      },
+      {
+        "tag": "section",
+        "label": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+        "top": 6425,
+        "height": 459
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center phù hợp với những hoạt động nào?",
+        "top": 6884,
+        "height": 575
+      },
+      {
+        "tag": "section",
+        "label": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+        "top": 7459,
+        "height": 340
+      },
+      {
+        "tag": "section",
+        "label": "Chọn đúng sản phẩm theo bài toán cần giải quyết",
+        "top": 7799,
+        "height": 461
+      },
+      {
+        "tag": "section",
+        "label": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+        "top": 8260,
+        "height": 531
+      },
+      {
+        "tag": "section",
+        "label": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+        "top": 8791,
+        "height": 443
+      },
+      {
+        "tag": "section",
+        "label": "Câu hỏi thường gặp về QA QC Center",
+        "top": 9235,
+        "height": 679
+      },
+      {
+        "tag": "section",
+        "label": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ng",
+        "top": 9913,
+        "height": 552
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi → QA QC Center là gì?",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center là gì? → Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ",
+        "gap": -1
+      },
+      {
+        "between": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ → Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem",
+        "gap": 0
+      },
+      {
+        "between": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem → Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+        "gap": 0
+      },
+      {
+        "between": "Từ bản ghi cuộc gọi đến phiên đánh giá QA → Các năng lực cốt lõi hỗ trợ đội QA",
+        "gap": 0
+      },
+      {
+        "between": "Các năng lực cốt lõi hỗ trợ đội QA → Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+        "gap": 0
+      },
+      {
+        "between": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng → Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+        "gap": 0
+      },
+      {
+        "between": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý → AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g",
+        "gap": 0
+      },
+      {
+        "between": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g → Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+        "gap": 1
+      },
+      {
+        "between": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ → Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+        "gap": 0
+      },
+      {
+        "between": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý → QA QC Center phù hợp với những hoạt động nào?",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center phù hợp với những hoạt động nào? → Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+        "gap": 0
+      },
+      {
+        "between": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần → Chọn đúng sản phẩm theo bài toán cần giải quyết",
+        "gap": 0
+      },
+      {
+        "between": "Chọn đúng sản phẩm theo bài toán cần giải quyết → Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+        "gap": 0
+      },
+      {
+        "between": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại → Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+        "gap": 0
+      },
+      {
+        "between": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA → Câu hỏi thường gặp về QA QC Center",
+        "gap": 1
+      },
+      {
+        "between": "Câu hỏi thường gặp về QA QC Center → Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ng",
+        "gap": -1
+      }
+    ],
+    "consoleErrors": []
+  },
+  "1280": {
+    "pageHeight": 10556,
+    "docWidth": 1280,
+    "viewportWidth": 1280,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 22,
+    "sectionCount": 19,
+    "images": [],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+        "top": 140,
+        "height": 943
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center là gì?",
+        "top": 1083,
+        "height": 378
+      },
+      {
+        "tag": "section",
+        "label": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ",
+        "top": 1461,
+        "height": 679
+      },
+      {
+        "tag": "section",
+        "label": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem",
+        "top": 2140,
+        "height": 613
+      },
+      {
+        "tag": "section",
+        "label": "Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+        "top": 2753,
+        "height": 518
+      },
+      {
+        "tag": "section",
+        "label": "Các năng lực cốt lõi hỗ trợ đội QA",
+        "top": 3271,
+        "height": 898
+      },
+      {
+        "tag": "section",
+        "label": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+        "top": 4168,
+        "height": 551
+      },
+      {
+        "tag": "section",
+        "label": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+        "top": 4719,
+        "height": 513
+      },
+      {
+        "tag": "section",
+        "label": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g",
+        "top": 5233,
+        "height": 535
+      },
+      {
+        "tag": "section",
+        "label": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+        "top": 5768,
+        "height": 471
+      },
+      {
+        "tag": "section",
+        "label": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+        "top": 6239,
+        "height": 435
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center phù hợp với những hoạt động nào?",
+        "top": 6674,
+        "height": 431
+      },
+      {
+        "tag": "section",
+        "label": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+        "top": 7105,
+        "height": 340
+      },
+      {
+        "tag": "section",
+        "label": "Chọn đúng sản phẩm theo bài toán cần giải quyết",
+        "top": 7445,
+        "height": 392
+      },
+      {
+        "tag": "section",
+        "label": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+        "top": 7837,
+        "height": 531
+      },
+      {
+        "tag": "section",
+        "label": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+        "top": 8369,
+        "height": 443
+      },
+      {
+        "tag": "section",
+        "label": "Câu hỏi thường gặp về QA QC Center",
+        "top": 8812,
+        "height": 679
+      },
+      {
+        "tag": "section",
+        "label": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ng",
+        "top": 9490,
+        "height": 552
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi → QA QC Center là gì?",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center là gì? → Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ",
+        "gap": 0
+      },
+      {
+        "between": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ → Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem",
+        "gap": 0
+      },
+      {
+        "between": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem → Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+        "gap": 0
+      },
+      {
+        "between": "Từ bản ghi cuộc gọi đến phiên đánh giá QA → Các năng lực cốt lõi hỗ trợ đội QA",
+        "gap": 0
+      },
+      {
+        "between": "Các năng lực cốt lõi hỗ trợ đội QA → Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+        "gap": -1
+      },
+      {
+        "between": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng → Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+        "gap": 0
+      },
+      {
+        "between": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý → AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g",
+        "gap": 1
+      },
+      {
+        "between": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g → Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+        "gap": 0
+      },
+      {
+        "between": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ → Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+        "gap": 0
+      },
+      {
+        "between": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý → QA QC Center phù hợp với những hoạt động nào?",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center phù hợp với những hoạt động nào? → Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+        "gap": 0
+      },
+      {
+        "between": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần → Chọn đúng sản phẩm theo bài toán cần giải quyết",
+        "gap": 0
+      },
+      {
+        "between": "Chọn đúng sản phẩm theo bài toán cần giải quyết → Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+        "gap": 0
+      },
+      {
+        "between": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại → Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+        "gap": 1
+      },
+      {
+        "between": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA → Câu hỏi thường gặp về QA QC Center",
+        "gap": 0
+      },
+      {
+        "between": "Câu hỏi thường gặp về QA QC Center → Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ng",
+        "gap": -1
+      }
+    ],
+    "consoleErrors": []
+  },
+  "1440": {
+    "pageHeight": 10556,
+    "docWidth": 1440,
+    "viewportWidth": 1440,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "h2Count": 22,
+    "sectionCount": 19,
+    "images": [],
+    "sections": [
+      {
+        "tag": "div",
+        "label": "(no heading)",
+        "top": 0,
+        "height": 140
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+        "top": 140,
+        "height": 943
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center là gì?",
+        "top": 1083,
+        "height": 378
+      },
+      {
+        "tag": "section",
+        "label": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ",
+        "top": 1461,
+        "height": 679
+      },
+      {
+        "tag": "section",
+        "label": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem",
+        "top": 2140,
+        "height": 613
+      },
+      {
+        "tag": "section",
+        "label": "Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+        "top": 2753,
+        "height": 518
+      },
+      {
+        "tag": "section",
+        "label": "Các năng lực cốt lõi hỗ trợ đội QA",
+        "top": 3271,
+        "height": 898
+      },
+      {
+        "tag": "section",
+        "label": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+        "top": 4168,
+        "height": 551
+      },
+      {
+        "tag": "section",
+        "label": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+        "top": 4719,
+        "height": 513
+      },
+      {
+        "tag": "section",
+        "label": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g",
+        "top": 5233,
+        "height": 535
+      },
+      {
+        "tag": "section",
+        "label": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+        "top": 5768,
+        "height": 471
+      },
+      {
+        "tag": "section",
+        "label": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+        "top": 6239,
+        "height": 435
+      },
+      {
+        "tag": "section",
+        "label": "QA QC Center phù hợp với những hoạt động nào?",
+        "top": 6674,
+        "height": 431
+      },
+      {
+        "tag": "section",
+        "label": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+        "top": 7105,
+        "height": 340
+      },
+      {
+        "tag": "section",
+        "label": "Chọn đúng sản phẩm theo bài toán cần giải quyết",
+        "top": 7445,
+        "height": 392
+      },
+      {
+        "tag": "section",
+        "label": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+        "top": 7837,
+        "height": 531
+      },
+      {
+        "tag": "section",
+        "label": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+        "top": 8369,
+        "height": 443
+      },
+      {
+        "tag": "section",
+        "label": "Câu hỏi thường gặp về QA QC Center",
+        "top": 8812,
+        "height": 679
+      },
+      {
+        "tag": "section",
+        "label": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ng",
+        "top": 9490,
+        "height": 552
+      }
+    ],
+    "gaps": [
+      {
+        "between": "(no heading) → QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi → QA QC Center là gì?",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center là gì? → Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ",
+        "gap": 0
+      },
+      {
+        "between": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ đ → Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem",
+        "gap": 0
+      },
+      {
+        "between": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem → Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+        "gap": 0
+      },
+      {
+        "between": "Từ bản ghi cuộc gọi đến phiên đánh giá QA → Các năng lực cốt lõi hỗ trợ đội QA",
+        "gap": 0
+      },
+      {
+        "between": "Các năng lực cốt lõi hỗ trợ đội QA → Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+        "gap": -1
+      },
+      {
+        "between": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng → Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+        "gap": 0
+      },
+      {
+        "between": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý → AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g",
+        "gap": 1
+      },
+      {
+        "between": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh g → Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+        "gap": 0
+      },
+      {
+        "between": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ → Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+        "gap": 0
+      },
+      {
+        "between": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý → QA QC Center phù hợp với những hoạt động nào?",
+        "gap": 0
+      },
+      {
+        "between": "QA QC Center phù hợp với những hoạt động nào? → Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+        "gap": 0
+      },
+      {
+        "between": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần → Chọn đúng sản phẩm theo bài toán cần giải quyết",
+        "gap": 0
+      },
+      {
+        "between": "Chọn đúng sản phẩm theo bài toán cần giải quyết → Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+        "gap": 0
+      },
+      {
+        "between": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại → Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+        "gap": 1
+      },
+      {
+        "between": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA → Câu hỏi thường gặp về QA QC Center",
+        "gap": 0
+      },
+      {
+        "between": "Câu hỏi thường gặp về QA QC Center → Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ng",
+        "gap": -1
+      }
+    ],
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  }
+}
