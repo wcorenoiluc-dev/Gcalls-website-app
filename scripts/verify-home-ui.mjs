@@ -92,6 +92,57 @@ for (const bp of BREAKPOINTS) {
       docOverflow: document.documentElement.scrollWidth > document.documentElement.clientWidth,
       clipped,
       forms: wrap ? wrap.querySelectorAll('form').length : 0,
+      /**
+       * The form is required to be present and required to be inert.
+       *
+       * `LEAD_BACKEND_CONFIGURED` only makes delivery fail; it does not stop
+       * the page from accepting a submit, and this page does not own
+       * LeadForm.tsx. §13 therefore wraps it in a disabled fieldset, and this
+       * measures the result rather than trusting the markup: every control is
+       * counted, and the submit button is clicked to prove no submit event
+       * escapes. A live submit here would mean the page collected details it
+       * cannot deliver.
+       */
+      ...(() => {
+        const form = wrap?.querySelector('form')
+        if (!form) return { formControls: 0, enabledControls: 0, submitFired: null }
+        const controls = [...form.querySelectorAll('input,select,textarea,button')]
+        /**
+         * `:disabled`, not `.disabled`. The IDL property reflects the element's
+         * OWN content attribute, so a control disabled by an ancestor fieldset
+         * still reports false — a check written against `.disabled` reads as a
+         * failure while the page is correct, which is how this one started.
+         * `:disabled` matches the "actually disabled" state the browser uses to
+         * decide whether the control can be interacted with at all.
+         */
+        const enabled = controls.filter((c) => !c.matches(':disabled'))
+
+        // The user's path: activating the submit button.
+        let firedByClick = false
+        const onClickPath = () => { firedByClick = true }
+        form.addEventListener('submit', onClickPath)
+        const submitBtn = controls.find((c) => c.tagName === 'BUTTON' && c.type === 'submit')
+        submitBtn?.click()
+        form.removeEventListener('submit', onClickPath)
+
+        // The scripted path: requestSubmit() ignores a disabled submitter and
+        // this form sets noValidate, so the event is dispatched regardless.
+        // What must hold is that it is cancelled before the form acts on it.
+        let scriptedReached = false
+        let scriptedCancelled = null
+        const onScripted = (e) => { scriptedReached = true; scriptedCancelled = e.defaultPrevented; e.preventDefault() }
+        form.addEventListener('submit', onScripted)
+        try { form.requestSubmit?.() } catch { /* nothing to do; the assertion below covers it */ }
+        form.removeEventListener('submit', onScripted)
+
+        return {
+          formControls: controls.length,
+          enabledControls: enabled.length,
+          enabledSample: enabled.slice(0, 3).map((c) => c.name || c.id || c.tagName),
+          submitFiredByClick: firedByClick,
+          scriptedSubmitNeutralized: !scriptedReached || scriptedCancelled === true,
+        }
+      })(),
       captions: document.querySelectorAll('[data-mockup-caption]').length,
       images: document.images.length,
       brokenImages: [...document.images].filter((i) => i.complete && i.naturalWidth === 0).length,
@@ -126,6 +177,15 @@ check('exactly one H1', at1440.h1 === 1, `${at1440.h1}`)
 check('H1 is not empty', at1440.h1Text.length > 0, at1440.h1Text)
 check('a lead form at the end of the page', at1440.forms === 1, `${at1440.forms} form(s)`)
 
+console.log('\n  LEAD FORM — FAIL-CLOSED')
+check('the form renders its controls', at1440.formControls > 0, `${at1440.formControls} control(s)`)
+check('every control is actually disabled', at1440.enabledControls === 0,
+  `${at1440.enabledControls} still enabled: ${(at1440.enabledSample ?? []).join(', ')}`)
+check('activating submit fires no submit event', at1440.submitFiredByClick === false,
+  `submitFiredByClick=${at1440.submitFiredByClick}`)
+check('a scripted submit is cancelled before the form sees it', at1440.scriptedSubmitNeutralized === true,
+  `scriptedSubmitNeutralized=${at1440.scriptedSubmitNeutralized}`)
+
 console.log('\n  RHYTHM')
 check('12 seams (13 sections)', at1440.seams.length === 12, `${at1440.seams.length}`)
 for (const bp of BREAKPOINTS) {
@@ -134,6 +194,20 @@ for (const bp of BREAKPOINTS) {
     s.filter((x) => x !== 50).length ? `off: ${[...new Set(s.filter((x) => x !== 50))].join(', ')}` : '')
 }
 check('container is 1180px @1440', at1440.containerWidth === 1180, `${at1440.containerWidth}px`)
+
+/**
+ * The measured seams, printed. A gate that reports only "ok" leaves the next
+ * reader to re-run it to learn what the numbers were, and the seam values are
+ * the deliverable here, not just their verdict.
+ */
+console.log('\n  MEASURED SEAMS (px, between the 13 sections)')
+console.log(`    bp     n   distinct   seams`)
+for (const bp of BREAKPOINTS) {
+  const s = perBp[bp].seams
+  const distinct = [...new Set(s)].sort((a, b) => a - b)
+  console.log(`    ${String(bp).padEnd(6)} ${String(s.length).padEnd(3)} ${distinct.join('/').padEnd(10)} ${s.join(' ')}`)
+}
+console.log(`    container @1440: ${at1440.containerWidth}px   H1: ${at1440.h1}   sections: ${at1440.sections}`)
 
 console.log('\n  RESPONSIVE')
 for (const bp of BREAKPOINTS) {
