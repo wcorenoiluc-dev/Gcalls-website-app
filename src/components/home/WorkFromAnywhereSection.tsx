@@ -6,18 +6,18 @@ import { TeamPermissionsBlock } from "./TeamPermissionsBlock";
 // ─── Section 9: Work From Anywhere ───────────────────────────────────────────
 
 const remoteStatuses = [
-  { name: "Nhân viên 01",    avatar: "NH", color: "#22c55e", status: "available", label: "Sẵn sàng",   location: "Hà Nội",    calls: 12, dur: "3:42" },
-  { name: "Nhân viên 02",   avatar: "TT", color: "#673ab7", status: "in-call",   label: "Đang gọi",   location: "TP.HCM",    calls: 8,  dur: "01:24" },
-  { name: "Nhân viên 03",     avatar: "LL", color: "#22c55e", status: "available", label: "Sẵn sàng",   location: "Đà Nẵng",   calls: 17, dur: "4:10" },
-  { name: "Nhân viên 04",  avatar: "PD", color: "#f59e0b", status: "away",      label: "Vắng mặt",   location: "Remote",    calls: 5,  dur: "—" },
-  { name: "Nhân viên 05",   avatar: "VT", color: "#0891b2", status: "in-call",   label: "Đang gọi",   location: "TP.HCM",    calls: 21, dur: "02:58" },
-  { name: "Nhân viên 06",   avatar: "DH", color: "#9ca3af", status: "offline",   label: "Ngoại tuyến", location: "Hải Phòng", calls: 0,  dur: "—" },
+  { name: "Nhân viên 01",    avatar: "NH", color: "#22c55e", status: "available", label: "Sẵn sàng",   location: "Hà Nội",    calls: "—", dur: "—" },
+  { name: "Nhân viên 02",   avatar: "TT", color: "#673ab7", status: "in-call",   label: "Đang gọi",   location: "TP.HCM",    calls: "—",  dur: "—" },
+  { name: "Nhân viên 03",     avatar: "LL", color: "#22c55e", status: "available", label: "Sẵn sàng",   location: "Đà Nẵng",   calls: "—", dur: "—" },
+  { name: "Nhân viên 04",  avatar: "PD", color: "#f59e0b", status: "away",      label: "Vắng mặt",   location: "Remote",    calls: "—",  dur: "—" },
+  { name: "Nhân viên 05",   avatar: "VT", color: "#0891b2", status: "in-call",   label: "Đang gọi",   location: "TP.HCM",    calls: "—", dur: "—" },
+  { name: "Nhân viên 06",   avatar: "DH", color: "#9ca3af", status: "offline",   label: "Ngoại tuyến", location: "Hải Phòng", calls: "—",  dur: "—" },
 ];
 
 const statusLog = [
   { time: "10:48", agent: "Nhân viên 01",   event: "Chuyển sang Sẵn sàng",          icon: Check,         color: "#22c55e" },
-  { time: "10:45", agent: "Nhân viên 02",  event: "Bắt đầu cuộc gọi · 0900 000 002", icon: PhoneCall,   color: "#673ab7" },
-  { time: "10:40", agent: "Nhân viên 05",  event: "Bắt đầu cuộc gọi · 0900 000 004", icon: PhoneCall,   color: "#0891b2" },
+  { time: "10:45", agent: "Nhân viên 02",  event: "Bắt đầu cuộc gọi · —", icon: PhoneCall,   color: "#673ab7" },
+  { time: "10:40", agent: "Nhân viên 05",  event: "Bắt đầu cuộc gọi · —", icon: PhoneCall,   color: "#0891b2" },
   { time: "10:32", agent: "Nhân viên 04", event: "Chuyển sang Vắng mặt",           icon: Clock,         color: "#f59e0b" },
   { time: "10:18", agent: "Nhân viên 03",    event: "Kết thúc cuộc gọi · 7m 12s",    icon: PhoneOff,      color: "#6b7280" },
   { time: "09:55", agent: "Nhân viên 06",  event: "Đăng xuất khỏi hệ thống",       icon: X,             color: "#9ca3af" },
@@ -62,7 +62,7 @@ export function DialpadMockup() {
         <div className="text-xl font-bold tabular-nums tracking-widest mb-1" style={{ color: "#1e2026", fontFamily: "'DM Mono',monospace" }}>
           {dialInput || <span style={{ color: "#d1d5db" }}>Nhập số</span>}
         </div>
-        <div className="text-[10px]" style={{ color: "#9ca3af" }}>Ext: 101 · Hotline: 1900 0000</div>
+        <div className="text-[10px]" style={{ color: "#9ca3af" }}>Ext: 101 · Hotline: —</div>
       </div>
 
       {/* Keypad */}
@@ -104,8 +104,8 @@ export function DialpadMockup() {
       <div className="px-4 pb-4 pt-0" style={{ borderTop: "1px solid rgba(103,58,183,0.07)" }}>
         <div className="text-[9px] font-bold uppercase tracking-wide mb-2 pt-3" style={{ color: "#9ca3af" }}>Gọi nhanh</div>
         {[
-          { name: "Nhân viên 01", ext: "101", color: "#673ab7" },
-          { name: "Nhân viên 02", ext: "102", color: "#0891b2" },
+          { name: "Nhân viên 01", ext: "—", color: "#673ab7" },
+          { name: "Nhân viên 02", ext: "—", color: "#0891b2" },
         ].map(c => (
           <div key={c.ext} className="flex items-center gap-2 py-1.5 cursor-pointer rounded-xl px-1 transition-colors" onMouseEnter={e => (e.currentTarget.style.background = "#f6f3fc")} onMouseLeave={e => (e.currentTarget.style.background = "transparent")}>
             <div className="w-5 h-5 rounded-full flex items-center justify-center text-[8px] font-bold" style={{ background: c.color + "18", color: c.color }}>{c.name[0]}{c.name.split(" ").pop()![0]}</div>
@@ -160,7 +160,7 @@ export function SoftphoneMockup() {
               TL
             </div>
             <div className="text-base font-bold text-white mb-0.5">Khách hàng 02</div>
-            <div className="text-[11px] mb-1" style={{ color: "rgba(255,255,255,0.6)" }}>0900 000 002</div>
+            <div className="text-[11px] mb-1" style={{ color: "rgba(255,255,255,0.6)" }}>—</div>
             <div className="text-2xl font-extrabold tabular-nums mb-4" style={{ color: "#fff", fontFamily: "'DM Mono',monospace" }}>{fmt(elapsed)}</div>
 
             {/* Waveform */}
@@ -202,11 +202,11 @@ export function SoftphoneMockup() {
               <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0" style={{ background: "#ede8f9", color: "#673ab7" }}>TL</div>
               <div>
                 <div className="text-sm font-bold" style={{ color: "#1e2026" }}>Khách hàng 02</div>
-                <div className="text-[10px]" style={{ color: "#5b5f6b" }}>0900 000 002 · Gia hạn</div>
+                <div className="text-[10px]" style={{ color: "#5b5f6b" }}>— · Gia hạn</div>
               </div>
               <PhoneIncoming size={14} color="#673ab7" className="ml-auto animate-bounce" />
             </div>
-            <div className="text-xs text-center mb-4" style={{ color: "#9ca3af" }}>Cuộc gọi đến · 1900 0000</div>
+            <div className="text-xs text-center mb-4" style={{ color: "#9ca3af" }}>Cuộc gọi đến · —</div>
             <div className="flex gap-3">
               <button
                 className="flex-1 py-3 rounded-2xl font-bold text-sm flex items-center justify-center gap-2"

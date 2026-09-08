@@ -19,36 +19,36 @@ const analyticsFeatures = [
 const kpiCards = [
   { value: "Live",   label: "Tỷ lệ bắt máy realtime",     icon: PhoneCall,  color: "#673ab7", trend: "Minh họa" },
   { value: "Cuộc gọi", label: "Theo dõi theo tháng",     icon: BarChart2,  color: "#0891b2", trend: "Dashboard" },
-  { value: "3m25s",  label: "Thời lượng trung bình",       icon: Clock,      color: "#16a34a", trend: "-0:12" },
+  { value: "—",  label: "Thời lượng trung bình",       icon: Clock,      color: "#16a34a", trend: "" },
   { value: "Live",   label: "Cập nhật liên tục",           icon: Activity,   color: "#d97706", trend: "Realtime" },
 ];
 
 // Bar chart data – 7 days
 const barData = [
-  { day: "T2", out: 62, in: 48, missed: 7 },
-  { day: "T3", out: 78, in: 55, missed: 5 },
-  { day: "T4", out: 55, in: 42, missed: 9 },
-  { day: "T5", out: 91, in: 67, missed: 4 },
-  { day: "T6", out: 84, in: 60, missed: 6 },
-  { day: "T7", out: 40, in: 31, missed: 11 },
-  { day: "CN", out: 22, in: 18, missed: 8 },
+  { day: "T2", out: "—", in: "—", missed: "—" },
+  { day: "T3", out: "—", in: "—", missed: "—" },
+  { day: "T4", out: "—", in: "—", missed: "—" },
+  { day: "T5", out: "—", in: "—", missed: "—" },
+  { day: "T6", out: "—", in: "—", missed: "—" },
+  { day: "T7", out: "—", in: "—", missed: "—" },
+  { day: "CN", out: "—", in: "—", missed: "—" },
 ];
 const maxBar = 100;
 
 const agentRows = [
-  { name: "Nhân viên 01",    avatar: "NH", color: "#673ab7", out: 38, in: 29, missed: 2, rate: "97%",  dur: "3:52" },
-  { name: "Nhân viên 02",   avatar: "TT", color: "#0891b2", out: 31, in: 22, missed: 4, rate: "92%",  dur: "4:10" },
-  { name: "Nhân viên 03",     avatar: "LL", color: "#16a34a", out: 44, in: 35, missed: 1, rate: "98%",  dur: "3:18" },
-  { name: "Nhân viên 04",  avatar: "PD", color: "#d97706", out: 19, in: 14, missed: 6, rate: "86%",  dur: "5:04" },
+  { name: "Nhân viên 01",    avatar: "NH", color: "#673ab7", out: "—", in: "—", missed: "—", rate: "—",  dur: "—" },
+  { name: "Nhân viên 02",   avatar: "TT", color: "#0891b2", out: "—", in: "—", missed: "—", rate: "—",  dur: "—" },
+  { name: "Nhân viên 03",     avatar: "LL", color: "#16a34a", out: "—", in: "—", missed: "—", rate: "—",  dur: "—" },
+  { name: "Nhân viên 04",  avatar: "PD", color: "#d97706", out: "—", in: "—", missed: "—", rate: "—",  dur: "—" },
 ];
 
 const metricCards = [
-  { label: "Cuộc gọi đến",       value: "284",   unit: "cuộc",  icon: PhoneIncoming, color: "#16a34a", bg: "#f0fdf4",  change: "+12%",  up: true },
-  { label: "Cuộc gọi đi",        value: "391",   unit: "cuộc",  icon: PhoneOutgoing, color: "#673ab7", bg: "#f5f0fd",  change: "+8%",   up: true },
-  { label: "Cuộc gọi nhỡ",       value: "23",    unit: "cuộc",  icon: PhoneMissed,   color: "#ef4444", bg: "#fff1f2",  change: "-5%",   up: false },
-  { label: "Thời lượng TB",       value: "3:25",  unit: "phút",  icon: Clock,         color: "#0891b2", bg: "#f0f9ff",  change: "-0:12", up: false },
-  { label: "Tỷ lệ bắt máy",      value: "—",     unit: "",      icon: TrendingUp,    color: "#d97706", bg: "#fffbeb",  change: "Minh họa", up: true },
-  { label: "Hiệu suất nhân viên", value: "4.7",   unit: "/ 5",  icon: Star,          color: "#7c3aed", bg: "#f5f0ff",  change: "+0.3",  up: true },
+  { label: "Cuộc gọi đến",       value: "—",   unit: "cuộc",  icon: PhoneIncoming, color: "#16a34a", bg: "#f0fdf4",  change: "",  up: true },
+  { label: "Cuộc gọi đi",        value: "—",   unit: "cuộc",  icon: PhoneOutgoing, color: "#673ab7", bg: "#f5f0fd",  change: "",   up: true },
+  { label: "Cuộc gọi nhỡ",       value: "—",    unit: "cuộc",  icon: PhoneMissed,   color: "#ef4444", bg: "#fff1f2",  change: "",   up: false },
+  { label: "Thời lượng TB",       value: "—",  unit: "phút",  icon: Clock,         color: "#0891b2", bg: "#f0f9ff",  change: "", up: false },
+  { label: "Tỷ lệ bắt máy",      value: "—",     unit: "",      icon: TrendingUp,    color: "#d97706", bg: "#fffbeb",  change: "", up: true },
+  { label: "Hiệu suất nhân viên", value: "—",   unit: "/ 5",  icon: Star,          color: "#7c3aed", bg: "#f5f0ff",  change: "",  up: true },
 ];
 
 const analyticUseCases = [
@@ -63,10 +63,10 @@ export function AnalyticsDashboardMockup() {
   const [hoveredBar, setHoveredBar] = useState<number | null>(null);
 
   const summaryKPIs = [
-    { label: "Tổng cuộc gọi", value: "675", icon: PhoneCall,  color: "#673ab7" },
-    { label: "Bắt máy",       value: "638", icon: Check,      color: "#16a34a" },
-    { label: "Cuộc gọi nhỡ", value: "37",  icon: PhoneMissed,color: "#ef4444" },
-    { label: "TB thời lượng", value: "3:25",icon: Clock,       color: "#0891b2" },
+    { label: "Tổng cuộc gọi", value: "—", icon: PhoneCall,  color: "#673ab7" },
+    { label: "Bắt máy",       value: "—", icon: Check,      color: "#16a34a" },
+    { label: "Cuộc gọi nhỡ", value: "—",  icon: PhoneMissed,color: "#ef4444" },
+    { label: "TB thời lượng", value: "—",icon: Clock,       color: "#0891b2" },
   ];
 
   return (
@@ -154,14 +154,14 @@ export function AnalyticsDashboardMockup() {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  {d.out + d.in + d.missed} cuộc
+                  — cuộc
                 </div>
               )}
               <div className="w-full flex flex-col gap-px" style={{ height: "96px", justifyContent: "flex-end" }}>
                 <div
                   className="w-full rounded-t transition-all duration-200"
                   style={{
-                    height: `${(d.out / maxBar) * 60}px`,
+                    height: "18px",
                     background: hoveredBar === i ? "#5929a8" : "#673ab7",
                     opacity: hoveredBar !== null && hoveredBar !== i ? 0.5 : 1,
                   }}
@@ -169,7 +169,7 @@ export function AnalyticsDashboardMockup() {
                 <div
                   className="w-full transition-all duration-200"
                   style={{
-                    height: `${(d.in / maxBar) * 60}px`,
+                    height: "14px",
                     background: hoveredBar === i ? "#0770a8" : "#0891b2",
                     opacity: hoveredBar !== null && hoveredBar !== i ? 0.5 : 1,
                   }}
@@ -177,7 +177,7 @@ export function AnalyticsDashboardMockup() {
                 <div
                   className="w-full rounded-b transition-all duration-200"
                   style={{
-                    height: `${(d.missed / maxBar) * 60}px`,
+                    height: "6px",
                     background: "#fca5a5",
                     opacity: hoveredBar !== null && hoveredBar !== i ? 0.5 : 1,
                   }}

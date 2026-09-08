@@ -11,11 +11,11 @@ const timelineItems = [
   {
     id: 1,
     name: "Khách hàng 01",
-    phone: "0900 000 001",
-    hotline: "1900 0000",
+    phone: "—",
+    hotline: "—",
     type: "out" as const,
     status: "answered" as const,
-    duration: "3:42",
+    duration: "—",
     time: "09:14",
     date: "Hôm nay",
     tag: "Khách hàng mới",
@@ -26,11 +26,11 @@ const timelineItems = [
   {
     id: 2,
     name: "Khách hàng 02",
-    phone: "0900 000 002",
-    hotline: "1900 0001",
+    phone: "—",
+    hotline: "—",
     type: "in" as const,
     status: "answered" as const,
-    duration: "7:18",
+    duration: "—",
     time: "09:31",
     date: "Hôm nay",
     tag: "Gia hạn",
@@ -41,8 +41,8 @@ const timelineItems = [
   {
     id: 3,
     name: "Khách hàng 03",
-    phone: "0900 000 003",
-    hotline: "1900 0000",
+    phone: "—",
+    hotline: "—",
     type: "out" as const,
     status: "missed" as const,
     duration: "—",
@@ -56,11 +56,11 @@ const timelineItems = [
   {
     id: 4,
     name: "Khách hàng 04",
-    phone: "0900 000 004",
-    hotline: "1900 0001",
+    phone: "—",
+    hotline: "—",
     type: "in" as const,
     status: "answered" as const,
-    duration: "12:05",
+    duration: "—",
     time: "10:08",
     date: "Hôm nay",
     tag: "Demo",
@@ -71,11 +71,11 @@ const timelineItems = [
   {
     id: 5,
     name: "Khách hàng 05",
-    phone: "0900 000 005",
-    hotline: "1900 0000",
+    phone: "—",
+    hotline: "—",
     type: "out" as const,
     status: "answered" as const,
-    duration: "5:20",
+    duration: "—",
     time: "10:45",
     date: "Hôm nay",
     tag: "Upsell",
@@ -95,8 +95,8 @@ const featureList = [
 ];
 
 const floatingStats = [
-  { value: "84", label: "Cuộc gọi hôm nay (minh họa)", icon: PhoneCall, color: "#673ab7" },
-  { value: "73%", label: "Tỷ lệ nghe máy (minh họa)", icon: Check, color: "#16a34a" },
+  { value: "—", label: "Cuộc gọi hôm nay (minh họa)", icon: PhoneCall, color: "#673ab7" },
+  { value: "—", label: "Tỷ lệ nghe máy (minh họa)", icon: Check, color: "#16a34a" },
   { value: "Ghi âm", label: "Tự động theo cuộc gọi", icon: Mic, color: "#0891b2" },
 ];
 
@@ -185,8 +185,8 @@ export function CallTimelineMockup() {
         ))}
         <div className="ml-auto flex items-center gap-1 pb-2">
           <span className="text-[10px]" style={{ color: "#9ca3af" }}>Hotline:</span>
-          <span className="text-[10px] font-medium px-2 py-0.5 rounded-full" style={{ background: "#f0ecf9", color: "#673ab7" }}>1900 0000</span>
-          <span className="text-[10px] font-medium px-2 py-0.5 rounded-full" style={{ background: "#f0ecf9", color: "#673ab7" }}>1900 0001</span>
+          <span className="text-[10px] font-medium px-2 py-0.5 rounded-full" style={{ background: "#f0ecf9", color: "#673ab7" }}>—</span>
+          <span className="text-[10px] font-medium px-2 py-0.5 rounded-full" style={{ background: "#f0ecf9", color: "#673ab7" }}>—</span>
         </div>
       </div>
 
