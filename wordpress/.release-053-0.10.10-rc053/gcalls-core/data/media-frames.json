@@ -1,0 +1,96 @@
+{
+  "note": "GCALLS-039. The single allowlist for every RASTER image the plugin renders. Before this file, class-mockups.php built image URLs from two hardcoded lists (mock_plus_gallery and showcase), neither of which consulted approvedMedia — so six frames carrying an unapproved domain, fabricated identities and invented KPIs rendered on /gcalls-plus-webphone/ with nothing objecting. Rendering is fail-closed: an id absent from this file, or present with any verdict other than PASS, renders nothing at all. GCALLS-040: the six REFUSED files are no longer shipped in the plugin ZIP at all — `in_package` records that. They remain in the repository as evidence; removing them from the artifact is what stops them being fetchable by direct URL after a deploy.",
+  "label": "Giao diện minh hoạ · Dữ liệu mẫu",
+  "frames": {
+    "webphone-overview": {
+      "file": "webphone-overview.webp",
+      "verdict": "REFUSED",
+      "kind": "illustrative",
+      "provenance": "commit 3bc2c79 feat: add product-specific demo imagery — drawn, not a screenshot",
+      "reason": "UNAPPROVED_DOMAIN_01 drawn into the browser chrome; fabricated contact names and a phone number",
+      "alt": "",
+      "label": "",
+      "in_package": false
+    },
+    "customer-profile": {
+      "file": "customer-profile.webp",
+      "verdict": "REFUSED",
+      "kind": "illustrative",
+      "provenance": "commit 3bc2c79",
+      "reason": "UNAPPROVED_DOMAIN_01 plus a full contact list of fabricated people with phone numbers",
+      "alt": "",
+      "label": "",
+      "in_package": false
+    },
+    "call-history": {
+      "file": "call-history.webp",
+      "verdict": "REFUSED",
+      "kind": "illustrative",
+      "provenance": "commit 3bc2c79",
+      "reason": "UNAPPROVED_DOMAIN_01, fabricated contact names, per-call star ratings presented as measured quality",
+      "alt": "",
+      "label": "",
+      "in_package": false
+    },
+    "analytics-dashboard": {
+      "file": "analytics-dashboard.webp",
+      "verdict": "REFUSED",
+      "kind": "illustrative",
+      "provenance": "commit 3bc2c79",
+      "reason": "GCALLS-038 blocking finding: a KPI row and trend charts presenting invented call totals, connection and abandon rates as measured results, plus UNAPPROVED_DOMAIN_01 in the drawn browser chrome and five named agents with scores. Figures deliberately not repeated here.",
+      "alt": "",
+      "label": "",
+      "in_package": false
+    },
+    "agent-performance": {
+      "file": "agent-performance.webp",
+      "verdict": "REFUSED",
+      "kind": "illustrative",
+      "provenance": "commit 3bc2c79",
+      "reason": "Total-calls, answered-calls, average-talk-time and CSAT tiles over a per-agent table with fabricated names — the same class of claim the media manifest already REFUSED. Figures deliberately not repeated here.",
+      "alt": "",
+      "label": "",
+      "in_package": false
+    },
+    "click-to-call": {
+      "file": "click-to-call.webp",
+      "verdict": "REFUSED",
+      "kind": "illustrative",
+      "provenance": "commit 3bc2c79",
+      "reason": "UNAPPROVED_DOMAIN_01 and a contact table of fabricated companies and people",
+      "alt": "",
+      "label": "",
+      "in_package": false
+    },
+    "cx-omnichannel": {
+      "file": "gcalls-cx-omnichannel-demo.webp",
+      "verdict": "PASS",
+      "kind": "illustrative",
+      "provenance": "wordpress/scripts/build-demo-imagery.mjs — drawn from neutral placeholders",
+      "reason": "Anonymised throughout: correspondents are Khách hàng A/B/C, no domain chrome, no KPI tiles, counts are inbox navigation",
+      "alt": "Giao diện minh hoạ Gcalls CX: hộp thư hợp nhất hotline, Zalo OA, Facebook và email trong một màn hình",
+      "label": "Giao diện minh hoạ · Dữ liệu mẫu",
+      "in_package": true
+    },
+    "voicebot-flow": {
+      "file": "voicebot-flow-builder-demo.webp",
+      "verdict": "PASS",
+      "kind": "illustrative",
+      "provenance": "wordpress/scripts/build-demo-imagery.mjs",
+      "reason": "A script flow canvas: node labels only, no metrics, no identities, no domain",
+      "alt": "Giao diện minh hoạ Voicebot AI: trình dựng kịch bản hội thoại theo từng bước",
+      "label": "Giao diện minh hoạ · Dữ liệu mẫu",
+      "in_package": true
+    },
+    "qc-scoring": {
+      "file": "qc-scoring-dashboard-demo.webp",
+      "verdict": "PASS",
+      "kind": "illustrative",
+      "provenance": "wordpress/scripts/build-demo-imagery.mjs",
+      "reason": "Criteria checklist with Đạt/Không đạt states; call is DEMO-2481, participants are Nhân viên 01 / Khách hàng A; no aggregate score",
+      "alt": "Giao diện minh hoạ QC Bot AI: bảng chấm điểm cuộc gọi theo bộ tiêu chí",
+      "label": "Giao diện minh hoạ · Dữ liệu mẫu",
+      "in_package": true
+    }
+  }
+}

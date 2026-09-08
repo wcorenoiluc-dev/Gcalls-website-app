@@ -654,6 +654,77 @@
 	}
 }
 
+/* ---------------------------------------------------------------------------
+ * Card fields the renderer used to drop (GCALLS-053)
+ *
+ * `supporting`, `tags`, `cta` and `current` were carried in content-pages.json
+ * and never read, so fifteen cards on /san-pham/, /giai-phap/ and /tich-hop/
+ * shipped as a title over one sentence. The markup is plugin-owned, so the
+ * styling for it lives in the plugin — no new colours, no new tokens, no new
+ * spacing scale: everything below reuses what the card already uses.
+ * ------------------------------------------------------------------------- */
+
+/* The category label above the title — small, quiet, and clearly subordinate
+ * to the heading it introduces. */
+.gcalls-cp__card-supporting {
+	color: var(--gcalls-brand, #673ab7);
+	font-size: 0.6875rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	line-height: 1.4;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+/* Tags are a list in the markup so a screen reader gets a count and a boundary
+ * between items; the bullets and indent are removed, not the semantics. */
+.gcalls-cp__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gcalls-cp__tag {
+	background: var(--gcalls-surface-alt, #f6f3fc);
+	border: 1px solid var(--gcalls-border, rgba(103, 58, 183, 0.12));
+	border-radius: 999px;
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.75rem;
+	line-height: 1.4;
+	padding: 3px 10px;
+	white-space: nowrap;
+}
+
+/* Long tags must wrap rather than push the card wide — `nowrap` above keeps a
+ * short tag on one line, and this releases it when the tag is not short. */
+@media (max-width: 480px) {
+	.gcalls-cp__tag {
+		white-space: normal;
+	}
+}
+
+/* The card the reader is currently on, in the boundary lists. The state is
+ * stated in text by .gcalls-cp__card-current — this only makes it visible at a
+ * glance, so colour is never the only carrier. */
+.gcalls-cp__card--current {
+	border-color: var(--gcalls-brand, #673ab7);
+}
+
+.gcalls-cp__card-current {
+	align-self: flex-start;
+	background: var(--gcalls-brand, #673ab7);
+	border-radius: 999px;
+	color: #fff;
+	font-size: 0.6875rem;
+	font-weight: 700;
+	line-height: 1.4;
+	margin: 0;
+	padding: 3px 10px;
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.gcalls-cp__card,
 	.gcalls-cp__card-link::after,

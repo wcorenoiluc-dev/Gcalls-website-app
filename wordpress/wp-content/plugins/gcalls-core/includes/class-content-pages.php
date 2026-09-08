@@ -261,14 +261,74 @@ final class Content_Pages {
 			return '';
 		}
 
-		$out = '<article class="gcalls-cp__card">';
+		/*
+		 * THE MANIFEST CARRIED FOUR FIELDS THIS METHOD NEVER READ.
+		 *
+		 * `supporting`, `tags`, `cta` and `current` are present in
+		 * content-pages.json and were silently dropped, because this method's
+		 * key vocabulary was title/body/checklist/href and nothing else. The
+		 * section was not empty, so content-completeness-test.php passed; the
+		 * renderer obeyed the manifest, so renderer-test.php passed. Fifteen
+		 * cards on the three hub landing pages — /san-pham/ (3), /giai-phap/
+		 * (7) and /tich-hop/ (5) — therefore shipped as a bare title over one
+		 * sentence, losing their category label, their tag chips and their own
+		 * call to action. Eight boundary cards lost the marker saying which one
+		 * the reader is currently on.
+		 *
+		 * Every field below is rendered only when the manifest actually carries
+		 * it: `supporting` is present-but-empty on one card and `tags` is an
+		 * empty array on another, and neither may produce an empty element.
+		 */
+		$current = ! empty( $c['current'] );
+
+		$out = '<article class="gcalls-cp__card' . ( $current ? ' gcalls-cp__card--current' : '' ) . '"'
+			. ( $current ? ' aria-current="true"' : '' ) . '>';
+
+		/*
+		 * The category label above the title — "CRM", "Voicebot AI". It is a
+		 * label for the card, so it is tied to the heading rather than left as
+		 * a loose fragment a screen reader meets with no context.
+		 */
+		$supporting = trim( (string) ( $c['supporting'] ?? '' ) );
+
+		if ( '' !== $supporting ) {
+			$out .= '<p class="gcalls-cp__card-supporting">' . esc_html( $supporting ) . '</p>';
+		}
 
 		if ( '' !== $title ) {
 			$out .= '<h3 class="gcalls-cp__card-title">' . esc_html( $title ) . '</h3>';
 		}
 
+		/*
+		 * "Trang bạn đang xem" is stated in text, not only by colour — the
+		 * boundary lists are exactly where a reader needs to know which row is
+		 * theirs, and aria-current alone is invisible to sighted readers.
+		 */
+		if ( $current ) {
+			$out .= '<p class="gcalls-cp__card-current">'
+				. esc_html__( 'Trang bạn đang xem', 'gcalls-core' ) . '</p>';
+		}
+
 		if ( '' !== $body ) {
 			$out .= '<p class="gcalls-cp__card-body">' . esc_html( $body ) . '</p>';
+		}
+
+		/*
+		 * Tags describe what the card covers. They are a list, so they are a
+		 * list — a row of <span>s would give a screen reader no count and no
+		 * boundary between one tag and the next.
+		 */
+		$tags = isset( $c['tags'] ) && is_array( $c['tags'] ) ? $c['tags'] : array();
+		$tags = array_values( array_filter( array_map( 'strval', $tags ), static fn( $t ) => '' !== trim( $t ) ) );
+
+		if ( array() !== $tags ) {
+			$out .= '<ul class="gcalls-cp__tags">';
+
+			foreach ( $tags as $tag ) {
+				$out .= '<li class="gcalls-cp__tag">' . esc_html( trim( $tag ) ) . '</li>';
+			}
+
+			$out .= '</ul>';
 		}
 
 		/*
@@ -313,9 +373,27 @@ final class Content_Pages {
 				)
 				: __( 'Tìm hiểu thêm', 'gcalls-core' );
 
-			$out .= '<a class="gcalls-cp__card-link" href="' . esc_url( $href ) . '"'
-				. ' aria-label="' . esc_attr( $label ) . '">'
-				. esc_html__( 'Tìm hiểu thêm', 'gcalls-core' ) . '</a>';
+			/*
+			 * The manifest's own CTA text wins over the generic label.
+			 *
+			 * Fifteen cards carry a written call to action — "Xem tích hợp
+			 * HubSpot", "Xem Gcalls Voicebot AI" — and every one of them was
+			 * being overwritten with "Tìm hiểu thêm". Where a card supplies its
+			 * own wording it is already specific, so it becomes both the
+			 * visible text and the accessible name and the title-suffixed
+			 * fallback is not needed. Where it does not, the previous behaviour
+			 * is unchanged.
+			 */
+			$cta = trim( (string) ( $c['cta'] ?? '' ) );
+
+			if ( '' !== $cta ) {
+				$out .= '<a class="gcalls-cp__card-link" href="' . esc_url( $href ) . '">'
+					. esc_html( $cta ) . '</a>';
+			} else {
+				$out .= '<a class="gcalls-cp__card-link" href="' . esc_url( $href ) . '"'
+					. ' aria-label="' . esc_attr( $label ) . '">'
+					. esc_html__( 'Tìm hiểu thêm', 'gcalls-core' ) . '</a>';
+			}
 		}
 
 		return $out . '</article>';
@@ -495,7 +573,24 @@ final class Content_Pages {
 				$out .= '</div></li>';
 			}
 
-			return $out . '</ol></section>';
+			$out .= '</ol>';
+
+			/*
+			 * The steps branch dropped `note`, as the prose branch once did.
+			 * Three sections carry one, and one of them is not decoration:
+			 * /cong-ty/doi-tac/ closes its journey with "Không bước nào ở trên
+			 * tạo ra quan hệ đối tác trước khi có thỏa thuận…". Dropping that
+			 * leaves a five-step path to partnership with the disclaimer that
+			 * it is not one removed — the page then implies a relationship the
+			 * company has not agreed to.
+			 */
+			$note = trim( (string) ( $s['note'] ?? '' ) );
+
+			if ( '' !== $note ) {
+				$out .= '<p class="gcalls-cp__note">' . esc_html( $note ) . '</p>';
+			}
+
+			return $out . '</section>';
 		}
 
 		if ( 'taglist' === $type ) {

@@ -1,0 +1,340 @@
+/*
+ * Homepage operational-loss estimator.
+ *
+ * Mirrors src/components/home/LossEstimator.tsx, whose colours are written as
+ * inline style objects rather than theme tokens. They are repeated here as
+ * literals for that reason, with the theme's custom properties as the preferred
+ * source so a token change still reaches this widget.
+ *
+ * The result panel is sticky on wide screens only. Below the two-column
+ * breakpoint it sits under the inputs, where a sticky element would cover them.
+ */
+
+.gcalls-loss {
+  border-radius: 24px;
+  overflow: hidden;
+  background: #faf8ff;
+  border: 1px solid rgba(103, 58, 183, 0.12);
+}
+
+.gcalls-loss__head {
+  padding: 36px 24px 24px;
+  text-align: center;
+}
+
+.gcalls-loss__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(103, 58, 183, 0.1);
+  color: var(--gcalls-brand, #673ab7);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gcalls-loss__title {
+  margin: 0 0 12px;
+  font-size: clamp(20px, 2.4vw, 30px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #1e2026;
+}
+
+.gcalls-loss__title-accent {
+  color: var(--gcalls-brand, #673ab7);
+}
+
+.gcalls-loss__intro {
+  max-width: 560px;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #5b5f6b;
+}
+
+.gcalls-loss__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: start;
+  padding: 0 24px 36px;
+}
+
+.gcalls-loss__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* --- one field --- */
+
+.gcalls-loss__field {
+  padding: 16px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(103, 58, 183, 0.1);
+}
+
+.gcalls-loss__field-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin-bottom: 4px;
+}
+
+.gcalls-loss__label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e2026;
+}
+
+.gcalls-loss__value {
+  font-size: 13px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--gcalls-brand, #673ab7);
+}
+
+.gcalls-loss__hint {
+  margin: 0 0 12px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #8b8f9a;
+}
+
+.gcalls-loss__slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: #e9e3f7;
+  accent-color: var(--gcalls-brand, #673ab7);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.gcalls-loss__slider:focus-visible {
+  outline: 2px solid var(--gcalls-brand, #673ab7);
+  outline-offset: 4px;
+}
+
+.gcalls-loss__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.gcalls-loss__number {
+  /* min-width:0 is what stops a number input forcing the grid column wider
+     than the card at 320px — its intrinsic width is not 100%. */
+  width: 100%;
+  min-width: 0;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(103, 58, 183, 0.16);
+  background: #faf8ff;
+  color: #1e2026;
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.gcalls-loss__number:focus-visible {
+  outline: 2px solid var(--gcalls-brand, #673ab7);
+  outline-offset: 2px;
+}
+
+.gcalls-loss__unit {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 500;
+  color: #8b8f9a;
+}
+
+.gcalls-loss__reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  /* 44px tall, so the reset is a comfortable tap target on a phone. */
+  min-height: 44px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(103, 58, 183, 0.18);
+  background: #fff;
+  color: var(--gcalls-brand, #673ab7);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.gcalls-loss__reset:hover:not(:disabled) {
+  background: #f5f1fc;
+}
+
+.gcalls-loss__reset:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* --- result --- */
+
+.gcalls-loss__result {
+  padding: 24px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #673ab7 0%, #4c1d95 100%);
+  box-shadow: 0 16px 48px rgba(103, 58, 183, 0.24);
+  color: #fff;
+}
+
+.gcalls-loss__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.gcalls-loss__metric {
+  margin-bottom: 24px;
+}
+
+.gcalls-loss__metric-label {
+  margin-bottom: 4px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.gcalls-loss__metric-value {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  /* The figure can reach seven digits at 320px; wrapping beats overflowing. */
+  overflow-wrap: anywhere;
+}
+
+.gcalls-loss__metric-unit {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.gcalls-loss__cost {
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.gcalls-loss__cost-value {
+  font-size: clamp(22px, 2.8vw, 30px);
+  font-weight: 800;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.gcalls-loss__rate {
+  margin-top: 6px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.gcalls-loss__disclaimer {
+  margin: 0 0 24px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.gcalls-loss__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 14px 24px;
+  border-radius: 16px;
+  background: #fff;
+  color: var(--gcalls-brand, #673ab7);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+  transition: transform 0.15s ease;
+}
+
+.gcalls-loss__cta:hover,
+.gcalls-loss__cta:focus-visible {
+  color: var(--gcalls-brand, #673ab7);
+  transform: translateY(-2px);
+}
+
+.gcalls-loss__cta:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.gcalls-loss__noscript {
+  padding: 24px;
+}
+
+/* --- breakpoints --- */
+
+@media (min-width: 640px) {
+  .gcalls-loss__head,
+  .gcalls-loss__body {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+
+  .gcalls-loss__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gcalls-loss__result {
+    padding: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gcalls-loss__body {
+    grid-template-columns: 1.25fr 1fr;
+    gap: 32px;
+  }
+
+  .gcalls-loss__result {
+    position: sticky;
+    top: 112px;
+  }
+}
+
+/* A transform on hover is decoration. Someone who has asked for less motion
+   still needs the button to look focusable, so the outline stays. */
+@media (prefers-reduced-motion: reduce) {
+  .gcalls-loss__cta {
+    transition: none;
+  }
+
+  .gcalls-loss__cta:hover,
+  .gcalls-loss__cta:focus-visible {
+    transform: none;
+  }
+}

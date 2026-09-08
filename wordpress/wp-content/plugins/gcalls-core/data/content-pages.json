@@ -3796,34 +3796,65 @@
             {
               "title": "Giáo dục",
               "body": "Một người quan tâm hiếm khi ra quyết định sau cuộc gọi đầu tiên. Gcalls giúp tổ chức giáo dục thực hiện, ghi nhận và theo dõi toàn bộ những lần trao đổi đó trên một hệ thống, để tư vấn viên biết đã nói gì với ai và cần quay lại vào lúc nào.",
-              "href": "/nganh/giao-duc/"
+              "href": "/nganh/giao-duc/",
+              "tags": [
+                "Gcalls Plus",
+                "Tích hợp CRM"
+              ],
+              "cta": "Xem giải pháp cho giáo dục"
             },
             {
               "title": "Tài chính",
               "body": "Doanh nghiệp tài chính thường đã có hệ thống quản lý khách hàng. Vấn đề nằm ở chỗ hoạt động nghe gọi diễn ra bên ngoài hệ thống đó, nên lịch sử tương tác không bao giờ đầy đủ. Gcalls kết nối hai lớp này lại với nhau.",
-              "href": "/nganh/tai-chinh/"
+              "href": "/nganh/tai-chinh/",
+              "tags": [
+                "Gcalls Plus",
+                "QA QC Center"
+              ],
+              "cta": "Xem giải pháp cho tài chính"
             },
             {
               "title": "Bảo hiểm",
               "body": "Một hợp đồng bảo hiểm kéo theo nhiều lần liên hệ trong nhiều năm: tư vấn, xác nhận, nhắc đóng phí, tái tục và xử lý quyền lợi. Gcalls giúp mỗi lần liên hệ đó diễn ra với đầy đủ ngữ cảnh của những lần trước.",
-              "href": "/nganh/bao-hiem/"
+              "href": "/nganh/bao-hiem/",
+              "tags": [
+                "Gcalls Plus",
+                "QA QC Center"
+              ],
+              "cta": "Xem giải pháp cho bảo hiểm"
             },
             {
               "title": "Bất động sản",
               "body": "Đội kinh doanh bất động sản làm việc với hàng nghìn lead và gọi ra với tần suất rất cao. Gcalls giúp toàn bộ hoạt động gọi đó diễn ra trên một hệ thống, để trạng thái của từng khách hàng luôn rõ ràng và không phụ thuộc vào máy cá nhân của agent.",
-              "href": "/nganh/bat-dong-san/"
+              "href": "/nganh/bat-dong-san/",
+              "tags": [
+                "Gcalls Plus",
+                "Tích hợp CRM"
+              ],
+              "cta": "Xem giải pháp cho bất động sản"
             },
             {
               "title": "Thương mại điện tử",
               "body": "Xác nhận đơn, xử lý đổi trả, khảo sát sau bán và các chiến dịch chăm sóc lại đều là cuộc gọi tới người đã mua hàng. Gcalls giúp hoạt động gọi ra đó diễn ra tập trung, có ngữ cảnh đơn hàng và gắn với nhận diện của doanh nghiệp.",
-              "href": "/nganh/thuong-mai-dien-tu/"
+              "href": "/nganh/thuong-mai-dien-tu/",
+              "tags": [
+                "Tích hợp POS",
+                "Gcalls CX"
+              ],
+              "cta": "Xem giải pháp cho thương mại điện tử"
             },
             {
               "title": "BPO",
               "body": "Với doanh nghiệp BPO, chất lượng cuộc gọi chính là sản phẩm bàn giao cho khách hàng. Gcalls hỗ trợ tập trung hoạt động nghe gọi của nhiều nhóm dự án và đưa việc đánh giá chất lượng ra khỏi giới hạn của việc nghe lại thủ công.",
-              "href": "/nganh/bpo/"
+              "href": "/nganh/bpo/",
+              "tags": [
+                "Gcalls CX",
+                "QA QC Center"
+              ],
+              "cta": "Xem giải pháp cho BPO"
             }
-          ]
+          ],
+          "note": "Các nhãn sản phẩm trên mỗi thẻ là hướng thường phù hợp với bối cảnh ngành đó, không phải cấu hình bắt buộc. Cấu hình cuối cùng được xác định theo quy trình và hệ thống thực tế của doanh nghiệp."
         }
       ],
       "faq": [],
@@ -4790,34 +4821,56 @@
             {
               "title": "Blog",
               "body": "Góc nhìn vận hành theo sáu danh mục biên tập.",
-              "href": "/blog/"
+              "href": "/blog/",
+              "cta": "Xem Blog"
             },
             {
               "title": "Guides",
               "body": "Sáu lộ trình đánh giá trước khi triển khai.",
-              "href": "/tai-nguyen/guides/"
+              "href": "/tai-nguyen/guides/",
+              "tags": [
+                "Đã có nội dung"
+              ],
+              "cta": "Xem Guides"
             },
             {
               "title": "Case Studies",
               "body": "Tiêu chuẩn bằng chứng cho câu chuyện triển khai.",
-              "href": "/tai-nguyen/case-studies/"
+              "href": "/tai-nguyen/case-studies/",
+              "tags": [
+                "Đang thu thập bằng chứng"
+              ],
+              "cta": "Xem Case Studies"
             },
             {
               "title": "Ebook",
               "body": "Chủ đề chuyên sâu đang được chuẩn bị.",
-              "href": "/tai-nguyen/ebook/"
+              "href": "/tai-nguyen/ebook/",
+              "tags": [
+                "Chưa phát hành tài liệu"
+              ],
+              "cta": "Xem Ebook"
             },
             {
               "title": "Glossary",
               "body": "Hai mươi bốn thuật ngữ thường gặp.",
-              "href": "/tai-nguyen/glossary/"
+              "href": "/tai-nguyen/glossary/",
+              "tags": [
+                "Đã có nội dung"
+              ],
+              "cta": "Xem Glossary"
             },
             {
               "title": "FAQ",
               "body": "Hai mươi mốt câu hỏi theo sáu nhóm chủ đề.",
-              "href": "/tai-nguyen/faq/"
+              "href": "/tai-nguyen/faq/",
+              "tags": [
+                "Đã có nội dung"
+              ],
+              "cta": "Xem FAQ"
             }
-          ]
+          ],
+          "note": "Các trang sản phẩm và giải pháp đều có phần FAQ riêng theo chủ đề, nên đó thường là nơi trả lời nhanh nhất cho câu hỏi về một sản phẩm cụ thể."
         }
       ],
       "faq": [],

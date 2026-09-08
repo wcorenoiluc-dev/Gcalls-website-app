@@ -1,0 +1,71 @@
+{
+  "version": "0.10.10-rc053",
+  "final": false,
+  "builtAt": "2026-09-08T07:30:44.311Z",
+  "source": {
+    "head": "3e47c6bdf0fd2965d2168527748da2bee1c0144a",
+    "wordpressSourceCommit": "63e93ae",
+    "sourceTreeSha256": "a087617b0a2cac8ae3a04cb09d37fbfcacf9f25d46baf7f20da235c0215588cc",
+    "workingTreeClean": true
+  },
+  "baselines": {
+    "assembledFrom": {
+      "zip": "../../../gcalls-core-0.10.1-CANDIDATE-do-not-deploy-yet/gcalls-core-0.10.1.zip",
+      "sha256": "52ffe873880a304714a858ff69e680ec48c6d741cf90e744d4e46d0f695a0c48",
+      "version": "0.10.1"
+    },
+    "supersetOf": {
+      "zip": "../Gcalls-website-app/wordpress/.release-047/gcalls-core-0.10.8.zip",
+      "sha256": "0357782e9786b214dcbec6e1f391701da4256c5597f8fce6cb1f1afb5218d657",
+      "version": "0.10.8"
+    }
+  },
+  "generators": {
+    "executed": [
+      "build-product-content.mjs",
+      "build-estimator-config.mjs",
+      "build-loss-estimator-config.mjs",
+      "build-homepage-template.mjs"
+    ],
+    "reproducedByteIdentical": true,
+    "notGenerated": [
+      "data/content-pages.json",
+      "data/section-components.json",
+      "data/media-frames.json",
+      "data/content-inventory.json"
+    ],
+    "notGeneratedNote": "produced by one-off migration/scan scripts; hashed, not regenerated",
+    "notGeneratedHashes": {
+      "data/content-pages.json": "67b7ec5c1ce2bd7bbf601d6ec5a5c935963ac646ea3ee0c391b85ee5f4fc7fde",
+      "data/section-components.json": "ad01fae2d4af91e7de0b287fa8ac0668a5323c0e5bafa44f89d30f83523bf79f",
+      "data/media-frames.json": "c234921bb087f72b35f9b0c3d8854043ad8dad59cb9fa6f77cd4182b81d5c48e",
+      "data/content-inventory.json": "cfcdc73b24516757039516ebf2556c6cb0d3bb5ba0c4dd9c54ffd6d31db72d11"
+    }
+  },
+  "contracts": {
+    "homepageTopLevelSections": 13,
+    "homepageWidgets": 67,
+    "homepageInventory": 13,
+    "manifestPages": 31
+  },
+  "leadBackend": {
+    "packaged": false,
+    "forbidden": [
+      "includes/class-leads.php",
+      "assets/js/lead-form.js",
+      "assets/css/lead-form.css",
+      "tests/leads-test.php"
+    ],
+    "executableLeadsReferences": 0
+  },
+  "theme": {
+    "version": "0.8.6",
+    "note": "unchanged vs 0.8.6 (version header ignored) — theme stays 0.8.6, not repackaged"
+  },
+  "artifact": {
+    "file": "gcalls-core-0.10.10-rc053.zip",
+    "bytes": 506056,
+    "files": 41,
+    "sha256": "f71f38a7db698dca6e88f1c8edcb1c37647b5e9c54d744276bc755a0d18de78b"
+  }
+}

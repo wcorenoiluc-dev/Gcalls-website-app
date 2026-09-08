@@ -1,0 +1,602 @@
+{
+  "generator": "wordpress/scripts/build-estimator-config.mjs",
+  "pricingConfigured": false,
+  "priceUnavailableLabel": "Chi phí theo cấu hình",
+  "priceUnavailableSupporting": "Gcalls cần xác nhận cấu hình để đưa ra báo giá phù hợp.",
+  "solutions": [
+    {
+      "id": "gcalls-plus",
+      "name": "Gcalls Plus Webphone",
+      "useCase": "Hệ thống Webphone / Call Center tinh gọn cho Sales và CSKH.",
+      "path": "/gcalls-plus-webphone/",
+      "fields": [
+        {
+          "id": "agents",
+          "label": "Số lượng Agent",
+          "type": "number",
+          "hint": null,
+          "unit": "người",
+          "min": 1,
+          "max": 10000,
+          "defaultValue": 5,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "minutes",
+          "label": "Số phút gọi dự kiến mỗi tháng",
+          "type": "number",
+          "hint": "Ước lượng tương đối là đủ — có thể để trống nếu chưa rõ.",
+          "unit": "phút/tháng",
+          "min": 0,
+          "max": 10000000,
+          "defaultValue": null,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "hotlines",
+          "label": "Số hotline / đầu số",
+          "type": "number",
+          "hint": null,
+          "unit": "đầu số",
+          "min": 0,
+          "max": 1000,
+          "defaultValue": 1,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "needsCrm",
+          "label": "Có cần tích hợp CRM không?",
+          "type": "boolean",
+          "hint": null,
+          "unit": null,
+          "min": null,
+          "max": null,
+          "defaultValue": null,
+          "options": null,
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "qa-qc",
+      "name": "QA QC Center",
+      "useCase": "AI hỗ trợ chuyển hội thoại thành dữ liệu phục vụ đánh giá chất lượng.",
+      "path": "/qc-bot-ai/",
+      "fields": [
+        {
+          "id": "agents",
+          "label": "Số lượng Agent",
+          "type": "number",
+          "hint": null,
+          "unit": "người",
+          "min": 1,
+          "max": 10000,
+          "defaultValue": 5,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "monthlyCalls",
+          "label": "Số cuộc gọi dự kiến mỗi tháng",
+          "type": "number",
+          "hint": null,
+          "unit": "cuộc/tháng",
+          "min": 0,
+          "max": 10000000,
+          "defaultValue": null,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "qaVolume",
+          "label": "Số cuộc gọi cần phân tích mỗi tháng",
+          "type": "number",
+          "hint": "Phần cuộc gọi cần đưa vào quy trình đánh giá chất lượng.",
+          "unit": "cuộc/tháng",
+          "min": 0,
+          "max": 10000000,
+          "defaultValue": null,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "qaCriteria",
+          "label": "Số bộ tiêu chí QA",
+          "type": "number",
+          "hint": null,
+          "unit": "bộ tiêu chí",
+          "min": 0,
+          "max": 200,
+          "defaultValue": 1,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "needsTranscript",
+          "label": "Có cần transcript hội thoại không?",
+          "type": "boolean",
+          "hint": null,
+          "unit": null,
+          "min": null,
+          "max": null,
+          "defaultValue": null,
+          "options": null,
+          "step": 3
+        },
+        {
+          "id": "needsSignals",
+          "label": "Có cần phân tích từ khóa / cảm xúc không?",
+          "type": "boolean",
+          "hint": null,
+          "unit": null,
+          "min": null,
+          "max": null,
+          "defaultValue": null,
+          "options": null,
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "cx",
+      "name": "Gcalls CX",
+      "useCase": "Contact Center đa kênh cho quy trình chăm sóc khách hàng.",
+      "path": "/gcalls-cx/",
+      "fields": [
+        {
+          "id": "agents",
+          "label": "Số lượng Agent",
+          "type": "number",
+          "hint": null,
+          "unit": "người",
+          "min": 1,
+          "max": 10000,
+          "defaultValue": 5,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "channels",
+          "label": "Kênh cần sử dụng",
+          "type": "multi",
+          "hint": null,
+          "unit": null,
+          "min": null,
+          "max": null,
+          "defaultValue": null,
+          "options": [
+            {
+              "value": "voice",
+              "label": "Voice"
+            },
+            {
+              "value": "zalo",
+              "label": "Zalo"
+            },
+            {
+              "value": "facebook",
+              "label": "Facebook"
+            },
+            {
+              "value": "sms",
+              "label": "SMS"
+            },
+            {
+              "value": "email",
+              "label": "Email"
+            }
+          ],
+          "step": 2
+        },
+        {
+          "id": "interactions",
+          "label": "Khối lượng tương tác dự kiến mỗi tháng",
+          "type": "number",
+          "hint": null,
+          "unit": "tương tác/tháng",
+          "min": 0,
+          "max": 10000000,
+          "defaultValue": null,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "needsIntegration",
+          "label": "Có cần tích hợp hệ thống khác không?",
+          "type": "boolean",
+          "hint": null,
+          "unit": null,
+          "min": null,
+          "max": null,
+          "defaultValue": null,
+          "options": null,
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "crm",
+      "name": "Tích hợp CRM",
+      "useCase": "Kết nối cuộc gọi với dữ liệu và workflow CRM.",
+      "path": "/tong-dai-tich-hop-crm/",
+      "fields": [
+        {
+          "id": "crmPlatform",
+          "label": "CRM đang sử dụng",
+          "type": "select",
+          "hint": "Khả năng kết nối cụ thể sẽ được Gcalls xác nhận theo hệ thống thực tế.",
+          "unit": null,
+          "min": null,
+          "max": null,
+          "defaultValue": null,
+          "options": [
+            {
+              "value": "hubspot",
+              "label": "HubSpot"
+            },
+            {
+              "value": "salesforce",
+              "label": "Salesforce"
+            },
+            {
+              "value": "zoho",
+              "label": "Zoho CRM"
+            },
+            {
+              "value": "other",
+              "label": "Khác"
+            }
+          ],
+          "step": 2
+        },
+        {
+          "id": "agents",
+          "label": "Số lượng Agent",
+          "type": "number",
+          "hint": null,
+          "unit": "người",
+          "min": 1,
+          "max": 10000,
+          "defaultValue": 5,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "crmNeeds",
+          "label": "Nhu cầu tích hợp",
+          "type": "multi",
+          "hint": null,
+          "unit": null,
+          "min": null,
+          "max": null,
+          "defaultValue": null,
+          "options": [
+            {
+              "value": "click-to-call",
+              "label": "Click-to-Call"
+            },
+            {
+              "value": "customer-context",
+              "label": "Customer context"
+            },
+            {
+              "value": "call-history",
+              "label": "Call history"
+            },
+            {
+              "value": "workflow",
+              "label": "Workflow integration"
+            }
+          ],
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "helpdesk",
+      "name": "Tích hợp Helpdesk",
+      "useCase": "Đưa cuộc gọi vào quy trình hỗ trợ và ticket.",
+      "path": "/tong-dai-tich-hop-helpdesk/",
+      "fields": [
+        {
+          "id": "helpdeskPlatform",
+          "label": "Helpdesk đang sử dụng",
+          "type": "select",
+          "hint": "Khả năng kết nối cụ thể sẽ được Gcalls xác nhận theo hệ thống thực tế.",
+          "unit": null,
+          "min": null,
+          "max": null,
+          "defaultValue": null,
+          "options": [
+            {
+              "value": "freshdesk",
+              "label": "Freshdesk"
+            },
+            {
+              "value": "zendesk",
+              "label": "Zendesk"
+            },
+            {
+              "value": "other",
+              "label": "Khác"
+            }
+          ],
+          "step": 2
+        },
+        {
+          "id": "agents",
+          "label": "Số lượng Agent",
+          "type": "number",
+          "hint": null,
+          "unit": "người",
+          "min": 1,
+          "max": 10000,
+          "defaultValue": 5,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "supportTeams",
+          "label": "Số nhóm hỗ trợ",
+          "type": "number",
+          "hint": null,
+          "unit": "nhóm",
+          "min": 1,
+          "max": 500,
+          "defaultValue": 1,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "helpdeskNeeds",
+          "label": "Nhu cầu kết nối",
+          "type": "multi",
+          "hint": null,
+          "unit": null,
+          "min": null,
+          "max": null,
+          "defaultValue": null,
+          "options": [
+            {
+              "value": "ticket",
+              "label": "Gắn cuộc gọi vào ticket"
+            },
+            {
+              "value": "history",
+              "label": "Lịch sử cuộc gọi trong hồ sơ hỗ trợ"
+            }
+          ],
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "pos",
+      "name": "Tích hợp POS",
+      "useCase": "Kết nối cuộc gọi với dữ liệu khách hàng và bán hàng.",
+      "path": "/tong-dai-tich-hop-pos/",
+      "fields": [
+        {
+          "id": "posPlatform",
+          "label": "POS / hệ thống bán hàng đang sử dụng",
+          "type": "select",
+          "hint": "Khả năng kết nối cụ thể sẽ được Gcalls xác nhận theo hệ thống thực tế.",
+          "unit": null,
+          "min": null,
+          "max": null,
+          "defaultValue": null,
+          "options": [
+            {
+              "value": "kiotviet",
+              "label": "KiotViet"
+            },
+            {
+              "value": "sapo",
+              "label": "Sapo"
+            },
+            {
+              "value": "haravan",
+              "label": "Haravan"
+            },
+            {
+              "value": "other",
+              "label": "Khác"
+            }
+          ],
+          "step": 2
+        },
+        {
+          "id": "locations",
+          "label": "Số điểm / hệ thống cần kết nối",
+          "type": "number",
+          "hint": null,
+          "unit": "điểm",
+          "min": 1,
+          "max": 5000,
+          "defaultValue": 1,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "agents",
+          "label": "Số lượng Agent",
+          "type": "number",
+          "hint": null,
+          "unit": "người",
+          "min": 1,
+          "max": 10000,
+          "defaultValue": 5,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "posNeeds",
+          "label": "Nhu cầu dữ liệu",
+          "type": "multi",
+          "hint": null,
+          "unit": null,
+          "min": null,
+          "max": null,
+          "defaultValue": null,
+          "options": [
+            {
+              "value": "customer",
+              "label": "Dữ liệu khách hàng"
+            },
+            {
+              "value": "order",
+              "label": "Dữ liệu đơn hàng"
+            }
+          ],
+          "step": 3
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "name": "Tổng đài quốc tế",
+      "useCase": "Đầu số và liên lạc doanh nghiệp tại các thị trường quốc tế.",
+      "path": "/tong-dai-quoc-te/",
+      "fields": [
+        {
+          "id": "markets",
+          "label": "Quốc gia / thị trường",
+          "type": "multi",
+          "hint": "Cước và hồ sơ đăng ký khác nhau theo từng thị trường.",
+          "unit": null,
+          "min": null,
+          "max": null,
+          "defaultValue": null,
+          "options": [
+            {
+              "value": "us",
+              "label": "Mỹ"
+            },
+            {
+              "value": "uk",
+              "label": "Anh"
+            },
+            {
+              "value": "sg",
+              "label": "Singapore"
+            },
+            {
+              "value": "au",
+              "label": "Úc"
+            },
+            {
+              "value": "jp",
+              "label": "Nhật Bản"
+            },
+            {
+              "value": "kr",
+              "label": "Hàn Quốc"
+            },
+            {
+              "value": "other",
+              "label": "Thị trường khác"
+            }
+          ],
+          "step": 2
+        },
+        {
+          "id": "intlNumbers",
+          "label": "Số đầu số cần sử dụng",
+          "type": "number",
+          "hint": null,
+          "unit": "đầu số",
+          "min": 1,
+          "max": 1000,
+          "defaultValue": 1,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "intlMinutes",
+          "label": "Lưu lượng gọi quốc tế dự kiến mỗi tháng",
+          "type": "number",
+          "hint": null,
+          "unit": "phút/tháng",
+          "min": 0,
+          "max": 10000000,
+          "defaultValue": null,
+          "options": null,
+          "step": 2
+        },
+        {
+          "id": "intlPurpose",
+          "label": "Loại nhu cầu",
+          "type": "multi",
+          "hint": null,
+          "unit": null,
+          "min": null,
+          "max": null,
+          "defaultValue": null,
+          "options": [
+            {
+              "value": "local-presence",
+              "label": "Local presence"
+            },
+            {
+              "value": "sales",
+              "label": "Sales"
+            },
+            {
+              "value": "cs",
+              "label": "Customer Service"
+            },
+            {
+              "value": "bpo",
+              "label": "BPO / Operations"
+            }
+          ],
+          "step": 3
+        }
+      ]
+    }
+  ],
+  "recommendationRules": {
+    "gcalls-plus": [
+      {
+        "consider": "crm",
+        "when": {
+          "field": "needsCrm",
+          "equals": true
+        }
+      }
+    ],
+    "crm": [
+      {
+        "consider": "gcalls-plus"
+      }
+    ],
+    "helpdesk": [
+      {
+        "consider": "gcalls-plus"
+      }
+    ],
+    "pos": [
+      {
+        "consider": "gcalls-plus"
+      }
+    ],
+    "cx": [
+      {
+        "consider": "crm",
+        "when": {
+          "field": "needsIntegration",
+          "equals": true
+        }
+      }
+    ],
+    "qa-qc": [
+      {
+        "consider": "gcalls-plus"
+      }
+    ],
+    "international": []
+  }
+}

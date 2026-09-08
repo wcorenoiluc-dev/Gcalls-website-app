@@ -1,0 +1,213 @@
+{
+  "generated_from": "wordpress/scripts/build-homepage-template.mjs",
+  "sections": [
+    {
+      "index": 0,
+      "elementId": "34df847",
+      "component": "HeroSection.tsx",
+      "mergedFrom": [
+        0
+      ],
+      "heading": "",
+      "classes": [
+        "gc-btn",
+        "gc-check",
+        "gc-check__i",
+        "gc-checks",
+        "gc-ctarow",
+        "gc-eyebrow",
+        "gc-eyebrow__dot",
+        "gc-fine",
+        "gc-grad",
+        "gc-h1",
+        "gc-hero",
+        "gc-hero-lede"
+      ],
+      "paddingTop": "56",
+      "paddingBottom": "25"
+    },
+    {
+      "index": 1,
+      "elementId": "5d4fe9c",
+      "component": "PainPointsSection.tsx (heading + cards + LossEstimator)",
+      "mergedFrom": [
+        1,
+        2,
+        3
+      ],
+      "heading": "“Khoảng Trống” Vận Hành Khiến Doanh Nghiệp Rò Rỉ Khách Hàng Và Thất Thoát Doanh Thu",
+      "classes": [
+        "gc-card",
+        "gc-card__body",
+        "gc-card__icon",
+        "gc-card__n",
+        "gc-card__rule",
+        "gc-card__top",
+        "gc-cards",
+        "gc-eyebrow",
+        "gc-grad",
+        "gc-h2",
+        "gc-head",
+        "gc-head__lead"
+      ],
+      "paddingTop": "25",
+      "paddingBottom": "25"
+    },
+    {
+      "index": 2,
+      "elementId": "797897b",
+      "component": "SolutionBridgeSection.tsx",
+      "mergedFrom": [
+        4
+      ],
+      "heading": "Tổng Đài Thông Minh Gcalls: Bứt Phá Doanh Số Đội Ngũ & Nâng Cao Trải Nghiệm Khách Hàng",
+      "classes": [],
+      "paddingTop": "25",
+      "paddingBottom": "25"
+    },
+    {
+      "index": 3,
+      "elementId": "f24c133",
+      "component": "EcosystemSection.tsx (header + products + solutions + CTAs)",
+      "mergedFrom": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "heading": "Hệ sinh thái sản phẩm và giải pháp Gcalls",
+      "classes": [
+        "gc-eco-card",
+        "gc-eco-card__body",
+        "gc-eco-card__cta",
+        "gc-eco-card__icon",
+        "gc-eco-card__name",
+        "gc-eco-card__supporting",
+        "gc-eco-grid",
+        "gc-eco-group",
+        "gc-eco-group__head",
+        "gc-eco-group__lead",
+        "gc-eco-group__title",
+        "gc-eyebrow",
+        "gc-linkrow",
+        "gc-linkrow__btn"
+      ],
+      "paddingTop": "25",
+      "paddingBottom": "25"
+    },
+    {
+      "index": 4,
+      "elementId": "e2313d7",
+      "component": "CallTimelineSection.tsx",
+      "mergedFrom": [
+        9
+      ],
+      "heading": "Theo dõi toàn bộ hoạt động cuộc gọi theo thời gian thực",
+      "classes": [],
+      "paddingTop": "25",
+      "paddingBottom": "25"
+    },
+    {
+      "index": 5,
+      "elementId": "756b457",
+      "component": "CRMSection.tsx",
+      "mergedFrom": [
+        10
+      ],
+      "heading": "Quản lý khách hàng tập trung ngay trên Gcalls",
+      "classes": [],
+      "paddingTop": "25",
+      "paddingBottom": "25"
+    },
+    {
+      "index": 6,
+      "elementId": "ee2732a",
+      "component": "AnalyticsSection.tsx",
+      "mergedFrom": [
+        11
+      ],
+      "heading": "Theo dõi hiệu suất đội ngũ theo thời gian thực",
+      "classes": [
+        "gc-subhead"
+      ],
+      "paddingTop": "25",
+      "paddingBottom": "25"
+    },
+    {
+      "index": 7,
+      "elementId": "16f49ed",
+      "component": "CloudSection.tsx",
+      "mergedFrom": [
+        12
+      ],
+      "heading": "Xây dựng hệ thống tổng đài doanh nghiệp trên nền tảng Cloud",
+      "classes": [
+        "gc-linkrow",
+        "gc-linkrow__btn",
+        "gc-subhead"
+      ],
+      "paddingTop": "25",
+      "paddingBottom": "25"
+    },
+    {
+      "index": 8,
+      "elementId": "f6fe030",
+      "component": "CustomerPopupSection.tsx",
+      "mergedFrom": [
+        13
+      ],
+      "heading": "Nhận diện khách hàng ngay khi cuộc gọi đến",
+      "classes": [],
+      "paddingTop": "25",
+      "paddingBottom": "25"
+    },
+    {
+      "index": 9,
+      "elementId": "6401f80",
+      "component": "CallWidgetSection.tsx",
+      "mergedFrom": [
+        14
+      ],
+      "heading": "Biến khách truy cập website thành cuộc gọi",
+      "classes": [],
+      "paddingTop": "25",
+      "paddingBottom": "25"
+    },
+    {
+      "index": 10,
+      "elementId": "17cbfe1",
+      "component": "IntegrationsSection.tsx",
+      "mergedFrom": [
+        15
+      ],
+      "heading": "Hệ sinh thái tích hợp của Gcalls",
+      "classes": [],
+      "paddingTop": "25",
+      "paddingBottom": "25"
+    },
+    {
+      "index": 11,
+      "elementId": "0bb94e7",
+      "component": "WorkFromAnywhereSection.tsx",
+      "mergedFrom": [
+        16
+      ],
+      "heading": "Mang tổng đài doanh nghiệp theo bạn đến bất kỳ đâu",
+      "classes": [],
+      "paddingTop": "25",
+      "paddingBottom": "25"
+    },
+    {
+      "index": 12,
+      "elementId": "7652f60",
+      "component": "UseCasesFinalCtaSection.tsx",
+      "mergedFrom": [
+        17
+      ],
+      "heading": "Tổng đài doanh nghiệp luôn đồng hành cùng đội ngũ của bạn",
+      "classes": [],
+      "paddingTop": "25",
+      "paddingBottom": "56"
+    }
+  ]
+}

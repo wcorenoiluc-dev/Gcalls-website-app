@@ -1,0 +1,80 @@
+{
+  "generator": "wordpress/scripts/build-loss-estimator-config.mjs",
+  "source": "src/components/home/lossEstimate.ts",
+  "fields": [
+    {
+      "key": "employees",
+      "label": "Số nhân viên",
+      "hint": "Nhân sự Sales, Telesales hoặc CSKH tham gia nghe gọi.",
+      "unit": "người",
+      "min": 1,
+      "max": 500,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "key": "monthlySalary",
+      "label": "Chi phí nhân sự / tháng / người",
+      "hint": "Tổng chi phí doanh nghiệp trả cho một nhân sự mỗi tháng.",
+      "unit": "VNĐ",
+      "min": 1000000,
+      "max": 200000000,
+      "step": 500000,
+      "default": 12000000
+    },
+    {
+      "key": "wastedMinutesPerDay",
+      "label": "Thời gian thao tác thủ công",
+      "hint": "Nhập liệu, đối chiếu, tổng hợp báo cáo — mỗi người mỗi ngày.",
+      "unit": "phút/ngày",
+      "min": 0,
+      "max": 480,
+      "step": 5,
+      "default": 60
+    },
+    {
+      "key": "errorRatePercent",
+      "label": "Tỷ lệ lỗi và làm lại",
+      "hint": "Phần công việc phải xử lý lại do sai sót dữ liệu.",
+      "unit": "%",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "key": "workingDays",
+      "label": "Số ngày làm việc / tháng",
+      "hint": "Dùng để quy đổi chi phí theo giờ.",
+      "unit": "ngày",
+      "min": 1,
+      "max": 31,
+      "step": 1,
+      "default": 22
+    },
+    {
+      "key": "workingHoursPerDay",
+      "label": "Số giờ làm việc / ngày",
+      "hint": "Dùng để quy đổi chi phí theo giờ.",
+      "unit": "giờ",
+      "min": 1,
+      "max": 16,
+      "step": 1,
+      "default": 8
+    }
+  ],
+  "disclaimer": "Kết quả chỉ là ước tính dựa trên thông tin doanh nghiệp cung cấp và các giả định vận hành đã chọn. Kết quả không phải cam kết tiết kiệm hoặc bảo đảm hiệu suất khi triển khai Gcalls.",
+  "labels": {
+    "eyebrow": "Công cụ ước tính tổn thất",
+    "heading": "Ước tính chi phí vận hành thủ công",
+    "headingAccent": "mỗi tháng",
+    "intro": "Điều chỉnh các thông số theo thực tế doanh nghiệp của bạn để xem số giờ làm việc và chi phí tương ứng đang dành cho thao tác thủ công và xử lý lại.",
+    "reset": "Đặt lại giá trị mặc định",
+    "resultBadge": "Ước tính hằng tháng",
+    "hoursLabel": "Tổng thời gian dành cho thao tác thủ công và làm lại",
+    "hoursUnit": "giờ",
+    "costLabel": "Chi phí tương ứng ước tính",
+    "perHour": "Tương đương {rate} / giờ / người",
+    "cta": "Nhận tư vấn tối ưu vận hành"
+  }
+}
