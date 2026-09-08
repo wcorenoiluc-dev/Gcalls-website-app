@@ -161,6 +161,38 @@
 
 .gcalls-mock__tabs button[aria-selected="true"] { background: var(--m-brand); border-color: var(--m-brand); color: #fff; font-weight: 600; }
 
+/* Static period chips for the reporting panel. Same shape as the live tabs,
+   but no pointer and no hover: nothing here is clickable. */
+.gcalls-mock__tabs--static span {
+	background: #fff;
+	border: 1px solid var(--m-border);
+	border-radius: 999px;
+	color: var(--m-muted);
+	padding: 0.3rem 0.8rem;
+}
+
+.gcalls-mock__tabs--static span.is-on { background: var(--m-brand); border-color: var(--m-brand); color: #fff; font-weight: 600; }
+
+/* Metric rows whose value is deliberately absent. The em dash is the widest
+   the column ever gets, so the rule reserves its space rather than letting the
+   row reflow if a value is ever added. */
+.gcalls-mock__metrics { display: grid; gap: 1px; list-style: none; margin: 0.7rem 0 0; padding: 0 0.9rem; }
+
+.gcalls-mock__metric {
+	align-items: baseline;
+	border-bottom: 1px solid var(--m-border);
+	display: flex;
+	gap: 1rem;
+	justify-content: space-between;
+	padding: 0.55rem 0;
+}
+
+.gcalls-mock__metric:last-child { border-bottom: 0; }
+.gcalls-mock__metric span { color: var(--m-muted); font-size: 0.8125rem; }
+.gcalls-mock__metric strong { color: var(--m-muted); font-size: 1.125rem; line-height: 1; }
+
+.gcalls-mock__empty { color: var(--m-muted); font-size: 0.8125rem; margin: 0; }
+
 .gcalls-mock__list, .gcalls-mock__steps, .gcalls-mock__api, .gcalls-mock__side,
 .gcalls-mock__events, .gcalls-mock__ticks, .gcalls-mock__criteria, .gcalls-mock__script {
 	list-style: none; margin: 0; padding: 0;
@@ -269,7 +301,9 @@
 .gcalls-mock__mark--ok { background: #e8f5ee; color: #1e7a4a; }
 .gcalls-mock__mark--no { background: #fdeaea; color: #a01b1b; }
 
-.gcalls-mock__caption { background: #faf9fc; border-top: 1px solid var(--m-border); color: var(--m-muted); font-size: 0.75rem; margin: 0; padding: 0.5rem 0.9rem; text-align: center; }
+/* The illustrative label. It is the one line that stops a mockup being read as
+   a record, so it is sized to be read rather than to be unobtrusive. */
+.gcalls-mock__caption { background: #faf9fc; border-top: 1px solid var(--m-border); color: #4b4f5a; font-size: 0.8125rem; margin: 0; padding: 0.6rem 0.9rem; text-align: center; }
 
 /* Product hero shot. One demo image, its box reserved by aspect-ratio so the
  * copy below it never moves while the bytes are still arriving. Unlike the
@@ -671,3 +705,52 @@
 .gcalls-trend__col { display: flex; flex: 1; flex-direction: column; gap: 0.3rem; justify-content: flex-end; }
 .gcalls-trend__bar { background: rgba(103, 58, 183, 0.8); border-radius: 4px 4px 0 0; display: block; width: 100%; }
 .gcalls-trend__col small { color: var(--m-muted); font-size: 0.625rem; text-align: center; }
+
+/*
+ * The illustrative-data label that sits with a figure-tile strip.
+ *
+ * Visible at every width by design: the bottom caption can be a screenful away
+ * from the tiles on a phone, and a number that reads as a measured result is
+ * exactly the thing that must not be a scroll away from its disclaimer.
+ */
+.gcalls-tiles-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.gcalls-tiles__label {
+	align-self: flex-start;
+	background: rgba(103, 58, 183, 0.1);
+	border-radius: 999px;
+	color: #4a2391;
+	/* 12px and sentence case: the label now carries the full wording, and
+	   uppercased Vietnamese with diacritics is measurably harder to read. */
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	margin: 0;
+	padding: 4px 10px;
+}
+
+/*
+ * GCALLS-039 — the fixed label carried by every registry frame.
+ *
+ * It sits directly under the image inside the same <figure>, for the reason
+ * the figure-tile label sits next to its tiles: on a phone a caption placed at
+ * the end of a tall panel can be a screen away from the thing it qualifies,
+ * and a picture of an interface reads as a photograph of a real system until
+ * something adjacent says otherwise.
+ */
+.gcalls-shot__label {
+	background: rgba(103, 58, 183, 0.1);
+	border-radius: 999px;
+	color: #4a2391;
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	margin: 8px 0 0;
+	padding: 4px 10px;
+	text-transform: uppercase;
+}

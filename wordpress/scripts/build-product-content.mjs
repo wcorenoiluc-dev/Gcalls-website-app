@@ -23,6 +23,7 @@
  *
  * Usage: node wordpress/scripts/build-product-content.mjs
  */
+import crypto from 'node:crypto'
 import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
@@ -87,7 +88,12 @@ async function load(file) {
 const PAGES = [
   {
     id: 'gcalls-plus',
-    heroMockup: 'plus_gallery',
+    // GCALLS-039: was 'plus_gallery', a six-frame raster gallery whose every
+    // frame is REFUSED (unapproved domain, fabricated identities, invented
+    // KPIs). 'customer_popup' is drawn by class-mockups.php and shows only a
+    // call duration, a timestamp and a status — figures the checkpoint keeps
+    // without a claim warning.
+    heroMockup: 'customer_popup',
     route: '/gcalls-plus-webphone/',
     file: 'gcallsPlus.ts',
     lead: { intent: 'consultation', source: 'gcalls_plus', product: 'Gcalls Plus Webphone' },
@@ -179,6 +185,36 @@ function normalise(raw) {
   const CARD_KEYS = ['items', 'steps', 'rows', 'channels']
   const BULLET_KEYS = ['capabilities', 'points', 'valuePoints']
 
+  /*
+   * GP_BOUNDARIES is two labelled groups, not one list: `fitTitle`/`fitItems`
+   * ("who this suits") beside `expandTitle`/`expandItems` ("what to move to
+   * when you outgrow it"). Neither key was known here, so the section exported
+   * with an empty list. Flattening the two groups into one would lose the
+   * contrast that IS the section, so they are kept as groups and the renderer
+   * places them side by side, which is what React does.
+   */
+  const GROUPS = [
+    ['fitTitle', 'fitItems'],
+    ['expandTitle', 'expandItems'],
+  ]
+  const groups = GROUPS
+    .filter(([, itemsKey]) => Array.isArray(raw[itemsKey]) && raw[itemsKey].length)
+    .map(([titleKey, itemsKey]) => ({
+      label: pick(raw, [titleKey]),
+      items: raw[itemsKey]
+        .map((item) =>
+          typeof item === 'string'
+            ? { title: item, body: '', href: '' }
+            : {
+                title: pick(item, ['need', 'title', 'name', 'label']),
+                body: pick(item, ['solution', 'product', 'detail', 'description']),
+                href: pick(item, ['path', 'href']),
+              },
+        )
+        .filter((item) => item.title || item.body),
+    }))
+    .filter((group) => group.items.length)
+
   const listKey = [...CARD_KEYS, ...BULLET_KEYS].find(
     (key) => Array.isArray(raw[key]) && raw[key].length,
   )
@@ -195,15 +231,49 @@ function normalise(raw) {
         // call their titles. Without them those sections rendered as a run of
         // unlabelled paragraphs — five industries on Gcalls Plus and four on
         // CX, each described but never named.
-        title: pick(item, ['title', 'name', 'role', 'segment', 'label', 'question', 'heading']),
-        body: pick(item, ['detail', 'description', 'body', 'answer', 'text', 'copy']),
+        /*
+         * `need` was the missing one, and it cost three whole sections.
+         * CX_BOUNDARIES and QQ_BOUNDARIES are decision tables — each row is
+         * {need, product, path}: "what you are trying to do" answered by
+         * "which product does it". Neither key was in either list, so every row
+         * normalised to an empty title AND an empty body, the filter below
+         * dropped all of them, and the section arrived carrying a heading and
+         * nothing else. It read as an export success because the heading was
+         * there.
+         */
+        title: pick(item, ['title', 'name', 'role', 'segment', 'label', 'question', 'heading', 'need']),
+        body: pick(item, ['detail', 'description', 'body', 'answer', 'text', 'copy', 'product', 'solution']),
+        // The row's own destination. These are navigation, not lead capture:
+        // they send a reader to the product that fits, and the CTA inventory
+        // counts them separately for that reason.
+        href: pick(item, ['path', 'href']),
       }
     })
     .filter((item) => item && (item.title || item.body))
 
-  if (!heading && !lead && items.length === 0) return null
+  /*
+   * EMPTY BY DESIGN IS NOT AN EXPORT FAILURE, AND THE TWO MUST NOT LOOK ALIKE.
+   *
+   * GP_STORY has no customer story because none has been approved for
+   * publication — React itself renders `placeholder` and `placeholderNote`
+   * there. Exporting that as "produced nothing" would have the builder demand
+   * a fix for something that is working as intended, and rendering it as an
+   * empty section would drop copy the reference shows. So it is carried, with
+   * a flag, and the completeness report counts it separately.
+   */
+  const placeholder = pick(raw, ['placeholder'])
+  const placeholderNote = pick(raw, ['placeholderNote'])
+  const link = raw.link && typeof raw.link === 'object'
+    ? { label: pick(raw.link, ['label']), href: pick(raw.link, ['path', 'href']) }
+    : null
 
-  return { eyebrow, heading, lead, cards, items }
+  if (placeholder && items.length === 0 && groups.length === 0) {
+    return { eyebrow, heading, lead, cards: false, items: [], groups: [], emptyByDesign: true, placeholder, placeholderNote, link }
+  }
+
+  if (!heading && !lead && items.length === 0 && groups.length === 0) return null
+
+  return { eyebrow, heading, lead, cards, items, groups }
 }
 
 const problems = []
@@ -311,11 +381,60 @@ for (const page of PAGES) {
     const normalised = normalise(module[name])
 
     if (!normalised) {
-      problems.push(`${page.id}: section ${name} produced nothing`)
+      problems.push(`${page.id}: section ${name} produced nothing (EXPORT_FAILURE)`)
       continue
     }
 
-    sections.push({ source: name, ...normalised, ...extra })
+    /*
+     * The check GCALLS-036B needed and did not have. A section that arrives
+     * with a heading and no body renders as a heading orphan or gets dropped,
+     * and both were happening silently. Now the build fails, and it fails with
+     * the distinction that matters: nothing to render is an EXPORT_FAILURE
+     * unless the source says the emptiness is intentional.
+     */
+    const renderable =
+      normalised.items.length > 0 ||
+      (normalised.groups && normalised.groups.length > 0) ||
+      normalised.emptyByDesign === true ||
+      Boolean(normalised.lead)
+
+    if (!renderable) {
+      problems.push(`${page.id}: section ${name} has a heading and no body (EXPORT_FAILURE)`)
+    }
+
+    /*
+     * Section-level CTAs, taken from the React data rather than placed by
+     * judgement. Only four constants carry one — the pricing sections
+     * (estimator + price list), CX_TRUST, QQ_STORY and GP_INTEGRATION — and
+     * that restraint is the point: React does not repeat its ask under every
+     * heading, so neither does this. `ask()` is the same allowlist the hero and
+     * the closing band use, so a manifest cannot introduce a query parameter.
+     */
+    const rawSection = module[name]
+
+    /*
+     * Two exclusions, both to stop the same ask appearing twice.
+     *
+     * `*_FINAL_CTA` sections are already skipped by the renderer — the closing
+     * band comes from `page.finalCta` — so exporting their buttons here would
+     * put the page's two closing asks into the manifest a second time.
+     *
+     * A section that is empty by design renders its own `link` inside the
+     * placeholder (GP_STORY's "Đọc bài viết trên Blog Gcalls" is part of the
+     * placeholder, not a separate ask), so taking `link` again would duplicate
+     * it directly underneath itself.
+     */
+    const ctaKeys = normalised.emptyByDesign
+      ? ['primaryCta', 'secondaryCta', 'cta']
+      : ['primaryCta', 'secondaryCta', 'cta', 'link']
+
+    const sectionCta = name.endsWith('_FINAL_CTA')
+      ? []
+      : ctaKeys
+          .map((key) => ask(rawSection?.[key], key === 'cta' ? demoLead ?? consultLead : consultLead ?? demoLead))
+          .filter(Boolean)
+
+    sections.push({ source: name, ...normalised, ...extra, cta: sectionCta })
   }
 
   if (sections.length < 6) problems.push(`${page.id}: only ${sections.length} sections`)
@@ -345,8 +464,21 @@ for (const page of PAGES) {
   if (direct && !(direct.question && direct.answer)) problems.push(`${page.id}: direct answer is incomplete`)
   if (faq.length === 0) problems.push(`${page.id}: no FAQ items`)
 
+  /*
+   * Provenance, so a later reader can prove which revision of the React source
+   * a section's copy came from without diffing prose. GCALLS-036B could not
+   * answer "is this stale or was it never exported" for the four empty
+   * sections; a path and a hash answers it.
+   */
+  const sourcePath = `src/data/${page.file}`
+  const sourceSha = crypto
+    .createHash('sha256')
+    .update(fs.readFileSync(path.join(REPO, sourcePath)))
+    .digest('hex')
+
   output.pages[page.id] = {
     route: page.route,
+    source: { path: sourcePath, sha256: sourceSha },
     // The FAQ heading names the product — "Câu hỏi thường gặp về Gcalls CX",
     // not a bare "Câu hỏi thường gặp". On a page this long the reader has
     // scrolled a long way from the title by the time they reach it.
@@ -365,10 +497,12 @@ fs.writeFileSync(OUT, `${JSON.stringify(output, null, 2)}\n`)
 
 console.log(`build-product-content: ${path.relative(REPO, OUT)}`)
 for (const [id, page] of Object.entries(output.pages)) {
-  const items = page.sections.reduce((n, s) => n + s.items.length, 0)
+  const items = page.sections.reduce((n, s) => n + s.items.length + (s.groups ?? []).reduce((m, g) => m + g.items.length, 0), 0)
+  const byDesign = page.sections.filter((s) => s.emptyByDesign).length
+  const grouped = page.sections.filter((s) => (s.groups ?? []).length).length
   console.log(
     `  ${id.padEnd(12)} ${String(page.sections.length).padStart(2)} sections, ${String(items).padStart(3)} items, ` +
-      `${String(page.faq.length).padStart(2)} faq, hero "${page.hero.heading.slice(0, 38)}…"`,
+      `${String(grouped)} grouped, ${String(byDesign)} empty-by-design, ${String(page.faq.length).padStart(2)} faq`,
   )
 }
 

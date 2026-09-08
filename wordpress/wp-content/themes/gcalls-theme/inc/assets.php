@@ -48,6 +48,27 @@ function gcalls_theme_enqueue_assets(): void {
 		GCALLS_THEME_VERSION
 	);
 
+	/*
+	 * The shared page component system (GCALLS-036) loads AFTER theme.css and
+	 * depends on it, so its tokens can reference the palette theme.css defines
+	 * and its rules win on order rather than on `!important`. It is a separate
+	 * handle so that backing it out is one line, leaving the signed-off 0.8.5
+	 * baseline untouched.
+	 */
+	$components_path = GCALLS_THEME_DIR . 'assets/css/gc-components.css';
+
+	wp_enqueue_style(
+		'gcalls-components',
+		GCALLS_THEME_URI . 'assets/css/gc-components.css',
+		array( 'gcalls-theme' ),
+		// Fingerprinted by mtime as well as by theme version: during the
+		// 036B preview cycle this file changes far more often than the theme
+		// version does, and a stale copy at the edge reads as a layout bug.
+		is_readable( $components_path )
+			? GCALLS_THEME_VERSION . '.' . (string) filemtime( $components_path )
+			: GCALLS_THEME_VERSION
+	);
+
 	wp_enqueue_script(
 		'gcalls-navigation',
 		GCALLS_THEME_URI . 'assets/js/navigation.js',

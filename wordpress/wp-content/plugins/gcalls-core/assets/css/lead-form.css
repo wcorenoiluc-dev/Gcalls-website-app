@@ -165,3 +165,121 @@
 		transition: none;
 	}
 }
+
+/* ── GCALLS-042 §B — two-column composition ──────────────────────────────
+ * The note above ("one column at every width") described the FORM. This adds
+ * the SECTION around it: copy on the left, form card on the right. The form
+ * itself still collapses to one column on a phone, and the pairs below are the
+ * only place two inputs ever share a row.
+ */
+.gcalls-lead {
+	--gl-radius: 20px;
+	--gl-gap: 24px;
+	--gl-ink: var(--gcalls-ink, #1e2026);
+	--gl-muted: var(--gcalls-muted, #5b5f6b);
+	--gl-border: var(--gcalls-border, #e6e3ef);
+	--gl-brand: var(--gcalls-brand, #673ab7);
+}
+
+/* 42 / 58, as specified. minmax(0,…) so a long word cannot widen a column and
+   push the grid past the viewport — the usual cause of horizontal overflow. */
+.gcalls-lead__grid {
+	align-items: start;
+	display: grid;
+	gap: 40px;
+	grid-template-columns: minmax(0, 42fr) minmax(0, 58fr);
+}
+
+.gcalls-lead__eyebrow {
+	color: var(--gl-brand);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	margin: 0 0 0.5rem;
+	text-transform: uppercase;
+}
+
+.gcalls-lead__title { font-size: 1.75rem; line-height: 1.25; margin: 0 0 0.75rem; }
+.gcalls-lead__lede { color: var(--gl-muted); margin: 0 0 1.25rem; max-width: 46ch; }
+
+.gcalls-lead__points { display: grid; gap: 12px; list-style: none; margin: 0 0 1.5rem; padding: 0; }
+
+.gcalls-lead__points li {
+	color: var(--gl-ink);
+	padding-left: 28px;
+	position: relative;
+}
+
+/* A check drawn in CSS: one less asset, and it cannot 404. */
+.gcalls-lead__points li::before {
+	border-bottom: 2px solid var(--gl-brand);
+	border-left: 2px solid var(--gl-brand);
+	content: "";
+	height: 6px;
+	left: 4px;
+	position: absolute;
+	top: 6px;
+	transform: rotate(-45deg);
+	width: 12px;
+}
+
+.gcalls-lead__direct { border-top: 1px solid var(--gl-border); padding-top: 1rem; }
+.gcalls-lead__direct-t { color: var(--gl-muted); font-size: 0.8125rem; margin: 0 0 0.35rem; }
+
+.gcalls-lead__card {
+	background: #fff;
+	border: 1px solid var(--gl-border);
+	border-radius: var(--gl-radius);
+	box-shadow: 0 1px 2px rgba(30, 32, 38, 0.04), 0 12px 32px rgba(30, 32, 38, 0.06);
+	padding: 28px;
+}
+
+/* Two-up field rows. */
+.gcalls-lead__row { display: grid; gap: var(--gl-gap); grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+
+.gcalls-lead__opt { color: var(--gl-muted); font-weight: 400; }
+
+/* 48px minimum target, and a focus ring that does not rely on the browser
+   default — which is nearly invisible on a white card in some themes. */
+.gcalls-lead__form input:not([type="checkbox"]),
+.gcalls-lead__form textarea {
+	border: 1px solid var(--gl-border);
+	border-radius: 10px;
+	font: inherit;
+	min-height: 48px;
+	padding: 12px 14px;
+	width: 100%;
+}
+
+.gcalls-lead__form input:focus-visible,
+.gcalls-lead__form textarea:focus-visible,
+.gcalls-lead__form button:focus-visible,
+.gcalls-lead__form input[type="checkbox"]:focus-visible {
+	outline: 3px solid rgba(103, 58, 183, 0.45);
+	outline-offset: 2px;
+}
+
+.gcalls-lead__form textarea { min-height: 96px; resize: vertical; }
+
+.gcalls-lead__submit button { min-height: 48px; width: 100%; }
+
+.gcalls-lead__field--invalid input,
+.gcalls-lead__field--invalid textarea { border-color: #b3261e; }
+
+.gcalls-lead__fielderr { color: #b3261e; display: block; font-size: 0.8125rem; margin-top: 0.35rem; }
+
+/* Submitting: the button says so and the fieldset goes inert. This is the ONLY
+   state in which anything here is disabled. */
+.gcalls-lead__form[data-submitting] fieldset { opacity: 0.7; }
+
+@media (max-width: 900px) {
+	.gcalls-lead__grid { gap: 24px; grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 600px) {
+	/* The card keeps its own inset off the screen edge. */
+	.gcalls-lead__card { border-radius: 16px; padding: 20px; }
+	.gcalls-lead__row { gap: 16px; grid-template-columns: minmax(0, 1fr); }
+	.gcalls-lead__title { font-size: 1.5rem; }
+	.gcalls-lead__points { gap: 10px; }
+}

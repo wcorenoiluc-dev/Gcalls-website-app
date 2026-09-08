@@ -1,0 +1,765 @@
+/**
+ * GCALLS-036 — shared page component system.
+ *
+ * WHY A SECOND FILE AND NOT AN EDIT TO theme.css
+ * `theme.css` at 0.8.5 is byte-identical to what is live (sha aea2b953…), and
+ * the brief requires the theme visual to start from exactly that. Keeping the
+ * new system in its own file means the 0.8.5 baseline stays diffable and the
+ * rollback is "stop enqueuing one stylesheet", not a revert of 59 KB.
+ *
+ * WHAT PROBLEM THIS SOLVES
+ * Measured on 2026-09-01: WordPress renders 14 semantically different sections
+ * through one class (`.gcalls-product__section`) and one grid
+ * (`.gcalls-product__grid`, `repeat(auto-fit, …)`), with zero SVG icons and
+ * zero two-column splits, against 22 distinct grids and 69 icons in React on
+ * the same route. The fix is not more CSS on the same markup — it is a set of
+ * components the renderer picks between by MEANING. See
+ * docs/content-review/gcalls-036/REACT-WP-COMPONENT-MAP.md.
+ *
+ * RULES THIS FILE KEEPS
+ * - No `!important`. Every rule is scoped to `.gc-page`, the class the section
+ *   renderer puts on its own root, so specificity comes from the scope and
+ *   from load order rather than from a hammer.
+ * - `.gc-page` is narrower than `body:not(.home)` on purpose. A body-level
+ *   scope reaches the blog, the estimator, and anything another plugin prints,
+ *   which would make "back this release out" mean auditing all of them. It
+ *   also cannot touch the home page, whose signed-off Elementor rhythm is not
+ *   part of this work.
+ * - No negative margins, no `min-height` to fake equal cards; cards stretch
+ *   because the grid stretches them, which is what `align-items` is for.
+ */
+
+/* ── Tokens ──────────────────────────────────────────────────────────────
+ * Values come from the brief's ranges, resolved to one number each so there is
+ * nothing left to interpret at call sites. Colours reuse theme.css so there is
+ * one palette, not two.
+ */
+:root {
+	--gc-container: 1220px;          /* brief 1180–1240 */
+	--gc-measure: 660px;             /* brief 620–680 reading width */
+	--gc-gutter: 20px;
+	--gc-gutter-lg: 32px;
+
+	--gc-section-pad: 50px;          /* brief: 50px desktop AND mobile */
+	--gc-hero-pad-top: 72px;         /* hero carries its own, measured */
+	--gc-hero-pad-bottom: 64px;
+
+	--gc-gap-section: 36px;          /* brief 28–48 internal gap */
+	--gc-gap-head-desc: 18px;        /* brief 16–20 */
+	--gc-gap-desc-body: 32px;        /* brief 28–36 */
+	--gc-gap-grid: 20px;
+	--gc-gap-split: 56px;
+
+	--gc-card-pad: 28px;             /* brief 24–32 desktop */
+	--gc-card-pad-mobile: 22px;      /* brief 20–24 mobile */
+	--gc-radius: 20px;               /* brief 18–24 */
+	--gc-radius-sm: 12px;
+
+	--gc-border: 1px solid var(--gcalls-border, #e8e5ef);
+	--gc-border-soft: 1px solid rgba(103, 58, 183, 0.12);
+	--gc-shadow: 0 8px 24px rgba(30, 32, 38, 0.05);
+	--gc-shadow-lift: 0 14px 34px rgba(74, 35, 145, 0.09);
+
+	--gc-icon: 20px;
+	--gc-icon-box: 40px;
+}
+
+/* ── Section shell ───────────────────────────────────────────────────────
+ * One shell, three surfaces. The surface is a full-bleed band, not a rounded
+ * panel: bands butt against each other so the alternation reads as rhythm
+ * rather than as a stack of floating boxes, which is how the current
+ * `--alt` panel reads at 1440.
+ */
+.gc-page .gc-section {
+	padding-block: var(--gc-section-pad);
+}
+
+.gc-page .gc-section--alt {
+	background: var(--gcalls-surface-alt, #faf9fc);
+}
+
+.gc-page .gc-section--brand {
+	background: var(--gcalls-brand-light, #f5f1fc);
+}
+
+/* Bands are flush. A band followed by a band must not show a seam. */
+.gc-page .gc-section--alt + .gc-section--alt,
+.gc-page .gc-section--brand + .gc-section--brand {
+	padding-top: 0;
+}
+
+.gc-page .gc-container {
+	margin-inline: auto;
+	max-width: var(--gc-container);
+	padding-inline: var(--gc-gutter);
+	width: 100%;
+}
+
+@media (min-width: 1024px) {
+	.gc-page .gc-container { padding-inline: var(--gc-gutter-lg); }
+}
+
+/* ── Section header ──────────────────────────────────────────────────────
+ * Eyebrow → heading → description, with the two gaps the brief specifies.
+ * A heading is never allowed to stand alone: `.gc-head` is only ever emitted
+ * with at least a heading, and the renderer must not emit it for a section
+ * that has no body.
+ */
+.gc-page .gc-head {
+	display: flex;
+	flex-direction: column;
+	max-width: var(--gc-measure);
+}
+
+.gc-page .gc-head--wide { max-width: none; }
+.gc-page .gc-head--center { margin-inline: auto; text-align: center; }
+
+.gc-page .gc-head__eyebrow {
+	align-self: flex-start;
+	background: var(--gcalls-brand, #673ab7);
+	border-radius: 999px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	line-height: 1;
+	padding: 7px 14px;
+	text-transform: uppercase;
+}
+
+.gc-page .gc-head--center .gc-head__eyebrow { align-self: center; }
+
+.gc-page .gc-head__title {
+	color: var(--gcalls-brand, #673ab7);
+	font-size: clamp(1.5rem, 2.4vw, 2.125rem);
+	font-weight: 800;
+	letter-spacing: -0.01em;
+	line-height: 1.22;
+	margin: var(--gc-gap-head-desc) 0 0;
+}
+
+.gc-page .gc-head__eyebrow + .gc-head__title { margin-top: 14px; }
+
+.gc-page .gc-head__desc {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 1.0625rem;
+	line-height: 1.65;
+	margin: var(--gc-gap-head-desc) 0 0;
+}
+
+/* Header to whatever follows it. */
+.gc-page .gc-head + * { margin-top: var(--gc-gap-desc-body); }
+
+/* ── Icons ───────────────────────────────────────────────────────────────
+ * The single largest visual gap: 69 icons in React, 0 in WordPress. Icons are
+ * decorative here — they repeat the adjacent text — so they carry
+ * aria-hidden in the markup and never become the only label.
+ */
+.gc-page .gc-icon {
+	block-size: var(--gc-icon);
+	color: var(--gcalls-brand, #673ab7);
+	flex: none;
+	inline-size: var(--gc-icon);
+}
+
+.gc-page .gc-iconbox {
+	align-items: center;
+	background: var(--gcalls-brand-light, #f5f1fc);
+	border-radius: 12px;
+	block-size: var(--gc-icon-box);
+	color: var(--gcalls-brand, #673ab7);
+	display: inline-flex;
+	inline-size: var(--gc-icon-box);
+	justify-content: center;
+}
+
+.gc-page .gc-iconbox--round { border-radius: 999px; }
+
+/* ── Card ────────────────────────────────────────────────────────────────
+ * No min-height. Equal heights come from the grid stretching its items, which
+ * is correct when the content genuinely differs in length and honest when it
+ * does not.
+ */
+.gc-page .gc-card {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius);
+	box-shadow: var(--gc-shadow);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: var(--gc-card-pad);
+	transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.gc-page .gc-card__title {
+	color: var(--gcalls-foreground, #1e2026);
+	font-size: 1.0625rem;
+	font-weight: 700;
+	line-height: 1.35;
+	margin: 0;
+}
+
+.gc-page .gc-card__body {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.9375rem;
+	line-height: 1.65;
+	margin: 0;
+}
+
+.gc-page a.gc-card:hover,
+.gc-page .gc-card--link:hover {
+	border-color: rgba(103, 58, 183, 0.38);
+	box-shadow: var(--gc-shadow-lift);
+	transform: translateY(-2px);
+}
+
+/* ── Grids ───────────────────────────────────────────────────────────────
+ * Explicit column counts, chosen by the renderer from the number of items and
+ * the meaning of the section. `auto-fit` is deliberately not used: it is what
+ * produced the empty 0px tracks measured on sections 2, 6 and 8, and it lets
+ * six cards land in five columns.
+ */
+.gc-page .gc-grid {
+	display: grid;
+	gap: var(--gc-gap-grid);
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 640px) {
+	.gc-page .gc-grid--2,
+	.gc-page .gc-grid--3,
+	.gc-page .gc-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+	.gc-page .gc-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.gc-page .gc-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.gc-page .gc-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* ── 5. Feature split ────────────────────────────────────────────────────
+ * Missing entirely today: 0 of 3 on gcalls-plus, 0 of 2 on voicebot.
+ */
+.gc-page .gc-split {
+	align-items: center;
+	display: grid;
+	gap: 40px;
+	grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 1024px) {
+	.gc-page .gc-split {
+		gap: var(--gc-gap-split);
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.gc-page .gc-split--reverse .gc-split__copy { order: 2; }
+	.gc-page .gc-split--reverse .gc-split__visual { order: 1; }
+}
+
+.gc-page .gc-split__copy { max-width: var(--gc-measure); }
+
+.gc-page .gc-checks {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	list-style: none;
+	margin: 28px 0 0;
+	padding: 0;
+}
+
+.gc-page .gc-checks li {
+	align-items: flex-start;
+	color: var(--gcalls-foreground, #1e2026);
+	display: flex;
+	font-size: 1rem;
+	gap: 10px;
+	line-height: 1.6;
+}
+
+.gc-page .gc-checks .gc-iconbox {
+	block-size: 22px;
+	border-radius: 999px;
+	inline-size: 22px;
+	margin-top: 3px;
+}
+
+.gc-page .gc-checks .gc-icon { block-size: 13px; inline-size: 13px; }
+
+/* ── 9. Process / timeline ───────────────────────────────────────────────
+ * Steps are ordered, so they are an <ol> and they show their number. Today
+ * they render as unnumbered cards, which loses the sequence.
+ */
+.gc-page .gc-steps {
+	counter-reset: gc-step;
+	display: grid;
+	gap: var(--gc-gap-grid);
+	grid-template-columns: minmax(0, 1fr);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+@media (min-width: 768px) { .gc-page .gc-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .gc-page .gc-steps--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+	.gc-page .gc-steps--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.gc-page .gc-steps--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+
+.gc-page .gc-steps__item {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius);
+	padding: var(--gc-card-pad);
+	position: relative;
+}
+
+.gc-page .gc-steps__item::before {
+	align-items: center;
+	background: var(--gcalls-brand, #673ab7);
+	border-radius: 999px;
+	color: #fff;
+	content: counter(gc-step);
+	counter-increment: gc-step;
+	display: flex;
+	font-size: 13px;
+	font-weight: 700;
+	block-size: 28px;
+	inline-size: 28px;
+	justify-content: center;
+	margin-bottom: 14px;
+}
+
+/* ── 10. Vendor / integration grid ───────────────────────────────────────*/
+.gc-page .gc-vendors {
+	display: grid;
+	gap: 14px;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) { .gc-page .gc-vendors { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .gc-page .gc-vendors { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+
+.gc-page .gc-vendors__item {
+	align-items: center;
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius-sm);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+	padding: 18px 14px;
+	text-align: center;
+}
+
+.gc-page .gc-vendors__item img { block-size: 28px; inline-size: auto; object-fit: contain; }
+.gc-page .gc-vendors__name { font-size: 0.875rem; font-weight: 600; }
+
+/* ── 6. Real product screenshot ──────────────────────────────────────────
+ * Only ever a `-v2` derivative that passed the PII gate. The caption is part
+ * of the component, not an option: an anonymised screenshot that does not say
+ * so reads as a real customer's data.
+ */
+.gc-page .gc-shot { margin: 0; }
+
+.gc-page .gc-shot img {
+	block-size: auto;
+	border: var(--gc-border-soft);
+	border-radius: var(--gc-radius);
+	box-shadow: var(--gc-shadow);
+	display: block;
+	inline-size: 100%;
+	max-inline-size: 100%;
+}
+
+.gc-page .gc-shot figcaption {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.8125rem;
+	line-height: 1.5;
+	margin-top: 10px;
+}
+
+/* ── 7. Illustrated diagram ──────────────────────────────────────────────
+ * Used where no true screenshot of THAT product exists. The label is
+ * mandatory and is a real element, not a ::after, so it survives copy-paste
+ * and is read by a screen reader.
+ */
+.gc-page .gc-diagram {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius);
+	overflow: hidden;
+	padding: 0;
+}
+
+.gc-page .gc-diagram__canvas { overflow-x: auto; padding: 20px; }
+
+.gc-page .gc-diagram__label {
+	background: var(--gcalls-surface-alt, #faf9fc);
+	border-top: var(--gc-border);
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.8125rem;
+	padding: 10px 20px;
+}
+
+/* ── 13. FAQ ─────────────────────────────────────────────────────────────*/
+.gc-page .gc-faq { display: flex; flex-direction: column; gap: 12px; max-width: var(--gc-measure); }
+
+.gc-page .gc-faq__item {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius-sm);
+	padding: 18px 20px;
+}
+
+.gc-page .gc-faq__q {
+	align-items: flex-start;
+	cursor: pointer;
+	display: flex;
+	font-size: 1rem;
+	font-weight: 650;
+	gap: 12px;
+	justify-content: space-between;
+	line-height: 1.45;
+	list-style: none;
+}
+
+.gc-page .gc-faq__q::-webkit-details-marker { display: none; }
+.gc-page .gc-faq__item[open] .gc-faq__q .gc-icon { transform: rotate(180deg); }
+.gc-page .gc-faq__a { color: var(--gcalls-muted, #5b5f6b); line-height: 1.7; margin: 12px 0 0; }
+
+/* ── 14. Conversion CTA ──────────────────────────────────────────────────*/
+.gc-page .gc-cta {
+	background: var(--gcalls-brand-light, #f5f1fc);
+	border: var(--gc-border-soft);
+	border-radius: var(--gc-radius);
+	padding: 40px var(--gc-card-pad);
+	text-align: center;
+}
+
+.gc-page .gc-cta__row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	justify-content: center;
+	margin-top: 24px;
+}
+
+/* ── 15. Lead form slot ──────────────────────────────────────────────────
+ * While the runtime is not merged this slot must render a contact card, not a
+ * form. A CTA that leads to something that cannot submit is worse than a CTA
+ * that leads to a phone number.
+ */
+.gc-page .gc-leadslot {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius);
+	display: grid;
+	gap: 18px;
+	padding: var(--gc-card-pad);
+}
+
+.gc-page .gc-leadslot__row { align-items: center; display: flex; gap: 12px; }
+
+/* ── 2. Trust bar · 11. Comparison · 16. Related ─────────────────────────*/
+.gc-page .gc-trustbar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px 28px;
+}
+
+.gc-page .gc-trustbar__item { align-items: center; display: flex; gap: 8px; font-size: 0.9375rem; }
+
+.gc-page .gc-compare { overflow-x: auto; }
+.gc-page .gc-compare table { border-collapse: collapse; inline-size: 100%; min-inline-size: 640px; }
+.gc-page .gc-compare th,
+.gc-page .gc-compare td { border-bottom: var(--gc-border); padding: 14px 16px; text-align: left; }
+.gc-page .gc-compare thead th { font-size: 0.875rem; letter-spacing: 0.03em; text-transform: uppercase; }
+
+.gc-page .gc-related { display: grid; gap: var(--gc-gap-grid); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 768px) { .gc-page .gc-related { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* ── Focus, motion, mobile ───────────────────────────────────────────────*/
+.gc-page .gc-card:focus-visible,
+.gc-page .gc-faq__q:focus-visible,
+.gc-page .gc-vendors__item:focus-visible,
+.gc-page .gc-related a:focus-visible {
+	outline: 3px solid var(--gcalls-brand, #673ab7);
+	outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+	.gc-page .gc-card,
+	.gc-page .gc-steps__item,
+	.gc-page .gc-leadslot { padding: var(--gc-card-pad-mobile); }
+	.gc-page .gc-cta { padding: 32px var(--gc-card-pad-mobile); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gc-page .gc-card { transition: none; }
+	.gc-page a.gc-card:hover,
+	.gc-page .gc-card--link:hover { transform: none; }
+}
+
+/* ── Page hero ───────────────────────────────────────────────────────────
+ * The hero gets its own vertical token: the brief's 50px is the rhythm for
+ * content sections, and applying it to the first thing on the page put the h1
+ * against the header.
+ */
+.gc-page .gc-section--hero { padding-block: var(--gc-hero-pad-top) var(--gc-hero-pad-bottom); }
+
+.gc-page .gc-hero { max-width: 780px; }
+
+.gc-page .gc-hero__title {
+	color: var(--gcalls-brand, #673ab7);
+	font-size: clamp(1.9rem, 3.6vw, 2.85rem);
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	line-height: 1.15;
+	margin: 16px 0 0;
+}
+
+.gc-page .gc-section--direct { background: var(--gcalls-brand-light, #f5f1fc); }
+
+/* ── Prose ───────────────────────────────────────────────────────────────
+ * The content pages put their direct answer here with no heading at all. It
+ * is the paragraph an answer engine quotes, so it is plain visible text at
+ * reading width, never inside an accordion.
+ */
+.gc-page .gc-prose { max-width: var(--gc-measure); }
+
+.gc-page .gc-prose p {
+	color: var(--gcalls-foreground, #1e2026);
+	font-size: 1.0625rem;
+	line-height: 1.75;
+	margin: 0;
+}
+
+/* ── Before/after flow ───────────────────────────────────────────────────
+ * Two ordered lists side by side. The point of the section is that one
+ * sequence is longer than the other, so they must be comparable at a glance
+ * and must not be equalised to the same height.
+ */
+.gc-page .gc-compare-flow {
+	display: grid;
+	gap: var(--gc-gap-grid);
+	grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 768px) {
+	.gc-page .gc-compare-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.gc-page .gc-flow {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius);
+	padding: var(--gc-card-pad);
+}
+
+.gc-page .gc-flow--after { border-color: rgba(103, 58, 183, 0.32); }
+
+.gc-page .gc-flow__label {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	margin: 0 0 14px;
+	text-transform: uppercase;
+}
+
+.gc-page .gc-flow--after .gc-flow__label { color: var(--gcalls-brand, #673ab7); }
+
+.gc-page .gc-flow__steps {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gc-page .gc-flow__steps li {
+	background: var(--gcalls-surface-alt, #faf9fc);
+	border-radius: 10px;
+	font-size: 0.9375rem;
+	padding: 10px 14px;
+}
+
+.gc-page .gc-flow--after .gc-flow__steps li { background: var(--gcalls-brand-light, #f5f1fc); }
+
+/* ── Tag list ────────────────────────────────────────────────────────────
+ * Short labels. A card each would be mostly padding.
+ */
+.gc-page .gc-taglist {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gc-page .gc-taglist__item {
+	align-items: center;
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: 999px;
+	display: inline-flex;
+	font-size: 0.9375rem;
+	gap: 8px;
+	padding: 9px 16px;
+}
+
+.gc-page .gc-taglist__item .gc-icon { block-size: 16px; inline-size: 16px; }
+
+/* ── Card badge ──────────────────────────────────────────────────────────*/
+.gc-page .gc-badge {
+	align-self: flex-start;
+	background: var(--gcalls-brand-light, #f5f1fc);
+	border-radius: 999px;
+	color: var(--gcalls-brand-dark, #4a2391);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	padding: 5px 10px;
+	text-transform: uppercase;
+}
+
+/* ── Split visual ────────────────────────────────────────────────────────
+ * React's split is 580/580 at 1440 inside a 1280 container. Against the
+ * 1220 container here that is roughly 42% copy / 54% visual, which is the
+ * brief's range, so the visual column is the wider of the two.
+ */
+@media (min-width: 1024px) {
+	.gc-page .gc-split { grid-template-columns: minmax(0, 43fr) minmax(0, 54fr); }
+}
+
+.gc-page .gc-split__visual > * { margin: 0; }
+
+/* ── FAQ / final bands ───────────────────────────────────────────────────*/
+.gc-page .gc-section--faq { background: var(--gcalls-surface-alt, #faf9fc); }
+.gc-page .gc-section--final { padding-block: var(--gc-section-pad); }
+
+/* Header inside a split is one column of two, so it is not capped to the
+ * reading measure the way a full-width section header is. */
+.gc-page .gc-head--bare { max-width: none; }
+
+/* Lead slot rows stack; the two channels are equal-weight, not a form. */
+.gc-page .gc-leadslot__row { margin: 0; }
+
+/* ── Two labelled groups ─────────────────────────────────────────────────
+ * "Who this suits" beside "what to move to when you outgrow it". The contrast
+ * is the section, so the two columns sit side by side from 768 up and never
+ * merge into one list.
+ */
+.gc-page .gc-groups {
+	display: grid;
+	gap: var(--gc-gap-grid);
+	grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 768px) {
+	.gc-page .gc-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.gc-page .gc-groups__col {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius);
+	padding: var(--gc-card-pad);
+}
+
+.gc-page .gc-groups__label {
+	color: var(--gcalls-brand, #673ab7);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	margin: 0 0 16px;
+	text-transform: uppercase;
+}
+
+.gc-page .gc-groups__list {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gc-page .gc-groups__list li {
+	align-items: flex-start;
+	display: flex;
+	font-size: 0.9375rem;
+	gap: 10px;
+	line-height: 1.6;
+}
+
+.gc-page .gc-groups__list .gc-iconbox { block-size: 22px; inline-size: 22px; margin-top: 2px; }
+.gc-page .gc-groups__list .gc-icon { block-size: 13px; inline-size: 13px; }
+
+/* ── Decision table ──────────────────────────────────────────────────────
+ * A need, then the product that answers it. These links are navigation, not
+ * lead capture, so they are plain links and not buttons — a row of five
+ * buttons here would read as five competing asks.
+ */
+.gc-page .gc-decision {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	list-style: none;
+	margin: 0;
+	max-width: var(--gc-container);
+	padding: 0;
+}
+
+.gc-page .gc-decision__row {
+	align-items: flex-start;
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius-sm);
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	padding: 16px 20px;
+}
+
+@media (min-width: 768px) {
+	.gc-page .gc-decision__row { align-items: center; flex-direction: row; gap: 20px; justify-content: space-between; }
+}
+
+.gc-page .gc-decision__need { font-size: 0.9375rem; }
+
+.gc-page .gc-decision__answer {
+	align-items: center;
+	color: var(--gcalls-brand, #673ab7);
+	display: inline-flex;
+	font-weight: 650;
+	gap: 8px;
+}
+
+.gc-page .gc-decision__answer .gc-icon { block-size: 16px; inline-size: 16px; }
+
+/* ── Placeholder: empty on purpose ───────────────────────────────────────
+ * Reads as a stated absence, not as a broken section. Muted, no card chrome
+ * that would make it look like content.
+ */
+.gc-page .gc-placeholder {
+	border: 1px dashed var(--gcalls-border, #e8e5ef);
+	border-radius: var(--gc-radius);
+	max-width: var(--gc-measure);
+	padding: var(--gc-card-pad);
+}
+
+.gc-page .gc-placeholder__text { font-weight: 650; margin: 0; }
+.gc-page .gc-placeholder__note { color: var(--gcalls-muted, #5b5f6b); font-size: 0.9375rem; margin: 8px 0 0; }
+.gc-page .gc-placeholder__link { margin: 14px 0 0; }
+
+/* A section's own asks. Never a full band — that is the closing CTA's job. */
+.gc-page .gc-ctarow--section {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: var(--gc-gap-section);
+}

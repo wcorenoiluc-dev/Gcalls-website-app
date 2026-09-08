@@ -189,22 +189,79 @@ final class Shortcodes {
 	 */
 	public static function lead_form( $atts = array() ): string {
 		$atts = shortcode_atts(
-			array( 'title' => __( 'Đăng ký tư vấn', 'gcalls-core' ) ),
+			array(
+				'title'    => __( 'Đăng ký tư vấn', 'gcalls-core' ),
+				'intent'   => '',
+				'source'   => '',
+				'product'  => '',
+				'solution' => '',
+			),
 			(array) $atts,
 			'gcalls_lead_form'
 		);
 
-		$attribution = self::lead_attribution();
+		$attribution = self::lead_attribution(
+			array(
+				'intent'   => (string) $atts['intent'],
+				'source'   => (string) $atts['source'],
+				'product'  => (string) $atts['product'],
+				'solution' => (string) $atts['solution'],
+			)
+		);
 		$state       = self::lead_state();
 
+		/*
+		 * GCALLS-042 §B — a two-column composition, not a full-bleed form.
+		 *
+		 * The form ran the whole width of the page with its heading floating
+		 * above it, which is why it read as a wall of inputs with no hierarchy.
+		 * The left column carries the reason to fill it in; the right carries
+		 * the card. On a phone they stack in that order, so the argument still
+		 * arrives before the work.
+		 *
+		 * The h4 stays an h4 for the same reason it always did: this panel sits
+		 * inside a section that already owns the heading above it.
+		 */
 		$markup = '<section class="gcalls-lead" id="gcalls-lead">';
+		$markup .= '<div class="gcalls-lead__grid">';
 
-		// h4, not h2. The panel sits inside a section that already has its own
-		// heading, so an h2 here inserts a second top-level heading into that
-		// section — on the home page it produced a forty-second heading React
-		// does not have, out of order, directly under the section title it was
-		// competing with. React labels the panel without promoting it.
-		$markup .= '<h4 class="gcalls-lead__title">' . esc_html( (string) $atts['title'] ) . '</h4>';
+		$markup .= '<div class="gcalls-lead__intro">';
+		/*
+		 * The eyebrow is dropped when it would repeat the heading. The default
+		 * title IS "Đăng ký tư vấn", so a fixed eyebrow printed the same three
+		 * words twice, one above the other, on every page that did not pass a
+		 * custom title.
+		 */
+		$eyebrow = __( 'Đăng ký tư vấn', 'gcalls-core' );
+		$title   = (string) $atts['title'];
+
+		if ( $eyebrow !== $title ) {
+			$markup .= '<p class="gcalls-lead__eyebrow">' . esc_html( $eyebrow ) . '</p>';
+		}
+
+		$markup .= '<h4 class="gcalls-lead__title">' . esc_html( $title ) . '</h4>';
+		$markup .= '<p class="gcalls-lead__lede">'
+			. esc_html__( 'Để lại thông tin, đội ngũ Gcalls sẽ liên hệ để tư vấn giải pháp tổng đài phù hợp với quy mô và quy trình của doanh nghiệp bạn.', 'gcalls-core' )
+			. '</p>';
+
+		$markup .= '<ul class="gcalls-lead__points">';
+
+		foreach ( array(
+			__( 'Tư vấn theo quy mô đội ngũ và hệ thống đang dùng', 'gcalls-core' ),
+			__( 'Hướng dẫn tích hợp với CRM, Helpdesk hoặc POS', 'gcalls-core' ),
+			__( 'Phản hồi trong giờ làm việc', 'gcalls-core' ),
+		) as $point ) {
+			$markup .= '<li>' . esc_html( $point ) . '</li>';
+		}
+
+		$markup .= '</ul>';
+		$markup .= '<div class="gcalls-lead__direct">';
+		$markup .= '<p class="gcalls-lead__direct-t">' . esc_html__( 'Hoặc liên hệ trực tiếp', 'gcalls-core' ) . '</p>';
+		$markup .= self::lead_contact_line();
+		$markup .= '</div>';
+		$markup .= '</div>';
+
+		$markup .= '<div class="gcalls-lead__card">';
 
 		/*
 		 * Success is rendered INSTEAD of the form, and only when the server has
@@ -221,7 +278,9 @@ final class Shortcodes {
 			}
 
 			$markup .= self::lead_contact_line();
-			$markup .= '</div></section>';
+			// Success replaces the form INSIDE the card, so the page keeps its
+			// two-column shape and nothing below it jumps.
+			$markup .= '</div></div></div></section>';
 
 			return $markup;
 		}
@@ -243,15 +302,29 @@ final class Shortcodes {
 		$markup .= '<fieldset>';
 		$markup .= '<legend class="screen-reader-text">' . esc_html__( 'Thông tin liên hệ', 'gcalls-core' ) . '</legend>';
 
+		/*
+		 * GCALLS-042 §B pairs these two to a row: name+company, then
+		 * email+phone. The order is the order they are asked in, not the order
+		 * the validator happens to check them.
+		 */
 		$fields = array(
 			'name'    => array( __( 'Họ và tên', 'gcalls-core' ), 'text', true, 'name' ),
-			'phone'   => array( __( 'Số điện thoại', 'gcalls-core' ), 'tel', true, 'tel' ),
-			'email'   => array( __( 'Email công việc', 'gcalls-core' ), 'email', false, 'email' ),
 			'company' => array( __( 'Công ty', 'gcalls-core' ), 'text', false, 'organization' ),
+			'email'   => array( __( 'Email công việc', 'gcalls-core' ), 'email', false, 'email' ),
+			'phone'   => array( __( 'Số điện thoại', 'gcalls-core' ), 'tel', true, 'tel' ),
 		);
+
+		$pair = 0;
 
 		foreach ( $fields as $name => $spec ) {
 			list( $label, $type, $required, $autocomplete ) = $spec;
+
+			// Two per row on desktop, one per row on a phone. The row is a
+			// real element rather than a grid span so that a field carrying an
+			// error message grows without dragging its neighbour with it.
+			if ( 0 === $pair % 2 ) {
+				$markup .= '<div class="gcalls-lead__row">';
+			}
 
 			$id      = 'gcalls-lead-' . $name;
 			$invalid = in_array( $name, $state['fields'], true );
@@ -287,14 +360,37 @@ final class Shortcodes {
 			}
 
 			$markup .= '</p>';
+
+			++$pair;
+
+			if ( 0 === $pair % 2 ) {
+				$markup .= '</div>';
+			}
 		}
+
+		if ( 0 !== $pair % 2 ) {
+			$markup .= '</div>';
+		}
+
+		/* Nhu cầu quan tâm — full width, and the field that replaced a required
+		 * paragraph. The backend already stored `need`; it was simply never
+		 * rendered, so every lead arrived with it blank. */
+		$invalid_need = in_array( 'need', $state['fields'], true );
+
+		$markup .= '<p class="gcalls-lead__field' . ( $invalid_need ? ' gcalls-lead__field--invalid' : '' ) . '">';
+		$markup .= '<label for="gcalls-lead-need">' . esc_html__( 'Nhu cầu quan tâm', 'gcalls-core' ) . '</label>';
+		$markup .= '<input type="text" id="gcalls-lead-need" name="need" maxlength="120"';
+		$markup .= ' value="' . esc_attr( $state['values']['need'] ?? '' ) . '"';
+		$markup .= ' autocomplete="off"';
+		$markup .= ' placeholder="' . esc_attr__( 'VD: tổng đài cho đội Sales', 'gcalls-core' ) . '">';
+		$markup .= '</p>';
 
 		$invalid_message = in_array( 'message', $state['fields'], true );
 
 		$markup .= '<p class="gcalls-lead__field' . ( $invalid_message ? ' gcalls-lead__field--invalid' : '' ) . '">';
-		$markup .= '<label for="gcalls-lead-message">' . esc_html__( 'Nội dung cần tư vấn', 'gcalls-core' );
-		$markup .= ' <span class="gcalls-lead__req" aria-hidden="true">*</span></label>';
-		$markup .= '<textarea id="gcalls-lead-message" name="message" rows="4" maxlength="4000" required aria-required="true"';
+		$markup .= '<label for="gcalls-lead-message">' . esc_html__( 'Lời nhắn', 'gcalls-core' );
+		$markup .= ' <span class="gcalls-lead__opt">' . esc_html__( '(không bắt buộc)', 'gcalls-core' ) . '</span></label>';
+		$markup .= '<textarea id="gcalls-lead-message" name="message" rows="3" maxlength="4000"';
 
 		if ( $invalid_message ) {
 			$markup .= ' aria-invalid="true" aria-describedby="gcalls-lead-message-err"';
@@ -345,15 +441,15 @@ final class Shortcodes {
 
 		$markup .= '<p class="gcalls-lead__submit">';
 		$markup .= '<button type="submit" class="gcalls-cta gcalls-cta--primary" data-gcalls-lead-submit>';
-		$markup .= '<span data-gcalls-lead-label>' . esc_html__( 'Gửi yêu cầu tư vấn', 'gcalls-core' ) . '</span>';
+		$markup .= '<span data-gcalls-lead-label>' . esc_html__( 'Nhận tư vấn giải pháp', 'gcalls-core' ) . '</span>';
 		$markup .= '</button></p>';
 
 		$markup .= '</fieldset>';
 		$markup .= '</form>';
 
-		$markup .= '<p class="gcalls-lead__alt">' . esc_html__( 'Hoặc liên hệ trực tiếp:', 'gcalls-core' ) . '</p>';
-		$markup .= self::lead_contact_line();
-		$markup .= '</section>';
+		// The contact details live in the left column now. Repeating them under
+		// the form is the second of the two stacked CTAs §A reported.
+		$markup .= '</div></div></section>';
 
 		return $markup;
 	}
@@ -382,7 +478,11 @@ final class Shortcodes {
 	 *
 	 * @return array<string, string>
 	 */
-	private static function lead_attribution(): array {
+	/**
+	 * @param array<string, string> $defaults Page-level attribution.
+	 * @return array<string, string>
+	 */
+	private static function lead_attribution( array $defaults = array() ): array {
 		$keys = array(
 			'intent',
 			'source',
@@ -395,7 +495,24 @@ final class Shortcodes {
 			'utm_term',
 		);
 
+		/*
+		 * GCALLS-042 §C. Attribution arrives two ways and they do not compete.
+		 * A shortcode attribute is how a PAGE states its own default — the
+		 * contact page is source=contact whether or not anyone arrived with a
+		 * query string. The query string is how a CTA describes a specific
+		 * journey, so it OVERWRITES the default: someone who clicked "demo" on
+		 * the Gcalls Plus hero is better described by that CTA than by the page
+		 * they landed on.
+		 */
 		$out = array();
+
+		foreach ( $defaults as $key => $value ) {
+			$value = sanitize_text_field( (string) $value );
+
+			if ( in_array( $key, $keys, true ) && '' !== $value ) {
+				$out[ $key ] = mb_substr( $value, 0, 300 );
+			}
+		}
 
 		foreach ( $keys as $key ) {
 			// Read-only use of a GET parameter, escaped on the way out.
@@ -912,7 +1029,16 @@ final class Shortcodes {
 
 		wp_enqueue_style( 'gcalls-product', GCALLS_CORE_URL . 'assets/css/product.css', array(), VERSION );
 
-		$out = '<div class="gcalls-product">';
+		/*
+		 * GCALLS-036B: the component stylesheet is scoped to this renderer root
+		 * rather than to `body:not(.home)`. A body-level scope would also reach
+		 * the blog, the estimator and any other plugin's output, so backing the
+		 * release out would mean auditing those too. Scoped here, the rollback
+		 * is removing this class and the enqueue.
+		 */
+		do_action( 'gcalls_render_page', 'product' );
+
+		$out = '<div class="gcalls-product gc-page gc-page--product">';
 
 		/* --- hero --- */
 		$hero = (array) ( $page['hero'] ?? array() );
@@ -990,74 +1116,15 @@ final class Shortcodes {
 		}
 
 		/* --- sections --- */
-		foreach ( (array) ( $page['sections'] ?? array() ) as $index => $section ) {
-			$alt  = 0 === $index % 2 ? '' : ' gcalls-product__section--alt';
-			$out .= '<section class="gcalls-product__section' . $alt . '">';
 
-			if ( ! empty( $section['eyebrow'] ) ) {
-				$out .= '<p class="gcalls-eyebrow">' . esc_html( $section['eyebrow'] ) . '</p>';
-			}
-			if ( ! empty( $section['heading'] ) ) {
-				$out .= '<h2 class="gcalls-product__heading">' . esc_html( $section['heading'] ) . '</h2>';
-			}
-			if ( ! empty( $section['lead'] ) ) {
-				$out .= '<p class="gcalls-product__lead">' . esc_html( $section['lead'] ) . '</p>';
-			}
-
-			// A screenshot only where one was actually produced and approved for
-			// THIS product; otherwise a diagram of the mechanism.
-			if ( ! empty( $section['media'] ) ) {
-				$out .= self::media( array( 'id' => (string) $section['media'], 'size' => 'large' ) );
-			} elseif ( ! empty( $section['mockup'] ) ) {
-				$out .= Mockups::render( array( 'id' => (string) $section['mockup'] ) );
-			} elseif ( ! empty( $section['diagram'] ) ) {
-				$out .= self::diagram( array( 'id' => (string) $section['diagram'] ) );
-			}
-
-			if ( ! empty( $section['items'] ) ) {
-				$out .= '<div class="gcalls-product__grid">';
-				foreach ( (array) $section['items'] as $item ) {
-					$out .= '<article class="gcalls-product__card">';
-					if ( ! empty( $item['label'] ) ) {
-						$out .= '<span class="gcalls-badge">' . esc_html( (string) $item['label'] ) . '</span>';
-					}
-					if ( ! empty( $item['title'] ) ) {
-						/*
-						 * THE SOURCE DATA DECIDES WHETHER A TITLE IS A HEADING.
-						 *
-						 * Three answers have shipped here and the first two were both
-						 * guesses. Every title as h3 gave /gcalls-cx/ 76 headings
-						 * against the reference's 59 — an outline where the reference
-						 * has a product story. Every title as a paragraph took it to
-						 * 31, losing half the structure a screen-reader user navigates
-						 * by. Heading only titles that carry a description took it to
-						 * 53, dropping the deployment steps — which React heads and
-						 * which have no description.
-						 *
-						 * React renders `items`, `steps`, `rows` and `channels` as
-						 * cards, each title heading the passage beneath it, and
-						 * `capabilities`, `points` and `valuePoints` as a bullet list
-						 * inside one card, where a heading would announce a section with
-						 * no content. The exporter records which of the two it read, so
-						 * this stops guessing. See normalise() in
-						 * wordpress/scripts/build-product-content.mjs.
-						 */
-						$title_tag = empty( $section['cards'] ) ? 'p' : 'h3';
-
-						$out .= '<' . $title_tag . ' class="gcalls-product__card-title">';
-						$out .= esc_html( (string) $item['title'] );
-						$out .= '</' . $title_tag . '>';
-					}
-					if ( ! empty( $item['body'] ) ) {
-						$out .= '<p class="gcalls-product__card-body">' . esc_html( (string) $item['body'] ) . '</p>';
-					}
-					$out .= '</article>';
-				}
-				$out .= '</div>';
-			}
-
-			$out .= '</section>';
-		}
+		/*
+		 * GCALLS-036B: the section loop that used to live here drew every section
+		 * with one wrapper and one auto-fit grid. Placement now comes from the
+		 * section's declared semantic source, through the allowlist in
+		 * data/section-components.json, which also marks the duplicated
+		 * `*_FINAL_CTA` sections `skip` so the closing band below renders once.
+		 */
+		$out .= Sections::render_product_sections( $page );
 
 		/* --- FAQ, then the ask --- */
 

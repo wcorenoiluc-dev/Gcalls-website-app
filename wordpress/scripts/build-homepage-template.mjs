@@ -1061,6 +1061,116 @@ const content = [
 ]
 
 /* ------------------------------------------------------------------ *
+ * GCALLS-040 — regroup eighteen emitted sections into thirteen compositions
+ * ------------------------------------------------------------------ *
+ * WHY THIS EXISTS
+ * `HomePage.tsx` has thirteen top-level compositions. This template emitted
+ * eighteen top-level Elementor sections because three of those compositions
+ * were split into sibling sections — the comment on SECTION_PAD blamed
+ * "Elementor's lack of nesting", which is simply not true: Elementor has inner
+ * sections, and they stack vertically inside a column, which is exactly the
+ * shape a split composition needs.
+ *
+ * The split had two costs. The seam between two compositions and the gap
+ * between two halves of the SAME composition were both a section boundary, so
+ * they could not be spaced differently; and the section count disagreed with
+ * the design it was porting, which is what GCALLS-039 was unable to accept.
+ *
+ * Nothing is dropped and nothing is reordered. Every source section lands
+ * inside its composition, in its original order. The mapping is the one
+ * reviewed in docs/content-review/gcalls-033 §1.2.
+ */
+const COMPOSITIONS = [
+  { component: 'HeroSection.tsx', from: [0] },
+  { component: 'PainPointsSection.tsx (heading + cards + LossEstimator)', from: [1, 2, 3] },
+  { component: 'SolutionBridgeSection.tsx', from: [4] },
+  { component: 'EcosystemSection.tsx (header + products + solutions + CTAs)', from: [5, 6, 7, 8] },
+  { component: 'CallTimelineSection.tsx', from: [9] },
+  { component: 'CRMSection.tsx', from: [10] },
+  { component: 'AnalyticsSection.tsx', from: [11] },
+  { component: 'CloudSection.tsx', from: [12] },
+  { component: 'CustomerPopupSection.tsx', from: [13] },
+  { component: 'CallWidgetSection.tsx', from: [14] },
+  { component: 'IntegrationsSection.tsx', from: [15] },
+  { component: 'WorkFromAnywhereSection.tsx', from: [16] },
+  { component: 'UseCasesFinalCtaSection.tsx', from: [17] },
+]
+
+/*
+ * Geometry, from docs/content-review/gcalls-033 §1.1 and its candidate CSS.
+ *
+ * The target is the gap a reader SEES between two compositions, not the number
+ * written on each side of it. Two adjacent sections each contribute half, so
+ * 25 + 25 is the 50px seam; writing 50 on both sides would produce 100.
+ */
+const SEAM_HALF = '25'  // 25 + 25 = a 50px seam between two compositions
+const EDGE_PAD = '56'   // hero top and final-CTA bottom, against header/footer
+const INNER_GAP = '44'  // between members of one composition (36–56 band)
+
+const pad = (top, bottom) => ({
+  unit: 'px', top, right: '0', bottom, left: '0', isLinked: false,
+})
+
+/* A source section, demoted to an inner section: it no longer owns the rhythm,
+ * so its own vertical padding goes and the gap becomes a margin instead. */
+const asInner = (sec, first) => ({
+  ...sec,
+  isInner: true,
+  settings: {
+    ...sec.settings,
+    content_width: 'full',
+    padding: pad('0', '0'),
+    ...(first ? {} : { margin: { unit: 'px', top: INNER_GAP, right: '0', bottom: '0', left: '0', isLinked: false } }),
+  },
+})
+
+const seen = new Set()
+for (const comp of COMPOSITIONS) {
+  for (const i of comp.from) {
+    if (i < 0 || i >= content.length) {
+      console.error(`build-homepage-template: composition ${comp.component} names section ${i}, which does not exist`)
+      process.exit(1)
+    }
+    if (seen.has(i)) {
+      console.error(`build-homepage-template: section ${i} is claimed by two compositions`)
+      process.exit(1)
+    }
+    seen.add(i)
+  }
+}
+if (seen.size !== content.length) {
+  const lost = [...content.keys()].filter((i) => !seen.has(i))
+  console.error(`build-homepage-template: section(s) ${lost.join(', ')} belong to no composition — content would be dropped`)
+  process.exit(1)
+}
+
+const grouped = COMPOSITIONS.map((comp, position) => {
+  const first = position === 0
+  const last = position === COMPOSITIONS.length - 1
+  const padding = pad(first ? EDGE_PAD : SEAM_HALF, last ? EDGE_PAD : SEAM_HALF)
+
+  // A composition that was never split keeps its own section, and only the
+  // rhythm is rewritten — its background and columns are untouched.
+  if (comp.from.length === 1) {
+    const only = content[comp.from[0]]
+    return { ...only, settings: { ...only.settings, padding } }
+  }
+
+  // A split composition becomes one section holding its former siblings as
+  // inner sections. Both split groups carry no background of their own, so
+  // wrapping them changes no colour; if that ever stops being true this needs
+  // revisiting rather than silently flattening two backgrounds into one.
+  const members = comp.from.map((i) => content[i])
+  const tinted = members.filter((m) => m.settings?.background_background)
+  if (tinted.length) {
+    console.error(`build-homepage-template: ${comp.component} merges a section that carries a background; merging would change its colour`)
+    process.exit(1)
+  }
+
+  return section([column(members.map((m, i) => asInner(m, i === 0)))], { padding })
+})
+
+/* ------------------------------------------------------------------ *
  * Envelope and output
  * ------------------------------------------------------------------ */
 
@@ -1068,7 +1178,7 @@ const template = {
   version: '0.4',
   title: 'Gcalls — Trang chủ',
   type: 'page',
-  content,
+  content: grouped,
 }
 
 const outArg = process.argv.indexOf('--out')
@@ -1110,38 +1220,19 @@ await writeFile(outPath, `${JSON.stringify(template, null, 2)}\n`)
  *     never carried
  * Five minus two merges plus one addition is four, so the page total is 18.
  */
-const SECTION_COMPONENTS = [
-  'HeroSection.tsx',
-  'PainPointsSection.tsx — heading',
-  'PainPointsSection.tsx — pain card grid',
-  'LossEstimator.tsx',
-  'SolutionBridgeSection.tsx',
-  'EcosystemSection.tsx — header',
-  'EcosystemSection.tsx — product group (heading + grid)',
-  'EcosystemSection.tsx — solution group (heading + grid)',
-  'EcosystemSection.tsx — overview CTAs',
-  'CallTimelineSection.tsx',
-  'CRMSection.tsx',
-  'AnalyticsSection.tsx',
-  'CloudSection.tsx',
-  'CustomerPopupSection.tsx',
-  'CallWidgetSection.tsx',
-  'IntegrationsSection.tsx',
-  'WorkFromAnywhereSection.tsx',
-  'UseCasesFinalCtaSection.tsx',
-]
+const SECTION_COMPONENTS = COMPOSITIONS.map((c) => c.component)
 
-if (SECTION_COMPONENTS.length !== content.length) {
+if (SECTION_COMPONENTS.length !== grouped.length) {
   console.error(
-    `build-homepage-template: inventory lists ${SECTION_COMPONENTS.length} section(s) ` +
-      `but the template emits ${content.length}. Update SECTION_COMPONENTS deliberately.`,
+    `build-homepage-template: inventory lists ${SECTION_COMPONENTS.length} composition(s) ` +
+      `but the template emits ${grouped.length}. Update COMPOSITIONS deliberately.`,
   )
   process.exit(1)
 }
 
 const inventory = {
   generated_from: 'wordpress/scripts/build-homepage-template.mjs',
-  sections: content.map((sec, i) => {
+  sections: grouped.map((sec, i) => {
     const blob = JSON.stringify(sec)
     const headings = [...blob.matchAll(/"title":"((?:[^"\\]|\\.)*)"/g)].map((m) => m[1])
     const inline = [...blob.matchAll(/<h([23])[^>]*>((?:[^<]|<(?!\/h[23]))*)<\/h\1>/g)].map((m) =>
@@ -1151,6 +1242,7 @@ const inventory = {
       index: i,
       elementId: sec.id,
       component: SECTION_COMPONENTS[i],
+      mergedFrom: COMPOSITIONS[i].from,
       heading: headings[0] ?? inline[0] ?? '',
       classes: [...new Set([...blob.matchAll(/class=\\?"(gc-[a-z0-9_-]+)/g)].map((m) => m[1]))].sort(),
       paddingTop: sec.settings?.padding?.top ?? String(SECTION_PAD),
@@ -1173,9 +1265,9 @@ if (outArg === -1) {
   )
 }
 
-const widgets = JSON.stringify(content).match(/"elType":"widget"/g)?.length ?? 0
+const widgets = JSON.stringify(grouped).match(/"elType":"widget"/g)?.length ?? 0
 
 console.log(`build-homepage-template: ${path.relative(path.resolve(WP_DIR, '..'), outPath)}`)
-console.log(`  sections  ${content.length}`)
+console.log(`  sections  ${grouped.length} composition(s) from ${content.length} emitted section(s)`)
 console.log(`  widgets   ${widgets}`)
 console.log(`  ids       ${counter} (deterministic — reruns are byte-identical)`)

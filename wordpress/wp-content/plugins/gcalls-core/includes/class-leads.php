@@ -150,7 +150,15 @@ final class Leads {
 		// so checking the content alone misses every page built with it.
 		$haystack = $post->post_content . (string) get_post_meta( $post->ID, '_elementor_data', true );
 
-		if ( ! str_contains( $haystack, 'gcalls_lead_form' ) ) {
+		$wanted = str_contains( $haystack, 'gcalls_lead_form' );
+
+		// A content page carries no shortcode in its body — the renderer puts
+		// the form there from the manifest — so it has to be asked directly.
+		if ( ! $wanted && class_exists( Content_Pages::class ) ) {
+			$wanted = Content_Pages::renders_form( $post );
+		}
+
+		if ( ! $wanted ) {
 			return;
 		}
 
@@ -508,9 +516,15 @@ final class Leads {
 			$errors['email'] = 'format';
 		}
 
-		if ( '' === $fields['message'] ) {
-			$errors['message'] = 'required';
-		}
+		/*
+		 * GCALLS-042: the message is OPTIONAL.
+		 *
+		 * A name, a phone number and consent are enough to call somebody back,
+		 * which is the whole point of the form. Requiring a paragraph before
+		 * that is allowed to happen turns the cheapest possible conversion into
+		 * a writing task, and the field it forced was the one most likely to be
+		 * abandoned. "Nhu cầu quan tâm" now carries the same intent in one tap.
+		 */
 
 		if ( 'yes' !== $fields['consent'] ) {
 			$errors['consent'] = 'required';
