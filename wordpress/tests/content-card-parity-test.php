@@ -114,10 +114,16 @@ $expected = array(
 	'san-pham'   => array( 'sections' => 4, 'cards_from' => 'cards', 'cards' => 3, 'supporting' => 1, 'tags' => 3, 'cta' => 3, 'current' => 0 ),
 	'giai-phap'  => array( 'sections' => 4, 'cards_from' => 'cards', 'cards' => 7, 'supporting' => 1, 'tags' => 5, 'cta' => 7, 'current' => 0 ),
 	'tich-hop'   => array( 'sections' => 4, 'cards_from' => 'cards', 'cards' => 5, 'supporting' => 5, 'tags' => 0, 'cta' => 5, 'current' => 0 ),
-	'nganh'      => array( 'sections' => 1, 'cards_from' => 'industries/index — hub', 'cards' => 6, 'supporting' => 0, 'tags' => 6, 'cta' => 6, 'current' => 0 ),
+	/* Three sections, not one. Both of these were a single grid of six cards
+	 * under an h1 — no answer above it, no way onward below it — while every
+	 * other hub route carries a direct answer, its cards and a link row.
+	 * port-hub-shape-053.mjs added the two missing sections from the approved
+	 * React hub; the h1 and the six cards are untouched, because those come
+	 * from a different source whose prose the owner has locked. */
+	'nganh'      => array( 'sections' => 3, 'cards_from' => 'industries/index — hub', 'cards' => 6, 'supporting' => 0, 'tags' => 6, 'cta' => 6, 'current' => 0 ),
 	/* Six tag lists, not five: five cards carry a static status from the React
 	 * source, and Blog's is DERIVED from wp_count_posts() at request time. */
-	'tai-nguyen' => array( 'sections' => 1, 'cards_from' => 'resources/index — RESOURCE_NAV', 'cards' => 6, 'supporting' => 0, 'tags' => 6, 'cta' => 6, 'current' => 0 ),
+	'tai-nguyen' => array( 'sections' => 3, 'cards_from' => 'resources/index — RESOURCE_NAV', 'cards' => 6, 'supporting' => 0, 'tags' => 6, 'cta' => 6, 'current' => 0 ),
 	/* Ported from COMPANY_HUB: a direct answer, three principles, a four-row
 	 * guide and an onward link row — replacing a single section of two child
 	 * links. The three principles each carry their own CTA. */
@@ -237,6 +243,151 @@ if ( $doi_tac ) {
 	ok( '/cong-ty/doi-tac/ still states that no step creates a partnership',
 		str_contains( $html, 'không tạo ra quan hệ đối tác' ) || str_contains( $html, 'Không bước nào' ) );
 }
+
+/* ---- the field kinds the card vocabulary had no slot for --------------- */
+
+/*
+ * `audience` — who the page is written for.
+ *
+ * Every resource page and both company pages open with a required "purpose and
+ * audience" section. The migration kept the paragraph and dropped the readers,
+ * so seven pages said what they were about and never said who they were for.
+ * Locked as an inventory: a page losing its audience block fails here.
+ */
+echo "\nAUDIENCE BLOCK\n";
+$audience_expected = array(
+	'faq' => 3, 'ebook' => 3, 'glossary' => 3, 'case-studies' => 3,
+	'guides' => 3, 'khach-hang' => 4, 'doi-tac' => 4,
+);
+$audience_total = 0;
+foreach ( $audience_expected as $slug => $want ) {
+	if ( ! isset( $pages[ $slug ] ) ) { ok( "$slug exists", false ); continue; }
+	$html = '';
+	foreach ( $pages[ $slug ]['sections'] as $s ) {
+		if ( 'prose' === ( $s['type'] ?? '' ) ) { $html .= $render_section( $s ); }
+	}
+	$got             = substr_count( $html, 'gcalls-cp__audience-who' );
+	$audience_total += $got;
+	ok( "$slug renders $want audience row(s)", $got === $want, "got $got" );
+	ok( "$slug audience rows carry their detail",
+		substr_count( $html, 'gcalls-cp__audience-detail' ) === $want );
+}
+ok( 'twenty-three audience rows across seven pages', 23 === $audience_total, "got $audience_total" );
+
+/*
+ * `need`/`product` and `role`/`flow` — the two lists that are not card grids.
+ *
+ * A decision row is a need answered by a product; a use-case row is a role and
+ * what that role does. Both were flattened to title/body and rendered in the
+ * same three-column card grid as the feature sections beside them. These
+ * assertions are on MARKUP: the decision rows must not be cards, and the row
+ * for the page the reader is on must not be a link.
+ */
+echo "\nDECISION AND USE-CASE LAYOUTS\n";
+$decision_pages = array( 'freshdesk' => 5, 'salesforce' => 4, 'zendesk' => 5, 'zoho-crm' => 4,
+	'tong-dai-quoc-te' => 4, 'tong-dai-tich-hop-crm' => 4, 'tong-dai-tich-hop-helpdesk' => 4,
+	'tong-dai-tich-hop-pos' => 4 );
+$usecase_pages  = array( 'freshdesk' => 4, 'hubspot' => 4, 'salesforce' => 4, 'zendesk' => 4,
+	'zoho-crm' => 4, 'tong-dai-quoc-te' => 4 );
+
+foreach ( $decision_pages as $slug => $want ) {
+	$html = '';
+	foreach ( $pages[ $slug ]['sections'] ?? array() as $s ) {
+		if ( 'decision' === ( $s['variant'] ?? '' ) ) { $html .= $render_section( $s ); }
+	}
+	ok( "$slug renders $want decision row(s)",
+		substr_count( $html, 'gcalls-cp__decision-row' ) === $want,
+		'got ' . substr_count( $html, 'gcalls-cp__decision-row' ) );
+	ok( "$slug states the need and the product separately",
+		substr_count( $html, 'gcalls-cp__decision-need' ) === $want
+			&& substr_count( $html, 'gcalls-cp__decision-product' ) === $want );
+	ok( "$slug does not render the boundary list as cards",
+		! str_contains( $html, 'gcalls-cp__card ' ) && ! str_contains( $html, 'gcalls-cp__grid' ) );
+	/* The current row is marked in words, and carries no link of its own. */
+	ok( "$slug marks the current row in text", 1 === substr_count( $html, 'gcalls-cp__decision-here' ) );
+	ok( "$slug does not link the current row to itself",
+		substr_count( $html, 'gcalls-cp__decision-link' ) === $want - 1,
+		'links ' . substr_count( $html, 'gcalls-cp__decision-link' ) . ' of ' . $want );
+}
+
+foreach ( $usecase_pages as $slug => $want ) {
+	$html = '';
+	foreach ( $pages[ $slug ]['sections'] ?? array() as $s ) {
+		if ( 'usecases' === ( $s['variant'] ?? '' ) ) { $html .= $render_section( $s ); }
+	}
+	ok( "$slug renders $want use-case row(s)",
+		substr_count( $html, 'gcalls-cp__usecase-role' ) === $want,
+		'got ' . substr_count( $html, 'gcalls-cp__usecase-role' ) );
+	ok( "$slug keeps the role as a label rather than a heading",
+		! str_contains( $html, 'gcalls-cp__card-title' ) );
+}
+
+/*
+ * `related` — a row of destinations. As cards these were boxes holding a title
+ * and the words "Tìm hiểu thêm"; the link is the content.
+ */
+echo "\nRELATED LINK ROWS\n";
+$related_sections = 0;
+$related_links    = 0;
+foreach ( $pages as $slug => $p ) {
+	foreach ( $p['sections'] as $s ) {
+		if ( 'related' !== ( $s['variant'] ?? '' ) ) { continue; }
+		$related_sections++;
+		$html           = $render_section( $s );
+		$related_links += substr_count( $html, 'gcalls-cp__related-link' );
+		ok( "$slug related row renders links, not cards",
+			str_contains( $html, 'gcalls-cp__related' ) && ! str_contains( $html, 'Tìm hiểu thêm' ) );
+	}
+}
+ok( 'eleven related rows across the manifest', 11 === $related_sections, "got $related_sections" );
+ok( 'every related row carries at least one link', $related_links >= $related_sections );
+
+/*
+ * /nganh/ and /tai-nguyen/ were each ONE card grid and nothing else. The port
+ * added the direct answer above and the link row below; the h1 and the six
+ * cards are unchanged, and the Blog status must still be counted rather than
+ * asserted anywhere on the page.
+ */
+echo "\nHUB SHAPE\n";
+foreach ( array( 'nganh', 'tai-nguyen' ) as $slug ) {
+	$page = $pages[ $slug ] ?? null;
+	if ( null === $page ) { ok( "$slug exists", false ); continue; }
+	$types = array();
+	foreach ( $page['sections'] as $s ) { $types[] = ( $s['from'] ?? '' ); }
+	ok( "$slug opens with a direct answer", 'directAnswer' === ( $types[0] ?? '' ) );
+	ok( "$slug closes with a link row", 'links' === ( $types[ count( $types ) - 1 ] ?? '' ) );
+
+	$html = '';
+	foreach ( $page['sections'] as $s ) { $html .= $render_section( $s ); }
+	ok( "$slug is more than one card grid", substr_count( $html, 'gcalls-cp__section' ) >= 3 );
+	ok( "$slug never says the blog is empty",
+		! str_contains( $html, 'Chưa có bài viết' ) && ! str_contains( $html, 'trạng thái thật' ) );
+}
+
+/*
+ * THE FORM SLOT MUST FAIL CLOSED.
+ *
+ * /lien-he/ carries `form_slot.state = active`, which is correct for a build
+ * that ships the lead backend. Core 0.10.11 does not ship it, and the slot
+ * decides at RUNTIME: it renders the form only when the shortcode and the Leads
+ * class both exist. Both stubs here say they do not, which is the packaged
+ * state, so the output must be a note — no form element, no input, nothing that
+ * can appear to send. A form that looks like it works and has no backend is the
+ * failure this project has spent two releases avoiding, and it would not be
+ * caught by anything that only reads the manifest, where the state says active.
+ */
+echo "\nFORM SLOT, BACKEND ABSENT\n";
+$slot_method = new ReflectionMethod( 'Gcalls\\Core\\Content_Pages', 'form_slot' );
+$slot_method->setAccessible( true );
+$slot_html = (string) $slot_method->invoke( null, $pages['lien-he'] ?? array() );
+
+ok( 'the contact page declares an active form slot',
+	'active' === ( $pages['lien-he']['form_slot']['state'] ?? '' ) );
+ok( 'and renders no form when the backend is not packaged',
+	! str_contains( $slot_html, '<form' ) && ! str_contains( $slot_html, '<input' )
+		&& ! str_contains( $slot_html, '<textarea' ) && ! str_contains( $slot_html, '<button' ) );
+ok( 'it says so as a note rather than showing a dead control',
+	str_contains( $slot_html, 'role="note"' ) );
 
 echo "\ncontent-card-parity: $pass ok, $fail failed\n";
 exit( $fail > 0 ? 1 : 0 );

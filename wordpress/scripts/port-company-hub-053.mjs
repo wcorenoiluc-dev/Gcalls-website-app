@@ -131,6 +131,28 @@ const doc = JSON.parse(fs.readFileSync(MANIFEST, 'utf8'))
 const page = doc.pages.find((p) => p.slug === 'cong-ty')
 if (!page) die('manifest has no page "cong-ty"')
 
+/*
+ * KEYS A LATER PASS ADDED, CARRIED FORWARD.
+ *
+ * This script REPLACES the page's sections, which is right — its whole point is
+ * that the page had the wrong content, not a missing field. But
+ * port-field-kinds-053.mjs then adds `variant` to the link row, saying it is a
+ * row of destinations rather than a card grid. Re-running this would silently
+ * strip that and put the five "Xem thêm" links back into five cards, and the
+ * only symptom would be a layout regression nobody was looking for. So the
+ * additive keys are preserved by section `from`, and the two scripts can run in
+ * either order and any number of times.
+ */
+const carried = new Map()
+for (const s of page.sections ?? []) {
+  const keep = {}
+  for (const key of ['variant', 'audience']) {
+    if (s[key] !== undefined) keep[key] = s[key]
+  }
+  if (Object.keys(keep).length) carried.set(String(s.from), keep)
+}
+for (const s of sections) Object.assign(s, carried.get(String(s.from)) ?? {})
+
 const before = { sections: page.sections.length, cards: (page.sections[0]?.cards ?? []).length }
 
 const next = {

@@ -453,6 +453,151 @@ final class Content_Pages {
 	}
 
 	/**
+	 * A decision table: a need, the product that answers it, and a way there.
+	 *
+	 * The row for the page the reader is already on is stated in words and
+	 * carries no link — a self-link on a boundary list is the one place a reader
+	 * most needs to know where they are, and sending them back to the page they
+	 * are reading is worse than useless.
+	 *
+	 * Falls back to `title`/`body` when a row has no `need`/`product`, so a
+	 * section marked as a decision before the manifest carried the split still
+	 * renders its content.
+	 *
+	 * @param array<int, mixed> $rows Cards.
+	 * @return string
+	 */
+	private static function decision( array $rows ): string {
+		$out = '';
+
+		foreach ( $rows as $row ) {
+			$row     = (array) $row;
+			$need    = trim( (string) ( $row['need'] ?? $row['title'] ?? '' ) );
+			$product = trim( (string) ( $row['product'] ?? $row['body'] ?? '' ) );
+			$href    = self::safe_href( (string) ( $row['href'] ?? '' ) );
+			$current = ! empty( $row['current'] );
+
+			if ( '' === $need && '' === $product ) {
+				continue;
+			}
+
+			$out .= '<div class="gcalls-cp__decision-row' . ( $current ? ' is-current' : '' ) . '"'
+				. ( $current ? ' aria-current="true"' : '' ) . '>';
+
+			if ( '' !== $need ) {
+				$out .= '<p class="gcalls-cp__decision-need">' . esc_html( $need ) . '</p>';
+			}
+
+			if ( '' !== $product ) {
+				$name = '<span class="gcalls-cp__decision-product">' . esc_html( $product ) . '</span>';
+
+				if ( $current || '' === $href ) {
+					$out .= '<p class="gcalls-cp__decision-answer">' . $name;
+
+					if ( $current ) {
+						$out .= ' <span class="gcalls-cp__decision-here">'
+							. esc_html__( 'Trang bạn đang xem', 'gcalls-core' ) . '</span>';
+					}
+
+					$out .= '</p>';
+				} else {
+					$out .= '<p class="gcalls-cp__decision-answer">'
+						. '<a class="gcalls-cp__decision-link" href="' . esc_url( $href ) . '">'
+						. $name . '</a></p>';
+				}
+			}
+
+			$out .= '</div>';
+		}
+
+		return '' === $out ? '' : '<div class="gcalls-cp__decision">' . $out . '</div>';
+	}
+
+	/**
+	 * Role rows: who is doing this, and what they are doing.
+	 *
+	 * The role is a label above the sentence, not a heading — these sections
+	 * carry four of them and four h3s would put four entries in the document
+	 * outline for what is one list.
+	 *
+	 * @param array<int, mixed> $rows Cards.
+	 * @return string
+	 */
+	private static function usecases( array $rows ): string {
+		$out = '';
+
+		foreach ( $rows as $row ) {
+			$row  = (array) $row;
+			$role = trim( (string) ( $row['role'] ?? $row['title'] ?? '' ) );
+			$flow = trim( (string) ( $row['flow'] ?? $row['body'] ?? '' ) );
+
+			if ( '' === $role && '' === $flow ) {
+				continue;
+			}
+
+			$out .= '<li class="gcalls-cp__usecase">';
+
+			if ( '' !== $role ) {
+				$out .= '<p class="gcalls-cp__usecase-role">' . esc_html( $role ) . '</p>';
+			}
+
+			if ( '' !== $flow ) {
+				$out .= '<p class="gcalls-cp__usecase-flow">' . esc_html( $flow ) . '</p>';
+			}
+
+			$out .= '</li>';
+		}
+
+		return '' === $out ? '' : '<ul class="gcalls-cp__usecases">' . $out . '</ul>';
+	}
+
+	/**
+	 * An onward link row.
+	 *
+	 * These sections are a list of destinations and nothing else — the card
+	 * bodies are empty by construction. As cards they were five boxes each
+	 * holding a title and the words "Tìm hiểu thêm"; the link itself is the
+	 * content, so the link is what is rendered.
+	 *
+	 * A row that turns out to carry a body is NOT flattened into a link — it
+	 * falls through to a card so nothing a reader could see is dropped.
+	 *
+	 * @param array<int, mixed> $rows Cards.
+	 * @return string
+	 */
+	private static function related( array $rows ): string {
+		$links = '';
+		$cards = '';
+
+		foreach ( $rows as $row ) {
+			$row   = (array) $row;
+			$title = trim( (string) ( $row['title'] ?? '' ) );
+			$body  = trim( (string) ( $row['body'] ?? '' ) );
+			$href  = self::safe_href( (string) ( $row['href'] ?? '' ) );
+
+			if ( '' !== $body || '' === $href || '' === $title ) {
+				$cards .= self::card( $row );
+				continue;
+			}
+
+			$label = trim( (string) ( $row['cta'] ?? '' ) );
+			$label = '' !== $label ? $label : $title;
+
+			$links .= '<li class="gcalls-cp__related-item">'
+				. '<a class="gcalls-cp__related-link" href="' . esc_url( $href ) . '">'
+				. esc_html( $label ) . '</a></li>';
+		}
+
+		$out = '' === $links ? '' : '<ul class="gcalls-cp__related">' . $links . '</ul>';
+
+		if ( '' !== trim( $cards ) ) {
+			$out .= '<div class="gcalls-cp__grid gcalls-cp__grid--3">' . $cards . '</div>';
+		}
+
+		return $out;
+	}
+
+	/**
 	 * One section, by type.
 	 *
 	 * A section whose payload is empty renders nothing at all — no heading
@@ -493,7 +638,42 @@ final class Content_Pages {
 			 */
 			$note = trim( (string) ( $s['note'] ?? '' ) );
 
-			if ( '' === $body && '' === $head && '' === $note ) {
+			/*
+			 * WHO THE PAGE IS FOR — the `audience` block.
+			 *
+			 * Every resource page and both company pages open with a required
+			 * "purpose and audience" section: the paragraph above, then three or
+			 * four named readers with a sentence each. The migration carried the
+			 * paragraph and the note and dropped the readers, so six pages said
+			 * what they were about and never said who they were for.
+			 *
+			 * It is a description list because that is what it is — a named
+			 * reader and what that reader is responsible for. A card grid would
+			 * put four boxes between the purpose paragraph and the page's actual
+			 * content, which is the opposite of the emphasis the section wants.
+			 */
+			$audience = isset( $s['audience'] ) && is_array( $s['audience'] ) ? $s['audience'] : array();
+			$rows     = '';
+
+			foreach ( $audience as $one ) {
+				$one   = (array) $one;
+				$who   = trim( (string) ( $one['title'] ?? '' ) );
+				$doing = trim( (string) ( $one['body'] ?? '' ) );
+
+				if ( '' === $who && '' === $doing ) {
+					continue;
+				}
+
+				if ( '' !== $who ) {
+					$rows .= '<dt class="gcalls-cp__audience-who">' . esc_html( $who ) . '</dt>';
+				}
+
+				if ( '' !== $doing ) {
+					$rows .= '<dd class="gcalls-cp__audience-detail">' . esc_html( $doing ) . '</dd>';
+				}
+			}
+
+			if ( '' === $body && '' === $head && '' === $note && '' === $rows ) {
 				return '';
 			}
 
@@ -501,6 +681,10 @@ final class Content_Pages {
 
 			if ( '' !== $body ) {
 				$out .= '<p class="gcalls-cp__prose">' . esc_html( $body ) . '</p>';
+			}
+
+			if ( '' !== $rows ) {
+				$out .= '<dl class="gcalls-cp__audience">' . $rows . '</dl>';
 			}
 
 			if ( '' !== $note ) {
@@ -515,6 +699,49 @@ final class Content_Pages {
 
 			if ( array() === $items ) {
 				return '';
+			}
+
+			/*
+			 * NOT EVERY LIST OF THINGS IS A CARD GRID.
+			 *
+			 * `type` says a section carries a list. It does not say what the
+			 * list IS, and three of these lists are not card grids in the source
+			 * at all:
+			 *
+			 *   decision — "what are you trying to do" answered by "which
+			 *              product does it", one row each, with the row for the
+			 *              page you are on marked rather than linked. Ported as
+			 *              title/body it became a long sentence with a product
+			 *              name under it, in a three-up grid, next to a section
+			 *              of feature cards that looked exactly the same.
+			 *   usecases — a role and what that role does. The role is a label,
+			 *              not a headline, and the row has nowhere to go.
+			 *   related  — a row of onward links. Rendering five links as five
+			 *              cards with "Tìm hiểu thêm" under each gives a reader
+			 *              five boxes to read for five words of content.
+			 *
+			 * `variant` names which one, written by port-field-kinds-053.mjs
+			 * from the React source's own item shape. A section without a
+			 * variant renders exactly as before.
+			 */
+			$variant = trim( (string) ( $s['variant'] ?? '' ) );
+
+			if ( in_array( $variant, array( 'decision', 'usecases', 'related' ), true ) ) {
+				$rendered = 'decision' === $variant
+					? self::decision( $items )
+					: ( 'usecases' === $variant ? self::usecases( $items ) : self::related( $items ) );
+
+				if ( '' === trim( $rendered ) ) {
+					return empty( $s['lead'] ) ? '' : $open . '</section>';
+				}
+
+				$out = $open . $rendered;
+
+				if ( ! empty( $s['note'] ) ) {
+					$out .= '<p class="gcalls-cp__note">' . esc_html( (string) $s['note'] ) . '</p>';
+				}
+
+				return $out . '</section>';
 			}
 
 			/*

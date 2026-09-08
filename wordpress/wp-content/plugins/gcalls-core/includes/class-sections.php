@@ -281,6 +281,21 @@ final class Sections {
 			return '';
 		}
 
+		/*
+		 * A closing sentence under the section body.
+		 *
+		 * VB_HUMAN_AI ends on "không phải thay thế vai trò của nhân viên" and
+		 * QQ_OVERVIEW opens its list with "tập hợp bảy thành phần dưới đây".
+		 * Both were dropped with the lists they belong to. The first is a limit
+		 * on what the product claims and is not decoration; it renders as a
+		 * paragraph, never as a heading, and only when non-empty.
+		 */
+		$note = isset( $section['note'] ) ? trim( (string) $section['note'] ) : '';
+
+		if ( '' !== $note && ! $lead_only ) {
+			$body .= '<p class="gc-section__note">' . esc_html( $note ) . '</p>';
+		}
+
 		$body  .= self::section_cta( $section );
 		$header = self::header( $section, 'split' === $component, $lead_only );
 
@@ -705,8 +720,22 @@ final class Sections {
 				continue;
 			}
 
+			/*
+			 * A DESTINATION THAT IS NOT A LINK IS A DEAD END.
+			 *
+			 * CX_INTEGRATION and QQ_INTEGRATION are lists of onward products —
+			 * "Tổng đài tích hợp CRM", "Gcalls Plus", "Gcalls CX" — each with a
+			 * route in the source. This renderer printed the name only, so the
+			 * one section on each page whose entire job is to send a reader
+			 * somewhere else sent them nowhere.
+			 */
+			$href = isset( $item['href'] ) ? trim( (string) $item['href'] ) : '';
+			$name = '' !== $href
+				? '<a class="gc-vendors__link" href="' . esc_url( $href ) . '">' . esc_html( $title ) . '</a>'
+				: esc_html( $title );
+
 			$out .= '<div class="gc-vendors__item"><span class="gc-iconbox">' . Icons::render( $icon ) .
-				'</span><span class="gc-vendors__name">' . esc_html( $title ) . '</span></div>';
+				'</span><span class="gc-vendors__name">' . $name . '</span></div>';
 		}
 
 		return $out . '</div>';
@@ -852,6 +881,17 @@ final class Sections {
 				$out .= '<p class="gc-groups__label">' . esc_html( (string) $group['label'] ) . '</p>';
 			}
 
+			/*
+			 * VB_HUMAN_AI gives each column a sentence before its examples —
+			 * "Các tác vụ gọi có quy trình và kịch bản rõ ràng" against
+			 * "Những trường hợp cần tư vấn, thương lượng hoặc hiểu bối cảnh
+			 * riêng". That sentence is the criterion; the bullets are only
+			 * instances of it. GP_BOUNDARIES has no such lead and is unchanged.
+			 */
+			if ( ! empty( $group['lead'] ) ) {
+				$out .= '<p class="gc-groups__lead">' . esc_html( (string) $group['lead'] ) . '</p>';
+			}
+
 			$out .= '<ul class="gc-groups__list">';
 
 			foreach ( $group['items'] as $item ) {
@@ -906,17 +946,36 @@ final class Sections {
 			$need    = isset( $item['title'] ) ? trim( (string) $item['title'] ) : '';
 			$product = isset( $item['body'] ) ? trim( (string) $item['body'] ) : '';
 			$href    = isset( $item['href'] ) ? trim( (string) $item['href'] ) : '';
+			$current = ! empty( $item['current'] );
 
 			if ( '' === $need && '' === $product ) {
 				continue;
 			}
 
-			$out .= '<li class="gc-decision__row"><span class="gc-decision__need">' . esc_html( $need ) . '</span>';
+			/*
+			 * THE ROW FOR THE PAGE THE READER IS ON IS NOT A LINK.
+			 *
+			 * One row of CX_BOUNDARIES and one of QQ_BOUNDARIES is the page
+			 * itself. React marks it and never links it; the export dropped the
+			 * flag, so both tables opened with a link back to the page being
+			 * read and nothing telling the reader which row was theirs — on the
+			 * one section whose whole purpose is to say "this is where you are,
+			 * and here is where the other cases go". Stated in words as well as
+			 * in colour: aria-current alone is invisible to sighted readers.
+			 */
+			$out .= '<li class="gc-decision__row' . ( $current ? ' is-current' : '' ) . '"'
+				. ( $current ? ' aria-current="true"' : '' ) . '>';
+			$out .= '<span class="gc-decision__need">' . esc_html( $need ) . '</span>';
 			$out .= '<span class="gc-decision__answer">' . Icons::render( 'arrow' );
 
-			$out .= '' !== $href && '' !== $product
+			$out .= '' !== $href && '' !== $product && ! $current
 				? '<a href="' . esc_url( $href ) . '">' . esc_html( $product ) . '</a>'
 				: esc_html( $product );
+
+			if ( $current ) {
+				$out .= ' <span class="gc-decision__here">'
+					. esc_html__( 'Trang bạn đang xem', 'gcalls-core' ) . '</span>';
+			}
 
 			$out .= '</span></li>';
 		}
