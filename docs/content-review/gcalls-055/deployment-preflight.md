@@ -45,9 +45,11 @@ Two superseded 0.10.11 builds are retired outside the repo under `.bak` filename
 with their hashes recorded (`e1f0008b…`, `1d6f7042…`), so exactly one file named
 `gcalls-core-0.10.11.zip` exists anywhere on disk.
 
-## 4. The theme version is a deviation, and needs an owner decision
+## 4. The theme version is a deviation — OWNER DECIDED: ship 0.8.7
 
-The instruction says deploy **Theme 0.8.6**. That is not possible as written.
+**Decision (owner, this run): ship Theme 0.8.7 alongside Core 0.10.11.**
+
+The instruction said deploy **Theme 0.8.6**. That was not possible as written.
 
 The blog-index fix lives in `home.php` — the theme, not the plugin — so Core
 0.10.11 cannot carry it. Shipping the changed theme as "0.8.6" would make that
@@ -110,3 +112,31 @@ local fixture. So the rendered `<head>` **cannot be graded locally**. What was
 verified is narrower: all 38 pages carry correct `rank_math_title` and
 `rank_math_description` post meta, and every permalink equals its canonical
 route. The head itself must be checked live, after deploy.
+
+## 9. Owner decisions taken in this run
+
+| Question | Decision |
+| --- | --- |
+| Theme version — 0.8.6 is no longer accurate | **Ship Theme 0.8.7** alongside Core 0.10.11 |
+| G-3 (duplicate `loading=` attribute on one `<img>`) | **Defer to a follow-up.** Deploy as-is |
+
+G-3 is pre-existing, not a regression from this release: `[gcalls_media]` passes
+`'loading' => 'lazy'` into `wp_get_attachment_image()` while WP 7.1 adds its own.
+The HTML is invalid; browsers render it correctly. It stays open, unfixed, and is
+not a deployment blocker. It should be picked up in the next content/UI release.
+
+## 10. Phase G result (final)
+
+**228 / 228 cases measured. 222 raw pass / 6 fail. 0 candidate defects.**
+
+All six failures are one string, `"Chi phí theo cấu hình"`, on
+`/uoc-tinh-chi-phi/` at all six breakpoints. `estimator.js` builds it in
+`renderResult()` — the step-4 panel, three interactions deep — and the sweep is
+forbidden to interact by the protection gate, so absence on load is correct.
+
+ZIP-installed acceptance on a pristine WP 7.1 + Elementor 4.2.3 fixture,
+Playground CLI 3.1.52, PHP 8.3.32 WASM, SQLite, bound to 127.0.0.1:9472 only.
+219 PHP assertions, 0 failed. `/voicebot-ai/` reconciles 116/116 at every width.
+
+**SEO is NOT recorded as passed** — see §8.
+
