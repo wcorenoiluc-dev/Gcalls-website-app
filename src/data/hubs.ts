@@ -738,7 +738,7 @@ export const RESOURCES_HUB: HubContent = {
         title: 'Blog',
         detail:
           'Sáu danh mục biên tập về vận hành Call Center, tích hợp hệ thống và chăm sóc khách hàng.',
-        points: ['Chưa có bài viết'],
+        points: ['Theo sáu danh mục biên tập'],
         path: ROUTES.blog,
         cta: 'Xem Blog',
       },

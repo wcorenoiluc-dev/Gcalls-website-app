@@ -95,7 +95,7 @@ for (const port of PORTS) {
    * the failure this whole task exists to undo.
    */
   const SKIP_TAGS = new Map([
-    ['tai-nguyen::Blog', 'WordPress /blog/ holds 18 published articles; "Chưa có bài viết" would be false there'],
+    ['tai-nguyen::Blog', 'the WordPress card derives its count from wp_count_posts() at request time (count_source), so no status is carried across'],
   ])
 
   for (const card of section.cards) {

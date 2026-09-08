@@ -991,42 +991,119 @@
     {
       "slug": "cong-ty",
       "family": "company-overview",
-      "provenance": "ADAPTED",
+      "provenance": "PORTED",
       "sources": [
         {
-          "file": "src/data/company/index.ts"
+          "file": "src/data/hubs.ts (COMPANY_HUB)"
         }
       ],
       "hero": {
-        "eyebrow": "CÔNG TY",
-        "h1": "Gcalls và hệ sinh thái đối tác",
-        "description": "Gcalls xây dựng nền tảng tổng đài cho đội Sales và CSKH của doanh nghiệp Việt Nam, triển khai cùng mạng lưới đối tác công nghệ và tư vấn.",
+        "eyebrow": "VỀ GCALLS",
+        "h1": "Gcalls xây dựng nền tảng giao tiếp cho doanh nghiệp Việt Nam",
+        "description": "Gcalls phát triển nền tảng giúp doanh nghiệp kết nối cuộc gọi với dữ liệu khách hàng và quy trình vận hành, để hoạt động liên hệ khách hàng được tổ chức và theo dõi rõ ràng hơn.",
         "points": []
       },
       "sections": [
         {
+          "type": "prose",
+          "from": "directAnswer",
+          "heading": "Gcalls là công ty gì?",
+          "body": "Gcalls là đơn vị phát triển nền tảng giao tiếp doanh nghiệp, tập trung vào tổng đài trên trình duyệt và việc kết nối hoạt động nghe gọi với hệ thống doanh nghiệp đang sử dụng như CRM, Helpdesk và hệ thống bán hàng. Sản phẩm của Gcalls dành cho đội Sales, đội chăm sóc khách hàng và đội kiểm soát chất lượng — những nhóm cần cuộc gọi gắn với dữ liệu, không chỉ cần một thiết bị để gọi."
+        },
+        {
           "type": "cards",
-          "from": "company/index — hub",
-          "heading": "Tìm hiểu thêm",
+          "from": "cards",
+          "eyebrow": "CÁCH GCALLS LÀM VIỆC",
+          "heading": "Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản phẩm",
+          "cards": [
+            {
+              "title": "Cuộc gọi gắn với dữ liệu",
+              "body": "Gcalls không xem cuộc gọi là một hoạt động tách rời. Sản phẩm được thiết kế để hoạt động nghe gọi nằm cùng dữ liệu khách hàng và quy trình đội ngũ đang dùng.",
+              "href": "/san-pham/",
+              "cta": "Xem sản phẩm"
+            },
+            {
+              "title": "Triển khai theo hệ thống thực tế",
+              "body": "Mỗi doanh nghiệp có hệ thống, quyền truy cập và quy trình khác nhau. Gcalls khảo sát trước khi xác nhận phạm vi triển khai, thay vì áp một cấu hình mặc định.",
+              "href": "/giai-phap/",
+              "cta": "Xem giải pháp"
+            },
+            {
+              "title": "Nói rõ phạm vi trước khi cam kết",
+              "body": "Khả năng tích hợp, dữ liệu khả dụng và điều kiện triển khai được xác nhận theo từng trường hợp, và được nêu rõ trước khi doanh nghiệp ra quyết định.",
+              "href": "/lien-he/",
+              "cta": "Trao đổi với Gcalls"
+            }
+          ]
+        },
+        {
+          "type": "steps",
+          "from": "decisionGuide",
+          "eyebrow": "TÌM HIỂU THÊM",
+          "heading": "Các trang thông tin về Gcalls",
+          "lead": "",
+          "steps": [
+            {
+              "n": 1,
+              "title": "Khách hàng",
+              "body": "Muốn biết Gcalls được xây dựng cho kiểu vận hành nào. Năm mô hình vận hành được phục vụ và bảy giai đoạn làm việc từ khảo sát tới vận hành. Tên và logo khách hàng chỉ được đăng sau khi có sự đồng ý bằng văn bản."
+            },
+            {
+              "n": 2,
+              "title": "Đối tác",
+              "body": "Là đơn vị triển khai, tư vấn hoặc tích hợp hệ thống và muốn hợp tác. Khung hợp tác, các hình thức có thể trao đổi kèm điều kiện áp dụng, và tiêu chí được làm rõ trước khi hai bên cam kết."
+            },
+            {
+              "n": 3,
+              "title": "Chương trình giới thiệu",
+              "body": "Muốn giới thiệu Gcalls tới doanh nghiệp có nhu cầu. Dành cho cá nhân và tổ chức muốn giới thiệu giải pháp. Điều khoản được trao đổi trực tiếp."
+            },
+            {
+              "n": 4,
+              "title": "Liên hệ",
+              "body": "Cần trao đổi trực tiếp với đội ngũ Gcalls. Gửi thông tin nhu cầu hoặc liên hệ qua email và số điện thoại."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "type": "cards",
+          "from": "links",
+          "heading": "Xem thêm",
           "cards": [
             {
               "title": "Khách hàng",
-              "body": "Thay vì trưng ra một dãy logo mà bạn không đối chiếu được với hoàn cảnh của mình, trang này mô tả các mô hình vận hành mà Gcalls phục vụ: đội ngũ làm việc ra sao, dữ liệu nằm ở đâu, và vấn đề thường phát sinh ở chỗ nào.",
+              "body": "",
               "href": "/cong-ty/khach-hang/"
             },
             {
               "title": "Đối tác",
-              "body": "Trang này mô tả các hình thức hợp tác Gcalls sẵn sàng trao đổi, những tiêu chí được đánh giá trước khi hai bên cam kết, và ranh giới giữa việc tích hợp kỹ thuật với một quan hệ đối tác chính thức. Đây là khung làm việc, không phải danh sách đối tác hiện có.",
+              "body": "",
               "href": "/cong-ty/doi-tac/"
+            },
+            {
+              "title": "Liên hệ",
+              "body": "",
+              "href": "/lien-he/"
+            },
+            {
+              "title": "Tài nguyên",
+              "body": "",
+              "href": "/tai-nguyen/"
+            },
+            {
+              "title": "Bảng giá Gcalls",
+              "body": "",
+              "href": "/bang-gia/"
             }
           ]
         }
       ],
       "faq": [],
       "cta": {
-        "heading": "Trao đổi trực tiếp với Gcalls",
-        "body": "Chia sẻ quy mô đội ngũ và hệ thống đang dùng để nhận tư vấn cấu hình.",
-        "label": "Nhận tư vấn giải pháp",
+        "heading": "Trao đổi với Gcalls về bài toán giao tiếp của doanh nghiệp",
+        "body": "Chia sẻ quy mô đội ngũ, hệ thống đang sử dụng và nhu cầu hiện tại để đội ngũ Gcalls có thông tin trước khi trao đổi.",
+        "label": "Liên hệ Gcalls",
         "href": "/lien-he/"
       },
       "attribution": {
@@ -4822,7 +4899,8 @@
               "title": "Blog",
               "body": "Góc nhìn vận hành theo sáu danh mục biên tập.",
               "href": "/blog/",
-              "cta": "Xem Blog"
+              "cta": "Xem Blog",
+              "count_source": "published_posts"
             },
             {
               "title": "Guides",

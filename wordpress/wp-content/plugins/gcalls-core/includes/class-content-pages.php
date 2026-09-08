@@ -321,6 +321,37 @@ final class Content_Pages {
 		$tags = isset( $c['tags'] ) && is_array( $c['tags'] ) ? $c['tags'] : array();
 		$tags = array_values( array_filter( array_map( 'strval', $tags ), static fn( $t ) => '' !== trim( $t ) ) );
 
+		/*
+		 * A COUNT THAT IS DISPLAYED MUST BE COUNTED, NOT WRITTEN DOWN.
+		 *
+		 * The Resources hub wants to say whether a category has anything in it.
+		 * The React source says "Chưa có bài viết" for Blog, which is true of
+		 * the React preview — every catalog entry is a draft, so the visible
+		 * list is empty — and false of WordPress, where /blog/ is the posts page
+		 * for real published articles. Porting that string would have published
+		 * a falsehood.
+		 *
+		 * A literal number would be no better: hardcoding today's count turns a
+		 * fact into a marketing claim that silently rots the next time someone
+		 * publishes. So the manifest names a SOURCE, and the renderer asks the
+		 * database at request time. If the source is unknown, nothing is
+		 * rendered rather than something invented.
+		 */
+		$count_source = trim( (string) ( $c['count_source'] ?? '' ) );
+
+		if ( 'published_posts' === $count_source && function_exists( 'wp_count_posts' ) ) {
+			$counts    = wp_count_posts( 'post' );
+			$published = (int) ( $counts->publish ?? 0 );
+
+			$tags[] = $published > 0
+				? sprintf(
+					/* translators: %d: number of published blog posts. */
+					_n( '%d bài đã đăng', '%d bài đã đăng', $published, 'gcalls-core' ),
+					$published
+				)
+				: __( 'Đang biên tập', 'gcalls-core' );
+		}
+
 		if ( array() !== $tags ) {
 			$out .= '<ul class="gcalls-cp__tags">';
 

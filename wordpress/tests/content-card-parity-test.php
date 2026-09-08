@@ -59,6 +59,15 @@ function add_action( ...$a ) { return true; }
 function wp_enqueue_style( ...$a ) { return true; }
 function shortcode_exists( $t ) { return false; }
 function do_shortcode( $c ) { return $c; }
+function _n( $single, $plural, $n, $d = null ) { return 1 === (int) $n ? $single : $plural; }
+
+/* The published-post count is injected so the test can prove BOTH branches of
+ * the derived status without a database: the renderer must show a real count
+ * when there are posts, and say the category is being edited when there are
+ * none. $GLOBALS is the seam because wp_count_posts() is a global function. */
+function wp_count_posts( $type = 'post' ) {
+	return (object) array( 'publish' => (int) ( $GLOBALS['gcalls_test_published'] ?? 0 ) );
+}
 
 require_once GCALLS_CORE_DIR . 'includes/class-content-pages.php';
 
@@ -106,8 +115,13 @@ $expected = array(
 	'giai-phap'  => array( 'sections' => 4, 'cards_from' => 'cards', 'cards' => 7, 'supporting' => 1, 'tags' => 5, 'cta' => 7, 'current' => 0 ),
 	'tich-hop'   => array( 'sections' => 4, 'cards_from' => 'cards', 'cards' => 5, 'supporting' => 5, 'tags' => 0, 'cta' => 5, 'current' => 0 ),
 	'nganh'      => array( 'sections' => 1, 'cards_from' => 'industries/index — hub', 'cards' => 6, 'supporting' => 0, 'tags' => 6, 'cta' => 6, 'current' => 0 ),
-	'tai-nguyen' => array( 'sections' => 1, 'cards_from' => 'resources/index — RESOURCE_NAV', 'cards' => 6, 'supporting' => 0, 'tags' => 5, 'cta' => 6, 'current' => 0 ),
-	'cong-ty'    => array( 'sections' => 1, 'cards_from' => 'company/index — hub', 'cards' => 2, 'supporting' => 0, 'tags' => 0, 'cta' => 0, 'current' => 0 ),
+	/* Six tag lists, not five: five cards carry a static status from the React
+	 * source, and Blog's is DERIVED from wp_count_posts() at request time. */
+	'tai-nguyen' => array( 'sections' => 1, 'cards_from' => 'resources/index — RESOURCE_NAV', 'cards' => 6, 'supporting' => 0, 'tags' => 6, 'cta' => 6, 'current' => 0 ),
+	/* Ported from COMPANY_HUB: a direct answer, three principles, a four-row
+	 * guide and an onward link row — replacing a single section of two child
+	 * links. The three principles each carry their own CTA. */
+	'cong-ty'    => array( 'sections' => 4, 'cards_from' => 'cards', 'cards' => 3, 'supporting' => 0, 'tags' => 0, 'cta' => 3, 'current' => 0 ),
 );
 
 echo "\nHUB CARD FIELD PARITY\n";
@@ -146,6 +160,44 @@ foreach ( $expected as $slug => $want ) {
 	ok( "$slug uses its own CTA wording on {$want['cta']} link(s)", $generic === $want_generic,
 		"generic labels: $generic, expected $want_generic (links $n_links)" );
 }
+
+/* ---- the Blog card's count is DERIVED, never written down ---- */
+echo "\nDERIVED PUBLISHED COUNT\n";
+$resources   = $pages['tai-nguyen'];
+$res_section = null;
+foreach ( $resources['sections'] as $s ) {
+	if ( ( $s['from'] ?? '' ) === 'resources/index — RESOURCE_NAV' ) { $res_section = $s; break; }
+}
+
+$blog_card = null;
+foreach ( $res_section['cards'] as $c ) {
+	if ( 'Blog' === ( $c['title'] ?? '' ) ) { $blog_card = $c; break; }
+}
+
+ok( 'the Blog card names a count SOURCE rather than a number',
+	'published_posts' === ( $blog_card['count_source'] ?? '' ) );
+ok( 'the Blog card hardcodes no status tag', empty( $blog_card['tags'] ) );
+
+/* No number from today may be frozen into the manifest. */
+ok( 'no published-post count is written into the manifest',
+	! preg_match( '/\b(18|230|250)\s*bài/u', json_encode( $manifest, JSON_UNESCAPED_UNICODE ) ) );
+
+$GLOBALS['gcalls_test_published'] = 18;
+$html_18 = $render_section( $res_section );
+ok( 'with 18 published posts the card says 18', str_contains( $html_18, '18 bài đã đăng' ) );
+ok( 'it never says the blog is empty when posts exist',
+	! str_contains( $html_18, 'Chưa có bài viết' ) && ! str_contains( $html_18, 'Đang biên tập' ) );
+
+$GLOBALS['gcalls_test_published'] = 41;
+ok( 'the count follows the data, not a constant',
+	str_contains( $render_section( $res_section ), '41 bài đã đăng' ) );
+
+$GLOBALS['gcalls_test_published'] = 0;
+$html_0 = $render_section( $res_section );
+ok( 'with no published posts it says so honestly', str_contains( $html_0, 'Đang biên tập' ) );
+ok( 'and claims no count', ! str_contains( $html_0, 'bài đã đăng' ) );
+
+$GLOBALS['gcalls_test_published'] = 18;
 
 /* ---- the boundary pages: `current` must reach the markup ---- */
 echo "\nBOUNDARY 'current' MARKER\n";
