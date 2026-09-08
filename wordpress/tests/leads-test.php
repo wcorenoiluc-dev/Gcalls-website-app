@@ -415,6 +415,51 @@ $headers = Env::$mail[0]['headers'] ?? array();
 ok( '21 Reply-To set for a valid email', (bool) preg_grep( '/^Reply-To: a@example\.com$/', $headers ) );
 ok( '21 From is on this site\'s domain', (bool) preg_grep( '/^From: .*@example\.test>?$/', $headers ) );
 
+/* 22. The configured recipient, and what it must NOT change ------------
+ *
+ * The production notification recipient is a CONFIGURATION VALUE, not a
+ * constant, and it is deliberately absent from this repository. The code
+ * default stays on the company domain, so a site that was never configured
+ * mails sales@gcalls.co rather than a personal mailbox someone typed into a
+ * release once. Naming the real mailbox here would put it in git history
+ * permanently for no test benefit — the behaviour under test is "whatever is
+ * configured is honoured", which any address proves.
+ *
+ * Override with GCALLS_TEST_RECIPIENT if you need to rehearse a specific
+ * address locally; it defaults to a reserved .invalid domain that can never
+ * receive mail.
+ *
+ * The second and third assertions are the ones that matter, and they need a
+ * recipient on a big consumer domain to be meaningful — hence the synthetic
+ * gmail.com address below, which is not anyone's mailbox. Routing TO such an
+ * address must not tempt anything into sending FROM one: a From on gmail.com
+ * that this server is not authorised to send for is what gets the whole
+ * domain's mail classified as spoofing and dropped before anyone sees it.
+ */
+$configured_recipient = getenv( 'GCALLS_TEST_RECIPIENT' );
+if ( ! is_string( $configured_recipient ) || '' === $configured_recipient ) {
+	$configured_recipient = 'recipient@example.invalid';
+}
+Env::reset();
+update_option( 'gcalls_lead_recipient', $configured_recipient );
+submit( valid() );
+ok( '22 configured recipient is honoured', $configured_recipient === ( Env::$mail[0]['to'] ?? '' ) );
+
+/* The consumer-domain case, with a synthetic address. */
+Env::reset();
+update_option( 'gcalls_lead_recipient', 'synthetic-test-mailbox@gmail.com' );
+submit( valid() );
+ok( '22 consumer-domain recipient is honoured', 'synthetic-test-mailbox@gmail.com' === ( Env::$mail[0]['to'] ?? '' ) );
+
+$headers = Env::$mail[0]['headers'] ?? array();
+ok( '22 From stays on this site, not the recipient domain', (bool) preg_grep( '/^From: .*@example\\.test>?$/', $headers ) );
+ok( '22 nothing sends From a gmail.com address', ! (bool) preg_grep( '/^From:.*gmail\\.com/i', $headers ) );
+
+Env::reset();
+update_option( 'gcalls_lead_recipient', 'not-an-email' );
+submit( valid() );
+ok( '22 an invalid configured recipient falls back to the default', 'sales@gcalls.co' === ( Env::$mail[0]['to'] ?? '' ) );
+
 /* ------------------------------------------------------------- summary */
 
 echo "\n$pass pass, $fail fail\n";
