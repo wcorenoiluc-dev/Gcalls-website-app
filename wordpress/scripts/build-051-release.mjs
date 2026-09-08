@@ -86,7 +86,21 @@ const ZIP_0101_SHA = '52ffe873880a304714a858ff69e680ec48c6d741cf90e744d4e46d0f69
 /* The live baseline. 0.10.11 must be a superset of what 0.10.8 already ships,
  * so the reconciled hash from Phase F0 is pinned here and the overlay set is
  * asserted against the ZIP's own contents rather than against a memory of it. */
-const ZIP_0108 = process.env.GCALLS_0108_ZIP || path.join(REPO, 'wordpress/.release-047/gcalls-core-0.10.8.zip')
+/* Release directories (.release-*, .deploy-*) are build OUTPUT and are
+ * deliberately not committed, so the 0.10.8 baseline does not live in this
+ * worktree. It is looked up in the sibling checkout that holds it, and
+ * GCALLS_0108_ZIP overrides. This is a lookup, never a fallback that silently
+ * skips the check: if no candidate exists the build dies. */
+const BASELINE_DIRS = [
+  path.join(REPO, 'wordpress/.release-047'),
+  '/Users/macos/Desktop/Gcalls/App/Gcalls-website-app/wordpress/.release-047',
+]
+const findBaseline = (name) => {
+  for (const d of BASELINE_DIRS) { const f = path.join(d, name); if (fs.existsSync(f)) return f }
+  return null
+}
+const ZIP_0108 = process.env.GCALLS_0108_ZIP || findBaseline('gcalls-core-0.10.8.zip') ||
+  path.join(REPO, 'wordpress/.release-047/gcalls-core-0.10.8.zip')
 const ZIP_0108_SHA = '0357782e9786b214dcbec6e1f391701da4256c5597f8fce6cb1f1afb5218d657'
 
 /* The commit that first carried the WordPress source into the integration
@@ -489,9 +503,9 @@ ok(`version ${VERSION} names exactly one archive`)
  * header, not a change. Bumping a theme version to keep numbers tidy makes the
  * version meaningless, so the theme is compared byte-for-byte against the last
  * shipped theme and reused when identical. */
-const THEME_REF = path.join(REPO, 'wordpress/.release-047/gcalls-theme')
+const THEME_REF = BASELINE_DIRS.map((d) => path.join(d, 'gcalls-theme')).find((d) => fs.existsSync(d)) ?? ''
 let themeNote = 'not packaged — no reference theme to compare against'
-if (fs.existsSync(THEME_REF)) {
+if (THEME_REF && fs.existsSync(THEME_REF)) {
   const relTheme = walk(THEME_SRC)
   const differing = relTheme.filter((f) => {
     const a = path.join(THEME_SRC, f), b = path.join(THEME_REF, f)
