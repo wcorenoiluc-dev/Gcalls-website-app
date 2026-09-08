@@ -266,7 +266,7 @@ if (widgetCount !== HOMEPAGE_WIDGETS) die(`homepage artifact has ${widgetCount} 
 const homeInv = JSON.parse(fs.readFileSync(path.join(CORE_SRC, 'data/homepage-inventory.json'), 'utf8'))
 const invLen = Array.isArray(homeInv) ? homeInv.length : (homeInv.sections?.length ?? -1)
 if (invLen !== 13) die(`homepage inventory has ${invLen} entries, not 13`)
-ok(`homepage artifact: 13 top-level sections, 67 widgets, inventory 13`)
+ok(`homepage artifact: ${topSections.length} top-level sections, ${widgetCount} widgets, inventory ${invLen}`)
 
 /* --final additionally requires the homepage to carry the merged 052 content.
  * Building 0.10.11 from a homepage that predates the merge is exactly the
