@@ -64,7 +64,7 @@
       "isInner": false
     },
     {
-      "id": "5d4fe9c",
+      "id": "0e2704e",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -79,7 +79,7 @@
       },
       "elements": [
         {
-          "id": "9a9f973",
+          "id": "ca5fee8",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -392,7 +392,7 @@
       "isInner": false
     },
     {
-      "id": "f24c133",
+      "id": "0959a99",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -407,7 +407,7 @@
       },
       "elements": [
         {
-          "id": "214ab0f",
+          "id": "5bba406",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -1408,7 +1408,7 @@
       "isInner": false
     },
     {
-      "id": "0bb94e7",
+      "id": "96df524",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -1423,7 +1423,7 @@
       },
       "elements": [
         {
-          "id": "2a5cb4c",
+          "id": "bc43b2b",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -1545,12 +1545,304 @@
                 "typography_font_weight": "700"
               },
               "elements": []
+            },
+            {
+              "id": "2a5cb4c",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Mỗi nhân viên chỉ thấy đúng những gì họ cần",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "3f76ca7",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Doanh nghiệp có thể thiết lập quyền truy cập cho từng bộ phận, từng nhóm hoặc từng nhân viên nhằm bảo vệ dữ liệu khách hàng và chuẩn hóa quy trình làm việc.</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "0e63db4",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Admin</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "7b99ca8",
+              "elType": "widget",
+              "widgetType": "icon-list",
+              "settings": {
+                "icon_list": [
+                  {
+                    "_id": "0bb94e7",
+                    "text": "Quản lý toàn bộ hệ thống",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "86e1d24",
+                    "text": "Thêm / xóa người dùng",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "578fa75",
+                    "text": "Xem tất cả cuộc gọi",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "25e5662",
+                    "text": "Xuất báo cáo",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "dc94f88",
+                    "text": "Cấu hình hotline & SIP",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  }
+                ],
+                "icon_color": "#673ab7",
+                "text_color": "#5b5f6b",
+                "space_between": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "ef8c9f5",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Manager</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "9a9f973",
+              "elType": "widget",
+              "widgetType": "icon-list",
+              "settings": {
+                "icon_list": [
+                  {
+                    "_id": "a65ad71",
+                    "text": "Xem báo cáo đội ngũ",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "3e3b0be",
+                    "text": "Nghe lại ghi âm",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "961bfd8",
+                    "text": "Phân công khách hàng",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "7652f60",
+                    "text": "Quản lý nhóm của mình",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  }
+                ],
+                "icon_color": "#673ab7",
+                "text_color": "#5b5f6b",
+                "space_between": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "5d4fe9c",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Sales / CSKH</p>",
+                "text_color": "#5b5f6b",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "63deeeb",
+              "elType": "widget",
+              "widgetType": "icon-list",
+              "settings": {
+                "icon_list": [
+                  {
+                    "_id": "214ab0f",
+                    "text": "Gọi & nhận cuộc gọi",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "f24c133",
+                    "text": "Xem KH được phân công",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "2500cf5",
+                    "text": "Ghi chú & gắn tag",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "5fbcef4",
+                    "text": "Xem lịch sử của mình",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  }
+                ],
+                "icon_color": "#673ab7",
+                "text_color": "#5b5f6b",
+                "space_between": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
+            },
+            {
+              "id": "d92da82",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Từ nhân viên đến quản lý, mọi hoạt động đều được ghi nhận",
+                "header_size": "h3",
+                "title_color": "#1e2026",
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans",
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "51a6c03",
+              "elType": "widget",
+              "widgetType": "icon-list",
+              "settings": {
+                "icon_list": [
+                  {
+                    "_id": "a348e3b",
+                    "text": "Tạo tài khoản nhân viên — thêm thành viên vào hệ thống, gán hotline và nhóm làm việc",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "113c315",
+                    "text": "Phân quyền theo vai trò — thiết lập quyền truy cập phù hợp cho từng vai trò trong tổ chức",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "b378c9d",
+                    "text": "Giao khách hàng & hotline — phân công danh sách khách hàng và đường dây riêng cho từng nhân viên",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "0cde749",
+                    "text": "Theo dõi cuộc gọi — giám sát realtime: ai đang gọi, ai nhỡ máy, chất lượng từng cuộc gọi",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  },
+                  {
+                    "_id": "4f52cb9",
+                    "text": "Đánh giá KPI — tổng hợp hiệu suất gọi, tỷ lệ chốt deal và điểm chất lượng từng nhân viên",
+                    "selected_icon": {
+                      "value": "fas fa-check",
+                      "library": "fa-solid"
+                    }
+                  }
+                ],
+                "icon_color": "#673ab7",
+                "text_color": "#5b5f6b",
+                "space_between": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Open Sans"
+              },
+              "elements": []
             }
           ],
           "isInner": false
         },
         {
-          "id": "0e63db4",
+          "id": "68f1214",
           "elType": "column",
           "settings": {
             "_column_size": 50,
@@ -1558,7 +1850,7 @@
           },
           "elements": [
             {
-              "id": "3f76ca7",
+              "id": "f9eff8e",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {
@@ -1573,7 +1865,7 @@
       "isInner": false
     },
     {
-      "id": "7652f60",
+      "id": "3eecd79",
       "elType": "section",
       "settings": {
         "content_width": "boxed",
@@ -1590,7 +1882,7 @@
       },
       "elements": [
         {
-          "id": "961bfd8",
+          "id": "06979b2",
           "elType": "column",
           "settings": {
             "_column_size": 100,
@@ -1598,7 +1890,7 @@
           },
           "elements": [
             {
-              "id": "86e1d24",
+              "id": "0ab72df",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1612,7 +1904,7 @@
               "elements": []
             },
             {
-              "id": "578fa75",
+              "id": "bd88bdb",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1626,7 +1918,7 @@
               "elements": []
             },
             {
-              "id": "25e5662",
+              "id": "23786c9",
               "elType": "widget",
               "widgetType": "heading",
               "settings": {
@@ -1640,7 +1932,7 @@
               "elements": []
             },
             {
-              "id": "dc94f88",
+              "id": "71a4a4f",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1652,7 +1944,7 @@
               "elements": []
             },
             {
-              "id": "7b99ca8",
+              "id": "3e7f835",
               "elType": "widget",
               "widgetType": "text-editor",
               "settings": {
@@ -1664,7 +1956,7 @@
               "elements": []
             },
             {
-              "id": "ef8c9f5",
+              "id": "ac95906",
               "elType": "widget",
               "widgetType": "button",
               "settings": {
@@ -1695,7 +1987,7 @@
               "elements": []
             },
             {
-              "id": "a65ad71",
+              "id": "2fa6f74",
               "elType": "widget",
               "widgetType": "button",
               "settings": {
@@ -1726,7 +2018,7 @@
               "elements": []
             },
             {
-              "id": "3e3b0be",
+              "id": "b24f743",
               "elType": "widget",
               "widgetType": "shortcode",
               "settings": {

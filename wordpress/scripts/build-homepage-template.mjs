@@ -1027,6 +1027,55 @@ const content = [
         ]),
         heading('Chỉ cần trình duyệt là có thể bắt đầu', 'h3'),
         heading('Biết đội ngũ đang làm gì theo thời gian thực', 'h3'),
+
+        /*
+         * The role-and-permission argument, folded in from TeamPermissionsBlock.
+         *
+         * It reached the React page in the Homepage 052 work: TeamSection had no
+         * route and no importer, and its argument belongs beside "your team can
+         * work from anywhere" — who may do what, once they are. This mirrors it
+         * so the two renderings of §12 say the same thing.
+         *
+         * Its ROSTER is deliberately absent and must stay absent: six invented
+         * people on a domain with no evidence record read as a real staff
+         * directory, §12 already shows presence through the mockup, and the
+         * per-role headcounts were a claim about Gcalls that nothing supports.
+         * The roles are here; the numbers attached to them are not.
+         */
+        heading('Mỗi nhân viên chỉ thấy đúng những gì họ cần', 'h3'),
+        text(
+          'Doanh nghiệp có thể thiết lập quyền truy cập cho từng bộ phận, từng nhóm hoặc từng nhân viên nhằm bảo vệ dữ liệu khách hàng và chuẩn hóa quy trình làm việc.',
+        ),
+        text('Admin'),
+        iconList([
+          'Quản lý toàn bộ hệ thống',
+          'Thêm / xóa người dùng',
+          'Xem tất cả cuộc gọi',
+          'Xuất báo cáo',
+          'Cấu hình hotline & SIP',
+        ]),
+        text('Manager'),
+        iconList([
+          'Xem báo cáo đội ngũ',
+          'Nghe lại ghi âm',
+          'Phân công khách hàng',
+          'Quản lý nhóm của mình',
+        ]),
+        text('Sales / CSKH'),
+        iconList([
+          'Gọi & nhận cuộc gọi',
+          'Xem KH được phân công',
+          'Ghi chú & gắn tag',
+          'Xem lịch sử của mình',
+        ]),
+        heading('Từ nhân viên đến quản lý, mọi hoạt động đều được ghi nhận', 'h3'),
+        iconList([
+          'Tạo tài khoản nhân viên — thêm thành viên vào hệ thống, gán hotline và nhóm làm việc',
+          'Phân quyền theo vai trò — thiết lập quyền truy cập phù hợp cho từng vai trò trong tổ chức',
+          'Giao khách hàng & hotline — phân công danh sách khách hàng và đường dây riêng cho từng nhân viên',
+          'Theo dõi cuộc gọi — giám sát realtime: ai đang gọi, ai nhỡ máy, chất lượng từng cuộc gọi',
+          'Đánh giá KPI — tổng hợp hiệu suất gọi, tỷ lệ chốt deal và điểm chất lượng từng nhân viên',
+        ]),
       ],
       50,
     ),

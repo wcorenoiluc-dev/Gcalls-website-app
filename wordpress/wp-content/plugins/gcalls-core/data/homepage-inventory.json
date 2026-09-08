@@ -28,7 +28,7 @@
     },
     {
       "index": 1,
-      "elementId": "5d4fe9c",
+      "elementId": "0e2704e",
       "component": "PainPointsSection.tsx (heading + cards + LossEstimator)",
       "mergedFrom": [
         1,
@@ -67,7 +67,7 @@
     },
     {
       "index": 3,
-      "elementId": "f24c133",
+      "elementId": "0959a99",
       "component": "EcosystemSection.tsx (header + products + solutions + CTAs)",
       "mergedFrom": [
         5,
@@ -187,7 +187,7 @@
     },
     {
       "index": 11,
-      "elementId": "0bb94e7",
+      "elementId": "96df524",
       "component": "WorkFromAnywhereSection.tsx",
       "mergedFrom": [
         16
@@ -199,7 +199,7 @@
     },
     {
       "index": 12,
-      "elementId": "7652f60",
+      "elementId": "3eecd79",
       "component": "UseCasesFinalCtaSection.tsx",
       "mergedFrom": [
         17

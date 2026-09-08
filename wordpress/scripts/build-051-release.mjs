@@ -254,7 +254,15 @@ if (topSections.length !== 13) die(`homepage artifact has ${topSections.length} 
 let widgetCount = 0
 const countWidgets = (e) => { if (e.elType === 'widget') widgetCount++; (e.elements ?? []).forEach(countWidgets) }
 homeContent.forEach(countWidgets)
-if (widgetCount !== 67) die(`homepage artifact has ${widgetCount} widgets, locked contract is 67`)
+/*
+ * 77, not 67. The contract was 67 until §12 took the role-and-permission
+ * argument from the orphaned TeamSection, which adds two headings, four
+ * paragraphs and four icon lists. The count is locked to the new number rather
+ * than loosened to a range: a range stops catching the thing the count exists
+ * to catch.
+ */
+const HOMEPAGE_WIDGETS = 77
+if (widgetCount !== HOMEPAGE_WIDGETS) die(`homepage artifact has ${widgetCount} widgets, locked contract is ${HOMEPAGE_WIDGETS}`)
 const homeInv = JSON.parse(fs.readFileSync(path.join(CORE_SRC, 'data/homepage-inventory.json'), 'utf8'))
 const invLen = Array.isArray(homeInv) ? homeInv.length : (homeInv.sections?.length ?? -1)
 if (invLen !== 13) die(`homepage inventory has ${invLen} entries, not 13`)
