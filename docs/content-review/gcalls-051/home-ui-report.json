@@ -1,6 +1,6 @@
 {
   "base": "http://localhost:5180",
-  "at": "2026-09-07T10:18:58.452Z",
+  "at": "2026-09-08T09:05:18.235Z",
   "perBp": {
     "320": {
       "sections": 13,
@@ -30,7 +30,7 @@
       "hashHrefs": 0,
       "rawShortcode": false,
       "retiredHits": [],
-      "pageHeight": 45623,
+      "pageHeight": 45513,
       "badResponses": [],
       "faviconOnly": 0,
       "consoleErrors": []
@@ -63,7 +63,7 @@
       "hashHrefs": 0,
       "rawShortcode": false,
       "retiredHits": [],
-      "pageHeight": 41874,
+      "pageHeight": 41805,
       "badResponses": [],
       "faviconOnly": 0,
       "consoleErrors": []
@@ -96,7 +96,7 @@
       "hashHrefs": 0,
       "rawShortcode": false,
       "retiredHits": [],
-      "pageHeight": 27631,
+      "pageHeight": 27586,
       "badResponses": [],
       "faviconOnly": 0,
       "consoleErrors": []
@@ -129,7 +129,7 @@
       "hashHrefs": 0,
       "rawShortcode": false,
       "retiredHits": [],
-      "pageHeight": 19539,
+      "pageHeight": 19446,
       "badResponses": [],
       "faviconOnly": 0,
       "consoleErrors": []
@@ -162,7 +162,7 @@
       "hashHrefs": 0,
       "rawShortcode": false,
       "retiredHits": [],
-      "pageHeight": 18992,
+      "pageHeight": 18958,
       "badResponses": [],
       "faviconOnly": 0,
       "consoleErrors": []
@@ -195,7 +195,7 @@
       "hashHrefs": 0,
       "rawShortcode": false,
       "retiredHits": [],
-      "pageHeight": 19011,
+      "pageHeight": 18977,
       "badResponses": [],
       "faviconOnly": 0,
       "consoleErrors": []

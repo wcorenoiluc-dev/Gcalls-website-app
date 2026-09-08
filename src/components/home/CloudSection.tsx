@@ -16,16 +16,16 @@ const sipAccounts = [
 ];
 
 const hotlines = [
-  { number: "—", label: "Sales",        agents: 3, active: 2, color: "#673ab7" },
-  { number: "—", label: "CSKH",         agents: 2, active: 1, color: "#0891b2" },
-  { number: "028 7109 xxxx", label: "VoIP DID", agents: 5, active: 4, color: "#16a34a" },
+  { number: "—", label: "Sales",        agents: "—", active: "—", color: "#673ab7" },
+  { number: "—", label: "CSKH",         agents: "—", active: "—", color: "#0891b2" },
+  { number: "—", label: "VoIP DID", agents: "—", active: "—", color: "#16a34a" },
 ];
 
 const ivrTree = [
   { level: 0, key: "root",   label: "Khách hàng gọi đến",  sub: "—",           color: "#673ab7" },
   { level: 1, key: "ivr1",   label: "IVR: Bấm phím",       sub: "1–Sales · 2–CSKH · 0–Lễ tân", color: "#7c3aed" },
   { level: 2, key: "route",  label: "Call Routing",         sub: "Theo nhân viên rảnh", color: "#0891b2" },
-  { level: 2, key: "group",  label: "Ring Group",           sub: "Đổ đồng thời 3 agent",color: "#16a34a" },
+  { level: 2, key: "group",  label: "Ring Group",           sub: "Đổ chuông đồng thời nhiều agent",color: "#16a34a" },
   { level: 3, key: "agent",  label: "Agent nhận máy",       sub: "Ghi âm tự động",      color: "#d97706" },
 ];
 
@@ -148,7 +148,7 @@ function CloudMockup() {
             const st = sipStatusLabel[a.status];
             return (
               <div
-                key={a.ext}
+                key={a.name}
                 className="grid items-center px-4 py-2.5 transition-colors"
                 style={{ gridTemplateColumns: "52px 1fr 110px 80px 40px", gap: "0 8px", borderBottom: "1px solid rgba(103,58,183,0.05)" }}
                 onMouseEnter={e => (e.currentTarget.style.background = "#fbf9ff")}
@@ -241,12 +241,12 @@ function CloudMockup() {
         <div className="px-5 py-4">
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-bold" style={{ color: "#1e2026" }}>Hotlines đang hoạt động</span>
-            <span className="text-[10px]" style={{ color: "#9ca3af" }}>3 đầu số</span>
+            <span className="text-[10px]" style={{ color: "#9ca3af" }}>Đầu số</span>
           </div>
           <div className="flex flex-col gap-2.5 mb-4">
             {hotlines.map((h) => (
               <div
-                key={h.number}
+                key={h.label}
                 className="flex items-center gap-3 px-4 py-3 rounded-2xl"
                 style={{ background: h.color + "08", border: `1px solid ${h.color}20` }}
               >

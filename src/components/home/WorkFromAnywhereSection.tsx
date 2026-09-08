@@ -31,7 +31,7 @@ const remoteFeatures2 = [
 ];
 
 export function DialpadMockup() {
-  const [dialInput, setDialInput] = useState("0901 234");
+  const [dialInput, setDialInput] = useState("—");
   const keys = [["1","2","3"],["4","5","6"],["7","8","9"],["*","0","#"]];
 
   return (
@@ -107,7 +107,7 @@ export function DialpadMockup() {
           { name: "Nhân viên 01", ext: "—", color: "#673ab7" },
           { name: "Nhân viên 02", ext: "—", color: "#0891b2" },
         ].map(c => (
-          <div key={c.ext} className="flex items-center gap-2 py-1.5 cursor-pointer rounded-xl px-1 transition-colors" onMouseEnter={e => (e.currentTarget.style.background = "#f6f3fc")} onMouseLeave={e => (e.currentTarget.style.background = "transparent")}>
+          <div key={c.name} className="flex items-center gap-2 py-1.5 cursor-pointer rounded-xl px-1 transition-colors" onMouseEnter={e => (e.currentTarget.style.background = "#f6f3fc")} onMouseLeave={e => (e.currentTarget.style.background = "transparent")}>
             <div className="w-5 h-5 rounded-full flex items-center justify-center text-[8px] font-bold" style={{ background: c.color + "18", color: c.color }}>{c.name[0]}{c.name.split(" ").pop()![0]}</div>
             <span className="text-[10px] flex-1" style={{ color: "#5b5f6b" }}>{c.name}</span>
             <span className="text-[9px] font-bold tabular-nums" style={{ color: c.color, fontFamily: "'DM Mono',monospace" }}>Ext {c.ext}</span>

@@ -7,7 +7,7 @@ import { HomePage } from '@/pages/HomePage'
 import { VISIBLE_ARTICLES } from '@/data/blog/visibility'
 
 /**
- * Route table for the GCALLS website — 37 routes.
+ * Route table for the GCALLS website — 38 routes.
  *
  * Paths come from `src/config/sitemap.ts`, the single source of truth, so the
  * router, navigation, footer, breadcrumbs and SEO metadata cannot drift apart.

@@ -492,7 +492,7 @@ export function FloatingAnalytics() {
 }
 
 export function FloatingDialpad() {
-  const [input, setInput] = useState("0901 234 5");
+  const [input, setInput] = useState("—");
 
   const keys = [
     ["1", "2", "3"],
