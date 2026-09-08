@@ -193,7 +193,7 @@ export function APIManagerMockup() {
 {`{
   "id": "call_8f3kd9",
   "contact": "Khách hàng 01",
-  "phone": "0900000001",
+  "phone": "—",
   "status": "answered",
   "duration": 222,
   "recording_url": "https://..."
@@ -233,7 +233,7 @@ export function CustomerPopupMockup() {
         </div>
         <div>
           <div className="text-xs font-bold text-white">{ringing ? "Cuộc gọi đến..." : "Đã kết nối"}</div>
-          <div className="text-[10px]" style={{ color: "rgba(255,255,255,0.75)" }}>1900 0000 · Hà Nội</div>
+          <div className="text-[10px]" style={{ color: "rgba(255,255,255,0.75)" }}>— · Hà Nội</div>
         </div>
         <div className="ml-auto flex gap-1.5">
           {ringing ? (

@@ -20,7 +20,7 @@ import { BarChart2, Check, PhoneCall, ShieldCheck, UserCheck, Users } from "luci
  *  · `TeamMgmtMockup` — the tabbed UI whose only purpose is to display that
  *    roster. §12 already shows per-agent presence through `remoteStatuses`, so
  *    the roster was also the duplicated half.
- *  · The `count: 2 / 4 / 38` headcounts on each role. "38" is a headcount claim
+ *  · The `count: "—" / 4 / 38` headcounts on each role. "38" is a headcount claim
  *    about Gcalls that nothing in this repository evidences. The roles are kept;
  *    the numbers attached to them are not.
  *

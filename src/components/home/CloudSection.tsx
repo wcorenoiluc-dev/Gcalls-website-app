@@ -8,21 +8,21 @@ import { MockupCaption } from "./MockupCaption";
 // ─── Section 7: Cloud Call Center ────────────────────────────────────────────
 
 const sipAccounts = [
-  { ext: "101", name: "Nhân viên 01",    hotline: "1900 0000", status: "registered", calls: 3,  color: "#22c55e" },
-  { ext: "102", name: "Nhân viên 02",   hotline: "1900 0000", status: "on-call",    calls: 1,  color: "#673ab7" },
-  { ext: "103", name: "Nhân viên 03",     hotline: "1900 0001", status: "registered", calls: 0,  color: "#22c55e" },
-  { ext: "104", name: "Nhân viên 04",  hotline: "1900 0001", status: "offline",    calls: 0,  color: "#9ca3af" },
-  { ext: "105", name: "Nhân viên 05",   hotline: "1900 0000", status: "registered", calls: 2,  color: "#22c55e" },
+  { ext: "—", name: "Nhân viên 01",    hotline: "—", status: "registered", calls: "—",  color: "#22c55e" },
+  { ext: "—", name: "Nhân viên 02",   hotline: "—", status: "on-call",    calls: "—",  color: "#673ab7" },
+  { ext: "—", name: "Nhân viên 03",     hotline: "—", status: "registered", calls: "—",  color: "#22c55e" },
+  { ext: "—", name: "Nhân viên 04",  hotline: "—", status: "offline",    calls: "—",  color: "#9ca3af" },
+  { ext: "—", name: "Nhân viên 05",   hotline: "—", status: "registered", calls: "—",  color: "#22c55e" },
 ];
 
 const hotlines = [
-  { number: "1900 0000", label: "Sales",        agents: 3, active: 2, color: "#673ab7" },
-  { number: "1900 0001", label: "CSKH",         agents: 2, active: 1, color: "#0891b2" },
+  { number: "—", label: "Sales",        agents: 3, active: 2, color: "#673ab7" },
+  { number: "—", label: "CSKH",         agents: 2, active: 1, color: "#0891b2" },
   { number: "028 7109 xxxx", label: "VoIP DID", agents: 5, active: 4, color: "#16a34a" },
 ];
 
 const ivrTree = [
-  { level: 0, key: "root",   label: "Khách hàng gọi đến",  sub: "1900 0000",           color: "#673ab7" },
+  { level: 0, key: "root",   label: "Khách hàng gọi đến",  sub: "—",           color: "#673ab7" },
   { level: 1, key: "ivr1",   label: "IVR: Bấm phím",       sub: "1–Sales · 2–CSKH · 0–Lễ tân", color: "#7c3aed" },
   { level: 2, key: "route",  label: "Call Routing",         sub: "Theo nhân viên rảnh", color: "#0891b2" },
   { level: 2, key: "group",  label: "Ring Group",           sub: "Đổ đồng thời 3 agent",color: "#16a34a" },
@@ -57,7 +57,7 @@ const featureGrid = [
 ];
 
 const flowSteps = [
-  { label: "Khách hàng gọi đến", icon: Phone,         color: "#673ab7", note: "1900 0000 · 028 xxxx" },
+  { label: "Khách hàng gọi đến", icon: Phone,         color: "#673ab7", note: "— · 028 xxxx" },
   { label: "IVR",                icon: GitBranch,     color: "#7c3aed", note: "Bấm 1–Sales, 2–CSKH" },
   { label: "Call Routing",       icon: Network,       color: "#0891b2", note: "Phân phối thông minh" },
   { label: "Ring Group",         icon: Users,         color: "#16a34a", note: "Đổ chuông đồng thời" },
@@ -199,7 +199,7 @@ function CloudMockup() {
         <div className="px-5 py-5">
           <div className="flex items-center gap-2 mb-4">
             <GitBranch size={14} color="#673ab7" />
-            <span className="text-xs font-bold" style={{ color: "#1e2026" }}>Cây IVR — 1900 0000</span>
+            <span className="text-xs font-bold" style={{ color: "#1e2026" }}>Cây IVR — —</span>
             <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full font-medium" style={{ background: "#f0ecf9", color: "#673ab7" }}>3 cấp</span>
           </div>
 

@@ -6,29 +6,29 @@ import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { stageClass, stageMainClass, stageFloatFullClass, hideBelowLgClass } from "@/components/common/ResponsiveProductVisual";
 
 const callLog = [
-  { id: 1, name: "Khách hàng 01", phone: "0900 000 001", type: "out", duration: "3:42", status: "answered", time: "09:14", tag: "Khách hàng mới" },
-  { id: 2, name: "Khách hàng 02", phone: "0900 000 002", type: "in", duration: "7:18", status: "answered", time: "09:31", tag: "Gia hạn" },
-  { id: 3, name: "Khách hàng 03", phone: "0900 000 003", type: "out", duration: "—", status: "missed", time: "09:52", tag: null },
-  { id: 4, name: "Khách hàng 04", phone: "0900 000 004", type: "in", duration: "12:05", status: "answered", time: "10:08", tag: "Demo" },
-  { id: 5, name: "Khách hàng 05", phone: "0900 000 005", type: "out", duration: "5:20", status: "answered", time: "10:45", tag: "Upsell" },
+  { id: 1, name: "Khách hàng 01", phone: "—", type: "out", duration: "—", status: "answered", time: "09:14", tag: "Khách hàng mới" },
+  { id: 2, name: "Khách hàng 02", phone: "—", type: "in", duration: "—", status: "answered", time: "09:31", tag: "Gia hạn" },
+  { id: 3, name: "Khách hàng 03", phone: "—", type: "out", duration: "—", status: "missed", time: "09:52", tag: null },
+  { id: 4, name: "Khách hàng 04", phone: "—", type: "in", duration: "—", status: "answered", time: "10:08", tag: "Demo" },
+  { id: 5, name: "Khách hàng 05", phone: "—", type: "out", duration: "—", status: "answered", time: "10:45", tag: "Upsell" },
 ];
 
 const contacts = [
-  { id: 1, name: "Công ty A", contact: "Khách hàng 01", calls: 12, lastCall: "Hôm nay 09:14", stage: "Demo", avatar: "BM" },
-  { id: 2, name: "Công ty B", contact: "Khách hàng 02", calls: 8, lastCall: "Hôm nay 09:31", stage: "Đàm phán", avatar: "VP" },
-  { id: 3, name: "Công ty C", contact: "Khách hàng 04", calls: 24, lastCall: "Hôm nay 10:08", stage: "Đề xuất", avatar: "SV" },
+  { id: 1, name: "Công ty A", contact: "Khách hàng 01", calls: "—", lastCall: "—", stage: "Demo", avatar: "BM" },
+  { id: 2, name: "Công ty B", contact: "Khách hàng 02", calls: "—", lastCall: "—", stage: "Đàm phán", avatar: "VP" },
+  { id: 3, name: "Công ty C", contact: "Khách hàng 04", calls: "—", lastCall: "—", stage: "Đề xuất", avatar: "SV" },
 ];
 
 const kpiData = [
-  { label: "Cuộc gọi hôm nay", value: "84", change: "+12%", up: true },
-  { label: "Tỷ lệ nghe máy", value: "73%", change: "+4%", up: true },
-  { label: "Thời gian TB", value: "5:24", change: "-0:18", up: false },
-  { label: "Đã chốt deal", value: "11", change: "+3", up: true },
+  { label: "Cuộc gọi hôm nay", value: "—", change: "", up: true },
+  { label: "Tỷ lệ nghe máy", value: "—", change: "", up: true },
+  { label: "Thời gian TB", value: "—", change: "", up: false },
+  { label: "Đã chốt deal", value: "—", change: "", up: true },
 ];
 
 const agentStatus = [
-  { name: "NV 01", status: "on-call", duration: "04:12", color: "#22c55e" },
-  { name: "NV 02", status: "on-call", duration: "01:48", color: "#22c55e" },
+  { name: "NV 01", status: "on-call", duration: "—", color: "#22c55e" },
+  { name: "NV 02", status: "on-call", duration: "—", color: "#22c55e" },
   { name: "NV 03", status: "available", duration: null, color: "#673ab7" },
   { name: "NV 04", status: "break", duration: null, color: "#f59e0b" },
 ];
@@ -100,7 +100,7 @@ export function DashboardMain() {
             Cuộc gọi đến · Khách hàng 01
           </div>
           <div className="text-[10px]" style={{ color: "#5b5f6b" }}>
-            0900 000 001 · Hotline 1900 0000
+            — · Hotline —
           </div>
         </div>
         <span
@@ -265,7 +265,7 @@ export function FloatingCustomerPopup() {
       >
         <PhoneIncoming size={12} color="#fff" aria-hidden="true" />
         <span className="text-[11px] font-semibold text-white">Cuộc gọi đến</span>
-        <span className="ml-auto text-[9px]" style={{ color: "rgba(255,255,255,0.8)" }}>1900 0000</span>
+        <span className="ml-auto text-[9px]" style={{ color: "rgba(255,255,255,0.8)" }}>—</span>
       </div>
 
       <div className="p-3.5">
@@ -720,7 +720,7 @@ export function Hero() {
             {/*
               WHAT USED TO BE HERE, AND WHY IT IS GONE — Checkpoint WEB-SITE-QA-001.
 
-              A five-star row reading "4.9" beside four avatar initials
+              A five-star row beside four avatar initials
               ("VP", "BM", "SV", "TH") under the caption "Được tin dùng bởi các
               doanh nghiệp Việt Nam". Every part of it was fabricated: this
               repository holds no rating, no review, no customer count and no
