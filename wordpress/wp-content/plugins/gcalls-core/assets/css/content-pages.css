@@ -736,3 +736,224 @@
 		transform: none;
 	}
 }
+
+/* ── Audience ─────────────────────────────────────────────────────────────
+ * "Who this page is for" — a named reader and what that reader is responsible
+ * for. A description list, not a card grid: this block sits between the purpose
+ * paragraph and the page's actual content, and four boxes there would read as
+ * the content rather than as the framing for it. Two columns from 640px, which
+ * is where four rows stop being a long scroll.
+ */
+.gcalls-cp__audience {
+	display: grid;
+	gap: 14px 28px;
+	grid-template-columns: minmax(0, 1fr);
+	margin: 18px 0 0;
+	max-width: var(--gcp-measure);
+}
+
+@media (min-width: 640px) {
+	.gcalls-cp__audience {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		max-width: none;
+	}
+}
+
+.gcalls-cp__audience-who {
+	border-left: 2px solid var(--gcalls-brand, #673ab7);
+	color: var(--gcalls-foreground, #1e2026);
+	font-size: 0.9375rem;
+	font-weight: 700;
+	line-height: 1.4;
+	margin: 0;
+	padding-left: 12px;
+}
+
+.gcalls-cp__audience-detail {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.875rem;
+	line-height: 1.6;
+	margin: 4px 0 0;
+	overflow-wrap: anywhere;
+	padding-left: 14px;
+}
+
+/* ── Decision table ───────────────────────────────────────────────────────
+ * "What are you trying to do" answered by "which product does it". The need is
+ * the question and reads at body weight; the product is the answer and is the
+ * link. The row for the page the reader is on is marked and carries no link —
+ * `.is-current` only makes visible what `.gcalls-cp__decision-here` already
+ * says in words, so colour is never the sole carrier.
+ */
+.gcalls-cp__decision {
+	border: var(--gcp-border);
+	border-radius: var(--gcp-radius);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.gcalls-cp__decision-row {
+	background: var(--gcalls-surface, #fff);
+	border-top: var(--gcp-border);
+	display: grid;
+	gap: 6px 24px;
+	grid-template-columns: minmax(0, 1fr);
+	padding: 16px var(--gcp-card-pad);
+}
+
+.gcalls-cp__decision-row:first-child {
+	border-top: 0;
+}
+
+@media (min-width: 768px) {
+	.gcalls-cp__decision-row {
+		align-items: baseline;
+		grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+	}
+}
+
+.gcalls-cp__decision-row.is-current {
+	background: rgba(103, 58, 183, 0.06);
+}
+
+.gcalls-cp__decision-need {
+	color: var(--gcalls-foreground, #1e2026);
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin: 0;
+	overflow-wrap: anywhere;
+}
+
+.gcalls-cp__decision-answer {
+	margin: 0;
+}
+
+.gcalls-cp__decision-product {
+	font-size: 0.9375rem;
+	font-weight: 700;
+	line-height: 1.5;
+	overflow-wrap: anywhere;
+}
+
+.gcalls-cp__decision-link {
+	align-items: baseline;
+	color: var(--gcalls-brand, #673ab7);
+	display: inline-flex;
+	gap: 6px;
+	text-decoration: none;
+}
+
+.gcalls-cp__decision-link::after {
+	content: "→";
+}
+
+.gcalls-cp__decision-link:hover,
+.gcalls-cp__decision-link:focus-visible {
+	text-decoration: underline;
+}
+
+.gcalls-cp__decision-here {
+	background: var(--gcalls-brand, #673ab7);
+	border-radius: 999px;
+	color: #fff;
+	display: inline-block;
+	font-size: 0.6875rem;
+	font-weight: 700;
+	line-height: 1.4;
+	padding: 3px 10px;
+	white-space: nowrap;
+}
+
+/* ── Use cases ────────────────────────────────────────────────────────────
+ * A role and what that role does with the product. The role is a label, so it
+ * is set as one — small, brand-coloured, above the sentence — rather than as a
+ * card heading that would put four more entries in the document outline.
+ */
+.gcalls-cp__usecases {
+	display: grid;
+	gap: var(--gcp-gap-grid);
+	grid-template-columns: minmax(0, 1fr);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+@media (min-width: 768px) {
+	.gcalls-cp__usecases {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+.gcalls-cp__usecase {
+	border-left: 2px solid rgba(103, 58, 183, 0.28);
+	min-width: 0;
+	padding-left: 16px;
+}
+
+.gcalls-cp__usecase-role {
+	color: var(--gcalls-brand, #673ab7);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	line-height: 1.4;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.gcalls-cp__usecase-flow {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.9375rem;
+	line-height: 1.65;
+	margin: 6px 0 0;
+	overflow-wrap: anywhere;
+}
+
+/* ── Related links ────────────────────────────────────────────────────────
+ * A row of destinations. The link IS the content here — as cards these were
+ * boxes holding a title and the words "Tìm hiểu thêm" underneath.
+ */
+.gcalls-cp__related {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px 12px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gcalls-cp__related-item {
+	min-width: 0;
+}
+
+.gcalls-cp__related-link {
+	align-items: center;
+	background: var(--gcalls-surface, #fff);
+	border: var(--gcp-border);
+	border-radius: 999px;
+	color: var(--gcalls-brand, #673ab7);
+	display: inline-flex;
+	font-size: 0.9375rem;
+	font-weight: 650;
+	gap: 6px;
+	line-height: 1.4;
+	padding: 9px 16px;
+	text-decoration: none;
+	transition: border-color 160ms ease;
+}
+
+.gcalls-cp__related-link::after {
+	content: "→";
+}
+
+.gcalls-cp__related-link:hover,
+.gcalls-cp__related-link:focus-visible {
+	border-color: rgba(103, 58, 183, 0.38);
+	text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gcalls-cp__related-link {
+		transition: none;
+	}
+}

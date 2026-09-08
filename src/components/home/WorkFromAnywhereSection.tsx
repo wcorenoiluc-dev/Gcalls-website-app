@@ -15,12 +15,12 @@ const remoteStatuses = [
 ];
 
 const statusLog = [
-  { time: "10:48", agent: "Nhân viên 01",   event: "Chuyển sang Sẵn sàng",          icon: Check,         color: "#22c55e" },
-  { time: "10:45", agent: "Nhân viên 02",  event: "Bắt đầu cuộc gọi · —", icon: PhoneCall,   color: "#673ab7" },
-  { time: "10:40", agent: "Nhân viên 05",  event: "Bắt đầu cuộc gọi · —", icon: PhoneCall,   color: "#0891b2" },
-  { time: "10:32", agent: "Nhân viên 04", event: "Chuyển sang Vắng mặt",           icon: Clock,         color: "#f59e0b" },
-  { time: "10:18", agent: "Nhân viên 03",    event: "Kết thúc cuộc gọi · 7m 12s",    icon: PhoneOff,      color: "#6b7280" },
-  { time: "09:55", agent: "Nhân viên 06",  event: "Đăng xuất khỏi hệ thống",       icon: X,             color: "#9ca3af" },
+  { time: "—", agent: "Nhân viên 01",   event: "Chuyển sang Sẵn sàng",          icon: Check,         color: "#22c55e" },
+  { time: "—", agent: "Nhân viên 02",  event: "Bắt đầu cuộc gọi · —", icon: PhoneCall,   color: "#673ab7" },
+  { time: "—", agent: "Nhân viên 05",  event: "Bắt đầu cuộc gọi · —", icon: PhoneCall,   color: "#0891b2" },
+  { time: "—", agent: "Nhân viên 04", event: "Chuyển sang Vắng mặt",           icon: Clock,         color: "#f59e0b" },
+  { time: "—", agent: "Nhân viên 03",    event: "Kết thúc cuộc gọi · —",    icon: PhoneOff,      color: "#6b7280" },
+  { time: "—", agent: "Nhân viên 06",  event: "Đăng xuất khỏi hệ thống",       icon: X,             color: "#9ca3af" },
 ];
 
 const remoteFeatures2 = [
@@ -62,7 +62,7 @@ export function DialpadMockup() {
         <div className="text-xl font-bold tabular-nums tracking-widest mb-1" style={{ color: "#1e2026", fontFamily: "'DM Mono',monospace" }}>
           {dialInput || <span style={{ color: "#d1d5db" }}>Nhập số</span>}
         </div>
-        <div className="text-[10px]" style={{ color: "#9ca3af" }}>Ext: 101 · Hotline: —</div>
+        <div className="text-[10px]" style={{ color: "#9ca3af" }}>Ext: — · Hotline: —</div>
       </div>
 
       {/* Keypad */}

@@ -268,3 +268,60 @@
 	.gcalls-product__card { transition: none; }
 	.gcalls-product__card:hover { transform: none; }
 }
+
+/* ── gc-* additions that ship with the PLUGIN ─────────────────────────────
+ *
+ * The rest of the `gc-*` vocabulary is styled in the theme's gc-components.css.
+ * These five rules are for markup class-sections.php started emitting in this
+ * release, and they live here because the plugin owns that markup and the theme
+ * is not being repackaged: a rule the plugin needs and the theme has not got is
+ * an unstyled element on a live page.
+ *
+ * Selector shape and tokens match gc-components.css exactly so nothing here
+ * wins by specificity — it only fills gaps.
+ */
+
+/* VB_HUMAN_AI gives each column a criterion sentence above its examples. */
+.gc-page .gc-groups__lead {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.875rem;
+	line-height: 1.6;
+	margin: 0 0 14px;
+}
+
+/* The boundary row for the page the reader is on: marked, and never a link.
+ * The wording carries the meaning; the tint only makes it findable. */
+.gc-page .gc-decision__row.is-current {
+	border-color: var(--gcalls-brand, #673ab7);
+}
+
+.gc-page .gc-decision__here {
+	background: var(--gcalls-brand, #673ab7);
+	border-radius: 999px;
+	color: #fff;
+	font-size: 0.6875rem;
+	font-weight: 700;
+	line-height: 1.4;
+	padding: 3px 10px;
+	white-space: nowrap;
+}
+
+/* The integration sections are lists of destinations, so their names are links. */
+.gc-page .gc-vendors__link {
+	color: var(--gcalls-brand, #673ab7);
+	text-decoration: none;
+}
+
+.gc-page .gc-vendors__link:hover,
+.gc-page .gc-vendors__link:focus-visible {
+	text-decoration: underline;
+}
+
+/* A closing sentence under a section body — a limit on a claim, not a caption. */
+.gc-page .gc-section__note {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.875rem;
+	line-height: 1.65;
+	margin: 18px 0 0;
+	max-width: 68ch;
+}

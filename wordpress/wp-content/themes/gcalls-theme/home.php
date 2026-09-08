@@ -28,7 +28,38 @@ get_header();
 
 $posts_page_id = (int) get_option( 'page_for_posts' );
 $hub_taxonomy  = 'gcalls_hub';
-$grouped       = taxonomy_exists( $hub_taxonomy ) && ! is_paged();
+
+/*
+ * THE GROUPED VIEW MUST NOT BE ENTERED WHEN IT HAS NOTHING TO GROUP.
+ *
+ * `$grouped` used to ask only whether the taxonomy is registered. The plugin
+ * registers `gcalls_hub` on load, so the answer is yes on any site with
+ * gcalls-core active — including one where no article has been filed under a
+ * hub yet. The grouped branch then found `get_terms( hide_empty => true )`
+ * empty and took its own else, which prints template-parts/content-none.php:
+ * "Chưa có bài viết nào trong mục này." on an archive holding eighteen
+ * PUBLISHED articles. The posts were never consulted; only the terms were.
+ *
+ * So the terms are fetched first and having at least one is part of the
+ * condition. With no hub terms the template falls through to the ordinary
+ * paginated loop, which reads the posts themselves — and the empty state is
+ * then reachable only from `have_posts()` being false, which is what an empty
+ * state is supposed to mean.
+ */
+$hub_terms = taxonomy_exists( $hub_taxonomy )
+	? get_terms(
+		array(
+			'taxonomy'   => $hub_taxonomy,
+			'hide_empty' => true,
+		)
+	)
+	: array();
+
+if ( is_wp_error( $hub_terms ) ) {
+	$hub_terms = array();
+}
+
+$grouped = ! is_paged() && array() !== $hub_terms;
 ?>
 
 <div class="gcalls-container gcalls-stack">
@@ -83,27 +114,20 @@ $grouped       = taxonomy_exists( $hub_taxonomy ) && ! is_paged();
 
 	<?php if ( $grouped ) : ?>
 		<?php
-		$hub_terms = get_terms(
-			array(
-				'taxonomy'   => $hub_taxonomy,
-				'hide_empty' => true,
-			)
-		);
-
+		// `$hub_terms` was resolved above, before `$grouped` was decided. It is
+		// not re-fetched here: the decision and the data it was made from have
+		// to be the same array, or the branch can be entered on one answer and
+		// rendered from another.
 		$rendered = 0;
 
 		// Needed by the "Tất cả" chip, which is printed before the groups are
 		// walked, so it cannot use the running total.
 		$rendered_total = 0;
 
-		if ( ! is_wp_error( $hub_terms ) ) {
-			foreach ( $hub_terms as $term ) {
-				$rendered_total += (int) $term->count;
-			}
+		foreach ( $hub_terms as $term ) {
+			$rendered_total += (int) $term->count;
 		}
-
-		if ( ! is_wp_error( $hub_terms ) && array() !== $hub_terms ) :
-			?>
+		?>
 			<?php
 			/*
 			 * The filter bar.
@@ -233,6 +257,55 @@ $grouped       = taxonomy_exists( $hub_taxonomy ) && ! is_paged();
 				?>
 			<?php endforeach; ?>
 
+			<?php
+			/*
+			 * ARTICLES THAT BELONG TO NO HUB ARE STILL PUBLISHED ARTICLES.
+			 *
+			 * The grouped view walks the taxonomy, so a published post carrying
+			 * no `gcalls_hub` term appears in no group — and page one is the
+			 * whole archive here, `is_paged()` having sent the paginated view
+			 * away. Such a post would be live, indexed and unreachable from its
+			 * own index. This picks them up in one bounded query and lists them
+			 * under a plain heading rather than inventing a hub for them.
+			 *
+			 * It renders only when there are any, so a fully-filed archive is
+			 * byte-identical to before.
+			 */
+			$unfiled = new WP_Query(
+				array(
+					'post_type'              => 'post',
+					'post_status'            => 'publish',
+					'posts_per_page'         => -1,
+					'ignore_sticky_posts'    => true,
+					'no_found_rows'          => true,
+					'update_post_meta_cache' => false,
+					'tax_query'              => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Bounded archive.
+						array(
+							'taxonomy' => $hub_taxonomy,
+							'operator' => 'NOT EXISTS',
+						),
+					),
+				)
+			);
+			?>
+
+			<?php if ( $unfiled->have_posts() ) : ?>
+				<section class="gcalls-hub-group" id="hub-khac" data-hub="khac">
+					<h3 class="gcalls-hub-group__title"><?php esc_html_e( 'Chưa xếp nhóm', 'gcalls-theme' ); ?><span class="gcalls-hub-group__count"><?php printf( esc_html( /* translators: %d: number of articles outside every hub. */ _n( '%d bài', '%d bài', (int) $unfiled->post_count, 'gcalls-theme' ) ), (int) $unfiled->post_count ); ?></span></h3>
+
+					<div class="gcalls-cards">
+						<?php
+						while ( $unfiled->have_posts() ) :
+							$unfiled->the_post();
+							++$rendered;
+							get_template_part( 'template-parts/content', 'card' );
+						endwhile;
+						?>
+					</div>
+				</section>
+				<?php wp_reset_postdata(); ?>
+			<?php endif; ?>
+
 			<p class="gcalls-meta gcalls-hub-total">
 				<?php
 				printf(
@@ -243,9 +316,6 @@ $grouped       = taxonomy_exists( $hub_taxonomy ) && ! is_paged();
 				);
 				?>
 			</p>
-		<?php else : ?>
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
-		<?php endif; ?>
 
 	<?php elseif ( have_posts() ) : ?>
 		<div class="gcalls-cards">

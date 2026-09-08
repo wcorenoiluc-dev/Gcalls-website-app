@@ -19,7 +19,7 @@ const crmContacts = [
     lastCall: "—",
     stage: "Demo",
     stageColor: "#673ab7",
-    note: "KH quan tâm gói Business. Hẹn demo thứ 5 tuần này. Cần gửi proposal trước ngày 25.",
+    note: "Ghi chú: khách quan tâm gói dịch vụ, cần gửi đề xuất.",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const crmContacts = [
     lastCall: "—",
     stage: "Đàm phán",
     stageColor: "#d97706",
-    note: "Cần gửi báo giá gia hạn trước 15h hôm nay.",
+    note: "Ghi chú: cần gửi báo giá gia hạn.",
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ const crmContacts = [
     lastCall: "—",
     stage: "Đề xuất",
     stageColor: "#16a34a",
-    note: "Demo thành công, đang chờ duyệt ngân sách từ BGĐ.",
+    note: "Ghi chú: đã demo, đang chờ phê duyệt ngân sách.",
   },
   {
     id: 4,
@@ -64,15 +64,15 @@ const crmContacts = [
     lastCall: "—",
     stage: "Cân nhắc",
     stageColor: "#9ca3af",
-    note: "Đang xem xét nâng lên gói Pro. Follow up sau 3 ngày.",
+    note: "Ghi chú: đang xem xét nâng gói, cần theo dõi tiếp.",
   },
 ];
 
 const crmInteractions = [
   { type: "call", label: "Cuộc gọi đến", detail: "— · Ghi âm có sẵn", time: "—", icon: PhoneIncoming, color: "#16a34a" },
-  { type: "note", label: "Ghi chú", detail: "Cần gửi báo giá gia hạn trước 15h hôm nay", time: "—", icon: FileText, color: "#673ab7" },
-  { type: "call", label: "Cuộc gọi đi", detail: "— · Đã nghe máy", time: "Hôm qua", icon: PhoneOutgoing, color: "#0891b2" },
-  { type: "tag", label: "Gắn nhãn VIP", detail: "Thêm tag: VIP, Gia hạn", time: "2 ngày trước", icon: Tag, color: "#d97706" },
+  { type: "note", label: "Ghi chú", detail: "Cần gửi báo giá gia hạn", time: "—", icon: FileText, color: "#673ab7" },
+  { type: "call", label: "Cuộc gọi đi", detail: "— · Đã nghe máy", time: "—", icon: PhoneOutgoing, color: "#0891b2" },
+  { type: "tag", label: "Gắn nhãn VIP", detail: "Thêm tag: VIP, Gia hạn", time: "—", icon: Tag, color: "#d97706" },
 ];
 
 const crmFeatures = [
@@ -197,7 +197,7 @@ export function CRMMockup() {
 
         {/* Footer count */}
         <div className="px-3.5 py-2.5" style={{ borderTop: "1px solid rgba(103,58,183,0.08)" }}>
-          <span className="text-[10px]" style={{ color: "#9ca3af" }}>{crmContacts.length} liên hệ · trang 1/12</span>
+          <span className="text-[10px]" style={{ color: "#9ca3af" }}>Danh sách liên hệ</span>
         </div>
       </div>
 

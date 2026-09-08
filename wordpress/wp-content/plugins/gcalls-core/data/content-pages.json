@@ -825,7 +825,21 @@
           "heading": "Dành cho người phải thẩm định một tuyên bố kết quả",
           "eyebrow": "MỤC ĐÍCH VÀ ĐỐI TƯỢNG",
           "lead": "Người đọc case study thường đang cân nhắc một quyết định có chi phí. Điều họ cần không phải là một con số ấn tượng, mà là đủ thông tin để biết con số đó có áp dụng được cho hoàn cảnh của mình hay không.",
-          "note": "Tiêu chuẩn dưới đây áp dụng cho mọi nội dung Gcalls công bố, không chỉ cho case study."
+          "note": "Tiêu chuẩn dưới đây áp dụng cho mọi nội dung Gcalls công bố, không chỉ cho case study.",
+          "audience": [
+            {
+              "title": "Người phải trình bày phương án với ban lãnh đạo",
+              "body": "Cần biết một kết quả được đo trong bao lâu, trên phạm vi nào và tính bằng cách nào, để không dẫn lại một con số không bảo vệ được."
+            },
+            {
+              "title": "Người phụ trách vận hành đang so sánh nhà cung cấp",
+              "body": "Cần phân biệt giữa kết quả gắn với một hoàn cảnh cụ thể và tuyên bố chung áp dụng cho mọi doanh nghiệp."
+            },
+            {
+              "title": "Doanh nghiệp đang dùng Gcalls và cân nhắc chia sẻ câu chuyện",
+              "body": "Cần biết trước Gcalls sẽ hỏi những gì, công bố những gì và doanh nghiệp giữ quyền quyết định tới đâu."
+            }
+          ]
         },
         {
           "type": "cards",
@@ -1096,7 +1110,8 @@
               "body": "",
               "href": "/bang-gia/"
             }
-          ]
+          ],
+          "variant": "related"
         }
       ],
       "faq": [],
@@ -1133,7 +1148,25 @@
           "heading": "Dành cho tổ chức đang cân nhắc làm việc cùng Gcalls",
           "eyebrow": "MỤC ĐÍCH VÀ ĐỐI TƯỢNG",
           "lead": "Trang này viết cho thời điểm bạn muốn biết hợp tác với Gcalls sẽ diễn ra thế nào, cần chuẩn bị gì, và điều gì phải được thống nhất trước khi bất kỳ bên nào nói tới cam kết công khai.",
-          "note": "Trang này không cam kết rằng mọi hình thức hợp tác đều đang mở. Hình thức khả thi cho một tổ chức cụ thể được xác định sau khi hai bên trao đổi."
+          "note": "Trang này không cam kết rằng mọi hình thức hợp tác đều đang mở. Hình thức khả thi cho một tổ chức cụ thể được xác định sau khi hai bên trao đổi.",
+          "audience": [
+            {
+              "title": "Đơn vị triển khai và tư vấn hệ thống",
+              "body": "Đang triển khai CRM, Helpdesk hoặc hệ thống vận hành cho doanh nghiệp và cần bổ sung phần kênh thoại vào phạm vi của mình."
+            },
+            {
+              "title": "Nhà cung cấp công nghệ và nền tảng",
+              "body": "Có sản phẩm mà khách hàng thường dùng song song với tổng đài, và muốn đánh giá khả năng kết nối kỹ thuật giữa hai hệ thống."
+            },
+            {
+              "title": "Đơn vị giới thiệu và kinh doanh giải pháp",
+              "body": "Có tệp khách hàng doanh nghiệp và muốn tìm hiểu hình thức giới thiệu hoặc phân phối giải pháp, cùng ranh giới thương mại đi kèm."
+            },
+            {
+              "title": "Đội ngũ nội bộ đang thẩm định nhà cung cấp",
+              "body": "Cần biết Gcalls đặt ra tiêu chí gì cho một quan hệ hợp tác, vì đó cũng là cách Gcalls tự ràng buộc mình trong quan hệ đó."
+            }
+          ]
         },
         {
           "type": "cards",
@@ -1447,7 +1480,21 @@
           "heading": "Dành cho người phải xây dựng phương án, không chỉ chọn công cụ",
           "eyebrow": "MỤC ĐÍCH VÀ ĐỐI TƯỢNG",
           "lead": "Tài liệu dài phù hợp khi người đọc cần hiểu toàn bộ một chủ đề để tự thiết kế cách làm cho doanh nghiệp mình, thay vì tìm câu trả lời cho một câu hỏi đơn lẻ.",
-          "note": "Nếu bạn chỉ cần trả lời một câu hỏi cụ thể, trang FAQ và trang Guides thường nhanh hơn tài liệu dài."
+          "note": "Nếu bạn chỉ cần trả lời một câu hỏi cụ thể, trang FAQ và trang Guides thường nhanh hơn tài liệu dài.",
+          "audience": [
+            {
+              "title": "Người xây dựng quy trình vận hành",
+              "body": "Cần một khung tham chiếu đầy đủ để thiết kế luồng làm việc, phân vai và tiêu chí đánh giá cho đội ngũ."
+            },
+            {
+              "title": "Người chuẩn bị dự án chuyển đổi hệ thống",
+              "body": "Cần hiểu các hạng mục kỹ thuật, dữ liệu và quản trị thay đổi trước khi lập kế hoạch triển khai."
+            },
+            {
+              "title": "Người phụ trách chất lượng và tuân thủ",
+              "body": "Cần nắm cách thiết lập tiêu chí, cách lưu vết hội thoại và ranh giới khi dùng kết quả phân tích tự động để đánh giá con người."
+            }
+          ]
         },
         {
           "type": "cards",
@@ -1594,7 +1641,21 @@
           "heading": "Trả lời trước những câu hỏi thường xuất hiện ở cuộc gọi tư vấn đầu tiên",
           "eyebrow": "MỤC ĐÍCH VÀ ĐỐI TƯỢNG",
           "lead": "Trang này dành cho người đang tìm hiểu và muốn tự trả lời phần lớn câu hỏi trước khi trao đổi với đội ngũ kinh doanh, để cuộc trao đổi sau đó tập trung vào bối cảnh riêng của doanh nghiệp.",
-          "note": "Nếu câu hỏi của bạn không có ở đây, hoặc phụ thuộc vào hệ thống cụ thể doanh nghiệp đang dùng, hãy gửi trực tiếp cho đội ngũ Gcalls."
+          "note": "Nếu câu hỏi của bạn không có ở đây, hoặc phụ thuộc vào hệ thống cụ thể doanh nghiệp đang dùng, hãy gửi trực tiếp cho đội ngũ Gcalls.",
+          "audience": [
+            {
+              "title": "Doanh nghiệp đang tìm hiểu lần đầu",
+              "body": "Cần biết Gcalls có những sản phẩm nào, khác nhau ra sao và sản phẩm nào phù hợp với bài toán hiện tại."
+            },
+            {
+              "title": "Người phụ trách hệ thống đang thẩm định kỹ thuật",
+              "body": "Cần biết phạm vi tích hợp, cách dữ liệu được đồng bộ và những gì phụ thuộc vào nền tảng bên thứ ba."
+            },
+            {
+              "title": "Doanh nghiệp đang chuẩn bị mở rộng phạm vi sử dụng",
+              "body": "Cần biết những gì thay đổi khi tăng số người dùng, thêm kênh, thêm thị trường hoặc thêm yêu cầu kiểm soát chất lượng."
+            }
+          ]
         },
         {
           "type": "prose",
@@ -1868,29 +1929,40 @@
             {
               "title": "Gcalls Plus",
               "body": "Lớp nghe gọi trên trình duyệt — phần thực hiện cuộc gọi của doanh nghiệp.",
-              "href": "/gcalls-plus-webphone/"
+              "href": "/gcalls-plus-webphone/",
+              "need": "Lớp nghe gọi trên trình duyệt — phần thực hiện cuộc gọi của doanh nghiệp.",
+              "product": "Gcalls Plus"
             },
             {
               "title": "Helpdesk Integration",
               "body": "Giải pháp tích hợp Helpdesk nói chung, khi doanh nghiệp chưa xác định nền tảng.",
-              "href": "/tong-dai-tich-hop-helpdesk/"
+              "href": "/tong-dai-tich-hop-helpdesk/",
+              "need": "Giải pháp tích hợp Helpdesk nói chung, khi doanh nghiệp chưa xác định nền tảng.",
+              "product": "Helpdesk Integration"
             },
             {
               "title": "Freshdesk Integration",
               "body": "Workflow riêng cho đội Support đã sử dụng Freshdesk để quản lý ticket.",
-              "current": true
+              "current": true,
+              "need": "Workflow riêng cho đội Support đã sử dụng Freshdesk để quản lý ticket.",
+              "product": "Freshdesk Integration"
             },
             {
               "title": "Gcalls CX",
               "body": "Quản lý giao tiếp đa kênh khi doanh nghiệp cần hợp nhất nhiều điểm chạm khách hàng.",
-              "href": "/gcalls-cx/"
+              "href": "/gcalls-cx/",
+              "need": "Quản lý giao tiếp đa kênh khi doanh nghiệp cần hợp nhất nhiều điểm chạm khách hàng.",
+              "product": "Gcalls CX"
             },
             {
               "title": "QA QC Center",
               "body": "Đánh giá chất lượng cuộc gọi với hỗ trợ của AI — không phải chức năng của lớp tích hợp Helpdesk.",
-              "href": "/qc-bot-ai/"
+              "href": "/qc-bot-ai/",
+              "need": "Đánh giá chất lượng cuộc gọi với hỗ trợ của AI — không phải chức năng của lớp tích hợp Helpdesk.",
+              "product": "QA QC Center"
             }
-          ]
+          ],
+          "variant": "decision"
         },
         {
           "type": "cards",
@@ -1952,7 +2024,8 @@
               "body": "",
               "href": "/lien-he/"
             }
-          ]
+          ],
+          "variant": "related"
         },
         {
           "type": "steps",
@@ -2142,21 +2215,30 @@
           "cards": [
             {
               "title": "Inbound Customer Support",
-              "body": "Agent tiếp nhận cuộc gọi trong bối cảnh contact và yêu cầu hỗ trợ đang được quản lý trong Freshdesk."
+              "body": "Agent tiếp nhận cuộc gọi trong bối cảnh contact và yêu cầu hỗ trợ đang được quản lý trong Freshdesk.",
+              "role": "Inbound Customer Support",
+              "flow": "Agent tiếp nhận cuộc gọi trong bối cảnh contact và yêu cầu hỗ trợ đang được quản lý trong Freshdesk."
             },
             {
               "title": "Ticket Follow-up",
-              "body": "Nhân viên gọi lại cho khách hàng và tiếp tục xử lý ticket từ context hiện có."
+              "body": "Nhân viên gọi lại cho khách hàng và tiếp tục xử lý ticket từ context hiện có.",
+              "role": "Ticket Follow-up",
+              "flow": "Nhân viên gọi lại cho khách hàng và tiếp tục xử lý ticket từ context hiện có."
             },
             {
               "title": "SaaS Support",
-              "body": "Đội Support theo dõi cuộc gọi và ticket gần hơn trong quá trình xử lý vấn đề sản phẩm hoặc dịch vụ."
+              "body": "Đội Support theo dõi cuộc gọi và ticket gần hơn trong quá trình xử lý vấn đề sản phẩm hoặc dịch vụ.",
+              "role": "SaaS Support",
+              "flow": "Đội Support theo dõi cuộc gọi và ticket gần hơn trong quá trình xử lý vấn đề sản phẩm hoặc dịch vụ."
             },
             {
               "title": "E-commerce Customer Service",
-              "body": "Đội CSKH sử dụng customer và support context để tiếp tục giải quyết yêu cầu sau cuộc gọi."
+              "body": "Đội CSKH sử dụng customer và support context để tiếp tục giải quyết yêu cầu sau cuộc gọi.",
+              "role": "E-commerce Customer Service",
+              "flow": "Đội CSKH sử dụng customer và support context để tiếp tục giải quyết yêu cầu sau cuộc gọi."
             }
-          ]
+          ],
+          "variant": "usecases"
         },
         {
           "type": "prose",
@@ -2483,7 +2565,8 @@
               "body": "",
               "href": "/uoc-tinh-chi-phi/"
             }
-          ]
+          ],
+          "variant": "related"
         }
       ],
       "faq": [],
@@ -2720,7 +2803,21 @@
           "heading": "Để đọc tài liệu và báo giá mà không phải đoán nghĩa",
           "eyebrow": "MỤC ĐÍCH VÀ ĐỐI TƯỢNG",
           "lead": "Tài liệu kỹ thuật và báo giá trong lĩnh vực này dùng rất nhiều thuật ngữ tiếng Anh, và cùng một từ đôi khi được các nhà cung cấp hiểu khác nhau. Trang này giải thích nghĩa phổ biến của từng thuật ngữ để người đọc hỏi lại đúng chỗ.",
-          "note": "Nếu một thuật ngữ xuất hiện trong báo giá bạn đang đọc mà không có ở đây, hãy hỏi nhà cung cấp mô tả chính xác phạm vi của nó trước khi so sánh giá."
+          "note": "Nếu một thuật ngữ xuất hiện trong báo giá bạn đang đọc mà không có ở đây, hãy hỏi nhà cung cấp mô tả chính xác phạm vi của nó trước khi so sánh giá.",
+          "audience": [
+            {
+              "title": "Người đọc báo giá và hồ sơ giải pháp",
+              "body": "Cần hiểu chính xác từng hạng mục được chào để so sánh giữa các nhà cung cấp trên cùng một mặt bằng."
+            },
+            {
+              "title": "Người mới tiếp nhận công việc vận hành tổng đài",
+              "body": "Cần nắm nhanh các khái niệm mà đội ngũ đang dùng hằng ngày trong trao đổi nội bộ."
+            },
+            {
+              "title": "Người phối hợp giữa bộ phận kinh doanh và bộ phận kỹ thuật",
+              "body": "Cần cùng một cách hiểu về API, SDK, đồng bộ dữ liệu và cam kết dịch vụ để trao đổi không lệch nhau."
+            }
+          ]
         },
         {
           "type": "prose",
@@ -2946,7 +3043,21 @@
           "heading": "Dành cho người phải chuẩn bị quyết định, không chỉ người tìm hiểu",
           "eyebrow": "MỤC ĐÍCH VÀ ĐỐI TƯỢNG",
           "lead": "Mỗi lộ trình được viết cho thời điểm doanh nghiệp đã nhận ra vấn đề nhưng chưa biết cần làm rõ những gì trước khi chọn phương án hoặc yêu cầu báo giá.",
-          "note": "Các lộ trình này giúp chuẩn bị câu hỏi đúng. Kết luận cuối cùng — phạm vi, cấu hình và thời gian triển khai — chỉ có sau bước khảo sát hệ thống thực tế của doanh nghiệp."
+          "note": "Các lộ trình này giúp chuẩn bị câu hỏi đúng. Kết luận cuối cùng — phạm vi, cấu hình và thời gian triển khai — chỉ có sau bước khảo sát hệ thống thực tế của doanh nghiệp.",
+          "audience": [
+            {
+              "title": "Người đề xuất phương án nội bộ",
+              "body": "Cần một danh sách hạng mục cần làm rõ để trình bày với ban lãnh đạo, thay vì chỉ so sánh tính năng giữa các nhà cung cấp."
+            },
+            {
+              "title": "Người phụ trách vận hành sẽ dùng hệ thống",
+              "body": "Cần biết thay đổi này ảnh hưởng thế nào tới thao tác hằng ngày của đội ngũ và cần chuẩn bị gì trước khi chuyển đổi."
+            },
+            {
+              "title": "Người phụ trách hệ thống và dữ liệu",
+              "body": "Cần xác định phạm vi kết nối kỹ thuật khả thi với hệ thống hiện có và những gì phụ thuộc vào nền tảng bên thứ ba."
+            }
+          ]
         },
         {
           "type": "cards",
@@ -3218,7 +3329,8 @@
               "body": "",
               "href": "/lien-he/"
             }
-          ]
+          ],
+          "variant": "related"
         },
         {
           "type": "steps",
@@ -3392,21 +3504,30 @@
           "cards": [
             {
               "title": "Inbound Sales",
-              "body": "Sales nhận lead trong HubSpot, thực hiện cuộc gọi và tiếp tục follow-up từ customer context hiện có."
+              "body": "Sales nhận lead trong HubSpot, thực hiện cuộc gọi và tiếp tục follow-up từ customer context hiện có.",
+              "role": "Inbound Sales",
+              "flow": "Sales nhận lead trong HubSpot, thực hiện cuộc gọi và tiếp tục follow-up từ customer context hiện có."
             },
             {
               "title": "Lead Follow-up",
-              "body": "Nhân viên làm việc với danh sách lead/contact và gọi theo quy trình thay vì duy trì danh sách số điện thoại riêng."
+              "body": "Nhân viên làm việc với danh sách lead/contact và gọi theo quy trình thay vì duy trì danh sách số điện thoại riêng.",
+              "role": "Lead Follow-up",
+              "flow": "Nhân viên làm việc với danh sách lead/contact và gọi theo quy trình thay vì duy trì danh sách số điện thoại riêng."
             },
             {
               "title": "Customer Service",
-              "body": "Agent sử dụng customer record và lịch sử liên quan để có thêm bối cảnh khi khách hàng gọi đến."
+              "body": "Agent sử dụng customer record và lịch sử liên quan để có thêm bối cảnh khi khách hàng gọi đến.",
+              "role": "Customer Service",
+              "flow": "Agent sử dụng customer record và lịch sử liên quan để có thêm bối cảnh khi khách hàng gọi đến."
             },
             {
               "title": "Customer Success",
-              "body": "Đội CS có thể giữ hoạt động gọi gần hơn với dữ liệu vòng đời khách hàng đang quản lý trên HubSpot."
+              "body": "Đội CS có thể giữ hoạt động gọi gần hơn với dữ liệu vòng đời khách hàng đang quản lý trên HubSpot.",
+              "role": "Customer Success",
+              "flow": "Đội CS có thể giữ hoạt động gọi gần hơn với dữ liệu vòng đời khách hàng đang quản lý trên HubSpot."
             }
-          ]
+          ],
+          "variant": "usecases"
         },
         {
           "type": "prose",
@@ -3523,7 +3644,25 @@
           "heading": "Để bạn tự trả lời câu hỏi \"Gcalls có hợp với đội của mình không?\"",
           "eyebrow": "MỤC ĐÍCH VÀ ĐỐI TƯỢNG",
           "lead": "Trang này viết cho thời điểm bạn đang cân nhắc, chưa muốn nói chuyện với đội kinh doanh, và cần một cách đối chiếu Gcalls với cách đội ngũ mình đang làm việc.",
-          "note": "Trang này không thay thế bước khảo sát. Mức độ phù hợp thực tế phụ thuộc vào hệ thống hiện có, quy mô đội ngũ và quy định áp dụng cho từng doanh nghiệp."
+          "note": "Trang này không thay thế bước khảo sát. Mức độ phù hợp thực tế phụ thuộc vào hệ thống hiện có, quy mô đội ngũ và quy định áp dụng cho từng doanh nghiệp.",
+          "audience": [
+            {
+              "title": "Doanh nghiệp đang đánh giá mức độ phù hợp",
+              "body": "Cần biết Gcalls được thiết kế cho kiểu vận hành nào, và quan trọng không kém: kiểu vận hành nào thì chưa cần tới nó."
+            },
+            {
+              "title": "Người phụ trách vận hành đội nghe gọi",
+              "body": "Cần so sánh cách đội mình đang phân bổ cuộc gọi, ghi nhận thông tin và bàn giao khách hàng với các mô hình được mô tả ở đây."
+            },
+            {
+              "title": "Người chuẩn bị đề xuất nội bộ",
+              "body": "Cần hiểu quá trình làm việc với Gcalls gồm những bước nào để dự trù nguồn lực và thời gian của các bộ phận liên quan."
+            },
+            {
+              "title": "Doanh nghiệp đang dùng Gcalls",
+              "body": "Cần biết Gcalls sẽ hỏi những gì và công bố những gì nếu bạn cân nhắc chia sẻ câu chuyện triển khai của mình."
+            }
+          ]
         },
         {
           "type": "cards",
@@ -3866,6 +4005,12 @@
       },
       "sections": [
         {
+          "type": "prose",
+          "from": "directAnswer",
+          "heading": "Gcalls phù hợp với những ngành nào?",
+          "body": "Gcalls phù hợp với doanh nghiệp có hoạt động liên hệ khách hàng thường xuyên qua điện thoại và cần theo dõi lịch sử trao đổi. Website hiện trình bày sáu bối cảnh ngành: giáo dục, tài chính, bảo hiểm, bất động sản, thương mại điện tử và BPO. Sản phẩm và giải pháp được chọn theo bài toán vận hành của ngành đó, không phải theo một cấu hình mặc định."
+        },
+        {
           "type": "cards",
           "from": "industries/index — hub",
           "heading": "Sáu ngành đang có trang riêng",
@@ -3932,6 +4077,39 @@
             }
           ],
           "note": "Các nhãn sản phẩm trên mỗi thẻ là hướng thường phù hợp với bối cảnh ngành đó, không phải cấu hình bắt buộc. Cấu hình cuối cùng được xác định theo quy trình và hệ thống thực tế của doanh nghiệp."
+        },
+        {
+          "type": "cards",
+          "from": "links",
+          "variant": "related",
+          "heading": "Xem thêm",
+          "cards": [
+            {
+              "title": "Tất cả sản phẩm",
+              "body": "",
+              "href": "/san-pham/"
+            },
+            {
+              "title": "Tất cả giải pháp",
+              "body": "",
+              "href": "/giai-phap/"
+            },
+            {
+              "title": "Danh mục tích hợp",
+              "body": "",
+              "href": "/tich-hop/"
+            },
+            {
+              "title": "Case Studies",
+              "body": "",
+              "href": "/tai-nguyen/case-studies/"
+            },
+            {
+              "title": "Ước tính chi phí",
+              "body": "",
+              "href": "/uoc-tinh-chi-phi/"
+            }
+          ]
         }
       ],
       "faq": [],
@@ -4154,7 +4332,8 @@
               "body": "",
               "href": "/lien-he/"
             }
-          ]
+          ],
+          "variant": "related"
         },
         {
           "type": "steps",
@@ -4261,24 +4440,33 @@
             {
               "title": "Gcalls Plus",
               "body": "Lớp nghe gọi trên trình duyệt — phần thực hiện cuộc gọi của doanh nghiệp.",
-              "href": "/gcalls-plus-webphone/"
+              "href": "/gcalls-plus-webphone/",
+              "need": "Lớp nghe gọi trên trình duyệt — phần thực hiện cuộc gọi của doanh nghiệp.",
+              "product": "Gcalls Plus"
             },
             {
               "title": "CRM Integration",
               "body": "Giải pháp tích hợp CRM nói chung, khi doanh nghiệp chưa xác định nền tảng.",
-              "href": "/tong-dai-tich-hop-crm/"
+              "href": "/tong-dai-tich-hop-crm/",
+              "need": "Giải pháp tích hợp CRM nói chung, khi doanh nghiệp chưa xác định nền tảng.",
+              "product": "CRM Integration"
             },
             {
               "title": "Salesforce Integration",
               "body": "Workflow riêng cho doanh nghiệp đã sử dụng Salesforce làm hệ thống khách hàng.",
-              "current": true
+              "current": true,
+              "need": "Workflow riêng cho doanh nghiệp đã sử dụng Salesforce làm hệ thống khách hàng.",
+              "product": "Salesforce Integration"
             },
             {
               "title": "QA QC Center",
               "body": "Đánh giá chất lượng cuộc gọi với hỗ trợ của AI — không phải chức năng của lớp tích hợp CRM.",
-              "href": "/qc-bot-ai/"
+              "href": "/qc-bot-ai/",
+              "need": "Đánh giá chất lượng cuộc gọi với hỗ trợ của AI — không phải chức năng của lớp tích hợp CRM.",
+              "product": "QA QC Center"
             }
-          ]
+          ],
+          "variant": "decision"
         },
         {
           "type": "steps",
@@ -4363,21 +4551,30 @@
           "cards": [
             {
               "title": "Enterprise Sales",
-              "body": "Sales làm việc với lead và opportunity trong Salesforce, thực hiện cuộc gọi và tiếp tục follow-up từ customer context hiện có."
+              "body": "Sales làm việc với lead và opportunity trong Salesforce, thực hiện cuộc gọi và tiếp tục follow-up từ customer context hiện có.",
+              "role": "Enterprise Sales",
+              "flow": "Sales làm việc với lead và opportunity trong Salesforce, thực hiện cuộc gọi và tiếp tục follow-up từ customer context hiện có."
             },
             {
               "title": "Sales Operations",
-              "body": "Đội vận hành có thêm dữ liệu cuộc gọi phù hợp để theo dõi quy trình tương tác gần hơn với CRM."
+              "body": "Đội vận hành có thêm dữ liệu cuộc gọi phù hợp để theo dõi quy trình tương tác gần hơn với CRM.",
+              "role": "Sales Operations",
+              "flow": "Đội vận hành có thêm dữ liệu cuộc gọi phù hợp để theo dõi quy trình tương tác gần hơn với CRM."
             },
             {
               "title": "Customer Service",
-              "body": "Agent sử dụng customer record và lịch sử liên quan để có thêm context khi tiếp nhận cuộc gọi."
+              "body": "Agent sử dụng customer record và lịch sử liên quan để có thêm context khi tiếp nhận cuộc gọi.",
+              "role": "Customer Service",
+              "flow": "Agent sử dụng customer record và lịch sử liên quan để có thêm context khi tiếp nhận cuộc gọi."
             },
             {
               "title": "Account Management",
-              "body": "Người phụ trách tài khoản có thể giữ hoạt động liên hệ gần hơn với dữ liệu và quá trình chăm sóc khách hàng."
+              "body": "Người phụ trách tài khoản có thể giữ hoạt động liên hệ gần hơn với dữ liệu và quá trình chăm sóc khách hàng.",
+              "role": "Account Management",
+              "flow": "Người phụ trách tài khoản có thể giữ hoạt động liên hệ gần hơn với dữ liệu và quá trình chăm sóc khách hàng."
             }
-          ]
+          ],
+          "variant": "usecases"
         },
         {
           "type": "prose",
@@ -4659,7 +4856,8 @@
               "body": "",
               "href": "/nganh/"
             }
-          ]
+          ],
+          "variant": "related"
         }
       ],
       "faq": [],
@@ -4891,6 +5089,12 @@
       },
       "sections": [
         {
+          "type": "prose",
+          "from": "directAnswer",
+          "heading": "Trung tâm tài nguyên Gcalls có những gì?",
+          "body": "Trung tâm tài nguyên được chia thành sáu danh mục theo mục đích sử dụng: Blog cho góc nhìn vận hành, Guides cho lộ trình đánh giá trước khi triển khai, Case Studies cho tiêu chuẩn bằng chứng, Ebook cho chủ đề chuyên sâu, Glossary cho thuật ngữ và FAQ cho câu hỏi thường gặp."
+        },
+        {
           "type": "cards",
           "from": "resources/index — RESOURCE_NAV",
           "heading": "Các nhóm tài nguyên",
@@ -4949,6 +5153,39 @@
             }
           ],
           "note": "Các trang sản phẩm và giải pháp đều có phần FAQ riêng theo chủ đề, nên đó thường là nơi trả lời nhanh nhất cho câu hỏi về một sản phẩm cụ thể."
+        },
+        {
+          "type": "cards",
+          "from": "links",
+          "variant": "related",
+          "heading": "Có thể xem thêm",
+          "cards": [
+            {
+              "title": "Gcalls Plus Webphone",
+              "body": "",
+              "href": "/gcalls-plus-webphone/"
+            },
+            {
+              "title": "QA QC Center",
+              "body": "",
+              "href": "/qc-bot-ai/"
+            },
+            {
+              "title": "Gcalls CX",
+              "body": "",
+              "href": "/gcalls-cx/"
+            },
+            {
+              "title": "Tất cả giải pháp",
+              "body": "",
+              "href": "/giai-phap/"
+            },
+            {
+              "title": "Bảng giá Gcalls",
+              "body": "",
+              "href": "/bang-gia/"
+            }
+          ]
         }
       ],
       "faq": [],
@@ -5348,7 +5585,8 @@
               "body": "",
               "href": "/bang-gia/"
             }
-          ]
+          ],
+          "variant": "related"
         }
       ],
       "faq": [],
@@ -5405,24 +5643,33 @@
             {
               "title": "Tổng đài quốc tế",
               "body": "Doanh nghiệp cần đầu số và cấu hình liên lạc cho một hoặc nhiều thị trường nước ngoài.",
-              "current": true
+              "current": true,
+              "need": "Doanh nghiệp cần đầu số và cấu hình liên lạc cho một hoặc nhiều thị trường nước ngoài.",
+              "product": "Tổng đài quốc tế"
             },
             {
               "title": "Gcalls Plus Webphone",
               "body": "Đội ngũ cần kênh nghe gọi trên trình duyệt và quản lý hoạt động cuộc gọi.",
-              "href": "/gcalls-plus-webphone/"
+              "href": "/gcalls-plus-webphone/",
+              "need": "Đội ngũ cần kênh nghe gọi trên trình duyệt và quản lý hoạt động cuộc gọi.",
+              "product": "Gcalls Plus Webphone"
             },
             {
               "title": "CRM Integration",
               "body": "Sales/CSKH vận hành quanh lead, contact và workflow quản lý khách hàng.",
-              "href": "/tong-dai-tich-hop-crm/"
+              "href": "/tong-dai-tich-hop-crm/",
+              "need": "Sales/CSKH vận hành quanh lead, contact và workflow quản lý khách hàng.",
+              "product": "CRM Integration"
             },
             {
               "title": "Gcalls CX",
               "body": "Doanh nghiệp cần hội thoại tập trung trên nhiều kênh giao tiếp, không chỉ kênh thoại.",
-              "href": "/gcalls-cx/"
+              "href": "/gcalls-cx/",
+              "need": "Doanh nghiệp cần hội thoại tập trung trên nhiều kênh giao tiếp, không chỉ kênh thoại.",
+              "product": "Gcalls CX"
             }
-          ]
+          ],
+          "variant": "decision"
         },
         {
           "type": "steps",
@@ -5747,21 +5994,30 @@
           "cards": [
             {
               "title": "Local presence",
-              "body": "Doanh nghiệp muốn khách hàng tại thị trường nước ngoài thấy một đầu số quen thuộc để dễ liên hệ."
+              "body": "Doanh nghiệp muốn khách hàng tại thị trường nước ngoài thấy một đầu số quen thuộc để dễ liên hệ.",
+              "role": "Local presence",
+              "flow": "Doanh nghiệp muốn khách hàng tại thị trường nước ngoài thấy một đầu số quen thuộc để dễ liên hệ."
             },
             {
               "title": "Sales",
-              "body": "Đội bán hàng gọi ra tới khách hàng và đối tác ở thị trường quốc tế từ cùng một hệ thống."
+              "body": "Đội bán hàng gọi ra tới khách hàng và đối tác ở thị trường quốc tế từ cùng một hệ thống.",
+              "role": "Sales",
+              "flow": "Đội bán hàng gọi ra tới khách hàng và đối tác ở thị trường quốc tế từ cùng một hệ thống."
             },
             {
               "title": "Customer Service",
-              "body": "Đội CSKH tiếp nhận yêu cầu từ khách hàng nước ngoài và theo dõi lịch sử hỗ trợ tập trung."
+              "body": "Đội CSKH tiếp nhận yêu cầu từ khách hàng nước ngoài và theo dõi lịch sử hỗ trợ tập trung.",
+              "role": "Customer Service",
+              "flow": "Đội CSKH tiếp nhận yêu cầu từ khách hàng nước ngoài và theo dõi lịch sử hỗ trợ tập trung."
             },
             {
               "title": "BPO / Operations",
-              "body": "Đơn vị vận hành dịch vụ cho khách hàng ở nhiều quốc gia cần nhiều đầu số và phân công theo dự án."
+              "body": "Đơn vị vận hành dịch vụ cho khách hàng ở nhiều quốc gia cần nhiều đầu số và phân công theo dự án.",
+              "role": "BPO / Operations",
+              "flow": "Đơn vị vận hành dịch vụ cho khách hàng ở nhiều quốc gia cần nhiều đầu số và phân công theo dự án."
             }
-          ]
+          ],
+          "variant": "usecases"
         }
       ],
       "faq": [
@@ -5876,24 +6132,33 @@
             {
               "title": "CRM Integration",
               "body": "Sales/CSKH đã vận hành quanh CRM record và dữ liệu khách hàng.",
-              "current": true
+              "current": true,
+              "need": "Sales/CSKH đã vận hành quanh CRM record và dữ liệu khách hàng.",
+              "product": "CRM Integration"
             },
             {
               "title": "Helpdesk Integration",
               "body": "Đội hỗ trợ vận hành quanh ticket và quy trình xử lý yêu cầu.",
-              "href": "/tong-dai-tich-hop-helpdesk/"
+              "href": "/tong-dai-tich-hop-helpdesk/",
+              "need": "Đội hỗ trợ vận hành quanh ticket và quy trình xử lý yêu cầu.",
+              "product": "Helpdesk Integration"
             },
             {
               "title": "Gcalls CX",
               "body": "Doanh nghiệp cần tập trung giao tiếp trên nhiều kênh khách hàng.",
-              "href": "/gcalls-cx/"
+              "href": "/gcalls-cx/",
+              "need": "Doanh nghiệp cần tập trung giao tiếp trên nhiều kênh khách hàng.",
+              "product": "Gcalls CX"
             },
             {
               "title": "Gcalls Plus",
               "body": "Đội ngũ chủ yếu cần nghe gọi gọn nhẹ trên trình duyệt.",
-              "href": "/gcalls-plus-webphone/"
+              "href": "/gcalls-plus-webphone/",
+              "need": "Đội ngũ chủ yếu cần nghe gọi gọn nhẹ trên trình duyệt.",
+              "product": "Gcalls Plus"
             }
-          ]
+          ],
+          "variant": "decision"
         },
         {
           "type": "cards",
@@ -6275,24 +6540,33 @@
             {
               "title": "Helpdesk Integration",
               "body": "Đội hỗ trợ vận hành quanh ticket, case và quy trình xử lý yêu cầu.",
-              "current": true
+              "current": true,
+              "need": "Đội hỗ trợ vận hành quanh ticket, case và quy trình xử lý yêu cầu.",
+              "product": "Helpdesk Integration"
             },
             {
               "title": "CRM Integration",
               "body": "Sales/CSKH chủ yếu vận hành quanh CRM record, lead và dữ liệu khách hàng.",
-              "href": "/tong-dai-tich-hop-crm/"
+              "href": "/tong-dai-tich-hop-crm/",
+              "need": "Sales/CSKH chủ yếu vận hành quanh CRM record, lead và dữ liệu khách hàng.",
+              "product": "CRM Integration"
             },
             {
               "title": "Gcalls CX",
               "body": "Doanh nghiệp cần tập trung hội thoại trên nhiều kênh khách hàng.",
-              "href": "/gcalls-cx/"
+              "href": "/gcalls-cx/",
+              "need": "Doanh nghiệp cần tập trung hội thoại trên nhiều kênh khách hàng.",
+              "product": "Gcalls CX"
             },
             {
               "title": "Gcalls Plus",
               "body": "Đội ngũ chủ yếu cần nghe gọi gọn nhẹ trên trình duyệt.",
-              "href": "/gcalls-plus-webphone/"
+              "href": "/gcalls-plus-webphone/",
+              "need": "Đội ngũ chủ yếu cần nghe gọi gọn nhẹ trên trình duyệt.",
+              "product": "Gcalls Plus"
             }
-          ]
+          ],
+          "variant": "decision"
         },
         {
           "type": "cards",
@@ -6670,24 +6944,33 @@
             {
               "title": "POS Integration",
               "body": "Đội ngũ cần customer context và dữ liệu bán hàng từ workflow bán lẻ hoặc quản lý đơn hàng.",
-              "current": true
+              "current": true,
+              "need": "Đội ngũ cần customer context và dữ liệu bán hàng từ workflow bán lẻ hoặc quản lý đơn hàng.",
+              "product": "POS Integration"
             },
             {
               "title": "CRM Integration",
               "body": "Sales/CSKH vận hành quanh lead, contact và workflow quản lý khách hàng.",
-              "href": "/tong-dai-tich-hop-crm/"
+              "href": "/tong-dai-tich-hop-crm/",
+              "need": "Sales/CSKH vận hành quanh lead, contact và workflow quản lý khách hàng.",
+              "product": "CRM Integration"
             },
             {
               "title": "Helpdesk Integration",
               "body": "Đội hỗ trợ vận hành quanh ticket và quy trình xử lý yêu cầu.",
-              "href": "/tong-dai-tich-hop-helpdesk/"
+              "href": "/tong-dai-tich-hop-helpdesk/",
+              "need": "Đội hỗ trợ vận hành quanh ticket và quy trình xử lý yêu cầu.",
+              "product": "Helpdesk Integration"
             },
             {
               "title": "Gcalls CX",
               "body": "Doanh nghiệp cần hội thoại tập trung trên nhiều kênh giao tiếp.",
-              "href": "/gcalls-cx/"
+              "href": "/gcalls-cx/",
+              "need": "Doanh nghiệp cần hội thoại tập trung trên nhiều kênh giao tiếp.",
+              "product": "Gcalls CX"
             }
-          ]
+          ],
+          "variant": "decision"
         },
         {
           "type": "cards",
@@ -7078,29 +7361,40 @@
             {
               "title": "Gcalls Plus",
               "body": "Lớp nghe gọi trên trình duyệt — phần thực hiện cuộc gọi của doanh nghiệp.",
-              "href": "/gcalls-plus-webphone/"
+              "href": "/gcalls-plus-webphone/",
+              "need": "Lớp nghe gọi trên trình duyệt — phần thực hiện cuộc gọi của doanh nghiệp.",
+              "product": "Gcalls Plus"
             },
             {
               "title": "Helpdesk Integration",
               "body": "Giải pháp tích hợp Helpdesk nói chung, khi doanh nghiệp chưa xác định nền tảng.",
-              "href": "/tong-dai-tich-hop-helpdesk/"
+              "href": "/tong-dai-tich-hop-helpdesk/",
+              "need": "Giải pháp tích hợp Helpdesk nói chung, khi doanh nghiệp chưa xác định nền tảng.",
+              "product": "Helpdesk Integration"
             },
             {
               "title": "Zendesk Integration",
               "body": "Workflow riêng cho đội Support đã sử dụng Zendesk để quản lý ticket.",
-              "current": true
+              "current": true,
+              "need": "Workflow riêng cho đội Support đã sử dụng Zendesk để quản lý ticket.",
+              "product": "Zendesk Integration"
             },
             {
               "title": "Gcalls CX",
               "body": "Quản lý giao tiếp đa kênh khi doanh nghiệp cần hợp nhất nhiều điểm chạm khách hàng.",
-              "href": "/gcalls-cx/"
+              "href": "/gcalls-cx/",
+              "need": "Quản lý giao tiếp đa kênh khi doanh nghiệp cần hợp nhất nhiều điểm chạm khách hàng.",
+              "product": "Gcalls CX"
             },
             {
               "title": "QA QC Center",
               "body": "Đánh giá chất lượng cuộc gọi với hỗ trợ của AI — không phải chức năng của lớp tích hợp Helpdesk.",
-              "href": "/qc-bot-ai/"
+              "href": "/qc-bot-ai/",
+              "need": "Đánh giá chất lượng cuộc gọi với hỗ trợ của AI — không phải chức năng của lớp tích hợp Helpdesk.",
+              "product": "QA QC Center"
             }
-          ]
+          ],
+          "variant": "decision"
         },
         {
           "type": "cards",
@@ -7162,7 +7456,8 @@
               "body": "",
               "href": "/lien-he/"
             }
-          ]
+          ],
+          "variant": "related"
         },
         {
           "type": "steps",
@@ -7352,21 +7647,30 @@
           "cards": [
             {
               "title": "Inbound Customer Support",
-              "body": "Agent tiếp nhận yêu cầu trong bối cảnh contact và ticket đang được quản lý trong Zendesk."
+              "body": "Agent tiếp nhận yêu cầu trong bối cảnh contact và ticket đang được quản lý trong Zendesk.",
+              "role": "Inbound Customer Support",
+              "flow": "Agent tiếp nhận yêu cầu trong bối cảnh contact và ticket đang được quản lý trong Zendesk."
             },
             {
               "title": "Ticket Follow-up",
-              "body": "Nhân viên gọi lại cho khách hàng và tiếp tục xử lý ticket từ context hiện có."
+              "body": "Nhân viên gọi lại cho khách hàng và tiếp tục xử lý ticket từ context hiện có.",
+              "role": "Ticket Follow-up",
+              "flow": "Nhân viên gọi lại cho khách hàng và tiếp tục xử lý ticket từ context hiện có."
             },
             {
               "title": "SaaS Support",
-              "body": "Đội Support theo dõi cuộc gọi và ticket gần hơn khi xử lý vấn đề sản phẩm hoặc dịch vụ."
+              "body": "Đội Support theo dõi cuộc gọi và ticket gần hơn khi xử lý vấn đề sản phẩm hoặc dịch vụ.",
+              "role": "SaaS Support",
+              "flow": "Đội Support theo dõi cuộc gọi và ticket gần hơn khi xử lý vấn đề sản phẩm hoặc dịch vụ."
             },
             {
               "title": "Enterprise Customer Service",
-              "body": "Đội CSKH duy trì customer và support context khi nhiều nhân viên cùng tham gia xử lý một yêu cầu."
+              "body": "Đội CSKH duy trì customer và support context khi nhiều nhân viên cùng tham gia xử lý một yêu cầu.",
+              "role": "Enterprise Customer Service",
+              "flow": "Đội CSKH duy trì customer và support context khi nhiều nhân viên cùng tham gia xử lý một yêu cầu."
             }
-          ]
+          ],
+          "variant": "usecases"
         },
         {
           "type": "prose",
@@ -7556,24 +7860,33 @@
             {
               "title": "Gcalls Plus",
               "body": "Lớp nghe gọi trên trình duyệt — phần thực hiện cuộc gọi của doanh nghiệp.",
-              "href": "/gcalls-plus-webphone/"
+              "href": "/gcalls-plus-webphone/",
+              "need": "Lớp nghe gọi trên trình duyệt — phần thực hiện cuộc gọi của doanh nghiệp.",
+              "product": "Gcalls Plus"
             },
             {
               "title": "CRM Integration",
               "body": "Giải pháp tích hợp CRM nói chung, khi doanh nghiệp chưa xác định nền tảng.",
-              "href": "/tong-dai-tich-hop-crm/"
+              "href": "/tong-dai-tich-hop-crm/",
+              "need": "Giải pháp tích hợp CRM nói chung, khi doanh nghiệp chưa xác định nền tảng.",
+              "product": "CRM Integration"
             },
             {
               "title": "Zoho CRM Integration",
               "body": "Workflow riêng cho doanh nghiệp đã sử dụng Zoho CRM làm hệ thống khách hàng.",
-              "current": true
+              "current": true,
+              "need": "Workflow riêng cho doanh nghiệp đã sử dụng Zoho CRM làm hệ thống khách hàng.",
+              "product": "Zoho CRM Integration"
             },
             {
               "title": "Gcalls CX",
               "body": "Giao tiếp đa kênh khi doanh nghiệp cần hợp nhất nhiều điểm chạm khách hàng.",
-              "href": "/gcalls-cx/"
+              "href": "/gcalls-cx/",
+              "need": "Giao tiếp đa kênh khi doanh nghiệp cần hợp nhất nhiều điểm chạm khách hàng.",
+              "product": "Gcalls CX"
             }
-          ]
+          ],
+          "variant": "decision"
         },
         {
           "type": "cards",
@@ -7635,7 +7948,8 @@
               "body": "",
               "href": "/lien-he/"
             }
-          ]
+          ],
+          "variant": "related"
         },
         {
           "type": "steps",
@@ -7815,21 +8129,30 @@
           "cards": [
             {
               "title": "SME Sales",
-              "body": "Đội Sales làm việc với lead/contact trong Zoho CRM và tiếp tục follow-up dựa trên customer context đang có."
+              "body": "Đội Sales làm việc với lead/contact trong Zoho CRM và tiếp tục follow-up dựa trên customer context đang có.",
+              "role": "SME Sales",
+              "flow": "Đội Sales làm việc với lead/contact trong Zoho CRM và tiếp tục follow-up dựa trên customer context đang có."
             },
             {
               "title": "Startup Sales Operations",
-              "body": "Đội vận hành có thể tổ chức hoạt động gọi gần hơn với dữ liệu CRM thay vì duy trì các danh sách rời rạc."
+              "body": "Đội vận hành có thể tổ chức hoạt động gọi gần hơn với dữ liệu CRM thay vì duy trì các danh sách rời rạc.",
+              "role": "Startup Sales Operations",
+              "flow": "Đội vận hành có thể tổ chức hoạt động gọi gần hơn với dữ liệu CRM thay vì duy trì các danh sách rời rạc."
             },
             {
               "title": "Customer Service",
-              "body": "Agent sử dụng thông tin khách hàng và lịch sử liên quan để có thêm bối cảnh khi xử lý cuộc gọi."
+              "body": "Agent sử dụng thông tin khách hàng và lịch sử liên quan để có thêm bối cảnh khi xử lý cuộc gọi.",
+              "role": "Customer Service",
+              "flow": "Agent sử dụng thông tin khách hàng và lịch sử liên quan để có thêm bối cảnh khi xử lý cuộc gọi."
             },
             {
               "title": "Customer Success",
-              "body": "Đội CS giữ hoạt động liên hệ gần hơn với dữ liệu vòng đời khách hàng đang theo dõi trong Zoho CRM."
+              "body": "Đội CS giữ hoạt động liên hệ gần hơn với dữ liệu vòng đời khách hàng đang theo dõi trong Zoho CRM.",
+              "role": "Customer Success",
+              "flow": "Đội CS giữ hoạt động liên hệ gần hơn với dữ liệu vòng đời khách hàng đang theo dõi trong Zoho CRM."
             }
-          ]
+          ],
+          "variant": "usecases"
         },
         {
           "type": "prose",

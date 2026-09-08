@@ -149,12 +149,12 @@ export function APIManagerMockup() {
       <div className="flex items-center gap-3 px-5 py-3" style={{ background: "#fbf9ff", borderBottom: "1px solid rgba(103,58,183,0.08)" }}>
         <div className="flex items-center gap-2 flex-1 px-3 py-2 rounded-xl" style={{ background: "#f0ecf9" }}>
           <Key size={11} color="#673ab7" />
-          <span className="text-[11px] font-medium flex-1" style={{ color: "#673ab7", fontFamily: "'DM Mono',monospace" }}>sk-gc-••••••••••••••••4f2a</span>
+          <span className="text-[11px] font-medium flex-1" style={{ color: "#673ab7", fontFamily: "'DM Mono',monospace" }}>sk-gc-••••••••••••••••••••</span>
           <button className="text-[9px] px-2 py-0.5 rounded font-semibold" style={{ background: "#673ab7", color: "#fff" }}>Copy</button>
         </div>
         <div className="flex items-center gap-1.5 px-3 py-2 rounded-xl" style={{ background: "#f0fdf4" }}>
           <Activity size={11} color="#16a34a" />
-          <span className="text-[11px] font-medium" style={{ color: "#16a34a" }}>2.4k req/h</span>
+          <span className="text-[11px] font-medium" style={{ color: "#16a34a" }}>— req/h</span>
         </div>
       </div>
 
@@ -186,16 +186,16 @@ export function APIManagerMockup() {
       {/* Response preview */}
       <div className="px-5 py-4" style={{ background: "#0d0d1a" }}>
         <div className="flex items-center justify-between mb-2">
-          <span className="text-[10px] font-bold" style={{ color: "rgba(255,255,255,0.4)" }}>RESPONSE · 200 OK · 48ms</span>
+          <span className="text-[10px] font-bold" style={{ color: "rgba(255,255,255,0.4)" }}>RESPONSE · 200 OK · —</span>
           <span className="text-[9px] px-2 py-0.5 rounded font-medium" style={{ background: "rgba(34,197,94,0.15)", color: "#4ade80" }}>JSON</span>
         </div>
         <pre className="text-[10px] leading-relaxed overflow-x-auto" style={{ color: "#a78bfa", fontFamily: "'DM Mono',monospace" }}>
 {`{
-  "id": "call_8f3kd9",
+  "id": "call_…",
   "contact": "Khách hàng 01",
   "phone": "—",
   "status": "answered",
-  "duration": 222,
+  "duration": null,
   "recording_url": "https://..."
 }`}
         </pre>
@@ -265,8 +265,8 @@ export function CustomerPopupMockup() {
         <div className="flex flex-col gap-1.5 mb-3 p-2.5 rounded-xl" style={{ background: "#f6f3fc" }}>
           <div className="text-[9px] font-bold uppercase tracking-wide mb-1" style={{ color: "#9ca3af" }}>Lịch sử gần nhất</div>
           {[
-            { icon: PhoneOutgoing, label: "Gọi đi · 3:42", time: "Hôm nay 09:14", color: "#673ab7" },
-            { icon: FileText,      label: "Ghi chú: Cần gửi proposal", time: "Hôm nay 09:35", color: "#d97706" },
+            { icon: PhoneOutgoing, label: "Gọi đi · —", time: "—", color: "#673ab7" },
+            { icon: FileText,      label: "Ghi chú sau cuộc gọi", time: "—", color: "#d97706" },
           ].map((h, i) => {
             const Icon = h.icon;
             return (

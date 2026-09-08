@@ -208,7 +208,7 @@ function TeamMgmtMockup() {
           })}
           {/* Footer */}
           <div className="flex items-center justify-between px-4 py-2.5" style={{ borderTop: "1px solid rgba(103,58,183,0.07)" }}>
-            <span className="text-[10px]" style={{ color: "#9ca3af" }}>Hiển thị 6 / 44 nhân viên</span>
+            <span className="text-[10px]" style={{ color: "#9ca3af" }}>Hiển thị {teamMembers.length} nhân viên</span>
             <div className="flex items-center gap-1">
               {[1,2,3,"..."].map((p, i) => (
                 <button key={i} className="w-5 h-5 rounded text-[9px] font-medium" style={{ background: p === 1 ? "#673ab7" : "#f6f3fc", color: p === 1 ? "#fff" : "#5b5f6b" }}>{p}</button>

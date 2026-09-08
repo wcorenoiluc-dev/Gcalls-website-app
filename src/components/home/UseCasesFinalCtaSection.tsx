@@ -236,13 +236,64 @@ export function UseCasesFinalCtaSection() {
           confirmed `ok: true` from the transport, and with no backend
           configured it renders the honest not-connected state with working
           mailto:/tel: fallbacks instead.
+
+          On this page it is rendered FAIL-CLOSED: not merely undeliverable, but
+          not submittable. See the fieldset below for how, and why it is done
+          here rather than in `LeadForm`.
         */}
         <div className="mt-14 max-w-3xl mx-auto">
-          <LeadForm
-            variant="consultation"
-            source="consultation"
-            intent="consultation"
-          />
+          {/*
+            The disabling fieldset. `LeadForm` has no `disabled` prop and this
+            page does not own that file, so the guarantee is made in markup
+            instead of by a flag: a `fieldset[disabled]` disables every form
+            control that descends from it, and a nested <form> is a descendant.
+            The submit button is therefore disabled, and a disabled button
+            cannot activate its form — the page cannot post a lead even if the
+            transport were configured later without anyone revisiting this.
+
+            `inert` is belt-and-braces for pointers and the tab order in the
+            browsers that honour it; the fieldset is what the guarantee rests
+            on. The style reset is required: a bare fieldset carries a default
+            border, padding and `min-inline-size: min-content`, and any of the
+            three would move the 1180/50px measurements this page is gated on.
+          */}
+          <fieldset
+            disabled
+            {...{ inert: '' }}
+            /**
+             * The second guarantee, independent of the first.
+             *
+             * `disabled` closes the user's path: every control is actually
+             * disabled, the submit button cannot be activated, and implicit
+             * submission has no enabled default button to click. It does not
+             * close the scripted path — `form.requestSubmit()` ignores a
+             * disabled submitter, and this form sets `noValidate`, so the
+             * submit event would still reach LeadForm's handler.
+             *
+             * React dispatches capture listeners from the root down before the
+             * target's own bubble handler, so cancelling here means the form's
+             * `onSubmit` never runs, whatever asked it to.
+             */
+            onSubmitCapture={(e) => { e.preventDefault(); e.stopPropagation(); }}
+            className="m-0 min-w-0 border-0 p-0"
+          >
+            <legend className="sr-only">
+              Biểu mẫu đăng ký tư vấn — đang tạm khoá
+            </legend>
+            <p
+              className="mb-4 rounded-[10px] border border-dashed px-4 py-3 text-sm leading-relaxed"
+              style={{ borderColor: "rgba(103,58,183,0.35)", background: "#f6f3fc", color: "#5b5f6b" }}
+            >
+              <span className="font-semibold" style={{ color: "#673ab7" }}>Biểu mẫu đang tạm khoá · </span>
+              Trang chủ hiển thị biểu mẫu ở trạng thái xem trước, chưa nhận gửi.
+              Vui lòng liên hệ qua email hoặc số điện thoại bên dưới.
+            </p>
+            <LeadForm
+              variant="consultation"
+              source="consultation"
+              intent="consultation"
+            />
+          </fieldset>
         </div>
 
       </div>

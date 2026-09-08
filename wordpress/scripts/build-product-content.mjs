@@ -182,8 +182,28 @@ function normalise(raw) {
    * gave 53 — it drops the deployment steps, which React heads and which carry
    * no description. The source data already knows the answer.
    */
-  const CARD_KEYS = ['items', 'steps', 'rows', 'channels']
-  const BULLET_KEYS = ['capabilities', 'points', 'valuePoints']
+  /*
+   * SIX MORE LIST KEYS, AND SIX SECTIONS THAT WERE ARRIVING EMPTY.
+   *
+   * The vocabulary below is the whole reason a section can export as a heading
+   * with nothing under it: a list key nobody listed is a list nobody reads. Six
+   * were missing, and each cost a whole section on a live product page —
+   *
+   *   roles         QQ_HUMAN_LOOP  "AI hỗ trợ / QA xác nhận / Manager cải
+   *                                thiện", the three-way split that is the
+   *                                section's entire argument.
+   *   components    CX_OVERVIEW    nine workspace components, and
+   *                 QQ_OVERVIEW    seven QA components — the latter under a
+   *                                sentence that says "bảy thành phần dưới
+   *                                đây", pointing at nothing.
+   *   links         QQ_INTEGRATION three onward products.
+   *   relatedLinks  CX_INTEGRATION two more, beside `primaryLink`.
+   *
+   * `components` is a bullet list, not cards: the entries are two-word names
+   * and a card each would be padding around a label. The other three are rows.
+   */
+  const CARD_KEYS = ['items', 'steps', 'rows', 'channels', 'roles', 'links', 'relatedLinks']
+  const BULLET_KEYS = ['capabilities', 'points', 'valuePoints', 'components']
 
   /*
    * GP_BOUNDARIES is two labelled groups, not one list: `fitTitle`/`fitItems`
@@ -197,29 +217,67 @@ function normalise(raw) {
     ['fitTitle', 'fitItems'],
     ['expandTitle', 'expandItems'],
   ]
+  const groupItem = (item) =>
+    typeof item === 'string'
+      ? { title: item, body: '', href: '' }
+      : {
+          title: pick(item, ['need', 'title', 'name', 'label']),
+          body: pick(item, ['solution', 'product', 'detail', 'description']),
+          href: pick(item, ['path', 'href']),
+        }
+
   const groups = GROUPS
     .filter(([, itemsKey]) => Array.isArray(raw[itemsKey]) && raw[itemsKey].length)
     .map(([titleKey, itemsKey]) => ({
       label: pick(raw, [titleKey]),
-      items: raw[itemsKey]
-        .map((item) =>
-          typeof item === 'string'
-            ? { title: item, body: '', href: '' }
-            : {
-                title: pick(item, ['need', 'title', 'name', 'label']),
-                body: pick(item, ['solution', 'product', 'detail', 'description']),
-                href: pick(item, ['path', 'href']),
-              },
-        )
-        .filter((item) => item.title || item.body),
+      lead: '',
+      items: raw[itemsKey].map(groupItem).filter((item) => item.title || item.body),
     }))
     .filter((group) => group.items.length)
+
+  /*
+   * `columns` IS THE SAME SHAPE UNDER A DIFFERENT NAME, AND IT COST A SECTION.
+   *
+   * VB_HUMAN_AI is the section that says where the boundary between the bot and
+   * a person is: two columns, "Voicebot đảm nhận" and "Nhân viên tiếp nhận",
+   * each with a sentence and three examples, closing on "không phải thay thế
+   * vai trò của nhân viên". `columns` was in no list, so the whole thing
+   * exported as a heading and a paragraph — a page about an AI that answers
+   * calls, with the sentence limiting what it answers removed.
+   *
+   * Flattening the two columns into one list would lose the contrast that IS
+   * the section, exactly as it would for GP_BOUNDARIES, so they are groups.
+   */
+  if (!groups.length && Array.isArray(raw.columns) && raw.columns.length) {
+    for (const column of raw.columns) {
+      if (!column || typeof column !== 'object') continue
+      const items = (Array.isArray(column.items) ? column.items : []).map(groupItem)
+        .filter((item) => item.title || item.body)
+      if (!items.length) continue
+      groups.push({
+        label: pick(column, ['role', 'title', 'label', 'name']),
+        lead: pick(column, ['detail', 'description', 'body']),
+        items,
+      })
+    }
+  }
 
   const listKey = [...CARD_KEYS, ...BULLET_KEYS].find(
     (key) => Array.isArray(raw[key]) && raw[key].length,
   )
-  const list = listKey ? raw[listKey] : undefined
+  let list = listKey ? raw[listKey] : undefined
   const cards = CARD_KEYS.includes(listKey)
+
+  /*
+   * CX_INTEGRATION names its first destination separately, as `primaryLink`,
+   * because React renders it larger. WordPress has no such treatment, and
+   * dropping it would leave the section pointing at "QA QC Center" and "Gcalls
+   * Plus" while the CRM integration it is actually about — the one the
+   * paragraph above names — is missing. It goes first in the same list.
+   */
+  if (listKey === 'relatedLinks' && raw.primaryLink && typeof raw.primaryLink === 'object') {
+    list = [raw.primaryLink, ...list]
+  }
 
   const items = (list ?? [])
     .map((item) => {
@@ -247,9 +305,25 @@ function normalise(raw) {
         // they send a reader to the product that fits, and the CTA inventory
         // counts them separately for that reason.
         href: pick(item, ['path', 'href']),
+        /*
+         * THE ROW FOR THE PAGE YOU ARE ALREADY ON.
+         *
+         * CX_BOUNDARIES and QQ_BOUNDARIES each mark one row `current: true` —
+         * React renders it as a marked row and never as a link, with the
+         * comment "This page. Rendered as a marked card, never as a self-link."
+         * The flag was in no list, so both pages shipped a boundary table whose
+         * first row was a link back to the page the reader was reading, with
+         * nothing saying which row was theirs. Exported here; the renderer
+         * states it in words as well as in colour.
+         */
+        current: item.current === true,
       }
     })
     .filter((item) => item && (item.title || item.body))
+    .map((item) => {
+      if (!item.current) delete item.current
+      return item
+    })
 
   /*
    * EMPTY BY DESIGN IS NOT AN EXPORT FAILURE, AND THE TWO MUST NOT LOOK ALIKE.
@@ -267,13 +341,30 @@ function normalise(raw) {
     ? { label: pick(raw.link, ['label']), href: pick(raw.link, ['path', 'href']) }
     : null
 
+  /*
+   * A SENTENCE THAT BELONGS WITH THE LIST, ABOVE IT OR BELOW IT.
+   *
+   *   keywordLead  QQ_OVERVIEW — "QA QC Center tập hợp bảy thành phần dưới đây
+   *                thành một quy trình kiểm soát chất lượng duy nhất." It
+   *                introduces the list, and it was dropped alongside it, which
+   *                is the only reason the page did not read as a sentence
+   *                promising seven things and then showing none.
+   *   closing      VB_HUMAN_AI — "Định hướng của giải pháp là hỗ trợ đội ngũ mở
+   *                rộng khả năng xử lý cuộc gọi, không phải thay thế vai trò của
+   *                nhân viên." That is a limit on what the product claims, and
+   *                a page about an AI answering calls must not drop it.
+   *
+   * Both render as a note under the section body.
+   */
+  const note = pick(raw, ['keywordLead', 'closing'])
+
   if (placeholder && items.length === 0 && groups.length === 0) {
     return { eyebrow, heading, lead, cards: false, items: [], groups: [], emptyByDesign: true, placeholder, placeholderNote, link }
   }
 
-  if (!heading && !lead && items.length === 0 && groups.length === 0) return null
+  if (!heading && !lead && !note && items.length === 0 && groups.length === 0) return null
 
-  return { eyebrow, heading, lead, cards, items, groups }
+  return { eyebrow, heading, lead, note, cards, items, groups }
 }
 
 const problems = []

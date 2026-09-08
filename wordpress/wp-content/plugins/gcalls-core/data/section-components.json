@@ -409,15 +409,16 @@
       "items": 5
     },
     "VB_HUMAN_AI": {
-      "component": "grid",
-      "modifier": "gc-grid gc-grid--3",
+      "component": "groups",
+      "modifier": "gc-groups",
       "icon": "users",
       "mockup": null,
       "diagram": "handover",
       "media": null,
       "reactLayout": "grid",
-      "reactCols": 3,
-      "items": 0
+      "reactCols": 2,
+      "items": 0,
+      "note": "Two labelled columns: what the voicebot takes and what a person takes, each with a criterion and three examples. React shows them side by side; a 3-up card grid cannot express the contrast, and the `columns` key was unknown to the exporter so the section carried no items at all."
     },
     "VB_INTEGRATION": {
       "component": "vendors",

@@ -1,13 +1,13 @@
 {
   "note": "GCALLS-047. The expected shape of every content page. content-completeness-test.php reads this so that DELETING a section fails, not just emptying one. Regenerate deliberately and review the diff.",
-  "generated_at_gmt": "2026-09-03T05:49:18.335Z",
+  "generated_at_gmt": "2026-09-08T09:57:50.090Z",
   "pages": {
     "bang-gia": 6,
     "bao-hiem": 6,
     "bat-dong-san": 6,
     "bpo": 6,
     "case-studies": 6,
-    "cong-ty": 1,
+    "cong-ty": 4,
     "doi-tac": 9,
     "ebook": 5,
     "faq": 9,
@@ -19,12 +19,12 @@
     "hubspot": 13,
     "khach-hang": 9,
     "lien-he": 1,
-    "nganh": 1,
+    "nganh": 3,
     "referral": 2,
     "salesforce": 15,
     "san-pham": 4,
     "tai-chinh": 6,
-    "tai-nguyen": 1,
+    "tai-nguyen": 3,
     "thuong-mai-dien-tu": 6,
     "tich-hop": 4,
     "tong-dai-quoc-te": 14,
@@ -33,6 +33,16 @@
     "tong-dai-tich-hop-pos": 13,
     "zendesk": 16,
     "zoho-crm": 15
+  },
+  "siteRoutes": 38,
+  "otherRenderers": {
+    "trang-chu": "Elementor layout — includes/class-home-layout.php",
+    "gcalls-plus-webphone": "[gcalls_product_page id=gcalls-plus] — includes/class-shortcodes.php",
+    "qc-bot-ai": "[gcalls_product_page id=qa-qc] — includes/class-shortcodes.php",
+    "gcalls-cx": "[gcalls_product_page id=cx] — includes/class-shortcodes.php",
+    "voicebot-ai": "[gcalls_product_page id=voicebot] — includes/class-shortcodes.php",
+    "uoc-tinh-chi-phi": "[gcalls_estimator] — includes/class-shortcodes.php",
+    "blog": "posts page — theme home.php"
   },
   "detail": {
     "bang-gia": {
@@ -101,9 +111,12 @@
       "cta": true
     },
     "cong-ty": {
-      "sections": 1,
+      "sections": 4,
       "headings": [
-        "Tìm hiểu thêm"
+        "Gcalls là công ty gì?",
+        "Ba nguyên tắc trong cách Gcalls xây dựng và triển khai sản phẩm",
+        "Các trang thông tin về Gcalls",
+        "Xem thêm"
       ],
       "faq": 0,
       "cta": true
@@ -271,9 +284,11 @@
       "cta": false
     },
     "nganh": {
-      "sections": 1,
+      "sections": 3,
       "headings": [
-        "Sáu ngành đang có trang riêng"
+        "Gcalls phù hợp với những ngành nào?",
+        "Sáu ngành đang có trang riêng",
+        "Xem thêm"
       ],
       "faq": 0,
       "cta": true
@@ -334,9 +349,11 @@
       "cta": true
     },
     "tai-nguyen": {
-      "sections": 1,
+      "sections": 3,
       "headings": [
-        "Các nhóm tài nguyên"
+        "Trung tâm tài nguyên Gcalls có những gì?",
+        "Các nhóm tài nguyên",
+        "Có thể xem thêm"
       ],
       "faq": 0,
       "cta": true

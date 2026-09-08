@@ -57,7 +57,7 @@ const featureGrid = [
 ];
 
 const flowSteps = [
-  { label: "Khách hàng gọi đến", icon: Phone,         color: "#673ab7", note: "— · 028 xxxx" },
+  { label: "Khách hàng gọi đến", icon: Phone,         color: "#673ab7", note: "Đầu số hotline" },
   { label: "IVR",                icon: GitBranch,     color: "#7c3aed", note: "Bấm 1–Sales, 2–CSKH" },
   { label: "Call Routing",       icon: Network,       color: "#0891b2", note: "Phân phối thông minh" },
   { label: "Ring Group",         icon: Users,         color: "#16a34a", note: "Đổ chuông đồng thời" },
@@ -129,7 +129,7 @@ function CloudMockup() {
           </button>
         ))}
         <div className="ml-auto pb-2 flex items-center gap-1.5">
-          <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full" style={{ background: "#f0ecf9", color: "#673ab7" }}>5 extensions</span>
+          <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full" style={{ background: "#f0ecf9", color: "#673ab7" }}>Extensions</span>
           <button className="flex items-center gap-1 text-[10px] font-semibold px-2.5 py-1 rounded-lg" style={{ background: "#673ab7", color: "#fff" }}>
             <Plus size={9} /> Thêm
           </button>
@@ -189,7 +189,7 @@ function CloudMockup() {
             </div>
             <div className="flex items-center gap-1.5 ml-auto">
               <RefreshCw size={10} color="#9ca3af" />
-              <span className="text-[10px]" style={{ color: "#9ca3af" }}>Cập nhật 5s trước</span>
+              <span className="text-[10px]" style={{ color: "#9ca3af" }}>Cập nhật realtime</span>
             </div>
           </div>
         </div>
@@ -199,8 +199,8 @@ function CloudMockup() {
         <div className="px-5 py-5">
           <div className="flex items-center gap-2 mb-4">
             <GitBranch size={14} color="#673ab7" />
-            <span className="text-xs font-bold" style={{ color: "#1e2026" }}>Cây IVR — —</span>
-            <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full font-medium" style={{ background: "#f0ecf9", color: "#673ab7" }}>3 cấp</span>
+            <span className="text-xs font-bold" style={{ color: "#1e2026" }}>Cây IVR</span>
+            <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full font-medium" style={{ background: "#f0ecf9", color: "#673ab7" }}>Nhiều cấp</span>
           </div>
 
           <div className="flex flex-col gap-2.5">
@@ -229,7 +229,7 @@ function CloudMockup() {
           </div>
 
           <div className="mt-4 pt-3 flex items-center justify-between" style={{ borderTop: "1px solid rgba(103,58,183,0.08)" }}>
-            <span className="text-[10px]" style={{ color: "#9ca3af" }}>Cập nhật lần cuối: hôm nay 08:30</span>
+            <span className="text-[10px]" style={{ color: "#9ca3af" }}>Cập nhật lần cuối: —</span>
             <button className="flex items-center gap-1.5 text-[10px] font-semibold px-3 py-1.5 rounded-lg" style={{ background: "#f0ecf9", color: "#673ab7" }}>
               <Settings size={10} /> Chỉnh sửa IVR
             </button>

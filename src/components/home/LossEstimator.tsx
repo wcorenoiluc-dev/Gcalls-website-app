@@ -188,6 +188,11 @@ export function LossEstimator() {
 
   return (
     <div
+      /* Marks the calculator's subtree for scripts/scan-home-fabricated.mjs.
+         Numbers in here are the visitor's own inputs and the arithmetic on
+         them — they assert nothing about Gcalls, so the scan exempts the
+         region by name rather than by guessing at each value. */
+      data-loss-estimator=""
       className="rounded-3xl overflow-hidden"
       style={{ background: "#faf8ff", border: "1px solid rgba(103,58,183,0.12)" }}
     >

@@ -217,6 +217,50 @@ if ( is_readable( $inventory_path ) ) {
 	foreach ( $shape as $line ) {
 		echo "        $line\n";
 	}
+
+	/*
+	 * THE SITE IS 38 PAGES. THIS MANIFEST IS 31 OF THEM.
+	 *
+	 * The other seven are rendered by something else — the Elementor home
+	 * layout, four `[gcalls_product_page]` bodies, the estimator and the posts
+	 * page — and the inventory names each one with its renderer. Nothing
+	 * asserted that split, which meant a product page dropped from the export
+	 * would leave 30 pages here and every gate would still pass: 30 is a
+	 * perfectly consistent number on its own, and the guard above only compares
+	 * this manifest with a lock derived from this manifest.
+	 *
+	 * So the two sets are required to add up to the whole site, and no slug may
+	 * appear in both. `siteRoutes` was locked by
+	 * build-content-inventory-047.mjs only after it reconciled these slugs
+	 * against wordpress/imports/content-manifest.json one at a time; that file
+	 * is not packaged, so the total travels with the inventory instead.
+	 */
+	$other = (array) ( $inventory['otherRenderers'] ?? array() );
+	$site  = (int) ( $inventory['siteRoutes'] ?? 0 );
+
+	if ( $site > 0 ) {
+		$routes = array();
+		$both   = array_intersect( array_keys( $actual ), array_keys( $other ) );
+
+		if ( $both ) {
+			$routes[] = 'claimed by two renderers: ' . implode( ',', $both );
+		}
+
+		$sum = count( $actual ) + count( $other );
+
+		if ( $sum !== $site ) {
+			$routes[] = count( $actual ) . ' manifest + ' . count( $other )
+				. ' rendered elsewhere = ' . $sum . ', the site has ' . $site;
+		}
+
+		check( empty( $routes ), 'every route on the site has exactly one renderer' );
+
+		foreach ( $routes as $line ) {
+			echo "        $line\n";
+		}
+	} else {
+		echo "  note  inventory carries no siteRoutes — route reconciliation inactive\n";
+	}
 } else {
 	echo "  note  no content-inventory.json — section-deletion guard inactive\n";
 }

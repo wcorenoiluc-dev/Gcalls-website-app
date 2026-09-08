@@ -6,11 +6,11 @@ import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { stageClass, stageMainClass, stageFloatFullClass, hideBelowLgClass } from "@/components/common/ResponsiveProductVisual";
 
 const callLog = [
-  { id: 1, name: "Khách hàng 01", phone: "—", type: "out", duration: "—", status: "answered", time: "09:14", tag: "Khách hàng mới" },
-  { id: 2, name: "Khách hàng 02", phone: "—", type: "in", duration: "—", status: "answered", time: "09:31", tag: "Gia hạn" },
-  { id: 3, name: "Khách hàng 03", phone: "—", type: "out", duration: "—", status: "missed", time: "09:52", tag: null },
-  { id: 4, name: "Khách hàng 04", phone: "—", type: "in", duration: "—", status: "answered", time: "10:08", tag: "Demo" },
-  { id: 5, name: "Khách hàng 05", phone: "—", type: "out", duration: "—", status: "answered", time: "10:45", tag: "Upsell" },
+  { id: 1, name: "Khách hàng 01", phone: "—", type: "out", duration: "—", status: "answered", time: "—", tag: "Khách hàng mới" },
+  { id: 2, name: "Khách hàng 02", phone: "—", type: "in", duration: "—", status: "answered", time: "—", tag: "Gia hạn" },
+  { id: 3, name: "Khách hàng 03", phone: "—", type: "out", duration: "—", status: "missed", time: "—", tag: null },
+  { id: 4, name: "Khách hàng 04", phone: "—", type: "in", duration: "—", status: "answered", time: "—", tag: "Demo" },
+  { id: 5, name: "Khách hàng 05", phone: "—", type: "out", duration: "—", status: "answered", time: "—", tag: "Upsell" },
 ];
 
 const contacts = [
@@ -299,7 +299,7 @@ export function FloatingCustomerPopup() {
             Lịch sử gần nhất
           </div>
           <div className="text-[10px] leading-snug" style={{ color: "#5b5f6b" }}>
-            Gọi đi 09:14 · “KH quan tâm gói Business, hẹn demo thứ 5”
+            Gọi đi — · Ghi chú sau cuộc gọi
           </div>
         </div>
 
@@ -360,7 +360,7 @@ export function FloatingTimeline() {
         </div>
         <div>
           <div className="text-xs font-semibold" style={{ color: "#1e2026" }}>Khách hàng 02</div>
-          <div className="text-[10px]" style={{ color: "#5b5f6b" }}>Cuộc gọi đến · 7:18 phút</div>
+          <div className="text-[10px]" style={{ color: "#5b5f6b" }}>Cuộc gọi đến · —</div>
         </div>
         <span className="ml-auto text-[9px] px-1.5 py-0.5 rounded-full font-medium" style={{ background: "#dcfce7", color: "#16a34a" }}>Đã nghe</span>
       </div>
@@ -479,12 +479,12 @@ export function FloatingAnalytics() {
       </div>
       <div className="flex items-center justify-between mt-2.5 pt-2" style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}>
         <div>
-          <div className="text-xs font-bold text-white">543</div>
+          <div className="text-xs font-bold text-white">—</div>
           <div className="text-[9px]" style={{ color: "rgba(255,255,255,0.6)" }}>Cuộc gọi / tuần</div>
         </div>
         <div className="flex items-center gap-1 px-2 py-1 rounded-full" style={{ background: "rgba(255,255,255,0.15)" }}>
           <TrendingUp size={10} color="#fff" />
-          <span className="text-[10px] text-white font-medium">+18%</span>
+          <span className="text-[10px] text-white font-medium">—</span>
         </div>
       </div>
     </div>

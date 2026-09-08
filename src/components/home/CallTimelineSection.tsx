@@ -16,12 +16,12 @@ const timelineItems = [
     type: "out" as const,
     status: "answered" as const,
     duration: "—",
-    time: "09:14",
+    time: "—",
     date: "Hôm nay",
     tag: "Khách hàng mới",
     tagColor: "#673ab7",
-    note: "KH quan tâm gói Business, hẹn demo thứ 5",
-    score: 4,
+    note: "Ghi chú: khách quan tâm gói dịch vụ",
+    score: null,
   },
   {
     id: 2,
@@ -31,12 +31,12 @@ const timelineItems = [
     type: "in" as const,
     status: "answered" as const,
     duration: "—",
-    time: "09:31",
+    time: "—",
     date: "Hôm nay",
     tag: "Gia hạn",
     tagColor: "#0891b2",
-    note: "Cần gửi báo giá gia hạn trước 15h",
-    score: 5,
+    note: "Ghi chú: cần gửi báo giá gia hạn",
+    score: null,
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const timelineItems = [
     type: "out" as const,
     status: "missed" as const,
     duration: "—",
-    time: "09:52",
+    time: "—",
     date: "Hôm nay",
     tag: null,
     tagColor: null,
@@ -61,12 +61,12 @@ const timelineItems = [
     type: "in" as const,
     status: "answered" as const,
     duration: "—",
-    time: "10:08",
+    time: "—",
     date: "Hôm nay",
     tag: "Demo",
     tagColor: "#16a34a",
-    note: "Demo thành công, gửi proposal",
-    score: 5,
+    note: "Ghi chú: đã demo, gửi đề xuất",
+    score: null,
   },
   {
     id: 5,
@@ -76,12 +76,12 @@ const timelineItems = [
     type: "out" as const,
     status: "answered" as const,
     duration: "—",
-    time: "10:45",
+    time: "—",
     date: "Hôm nay",
     tag: "Upsell",
     tagColor: "#d97706",
-    note: "Đang cân nhắc nâng gói Pro",
-    score: 4,
+    note: "Ghi chú: đang cân nhắc nâng gói",
+    score: null,
   },
 ];
 
@@ -99,6 +99,23 @@ const floatingStats = [
   { value: "—", label: "Tỷ lệ nghe máy (minh họa)", icon: Check, color: "#16a34a" },
   { value: "Ghi âm", label: "Tự động theo cuộc gọi", icon: Mic, color: "#0891b2" },
 ];
+
+/**
+ * The elapsed-time readout under the audio scrubber.
+ *
+ * `duration` is an illustration placeholder ("—"), not a real length. Parsing it
+ * produced NaN and the mockup rendered the literal string "NaN:NaN" — the visible
+ * residue of the 052 neutralization. With nothing to play back there is no time
+ * to report, so the readout stays a placeholder and only becomes a clock again if
+ * a real "m:ss" duration is ever supplied.
+ */
+function playbackClock(duration: string, progress: number): string {
+  const m = /^(\d+):([0-5]\d)$/.exec(duration.trim())
+  if (!m) return "—:—"
+  const total = Number(m[1]) * 60 + Number(m[2])
+  const at = Math.floor((progress / 100) * total)
+  return `${Math.floor(at / 60)}:${String(at % 60).padStart(2, "0")}`
+}
 
 export function CallTimelineMockup() {
   const [activeId, setActiveId] = useState<number>(2);
@@ -179,7 +196,7 @@ export function CallTimelineMockup() {
           >
             {t.label}
             {t.key === "missed" && (
-              <span className="ml-1.5 px-1 py-0.5 rounded text-[9px] font-bold" style={{ background: "#fee2e2", color: "#ef4444" }}>1</span>
+              <span className="ml-1.5 px-1 py-0.5 rounded text-[9px] font-bold" style={{ background: "#fee2e2", color: "#ef4444" }}>{timelineItems.filter(i => i.status === "missed").length}</span>
             )}
           </button>
         ))}
@@ -316,8 +333,7 @@ export function CallTimelineMockup() {
               <div className="h-full rounded-full" style={{ width: `${progress}%`, background: "#673ab7" }} />
             </div>
             <span className="text-[10px] tabular-nums flex-shrink-0" style={{ color: "#9ca3af", fontFamily: "'DM Mono', monospace" }}>
-              {String(Math.floor((progress / 100) * parseInt(activeItem.duration))).padStart(1, "0")}:
-              {String(Math.floor(((progress / 100) * parseFloat(activeItem.duration.replace(":", ".")) % 1) * 60)).padStart(2, "0")}
+              {playbackClock(activeItem.duration, progress)}
             </span>
             <Volume2 size={13} color="#9ca3af" />
           </div>
