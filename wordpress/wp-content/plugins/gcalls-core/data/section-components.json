@@ -421,14 +421,14 @@
       "note": "Two labelled columns: what the voicebot takes and what a person takes, each with a criterion and three examples. React shows them side by side; a 3-up card grid cannot express the contrast, and the `columns` key was unknown to the exporter so the section carried no items at all."
     },
     "VB_INTEGRATION": {
-      "component": "vendors",
-      "modifier": "gc-vendors",
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--3",
       "icon": "plug",
       "mockup": null,
       "diagram": null,
       "media": null,
       "reactLayout": "grid",
-      "reactCols": 4,
+      "reactCols": 3,
       "items": 5
     },
     "VB_INDUSTRIES": {
@@ -454,14 +454,14 @@
       "items": 5
     },
     "VB_OUTCOMES": {
-      "component": "prose",
-      "modifier": "gc-prose",
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--3",
       "icon": "trending",
       "mockup": null,
       "diagram": null,
       "media": null,
-      "reactLayout": "plain",
-      "reactCols": null,
+      "reactLayout": "grid",
+      "reactCols": 3,
       "items": 5
     },
     "QQ_PROBLEMS": {

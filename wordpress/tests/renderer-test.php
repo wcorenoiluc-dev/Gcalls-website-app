@@ -245,6 +245,76 @@ foreach ( $manifest['pages'] as $id => $page ) {
 }
 check( empty( Sections::empty_sources() ), 'CONTENT_MISSING: ' . ( Sections::empty_sources() ? implode( ',', Sections::empty_sources() ) : 'none' ) );
 
+/*
+ * ---- 2b. every string the manifest carries actually reaches the markup ----
+ *
+ * WHY THIS EXISTS
+ * A section can be mapped to a component that cannot render its shape, and
+ * nothing above notices: the page still emits its section wrapper, its heading
+ * and its lead, so the section count is right, empty_sources() stays empty and
+ * every other assertion passes. The content simply vanishes.
+ *
+ * That is not hypothetical. VB_OUTCOMES carried five items and was mapped to
+ * `prose`, which reads only $section['body'] — all ten of its strings rendered
+ * nowhere. VB_INTEGRATION was mapped to `vendors`, which emits $item['title']
+ * and ignores $item['body'] — five item bodies vanished. Both shipped inside a
+ * release that passed every other suite, and were caught only by rendering the
+ * built artifact in a browser and diffing it against source.
+ *
+ * So this asserts the thing that actually matters: for every section, every
+ * non-empty title and body the manifest carries must appear in the rendered
+ * HTML of the page it belongs to. It is deliberately about payload strings, not
+ * about which component was chosen — remapping a section is fine, losing its
+ * words is not.
+ */
+$reconcile_checked = 0;
+$reconcile_missing = array();
+
+foreach ( $manifest['pages'] as $id => $page ) {
+	$html = html_entity_decode( $snapshots[ $id ], ENT_QUOTES, 'UTF-8' );
+
+	foreach ( $page['sections'] as $section ) {
+		$source = isset( $section['source'] ) ? (string) $section['source'] : '(unnamed)';
+
+		/* The list payloads a component may be asked to render. */
+		foreach ( array( 'items', 'cards', 'groups' ) as $list_key ) {
+			if ( empty( $section[ $list_key ] ) || ! is_array( $section[ $list_key ] ) ) {
+				continue;
+			}
+
+			foreach ( $section[ $list_key ] as $item ) {
+				if ( ! is_array( $item ) ) {
+					continue;
+				}
+
+				foreach ( array( 'title', 'body' ) as $field ) {
+					$value = isset( $item[ $field ] ) ? trim( (string) $item[ $field ] ) : '';
+
+					if ( '' === $value ) {
+						continue;
+					}
+
+					++$reconcile_checked;
+
+					if ( false === strpos( $html, $value ) ) {
+						$reconcile_missing[] = "$id :: $source :: $list_key.$field :: "
+							. mb_substr( $value, 0, 60 );
+					}
+				}
+			}
+		}
+	}
+}
+
+check( $reconcile_checked > 200, "payload reconciliation examined $reconcile_checked strings" );
+check(
+	empty( $reconcile_missing ),
+	'every manifest string reaches the markup'
+		. ( $reconcile_missing
+			? ' — ABSENT: ' . count( $reconcile_missing ) . ' [' . implode( ' | ', array_slice( $reconcile_missing, 0, 6 ) ) . ']'
+			: '' )
+);
+
 /* ---- 3. an unknown source renders nothing and is recorded ---- */
 $before = count( Sections::unmapped() );
 $out    = Sections::render_product_sections( array( 'sections' => array( array( 'source' => 'NOT_A_REAL_SOURCE', 'heading' => 'X' ) ) ) );
