@@ -68,3 +68,9 @@ wordpress/dist/
 wordpress/**/*.sql
 wordpress/**/*.sql.gz
 wordpress/backups/
+
+# WordPress release artifacts are build OUTPUT, never source. A release is
+# rebuilt from a commit; committing the ZIP invites editing the artifact instead
+# of the source that produced it, and the same version would then name two files.
+wordpress/.release*/
+wordpress/.deploy*/
