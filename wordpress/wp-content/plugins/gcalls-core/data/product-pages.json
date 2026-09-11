@@ -1,0 +1,2002 @@
+{
+  "generator": "wordpress/scripts/build-product-content.mjs",
+  "pages": {
+    "gcalls-plus": {
+      "route": "/gcalls-plus-webphone/",
+      "source": {
+        "path": "src/data/gcallsPlus.ts",
+        "sha256": "edf15f8bc57d4992e32d3eeb8da9795ad6799054092995e4d48184821ebc20a1"
+      },
+      "product": "Gcalls Plus Webphone",
+      "hero": {
+        "mockup": "customer_popup",
+        "cta": {
+          "label": "Đăng ký tư vấn",
+          "intent": "consultation",
+          "source": "gcalls_plus",
+          "product": "Gcalls Plus Webphone"
+        },
+        "eyebrow": "GCALLS PLUS WEBPHONE",
+        "heading": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình duyệt",
+        "lead": "Nghe gọi, quản lý danh bạ, theo dõi lịch sử tương tác và hoạt động của đội ngũ Sales/CSKH trong một giao diện Webphone tập trung.",
+        "points": [
+          "Làm việc ngay trên trình duyệt",
+          "Theo dõi context khách hàng",
+          "Quản lý hoạt động đội ngũ"
+        ]
+      },
+      "finalCta": {
+        "heading": "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ của bạn đang làm việc",
+        "lead": "Chia sẻ quy mô Sales/CSKH, số hotline và quy trình hiện tại để Gcalls tư vấn cấu hình Webphone phù hợp.",
+        "primary": {
+          "label": "Đăng ký tư vấn",
+          "intent": "consultation",
+          "source": "gcalls_plus",
+          "product": "Gcalls Plus Webphone"
+        },
+        "secondary": {
+          "label": "Ước tính cấu hình",
+          "href": "/uoc-tinh-chi-phi/?product=gcalls-plus"
+        }
+      },
+      "direct": {
+        "question": "Gcalls Plus Webphone là gì?",
+        "answer": "Gcalls Plus Webphone là phần mềm tổng đài Webphone hoạt động trực tiếp trên trình duyệt, giúp đội Sales và Chăm sóc khách hàng thực hiện cuộc gọi, quản lý danh bạ, theo dõi lịch sử tương tác, ghi chú và hoạt động cuộc gọi trên một giao diện tập trung. Giải pháp phù hợp với các đội ngũ cần triển khai kênh nghe gọi chuyên nghiệp nhưng muốn giữ quy trình vận hành đơn giản."
+      },
+      "faq": [
+        {
+          "question": "Gcalls Plus Webphone là gì?",
+          "answer": "Gcalls Plus Webphone là giải pháp tổng đài hoạt động trên trình duyệt giúp doanh nghiệp thực hiện cuộc gọi và quản lý các thông tin liên quan đến hoạt động tương tác trong một giao diện tập trung."
+        },
+        {
+          "question": "Gcalls Plus có cần điện thoại bàn không?",
+          "answer": "Webphone được thiết kế để hoạt động thông qua môi trường trình duyệt trên máy tính. Yêu cầu thiết bị và cấu hình thực tế sẽ tùy thuộc vào mô hình triển khai."
+        },
+        {
+          "question": "Gcalls Plus có lưu lịch sử cuộc gọi không?",
+          "answer": "Có. Gcalls Plus hỗ trợ theo dõi lịch sử và dữ liệu hoạt động cuộc gọi để nhân viên và người quản lý có thêm context trong quá trình làm việc."
+        },
+        {
+          "question": "Gcalls Plus có tích hợp CRM không?",
+          "answer": "Gcalls có khả năng kết nối hoạt động nghe gọi với CRM. Với doanh nghiệp cần workflow sâu hơn như Click-to-Call, context khách hàng hoặc đồng bộ lịch sử cuộc gọi, hãy tham khảo giải pháp Tổng đài tích hợp CRM."
+        },
+        {
+          "question": "Gcalls Plus phù hợp với ai?",
+          "answer": "Gcalls Plus hướng tới các SME và đội Sales/CSKH cần một hệ thống nghe gọi tập trung trên trình duyệt nhưng chưa cần một Contact Center đa kênh phức tạp."
+        },
+        {
+          "question": "Tôi có thể biết chi phí trước khi tư vấn không?",
+          "answer": "Doanh nghiệp có thể sử dụng công cụ Ước tính cấu hình & chi phí để mô tả quy mô và nhu cầu trước khi nhận báo giá chính thức."
+        }
+      ],
+      "lead": {
+        "intent": "consultation",
+        "source": "gcalls_plus",
+        "product": "Gcalls Plus Webphone"
+      },
+      "sections": [
+        {
+          "source": "GP_PROBLEMS",
+          "eyebrow": "BÀI TOÁN",
+          "heading": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp",
+          "lead": "Khi dữ liệu cuộc gọi, ghi chú và lịch sử khách hàng nằm rải rác, ngay cả một đội Sales hoặc CSKH nhỏ cũng có thể mất nhiều thời gian để theo dõi và tiếp tục từng cuộc hội thoại.",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Thông tin cuộc gọi nằm rời rạc",
+              "body": "Nhân viên gọi điện nhưng lịch sử trao đổi, ghi chú và thông tin khách hàng không nằm trong cùng một luồng làm việc.",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "Khó theo dõi những gì đã trao đổi",
+              "body": "Khi khách hàng quay lại, nhân viên cần biết ai đã liên hệ, trao đổi nội dung gì và bước tiếp theo là gì.",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "Quản lý khó nhìn thấy hoạt động của đội ngũ",
+              "body": "Không có dữ liệu tập trung khiến việc theo dõi lượng cuộc gọi và hoạt động của nhân viên trở nên khó khăn hơn.",
+              "href": ""
+            },
+            {
+              "label": "04",
+              "title": "Giải pháp quá phức tạp so với nhu cầu thực tế",
+              "body": "SME có thể chỉ cần một hệ thống nghe gọi gọn nhẹ thay vì bắt đầu bằng một Contact Center với quá nhiều lớp vận hành.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "media": "GP-13",
+          "cta": []
+        },
+        {
+          "source": "GP_OVERVIEW",
+          "eyebrow": "GCALLS PLUS WEBPHONE",
+          "heading": "Webphone đưa chức năng tổng đài vào trình duyệt",
+          "lead": "Gcalls Plus tập trung các chức năng nghe gọi và quản lý tương tác vào giao diện Webphone để nhân viên có thể xử lý công việc trên máy tính.",
+          "cards": false,
+          "items": [
+            {
+              "label": "",
+              "title": "Hoạt động trực tiếp trên trình duyệt",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Tập trung vào hoạt động nghe gọi và quản lý tương tác",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Gọn nhẹ hơn so với một Contact Center đa kênh đầy đủ",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Phù hợp với đội Sales và Chăm sóc khách hàng",
+              "body": ""
+            }
+          ],
+          "groups": [],
+          "media": "GP-09",
+          "cta": []
+        },
+        {
+          "source": "GP_FEATURES",
+          "eyebrow": "NĂNG LỰC CỐT LÕI",
+          "heading": "Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày",
+          "lead": "",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Webphone",
+              "body": "Thực hiện và tiếp nhận cuộc gọi trực tiếp từ giao diện làm việc trên trình duyệt.",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "IVR & Call Flow",
+              "body": "Thiết lập lời chào và luồng xử lý cuộc gọi phù hợp với cách doanh nghiệp tổ chức tiếp nhận khách hàng.",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "Quản lý danh bạ",
+              "body": "Quản lý thông tin liên hệ phục vụ hoạt động Sales hoặc Chăm sóc khách hàng.",
+              "href": ""
+            },
+            {
+              "label": "04",
+              "title": "Lịch sử tương tác",
+              "body": "Theo dõi lịch sử tương tác để nhân viên có thêm context khi tiếp tục làm việc với khách hàng.",
+              "href": ""
+            },
+            {
+              "label": "05",
+              "title": "Ghi chú & Follow-up",
+              "body": "Ghi lại thông tin liên quan đến cuộc gọi và hỗ trợ nhân viên tiếp tục xử lý ở bước tiếp theo.",
+              "href": ""
+            },
+            {
+              "label": "06",
+              "title": "Phân loại cuộc gọi",
+              "body": "Phân loại cuộc gọi theo nội dung hoặc mục đích để thuận tiện cho quản lý và báo cáo.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "media": "GP-14",
+          "cta": []
+        },
+        {
+          "source": "GP_HISTORY",
+          "eyebrow": "LỊCH SỬ TƯƠNG TÁC",
+          "heading": "Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi riêng lẻ",
+          "lead": "Lịch sử tương tác giúp nhân viên xem lại những lần liên hệ trước, nội dung đã ghi chú và các hoạt động liên quan trước khi tiếp tục xử lý khách hàng.",
+          "cards": false,
+          "items": [
+            {
+              "label": "",
+              "title": "Lịch sử cuộc gọi",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Thời gian tương tác",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Ghi chú",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Phân loại",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Hoạt động liên quan",
+              "body": ""
+            }
+          ],
+          "groups": [],
+          "media": "GP-15",
+          "cta": []
+        },
+        {
+          "source": "GP_CONTEXT",
+          "eyebrow": "CUSTOMER CONTEXT",
+          "heading": "Hiểu khách hàng trước khi tiếp tục cuộc hội thoại",
+          "lead": "Khi thông tin liên hệ, lịch sử cuộc gọi và ghi chú được tập trung trong cùng một giao diện, nhân viên có thể nhanh chóng xem lại những gì đã diễn ra trước khi tiếp tục trao đổi với khách hàng.",
+          "cards": false,
+          "items": [
+            {
+              "label": "",
+              "title": "Thông tin liên hệ",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Lịch sử cuộc gọi",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Ghi chú",
+              "body": ""
+            }
+          ],
+          "groups": [],
+          "media": "GP-10",
+          "cta": []
+        },
+        {
+          "source": "GP_WORKFLOW",
+          "eyebrow": "QUY TRÌNH",
+          "heading": "Từ cuộc gọi đến bước follow-up tiếp theo",
+          "lead": "",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Tiếp nhận hoặc thực hiện cuộc gọi",
+              "body": "Nhân viên xử lý cuộc gọi trên Webphone.",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "Xem context liên hệ",
+              "body": "Thông tin khách hàng và lịch sử tương tác hỗ trợ nhân viên hiểu bối cảnh trước khi trao đổi.",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "Ghi lại nội dung quan trọng",
+              "body": "Nhân viên thêm ghi chú, phân loại hoặc thông tin cần follow-up.",
+              "href": ""
+            },
+            {
+              "label": "04",
+              "title": "Theo dõi lịch sử",
+              "body": "Hoạt động được lưu trong lịch sử để đội ngũ có thể tiếp tục xử lý ở lần tương tác tiếp theo.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "media": "GP-07",
+          "cta": []
+        },
+        {
+          "source": "GP_PERFORMANCE",
+          "eyebrow": "QUẢN LÝ HOẠT ĐỘNG",
+          "heading": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung",
+          "lead": "Lịch sử và dữ liệu hoạt động cuộc gọi giúp người quản lý có thêm cơ sở để theo dõi cách đội Sales/CSKH đang vận hành thay vì chỉ dựa vào báo cáo thủ công từ từng nhân viên.",
+          "cards": false,
+          "items": [
+            {
+              "label": "",
+              "title": "Lịch sử cuộc gọi của đội ngũ",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Dữ liệu hoạt động tập trung",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Trạng thái Agent trong quá trình vận hành",
+              "body": ""
+            }
+          ],
+          "groups": [],
+          "media": "GP-05",
+          "cta": []
+        },
+        {
+          "source": "GP_INTEGRATION",
+          "eyebrow": "KẾT NỐI HỆ THỐNG",
+          "heading": "Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần",
+          "lead": "Khi quy trình Sales hoặc CSKH đã vận hành trên CRM, Gcalls có thể mở rộng từ Webphone sang mô hình tích hợp sâu hơn để hoạt động cuộc gọi gắn với dữ liệu và workflow hiện có của doanh nghiệp.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "media": "GP-12",
+          "cta": [
+            {
+              "label": "Khám phá Tổng đài tích hợp CRM",
+              "href": "/tong-dai-tich-hop-crm/"
+            }
+          ]
+        },
+        {
+          "source": "GP_USE_CASES",
+          "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
+          "heading": "Gcalls Plus phù hợp với những đội ngũ nào?",
+          "lead": "",
+          "cards": true,
+          "items": [
+            {
+              "label": "",
+              "title": "Sales",
+              "body": "Quản lý hoạt động gọi lead, lịch sử liên hệ, ghi chú và follow-up trong một luồng làm việc gọn hơn.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Chăm sóc khách hàng",
+              "body": "Tiếp nhận cuộc gọi và xem lại lịch sử tương tác trước khi hỗ trợ khách hàng.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Giáo dục",
+              "body": "Phù hợp với đội tư vấn tuyển sinh và chăm sóc học viên cần xử lý lượng liên hệ thường xuyên.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Dịch vụ",
+              "body": "Phù hợp với các doanh nghiệp dịch vụ cần hotline và hệ thống quản lý hoạt động gọi tập trung.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Thương mại điện tử",
+              "body": "Hỗ trợ đội bán hàng hoặc CSKH xử lý cuộc gọi liên quan tới tư vấn, đơn hàng và chăm sóc sau bán.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "media": "GP-03",
+          "cta": []
+        },
+        {
+          "source": "GP_BOUNDARIES",
+          "eyebrow": "PHẠM VI PHÙ HỢP",
+          "heading": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Contact Center phức tạp",
+          "lead": "",
+          "cards": false,
+          "items": [],
+          "groups": [
+            {
+              "label": "PHÙ HỢP VỚI GCALLS PLUS",
+              "items": [
+                {
+                  "title": "SME / Startup",
+                  "body": "",
+                  "href": ""
+                },
+                {
+                  "title": "Sales team",
+                  "body": "",
+                  "href": ""
+                },
+                {
+                  "title": "Customer Service team",
+                  "body": "",
+                  "href": ""
+                },
+                {
+                  "title": "Đội ngũ quy mô nhỏ và vừa",
+                  "body": "",
+                  "href": ""
+                },
+                {
+                  "title": "Doanh nghiệp cần quản lý cuộc gọi tập trung",
+                  "body": "",
+                  "href": ""
+                }
+              ]
+            },
+            {
+              "label": "KHI NHU CẦU MỞ RỘNG",
+              "items": [
+                {
+                  "title": "CRM workflow sâu hơn",
+                  "body": "Tổng đài tích hợp CRM",
+                  "href": "/tong-dai-tich-hop-crm/"
+                },
+                {
+                  "title": "Giao tiếp đa kênh",
+                  "body": "Gcalls CX",
+                  "href": "/gcalls-cx/"
+                },
+                {
+                  "title": "Kiểm soát chất lượng hội thoại bằng AI",
+                  "body": "QA QC Center",
+                  "href": "/qc-bot-ai/"
+                },
+                {
+                  "title": "Liên lạc quốc tế",
+                  "body": "International Calling",
+                  "href": "/tong-dai-quoc-te/"
+                }
+              ]
+            }
+          ],
+          "media": "GP-02",
+          "cta": []
+        },
+        {
+          "source": "GP_DEPLOYMENT",
+          "eyebrow": "TRIỂN KHAI",
+          "heading": "Triển khai theo nhu cầu vận hành thực tế",
+          "lead": "Gcalls Plus được thiết kế theo mô hình Webphone để giảm độ phức tạp khi triển khai cho đội ngũ cần một hệ thống nghe gọi tập trung. Thời gian triển khai thực tế phụ thuộc vào cấu hình hotline, call flow, số lượng người dùng và yêu cầu tích hợp của doanh nghiệp.",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Khảo sát nhu cầu",
+              "body": "",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "Xác định hotline và người dùng",
+              "body": "",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "Thiết lập call flow",
+              "body": "",
+              "href": ""
+            },
+            {
+              "label": "04",
+              "title": "Kiểm thử",
+              "body": "",
+              "href": ""
+            },
+            {
+              "label": "05",
+              "title": "Hướng dẫn sử dụng",
+              "body": "",
+              "href": ""
+            },
+            {
+              "label": "06",
+              "title": "Vận hành",
+              "body": "",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "media": "GP-11",
+          "cta": []
+        },
+        {
+          "source": "GP_PRICING",
+          "eyebrow": "CẤU HÌNH & CHI PHÍ",
+          "heading": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
+          "lead": "Quy mô người dùng, hotline, lưu lượng gọi và yêu cầu tích hợp có thể ảnh hưởng đến cấu hình giải pháp. Sử dụng công cụ ước tính để mô tả nhu cầu trước khi nhận tư vấn.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "cta": [
+            {
+              "label": "Ước tính cấu hình & chi phí",
+              "href": "/uoc-tinh-chi-phi/?product=gcalls-plus"
+            },
+            {
+              "label": "Xem bảng giá Gcalls",
+              "href": "/bang-gia/"
+            }
+          ]
+        },
+        {
+          "source": "GP_STORY",
+          "eyebrow": "KHÁCH HÀNG",
+          "heading": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
+          "lead": "",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "emptyByDesign": true,
+          "placeholder": "Nội dung khách hàng đang được cập nhật",
+          "placeholderNote": "Câu chuyện khách hàng sẽ được bổ sung khi có thông tin được duyệt công bố.",
+          "link": {
+            "label": "Đọc bài viết trên Blog Gcalls",
+            "href": "/blog/"
+          },
+          "cta": []
+        },
+        {
+          "source": "GP_FINAL_CTA",
+          "eyebrow": "GCALLS PLUS WEBPHONE",
+          "heading": "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ của bạn đang làm việc",
+          "lead": "Chia sẻ quy mô Sales/CSKH, số hotline và quy trình hiện tại để Gcalls tư vấn cấu hình Webphone phù hợp.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "cta": []
+        }
+      ]
+    },
+    "cx": {
+      "route": "/gcalls-cx/",
+      "source": {
+        "path": "src/data/gcallsCx.ts",
+        "sha256": "a3ae6e13746d4c3bff0b5ea7d2972c91b950b565bd68c1a59bb29b6d055e6a85"
+      },
+      "product": "Gcalls CX",
+      "hero": {
+        "mockup": "cx_inbox",
+        "cta": {
+          "label": "Yêu cầu demo Gcalls CX",
+          "intent": "demo",
+          "source": "gcalls_cx",
+          "product": "Gcalls CX"
+        },
+        "eyebrow": "GCALLS CX • OMNICHANNEL CONTACT CENTER",
+        "heading": "Gcalls CX – hợp nhất mọi điểm chạm khách hàng trên một màn hình",
+        "lead": "Tập trung Voice, Zalo, Facebook, SMS, Email và quy trình hỗ trợ khách hàng vào một không gian làm việc để đội CSKH dễ theo dõi hội thoại, ticket và customer context hơn.",
+        "points": [
+          "Hợp nhất điểm chạm",
+          "Quản lý xử lý rõ ràng hơn",
+          "Có thêm context khi chăm sóc khách hàng"
+        ]
+      },
+      "finalCta": {
+        "heading": "Xem Gcalls CX hoạt động trên chính hành trình chăm sóc khách hàng của doanh nghiệp bạn",
+        "lead": "Chia sẻ các kênh đang sử dụng, cấu trúc đội CSKH và workflow hiện tại để Gcalls tư vấn cấu hình Contact Center phù hợp.",
+        "primary": {
+          "label": "Yêu cầu demo Gcalls CX",
+          "intent": "demo",
+          "source": "gcalls_cx",
+          "product": "Gcalls CX"
+        },
+        "secondary": {
+          "label": "Đăng ký tư vấn",
+          "intent": "consultation",
+          "source": "gcalls_cx",
+          "product": "Gcalls CX"
+        }
+      },
+      "direct": {
+        "question": "Gcalls CX là gì?",
+        "answer": "Gcalls CX là giải pháp Contact Center đa kênh giúp doanh nghiệp tập trung các điểm chạm như Voice, Zalo, Facebook, SMS và Email vào một không gian quản lý. Nền tảng hỗ trợ đội CSKH theo dõi hội thoại, ticket, customer context và hoạt động vận hành tập trung hơn thay vì xử lý từng kênh trên các hệ thống rời rạc."
+      },
+      "faq": [
+        {
+          "question": "Gcalls CX là gì?",
+          "answer": "Gcalls CX là giải pháp Contact Center đa kênh giúp doanh nghiệp tập trung các điểm chạm giao tiếp và quy trình chăm sóc khách hàng trong một không gian làm việc thống nhất hơn."
+        },
+        {
+          "question": "Gcalls CX hỗ trợ những kênh nào?",
+          "answer": "Theo phạm vi sản phẩm hiện tại, Gcalls CX có thể hỗ trợ các điểm chạm như Voice/Hotline, Zalo OA, Facebook Fanpage, SMS và Email. Khả năng triển khai cụ thể phụ thuộc vào kênh, tài khoản và cấu hình của doanh nghiệp."
+        },
+        {
+          "question": "Gcalls CX có quản lý ticket không?",
+          "answer": "Có. Quản lý ticket là một trong những năng lực của Gcalls CX, giúp đội ngũ theo dõi trạng thái và quá trình xử lý yêu cầu theo workflow được cấu hình."
+        },
+        {
+          "question": "Gcalls CX khác Gcalls Plus như thế nào?",
+          "answer": "Gcalls Plus tập trung vào hoạt động nghe gọi Webphone gọn nhẹ, trong khi Gcalls CX được thiết kế cho bài toán Contact Center đa kênh với nhiều điểm chạm và quy trình chăm sóc khách hàng phức tạp hơn."
+        },
+        {
+          "question": "Gcalls CX có thay thế CRM không?",
+          "answer": "Gcalls CX tập trung vào giao tiếp và quy trình Contact Center đa kênh. CRM vẫn có vai trò quản lý dữ liệu và quy trình khách hàng; tùy mô hình triển khai, Gcalls có thể kết nối với CRM để hai hệ thống hỗ trợ nhau."
+        },
+        {
+          "question": "Gcalls CX phù hợp với doanh nghiệp nào?",
+          "answer": "Gcalls CX phù hợp với doanh nghiệp có lượng tương tác lớn hoặc nhiều kênh chăm sóc khách hàng và cần quản lý hội thoại, ticket, customer context và hoạt động đội ngũ tập trung hơn."
+        }
+      ],
+      "lead": {
+        "intent": "consultation",
+        "source": "gcalls_cx",
+        "product": "Gcalls CX"
+      },
+      "sections": [
+        {
+          "source": "CX_PROBLEMS",
+          "eyebrow": "BÀI TOÁN ĐA KÊNH",
+          "heading": "Nhiều kênh giao tiếp không đồng nghĩa với một trải nghiệm liền mạch",
+          "lead": "Khi mỗi kênh được vận hành trên một công cụ khác nhau, đội CSKH dễ mất context, khó theo dõi trạng thái xử lý và khó có một bức tranh thống nhất về hành trình tương tác của khách hàng.",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Hội thoại nằm ở nhiều nơi",
+              "body": "Tin nhắn, cuộc gọi và yêu cầu hỗ trợ được xử lý trên các công cụ riêng khiến nhân viên phải liên tục chuyển đổi giữa nhiều màn hình.",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "Tương tác dễ bị bỏ sót",
+              "body": "Khi khối lượng trao đổi tăng, những hội thoại chưa được phản hồi hoặc chưa có người xử lý có thể khó được phát hiện kịp thời.",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "Customer context bị phân mảnh",
+              "body": "Nhân viên khó nhìn lại lịch sử tương tác khi dữ liệu khách hàng nằm rải rác giữa các kênh.",
+              "href": ""
+            },
+            {
+              "label": "04",
+              "title": "Quản lý khó theo dõi hiệu suất đa kênh",
+              "body": "Dữ liệu riêng lẻ ở từng công cụ khiến người quản lý khó có góc nhìn tập trung về workload, trạng thái xử lý và hoạt động của đội ngũ.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "CX_OVERVIEW",
+          "eyebrow": "OMNICHANNEL WORKSPACE",
+          "heading": "Một không gian làm việc cho nhiều điểm chạm khách hàng",
+          "lead": "Gcalls CX tập trung các kênh giao tiếp và quy trình chăm sóc vào một workspace để nhân viên có thể theo dõi hội thoại, customer context và trạng thái xử lý thuận tiện hơn.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "mockup": "cx_context",
+          "cta": []
+        },
+        {
+          "source": "CX_CHANNELS",
+          "eyebrow": "ĐIỂM CHẠM",
+          "heading": "Kết nối những kênh khách hàng đang sử dụng",
+          "lead": "",
+          "cards": true,
+          "items": [
+            {
+              "label": "",
+              "title": "Voice / Hotline",
+              "body": "Tiếp nhận và quản lý tương tác thoại trong cùng hệ sinh thái vận hành.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Zalo OA",
+              "body": "Đưa hội thoại từ Zalo OA vào luồng xử lý tập trung khi kênh này được cấu hình triển khai.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Facebook",
+              "body": "Theo dõi hội thoại từ Facebook Fanpage cùng với các kênh chăm sóc khác.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "SMS",
+              "body": "Bổ sung SMS vào hành trình giao tiếp khi doanh nghiệp sử dụng kênh nhắn tin này.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Email",
+              "body": "Quản lý email như một phần của quy trình hỗ trợ đa kênh nếu được cấu hình.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "CX_INBOX",
+          "eyebrow": "OMNICHANNEL INBOX",
+          "heading": "Giảm việc chuyển đổi giữa nhiều màn hình khi xử lý khách hàng",
+          "lead": "Thay vì mở từng ứng dụng riêng lẻ, đội CSKH có thể làm việc trên một giao diện tập trung hơn để theo dõi hội thoại và trạng thái xử lý của các kênh được kết nối.",
+          "cards": false,
+          "items": [
+            {
+              "label": "",
+              "title": "Xem hội thoại theo kênh",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Theo dõi trạng thái xử lý",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Xác định hội thoại cần tiếp tục",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Hỗ trợ phân công xử lý khi workflow được cấu hình",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Duy trì customer context liên quan",
+              "body": ""
+            }
+          ],
+          "groups": [],
+          "mockup": "cx_inbox",
+          "cta": []
+        },
+        {
+          "source": "CX_TICKETS",
+          "eyebrow": "TICKET & WORKFLOW",
+          "heading": "Biến hội thoại thành công việc có trạng thái và người chịu trách nhiệm",
+          "lead": "Khi một yêu cầu cần được theo dõi qua nhiều bước, ticket và workflow giúp đội ngũ tổ chức việc tiếp nhận, phân công và tiếp tục xử lý rõ ràng hơn.",
+          "cards": false,
+          "items": [
+            {
+              "label": "",
+              "title": "Tạo hoặc quản lý ticket theo workflow được triển khai",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Theo dõi trạng thái xử lý",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Phân công người phụ trách",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Duy trì lịch sử liên quan",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Hỗ trợ quá trình follow-up",
+              "body": ""
+            }
+          ],
+          "groups": [],
+          "mockup": "cx_ticket",
+          "cta": []
+        },
+        {
+          "source": "CX_CONTEXT",
+          "eyebrow": "CUSTOMER CONTEXT",
+          "heading": "Hiểu những gì đã xảy ra trước khi phản hồi khách hàng",
+          "lead": "Lịch sử tương tác và dữ liệu liên quan giúp nhân viên có thêm bối cảnh khi tiếp nhận một hội thoại mới hoặc tiếp tục yêu cầu đang xử lý.",
+          "cards": false,
+          "items": [
+            {
+              "label": "",
+              "title": "Hồ sơ khách hàng",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Lịch sử theo kênh",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Tương tác gần đây",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Lịch sử ticket",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Trạng thái xử lý",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Ghi chú và context liên quan",
+              "body": ""
+            }
+          ],
+          "groups": [],
+          "mockup": "cx_context",
+          "cta": []
+        },
+        {
+          "source": "CX_HOW_IT_WORKS",
+          "eyebrow": "CÁCH HOẠT ĐỘNG",
+          "heading": "Từ nhiều điểm chạm đến một quy trình chăm sóc tập trung hơn",
+          "lead": "",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Khách hàng liên hệ qua kênh phù hợp",
+              "body": "Tương tác có thể bắt đầu từ Voice, Zalo, Facebook, SMS, Email hoặc kênh được doanh nghiệp triển khai.",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "Gcalls CX tập trung hội thoại",
+              "body": "Các điểm chạm được kết nối được đưa vào workspace để đội ngũ theo dõi thuận tiện hơn.",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "Xác định context và trạng thái",
+              "body": "Nhân viên xem thông tin liên quan, lịch sử tương tác và trạng thái xử lý trước khi tiếp tục.",
+              "href": ""
+            },
+            {
+              "label": "04",
+              "title": "Phân công hoặc tiếp tục xử lý",
+              "body": "Hội thoại hoặc ticket được xử lý theo workflow vận hành của doanh nghiệp.",
+              "href": ""
+            },
+            {
+              "label": "05",
+              "title": "Theo dõi hoạt động và kết quả",
+              "body": "Dữ liệu vận hành được tổng hợp để người quản lý có thêm góc nhìn về hoạt động chăm sóc khách hàng.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "diagram": "flow",
+          "cta": []
+        },
+        {
+          "source": "CX_REPORTING",
+          "eyebrow": "BÁO CÁO VẬN HÀNH",
+          "heading": "Theo dõi hoạt động đa kênh từ dữ liệu tập trung",
+          "lead": "Dữ liệu từ các kênh và workflow được triển khai giúp người quản lý có thêm góc nhìn về workload, trạng thái xử lý và hoạt động của đội CSKH.",
+          "cards": false,
+          "items": [
+            {
+              "label": "",
+              "title": "Khối lượng hội thoại",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Trạng thái ticket",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Phân bổ theo kênh",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Workload của đội ngũ",
+              "body": ""
+            }
+          ],
+          "groups": [],
+          "mockup": "cx_report",
+          "cta": []
+        },
+        {
+          "source": "CX_BENEFITS",
+          "eyebrow": "GIÁ TRỊ VẬN HÀNH",
+          "heading": "Giúp đội CSKH làm việc với ít điểm đứt gãy hơn",
+          "lead": "",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Giảm phân mảnh công cụ",
+              "body": "Đưa nhiều điểm chạm vào cùng một luồng làm việc giúp nhân viên hạn chế việc chuyển đổi giữa các hệ thống rời rạc.",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "Giảm nguy cơ bỏ sót tương tác",
+              "body": "Trạng thái xử lý tập trung giúp đội ngũ dễ nhận biết những hội thoại cần tiếp tục.",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "Giữ customer context xuyên kênh",
+              "body": "Lịch sử liên quan giúp nhân viên hiểu những tương tác đã diễn ra trước đó.",
+              "href": ""
+            },
+            {
+              "label": "04",
+              "title": "Có thêm dữ liệu cho quản lý",
+              "body": "Reporting giúp người quản lý quan sát hoạt động đa kênh thay vì chỉ theo dõi từng công cụ riêng biệt.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "CX_USE_CASES",
+          "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
+          "heading": "Gcalls CX phù hợp với những mô hình có nhiều điểm chạm khách hàng",
+          "lead": "",
+          "cards": true,
+          "items": [
+            {
+              "label": "",
+              "title": "Tài chính",
+              "body": "Hỗ trợ đội chăm sóc quản lý lượng tương tác lớn và theo dõi yêu cầu trên nhiều điểm chạm.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Bảo hiểm",
+              "body": "Tập trung hội thoại và quá trình follow-up khi khách hàng tương tác qua nhiều kênh.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Bất động sản",
+              "body": "Hỗ trợ đội tư vấn và CSKH theo dõi hội thoại, lead và quá trình chăm sóc trên nhiều điểm chạm.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Doanh nghiệp tăng trưởng nhanh",
+              "body": "Phù hợp khi số lượng kênh, nhân viên và tương tác tăng khiến mô hình xử lý riêng lẻ không còn dễ quản lý.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "CX_INTEGRATION",
+          "eyebrow": "KẾT NỐI HỆ THỐNG",
+          "heading": "Kết nối giao tiếp đa kênh với dữ liệu và quy trình doanh nghiệp",
+          "lead": "Gcalls CX tập trung vào vận hành giao tiếp đa kênh. Khi doanh nghiệp cần kết nối sâu hoạt động cuộc gọi với CRM, Gcalls có giải pháp tích hợp riêng cho workflow Sales và Customer Service.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "CX_BOUNDARIES",
+          "eyebrow": "CHỌN ĐÚNG GIẢI PHÁP",
+          "heading": "Mỗi bài toán giao tiếp cần một lớp sản phẩm khác nhau",
+          "lead": "",
+          "cards": true,
+          "items": [
+            {
+              "label": "",
+              "title": "Nghe gọi tập trung trên trình duyệt",
+              "body": "Gcalls Plus Webphone",
+              "href": "/gcalls-plus-webphone/"
+            },
+            {
+              "label": "",
+              "title": "Quản lý giao tiếp đa kênh",
+              "body": "Gcalls CX",
+              "href": "/gcalls-cx/"
+            },
+            {
+              "label": "",
+              "title": "Kiểm soát chất lượng cuộc gọi bằng AI",
+              "body": "QA QC Center",
+              "href": "/qc-bot-ai/"
+            },
+            {
+              "label": "",
+              "title": "Tích hợp cuộc gọi sâu vào CRM",
+              "body": "CRM Integration",
+              "href": "/tong-dai-tich-hop-crm/"
+            },
+            {
+              "label": "",
+              "title": "Liên lạc với thị trường quốc tế",
+              "body": "International Calling",
+              "href": "/tong-dai-quoc-te/"
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "CX_DEPLOYMENT",
+          "eyebrow": "TRIỂN KHAI",
+          "heading": "Thiết kế cấu hình theo kênh và workflow doanh nghiệp đang sử dụng",
+          "lead": "Phạm vi triển khai Gcalls CX phụ thuộc vào các kênh cần kết nối, quy trình ticket, số lượng người dùng và hệ thống doanh nghiệp liên quan.",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Khảo sát các điểm chạm hiện tại",
+              "body": "",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "Xác định kênh cần kết nối",
+              "body": "",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "Thiết kế workflow xử lý",
+              "body": "",
+              "href": ""
+            },
+            {
+              "label": "04",
+              "title": "Cấu hình người dùng và phân quyền",
+              "body": "",
+              "href": ""
+            },
+            {
+              "label": "05",
+              "title": "Kiểm thử",
+              "body": "",
+              "href": ""
+            },
+            {
+              "label": "06",
+              "title": "Hướng dẫn vận hành",
+              "body": "",
+              "href": ""
+            },
+            {
+              "label": "07",
+              "title": "Go-live theo phạm vi đã thống nhất",
+              "body": "",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "CX_TRUST",
+          "eyebrow": "TRIỂN KHAI THEO BỐI CẢNH THỰC TẾ",
+          "heading": "Mỗi hành trình khách hàng cần một workflow khác nhau",
+          "lead": "Kênh giao tiếp, cấu trúc đội ngũ và cách xử lý ticket khác nhau giữa từng doanh nghiệp. Gcalls CX cần được cấu hình theo quy trình vận hành thực tế thay vì áp dụng một mô hình giống nhau cho mọi tổ chức.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "cta": [
+            {
+              "label": "Yêu cầu demo theo workflow của doanh nghiệp",
+              "intent": "demo",
+              "source": "gcalls_cx",
+              "product": "Gcalls CX"
+            },
+            {
+              "label": "Đọc bài viết trên Blog Gcalls",
+              "href": "/blog/"
+            }
+          ]
+        },
+        {
+          "source": "CX_PRICING",
+          "eyebrow": "CẤU HÌNH & CHI PHÍ",
+          "heading": "Chi phí phụ thuộc vào số kênh, người dùng và phạm vi triển khai",
+          "lead": "Cấu hình Gcalls CX có thể thay đổi theo số lượng Agent, các kênh cần kết nối, workflow ticket và yêu cầu tích hợp hệ thống. Công cụ ước tính giúp doanh nghiệp mô tả nhu cầu trước khi nhận báo giá chính thức.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "cta": [
+            {
+              "label": "Ước tính cấu hình & chi phí",
+              "href": "/uoc-tinh-chi-phi/?product=gcalls-cx"
+            },
+            {
+              "label": "Xem bảng giá Gcalls",
+              "href": "/bang-gia/"
+            }
+          ]
+        },
+        {
+          "source": "CX_FINAL_CTA",
+          "eyebrow": "GCALLS CX • OMNICHANNEL CONTACT CENTER",
+          "heading": "Xem Gcalls CX hoạt động trên chính hành trình chăm sóc khách hàng của doanh nghiệp bạn",
+          "lead": "Chia sẻ các kênh đang sử dụng, cấu trúc đội CSKH và workflow hiện tại để Gcalls tư vấn cấu hình Contact Center phù hợp.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "cta": []
+        }
+      ]
+    },
+    "voicebot": {
+      "route": "/voicebot-ai/",
+      "source": {
+        "path": "src/data/voicebotAi.ts",
+        "sha256": "575f1770a95c02ecae265c331162f9bbfb1852e4668f0a4adcdc787f01763629"
+      },
+      "product": "Gcalls Voicebot AI",
+      "hero": {
+        "mockup": "voicebot_builder",
+        "cta": {
+          "label": "Đăng ký tư vấn Voicebot",
+          "intent": "consultation",
+          "source": "voicebot_ai",
+          "product": "Gcalls Voicebot AI"
+        },
+        "eyebrow": "VOICEBOT AI CHO DOANH NGHIỆP",
+        "heading": "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI",
+        "lead": "Gcalls giúp doanh nghiệp triển khai Voicebot cho các tác vụ như nhắc lịch, xác nhận thông tin, sàng lọc nhu cầu và xử lý bước đầu ngoài giờ — để đội ngũ tập trung vào những tương tác cần chuyên môn và sự thấu hiểu của con người.",
+        "points": []
+      },
+      "finalCta": {
+        "heading": "Bắt đầu từ một tình huống cuộc gọi phù hợp với doanh nghiệp",
+        "lead": "Chia sẻ quy trình hiện tại để đội ngũ Gcalls cùng bạn xác định use case, phạm vi tích hợp và phương án triển khai Voicebot phù hợp.",
+        "primary": {
+          "label": "Đăng ký tư vấn Voicebot",
+          "intent": "consultation",
+          "source": "voicebot_ai",
+          "product": "Gcalls Voicebot AI"
+        },
+        "secondary": null
+      },
+      "direct": null,
+      "faq": [
+        {
+          "question": "Voicebot AI phù hợp với doanh nghiệp nào?",
+          "answer": "Voicebot phù hợp với doanh nghiệp có nhiều cuộc gọi lặp lại theo cùng một kịch bản, chẳng hạn nhắc lịch, xác nhận thông tin hoặc sàng lọc danh sách liên hệ. Mức độ phù hợp được xác định dựa trên quy trình và khối lượng cuộc gọi thực tế."
+        },
+        {
+          "question": "Voicebot có thể áp dụng cho tình huống nào?",
+          "answer": "Các tình huống thường được cân nhắc gồm nhắc lịch hẹn, nhắc thanh toán, xác nhận thông tin, sàng lọc nhu cầu, chiến dịch gọi hàng loạt và xử lý bước đầu ngoài giờ. Mỗi tình huống cần kịch bản riêng và được kiểm thử trước khi mở rộng."
+        },
+        {
+          "question": "Có thể kết nối Voicebot với hệ thống hiện tại không?",
+          "answer": "Khả năng kết nối với tổng đài, CRM, dữ liệu chiến dịch, quy trình chăm sóc khách hàng và hệ thống báo cáo có thể được khảo sát trong quá trình tư vấn. Phạm vi tích hợp cụ thể phụ thuộc vào hệ thống và dữ liệu hiện có của doanh nghiệp."
+        },
+        {
+          "question": "Khi nào cuộc gọi cần chuyển sang nhân viên?",
+          "answer": "Những tình huống nằm ngoài kịch bản, cần tư vấn chuyên sâu, thương lượng hoặc xử lý khiếu nại nên được chuyển cho nhân viên. Điều kiện chuyển tiếp được thống nhất khi xây dựng kịch bản chứ không cố định cho mọi doanh nghiệp."
+        },
+        {
+          "question": "Doanh nghiệp bắt đầu triển khai như thế nào?",
+          "answer": "Thông thường sẽ bắt đầu bằng việc khảo sát nhu cầu, chọn một use case cụ thể, xây dựng kịch bản, thiết lập và kiểm thử trên phạm vi giới hạn, sau đó mới vận hành và tối ưu theo kết quả thực tế."
+        },
+        {
+          "question": "Chi phí Voicebot được xác định ra sao?",
+          "answer": "Chi phí phụ thuộc vào use case được triển khai, lưu lượng cuộc gọi, mức độ tích hợp với hệ thống hiện tại và phạm vi triển khai. Gcalls xác định phương án phù hợp sau bước khảo sát thay vì áp dụng một mức giá chung."
+        }
+      ],
+      "lead": {
+        "intent": "consultation",
+        "source": "voicebot_ai",
+        "product": "Gcalls Voicebot AI"
+      },
+      "sections": [
+        {
+          "source": "VB_PROBLEMS",
+          "eyebrow": "BÀI TOÁN VẬN HÀNH",
+          "heading": "Khi những cuộc gọi lặp lại chiếm quá nhiều nguồn lực",
+          "lead": "Nhiều đội ngũ đang dùng cùng một nguồn lực cho hai loại cuộc gọi rất khác nhau: những cuộc gọi có kịch bản cố định và những cuộc trao đổi cần tư vấn thật sự.",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Thời gian dồn vào các cuộc gọi có kịch bản giống nhau",
+              "body": "Nhắc lịch, xác nhận thông tin hay nhắc thanh toán thường lặp lại gần như nguyên vẹn ở mỗi cuộc gọi, nhưng vẫn cần nhân viên thực hiện thủ công từng cuộc.",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "Khó mở rộng số lượng cuộc gọi trong giai đoạn cao điểm",
+              "body": "Khi chiến dịch cần liên hệ một lượng lớn khách hàng trong thời gian ngắn, khối lượng cuộc gọi bị giới hạn bởi số nhân sự đang có mặt.",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "Ít thời gian còn lại cho khách hàng cần tư vấn chuyên sâu",
+              "body": "Những tình huống cần giải thích, thương lượng hoặc xử lý khiếu nại là nơi nhân viên tạo ra giá trị rõ nhất, nhưng lại thường bị chia sẻ nguồn lực với các cuộc gọi thủ tục.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "VB_USE_CASES",
+          "eyebrow": "TÌNH HUỐNG ỨNG DỤNG",
+          "heading": "Những tình huống cuộc gọi có thể cân nhắc đưa vào Voicebot",
+          "lead": "Voicebot phù hợp nhất với các cuộc gọi có mục tiêu rõ ràng và kịch bản ổn định. Mỗi tình huống dưới đây cần được xem xét theo quy trình và dữ liệu thực tế của doanh nghiệp trước khi triển khai.",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Nhắc lịch hẹn",
+              "body": "Gọi nhắc khách hàng về lịch hẹn đã đặt và ghi nhận phản hồi xác nhận, dời lịch hoặc cần liên hệ lại.",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "Nhắc thanh toán",
+              "body": "Thực hiện các cuộc gọi nhắc kỳ thanh toán theo kịch bản đã được doanh nghiệp duyệt, với nội dung và thời điểm do doanh nghiệp quy định.",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "Xác nhận thông tin",
+              "body": "Xác nhận đơn hàng, lịch giao nhận hoặc thông tin giao dịch, và ghi nhận kết quả xác nhận để chuyển sang bước xử lý tiếp theo.",
+              "href": ""
+            },
+            {
+              "label": "04",
+              "title": "Sàng lọc nhu cầu",
+              "body": "Liên hệ data thô để xác định mức độ quan tâm trước khi chuyển những trường hợp phù hợp cho nhân viên tư vấn.",
+              "href": ""
+            },
+            {
+              "label": "05",
+              "title": "Chiến dịch gọi hàng loạt",
+              "body": "Thực hiện các cuộc gọi lặp lại theo chiến dịch với cùng một kịch bản, thay vì phân bổ toàn bộ danh sách cho đội ngũ.",
+              "href": ""
+            },
+            {
+              "label": "06",
+              "title": "Xử lý bước đầu ngoài giờ",
+              "body": "Tiếp nhận và ghi nhận nhu cầu ở bước đầu tiên ngoài khung giờ làm việc, sau đó chuyển lại cho đội ngũ xử lý trong giờ hành chính.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "VB_HOW_IT_WORKS",
+          "eyebrow": "QUY TRÌNH HOẠT ĐỘNG",
+          "heading": "Một chiến dịch Voicebot diễn ra như thế nào",
+          "lead": "Quy trình dưới đây mô tả cách một chiến dịch được chuẩn bị và vận hành. Việc bước nào được tự động hóa đến đâu phụ thuộc vào phạm vi triển khai được thống nhất với doanh nghiệp.",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Xác định mục tiêu chiến dịch",
+              "body": "Doanh nghiệp và Gcalls thống nhất chiến dịch cần đạt điều gì: nhắc lịch, xác nhận, sàng lọc hay thu thập phản hồi.",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "Chuẩn bị dữ liệu và kịch bản",
+              "body": "Danh sách liên hệ và nội dung hội thoại được doanh nghiệp chuẩn bị, rà soát và duyệt trước khi đưa vào chiến dịch.",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "Voicebot thực hiện cuộc gọi",
+              "body": "Các cuộc gọi được thực hiện theo kịch bản và cấu hình đã thiết lập cho chiến dịch.",
+              "href": ""
+            },
+            {
+              "label": "04",
+              "title": "Ghi nhận kết quả phản hồi",
+              "body": "Phản hồi của người nghe được ghi nhận lại theo cách đã được cấu hình cho từng kịch bản.",
+              "href": ""
+            },
+            {
+              "label": "05",
+              "title": "Chuyển trường hợp cần thiết cho nhân viên",
+              "body": "Những tình huống nằm ngoài kịch bản hoặc cần trao đổi thêm được đưa sang đội ngũ để tiếp tục xử lý.",
+              "href": ""
+            },
+            {
+              "label": "06",
+              "title": "Theo dõi và tối ưu",
+              "body": "Đội ngũ xem lại kết quả chiến dịch để điều chỉnh kịch bản, dữ liệu hoặc cách phân luồng cho các đợt tiếp theo.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "diagram": "flow",
+          "cta": []
+        },
+        {
+          "source": "VB_CAPABILITIES",
+          "eyebrow": "KHẢ NĂNG GIẢI PHÁP",
+          "heading": "Những gì một triển khai Voicebot được xây dựng xoay quanh",
+          "lead": "Phạm vi cụ thể của từng khả năng được xác định trong quá trình khảo sát và kiểm thử, dựa trên use case và hệ thống hiện tại của doanh nghiệp.",
+          "cards": false,
+          "items": [
+            {
+              "label": "",
+              "title": "Thực hiện tác vụ gọi theo kịch bản đã thiết lập.",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Ghi nhận phản hồi của khách hàng trong cuộc gọi.",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Phân loại kết quả cuộc gọi theo các nhóm đã được cấu hình.",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Chuyển các tình huống cần con người xử lý sang đội ngũ.",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Cung cấp dữ liệu phục vụ theo dõi chiến dịch.",
+              "body": ""
+            }
+          ],
+          "groups": [],
+          "mockup": "voicebot_handoff",
+          "cta": []
+        },
+        {
+          "source": "VB_HUMAN_AI",
+          "eyebrow": "CON NGƯỜI VÀ AI",
+          "heading": "AI xử lý tác vụ lặp lại, con người xử lý tương tác có giá trị cao",
+          "lead": "Voicebot được đặt vào quy trình để gánh phần việc có kịch bản rõ ràng. Những cuộc trao đổi cần chuyên môn, sự linh hoạt và khả năng đọc ngữ cảnh vẫn thuộc về đội ngũ.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "diagram": "handover",
+          "cta": []
+        },
+        {
+          "source": "VB_INTEGRATION",
+          "eyebrow": "TÍCH HỢP VÀO QUY TRÌNH",
+          "heading": "Voicebot có thể được khảo sát tích hợp vào hệ thống đang vận hành",
+          "lead": "Phạm vi kết nối được xác định trong quá trình khảo sát. Gcalls đánh giá hệ thống hiện tại, dữ liệu sẵn có và cách đội ngũ đang làm việc trước khi đề xuất phương án tích hợp.",
+          "cards": true,
+          "items": [
+            {
+              "label": "",
+              "title": "Hệ thống tổng đài",
+              "body": "Có thể được khảo sát tích hợp để cuộc gọi Voicebot nằm chung luồng vận hành thoại của doanh nghiệp.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "CRM",
+              "body": "Có thể được khảo sát tích hợp để dữ liệu liên hệ và kết quả cuộc gọi nằm cùng nơi đội ngũ đang làm việc.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Dữ liệu chiến dịch",
+              "body": "Có thể được khảo sát tích hợp để danh sách liên hệ và trạng thái chiến dịch được đồng bộ theo quy trình hiện tại.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Quy trình chăm sóc khách hàng",
+              "body": "Có thể được khảo sát tích hợp để những trường hợp cần con người xử lý đi vào đúng luồng chăm sóc đang có.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Hệ thống báo cáo",
+              "body": "Có thể được khảo sát tích hợp để dữ liệu cuộc gọi phục vụ hoạt động theo dõi và báo cáo nội bộ.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "VB_INDUSTRIES",
+          "eyebrow": "NGÀNH PHÙ HỢP",
+          "heading": "Những nhóm ngành thường có nhiều cuộc gọi lặp lại",
+          "lead": "Mỗi ngành có một nhóm cuộc gọi thủ tục riêng. Đây là điểm bắt đầu thường gặp khi doanh nghiệp cân nhắc đưa Voicebot vào vận hành.",
+          "cards": true,
+          "items": [
+            {
+              "label": "",
+              "title": "Tài chính và bảo hiểm",
+              "body": "Gọi nhắc kỳ thanh toán hoặc nhắc lịch làm việc theo danh sách đã được duyệt.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Giáo dục",
+              "body": "Gọi nhắc lịch học, lịch tư vấn hoặc xác nhận thông tin ghi danh với số lượng lớn trong thời gian ngắn.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Thương mại điện tử và bán lẻ",
+              "body": "Gọi xác nhận đơn hàng và ghi nhận phản hồi của khách trước bước giao nhận.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "BPO và Outsourcing",
+              "body": "Sàng lọc data thô theo chiến dịch trước khi chuyển những liên hệ phù hợp cho nhân viên.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "VB_DEPLOYMENT",
+          "eyebrow": "QUY TRÌNH TRIỂN KHAI",
+          "heading": "Từ khảo sát nhu cầu đến vận hành và tối ưu",
+          "lead": "Thời gian của mỗi bước phụ thuộc vào use case, dữ liệu và mức độ tích hợp, nên được xác định cụ thể trong quá trình tư vấn.",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Khảo sát nhu cầu",
+              "body": "Xem xét quy trình cuộc gọi hiện tại, khối lượng và cách đội ngũ đang xử lý.",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "Xác định use case",
+              "body": "Chọn tình huống cuộc gọi phù hợp để bắt đầu, thay vì đưa toàn bộ hoạt động gọi vào cùng lúc.",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "Xây dựng kịch bản",
+              "body": "Thống nhất nội dung hội thoại, các nhánh phản hồi và điều kiện chuyển sang nhân viên.",
+              "href": ""
+            },
+            {
+              "label": "04",
+              "title": "Thiết lập và kiểm thử",
+              "body": "Cấu hình chiến dịch và kiểm thử trên phạm vi giới hạn trước khi mở rộng.",
+              "href": ""
+            },
+            {
+              "label": "05",
+              "title": "Vận hành và tối ưu",
+              "body": "Theo dõi kết quả thực tế và điều chỉnh kịch bản, dữ liệu hoặc phân luồng theo từng đợt.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "VB_OUTCOMES",
+          "eyebrow": "GIÁ TRỊ ĐẦU RA",
+          "heading": "Những thay đổi doanh nghiệp có thể hướng tới",
+          "lead": "Kết quả cụ thể phụ thuộc vào use case, chất lượng dữ liệu và cách chiến dịch được thiết kế. Dưới đây là những giá trị mà doanh nghiệp thường đặt làm mục tiêu khi bắt đầu.",
+          "cards": true,
+          "items": [
+            {
+              "label": "",
+              "title": "Mở rộng khả năng xử lý cuộc gọi",
+              "body": "Khối lượng cuộc gọi thủ tục không còn bị giới hạn hoàn toàn bởi số nhân sự trực tại một thời điểm.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Tăng tính nhất quán của tác vụ lặp lại",
+              "body": "Cùng một kịch bản được sử dụng cho toàn bộ chiến dịch, thay vì thay đổi theo từng người thực hiện.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Giúp nhân viên tập trung vào tương tác quan trọng",
+              "body": "Đội ngũ dành thời gian cho những khách hàng cần tư vấn, thương lượng hoặc xử lý tình huống riêng.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Dữ liệu cuộc gọi rõ ràng hơn",
+              "body": "Kết quả chiến dịch được ghi nhận theo cấu hình, phục vụ việc theo dõi và rà soát nội bộ.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Linh hoạt thử nghiệm theo từng use case",
+              "body": "Doanh nghiệp có thể bắt đầu từ một tình huống cuộc gọi và mở rộng dần theo kết quả thực tế.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "VB_FINAL_CTA",
+          "eyebrow": "VOICEBOT AI CHO DOANH NGHIỆP",
+          "heading": "Bắt đầu từ một tình huống cuộc gọi phù hợp với doanh nghiệp",
+          "lead": "Chia sẻ quy trình hiện tại để đội ngũ Gcalls cùng bạn xác định use case, phạm vi tích hợp và phương án triển khai Voicebot phù hợp.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "cta": []
+        }
+      ]
+    },
+    "qa-qc": {
+      "route": "/qc-bot-ai/",
+      "source": {
+        "path": "src/data/qaQcCenter.ts",
+        "sha256": "62d17e7d5f867193924e1fb79e91ebbab5721ba62923e1a4de4b82bf2c1e08ce"
+      },
+      "product": "QA QC Center",
+      "hero": {
+        "mockup": "qc_review",
+        "cta": {
+          "label": "Yêu cầu demo QA QC Center",
+          "intent": "demo",
+          "source": "qa_qc_center",
+          "product": "QA QC Center"
+        },
+        "eyebrow": "QA QC CENTER • POWERED BY QC BOT AI",
+        "heading": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+        "lead": "Chuyển nội dung cuộc gọi thành dữ liệu có cấu trúc, áp dụng tiêu chí QA và làm nổi bật những tín hiệu cần kiểm tra để đội quản lý tập trung vào các hội thoại quan trọng.",
+        "points": [
+          "Chuyển hội thoại thành dữ liệu",
+          "Chuẩn hóa tiêu chí đánh giá",
+          "Ưu tiên cuộc gọi cần xem lại"
+        ]
+      },
+      "finalCta": {
+        "heading": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ngũ bạn",
+        "lead": "Chia sẻ quy trình QA, tiêu chí đánh giá và cách đội ngũ đang kiểm tra cuộc gọi để Gcalls tư vấn cấu hình phù hợp.",
+        "primary": {
+          "label": "Yêu cầu demo QA QC Center",
+          "intent": "demo",
+          "source": "qa_qc_center",
+          "product": "QA QC Center"
+        },
+        "secondary": {
+          "label": "Đăng ký tư vấn",
+          "intent": "consultation",
+          "source": "qa_qc_center",
+          "product": "QA QC Center"
+        }
+      },
+      "direct": {
+        "question": "QA QC Center là gì?",
+        "answer": "QA QC Center sử dụng năng lực QC Bot AI để chuyển nội dung cuộc gọi thành transcript, đánh giá theo các tiêu chí QA được cấu hình và làm nổi bật những tín hiệu cần kiểm tra như từ khóa, cảm xúc hoặc mức độ tuân thủ. Giải pháp giúp đội QA và quản lý tập trung vào các hội thoại cần được xem xét thay vì phụ thuộc hoàn toàn vào việc nghe lại thủ công."
+      },
+      "faq": [
+        {
+          "question": "QA QC Center là gì?",
+          "answer": "QA QC Center là giải pháp sử dụng QC Bot AI để chuyển cuộc gọi thành transcript, hỗ trợ đánh giá theo tiêu chí QA và làm nổi bật những tín hiệu cần được đội kiểm soát chất lượng xem xét."
+        },
+        {
+          "question": "QC Bot AI có thể tự động chấm điểm cuộc gọi không?",
+          "answer": "QC Bot AI có thể hỗ trợ chấm điểm trên dữ liệu cuộc gọi dựa trên bộ tiêu chí và trọng số được cấu hình. Kết quả cần được sử dụng phù hợp với quy trình QA và bối cảnh vận hành của doanh nghiệp."
+        },
+        {
+          "question": "QC Bot có phân tích từ khóa và cảm xúc không?",
+          "answer": "QA QC Center có thể làm nổi bật từ khóa và các tín hiệu cảm xúc trong hội thoại để hỗ trợ đội QA xác định những cuộc gọi cần chú ý."
+        },
+        {
+          "question": "AI có thay thế hoàn toàn nhân viên QA không?",
+          "answer": "Không nên xem QA QC Center là công cụ thay thế hoàn toàn vai trò QA. AI hỗ trợ xử lý dữ liệu, scoring và phát hiện tín hiệu; đội QA vẫn cần xem xét context, xác nhận kết quả và thực hiện coaching hoặc cải thiện quy trình."
+        },
+        {
+          "question": "QA QC Center phù hợp với doanh nghiệp nào?",
+          "answer": "Giải pháp phù hợp với doanh nghiệp có lượng cuộc gọi đáng kể và cần một quy trình có cấu trúc để theo dõi chất lượng hội thoại, đặc biệt ở Customer Service, Telesales, Contact Center và BPO."
+        },
+        {
+          "question": "QA QC Center có phân tích tất cả cuộc gọi không?",
+          "answer": "Phạm vi phân tích phụ thuộc vào dữ liệu cuộc gọi được đưa vào hệ thống, cấu hình triển khai và điều kiện kỹ thuật thực tế. Gcalls sẽ xác định phạm vi phù hợp trong quá trình tư vấn và kiểm thử."
+        }
+      ],
+      "lead": {
+        "intent": "consultation",
+        "source": "qa_qc_center",
+        "product": "QA QC Center"
+      },
+      "sections": [
+        {
+          "source": "QQ_PROBLEMS",
+          "eyebrow": "BÀI TOÁN QA",
+          "heading": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ để kiểm soát chất lượng",
+          "lead": "Đội QA thường phải chọn một phần nhỏ cuộc gọi để nghe lại, trong khi những cuộc hội thoại còn lại vẫn có thể chứa vấn đề về quy trình, trải nghiệm khách hàng hoặc cách nhân viên xử lý tình huống.",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Khó xem xét toàn bộ khối lượng hội thoại",
+              "body": "Số lượng cuộc gọi lớn khiến đội QA phải ưu tiên mẫu kiểm tra thay vì có góc nhìn có cấu trúc trên toàn bộ dữ liệu được đưa vào hệ thống.",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "Chấm điểm dễ phụ thuộc vào cách đánh giá của từng người",
+              "body": "Nếu tiêu chí và trọng số chưa được chuẩn hóa, kết quả đánh giá giữa các QA có thể thiếu nhất quán.",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "Tốn thời gian tìm cuộc gọi có vấn đề",
+              "body": "QA phải nghe lại nhiều cuộc gọi để xác định những hội thoại có từ khóa, nội dung hoặc dấu hiệu cần được kiểm tra.",
+              "href": ""
+            },
+            {
+              "label": "04",
+              "title": "Dữ liệu QA khó tổng hợp thành xu hướng",
+              "body": "Khi đánh giá nằm ở nhiều file hoặc thao tác thủ công, người quản lý khó nhìn thấy xu hướng chất lượng theo đội ngũ và thời gian.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "QQ_OVERVIEW",
+          "eyebrow": "QC BOT AI",
+          "heading": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem lại",
+          "lead": "QA QC Center kết hợp dữ liệu hội thoại với bộ tiêu chí đánh giá để hỗ trợ đội QA theo dõi chất lượng cuộc gọi theo một quy trình có cấu trúc hơn.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "mockup": "qc_transcript",
+          "cta": []
+        },
+        {
+          "source": "QQ_HOW_IT_WORKS",
+          "eyebrow": "CÁCH HOẠT ĐỘNG",
+          "heading": "Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+          "lead": "",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Tiếp nhận dữ liệu cuộc gọi",
+              "body": "Cuộc gọi được đưa vào luồng phân tích theo cấu hình của hệ thống.",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "Chuyển giọng nói thành văn bản",
+              "body": "Speech-to-Text tạo transcript để nội dung hội thoại có thể được đọc và xử lý dưới dạng dữ liệu.",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "Áp dụng tiêu chí QA",
+              "body": "Hệ thống sử dụng bộ tiêu chí và trọng số được cấu hình để hỗ trợ đánh giá nội dung cuộc gọi.",
+              "href": ""
+            },
+            {
+              "label": "04",
+              "title": "Phát hiện tín hiệu cần chú ý",
+              "body": "Từ khóa, tín hiệu cảm xúc và các điều kiện đánh giá giúp làm nổi bật những cuộc gọi cần được xem xét.",
+              "href": ""
+            },
+            {
+              "label": "05",
+              "title": "QA xem lại và phân tích",
+              "body": "Đội QA sử dụng transcript, scoring và context của cuộc gọi để kiểm tra, xác nhận và tiếp tục quá trình coaching hoặc cải thiện vận hành.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "diagram": "flow",
+          "cta": []
+        },
+        {
+          "source": "QQ_CAPABILITIES",
+          "eyebrow": "NĂNG LỰC AI",
+          "heading": "Các năng lực cốt lõi hỗ trợ đội QA",
+          "lead": "",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Speech-to-Text",
+              "body": "Chuyển nội dung hội thoại thành transcript để hỗ trợ tìm kiếm, đọc và xem lại cuộc gọi.",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "QA Criteria",
+              "body": "Thiết lập các tiêu chí đánh giá phù hợp với quy trình chất lượng của doanh nghiệp.",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "AI-assisted Scoring",
+              "body": "Hỗ trợ chấm điểm trên dữ liệu đã được phân tích dựa trên bộ tiêu chí và trọng số được cấu hình.",
+              "href": ""
+            },
+            {
+              "label": "04",
+              "title": "Keyword Analysis",
+              "body": "Phát hiện các từ khóa hoặc cụm nội dung cần được đội QA chú ý.",
+              "href": ""
+            },
+            {
+              "label": "05",
+              "title": "Sentiment Signals",
+              "body": "Làm nổi bật tín hiệu cảm xúc trong hội thoại để hỗ trợ quá trình xem xét.",
+              "href": ""
+            },
+            {
+              "label": "06",
+              "title": "Conversation Review",
+              "body": "Tập trung transcript, kết quả đánh giá và các tín hiệu liên quan để QA xem lại cuộc gọi hiệu quả hơn.",
+              "href": ""
+            },
+            {
+              "label": "07",
+              "title": "Quality Dashboard",
+              "body": "Tổng hợp dữ liệu đánh giá để người quản lý theo dõi chất lượng và xu hướng vận hành.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "QQ_SCORING",
+          "eyebrow": "QA SCORING",
+          "heading": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+          "lead": "Thay vì chỉ dựa vào cảm nhận khi nghe lại, doanh nghiệp có thể cấu hình bộ tiêu chí và trọng số để tạo một khung đánh giá nhất quán hơn.",
+          "cards": false,
+          "items": [
+            {
+              "label": "",
+              "title": "Thiết lập tiêu chí QA",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Gán trọng số theo mức độ quan trọng",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Hỗ trợ scoring trên dữ liệu được phân tích",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Đưa cuộc gọi cần chú ý vào luồng review",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Cho phép QA xem lại context trước khi kết luận",
+              "body": ""
+            }
+          ],
+          "groups": [],
+          "mockup": "qc_scorecard",
+          "cta": []
+        },
+        {
+          "source": "QQ_SIGNALS",
+          "eyebrow": "CONVERSATION SIGNALS",
+          "heading": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+          "lead": "Không phải mọi cuộc gọi đều cần mức độ kiểm tra như nhau. Các tín hiệu từ nội dung hội thoại có thể giúp đội QA ưu tiên những cuộc gọi cần xem lại trước.",
+          "cards": false,
+          "items": [
+            {
+              "label": "",
+              "title": "Tìm từ khóa/cụm nội dung theo cấu hình",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Làm nổi bật tín hiệu cảm xúc",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Xác định hội thoại có dấu hiệu bất thường",
+              "body": ""
+            },
+            {
+              "label": "",
+              "title": "Theo dõi xu hướng thay vì chỉ nhìn từng cuộc gọi riêng lẻ",
+              "body": ""
+            }
+          ],
+          "groups": [],
+          "mockup": "qc_signals",
+          "cta": []
+        },
+        {
+          "source": "QQ_HUMAN_LOOP",
+          "eyebrow": "AI + HUMAN QA",
+          "heading": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh giá và cải thiện",
+          "lead": "QA QC Center giúp tự động hóa các bước xử lý dữ liệu và làm nổi bật tín hiệu, nhưng quyết định đánh giá, coaching và thay đổi quy trình vẫn cần được đặt trong bối cảnh vận hành thực tế của doanh nghiệp.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "QQ_DASHBOARD",
+          "eyebrow": "QUALITY DASHBOARD",
+          "heading": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+          "lead": "Dashboard tập hợp dữ liệu đánh giá để QA Manager và người vận hành theo dõi các cuộc gọi cần chú ý, kết quả scoring và xu hướng chất lượng theo thời gian.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "mockup": "qc_dashboard",
+          "cta": []
+        },
+        {
+          "source": "QQ_BENEFITS",
+          "eyebrow": "GIÁ TRỊ VẬN HÀNH",
+          "heading": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+          "lead": "",
+          "cards": true,
+          "items": [
+            {
+              "label": "01",
+              "title": "Giảm thời gian tìm cuộc gọi cần kiểm tra",
+              "body": "Sử dụng dữ liệu và tín hiệu để ưu tiên review thay vì phải tìm thủ công trong danh sách lớn.",
+              "href": ""
+            },
+            {
+              "label": "02",
+              "title": "Chuẩn hóa khung đánh giá",
+              "body": "Tiêu chí và trọng số được cấu hình giúp đội QA làm việc trên cùng một framework.",
+              "href": ""
+            },
+            {
+              "label": "03",
+              "title": "Dễ phát hiện xu hướng",
+              "body": "Dashboard và dữ liệu có cấu trúc giúp người quản lý theo dõi các mẫu vấn đề lặp lại theo thời gian.",
+              "href": ""
+            },
+            {
+              "label": "04",
+              "title": "Hỗ trợ coaching có context",
+              "body": "Transcript và kết quả review tạo thêm dữ liệu để trao đổi với nhân viên về những tình huống cụ thể.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "QQ_USE_CASES",
+          "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
+          "heading": "QA QC Center phù hợp với những hoạt động nào?",
+          "lead": "",
+          "cards": true,
+          "items": [
+            {
+              "label": "",
+              "title": "Customer Service QA",
+              "body": "Kiểm tra cách đội CSKH giao tiếp, xử lý tình huống và tuân thủ quy trình dịch vụ.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Telesales QA",
+              "body": "Theo dõi nội dung tư vấn, cách trình bày thông tin và những tín hiệu cần coaching trong cuộc gọi bán hàng.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "BPO / Contact Center",
+              "body": "Hỗ trợ đội QA xử lý lượng lớn dữ liệu hội thoại và ưu tiên những cuộc gọi cần review.",
+              "href": ""
+            },
+            {
+              "label": "",
+              "title": "Finance & Insurance",
+              "body": "Hỗ trợ quy trình QA đối với những cuộc gọi có tiêu chí đánh giá rõ ràng và yêu cầu kiểm tra nội dung hội thoại.",
+              "href": ""
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "QQ_INTEGRATION",
+          "eyebrow": "KẾT NỐI DỮ LIỆU",
+          "heading": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+          "lead": "QA QC Center có thể nằm trong hệ sinh thái giao tiếp Gcalls và được triển khai cùng các giải pháp nghe gọi hoặc tích hợp hệ thống tùy theo kiến trúc của doanh nghiệp.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "QQ_BOUNDARIES",
+          "eyebrow": "CHỌN SẢN PHẨM",
+          "heading": "Chọn đúng sản phẩm theo bài toán cần giải quyết",
+          "lead": "",
+          "cards": true,
+          "items": [
+            {
+              "label": "",
+              "title": "Nghe gọi trên trình duyệt",
+              "body": "Gcalls Plus Webphone",
+              "href": "/gcalls-plus-webphone/"
+            },
+            {
+              "label": "",
+              "title": "Quản lý giao tiếp đa kênh",
+              "body": "Gcalls CX",
+              "href": "/gcalls-cx/"
+            },
+            {
+              "label": "",
+              "title": "Tích hợp cuộc gọi sâu vào CRM",
+              "body": "CRM Integration",
+              "href": "/tong-dai-tich-hop-crm/"
+            },
+            {
+              "label": "",
+              "title": "Kiểm soát chất lượng hội thoại",
+              "body": "QA QC Center",
+              "href": "/qc-bot-ai/"
+            }
+          ],
+          "groups": [],
+          "cta": []
+        },
+        {
+          "source": "QQ_PRICING",
+          "eyebrow": "CẤU HÌNH & CHI PHÍ",
+          "heading": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+          "lead": "Cấu hình QA QC Center có thể phụ thuộc vào quy mô đội ngũ, khối lượng hội thoại cần phân tích và bộ tiêu chí QA cần áp dụng.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "cta": [
+            {
+              "label": "Ước tính cấu hình & chi phí",
+              "href": "/uoc-tinh-chi-phi/?product=qa-qc"
+            },
+            {
+              "label": "Xem bảng giá Gcalls",
+              "href": "/bang-gia/"
+            }
+          ]
+        },
+        {
+          "source": "QQ_STORY",
+          "eyebrow": "QUY TRÌNH QA",
+          "heading": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+          "lead": "Mỗi doanh nghiệp có bộ tiêu chí, quy trình kiểm tra và mục tiêu chất lượng khác nhau. QA QC Center cần được cấu hình theo bối cảnh vận hành thực tế trước khi dữ liệu được sử dụng cho đánh giá hoặc coaching.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "cta": [
+            {
+              "label": "Yêu cầu demo theo quy trình QA của doanh nghiệp",
+              "intent": "demo",
+              "source": "qa_qc_center",
+              "product": "QA QC Center"
+            },
+            {
+              "label": "Đọc bài viết trên Blog Gcalls",
+              "href": "/blog/"
+            }
+          ]
+        },
+        {
+          "source": "QQ_FINAL_CTA",
+          "eyebrow": "QA QC CENTER • POWERED BY QC BOT AI",
+          "heading": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ngũ bạn",
+          "lead": "Chia sẻ quy trình QA, tiêu chí đánh giá và cách đội ngũ đang kiểm tra cuộc gọi để Gcalls tư vấn cấu hình phù hợp.",
+          "cards": false,
+          "items": [],
+          "groups": [],
+          "cta": []
+        }
+      ]
+    }
+  }
+}

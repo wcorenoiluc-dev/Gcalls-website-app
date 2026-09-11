@@ -1,0 +1,934 @@
+/**
+ * Live acceptance for the demo site. One command, everything the 014–017
+ * briefs ask for.
+ *
+ * It is read-only against the site: it loads pages, clicks controls that only
+ * change what is on screen, and writes screenshots and a report locally.
+ * Nothing is submitted, nothing is saved, no admin URL is touched.
+ *
+ *   node wordpress/scripts/acceptance.mjs
+ *   node wordpress/scripts/acceptance.mjs --skip-shots     (faster re-run)
+ *   node wordpress/scripts/acceptance.mjs --routes /,/blog/
+ *
+ * Exits non-zero if any gate fails, so it can be the thing that decides
+ * whether a deploy is accepted rather than a thing somebody reads.
+ */
+
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { chromium } from 'playwright-core'
+
+const HERE = path.dirname(fileURLToPath(import.meta.url))
+const OUT = path.join(HERE, '..', 'dist', 'acceptance')
+
+const args = process.argv.slice(2)
+const arg = (name, fallback) => {
+  const i = args.indexOf(`--${name}`)
+  return i !== -1 ? args[i + 1] : fallback
+}
+const has = (name) => args.includes(`--${name}`)
+
+const ORIGIN = (arg('origin', 'https://ashernguyenxuanthuy.com')).replace(/\/$/, '')
+const SKIP_SHOTS = has('skip-shots')
+
+const ROUTES = arg(
+  'routes',
+  '/,/gcalls-plus-webphone/,/gcalls-cx/,/voicebot-ai/,/qc-bot-ai/,/uoc-tinh-chi-phi/,/blog/',
+).split(',').filter(Boolean)
+
+/** One representative article, so the single-post template is covered. */
+const SINGLE_POST = arg('post', '/du-lieu-dong-bo-giua-tong-dai-va-helpdesk/')
+
+const WIDTHS = [1440, 1024, 768, 390, 320]
+
+/*
+ * READ FROM THE REPO, not typed here.
+ *
+ * This gate exists to stop the suite measuring a release that is not live yet,
+ * and it was a pair of literals that had to be hand-edited after every deploy.
+ * A literal that must be edited to make a run proceed is a literal somebody
+ * eventually edits to make a run PASS. Reading the versions the working tree
+ * actually declares means the gate says "live does not match this checkout",
+ * which is the question worth asking, and it cannot be satisfied by editing it.
+ */
+const declaredVersion = (file, re) => {
+  const m = fs.readFileSync(path.join(HERE, '..', file), 'utf8').match(re)
+  if (!m) throw new Error(`cannot read version from ${file}`)
+  return m[1]
+}
+
+/*
+ * `--expect-theme` / `--expect-core` name a DIFFERENT release under test, for
+ * the case where live is deliberately not the checkout — a rollback, or a
+ * staged deploy. It is an explicit argument that shows up in the command and in
+ * the run header, not a quiet edit to a constant, which is the distinction that
+ * matters: the run still states which build it measured.
+ */
+const EXPECT = {
+  theme: arg('expect-theme', declaredVersion('wp-content/themes/gcalls-theme/style.css', /^Version:\s*([0-9.]+)/m)),
+  core: arg('expect-core', declaredVersion('wp-content/plugins/gcalls-core/gcalls-core.php', /^const VERSION = '([0-9.]+)';/m)),
+}
+
+const results = []
+let failures = 0
+
+const record = (area, label, ok, detail = '') => {
+  results.push({ area, label, ok, detail })
+  if (!ok) failures += 1
+  console.log(`  ${ok ? 'ok  ' : 'FAIL'} ${label}${detail && !ok ? ` — ${detail}` : ''}`)
+}
+
+const CHROME_PATHS = [
+  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge',
+  '/Applications/Chromium.app/Contents/MacOS/Chromium',
+]
+
+async function browser() {
+  try {
+    return await chromium.launch()
+  } catch (bundled) {
+    const found = CHROME_PATHS.find((p) => fs.existsSync(p))
+    if (!found) throw bundled
+    return chromium.launch({ executablePath: found })
+  }
+}
+
+/**
+ * Console noise from a browser extension is not the website's problem, and on
+ * this machine there is plenty of it.
+ *
+ * Chrome's own message for a failed subresource — "Failed to load resource:
+ * the server responded with a status of 404" — does not name the URL, so
+ * filtering on the text alone cannot tell a missing favicon from a missing
+ * stylesheet. Failed requests are therefore judged from the response event,
+ * which does carry the URL, and the console listener is left for real script
+ * errors.
+ */
+const isSiteError = (text) =>
+  !/extension|chrome-extension|devtools|favicon/i.test(text) &&
+  !/Failed to load resource/i.test(text)
+
+/** A failed request that actually matters: not a favicon, not third-party. */
+const isSiteRequestFailure = (url, status) =>
+  status >= 400 && !/favicon|\.ico($|\?)/i.test(url) && url.includes('ashernguyenxuanthuy.com')
+
+async function settle(page) {
+  await page.waitForLoadState('networkidle').catch(() => {})
+  await page.evaluate(() => document.fonts?.ready).catch(() => {})
+  await page.evaluate(async () => {
+    await new Promise((resolve) => {
+      let y = 0
+      const step = () => {
+        y += window.innerHeight
+        window.scrollTo(0, y)
+        if (y < document.body.scrollHeight) setTimeout(step, 50)
+        else {
+          window.scrollTo(0, 0)
+          setTimeout(resolve, 200)
+        }
+      }
+      step()
+    })
+  })
+  await page.waitForTimeout(250)
+}
+
+const slug = (route) => (route === '/' ? 'home' : route.replace(/^\/|\/$/g, '').replace(/[^a-z0-9]+/gi, '-'))
+
+fs.mkdirSync(OUT, { recursive: true })
+
+const b = await browser()
+
+/* ------------------------------------------------------------- fingerprint */
+
+console.log(`\nACCEPTANCE — ${ORIGIN}\n`)
+console.log('0. Asset fingerprint')
+
+{
+  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } })
+  const page = await ctx.newPage()
+  await page.goto(ORIGIN + '/', { waitUntil: 'domcontentloaded', timeout: 45000 })
+  const html = await page.content()
+
+  const theme = html.match(/theme\.css\?ver=([0-9.]+)/)?.[1] ?? '(none)'
+  const core = html.match(/mockups\.css\?ver=([0-9.]+)/)?.[1] ?? '(none)'
+
+  record('fingerprint', `theme.css?ver=${EXPECT.theme}`, theme === EXPECT.theme, `found ${theme}`)
+  record('fingerprint', `mockups.css?ver=${EXPECT.core}`, core === EXPECT.core, `found ${core}`)
+
+  await ctx.close()
+
+  if (theme !== EXPECT.theme || core !== EXPECT.core) {
+    console.log('\nThe new release is not live yet — the rest of this run would be measuring the old one.')
+    console.log(`theme ${theme}, core ${core}\n`)
+    await b.close()
+    process.exit(2)
+  }
+}
+
+/* ------------------------------------------------ routes × breakpoints */
+
+console.log('\n1. Routes × breakpoints')
+
+const allRoutes = [...ROUTES, SINGLE_POST]
+
+for (const route of allRoutes) {
+  const dir = path.join(OUT, slug(route))
+  if (!SKIP_SHOTS) fs.mkdirSync(dir, { recursive: true })
+
+  for (const width of WIDTHS) {
+    const ctx = await b.newContext({ viewport: { width, height: 900 }, deviceScaleFactor: 1 })
+    const page = await ctx.newPage()
+
+    const consoleErrors = []
+    page.on('console', (m) => m.type() === 'error' && isSiteError(m.text()) && consoleErrors.push(m.text().slice(0, 140)))
+    page.on('pageerror', (e) => consoleErrors.push('pageerror: ' + String(e).slice(0, 140)))
+    page.on('response', (r) => {
+      if (isSiteRequestFailure(r.url(), r.status())) consoleErrors.push(`${r.status()} ${r.url().slice(-70)}`)
+    })
+
+    let status = 0
+    try {
+      const res = await page.goto(ORIGIN + route, { waitUntil: 'domcontentloaded', timeout: 45000 })
+      status = res?.status() ?? 0
+      await settle(page)
+    } catch (error) {
+      record('routes', `${route} @${width} loads`, false, String(error).slice(0, 70))
+      await ctx.close()
+      continue
+    }
+
+    const m = await page.evaluate(() => {
+      const d = document.documentElement
+      const offenders = []
+      for (const el of document.querySelectorAll('body *')) {
+        const r = el.getBoundingClientRect()
+        if (r.width > 0 && (r.right > d.clientWidth + 2 || r.left < -2)) {
+          offenders.push((el.tagName + '.' + String(el.className || '').slice(0, 40)).slice(0, 60))
+          if (offenders.length > 3) break
+        }
+      }
+      return {
+        h1: document.querySelectorAll('h1').length,
+        overflow: d.scrollWidth > d.clientWidth + 1,
+        offenders,
+        broken: [...document.images].filter((i) => i.complete && i.naturalWidth === 0).map((i) => i.currentSrc || i.src).slice(0, 4),
+        rawShortcode: /\[gcalls_[a-z_]+/.test(document.body.innerText),
+        phpNotice: /(Warning|Fatal error|Notice|Deprecated):\s/.test(document.body.innerText),
+        height: d.scrollHeight,
+      }
+    })
+
+    const tag = `${route} @${width}`
+    record('routes', `${tag} HTTP 200`, status === 200, String(status))
+    record('routes', `${tag} exactly one H1`, m.h1 === 1, `${m.h1} found`)
+    record('routes', `${tag} no horizontal overflow`, !m.overflow, m.offenders.join(' '))
+    record('routes', `${tag} no broken image`, m.broken.length === 0, m.broken.join(' '))
+    record('routes', `${tag} no raw shortcode`, !m.rawShortcode)
+    record('routes', `${tag} no PHP warning`, !m.phpNotice)
+    record('routes', `${tag} no console error`, consoleErrors.length === 0, consoleErrors.slice(0, 2).join(' | '))
+
+    if (!SKIP_SHOTS) {
+      await page.screenshot({ path: path.join(dir, `wp-${width}.png`), fullPage: true })
+    }
+
+    await ctx.close()
+  }
+}
+
+/* --------------------------------------------------------- home page shape */
+
+console.log('\n2. Home page structure')
+
+{
+  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } })
+  const page = await ctx.newPage()
+  await page.goto(ORIGIN + '/', { waitUntil: 'domcontentloaded', timeout: 45000 })
+  await settle(page)
+
+  const m = await page.evaluate(() => ({
+    sections: document.querySelectorAll('.elementor-section, .elementor-top-section').length,
+    topSections: document.querySelectorAll('.elementor-top-section').length,
+    mockups: [...document.querySelectorAll('[data-gcalls-mock]')].map((e) => e.getAttribute('data-gcalls-mock')),
+    /*
+     * SCOPED. This counted `.gc-card` across the whole document and reported
+     * 14 for a section that has six, because two later feature grids use the
+     * same class. A count is only meaningful against the grid it belongs to.
+     */
+    painCards: (() => {
+      const first = document.querySelector('.gc-cards')
+      return first ? first.querySelectorAll('.gc-card').length : 0
+    })(),
+    ctaRow: document.querySelectorAll('.gc-ctarow .gc-btn').length,
+    ctaInline: (() => {
+      const row = document.querySelector('.gc-ctarow')
+      if (!row) return false
+      const b = [...row.querySelectorAll('.gc-btn')]
+      return b.length === 2 && Math.abs(b[0].getBoundingClientRect().top - b[1].getBoundingClientRect().top) < 8
+    })(),
+    eyebrow: Boolean(document.querySelector('.gc-eyebrow')),
+    gradient: Boolean(document.querySelector('.gc-grad')),
+    checks: document.querySelectorAll('.gc-check').length,
+    fine: document.querySelectorAll('.gc-fine p').length,
+    logoMark: Boolean(document.querySelector('.gcalls-branding__mark')),
+    stage: Boolean(document.querySelector('.gcalls-stage__main')),
+    floats: document.querySelectorAll('.gcalls-stage__float').length,
+    cardGridCols: (() => {
+      const g = document.querySelector('.gc-cards')
+      return g ? getComputedStyle(g).gridTemplateColumns.split(' ').length : 0
+    })(),
+  }))
+
+  /* Same rule as the QA gate: the number comes from the reviewed inventory
+   * that ships beside the layout, never from a literal here. */
+  const expectedSections = JSON.parse(
+    fs.readFileSync(path.join(HERE, '..', 'wp-content/plugins/gcalls-core/data/homepage-inventory.json'), 'utf8'),
+  ).sections.length
+
+  record(
+    'home',
+    `${expectedSections} Elementor root sections, as the inventory declares`,
+    m.topSections === expectedSections,
+    `${m.topSections} (all: ${m.sections})`,
+  )
+  record('home', 'six pain cards', m.painCards === 6, String(m.painCards))
+  record('home', 'pain cards are 3 across on desktop', m.cardGridCols === 3, `${m.cardGridCols} columns`)
+  record('home', 'hero has two CTAs', m.ctaRow === 2, String(m.ctaRow))
+  record('home', 'hero CTAs sit on one row', m.ctaInline)
+  record('home', 'hero eyebrow present', m.eyebrow)
+  record('home', 'hero heading has gradient emphasis', m.gradient)
+  record('home', 'hero check list has four items', m.checks === 4, String(m.checks))
+  record('home', 'hero fine print has two lines', m.fine === 2, String(m.fine))
+  record('home', 'logo mark present', m.logoMark)
+  record('home', 'hero is a layered stage', m.stage && m.floats >= 1, `${m.floats} floats`)
+  record('home', 'customer popup mockup present', m.mockups.includes('customer_popup'), m.mockups.join(','))
+  record('home', 'call widget mockup present', m.mockups.includes('widget'))
+
+  await ctx.close()
+}
+
+/* ----------------------------------------------------------------- hero */
+
+/*
+ * GCALLS-024. The hero's layered composition, measured against the box that
+ * actually clips it.
+ *
+ * The first version of this measurement compared each floating card to the
+ * Elementor COLUMN and reported 94-100% visible, which was reassuring and
+ * wrong: the real clipper is `.gcalls-mock`, the framed card the stage is
+ * nested inside, and against that box the incoming-call card was 90% visible
+ * with 22px of its left edge — border, corner and the first letter of every
+ * line — cut off.
+ *
+ * So this gate finds the clipping ancestor by walking up from the stage rather
+ * than assuming one, and fails on CUT PIXELS, not on a ratio that a shadow
+ * could flatter. Two pixels are tolerated because a rotated card's bounding box
+ * includes its shadow; content and border are not allowed to lose any.
+ */
+
+console.log('\n3. Hero composition')
+
+const HERO_CUT_TOLERANCE = 2
+
+for (const width of [1440, 1366, 1024, 768, 390, 320]) {
+  const ctx = await b.newContext({ viewport: { width, height: 900 } })
+  const page = await ctx.newPage()
+  await page.goto(ORIGIN + '/', { waitUntil: 'domcontentloaded', timeout: 45000 })
+  await settle(page)
+
+  const hero = await page.evaluate(() => {
+    const section = document.querySelectorAll('.elementor-top-section')[0]
+    const stage = section ? section.querySelector('.gcalls-stage') : null
+    if (!stage) return null
+
+    /* Walk up for the box that really clips, instead of assuming the column. */
+    let clip = stage.parentElement
+    while (clip && getComputedStyle(clip).overflow === 'visible') clip = clip.parentElement
+    if (!clip) clip = document.documentElement
+    const cb = clip.getBoundingClientRect()
+
+    const cuts = (el) => {
+      const r = el.getBoundingClientRect()
+      return {
+        left: Math.max(0, Math.round(cb.left - r.left)),
+        right: Math.max(0, Math.round(r.right - cb.right)),
+        top: Math.max(0, Math.round(cb.top - r.top)),
+        bottom: Math.max(0, Math.round(r.bottom - cb.bottom)),
+        visible: r.width * r.height
+          ? Math.round(
+              (Math.max(0, Math.min(r.right, cb.right) - Math.max(r.left, cb.left)) *
+                Math.max(0, Math.min(r.bottom, cb.bottom) - Math.max(r.top, cb.top))) /
+                (r.width * r.height) * 100,
+            )
+          : 0,
+      }
+    }
+
+    const surfaces = [{ name: 'dashboard', el: stage.querySelector('.gcalls-stage__main') }]
+
+    for (const f of stage.querySelectorAll('.gcalls-stage__float')) {
+      /* Below lg three of the four are display:none by design; a zero box is
+       * not a clipped box, so they are not measured as one. */
+      if (f.getBoundingClientRect().width === 0) continue
+      const name = ([...f.classList].find((c) => c.startsWith('gcalls-stage__float--')) || 'float')
+        .replace('gcalls-stage__float--', '')
+      surfaces.push({ name, el: f })
+    }
+
+    const next = document.querySelectorAll('.elementor-top-section')[1]
+
+    return {
+      clipper: (clip.className || clip.tagName).toString().split(' ')[0],
+      surfaces: surfaces.filter((s) => s.el).map((s) => ({ name: s.name, ...cuts(s.el) })),
+      overflowX: document.documentElement.scrollWidth > innerWidth + 1,
+      scrollWidth: document.documentElement.scrollWidth,
+      overlapNext: next
+        ? Math.round(section.getBoundingClientRect().bottom - next.getBoundingClientRect().top)
+        : 0,
+      stageInsideHero:
+        Math.round(section.getBoundingClientRect().bottom - stage.getBoundingClientRect().bottom) >= 0,
+      h1: document.querySelectorAll('h1').length,
+      ctas: section.querySelectorAll('.gc-ctarow .gc-btn').length,
+      brokenImages: [...section.querySelectorAll('img')].filter(
+        (i) => i.complete && i.naturalWidth === 0,
+      ).length,
+      rawShortcode: /\[[a-z_]+[^\]]*\]/.test(section.innerText),
+    }
+  })
+
+  if (!hero) {
+    record('hero', `@${width} hero stage is present`, false, 'no .gcalls-stage')
+    await ctx.close()
+    continue
+  }
+
+  for (const s of hero.surfaces) {
+    const worst = Math.max(s.left, s.right, s.top, s.bottom)
+    record(
+      'hero',
+      `@${width} ${s.name} is not clipped`,
+      worst <= HERO_CUT_TOLERANCE,
+      `${s.visible}% visible, cut L${s.left} R${s.right} T${s.top} B${s.bottom} by .${hero.clipper}`,
+    )
+  }
+
+  record('hero', `@${width} document does not scroll sideways`, !hero.overflowX, `${hero.scrollWidth} vs ${width}`)
+  record('hero', `@${width} hero does not overlap the next section`, hero.overlapNext <= 0, `${hero.overlapNext}px`)
+  record('hero', `@${width} hero contains the whole stage`, hero.stageInsideHero)
+  record('hero', `@${width} exactly one H1`, hero.h1 === 1, String(hero.h1))
+  record('hero', `@${width} two hero CTAs`, hero.ctas === 2, String(hero.ctas))
+  record('hero', `@${width} no broken image`, hero.brokenImages === 0, String(hero.brokenImages))
+  record('hero', `@${width} no raw shortcode`, !hero.rawShortcode)
+
+  await ctx.close()
+}
+
+/*
+ * The stage CSS is shared, so a hero fix can break the product heroes. These
+ * four carry the same composition on their own pages.
+ */
+for (const route of ['/gcalls-cx/', '/voicebot-ai/', '/qc-bot-ai/', '/gcalls-plus-webphone/']) {
+  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } })
+  const page = await ctx.newPage()
+  await page.goto(ORIGIN + route, { waitUntil: 'domcontentloaded', timeout: 45000 })
+  await settle(page)
+
+  const worst = await page.evaluate(() => {
+    const stages = [...document.querySelectorAll('.gcalls-stage')]
+    let worst = 0
+    let where = ''
+    for (const stage of stages) {
+      let clip = stage.parentElement
+      while (clip && getComputedStyle(clip).overflow === 'visible') clip = clip.parentElement
+      if (!clip) continue
+      const cb = clip.getBoundingClientRect()
+      const parts = [stage.querySelector('.gcalls-stage__main'), ...stage.querySelectorAll('.gcalls-stage__float')]
+      for (const el of parts) {
+        if (!el || el.getBoundingClientRect().width === 0) continue
+        const r = el.getBoundingClientRect()
+        const cut = Math.max(cb.left - r.left, r.right - cb.right, cb.top - r.top, r.bottom - cb.bottom)
+        if (cut > worst) { worst = Math.round(cut); where = el.className.toString().slice(0, 40) }
+      }
+    }
+    return { worst, where, stages: stages.length, overflowX: document.documentElement.scrollWidth > innerWidth + 1 }
+  })
+
+  record('hero', `${route} product stage is not clipped`, worst.worst <= HERO_CUT_TOLERANCE, `${worst.worst}px ${worst.where}`)
+  record('hero', `${route} no horizontal overflow`, !worst.overflowX)
+
+  await ctx.close()
+}
+
+/* ------------------------------------------------------------ ecosystem */
+
+/*
+ * GCALLS-020. The product/solution ecosystem, measured on its own terms.
+ *
+ * Every query below is rooted at a .gc-eco-group, never at the document: the
+ * defect that hid here for a release was a document-wide `.gc-card` count that
+ * summed three unrelated grids and reported a section as broken that was not.
+ *
+ * The dead-space assertion is the one that matters. The block used to be five
+ * sibling top sections each carrying the 104px site rhythm, so 208px of empty
+ * page opened at every seam. GAP_MAX is the threshold for empty vertical run
+ * between two consecutive rendered blocks with nothing visible between them.
+ */
+
+console.log('\n4. Product / solution ecosystem')
+
+const ECO_COLUMNS = { 1440: 3, 1024: 3, 768: 2, 390: 1, 320: 1 }
+const GAP_MAX = 120
+const NAME_GAP_MAX = 12
+
+for (const width of WIDTHS) {
+  const ctx = await b.newContext({ viewport: { width, height: 900 } })
+  const page = await ctx.newPage()
+  await page.goto(ORIGIN + '/', { waitUntil: 'domcontentloaded', timeout: 45000 })
+  await settle(page)
+
+  const eco = await page.evaluate(() => {
+    const groups = [...document.querySelectorAll('.gc-eco-group')]
+    if (!groups.length) return null
+
+    const read = (n) => {
+      const grid = n.querySelector('.gc-eco-grid')
+      const head = n.querySelector('.gc-eco-group__head')
+      const cards = [...grid.querySelectorAll('.gc-eco-card')]
+      const tops = [...new Set(cards.map((c) => Math.round(c.getBoundingClientRect().top)))]
+      return {
+        title: (n.querySelector('.gc-eco-group__title') || {}).textContent?.trim() ?? '',
+        cards: cards.length,
+        cols: getComputedStyle(grid).gridTemplateColumns.split(' ').length,
+        perRow: cards.filter((c) => Math.round(c.getBoundingClientRect().top) === tops[0]).length,
+        headToGrid: Math.round(grid.getBoundingClientRect().top - head.getBoundingClientRect().bottom),
+        rowsEqual: tops.every((t) => {
+          const hs = cards
+            .filter((c) => Math.round(c.getBoundingClientRect().top) === t)
+            .map((c) => Math.round(c.getBoundingClientRect().height))
+          return new Set(hs).size <= 1
+        }),
+        linked: cards.filter((c) => c.tagName === 'A' && (c.getAttribute('href') || '').startsWith('/')).length,
+        iconed: cards.filter((c) => c.querySelector('.gc-eco-card__icon svg')).length,
+        ctaed: cards.filter((c) => c.querySelector('.gc-eco-card__cta')).length,
+        headings: n.querySelectorAll('h1, h2').length,
+        /* Name to the next rendered thing: the supporting label where a card
+         * carries one, the body otherwise. Measuring to the body regardless
+         * would flag the one card with a "QC Bot AI" label as inconsistent
+         * when what fills the gap is an element, not empty space. */
+        nameGaps: [...new Set(cards.map((c) => {
+          const nm = c.querySelector('.gc-eco-card__name').getBoundingClientRect()
+          const next = c.querySelector('.gc-eco-card__supporting') || c.querySelector('.gc-eco-card__body')
+          return Math.round(next.getBoundingClientRect().top - nm.bottom)
+        }))],
+        /*
+         * Elementor puts `min-height: 1px` on every .elementor-column in its
+         * own stylesheet, site-wide. A 1px floor cannot hold a section open,
+         * and failing on it flagged all five breakpoints while the section was
+         * correct. What this check is for is a min-height big enough to create
+         * the empty band this ticket was filed about, so it looks for one.
+         */
+        minHeights: (() => {
+          const bad = []
+          let cur = grid
+          while (cur && cur !== document.body) {
+            const mh = getComputedStyle(cur).minHeight
+            const px = parseFloat(mh)
+            if (mh !== 'auto' && mh !== 'none' && Number.isFinite(px) && px > 2) {
+              bad.push(`${cur.className || cur.tagName}:${mh}`)
+            }
+            cur = cur.parentElement
+          }
+          return bad
+        })(),
+        hrefs: cards.map((c) => c.getAttribute('href')),
+      }
+    }
+
+    /*
+     * Widest empty run between consecutive blocks OF THE ECOSYSTEM RUN.
+     *
+     * Scoped to the sections that hold the groups plus the one CTA row that
+     * follows them. A document-wide query also matched the Cloud section's
+     * link row much further down the page and reported the distance between
+     * two unrelated sections as a 2900px gap — the same document-wide mistake
+     * this suite already made once with `.gc-card`.
+     */
+    const ecoSections = [...new Set(
+      groups.map((g) => g.closest('.elementor-top-section')).filter(Boolean),
+    )]
+
+    const last = ecoSections[ecoSections.length - 1]
+    const after = last ? last.nextElementSibling : null
+
+    if (after && after.classList.contains('elementor-top-section') && after.querySelector('.gc-linkrow')) {
+      ecoSections.push(after)
+    }
+
+    const blocks = ecoSections.flatMap((sec) =>
+      [...sec.querySelectorAll('.gc-eco-group__head, .gc-eco-grid, .gc-linkrow')],
+    )
+    let worst = 0
+    let where = ''
+    for (let i = 1; i < blocks.length; i++) {
+      if (blocks[i - 1].contains(blocks[i]) || blocks[i].contains(blocks[i - 1])) continue
+      const gap = Math.round(blocks[i].getBoundingClientRect().top - blocks[i - 1].getBoundingClientRect().bottom)
+      if (gap > worst) {
+        worst = gap
+        where = `${blocks[i - 1].className} -> ${blocks[i].className}`
+      }
+    }
+
+    return { groups: groups.map(read), worst, where }
+  })
+
+  if (!eco) {
+    record('ecosystem', `@${width} ecosystem section is present`, false, 'no .gc-eco-group')
+    await ctx.close()
+    continue
+  }
+
+  record('ecosystem', `@${width} two groups`, eco.groups.length === 2, String(eco.groups.length))
+
+  const [products, solutions] = eco.groups
+  const expectCols = ECO_COLUMNS[width]
+
+  record('ecosystem', `@${width} product cards = 3`, products.cards === 3, String(products.cards))
+  record('ecosystem', `@${width} solution cards = 7`, solutions.cards === 7, String(solutions.cards))
+
+  for (const g of eco.groups) {
+    const tag = `@${width} ${g.title}`
+    record('ecosystem', `${tag} grid is ${expectCols} across`, g.cols === expectCols, `${g.cols} columns`)
+    record('ecosystem', `${tag} first row holds ${expectCols}`, g.perRow === Math.min(expectCols, g.cards), String(g.perRow))
+    record('ecosystem', `${tag} heading sits on its grid`, g.headToGrid > 0 && g.headToGrid <= 48, `${g.headToGrid}px`)
+    record('ecosystem', `${tag} cards level within a row`, g.rowsEqual)
+    record('ecosystem', `${tag} every card links to a route`, g.linked === g.cards, `${g.linked}/${g.cards}`)
+    record('ecosystem', `${tag} every card carries an icon`, g.iconed === g.cards, `${g.iconed}/${g.cards}`)
+    record('ecosystem', `${tag} every card carries a CTA`, g.ctaed === g.cards, `${g.ctaed}/${g.cards}`)
+    record('ecosystem', `${tag} name-to-body spacing is consistent`,
+      g.nameGaps.every((n) => n >= 0 && n <= NAME_GAP_MAX), g.nameGaps.join(','))
+    record('ecosystem', `${tag} no min-height on any ancestor`, g.minHeights.length === 0, g.minHeights.join(' '))
+    record('ecosystem', `${tag} no h1/h2 inside the group`, g.headings === 0, String(g.headings))
+  }
+
+  record('ecosystem', `@${width} no dead space between blocks`, eco.worst <= GAP_MAX, `${eco.worst}px ${eco.where}`)
+
+  /* Every href must resolve, not merely exist. */
+  if (width === 1440) {
+    const hrefs = [...new Set(eco.groups.flatMap((g) => g.hrefs))]
+    for (const href of hrefs) {
+      const res = await page.request.get(new URL(href, ORIGIN).toString())
+      record('ecosystem', `link ${href.split('?')[0]} is 200`, res.status() === 200, String(res.status()))
+    }
+
+    /* focus-visible must produce a real, visible ring on the card itself. */
+    const focus = await page.evaluate(() => {
+      const card = document.querySelector('.gc-eco-card')
+      card.focus()
+      const cs = getComputedStyle(card)
+      return {
+        focused: document.activeElement === card,
+        outlineWidth: cs.outlineWidth,
+        outlineStyle: cs.outlineStyle,
+      }
+    })
+    record('ecosystem', 'a card takes keyboard focus', focus.focused)
+    record('ecosystem', 'focus-visible draws a ring',
+      focus.outlineStyle !== 'none' && parseFloat(focus.outlineWidth) >= 2,
+      `${focus.outlineStyle} ${focus.outlineWidth}`)
+  }
+
+  const overflows = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)
+  record('ecosystem', `@${width} no horizontal overflow`, !overflows)
+
+  await ctx.close()
+}
+
+/* ------------------------------------------------------- product visuals */
+
+console.log('\n5. Product visuals')
+
+const PRODUCT_VISUALS = {
+  '/gcalls-cx/': ['cx_inbox', 'cx_context', 'cx_ticket', 'cx_report'],
+  '/voicebot-ai/': ['voicebot_builder', 'voicebot_handoff'],
+  '/qc-bot-ai/': ['qc_review', 'qc_transcript', 'qc_scorecard', 'qc_signals', 'qc_dashboard'],
+}
+
+for (const [route, expected] of Object.entries(PRODUCT_VISUALS)) {
+  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } })
+  const page = await ctx.newPage()
+  await page.goto(ORIGIN + route, { waitUntil: 'domcontentloaded', timeout: 45000 })
+  await settle(page)
+
+  const found = await page.evaluate(() =>
+    [...new Set([...document.querySelectorAll('[data-gcalls-mock]')].map((e) => e.getAttribute('data-gcalls-mock')))],
+  )
+
+  for (const id of expected) {
+    record('visuals', `${route} renders ${id}`, found.includes(id), found.join(','))
+  }
+
+  const generic = ['crm', 'analytics'].filter((g) => found.includes(g))
+  record('visuals', `${route} uses no generic stand-in`, generic.length === 0, generic.join(','))
+
+  await ctx.close()
+}
+
+/* ------------------------------------------------------------ interaction */
+
+console.log('\n6. Interaction')
+
+{
+  /* Mobile menu: click, Escape, outside click, scroll lock. */
+  const ctx = await b.newContext({ viewport: { width: 390, height: 780 } })
+  const page = await ctx.newPage()
+  await page.goto(ORIGIN + '/', { waitUntil: 'domcontentloaded', timeout: 45000 })
+  await settle(page)
+
+  const toggle = page.locator('[data-gcalls-nav-toggle]')
+  const hasToggle = (await toggle.count()) > 0
+  record('interaction', 'mobile menu toggle exists', hasToggle)
+
+  if (hasToggle) {
+    await toggle.click()
+    await page.waitForTimeout(200)
+    record('interaction', 'menu opens on click', (await toggle.getAttribute('aria-expanded')) === 'true')
+    record('interaction', 'background scroll locks', await page.evaluate(() => document.body.classList.contains('gcalls-nav-open') || document.documentElement.classList.contains('gcalls-nav-open')))
+
+    await page.keyboard.press('Escape')
+    await page.waitForTimeout(200)
+    record('interaction', 'menu closes on Escape', (await toggle.getAttribute('aria-expanded')) === 'false')
+
+    await toggle.click()
+    await page.waitForTimeout(200)
+    /*
+     * Click inside the main content, computed from its box. A fixed (5, 700)
+     * can land on the open panel itself or on nothing at all depending on the
+     * viewport, and then this measures the click rather than the menu.
+     */
+    const mainBox = await page.locator('#gcalls-main, main').first().boundingBox()
+    await page.mouse.click(200, mainBox ? Math.round(mainBox.y + 300) : 700)
+    await page.waitForTimeout(350)
+    record('interaction', 'menu closes on outside click', (await toggle.getAttribute('aria-expanded')) === 'false')
+  }
+
+  await ctx.close()
+}
+
+{
+  /* Gcalls Plus gallery: six tabs, arrow keys, roving tabindex. */
+  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } })
+  const page = await ctx.newPage()
+  await page.goto(ORIGIN + '/gcalls-plus-webphone/', { waitUntil: 'domcontentloaded', timeout: 45000 })
+  await settle(page)
+
+  const tabs = page.locator('[data-gallery-tab]')
+  const count = await tabs.count()
+  record('interaction', 'gallery has six tabs', count === 6, String(count))
+
+  if (count > 0) {
+    const tabbable = await page.evaluate(() => [...document.querySelectorAll('[data-gallery-tab]')].filter((t) => t.tabIndex === 0).length)
+    record('interaction', 'exactly one tab in the tab order', tabbable === 1, String(tabbable))
+
+    await tabs.nth(0).focus()
+    await page.keyboard.press('ArrowRight')
+    await page.waitForTimeout(200)
+    record('interaction', 'ArrowRight moves the gallery', (await tabs.nth(1).getAttribute('aria-selected')) === 'true')
+
+    const visible = await page.evaluate(() => [...document.querySelectorAll('[data-gallery-panel]')].filter((p) => !p.hidden).length)
+    record('interaction', 'exactly one gallery panel is shown', visible === 1, String(visible))
+  }
+
+  await ctx.close()
+}
+
+{
+  /* Blog hub filter. */
+  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } })
+  const page = await ctx.newPage()
+  await page.goto(ORIGIN + '/blog/', { waitUntil: 'domcontentloaded', timeout: 45000 })
+  await settle(page)
+
+  const m = await page.evaluate(() => ({
+    filters: document.querySelectorAll('[data-hub-filter]').length,
+    groups: document.querySelectorAll('[data-hub]').length,
+    cards: document.querySelectorAll('.gcalls-card').length,
+    covers: document.querySelectorAll('.gcalls-cover').length,
+    empty: /chưa có bài|không có bài/i.test(document.body.innerText),
+  }))
+
+  record('blog', 'hub filter is rendered', m.filters > 0, String(m.filters))
+  record('blog', 'eighteen article cards', m.cards === 18, String(m.cards))
+  record('blog', 'every card has a cover', m.covers >= m.cards, `${m.covers} covers / ${m.cards} cards`)
+  record('blog', 'no "no posts yet" message', !m.empty)
+
+  if (m.filters > 1) {
+    const first = page.locator('[data-hub-filter]:not([data-hub-filter="all"]):not([disabled])').first()
+    await first.click()
+    await page.waitForTimeout(250)
+    const after = await page.evaluate(() => ({
+      pressed: [...document.querySelectorAll('[data-hub-filter]')].filter((b) => b.getAttribute('aria-pressed') === 'true').length,
+      shown: [...document.querySelectorAll('[data-hub]')].filter((g) => !g.hidden).length,
+    }))
+    record('blog', 'filtering marks exactly one button pressed', after.pressed === 1, String(after.pressed))
+    record('blog', 'filtering narrows the groups', after.shown === 1, String(after.shown))
+  }
+
+  await ctx.close()
+}
+
+{
+  /* Estimator. */
+  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } })
+  const page = await ctx.newPage()
+  await page.goto(ORIGIN + '/uoc-tinh-chi-phi/', { waitUntil: 'domcontentloaded', timeout: 45000 })
+  await settle(page)
+
+  const m = await page.evaluate(() => ({
+    // The rendered class is `gcalls-est`, not `gcalls-estimator`.
+    root: Boolean(document.querySelector('.gcalls-est')),
+    steps: document.querySelectorAll('.gcalls-est [class*="step"], .gcalls-est fieldset').length,
+    controls: document.querySelectorAll('.gcalls-est button, .gcalls-est input').length,
+  }))
+
+  record('estimator', 'estimator renders', m.root, `root=${m.root}`)
+  record('estimator', 'estimator has controls', m.controls > 0, `${m.steps} steps, ${m.controls} controls`)
+
+  await ctx.close()
+}
+
+{
+  /* Single post template. */
+  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } })
+  const page = await ctx.newPage()
+  await page.goto(ORIGIN + SINGLE_POST, { waitUntil: 'domcontentloaded', timeout: 45000 })
+  await settle(page)
+
+  const m = await page.evaluate(() => ({
+    breadcrumb: Boolean(document.querySelector('.gcalls-breadcrumbs, [class*="breadcrumb"]')),
+    cover: Boolean(document.querySelector('.gcalls-article__cover')),
+    toc: Boolean(document.querySelector('.gcalls-toc')),
+    tocLinks: document.querySelectorAll('.gcalls-toc a').length,
+    anchors: document.querySelectorAll('.gcalls-article__body h2[id], .gcalls-article__body h3[id]').length,
+    related: document.querySelectorAll('.gcalls-related .gcalls-card').length,
+    h1: document.querySelectorAll('h1').length,
+    /*
+     * Scoped to the article. The header carries a site-wide CTA on every page
+     * — counting document-wide reported two and called a correct page a
+     * duplicate.
+     */
+    ctaInArticle: document.querySelectorAll('article .gcalls-cta, .gcalls-article .gcalls-cta').length,
+  }))
+
+  record('single', 'breadcrumb present', m.breadcrumb)
+  record('single', 'cover present', m.cover)
+  record('single', 'contents list present', m.toc, `${m.tocLinks} links`)
+  record('single', 'headings carry anchors', m.anchors > 0, String(m.anchors))
+  record('single', 'related articles present', m.related > 0, String(m.related))
+  record('single', 'exactly one H1', m.h1 === 1, String(m.h1))
+  record('single', 'the article carries exactly one CTA', m.ctaInArticle === 1, String(m.ctaInArticle))
+
+  await ctx.close()
+}
+
+/* --------------------------------------------------------------- hardening */
+
+console.log('\n7. Hardening, redirects, noindex')
+
+const httpCheck = async (url, options = {}) => {
+  const res = await fetch(url, { redirect: 'manual', ...options }).catch(() => null)
+  return res
+}
+
+{
+  const author = await httpCheck(`${ORIGIN}/?author=1`)
+  record('hardening', '/?author=1 is 404', author?.status === 404, String(author?.status))
+  record('hardening', '/?author=1 sends no Location', !author?.headers.get('location'), String(author?.headers.get('location') ?? ''))
+
+  const authorPath = await httpCheck(`${ORIGIN}/author/admin/`)
+  record('hardening', '/author/admin/ is 404', authorPath?.status === 404, String(authorPath?.status))
+
+  const restUsers = await httpCheck(`${ORIGIN}/wp-json/wp/v2/users`)
+  record('hardening', 'REST users is closed', restUsers?.status === 401 || restUsers?.status === 403, String(restUsers?.status))
+
+  const usersSitemap = await httpCheck(`${ORIGIN}/wp-sitemap-users-1.xml`, { redirect: 'follow' })
+  record('hardening', 'no users sitemap', usersSitemap?.status === 404, String(usersSitemap?.status))
+
+  const oembed = await fetch(`${ORIGIN}/wp-json/oembed/1.0/embed?url=${ORIGIN}/blog/`).catch(() => null)
+  const oembedText = oembed ? await oembed.text() : ''
+  record('hardening', 'oEmbed exposes no author', !/author_name|author_url/.test(oembedText))
+
+  const home = await fetch(ORIGIN + '/').catch(() => null)
+  const homeText = home ? await home.text() : ''
+  record('noindex', 'robots meta carries noindex', /name=["']robots["'][^>]*noindex/i.test(homeText))
+
+  /*
+   * X-Robots-Tag, and why it is reported the way it is.
+   *
+   * The header comes from `Header always set` in .htaccess, so Apache adds it
+   * when the request reaches Apache. It does not reach Apache on a page-cache
+   * hit: the cache replays a stored body and the header is not part of it.
+   * Measured behaviour is exactly that — present on the first request after a
+   * purge, absent on every one after, which is most of them.
+   *
+   * This reports what a crawler actually receives and names the layer still
+   * carrying the weight. It is a real gap in one of the four noindex layers,
+   * and not a reason to pretend the header is there.
+   */
+  {
+    const ctx = await b.newContext()
+    const page = await ctx.newPage()
+    const resp = await page.goto(ORIGIN + '/', { waitUntil: 'domcontentloaded', timeout: 45000 })
+    const headers = await resp.allHeaders()
+    const xr = headers['x-robots-tag'] ?? ''
+
+    record(
+      'noindex',
+      'X-Robots-Tag header',
+      /noindex/i.test(xr),
+      xr ||
+        'absent on a page-cache hit — the .htaccess header does not survive a cached response. ' +
+          'noindex is still enforced by the robots meta tag and robots.txt.',
+    )
+    await ctx.close()
+  }
+}
+
+/* -------------------------------------------------------- the eighteen */
+
+console.log('\n8. The eighteen published articles')
+
+{
+  const beforePath = path.join(HERE, '..', 'dist', 'live-baseline-before-deploy.json')
+
+  if (!fs.existsSync(beforePath)) {
+    record('articles', 'pre-deploy baseline exists', false, 'run live-baseline.mjs before deploying')
+  } else {
+    record('articles', 'pre-deploy baseline exists', true)
+    console.log('  (run live-baseline.mjs --compare to diff the eighteen; summarised here)')
+  }
+}
+
+/* ------------------------------------------------------------------ done */
+
+await b.close()
+
+const byArea = {}
+for (const r of results) {
+  byArea[r.area] = byArea[r.area] ?? { pass: 0, fail: 0 }
+  byArea[r.area][r.ok ? 'pass' : 'fail'] += 1
+}
+
+console.log('\nSUMMARY')
+for (const [area, n] of Object.entries(byArea)) {
+  console.log(`  ${area.padEnd(14)} ${String(n.pass).padStart(4)} pass  ${String(n.fail).padStart(3)} fail`)
+}
+
+console.log(`\n${results.length - failures} pass, ${failures} fail`)
+
+fs.writeFileSync(path.join(OUT, 'acceptance.json'), JSON.stringify({ origin: ORIGIN, at: new Date().toISOString(), results }, null, 2))
+console.log(`report: wordpress/dist/acceptance/acceptance.json`)
+if (!SKIP_SHOTS) console.log(`screenshots: wordpress/dist/acceptance/<route>/wp-<width>.png`)
+
+process.exitCode = failures > 0 ? 1 : 0

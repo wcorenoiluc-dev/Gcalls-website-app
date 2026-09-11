@@ -1,0 +1,70 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment / local secrets
+.env
+.env.*
+!.env.example
+# Templates only. Both hold placeholders, never a real value.
+!.env.demo.example
+
+# Editor / IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tooling caches
+.eslintcache
+*.tsbuildinfo
+.vite/
+
+# WordPress — source only. Core, config and uploads never enter this repo.
+# Core is installed on the host and updated there; a copy here would go stale
+# and would be the version an attacker reads off GitHub.
+wordpress/core/
+wordpress/wp-admin/
+wordpress/wp-includes/
+wordpress/wp-config.php
+wordpress/wp-content/uploads/
+wordpress/wp-content/cache/
+wordpress/wp-content/upgrade/
+wordpress/wp-content/languages/
+# Every plugin except the one we author. Elementor and Rank Math are installed
+# from wordpress.org on the host, never vendored here.
+wordpress/wp-content/plugins/*
+!wordpress/wp-content/plugins/gcalls-core/
+# Same rule for themes.
+wordpress/wp-content/themes/*
+!wordpress/wp-content/themes/gcalls-theme/
+# Parity screenshots. 70 full-page PNGs is 92 MB of evidence that is
+# regenerable from scripts/parity-shots.mjs; the measurements that matter are
+# committed as parity-results.json beside them.
+docs/content-review/parity-006/*.png
+
+# Build output of wp:package. The ZIP is a derivable artefact of a commit —
+# committing it doubles the source and lets the two drift.
+wordpress/dist/
+# Database dumps and backups.
+wordpress/**/*.sql
+wordpress/**/*.sql.gz
+wordpress/backups/
