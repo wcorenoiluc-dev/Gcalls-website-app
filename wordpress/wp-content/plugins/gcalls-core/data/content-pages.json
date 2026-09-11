@@ -2247,7 +2247,14 @@
         "eyebrow": "GIẢI PHÁP GCALLS",
         "h1": "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp",
         "description": "Giải pháp Gcalls được tổ chức theo bài toán thực tế, không theo danh sách tính năng: kết nối cuộc gọi với hệ thống doanh nghiệp đang dùng, và thiết lập liên lạc cho các thị trường doanh nghiệp cần phục vụ.",
-        "points": []
+        "points": [],
+        "primaryCta": {
+          "label": "Đăng ký tư vấn giải pháp"
+        },
+        "secondaryCta": {
+          "label": "Ước tính chi phí",
+          "path": "/uoc-tinh-chi-phi/"
+        }
       },
       "sections": [
         {
@@ -4395,7 +4402,14 @@
         "eyebrow": "SẢN PHẨM GCALLS",
         "h1": "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA",
         "description": "Gcalls có ba sản phẩm phục vụ ba bài toán khác nhau trong hoạt động giao tiếp với khách hàng: kênh nghe gọi cho đội ngũ, kiểm soát chất lượng hội thoại, và vận hành chăm sóc khách hàng đa kênh.",
-        "points": []
+        "points": [],
+        "primaryCta": {
+          "label": "Đăng ký tư vấn sản phẩm"
+        },
+        "secondaryCta": {
+          "label": "Xem bảng giá",
+          "path": "/bang-gia/"
+        }
       },
       "sections": [
         {

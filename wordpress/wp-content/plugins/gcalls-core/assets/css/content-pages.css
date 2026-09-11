@@ -591,6 +591,30 @@
 	color: #fff;
 }
 
+/* Hero CTA pair: a row of primary + ghost secondary. */
+.gcalls-cp__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 8px;
+}
+
+.gcalls-cp__actions .gcalls-cp__btn {
+	margin-top: 16px;
+}
+
+.gcalls-cp__btn--ghost {
+	background: transparent;
+	border: 1px solid var(--gcalls-brand, #673ab7);
+	color: var(--gcalls-brand, #673ab7);
+}
+
+.gcalls-cp__btn--ghost:hover,
+.gcalls-cp__btn--ghost:focus-visible {
+	background: var(--gcalls-brand-light, #f5f1fc);
+	color: var(--gcalls-brand-dark, #4a2391);
+}
+
 /* ── Focus ────────────────────────────────────────────────────────────────*/
 .gcalls-cp a:focus-visible {
 	outline: 3px solid var(--gcalls-brand, #673ab7);

@@ -232,6 +232,8 @@ final class Content_Pages {
 			$out .= '<p class="gcalls-cp__lead">' . esc_html( (string) $hero['description'] ) . '</p>';
 		}
 
+		$out .= self::hero_actions( $page );
+
 		$points = (array) ( $hero['points'] ?? array() );
 
 		if ( array() !== $points ) {
@@ -245,6 +247,57 @@ final class Content_Pages {
 		}
 
 		return $out . '</header>';
+	}
+
+	/**
+	 * The hero CTA pair. Primary points at the lead route with the page's
+	 * attribution (same builder the bottom CTA uses); secondary is a plain
+	 * internal path validated through safe_href. Renders nothing when the hero
+	 * declares no CTAs, so pages without them are unchanged.
+	 *
+	 * @param array<string, mixed> $page The page manifest.
+	 */
+	private static function hero_actions( array $page ): string {
+		$hero      = (array) ( $page['hero'] ?? array() );
+		$primary   = (array) ( $hero['primaryCta'] ?? array() );
+		$secondary = (array) ( $hero['secondaryCta'] ?? array() );
+
+		if ( empty( $primary['label'] ) && empty( $secondary['label'] ) ) {
+			return '';
+		}
+
+		$out = '<div class="gcalls-cp__actions">';
+
+		if ( ! empty( $primary['label'] ) ) {
+			$attribution = (array) ( $page['attribution'] ?? array() );
+			$query       = array();
+
+			foreach ( array( 'intent', 'source', 'product', 'solution' ) as $key ) {
+				if ( ! empty( $attribution[ $key ] ) ) {
+					$query[ $key ] = (string) $attribution[ $key ];
+				}
+			}
+
+			$href = Shortcodes::LEAD_ROUTE;
+
+			if ( array() !== $query ) {
+				$href = add_query_arg( array_map( 'rawurlencode', $query ), $href );
+			}
+
+			$out .= '<a class="gcalls-cp__btn" href="' . esc_url( home_url( $href ) ) . '">'
+				. esc_html( (string) $primary['label'] ) . '</a>';
+		}
+
+		if ( ! empty( $secondary['label'] ) ) {
+			$sh = self::safe_href( (string) ( $secondary['href'] ?? $secondary['path'] ?? '' ) );
+
+			if ( '' !== $sh ) {
+				$out .= '<a class="gcalls-cp__btn gcalls-cp__btn--ghost" href="' . esc_url( home_url( $sh ) ) . '">'
+					. esc_html( (string) $secondary['label'] ) . '</a>';
+			}
+		}
+
+		return $out . '</div>';
 	}
 
 	/**
