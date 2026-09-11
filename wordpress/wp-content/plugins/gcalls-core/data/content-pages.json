@@ -1001,7 +1001,14 @@
         "eyebrow": "CÔNG TY",
         "h1": "Gcalls và hệ sinh thái đối tác",
         "description": "Gcalls xây dựng nền tảng tổng đài cho đội Sales và CSKH của doanh nghiệp Việt Nam, triển khai cùng mạng lưới đối tác công nghệ và tư vấn.",
-        "points": []
+        "points": [],
+        "primaryCta": {
+          "label": "Liên hệ đội ngũ Gcalls"
+        },
+        "secondaryCta": {
+          "label": "Xem tất cả sản phẩm",
+          "path": "/san-pham/"
+        }
       },
       "sections": [
         {
@@ -3750,7 +3757,14 @@
         "eyebrow": "THEO NGÀNH",
         "h1": "Giải pháp tổng đài theo đặc thù từng ngành",
         "description": "Mỗi ngành có hành trình khách hàng, quy định và nhịp vận hành riêng. Chọn ngành gần nhất với doanh nghiệp của bạn để xem bài toán cụ thể và cách triển khai phù hợp.",
-        "points": []
+        "points": [],
+        "primaryCta": {
+          "label": "Đăng ký tư vấn theo ngành"
+        },
+        "secondaryCta": {
+          "label": "Xem tất cả giải pháp",
+          "path": "/giai-phap/"
+        }
       },
       "sections": [
         {
@@ -4751,7 +4765,14 @@
         "eyebrow": "TÀI NGUYÊN",
         "h1": "Tài liệu và công cụ cho đội vận hành tổng đài",
         "description": "Hướng dẫn triển khai, thuật ngữ, câu hỏi thường gặp và các tài liệu tham khảo khi doanh nghiệp đánh giá hoặc vận hành tổng đài.",
-        "points": []
+        "points": [],
+        "primaryCta": {
+          "label": "Đăng ký tư vấn"
+        },
+        "secondaryCta": {
+          "label": "Xem tất cả sản phẩm",
+          "path": "/san-pham/"
+        }
       },
       "sections": [
         {
@@ -5071,7 +5092,14 @@
         "eyebrow": "TÍCH HỢP GCALLS",
         "h1": "Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng",
         "description": "Gcalls có thể kết nối với các hệ thống doanh nghiệp đang dùng để đưa cuộc gọi và ngữ cảnh khách hàng vào workflow hiện tại, thay vì buộc đội ngũ chuyển sang một công cụ mới.",
-        "points": []
+        "points": [],
+        "primaryCta": {
+          "label": "Tư vấn tích hợp"
+        },
+        "secondaryCta": {
+          "label": "Xem tất cả giải pháp",
+          "path": "/giai-phap/"
+        }
       },
       "sections": [
         {
