@@ -49,6 +49,30 @@ const artifacts = []
 const note = (message) => console.log(`  ${message}`)
 
 /* ------------------------------------------------------------------ *
+ * Media gate — FAIL CLOSED. Assets that are BLOCKED (burnt-in PII) or
+ * REFUSED (real staff/performance data) must never enter a package.
+ * Source of truth:
+ *   - wordpress/wp-content/plugins/gcalls-core/data/section-components.json
+ *     (approvedMedia.blocked → GP-03/08/09/10/12 PII, GP-04/06 refused)
+ *   - docs/content-review/images/product-media-manifest.json (BLOCKED/REFUSED)
+ * These five content originals are the exact files force-deleted from the live
+ * Media Library on 2026-09-11; re-shipping them would re-expose the PII.
+ * ------------------------------------------------------------------ */
+const BLOCKED_MEDIA = new Set([
+  'gcalls-plus-advanced-filter-desktop-v1.webp',      // GP-03 PII
+  'gcalls-plus-click-to-call-config-desktop-v1.webp', // GP-08 PII
+  'gcalls-plus-webphone-desktop-v1.webp',             // GP-09 PII
+  'gcalls-plus-contact-profile-desktop-v1.webp',      // GP-10 PII
+  'gcalls-plus-integrations-desktop-v1.webp',         // GP-12 PII
+  'agent-performance.webp',   // GP-04 REFUSED (real staff data)
+  'analytics-dashboard.webp', // GP-06 REFUSED (invented KPIs / real perf)
+  'customer-profile.webp',    // GP-10 contact-profile PII
+  'click-to-call.webp',       // GP-08 PII
+])
+const blockedExcluded = []
+const isBlockedMedia = (file) => BLOCKED_MEDIA.has(path.basename(file))
+
+/* ------------------------------------------------------------------ *
  * Provenance — every artifact must be traceable to a commit
  * ------------------------------------------------------------------ */
 
@@ -74,6 +98,13 @@ async function packageTracked({ label, sourceDir, rootName, outName, versionFile
     .split('\0')
     .filter(Boolean)
     .map((file) => path.relative(sourceDir, file))
+    .filter((file) => {
+      if (isBlockedMedia(file)) {
+        blockedExcluded.push(`${label}: ${path.basename(file)}`)
+        return false
+      }
+      return true
+    })
     .sort()
 
   if (tracked.length === 0) {
@@ -169,6 +200,10 @@ execFileSync(
 const manifest = JSON.parse(await readFile(path.join(contentStage, 'content-manifest.json'), 'utf8'))
 
 for (const item of manifest.media) {
+  if (isBlockedMedia(item.file)) {
+    blockedExcluded.push(`content: ${path.basename(item.file)}`)
+    continue
+  }
   await copyFile(path.join(REPO, item.file), path.join(contentStage, 'media', path.basename(item.file)))
 }
 
@@ -178,7 +213,7 @@ for (const entry of manifest.elementor ?? []) {
 
 const contentFiles = [
   'content-manifest.json',
-  ...manifest.media.map((item) => `media/${path.basename(item.file)}`),
+  ...manifest.media.filter((item) => !isBlockedMedia(item.file)).map((item) => `media/${path.basename(item.file)}`),
   ...(manifest.elementor ?? []).map((entry) => `elementor/${path.basename(entry.file)}`),
 ]
 const contentVetProblems = await vet(contentStage, contentFiles)
@@ -417,6 +452,28 @@ if (problems.length) {
   console.log('PROBLEMS')
   for (const problem of problems) console.log(`  - ${problem}`)
   process.exit(1)
+}
+
+// Media gate report + defense-in-depth: prove no blocked asset reached a ZIP.
+if (blockedExcluded.length) {
+  console.log('\nMEDIA GATE — excluded blocked/refused assets (fail closed):')
+  for (const x of [...new Set(blockedExcluded)]) console.log(`  - ${x}`)
+}
+{
+  const { execFileSync } = await import('node:child_process')
+  const leaked = []
+  for (const a of artifacts) {
+    if (!a.path || !a.path.endsWith('.zip')) continue
+    const list = execFileSync('unzip', ['-Z1', a.path], { encoding: 'utf8' })
+    for (const line of list.split('\n')) {
+      if (line && BLOCKED_MEDIA.has(path.basename(line.trim()))) leaked.push(`${path.basename(a.path)}: ${line.trim()}`)
+    }
+  }
+  if (leaked.length) {
+    console.log('\nMEDIA GATE FAILED — blocked media present in a package:')
+    for (const l of leaked) console.log(`  - ${l}`)
+    process.exit(2)
+  }
 }
 
 console.log(`build-release: OK — ${artifacts.length} artifacts + checklist in ${OUT}`)
