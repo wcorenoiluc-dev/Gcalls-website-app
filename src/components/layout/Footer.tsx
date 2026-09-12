@@ -1,7 +1,7 @@
 import { Mail, Phone } from 'lucide-react'
 import { Link } from 'react-router'
 import { CONTACT, FOOTER_COLUMNS } from '@/config/navigation'
-import { Logo } from '@/components/navigation/Logo'
+import { GcallsLogo } from '@/components/brand/GcallsLogo'
 
 /**
  * Shared site footer.
@@ -26,7 +26,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 lg:gap-8">
           {/* Brand + contact */}
           <div>
-            <Logo />
+            <GcallsLogo variant="footer" />
             <p className="mt-4 text-sm leading-relaxed" style={{ color: '#5b5f6b' }}>
               Tổng đài chuyên nghiệp chạy trên trình duyệt cho đội Sales và CSKH.
             </p>

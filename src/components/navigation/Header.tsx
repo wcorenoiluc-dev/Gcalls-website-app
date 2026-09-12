@@ -3,8 +3,8 @@ import { MoreHorizontal, X } from 'lucide-react'
 import { Link } from 'react-router'
 import { PRIMARY_CTA } from '@/config/navigation'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
+import { GcallsLogo } from '@/components/brand/GcallsLogo'
 import { DesktopNav } from './DesktopNav'
-import { Logo } from './Logo'
 import { MobileMenu } from './MobileMenu'
 
 /**
@@ -42,7 +42,7 @@ export function Header() {
         }}
       >
         <div className="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between gap-3">
-          <Logo />
+          <GcallsLogo variant="header" />
 
           <DesktopNav />
 
