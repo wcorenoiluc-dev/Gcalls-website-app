@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 import { CONTACT, ROUTES } from '@/config/navigation'
 import { SITE_ORIGIN } from '@/config/seo'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
+import { darkSection } from '@/lib/theme/darkSection'
 import { JsonLd } from '@/components/common/JsonLd'
 import { Breadcrumb } from '@/components/layout/Breadcrumb'
 import {
@@ -290,7 +291,8 @@ export function PricingPage() {
           >
             <h2
               id="cta-cuoi"
-              className="mx-auto max-w-2xl text-[26px] font-extrabold leading-[1.2] tracking-tight text-white sm:text-[34px] lg:text-[40px]"
+              className="mx-auto max-w-2xl text-[26px] font-extrabold leading-[1.2] tracking-tight sm:text-[34px] lg:text-[40px]"
+              style={{ color: darkSection.heading }}
             >
               Chưa chắc cấu hình nào phù hợp với doanh nghiệp?
             </h2>

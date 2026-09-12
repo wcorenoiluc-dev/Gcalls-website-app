@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Form đăng ký — visual preview (GCALLS-033)</title>
+<!--
+  GCALLS-033 §7 — VISUAL PREVIEW ONLY. NOT DEPLOYED, NOT WIRED.
+
+  There is deliberately no <form> element, no action, no method and no script
+  on this page. Nothing here can submit, and nothing here can fake a success
+  state. The fields are inert boxes styled to match the React LeadForm, and the
+  focus and error states are rendered as static variants rather than produced by
+  interaction, so the states can be reviewed without a live input existing.
+
+  Fields, labels, option list and headings are taken from
+  src/components/lead/LeadForm.tsx and src/lib/leads/types.ts so the preview
+  cannot drift from the component it is previewing.
+
+  Public contact details on the page stay sales@gcalls.co / 028 7302 5469.
+  The internal recipient (socialgcall@gmail.com) is a server-side setting and
+  deliberately does not appear anywhere in the markup.
+-->
+<style>
+  :root{
+    --ink:#111827; --muted:#6b7280; --line:rgba(17,24,39,.12);
+    --brand:#5b21b6; --danger:#d4183d; --ring:#8b5cf6;
+    --radius:20px; --field-h:48px; --gap:18px;
+    --bg:#f6f7f9; --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    padding:40px 20px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1200px;margin:0 auto}
+  .banner{max-width:660px;margin:0 auto 28px;padding:10px 16px;border-radius:999px;
+    background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:13px;font-weight:600;text-align:center}
+  .stateLabel{max-width:660px;margin:34px auto 12px;font-size:12px;font-weight:700;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+  .card{max-width:660px;margin:0 auto;background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius);box-shadow:0 1px 2px rgba(17,24,39,.04),0 10px 30px rgba(17,24,39,.06);
+    padding:32px}
+  .card h2{margin:0;font-size:21px;font-weight:800;letter-spacing:-.01em}
+  .card .lead{margin:8px 0 0;color:var(--muted);font-size:15px}
+
+  .fields{margin-top:26px;display:grid;gap:var(--gap)}
+  .row2{display:grid;gap:var(--gap);grid-template-columns:1fr 1fr}
+  label{display:block;font-size:14px;font-weight:700;margin-bottom:7px}
+  label .req{color:var(--danger)}
+  .field{height:var(--field-h);border:1px solid var(--line);border-radius:12px;background:#fff;
+    display:flex;align-items:center;padding:0 14px;color:#9ca3af;font-size:15px}
+  .field.filled{color:var(--ink)}
+  .field.focus{border-color:var(--ring);box-shadow:0 0 0 3px rgba(139,92,246,.18)}
+  .field.err{border-color:var(--danger);box-shadow:0 0 0 3px rgba(212,24,61,.12)}
+  .field.select::after{content:"";margin-left:auto;width:0;height:0;
+    border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid #6b7280}
+  .hint{margin-top:7px;font-size:13px;font-weight:600;color:var(--danger)}
+  .help{margin-top:7px;font-size:13px;color:var(--muted)}
+
+  .cta{margin-top:26px;height:50px;border-radius:12px;background:var(--brand);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;
+    box-shadow:0 6px 16px rgba(91,33,182,.20)}
+  .fine{margin-top:14px;font-size:13px;color:var(--muted);text-align:center}
+  .fine a{color:var(--brand);text-decoration:none;font-weight:600}
+
+  @media (max-width:640px){
+    body{padding:24px 14px}
+    .card{padding:22px;border-radius:18px}
+    .row2{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="banner">Visual preview — form chưa được kích hoạt, không gửi dữ liệu</div>
+
+  <!-- ── State 1: mặc định ─────────────────────────────────────────────── -->
+  <div class="stateLabel">1 · Trạng thái mặc định</div>
+  <section class="card">
+    <h2>Đăng ký tư vấn</h2>
+    <p class="lead">Chia sẻ nhu cầu hiện tại để đội ngũ Gcalls chuẩn bị trước khi trao đổi.</p>
+
+    <div class="fields">
+      <div class="row2">
+        <div>
+          <label>Họ và tên <span class="req">*</span></label>
+          <div class="field">Nguyễn Văn A</div>
+        </div>
+        <div>
+          <label>Công ty <span class="req">*</span></label>
+          <div class="field">Tên công ty của bạn</div>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div>
+          <label>Email</label>
+          <div class="field">ban@congty.vn</div>
+        </div>
+        <div>
+          <label>Điện thoại</label>
+          <div class="field">090 123 4567</div>
+        </div>
+      </div>
+      <p class="help">Điền email hoặc điện thoại — cần ít nhất một cách để liên hệ lại.</p>
+
+      <div>
+        <label>Nhu cầu</label>
+        <div class="field select">— Chọn —</div>
+      </div>
+    </div>
+
+    <div class="cta">Đăng ký tư vấn</div>
+    <p class="fine">Hoặc liên hệ trực tiếp: <a>sales@gcalls.co</a> · <a>028 7302 5469</a></p>
+  </section>
+
+  <!-- ── State 2: focus ────────────────────────────────────────────────── -->
+  <div class="stateLabel">2 · Trạng thái focus</div>
+  <section class="card">
+    <div class="fields">
+      <div class="row2">
+        <div>
+          <label>Họ và tên <span class="req">*</span></label>
+          <div class="field filled">Nguyễn Thị B</div>
+        </div>
+        <div>
+          <label>Công ty <span class="req">*</span></label>
+          <div class="field focus filled">Công ty TNHH B</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── State 3: lỗi ──────────────────────────────────────────────────── -->
+  <div class="stateLabel">3 · Trạng thái lỗi</div>
+  <section class="card">
+    <div class="fields">
+      <div class="row2">
+        <div>
+          <label>Họ và tên <span class="req">*</span></label>
+          <div class="field err"></div>
+          <p class="hint">Vui lòng nhập họ và tên.</p>
+        </div>
+        <div>
+          <label>Công ty <span class="req">*</span></label>
+          <div class="field filled">Công ty TNHH B</div>
+        </div>
+      </div>
+      <div>
+        <label>Email</label>
+        <div class="field err filled">ban@congty</div>
+        <p class="hint">Email chưa đúng định dạng.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "publishedCount": 18,
+  "draftQueryStatus": 400,
+  "draftTotalHeaderAnon": null,
+  "expectedMigrationDrafts": 163,
+  "note": "Draft enumeration requires auth; anonymous REST returns only published. Expected 163 migration drafts to be confirmed by owner in wp-admin."
+}

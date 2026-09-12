@@ -1,0 +1,270 @@
+/**
+ * Product page sections.
+ *
+ * Tokens come from the theme with a literal fallback, so the shortcode still
+ * looks like Gcalls if it is ever placed on a page rendered without the theme's
+ * stylesheet — an Elementor Canvas template, for instance.
+ *
+ * Every grid is auto-fit rather than a fixed column count: one rule then covers
+ * 1440 down to 320 without a media query, which is what keeps the horizontal
+ * overflow gate at zero.
+ */
+.gcalls-product {
+	--p-brand: var(--gcalls-brand, #673ab7);
+	--p-dark: var(--gcalls-brand-dark, #4a2391);
+	--p-light: var(--gcalls-brand-light, #f5f1fc);
+	--p-border: var(--gcalls-border, #e8e5ef);
+	--p-muted: var(--gcalls-muted, #5b5f6b);
+	--p-ink: var(--gcalls-foreground, #1e2026);
+	font-family: var(--gcalls-font-sans, 'Open Sans', system-ui, sans-serif);
+	color: var(--p-ink);
+}
+
+.gcalls-eyebrow {
+	color: var(--p-brand);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	margin: 0 0 0.5rem;
+	text-transform: uppercase;
+}
+
+.gcalls-product__hero {
+	background:
+		radial-gradient(circle at 92% 10%, rgba(255, 255, 255, 0.86), transparent 34%),
+		linear-gradient(135deg, #f5f1fc 0%, #fff 48%, #f1e9ff 100%);
+	border: 1px solid rgba(103, 58, 183, 0.14);
+	border-radius: clamp(1.25rem, 2vw, 2rem);
+	display: grid;
+	gap: clamp(2rem, 4vw, 4.5rem);
+	grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+	margin-bottom: clamp(3.5rem, 7vw, 6.5rem);
+	overflow: hidden;
+	padding: clamp(2rem, 5vw, 4.75rem);
+	position: relative;
+}
+
+.gcalls-product__hero-copy {
+	align-self: center;
+	min-width: 0;
+}
+
+.gcalls-product__hero-visual {
+	align-self: center;
+	min-width: 0;
+}
+
+.gcalls-product__hero-visual .gcalls-mock {
+	box-shadow: 0 24px 70px rgba(74, 35, 145, 0.18);
+	margin: 0;
+}
+
+.gcalls-product__hero-title {
+	color: var(--p-ink);
+	font-size: clamp(2.35rem, 4.8vw, 4.5rem);
+	font-weight: 800;
+	letter-spacing: -0.045em;
+	line-height: 1.06;
+	margin: 0 0 1.25rem;
+	text-wrap: balance;
+}
+
+.gcalls-product__hero-lead {
+	color: var(--p-muted);
+	font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+	line-height: 1.65;
+	margin: 0 0 1.5rem;
+	max-width: var(--gcalls-measure, 760px);
+}
+
+.gcalls-product__points {
+	display: grid;
+	gap: 0.5rem;
+	grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+	list-style: none;
+	margin: 0 0 1.75rem;
+	padding: 0;
+}
+
+.gcalls-product__points li {
+	color: #34313c;
+	font-weight: 600;
+	line-height: 1.5;
+	padding-left: 1.5rem;
+	position: relative;
+}
+
+/* Drawn, so it needs no icon font and stays on-brand. */
+.gcalls-product__points li::before {
+	border-bottom: 2px solid var(--p-brand);
+	border-left: 2px solid var(--p-brand);
+	content: "";
+	height: 0.35rem;
+	left: 0;
+	position: absolute;
+	top: 0.5rem;
+	transform: rotate(-45deg);
+	width: 0.65rem;
+}
+
+.gcalls-product__section {
+	margin-bottom: clamp(3.75rem, 7vw, 6.5rem);
+	padding-block: 0.5rem;
+}
+
+.gcalls-product__section--alt {
+	background: #faf9fc;
+	border: 1px solid rgba(103, 58, 183, 0.08);
+	border-radius: clamp(1rem, 2vw, 1.5rem);
+	padding: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.gcalls-product__heading {
+	color: var(--p-ink);
+	font-size: clamp(1.75rem, 3.3vw, 2.75rem);
+	letter-spacing: -0.025em;
+	line-height: 1.15;
+	margin: 0 0 1rem;
+	max-width: 22ch;
+	text-wrap: balance;
+}
+
+.gcalls-product__lead {
+	color: var(--p-muted);
+	font-size: 1.0625rem;
+	line-height: 1.7;
+	margin: 0 0 2rem;
+	max-width: var(--gcalls-measure, 760px);
+}
+
+.gcalls-product__grid {
+	display: grid;
+	gap: 1.25rem;
+	grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+}
+
+.gcalls-product__card {
+	background: #fff;
+	border: 1px solid var(--p-border);
+	border-radius: 0.875rem;
+	box-shadow: 0 8px 24px rgba(30, 32, 38, 0.04);
+	padding: clamp(1.25rem, 2vw, 1.75rem);
+	transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.gcalls-product__card:hover {
+	border-color: rgba(103, 58, 183, 0.38);
+	box-shadow: 0 14px 34px rgba(74, 35, 145, 0.09);
+	transform: translateY(-2px);
+}
+
+.gcalls-badge {
+	background: var(--p-light);
+	border-radius: 999px;
+	color: var(--p-dark);
+	display: inline-block;
+	font-size: 0.75rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+	padding: 0.15rem 0.6rem;
+}
+
+.gcalls-product__card-title {
+	color: var(--p-ink);
+	font-size: 1.0625rem;
+	font-weight: 750;
+	line-height: 1.35;
+	margin: 0 0 0.4rem;
+}
+
+.gcalls-product__card-body {
+	color: var(--p-muted);
+	font-size: 0.9375rem;
+	line-height: 1.65;
+	margin: 0;
+}
+
+.gcalls-product__final {
+	background: linear-gradient(135deg, var(--p-dark), var(--p-brand));
+	border-radius: clamp(1rem, 2vw, 1.75rem);
+	color: #fff;
+	margin-top: clamp(3.5rem, 7vw, 6rem);
+	padding: clamp(2rem, 5vw, 4rem);
+}
+
+.gcalls-product__final > .gcalls-product__heading { color: #fff; }
+.gcalls-product__final .gcalls-cta-band__note { color: rgba(255, 255, 255, 0.82); }
+
+/* Diagrams. aspect-ratio reserves the box before the SVG paints, so nothing
+ * below it shifts on load — the same reason the images carry width/height. */
+.gcalls-diagram {
+	background: #fff;
+	border: 1px solid var(--p-border);
+	border-radius: var(--gcalls-radius, 0.625rem);
+	margin: 0 0 1.25rem;
+	padding: 1rem;
+}
+
+.gcalls-diagram svg {
+	aspect-ratio: 715 / 275;
+	display: block;
+	height: auto;
+	width: 100%;
+}
+
+.gcalls-diagram figcaption {
+	font-size: 0.8125rem;
+	margin-top: 0.5rem;
+	text-align: center;
+}
+
+.gcalls-product .gcalls-media {
+	border: 1px solid var(--p-border);
+	border-radius: 1rem;
+	box-shadow: 0 18px 48px rgba(74, 35, 145, 0.12);
+	height: auto;
+	margin-bottom: 1.25rem;
+	max-width: 100%;
+}
+
+/* The direct answer sits right under the hero and is the page's short answer to
+   "what is this?" — set apart so it reads as an answer, not as body copy. */
+.gcalls-product__direct {
+	margin: 0 0 clamp(3.75rem, 7vw, 6.5rem);
+	padding: clamp(1.5rem, 3vw, 2.5rem);
+	border-radius: 16px;
+	background: var(--gcalls-brand-light, #f5f1fc);
+}
+
+.gcalls-product__direct p { margin: 0; }
+
+.gcalls-product__faq { margin-top: 3rem; }
+
+.gcalls-product__faq-item {
+	padding: 1.25rem 0;
+	border-bottom: 1px solid rgba(103, 58, 183, 0.14);
+}
+
+.gcalls-product__faq-question {
+	margin: 0 0 0.5rem;
+	font-size: 1.0625rem;
+	font-weight: 700;
+}
+
+.gcalls-product__faq-answer { margin: 0; }
+
+@media (max-width: 960px) {
+	.gcalls-product__hero { grid-template-columns: 1fr; }
+	.gcalls-product__hero-copy { max-width: 720px; }
+}
+
+@media (max-width: 520px) {
+	.gcalls-product__hero { margin-inline: -0.25rem; padding: 1.5rem; }
+	.gcalls-product__hero-title { font-size: clamp(2.1rem, 11vw, 3.15rem); }
+	.gcalls-product__section--alt { padding: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gcalls-product__card { transition: none; }
+	.gcalls-product__card:hover { transform: none; }
+}

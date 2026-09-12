@@ -1,0 +1,291 @@
+{
+  "capturedAt": "2026-08-31T00:17:36.392Z",
+  "coreVersionLive": "0.10.0",
+  "themeVersionLive": "0.8.5",
+  "pages": {
+    "/tich-hop/": {
+      "http": 200,
+      "wordCount": 139,
+      "h1Count": 1,
+      "h1Text": [
+        "Tổng quan tích hợp"
+      ],
+      "rawShortcode": [],
+      "faqCount": 0,
+      "ctaCount": 2,
+      "brokenImages": [],
+      "imgCount": 0,
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "badResponses": [],
+      "byWidth": {
+        "320": {
+          "docWidth": 320,
+          "viewport": 320,
+          "overflow": false,
+          "height": 2306
+        },
+        "390": {
+          "docWidth": 390,
+          "viewport": 390,
+          "overflow": false,
+          "height": 2282
+        },
+        "768": {
+          "docWidth": 768,
+          "viewport": 768,
+          "overflow": false,
+          "height": 1261
+        },
+        "1024": {
+          "docWidth": 1024,
+          "viewport": 1024,
+          "overflow": false,
+          "height": 998
+        },
+        "1440": {
+          "docWidth": 1440,
+          "viewport": 1440,
+          "overflow": false,
+          "height": 1011
+        }
+      }
+    },
+    "/tich-hop/hubspot/": {
+      "http": 200,
+      "wordCount": 125,
+      "h1Count": 1,
+      "h1Text": [
+        "HubSpot"
+      ],
+      "rawShortcode": [],
+      "faqCount": 0,
+      "ctaCount": 2,
+      "brokenImages": [],
+      "imgCount": 0,
+      "consoleErrors": [],
+      "badResponses": [],
+      "byWidth": {
+        "320": {
+          "docWidth": 320,
+          "viewport": 320,
+          "overflow": false,
+          "height": 2112
+        },
+        "390": {
+          "docWidth": 390,
+          "viewport": 390,
+          "overflow": false,
+          "height": 2088
+        },
+        "768": {
+          "docWidth": 768,
+          "viewport": 768,
+          "overflow": false,
+          "height": 1062
+        },
+        "1024": {
+          "docWidth": 1024,
+          "viewport": 1024,
+          "overflow": false,
+          "height": 900
+        },
+        "1440": {
+          "docWidth": 1440,
+          "viewport": 1440,
+          "overflow": false,
+          "height": 900
+        }
+      }
+    },
+    "/tich-hop/salesforce/": {
+      "http": 200,
+      "wordCount": 125,
+      "h1Count": 1,
+      "h1Text": [
+        "Salesforce"
+      ],
+      "rawShortcode": [],
+      "faqCount": 0,
+      "ctaCount": 2,
+      "brokenImages": [],
+      "imgCount": 0,
+      "consoleErrors": [],
+      "badResponses": [],
+      "byWidth": {
+        "320": {
+          "docWidth": 320,
+          "viewport": 320,
+          "overflow": false,
+          "height": 2112
+        },
+        "390": {
+          "docWidth": 390,
+          "viewport": 390,
+          "overflow": false,
+          "height": 2088
+        },
+        "768": {
+          "docWidth": 768,
+          "viewport": 768,
+          "overflow": false,
+          "height": 1062
+        },
+        "1024": {
+          "docWidth": 1024,
+          "viewport": 1024,
+          "overflow": false,
+          "height": 900
+        },
+        "1440": {
+          "docWidth": 1440,
+          "viewport": 1440,
+          "overflow": false,
+          "height": 900
+        }
+      }
+    },
+    "/tich-hop/zoho-crm/": {
+      "http": 200,
+      "wordCount": 127,
+      "h1Count": 1,
+      "h1Text": [
+        "Zoho CRM"
+      ],
+      "rawShortcode": [],
+      "faqCount": 0,
+      "ctaCount": 2,
+      "brokenImages": [],
+      "imgCount": 0,
+      "consoleErrors": [],
+      "badResponses": [],
+      "byWidth": {
+        "320": {
+          "docWidth": 320,
+          "viewport": 320,
+          "overflow": false,
+          "height": 2112
+        },
+        "390": {
+          "docWidth": 390,
+          "viewport": 390,
+          "overflow": false,
+          "height": 2088
+        },
+        "768": {
+          "docWidth": 768,
+          "viewport": 768,
+          "overflow": false,
+          "height": 1062
+        },
+        "1024": {
+          "docWidth": 1024,
+          "viewport": 1024,
+          "overflow": false,
+          "height": 900
+        },
+        "1440": {
+          "docWidth": 1440,
+          "viewport": 1440,
+          "overflow": false,
+          "height": 900
+        }
+      }
+    },
+    "/tich-hop/freshdesk/": {
+      "http": 200,
+      "wordCount": 125,
+      "h1Count": 1,
+      "h1Text": [
+        "Freshdesk"
+      ],
+      "rawShortcode": [],
+      "faqCount": 0,
+      "ctaCount": 2,
+      "brokenImages": [],
+      "imgCount": 0,
+      "consoleErrors": [],
+      "badResponses": [],
+      "byWidth": {
+        "320": {
+          "docWidth": 320,
+          "viewport": 320,
+          "overflow": false,
+          "height": 2112
+        },
+        "390": {
+          "docWidth": 390,
+          "viewport": 390,
+          "overflow": false,
+          "height": 2088
+        },
+        "768": {
+          "docWidth": 768,
+          "viewport": 768,
+          "overflow": false,
+          "height": 1062
+        },
+        "1024": {
+          "docWidth": 1024,
+          "viewport": 1024,
+          "overflow": false,
+          "height": 900
+        },
+        "1440": {
+          "docWidth": 1440,
+          "viewport": 1440,
+          "overflow": false,
+          "height": 900
+        }
+      }
+    },
+    "/tich-hop/zendesk/": {
+      "http": 200,
+      "wordCount": 125,
+      "h1Count": 1,
+      "h1Text": [
+        "Zendesk"
+      ],
+      "rawShortcode": [],
+      "faqCount": 0,
+      "ctaCount": 2,
+      "brokenImages": [],
+      "imgCount": 0,
+      "consoleErrors": [],
+      "badResponses": [],
+      "byWidth": {
+        "320": {
+          "docWidth": 320,
+          "viewport": 320,
+          "overflow": false,
+          "height": 2112
+        },
+        "390": {
+          "docWidth": 390,
+          "viewport": 390,
+          "overflow": false,
+          "height": 2088
+        },
+        "768": {
+          "docWidth": 768,
+          "viewport": 768,
+          "overflow": false,
+          "height": 1062
+        },
+        "1024": {
+          "docWidth": 1024,
+          "viewport": 1024,
+          "overflow": false,
+          "height": 900
+        },
+        "1440": {
+          "docWidth": 1440,
+          "viewport": 1440,
+          "overflow": false,
+          "height": 900
+        }
+      }
+    }
+  }
+}

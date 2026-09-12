@@ -1,0 +1,1313 @@
+{
+  "schema": 1,
+  "ticket": "WORKER-A — content-pages.json blank-card repair",
+  "generated_at_gmt": "2026-09-03T05:44:20.612Z",
+  "diagnosis": {
+    "summary": "All 58 blank cards in 14 sections across 9 pages are a single exporter defect, not intentionally-empty content. Every one of the 14 source exports has full content in src/data.",
+    "root_cause": "The 0.10.1 exporter that produced these pages read list items through a fixed key vocabulary — title|label|name|term|q|question for the card title and detail|body|summary|description|a|answer|definition for the card body (the same vocabulary that survives in wordpress/scripts/port-content-044.mjs as titleOf()/bodyOf()). The two integration item shapes in src/data use neither set: {product, need, path} for product-boundary tables and {role, flow} for use-case grids. Both resolved to the empty string. The link was lost the same way: the exporter read i.href, while these items carry i.path.",
+    "why_it_was_silent": "The exporter mapped items 1:1 with no `.filter(c => c.title || c.body)`, so the card arrays kept the exact source item counts (5,4,4,4,4,4,4,4,4,4,5,4,4,4 = 58). Nothing looked missing in the manifest; the loss only appears at render time.",
+    "exporter_status": "ABSENT from this repo. wordpress/scripts/port-content-044.mjs is the only script that writes content-pages.json, and it merges by slug with an explicit `SKIP <slug> — already in the manifest, not overwriting`. These 9 pages came with the Core 0.10.1 base, so the code that emptied them is not in the tree. The vocabulary defect is reproduced (and partly mitigated) in port-content-044.mjs: it added a filter that would DROP such cards instead of emitting hollow ones, but neither product/need nor role/flow is in its LIST vocabulary either, so it would silently lose them too if it ever ran on these pages.",
+    "render_effect": "class-content-pages.php::card() returns '' when title and body are both empty; section() then returns '' for a cards section whose cards all render empty AND whose lead is empty. All 14 sections have lead: \"\". So all 14 sections vanish from the HTML.",
+    "pages_affected": "5 pages lose 2 sections each (freshdesk, salesforce, zendesk, zoho-crm, tong-dai-quoc-te) and 4 pages lose 1 section each (hubspot, tong-dai-tich-hop-crm, tong-dai-tich-hop-helpdesk, tong-dai-tich-hop-pos) — 14 sections total, not 10."
+  },
+  "audit": {
+    "empty_cards_total": 58,
+    "sections_affected": 14,
+    "pages_affected": 9,
+    "genuine_export_bug": 58,
+    "intentionally_empty": 0
+  },
+  "merge_instructions": "For each entry, locate the section in content-pages.json by page_slug + section_from (section_index given as a cross-check) and replace it wholesale with `after`. `before` is included so a merge can assert it is patching the section it thinks it is. Card key `current` is informational — the PHP renderer ignores unknown keys.",
+  "sections": [
+    {
+      "page_slug": "freshdesk",
+      "section_index": 2,
+      "section_from": "FD_BOUNDARY",
+      "section_heading": "Freshdesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+      "match_on": {
+        "from": "FD_BOUNDARY",
+        "heading": "Freshdesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+        "type": "cards"
+      },
+      "classification": "GENUINE_EXPORT_BUG",
+      "provenance": {
+        "src_file": "src/data/freshdeskIntegration.ts",
+        "export": "FD_BOUNDARY",
+        "source_item_count": 5,
+        "source_item_keys": [
+          "product",
+          "need",
+          "path"
+        ],
+        "react_component": "src/components/integration/IntegrationBoundaries.tsx",
+        "field_map": {
+          "title": "items[].product",
+          "body": "items[].need",
+          "href": "items[].path (omitted when items[].current)"
+        },
+        "note": "Product-boundary routing table. `current: true` marks the page itself; the React component renders a \"Trang này\" badge and NO link, so no href is emitted for that row."
+      },
+      "before": {
+        "cards": [
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          }
+        ],
+        "eyebrow": null,
+        "lead": ""
+      },
+      "after": {
+        "type": "cards",
+        "from": "FD_BOUNDARY",
+        "heading": "Freshdesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+        "eyebrow": "PHÂN BIỆT SẢN PHẨM",
+        "lead": "",
+        "cards": [
+          {
+            "title": "Gcalls Plus",
+            "body": "Lớp nghe gọi trên trình duyệt — phần thực hiện cuộc gọi của doanh nghiệp.",
+            "href": "/gcalls-plus-webphone/"
+          },
+          {
+            "title": "Helpdesk Integration",
+            "body": "Giải pháp tích hợp Helpdesk nói chung, khi doanh nghiệp chưa xác định nền tảng.",
+            "href": "/tong-dai-tich-hop-helpdesk/"
+          },
+          {
+            "title": "Freshdesk Integration",
+            "body": "Workflow riêng cho đội Support đã sử dụng Freshdesk để quản lý ticket.",
+            "current": true
+          },
+          {
+            "title": "Gcalls CX",
+            "body": "Quản lý giao tiếp đa kênh khi doanh nghiệp cần hợp nhất nhiều điểm chạm khách hàng.",
+            "href": "/gcalls-cx/"
+          },
+          {
+            "title": "QA QC Center",
+            "body": "Đánh giá chất lượng cuộc gọi với hỗ trợ của AI — không phải chức năng của lớp tích hợp Helpdesk.",
+            "href": "/qc-bot-ai/"
+          }
+        ]
+      }
+    },
+    {
+      "page_slug": "freshdesk",
+      "section_index": 13,
+      "section_from": "FD_USE_CASES",
+      "section_heading": "Gcalls × Freshdesk phù hợp với những workflow hỗ trợ nào?",
+      "match_on": {
+        "from": "FD_USE_CASES",
+        "heading": "Gcalls × Freshdesk phù hợp với những workflow hỗ trợ nào?",
+        "type": "cards"
+      },
+      "classification": "GENUINE_EXPORT_BUG",
+      "provenance": {
+        "src_file": "src/data/freshdeskIntegration.ts",
+        "export": "FD_USE_CASES",
+        "source_item_count": 4,
+        "source_item_keys": [
+          "role",
+          "flow"
+        ],
+        "react_component": "src/components/integration/IntegrationUseCases.tsx",
+        "field_map": {
+          "title": "items[].role",
+          "body": "items[].flow"
+        },
+        "note": "Workflow use-case grid. Role + flow chain, no outcome claim."
+      },
+      "before": {
+        "cards": [
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          }
+        ],
+        "eyebrow": null,
+        "lead": ""
+      },
+      "after": {
+        "type": "cards",
+        "from": "FD_USE_CASES",
+        "heading": "Gcalls × Freshdesk phù hợp với những workflow hỗ trợ nào?",
+        "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
+        "lead": "",
+        "cards": [
+          {
+            "title": "Inbound Customer Support",
+            "body": "Agent tiếp nhận cuộc gọi trong bối cảnh contact và yêu cầu hỗ trợ đang được quản lý trong Freshdesk."
+          },
+          {
+            "title": "Ticket Follow-up",
+            "body": "Nhân viên gọi lại cho khách hàng và tiếp tục xử lý ticket từ context hiện có."
+          },
+          {
+            "title": "SaaS Support",
+            "body": "Đội Support theo dõi cuộc gọi và ticket gần hơn trong quá trình xử lý vấn đề sản phẩm hoặc dịch vụ."
+          },
+          {
+            "title": "E-commerce Customer Service",
+            "body": "Đội CSKH sử dụng customer và support context để tiếp tục giải quyết yêu cầu sau cuộc gọi."
+          }
+        ]
+      }
+    },
+    {
+      "page_slug": "hubspot",
+      "section_index": 10,
+      "section_from": "HS_USE_CASES",
+      "section_heading": "Gcalls × HubSpot phù hợp với những workflow nào?",
+      "match_on": {
+        "from": "HS_USE_CASES",
+        "heading": "Gcalls × HubSpot phù hợp với những workflow nào?",
+        "type": "cards"
+      },
+      "classification": "GENUINE_EXPORT_BUG",
+      "provenance": {
+        "src_file": "src/data/hubspotIntegration.ts",
+        "export": "HS_USE_CASES",
+        "source_item_count": 4,
+        "source_item_keys": [
+          "role",
+          "flow"
+        ],
+        "react_component": "src/components/integration/IntegrationUseCases.tsx",
+        "field_map": {
+          "title": "items[].role",
+          "body": "items[].flow"
+        },
+        "note": "Workflow use-case grid. Role + flow chain, no outcome claim."
+      },
+      "before": {
+        "cards": [
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          }
+        ],
+        "eyebrow": null,
+        "lead": ""
+      },
+      "after": {
+        "type": "cards",
+        "from": "HS_USE_CASES",
+        "heading": "Gcalls × HubSpot phù hợp với những workflow nào?",
+        "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
+        "lead": "",
+        "cards": [
+          {
+            "title": "Inbound Sales",
+            "body": "Sales nhận lead trong HubSpot, thực hiện cuộc gọi và tiếp tục follow-up từ customer context hiện có."
+          },
+          {
+            "title": "Lead Follow-up",
+            "body": "Nhân viên làm việc với danh sách lead/contact và gọi theo quy trình thay vì duy trì danh sách số điện thoại riêng."
+          },
+          {
+            "title": "Customer Service",
+            "body": "Agent sử dụng customer record và lịch sử liên quan để có thêm bối cảnh khi khách hàng gọi đến."
+          },
+          {
+            "title": "Customer Success",
+            "body": "Đội CS có thể giữ hoạt động gọi gần hơn với dữ liệu vòng đời khách hàng đang quản lý trên HubSpot."
+          }
+        ]
+      }
+    },
+    {
+      "page_slug": "salesforce",
+      "section_index": 8,
+      "section_from": "SF_RELATIONSHIPS",
+      "section_heading": "Salesforce Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+      "match_on": {
+        "from": "SF_RELATIONSHIPS",
+        "heading": "Salesforce Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+        "type": "cards"
+      },
+      "classification": "GENUINE_EXPORT_BUG",
+      "provenance": {
+        "src_file": "src/data/salesforceIntegration.ts",
+        "export": "SF_RELATIONSHIPS",
+        "source_item_count": 4,
+        "source_item_keys": [
+          "product",
+          "need",
+          "path"
+        ],
+        "react_component": "src/components/integration/IntegrationBoundaries.tsx",
+        "field_map": {
+          "title": "items[].product",
+          "body": "items[].need",
+          "href": "items[].path (omitted when items[].current)"
+        },
+        "note": "Product-boundary routing table. `current: true` marks the page itself; the React component renders a \"Trang này\" badge and NO link, so no href is emitted for that row."
+      },
+      "before": {
+        "cards": [
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          }
+        ],
+        "eyebrow": null,
+        "lead": ""
+      },
+      "after": {
+        "type": "cards",
+        "from": "SF_RELATIONSHIPS",
+        "heading": "Salesforce Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+        "eyebrow": "PHÂN BIỆT SẢN PHẨM",
+        "lead": "",
+        "cards": [
+          {
+            "title": "Gcalls Plus",
+            "body": "Lớp nghe gọi trên trình duyệt — phần thực hiện cuộc gọi của doanh nghiệp.",
+            "href": "/gcalls-plus-webphone/"
+          },
+          {
+            "title": "CRM Integration",
+            "body": "Giải pháp tích hợp CRM nói chung, khi doanh nghiệp chưa xác định nền tảng.",
+            "href": "/tong-dai-tich-hop-crm/"
+          },
+          {
+            "title": "Salesforce Integration",
+            "body": "Workflow riêng cho doanh nghiệp đã sử dụng Salesforce làm hệ thống khách hàng.",
+            "current": true
+          },
+          {
+            "title": "QA QC Center",
+            "body": "Đánh giá chất lượng cuộc gọi với hỗ trợ của AI — không phải chức năng của lớp tích hợp CRM.",
+            "href": "/qc-bot-ai/"
+          }
+        ]
+      }
+    },
+    {
+      "page_slug": "salesforce",
+      "section_index": 12,
+      "section_from": "SF_USE_CASES",
+      "section_heading": "Gcalls × Salesforce phù hợp với những workflow nào?",
+      "match_on": {
+        "from": "SF_USE_CASES",
+        "heading": "Gcalls × Salesforce phù hợp với những workflow nào?",
+        "type": "cards"
+      },
+      "classification": "GENUINE_EXPORT_BUG",
+      "provenance": {
+        "src_file": "src/data/salesforceIntegration.ts",
+        "export": "SF_USE_CASES",
+        "source_item_count": 4,
+        "source_item_keys": [
+          "role",
+          "flow"
+        ],
+        "react_component": "src/components/integration/IntegrationUseCases.tsx",
+        "field_map": {
+          "title": "items[].role",
+          "body": "items[].flow"
+        },
+        "note": "Workflow use-case grid. Role + flow chain, no outcome claim."
+      },
+      "before": {
+        "cards": [
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          }
+        ],
+        "eyebrow": null,
+        "lead": ""
+      },
+      "after": {
+        "type": "cards",
+        "from": "SF_USE_CASES",
+        "heading": "Gcalls × Salesforce phù hợp với những workflow nào?",
+        "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
+        "lead": "",
+        "cards": [
+          {
+            "title": "Enterprise Sales",
+            "body": "Sales làm việc với lead và opportunity trong Salesforce, thực hiện cuộc gọi và tiếp tục follow-up từ customer context hiện có."
+          },
+          {
+            "title": "Sales Operations",
+            "body": "Đội vận hành có thêm dữ liệu cuộc gọi phù hợp để theo dõi quy trình tương tác gần hơn với CRM."
+          },
+          {
+            "title": "Customer Service",
+            "body": "Agent sử dụng customer record và lịch sử liên quan để có thêm context khi tiếp nhận cuộc gọi."
+          },
+          {
+            "title": "Account Management",
+            "body": "Người phụ trách tài khoản có thể giữ hoạt động liên hệ gần hơn với dữ liệu và quá trình chăm sóc khách hàng."
+          }
+        ]
+      }
+    },
+    {
+      "page_slug": "tong-dai-quoc-te",
+      "section_index": 0,
+      "section_from": "INTL_BOUNDARIES",
+      "section_heading": "Tổng đài quốc tế giải quyết bài toán thị trường, không thay thế các luồng tích hợp",
+      "match_on": {
+        "from": "INTL_BOUNDARIES",
+        "heading": "Tổng đài quốc tế giải quyết bài toán thị trường, không thay thế các luồng tích hợp",
+        "type": "cards"
+      },
+      "classification": "GENUINE_EXPORT_BUG",
+      "provenance": {
+        "src_file": "src/data/internationalCalling.ts",
+        "export": "INTL_BOUNDARIES",
+        "source_item_count": 4,
+        "source_item_keys": [
+          "product",
+          "need",
+          "path",
+          "current"
+        ],
+        "react_component": "src/components/integration/IntegrationBoundaries.tsx",
+        "field_map": {
+          "title": "items[].product",
+          "body": "items[].need",
+          "href": "items[].path (omitted when items[].current)"
+        },
+        "note": "Product-boundary routing table. `current: true` marks the page itself; the React component renders a \"Trang này\" badge and NO link, so no href is emitted for that row."
+      },
+      "before": {
+        "cards": [
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          }
+        ],
+        "eyebrow": null,
+        "lead": ""
+      },
+      "after": {
+        "type": "cards",
+        "from": "INTL_BOUNDARIES",
+        "heading": "Tổng đài quốc tế giải quyết bài toán thị trường, không thay thế các luồng tích hợp",
+        "eyebrow": "CHỌN ĐÚNG GIẢI PHÁP",
+        "lead": "",
+        "cards": [
+          {
+            "title": "Tổng đài quốc tế",
+            "body": "Doanh nghiệp cần đầu số và cấu hình liên lạc cho một hoặc nhiều thị trường nước ngoài.",
+            "current": true
+          },
+          {
+            "title": "Gcalls Plus Webphone",
+            "body": "Đội ngũ cần kênh nghe gọi trên trình duyệt và quản lý hoạt động cuộc gọi.",
+            "href": "/gcalls-plus-webphone/"
+          },
+          {
+            "title": "CRM Integration",
+            "body": "Sales/CSKH vận hành quanh lead, contact và workflow quản lý khách hàng.",
+            "href": "/tong-dai-tich-hop-crm/"
+          },
+          {
+            "title": "Gcalls CX",
+            "body": "Doanh nghiệp cần hội thoại tập trung trên nhiều kênh giao tiếp, không chỉ kênh thoại.",
+            "href": "/gcalls-cx/"
+          }
+        ]
+      },
+      "unmapped_source": {
+        "field": "related",
+        "why": "The React page renders an inline \"see also\" list under the grid (IntegrationBoundaries `related` prop). class-content-pages.php has no slot for it, so it is recorded here verbatim rather than dropped. Coordinator decides whether to add a renderer slot or fold it into the section lead.",
+        "value": {
+          "lead": "Các luồng liên quan khác:",
+          "links": [
+            {
+              "label": "Tích hợp Helpdesk",
+              "path": "/tong-dai-tich-hop-helpdesk/"
+            },
+            {
+              "label": "Tích hợp POS",
+              "path": "/tong-dai-tich-hop-pos/"
+            },
+            {
+              "label": "Xem tất cả giải pháp",
+              "path": "/giai-phap/"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "page_slug": "tong-dai-quoc-te",
+      "section_index": 13,
+      "section_from": "INTL_USE_CASES",
+      "section_heading": "Doanh nghiệp dùng tổng đài quốc tế cho những bài toán nào",
+      "match_on": {
+        "from": "INTL_USE_CASES",
+        "heading": "Doanh nghiệp dùng tổng đài quốc tế cho những bài toán nào",
+        "type": "cards"
+      },
+      "classification": "GENUINE_EXPORT_BUG",
+      "provenance": {
+        "src_file": "src/data/internationalCalling.ts",
+        "export": "INTL_USE_CASES",
+        "source_item_count": 4,
+        "source_item_keys": [
+          "role",
+          "flow"
+        ],
+        "react_component": "src/components/integration/IntegrationUseCases.tsx",
+        "field_map": {
+          "title": "items[].role",
+          "body": "items[].flow"
+        },
+        "note": "Workflow use-case grid. Role + flow chain, no outcome claim."
+      },
+      "before": {
+        "cards": [
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          }
+        ],
+        "eyebrow": null,
+        "lead": ""
+      },
+      "after": {
+        "type": "cards",
+        "from": "INTL_USE_CASES",
+        "heading": "Doanh nghiệp dùng tổng đài quốc tế cho những bài toán nào",
+        "eyebrow": "NHU CẦU THƯỜNG GẶP",
+        "lead": "",
+        "cards": [
+          {
+            "title": "Local presence",
+            "body": "Doanh nghiệp muốn khách hàng tại thị trường nước ngoài thấy một đầu số quen thuộc để dễ liên hệ."
+          },
+          {
+            "title": "Sales",
+            "body": "Đội bán hàng gọi ra tới khách hàng và đối tác ở thị trường quốc tế từ cùng một hệ thống."
+          },
+          {
+            "title": "Customer Service",
+            "body": "Đội CSKH tiếp nhận yêu cầu từ khách hàng nước ngoài và theo dõi lịch sử hỗ trợ tập trung."
+          },
+          {
+            "title": "BPO / Operations",
+            "body": "Đơn vị vận hành dịch vụ cho khách hàng ở nhiều quốc gia cần nhiều đầu số và phân công theo dự án."
+          }
+        ]
+      }
+    },
+    {
+      "page_slug": "tong-dai-tich-hop-crm",
+      "section_index": 1,
+      "section_from": "CRM_BOUNDARIES",
+      "section_heading": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+      "match_on": {
+        "from": "CRM_BOUNDARIES",
+        "heading": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+        "type": "cards"
+      },
+      "classification": "GENUINE_EXPORT_BUG",
+      "provenance": {
+        "src_file": "src/data/crmIntegration.ts",
+        "export": "CRM_BOUNDARIES",
+        "source_item_count": 4,
+        "source_item_keys": [
+          "product",
+          "need",
+          "path",
+          "current"
+        ],
+        "react_component": "src/components/integration/IntegrationBoundaries.tsx",
+        "field_map": {
+          "title": "items[].product",
+          "body": "items[].need",
+          "href": "items[].path (omitted when items[].current)"
+        },
+        "note": "Product-boundary routing table. `current: true` marks the page itself; the React component renders a \"Trang này\" badge and NO link, so no href is emitted for that row."
+      },
+      "before": {
+        "cards": [
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          }
+        ],
+        "eyebrow": null,
+        "lead": ""
+      },
+      "after": {
+        "type": "cards",
+        "from": "CRM_BOUNDARIES",
+        "heading": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+        "eyebrow": "CHỌN ĐÚNG LUỒNG TÍCH HỢP",
+        "lead": "",
+        "cards": [
+          {
+            "title": "CRM Integration",
+            "body": "Sales/CSKH đã vận hành quanh CRM record và dữ liệu khách hàng.",
+            "current": true
+          },
+          {
+            "title": "Helpdesk Integration",
+            "body": "Đội hỗ trợ vận hành quanh ticket và quy trình xử lý yêu cầu.",
+            "href": "/tong-dai-tich-hop-helpdesk/"
+          },
+          {
+            "title": "Gcalls CX",
+            "body": "Doanh nghiệp cần tập trung giao tiếp trên nhiều kênh khách hàng.",
+            "href": "/gcalls-cx/"
+          },
+          {
+            "title": "Gcalls Plus",
+            "body": "Đội ngũ chủ yếu cần nghe gọi gọn nhẹ trên trình duyệt.",
+            "href": "/gcalls-plus-webphone/"
+          }
+        ]
+      },
+      "unmapped_source": {
+        "field": "related",
+        "why": "The React page renders an inline \"see also\" list under the grid (IntegrationBoundaries `related` prop). class-content-pages.php has no slot for it, so it is recorded here verbatim rather than dropped. Coordinator decides whether to add a renderer slot or fold it into the section lead.",
+        "value": {
+          "lead": "Các luồng liên quan khác:",
+          "links": [
+            {
+              "label": "Tổng đài tích hợp POS",
+              "path": "/tong-dai-tich-hop-pos/"
+            },
+            {
+              "label": "QA QC Center",
+              "path": "/qc-bot-ai/"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "page_slug": "tong-dai-tich-hop-helpdesk",
+      "section_index": 1,
+      "section_from": "HD_BOUNDARIES",
+      "section_heading": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+      "match_on": {
+        "from": "HD_BOUNDARIES",
+        "heading": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+        "type": "cards"
+      },
+      "classification": "GENUINE_EXPORT_BUG",
+      "provenance": {
+        "src_file": "src/data/helpdeskIntegration.ts",
+        "export": "HD_BOUNDARIES",
+        "source_item_count": 4,
+        "source_item_keys": [
+          "product",
+          "need",
+          "path",
+          "current"
+        ],
+        "react_component": "src/components/integration/IntegrationBoundaries.tsx",
+        "field_map": {
+          "title": "items[].product",
+          "body": "items[].need",
+          "href": "items[].path (omitted when items[].current)"
+        },
+        "note": "Product-boundary routing table. `current: true` marks the page itself; the React component renders a \"Trang này\" badge and NO link, so no href is emitted for that row."
+      },
+      "before": {
+        "cards": [
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          }
+        ],
+        "eyebrow": null,
+        "lead": ""
+      },
+      "after": {
+        "type": "cards",
+        "from": "HD_BOUNDARIES",
+        "heading": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+        "eyebrow": "CHỌN ĐÚNG LUỒNG TÍCH HỢP",
+        "lead": "",
+        "cards": [
+          {
+            "title": "Helpdesk Integration",
+            "body": "Đội hỗ trợ vận hành quanh ticket, case và quy trình xử lý yêu cầu.",
+            "current": true
+          },
+          {
+            "title": "CRM Integration",
+            "body": "Sales/CSKH chủ yếu vận hành quanh CRM record, lead và dữ liệu khách hàng.",
+            "href": "/tong-dai-tich-hop-crm/"
+          },
+          {
+            "title": "Gcalls CX",
+            "body": "Doanh nghiệp cần tập trung hội thoại trên nhiều kênh khách hàng.",
+            "href": "/gcalls-cx/"
+          },
+          {
+            "title": "Gcalls Plus",
+            "body": "Đội ngũ chủ yếu cần nghe gọi gọn nhẹ trên trình duyệt.",
+            "href": "/gcalls-plus-webphone/"
+          }
+        ]
+      },
+      "unmapped_source": {
+        "field": "related",
+        "why": "The React page renders an inline \"see also\" list under the grid (IntegrationBoundaries `related` prop). class-content-pages.php has no slot for it, so it is recorded here verbatim rather than dropped. Coordinator decides whether to add a renderer slot or fold it into the section lead.",
+        "value": {
+          "lead": "Các luồng liên quan khác:",
+          "links": [
+            {
+              "label": "Tổng đài tích hợp POS",
+              "path": "/tong-dai-tich-hop-pos/"
+            },
+            {
+              "label": "QA QC Center",
+              "path": "/qc-bot-ai/"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "page_slug": "tong-dai-tich-hop-pos",
+      "section_index": 1,
+      "section_from": "POS_BOUNDARIES",
+      "section_heading": "CRM, Helpdesk và POS cung cấp những loại customer context khác nhau",
+      "match_on": {
+        "from": "POS_BOUNDARIES",
+        "heading": "CRM, Helpdesk và POS cung cấp những loại customer context khác nhau",
+        "type": "cards"
+      },
+      "classification": "GENUINE_EXPORT_BUG",
+      "provenance": {
+        "src_file": "src/data/posIntegration.ts",
+        "export": "POS_BOUNDARIES",
+        "source_item_count": 4,
+        "source_item_keys": [
+          "product",
+          "need",
+          "path",
+          "current"
+        ],
+        "react_component": "src/components/integration/IntegrationBoundaries.tsx",
+        "field_map": {
+          "title": "items[].product",
+          "body": "items[].need",
+          "href": "items[].path (omitted when items[].current)"
+        },
+        "note": "Product-boundary routing table. `current: true` marks the page itself; the React component renders a \"Trang này\" badge and NO link, so no href is emitted for that row."
+      },
+      "before": {
+        "cards": [
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          }
+        ],
+        "eyebrow": null,
+        "lead": ""
+      },
+      "after": {
+        "type": "cards",
+        "from": "POS_BOUNDARIES",
+        "heading": "CRM, Helpdesk và POS cung cấp những loại customer context khác nhau",
+        "eyebrow": "CHỌN ĐÚNG LUỒNG TÍCH HỢP",
+        "lead": "",
+        "cards": [
+          {
+            "title": "POS Integration",
+            "body": "Đội ngũ cần customer context và dữ liệu bán hàng từ workflow bán lẻ hoặc quản lý đơn hàng.",
+            "current": true
+          },
+          {
+            "title": "CRM Integration",
+            "body": "Sales/CSKH vận hành quanh lead, contact và workflow quản lý khách hàng.",
+            "href": "/tong-dai-tich-hop-crm/"
+          },
+          {
+            "title": "Helpdesk Integration",
+            "body": "Đội hỗ trợ vận hành quanh ticket và quy trình xử lý yêu cầu.",
+            "href": "/tong-dai-tich-hop-helpdesk/"
+          },
+          {
+            "title": "Gcalls CX",
+            "body": "Doanh nghiệp cần hội thoại tập trung trên nhiều kênh giao tiếp.",
+            "href": "/gcalls-cx/"
+          }
+        ]
+      },
+      "unmapped_source": {
+        "field": "related",
+        "why": "The React page renders an inline \"see also\" list under the grid (IntegrationBoundaries `related` prop). class-content-pages.php has no slot for it, so it is recorded here verbatim rather than dropped. Coordinator decides whether to add a renderer slot or fold it into the section lead.",
+        "value": {
+          "lead": "Các luồng liên quan khác:",
+          "links": [
+            {
+              "label": "Xem tất cả giải pháp",
+              "path": "/giai-phap/"
+            },
+            {
+              "label": "QA QC Center",
+              "path": "/qc-bot-ai/"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "page_slug": "zendesk",
+      "section_index": 2,
+      "section_from": "ZD_BOUNDARY",
+      "section_heading": "Zendesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+      "match_on": {
+        "from": "ZD_BOUNDARY",
+        "heading": "Zendesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+        "type": "cards"
+      },
+      "classification": "GENUINE_EXPORT_BUG",
+      "provenance": {
+        "src_file": "src/data/zendeskIntegration.ts",
+        "export": "ZD_BOUNDARY",
+        "source_item_count": 5,
+        "source_item_keys": [
+          "product",
+          "need",
+          "path"
+        ],
+        "react_component": "src/components/integration/IntegrationBoundaries.tsx",
+        "field_map": {
+          "title": "items[].product",
+          "body": "items[].need",
+          "href": "items[].path (omitted when items[].current)"
+        },
+        "note": "Product-boundary routing table. `current: true` marks the page itself; the React component renders a \"Trang này\" badge and NO link, so no href is emitted for that row."
+      },
+      "before": {
+        "cards": [
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          }
+        ],
+        "eyebrow": null,
+        "lead": ""
+      },
+      "after": {
+        "type": "cards",
+        "from": "ZD_BOUNDARY",
+        "heading": "Zendesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+        "eyebrow": "PHÂN BIỆT SẢN PHẨM",
+        "lead": "",
+        "cards": [
+          {
+            "title": "Gcalls Plus",
+            "body": "Lớp nghe gọi trên trình duyệt — phần thực hiện cuộc gọi của doanh nghiệp.",
+            "href": "/gcalls-plus-webphone/"
+          },
+          {
+            "title": "Helpdesk Integration",
+            "body": "Giải pháp tích hợp Helpdesk nói chung, khi doanh nghiệp chưa xác định nền tảng.",
+            "href": "/tong-dai-tich-hop-helpdesk/"
+          },
+          {
+            "title": "Zendesk Integration",
+            "body": "Workflow riêng cho đội Support đã sử dụng Zendesk để quản lý ticket.",
+            "current": true
+          },
+          {
+            "title": "Gcalls CX",
+            "body": "Quản lý giao tiếp đa kênh khi doanh nghiệp cần hợp nhất nhiều điểm chạm khách hàng.",
+            "href": "/gcalls-cx/"
+          },
+          {
+            "title": "QA QC Center",
+            "body": "Đánh giá chất lượng cuộc gọi với hỗ trợ của AI — không phải chức năng của lớp tích hợp Helpdesk.",
+            "href": "/qc-bot-ai/"
+          }
+        ]
+      }
+    },
+    {
+      "page_slug": "zendesk",
+      "section_index": 13,
+      "section_from": "ZD_USE_CASES",
+      "section_heading": "Gcalls × Zendesk phù hợp với những workflow hỗ trợ nào?",
+      "match_on": {
+        "from": "ZD_USE_CASES",
+        "heading": "Gcalls × Zendesk phù hợp với những workflow hỗ trợ nào?",
+        "type": "cards"
+      },
+      "classification": "GENUINE_EXPORT_BUG",
+      "provenance": {
+        "src_file": "src/data/zendeskIntegration.ts",
+        "export": "ZD_USE_CASES",
+        "source_item_count": 4,
+        "source_item_keys": [
+          "role",
+          "flow"
+        ],
+        "react_component": "src/components/integration/IntegrationUseCases.tsx",
+        "field_map": {
+          "title": "items[].role",
+          "body": "items[].flow"
+        },
+        "note": "Workflow use-case grid. Role + flow chain, no outcome claim."
+      },
+      "before": {
+        "cards": [
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          }
+        ],
+        "eyebrow": null,
+        "lead": ""
+      },
+      "after": {
+        "type": "cards",
+        "from": "ZD_USE_CASES",
+        "heading": "Gcalls × Zendesk phù hợp với những workflow hỗ trợ nào?",
+        "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
+        "lead": "",
+        "cards": [
+          {
+            "title": "Inbound Customer Support",
+            "body": "Agent tiếp nhận yêu cầu trong bối cảnh contact và ticket đang được quản lý trong Zendesk."
+          },
+          {
+            "title": "Ticket Follow-up",
+            "body": "Nhân viên gọi lại cho khách hàng và tiếp tục xử lý ticket từ context hiện có."
+          },
+          {
+            "title": "SaaS Support",
+            "body": "Đội Support theo dõi cuộc gọi và ticket gần hơn khi xử lý vấn đề sản phẩm hoặc dịch vụ."
+          },
+          {
+            "title": "Enterprise Customer Service",
+            "body": "Đội CSKH duy trì customer và support context khi nhiều nhân viên cùng tham gia xử lý một yêu cầu."
+          }
+        ]
+      }
+    },
+    {
+      "page_slug": "zoho-crm",
+      "section_index": 2,
+      "section_from": "ZH_BOUNDARY",
+      "section_heading": "Zoho CRM Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+      "match_on": {
+        "from": "ZH_BOUNDARY",
+        "heading": "Zoho CRM Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+        "type": "cards"
+      },
+      "classification": "GENUINE_EXPORT_BUG",
+      "provenance": {
+        "src_file": "src/data/zohoCrmIntegration.ts",
+        "export": "ZH_BOUNDARY",
+        "source_item_count": 4,
+        "source_item_keys": [
+          "product",
+          "need",
+          "path"
+        ],
+        "react_component": "src/components/integration/IntegrationBoundaries.tsx",
+        "field_map": {
+          "title": "items[].product",
+          "body": "items[].need",
+          "href": "items[].path (omitted when items[].current)"
+        },
+        "note": "Product-boundary routing table. `current: true` marks the page itself; the React component renders a \"Trang này\" badge and NO link, so no href is emitted for that row."
+      },
+      "before": {
+        "cards": [
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          }
+        ],
+        "eyebrow": null,
+        "lead": ""
+      },
+      "after": {
+        "type": "cards",
+        "from": "ZH_BOUNDARY",
+        "heading": "Zoho CRM Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+        "eyebrow": "PHÂN BIỆT SẢN PHẨM",
+        "lead": "",
+        "cards": [
+          {
+            "title": "Gcalls Plus",
+            "body": "Lớp nghe gọi trên trình duyệt — phần thực hiện cuộc gọi của doanh nghiệp.",
+            "href": "/gcalls-plus-webphone/"
+          },
+          {
+            "title": "CRM Integration",
+            "body": "Giải pháp tích hợp CRM nói chung, khi doanh nghiệp chưa xác định nền tảng.",
+            "href": "/tong-dai-tich-hop-crm/"
+          },
+          {
+            "title": "Zoho CRM Integration",
+            "body": "Workflow riêng cho doanh nghiệp đã sử dụng Zoho CRM làm hệ thống khách hàng.",
+            "current": true
+          },
+          {
+            "title": "Gcalls CX",
+            "body": "Giao tiếp đa kênh khi doanh nghiệp cần hợp nhất nhiều điểm chạm khách hàng.",
+            "href": "/gcalls-cx/"
+          }
+        ]
+      }
+    },
+    {
+      "page_slug": "zoho-crm",
+      "section_index": 12,
+      "section_from": "ZH_USE_CASES",
+      "section_heading": "Gcalls × Zoho CRM phù hợp với những workflow nào?",
+      "match_on": {
+        "from": "ZH_USE_CASES",
+        "heading": "Gcalls × Zoho CRM phù hợp với những workflow nào?",
+        "type": "cards"
+      },
+      "classification": "GENUINE_EXPORT_BUG",
+      "provenance": {
+        "src_file": "src/data/zohoCrmIntegration.ts",
+        "export": "ZH_USE_CASES",
+        "source_item_count": 4,
+        "source_item_keys": [
+          "role",
+          "flow"
+        ],
+        "react_component": "src/components/integration/IntegrationUseCases.tsx",
+        "field_map": {
+          "title": "items[].role",
+          "body": "items[].flow"
+        },
+        "note": "Workflow use-case grid. Role + flow chain, no outcome claim."
+      },
+      "before": {
+        "cards": [
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          },
+          {
+            "title": "",
+            "body": "",
+            "href": ""
+          }
+        ],
+        "eyebrow": null,
+        "lead": ""
+      },
+      "after": {
+        "type": "cards",
+        "from": "ZH_USE_CASES",
+        "heading": "Gcalls × Zoho CRM phù hợp với những workflow nào?",
+        "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
+        "lead": "",
+        "cards": [
+          {
+            "title": "SME Sales",
+            "body": "Đội Sales làm việc với lead/contact trong Zoho CRM và tiếp tục follow-up dựa trên customer context đang có."
+          },
+          {
+            "title": "Startup Sales Operations",
+            "body": "Đội vận hành có thể tổ chức hoạt động gọi gần hơn với dữ liệu CRM thay vì duy trì các danh sách rời rạc."
+          },
+          {
+            "title": "Customer Service",
+            "body": "Agent sử dụng thông tin khách hàng và lịch sử liên quan để có thêm bối cảnh khi xử lý cuộc gọi."
+          },
+          {
+            "title": "Customer Success",
+            "body": "Đội CS giữ hoạt động liên hệ gần hơn với dữ liệu vòng đời khách hàng đang theo dõi trong Zoho CRM."
+          }
+        ]
+      }
+    }
+  ],
+  "self_check": "PASS — every ported card has a non-empty title and body, every emitted href passes ContentPages::safe_href(), every source item count matches the manifest card count, and every source h2 matches the manifest heading.",
+  "href_only_repairs": {
+    "why": "Found by the proposed source-parity test, same root cause (the exporter read item.href where src/data carries item.path). These are NOT part of the 14 blank sections: the cards render, but two of them are dead. GCALLS-041 restore-card-links-041.mjs restored 32 destinations and missed these four.",
+    "classification": "GENUINE_EXPORT_BUG",
+    "repairs": [
+      {
+        "page_slug": "freshdesk",
+        "section_from": "FD_LINKS",
+        "section_index": 5,
+        "card_index": 0,
+        "card_title": "Tổng đài cho Thương mại điện tử",
+        "set_href": "/nganh/thuong-mai-dien-tu/",
+        "provenance": "src/data/freshdeskIntegration.ts FD_LINKS.items[0].path (ROUTES.ecommerce)"
+      },
+      {
+        "page_slug": "freshdesk",
+        "section_from": "FD_LINKS",
+        "section_index": 5,
+        "card_index": 1,
+        "card_title": "Tổng đài cho BPO",
+        "set_href": "/nganh/bpo/",
+        "provenance": "src/data/freshdeskIntegration.ts FD_LINKS.items[1].path (ROUTES.bpo)"
+      },
+      {
+        "page_slug": "zendesk",
+        "section_from": "ZD_LINKS",
+        "card_index": 0,
+        "card_title": "Tổng đài cho BPO",
+        "set_href": "/nganh/bpo/",
+        "provenance": "src/data/zendeskIntegration.ts ZD_LINKS.items[0].path (ROUTES.bpo)",
+        "section_index": 5
+      },
+      {
+        "page_slug": "zendesk",
+        "section_from": "ZD_LINKS",
+        "card_index": 1,
+        "card_title": "Tổng đài cho Thương mại điện tử",
+        "set_href": "/nganh/thuong-mai-dien-tu/",
+        "provenance": "src/data/zendeskIntegration.ts ZD_LINKS.items[1].path (ROUTES.ecommerce)",
+        "section_index": 5
+      }
+    ]
+  },
+  "verification": {
+    "method": "Applied `sections[].after` plus href_only_repairs to a COPY of content-pages.json, then ran the proposed source-parity test against it.",
+    "before": "115 cards match src/data, 62 failures (58 blank titles + 4 dead hrefs)",
+    "after": "177 cards match src/data, 0 failures",
+    "negative_cases": {
+      "delete FD_USE_CASES section from the manifest": "FAIL — manifest has no section for it",
+      "delete one card from FD_USE_CASES": "FAIL — source has 4 items, manifest section has 3",
+      "blank one card body": "FAIL — manifest \"\" != source \"Agent tiếp nhận...\""
+    },
+    "proposed_test_path": "wordpress/scripts/source-parity-test.mjs (draft at /tmp/workerA-source-parity-test.mjs, NOT applied)"
+  }
+}

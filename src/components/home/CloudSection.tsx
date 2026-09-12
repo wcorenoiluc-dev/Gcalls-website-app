@@ -3,6 +3,7 @@ import { ROUTES } from '@/config/navigation';
 import { Link } from "react-router";
 import { ArrowRight, BarChart2, Check, ChevronRight, Cloud, GitBranch, Globe, HeadphonesIcon, Layers, Mic, MoreHorizontal, Network, Phone, PhoneForwarded, PhoneIncoming, Plus, RefreshCw, Server, Settings, Users, Voicemail, Wifi, Zap } from "lucide-react";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
+import { darkSection } from "@/lib/theme/darkSection";
 
 // ─── Section 7: Cloud Call Center ────────────────────────────────────────────
 
@@ -409,7 +410,7 @@ export function CloudSection() {
               product does; whether a call is answered depends on staffing and
               carrier conditions Gcalls does not control.
             */}
-            <h3 className="font-extrabold text-white mb-3" style={{ fontSize: "clamp(20px, 2.4vw, 30px)", lineHeight: 1.2 }}>
+            <h3 className="font-extrabold mb-3" style={{ fontSize: "clamp(20px, 2.4vw, 30px)", lineHeight: 1.2, color: darkSection.heading }}>
               Điều hướng cuộc gọi đến <span style={{ color: "rgba(255,255,255,0.75)" }}>đúng người phụ trách</span>
             </h3>
             <p style={{ color: "rgba(255,255,255,0.72)", maxWidth: "540px", fontSize: "15px", lineHeight: 1.7 }}>

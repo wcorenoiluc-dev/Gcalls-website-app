@@ -1,0 +1,67 @@
+name: PHP renderer contract
+
+# Runs the assertions the authoring machine cannot: there is no PHP runtime
+# there, so until this workflow has run, the PHP renderer has never executed.
+# Deliberately does NOT run on every push to a public fork — see the repo
+# visibility gate in the GCALLS-035 incident record.
+
+on:
+  push:
+    branches: [main, 'feature/**']
+    paths:
+      - 'wordpress/wp-content/plugins/gcalls-core/**'
+      - 'wordpress/tests/**'
+      - '.github/workflows/php-renderer.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  renderer:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.1', '8.2', '8.3']
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      - name: Lint every plugin file
+        run: |
+          find wordpress/wp-content/plugins/gcalls-core -name '*.php' -print0 \
+            | xargs -0 -n1 php -l
+
+      - name: Renderer contract
+        # The artifact under test is named explicitly and its hash is pinned by
+        # the caller, so the run cannot silently render a different manifest
+        # than the one being released. Missing manifest, missing route, hash
+        # mismatch or too few assertions all exit non-zero.
+        run: |
+          php wordpress/tests/renderer-test.php \
+            --manifest=wordpress/wp-content/plugins/gcalls-core/data/product-pages.json \
+            --min-checks=15
+
+      - name: Node/PHP contract
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+        # The CONTENT half of the manifest is a build artifact of Core 0.10.1
+        # and is not in the repository, so CI cannot check it. That limit is
+        # declared here rather than hidden: the run prints "NOT CHECKED" for it
+        # and still checks every product source. Without this flag the test is
+        # a hard failure, so a developer machine cannot silently check nothing.
+      - run: node wordpress/scripts/contract-test-sections.mjs
+        env:
+          GCALLS_CONTENT_PKG_OPTIONAL: '1'
+
+      # Release gate. Distinct from the informative run above: this one refuses
+      # to pass while anything is NOT CHECKED, so an unverified half can never
+      # be read as approval to ship. It needs the extracted 0.10.1 package, so
+      # it runs only where that has been provided.
+      - name: Release gate (strict — NOT CHECKED is not a pass)
+        if: ${{ hashFiles('wordpress/.pkg/content-pages-0.10.1.json') != '' }}
+        run: node wordpress/scripts/contract-test-sections.mjs --release-gate

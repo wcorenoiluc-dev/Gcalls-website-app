@@ -1,0 +1,71 @@
+{
+  "home": {
+    "route": "/",
+    "first": {
+      "status": 200,
+      "xCache": null,
+      "age": null,
+      "cacheControl": null,
+      "setCookie": false,
+      "nonce": null,
+      "len": 139560
+    },
+    "second": {
+      "status": 200,
+      "xCache": null,
+      "age": null,
+      "cacheControl": null,
+      "setCookie": false,
+      "nonce": null,
+      "len": 139560
+    },
+    "sameNonce": true,
+    "nonceObserved": false
+  },
+  "contact": {
+    "route": "/lien-he/",
+    "first": {
+      "status": 200,
+      "xCache": null,
+      "age": null,
+      "cacheControl": null,
+      "setCookie": false,
+      "nonce": null,
+      "len": 44093
+    },
+    "second": {
+      "status": 200,
+      "xCache": null,
+      "age": null,
+      "cacheControl": null,
+      "setCookie": false,
+      "nonce": null,
+      "len": 44203
+    },
+    "sameNonce": true,
+    "nonceObserved": false
+  },
+  "withQuery": {
+    "route": "/lien-he/?utm_test=1",
+    "first": {
+      "status": 200,
+      "xCache": null,
+      "age": null,
+      "cacheControl": null,
+      "setCookie": false,
+      "nonce": null,
+      "len": 44203
+    },
+    "second": {
+      "status": 200,
+      "xCache": null,
+      "age": null,
+      "cacheControl": null,
+      "setCookie": false,
+      "nonce": null,
+      "len": 44203
+    },
+    "sameNonce": true,
+    "nonceObserved": false
+  }
+}

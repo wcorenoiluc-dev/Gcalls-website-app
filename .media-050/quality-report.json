@@ -1,0 +1,4341 @@
+{
+  "generated_at_gmt": "2026-09-03T09:40:43.338Z",
+  "dir": "/Users/macos/Desktop/Gcalls/App/Gcalls-website-app/.media-050/batch154",
+  "thresholds": {
+    "featured": {
+      "exact_width": 1200,
+      "exact_height": 630,
+      "min_bytes": 20480,
+      "max_bytes": 512000
+    },
+    "body": {
+      "max_width": 960,
+      "min_width": 200,
+      "max_height": 2400,
+      "min_bytes": 6144,
+      "max_bytes": 409600
+    },
+    "min_estimated_quality": 80,
+    "min_bytes_per_pixel": 0.008
+  },
+  "counts": {
+    "total": 154,
+    "passed": 154,
+    "failed": 0,
+    "warned": 0
+  },
+  "results": [
+    {
+      "file": "acd-la-gi-ung-dung-vao-call-center.webp",
+      "abs": ".media-050/batch154/acd-la-gi-ung-dung-vao-call-center.webp",
+      "role": "featured",
+      "bytes": 36556,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04835,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.369,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1260,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "ban-hang-inbound-quy-trinh.webp",
+      "abs": ".media-050/batch154/ban-hang-inbound-quy-trinh.webp",
+      "role": "featured",
+      "bytes": 22676,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.02999,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.359,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 781,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "ban-hang-outbound-quy-trinh.webp",
+      "abs": ".media-050/batch154/ban-hang-outbound-quy-trinh.webp",
+      "role": "featured",
+      "bytes": 26106,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03453,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.343,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 870,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "bao-cao-tong-dai-vi-sao-can.webp",
+      "abs": ".media-050/batch154/bao-cao-tong-dai-vi-sao-can.webp",
+      "role": "featured",
+      "bytes": 30692,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.0406,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.339,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1176,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "bi-quyet-cham-soc-khach-hang.webp",
+      "abs": ".media-050/batch154/bi-quyet-cham-soc-khach-hang.webp",
+      "role": "featured",
+      "bytes": 29946,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03961,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.374,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 969,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "buoc-ban-hang-co-ban-cho-nhan-vien-sales.webp",
+      "abs": ".media-050/batch154/buoc-ban-hang-co-ban-cho-nhan-vien-sales.webp",
+      "role": "featured",
+      "bytes": 26984,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03569,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.344,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 899,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "buoc-lap-ke-hoach-digital-marketing.webp",
+      "abs": ".media-050/batch154/buoc-lap-ke-hoach-digital-marketing.webp",
+      "role": "featured",
+      "bytes": 35870,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04745,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.342,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1256,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "buoc-lap-ke-hoach-marketing.webp",
+      "abs": ".media-050/batch154/buoc-lap-ke-hoach-marketing.webp",
+      "role": "featured",
+      "bytes": 31716,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04195,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.351,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1066,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "buoc-lap-ke-hoach-telesales.webp",
+      "abs": ".media-050/batch154/buoc-lap-ke-hoach-telesales.webp",
+      "role": "featured",
+      "bytes": 31562,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04175,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.33,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1089,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "buoc-thiet-ke-kich-ban-ban-hang.webp",
+      "abs": ".media-050/batch154/buoc-thiet-ke-kich-ban-ban-hang.webp",
+      "role": "featured",
+      "bytes": 28922,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03826,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.344,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 965,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cac-dich-vu-sms-marketing-gia-re.webp",
+      "abs": ".media-050/batch154/cac-dich-vu-sms-marketing-gia-re.webp",
+      "role": "featured",
+      "bytes": 30904,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04088,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.332,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1197,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cach-ban-hang-hieu-qua-bang-giong-noi.webp",
+      "abs": ".media-050/batch154/cach-ban-hang-hieu-qua-bang-giong-noi.webp",
+      "role": "featured",
+      "bytes": 26622,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03521,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.331,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1052,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cach-giam-ap-luc-khi-lam-telesales.webp",
+      "abs": ".media-050/batch154/cach-giam-ap-luc-khi-lam-telesales.webp",
+      "role": "featured",
+      "bytes": 29354,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03883,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.322,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1013,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cach-goi-sale-hieu-qua.webp",
+      "abs": ".media-050/batch154/cach-goi-sale-hieu-qua.webp",
+      "role": "featured",
+      "bytes": 25952,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03433,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.365,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 850,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cach-goi-telesale-hieu-qua.webp",
+      "abs": ".media-050/batch154/cach-goi-telesale-hieu-qua.webp",
+      "role": "featured",
+      "bytes": 31046,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04107,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.329,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1072,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cach-mang-cong-nghiep-4-0.webp",
+      "abs": ".media-050/batch154/cach-mang-cong-nghiep-4-0.webp",
+      "role": "featured",
+      "bytes": 26864,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03553,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.363,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 917,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cach-nang-cao-trai-nghiem-dich-vu-khach-hang.webp",
+      "abs": ".media-050/batch154/cach-nang-cao-trai-nghiem-dich-vu-khach-hang.webp",
+      "role": "featured",
+      "bytes": 30950,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04094,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.345,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1212,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cach-nhan-tin-cho-khach-hang.webp",
+      "abs": ".media-050/batch154/cach-nhan-tin-cho-khach-hang.webp",
+      "role": "featured",
+      "bytes": 29128,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03853,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.34,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1082,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cach-telesale-cho-nguoi-moi-bat-dau.webp",
+      "abs": ".media-050/batch154/cach-telesale-cho-nguoi-moi-bat-dau.webp",
+      "role": "featured",
+      "bytes": 23890,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.0316,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.335,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 887,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cach-toi-uu-san-pham-tren-shopee.webp",
+      "abs": ".media-050/batch154/cach-toi-uu-san-pham-tren-shopee.webp",
+      "role": "featured",
+      "bytes": 22684,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03001,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.34,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 843,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cach-xu-ly-tinh-huong-cham-soc-khach-hang.webp",
+      "abs": ".media-050/batch154/cach-xu-ly-tinh-huong-cham-soc-khach-hang.webp",
+      "role": "featured",
+      "bytes": 27130,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03589,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.341,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1035,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cau-hoi-cham-soc-khach-hang-cu-kich-ban.webp",
+      "abs": ".media-050/batch154/cau-hoi-cham-soc-khach-hang-cu-kich-ban.webp",
+      "role": "featured",
+      "bytes": 31306,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04141,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.35,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1034,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cau-hoi-phong-van-telesales-telemarketing.webp",
+      "abs": ".media-050/batch154/cau-hoi-phong-van-telesales-telemarketing.webp",
+      "role": "featured",
+      "bytes": 23950,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03168,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.346,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 876,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cau-hoi-truoc-khi-goi-ban-hang.webp",
+      "abs": ".media-050/batch154/cau-hoi-truoc-khi-goi-ban-hang.webp",
+      "role": "featured",
+      "bytes": 25322,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03349,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.335,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 967,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cham-soc-khach-hang-qua-dien-thoai.webp",
+      "abs": ".media-050/batch154/cham-soc-khach-hang-qua-dien-thoai.webp",
+      "role": "featured",
+      "bytes": 26256,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03473,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.35,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 963,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "chi-so-danh-gia-bo-phan-cham-soc-khach-hang.webp",
+      "abs": ".media-050/batch154/chi-so-danh-gia-bo-phan-cham-soc-khach-hang.webp",
+      "role": "featured",
+      "bytes": 31660,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04188,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.337,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1275,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "chi-so-danh-gia-pheu-ban-hang.webp",
+      "abs": ".media-050/batch154/chi-so-danh-gia-pheu-ban-hang.webp",
+      "role": "featured",
+      "bytes": 25484,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03371,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.329,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 878,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "chi-so-do-luong-hieu-suat-ban-hang.webp",
+      "abs": ".media-050/batch154/chi-so-do-luong-hieu-suat-ban-hang.webp",
+      "role": "featured",
+      "bytes": 28896,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03822,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.346,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1139,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "chiem-long-tin-khach-hang-kin-tieng.webp",
+      "abs": ".media-050/batch154/chiem-long-tin-khach-hang-kin-tieng.webp",
+      "role": "featured",
+      "bytes": 27394,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03624,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.338,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1079,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "chien-luoc-cham-soc-khach-hang-voi-salesforce.webp",
+      "abs": ".media-050/batch154/chien-luoc-cham-soc-khach-hang-voi-salesforce.webp",
+      "role": "featured",
+      "bytes": 32048,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04239,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.36,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1054,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "chien-luoc-email-follow-up-phan-1.webp",
+      "abs": ".media-050/batch154/chien-luoc-email-follow-up-phan-1.webp",
+      "role": "featured",
+      "bytes": 27504,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03638,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.346,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1061,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "chien-luoc-giu-chan-khach-hang.webp",
+      "abs": ".media-050/batch154/chien-luoc-giu-chan-khach-hang.webp",
+      "role": "featured",
+      "bytes": 34666,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04585,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.336,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1223,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "chien-luoc-mo-rong-thi-truong-quoc-te.webp",
+      "abs": ".media-050/batch154/chien-luoc-mo-rong-thi-truong-quoc-te.webp",
+      "role": "featured",
+      "bytes": 30084,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03979,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.343,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1157,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "chuong-trinh-cham-soc-khach-hang.webp",
+      "abs": ".media-050/batch154/chuong-trinh-cham-soc-khach-hang.webp",
+      "role": "featured",
+      "bytes": 31998,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04233,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.362,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1057,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "chuong-trinh-finder-doi-tac-gioi-thieu.webp",
+      "abs": ".media-050/batch154/chuong-trinh-finder-doi-tac-gioi-thieu.webp",
+      "role": "featured",
+      "bytes": 31744,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04199,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.334,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1089,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cold-calling-loi-don-va-cach-lam-dung.webp",
+      "abs": ".media-050/batch154/cold-calling-loi-don-va-cach-lam-dung.webp",
+      "role": "featured",
+      "bytes": 31540,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04172,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.346,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1336,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cong-nghe-thay-doi-cach-lam-viec-tu-xa.webp",
+      "abs": ".media-050/batch154/cong-nghe-thay-doi-cach-lam-viec-tu-xa.webp",
+      "role": "featured",
+      "bytes": 33906,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04485,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.353,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1172,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cong-nghe-xay-dung-team-lam-viec-tu-xa.webp",
+      "abs": ".media-050/batch154/cong-nghe-xay-dung-team-lam-viec-tu-xa.webp",
+      "role": "featured",
+      "bytes": 27142,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.0359,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.333,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 896,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "crm-cho-doi-inbound-va-outbound.webp",
+      "abs": ".media-050/batch154/crm-cho-doi-inbound-va-outbound.webp",
+      "role": "featured",
+      "bytes": 24668,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03263,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.406,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 735,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cuoc-goi-tiep-thi-qua-dien-thoai-la-gi.webp",
+      "abs": ".media-050/batch154/cuoc-goi-tiep-thi-qua-dien-thoai-la-gi.webp",
+      "role": "featured",
+      "bytes": 32674,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04322,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.351,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1281,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "cuoc-hop-danh-gia-ban-hang-hang-nam.webp",
+      "abs": ".media-050/batch154/cuoc-hop-danh-gia-ban-hang-hang-nam.webp",
+      "role": "featured",
+      "bytes": 34346,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04543,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.343,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1222,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "customer-lifetime-value-la-gi.webp",
+      "abs": ".media-050/batch154/customer-lifetime-value-la-gi.webp",
+      "role": "featured",
+      "bytes": 29638,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.0392,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.343,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1165,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "customer-success-la-gi.webp",
+      "abs": ".media-050/batch154/customer-success-la-gi.webp",
+      "role": "featured",
+      "bytes": 25818,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03415,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.341,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 812,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "dang-ky-dich-vu-tin-nhan-sms-brandname.webp",
+      "abs": ".media-050/batch154/dang-ky-dich-vu-tin-nhan-sms-brandname.webp",
+      "role": "featured",
+      "bytes": 31142,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04119,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.326,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1066,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "dang-ky-tong-dai-ao.webp",
+      "abs": ".media-050/batch154/dang-ky-tong-dai-ao.webp",
+      "role": "featured",
+      "bytes": 27956,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03698,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.335,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 949,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "danh-gia-cuoc-goi-ban-hang-thanh-cong.webp",
+      "abs": ".media-050/batch154/danh-gia-cuoc-goi-ban-hang-thanh-cong.webp",
+      "role": "featured",
+      "bytes": 28822,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03812,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.334,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 965,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "dich-vu-call-center-la-gi.webp",
+      "abs": ".media-050/batch154/dich-vu-call-center-la-gi.webp",
+      "role": "featured",
+      "bytes": 24738,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03272,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.345,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 900,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "dich-vu-cham-soc-khach-hang-la-gi.webp",
+      "abs": ".media-050/batch154/dich-vu-cham-soc-khach-hang-la-gi.webp",
+      "role": "featured",
+      "bytes": 32588,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04311,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.344,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1281,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "dich-vu-tong-dai-ao-13-tinh-nang.webp",
+      "abs": ".media-050/batch154/dich-vu-tong-dai-ao-13-tinh-nang.webp",
+      "role": "featured",
+      "bytes": 29844,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03948,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.367,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1160,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "dich-vu-tong-dai-dam-may-cho-start-up.webp",
+      "abs": ".media-050/batch154/dich-vu-tong-dai-dam-may-cho-start-up.webp",
+      "role": "featured",
+      "bytes": 29032,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.0384,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.35,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1128,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "dich-vu-voice-brandname-loi-ich.webp",
+      "abs": ".media-050/batch154/dich-vu-voice-brandname-loi-ich.webp",
+      "role": "featured",
+      "bytes": 29942,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03961,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.35,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1197,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "dieu-ve-trai-nghiem-khach-hang-nhan-vien-ban-hang.webp",
+      "abs": ".media-050/batch154/dieu-ve-trai-nghiem-khach-hang-nhan-vien-ban-hang.webp",
+      "role": "featured",
+      "bytes": 31450,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.0416,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.334,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1318,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "dung-bao-gia-truoc-khi-truyen-tai-gia-tri.webp",
+      "abs": ".media-050/batch154/dung-bao-gia-truoc-khi-truyen-tai-gia-tri.webp",
+      "role": "featured",
+      "bytes": 28346,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03749,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.337,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1109,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "giai-phap-cham-soc-khach-hang-toi-uu.webp",
+      "abs": ".media-050/batch154/giai-phap-cham-soc-khach-hang-toi-uu.webp",
+      "role": "featured",
+      "bytes": 29552,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03909,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.38,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 904,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "giai-phap-tong-dai-ao-cho-sme.webp",
+      "abs": ".media-050/batch154/giai-phap-tong-dai-ao-cho-sme.webp",
+      "role": "featured",
+      "bytes": 29928,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03959,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.372,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 975,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "giai-phap-tong-dai-ao-khong-day.webp",
+      "abs": ".media-050/batch154/giai-phap-tong-dai-ao-khong-day.webp",
+      "role": "featured",
+      "bytes": 29428,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03893,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.332,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1009,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "giong-noi-trong-tiep-thi-qua-dien-thoai.webp",
+      "abs": ".media-050/batch154/giong-noi-trong-tiep-thi-qua-dien-thoai.webp",
+      "role": "featured",
+      "bytes": 29686,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03927,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.356,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1002,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "goals-vs-objectives-phan-biet.webp",
+      "abs": ".media-050/batch154/goals-vs-objectives-phan-biet.webp",
+      "role": "featured",
+      "bytes": 25968,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03435,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.352,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 896,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "goc-nhin-doanh-nghiep-va-khach-hang.webp",
+      "abs": ".media-050/batch154/goc-nhin-doanh-nghiep-va-khach-hang.webp",
+      "role": "featured",
+      "bytes": 24928,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03297,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.351,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 877,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "goi-dien-cho-khach-hang-da-mo-email.webp",
+      "abs": ".media-050/batch154/goi-dien-cho-khach-hang-da-mo-email.webp",
+      "role": "featured",
+      "bytes": 25756,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03407,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.344,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 963,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "he-thong-cham-soc-khach-hang-tinh-nang.webp",
+      "abs": ".media-050/batch154/he-thong-cham-soc-khach-hang-tinh-nang.webp",
+      "role": "featured",
+      "bytes": 28064,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03712,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.368,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1047,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "he-thong-quan-ly-khach-hang-nha-hang-khach-san.webp",
+      "abs": ".media-050/batch154/he-thong-quan-ly-khach-hang-nha-hang-khach-san.webp",
+      "role": "featured",
+      "bytes": 33252,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04398,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.342,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1276,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "he-thong-quan-ly-khach-hang-tren-dien-thoai.webp",
+      "abs": ".media-050/batch154/he-thong-quan-ly-khach-hang-tren-dien-thoai.webp",
+      "role": "featured",
+      "bytes": 27070,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03581,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.325,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1046,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "he-thong-tong-dai-dien-thoai-chuan.webp",
+      "abs": ".media-050/batch154/he-thong-tong-dai-dien-thoai-chuan.webp",
+      "role": "featured",
+      "bytes": 29880,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03952,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.377,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 968,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "ho-so-khach-hang-ly-tuong-b2b.webp",
+      "abs": ".media-050/batch154/ho-so-khach-hang-ly-tuong-b2b.webp",
+      "role": "featured",
+      "bytes": 29034,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.0384,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.339,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1003,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "hotline-la-gi-cac-loai-dau-so.webp",
+      "abs": ".media-050/batch154/hotline-la-gi-cac-loai-dau-so.webp",
+      "role": "featured",
+      "bytes": 21018,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.0278,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.335,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 728,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "huong-dan-khoi-nghiep.webp",
+      "abs": ".media-050/batch154/huong-dan-khoi-nghiep.webp",
+      "role": "featured",
+      "bytes": 30082,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03979,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.339,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1030,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "huong-dan-nhanh-cold-calling.webp",
+      "abs": ".media-050/batch154/huong-dan-nhanh-cold-calling.webp",
+      "role": "featured",
+      "bytes": 32152,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04253,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.363,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1090,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "ivr-la-gi-va-nhung-dieu-can-biet.webp",
+      "abs": ".media-050/batch154/ivr-la-gi-va-nhung-dieu-can-biet.webp",
+      "role": "featured",
+      "bytes": 27474,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03634,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.379,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 869,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "ke-hoach-cham-soc-khach-hang-cu.webp",
+      "abs": ".media-050/batch154/ke-hoach-cham-soc-khach-hang-cu.webp",
+      "role": "featured",
+      "bytes": 28940,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03828,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.34,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 964,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "khach-hang-noi-khong-co-thoi-gian.webp",
+      "abs": ".media-050/batch154/khach-hang-noi-khong-co-thoi-gian.webp",
+      "role": "featured",
+      "bytes": 26728,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03535,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.332,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1009,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "khoa-hoc-ban-hang-tren-shopee.webp",
+      "abs": ".media-050/batch154/khoa-hoc-ban-hang-tren-shopee.webp",
+      "role": "featured",
+      "bytes": 28262,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03738,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.345,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 964,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "khoa-hoc-kinh-doanh-shopee-top-3.webp",
+      "abs": ".media-050/batch154/khoa-hoc-kinh-doanh-shopee-top-3.webp",
+      "role": "featured",
+      "bytes": 30148,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03988,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.323,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1013,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "kich-ban-tu-van-khach-hang-spa.webp",
+      "abs": ".media-050/batch154/kich-ban-tu-van-khach-hang-spa.webp",
+      "role": "featured",
+      "bytes": 31786,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04204,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.37,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1064,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "kinh-nghiem-ban-hang-tren-shopee.webp",
+      "abs": ".media-050/batch154/kinh-nghiem-ban-hang-tren-shopee.webp",
+      "role": "featured",
+      "bytes": 33618,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04447,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.344,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1260,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "kinh-nghiem-kinh-doanh-shopee-nguoi-moi.webp",
+      "abs": ".media-050/batch154/kinh-nghiem-kinh-doanh-shopee-nguoi-moi.webp",
+      "role": "featured",
+      "bytes": 26788,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03543,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.347,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 894,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "ky-nang-xu-ly-tu-choi-qua-dien-thoai.webp",
+      "abs": ".media-050/batch154/ky-nang-xu-ly-tu-choi-qua-dien-thoai.webp",
+      "role": "featured",
+      "bytes": 27250,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03604,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.343,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1044,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "lich-gui-email-follow-up.webp",
+      "abs": ".media-050/batch154/lich-gui-email-follow-up.webp",
+      "role": "featured",
+      "bytes": 27158,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03592,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.34,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 916,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "loi-ich-bao-cao-tong-dai-call-center.webp",
+      "abs": ".media-050/batch154/loi-ich-bao-cao-tong-dai-call-center.webp",
+      "role": "featured",
+      "bytes": 27798,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03677,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.339,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1092,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "loi-ich-cua-dich-vu-ho-tro-truc-tuyen.webp",
+      "abs": ".media-050/batch154/loi-ich-cua-dich-vu-ho-tro-truc-tuyen.webp",
+      "role": "featured",
+      "bytes": 29528,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03906,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.378,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 897,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "loi-ich-cua-kich-ban-ban-hang.webp",
+      "abs": ".media-050/batch154/loi-ich-cua-kich-ban-ban-hang.webp",
+      "role": "featured",
+      "bytes": 34072,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04507,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.325,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1470,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "loi-khuyen-cho-nha-quan-ly-call-center.webp",
+      "abs": ".media-050/batch154/loi-khuyen-cho-nha-quan-ly-call-center.webp",
+      "role": "featured",
+      "bytes": 30150,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03988,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.358,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 979,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "ly-do-chon-dich-vu-cskh-viettel.webp",
+      "abs": ".media-050/batch154/ly-do-chon-dich-vu-cskh-viettel.webp",
+      "role": "featured",
+      "bytes": 29866,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03951,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.369,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 954,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "marketing-automation-la-gi.webp",
+      "abs": ".media-050/batch154/marketing-automation-la-gi.webp",
+      "role": "featured",
+      "bytes": 28032,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03708,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.331,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1125,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "mau-bang-danh-gia-nhan-vien-ban-hang.webp",
+      "abs": ".media-050/batch154/mau-bang-danh-gia-nhan-vien-ban-hang.webp",
+      "role": "featured",
+      "bytes": 24730,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03271,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.335,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 900,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "mau-loi-chao-tong-dai-dien-thoai.webp",
+      "abs": ".media-050/batch154/mau-loi-chao-tong-dai-dien-thoai.webp",
+      "role": "featured",
+      "bytes": 23674,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03131,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.341,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 840,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "meo-cold-calling-phan-1.webp",
+      "abs": ".media-050/batch154/meo-cold-calling-phan-1.webp",
+      "role": "featured",
+      "bytes": 27216,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.036,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.343,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1047,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "meo-hay-nhat-de-telesales-thanh-cong.webp",
+      "abs": ".media-050/batch154/meo-hay-nhat-de-telesales-thanh-cong.webp",
+      "role": "featured",
+      "bytes": 29678,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03926,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.373,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 958,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "mo-hinh-trai-nghiem-khach-hang.webp",
+      "abs": ".media-050/batch154/mo-hinh-trai-nghiem-khach-hang.webp",
+      "role": "featured",
+      "bytes": 29572,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03912,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.383,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 980,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "mo-rong-nhom-ban-hang-toan-cau.webp",
+      "abs": ".media-050/batch154/mo-rong-nhom-ban-hang-toan-cau.webp",
+      "role": "featured",
+      "bytes": 34580,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04574,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.362,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1236,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "mua-so-tong-dai-1900.webp",
+      "abs": ".media-050/batch154/mua-so-tong-dai-1900.webp",
+      "role": "featured",
+      "bytes": 28794,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03809,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.377,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 916,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "muc-tieu-smart-la-gi.webp",
+      "abs": ".media-050/batch154/muc-tieu-smart-la-gi.webp",
+      "role": "featured",
+      "bytes": 26276,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03476,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.33,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1039,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "nang-cao-chat-luong-nguon-nhan-luc.webp",
+      "abs": ".media-050/batch154/nang-cao-chat-luong-nguon-nhan-luc.webp",
+      "role": "featured",
+      "bytes": 34230,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04528,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.365,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1183,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "nen-hay-khong-dung-kich-ban-cuoc-goi.webp",
+      "abs": ".media-050/batch154/nen-hay-khong-dung-kich-ban-cuoc-goi.webp",
+      "role": "featured",
+      "bytes": 32848,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04345,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.349,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1231,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "nha-dau-tu-thien-than-cho-start-up.webp",
+      "abs": ".media-050/batch154/nha-dau-tu-thien-than-cho-start-up.webp",
+      "role": "featured",
+      "bytes": 31252,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04134,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.358,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1057,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "nhan-vien-ho-tro-khach-hang.webp",
+      "abs": ".media-050/batch154/nhan-vien-ho-tro-khach-hang.webp",
+      "role": "featured",
+      "bytes": 31530,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04171,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.36,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1064,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "on-premise-la-gi.webp",
+      "abs": ".media-050/batch154/on-premise-la-gi.webp",
+      "role": "featured",
+      "bytes": 29520,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03905,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.342,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1082,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "on-premises-va-cloud-call-center.webp",
+      "abs": ".media-050/batch154/on-premises-va-cloud-call-center.webp",
+      "role": "featured",
+      "bytes": 27954,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03698,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.35,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1002,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "phan-mem-auto-answer-loi-ich.webp",
+      "abs": ".media-050/batch154/phan-mem-auto-answer-loi-ich.webp",
+      "role": "featured",
+      "bytes": 30900,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04087,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.353,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1041,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "phan-mem-auto-call-loi-ich.webp",
+      "abs": ".media-050/batch154/phan-mem-auto-call-loi-ich.webp",
+      "role": "featured",
+      "bytes": 24998,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03307,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.344,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 970,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "phan-mem-crm-viet-nam-la-gi.webp",
+      "abs": ".media-050/batch154/phan-mem-crm-viet-nam-la-gi.webp",
+      "role": "featured",
+      "bytes": 29676,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03925,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.327,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1195,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "phan-mem-luu-tru-thong-tin-khach-hang.webp",
+      "abs": ".media-050/batch154/phan-mem-luu-tru-thong-tin-khach-hang.webp",
+      "role": "featured",
+      "bytes": 21590,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.02856,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.352,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 759,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "phan-mem-quan-ly-ban-hang-da-kenh.webp",
+      "abs": ".media-050/batch154/phan-mem-quan-ly-ban-hang-da-kenh.webp",
+      "role": "featured",
+      "bytes": 33076,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04375,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.368,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1087,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "phan-mem-quan-ly-khach-hang-mien-phi.webp",
+      "abs": ".media-050/batch154/phan-mem-quan-ly-khach-hang-mien-phi.webp",
+      "role": "featured",
+      "bytes": 24116,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.0319,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.335,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 864,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "phan-mem-sms-brandname-tich-hop-gcalls.webp",
+      "abs": ".media-050/batch154/phan-mem-sms-brandname-tich-hop-gcalls.webp",
+      "role": "featured",
+      "bytes": 31720,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04196,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.383,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1055,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "phan-mem-sms-marketing-doi-tuong.webp",
+      "abs": ".media-050/batch154/phan-mem-sms-marketing-doi-tuong.webp",
+      "role": "featured",
+      "bytes": 30010,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.0397,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.328,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1195,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "phan-mem-tong-dai-ao-la-gi.webp",
+      "abs": ".media-050/batch154/phan-mem-tong-dai-ao-la-gi.webp",
+      "role": "featured",
+      "bytes": 28088,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03715,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.343,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1076,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "phuong-phap-cham-soc-khach-hang.webp",
+      "abs": ".media-050/batch154/phuong-phap-cham-soc-khach-hang.webp",
+      "role": "featured",
+      "bytes": 27274,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03608,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.34,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 908,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "phuong-phap-quan-ly-telesale.webp",
+      "abs": ".media-050/batch154/phuong-phap-quan-ly-telesale.webp",
+      "role": "featured",
+      "bytes": 28676,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03793,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.333,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1069,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "phuong-phap-tiep-can-khach-hang.webp",
+      "abs": ".media-050/batch154/phuong-phap-tiep-can-khach-hang.webp",
+      "role": "featured",
+      "bytes": 30938,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04092,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.389,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 954,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "quan-ly-cuoc-goi-khach-hang.webp",
+      "abs": ".media-050/batch154/quan-ly-cuoc-goi-khach-hang.webp",
+      "role": "featured",
+      "bytes": 33122,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04381,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.347,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1226,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "quan-ly-quan-he-khach-hang.webp",
+      "abs": ".media-050/batch154/quan-ly-quan-he-khach-hang.webp",
+      "role": "featured",
+      "bytes": 30194,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03994,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.336,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1217,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "quan-ly-thong-tin-khach-hang.webp",
+      "abs": ".media-050/batch154/quan-ly-thong-tin-khach-hang.webp",
+      "role": "featured",
+      "bytes": 31742,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04199,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.362,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1316,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "quan-tri-theo-muc-tieu-smart.webp",
+      "abs": ".media-050/batch154/quan-tri-theo-muc-tieu-smart.webp",
+      "role": "featured",
+      "bytes": 26656,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03526,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.345,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1003,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "quy-trinh-ban-hang-cua-doanh-nghiep.webp",
+      "abs": ".media-050/batch154/quy-trinh-ban-hang-cua-doanh-nghiep.webp",
+      "role": "featured",
+      "bytes": 32750,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04332,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.337,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1151,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "quy-trinh-cham-soc-khach-hang-sau-ban-hang.webp",
+      "abs": ".media-050/batch154/quy-trinh-cham-soc-khach-hang-sau-ban-hang.webp",
+      "role": "featured",
+      "bytes": 32078,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04243,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.355,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1082,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "quy-trinh-gui-sms-brandname.webp",
+      "abs": ".media-050/batch154/quy-trinh-gui-sms-brandname.webp",
+      "role": "featured",
+      "bytes": 27484,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03635,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.33,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 924,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "quyet-toan-thue-tncn.webp",
+      "abs": ".media-050/batch154/quyet-toan-thue-tncn.webp",
+      "role": "featured",
+      "bytes": 29098,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03849,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.338,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1047,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "salesforce-la-gi.webp",
+      "abs": ".media-050/batch154/salesforce-la-gi.webp",
+      "role": "featured",
+      "bytes": 30802,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04074,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.35,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1229,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "salesforce-marketing-cloud-la-gi.webp",
+      "abs": ".media-050/batch154/salesforce-marketing-cloud-la-gi.webp",
+      "role": "featured",
+      "bytes": 30710,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04062,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.355,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1227,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "service-level-agreement-la-gi.webp",
+      "abs": ".media-050/batch154/service-level-agreement-la-gi.webp",
+      "role": "featured",
+      "bytes": 30530,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04038,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.366,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1176,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "shopee-template-thiet-ke-tren-canva.webp",
+      "abs": ".media-050/batch154/shopee-template-thiet-ke-tren-canva.webp",
+      "role": "featured",
+      "bytes": 30154,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03989,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.367,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 991,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "sip-trunk-la-gi-loi-ich.webp",
+      "abs": ".media-050/batch154/sip-trunk-la-gi-loi-ich.webp",
+      "role": "featured",
+      "bytes": 25158,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03328,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.374,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 828,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "sms-brandname-gom-may-loai.webp",
+      "abs": ".media-050/batch154/sms-brandname-gom-may-loai.webp",
+      "role": "featured",
+      "bytes": 26740,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03537,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.345,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 973,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "sms-marketing-la-gi.webp",
+      "abs": ".media-050/batch154/sms-marketing-la-gi.webp",
+      "role": "featured",
+      "bytes": 27850,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03684,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.345,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1149,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "so-do-quy-trinh-cham-soc-khach-hang.webp",
+      "abs": ".media-050/batch154/so-do-quy-trinh-cham-soc-khach-hang.webp",
+      "role": "featured",
+      "bytes": 34418,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04553,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.338,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1184,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "so-sanh-salesforce-crm-va-phan-mem-khac.webp",
+      "abs": ".media-050/batch154/so-sanh-salesforce-crm-va-phan-mem-khac.webp",
+      "role": "featured",
+      "bytes": 27014,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03573,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.385,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 823,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "so-tong-dai-1800-la-gi.webp",
+      "abs": ".media-050/batch154/so-tong-dai-1800-la-gi.webp",
+      "role": "featured",
+      "bytes": 26950,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03565,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.347,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1043,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "telesales-cach-tap-trung-khi-goi-dien.webp",
+      "abs": ".media-050/batch154/telesales-cach-tap-trung-khi-goi-dien.webp",
+      "role": "featured",
+      "bytes": 26438,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03497,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.337,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 989,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "telesales-va-telemarketing.webp",
+      "abs": ".media-050/batch154/telesales-va-telemarketing.webp",
+      "role": "featured",
+      "bytes": 24200,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03201,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.35,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 864,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "thong-ke-ve-he-thong-voip.webp",
+      "abs": ".media-050/batch154/thong-ke-ve-he-thong-voip.webp",
+      "role": "featured",
+      "bytes": 21826,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.02887,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.345,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 765,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "thu-thuat-tang-traffic-website.webp",
+      "abs": ".media-050/batch154/thu-thuat-tang-traffic-website.webp",
+      "role": "featured",
+      "bytes": 29858,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03949,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.346,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1032,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "tiep-thi-qua-dien-thoai-13-meo.webp",
+      "abs": ".media-050/batch154/tiep-thi-qua-dien-thoai-13-meo.webp",
+      "role": "featured",
+      "bytes": 29812,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03943,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.372,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 965,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "tin-nhan-cham-soc-khach-hang-cu-hieu-qua.webp",
+      "abs": ".media-050/batch154/tin-nhan-cham-soc-khach-hang-cu-hieu-qua.webp",
+      "role": "featured",
+      "bytes": 26778,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03542,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.35,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 890,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "tin-nhan-cham-soc-khach-hang-cu.webp",
+      "abs": ".media-050/batch154/tin-nhan-cham-soc-khach-hang-cu.webp",
+      "role": "featured",
+      "bytes": 30876,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04084,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.37,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1013,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "tong-dai-ao-la-gi-loi-ich.webp",
+      "abs": ".media-050/batch154/tong-dai-ao-la-gi-loi-ich.webp",
+      "role": "featured",
+      "bytes": 25890,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03425,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.342,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 981,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "tong-dai-ao-mien-phi-top-5.webp",
+      "abs": ".media-050/batch154/tong-dai-ao-mien-phi-top-5.webp",
+      "role": "featured",
+      "bytes": 24102,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03188,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.383,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 719,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "tong-dai-cong-nghe-la-gi.webp",
+      "abs": ".media-050/batch154/tong-dai-cong-nghe-la-gi.webp",
+      "role": "featured",
+      "bytes": 26056,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03447,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.343,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 973,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "tong-dai-contact-center-la-gi.webp",
+      "abs": ".media-050/batch154/tong-dai-contact-center-la-gi.webp",
+      "role": "featured",
+      "bytes": 29362,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03884,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.366,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1127,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "tong-dai-ip-truoc-khi-lap-dat.webp",
+      "abs": ".media-050/batch154/tong-dai-ip-truoc-khi-lap-dat.webp",
+      "role": "featured",
+      "bytes": 28498,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.0377,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.347,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1030,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "tong-dai-ip-va-tong-dai-analog.webp",
+      "abs": ".media-050/batch154/tong-dai-ip-va-tong-dai-analog.webp",
+      "role": "featured",
+      "bytes": 25840,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03418,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.359,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 926,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "tong-dai-noi-bo-ao-khac-tong-dai-ao.webp",
+      "abs": ".media-050/batch154/tong-dai-noi-bo-ao-khac-tong-dai-ao.webp",
+      "role": "featured",
+      "bytes": 27960,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03698,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.347,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 998,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "trai-nghiem-khach-hang-xuat-sac.webp",
+      "abs": ".media-050/batch154/trai-nghiem-khach-hang-xuat-sac.webp",
+      "role": "featured",
+      "bytes": 27262,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03606,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.337,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1020,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "tu-dong-ghi-am-cuoc-goi.webp",
+      "abs": ".media-050/batch154/tu-dong-ghi-am-cuoc-goi.webp",
+      "role": "featured",
+      "bytes": 29402,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03889,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.356,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1136,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "voice-brandname-nang-tam-thuong-hieu.webp",
+      "abs": ".media-050/batch154/voice-brandname-nang-tam-thuong-hieu.webp",
+      "role": "featured",
+      "bytes": 27214,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.036,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.358,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1100,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "voip-va-ung-dung-thuc-te.webp",
+      "abs": ".media-050/batch154/voip-va-ung-dung-thuc-te.webp",
+      "role": "featured",
+      "bytes": 27530,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03642,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.338,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 925,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "website-goi-von-cong-dong-cho-start-up.webp",
+      "abs": ".media-050/batch154/website-goi-von-cong-dong-cho-start-up.webp",
+      "role": "featured",
+      "bytes": 24912,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03295,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.4,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 739,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "xac-dinh-khach-hang-muc-tieu.webp",
+      "abs": ".media-050/batch154/xac-dinh-khach-hang-muc-tieu.webp",
+      "role": "featured",
+      "bytes": 33422,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04421,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.327,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1158,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "xac-dinh-ngan-sach-marketing.webp",
+      "abs": ".media-050/batch154/xac-dinh-ngan-sach-marketing.webp",
+      "role": "featured",
+      "bytes": 34708,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04591,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.365,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1186,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "xay-dung-chien-luoc-marketing.webp",
+      "abs": ".media-050/batch154/xay-dung-chien-luoc-marketing.webp",
+      "role": "featured",
+      "bytes": 35672,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04719,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.342,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1245,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "xu-huong-tuong-lai-tong-dai-doanh-nghiep.webp",
+      "abs": ".media-050/batch154/xu-huong-tuong-lai-tong-dai-doanh-nghiep.webp",
+      "role": "featured",
+      "bytes": 27226,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.03601,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.361,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 970,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "xu-ly-loi-tu-choi-cuoc-goi-chao-hang.webp",
+      "abs": ".media-050/batch154/xu-ly-loi-tu-choi-cuoc-goi-chao-hang.webp",
+      "role": "featured",
+      "bytes": 28200,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.0373,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.342,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1085,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "y-kien-trong-content-marketing.webp",
+      "abs": ".media-050/batch154/y-kien-trong-content-marketing.webp",
+      "role": "featured",
+      "bytes": 31832,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.04211,
+        "estimated_quality": 91,
+        "ratio_vs_q80_reencode": 1.34,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1309,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "file": "y-tuong-khoi-nghiep.webp",
+      "abs": ".media-050/batch154/y-tuong-khoi-nghiep.webp",
+      "role": "featured",
+      "bytes": 26232,
+      "failures": [],
+      "warnings": [],
+      "info": {
+        "has_alpha": false,
+        "pages": 1,
+        "metadata_present": {
+          "exif": false,
+          "icc": false,
+          "iptc": false,
+          "xmp": false,
+          "orientation": null
+        },
+        "bytes_per_pixel": 0.0347,
+        "estimated_quality": 92,
+        "ratio_vs_q80_reencode": 1.339,
+        "method": "bisection on re-encoded byte size",
+        "edge_density": 1009,
+        "edge_density_note": "informational only — does not track encoder quality (see header comment)"
+      },
+      "format": "webp",
+      "width": 1200,
+      "height": 630
+    }
+  ]
+}

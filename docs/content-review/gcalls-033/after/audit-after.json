@@ -1,0 +1,482 @@
+{
+  "home@1440": {
+    "pageHeight": 12151,
+    "sectionCount": 13,
+    "sections": [
+      {
+        "i": 0,
+        "top": 73,
+        "height": 873,
+        "padTop": 56,
+        "padBottom": 25,
+        "heading": "Tổng Đài Ảo Tích Hợp CRM - Bứt Phá Doanh Số Cho Đội Sales & ",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 1,
+        "illus": 0
+      },
+      {
+        "i": 1,
+        "top": 946,
+        "height": 2095,
+        "padTop": 25,
+        "padBottom": 25,
+        "heading": "“Khoảng Trống” Vận Hành Khiến Doanh Nghiệp Rò Rỉ Khách Hàng ",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "illus": 0
+      },
+      {
+        "i": 2,
+        "top": 3041,
+        "height": 451,
+        "padTop": 25,
+        "padBottom": 25,
+        "heading": "Tổng Đài Thông Minh Gcalls: Bứt Phá Doanh Số Đội Ngũ & Nâng ",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "illus": 0
+      },
+      {
+        "i": 3,
+        "top": 3493,
+        "height": 1645,
+        "padTop": 25,
+        "padBottom": 25,
+        "heading": "Hệ sinh thái sản phẩm và giải pháp Gcalls",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "illus": 0
+      },
+      {
+        "i": 4,
+        "top": 5138,
+        "height": 449,
+        "padTop": 25,
+        "padBottom": 25,
+        "heading": "Theo dõi toàn bộ hoạt động cuộc gọi theo thời gian thực",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-timeline-history-desktop-v1.webp"
+        ],
+        "mockCount": 0,
+        "illus": 0
+      },
+      {
+        "i": 5,
+        "top": 5587,
+        "height": 583,
+        "padTop": 25,
+        "padBottom": 25,
+        "heading": "Quản lý khách hàng tập trung ngay trên Gcalls",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 1,
+        "illus": 1
+      },
+      {
+        "i": 6,
+        "top": 6170,
+        "height": 659,
+        "padTop": 25,
+        "padBottom": 25,
+        "heading": "Theo dõi hiệu suất đội ngũ theo thời gian thực",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 1,
+        "illus": 1
+      },
+      {
+        "i": 7,
+        "top": 6829,
+        "height": 538,
+        "padTop": 25,
+        "padBottom": 25,
+        "heading": "Xây dựng hệ thống tổng đài doanh nghiệp trên nền tảng Cloud",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 1,
+        "illus": 1
+      },
+      {
+        "i": 8,
+        "top": 7367,
+        "height": 446,
+        "padTop": 25,
+        "padBottom": 25,
+        "heading": "Nhận diện khách hàng ngay khi cuộc gọi đến",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 1,
+        "illus": 1
+      },
+      {
+        "i": 9,
+        "top": 7813,
+        "height": 743,
+        "padTop": 25,
+        "padBottom": 25,
+        "heading": "Biến khách truy cập website thành cuộc gọi",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 1,
+        "illus": 1
+      },
+      {
+        "i": 10,
+        "top": 8556,
+        "height": 928,
+        "padTop": 25,
+        "padBottom": 25,
+        "heading": "Hệ sinh thái tích hợp của Gcalls",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-integration-config-desktop-v1.webp"
+        ],
+        "mockCount": 0,
+        "illus": 0
+      },
+      {
+        "i": 11,
+        "top": 9483,
+        "height": 698,
+        "padTop": 25,
+        "padBottom": 25,
+        "heading": "Mang tổng đài doanh nghiệp theo bạn đến bất kỳ đâu",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-webphone-keypad-mobile-v1-540x1024.webp"
+        ],
+        "mockCount": 0,
+        "illus": 0
+      },
+      {
+        "i": 12,
+        "top": 10181,
+        "height": 1356,
+        "padTop": 25,
+        "padBottom": 56,
+        "heading": "Tổng đài doanh nghiệp luôn đồng hành cùng đội ngũ của bạn",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "illus": 0
+      }
+    ],
+    "seams": [
+      {
+        "between": "0->1",
+        "gap": 50
+      },
+      {
+        "between": "1->2",
+        "gap": 50
+      },
+      {
+        "between": "2->3",
+        "gap": 51
+      },
+      {
+        "between": "3->4",
+        "gap": 50
+      },
+      {
+        "between": "4->5",
+        "gap": 50
+      },
+      {
+        "between": "5->6",
+        "gap": 50
+      },
+      {
+        "between": "6->7",
+        "gap": 50
+      },
+      {
+        "between": "7->8",
+        "gap": 50
+      },
+      {
+        "between": "8->9",
+        "gap": 50
+      },
+      {
+        "between": "9->10",
+        "gap": 50
+      },
+      {
+        "between": "10->11",
+        "gap": 49
+      },
+      {
+        "between": "11->12",
+        "gap": 50
+      }
+    ],
+    "worstGap": 51,
+    "maxConsecutiveMockups": 5,
+    "h1Count": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "shotNaturalSizes": [
+      {
+        "src": "gcalls-plus-timeline-history-desktop-v1.webp",
+        "nat": "809x443",
+        "rendered": 578
+      },
+      {
+        "src": "gcalls-plus-integration-config-desktop-v1.webp",
+        "nat": "809x446",
+        "rendered": 807
+      },
+      {
+        "src": "gcalls-plus-webphone-keypad-mobile-v1-540x1024.webp",
+        "nat": "300x568",
+        "rendered": 298
+      }
+    ]
+  },
+  "home@390": {
+    "pageHeight": 21305,
+    "sectionCount": 13,
+    "sections": [
+      {
+        "i": 0,
+        "top": 73,
+        "height": 1599,
+        "padTop": 40,
+        "padBottom": 20,
+        "heading": "Tổng Đài Ảo Tích Hợp CRM - Bứt Phá Doanh Số Cho Đội Sales & ",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 1,
+        "illus": 0
+      },
+      {
+        "i": 1,
+        "top": 1672,
+        "height": 4306,
+        "padTop": 20,
+        "padBottom": 20,
+        "heading": "“Khoảng Trống” Vận Hành Khiến Doanh Nghiệp Rò Rỉ Khách Hàng ",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "illus": 0
+      },
+      {
+        "i": 2,
+        "top": 5979,
+        "height": 545,
+        "padTop": 20,
+        "padBottom": 20,
+        "heading": "Tổng Đài Thông Minh Gcalls: Bứt Phá Doanh Số Đội Ngũ & Nâng ",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "illus": 0
+      },
+      {
+        "i": 3,
+        "top": 6523,
+        "height": 3374,
+        "padTop": 20,
+        "padBottom": 20,
+        "heading": "Hệ sinh thái sản phẩm và giải pháp Gcalls",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "illus": 0
+      },
+      {
+        "i": 4,
+        "top": 9897,
+        "height": 739,
+        "padTop": 20,
+        "padBottom": 20,
+        "heading": "Theo dõi toàn bộ hoạt động cuộc gọi theo thời gian thực",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-timeline-history-desktop-v1-768x421.webp"
+        ],
+        "mockCount": 0,
+        "illus": 0
+      },
+      {
+        "i": 5,
+        "top": 10637,
+        "height": 1347,
+        "padTop": 20,
+        "padBottom": 20,
+        "heading": "Quản lý khách hàng tập trung ngay trên Gcalls",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 1,
+        "illus": 1
+      },
+      {
+        "i": 6,
+        "top": 11983,
+        "height": 1069,
+        "padTop": 20,
+        "padBottom": 20,
+        "heading": "Theo dõi hiệu suất đội ngũ theo thời gian thực",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 1,
+        "illus": 1
+      },
+      {
+        "i": 7,
+        "top": 13052,
+        "height": 997,
+        "padTop": 20,
+        "padBottom": 20,
+        "heading": "Xây dựng hệ thống tổng đài doanh nghiệp trên nền tảng Cloud",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 1,
+        "illus": 1
+      },
+      {
+        "i": 8,
+        "top": 14049,
+        "height": 645,
+        "padTop": 20,
+        "padBottom": 20,
+        "heading": "Nhận diện khách hàng ngay khi cuộc gọi đến",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 1,
+        "illus": 1
+      },
+      {
+        "i": 9,
+        "top": 14695,
+        "height": 824,
+        "padTop": 20,
+        "padBottom": 20,
+        "heading": "Biến khách truy cập website thành cuộc gọi",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 1,
+        "illus": 1
+      },
+      {
+        "i": 10,
+        "top": 15519,
+        "height": 856,
+        "padTop": 20,
+        "padBottom": 20,
+        "heading": "Hệ sinh thái tích hợp của Gcalls",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-integration-config-desktop-v1-768x423.webp"
+        ],
+        "mockCount": 0,
+        "illus": 0
+      },
+      {
+        "i": 11,
+        "top": 16375,
+        "height": 1407,
+        "padTop": 20,
+        "padBottom": 20,
+        "heading": "Mang tổng đài doanh nghiệp theo bạn đến bất kỳ đâu",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-webphone-keypad-mobile-v1-540x1024.webp"
+        ],
+        "mockCount": 0,
+        "illus": 0
+      },
+      {
+        "i": 12,
+        "top": 17783,
+        "height": 1599,
+        "padTop": 20,
+        "padBottom": 40,
+        "heading": "Tổng đài doanh nghiệp luôn đồng hành cùng đội ngũ của bạn",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "illus": 0
+      }
+    ],
+    "seams": [
+      {
+        "between": "0->1",
+        "gap": 40
+      },
+      {
+        "between": "1->2",
+        "gap": 41
+      },
+      {
+        "between": "2->3",
+        "gap": 39
+      },
+      {
+        "between": "3->4",
+        "gap": 40
+      },
+      {
+        "between": "4->5",
+        "gap": 41
+      },
+      {
+        "between": "5->6",
+        "gap": 39
+      },
+      {
+        "between": "6->7",
+        "gap": 40
+      },
+      {
+        "between": "7->8",
+        "gap": 40
+      },
+      {
+        "between": "8->9",
+        "gap": 41
+      },
+      {
+        "between": "9->10",
+        "gap": 40
+      },
+      {
+        "between": "10->11",
+        "gap": 40
+      },
+      {
+        "between": "11->12",
+        "gap": 41
+      }
+    ],
+    "worstGap": 41,
+    "maxConsecutiveMockups": 5,
+    "h1Count": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "shotNaturalSizes": [
+      {
+        "src": "gcalls-plus-timeline-history-desktop-v1-768x421.webp",
+        "nat": "390x213",
+        "rendered": 368
+      },
+      {
+        "src": "gcalls-plus-integration-config-desktop-v1-768x423.webp",
+        "nat": "390x214",
+        "rendered": 368
+      },
+      {
+        "src": "gcalls-plus-webphone-keypad-mobile-v1-540x1024.webp",
+        "nat": "390x739",
+        "rendered": 298
+      }
+    ]
+  }
+}

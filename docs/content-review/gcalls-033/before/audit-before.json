@@ -1,0 +1,4192 @@
+{
+  "home@1440": {
+    "pageHeight": 13135,
+    "sectionCount": 18,
+    "sections": [
+      {
+        "i": 0,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-34df",
+        "id": "34df847",
+        "top": 73,
+        "height": 1000,
+        "padTop": 104,
+        "padBottom": 104,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Tổng Đài Ảo Tích Hợp CRM - Bứt Phá Doanh Số Cho Đội Sales & CSKH",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 40,
+        "sig": "elementor-widget-wrap|elementor-widget-html|elementor-widget-wrap|elementor-widget-shortcode|gcalls-mock|gcalls-stage|gcalls-stage__main|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__strip|gcalls-mock__pulse|gcalls-mock__muted|gcalls-mock__badge|gcalls-mock__kpis|gcalls-mock__kpi|gcalls-mock__kpi|gcalls-mock__kpi|gcalls-mock__kpi|gcalls-mock__list|gcalls-mock__avatar|gcalls-mock__who|gcalls-mock__kind"
+      },
+      {
+        "i": 1,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-7704",
+        "id": "77046cf",
+        "top": 1073,
+        "height": 453,
+        "padTop": 70,
+        "padBottom": 0,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "“Khoảng Trống” Vận Hành Khiến Doanh Nghiệp Rò Rỉ Khách Hàng Và Thất Th",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-html"
+      },
+      {
+        "i": 2,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-d131",
+        "id": "d131e08",
+        "top": 1526,
+        "height": 659,
+        "padTop": 0,
+        "padBottom": 48,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Gián đoạn hoạt động telesales khi số gọi ra bị khóa hoặc bị người nhận",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-html"
+      },
+      {
+        "i": 3,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-1f85",
+        "id": "1f85ba5",
+        "top": 2185,
+        "height": 1036,
+        "padTop": 0,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Ước tính chi phí vận hành thủ công mỗi tháng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-shortcode|gcalls-loss-root|gcalls-loss|gcalls-loss__head|gcalls-loss__eyebrow|gcalls-loss__title|gcalls-loss__title-accent|gcalls-loss__intro|gcalls-loss__body|gcalls-loss__inputs|gcalls-loss__grid|gcalls-loss__field|gcalls-loss__field-top|gcalls-loss__label|gcalls-loss__value|gcalls-loss__hint|gcalls-loss__slider|gcalls-loss__row|gcalls-loss__number|gcalls-loss__unit|gcalls-loss__field|gcalls-loss__field-top|gcalls-loss__label|gcalls-loss__value"
+      },
+      {
+        "i": 4,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-7978",
+        "id": "797897b",
+        "top": 3221,
+        "height": 541,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Tổng Đài Thông Minh Gcalls: Bứt Phá Doanh Số Đội Ngũ & Nâng Cao Trải N",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-icon-list|elementor-widget-button"
+      },
+      {
+        "i": 5,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-d388",
+        "id": "d388508",
+        "top": 3763,
+        "height": 215,
+        "padTop": 70,
+        "padBottom": 0,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Hệ sinh thái sản phẩm và giải pháp Gcalls",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-text-editor"
+      },
+      {
+        "i": 6,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-2b52",
+        "id": "2b52248",
+        "top": 3977,
+        "height": 456,
+        "padTop": 56,
+        "padBottom": 0,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Sản phẩm Gcalls",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-html"
+      },
+      {
+        "i": 7,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-67c5",
+        "id": "67c54a9",
+        "top": 4433,
+        "height": 936,
+        "padTop": 64,
+        "padBottom": 0,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Giải pháp Gcalls",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-html"
+      },
+      {
+        "i": 8,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-e371",
+        "id": "e371cf0",
+        "top": 5369,
+        "height": 142,
+        "padTop": 30,
+        "padBottom": 39,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": null,
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-html"
+      },
+      {
+        "i": 9,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-e231",
+        "id": "e2313d7",
+        "top": 5511,
+        "height": 654,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Theo dõi toàn bộ hoạt động cuộc gọi theo thời gian thực",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 30,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-text-editor|elementor-widget-wrap|elementor-widget-shortcode|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__tabs|gcalls-mock__list|gcalls-mock__avatar|gcalls-mock__who|gcalls-mock__kind|gcalls-mock__dur|gcalls-mock__avatar|gcalls-mock__who|gcalls-mock__kind|gcalls-mock__dur|gcalls-mock__avatar|gcalls-mock__who"
+      },
+      {
+        "i": 10,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-756b",
+        "id": "756b457",
+        "top": 6165,
+        "height": 633,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Quản lý khách hàng tập trung ngay trên Gcalls",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 26,
+        "sig": "elementor-widget-wrap|elementor-widget-shortcode|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__split|gcalls-mock__side|gcalls-mock__pane|gcalls-mock__record|gcalls-mock__record-name|gcalls-mock__note|gcalls-mock__events|gcalls-mock__record|gcalls-mock__record-name|gcalls-mock__note|gcalls-mock__events|gcalls-mock__record|gcalls-mock__record-name|gcalls-mock__note|gcalls-mock__events|gcalls-mock__record|gcalls-mock__record-name"
+      },
+      {
+        "i": 11,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-ee27",
+        "id": "ee2732a",
+        "top": 6799,
+        "height": 763,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Theo dõi hiệu suất đội ngũ theo thời gian thực",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 21,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-html|elementor-widget-wrap|elementor-widget-html|elementor-widget-shortcode|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__tabs|gcalls-mock__chart|gcalls-mock__bars|gcalls-mock__bar|gcalls-mock__bar|gcalls-mock__bar|gcalls-mock__bar|gcalls-mock__bar|gcalls-mock__bar|gcalls-mock__bar|gcalls-mock__kpis|gcalls-mock__kpi"
+      },
+      {
+        "i": 12,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-16f4",
+        "id": "16f49ed",
+        "top": 7561,
+        "height": 628,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Xây dựng hệ thống tổng đài doanh nghiệp trên nền tảng Cloud",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 14,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-html|elementor-widget-html|elementor-widget-wrap|elementor-widget-html|elementor-widget-shortcode|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__tabs|gcalls-mock__record|gcalls-mock__ticks|gcalls-mock__record|gcalls-mock__ticks|gcalls-mock__record|gcalls-mock__ticks|gcalls-mock__caption"
+      },
+      {
+        "i": 13,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-f6fe",
+        "id": "f6fe030",
+        "top": 8190,
+        "height": 496,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Nhận diện khách hàng ngay khi cuộc gọi đến",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 5,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-wrap|elementor-widget-shortcode|gcalls-mock|gcalls-pop|gcalls-pop__bar|gcalls-pop__ring|gcalls-pop__state|gcalls-pop__acts|gcalls-pop__btn|gcalls-pop__btn|gcalls-pop__body|gcalls-pop__who|gcalls-mock__avatar|gcalls-mock__who|gcalls-mock__badge|gcalls-pop__hist|gcalls-pop__histhead|gcalls-pop__row|gcalls-pop__row|gcalls-pop__quick|gcalls-mock__caption"
+      },
+      {
+        "i": 14,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-6401",
+        "id": "6401f80",
+        "top": 8685,
+        "height": 820,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Biến khách truy cập website thành cuộc gọi",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 2,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-icon-list|elementor-widget-shortcode|gcalls-mock|gcalls-widget|gcalls-widget__page|gcalls-widget__bar|gcalls-widget__line|gcalls-widget__line|gcalls-widget__panel|gcalls-widget__head|gcalls-widget__field|gcalls-widget__send|gcalls-widget__fab|gcalls-mock__caption|elementor-widget-button"
+      },
+      {
+        "i": 15,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-17cb",
+        "id": "17cbfe1",
+        "top": 9505,
+        "height": 938,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Hệ sinh thái tích hợp của Gcalls",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 18,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-text-editor|elementor-widget-shortcode|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__api|gcalls-mock__verb|gcalls-mock__verb|gcalls-mock__verb|gcalls-mock__verb|gcalls-mock__verb|gcalls-mock__code|gcalls-mock__code|gcalls-mock__code|gcalls-mock__code|gcalls-mock__code|gcalls-mock__caption|elementor-widget-heading"
+      },
+      {
+        "i": 16,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-0bb9",
+        "id": "0bb94e7",
+        "top": 10443,
+        "height": 662,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Mang tổng đài doanh nghiệp theo bạn đến bất kỳ đâu",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 24,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-text-editor|elementor-widget-icon-list|elementor-widget-heading|elementor-widget-heading|elementor-widget-wrap|elementor-widget-shortcode|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__tabs|gcalls-mock__list|gcalls-mock__status|gcalls-mock__who|gcalls-mock__dur|gcalls-mock__status|gcalls-mock__who|gcalls-mock__dur|gcalls-mock__status|gcalls-mock__who"
+      },
+      {
+        "i": 17,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-7652",
+        "id": "7652f60",
+        "top": 11106,
+        "height": 1415,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Tổng đài doanh nghiệp luôn đồng hành cùng đội ngũ của bạn",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-heading|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-text-editor|elementor-widget-button|elementor-widget-button|elementor-widget-shortcode|gcalls-lead|gcalls-lead__title|gcalls-lead__notice|gcalls-lead__contact|gcalls-lead__form|gcalls-lead__field|gcalls-lead__field|gcalls-lead__field|gcalls-lead__field|gcalls-lead__field|gcalls-cta"
+      }
+    ],
+    "seams": [
+      {
+        "between": "0->1",
+        "outerGap": 0,
+        "visualSeam": 174
+      },
+      {
+        "between": "1->2",
+        "outerGap": 0,
+        "visualSeam": 0
+      },
+      {
+        "between": "2->3",
+        "outerGap": 0,
+        "visualSeam": 48
+      },
+      {
+        "between": "3->4",
+        "outerGap": 0,
+        "visualSeam": 140
+      },
+      {
+        "between": "4->5",
+        "outerGap": 1,
+        "visualSeam": 140
+      },
+      {
+        "between": "5->6",
+        "outerGap": -1,
+        "visualSeam": 56
+      },
+      {
+        "between": "6->7",
+        "outerGap": 0,
+        "visualSeam": 64
+      },
+      {
+        "between": "7->8",
+        "outerGap": 0,
+        "visualSeam": 30
+      },
+      {
+        "between": "8->9",
+        "outerGap": 0,
+        "visualSeam": 109
+      },
+      {
+        "between": "9->10",
+        "outerGap": 0,
+        "visualSeam": 140
+      },
+      {
+        "between": "10->11",
+        "outerGap": 1,
+        "visualSeam": 140
+      },
+      {
+        "between": "11->12",
+        "outerGap": -1,
+        "visualSeam": 140
+      },
+      {
+        "between": "12->13",
+        "outerGap": 1,
+        "visualSeam": 140
+      },
+      {
+        "between": "13->14",
+        "outerGap": -1,
+        "visualSeam": 140
+      },
+      {
+        "between": "14->15",
+        "outerGap": 0,
+        "visualSeam": 140
+      },
+      {
+        "between": "15->16",
+        "outerGap": 0,
+        "visualSeam": 140
+      },
+      {
+        "between": "16->17",
+        "outerGap": 1,
+        "visualSeam": 140
+      }
+    ],
+    "worstSeam": 174,
+    "worstOuterGap": 1,
+    "maxConsecutiveMockups": 8,
+    "mockupRuns": [
+      8
+    ],
+    "repeatedCompositions": [
+      {
+        "n": 5,
+        "sig": "elementor-widget-wrap|elementor-widget-html"
+      }
+    ],
+    "h1Count": 1,
+    "rawShortcode": [],
+    "wordCount": 2753,
+    "docWidth": 1440,
+    "viewportWidth": 1440,
+    "http": 200,
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 ()"
+    ],
+    "badResponses": [],
+    "brokenImages": [],
+    "overflow": false
+  },
+  "gcalls-plus@1440": {
+    "pageHeight": 15552,
+    "sectionCount": 18,
+    "sections": [
+      {
+        "i": 0,
+        "tag": "SECTION",
+        "cls": "gcalls-product__hero",
+        "id": null,
+        "top": 73,
+        "height": 873,
+        "padTop": 72,
+        "padBottom": 72,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình duyệt",
+        "imgCount": 6,
+        "realImgs": [
+          "webphone-overview.webp",
+          "customer-profile.webp",
+          "call-history.webp",
+          "analytics-dashboard.webp",
+          "agent-performance.webp",
+          "click-to-call.webp"
+        ],
+        "mockCount": 2,
+        "sig": "gcalls-product__hero-copy|gcalls-eyebrow|gcalls-product__hero-title|gcalls-product__hero-lead|gcalls-product__points|gcalls-cta-band|gcalls-cta|gcalls-product__hero-visual|gcalls-mock|gcalls-gallery__tabs|gcalls-gallery__stage|gcalls-mock__caption"
+      },
+      {
+        "i": 1,
+        "tag": "SECTION",
+        "cls": "gcalls-product__direct",
+        "id": null,
+        "top": 996,
+        "height": 226,
+        "padTop": 40,
+        "padBottom": 40,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Gcalls Plus Webphone là gì?",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading"
+      },
+      {
+        "i": 2,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 1272,
+        "height": 1546,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-webphone-keypad-mobile-v1-540x1024.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 3,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 2868,
+        "height": 892,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Webphone đưa chức năng tổng đài vào trình duyệt",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-webphone-desktop-v1-768x407.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title"
+      },
+      {
+        "i": 4,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 3810,
+        "height": 1051,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-overview-activity-desktop-v1-768x427.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card"
+      },
+      {
+        "i": 5,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 4911,
+        "height": 1040,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi riêng lẻ",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-timeline-history-desktop-v1-768x421.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title"
+      },
+      {
+        "i": 6,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 6001,
+        "height": 781,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Hiểu khách hàng trước khi tiếp tục cuộc hội thoại",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-contact-profile-desktop-v1-768x418.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title"
+      },
+      {
+        "i": 7,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 6832,
+        "height": 1409,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Từ cuộc gọi đến bước follow-up tiếp theo",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-call-history-desktop-v1-768x934.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 8,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 8291,
+        "height": 645,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-agent-status-log-desktop-v1-768x280.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title"
+      },
+      {
+        "i": 9,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 8987,
+        "height": 843,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-integrations-desktop-v1-768x469.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-media"
+      },
+      {
+        "i": 10,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 9879,
+        "height": 1029,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Gcalls Plus phù hợp với những đội ngũ nào?",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-advanced-filter-desktop-v1-768x659.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 11,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 10958,
+        "height": 566,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Contact Cent",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-activity-type-dropdown-desktop-v1-768x228.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-media"
+      },
+      {
+        "i": 12,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 11574,
+        "height": 1017,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Triển khai theo nhu cầu vận hành thực tế",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-integration-config-desktop-v1-768x423.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title"
+      },
+      {
+        "i": 13,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 12641,
+        "height": 350,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 14,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 13041,
+        "height": 163,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading"
+      },
+      {
+        "i": 15,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 13254,
+        "height": 401,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ của bạn đan",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 16,
+        "tag": "SECTION",
+        "cls": "gcalls-product__faq",
+        "id": null,
+        "top": 13705,
+        "height": 723,
+        "padTop": 0,
+        "padBottom": 0,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Câu hỏi thường gặp về Gcalls Plus Webphone",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer"
+      },
+      {
+        "i": 17,
+        "tag": "SECTION",
+        "cls": "gcalls-product__final",
+        "id": null,
+        "top": 14478,
+        "height": 506,
+        "padTop": 64,
+        "padBottom": 64,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ của bạn đan",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__lead|gcalls-cta-band|gcalls-cta|gcalls-cta"
+      }
+    ],
+    "seams": [
+      {
+        "between": "0->1",
+        "outerGap": 50,
+        "visualSeam": 112
+      },
+      {
+        "between": "1->2",
+        "outerGap": 50,
+        "visualSeam": 48
+      },
+      {
+        "between": "2->3",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "3->4",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "4->5",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "5->6",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "6->7",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "7->8",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "8->9",
+        "outerGap": 51,
+        "visualSeam": 64
+      },
+      {
+        "between": "9->10",
+        "outerGap": 49,
+        "visualSeam": 64
+      },
+      {
+        "between": "10->11",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "11->12",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "12->13",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "13->14",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "14->15",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "15->16",
+        "outerGap": 50,
+        "visualSeam": 56
+      },
+      {
+        "between": "16->17",
+        "outerGap": 50,
+        "visualSeam": 64
+      }
+    ],
+    "worstSeam": 112,
+    "worstOuterGap": 51,
+    "maxConsecutiveMockups": 0,
+    "mockupRuns": [],
+    "repeatedCompositions": [
+      {
+        "n": 2,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-med"
+      },
+      {
+        "n": 2,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      }
+    ],
+    "h1Count": 1,
+    "rawShortcode": [],
+    "wordCount": 1751,
+    "docWidth": 1440,
+    "viewportWidth": 1440,
+    "http": 200,
+    "consoleErrors": [],
+    "badResponses": [],
+    "brokenImages": [],
+    "overflow": false
+  },
+  "gcalls-cx@1440": {
+    "pageHeight": 13412,
+    "sectionCount": 20,
+    "sections": [
+      {
+        "i": 0,
+        "tag": "SECTION",
+        "cls": "gcalls-product__hero",
+        "id": null,
+        "top": 73,
+        "height": 906,
+        "padTop": 72,
+        "padBottom": 72,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Gcalls CX – hợp nhất mọi điểm chạm khách hàng trên một màn hình",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-product__hero-copy|gcalls-eyebrow|gcalls-product__hero-title|gcalls-product__hero-lead|gcalls-product__points|gcalls-cta-band|gcalls-cta|gcalls-product__hero-visual|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-chanbar|gcalls-chanbar__all|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-rows|gcalls-row|gcalls-row__main|gcalls-row__head"
+      },
+      {
+        "i": 1,
+        "tag": "SECTION",
+        "cls": "gcalls-product__direct",
+        "id": null,
+        "top": 1029,
+        "height": 199,
+        "padTop": 40,
+        "padBottom": 40,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Gcalls CX là gì?",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading"
+      },
+      {
+        "i": 2,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 1278,
+        "height": 547,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Nhiều kênh giao tiếp không đồng nghĩa với một trải nghiệm liền mạch",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 3,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 1876,
+        "height": 770,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Một không gian làm việc cho nhiều điểm chạm khách hàng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 9,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-pad|gcalls-who|gcalls-mock__avatar|gcalls-mock__who|gcalls-chanrow|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-block__t|gcalls-recent|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-note|gcalls-block__t|gcalls-mock__caption"
+      },
+      {
+        "i": 4,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 2695,
+        "height": 324,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Kết nối những kênh khách hàng đang sử dụng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 5,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 3070,
+        "height": 1040,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Giảm việc chuyển đổi giữa nhiều màn hình khi xử lý khách hàng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-chanbar|gcalls-chanbar__all|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-rows|gcalls-row|gcalls-row__main|gcalls-row__head|gcalls-chan|gcalls-state|gcalls-row|gcalls-row__main|gcalls-row__head"
+      },
+      {
+        "i": 6,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 4160,
+        "height": 790,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Biến hội thoại thành công việc có trạng thái và người chịu trách nhiệm",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-pad|gcalls-row__head|gcalls-state|gcalls-chan|gcalls-row__by|gcalls-lead|gcalls-sub|gcalls-hist|gcalls-hist__at|gcalls-hist__at|gcalls-hist__at|gcalls-mock__caption|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card"
+      },
+      {
+        "i": 7,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 5000,
+        "height": 964,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Hiểu những gì đã xảy ra trước khi phản hồi khách hàng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 9,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-pad|gcalls-who|gcalls-mock__avatar|gcalls-mock__who|gcalls-chanrow|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-block__t|gcalls-recent|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-note|gcalls-block__t|gcalls-mock__caption"
+      },
+      {
+        "i": 8,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 6014,
+        "height": 1031,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Từ nhiều điểm chạm đến một quy trình chăm sóc tập trung hơn",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-diagram|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 9,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 7096,
+        "height": 949,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Theo dõi hoạt động đa kênh từ dữ liệu tập trung",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-pad|gcalls-tiles|gcalls-tile|gcalls-tile|gcalls-block|gcalls-block__t|gcalls-meters|gcalls-meters__l|gcalls-meters__track|gcalls-meters__fill|gcalls-meters__l|gcalls-meters__track|gcalls-meters__fill|gcalls-meters__l|gcalls-meters__track|gcalls-meters__fill"
+      },
+      {
+        "i": 10,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 8095,
+        "height": 359,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Giúp đội CSKH làm việc với ít điểm đứt gãy hơn",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 11,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 8504,
+        "height": 496,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Gcalls CX phù hợp với những mô hình có nhiều điểm chạm khách hàng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 12,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 9050,
+        "height": 252,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Kết nối giao tiếp đa kênh với dữ liệu và quy trình doanh nghiệp",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 13,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 9352,
+        "height": 261,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Mỗi bài toán giao tiếp cần một lớp sản phẩm khác nhau",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading"
+      },
+      {
+        "i": 14,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 9663,
+        "height": 614,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Thiết kế cấu hình theo kênh và workflow doanh nghiệp đang sử dụng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title"
+      },
+      {
+        "i": 15,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 10327,
+        "height": 379,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Mỗi hành trình khách hàng cần một workflow khác nhau",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 16,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 10756,
+        "height": 281,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Chi phí phụ thuộc vào số kênh, người dùng và phạm vi triển khai",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 17,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 11088,
+        "height": 401,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Xem Gcalls CX hoạt động trên chính hành trình chăm sóc khách hàng của ",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 18,
+        "tag": "SECTION",
+        "cls": "gcalls-product__faq",
+        "id": null,
+        "top": 11539,
+        "height": 726,
+        "padTop": 0,
+        "padBottom": 0,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Câu hỏi thường gặp về Gcalls CX",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer"
+      },
+      {
+        "i": 19,
+        "tag": "SECTION",
+        "cls": "gcalls-product__final",
+        "id": null,
+        "top": 12314,
+        "height": 530,
+        "padTop": 64,
+        "padBottom": 64,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Xem Gcalls CX hoạt động trên chính hành trình chăm sóc khách hàng của ",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__lead|gcalls-cta-band|gcalls-cta|gcalls-cta-band|gcalls-cta"
+      }
+    ],
+    "seams": [
+      {
+        "between": "0->1",
+        "outerGap": 50,
+        "visualSeam": 112
+      },
+      {
+        "between": "1->2",
+        "outerGap": 50,
+        "visualSeam": 48
+      },
+      {
+        "between": "2->3",
+        "outerGap": 51,
+        "visualSeam": 64
+      },
+      {
+        "between": "3->4",
+        "outerGap": 49,
+        "visualSeam": 64
+      },
+      {
+        "between": "4->5",
+        "outerGap": 51,
+        "visualSeam": 64
+      },
+      {
+        "between": "5->6",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "6->7",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "7->8",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "8->9",
+        "outerGap": 51,
+        "visualSeam": 64
+      },
+      {
+        "between": "9->10",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "10->11",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "11->12",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "12->13",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "13->14",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "14->15",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "15->16",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "16->17",
+        "outerGap": 51,
+        "visualSeam": 64
+      },
+      {
+        "between": "17->18",
+        "outerGap": 50,
+        "visualSeam": 56
+      },
+      {
+        "between": "18->19",
+        "outerGap": 49,
+        "visualSeam": 64
+      }
+    ],
+    "worstSeam": 112,
+    "worstOuterGap": 51,
+    "maxConsecutiveMockups": 3,
+    "mockupRuns": [
+      3
+    ],
+    "repeatedCompositions": [
+      {
+        "n": 2,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-moc"
+      },
+      {
+        "n": 4,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      }
+    ],
+    "h1Count": 1,
+    "rawShortcode": [],
+    "wordCount": 2341,
+    "docWidth": 1440,
+    "viewportWidth": 1440,
+    "http": 200,
+    "consoleErrors": [],
+    "badResponses": [],
+    "brokenImages": [],
+    "overflow": false
+  },
+  "voicebot-ai@1440": {
+    "pageHeight": 10414,
+    "sectionCount": 13,
+    "sections": [
+      {
+        "i": 0,
+        "tag": "SECTION",
+        "cls": "gcalls-product__hero",
+        "id": null,
+        "top": 73,
+        "height": 804,
+        "padTop": 72,
+        "padBottom": 72,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 8,
+        "sig": "gcalls-product__hero-copy|gcalls-eyebrow|gcalls-product__hero-title|gcalls-product__hero-lead|gcalls-cta-band|gcalls-cta|gcalls-product__hero-visual|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-chanbar|gcalls-mock__pulse|gcalls-row__by|gcalls-state|gcalls-pad|gcalls-tiles|gcalls-tile|gcalls-tile|gcalls-tile|gcalls-tile|gcalls-block|gcalls-block__t"
+      },
+      {
+        "i": 1,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 927,
+        "height": 472,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Khi những cuộc gọi lặp lại chiếm quá nhiều nguồn lực",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 2,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 1449,
+        "height": 813,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Những tình huống cuộc gọi có thể cân nhắc đưa vào Voicebot",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card"
+      },
+      {
+        "i": 3,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 2312,
+        "height": 1363,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Một chiến dịch Voicebot diễn ra như thế nào",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-diagram|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 4,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 3725,
+        "height": 849,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Những gì một triển khai Voicebot được xây dựng xoay quanh",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-rows|gcalls-row|gcalls-row__id|gcalls-row__main|gcalls-state|gcalls-row|gcalls-row__id|gcalls-row__main|gcalls-state|gcalls-row|gcalls-row__id|gcalls-row__main|gcalls-state|gcalls-row|gcalls-row__id|gcalls-row__main"
+      },
+      {
+        "i": 5,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 4624,
+        "height": 877,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "AI xử lý tác vụ lặp lại, con người xử lý tương tác có giá trị cao",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-diagram"
+      },
+      {
+        "i": 6,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 5551,
+        "height": 769,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Voicebot có thể được khảo sát tích hợp vào hệ thống đang vận hành",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 7,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 6370,
+        "height": 414,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Những nhóm ngành thường có nhiều cuộc gọi lặp lại",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 8,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 6834,
+        "height": 764,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Từ khảo sát nhu cầu đến vận hành và tối ưu",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 9,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 7648,
+        "height": 462,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Những thay đổi doanh nghiệp có thể hướng tới",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 10,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 8159,
+        "height": 350,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Bắt đầu từ một tình huống cuộc gọi phù hợp với doanh nghiệp",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 11,
+        "tag": "SECTION",
+        "cls": "gcalls-product__faq",
+        "id": null,
+        "top": 8560,
+        "height": 829,
+        "padTop": 0,
+        "padBottom": 0,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Câu hỏi thường gặp về Gcalls Voicebot AI",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer"
+      },
+      {
+        "i": 12,
+        "tag": "SECTION",
+        "cls": "gcalls-product__final",
+        "id": null,
+        "top": 9439,
+        "height": 407,
+        "padTop": 64,
+        "padBottom": 64,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Bắt đầu từ một tình huống cuộc gọi phù hợp với doanh nghiệp",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__lead|gcalls-cta-band|gcalls-cta"
+      }
+    ],
+    "seams": [
+      {
+        "between": "0->1",
+        "outerGap": 50,
+        "visualSeam": 80
+      },
+      {
+        "between": "1->2",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "2->3",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "3->4",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "4->5",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "5->6",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "6->7",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "7->8",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "8->9",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "9->10",
+        "outerGap": 49,
+        "visualSeam": 64
+      },
+      {
+        "between": "10->11",
+        "outerGap": 51,
+        "visualSeam": 56
+      },
+      {
+        "between": "11->12",
+        "outerGap": 50,
+        "visualSeam": 64
+      }
+    ],
+    "worstSeam": 80,
+    "worstOuterGap": 51,
+    "maxConsecutiveMockups": 1,
+    "mockupRuns": [],
+    "repeatedCompositions": [
+      {
+        "n": 2,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-pro"
+      }
+    ],
+    "h1Count": 1,
+    "rawShortcode": [],
+    "wordCount": 2283,
+    "docWidth": 1440,
+    "viewportWidth": 1440,
+    "http": 200,
+    "consoleErrors": [],
+    "badResponses": [],
+    "brokenImages": [],
+    "overflow": false
+  },
+  "qc-bot-ai@1440": {
+    "pageHeight": 11593,
+    "sectionCount": 19,
+    "sections": [
+      {
+        "i": 0,
+        "tag": "SECTION",
+        "cls": "gcalls-product__hero",
+        "id": null,
+        "top": 73,
+        "height": 800,
+        "padTop": 72,
+        "padBottom": 72,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 10,
+        "sig": "gcalls-product__hero-copy|gcalls-eyebrow|gcalls-product__hero-title|gcalls-product__hero-lead|gcalls-product__points|gcalls-cta-band|gcalls-cta|gcalls-product__hero-visual|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__split|gcalls-mock__pane|gcalls-block__t|gcalls-turns|gcalls-turns__who|gcalls-turns__text|gcalls-turns__who|gcalls-turns__text|gcalls-turns__who|gcalls-turns__text|gcalls-mock__pane"
+      },
+      {
+        "i": 1,
+        "tag": "SECTION",
+        "cls": "gcalls-product__direct",
+        "id": null,
+        "top": 923,
+        "height": 199,
+        "padTop": 40,
+        "padBottom": 40,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "QA QC Center là gì?",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading"
+      },
+      {
+        "i": 2,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 1172,
+        "height": 547,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ để kiểm soá",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 3,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 1769,
+        "height": 739,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem lại",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-chanbar|gcalls-row__by|gcalls-state|gcalls-turns|gcalls-hist__at|gcalls-turns__who|gcalls-turns__text|gcalls-hist__at|gcalls-turns__who|gcalls-turns__text|gcalls-state|gcalls-hist__at|gcalls-turns__who|gcalls-turns__text|gcalls-hist__at|gcalls-turns__who"
+      },
+      {
+        "i": 4,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 2558,
+        "height": 1033,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-diagram|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 5,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 3641,
+        "height": 624,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Các năng lực cốt lõi hỗ trợ đội QA",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge"
+      },
+      {
+        "i": 6,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 4315,
+        "height": 728,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-pad|gcalls-score|gcalls-crit|gcalls-crit__i|gcalls-crit__l|gcalls-crit__i|gcalls-crit__l|gcalls-crit__i|gcalls-crit__l|gcalls-crit__i|gcalls-crit__l|gcalls-mock__caption|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card"
+      },
+      {
+        "i": 7,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 5093,
+        "height": 758,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-chanbar|gcalls-row__by|gcalls-row__end|gcalls-rows|gcalls-row|gcalls-row__id|gcalls-row__main|gcalls-state|gcalls-row|gcalls-row__id|gcalls-row__main|gcalls-state|gcalls-row|gcalls-row__id|gcalls-row__main|gcalls-state"
+      },
+      {
+        "i": 8,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 5900,
+        "height": 332,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh giá và cải ",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 9,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 6282,
+        "height": 762,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-pad|gcalls-tiles|gcalls-tile|gcalls-tile|gcalls-tile|gcalls-tile|gcalls-block|gcalls-block__t|gcalls-trend|gcalls-trend__col|gcalls-trend__bar|gcalls-trend__col|gcalls-trend__bar|gcalls-trend__col|gcalls-trend__bar|gcalls-trend__col"
+      },
+      {
+        "i": 10,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 7095,
+        "height": 382,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 11,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 7527,
+        "height": 447,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "QA QC Center phù hợp với những hoạt động nào?",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 12,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 8024,
+        "height": 252,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 13,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 8326,
+        "height": 261,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Chọn đúng sản phẩm theo bài toán cần giải quyết",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading"
+      },
+      {
+        "i": 14,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 8637,
+        "height": 252,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 15,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 8939,
+        "height": 379,
+        "padTop": 56,
+        "padBottom": 56,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 16,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 9369,
+        "height": 303,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ngũ bạn",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 17,
+        "tag": "SECTION",
+        "cls": "gcalls-product__faq",
+        "id": null,
+        "top": 9722,
+        "height": 723,
+        "padTop": 0,
+        "padBottom": 0,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Câu hỏi thường gặp về QA QC Center",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer"
+      },
+      {
+        "i": 18,
+        "tag": "SECTION",
+        "cls": "gcalls-product__final",
+        "id": null,
+        "top": 10495,
+        "height": 530,
+        "padTop": 64,
+        "padBottom": 64,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ngũ bạn",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__lead|gcalls-cta-band|gcalls-cta|gcalls-cta-band|gcalls-cta"
+      }
+    ],
+    "seams": [
+      {
+        "between": "0->1",
+        "outerGap": 50,
+        "visualSeam": 112
+      },
+      {
+        "between": "1->2",
+        "outerGap": 50,
+        "visualSeam": 48
+      },
+      {
+        "between": "2->3",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "3->4",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "4->5",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "5->6",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "6->7",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "7->8",
+        "outerGap": 49,
+        "visualSeam": 64
+      },
+      {
+        "between": "8->9",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "9->10",
+        "outerGap": 51,
+        "visualSeam": 64
+      },
+      {
+        "between": "10->11",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "11->12",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "12->13",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "13->14",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "14->15",
+        "outerGap": 50,
+        "visualSeam": 64
+      },
+      {
+        "between": "15->16",
+        "outerGap": 51,
+        "visualSeam": 64
+      },
+      {
+        "between": "16->17",
+        "outerGap": 50,
+        "visualSeam": 8
+      },
+      {
+        "between": "17->18",
+        "outerGap": 50,
+        "visualSeam": 64
+      }
+    ],
+    "worstSeam": 112,
+    "worstOuterGap": 51,
+    "maxConsecutiveMockups": 2,
+    "mockupRuns": [
+      2
+    ],
+    "repeatedCompositions": [
+      {
+        "n": 5,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      }
+    ],
+    "h1Count": 1,
+    "rawShortcode": [],
+    "wordCount": 2270,
+    "docWidth": 1440,
+    "viewportWidth": 1440,
+    "http": 200,
+    "consoleErrors": [],
+    "badResponses": [],
+    "brokenImages": [],
+    "overflow": false
+  },
+  "home@390": {
+    "pageHeight": 22722,
+    "sectionCount": 18,
+    "sections": [
+      {
+        "i": 0,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-34df",
+        "id": "34df847",
+        "top": 73,
+        "height": 1747,
+        "padTop": 104,
+        "padBottom": 104,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Tổng Đài Ảo Tích Hợp CRM - Bứt Phá Doanh Số Cho Đội Sales & CSKH",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 40,
+        "sig": "elementor-widget-wrap|elementor-widget-html|elementor-widget-wrap|elementor-widget-shortcode|gcalls-mock|gcalls-stage|gcalls-stage__main|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__strip|gcalls-mock__pulse|gcalls-mock__muted|gcalls-mock__badge|gcalls-mock__kpis|gcalls-mock__kpi|gcalls-mock__kpi|gcalls-mock__kpi|gcalls-mock__kpi|gcalls-mock__list|gcalls-mock__avatar|gcalls-mock__who|gcalls-mock__kind"
+      },
+      {
+        "i": 1,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-7704",
+        "id": "77046cf",
+        "top": 1820,
+        "height": 488,
+        "padTop": 70,
+        "padBottom": 0,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "“Khoảng Trống” Vận Hành Khiến Doanh Nghiệp Rò Rỉ Khách Hàng Và Thất Th",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-html"
+      },
+      {
+        "i": 2,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-d131",
+        "id": "d131e08",
+        "top": 2308,
+        "height": 1853,
+        "padTop": 0,
+        "padBottom": 48,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Gián đoạn hoạt động telesales khi số gọi ra bị khóa hoặc bị người nhận",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-html"
+      },
+      {
+        "i": 3,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-1f85",
+        "id": "1f85ba5",
+        "top": 4162,
+        "height": 2049,
+        "padTop": 0,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Ước tính chi phí vận hành thủ công mỗi tháng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-shortcode|gcalls-loss-root|gcalls-loss|gcalls-loss__head|gcalls-loss__eyebrow|gcalls-loss__title|gcalls-loss__title-accent|gcalls-loss__intro|gcalls-loss__body|gcalls-loss__inputs|gcalls-loss__grid|gcalls-loss__field|gcalls-loss__field-top|gcalls-loss__label|gcalls-loss__value|gcalls-loss__hint|gcalls-loss__slider|gcalls-loss__row|gcalls-loss__number|gcalls-loss__unit|gcalls-loss__field|gcalls-loss__field-top|gcalls-loss__label|gcalls-loss__value"
+      },
+      {
+        "i": 4,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-7978",
+        "id": "797897b",
+        "top": 6211,
+        "height": 645,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Tổng Đài Thông Minh Gcalls: Bứt Phá Doanh Số Đội Ngũ & Nâng Cao Trải N",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-icon-list|elementor-widget-button"
+      },
+      {
+        "i": 5,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-d388",
+        "id": "d388508",
+        "top": 6855,
+        "height": 280,
+        "padTop": 70,
+        "padBottom": 0,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Hệ sinh thái sản phẩm và giải pháp Gcalls",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-text-editor"
+      },
+      {
+        "i": 6,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-2b52",
+        "id": "2b52248",
+        "top": 7135,
+        "height": 1029,
+        "padTop": 56,
+        "padBottom": 0,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Sản phẩm Gcalls",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-html"
+      },
+      {
+        "i": 7,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-67c5",
+        "id": "67c54a9",
+        "top": 8163,
+        "height": 1980,
+        "padTop": 64,
+        "padBottom": 0,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Giải pháp Gcalls",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-html"
+      },
+      {
+        "i": 8,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-e371",
+        "id": "e371cf0",
+        "top": 10143,
+        "height": 209,
+        "padTop": 30,
+        "padBottom": 39,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": null,
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-html"
+      },
+      {
+        "i": 9,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-e231",
+        "id": "e2313d7",
+        "top": 10352,
+        "height": 1070,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Theo dõi toàn bộ hoạt động cuộc gọi theo thời gian thực",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 30,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-text-editor|elementor-widget-wrap|elementor-widget-shortcode|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__tabs|gcalls-mock__list|gcalls-mock__avatar|gcalls-mock__who|gcalls-mock__kind|gcalls-mock__dur|gcalls-mock__avatar|gcalls-mock__who|gcalls-mock__kind|gcalls-mock__dur|gcalls-mock__avatar|gcalls-mock__who"
+      },
+      {
+        "i": 10,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-756b",
+        "id": "756b457",
+        "top": 11422,
+        "height": 1407,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Quản lý khách hàng tập trung ngay trên Gcalls",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 26,
+        "sig": "elementor-widget-wrap|elementor-widget-shortcode|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__split|gcalls-mock__side|gcalls-mock__pane|gcalls-mock__record|gcalls-mock__record-name|gcalls-mock__note|gcalls-mock__events|gcalls-mock__record|gcalls-mock__record-name|gcalls-mock__note|gcalls-mock__events|gcalls-mock__record|gcalls-mock__record-name|gcalls-mock__note|gcalls-mock__events|gcalls-mock__record|gcalls-mock__record-name"
+      },
+      {
+        "i": 11,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-ee27",
+        "id": "ee2732a",
+        "top": 12829,
+        "height": 1129,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Theo dõi hiệu suất đội ngũ theo thời gian thực",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 21,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-html|elementor-widget-wrap|elementor-widget-html|elementor-widget-shortcode|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__tabs|gcalls-mock__chart|gcalls-mock__bars|gcalls-mock__bar|gcalls-mock__bar|gcalls-mock__bar|gcalls-mock__bar|gcalls-mock__bar|gcalls-mock__bar|gcalls-mock__bar|gcalls-mock__kpis|gcalls-mock__kpi"
+      },
+      {
+        "i": 12,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-16f4",
+        "id": "16f49ed",
+        "top": 13958,
+        "height": 1057,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Xây dựng hệ thống tổng đài doanh nghiệp trên nền tảng Cloud",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 14,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-html|elementor-widget-html|elementor-widget-wrap|elementor-widget-html|elementor-widget-shortcode|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__tabs|gcalls-mock__record|gcalls-mock__ticks|gcalls-mock__record|gcalls-mock__ticks|gcalls-mock__record|gcalls-mock__ticks|gcalls-mock__caption"
+      },
+      {
+        "i": 13,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-f6fe",
+        "id": "f6fe030",
+        "top": 15015,
+        "height": 705,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Nhận diện khách hàng ngay khi cuộc gọi đến",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 5,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-wrap|elementor-widget-shortcode|gcalls-mock|gcalls-pop|gcalls-pop__bar|gcalls-pop__ring|gcalls-pop__state|gcalls-pop__acts|gcalls-pop__btn|gcalls-pop__btn|gcalls-pop__body|gcalls-pop__who|gcalls-mock__avatar|gcalls-mock__who|gcalls-mock__badge|gcalls-pop__hist|gcalls-pop__histhead|gcalls-pop__row|gcalls-pop__row|gcalls-pop__quick|gcalls-mock__caption"
+      },
+      {
+        "i": 14,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-6401",
+        "id": "6401f80",
+        "top": 15720,
+        "height": 885,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Biến khách truy cập website thành cuộc gọi",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 2,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-icon-list|elementor-widget-shortcode|gcalls-mock|gcalls-widget|gcalls-widget__page|gcalls-widget__bar|gcalls-widget__line|gcalls-widget__line|gcalls-widget__panel|gcalls-widget__head|gcalls-widget__field|gcalls-widget__send|gcalls-widget__fab|gcalls-mock__caption|elementor-widget-button"
+      },
+      {
+        "i": 15,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-17cb",
+        "id": "17cbfe1",
+        "top": 16605,
+        "height": 1093,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Hệ sinh thái tích hợp của Gcalls",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 18,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-text-editor|elementor-widget-shortcode|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__api|gcalls-mock__verb|gcalls-mock__verb|gcalls-mock__verb|gcalls-mock__verb|gcalls-mock__verb|gcalls-mock__code|gcalls-mock__code|gcalls-mock__code|gcalls-mock__code|gcalls-mock__code|gcalls-mock__caption|elementor-widget-heading"
+      },
+      {
+        "i": 16,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-0bb9",
+        "id": "0bb94e7",
+        "top": 17698,
+        "height": 1422,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Mang tổng đài doanh nghiệp theo bạn đến bất kỳ đâu",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 24,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-text-editor|elementor-widget-icon-list|elementor-widget-heading|elementor-widget-heading|elementor-widget-wrap|elementor-widget-shortcode|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__tabs|gcalls-mock__list|gcalls-mock__status|gcalls-mock__who|gcalls-mock__dur|gcalls-mock__status|gcalls-mock__who|gcalls-mock__dur|gcalls-mock__status|gcalls-mock__who"
+      },
+      {
+        "i": 17,
+        "tag": "SECTION",
+        "cls": "elementor-section elementor-top-section elementor-element elementor-element-7652",
+        "id": "7652f60",
+        "top": 19120,
+        "height": 1679,
+        "padTop": 70,
+        "padBottom": 70,
+        "marTop": 0,
+        "marBottom": 0,
+        "heading": "Tổng đài doanh nghiệp luôn đồng hành cùng đội ngũ của bạn",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "elementor-widget-wrap|elementor-widget-heading|elementor-widget-heading|elementor-widget-heading|elementor-widget-text-editor|elementor-widget-text-editor|elementor-widget-button|elementor-widget-button|elementor-widget-shortcode|gcalls-lead|gcalls-lead__title|gcalls-lead__notice|gcalls-lead__contact|gcalls-lead__form|gcalls-lead__field|gcalls-lead__field|gcalls-lead__field|gcalls-lead__field|gcalls-lead__field|gcalls-cta"
+      }
+    ],
+    "seams": [
+      {
+        "between": "0->1",
+        "outerGap": 0,
+        "visualSeam": 174
+      },
+      {
+        "between": "1->2",
+        "outerGap": 0,
+        "visualSeam": 0
+      },
+      {
+        "between": "2->3",
+        "outerGap": 1,
+        "visualSeam": 48
+      },
+      {
+        "between": "3->4",
+        "outerGap": 0,
+        "visualSeam": 140
+      },
+      {
+        "between": "4->5",
+        "outerGap": -1,
+        "visualSeam": 140
+      },
+      {
+        "between": "5->6",
+        "outerGap": 0,
+        "visualSeam": 56
+      },
+      {
+        "between": "6->7",
+        "outerGap": -1,
+        "visualSeam": 64
+      },
+      {
+        "between": "7->8",
+        "outerGap": 0,
+        "visualSeam": 30
+      },
+      {
+        "between": "8->9",
+        "outerGap": 0,
+        "visualSeam": 109
+      },
+      {
+        "between": "9->10",
+        "outerGap": 0,
+        "visualSeam": 140
+      },
+      {
+        "between": "10->11",
+        "outerGap": 0,
+        "visualSeam": 140
+      },
+      {
+        "between": "11->12",
+        "outerGap": 0,
+        "visualSeam": 140
+      },
+      {
+        "between": "12->13",
+        "outerGap": 0,
+        "visualSeam": 140
+      },
+      {
+        "between": "13->14",
+        "outerGap": 0,
+        "visualSeam": 140
+      },
+      {
+        "between": "14->15",
+        "outerGap": 0,
+        "visualSeam": 140
+      },
+      {
+        "between": "15->16",
+        "outerGap": 0,
+        "visualSeam": 140
+      },
+      {
+        "between": "16->17",
+        "outerGap": 0,
+        "visualSeam": 140
+      }
+    ],
+    "worstSeam": 174,
+    "worstOuterGap": 1,
+    "maxConsecutiveMockups": 8,
+    "mockupRuns": [
+      8
+    ],
+    "repeatedCompositions": [
+      {
+        "n": 5,
+        "sig": "elementor-widget-wrap|elementor-widget-html"
+      }
+    ],
+    "h1Count": 1,
+    "rawShortcode": [],
+    "wordCount": 2706,
+    "docWidth": 390,
+    "viewportWidth": 390,
+    "http": 200,
+    "consoleErrors": [],
+    "badResponses": [],
+    "brokenImages": [],
+    "overflow": false
+  },
+  "gcalls-plus@390": {
+    "pageHeight": 17951,
+    "sectionCount": 18,
+    "sections": [
+      {
+        "i": 0,
+        "tag": "SECTION",
+        "cls": "gcalls-product__hero",
+        "id": null,
+        "top": 73,
+        "height": 1064,
+        "padTop": 24,
+        "padBottom": 24,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình duyệt",
+        "imgCount": 6,
+        "realImgs": [
+          "webphone-overview.webp",
+          "customer-profile.webp",
+          "call-history.webp",
+          "analytics-dashboard.webp",
+          "agent-performance.webp",
+          "click-to-call.webp"
+        ],
+        "mockCount": 2,
+        "sig": "gcalls-product__hero-copy|gcalls-eyebrow|gcalls-product__hero-title|gcalls-product__hero-lead|gcalls-product__points|gcalls-cta-band|gcalls-cta|gcalls-product__hero-visual|gcalls-mock|gcalls-gallery__tabs|gcalls-gallery__stage|gcalls-mock__caption"
+      },
+      {
+        "i": 1,
+        "tag": "SECTION",
+        "cls": "gcalls-product__direct",
+        "id": null,
+        "top": 1187,
+        "height": 366,
+        "padTop": 24,
+        "padBottom": 24,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Gcalls Plus Webphone là gì?",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading"
+      },
+      {
+        "i": 2,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 1603,
+        "height": 1843,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-webphone-keypad-mobile-v1-540x1024.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 3,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 3495,
+        "height": 926,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Webphone đưa chức năng tổng đài vào trình duyệt",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-webphone-desktop-v1-768x407.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title"
+      },
+      {
+        "i": 4,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 4472,
+        "height": 1431,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-overview-activity-desktop-v1-768x427.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card"
+      },
+      {
+        "i": 5,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 5953,
+        "height": 987,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi riêng lẻ",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-timeline-history-desktop-v1-768x421.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title"
+      },
+      {
+        "i": 6,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 6990,
+        "height": 768,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Hiểu khách hàng trước khi tiếp tục cuộc hội thoại",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-contact-profile-desktop-v1-768x418.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title"
+      },
+      {
+        "i": 7,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 7808,
+        "height": 1311,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Từ cuộc gọi đến bước follow-up tiếp theo",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-call-history-desktop-v1-768x934.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 8,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 9169,
+        "height": 698,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-agent-status-log-desktop-v1-768x280.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title|gcalls-product__card|gcalls-product__card-title"
+      },
+      {
+        "i": 9,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 9917,
+        "height": 601,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-integrations-desktop-v1-768x469.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-media"
+      },
+      {
+        "i": 10,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 10568,
+        "height": 1172,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Gcalls Plus phù hợp với những đội ngũ nào?",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-advanced-filter-desktop-v1-768x659.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 11,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 11790,
+        "height": 348,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Contact Cent",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-activity-type-dropdown-desktop-v1-768x228.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-media"
+      },
+      {
+        "i": 12,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 12189,
+        "height": 1314,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Triển khai theo nhu cầu vận hành thực tế",
+        "imgCount": 1,
+        "realImgs": [
+          "gcalls-plus-integration-config-desktop-v1-768x423.webp"
+        ],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-media|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title"
+      },
+      {
+        "i": 13,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 13552,
+        "height": 332,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 14,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 13934,
+        "height": 126,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading"
+      },
+      {
+        "i": 15,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 14110,
+        "height": 335,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ của bạn đan",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 16,
+        "tag": "SECTION",
+        "cls": "gcalls-product__faq",
+        "id": null,
+        "top": 14494,
+        "height": 1082,
+        "padTop": 0,
+        "padBottom": 0,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Câu hỏi thường gặp về Gcalls Plus Webphone",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer"
+      },
+      {
+        "i": 17,
+        "tag": "SECTION",
+        "cls": "gcalls-product__final",
+        "id": null,
+        "top": 15627,
+        "height": 447,
+        "padTop": 32,
+        "padBottom": 32,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ của bạn đan",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__lead|gcalls-cta-band|gcalls-cta|gcalls-cta"
+      }
+    ],
+    "seams": [
+      {
+        "between": "0->1",
+        "outerGap": 50,
+        "visualSeam": 48
+      },
+      {
+        "between": "1->2",
+        "outerGap": 50,
+        "visualSeam": 32
+      },
+      {
+        "between": "2->3",
+        "outerGap": 49,
+        "visualSeam": 28
+      },
+      {
+        "between": "3->4",
+        "outerGap": 51,
+        "visualSeam": 28
+      },
+      {
+        "between": "4->5",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "5->6",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "6->7",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "7->8",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "8->9",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "9->10",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "10->11",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "11->12",
+        "outerGap": 51,
+        "visualSeam": 28
+      },
+      {
+        "between": "12->13",
+        "outerGap": 49,
+        "visualSeam": 28
+      },
+      {
+        "between": "13->14",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "14->15",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "15->16",
+        "outerGap": 49,
+        "visualSeam": 20
+      },
+      {
+        "between": "16->17",
+        "outerGap": 51,
+        "visualSeam": 32
+      }
+    ],
+    "worstSeam": 48,
+    "worstOuterGap": 51,
+    "maxConsecutiveMockups": 0,
+    "mockupRuns": [],
+    "repeatedCompositions": [
+      {
+        "n": 2,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-med"
+      },
+      {
+        "n": 2,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      }
+    ],
+    "h1Count": 1,
+    "rawShortcode": [],
+    "wordCount": 1729,
+    "docWidth": 390,
+    "viewportWidth": 390,
+    "http": 200,
+    "consoleErrors": [],
+    "badResponses": [],
+    "brokenImages": [],
+    "overflow": false
+  },
+  "gcalls-cx@390": {
+    "pageHeight": 18960,
+    "sectionCount": 20,
+    "sections": [
+      {
+        "i": 0,
+        "tag": "SECTION",
+        "cls": "gcalls-product__hero",
+        "id": null,
+        "top": 73,
+        "height": 1065,
+        "padTop": 24,
+        "padBottom": 24,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Gcalls CX – hợp nhất mọi điểm chạm khách hàng trên một màn hình",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-product__hero-copy|gcalls-eyebrow|gcalls-product__hero-title|gcalls-product__hero-lead|gcalls-product__points|gcalls-cta-band|gcalls-cta|gcalls-product__hero-visual|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-chanbar|gcalls-chanbar__all|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-rows|gcalls-row|gcalls-row__main|gcalls-row__head"
+      },
+      {
+        "i": 1,
+        "tag": "SECTION",
+        "cls": "gcalls-product__direct",
+        "id": null,
+        "top": 1188,
+        "height": 307,
+        "padTop": 24,
+        "padBottom": 24,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Gcalls CX là gì?",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading"
+      },
+      {
+        "i": 2,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 1546,
+        "height": 1064,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Nhiều kênh giao tiếp không đồng nghĩa với một trải nghiệm liền mạch",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 3,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 2659,
+        "height": 784,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Một không gian làm việc cho nhiều điểm chạm khách hàng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 9,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-pad|gcalls-who|gcalls-mock__avatar|gcalls-mock__who|gcalls-chanrow|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-block__t|gcalls-recent|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-note|gcalls-block__t|gcalls-mock__caption"
+      },
+      {
+        "i": 4,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 3494,
+        "height": 810,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Kết nối những kênh khách hàng đang sử dụng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 5,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 4354,
+        "height": 1240,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Giảm việc chuyển đổi giữa nhiều màn hình khi xử lý khách hàng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-chanbar|gcalls-chanbar__all|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-rows|gcalls-row|gcalls-row__main|gcalls-row__head|gcalls-chan|gcalls-state|gcalls-row|gcalls-row__main|gcalls-row__head"
+      },
+      {
+        "i": 6,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 5644,
+        "height": 1110,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Biến hội thoại thành công việc có trạng thái và người chịu trách nhiệm",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-pad|gcalls-row__head|gcalls-state|gcalls-chan|gcalls-row__by|gcalls-lead|gcalls-sub|gcalls-hist|gcalls-hist__at|gcalls-hist__at|gcalls-hist__at|gcalls-mock__caption|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card"
+      },
+      {
+        "i": 7,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 6803,
+        "height": 1312,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Hiểu những gì đã xảy ra trước khi phản hồi khách hàng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 9,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-pad|gcalls-who|gcalls-mock__avatar|gcalls-mock__who|gcalls-chanrow|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-block__t|gcalls-recent|gcalls-chan|gcalls-chan|gcalls-chan|gcalls-note|gcalls-block__t|gcalls-mock__caption"
+      },
+      {
+        "i": 8,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 8166,
+        "height": 1288,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Từ nhiều điểm chạm đến một quy trình chăm sóc tập trung hơn",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-diagram|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 9,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 9503,
+        "height": 1156,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Theo dõi hoạt động đa kênh từ dữ liệu tập trung",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-pad|gcalls-tiles|gcalls-tile|gcalls-tile|gcalls-block|gcalls-block__t|gcalls-meters|gcalls-meters__l|gcalls-meters__track|gcalls-meters__fill|gcalls-meters__l|gcalls-meters__track|gcalls-meters__fill|gcalls-meters__l|gcalls-meters__track|gcalls-meters__fill"
+      },
+      {
+        "i": 10,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 10710,
+        "height": 859,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Giúp đội CSKH làm việc với ít điểm đứt gãy hơn",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 11,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 11619,
+        "height": 802,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Gcalls CX phù hợp với những mô hình có nhiều điểm chạm khách hàng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 12,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 12471,
+        "height": 273,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Kết nối giao tiếp đa kênh với dữ liệu và quy trình doanh nghiệp",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 13,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 12794,
+        "height": 184,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Mỗi bài toán giao tiếp cần một lớp sản phẩm khác nhau",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading"
+      },
+      {
+        "i": 14,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 13028,
+        "height": 1142,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Thiết kế cấu hình theo kênh và workflow doanh nghiệp đang sử dụng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card|gcalls-badge|gcalls-product__card-title"
+      },
+      {
+        "i": 15,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 14220,
+        "height": 360,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Mỗi hành trình khách hàng cần một workflow khác nhau",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 16,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 14631,
+        "height": 334,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Chi phí phụ thuộc vào số kênh, người dùng và phạm vi triển khai",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 17,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 15015,
+        "height": 335,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Xem Gcalls CX hoạt động trên chính hành trình chăm sóc khách hàng của ",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 18,
+        "tag": "SECTION",
+        "cls": "gcalls-product__faq",
+        "id": null,
+        "top": 15400,
+        "height": 1162,
+        "padTop": 0,
+        "padBottom": 0,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Câu hỏi thường gặp về Gcalls CX",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer"
+      },
+      {
+        "i": 19,
+        "tag": "SECTION",
+        "cls": "gcalls-product__final",
+        "id": null,
+        "top": 16612,
+        "height": 471,
+        "padTop": 32,
+        "padBottom": 32,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Xem Gcalls CX hoạt động trên chính hành trình chăm sóc khách hàng của ",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__lead|gcalls-cta-band|gcalls-cta|gcalls-cta-band|gcalls-cta"
+      }
+    ],
+    "seams": [
+      {
+        "between": "0->1",
+        "outerGap": 50,
+        "visualSeam": 48
+      },
+      {
+        "between": "1->2",
+        "outerGap": 51,
+        "visualSeam": 32
+      },
+      {
+        "between": "2->3",
+        "outerGap": 49,
+        "visualSeam": 28
+      },
+      {
+        "between": "3->4",
+        "outerGap": 51,
+        "visualSeam": 28
+      },
+      {
+        "between": "4->5",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "5->6",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "6->7",
+        "outerGap": 49,
+        "visualSeam": 28
+      },
+      {
+        "between": "7->8",
+        "outerGap": 51,
+        "visualSeam": 28
+      },
+      {
+        "between": "8->9",
+        "outerGap": 49,
+        "visualSeam": 28
+      },
+      {
+        "between": "9->10",
+        "outerGap": 51,
+        "visualSeam": 28
+      },
+      {
+        "between": "10->11",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "11->12",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "12->13",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "13->14",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "14->15",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "15->16",
+        "outerGap": 51,
+        "visualSeam": 28
+      },
+      {
+        "between": "16->17",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "17->18",
+        "outerGap": 50,
+        "visualSeam": 20
+      },
+      {
+        "between": "18->19",
+        "outerGap": 50,
+        "visualSeam": 32
+      }
+    ],
+    "worstSeam": 48,
+    "worstOuterGap": 51,
+    "maxConsecutiveMockups": 3,
+    "mockupRuns": [
+      3
+    ],
+    "repeatedCompositions": [
+      {
+        "n": 2,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-moc"
+      },
+      {
+        "n": 4,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      }
+    ],
+    "h1Count": 1,
+    "rawShortcode": [],
+    "wordCount": 2326,
+    "docWidth": 390,
+    "viewportWidth": 390,
+    "http": 200,
+    "consoleErrors": [],
+    "badResponses": [],
+    "brokenImages": [],
+    "overflow": false
+  },
+  "voicebot-ai@390": {
+    "pageHeight": 15693,
+    "sectionCount": 13,
+    "sections": [
+      {
+        "i": 0,
+        "tag": "SECTION",
+        "cls": "gcalls-product__hero",
+        "id": null,
+        "top": 73,
+        "height": 1188,
+        "padTop": 24,
+        "padBottom": 24,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 8,
+        "sig": "gcalls-product__hero-copy|gcalls-eyebrow|gcalls-product__hero-title|gcalls-product__hero-lead|gcalls-cta-band|gcalls-cta|gcalls-product__hero-visual|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-chanbar|gcalls-mock__pulse|gcalls-row__by|gcalls-state|gcalls-pad|gcalls-tiles|gcalls-tile|gcalls-tile|gcalls-tile|gcalls-tile|gcalls-block|gcalls-block__t"
+      },
+      {
+        "i": 1,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 1311,
+        "height": 974,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Khi những cuộc gọi lặp lại chiếm quá nhiều nguồn lực",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 2,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 2335,
+        "height": 1595,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Những tình huống cuộc gọi có thể cân nhắc đưa vào Voicebot",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card"
+      },
+      {
+        "i": 3,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 3980,
+        "height": 1652,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Một chiến dịch Voicebot diễn ra như thế nào",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-diagram|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 4,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 5681,
+        "height": 1141,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Những gì một triển khai Voicebot được xây dựng xoay quanh",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-rows|gcalls-row|gcalls-row__id|gcalls-row__main|gcalls-state|gcalls-row|gcalls-row__id|gcalls-row__main|gcalls-state|gcalls-row|gcalls-row__id|gcalls-row__main|gcalls-state|gcalls-row|gcalls-row__id|gcalls-row__main"
+      },
+      {
+        "i": 5,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 6873,
+        "height": 494,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "AI xử lý tác vụ lặp lại, con người xử lý tương tác có giá trị cao",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-diagram"
+      },
+      {
+        "i": 6,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 7416,
+        "height": 1139,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Voicebot có thể được khảo sát tích hợp vào hệ thống đang vận hành",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 7,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 8606,
+        "height": 788,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Những nhóm ngành thường có nhiều cuộc gọi lặp lại",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 8,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 9444,
+        "height": 1180,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Từ khảo sát nhu cầu đến vận hành và tối ưu",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 9,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 10674,
+        "height": 1005,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Những thay đổi doanh nghiệp có thể hướng tới",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 10,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 11729,
+        "height": 303,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Bắt đầu từ một tình huống cuộc gọi phù hợp với doanh nghiệp",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 11,
+        "tag": "SECTION",
+        "cls": "gcalls-product__faq",
+        "id": null,
+        "top": 12081,
+        "height": 1288,
+        "padTop": 0,
+        "padBottom": 0,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Câu hỏi thường gặp về Gcalls Voicebot AI",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer"
+      },
+      {
+        "i": 12,
+        "tag": "SECTION",
+        "cls": "gcalls-product__final",
+        "id": null,
+        "top": 13420,
+        "height": 396,
+        "padTop": 32,
+        "padBottom": 32,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Bắt đầu từ một tình huống cuộc gọi phù hợp với doanh nghiệp",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__lead|gcalls-cta-band|gcalls-cta"
+      }
+    ],
+    "seams": [
+      {
+        "between": "0->1",
+        "outerGap": 50,
+        "visualSeam": 32
+      },
+      {
+        "between": "1->2",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "2->3",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "3->4",
+        "outerGap": 49,
+        "visualSeam": 28
+      },
+      {
+        "between": "4->5",
+        "outerGap": 51,
+        "visualSeam": 28
+      },
+      {
+        "between": "5->6",
+        "outerGap": 49,
+        "visualSeam": 28
+      },
+      {
+        "between": "6->7",
+        "outerGap": 51,
+        "visualSeam": 28
+      },
+      {
+        "between": "7->8",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "8->9",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "9->10",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "10->11",
+        "outerGap": 49,
+        "visualSeam": 20
+      },
+      {
+        "between": "11->12",
+        "outerGap": 51,
+        "visualSeam": 32
+      }
+    ],
+    "worstSeam": 32,
+    "worstOuterGap": 51,
+    "maxConsecutiveMockups": 1,
+    "mockupRuns": [],
+    "repeatedCompositions": [
+      {
+        "n": 2,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-pro"
+      }
+    ],
+    "h1Count": 1,
+    "rawShortcode": [],
+    "wordCount": 2268,
+    "docWidth": 390,
+    "viewportWidth": 390,
+    "http": 200,
+    "consoleErrors": [],
+    "badResponses": [],
+    "brokenImages": [],
+    "overflow": false
+  },
+  "qc-bot-ai@390": {
+    "pageHeight": 16522,
+    "sectionCount": 19,
+    "sections": [
+      {
+        "i": 0,
+        "tag": "SECTION",
+        "cls": "gcalls-product__hero",
+        "id": null,
+        "top": 73,
+        "height": 1211,
+        "padTop": 24,
+        "padBottom": 24,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 10,
+        "sig": "gcalls-product__hero-copy|gcalls-eyebrow|gcalls-product__hero-title|gcalls-product__hero-lead|gcalls-product__points|gcalls-cta-band|gcalls-cta|gcalls-product__hero-visual|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-mock__split|gcalls-mock__pane|gcalls-block__t|gcalls-turns|gcalls-turns__who|gcalls-turns__text|gcalls-turns__who|gcalls-turns__text|gcalls-turns__who|gcalls-turns__text|gcalls-mock__pane"
+      },
+      {
+        "i": 1,
+        "tag": "SECTION",
+        "cls": "gcalls-product__direct",
+        "id": null,
+        "top": 1334,
+        "height": 307,
+        "padTop": 24,
+        "padBottom": 24,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "QA QC Center là gì?",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading"
+      },
+      {
+        "i": 2,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 1692,
+        "height": 1087,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ để kiểm soá",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 3,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 2829,
+        "height": 761,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem lại",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-chanbar|gcalls-row__by|gcalls-state|gcalls-turns|gcalls-hist__at|gcalls-turns__who|gcalls-turns__text|gcalls-hist__at|gcalls-turns__who|gcalls-turns__text|gcalls-state|gcalls-hist__at|gcalls-turns__who|gcalls-turns__text|gcalls-hist__at|gcalls-turns__who"
+      },
+      {
+        "i": 4,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 3640,
+        "height": 1256,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-diagram|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 5,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 4946,
+        "height": 1413,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Các năng lực cốt lõi hỗ trợ đội QA",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge"
+      },
+      {
+        "i": 6,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 6409,
+        "height": 1069,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-pad|gcalls-score|gcalls-crit|gcalls-crit__i|gcalls-crit__l|gcalls-crit__i|gcalls-crit__l|gcalls-crit__i|gcalls-crit__l|gcalls-crit__i|gcalls-crit__l|gcalls-mock__caption|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card"
+      },
+      {
+        "i": 7,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 7529,
+        "height": 1043,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-chanbar|gcalls-row__by|gcalls-row__end|gcalls-rows|gcalls-row|gcalls-row__id|gcalls-row__main|gcalls-state|gcalls-row|gcalls-row__id|gcalls-row__main|gcalls-state|gcalls-row|gcalls-row__id|gcalls-row__main|gcalls-state"
+      },
+      {
+        "i": 8,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 8621,
+        "height": 334,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh giá và cải ",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 9,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 9006,
+        "height": 743,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 7,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead|gcalls-mock|gcalls-mock__bar|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__dot|gcalls-mock__title|gcalls-pad|gcalls-tiles|gcalls-tile|gcalls-tile|gcalls-tile|gcalls-tile|gcalls-block|gcalls-block__t|gcalls-trend|gcalls-trend__col|gcalls-trend__bar|gcalls-trend__col|gcalls-trend__bar|gcalls-trend__col|gcalls-trend__bar|gcalls-trend__col"
+      },
+      {
+        "i": 10,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 9799,
+        "height": 810,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__grid|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-badge|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 11,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 10659,
+        "height": 745,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "QA QC Center phù hợp với những hoạt động nào?",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__grid|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body|gcalls-product__card|gcalls-product__card-title|gcalls-product__card-body"
+      },
+      {
+        "i": 12,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 11454,
+        "height": 273,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 13,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 11777,
+        "height": 152,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Chọn đúng sản phẩm theo bài toán cần giải quyết",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading"
+      },
+      {
+        "i": 14,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 11979,
+        "height": 244,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 15,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section gcalls-product__section--alt",
+        "id": null,
+        "top": 12273,
+        "height": 328,
+        "padTop": 20,
+        "padBottom": 20,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 16,
+        "tag": "SECTION",
+        "cls": "gcalls-product__section",
+        "id": null,
+        "top": 12652,
+        "height": 277,
+        "padTop": 8,
+        "padBottom": 8,
+        "marTop": 0,
+        "marBottom": 50,
+        "heading": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ngũ bạn",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      },
+      {
+        "i": 17,
+        "tag": "SECTION",
+        "cls": "gcalls-product__faq",
+        "id": null,
+        "top": 12978,
+        "height": 1178,
+        "padTop": 0,
+        "padBottom": 0,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Câu hỏi thường gặp về QA QC Center",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer|gcalls-product__faq-item|gcalls-product__faq-question|gcalls-product__faq-answer"
+      },
+      {
+        "i": 18,
+        "tag": "SECTION",
+        "cls": "gcalls-product__final",
+        "id": null,
+        "top": 14206,
+        "height": 439,
+        "padTop": 32,
+        "padBottom": 32,
+        "marTop": 50,
+        "marBottom": 0,
+        "heading": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ngũ bạn",
+        "imgCount": 0,
+        "realImgs": [],
+        "mockCount": 0,
+        "sig": "gcalls-product__heading|gcalls-product__lead|gcalls-cta-band|gcalls-cta|gcalls-cta-band|gcalls-cta"
+      }
+    ],
+    "seams": [
+      {
+        "between": "0->1",
+        "outerGap": 50,
+        "visualSeam": 48
+      },
+      {
+        "between": "1->2",
+        "outerGap": 51,
+        "visualSeam": 32
+      },
+      {
+        "between": "2->3",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "3->4",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "4->5",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "5->6",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "6->7",
+        "outerGap": 51,
+        "visualSeam": 28
+      },
+      {
+        "between": "7->8",
+        "outerGap": 49,
+        "visualSeam": 28
+      },
+      {
+        "between": "8->9",
+        "outerGap": 51,
+        "visualSeam": 28
+      },
+      {
+        "between": "9->10",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "10->11",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "11->12",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "12->13",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "13->14",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "14->15",
+        "outerGap": 50,
+        "visualSeam": 28
+      },
+      {
+        "between": "15->16",
+        "outerGap": 51,
+        "visualSeam": 28
+      },
+      {
+        "between": "16->17",
+        "outerGap": 49,
+        "visualSeam": 8
+      },
+      {
+        "between": "17->18",
+        "outerGap": 50,
+        "visualSeam": 32
+      }
+    ],
+    "worstSeam": 48,
+    "worstOuterGap": 51,
+    "maxConsecutiveMockups": 2,
+    "mockupRuns": [
+      2
+    ],
+    "repeatedCompositions": [
+      {
+        "n": 5,
+        "sig": "gcalls-eyebrow|gcalls-product__heading|gcalls-product__lead"
+      }
+    ],
+    "h1Count": 1,
+    "rawShortcode": [],
+    "wordCount": 2255,
+    "docWidth": 390,
+    "viewportWidth": 390,
+    "http": 200,
+    "consoleErrors": [],
+    "badResponses": [],
+    "brokenImages": [],
+    "overflow": false
+  }
+}

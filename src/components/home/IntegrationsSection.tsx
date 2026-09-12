@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 import { ecosystemGroups } from "./sectionData";
+import { darkSection } from "@/lib/theme/darkSection";
 
 // ─── Section 11: Integration CTA (+ shared integration mockups) ──────────────
 
@@ -503,7 +504,7 @@ export function IntegrationCtaSection() {
               */}
               Tích hợp theo phạm vi được xác nhận
             </div>
-            <h3 className="font-extrabold text-white mb-4" style={{ fontSize: "clamp(22px, 3vw, 36px)", lineHeight: 1.15 }}>
+            <h3 className="font-extrabold mb-4" style={{ fontSize: "clamp(22px, 3vw, 36px)", lineHeight: 1.15, color: darkSection.heading }}>
               Trao đổi phạm vi tích hợp cùng đội ngũ Gcalls
             </h3>
             <p className="mb-8" style={{ color: "rgba(255,255,255,0.72)", fontSize: "16px", lineHeight: 1.7 }}>

@@ -71,9 +71,39 @@ final class Mockups {
 		array( 'name' => 'Nhân viên 5', 'state' => 'offline', 'label' => 'Ngoại tuyến' ),
 	);
 
-	/** The caption every mockup carries. */
+	/**
+	 * Drawings that exist in this file but must never render.
+	 *
+	 * Kept as a list of METHOD names rather than of ids, so that adding a new
+	 * id that happens to resolve to one of them cannot quietly re-open it.
+	 */
+	private const REFUSED_METHODS = array( 'mock_analytics', 'mock_plus_gallery' );
+
+	/**
+	 * The fixed label every illustrative surface carries.
+	 *
+	 * One source of truth with the raster registry: media-frames.json already
+	 * has to state it for the images, and a drawn panel making the same claim
+	 * must not be able to drift to a different wording.
+	 */
+	private static function illustrative_label(): string {
+		$reg = self::frames();
+
+		$label = (string) ( $reg['label'] ?? '' );
+
+		return '' !== $label ? $label : 'Giao diện minh hoạ · Dữ liệu mẫu';
+	}
+
+	/**
+	 * The caption every mockup carries.
+	 *
+	 * GCALLS-041: the default is now the same fixed wording the raster registry
+	 * uses, so a drawn mockup and an approved image make the identical
+	 * statement. Two nearly-identical captions ("dữ liệu demo" here, "Dữ liệu
+	 * mẫu" there) read as two different promises when they are meant to be one.
+	 */
 	private static function caption( string $text = '' ): string {
-		$text = '' !== $text ? $text : __( 'Giao diện minh họa – dữ liệu demo', 'gcalls-core' );
+		$text = '' !== $text ? $text : self::illustrative_label();
 
 		return '<p class="gcalls-mock__caption">' . esc_html( $text ) . '</p>';
 	}
@@ -94,7 +124,41 @@ final class Mockups {
 		$atts = shortcode_atts( array( 'id' => '' ), (array) $atts, 'gcalls_mockup' );
 		$id   = sanitize_key( str_replace( '-', '_', (string) $atts['id'] ) );
 
+		/*
+		 * REFUSED. `mock_analytics` draws a dashboard whose KPI tiles (114,
+		 * 73%, 3:25) and bar values are invented, presented as a product's
+		 * measured performance. GCALLS-036B classified it REFUSED_DATA and
+		 * GCALLS-036C removes it from the rendered surface. The method body is
+		 * left in place rather than deleted so the decision is reviewable and
+		 * reversible by the owner, but nothing can reach it.
+		 *
+		 * Labelling was considered and rejected: a caption under a fabricated
+		 * performance chart still leaves the chart as the thing the reader
+		 * remembers, and there is no measurement anywhere in this repository it
+		 * could be replaced with.
+		 *
+		 * BUT THE ID IS REMAPPED, NOT DROPPED. Returning '' for `analytics`
+		 * looked free while only the four product pages were being measured,
+		 * because none of them ask for it. The home page does: root section 11
+		 * of data/homepage-elementor.json is a heading, a paragraph, and this
+		 * shortcode as the section's only visual. An empty string there leaves
+		 * a heading over an empty column — the "heading orphan over an empty
+		 * grid track" that fails a route in acceptance. So `analytics` resolves
+		 * to `reporting`, a neutral panel that names the metrics the product
+		 * reports and states none of them.
+		 */
+		$id = ( 'analytics' === $id ) ? 'reporting' : $id;
+
 		$method = 'mock_' . $id;
+
+		/*
+		 * Belt and braces. The refused drawings stay in the file so the
+		 * decision stays reviewable, but no id may reach one — including
+		 * 'analytics' itself, which the line above has already sent elsewhere.
+		 */
+		if ( in_array( $method, self::REFUSED_METHODS, true ) ) {
+			return '';
+		}
 
 		if ( ! method_exists( self::class, $method ) ) {
 			return '';
@@ -116,32 +180,31 @@ final class Mockups {
 	 */
 	private static function mock_hero(): string {
 		/*
-		 * Four KPIs, because the reference's strip is a four-column grid and a
-		 * three-column port reads as a different component.
+		 * Four metric NAMES, because the reference's strip is a four-column
+		 * grid and a three-column port reads as a different component.
 		 *
-		 * The reference also prints a delta beside each one (+12%, +4%, −0:18).
-		 * Those are NOT reproduced. A value like "73%" under a caption saying
-		 * the data is illustrative reads as a shape; "+12%" reads as an
-		 * improvement this product delivered, and there is no measurement in
-		 * this repository behind it. Same layout, one claim fewer.
+		 * GCALLS-041 removed the values. The earlier reasoning here was that
+		 * "73%" under an illustrative caption reads as a shape while "+12%"
+		 * reads as a claim — so the deltas went and the values stayed. Rendering
+		 * the home page for the first time showed how that actually lands: the
+		 * strip sits in the first screenful, four numbers wide, and reads as
+		 * this product's results. It is the same claim GCALLS-039 refused on
+		 * mock_analytics, in a more prominent place. Same layout, same four
+		 * columns, no figures.
 		 */
-		$kpis = array(
-			array( 'Cuộc gọi hôm nay', '84' ),
-			array( 'Tỷ lệ nghe máy', '73%' ),
-			array( 'Thời gian TB', '5:24' ),
-			array( 'Đã chốt deal', '11' ),
-		);
+		$kpis = array( 'Cuộc gọi hôm nay', 'Tỷ lệ nghe máy', 'Thời gian TB', 'Đã chốt deal' );
 
 		/* The dashboard, which is the stage's main card. */
 		$main  = self::chrome( 'Gcalls Webphone — Dashboard' );
 		$main .= '<div class="gcalls-mock__strip gcalls-mock__strip--in"><span class="gcalls-mock__pulse" aria-hidden="true"></span>';
 		$main .= '<span><strong>Cuộc gọi đến</strong> · ' . esc_html( self::CONTACTS[0]['name'] ) . '</span>';
-		$main .= '<span class="gcalls-mock__muted">' . esc_html( self::CONTACTS[0]['phone'] ) . '</span>';
+		$main .= '<span class="gcalls-mock__muted">' . esc_html( '09xx xxx xxx' ) . '</span>';
 		$main .= '<span class="gcalls-mock__badge">Đang đổ chuông</span></div>';
 
 		$main .= '<div class="gcalls-mock__kpis">';
 		foreach ( $kpis as $kpi ) {
-			$main .= '<div class="gcalls-mock__kpi"><span>' . esc_html( $kpi[0] ) . '</span><strong>' . esc_html( $kpi[1] ) . '</strong></div>';
+			$main .= '<div class="gcalls-mock__kpi"><span>' . esc_html( $kpi ) . '</span>'
+				. '<strong aria-label="' . esc_attr__( 'chưa có số liệu', 'gcalls-core' ) . '">' . self::FIGURE . '</strong></div>';
 		}
 		$main .= '</div>';
 
@@ -158,6 +221,28 @@ final class Mockups {
 			$main .= '<span class="gcalls-mock__who"><strong>' . esc_html( $row[1] ) . '</strong>';
 			$main .= '<small>' . esc_html( $row[2] ) . '</small></span>';
 			$main .= '<span class="gcalls-mock__kind gcalls-mock__kind--' . esc_attr( $row[4] ) . '">' . esc_html( $row[3] ) . '</span></li>';
+		}
+		$main .= '</ul>';
+
+		/*
+		 * Team roster. Illustrative presence only — statuses, not metrics.
+		 * No names, no numbers, no call-volume or duration figures (the same
+		 * GCALLS-041 line the KPI strip holds): a roster with real names or a
+		 * "12 calls today" column would read as this product's operation.
+		 */
+		$team = array(
+			array( 'A', 'Nhân viên A', 'Sẵn sàng', '#16a34a', 'rgba(22,163,74,0.12)' ),
+			array( 'B', 'Nhân viên B', 'Đang xử lý', '#b45309', 'rgba(180,83,9,0.12)' ),
+			array( 'C', 'Nhân viên C', 'Ngoại tuyến', '#6b7280', 'rgba(107,114,128,0.12)' ),
+		);
+		$main .= '<div class="gcalls-mock__cardhead"><strong>' . esc_html__( 'Đội ngũ', 'gcalls-core' ) . '</strong></div>';
+		$main .= '<ul class="gcalls-mock__list gcalls-mock__list--team">';
+		foreach ( $team as $member ) {
+			$main .= '<li><span class="gcalls-mock__avatar">' . esc_html( $member[0] ) . '</span>';
+			$main .= '<span class="gcalls-mock__who"><strong>' . esc_html( $member[1] ) . '</strong></span>';
+			$main .= '<span class="gcalls-mock__status" style="margin-left:auto;font-size:12px;font-weight:600;'
+				. 'padding:2px 10px;border-radius:999px;color:' . esc_attr( $member[3] ) . ';background:' . esc_attr( $member[4] ) . '">'
+				. esc_html( $member[2] ) . '</span></li>';
 		}
 		$main .= '</ul>';
 
@@ -195,7 +280,7 @@ final class Mockups {
 		$popup  = '<div class="gcalls-mock__cardhead"><strong>' . esc_html__( 'Cuộc gọi đến', 'gcalls-core' ) . '</strong>';
 		$popup .= '<span class="gcalls-mock__pulse" aria-hidden="true"></span></div>';
 		$popup .= '<div class="gcalls-mock__who"><strong>' . esc_html( self::CONTACTS[0]['name'] ) . '</strong>';
-		$popup .= '<small>' . esc_html( self::CONTACTS[0]['org'] ) . ' · ' . esc_html( self::CONTACTS[0]['phone'] ) . '</small></div>';
+		$popup .= '<small>' . esc_html( self::CONTACTS[0]['org'] ) . ' · ' . esc_html( '09xx xxx xxx' ) . '</small></div>';
 
 		/* Dialpad. */
 		$keys = '';
@@ -203,8 +288,13 @@ final class Mockups {
 			$keys .= '<span>' . esc_html( $key ) . '</span>';
 		}
 
-		$dialpad  = '<div class="gcalls-mock__dialnum">090 *** **12</div>';
+		$dialpad  = '<div class="gcalls-mock__dialnum">09xx xxx xxx</div>';
 		$dialpad .= '<div class="gcalls-mock__keys" aria-hidden="true">' . $keys . '</div>';
+		$dialpad .= '<div class="gcalls-mock__call" aria-hidden="true"'
+			. ' style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;'
+			. 'background:#22c55e;color:#fff;font-weight:600;font-size:13px;line-height:1;'
+			. 'border-radius:10px;padding:9px 12px;box-shadow:0 4px 14px rgba(34,197,94,0.30)">'
+			. '<span aria-hidden="true">☎</span>' . esc_html__( 'Gọi ngay', 'gcalls-core' ) . '</div>';
 
 		$float = static function ( string $name, string $body, bool $lg_only = false ): string {
 			return '<div class="gcalls-stage__float gcalls-stage__float--' . esc_attr( $name )
@@ -222,6 +312,76 @@ final class Mockups {
 		return $out . self::caption();
 	}
 
+	/* ------------------------------------------------ raster frame registry */
+
+	/** @var array<string, mixed>|null Cached media-frames.json. */
+	private static $frames_registry = null;
+
+	/**
+	 * The one allowlist every raster image must pass through.
+	 *
+	 * GCALLS-038 found two hardcoded frame lists in this file that never
+	 * consulted media policy, so six images carrying an unapproved domain,
+	 * fabricated identities and invented KPIs shipped on the Gcalls Plus page.
+	 * Both lists now resolve through here, and anything not explicitly PASS
+	 * renders nothing.
+	 *
+	 * @return array<string, mixed>
+	 */
+	private static function frames(): array {
+		if ( null === self::$frames_registry ) {
+			$file = GCALLS_CORE_DIR . 'data/media-frames.json';
+			$raw  = is_readable( $file ) ? (string) file_get_contents( $file ) : '';
+			$data = json_decode( $raw, true );
+
+			self::$frames_registry = is_array( $data ) ? $data : array( 'frames' => array() );
+		}
+
+		return self::$frames_registry;
+	}
+
+	/**
+	 * Renders one registered frame, or nothing.
+	 *
+	 * FAIL CLOSED. An unknown id, a missing id, any verdict other than PASS, or
+	 * a missing file on disk all return the empty string. There is deliberately
+	 * no parameter for a URL or a filename: a caller cannot name an image this
+	 * registry has not approved, which is the hole GCALLS-038 reported.
+	 *
+	 * @param string $id  Registry key.
+	 * @param bool   $eager Whether this is the page's lead image.
+	 */
+	private static function frame( string $id, bool $eager = true ): string {
+		$reg = self::frames();
+		$f   = $reg['frames'][ $id ] ?? null;
+
+		if ( ! is_array( $f ) || 'PASS' !== ( $f['verdict'] ?? '' ) ) {
+			return '';
+		}
+
+		$file = (string) ( $f['file'] ?? '' );
+
+		if ( '' === $file || ! is_readable( GCALLS_CORE_DIR . 'assets/images/product-gallery/' . $file ) ) {
+			return '';
+		}
+
+		$alt   = (string) ( $f['alt'] ?? '' );
+		$label = (string) ( $f['label'] ?? ( $reg['label'] ?? '' ) );
+		$src   = GCALLS_CORE_URL . 'assets/images/product-gallery/' . $file;
+
+		$out  = '<figure class="gcalls-shot">';
+		$out .= '<img src="' . esc_url( $src ) . '" width="1600" height="900" alt="' . esc_attr( $alt ) . '" '
+			. ( $eager ? 'fetchpriority="high" decoding="async">' : 'loading="lazy" decoding="async">' );
+
+		// The label rides with the image, not in a caption further down the
+		// page: on a phone the caption can be a screen away from the picture.
+		if ( '' !== $label ) {
+			$out .= '<figcaption class="gcalls-shot__label">' . esc_html( $label ) . '</figcaption>';
+		}
+
+		return $out . '</figure>';
+	}
+
 	/* --------------------------------------------- approved image gallery */
 
 	/**
@@ -233,37 +393,29 @@ final class Mockups {
 	 * the remaining states are lazy; JavaScript only switches the visible frame.
 	 */
 	private static function mock_plus_gallery(): string {
-		$frames = array(
-			'overview' => array( 'Tổng quan', 'webphone-overview.webp', 'Tổng quan hoạt động Gcalls Plus Webphone', 1600, 900 ),
-			'profile'  => array( 'Khách hàng', 'customer-profile.webp', 'Hồ sơ khách hàng và thao tác gọi trực tiếp', 1448, 1086 ),
-			'history'  => array( 'Lịch sử gọi', 'call-history.webp', 'Lịch sử tương tác và cuộc gọi', 1600, 900 ),
-			'analytics'=> array( 'Thống kê', 'analytics-dashboard.webp', 'Dashboard thống kê hiệu suất cuộc gọi', 1600, 900 ),
-			'agents'   => array( 'Hiệu suất', 'agent-performance.webp', 'Hiệu suất và trạng thái nhân viên', 1600, 900 ),
-			'click'    => array( 'Click-to-Call', 'click-to-call.webp', 'Cấu hình Click-to-Call trên website và CRM', 1600, 900 ),
-		);
-
-		$out  = '<div class="gcalls-gallery__tabs" role="tablist" aria-label="Xem giao diện Gcalls Plus">';
-		$first = true;
-		foreach ( $frames as $key => $frame ) {
-			$out .= '<button type="button" role="tab" data-gallery-tab="' . esc_attr( $key ) . '" aria-selected="' . ( $first ? 'true' : 'false' ) . '">' . esc_html( $frame[0] ) . '</button>';
-			$first = false;
-		}
-		$out .= '</div><div class="gcalls-gallery__stage">';
-
-		$first = true;
-		foreach ( $frames as $key => $frame ) {
-			$src  = GCALLS_CORE_URL . 'assets/images/product-gallery/' . $frame[1];
-			$out .= '<figure data-gallery-panel="' . esc_attr( $key ) . '"' . ( $first ? '' : ' hidden' ) . '>';
-			$out .= '<img src="' . esc_url( $src ) . '" width="' . esc_attr( (string) $frame[3] ) . '" height="' . esc_attr( (string) $frame[4] ) . '" alt="' . esc_attr( $frame[2] ) . '" ';
-			$out .= $first ? 'fetchpriority="high" decoding="async">' : 'loading="lazy" decoding="async">';
-			$out .= '<figcaption>' . esc_html( $frame[2] ) . '</figcaption></figure>';
-			$first = false;
-		}
-
-		$out .= '</div>';
-
-		return $out . self::caption( __( 'Hình minh họa giao diện – dữ liệu demo đã được ẩn danh', 'gcalls-core' ) );
+		/*
+		 * REFUSED IN FULL — this method no longer renders.
+		 *
+		 * All six frames it used to draw (overview, profile, history,
+		 * analytics, agents, click) are marked REFUSED in data/media-frames.json:
+		 * every one carries UNAPPROVED_DOMAIN_01 in a drawn browser bar, and
+		 * between them fabricated contact names, phone numbers, per-agent
+		 * performance tables and invented KPI tiles presented as measured
+		 * results. GCALLS-039 removes the gallery rather than labelling it,
+		 * because a label does not make an unapproved domain or an invented
+		 * conversion rate acceptable.
+		 *
+		 * The Gcalls Plus hero is served by the drawn `customer_popup` mockup
+		 * instead — call duration, timestamp and status only, which is the
+		 * class of figure the checkpoint permits without a claim warning.
+		 *
+		 * The body is gone rather than commented out: there is no path that
+		 * renders an unapproved frame, and self::frame() cannot be handed a
+		 * filename to reintroduce one.
+		 */
+		return '';
 	}
+
 
 	/* --------------------------------------------------- 2. call timeline */
 
@@ -332,7 +484,65 @@ final class Mockups {
 		return $out . '</div></div>' . self::caption();
 	}
 
-	/* ------------------------------------------------------- 4. analytics */
+	/* ------------------------------------------------------- 4. reporting */
+
+	/**
+	 * The reporting screen, stated without a single quantity.
+	 *
+	 * This replaces mock_analytics() everywhere the `analytics` id is used.
+	 * What a reader needs from this panel is "the product has a reporting
+	 * screen, and here is what it reports" — which is a claim about features,
+	 * and true. What mock_analytics() added on top was "and here is how that
+	 * reporting turned out": 114 calls, 73% answered, 3:25 average, over a
+	 * weekly trend. None of those were measured anywhere, so all of them are
+	 * gone rather than relabelled.
+	 *
+	 * Every value is an em dash. The period chips are <span>, not <button>:
+	 * nothing in a still mockup responds to a click, and a control that looks
+	 * live and is not reads as a broken page rather than as a picture.
+	 */
+	private static function mock_reporting(): string {
+		$out = self::chrome( __( 'Báo cáo vận hành', 'gcalls-core' ) );
+
+		$out .= '<div class="gcalls-mock__tabs gcalls-mock__tabs--static" aria-hidden="true">';
+
+		foreach ( array( 'Ngày', 'Tuần', 'Tháng' ) as $index => $period ) {
+			$out .= '<span' . ( 1 === $index ? ' class="is-on"' : '' ) . '>' . esc_html( $period ) . '</span>';
+		}
+
+		$out .= '</div>';
+
+		/*
+		 * Metric NAMES, never metric values. Naming what the product measures
+		 * is a feature statement; filling it in would be a result.
+		 */
+		$metrics = array(
+			__( 'Tổng cuộc gọi', 'gcalls-core' ),
+			__( 'Tỷ lệ bắt máy', 'gcalls-core' ),
+			__( 'Thời lượng trung bình', 'gcalls-core' ),
+			__( 'Đánh giá sau cuộc gọi', 'gcalls-core' ),
+		);
+
+		$out .= '<ul class="gcalls-mock__metrics">';
+
+		foreach ( $metrics as $metric ) {
+			$out .= '<li class="gcalls-mock__metric"><span>' . esc_html( $metric ) . '</span>'
+				. '<strong aria-label="' . esc_attr__( 'chưa có số liệu', 'gcalls-core' ) . '">—</strong></li>';
+		}
+
+		$out .= '</ul>';
+
+		$out .= self::block(
+			__( 'Trạng thái', 'gcalls-core' ),
+			'<p class="gcalls-mock__empty">'
+				. esc_html__( 'Chọn khoảng thời gian và bộ lọc để xem số liệu của bạn.', 'gcalls-core' )
+				. '</p>'
+		);
+
+		return $out . self::caption( self::illustrative_label() );
+	}
+
+	/* ----------------------------------------------- 4b. analytics: REFUSED */
 
 	/** AnalyticsSection — the range-switchable bar chart. */
 	private static function mock_analytics(): string {
@@ -499,15 +709,46 @@ final class Mockups {
 		return '<span class="gcalls-state' . ( $warn ? ' gcalls-state--warn' : '' ) . '">' . esc_html( $label ) . '</span>';
 	}
 
-	/** A two-up grid of figure tiles. */
-	private static function tiles( array $items ): string {
-		$out = '<ul class="gcalls-tiles">';
-		foreach ( $items as $item ) {
-			$out .= '<li class="gcalls-tile"><strong>' . esc_html( $item[1] ) . '</strong>'
-				. '<span>' . esc_html( $item[0] ) . '</span></li>';
+	/**
+	 * The placeholder every unsourced figure renders as.
+	 *
+	 * An em dash, not "0" and not "N/A": zero is itself a measurement, and
+	 * "N/A" reads as an error state. A dash reads as "this is where a number
+	 * goes", which is exactly what a mockup is for.
+	 */
+	private const FIGURE = '—';
+
+	/**
+	 * A row of figure tiles — the METRICS a screen reports, never their values.
+	 *
+	 * GCALLS-041. This used to take label/value pairs, and the values were
+	 * invented: 312 conversations, 47 open tickets, 480 contacts, an average QA
+	 * score of 81. GCALLS-039 refused mock_analytics() for exactly that, so the
+	 * same rule is applied here rather than kept for one drawing.
+	 *
+	 * THE SIGNATURE IS THE ENFORCEMENT. It accepts labels only, so a caller
+	 * cannot supply a number at all — the way frame() refuses to accept a
+	 * filename. Relabelling would have left the next person free to type a
+	 * figure back in; removing the parameter does not.
+	 *
+	 * The label rides with the component, not with the caller: on a phone a
+	 * bottom caption can be a screen away from the tiles it qualifies.
+	 *
+	 * @param array<int, string> $labels Metric names.
+	 * @return string
+	 */
+	private static function tiles( array $labels ): string {
+		$out  = '<div class="gcalls-tiles-wrap">';
+		$out .= '<p class="gcalls-tiles__label">' . esc_html( self::illustrative_label() ) . '</p>';
+		$out .= '<ul class="gcalls-tiles">';
+
+		foreach ( $labels as $label ) {
+			$out .= '<li class="gcalls-tile">'
+				. '<strong aria-label="' . esc_attr__( 'chưa có số liệu', 'gcalls-core' ) . '">' . self::FIGURE . '</strong>'
+				. '<span>' . esc_html( $label ) . '</span></li>';
 		}
 
-		return $out . '</ul>';
+		return $out . '</ul></div>';
 	}
 
 	/** A titled sub-panel. */
@@ -621,10 +862,7 @@ final class Mockups {
 		$out  = self::chrome( 'Báo cáo vận hành' );
 		$out .= '<div class="gcalls-pad">';
 		$out .= self::tiles(
-			array(
-				array( 'Hội thoại hôm nay', '312' ),
-				array( 'Ticket đang mở', '47' ),
-			)
+			array( 'Hội thoại hôm nay', 'Ticket đang mở' )
 		);
 
 		$bars = '<ul class="gcalls-meters">';
@@ -633,7 +871,7 @@ final class Mockups {
 			$bars .= '<li><span class="gcalls-meters__l">' . esc_html( $status[0] ) . '</span>';
 			$bars .= '<span class="gcalls-meters__track"><span class="gcalls-meters__fill gcalls-meters__fill--'
 				. esc_attr( $status[2] ) . '" style="width:' . esc_attr( (string) $width ) . '%"></span></span>';
-			$bars .= '<b>' . esc_html( (string) $status[1] ) . '</b></li>';
+			$bars .= '<b>' . self::FIGURE . '</b></li>';
 		}
 		$bars .= '</ul>';
 		$out  .= self::block( 'Trạng thái ticket', $bars );
@@ -643,7 +881,7 @@ final class Mockups {
 			$rows .= '<li>' . self::chan( $item[0] );
 			$rows .= '<span class="gcalls-meters__track"><span class="gcalls-meters__fill" style="width:'
 				. esc_attr( (string) $item[1] ) . '%"></span></span>';
-			$rows .= '<b>' . esc_html( (string) $item[1] ) . '%</b></li>';
+			$rows .= '<b>' . self::FIGURE . '</b></li>';
 		}
 		$rows .= '</ul>';
 		$out  .= self::block( 'Phân bổ theo kênh', $rows );
@@ -674,18 +912,13 @@ final class Mockups {
 
 		$out .= '<div class="gcalls-pad">';
 		$out .= self::tiles(
-			array(
-				array( 'Trong danh sách', '480' ),
-				array( 'Đã gọi', '312' ),
-				array( 'Đã kết nối', '198' ),
-				array( 'Cần nhân viên', '24' ),
-			)
+			array( 'Trong danh sách', 'Đã gọi', 'Đã kết nối', 'Cần nhân viên' )
 		);
 
 		$bars = '<ul class="gcalls-outcomes">';
 		foreach ( $outcomes as $outcome ) {
 			$bars .= '<li><span class="gcalls-outcomes__head"><span>' . esc_html( $outcome[0] ) . '</span>'
-				. '<b>' . esc_html( (string) $outcome[1] ) . '%</b></span>';
+				. '<b>' . self::FIGURE . '</b></span>';
 			$bars .= '<span class="gcalls-meters__track"><span class="gcalls-meters__fill gcalls-meters__fill--'
 				. esc_attr( $outcome[2] ) . '" style="width:' . esc_attr( (string) $outcome[1] ) . '%"></span></span></li>';
 		}
@@ -768,14 +1001,23 @@ final class Mockups {
 		// matters: the product proposes, a person decides. A bare score would
 		// claim the machine grades the call.
 		$out .= '<div class="gcalls-score"><span><b>Điểm đề xuất</b><small>Chờ QA xác nhận</small></span>';
-		$out .= '<em>78</em></div>';
+		$out .= '<em aria-label="' . esc_attr__( 'chưa có số liệu', 'gcalls-core' ) . '">' . self::FIGURE . '</em></div>';
 
 		$out .= '<ul class="gcalls-crit">';
 		foreach ( $criteria as $item ) {
 			$out .= '<li><span class="gcalls-crit__i gcalls-crit__i--' . ( $item[2] ? 'ok' : 'no' ) . '" aria-hidden="true">'
 				. ( $item[2] ? '✓' : '!' ) . '</span>';
 			$out .= '<span class="gcalls-crit__l">' . esc_html( $item[0] ) . '</span>';
-			$out .= '<b>' . esc_html( $item[1] ) . '</b></li>';
+			/*
+			 * A CRITERION WEIGHT IS CONFIGURATION, NOT A RESULT.
+			 *
+			 * 20/30/30/20 describes how this scorecard is defined and sums to
+			 * 100; it says nothing about how any call went. The score above it
+			 * is the opposite and is now a dash. Marking the weight with its
+			 * own class keeps that distinction machine-checkable, so the
+			 * "no figures" sweep can exempt exactly this and nothing else.
+			 */
+			$out .= '<b class="gcalls-crit__w">' . esc_html( $item[1] ) . '</b></li>';
 		}
 
 		return $out . '</ul></div>' . self::caption();
@@ -818,12 +1060,7 @@ final class Mockups {
 		$out  = self::chrome( 'Quality Dashboard' );
 		$out .= '<div class="gcalls-pad">';
 		$out .= self::tiles(
-			array(
-				array( 'Cuộc gọi đã phân tích', '1.248' ),
-				array( 'Cần xem lại', '86' ),
-				array( 'Điểm QA trung bình', '81' ),
-				array( 'Phiên review tuần này', '34' ),
-			)
+			array( 'Cuộc gọi đã phân tích', 'Cần xem lại', 'Điểm QA trung bình', 'Phiên review tuần này' )
 		);
 
 		$trend = '<div class="gcalls-trend" aria-hidden="true">';
@@ -967,39 +1204,31 @@ final class Mockups {
 	 * Width and height are attributes, not CSS alone, so the box is reserved
 	 * before the bytes arrive and nothing below it moves.
 	 *
-	 * @param string $file Filename inside assets/images/product-gallery/.
+	 * @param string $id Registry id in data/media-frames.json.
 	 * @param string $alt  Alt text — describes the interface, not the file.
 	 */
-	private static function showcase( string $file, string $alt ): string {
-		$src = GCALLS_CORE_URL . 'assets/images/product-gallery/' . $file;
-
-		return '<figure class="gcalls-shot">'
-			. '<img src="' . esc_url( $src ) . '" width="1600" height="900" alt="' . esc_attr( $alt ) . '" fetchpriority="high" decoding="async">'
-			. '</figure>'
-			. self::caption( __( 'Hình minh họa giao diện – dữ liệu demo đã được ẩn danh', 'gcalls-core' ) );
+	private static function showcase( string $id ): string {
+		/*
+		 * Takes a REGISTRY ID, never a filename. The previous signature took
+		 * ( $file, $alt ) and built a URL directly, which is exactly how six
+		 * refused images reached the page without any policy check.
+		 */
+		return self::frame( $id, true );
 	}
+
 
 	/** Gcalls CX hero — the unified inbox, as a full application frame. */
 	private static function mock_cx_showcase(): string {
-		return self::showcase(
-			'gcalls-cx-omnichannel-demo.webp',
-			__( 'Giao diện demo Gcalls CX: hộp thư hợp nhất hotline, Zalo OA, Facebook và email trong một màn hình', 'gcalls-core' )
-		);
+		return self::showcase( 'cx-omnichannel' );
 	}
 
 	/** Voicebot AI hero — the script builder canvas. */
 	private static function mock_voicebot_showcase(): string {
-		return self::showcase(
-			'voicebot-flow-builder-demo.webp',
-			__( 'Giao diện demo Gcalls Voicebot AI: trình dựng kịch bản với các khối lời chào, điều kiện rẽ nhánh và chuyển nhân viên', 'gcalls-core' )
-		);
+		return self::showcase( 'voicebot-flow' );
 	}
 
 	/** QC Bot AI hero — transcript beside the scorecard. */
 	private static function mock_qc_showcase(): string {
-		return self::showcase(
-			'qc-scoring-dashboard-demo.webp',
-			__( 'Giao diện demo Gcalls QC Bot AI: bản ghi hội thoại và bộ tiêu chí chấm điểm cuộc gọi', 'gcalls-core' )
-		);
+		return self::showcase( 'qc-scoring' );
 	}
 }

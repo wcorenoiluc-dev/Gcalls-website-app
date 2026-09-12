@@ -1,0 +1,1588 @@
+[
+ {
+  "route": "/gcalls-plus-webphone/",
+  "width": 1440,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình duyệt"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=gcalls_plus&product=Gcalls%20Plus%20Webphone",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=gcalls_plus&product=Gcalls%20Plus%20Webphone"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/gcalls-plus-webphone/",
+  "width": 1024,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình duyệt"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=gcalls_plus&product=Gcalls%20Plus%20Webphone",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=gcalls_plus&product=Gcalls%20Plus%20Webphone"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/gcalls-plus-webphone/",
+  "width": 768,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình duyệt"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=gcalls_plus&product=Gcalls%20Plus%20Webphone",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=gcalls_plus&product=Gcalls%20Plus%20Webphone"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/gcalls-plus-webphone/",
+  "width": 390,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình duyệt"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=gcalls_plus&product=Gcalls%20Plus%20Webphone",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=gcalls_plus&product=Gcalls%20Plus%20Webphone"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/gcalls-plus-webphone/",
+  "width": 320,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình duyệt"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=gcalls_plus&product=Gcalls%20Plus%20Webphone",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=gcalls_plus&product=Gcalls%20Plus%20Webphone"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/gcalls-cx/",
+  "width": 1440,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Gcalls CX – hợp nhất mọi điểm chạm khách hàng trên một màn hình"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=gcalls_cx&product=Gcalls%20CX",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=gcalls_cx&product=Gcalls%20CX",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=gcalls_cx&product=Gcalls%20CX"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/gcalls-cx/",
+  "width": 1024,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Gcalls CX – hợp nhất mọi điểm chạm khách hàng trên một màn hình"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=gcalls_cx&product=Gcalls%20CX",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=gcalls_cx&product=Gcalls%20CX",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=gcalls_cx&product=Gcalls%20CX"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/gcalls-cx/",
+  "width": 768,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Gcalls CX – hợp nhất mọi điểm chạm khách hàng trên một màn hình"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=gcalls_cx&product=Gcalls%20CX",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=gcalls_cx&product=Gcalls%20CX",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=gcalls_cx&product=Gcalls%20CX"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/gcalls-cx/",
+  "width": 390,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Gcalls CX – hợp nhất mọi điểm chạm khách hàng trên một màn hình"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=gcalls_cx&product=Gcalls%20CX",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=gcalls_cx&product=Gcalls%20CX",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=gcalls_cx&product=Gcalls%20CX"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/gcalls-cx/",
+  "width": 320,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Gcalls CX – hợp nhất mọi điểm chạm khách hàng trên một màn hình"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=gcalls_cx&product=Gcalls%20CX",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=gcalls_cx&product=Gcalls%20CX",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=gcalls_cx&product=Gcalls%20CX"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/voicebot-ai/",
+  "width": 1440,
+  "status": 503,
+  "verdict": "FAIL",
+  "failed": [
+   "http200",
+   "oneH1",
+   "noConsoleError"
+  ],
+  "h1s": [],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [],
+  "consoleErrors": [
+   "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+   "Failed to load resource: the server responded with a status of 503 (Service Unavailable)"
+  ],
+  "failedRequests": [],
+  "imgCount": 0
+ },
+ {
+  "route": "/voicebot-ai/",
+  "width": 1024,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/voicebot-ai/",
+  "width": 768,
+  "status": 200,
+  "verdict": "FAIL",
+  "failed": [
+   "oneH1",
+   "noPhpError"
+  ],
+  "h1s": [],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "imgCount": 0
+ },
+ {
+  "route": "/voicebot-ai/",
+  "width": 390,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/voicebot-ai/",
+  "width": 320,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/qc-bot-ai/",
+  "width": 1440,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=qa_qc_center&product=QA%20QC%20Center",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=qa_qc_center&product=QA%20QC%20Center",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=qa_qc_center&product=QA%20QC%20Center"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/qc-bot-ai/",
+  "width": 1024,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=qa_qc_center&product=QA%20QC%20Center",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=qa_qc_center&product=QA%20QC%20Center",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=qa_qc_center&product=QA%20QC%20Center"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/qc-bot-ai/",
+  "width": 768,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=qa_qc_center&product=QA%20QC%20Center",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=qa_qc_center&product=QA%20QC%20Center",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=qa_qc_center&product=QA%20QC%20Center"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/qc-bot-ai/",
+  "width": 390,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=qa_qc_center&product=QA%20QC%20Center",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=qa_qc_center&product=QA%20QC%20Center",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=qa_qc_center&product=QA%20QC%20Center"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/qc-bot-ai/",
+  "width": 320,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=qa_qc_center&product=QA%20QC%20Center",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=qa_qc_center&product=QA%20QC%20Center",
+   "http://127.0.0.1:9400/lien-he/?intent=demo&source=qa_qc_center&product=QA%20QC%20Center"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/",
+  "width": 1440,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=integration&source=consultation"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/",
+  "width": 1024,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=integration&source=consultation"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/",
+  "width": 768,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=integration&source=consultation"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/",
+  "width": 390,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=integration&source=consultation"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/",
+  "width": 320,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Kết nối Gcalls với hệ thống doanh nghiệp đang sử dụng"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=integration&source=consultation"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/freshdesk/",
+  "width": 1440,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Freshdesk cho đội CSKH và Support"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=helpdesk_integration&product=Freshdesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/freshdesk/",
+  "width": 1024,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Freshdesk cho đội CSKH và Support"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=helpdesk_integration&product=Freshdesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/freshdesk/",
+  "width": 768,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Freshdesk cho đội CSKH và Support"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=helpdesk_integration&product=Freshdesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/freshdesk/",
+  "width": 390,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Freshdesk cho đội CSKH và Support"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=helpdesk_integration&product=Freshdesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/freshdesk/",
+  "width": 320,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Freshdesk cho đội CSKH và Support"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=helpdesk_integration&product=Freshdesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/hubspot/",
+  "width": 1440,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài Gcalls tích hợp HubSpot – đưa cuộc gọi vào quy trình CRM"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=crm_integration&product=HubSpot&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/hubspot/",
+  "width": 1024,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài Gcalls tích hợp HubSpot – đưa cuộc gọi vào quy trình CRM"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=crm_integration&product=HubSpot&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/hubspot/",
+  "width": 768,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài Gcalls tích hợp HubSpot – đưa cuộc gọi vào quy trình CRM"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=crm_integration&product=HubSpot&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/hubspot/",
+  "width": 390,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài Gcalls tích hợp HubSpot – đưa cuộc gọi vào quy trình CRM"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=crm_integration&product=HubSpot&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/hubspot/",
+  "width": 320,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài Gcalls tích hợp HubSpot – đưa cuộc gọi vào quy trình CRM"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=crm_integration&product=HubSpot&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/salesforce/",
+  "width": 1440,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Salesforce cho đội Sales và Customer Service"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=crm_integration&product=Salesforce&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/salesforce/",
+  "width": 1024,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Salesforce cho đội Sales và Customer Service"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=crm_integration&product=Salesforce&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/salesforce/",
+  "width": 768,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Salesforce cho đội Sales và Customer Service"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=crm_integration&product=Salesforce&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/salesforce/",
+  "width": 390,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Salesforce cho đội Sales và Customer Service"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=crm_integration&product=Salesforce&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/salesforce/",
+  "width": 320,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Salesforce cho đội Sales và Customer Service"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=crm_integration&product=Salesforce&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/zendesk/",
+  "width": 1440,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Zendesk cho đội CSKH và Support"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=helpdesk_integration&product=Zendesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/zendesk/",
+  "width": 1024,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Zendesk cho đội CSKH và Support"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=helpdesk_integration&product=Zendesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/zendesk/",
+  "width": 768,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Zendesk cho đội CSKH và Support"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=helpdesk_integration&product=Zendesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/zendesk/",
+  "width": 390,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Zendesk cho đội CSKH và Support"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=helpdesk_integration&product=Zendesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/zendesk/",
+  "width": 320,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Zendesk cho đội CSKH và Support"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=helpdesk_integration&product=Zendesk&solution=T%C3%ADch%20h%E1%BB%A3p%20Helpdesk"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/zoho-crm/",
+  "width": 1440,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Zoho CRM cho đội Sales và CSKH"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=crm_integration&product=Zoho%20CRM&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/zoho-crm/",
+  "width": 1024,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Zoho CRM cho đội Sales và CSKH"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=crm_integration&product=Zoho%20CRM&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/zoho-crm/",
+  "width": 768,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Zoho CRM cho đội Sales và CSKH"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=crm_integration&product=Zoho%20CRM&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/zoho-crm/",
+  "width": 390,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Zoho CRM cho đội Sales và CSKH"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=crm_integration&product=Zoho%20CRM&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/tich-hop/zoho-crm/",
+  "width": 320,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tổng đài tích hợp Zoho CRM cho đội Sales và CSKH"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=crm_integration&product=Zoho%20CRM&solution=T%C3%ADch%20h%E1%BB%A3p%20CRM"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/san-pham/",
+  "width": 1440,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=product_information&source=consultation"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/san-pham/",
+  "width": 1024,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=product_information&source=consultation"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/san-pham/",
+  "width": 768,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=product_information&source=consultation"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/san-pham/",
+  "width": 390,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=product_information&source=consultation"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/san-pham/",
+  "width": 320,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=product_information&source=consultation"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/giai-phap/",
+  "width": 1440,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center",
+   "/lien-he/?intent=consultation&source=consultation&solution=Call%20Button%20Widget",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=consultation"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/giai-phap/",
+  "width": 1024,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center",
+   "/lien-he/?intent=consultation&source=consultation&solution=Call%20Button%20Widget",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=consultation"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/giai-phap/",
+  "width": 768,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center",
+   "/lien-he/?intent=consultation&source=consultation&solution=Call%20Button%20Widget",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=consultation"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/giai-phap/",
+  "width": 390,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center",
+   "/lien-he/?intent=consultation&source=consultation&solution=Call%20Button%20Widget",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=consultation"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/giai-phap/",
+  "width": 320,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Giải pháp giao tiếp theo bài toán vận hành của doanh nghiệp"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [
+   "/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center",
+   "/lien-he/?intent=consultation&source=consultation&solution=Call%20Button%20Widget",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=consultation"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/lien-he/",
+  "width": 1440,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Liên hệ Gcalls"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/lien-he/",
+  "width": 1024,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Liên hệ Gcalls"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/lien-he/",
+  "width": 768,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Liên hệ Gcalls"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/lien-he/",
+  "width": 390,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Liên hệ Gcalls"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/lien-he/",
+  "width": 320,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Liên hệ Gcalls"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 0,
+  "heroCta": [],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ }
+]

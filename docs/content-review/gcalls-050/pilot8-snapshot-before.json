@@ -1,0 +1,16 @@
+{
+ "kind": "GCALLS-050 pilot pre-write snapshot",
+ "capturedAt": "2026-09-03",
+ "source": "authenticated WP REST, context=edit, read live",
+ "note": "textSha is the invariant: this round changes only image URLs, so textSha MUST be identical after the write. bodySha is expected to change. featured was 0 on all 163 before this round.",
+ "posts": {
+  "186": {"status":"draft","featured":0,"imgs":18,"links":4,"bodySha":"759f52624baa","textSha":"edf1a3389cf5"},
+  "200": {"status":"draft","featured":0,"imgs":11,"links":1,"bodySha":"145bd09c9183","textSha":"fa190a113c7d"},
+  "204": {"status":"draft","featured":0,"imgs":17,"links":2,"bodySha":"bb5d506368a1","textSha":"6f9fc8aa1dcb"},
+  "225": {"status":"draft","featured":0,"imgs":5,"links":3,"bodySha":"52150ec161ec","textSha":"534ac4269779"},
+  "251": {"status":"draft","featured":0,"imgs":18,"links":1,"bodySha":"d3f89e81cdf2","textSha":"1e2b695bdb7f"},
+  "343": {"status":"draft","featured":0,"imgs":7,"links":2,"bodySha":"de873030df1b","textSha":"02afd68c4468"},
+  "349": {"status":"draft","featured":0,"imgs":5,"links":2,"bodySha":"2850a57a3e57","textSha":"2a8267f4082f"},
+  "359": {"status":"draft","featured":0,"imgs":4,"links":6,"bodySha":"c55e274bdf83","textSha":"2a0030a6cf1a"}
+ }
+}

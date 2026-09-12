@@ -1,0 +1,512 @@
+[
+ {
+  "page": "gcalls-plus",
+  "source": "GP_PROBLEMS",
+  "items": 4,
+  "reactLayout": "CARDS-2col",
+  "reactIcons": 1,
+  "media": true,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "gcalls-plus",
+  "source": "GP_OVERVIEW",
+  "items": 4,
+  "reactLayout": "SPLIT",
+  "reactIcons": 13,
+  "media": true,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "gcalls-plus",
+  "source": "GP_FEATURES",
+  "items": 6,
+  "reactLayout": "CARDS-3col",
+  "reactIcons": 0,
+  "media": true,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "gcalls-plus",
+  "source": "GP_HISTORY",
+  "items": 5,
+  "reactLayout": "SPLIT",
+  "reactIcons": 7,
+  "media": true,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "gcalls-plus",
+  "source": "GP_CONTEXT",
+  "items": 3,
+  "reactLayout": "SPLIT",
+  "reactIcons": 5,
+  "media": true,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "gcalls-plus",
+  "source": "GP_WORKFLOW",
+  "items": 4,
+  "reactLayout": "CARDS-4col",
+  "reactIcons": 1,
+  "media": true,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "gcalls-plus",
+  "source": "GP_PERFORMANCE",
+  "items": 3,
+  "reactLayout": "SPLIT",
+  "reactIcons": 5,
+  "media": true,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "gcalls-plus",
+  "source": "GP_INTEGRATION",
+  "items": 0,
+  "reactLayout": "SPLIT",
+  "reactIcons": 3,
+  "media": true,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "gcalls-plus",
+  "source": "GP_USE_CASES",
+  "items": 5,
+  "reactLayout": "CARDS-3col",
+  "reactIcons": 3,
+  "media": true,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "gcalls-plus",
+  "source": "GP_BOUNDARIES",
+  "items": 0,
+  "reactLayout": "CARDS-2col",
+  "reactIcons": 10,
+  "media": true,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "gcalls-plus",
+  "source": "GP_DEPLOYMENT",
+  "items": 6,
+  "reactLayout": "CARDS-3col",
+  "reactIcons": 1,
+  "media": true,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "gcalls-plus",
+  "source": "GP_PRICING",
+  "items": 0,
+  "reactLayout": "SPLIT",
+  "reactIcons": 3,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "gcalls-plus",
+  "source": "GP_STORY",
+  "items": 0,
+  "reactLayout": "PLAIN",
+  "reactIcons": 3,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "cx",
+  "source": "CX_PROBLEMS",
+  "items": 4,
+  "reactLayout": "CARDS-2col",
+  "reactIcons": 1,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "cx",
+  "source": "CX_OVERVIEW",
+  "items": 0,
+  "reactLayout": "SPLIT",
+  "reactIcons": 11,
+  "media": false,
+  "mockup": true,
+  "diagram": false
+ },
+ {
+  "page": "cx",
+  "source": "CX_CHANNELS",
+  "items": 5,
+  "reactLayout": "CARDS-5col",
+  "reactIcons": 1,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "cx",
+  "source": "CX_INBOX",
+  "items": 5,
+  "reactLayout": "SPLIT",
+  "reactIcons": 7,
+  "media": false,
+  "mockup": true,
+  "diagram": false
+ },
+ {
+  "page": "cx",
+  "source": "CX_TICKETS",
+  "items": 5,
+  "reactLayout": "SPLIT",
+  "reactIcons": 7,
+  "media": false,
+  "mockup": true,
+  "diagram": false
+ },
+ {
+  "page": "cx",
+  "source": "CX_CONTEXT",
+  "items": 6,
+  "reactLayout": "SPLIT",
+  "reactIcons": 8,
+  "media": false,
+  "mockup": true,
+  "diagram": false
+ },
+ {
+  "page": "cx",
+  "source": "CX_HOW_IT_WORKS",
+  "items": 5,
+  "reactLayout": "CARDS-5col",
+  "reactIcons": 1,
+  "media": false,
+  "mockup": false,
+  "diagram": true
+ },
+ {
+  "page": "cx",
+  "source": "CX_REPORTING",
+  "items": 4,
+  "reactLayout": "SPLIT",
+  "reactIcons": 6,
+  "media": false,
+  "mockup": true,
+  "diagram": false
+ },
+ {
+  "page": "cx",
+  "source": "CX_BENEFITS",
+  "items": 4,
+  "reactLayout": "CARDS-4col",
+  "reactIcons": 1,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "cx",
+  "source": "CX_USE_CASES",
+  "items": 4,
+  "reactLayout": "CARDS-4col",
+  "reactIcons": 4,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "cx",
+  "source": "CX_INTEGRATION",
+  "items": 0,
+  "reactLayout": "PLAIN",
+  "reactIcons": 4,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "cx",
+  "source": "CX_BOUNDARIES",
+  "items": 0,
+  "reactLayout": "CARDS-5col",
+  "reactIcons": 6,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "cx",
+  "source": "CX_DEPLOYMENT",
+  "items": 7,
+  "reactLayout": "CARDS-4col",
+  "reactIcons": 1,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "cx",
+  "source": "CX_TRUST",
+  "items": 0,
+  "reactLayout": "PLAIN",
+  "reactIcons": 1,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "cx",
+  "source": "CX_PRICING",
+  "items": 0,
+  "reactLayout": "SPLIT",
+  "reactIcons": 3,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "voicebot",
+  "source": "VB_PROBLEMS",
+  "items": 3,
+  "reactLayout": "CARDS-3col",
+  "reactIcons": 1,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "voicebot",
+  "source": "VB_USE_CASES",
+  "items": 6,
+  "reactLayout": "CARDS-3col",
+  "reactIcons": 1,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "voicebot",
+  "source": "VB_HOW_IT_WORKS",
+  "items": 6,
+  "reactLayout": "SPLIT",
+  "reactIcons": 10,
+  "media": false,
+  "mockup": false,
+  "diagram": true
+ },
+ {
+  "page": "voicebot",
+  "source": "VB_CAPABILITIES",
+  "items": 5,
+  "reactLayout": "CARDS-2col",
+  "reactIcons": 9,
+  "media": false,
+  "mockup": true,
+  "diagram": false
+ },
+ {
+  "page": "voicebot",
+  "source": "VB_HUMAN_AI",
+  "items": 0,
+  "reactLayout": "CARDS-3col",
+  "reactIcons": 6,
+  "media": false,
+  "mockup": false,
+  "diagram": true
+ },
+ {
+  "page": "voicebot",
+  "source": "VB_INTEGRATION",
+  "items": 5,
+  "reactLayout": "CARDS-4col",
+  "reactIcons": 6,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "voicebot",
+  "source": "VB_INDUSTRIES",
+  "items": 4,
+  "reactLayout": "CARDS-5col",
+  "reactIcons": 1,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "voicebot",
+  "source": "VB_DEPLOYMENT",
+  "items": 5,
+  "reactLayout": "CARDS-3col",
+  "reactIcons": 6,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "voicebot",
+  "source": "VB_OUTCOMES",
+  "items": 5,
+  "reactLayout": "PLAIN",
+  "reactIcons": 6,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "qa-qc",
+  "source": "QQ_PROBLEMS",
+  "items": 4,
+  "reactLayout": "CARDS-2col",
+  "reactIcons": 1,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "qa-qc",
+  "source": "QQ_OVERVIEW",
+  "items": 0,
+  "reactLayout": "SPLIT",
+  "reactIcons": 10,
+  "media": false,
+  "mockup": true,
+  "diagram": false
+ },
+ {
+  "page": "qa-qc",
+  "source": "QQ_HOW_IT_WORKS",
+  "items": 5,
+  "reactLayout": "CARDS-5col",
+  "reactIcons": 1,
+  "media": false,
+  "mockup": false,
+  "diagram": true
+ },
+ {
+  "page": "qa-qc",
+  "source": "QQ_CAPABILITIES",
+  "items": 7,
+  "reactLayout": "CARDS-3col",
+  "reactIcons": 1,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "qa-qc",
+  "source": "QQ_SCORING",
+  "items": 5,
+  "reactLayout": "SPLIT",
+  "reactIcons": 7,
+  "media": false,
+  "mockup": true,
+  "diagram": false
+ },
+ {
+  "page": "qa-qc",
+  "source": "QQ_SIGNALS",
+  "items": 4,
+  "reactLayout": "SPLIT",
+  "reactIcons": 7,
+  "media": false,
+  "mockup": true,
+  "diagram": false
+ },
+ {
+  "page": "qa-qc",
+  "source": "QQ_HUMAN_LOOP",
+  "items": 0,
+  "reactLayout": "CARDS-3col",
+  "reactIcons": 1,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "qa-qc",
+  "source": "QQ_DASHBOARD",
+  "items": 0,
+  "reactLayout": "SPLIT",
+  "reactIcons": 3,
+  "media": false,
+  "mockup": true,
+  "diagram": false
+ },
+ {
+  "page": "qa-qc",
+  "source": "QQ_BENEFITS",
+  "items": 4,
+  "reactLayout": "CARDS-4col",
+  "reactIcons": 1,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "qa-qc",
+  "source": "QQ_USE_CASES",
+  "items": 4,
+  "reactLayout": "CARDS-4col",
+  "reactIcons": 4,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "qa-qc",
+  "source": "QQ_INTEGRATION",
+  "items": 0,
+  "reactLayout": "PLAIN",
+  "reactIcons": 4,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "qa-qc",
+  "source": "QQ_BOUNDARIES",
+  "items": 0,
+  "reactLayout": "CARDS-4col",
+  "reactIcons": 5,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "qa-qc",
+  "source": "QQ_PRICING",
+  "items": 0,
+  "reactLayout": "PLAIN",
+  "reactIcons": 2,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ },
+ {
+  "page": "qa-qc",
+  "source": "QQ_STORY",
+  "items": 0,
+  "reactLayout": "SPLIT",
+  "reactIcons": 3,
+  "media": false,
+  "mockup": false,
+  "diagram": false
+ }
+]

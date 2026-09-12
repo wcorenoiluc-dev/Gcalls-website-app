@@ -1,0 +1,636 @@
+/**
+ * Gcalls content pages — presentation for the `gcalls-cp__*` markup.
+ *
+ * WHY THIS FILE EXISTS
+ * `includes/class-content-pages.php` renders eight page families (integration,
+ * solution-detail, industry, resource, company, pricing, referral, contact)
+ * into a `gcalls-cp__*` class vocabulary. Nothing shipped has ever styled that
+ * vocabulary: `theme.css` 0.8.5 (live) contains zero occurrences of the string
+ * `gcalls-cp`, and `gc-components.css` — which is not on live at all — scopes
+ * all 118 of its rule blocks under `.gc-page`, the class the SEMANTIC SECTION
+ * renderer emits. Two different renderers, two different vocabularies, and the
+ * one that is actually live has no stylesheet. Hence: unstyled full-bleed text.
+ *
+ * WHAT IT REUSES AND WHAT IT DOES NOT INVENT
+ * Every colour comes from theme.css's `--gcalls-*` tokens (brand #673ab7,
+ * brand-dark #4a2391, brand-light #f5f1fc, surface #fff, surface-alt #faf9fc,
+ * foreground #1e2026, muted #5b5f6b, border #e8e5ef). Every geometry value —
+ * 1220px container, 660px measure, 50px section rhythm, 20px radius, 28px card
+ * padding, 20px grid gap, the 14/18/32px header gaps, the two shadows — is
+ * lifted from gc-components.css so the two systems read as one design, not two.
+ * No new palette, no `!important`, no negative margins, no min-height.
+ *
+ * SCOPE — WHY THIS CANNOT LEAK
+ * Every selector begins with `.gcalls-cp`, the wrapper `render()` puts around
+ * its own output and the only place that class exists. The Elementor home page
+ * is never a render target (`page_on_front` is refused in `target()`), the blog
+ * is `post_type=post` and outside the code path entirely, and the estimator
+ * shortcodes print `gcalls-est*`/`gcalls-product*` markup. None of them can
+ * match a selector here. The design tokens are declared on `.gcalls-cp`, not on
+ * `:root`, so even the custom properties do not escape the wrapper.
+ */
+
+/* ── Tokens ───────────────────────────────────────────────────────────────
+ * Scoped to the wrapper on purpose (see above). Values mirror
+ * gc-components.css one for one; colours fall back to the same literals
+ * theme.css defines, so a page still renders correctly if theme.css is ever
+ * loaded after this file.
+ */
+.gcalls-cp {
+	--gcp-container: 1220px;
+	--gcp-measure: 660px;
+	--gcp-measure-wide: 820px;
+	--gcp-gutter: 20px;
+	--gcp-gutter-lg: 32px;
+
+	--gcp-section-pad: 50px;
+	--gcp-hero-pad-top: 72px;
+	--gcp-hero-pad-bottom: 64px;
+
+	--gcp-gap-head-desc: 18px;
+	--gcp-gap-desc-body: 32px;
+	--gcp-gap-grid: 20px;
+
+	--gcp-card-pad: 28px;
+	--gcp-card-pad-mobile: 22px;
+	--gcp-radius: 20px;
+	--gcp-radius-sm: 12px;
+
+	--gcp-border: 1px solid var(--gcalls-border, #e8e5ef);
+	--gcp-border-soft: 1px solid rgba(103, 58, 183, 0.12);
+	--gcp-shadow: 0 8px 24px rgba(30, 32, 38, 0.05);
+	--gcp-shadow-lift: 0 14px 34px rgba(74, 35, 145, 0.09);
+
+	color: var(--gcalls-foreground, #1e2026);
+}
+
+/* ── Band + container in one element ──────────────────────────────────────
+ * The renderer emits no inner container div: a section's children are its
+ * direct children. So the section is the band AND the container — the padding
+ * absorbs the gutter at narrow widths and the leftover half-width above
+ * 1220px, which is what centres the content without a wrapper. `max()` means
+ * the gutter always wins on small screens, so there is no width at which the
+ * computed padding goes negative and pushes content out of the viewport.
+ */
+.gcalls-cp__hero,
+.gcalls-cp__section {
+	box-sizing: border-box;
+	padding-inline: max(
+		var(--gcp-gutter),
+		calc((100% - var(--gcp-container)) / 2)
+	);
+	width: 100%;
+}
+
+@media (min-width: 1024px) {
+	.gcalls-cp__hero,
+	.gcalls-cp__section {
+		padding-inline: max(
+			var(--gcp-gutter-lg),
+			calc((100% - var(--gcp-container)) / 2)
+		);
+	}
+}
+
+/* ── Section rhythm and surfaces ──────────────────────────────────────────
+ * 50px top and bottom, desktop and mobile, per the agreed rhythm. Surfaces
+ * alternate so the sections read as bands rather than as one long column;
+ * the hero, the FAQ and the closing CTA opt out of the alternation because
+ * their role, not their position, decides their surface.
+ */
+.gcalls-cp__section {
+	background: var(--gcalls-surface, #fff);
+	padding-block: var(--gcp-section-pad);
+}
+
+.gcalls-cp__section:nth-of-type(even) {
+	background: var(--gcalls-surface-alt, #faf9fc);
+}
+
+.gcalls-cp__hero {
+	background: var(--gcalls-brand-light, #f5f1fc);
+	padding-block: var(--gcp-hero-pad-top) var(--gcp-hero-pad-bottom);
+}
+
+/* Bands butt together: two same-coloured bands in a row must not show a seam
+ * where their paddings meet. */
+.gcalls-cp__section:nth-of-type(even) + .gcalls-cp__faq,
+.gcalls-cp__faq + .gcalls-cp__section:nth-of-type(even) {
+	padding-block-start: 0;
+}
+
+/* ── Type: hero ───────────────────────────────────────────────────────────*/
+.gcalls-cp__h1 {
+	color: var(--gcalls-brand, #673ab7);
+	font-size: clamp(1.9rem, 3.6vw, 2.85rem);
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	line-height: 1.15;
+	margin: 0;
+	max-width: 780px;
+}
+
+.gcalls-cp__eyebrow + .gcalls-cp__h1 {
+	margin-top: 16px;
+}
+
+/* The hero eyebrow is the page's label, so it carries the solid brand pill;
+ * section eyebrows below use the lighter badge treatment, because seven solid
+ * purple pills down one page compete with the headings they introduce. */
+.gcalls-cp__hero > .gcalls-cp__eyebrow {
+	background: var(--gcalls-brand, #673ab7);
+	color: #fff;
+	font-size: 12px;
+	letter-spacing: 0.06em;
+	padding: 7px 14px;
+}
+
+/* ── Type: section header ─────────────────────────────────────────────────
+ * eyebrow → heading → lead, with gc-components' 14px and 18px gaps, then 32px
+ * from the header to whatever body follows it. The markup is flat siblings,
+ * so the gaps are adjacency rules rather than a flex `gap`.
+ */
+.gcalls-cp__eyebrow {
+	background: var(--gcalls-brand-light, #f5f1fc);
+	border-radius: 999px;
+	color: var(--gcalls-brand-dark, #4a2391);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	line-height: 1.4;
+	margin: 0;
+	padding: 5px 10px;
+	text-transform: uppercase;
+	width: fit-content;
+}
+
+.gcalls-cp__h2 {
+	color: var(--gcalls-brand, #673ab7);
+	font-size: clamp(1.5rem, 2.4vw, 2.125rem);
+	font-weight: 800;
+	letter-spacing: -0.01em;
+	line-height: 1.22;
+	margin: 0;
+	max-width: var(--gcp-measure-wide);
+}
+
+.gcalls-cp__eyebrow + .gcalls-cp__h2 {
+	margin-top: 14px;
+}
+
+.gcalls-cp__lead {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 1.0625rem;
+	line-height: 1.65;
+	margin: 0;
+	max-width: var(--gcp-measure);
+}
+
+.gcalls-cp__h1 + .gcalls-cp__lead,
+.gcalls-cp__h2 + .gcalls-cp__lead {
+	margin-top: var(--gcp-gap-head-desc);
+}
+
+/* Header → body. Every body block the renderer can emit is listed, so a new
+ * block type gets no spacing by accident and is caught in review. */
+.gcalls-cp__lead + .gcalls-cp__grid,
+.gcalls-cp__lead + .gcalls-cp__steps,
+.gcalls-cp__lead + .gcalls-cp__tags,
+.gcalls-cp__lead + .gcalls-cp__compare,
+.gcalls-cp__lead + .gcalls-cp__prose,
+.gcalls-cp__h2 + .gcalls-cp__grid,
+.gcalls-cp__h2 + .gcalls-cp__steps,
+.gcalls-cp__h2 + .gcalls-cp__tags,
+.gcalls-cp__h2 + .gcalls-cp__compare,
+.gcalls-cp__h2 + .gcalls-cp__prose,
+.gcalls-cp__h1 + .gcalls-cp__grid {
+	margin-top: var(--gcp-gap-desc-body);
+}
+
+/* ── Prose ────────────────────────────────────────────────────────────────
+ * The direct-answer paragraph. Plain visible text at reading width — it is
+ * the paragraph an answer engine quotes, so it is never behind a disclosure.
+ */
+.gcalls-cp__prose {
+	color: var(--gcalls-foreground, #1e2026);
+	font-size: 1.0625rem;
+	line-height: 1.75;
+	margin: 0;
+	max-width: var(--gcp-measure);
+}
+
+/* ── Card grids ───────────────────────────────────────────────────────────
+ * Explicit column counts. `auto-fit` is deliberately avoided: with a variable
+ * card count it produces empty tracks and lets, say, five cards land in a
+ * four-column row with one orphan. `minmax(0, 1fr)` is what stops a long
+ * unbroken string in a card from widening its track past the viewport.
+ */
+.gcalls-cp__grid {
+	display: grid;
+	gap: var(--gcp-gap-grid);
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+	margin: 0;
+}
+
+@media (min-width: 640px) {
+	.gcalls-cp__grid--2,
+	.gcalls-cp__grid--3 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1024px) {
+	.gcalls-cp__grid--3 {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+.gcalls-cp__card {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gcp-border);
+	border-radius: var(--gcp-radius);
+	box-shadow: var(--gcp-shadow);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	min-width: 0;
+	padding: var(--gcp-card-pad);
+	transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+/* A card on the alt band would disappear into it, so it borrows the white
+ * surface it already has and leans on the border for definition. */
+.gcalls-cp__card-title {
+	color: var(--gcalls-foreground, #1e2026);
+	font-size: 1.0625rem;
+	font-weight: 700;
+	line-height: 1.35;
+	margin: 0;
+	overflow-wrap: anywhere;
+}
+
+.gcalls-cp__card-body {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.9375rem;
+	line-height: 1.65;
+	margin: 0;
+	overflow-wrap: anywhere;
+}
+
+/* Pushed to the bottom edge so a row of cards of unequal length still lines
+ * its links up. `margin-top: auto` does this without a min-height. */
+.gcalls-cp__card-link {
+	align-items: center;
+	color: var(--gcalls-brand, #673ab7);
+	display: inline-flex;
+	font-size: 0.9375rem;
+	font-weight: 650;
+	gap: 6px;
+	margin-top: auto;
+	padding-top: 4px;
+	text-decoration: none;
+	width: fit-content;
+}
+
+.gcalls-cp__card-link::after {
+	content: "→";
+	transition: transform 160ms ease;
+}
+
+.gcalls-cp__card-link:hover,
+.gcalls-cp__card-link:focus-visible {
+	text-decoration: underline;
+}
+
+.gcalls-cp__card-link:hover::after {
+	transform: translateX(3px);
+}
+
+.gcalls-cp__card:hover {
+	border-color: rgba(103, 58, 183, 0.38);
+	box-shadow: var(--gcp-shadow-lift);
+}
+
+/* The optional footnote under a grid. */
+.gcalls-cp__note {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.875rem;
+	line-height: 1.6;
+	margin: 18px 0 0;
+	max-width: var(--gcp-measure);
+}
+
+/* ── Steps ────────────────────────────────────────────────────────────────
+ * An ordered list rendered as a vertical sequence of rows rather than as a
+ * grid of cards. The renderer emits no step count, so a fixed column count
+ * would leave an empty track for any list whose length does not divide into
+ * it — and a sequence read left-to-right-then-wrap loses the very ordering
+ * the <ol> exists to express. Rows are count-agnostic and keep 1 → n obvious.
+ */
+.gcalls-cp__steps {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	list-style: none;
+	margin: 0;
+	max-width: var(--gcp-measure-wide);
+	padding: 0;
+}
+
+.gcalls-cp__step {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gcp-border);
+	border-radius: var(--gcp-radius);
+	display: flex;
+	gap: 16px;
+	padding: var(--gcp-card-pad);
+}
+
+.gcalls-cp__step > div {
+	min-width: 0;
+}
+
+/* The number is aria-hidden in the markup — the <ol> already carries the
+ * ordering for assistive tech — so this is purely the visual cue. */
+.gcalls-cp__step-n {
+	align-items: center;
+	background: var(--gcalls-brand, #673ab7);
+	border-radius: 999px;
+	color: #fff;
+	display: flex;
+	flex: none;
+	font-size: 13px;
+	font-weight: 700;
+	height: 32px;
+	justify-content: center;
+	line-height: 1;
+	width: 32px;
+}
+
+.gcalls-cp__step-title {
+	color: var(--gcalls-foreground, #1e2026);
+	font-size: 1.0625rem;
+	font-weight: 700;
+	line-height: 1.35;
+	margin: 0;
+	overflow-wrap: anywhere;
+}
+
+.gcalls-cp__step-body {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.9375rem;
+	line-height: 1.65;
+	margin: 8px 0 0;
+	overflow-wrap: anywhere;
+}
+
+/* ── Tag list ─────────────────────────────────────────────────────────────
+ * Short labels. A card each would be mostly padding.
+ */
+.gcalls-cp__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gcalls-cp__tag {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gcp-border);
+	border-radius: 999px;
+	font-size: 0.9375rem;
+	line-height: 1.4;
+	padding: 9px 16px;
+}
+
+/* ── Before / after comparison ────────────────────────────────────────────
+ * The point of the section is that one sequence is longer than the other, so
+ * the two columns must be comparable at a glance and must NOT be equalised to
+ * the same height — `align-items: start` is what keeps that honest.
+ */
+.gcalls-cp__compare {
+	align-items: start;
+	display: grid;
+	gap: var(--gcp-gap-grid);
+	grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 768px) {
+	.gcalls-cp__compare {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+.gcalls-cp__compare-col {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gcp-border);
+	border-radius: var(--gcp-radius);
+	min-width: 0;
+	padding: var(--gcp-card-pad);
+}
+
+.gcalls-cp__compare-col--after {
+	border-color: rgba(103, 58, 183, 0.32);
+}
+
+.gcalls-cp__compare-label {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	margin: 0 0 14px;
+	text-transform: uppercase;
+}
+
+.gcalls-cp__compare-col--after .gcalls-cp__compare-label {
+	color: var(--gcalls-brand, #673ab7);
+}
+
+.gcalls-cp__flow {
+	counter-reset: gcp-flow;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gcalls-cp__flow li {
+	background: var(--gcalls-surface-alt, #faf9fc);
+	border-radius: 10px;
+	font-size: 0.9375rem;
+	line-height: 1.55;
+	overflow-wrap: anywhere;
+	padding: 10px 14px 10px 38px;
+	position: relative;
+}
+
+.gcalls-cp__flow li::before {
+	color: var(--gcalls-muted, #5b5f6b);
+	content: counter(gcp-flow);
+	counter-increment: gcp-flow;
+	font-size: 0.8125rem;
+	font-weight: 700;
+	left: 14px;
+	position: absolute;
+	top: 10px;
+}
+
+.gcalls-cp__compare-col--after .gcalls-cp__flow li {
+	background: var(--gcalls-brand-light, #f5f1fc);
+}
+
+.gcalls-cp__compare-col--after .gcalls-cp__flow li::before {
+	color: var(--gcalls-brand, #673ab7);
+}
+
+/* ── Form slot ────────────────────────────────────────────────────────────
+ * Deliberately a note and not a form: there are no inputs, so nothing can
+ * appear to send. It is styled as a stated absence — muted, dashed — not as
+ * card chrome that would read as working content.
+ */
+.gcalls-cp__slot {
+	border: 1px dashed var(--gcalls-border, #e8e5ef);
+	border-radius: var(--gcp-radius);
+	max-width: var(--gcp-measure);
+	padding: var(--gcp-card-pad);
+}
+
+.gcalls-cp__slot-title {
+	color: var(--gcalls-foreground, #1e2026);
+	font-size: 1rem;
+	font-weight: 650;
+	margin: 0;
+}
+
+.gcalls-cp__slot-body {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.9375rem;
+	line-height: 1.65;
+	margin: 8px 0 0;
+}
+
+/* ── FAQ ──────────────────────────────────────────────────────────────────
+ * `gcalls-cp__faq` is a MODIFIER ON THE SECTION, not a wrapper inside it, and
+ * the items are its direct children. With no inner column element to cap, the
+ * measure is applied to each item; left-aligned and equally capped, they read
+ * as one column, which is the same result a wrapper would have given.
+ */
+.gcalls-cp__faq {
+	background: var(--gcalls-surface-alt, #faf9fc);
+}
+
+.gcalls-cp__faq > .gcalls-cp__h2 {
+	margin-bottom: var(--gcp-gap-desc-body);
+}
+
+.gcalls-cp__faq-item {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gcp-border);
+	border-radius: var(--gcp-radius-sm);
+	max-width: var(--gcp-measure);
+	padding: 18px 20px;
+}
+
+.gcalls-cp__faq-item + .gcalls-cp__faq-item {
+	margin-top: 12px;
+}
+
+.gcalls-cp__faq-q {
+	color: var(--gcalls-foreground, #1e2026);
+	font-size: 1rem;
+	font-weight: 650;
+	line-height: 1.45;
+	margin: 0;
+	overflow-wrap: anywhere;
+}
+
+.gcalls-cp__faq-a {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.9375rem;
+	line-height: 1.7;
+	margin: 10px 0 0;
+	overflow-wrap: anywhere;
+}
+
+/* ── Closing CTA ──────────────────────────────────────────────────────────
+ * One ask, centred, on the brand band. It is the page's only band of this
+ * colour below the hero, which is what makes it read as the end of the page.
+ */
+.gcalls-cp__cta {
+	background: var(--gcalls-brand-light, #f5f1fc);
+	border-top: var(--gcp-border-soft);
+	text-align: center;
+}
+
+.gcalls-cp__cta > .gcalls-cp__h2,
+.gcalls-cp__cta > .gcalls-cp__lead {
+	margin-inline: auto;
+}
+
+.gcalls-cp__btn {
+	background: var(--gcalls-brand, #673ab7);
+	border-radius: 999px;
+	color: #fff;
+	display: inline-block;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.2;
+	margin-top: 24px;
+	padding: 14px 28px;
+	text-decoration: none;
+	transition: background-color 160ms ease;
+}
+
+.gcalls-cp__btn:hover,
+.gcalls-cp__btn:focus-visible {
+	background: var(--gcalls-brand-dark, #4a2391);
+	color: #fff;
+}
+
+/* ── Focus ────────────────────────────────────────────────────────────────*/
+.gcalls-cp a:focus-visible {
+	outline: 3px solid var(--gcalls-brand, #673ab7);
+	outline-offset: 2px;
+}
+
+/* ── Mobile ───────────────────────────────────────────────────────────────
+ * The 50px section rhythm is the same on mobile by agreement; only the inner
+ * padding of the boxes tightens, so a 320px viewport still leaves a readable
+ * line inside a card.
+ */
+@media (max-width: 767px) {
+	.gcalls-cp__card,
+	.gcalls-cp__step,
+	.gcalls-cp__compare-col,
+	.gcalls-cp__slot {
+		padding: var(--gcp-card-pad-mobile);
+	}
+
+	.gcalls-cp__hero {
+		padding-block: 48px 40px;
+	}
+
+	.gcalls-cp__step {
+		gap: 14px;
+	}
+
+	.gcalls-cp__btn {
+		width: 100%;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gcalls-cp__card,
+	.gcalls-cp__card-link::after,
+	.gcalls-cp__btn {
+		transition: none;
+	}
+
+	.gcalls-cp__card-link:hover::after {
+		transform: none;
+	}
+}

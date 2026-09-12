@@ -1,0 +1,2980 @@
+{
+ "gcalls-plus|1440|react": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "Gcalls Plus Webphone – tổng đài doanh nghiệp n",
+    "height": 959,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 5
+   },
+   {
+    "i": 1,
+    "heading": "Gcalls Plus Webphone là gì?",
+    "height": 520,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 2,
+    "heading": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi ch",
+    "height": 692,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 3,
+    "heading": "Webphone đưa chức năng tổng đài vào trình duyệ",
+    "height": 704,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 18
+   },
+   {
+    "i": 4,
+    "heading": "Các chức năng cần thiết cho hoạt động nghe gọi",
+    "height": 796,
+    "split": null,
+    "cols": {
+     "n": 6,
+     "tracks": 3,
+     "zero": 0
+    },
+    "icons": 0
+   },
+   {
+    "i": 5,
+    "heading": "Theo dõi hành trình tương tác thay vì chỉ nhìn",
+    "height": 930,
+    "split": null,
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 7
+   },
+   {
+    "i": 6,
+    "heading": "Hiểu khách hàng trước khi tiếp tục cuộc hội th",
+    "height": 619,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 5
+   },
+   {
+    "i": 7,
+    "heading": "Từ cuộc gọi đến bước follow-up tiếp theo",
+    "height": 541,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 4,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 8,
+    "heading": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ ",
+    "height": 1211,
+    "split": null,
+    "cols": {
+     "n": 6,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 9
+   },
+   {
+    "i": 9,
+    "heading": "Mở rộng Gcalls Plus vào quy trình CRM khi doan",
+    "height": 592,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 3
+   },
+   {
+    "i": 10,
+    "heading": "Gcalls Plus phù hợp với những đội ngũ nào?",
+    "height": 800,
+    "split": null,
+    "cols": {
+     "n": 5,
+     "tracks": 3,
+     "zero": 0
+    },
+    "icons": 3
+   },
+   {
+    "i": 11,
+    "heading": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước ",
+    "height": 806,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 10
+   },
+   {
+    "i": 12,
+    "heading": "Triển khai theo nhu cầu vận hành thực tế",
+    "height": 715,
+    "split": null,
+    "cols": {
+     "n": 6,
+     "tracks": 3,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 13,
+    "heading": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu ",
+    "height": 585,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 3
+   },
+   {
+    "i": 14,
+    "heading": "Đồng hành cùng nhiều mô hình doanh nghiệp khác",
+    "height": 650,
+    "split": null,
+    "cols": null,
+    "icons": 3
+   },
+   {
+    "i": 15,
+    "heading": "Câu hỏi thường gặp về Gcalls Plus Webphone",
+    "height": 847,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 16,
+    "heading": "Bắt đầu với một hệ thống nghe gọi phù hợp với ",
+    "height": 742,
+    "split": null,
+    "cols": null,
+    "icons": 2
+   }
+  ],
+  "n": 17,
+  "height": 13360,
+  "icons": 90,
+  "splits": 6,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 5,
+  "items": 61,
+  "media": 6,
+  "faq": 1,
+  "faqItems": 0,
+  "overflowX": false
+ },
+ "gcalls-plus|1440|candidate": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "Gcalls Plus Webphone – tổng đài doanh nghiệp n",
+    "height": 702,
+    "split": {
+     "ratio": [
+      41,
+      59
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 3
+   },
+   {
+    "i": 1,
+    "heading": "Gcalls Plus Webphone là gì?",
+    "height": 372,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 2,
+    "heading": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi ch",
+    "height": 882,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 4
+   },
+   {
+    "i": 3,
+    "heading": "Webphone đưa chức năng tổng đài vào trình duyệ",
+    "height": 748,
+    "split": {
+     "ratio": [
+      44,
+      56
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 4
+   },
+   {
+    "i": 4,
+    "heading": "Các chức năng cần thiết cho hoạt động nghe gọi",
+    "height": 830,
+    "split": null,
+    "cols": {
+     "n": 6,
+     "tracks": 3,
+     "zero": 0
+    },
+    "icons": 6
+   },
+   {
+    "i": 5,
+    "heading": "Theo dõi hành trình tương tác thay vì chỉ nhìn",
+    "height": 748,
+    "split": {
+     "ratio": [
+      44,
+      56
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 5
+   },
+   {
+    "i": 6,
+    "heading": "Hiểu khách hàng trước khi tiếp tục cuộc hội th",
+    "height": 776,
+    "split": {
+     "ratio": [
+      44,
+      56
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 3
+   },
+   {
+    "i": 7,
+    "heading": "Từ cuộc gọi đến bước follow-up tiếp theo",
+    "height": 483,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 4,
+     "zero": 0
+    },
+    "icons": 0
+   },
+   {
+    "i": 8,
+    "heading": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ ",
+    "height": 776,
+    "split": {
+     "ratio": [
+      44,
+      56
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 3
+   },
+   {
+    "i": 9,
+    "heading": "Mở rộng Gcalls Plus vào quy trình CRM khi doan",
+    "height": 471,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 10,
+    "heading": "Gcalls Plus phù hợp với những đội ngũ nào?",
+    "height": 753,
+    "split": null,
+    "cols": {
+     "n": 5,
+     "tracks": 3,
+     "zero": 0
+    },
+    "icons": 5
+   },
+   {
+    "i": 11,
+    "heading": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước ",
+    "height": 608,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 9
+   },
+   {
+    "i": 12,
+    "heading": "Triển khai theo nhu cầu vận hành thực tế",
+    "height": 680,
+    "split": null,
+    "cols": {
+     "n": 6,
+     "tracks": 5,
+     "zero": 0
+    },
+    "icons": 0
+   },
+   {
+    "i": 13,
+    "heading": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu ",
+    "height": 443,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 14,
+    "heading": "Đồng hành cùng nhiều mô hình doanh nghiệp khác",
+    "height": 460,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 15,
+    "heading": "Câu hỏi thường gặp về Gcalls Plus Webphone",
+    "height": 1169,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 16,
+    "heading": "Bắt đầu với một hệ thống nghe gọi phù hợp với ",
+    "height": 398,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   }
+  ],
+  "n": 17,
+  "height": 11302,
+  "icons": 42,
+  "splits": 6,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 5,
+  "items": 52,
+  "media": 9,
+  "faq": 1,
+  "faqItems": 12,
+  "overflowX": false
+ },
+ "cx|1440|react": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "Gcalls CX – hợp nhất mọi điểm chạm khách hàng ",
+    "height": 1017,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 15
+   },
+   {
+    "i": 1,
+    "heading": "Gcalls CX là gì?",
+    "height": 490,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 2,
+    "heading": "Nhiều kênh giao tiếp không đồng nghĩa với một ",
+    "height": 821,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 3,
+    "heading": "Một không gian làm việc cho nhiều điểm chạm kh",
+    "height": 693,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 9,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 17
+   },
+   {
+    "i": 4,
+    "heading": "Kết nối những kênh khách hàng đang sử dụng",
+    "height": 509,
+    "split": null,
+    "cols": {
+     "n": 5,
+     "tracks": 5,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 5,
+    "heading": "Giảm việc chuyển đổi giữa nhiều màn hình khi x",
+    "height": 693,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 17
+   },
+   {
+    "i": 6,
+    "heading": "Biến hội thoại thành công việc có trạng thái v",
+    "height": 693,
+    "split": null,
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 8
+   },
+   {
+    "i": 7,
+    "heading": "Hiểu những gì đã xảy ra trước khi phản hồi khá",
+    "height": 731,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 14
+   },
+   {
+    "i": 8,
+    "heading": "Từ nhiều điểm chạm đến một quy trình chăm sóc ",
+    "height": 659,
+    "split": null,
+    "cols": {
+     "n": 5,
+     "tracks": 5,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 9,
+    "heading": "Theo dõi hoạt động đa kênh từ dữ liệu tập trun",
+    "height": 723,
+    "split": null,
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 10
+   },
+   {
+    "i": 10,
+    "heading": "Giúp đội CSKH làm việc với ít điểm đứt gãy hơn",
+    "height": 507,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 4,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 11,
+    "heading": "Gcalls CX phù hợp với những mô hình có nhiều đ",
+    "height": 598,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 4,
+     "zero": 0
+    },
+    "icons": 4
+   },
+   {
+    "i": 12,
+    "heading": "Kết nối giao tiếp đa kênh với dữ liệu và quy t",
+    "height": 579,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 13,
+    "heading": "Mỗi bài toán giao tiếp cần một lớp sản phẩm kh",
+    "height": 537,
+    "split": null,
+    "cols": {
+     "n": 5,
+     "tracks": 5,
+     "zero": 0
+    },
+    "icons": 6
+   },
+   {
+    "i": 14,
+    "heading": "Thiết kế cấu hình theo kênh và workflow doanh ",
+    "height": 778,
+    "split": null,
+    "cols": {
+     "n": 7,
+     "tracks": 4,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 15,
+    "heading": "Mỗi hành trình khách hàng cần một workflow khá",
+    "height": 673,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 16,
+    "heading": "Chi phí phụ thuộc vào số kênh, người dùng và p",
+    "height": 615,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 3
+   },
+   {
+    "i": 17,
+    "heading": "Câu hỏi thường gặp về Gcalls CX",
+    "height": 821,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 18,
+    "heading": "Xem Gcalls CX hoạt động trên chính hành trình ",
+    "height": 742,
+    "split": null,
+    "cols": null,
+    "icons": 2
+   }
+  ],
+  "n": 19,
+  "height": 13533,
+  "icons": 125,
+  "splits": 5,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 6,
+  "items": 106,
+  "media": 0,
+  "faq": 1,
+  "faqItems": 0,
+  "overflowX": false
+ },
+ "cx|1440|candidate": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "Gcalls CX – hợp nhất mọi điểm chạm khách hàng ",
+    "height": 730,
+    "split": {
+     "ratio": [
+      41,
+      59
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 3
+   },
+   {
+    "i": 1,
+    "heading": "Gcalls CX là gì?",
+    "height": 342,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 2,
+    "heading": "Nhiều kênh giao tiếp không đồng nghĩa với một ",
+    "height": 882,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 4
+   },
+   {
+    "i": 3,
+    "heading": "Một không gian làm việc cho nhiều điểm chạm kh",
+    "height": 776,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 4,
+    "heading": "Kết nối những kênh khách hàng đang sử dụng",
+    "height": 1211,
+    "split": null,
+    "cols": null,
+    "icons": 5
+   },
+   {
+    "i": 5,
+    "heading": "Giảm việc chuyển đổi giữa nhiều màn hình khi x",
+    "height": 776,
+    "split": {
+     "ratio": [
+      44,
+      56
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 5
+   },
+   {
+    "i": 6,
+    "heading": "Biến hội thoại thành công việc có trạng thái v",
+    "height": 748,
+    "split": {
+     "ratio": [
+      44,
+      56
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 5
+   },
+   {
+    "i": 7,
+    "heading": "Hiểu những gì đã xảy ra trước khi phản hồi khá",
+    "height": 748,
+    "split": {
+     "ratio": [
+      44,
+      56
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 6
+   },
+   {
+    "i": 8,
+    "heading": "Từ nhiều điểm chạm đến một quy trình chăm sóc ",
+    "height": 573,
+    "split": null,
+    "cols": {
+     "n": 5,
+     "tracks": 5,
+     "zero": 0
+    },
+    "icons": 0
+   },
+   {
+    "i": 9,
+    "heading": "Theo dõi hoạt động đa kênh từ dữ liệu tập trun",
+    "height": 748,
+    "split": {
+     "ratio": [
+      44,
+      56
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 4
+   },
+   {
+    "i": 10,
+    "heading": "Giúp đội CSKH làm việc với ít điểm đứt gãy hơn",
+    "height": 780,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 4
+   },
+   {
+    "i": 11,
+    "heading": "Gcalls CX phù hợp với những mô hình có nhiều đ",
+    "height": 704,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 4
+   },
+   {
+    "i": 12,
+    "heading": "Kết nối giao tiếp đa kênh với dữ liệu và quy t",
+    "height": 392,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 13,
+    "heading": "Mỗi bài toán giao tiếp cần một lớp sản phẩm kh",
+    "height": 645,
+    "split": null,
+    "cols": null,
+    "icons": 5
+   },
+   {
+    "i": 14,
+    "heading": "Thiết kế cấu hình theo kênh và workflow doanh ",
+    "height": 712,
+    "split": null,
+    "cols": {
+     "n": 7,
+     "tracks": 5,
+     "zero": 0
+    },
+    "icons": 0
+   },
+   {
+    "i": 15,
+    "heading": "Mỗi hành trình khách hàng cần một workflow khá",
+    "height": 473,
+    "split": {
+     "ratio": [
+      60,
+      40
+     ],
+     "copyFirst": true
+    },
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 16,
+    "heading": "Chi phí phụ thuộc vào số kênh, người dùng và p",
+    "height": 473,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 17,
+    "heading": "Câu hỏi thường gặp về Gcalls CX",
+    "height": 1209,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 18,
+    "heading": "Xem Gcalls CX hoạt động trên chính hành trình ",
+    "height": 398,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   }
+  ],
+  "n": 19,
+  "height": 13322,
+  "icons": 45,
+  "splits": 6,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 6,
+  "items": 57,
+  "media": 11,
+  "faq": 1,
+  "faqItems": 12,
+  "overflowX": false
+ },
+ "voicebot|1440|react": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "Tự động hóa các cuộc gọi lặp lại bằng Voicebot",
+    "height": 898,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 5
+   },
+   {
+    "i": 1,
+    "heading": "Khi những cuộc gọi lặp lại chiếm quá nhiều ngu",
+    "height": 640,
+    "split": null,
+    "cols": {
+     "n": 3,
+     "tracks": 3,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 2,
+    "heading": "Những tình huống cuộc gọi có thể cân nhắc đưa ",
+    "height": 925,
+    "split": null,
+    "cols": {
+     "n": 6,
+     "tracks": 3,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 3,
+    "heading": "Một chiến dịch Voicebot diễn ra như thế nào",
+    "height": 900,
+    "split": null,
+    "cols": {
+     "n": 6,
+     "tracks": 3,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 4,
+    "heading": "Những gì một triển khai Voicebot được xây dựng",
+    "height": 766,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 10
+   },
+   {
+    "i": 5,
+    "heading": "AI xử lý tác vụ lặp lại, con người xử lý tương",
+    "height": 825,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 9
+   },
+   {
+    "i": 6,
+    "heading": "Voicebot có thể được khảo sát tích hợp vào hệ ",
+    "height": 932,
+    "split": null,
+    "cols": {
+     "n": 5,
+     "tracks": 3,
+     "zero": 0
+    },
+    "icons": 6
+   },
+   {
+    "i": 7,
+    "heading": "Những nhóm ngành thường có nhiều cuộc gọi lặp ",
+    "height": 651,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 4,
+     "zero": 0
+    },
+    "icons": 6
+   },
+   {
+    "i": 8,
+    "heading": "Từ khảo sát nhu cầu đến vận hành và tối ưu",
+    "height": 720,
+    "split": null,
+    "cols": {
+     "n": 5,
+     "tracks": 5,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 9,
+    "heading": "Những thay đổi doanh nghiệp có thể hướng tới",
+    "height": 772,
+    "split": null,
+    "cols": {
+     "n": 5,
+     "tracks": 3,
+     "zero": 0
+    },
+    "icons": 6
+   },
+   {
+    "i": 10,
+    "heading": "Câu hỏi thường gặp về Voicebot AI",
+    "height": 847,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 11,
+    "heading": "Bắt đầu từ một tình huống cuộc gọi phù hợp với",
+    "height": 694,
+    "split": null,
+    "cols": null,
+    "icons": 2
+   }
+  ],
+  "n": 12,
+  "height": 10222,
+  "icons": 66,
+  "splits": 3,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 3,
+  "items": 81,
+  "media": 0,
+  "faq": 1,
+  "faqItems": 0,
+  "overflowX": false
+ },
+ "voicebot|1440|candidate": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "Tự động hóa các cuộc gọi lặp lại bằng Voicebot",
+    "height": 548,
+    "split": {
+     "ratio": [
+      41,
+      59
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 0
+   },
+   {
+    "i": 1,
+    "heading": "Khi những cuộc gọi lặp lại chiếm quá nhiều ngu",
+    "height": 678,
+    "split": null,
+    "cols": {
+     "n": 3,
+     "tracks": 3,
+     "zero": 0
+    },
+    "icons": 3
+   },
+   {
+    "i": 2,
+    "heading": "Những tình huống cuộc gọi có thể cân nhắc đưa ",
+    "height": 956,
+    "split": null,
+    "cols": {
+     "n": 6,
+     "tracks": 3,
+     "zero": 0
+    },
+    "icons": 6
+   },
+   {
+    "i": 3,
+    "heading": "Một chiến dịch Voicebot diễn ra như thế nào",
+    "height": 966,
+    "split": null,
+    "cols": {
+     "n": 6,
+     "tracks": 5,
+     "zero": 0
+    },
+    "icons": 0
+   },
+   {
+    "i": 4,
+    "heading": "Những gì một triển khai Voicebot được xây dựng",
+    "height": 748,
+    "split": {
+     "ratio": [
+      44,
+      56
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 5
+   },
+   {
+    "i": 5,
+    "heading": "AI xử lý tác vụ lặp lại, con người xử lý tương",
+    "height": 362,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 6,
+    "heading": "Voicebot có thể được khảo sát tích hợp vào hệ ",
+    "height": 511,
+    "split": null,
+    "cols": {
+     "n": 5,
+     "tracks": 5,
+     "zero": 0
+    },
+    "icons": 5
+   },
+   {
+    "i": 7,
+    "heading": "Những nhóm ngành thường có nhiều cuộc gọi lặp ",
+    "height": 778,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 4
+   },
+   {
+    "i": 8,
+    "heading": "Từ khảo sát nhu cầu đến vận hành và tối ưu",
+    "height": 624,
+    "split": null,
+    "cols": {
+     "n": 5,
+     "tracks": 5,
+     "zero": 0
+    },
+    "icons": 0
+   },
+   {
+    "i": 9,
+    "heading": "Những thay đổi doanh nghiệp có thể hướng tới",
+    "height": 392,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 10,
+    "heading": "Câu hỏi thường gặp về Gcalls Voicebot AI",
+    "height": 1236,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 11,
+    "heading": "Bắt đầu từ một tình huống cuộc gọi phù hợp với",
+    "height": 355,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   }
+  ],
+  "n": 12,
+  "height": 8156,
+  "icons": 23,
+  "splits": 2,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 2,
+  "items": 29,
+  "media": 3,
+  "faq": 1,
+  "faqItems": 12,
+  "overflowX": false
+ },
+ "qa-qc|1440|react": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "QA QC Center – AI hỗ trợ kiểm soát chất lượng ",
+    "height": 949,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 6
+   },
+   {
+    "i": 1,
+    "heading": "QA QC Center là gì?",
+    "height": 520,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 2,
+    "heading": "Khi số lượng cuộc gọi tăng, nghe lại thủ công ",
+    "height": 795,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 3,
+    "heading": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đ",
+    "height": 726,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 7,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 11
+   },
+   {
+    "i": 4,
+    "heading": "Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+    "height": 660,
+    "split": null,
+    "cols": {
+     "n": 5,
+     "tracks": 5,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 5,
+    "heading": "Các năng lực cốt lõi hỗ trợ đội QA",
+    "height": 1014,
+    "split": null,
+    "cols": {
+     "n": 7,
+     "tracks": 3,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 6,
+    "heading": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ",
+    "height": 645,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 11
+   },
+   {
+    "i": 7,
+    "heading": "Nhận diện từ khóa và tín hiệu hội thoại cần đư",
+    "height": 655,
+    "split": null,
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 7
+   },
+   {
+    "i": 8,
+    "heading": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ ",
+    "height": 677,
+    "split": null,
+    "cols": {
+     "n": 3,
+     "tracks": 3,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 9,
+    "heading": "Từ từng cuộc gọi đến góc nhìn chất lượng của c",
+    "height": 622,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 3
+   },
+   {
+    "i": 10,
+    "heading": "Giúp đội QA tập trung thời gian vào việc cần c",
+    "height": 505,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 4,
+     "zero": 0
+    },
+    "icons": 1
+   },
+   {
+    "i": 11,
+    "heading": "QA QC Center phù hợp với những hoạt động nào?",
+    "height": 573,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 4,
+     "zero": 0
+    },
+    "icons": 4
+   },
+   {
+    "i": 12,
+    "heading": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành",
+    "height": 482,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 13,
+    "heading": "Chọn đúng sản phẩm theo bài toán cần giải quyế",
+    "height": 534,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 4,
+     "zero": 0
+    },
+    "icons": 5
+   },
+   {
+    "i": 14,
+    "heading": "Xây dựng quy trình QA dựa trên dữ liệu hội tho",
+    "height": 673,
+    "split": null,
+    "cols": null,
+    "icons": 2
+   },
+   {
+    "i": 15,
+    "heading": "Cấu hình QA QC Center theo quy mô và bộ tiêu c",
+    "height": 585,
+    "split": {
+     "ratio": [
+      50,
+      50
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 3
+   },
+   {
+    "i": 16,
+    "heading": "Câu hỏi thường gặp về QA QC Center",
+    "height": 821,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 17,
+    "heading": "Xem QA QC Center hoạt động trên chính bộ tiêu ",
+    "height": 694,
+    "split": null,
+    "cols": null,
+    "icons": 2
+   }
+  ],
+  "n": 18,
+  "height": 12783,
+  "icons": 82,
+  "splits": 5,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 6,
+  "items": 87,
+  "media": 0,
+  "faq": 1,
+  "faqItems": 0,
+  "overflowX": false
+ },
+ "qa-qc|1440|candidate": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "QA QC Center – AI hỗ trợ kiểm soát chất lượng ",
+    "height": 649,
+    "split": {
+     "ratio": [
+      41,
+      59
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 3
+   },
+   {
+    "i": 1,
+    "heading": "QA QC Center là gì?",
+    "height": 372,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 2,
+    "heading": "Khi số lượng cuộc gọi tăng, nghe lại thủ công ",
+    "height": 924,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 4
+   },
+   {
+    "i": 3,
+    "heading": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đ",
+    "height": 748,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 4,
+    "heading": "Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+    "height": 622,
+    "split": null,
+    "cols": {
+     "n": 5,
+     "tracks": 5,
+     "zero": 0
+    },
+    "icons": 0
+   },
+   {
+    "i": 5,
+    "heading": "Các năng lực cốt lõi hỗ trợ đội QA",
+    "height": 1037,
+    "split": null,
+    "cols": {
+     "n": 7,
+     "tracks": 3,
+     "zero": 0
+    },
+    "icons": 7
+   },
+   {
+    "i": 6,
+    "heading": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ",
+    "height": 748,
+    "split": {
+     "ratio": [
+      44,
+      56
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 5
+   },
+   {
+    "i": 7,
+    "heading": "Nhận diện từ khóa và tín hiệu hội thoại cần đư",
+    "height": 776,
+    "split": {
+     "ratio": [
+      44,
+      56
+     ],
+     "copyFirst": true
+    },
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 4
+   },
+   {
+    "i": 8,
+    "heading": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ ",
+    "height": 392,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 9,
+    "heading": "Từ từng cuộc gọi đến góc nhìn chất lượng của c",
+    "height": 776,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 10,
+    "heading": "Giúp đội QA tập trung thời gian vào việc cần c",
+    "height": 780,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 4
+   },
+   {
+    "i": 11,
+    "heading": "QA QC Center phù hợp với những hoạt động nào?",
+    "height": 704,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 4
+   },
+   {
+    "i": 12,
+    "heading": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành",
+    "height": 362,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 13,
+    "heading": "Chọn đúng sản phẩm theo bài toán cần giải quyế",
+    "height": 575,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 14,
+    "heading": "Cấu hình QA QC Center theo quy mô và bộ tiêu c",
+    "height": 443,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 15,
+    "heading": "Xây dựng quy trình QA dựa trên dữ liệu hội tho",
+    "height": 432,
+    "split": {
+     "ratio": [
+      62,
+      38
+     ],
+     "copyFirst": true
+    },
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 16,
+    "heading": "Câu hỏi thường gặp về QA QC Center",
+    "height": 1209,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 17,
+    "heading": "Xem QA QC Center hoạt động trên chính bộ tiêu ",
+    "height": 357,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   }
+  ],
+  "n": 18,
+  "height": 11907,
+  "icons": 35,
+  "splits": 4,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 6,
+  "items": 40,
+  "media": 9,
+  "faq": 1,
+  "faqItems": 12,
+  "overflowX": false
+ },
+ "gcalls-plus|390|react": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "Gcalls Plus Webphone – tổng đài doanh nghiệp n",
+    "height": 1941,
+    "split": null,
+    "cols": null,
+    "icons": 5
+   },
+   {
+    "i": 1,
+    "heading": "Gcalls Plus Webphone là gì?",
+    "height": 533,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 2,
+    "heading": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi ch",
+    "height": 1248,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 3,
+    "heading": "Webphone đưa chức năng tổng đài vào trình duyệ",
+    "height": 1211,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 4,
+     "zero": 0
+    },
+    "icons": 18
+   },
+   {
+    "i": 4,
+    "heading": "Các chức năng cần thiết cho hoạt động nghe gọi",
+    "height": 1713,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 5,
+    "heading": "Theo dõi hành trình tương tác thay vì chỉ nhìn",
+    "height": 1103,
+    "split": null,
+    "cols": null,
+    "icons": 7
+   },
+   {
+    "i": 6,
+    "heading": "Hiểu khách hàng trước khi tiếp tục cuộc hội th",
+    "height": 1466,
+    "split": null,
+    "cols": null,
+    "icons": 5
+   },
+   {
+    "i": 7,
+    "heading": "Từ cuộc gọi đến bước follow-up tiếp theo",
+    "height": 1103,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 8,
+    "heading": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ ",
+    "height": 1869,
+    "split": null,
+    "cols": {
+     "n": 6,
+     "tracks": 6,
+     "zero": 0
+    },
+    "icons": 6
+   },
+   {
+    "i": 9,
+    "heading": "Mở rộng Gcalls Plus vào quy trình CRM khi doan",
+    "height": 793,
+    "split": null,
+    "cols": null,
+    "icons": 3
+   },
+   {
+    "i": 10,
+    "heading": "Gcalls Plus phù hợp với những đội ngũ nào?",
+    "height": 1268,
+    "split": null,
+    "cols": null,
+    "icons": 3
+   },
+   {
+    "i": 11,
+    "heading": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước ",
+    "height": 1074,
+    "split": null,
+    "cols": null,
+    "icons": 10
+   },
+   {
+    "i": 12,
+    "heading": "Triển khai theo nhu cầu vận hành thực tế",
+    "height": 1327,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 13,
+    "heading": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu ",
+    "height": 627,
+    "split": null,
+    "cols": null,
+    "icons": 3
+   },
+   {
+    "i": 14,
+    "heading": "Đồng hành cùng nhiều mô hình doanh nghiệp khác",
+    "height": 671,
+    "split": null,
+    "cols": null,
+    "icons": 3
+   },
+   {
+    "i": 15,
+    "heading": "Câu hỏi thường gặp về Gcalls Plus Webphone",
+    "height": 906,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 16,
+    "heading": "Bắt đầu với một hệ thống nghe gọi phù hợp với ",
+    "height": 696,
+    "split": null,
+    "cols": null,
+    "icons": 2
+   }
+  ],
+  "n": 17,
+  "height": 21465,
+  "icons": 82,
+  "splits": 0,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 5,
+  "items": 61,
+  "media": 6,
+  "faq": 1,
+  "faqItems": 0,
+  "overflowX": false
+ },
+ "gcalls-plus|390|candidate": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "Gcalls Plus Webphone – tổng đài doanh nghiệp n",
+    "height": 876,
+    "split": null,
+    "cols": null,
+    "icons": 3
+   },
+   {
+    "i": 1,
+    "heading": "Gcalls Plus Webphone là gì?",
+    "height": 479,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 2,
+    "heading": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi ch",
+    "height": 1480,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 3,
+    "heading": "Webphone đưa chức năng tổng đài vào trình duyệ",
+    "height": 969,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 4,
+    "heading": "Các chức năng cần thiết cho hoạt động nghe gọi",
+    "height": 1752,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 5,
+    "heading": "Theo dõi hành trình tương tác thay vì chỉ nhìn",
+    "height": 959,
+    "split": null,
+    "cols": null,
+    "icons": 5
+   },
+   {
+    "i": 6,
+    "heading": "Hiểu khách hàng trước khi tiếp tục cuộc hội th",
+    "height": 882,
+    "split": null,
+    "cols": null,
+    "icons": 3
+   },
+   {
+    "i": 7,
+    "heading": "Từ cuộc gọi đến bước follow-up tiếp theo",
+    "height": 1005,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 8,
+    "heading": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ ",
+    "height": 880,
+    "split": null,
+    "cols": null,
+    "icons": 3
+   },
+   {
+    "i": 9,
+    "heading": "Mở rộng Gcalls Plus vào quy trình CRM khi doan",
+    "height": 536,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 10,
+    "heading": "Gcalls Plus phù hợp với những đội ngũ nào?",
+    "height": 1350,
+    "split": null,
+    "cols": null,
+    "icons": 5
+   },
+   {
+    "i": 11,
+    "heading": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước ",
+    "height": 891,
+    "split": null,
+    "cols": null,
+    "icons": 9
+   },
+   {
+    "i": 12,
+    "heading": "Triển khai theo nhu cầu vận hành thực tế",
+    "height": 1230,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 13,
+    "heading": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu ",
+    "height": 534,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 14,
+    "heading": "Đồng hành cùng nhiều mô hình doanh nghiệp khác",
+    "height": 487,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 15,
+    "heading": "Câu hỏi thường gặp về Gcalls Plus Webphone",
+    "height": 1567,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 16,
+    "heading": "Bắt đầu với một hệ thống nghe gọi phù hợp với ",
+    "height": 527,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   }
+  ],
+  "n": 17,
+  "height": 16404,
+  "icons": 42,
+  "splits": 0,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 5,
+  "items": 52,
+  "media": 9,
+  "faq": 1,
+  "faqItems": 12,
+  "overflowX": false
+ },
+ "cx|390|react": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "Gcalls CX – hợp nhất mọi điểm chạm khách hàng ",
+    "height": 1508,
+    "split": null,
+    "cols": null,
+    "icons": 15
+   },
+   {
+    "i": 1,
+    "heading": "Gcalls CX là gì?",
+    "height": 507,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 2,
+    "heading": "Nhiều kênh giao tiếp không đồng nghĩa với một ",
+    "height": 1255,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 3,
+    "heading": "Một không gian làm việc cho nhiều điểm chạm kh",
+    "height": 1226,
+    "split": null,
+    "cols": null,
+    "icons": 17
+   },
+   {
+    "i": 4,
+    "heading": "Kết nối những kênh khách hàng đang sử dụng",
+    "height": 1032,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 5,
+    "heading": "Giảm việc chuyển đổi giữa nhiều màn hình khi x",
+    "height": 1135,
+    "split": null,
+    "cols": null,
+    "icons": 17
+   },
+   {
+    "i": 6,
+    "heading": "Biến hội thoại thành công việc có trạng thái v",
+    "height": 1003,
+    "split": null,
+    "cols": null,
+    "icons": 8
+   },
+   {
+    "i": 7,
+    "heading": "Hiểu những gì đã xảy ra trước khi phản hồi khá",
+    "height": 1086,
+    "split": null,
+    "cols": null,
+    "icons": 14
+   },
+   {
+    "i": 8,
+    "heading": "Từ nhiều điểm chạm đến một quy trình chăm sóc ",
+    "height": 1438,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 9,
+    "heading": "Theo dõi hoạt động đa kênh từ dữ liệu tập trun",
+    "height": 1160,
+    "split": null,
+    "cols": {
+     "n": 2,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 10
+   },
+   {
+    "i": 10,
+    "heading": "Giúp đội CSKH làm việc với ít điểm đứt gãy hơn",
+    "height": 895,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 11,
+    "heading": "Gcalls CX phù hợp với những mô hình có nhiều đ",
+    "height": 1155,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 12,
+    "heading": "Kết nối giao tiếp đa kênh với dữ liệu và quy t",
+    "height": 541,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 13,
+    "heading": "Mỗi bài toán giao tiếp cần một lớp sản phẩm kh",
+    "height": 947,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 14,
+    "heading": "Thiết kế cấu hình theo kênh và workflow doanh ",
+    "height": 1459,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 15,
+    "heading": "Mỗi hành trình khách hàng cần một workflow khá",
+    "height": 682,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 16,
+    "heading": "Chi phí phụ thuộc vào số kênh, người dùng và p",
+    "height": 653,
+    "split": null,
+    "cols": null,
+    "icons": 3
+   },
+   {
+    "i": 17,
+    "heading": "Câu hỏi thường gặp về Gcalls CX",
+    "height": 866,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 18,
+    "heading": "Xem Gcalls CX hoạt động trên chính hành trình ",
+    "height": 774,
+    "split": null,
+    "cols": null,
+    "icons": 2
+   }
+  ],
+  "n": 19,
+  "height": 21235,
+  "icons": 120,
+  "splits": 0,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 6,
+  "items": 106,
+  "media": 0,
+  "faq": 1,
+  "faqItems": 0,
+  "overflowX": false
+ },
+ "cx|390|candidate": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "Gcalls CX – hợp nhất mọi điểm chạm khách hàng ",
+    "height": 876,
+    "split": null,
+    "cols": null,
+    "icons": 3
+   },
+   {
+    "i": 1,
+    "heading": "Gcalls CX là gì?",
+    "height": 449,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 2,
+    "heading": "Nhiều kênh giao tiếp không đồng nghĩa với một ",
+    "height": 1564,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 3,
+    "heading": "Một không gian làm việc cho nhiều điểm chạm kh",
+    "height": 726,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 4,
+    "heading": "Kết nối những kênh khách hàng đang sử dụng",
+    "height": 1251,
+    "split": null,
+    "cols": null,
+    "icons": 5
+   },
+   {
+    "i": 5,
+    "heading": "Giảm việc chuyển đổi giữa nhiều màn hình khi x",
+    "height": 984,
+    "split": null,
+    "cols": null,
+    "icons": 5
+   },
+   {
+    "i": 6,
+    "heading": "Biến hội thoại thành công việc có trạng thái v",
+    "height": 984,
+    "split": null,
+    "cols": null,
+    "icons": 5
+   },
+   {
+    "i": 7,
+    "heading": "Hiểu những gì đã xảy ra trước khi phản hồi khá",
+    "height": 967,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 8,
+    "heading": "Từ nhiều điểm chạm đến một quy trình chăm sóc ",
+    "height": 1289,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 9,
+    "heading": "Theo dõi hoạt động đa kênh từ dữ liệu tập trun",
+    "height": 892,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 10,
+    "heading": "Giúp đội CSKH làm việc với ít điểm đứt gãy hơn",
+    "height": 1254,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 11,
+    "heading": "Gcalls CX phù hợp với những mô hình có nhiều đ",
+    "height": 1156,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 12,
+    "heading": "Kết nối giao tiếp đa kênh với dữ liệu và quy t",
+    "height": 427,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 13,
+    "heading": "Mỗi bài toán giao tiếp cần một lớp sản phẩm kh",
+    "height": 774,
+    "split": null,
+    "cols": null,
+    "icons": 5
+   },
+   {
+    "i": 14,
+    "heading": "Thiết kế cấu hình theo kênh và workflow doanh ",
+    "height": 1335,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 15,
+    "heading": "Mỗi hành trình khách hàng cần một workflow khá",
+    "height": 578,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 16,
+    "heading": "Chi phí phụ thuộc vào số kênh, người dùng và p",
+    "height": 593,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 17,
+    "heading": "Câu hỏi thường gặp về Gcalls CX",
+    "height": 1657,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 18,
+    "heading": "Xem Gcalls CX hoạt động trên chính hành trình ",
+    "height": 555,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   }
+  ],
+  "n": 19,
+  "height": 18311,
+  "icons": 45,
+  "splits": 0,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 6,
+  "items": 57,
+  "media": 11,
+  "faq": 1,
+  "faqItems": 12,
+  "overflowX": false
+ },
+ "voicebot|390|react": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "Tự động hóa các cuộc gọi lặp lại bằng Voicebot",
+    "height": 1513,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 5
+   },
+   {
+    "i": 1,
+    "heading": "Khi những cuộc gọi lặp lại chiếm quá nhiều ngu",
+    "height": 1095,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 2,
+    "heading": "Những tình huống cuộc gọi có thể cân nhắc đưa ",
+    "height": 1989,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 3,
+    "heading": "Một chiến dịch Voicebot diễn ra như thế nào",
+    "height": 1786,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 4,
+    "heading": "Những gì một triển khai Voicebot được xây dựng",
+    "height": 1256,
+    "split": null,
+    "cols": null,
+    "icons": 10
+   },
+   {
+    "i": 5,
+    "heading": "AI xử lý tác vụ lặp lại, con người xử lý tương",
+    "height": 1217,
+    "split": null,
+    "cols": null,
+    "icons": 9
+   },
+   {
+    "i": 6,
+    "heading": "Voicebot có thể được khảo sát tích hợp vào hệ ",
+    "height": 1500,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 7,
+    "heading": "Những nhóm ngành thường có nhiều cuộc gọi lặp ",
+    "height": 1310,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 8,
+    "heading": "Từ khảo sát nhu cầu đến vận hành và tối ưu",
+    "height": 1534,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 9,
+    "heading": "Những thay đổi doanh nghiệp có thể hướng tới",
+    "height": 1341,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 10,
+    "heading": "Câu hỏi thường gặp về Voicebot AI",
+    "height": 971,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 11,
+    "heading": "Bắt đầu từ một tình huống cuộc gọi phù hợp với",
+    "height": 627,
+    "split": null,
+    "cols": null,
+    "icons": 2
+   }
+  ],
+  "n": 12,
+  "height": 18054,
+  "icons": 61,
+  "splits": 0,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 3,
+  "items": 81,
+  "media": 0,
+  "faq": 1,
+  "faqItems": 0,
+  "overflowX": false
+ },
+ "voicebot|390|candidate": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "Tự động hóa các cuộc gọi lặp lại bằng Voicebot",
+    "height": 803,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 1,
+    "heading": "Khi những cuộc gọi lặp lại chiếm quá nhiều ngu",
+    "height": 1316,
+    "split": null,
+    "cols": null,
+    "icons": 3
+   },
+   {
+    "i": 2,
+    "heading": "Những tình huống cuộc gọi có thể cân nhắc đưa ",
+    "height": 2034,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 3,
+    "heading": "Một chiến dịch Voicebot diễn ra như thế nào",
+    "height": 1646,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 4,
+    "heading": "Những gì một triển khai Voicebot được xây dựng",
+    "height": 1087,
+    "split": null,
+    "cols": null,
+    "icons": 5
+   },
+   {
+    "i": 5,
+    "heading": "AI xử lý tác vụ lặp lại, con người xử lý tương",
+    "height": 398,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 6,
+    "heading": "Voicebot có thể được khảo sát tích hợp vào hệ ",
+    "height": 822,
+    "split": null,
+    "cols": {
+     "n": 5,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 5
+   },
+   {
+    "i": 7,
+    "heading": "Những nhóm ngành thường có nhiều cuộc gọi lặp ",
+    "height": 1232,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 8,
+    "heading": "Từ khảo sát nhu cầu đến vận hành và tối ưu",
+    "height": 1312,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 9,
+    "heading": "Những thay đổi doanh nghiệp có thể hướng tới",
+    "height": 398,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 10,
+    "heading": "Câu hỏi thường gặp về Gcalls Voicebot AI",
+    "height": 1831,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 11,
+    "heading": "Bắt đầu từ một tình huống cuộc gọi phù hợp với",
+    "height": 469,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   }
+  ],
+  "n": 12,
+  "height": 13348,
+  "icons": 23,
+  "splits": 0,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 2,
+  "items": 29,
+  "media": 3,
+  "faq": 1,
+  "faqItems": 12,
+  "overflowX": false
+ },
+ "qa-qc|390|react": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "QA QC Center – AI hỗ trợ kiểm soát chất lượng ",
+    "height": 1489,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 1,
+    "heading": "QA QC Center là gì?",
+    "height": 533,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 2,
+    "heading": "Khi số lượng cuộc gọi tăng, nghe lại thủ công ",
+    "height": 1379,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 3,
+    "heading": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đ",
+    "height": 1275,
+    "split": null,
+    "cols": null,
+    "icons": 11
+   },
+   {
+    "i": 4,
+    "heading": "Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+    "height": 1409,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 5,
+    "heading": "Các năng lực cốt lõi hỗ trợ đội QA",
+    "height": 1899,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 6,
+    "heading": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ",
+    "height": 1064,
+    "split": null,
+    "cols": null,
+    "icons": 11
+   },
+   {
+    "i": 7,
+    "heading": "Nhận diện từ khóa và tín hiệu hội thoại cần đư",
+    "height": 954,
+    "split": null,
+    "cols": null,
+    "icons": 7
+   },
+   {
+    "i": 8,
+    "heading": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ ",
+    "height": 1023,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 9,
+    "heading": "Từ từng cuộc gọi đến góc nhìn chất lượng của c",
+    "height": 931,
+    "split": null,
+    "cols": {
+     "n": 4,
+     "tracks": 2,
+     "zero": 0
+    },
+    "icons": 3
+   },
+   {
+    "i": 10,
+    "heading": "Giúp đội QA tập trung thời gian vào việc cần c",
+    "height": 973,
+    "split": null,
+    "cols": null,
+    "icons": 1
+   },
+   {
+    "i": 11,
+    "heading": "QA QC Center phù hợp với những hoạt động nào?",
+    "height": 1064,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 12,
+    "heading": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành",
+    "height": 471,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 13,
+    "heading": "Chọn đúng sản phẩm theo bài toán cần giải quyế",
+    "height": 805,
+    "split": null,
+    "cols": null,
+    "icons": 5
+   },
+   {
+    "i": 14,
+    "heading": "Xây dựng quy trình QA dựa trên dữ liệu hội tho",
+    "height": 661,
+    "split": null,
+    "cols": null,
+    "icons": 2
+   },
+   {
+    "i": 15,
+    "heading": "Cấu hình QA QC Center theo quy mô và bộ tiêu c",
+    "height": 601,
+    "split": null,
+    "cols": null,
+    "icons": 3
+   },
+   {
+    "i": 16,
+    "heading": "Câu hỏi thường gặp về QA QC Center",
+    "height": 926,
+    "split": null,
+    "cols": null,
+    "icons": 6
+   },
+   {
+    "i": 17,
+    "heading": "Xem QA QC Center hoạt động trên chính bộ tiêu ",
+    "height": 717,
+    "split": null,
+    "cols": null,
+    "icons": 2
+   }
+  ],
+  "n": 18,
+  "height": 20087,
+  "icons": 77,
+  "splits": 0,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 6,
+  "items": 87,
+  "media": 0,
+  "faq": 1,
+  "faqItems": 0,
+  "overflowX": false
+ },
+ "qa-qc|390|candidate": {
+  "rows": [
+   {
+    "i": 0,
+    "heading": "QA QC Center – AI hỗ trợ kiểm soát chất lượng ",
+    "height": 876,
+    "split": null,
+    "cols": null,
+    "icons": 3
+   },
+   {
+    "i": 1,
+    "heading": "QA QC Center là gì?",
+    "height": 449,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 2,
+    "heading": "Khi số lượng cuộc gọi tăng, nghe lại thủ công ",
+    "height": 1585,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 3,
+    "heading": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đ",
+    "height": 755,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 4,
+    "heading": "Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+    "height": 1284,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 5,
+    "heading": "Các năng lực cốt lõi hỗ trợ đội QA",
+    "height": 1964,
+    "split": null,
+    "cols": null,
+    "icons": 7
+   },
+   {
+    "i": 6,
+    "heading": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ",
+    "height": 981,
+    "split": null,
+    "cols": null,
+    "icons": 5
+   },
+   {
+    "i": 7,
+    "heading": "Nhận diện từ khóa và tín hiệu hội thoại cần đư",
+    "height": 943,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 8,
+    "heading": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ ",
+    "height": 457,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 9,
+    "heading": "Từ từng cuộc gọi đến góc nhìn chất lượng của c",
+    "height": 726,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 10,
+    "heading": "Giúp đội QA tập trung thời gian vào việc cần c",
+    "height": 1302,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 11,
+    "heading": "QA QC Center phù hợp với những hoạt động nào?",
+    "height": 1102,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 12,
+    "heading": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành",
+    "height": 398,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 13,
+    "heading": "Chọn đúng sản phẩm theo bài toán cần giải quyế",
+    "height": 673,
+    "split": null,
+    "cols": null,
+    "icons": 4
+   },
+   {
+    "i": 14,
+    "heading": "Cấu hình QA QC Center theo quy mô và bộ tiêu c",
+    "height": 504,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 15,
+    "heading": "Xây dựng quy trình QA dựa trên dữ liệu hội tho",
+    "height": 578,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 16,
+    "heading": "Câu hỏi thường gặp về QA QC Center",
+    "height": 1695,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   },
+   {
+    "i": 17,
+    "heading": "Xem QA QC Center hoạt động trên chính bộ tiêu ",
+    "height": 498,
+    "split": null,
+    "cols": null,
+    "icons": 0
+   }
+  ],
+  "n": 18,
+  "height": 16769,
+  "icons": 35,
+  "splits": 0,
+  "zeroTracks": 0,
+  "worstGap": 0,
+  "gapSpread": "0–0",
+  "ctas": 6,
+  "items": 40,
+  "media": 9,
+  "faq": 1,
+  "faqItems": 12,
+  "overflowX": false
+ }
+}

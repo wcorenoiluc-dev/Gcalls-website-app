@@ -1,0 +1,2903 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tong-dai-tich-hop-helpdesk — WordPress candidate</title>
+<style>/**
+ * Gcalls theme styles.
+ *
+ * The tokens below are transcribed from src/styles/theme.css in the React
+ * source, which stays the design reference. Values are duplicated rather than
+ * imported on purpose — the React build is not deployed with this site, so an
+ * import would be a broken link, and a token that silently disappears is worse
+ * than one written down twice. When a token changes in the React source it must
+ * be changed here in the same commit.
+ *
+ * Layout tokens that are also declared in theme.json (colours, font sizes,
+ * spacing steps) are the block editor's copy of the same values. theme.json
+ * feeds the editor UI; this file styles the classic templates. They must agree.
+ */
+
+/* -------------------------------------------------------------------------
+ * Border-box, and why its absence was the whole responsive problem
+ *
+ * Without this, `.gcalls-container` — `width: 100%` plus `padding-inline: var(
+ * --gcalls-gutter)` — computes to viewport + 2 × gutter. EVERY container on the
+ * site was wider than the screen by exactly that much: 64px at 1024 where the
+ * gutter is 2rem, 40px at 768 and below where it is 1.25rem. The measured
+ * overflow matched to the pixel.
+ *
+ * It was invisible during 003A/003B because the pages were nearly empty and
+ * nothing was measured. It is the single root cause of the horizontal
+ * scrolling at every breakpoint, so it is fixed here rather than patched
+ * container by container.
+ * ---------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	/* Brand */
+	--gcalls-brand: #673ab7;
+	--gcalls-brand-dark: #4a2391;
+	--gcalls-brand-light: #f5f1fc;
+	--gcalls-brand-gradient: linear-gradient(135deg, #673ab7 0%, #4a2391 100%);
+
+	/* Surfaces and text */
+	--gcalls-surface: #ffffff;
+	--gcalls-surface-alt: #faf9fc;
+	--gcalls-foreground: #1e2026;
+	--gcalls-muted: #5b5f6b;
+	--gcalls-border: #e8e5ef;
+	--gcalls-border-soft: rgba(103, 58, 183, 0.12);
+
+	/* Type */
+	--gcalls-font-sans: 'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--gcalls-font-mono: 'DM Mono', ui-monospace, SFMono-Regular, monospace;
+	--gcalls-font-size: 1rem;
+	--gcalls-line-height: 1.65;
+
+	/* Geometry */
+	--gcalls-container: 1280px;
+	--gcalls-measure: 760px;
+	--gcalls-gutter: 1.25rem;
+	--gcalls-radius: 0.625rem;
+	--gcalls-radius-sm: 0.375rem;
+
+	/* Spacing scale — matches theme.json spacingSizes. */
+	--gcalls-space-1: 0.5rem;
+	--gcalls-space-2: 1rem;
+	--gcalls-space-3: 1.5rem;
+	--gcalls-space-4: 2.5rem;
+	--gcalls-space-5: 4rem;
+	--gcalls-space-6: 6rem;
+}
+
+@media (min-width: 1024px) {
+	:root {
+		--gcalls-gutter: 2rem;
+	}
+}
+
+/* -------------------------------------------------------------------------
+ * Base
+ * ---------------------------------------------------------------------- */
+
+body {
+	margin: 0;
+	background: var(--gcalls-surface);
+	color: var(--gcalls-foreground);
+	font-family: var(--gcalls-font-sans);
+	font-size: var(--gcalls-font-size);
+	line-height: var(--gcalls-line-height);
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 var(--gcalls-space-2);
+	line-height: 1.25;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: clamp(1.875rem, 1.2rem + 2.2vw, 3rem);
+}
+
+h2 {
+	font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
+}
+
+h3 {
+	font-size: 1.375rem;
+}
+
+p,
+ul,
+ol {
+	margin: 0 0 var(--gcalls-space-2);
+}
+
+a {
+	color: var(--gcalls-brand);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.15em;
+}
+
+a:hover,
+a:focus {
+	color: var(--gcalls-brand-dark);
+}
+
+/* No image may impose a desktop width on a phone. */
+img,
+video,
+iframe,
+svg {
+	max-width: 100%;
+	height: auto;
+}
+
+code,
+pre {
+	font-family: var(--gcalls-font-mono);
+	font-size: 0.9375em;
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+	outline: 2px solid var(--gcalls-brand);
+	outline-offset: 2px;
+}
+
+/* -------------------------------------------------------------------------
+ * Accessibility helpers
+ * ---------------------------------------------------------------------- */
+
+.screen-reader-text {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}
+
+.gcalls-skip-link:focus {
+	position: fixed !important;
+	top: var(--gcalls-space-1);
+	left: var(--gcalls-space-1);
+	z-index: 999;
+	width: auto;
+	height: auto;
+	clip-path: none;
+	padding: var(--gcalls-space-1) var(--gcalls-space-2);
+	background: var(--gcalls-surface);
+	border-radius: var(--gcalls-radius-sm);
+	box-shadow: 0 2px 12px rgba(30, 32, 38, 0.18);
+}
+
+/* -------------------------------------------------------------------------
+ * Layout
+ * ---------------------------------------------------------------------- */
+
+.gcalls-container {
+	width: 100%;
+	max-width: var(--gcalls-container);
+	margin-inline: auto;
+	padding-inline: var(--gcalls-gutter);
+}
+
+.gcalls-stack {
+	padding-block: var(--gcalls-space-4) var(--gcalls-space-5);
+}
+
+/* An Elementor page manages its own width; the theme must not constrain it. */
+.gcalls-page--elementor,
+.gcalls-page--full-width {
+	width: 100%;
+}
+
+.gcalls-prose {
+	max-width: var(--gcalls-measure);
+}
+
+.gcalls-prose > * + * {
+	margin-top: var(--gcalls-space-2);
+}
+
+.gcalls-prose h2 {
+	margin-top: var(--gcalls-space-4);
+}
+
+.gcalls-prose h3 {
+	margin-top: var(--gcalls-space-3);
+}
+
+.gcalls-prose table {
+	width: 100%;
+	border-collapse: collapse;
+	display: block;
+	overflow-x: auto;
+}
+
+.gcalls-prose th,
+.gcalls-prose td {
+	border: 1px solid var(--gcalls-border);
+	padding: var(--gcalls-space-1) var(--gcalls-space-2);
+	text-align: left;
+	vertical-align: top;
+}
+
+/* -------------------------------------------------------------------------
+ * Header and navigation
+ * ---------------------------------------------------------------------- */
+
+.gcalls-header {
+	border-bottom: 1px solid var(--gcalls-border);
+	background: var(--gcalls-surface);
+}
+
+.gcalls-header__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--gcalls-space-2);
+	min-height: 72px;
+}
+
+.gcalls-branding {
+	margin: 0;
+	font-size: 1.25rem;
+	font-weight: 800;
+}
+
+/* .gcalls-branding__text is defined in the parity layer at the foot of this
+ * file, together with the mark it sits beside. */
+
+.gcalls-header__toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	padding: 0;
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius-sm);
+	background: var(--gcalls-surface);
+	cursor: pointer;
+}
+
+.gcalls-header__toggle-bar,
+.gcalls-header__toggle-bar::before,
+.gcalls-header__toggle-bar::after {
+	display: block;
+	width: 18px;
+	height: 2px;
+	background: var(--gcalls-foreground);
+	content: '';
+}
+
+.gcalls-header__toggle-bar {
+	position: relative;
+}
+
+.gcalls-header__toggle-bar::before {
+	position: absolute;
+	top: -6px;
+}
+
+.gcalls-header__toggle-bar::after {
+	position: absolute;
+	top: 6px;
+}
+
+.gcalls-nav__list,
+.gcalls-footer__list,
+.gcalls-footer__legal-list,
+.gcalls-terms {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gcalls-nav__list a {
+	display: block;
+	padding: var(--gcalls-space-1) 0;
+	color: var(--gcalls-foreground);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.gcalls-nav__list a:hover,
+.gcalls-nav__list .current-menu-item > a {
+	color: var(--gcalls-brand);
+}
+
+/* Mobile first: the menu is a closed panel until the toggle opens it. */
+@media (max-width: 1023px) {
+	.gcalls-nav {
+		position: absolute;
+		left: 0;
+		right: 0;
+		display: none;
+		padding: var(--gcalls-space-2) var(--gcalls-gutter) var(--gcalls-space-3);
+		background: var(--gcalls-surface);
+		border-bottom: 1px solid var(--gcalls-border);
+		box-shadow: 0 12px 24px rgba(30, 32, 38, 0.08);
+		z-index: 20;
+	}
+
+	.gcalls-nav.is-open {
+		display: block;
+	}
+
+	.gcalls-header__inner {
+		position: relative;
+		flex-wrap: wrap;
+	}
+
+	.gcalls-nav__list .sub-menu {
+		list-style: none;
+		margin: 0;
+		padding-left: var(--gcalls-space-2);
+	}
+}
+
+@media (min-width: 1024px) {
+	.gcalls-header__toggle {
+		display: none;
+	}
+
+	.gcalls-nav__list {
+		display: flex;
+		align-items: center;
+		gap: var(--gcalls-space-3);
+	}
+
+	.gcalls-nav__list .sub-menu {
+		position: absolute;
+		display: none;
+		min-width: 220px;
+		list-style: none;
+		margin: 0;
+		padding: var(--gcalls-space-1);
+		background: var(--gcalls-surface);
+		border: 1px solid var(--gcalls-border);
+		border-radius: var(--gcalls-radius);
+		box-shadow: 0 12px 24px rgba(30, 32, 38, 0.1);
+		z-index: 20;
+	}
+
+	.gcalls-nav__list > li {
+		position: relative;
+	}
+
+	.gcalls-nav__list > li:hover > .sub-menu,
+	.gcalls-nav__list > li:focus-within > .sub-menu {
+		display: block;
+	}
+}
+
+/* -------------------------------------------------------------------------
+ * Cards, meta, terms
+ * ---------------------------------------------------------------------- */
+
+.gcalls-cards {
+	display: grid;
+	gap: var(--gcalls-space-3);
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+	.gcalls-cards {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1024px) {
+	.gcalls-cards {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+.gcalls-card {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background: var(--gcalls-surface);
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius);
+}
+
+.gcalls-card__body {
+	padding: var(--gcalls-space-3);
+}
+
+.gcalls-card__title {
+	margin: 0 0 var(--gcalls-space-1);
+	font-size: 1.125rem;
+}
+
+.gcalls-card__title a {
+	color: var(--gcalls-foreground);
+	text-decoration: none;
+}
+
+.gcalls-card__title a:hover {
+	color: var(--gcalls-brand);
+}
+
+.gcalls-card__excerpt {
+	margin: 0 0 var(--gcalls-space-2);
+	color: var(--gcalls-muted);
+}
+
+.gcalls-meta {
+	margin: 0;
+	color: var(--gcalls-muted);
+	font-size: 0.875rem;
+}
+
+.gcalls-terms {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gcalls-space-1);
+	margin-bottom: var(--gcalls-space-1);
+}
+
+.gcalls-terms__item a {
+	display: inline-block;
+	padding: 0.125rem 0.625rem;
+	background: var(--gcalls-brand-light);
+	border-radius: 999px;
+	color: var(--gcalls-brand-dark);
+	font-size: 0.8125rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.gcalls-thumbnail {
+	margin: 0;
+}
+
+.gcalls-thumbnail img {
+	display: block;
+	width: 100%;
+}
+
+/* -------------------------------------------------------------------------
+ * Page header, breadcrumbs, buttons
+ * ---------------------------------------------------------------------- */
+
+.gcalls-page-header {
+	max-width: var(--gcalls-measure);
+	margin-bottom: var(--gcalls-space-3);
+}
+
+.gcalls-page-header__intro {
+	color: var(--gcalls-muted);
+}
+
+.gcalls-breadcrumbs {
+	margin-bottom: var(--gcalls-space-2);
+	color: var(--gcalls-muted);
+	font-size: 0.875rem;
+}
+
+.gcalls-breadcrumbs ol {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.375rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gcalls-breadcrumbs li + li::before {
+	margin-right: 0.375rem;
+	content: '/';
+	color: var(--gcalls-border);
+}
+
+.gcalls-button {
+	display: inline-block;
+	padding: 0.75rem 1.5rem;
+	background: var(--gcalls-brand-gradient);
+	border-radius: var(--gcalls-radius);
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.gcalls-button:hover,
+.gcalls-button:focus {
+	color: #fff;
+	filter: brightness(1.08);
+}
+
+/* -------------------------------------------------------------------------
+ * Post navigation, pagination, empty state, footer
+ * ---------------------------------------------------------------------- */
+
+.gcalls-article__footer {
+	max-width: var(--gcalls-measure);
+	margin-top: var(--gcalls-space-4);
+	padding-top: var(--gcalls-space-3);
+	border-top: 1px solid var(--gcalls-border);
+}
+
+.post-navigation .nav-links {
+	display: grid;
+	gap: var(--gcalls-space-2);
+}
+
+@media (min-width: 768px) {
+	.post-navigation .nav-links {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+.gcalls-post-nav__label {
+	display: block;
+	color: var(--gcalls-muted);
+	font-size: 0.8125rem;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.pagination .nav-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gcalls-space-1);
+	margin-top: var(--gcalls-space-4);
+}
+
+.pagination .page-numbers {
+	display: inline-block;
+	min-width: 40px;
+	padding: 0.5rem 0.75rem;
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius-sm);
+	text-align: center;
+	text-decoration: none;
+}
+
+.pagination .page-numbers.current {
+	background: var(--gcalls-brand);
+	border-color: var(--gcalls-brand);
+	color: #fff;
+}
+
+.gcalls-empty {
+	max-width: var(--gcalls-measure);
+	padding: var(--gcalls-space-4);
+	background: var(--gcalls-surface-alt);
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius);
+}
+
+.gcalls-empty__title {
+	margin-top: 0;
+}
+
+.gcalls-footer {
+	margin-top: var(--gcalls-space-6);
+	padding-block: var(--gcalls-space-4);
+	background: var(--gcalls-surface-alt);
+	border-top: 1px solid var(--gcalls-border);
+}
+
+.gcalls-footer__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gcalls-space-3);
+}
+
+.gcalls-footer__list a,
+.gcalls-footer__legal-list a {
+	color: var(--gcalls-foreground);
+	text-decoration: none;
+}
+
+.gcalls-footer__list a:hover,
+.gcalls-footer__legal-list a:hover {
+	color: var(--gcalls-brand);
+}
+
+.gcalls-footer__bottom {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--gcalls-space-2);
+	margin-top: var(--gcalls-space-3);
+	padding-top: var(--gcalls-space-2);
+	border-top: 1px solid var(--gcalls-border);
+	color: var(--gcalls-muted);
+	font-size: 0.875rem;
+}
+
+.gcalls-footer__legal-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gcalls-space-2);
+}
+
+.gcalls-widget {
+	margin-bottom: var(--gcalls-space-3);
+}
+
+.gcalls-widget__title {
+	font-size: 1.0625rem;
+}
+
+/* -------------------------------------------------------------------------
+ * Checkpoint 003B P0 — imported content and the shortcode layer
+ *
+ * Every value below is a token. A literal #673ab7 here would survive a rebrand
+ * of the token block above and quietly become the one purple that did not
+ * change, which is the failure mode elementor-templates/README.md warns about.
+ * ---------------------------------------------------------------------- */
+
+/* FAQ — rendered by gcalls-core from _gcalls_faq, with <details>/<summary> so
+ * it is keyboard accessible and open to find-in-page without JavaScript. */
+.gcalls-faq {
+	margin-block: var(--gcalls-space-4);
+	max-width: var(--gcalls-measure);
+}
+
+.gcalls-faq__title {
+	font-size: 1.5rem;
+	margin-bottom: var(--gcalls-space-2);
+}
+
+.gcalls-faq__item {
+	border-bottom: 1px solid var(--gcalls-border);
+}
+
+.gcalls-faq__question {
+	cursor: pointer;
+	font-weight: 600;
+	list-style: none;
+	padding: var(--gcalls-space-2) 2rem var(--gcalls-space-2) 0;
+	position: relative;
+}
+
+/* The question is an h3 inside the summary, so it carries the outline while
+   the summary carries the click target. It must not inherit the heading scale
+   or a question would out-size the section it sits under. */
+.gcalls-faq__question h3 {
+	display: inline;
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: inherit;
+}
+
+.gcalls-faq__question::-webkit-details-marker {
+	display: none;
+}
+
+/* The marker is drawn rather than typed so it rotates on open and needs no
+ * icon font. */
+.gcalls-faq__question::after {
+	border-bottom: 2px solid var(--gcalls-brand);
+	border-right: 2px solid var(--gcalls-brand);
+	content: "";
+	height: 0.5rem;
+	position: absolute;
+	right: 0.5rem;
+	top: 1.4rem;
+	transform: rotate(45deg);
+	transition: transform 150ms ease;
+	width: 0.5rem;
+}
+
+.gcalls-faq__item[open] .gcalls-faq__question::after {
+	transform: rotate(-135deg);
+}
+
+.gcalls-faq__answer {
+	color: var(--gcalls-muted);
+	padding-bottom: var(--gcalls-space-2);
+}
+
+/* CTA — the conversion button, always carrying its attribution query string. */
+.gcalls-cta-band {
+	margin-block: var(--gcalls-space-3);
+}
+
+.gcalls-cta {
+	align-items: center;
+	border-radius: var(--gcalls-radius-sm);
+	display: inline-flex;
+	font-weight: 600;
+	justify-content: center;
+	min-height: 3rem;
+	padding: 0 1.5rem;
+	text-decoration: none;
+	transition: background-color 150ms ease;
+}
+
+.gcalls-cta--primary {
+	background: var(--gcalls-brand);
+	color: #fff;
+}
+
+.gcalls-cta--primary:hover,
+.gcalls-cta--primary:focus-visible {
+	background: var(--gcalls-brand-dark);
+	color: #fff;
+}
+
+.gcalls-cta--secondary {
+	border: 1px solid var(--gcalls-brand);
+	color: var(--gcalls-brand);
+}
+
+.gcalls-cta-band__note {
+	color: var(--gcalls-muted);
+	font-size: 0.875rem;
+	margin-top: var(--gcalls-space-1);
+}
+
+/* Lead panel — deliberately disabled while no destination is approved. The
+ * reduced opacity is the visible half of that decision; the notice above it is
+ * the half that explains itself. */
+.gcalls-lead {
+	background: var(--gcalls-brand-light);
+	border-radius: var(--gcalls-radius);
+	margin-block: var(--gcalls-space-4);
+	padding: var(--gcalls-space-3);
+}
+
+.gcalls-lead__notice {
+	background: var(--gcalls-surface);
+	border-left: 3px solid var(--gcalls-brand);
+	border-radius: var(--gcalls-radius-sm);
+	margin-bottom: var(--gcalls-space-3);
+	padding: var(--gcalls-space-2);
+}
+
+.gcalls-lead__contact {
+	font-weight: 600;
+	margin-top: var(--gcalls-space-1);
+}
+
+.gcalls-lead__form fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.gcalls-lead__form fieldset[disabled] {
+	opacity: 0.6;
+}
+
+.gcalls-lead__field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	margin-bottom: var(--gcalls-space-2);
+}
+
+.gcalls-lead__field label {
+	font-size: 0.875rem;
+	font-weight: 600;
+}
+
+.gcalls-lead__field input,
+.gcalls-lead__field textarea {
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius-sm);
+	font: inherit;
+	padding: 0.6rem 0.75rem;
+	width: 100%;
+}
+
+/* Imported article furniture. */
+.gcalls-direct-answer {
+	background: var(--gcalls-brand-light);
+	border-left: 3px solid var(--gcalls-brand);
+	border-radius: var(--gcalls-radius-sm);
+	margin-block: var(--gcalls-space-3);
+	padding: var(--gcalls-space-2) var(--gcalls-space-3);
+}
+
+/* The article grammar has a checklist; WordPress core has no checklist block,
+ * so it is imported as a list with this class rather than as a custom block
+ * type that would render as a broken placeholder without the plugin. */
+.gcalls-checklist {
+	list-style: none;
+	padding-left: 0;
+}
+
+.gcalls-checklist li {
+	padding-left: 1.75rem;
+	position: relative;
+}
+
+.gcalls-checklist li::before {
+	border: 1px solid var(--gcalls-brand);
+	border-radius: 3px;
+	content: "";
+	height: 1rem;
+	left: 0;
+	position: absolute;
+	top: 0.35rem;
+	width: 1rem;
+}
+
+/* Hub-grouped blog archive. */
+.gcalls-hub-index__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gcalls-space-1);
+	list-style: none;
+	margin: 0 0 var(--gcalls-space-4);
+	padding: 0;
+}
+
+.gcalls-hub-index__list a {
+	align-items: center;
+	background: var(--gcalls-brand-light);
+	border-radius: 999px;
+	display: inline-flex;
+	gap: 0.4rem;
+	font-size: 0.875rem;
+	padding: 0.4rem 0.9rem;
+	text-decoration: none;
+}
+
+.gcalls-hub-index__count {
+	background: var(--gcalls-brand);
+	border-radius: 999px;
+	color: #fff;
+	font-size: 0.75rem;
+	min-width: 1.25rem;
+	padding: 0 0.35rem;
+	text-align: center;
+}
+
+.gcalls-hub-group {
+	margin-bottom: var(--gcalls-space-5);
+	/* The index links here; without this the sticky header covers the title. */
+	scroll-margin-top: var(--gcalls-space-4);
+}
+
+.gcalls-hub-group__title {
+	border-bottom: 2px solid var(--gcalls-brand-light);
+	font-size: 1.375rem;
+	margin-bottom: var(--gcalls-space-2);
+	padding-bottom: var(--gcalls-space-1);
+}
+
+.gcalls-hub-group__description {
+	color: var(--gcalls-muted);
+	margin-bottom: var(--gcalls-space-2);
+}
+
+.gcalls-hub-total {
+	border-top: 1px solid var(--gcalls-border);
+	padding-top: var(--gcalls-space-2);
+}
+
+/* -------------------------------------------------------------------------
+ * Footer columns
+ *
+ * The footer menu is five groups (Sản phẩm, Giải pháp, Khám phá, Tài nguyên,
+ * Gcalls) each with children. Rendered with the shared list rules it came out
+ * as one flat row of 28 links, which is not a footer — it is a sentence.
+ *
+ * Each group is now its own landmark with an h2 title, matching React: see
+ * gcalls_footer_columns() in inc/template-tags.php for why that difference is
+ * not cosmetic. The columns are laid out by the footer's own grid, so there is
+ * no inner auto-fit here — nesting one auto-fit inside another gave five
+ * columns of one link at 1440 and one column of five links at 1439.
+ * ---------------------------------------------------------------------- */
+.gcalls-footer__column-title {
+	margin: 0 0 var(--gcalls-space-1);
+	color: var(--gcalls-foreground);
+	font-weight: 700;
+	font-size: 0.875rem;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.gcalls-footer__list {
+	display: grid;
+	gap: 0.35rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gcalls-footer__list a {
+	/* 44px, so a footer link is a comfortable tap target on a phone. */
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	color: var(--gcalls-muted);
+	font-weight: 400;
+	font-size: 0.9375rem;
+	text-decoration: none;
+}
+
+.gcalls-footer__list a:hover,
+.gcalls-footer__list a:focus-visible {
+	color: var(--gcalls-brand);
+}
+
+/* -------------------------------------------------------------------------
+ * Overflow guard
+ *
+ * The acceptance gate is zero horizontal overflow at 1440/1024/768/390/320.
+ * Long unbroken strings — a Vietnamese heading with no spaces near a narrow
+ * column, a raw URL in imported prose — are the usual cause, and they are
+ * cheaper to prevent globally than to hunt page by page. Wide blocks that
+ * genuinely need width scroll inside themselves rather than pushing the body.
+ * ---------------------------------------------------------------------- */
+html,
+body {
+	overflow-x: hidden;
+}
+
+.gcalls-prose img,
+.gcalls-prose iframe,
+.gcalls-media,
+.wp-block-image img {
+	max-width: 100%;
+	height: auto;
+}
+
+.gcalls-prose table,
+.wp-block-table {
+	display: block;
+	max-width: 100%;
+	overflow-x: auto;
+}
+
+.gcalls-prose a,
+.gcalls-page-header__title,
+.gcalls-card__title {
+	overflow-wrap: anywhere;
+}
+
+/* Form controls size themselves from attributes, not from their container. A
+ * <textarea> defaults to cols="20", which renders around 384px wide and ignores
+ * a 320px screen entirely — that is the comment form, and it was the last
+ * source of horizontal overflow on an article page after the box-sizing fix. */
+input,
+select,
+textarea,
+button {
+	max-width: 100%;
+}
+
+textarea {
+	width: 100%;
+}
+
+/* Imported legacy bodies contain hand-built markup with inline widths and long
+ * unbroken URLs. These stay inside their column rather than widening the page. */
+.gcalls-prose pre,
+.gcalls-prose code {
+	max-width: 100%;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.gcalls-prose [style*="width"] {
+	max-width: 100%;
+}
+
+/* -------------------------------------------------------------------------
+ * Checkpoint 006 — design system, sticky header, footer brand
+ * ---------------------------------------------------------------------- */
+
+/* Heading scale. Declared once with clamp() rather than three media queries:
+ * the sizes then move continuously between 320 and 1440 instead of jumping at
+ * two arbitrary widths, and there is one number to change per level. */
+.gcalls-page-header__title,
+.gcalls-prose h1 { font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.15; }
+.gcalls-prose h2 { font-size: clamp(1.375rem, 2.6vw, 1.875rem); line-height: 1.25; margin-top: var(--gcalls-space-4); }
+.gcalls-prose h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); line-height: 1.3; margin-top: var(--gcalls-space-3); }
+
+/* Focus. A single visible ring on every interactive element — the demo has to
+ * be operable from the keyboard, and :focus-visible keeps it off mouse clicks. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+	outline: 2px solid var(--gcalls-brand);
+	outline-offset: 2px;
+	border-radius: var(--gcalls-radius-sm);
+}
+
+/* Sticky header, as in React. z-index sits above Elementor sections but below
+ * the mobile panel's own stacking so the panel cannot slide under the bar. */
+.gcalls-header {
+	position: sticky;
+	top: 0;
+	z-index: 30;
+	background: var(--gcalls-surface);
+}
+
+/* The admin bar is itself fixed at the top for logged-in users; without this
+ * the sticky header hides beneath it. */
+.admin-bar .gcalls-header { top: 32px; }
+@media (max-width: 782px) { .admin-bar .gcalls-header { top: 46px; } }
+
+/* Scroll lock while the mobile panel is open. */
+html.gcalls-nav-open,
+html.gcalls-nav-open body { overflow: hidden; }
+
+@media (min-width: 1024px) {
+	/* Belt and braces against both navigations rendering at once: above the
+	 * breakpoint the panel state is irrelevant and the bar always shows. */
+	html.gcalls-nav-open,
+	html.gcalls-nav-open body { overflow: auto; }
+	.gcalls-nav { display: flex; align-items: center; gap: var(--gcalls-space-3); }
+}
+
+/* Header CTA. */
+.gcalls-nav__cta .gcalls-cta-band { margin: 0; }
+.gcalls-nav__cta .gcalls-cta { min-height: 2.5rem; padding: 0 1.1rem; }
+
+@media (max-width: 1023px) {
+	.gcalls-nav__cta { margin-top: var(--gcalls-space-2); }
+	.gcalls-nav__cta .gcalls-cta { width: 100%; }
+}
+
+/* Footer layout: the brand block and five link columns.
+ *
+ * auto-fit below 1024 so the columns collapse from five to three to one with
+ * no extra breakpoints, which is what keeps 320px free of overflow. */
+.gcalls-footer__inner {
+	display: grid;
+	gap: var(--gcalls-space-4);
+	grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
+	align-items: start;
+}
+
+/* The brand column carries a sentence, so it needs roughly twice the width of
+   a link column before the five columns line up beside it. */
+@media (min-width: 1024px) {
+	.gcalls-footer__inner { grid-template-columns: 1.6fr repeat(5, minmax(0, 1fr)); }
+}
+
+.gcalls-footer__brand-name { font-weight: 800; font-size: 1.125rem; margin: 0 0 var(--gcalls-space-1); }
+.gcalls-footer__brand-desc { color: var(--gcalls-muted); font-size: 0.9375rem; margin: 0 0 var(--gcalls-space-2); max-width: 40ch; }
+.gcalls-footer__contact { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.3rem; font-weight: 600; }
+.gcalls-footer__contact a { color: var(--gcalls-brand); text-decoration: none; }
+.gcalls-footer__contact a:hover { text-decoration: underline; }
+.gcalls-footer__bottom { grid-column: 1 / -1; }
+
+/* Blog cards. Equal height whatever the excerpt length, and a designed
+ * text-only state — the 18 articles have no featured image and a card that just
+ * loses its top half looks broken rather than intentional. */
+.gcalls-cards {
+	display: grid;
+	gap: var(--gcalls-space-3);
+	grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+}
+
+.gcalls-card {
+	background: var(--gcalls-surface);
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.gcalls-card:hover { border-color: var(--gcalls-brand); box-shadow: 0 6px 20px rgba(103, 58, 183, 0.08); }
+.gcalls-card__body { display: flex; flex-direction: column; gap: 0.5rem; flex: 1; padding: var(--gcalls-space-2); }
+.gcalls-card__title { font-size: 1.0625rem; line-height: 1.35; margin: 0; }
+.gcalls-card__title a { color: var(--gcalls-foreground); text-decoration: none; }
+.gcalls-card__title a:hover { color: var(--gcalls-brand); }
+.gcalls-card__excerpt { color: var(--gcalls-muted); font-size: 0.9375rem; margin: 0; }
+.gcalls-card .gcalls-meta { margin-top: auto; padding-top: var(--gcalls-space-1); }
+
+/* The text-only card gets a brand strip so it reads as a deliberate style
+ * rather than a card whose image failed to load. */
+.gcalls-card:not(:has(.gcalls-card__media)) { border-top: 3px solid var(--gcalls-brand); }
+
+/* Related posts under an article. */
+.gcalls-related { margin-top: var(--gcalls-space-5); }
+.gcalls-related__title { font-size: 1.25rem; margin-bottom: var(--gcalls-space-2); }
+
+/* The lead panel's own label. An h4 by markup — it sits inside a section that
+   already has a heading — but sized like the panel title it is. */
+.gcalls-lead__title {
+	margin: 0 0 var(--gcalls-space-2);
+	font-size: 1.25rem;
+	font-weight: 800;
+	letter-spacing: -0.01em;
+}
+
+/* The fallback page title on a full-width template — printed only when the
+   content brings no h1 of its own. See page-templates/full-width.php. */
+.gcalls-page__title {
+	margin: var(--gcalls-space-5) 0 var(--gcalls-space-3);
+}
+
+/* The listing's own heading, and the count that belongs with each hub name.
+   The count is the second half of the heading, not a separate label, so it
+   reads as one phrase to a screen reader. */
+.gcalls-hub-heading {
+	margin: var(--gcalls-space-5) 0 var(--gcalls-space-3);
+}
+
+.gcalls-hub-group__count {
+	margin-left: 0.5rem;
+	color: var(--gcalls-muted);
+	font-size: 0.8125rem;
+	font-weight: 500;
+}
+
+/* =====================================================================
+ * React parity layer — 010
+ * =====================================================================
+ * The Elementor template carries structure and words; everything below
+ * carries the look. The split is deliberate and load-bearing:
+ * qa-foundation enforces an approved-colour list against the template
+ * JSON, and the reference design legitimately uses tints outside it
+ * (#9c63d6 in the heading gradient, three card accents). Putting those
+ * in the template would either fail that gate or force it to be
+ * loosened, and a loosened gate stops catching the stray colours it
+ * exists for. So the template emits class names and this file resolves
+ * them — which also means a palette change is one file, not a
+ * regenerated page.
+ *
+ * Every rule here is measured off src/components/home/*.tsx. Where a
+ * comment cites a Tailwind class, that is the class in the reference.
+ * ===================================================================== */
+
+/* Eyebrow pill. Reference: PainPointsSection header and Hero label badge —
+ * rgba brand wash, brand text, uppercase, 0.08em tracking. */
+.gc-eyebrow {
+	align-items: center;
+	background: rgba(103, 58, 183, 0.08);
+	border-radius: 999px;
+	color: var(--gcalls-brand);
+	display: inline-flex;
+	font-size: 0.75rem;
+	font-weight: 700;
+	gap: 0.5rem;
+	letter-spacing: 0.08em;
+	line-height: 1.4;
+	padding: 0.375rem 0.875rem;
+	text-transform: uppercase;
+}
+
+/* The hero's badge sits on a tinted section, so it carries a touch more
+ * fill to stay legible, plus the live dot. */
+.gc-eyebrow--hero { background: rgba(103, 58, 183, 0.1); }
+
+.gc-eyebrow__dot {
+	background: var(--gcalls-brand);
+	border-radius: 50%;
+	flex: none;
+	height: 0.375rem;
+	width: 0.375rem;
+	animation: gc-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes gc-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+@media (prefers-reduced-motion: reduce) {
+	.gc-eyebrow__dot { animation: none; }
+}
+
+/* Headings. The reference sets a fluid size with clamp() and keeps the
+ * body of the line in ink, colouring only the emphasised span — so the
+ * gradient reads as emphasis rather than as decoration on everything. */
+.gc-h1,
+.gc-h2 {
+	color: var(--gcalls-foreground);
+	font-family: var(--gcalls-font-sans);
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	margin: 0;
+}
+
+.gc-h1 { font-size: clamp(32px, 4.5vw, 54px); line-height: 1.12; }
+.gc-h2 { font-size: clamp(28px, 3.5vw, 44px); line-height: 1.15; }
+
+/* Clipped-gradient emphasis. -webkit-text-fill-color is what actually
+ * hides the solid colour; the plain `color` above is the fallback for
+ * engines without background-clip:text, which then render brand ink
+ * rather than an invisible line. */
+.gc-grad {
+	background-image: linear-gradient(135deg, #673ab7 0%, #9c63d6 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: var(--gcalls-brand);
+}
+
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+	.gc-grad { -webkit-text-fill-color: currentColor; color: var(--gcalls-brand); }
+}
+
+/* Centred section header: max-w-3xl mx-auto text-center mb-16. */
+.gc-head {
+	margin: 0 auto 4rem;
+	max-width: 48rem;
+	text-align: center;
+}
+
+.gc-head .gc-h2 { margin-top: 1.5rem; }
+
+.gc-head__lead {
+	color: var(--gcalls-muted);
+	font-size: 1.0625rem;
+	line-height: 1.7;
+	margin: 1.25rem 0 0;
+}
+
+/* ── Card grid ───────────────────────────────────────────────────────
+ * Reference: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5.
+ *
+ * This is a CSS grid inside ONE widget, not a row of Elementor columns.
+ * Elementor columns in a single section never wrap — they only get
+ * narrower — so six "33%" columns rendered as six across at every width
+ * instead of 3×2, which is what the audit found. A grid wraps by
+ * definition and needs no per-breakpoint column maths. */
+.gc-cards {
+	display: grid;
+	gap: 1.25rem;
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) { .gc-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .gc-cards--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .gc-cards--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+.gc-card {
+	--gc-accent: #673ab7;
+	--gc-accent-bg: #f5f0fd;
+	background: var(--gcalls-surface);
+	border: 1px solid rgba(103, 58, 183, 0.1);
+	border-radius: 20px;
+	box-shadow: 0 2px 12px rgba(103, 58, 183, 0.06), 0 1px 4px rgba(0, 0, 0, 0.03);
+	display: flex;
+	flex-direction: column;
+	padding: 1.75rem;
+	transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+/* Three accents, cycling, exactly as the reference data assigns them. */
+.gc-card:nth-child(3n + 2) { --gc-accent: #7c3aed; --gc-accent-bg: #f3f0fe; }
+.gc-card:nth-child(3n + 3) { --gc-accent: #5b21b6; --gc-accent-bg: #f0ebfd; }
+
+.gc-card:hover {
+	box-shadow: 0 20px 48px rgba(103, 58, 183, 0.14), 0 4px 12px rgba(0, 0, 0, 0.05);
+	transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gc-card, .gc-card:hover { transform: none; transition: none; }
+}
+
+.gc-card__icon {
+	align-items: center;
+	background: var(--gc-accent-bg);
+	border-radius: 1rem;
+	color: var(--gc-accent);
+	display: flex;
+	height: 3rem;
+	justify-content: center;
+	margin-bottom: 1.25rem;
+	transition: background-color 200ms ease, color 200ms ease;
+	width: 3rem;
+}
+
+.gc-card:hover .gc-card__icon { background: var(--gc-accent); color: #fff; }
+.gc-card__icon svg { height: 22px; width: 22px; }
+
+.gc-card__top {
+	align-items: flex-start;
+	display: flex;
+	gap: 0.5rem;
+	justify-content: space-between;
+	margin-bottom: 0.75rem;
+}
+
+/* A heading here is a real h3 — the card title heads the paragraph under
+ * it, so it is a heading in the document outline and not a styled div. */
+.gc-card__top h3 {
+	color: var(--gcalls-foreground);
+	font-size: 0.9375rem;
+	font-weight: 700;
+	line-height: 1.4;
+	margin: 0;
+}
+
+.gc-card__n {
+	color: rgba(103, 58, 183, 0.25);
+	flex: none;
+	font-family: var(--gcalls-font-mono);
+	font-size: 0.75rem;
+	font-weight: 700;
+	margin-top: 0.125rem;
+}
+
+.gc-card__body {
+	color: var(--gcalls-muted);
+	font-size: 0.875rem;
+	line-height: 1.7;
+	margin: 0;
+}
+
+.gc-card__rule {
+	background: linear-gradient(90deg, var(--gc-accent), transparent);
+	border-radius: 999px;
+	height: 2px;
+	margin-top: 1.25rem;
+	opacity: 0;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.gc-card:hover .gc-card__rule { opacity: 1; transform: scaleX(1); }
+
+/* ── Product / solution ecosystem ───────────────────────────────────────
+ *
+ * Parity target: src/components/home/EcosystemSection.tsx.
+ *
+ * The vertical rhythm lives here and in the generator's section padding, not
+ * in a fixed height: every box below is sized by its content. The group head
+ * and its grid are one block (.gc-eco-group) precisely so no section padding
+ * can ever open between a heading and the cards it introduces again.
+ */
+
+.gc-eco-group__head {
+	align-items: flex-end;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: space-between;
+	/* React: mb-7. This is the whole distance from group title to cards. */
+	margin-bottom: 1.75rem;
+}
+
+.gc-eco-group__head .gc-eyebrow { margin: 0 0 0.75rem; }
+
+.gc-eco-group__title {
+	color: var(--gcalls-foreground);
+	font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+	font-weight: 800;
+	line-height: 1.25;
+	margin: 0;
+}
+
+.gc-eco-group__lead {
+	color: var(--gcalls-muted);
+	font-size: 0.875rem;
+	line-height: 1.7;
+	margin: 0;
+	max-width: 24rem;
+}
+
+@media (min-width: 640px) { .gc-eco-group__lead { text-align: right; } }
+
+.gc-eco-grid {
+	display: grid;
+	gap: 1.25rem;
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) { .gc-eco-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .gc-eco-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .gc-eco-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* The whole card is the link — one tab stop, one hit area. `height: 100%`
+ * against the grid track is what keeps a row of cards level regardless of
+ * how long the longest description runs. */
+.gc-eco-card {
+	--gc-accent: #673ab7;
+	--gc-accent-bg: #f5f0fd;
+	background: var(--gcalls-surface);
+	border: 1px solid color-mix(in srgb, var(--gc-accent) 12%, transparent);
+	border-radius: 1rem;
+	box-shadow: 0 2px 12px rgba(103, 58, 183, 0.05);
+	color: inherit;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 1.5rem;
+	text-decoration: none;
+	transition: box-shadow 200ms ease, transform 200ms ease, border-color 200ms ease;
+}
+
+.gc-eco-card--violet { --gc-accent: #673ab7; --gc-accent-bg: #f5f0fd; }
+.gc-eco-card--cyan   { --gc-accent: #0891b2; --gc-accent-bg: #f0f9ff; }
+.gc-eco-card--amber  { --gc-accent: #d97706; --gc-accent-bg: #fffbeb; }
+.gc-eco-card--green  { --gc-accent: #16a34a; --gc-accent-bg: #f0fdf4; }
+.gc-eco-card--sky    { --gc-accent: #0284c7; --gc-accent-bg: #e0f2fe; }
+.gc-eco-card--purple { --gc-accent: #7c3aed; --gc-accent-bg: #f3f0fe; }
+
+.gc-eco-card:hover {
+	border-color: color-mix(in srgb, var(--gc-accent) 38%, transparent);
+	box-shadow: 0 16px 40px color-mix(in srgb, var(--gc-accent) 14%, transparent);
+	transform: translateY(-3px);
+}
+
+.gc-eco-card:focus-visible {
+	outline: 2px solid var(--gc-accent);
+	outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gc-eco-card, .gc-eco-card:hover { transform: none; transition: none; }
+}
+
+.gc-eco-card__icon {
+	align-items: center;
+	background: var(--gc-accent-bg);
+	border-radius: 0.875rem;
+	color: var(--gc-accent);
+	display: flex;
+	flex: none;
+	height: 2.75rem;
+	justify-content: center;
+	margin-bottom: 1rem;
+	width: 2.75rem;
+}
+
+.gc-eco-card__icon svg { height: 20px; width: 20px; }
+
+.gc-eco-card__name {
+	color: var(--gcalls-foreground);
+	font-size: 0.9375rem;
+	font-weight: 700;
+	line-height: 1.35;
+}
+
+.gc-eco-card__supporting {
+	color: var(--gc-accent);
+	font-size: 0.75rem;
+	font-weight: 600;
+	margin-top: 0.25rem;
+}
+
+/* flex: 1 pushes the CTA to the bottom edge of every card, so the CTAs in a
+ * row line up even when the descriptions differ in length. */
+.gc-eco-card__body {
+	color: var(--gcalls-muted);
+	flex: 1;
+	font-size: 0.875rem;
+	line-height: 1.7;
+	margin-top: 0.625rem;
+}
+
+.gc-eco-card__cta {
+	align-items: center;
+	color: var(--gc-accent);
+	display: inline-flex;
+	font-size: 0.75rem;
+	font-weight: 700;
+	gap: 0.375rem;
+	margin-top: 1.25rem;
+}
+
+.gc-eco-card__cta svg {
+	height: 13px;
+	transition: transform 150ms ease;
+	width: 13px;
+}
+
+.gc-eco-card:hover .gc-eco-card__cta svg { transform: translateX(4px); }
+
+@media (prefers-reduced-motion: reduce) {
+	.gc-eco-card:hover .gc-eco-card__cta svg { transform: none; }
+}
+
+/* ── Hero stage safe area ───────────────────────────────────────────────
+ *
+ * The hero's layered composition sits inside `.gcalls-mock`, which sets
+ * `overflow: hidden` so a mockup card can clip its own contents to its rounded
+ * corners. React has no such wrapper around this composition, so its floats
+ * overhang freely (top:-30px, right:-40px, left:-44px). Ported into the mock
+ * card, those same negative offsets fall outside the clip box and get cut: the
+ * incoming-call card lost 22px off its left edge, including its border and the
+ * first letter of every line.
+ *
+ * The clipping is not removed — other mockups rely on it, and switching it off
+ * to hide a layout problem is the thing not to do here. Instead the composition
+ * is made small enough to hold its own overhang: the dashboard gives up 34px on
+ * each side, and the floats move from negative offsets to a 6px inset. The
+ * overlap that makes it read as layered is preserved (28px, against 26px
+ * before); the difference is that all of it is now inside the canvas.
+ *
+ * The 6px absorbs the bounding-box growth from each float's rotation, which is
+ * what was clipping the recording card's top edge by 2px even at `top: 0`.
+ *
+ * Specificity note: mockups.css loads AFTER theme.css, so these overrides are
+ * written with the parent class to win on specificity rather than order.
+ */
+
+@media (min-width: 1024px) {
+	.gcalls-mock .gcalls-stage__main {
+		/* Never wider than the stage minus a safe band on both sides, so the
+		 * overhang has somewhere to live at every desktop width. */
+		max-width: min(480px, calc(100% - 68px));
+	}
+
+	.gcalls-mock .gcalls-stage__float--timeline {
+		top: 6px;
+		right: 6px;
+	}
+
+	.gcalls-mock .gcalls-stage__float--analytics {
+		bottom: 6px;
+		left: 6px;
+	}
+
+	.gcalls-mock .gcalls-stage__float--popup {
+		left: 6px;
+	}
+
+	.gcalls-mock .gcalls-stage__float--dialpad {
+		bottom: 8%;
+		right: 6px;
+	}
+}
+
+/* ── Sub-page vertical rhythm: 50px ─────────────────────────────────────
+ *
+ * The home page is EXCLUDED, and by body class rather than by section index
+ * or page id: `body.home` is set by WordPress itself and survives the front
+ * page being repointed, which an id would not. Its 104px Elementor rhythm and
+ * its hero, ecosystem, analytics and cloud geometry are all signed off and must
+ * not move by a pixel.
+ *
+ * WHERE THE SPACE ACTUALLY IS
+ * On the product pages the rhythm is not padding at all — it is
+ * `margin-bottom: clamp(3.75rem, 7vw, 6.5rem)` on each section, which resolves
+ * to 101px at 1440 and does not drop below 60px until the viewport is under
+ * 860px. Setting a padding here and leaving that margin would have added space
+ * rather than removed it, which is what measuring first was for.
+ *
+ * Blog and estimator carry their own rhythm as margins on the hub groups and
+ * headings. Same treatment.
+ *
+ * NOT TOUCHED, deliberately: card padding, FAQ items, form fields, mockup
+ * canvases, article body paragraphs, the header, and the footer's internals.
+ * Only the gap BETWEEN content sections, and the last section's gap to the
+ * footer, are the rhythm this is about.
+ *
+ * product.css and the blog styles load after theme.css, so every rule below
+ * carries the body scope partly to win on specificity rather than order.
+ */
+
+body:not(.home) .gcalls-product__hero,
+body:not(.home) .gcalls-product__section,
+body:not(.home) .gcalls-product__direct {
+	margin-bottom: 50px;
+}
+
+body:not(.home) .gcalls-product__final,
+body:not(.home) .gcalls-product__faq {
+	margin-top: 50px;
+}
+
+/*
+ * `.gcalls-product__section--alt` is NOT given the 50px block padding.
+ *
+ * It is a panel with its own background and radius, and its padding is uniform
+ * card padding: 56px at 1440 but 20px at 390, where it is also the horizontal
+ * inset. Forcing 50px on the block axis measured as an INCREASE on mobile —
+ * 20px to 50px, and the product pages grew by ~200px each at 390 — for a panel
+ * whose inline padding would still be 20px. That is the "do not blindly apply
+ * 50px to cards" case, so the rhythm rule stops at the gap BETWEEN sections and
+ * leaves panel interiors alone.
+ */
+
+/* Blog archive: hub groups and their headings carry the rhythm. */
+body:not(.home) .gcalls-hub-group {
+	margin-bottom: 50px;
+}
+
+body:not(.home) .gcalls-hub-heading {
+	margin-top: 50px;
+}
+
+body:not(.home) .gcalls-faq {
+	margin-block: 50px;
+}
+
+/* Estimator page title sits directly under the header. */
+body:not(.home) .gcalls-page__title {
+	margin-top: 50px;
+}
+
+/* Last content block to the footer. */
+body:not(.home) .gcalls-footer {
+	margin-top: 50px;
+}
+
+/* ── Sub-heading bound to the copy it introduces ────────────────────── */
+
+.gc-subhead h3 {
+	color: var(--gcalls-foreground);
+	font-size: clamp(1.125rem, 2.2vw, 1.625rem);
+	font-weight: 800;
+	line-height: 1.3;
+	margin: 0;
+}
+
+.gc-subhead p {
+	color: var(--gcalls-muted);
+	font-size: 0.9375rem;
+	line-height: 1.7;
+	/* The whole distance from an h3 to its paragraph, and the only one. */
+	margin: 0.625rem 0 0;
+	max-width: 34rem;
+}
+
+/* ── Plain link-button row ────────────────────────────────────────── */
+
+.gc-linkrow {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: center;
+}
+
+.gc-linkrow__btn {
+	align-items: center;
+	border-radius: 0.75rem;
+	display: inline-flex;
+	font-size: 0.875rem;
+	font-weight: 700;
+	gap: 0.5rem;
+	padding: 0.875rem 1.75rem;
+	text-decoration: none;
+	transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.gc-linkrow__btn svg { height: 15px; width: 15px; }
+
+.gc-linkrow__btn--primary {
+	background: #673ab7;
+	box-shadow: 0 4px 20px rgba(103, 58, 183, 0.3);
+	color: #fff;
+}
+
+.gc-linkrow__btn--primary:hover { background: #5929a8; }
+
+.gc-linkrow__btn--ghost {
+	background: var(--gcalls-surface);
+	border: 1.5px solid rgba(103, 58, 183, 0.25);
+	color: #673ab7;
+}
+
+.gc-linkrow__btn--ghost:hover { border-color: #673ab7; }
+
+.gc-linkrow__btn:focus-visible {
+	outline: 2px solid #673ab7;
+	outline-offset: 2px;
+}
+
+/* ── Hero left column ───────────────────────────────────────────────── */
+
+.gc-hero-lede {
+	color: var(--gcalls-muted);
+	font-size: 1.0625rem;
+	line-height: 1.7;
+	margin: 1.25rem 0 0;
+	max-width: 560px;
+}
+
+/* flex-wrap gap-3: the two buttons sit side by side and wrap together on
+ * a narrow screen rather than each taking a full row, which is how the
+ * port rendered them. */
+.gc-ctarow {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 1.75rem;
+}
+
+.gc-btn {
+	align-items: center;
+	border-radius: 0.75rem;
+	display: inline-flex;
+	font-size: 0.9375rem;
+	font-weight: 700;
+	gap: 0.5rem;
+	line-height: 1;
+	padding: 0.875rem 1.75rem;
+	text-decoration: none;
+	transition: background-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.gc-btn svg { height: 16px; width: 16px; }
+
+.gc-btn--primary {
+	background: var(--gcalls-brand);
+	box-shadow: 0 4px 24px rgba(103, 58, 183, 0.35);
+	color: #fff;
+}
+
+.gc-btn--primary:hover {
+	background: #5929a8;
+	box-shadow: 0 6px 32px rgba(103, 58, 183, 0.45);
+	color: #fff;
+	transform: translateY(-1px);
+}
+
+.gc-btn--ghost {
+	background: var(--gcalls-surface);
+	border: 1.5px solid rgba(103, 58, 183, 0.25);
+	box-shadow: 0 2px 8px rgba(103, 58, 183, 0.06);
+	color: var(--gcalls-brand);
+}
+
+.gc-btn--ghost:hover {
+	background: #f6f3fc;
+	border-color: var(--gcalls-brand);
+	transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gc-btn:hover { transform: none; }
+}
+
+.gc-checks {
+	display: flex;
+	flex-direction: column;
+	gap: 0.625rem;
+	margin-top: 1.75rem;
+}
+
+.gc-check { align-items: center; display: flex; gap: 0.625rem; }
+
+.gc-check__i {
+	align-items: center;
+	background: rgba(103, 58, 183, 0.12);
+	border-radius: 50%;
+	color: var(--gcalls-brand);
+	display: flex;
+	flex: none;
+	height: 1.25rem;
+	justify-content: center;
+	width: 1.25rem;
+}
+
+.gc-check__i svg { height: 11px; width: 11px; }
+
+.gc-check span {
+	color: var(--gcalls-muted);
+	font-size: 0.875rem;
+	font-weight: 500;
+}
+
+/* The claim-safety fine print. Two lines, the second dimmer, above a
+ * hairline — and never inside the mockup frame, where the layered cards
+ * cover it at desktop widths. */
+.gc-fine {
+	border-top: 1px solid rgba(103, 58, 183, 0.1);
+	margin-top: 1.75rem;
+	padding-top: 0.75rem;
+}
+
+.gc-fine p { color: var(--gcalls-muted); font-size: 0.75rem; line-height: 1.6; margin: 0; }
+.gc-fine p + p { color: #8b8f9a; margin-top: 0.375rem; }
+
+/* ── Branding mark and dropdown affordance — 010 parity ───────────────
+ * The port rendered the site title as one word of brand-coloured text.
+ * The reference is a 32px brand tile with a phone glyph beside a
+ * two-tone wordmark, and parent nav items announce their submenu with a
+ * chevron. Without the chevron the only way to discover a submenu is to
+ * hover every item and see what happens. */
+.gcalls-branding__link {
+	align-items: center;
+	display: inline-flex;
+	gap: 0.5rem;
+	min-height: 44px; /* tap target, without growing the 32px mark */
+	text-decoration: none;
+}
+
+.gcalls-branding__mark {
+	align-items: center;
+	background: var(--gcalls-brand);
+	border-radius: 0.5rem;
+	color: #fff;
+	display: flex;
+	flex: none;
+	height: 2rem;
+	justify-content: center;
+	width: 2rem;
+}
+
+.gcalls-branding__mark svg { height: 15px; width: 15px; }
+
+.gcalls-branding__text {
+	color: var(--gcalls-foreground);
+	font-size: 1.0625rem;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	text-decoration: none;
+}
+
+.gcalls-branding__text span { color: var(--gcalls-brand); }
+
+/* Chevron drawn in CSS rather than injected into the menu markup: the
+ * menu is editable in wp-admin, and a glyph added to a label there would
+ * be lost the moment someone renames the item. */
+.gcalls-nav__list .menu-item-has-children > a {
+	align-items: center;
+	display: inline-flex;
+	gap: 0.3rem;
+}
+
+.gcalls-nav__list .menu-item-has-children > a::after {
+	border-bottom: 1.5px solid currentColor;
+	border-right: 1.5px solid currentColor;
+	content: "";
+	display: inline-block;
+	height: 0.4em;
+	transform: translateY(-0.12em) rotate(45deg);
+	width: 0.4em;
+}
+
+@media (min-width: 1024px) {
+	.gcalls-nav__list > .menu-item-has-children:hover > a::after,
+	.gcalls-nav__list > .menu-item-has-children:focus-within > a::after {
+		transform: translateY(0.06em) rotate(-135deg);
+	}
+}
+
+/* =====================================================================
+ * Drawn covers, blog cards and the article page — 012
+ * =====================================================================
+ * Not one of the 250 articles has a featured image, and every inline
+ * image points at a host this site does not control. So the cover is
+ * drawn here: a hue rotated per HUB over the brand gradient, one glyph,
+ * and the hub name. No attachment, no upload, no database write — and
+ * the instant a real featured image exists, gcalls_post_cover() uses it
+ * and none of this renders.
+ * ===================================================================== */
+.gcalls-cover {
+	align-items: center;
+	aspect-ratio: 16 / 9;
+	background:
+		radial-gradient(circle at 78% 18%, hsl(var(--gcalls-cover-hue, 262) 70% 62% / 0.45), transparent 58%),
+		linear-gradient(135deg, hsl(var(--gcalls-cover-hue, 262) 58% 32%), hsl(var(--gcalls-cover-hue, 262) 62% 46%));
+	border-radius: var(--gcalls-radius);
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	justify-content: center;
+	overflow: hidden;
+	padding: 1rem;
+	position: relative;
+	width: 100%;
+}
+
+/* A faint grid, so the panel reads as artwork rather than as a colour
+ * swatch that failed to load an image. */
+.gcalls-cover::after {
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+	background-size: 28px 28px;
+	content: "";
+	inset: 0;
+	position: absolute;
+}
+
+.gcalls-cover__glyph {
+	height: 2.5rem;
+	opacity: 0.95;
+	position: relative;
+	width: 2.5rem;
+}
+
+.gcalls-cover__label {
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	line-height: 1.3;
+	position: relative;
+	text-align: center;
+	text-wrap: balance;
+}
+
+.gcalls-cover__img { border-radius: var(--gcalls-radius); display: block; height: auto; width: 100%; }
+
+/* ── Blog cards ──────────────────────────────────────────────────────── */
+/* .gcalls-card itself already flexes in a column and hides overflow, twice
+ * over, further up this file — a third copy here would be pure drift. Only
+ * what the cover and the read-more link add is defined. */
+.gcalls-card__media {
+	display: block;
+	line-height: 0;
+	text-decoration: none;
+}
+
+.gcalls-card__media .gcalls-cover { border-radius: 0; }
+
+.gcalls-card__more {
+	align-items: center;
+	color: var(--gcalls-brand);
+	display: inline-flex;
+	font-size: 0.8125rem;
+	font-weight: 700;
+	gap: 0.25rem;
+	margin-top: auto;
+	padding-top: 0.75rem;
+}
+
+.gcalls-card__more svg { height: 14px; width: 14px; }
+
+/* The two halves of the byline. Both were emitted by gcalls_posted_on() and
+ * neither had a rule, so an updated article looked exactly like a new one —
+ * which is the distinction that function exists to draw. */
+.gcalls-meta__date { color: var(--gcalls-muted); }
+
+.gcalls-meta__updated {
+	color: var(--gcalls-brand);
+	font-weight: 600;
+}
+
+.gcalls-meta__updated::before {
+	color: var(--gcalls-border);
+	content: "·";
+	margin-right: 0.4rem;
+}
+
+/* ── Article page ────────────────────────────────────────────────────── */
+.gcalls-article__cover { margin: 0 0 var(--gcalls-space-3); }
+/* A cap as well as a ratio: at 1280px the 21/8 box alone is nearly 500px of
+ * purple before the first sentence, which pushes the article off the screen
+ * on a laptop. */
+.gcalls-article__cover .gcalls-cover { aspect-ratio: 21 / 8; max-height: 280px; }
+.gcalls-article__cover .gcalls-cover__glyph { height: 3rem; width: 3rem; }
+.gcalls-article__cover .gcalls-cover__label { font-size: 1rem; }
+
+.gcalls-article__meta {
+	align-items: center;
+	color: var(--gcalls-muted);
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 0.875rem;
+	gap: 0.75rem;
+	margin-bottom: var(--gcalls-space-3);
+}
+
+/* The table of contents. Built from the headings already in the body —
+ * nothing is written into post_content to produce it. */
+.gcalls-toc {
+	background: var(--gcalls-surface-alt);
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius);
+	margin: 0 0 var(--gcalls-space-4);
+	padding: 1rem 1.25rem;
+}
+
+.gcalls-toc__title {
+	color: var(--gcalls-muted);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	margin: 0 0 0.5rem;
+	text-transform: uppercase;
+}
+
+.gcalls-toc ol { list-style: none; margin: 0; padding: 0; counter-reset: gcalls-toc; }
+.gcalls-toc li { counter-increment: gcalls-toc; padding: 0.2rem 0 0.2rem 1.75rem; position: relative; }
+.gcalls-toc li::before {
+	color: var(--gcalls-brand);
+	content: counter(gcalls-toc, decimal-leading-zero);
+	font-family: var(--gcalls-font-mono);
+	font-size: 0.75rem;
+	left: 0;
+	position: absolute;
+	top: 0.3rem;
+}
+.gcalls-toc li--sub { padding-left: 3rem; }
+.gcalls-toc a { color: var(--gcalls-foreground); text-decoration: none; }
+.gcalls-toc a:hover { color: var(--gcalls-brand); text-decoration: underline; }
+
+/* Related articles and prev/next. */
+.gcalls-related { margin-top: var(--gcalls-space-5); }
+.gcalls-related__title { font-size: 1.125rem; margin-bottom: var(--gcalls-space-2); }
+
+.gcalls-adjacent {
+	border-top: 1px solid var(--gcalls-border);
+	display: grid;
+	gap: 1rem;
+	margin-top: var(--gcalls-space-4);
+	padding-top: var(--gcalls-space-3);
+}
+
+@media (min-width: 768px) { .gcalls-adjacent { grid-template-columns: 1fr 1fr; } }
+
+.gcalls-adjacent a {
+	border: 1px solid var(--gcalls-border);
+	border-radius: var(--gcalls-radius);
+	display: block;
+	padding: 0.75rem 1rem;
+	text-decoration: none;
+}
+
+.gcalls-adjacent a:hover { border-color: var(--gcalls-brand); }
+.gcalls-adjacent__dir { color: var(--gcalls-muted); display: block; font-size: 0.75rem; }
+.gcalls-adjacent__title { color: var(--gcalls-foreground); font-weight: 600; }
+.gcalls-adjacent__next { text-align: right; }
+
+/* The article body's reading measure. */
+.gcalls-article__body { max-width: var(--gcalls-measure); }
+.gcalls-article__body > * { max-width: 100%; }
+
+/* ── Blog hub filter — 013 ────────────────────────────────────────────
+ * Hidden until the inline script marks the document as scripted. A row
+ * of buttons that cannot filter is a dead end; with the bar absent every
+ * group is on the page and nothing is lost. */
+.gcalls-hubfilter { display: none; }
+
+.gcalls-js .gcalls-hubfilter {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: var(--gcalls-space-3);
+}
+
+.gcalls-hubfilter__btn {
+	align-items: center;
+	background: var(--gcalls-surface);
+	border: 1px solid var(--gcalls-border);
+	border-radius: 999px;
+	color: var(--gcalls-muted);
+	cursor: pointer;
+	display: inline-flex;
+	font: inherit;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	gap: 0.4rem;
+	min-height: 2.25rem;
+	padding: 0.35rem 0.85rem;
+}
+
+.gcalls-hubfilter__btn:hover:not(:disabled) { border-color: var(--gcalls-brand); color: var(--gcalls-brand); }
+
+.gcalls-hubfilter__btn[aria-pressed="true"] {
+	background: var(--gcalls-brand);
+	border-color: var(--gcalls-brand);
+	color: #fff;
+}
+
+/* A hub with no article yet: shown, so the taxonomy reads complete, but
+ * not operable, because it could only ever return an empty list. */
+.gcalls-hubfilter__btn:disabled { cursor: not-allowed; opacity: 0.45; }
+
+.gcalls-hubfilter__count {
+	background: var(--gcalls-brand-light);
+	border-radius: 999px;
+	color: var(--gcalls-brand);
+	font-size: 0.6875rem;
+	font-variant-numeric: tabular-nums;
+	padding: 0.05rem 0.4rem;
+}
+
+.gcalls-hubfilter__btn[aria-pressed="true"] .gcalls-hubfilter__count {
+	background: rgba(255, 255, 255, 0.22);
+	color: #fff;
+}
+
+.gcalls-hubfilter__btn:disabled .gcalls-hubfilter__count { background: var(--gcalls-border); color: var(--gcalls-muted); }
+
+.gcalls-hubfilter__status {
+	color: var(--gcalls-muted);
+	font-size: 0.8125rem;
+	margin: 0 0 var(--gcalls-space-2);
+	min-height: 1.2em;
+}
+
+/* A tighter archive hero. The blog page's intro is body copy pulled from
+ * the page, and at full measure it filled the first screen before a
+ * single article was visible. */
+.blog .gcalls-page-header__intro,
+.gcalls-page-header__intro { font-size: 0.9375rem; max-width: var(--gcalls-measure); }
+.blog .gcalls-page-header { margin-bottom: var(--gcalls-space-3); }
+</style>
+<style>/**
+ * GCALLS-036 — shared page component system.
+ *
+ * WHY A SECOND FILE AND NOT AN EDIT TO theme.css
+ * `theme.css` at 0.8.5 is byte-identical to what is live (sha aea2b953…), and
+ * the brief requires the theme visual to start from exactly that. Keeping the
+ * new system in its own file means the 0.8.5 baseline stays diffable and the
+ * rollback is "stop enqueuing one stylesheet", not a revert of 59 KB.
+ *
+ * WHAT PROBLEM THIS SOLVES
+ * Measured on 2026-09-01: WordPress renders 14 semantically different sections
+ * through one class (`.gcalls-product__section`) and one grid
+ * (`.gcalls-product__grid`, `repeat(auto-fit, …)`), with zero SVG icons and
+ * zero two-column splits, against 22 distinct grids and 69 icons in React on
+ * the same route. The fix is not more CSS on the same markup — it is a set of
+ * components the renderer picks between by MEANING. See
+ * docs/content-review/gcalls-036/REACT-WP-COMPONENT-MAP.md.
+ *
+ * RULES THIS FILE KEEPS
+ * - No `!important`. Every rule is scoped to `.gc-page`, the class the section
+ *   renderer puts on its own root, so specificity comes from the scope and
+ *   from load order rather than from a hammer.
+ * - `.gc-page` is narrower than `body:not(.home)` on purpose. A body-level
+ *   scope reaches the blog, the estimator, and anything another plugin prints,
+ *   which would make "back this release out" mean auditing all of them. It
+ *   also cannot touch the home page, whose signed-off Elementor rhythm is not
+ *   part of this work.
+ * - No negative margins, no `min-height` to fake equal cards; cards stretch
+ *   because the grid stretches them, which is what `align-items` is for.
+ */
+
+/* ── Tokens ──────────────────────────────────────────────────────────────
+ * Values come from the brief's ranges, resolved to one number each so there is
+ * nothing left to interpret at call sites. Colours reuse theme.css so there is
+ * one palette, not two.
+ */
+:root {
+	--gc-container: 1220px;          /* brief 1180–1240 */
+	--gc-measure: 660px;             /* brief 620–680 reading width */
+	--gc-gutter: 20px;
+	--gc-gutter-lg: 32px;
+
+	--gc-section-pad: 50px;          /* brief: 50px desktop AND mobile */
+	--gc-hero-pad-top: 72px;         /* hero carries its own, measured */
+	--gc-hero-pad-bottom: 64px;
+
+	--gc-gap-section: 36px;          /* brief 28–48 internal gap */
+	--gc-gap-head-desc: 18px;        /* brief 16–20 */
+	--gc-gap-desc-body: 32px;        /* brief 28–36 */
+	--gc-gap-grid: 20px;
+	--gc-gap-split: 56px;
+
+	--gc-card-pad: 28px;             /* brief 24–32 desktop */
+	--gc-card-pad-mobile: 22px;      /* brief 20–24 mobile */
+	--gc-radius: 20px;               /* brief 18–24 */
+	--gc-radius-sm: 12px;
+
+	--gc-border: 1px solid var(--gcalls-border, #e8e5ef);
+	--gc-border-soft: 1px solid rgba(103, 58, 183, 0.12);
+	--gc-shadow: 0 8px 24px rgba(30, 32, 38, 0.05);
+	--gc-shadow-lift: 0 14px 34px rgba(74, 35, 145, 0.09);
+
+	--gc-icon: 20px;
+	--gc-icon-box: 40px;
+}
+
+/* ── Section shell ───────────────────────────────────────────────────────
+ * One shell, three surfaces. The surface is a full-bleed band, not a rounded
+ * panel: bands butt against each other so the alternation reads as rhythm
+ * rather than as a stack of floating boxes, which is how the current
+ * `--alt` panel reads at 1440.
+ */
+.gc-page .gc-section {
+	padding-block: var(--gc-section-pad);
+}
+
+.gc-page .gc-section--alt {
+	background: var(--gcalls-surface-alt, #faf9fc);
+}
+
+.gc-page .gc-section--brand {
+	background: var(--gcalls-brand-light, #f5f1fc);
+}
+
+/* Bands are flush. A band followed by a band must not show a seam. */
+.gc-page .gc-section--alt + .gc-section--alt,
+.gc-page .gc-section--brand + .gc-section--brand {
+	padding-top: 0;
+}
+
+.gc-page .gc-container {
+	margin-inline: auto;
+	max-width: var(--gc-container);
+	padding-inline: var(--gc-gutter);
+	width: 100%;
+}
+
+@media (min-width: 1024px) {
+	.gc-page .gc-container { padding-inline: var(--gc-gutter-lg); }
+}
+
+/* ── Section header ──────────────────────────────────────────────────────
+ * Eyebrow → heading → description, with the two gaps the brief specifies.
+ * A heading is never allowed to stand alone: `.gc-head` is only ever emitted
+ * with at least a heading, and the renderer must not emit it for a section
+ * that has no body.
+ */
+.gc-page .gc-head {
+	display: flex;
+	flex-direction: column;
+	max-width: var(--gc-measure);
+}
+
+.gc-page .gc-head--wide { max-width: none; }
+.gc-page .gc-head--center { margin-inline: auto; text-align: center; }
+
+.gc-page .gc-head__eyebrow {
+	align-self: flex-start;
+	background: var(--gcalls-brand, #673ab7);
+	border-radius: 999px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	line-height: 1;
+	padding: 7px 14px;
+	text-transform: uppercase;
+}
+
+.gc-page .gc-head--center .gc-head__eyebrow { align-self: center; }
+
+.gc-page .gc-head__title {
+	color: var(--gcalls-brand, #673ab7);
+	font-size: clamp(1.5rem, 2.4vw, 2.125rem);
+	font-weight: 800;
+	letter-spacing: -0.01em;
+	line-height: 1.22;
+	margin: var(--gc-gap-head-desc) 0 0;
+}
+
+.gc-page .gc-head__eyebrow + .gc-head__title { margin-top: 14px; }
+
+.gc-page .gc-head__desc {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 1.0625rem;
+	line-height: 1.65;
+	margin: var(--gc-gap-head-desc) 0 0;
+}
+
+/* Header to whatever follows it. */
+.gc-page .gc-head + * { margin-top: var(--gc-gap-desc-body); }
+
+/* ── Icons ───────────────────────────────────────────────────────────────
+ * The single largest visual gap: 69 icons in React, 0 in WordPress. Icons are
+ * decorative here — they repeat the adjacent text — so they carry
+ * aria-hidden in the markup and never become the only label.
+ */
+.gc-page .gc-icon {
+	block-size: var(--gc-icon);
+	color: var(--gcalls-brand, #673ab7);
+	flex: none;
+	inline-size: var(--gc-icon);
+}
+
+.gc-page .gc-iconbox {
+	align-items: center;
+	background: var(--gcalls-brand-light, #f5f1fc);
+	border-radius: 12px;
+	block-size: var(--gc-icon-box);
+	color: var(--gcalls-brand, #673ab7);
+	display: inline-flex;
+	inline-size: var(--gc-icon-box);
+	justify-content: center;
+}
+
+.gc-page .gc-iconbox--round { border-radius: 999px; }
+
+/* ── Card ────────────────────────────────────────────────────────────────
+ * No min-height. Equal heights come from the grid stretching its items, which
+ * is correct when the content genuinely differs in length and honest when it
+ * does not.
+ */
+.gc-page .gc-card {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius);
+	box-shadow: var(--gc-shadow);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: var(--gc-card-pad);
+	transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.gc-page .gc-card__title {
+	color: var(--gcalls-foreground, #1e2026);
+	font-size: 1.0625rem;
+	font-weight: 700;
+	line-height: 1.35;
+	margin: 0;
+}
+
+.gc-page .gc-card__body {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.9375rem;
+	line-height: 1.65;
+	margin: 0;
+}
+
+.gc-page a.gc-card:hover,
+.gc-page .gc-card--link:hover {
+	border-color: rgba(103, 58, 183, 0.38);
+	box-shadow: var(--gc-shadow-lift);
+	transform: translateY(-2px);
+}
+
+/* ── Grids ───────────────────────────────────────────────────────────────
+ * Explicit column counts, chosen by the renderer from the number of items and
+ * the meaning of the section. `auto-fit` is deliberately not used: it is what
+ * produced the empty 0px tracks measured on sections 2, 6 and 8, and it lets
+ * six cards land in five columns.
+ */
+.gc-page .gc-grid {
+	display: grid;
+	gap: var(--gc-gap-grid);
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 640px) {
+	.gc-page .gc-grid--2,
+	.gc-page .gc-grid--3,
+	.gc-page .gc-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+	.gc-page .gc-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.gc-page .gc-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.gc-page .gc-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* ── 5. Feature split ────────────────────────────────────────────────────
+ * Missing entirely today: 0 of 3 on gcalls-plus, 0 of 2 on voicebot.
+ */
+.gc-page .gc-split {
+	align-items: center;
+	display: grid;
+	gap: 40px;
+	grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 1024px) {
+	.gc-page .gc-split {
+		gap: var(--gc-gap-split);
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.gc-page .gc-split--reverse .gc-split__copy { order: 2; }
+	.gc-page .gc-split--reverse .gc-split__visual { order: 1; }
+}
+
+.gc-page .gc-split__copy { max-width: var(--gc-measure); }
+
+.gc-page .gc-checks {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	list-style: none;
+	margin: 28px 0 0;
+	padding: 0;
+}
+
+.gc-page .gc-checks li {
+	align-items: flex-start;
+	color: var(--gcalls-foreground, #1e2026);
+	display: flex;
+	font-size: 1rem;
+	gap: 10px;
+	line-height: 1.6;
+}
+
+.gc-page .gc-checks .gc-iconbox {
+	block-size: 22px;
+	border-radius: 999px;
+	inline-size: 22px;
+	margin-top: 3px;
+}
+
+.gc-page .gc-checks .gc-icon { block-size: 13px; inline-size: 13px; }
+
+/* ── 9. Process / timeline ───────────────────────────────────────────────
+ * Steps are ordered, so they are an <ol> and they show their number. Today
+ * they render as unnumbered cards, which loses the sequence.
+ */
+.gc-page .gc-steps {
+	counter-reset: gc-step;
+	display: grid;
+	gap: var(--gc-gap-grid);
+	grid-template-columns: minmax(0, 1fr);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+@media (min-width: 768px) { .gc-page .gc-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .gc-page .gc-steps--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+	.gc-page .gc-steps--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.gc-page .gc-steps--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+
+.gc-page .gc-steps__item {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius);
+	padding: var(--gc-card-pad);
+	position: relative;
+}
+
+.gc-page .gc-steps__item::before {
+	align-items: center;
+	background: var(--gcalls-brand, #673ab7);
+	border-radius: 999px;
+	color: #fff;
+	content: counter(gc-step);
+	counter-increment: gc-step;
+	display: flex;
+	font-size: 13px;
+	font-weight: 700;
+	block-size: 28px;
+	inline-size: 28px;
+	justify-content: center;
+	margin-bottom: 14px;
+}
+
+/* ── 10. Vendor / integration grid ───────────────────────────────────────*/
+.gc-page .gc-vendors {
+	display: grid;
+	gap: 14px;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) { .gc-page .gc-vendors { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .gc-page .gc-vendors { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+
+.gc-page .gc-vendors__item {
+	align-items: center;
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius-sm);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+	padding: 18px 14px;
+	text-align: center;
+}
+
+.gc-page .gc-vendors__item img { block-size: 28px; inline-size: auto; object-fit: contain; }
+.gc-page .gc-vendors__name { font-size: 0.875rem; font-weight: 600; }
+
+/* ── 6. Real product screenshot ──────────────────────────────────────────
+ * Only ever a `-v2` derivative that passed the PII gate. The caption is part
+ * of the component, not an option: an anonymised screenshot that does not say
+ * so reads as a real customer's data.
+ */
+.gc-page .gc-shot { margin: 0; }
+
+.gc-page .gc-shot img {
+	block-size: auto;
+	border: var(--gc-border-soft);
+	border-radius: var(--gc-radius);
+	box-shadow: var(--gc-shadow);
+	display: block;
+	inline-size: 100%;
+	max-inline-size: 100%;
+}
+
+.gc-page .gc-shot figcaption {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.8125rem;
+	line-height: 1.5;
+	margin-top: 10px;
+}
+
+/* ── 7. Illustrated diagram ──────────────────────────────────────────────
+ * Used where no true screenshot of THAT product exists. The label is
+ * mandatory and is a real element, not a ::after, so it survives copy-paste
+ * and is read by a screen reader.
+ */
+.gc-page .gc-diagram {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius);
+	overflow: hidden;
+	padding: 0;
+}
+
+.gc-page .gc-diagram__canvas { overflow-x: auto; padding: 20px; }
+
+.gc-page .gc-diagram__label {
+	background: var(--gcalls-surface-alt, #faf9fc);
+	border-top: var(--gc-border);
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.8125rem;
+	padding: 10px 20px;
+}
+
+/* ── 13. FAQ ─────────────────────────────────────────────────────────────*/
+.gc-page .gc-faq { display: flex; flex-direction: column; gap: 12px; max-width: var(--gc-measure); }
+
+.gc-page .gc-faq__item {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius-sm);
+	padding: 18px 20px;
+}
+
+.gc-page .gc-faq__q {
+	align-items: flex-start;
+	cursor: pointer;
+	display: flex;
+	font-size: 1rem;
+	font-weight: 650;
+	gap: 12px;
+	justify-content: space-between;
+	line-height: 1.45;
+	list-style: none;
+}
+
+.gc-page .gc-faq__q::-webkit-details-marker { display: none; }
+.gc-page .gc-faq__item[open] .gc-faq__q .gc-icon { transform: rotate(180deg); }
+.gc-page .gc-faq__a { color: var(--gcalls-muted, #5b5f6b); line-height: 1.7; margin: 12px 0 0; }
+
+/* ── 14. Conversion CTA ──────────────────────────────────────────────────*/
+.gc-page .gc-cta {
+	background: var(--gcalls-brand-light, #f5f1fc);
+	border: var(--gc-border-soft);
+	border-radius: var(--gc-radius);
+	padding: 40px var(--gc-card-pad);
+	text-align: center;
+}
+
+.gc-page .gc-cta__row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	justify-content: center;
+	margin-top: 24px;
+}
+
+/* ── 15. Lead form slot ──────────────────────────────────────────────────
+ * While the runtime is not merged this slot must render a contact card, not a
+ * form. A CTA that leads to something that cannot submit is worse than a CTA
+ * that leads to a phone number.
+ */
+.gc-page .gc-leadslot {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius);
+	display: grid;
+	gap: 18px;
+	padding: var(--gc-card-pad);
+}
+
+.gc-page .gc-leadslot__row { align-items: center; display: flex; gap: 12px; }
+
+/* ── 2. Trust bar · 11. Comparison · 16. Related ─────────────────────────*/
+.gc-page .gc-trustbar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px 28px;
+}
+
+.gc-page .gc-trustbar__item { align-items: center; display: flex; gap: 8px; font-size: 0.9375rem; }
+
+.gc-page .gc-compare { overflow-x: auto; }
+.gc-page .gc-compare table { border-collapse: collapse; inline-size: 100%; min-inline-size: 640px; }
+.gc-page .gc-compare th,
+.gc-page .gc-compare td { border-bottom: var(--gc-border); padding: 14px 16px; text-align: left; }
+.gc-page .gc-compare thead th { font-size: 0.875rem; letter-spacing: 0.03em; text-transform: uppercase; }
+
+.gc-page .gc-related { display: grid; gap: var(--gc-gap-grid); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 768px) { .gc-page .gc-related { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* ── Focus, motion, mobile ───────────────────────────────────────────────*/
+.gc-page .gc-card:focus-visible,
+.gc-page .gc-faq__q:focus-visible,
+.gc-page .gc-vendors__item:focus-visible,
+.gc-page .gc-related a:focus-visible {
+	outline: 3px solid var(--gcalls-brand, #673ab7);
+	outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+	.gc-page .gc-card,
+	.gc-page .gc-steps__item,
+	.gc-page .gc-leadslot { padding: var(--gc-card-pad-mobile); }
+	.gc-page .gc-cta { padding: 32px var(--gc-card-pad-mobile); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gc-page .gc-card { transition: none; }
+	.gc-page a.gc-card:hover,
+	.gc-page .gc-card--link:hover { transform: none; }
+}
+
+/* ── Page hero ───────────────────────────────────────────────────────────
+ * The hero gets its own vertical token: the brief's 50px is the rhythm for
+ * content sections, and applying it to the first thing on the page put the h1
+ * against the header.
+ */
+.gc-page .gc-section--hero { padding-block: var(--gc-hero-pad-top) var(--gc-hero-pad-bottom); }
+
+.gc-page .gc-hero { max-width: 780px; }
+
+.gc-page .gc-hero__title {
+	color: var(--gcalls-brand, #673ab7);
+	font-size: clamp(1.9rem, 3.6vw, 2.85rem);
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	line-height: 1.15;
+	margin: 16px 0 0;
+}
+
+.gc-page .gc-section--direct { background: var(--gcalls-brand-light, #f5f1fc); }
+
+/* ── Prose ───────────────────────────────────────────────────────────────
+ * The content pages put their direct answer here with no heading at all. It
+ * is the paragraph an answer engine quotes, so it is plain visible text at
+ * reading width, never inside an accordion.
+ */
+.gc-page .gc-prose { max-width: var(--gc-measure); }
+
+.gc-page .gc-prose p {
+	color: var(--gcalls-foreground, #1e2026);
+	font-size: 1.0625rem;
+	line-height: 1.75;
+	margin: 0;
+}
+
+/* ── Before/after flow ───────────────────────────────────────────────────
+ * Two ordered lists side by side. The point of the section is that one
+ * sequence is longer than the other, so they must be comparable at a glance
+ * and must not be equalised to the same height.
+ */
+.gc-page .gc-compare-flow {
+	display: grid;
+	gap: var(--gc-gap-grid);
+	grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 768px) {
+	.gc-page .gc-compare-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.gc-page .gc-flow {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius);
+	padding: var(--gc-card-pad);
+}
+
+.gc-page .gc-flow--after { border-color: rgba(103, 58, 183, 0.32); }
+
+.gc-page .gc-flow__label {
+	color: var(--gcalls-muted, #5b5f6b);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	margin: 0 0 14px;
+	text-transform: uppercase;
+}
+
+.gc-page .gc-flow--after .gc-flow__label { color: var(--gcalls-brand, #673ab7); }
+
+.gc-page .gc-flow__steps {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gc-page .gc-flow__steps li {
+	background: var(--gcalls-surface-alt, #faf9fc);
+	border-radius: 10px;
+	font-size: 0.9375rem;
+	padding: 10px 14px;
+}
+
+.gc-page .gc-flow--after .gc-flow__steps li { background: var(--gcalls-brand-light, #f5f1fc); }
+
+/* ── Tag list ────────────────────────────────────────────────────────────
+ * Short labels. A card each would be mostly padding.
+ */
+.gc-page .gc-taglist {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gc-page .gc-taglist__item {
+	align-items: center;
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: 999px;
+	display: inline-flex;
+	font-size: 0.9375rem;
+	gap: 8px;
+	padding: 9px 16px;
+}
+
+.gc-page .gc-taglist__item .gc-icon { block-size: 16px; inline-size: 16px; }
+
+/* ── Card badge ──────────────────────────────────────────────────────────*/
+.gc-page .gc-badge {
+	align-self: flex-start;
+	background: var(--gcalls-brand-light, #f5f1fc);
+	border-radius: 999px;
+	color: var(--gcalls-brand-dark, #4a2391);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	padding: 5px 10px;
+	text-transform: uppercase;
+}
+
+/* ── Split visual ────────────────────────────────────────────────────────
+ * React's split is 580/580 at 1440 inside a 1280 container. Against the
+ * 1220 container here that is roughly 42% copy / 54% visual, which is the
+ * brief's range, so the visual column is the wider of the two.
+ */
+@media (min-width: 1024px) {
+	.gc-page .gc-split { grid-template-columns: minmax(0, 43fr) minmax(0, 54fr); }
+}
+
+.gc-page .gc-split__visual > * { margin: 0; }
+
+/* ── FAQ / final bands ───────────────────────────────────────────────────*/
+.gc-page .gc-section--faq { background: var(--gcalls-surface-alt, #faf9fc); }
+.gc-page .gc-section--final { padding-block: var(--gc-section-pad); }
+
+/* Header inside a split is one column of two, so it is not capped to the
+ * reading measure the way a full-width section header is. */
+.gc-page .gc-head--bare { max-width: none; }
+
+/* Lead slot rows stack; the two channels are equal-weight, not a form. */
+.gc-page .gc-leadslot__row { margin: 0; }
+
+/* ── Two labelled groups ─────────────────────────────────────────────────
+ * "Who this suits" beside "what to move to when you outgrow it". The contrast
+ * is the section, so the two columns sit side by side from 768 up and never
+ * merge into one list.
+ */
+.gc-page .gc-groups {
+	display: grid;
+	gap: var(--gc-gap-grid);
+	grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 768px) {
+	.gc-page .gc-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.gc-page .gc-groups__col {
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius);
+	padding: var(--gc-card-pad);
+}
+
+.gc-page .gc-groups__label {
+	color: var(--gcalls-brand, #673ab7);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	margin: 0 0 16px;
+	text-transform: uppercase;
+}
+
+.gc-page .gc-groups__list {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gc-page .gc-groups__list li {
+	align-items: flex-start;
+	display: flex;
+	font-size: 0.9375rem;
+	gap: 10px;
+	line-height: 1.6;
+}
+
+.gc-page .gc-groups__list .gc-iconbox { block-size: 22px; inline-size: 22px; margin-top: 2px; }
+.gc-page .gc-groups__list .gc-icon { block-size: 13px; inline-size: 13px; }
+
+/* ── Decision table ──────────────────────────────────────────────────────
+ * A need, then the product that answers it. These links are navigation, not
+ * lead capture, so they are plain links and not buttons — a row of five
+ * buttons here would read as five competing asks.
+ */
+.gc-page .gc-decision {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	list-style: none;
+	margin: 0;
+	max-width: var(--gc-container);
+	padding: 0;
+}
+
+.gc-page .gc-decision__row {
+	align-items: flex-start;
+	background: var(--gcalls-surface, #fff);
+	border: var(--gc-border);
+	border-radius: var(--gc-radius-sm);
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	padding: 16px 20px;
+}
+
+@media (min-width: 768px) {
+	.gc-page .gc-decision__row { align-items: center; flex-direction: row; gap: 20px; justify-content: space-between; }
+}
+
+.gc-page .gc-decision__need { font-size: 0.9375rem; }
+
+.gc-page .gc-decision__answer {
+	align-items: center;
+	color: var(--gcalls-brand, #673ab7);
+	display: inline-flex;
+	font-weight: 650;
+	gap: 8px;
+}
+
+.gc-page .gc-decision__answer .gc-icon { block-size: 16px; inline-size: 16px; }
+
+/* ── Placeholder: empty on purpose ───────────────────────────────────────
+ * Reads as a stated absence, not as a broken section. Muted, no card chrome
+ * that would make it look like content.
+ */
+.gc-page .gc-placeholder {
+	border: 1px dashed var(--gcalls-border, #e8e5ef);
+	border-radius: var(--gc-radius);
+	max-width: var(--gc-measure);
+	padding: var(--gc-card-pad);
+}
+
+.gc-page .gc-placeholder__text { font-weight: 650; margin: 0; }
+.gc-page .gc-placeholder__note { color: var(--gcalls-muted, #5b5f6b); font-size: 0.9375rem; margin: 8px 0 0; }
+.gc-page .gc-placeholder__link { margin: 14px 0 0; }
+
+/* A section's own asks. Never a full band — that is the closing CTA's job. */
+.gc-page .gc-ctarow--section {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: var(--gc-gap-section);
+}
+</style>
+<style>
+/* Preview-only: mirrors .gcalls-product__hero in the plugin's product.css,
+   which lays the hero out as 0.82fr copy / 1.18fr visual and stacks on
+   narrow viewports. Proportions are copied, not chosen. */
+.gc-hero-grid{display:grid;gap:clamp(2rem,4vw,4.5rem);
+  grid-template-columns:minmax(0,0.82fr) minmax(0,1.18fr);align-items:center}
+.gc-hero-grid .gc-hero{max-width:none}
+.gc-hero__visual{min-width:0}
+@media (max-width:900px){.gc-hero-grid{grid-template-columns:minmax(0,1fr)}}
+/* Preview-only: the stand-in for a class-mockups.php drawing. */
+.gc-stub{align-items:center;aspect-ratio:16/10;background:linear-gradient(135deg,#f5f1fc,#faf9fc);
+ border:1px dashed rgba(103,58,183,.35);border-radius:12px;color:#673ab7;display:flex;
+ font:600 13px/1.4 system-ui;justify-content:center;text-align:center}
+body{margin:0}
+</style></head><body class="gc-page gc-page--solution-detail"><main><section class="gc-section gc-section--hero"><div class="gc-container"><div class="gc-hero"><p class="gc-head__eyebrow">GCALLS • HELPDESK INTEGRATION</p><h1 class="gc-hero__title">Tổng đài tích hợp Helpdesk – kết nối cuộc gọi với ticket và lịch sử hỗ trợ</h1><p class="gc-head__desc">Đưa cuộc gọi vào quy trình hỗ trợ để nhân viên có thêm context khách hàng, theo dõi ticket và lịch sử tương tác tập trung hơn thay vì phải chuyển đổi liên tục giữa Helpdesk và hệ thống nghe gọi.</p><ul class="gc-checks"><li><span class="gc-iconbox gc-iconbox--round"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5" /></svg></span><span>[object Object]</span></li><li><span class="gc-iconbox gc-iconbox--round"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5" /></svg></span><span>[object Object]</span></li><li><span class="gc-iconbox gc-iconbox--round"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5" /></svg></span><span>[object Object]</span></li></ul><p class="gc-cta__row"><a class="gc-btn gc-btn--primary" href="/lien-he/">Đăng ký tư vấn</a></p></div></div></section><section class="gc-section gc-section--comparison"><div class="gc-container"><div class="gc-head"><p class="gc-head__eyebrow">TRƯỚC &amp; SAU TÍCH HỢP</p><h2 class="gc-head__title">Giảm những bước chuyển đổi thủ công trong quy trình CSKH</h2></div><div class="gc-compare-flow"><div class="gc-flow gc-flow--before"><p class="gc-flow__label">Trước tích hợp</p><ol class="gc-flow__steps"><li>Hệ thống nghe gọi</li><li>Xác định khách hàng thủ công</li><li>Mở Helpdesk</li><li>Tìm ticket</li><li>Nhập ghi chú</li><li>Tiếp tục hỗ trợ</li></ol></div><div class="gc-flow gc-flow--after"><p class="gc-flow__label">Sau tích hợp</p><ol class="gc-flow__steps"><li>Cuộc gọi / workflow Helpdesk</li><li>Customer context</li><li>Ticket hoặc hồ sơ hỗ trợ liên quan</li><li>Lịch sử tương tác</li><li>Follow-up</li></ol></div></div></div></section><section class="gc-section gc-section--grid gc-section--alt"><div class="gc-container"><div class="gc-head"><h2 class="gc-head__title">CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng</h2></div><div class="gc-grid gc-grid--2"><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg></span></article><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg></span></article><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg></span></article><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg></span></article></div></div></section><section class="gc-section gc-section--grid"><div class="gc-container"><div class="gc-head"><h2 class="gc-head__title">Kết nối cuộc gọi với những dữ liệu đội CSKH cần để xử lý ticket</h2></div><div class="gc-grid gc-grid--2"><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /><path d="M20 3v4" /><path d="M22 5h-4" /><path d="M4 17v2" /><path d="M5 18H3" /></svg></span><h3 class="gc-card__title">Call Context</h3><p class="gc-card__body">Đưa thông tin liên quan đến cuộc gọi vào bối cảnh hỗ trợ để agent dễ xác định khách hàng và yêu cầu đang xử lý.</p></article><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /><path d="M20 3v4" /><path d="M22 5h-4" /><path d="M4 17v2" /><path d="M5 18H3" /></svg></span><h3 class="gc-card__title">Ticket / Support Record Connection</h3><p class="gc-card__body">Liên kết dữ liệu cuộc gọi với ticket hoặc hồ sơ hỗ trợ khi nền tảng Helpdesk và cấu hình tích hợp cho phép.</p></article><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /><path d="M20 3v4" /><path d="M22 5h-4" /><path d="M4 17v2" /><path d="M5 18H3" /></svg></span><h3 class="gc-card__title">Interaction History</h3><p class="gc-card__body">Ghi nhận lịch sử liên hệ phù hợp trong workflow hỗ trợ để nhân viên có thể tiếp tục xử lý với nhiều context hơn.</p></article><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /><path d="M20 3v4" /><path d="M22 5h-4" /><path d="M4 17v2" /><path d="M5 18H3" /></svg></span><h3 class="gc-card__title">Customer Identification</h3><p class="gc-card__body">Hỗ trợ nhận biết khách hàng hoặc hồ sơ liên quan khi dữ liệu và nền tảng tích hợp cho phép.</p></article></div></div></section><section class="gc-section gc-section--steps gc-section--alt"><div class="gc-container"><div class="gc-head"><h2 class="gc-head__title">Kết nối Helpdesk theo workflow hỗ trợ doanh nghiệp đang sử dụng</h2></div><ol class="gc-steps gc-steps--5"><li class="gc-steps__item"><h3 class="gc-card__title">Khảo sát Helpdesk và quy trình hiện tại</h3></li><li class="gc-steps__item"><h3 class="gc-card__title">Xác định dữ liệu/capability cần kết nối</h3></li><li class="gc-steps__item"><h3 class="gc-card__title">Thiết kế luồng cuộc gọi và ticket</h3></li><li class="gc-steps__item"><h3 class="gc-card__title">Cấu hình tích hợp</h3></li><li class="gc-steps__item"><h3 class="gc-card__title">Kiểm thử dữ liệu và workflow</h3></li><li class="gc-steps__item"><h3 class="gc-card__title">Hướng dẫn đội CSKH</h3></li><li class="gc-steps__item"><h3 class="gc-card__title">Đưa vào vận hành</h3></li></ol></div></section><section class="gc-section gc-section--prose"><div class="gc-container"><div class="gc-prose"><p>Tổng đài tích hợp Helpdesk là mô hình kết nối hoạt động nghe gọi với hệ thống quản lý yêu cầu hỗ trợ để nhân viên có thể sử dụng cuộc gọi, ticket và lịch sử tương tác trong cùng một quy trình chăm sóc khách hàng. Phạm vi đồng bộ phụ thuộc vào nền tảng Helpdesk, API và cấu hình tích hợp thực tế của doanh nghiệp.</p></div></div></section><section class="gc-section gc-section--steps gc-section--alt"><div class="gc-container"><div class="gc-head"><h2 class="gc-head__title">Từ cuộc gọi đến ticket và bước xử lý tiếp theo</h2></div><ol class="gc-steps gc-steps--5"><li class="gc-steps__item"><h3 class="gc-card__title">Khách hàng liên hệ</h3><p class="gc-card__body">Khách hàng gọi đến hoặc nhân viên thực hiện cuộc gọi trong phạm vi giải pháp được triển khai.</p></li><li class="gc-steps__item"><h3 class="gc-card__title">Xác định customer context</h3><p class="gc-card__body">Thông tin liên quan giúp nhân viên hiểu khách hàng hoặc yêu cầu hỗ trợ đang xử lý.</p></li><li class="gc-steps__item"><h3 class="gc-card__title">Kết nối với hồ sơ Helpdesk</h3><p class="gc-card__body">Dữ liệu cuộc gọi phù hợp được liên kết với workflow hỗ trợ theo khả năng nền tảng và cấu hình tích hợp.</p></li><li class="gc-steps__item"><h3 class="gc-card__title">Cập nhật lịch sử tương tác</h3><p class="gc-card__body">Thông tin liên quan đến cuộc gọi có thể được ghi nhận để đội ngũ tiếp tục theo dõi trong quy trình hỗ trợ.</p></li><li class="gc-steps__item"><h3 class="gc-card__title">Tiếp tục ticket / follow-up</h3><p class="gc-card__body">Agent xử lý các bước tiếp theo trong Helpdesk thay vì duy trì một lịch sử riêng bên ngoài hệ thống.</p></li></ol></div></section><section class="gc-section gc-section--steps"><div class="gc-container"><div class="gc-head"><h2 class="gc-head__title">Đưa cuộc gọi vào quy trình xử lý yêu cầu hỗ trợ</h2><p class="gc-head__desc">Gcalls kết nối lớp giao tiếp thoại với Helpdesk để đội CSKH có thể xử lý cuộc gọi trong bối cảnh ticket, lịch sử hỗ trợ và customer context đang có.</p></div><ol class="gc-steps gc-steps--5"><li class="gc-steps__item"><h3 class="gc-card__title">Customer</h3><p class="gc-card__body">Khách hàng cần được hỗ trợ.</p></li><li class="gc-steps__item"><h3 class="gc-card__title">Call</h3><p class="gc-card__body">Cuộc gọi diễn ra qua hệ thống Gcalls.</p></li><li class="gc-steps__item"><h3 class="gc-card__title">Identification / Context</h3><p class="gc-card__body">Thông tin liên quan giúp agent xác định bối cảnh.</p></li><li class="gc-steps__item"><h3 class="gc-card__title">Support record / ticket</h3><p class="gc-card__body">Cuộc gọi được gắn với hồ sơ hỗ trợ theo cấu hình.</p></li><li class="gc-steps__item"><h3 class="gc-card__title">Interaction history</h3><p class="gc-card__body">Lịch sử liên hệ phù hợp được ghi nhận.</p></li><li class="gc-steps__item"><h3 class="gc-card__title">Follow-up</h3><p class="gc-card__body">Đội ngũ tiếp tục xử lý trong Helpdesk.</p></li></ol></div></section><section class="gc-section gc-section--grid gc-section--alt"><div class="gc-container"><div class="gc-grid gc-grid--3"><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22v-5" /><path d="M9 8V2" /><path d="M15 8V2" /><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z" /></svg></span><h3 class="gc-card__title">Freshdesk</h3><p class="gc-card__body">Kết nối hoạt động nghe gọi với quy trình hỗ trợ trên Freshdesk theo phạm vi tích hợp được xác nhận.</p></article><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22v-5" /><path d="M9 8V2" /><path d="M15 8V2" /><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z" /></svg></span><h3 class="gc-card__title">Zendesk</h3><p class="gc-card__body">Kết nối hoạt động nghe gọi với quy trình hỗ trợ trên Zendesk theo phạm vi tích hợp được xác nhận.</p></article><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22v-5" /><path d="M9 8V2" /><path d="M15 8V2" /><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z" /></svg></span><h3 class="gc-card__title">Khác</h3><p class="gc-card__body">Với Helpdesk khác, Gcalls sẽ khảo sát API và khả năng kết nối trước khi đề xuất phương án tích hợp.</p></article></div></div></section><section class="gc-section gc-section--grid"><div class="gc-container"><div class="gc-head"><h2 class="gc-head__title">Khi cuộc gọi và ticket nằm ở hai nơi, đội CSKH phải tự ghép lại hành trình hỗ trợ</h2></div><div class="gc-grid gc-grid--2"><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg></span><h3 class="gc-card__title">Nhân viên phải chuyển đổi giữa nhiều công cụ</h3><p class="gc-card__body">Agent tiếp nhận cuộc gọi trên một hệ thống nhưng lại quản lý yêu cầu hỗ trợ trên Helpdesk, khiến workflow bị chia thành nhiều bước.</p></article><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg></span><h3 class="gc-card__title">Ticket thiếu context cuộc gọi</h3><p class="gc-card__body">Nếu dữ liệu nghe gọi không gắn với hồ sơ hỗ trợ, nhân viên có thể phải tìm lại thông tin trước khi tiếp tục xử lý.</p></article><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg></span><h3 class="gc-card__title">Lịch sử hỗ trợ bị phân mảnh</h3><p class="gc-card__body">Cuộc gọi, ticket, ghi chú và các lần tương tác khác nằm ở nhiều nơi khiến quá trình hỗ trợ khó được theo dõi xuyên suốt.</p></article><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg></span><h3 class="gc-card__title">Nhập lại thông tin làm tăng thao tác thủ công</h3><p class="gc-card__body">Khi hai hệ thống không kết nối, nhân viên có thể phải ghi lại cùng một nội dung nhiều lần để duy trì lịch sử hỗ trợ.</p></article></div></div></section><section class="gc-section gc-section--taglist gc-section--alt"><div class="gc-container"><div class="gc-head"><p class="gc-head__eyebrow">SUPPORT CONTEXT</p><h2 class="gc-head__title">Hiểu lịch sử hỗ trợ trước khi tiếp tục cuộc hội thoại</h2><p class="gc-head__desc">Khi ticket, thông tin khách hàng và lịch sử liên quan được đặt gần dữ liệu cuộc gọi, agent có thể hiểu bối cảnh tốt hơn trước khi phản hồi hoặc follow-up.</p></div><ul class="gc-taglist"><li class="gc-taglist__item"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" /><path d="m4.93 4.93 4.24 4.24" /><path d="m14.83 9.17 4.24-4.24" /><path d="m14.83 14.83 4.24 4.24" /><path d="m9.17 14.83-4.24 4.24" /><circle cx="12" cy="12" r="4" /></svg>Customer identity</li><li class="gc-taglist__item"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" /><path d="m4.93 4.93 4.24 4.24" /><path d="m14.83 9.17 4.24-4.24" /><path d="m14.83 14.83 4.24 4.24" /><path d="m9.17 14.83-4.24 4.24" /><circle cx="12" cy="12" r="4" /></svg>Ticket đang xử lý</li><li class="gc-taglist__item"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" /><path d="m4.93 4.93 4.24 4.24" /><path d="m14.83 9.17 4.24-4.24" /><path d="m14.83 14.83 4.24 4.24" /><path d="m9.17 14.83-4.24 4.24" /><circle cx="12" cy="12" r="4" /></svg>Ticket trước đó</li><li class="gc-taglist__item"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" /><path d="m4.93 4.93 4.24 4.24" /><path d="m14.83 9.17 4.24-4.24" /><path d="m14.83 14.83 4.24 4.24" /><path d="m9.17 14.83-4.24 4.24" /><circle cx="12" cy="12" r="4" /></svg>Tương tác gần đây</li><li class="gc-taglist__item"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" /><path d="m4.93 4.93 4.24 4.24" /><path d="m14.83 9.17 4.24-4.24" /><path d="m14.83 14.83 4.24 4.24" /><path d="m9.17 14.83-4.24 4.24" /><circle cx="12" cy="12" r="4" /></svg>Ghi chú</li><li class="gc-taglist__item"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" /><path d="m4.93 4.93 4.24 4.24" /><path d="m14.83 9.17 4.24-4.24" /><path d="m14.83 14.83 4.24 4.24" /><path d="m9.17 14.83-4.24 4.24" /><circle cx="12" cy="12" r="4" /></svg>Trạng thái hiện tại</li></ul></div></section><section class="gc-section gc-section--prose"><div class="gc-container"><div class="gc-head"><h2 class="gc-head__title">Mỗi Helpdesk có cấu trúc ticket và dữ liệu khác nhau</h2></div><div class="gc-prose"><p>Field, permission, API và quy trình xử lý khác nhau giữa từng nền tảng. Vì vậy phạm vi tích hợp cần được xác định từ hệ thống doanh nghiệp đang sử dụng thay vì áp dụng cùng một cấu hình cho mọi tổ chức.</p></div></div></section><section class="gc-section gc-section--grid gc-section--alt"><div class="gc-container"><div class="gc-head"><h2 class="gc-head__title">Phù hợp với những đội hỗ trợ cần theo dõi cuộc gọi và ticket trong cùng hành trình</h2></div><div class="gc-grid gc-grid--2"><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg></span><h3 class="gc-card__title">SaaS Customer Support</h3><p class="gc-card__body">Hỗ trợ agent theo dõi cuộc gọi cùng ticket và lịch sử xử lý khi khách hàng cần hỗ trợ sản phẩm hoặc dịch vụ.</p></article><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg></span><h3 class="gc-card__title">E-commerce Customer Service</h3><p class="gc-card__body">Giúp đội CSKH kết nối cuộc gọi với yêu cầu hỗ trợ để tiếp tục quá trình xử lý khách hàng có context hơn.</p></article><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg></span><h3 class="gc-card__title">Service Operations</h3><p class="gc-card__body">Phù hợp với doanh nghiệp dịch vụ có nhiều yêu cầu cần follow-up sau khi khách hàng gọi đến.</p></article><article class="gc-card"><span class="gc-iconbox"><svg class="gc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg></span><h3 class="gc-card__title">BPO / Support Center</h3><p class="gc-card__body">Hỗ trợ đội vận hành xử lý lượng lớn cuộc gọi và ticket theo workflow có cấu trúc hơn.</p></article></div></div></section><section class="gc-section gc-section--faq"><div class="gc-container"><div class="gc-head"><h2 class="gc-head__title">Câu hỏi thường gặp</h2></div><div class="gc-faq"><div class="gc-faq__item"><h3 class="gc-faq__q">Tổng đài tích hợp Helpdesk là gì?</h3><p class="gc-faq__a">Tổng đài tích hợp Helpdesk kết nối hoạt động nghe gọi với hệ thống quản lý yêu cầu hỗ trợ để nhân viên có thể sử dụng cuộc gọi, ticket và lịch sử tương tác trong cùng một quy trình CSKH.</p></div><div class="gc-faq__item"><h3 class="gc-faq__q">Gcalls có thể tích hợp với Helpdesk nào?</h3><p class="gc-faq__a">Khả năng tích hợp phụ thuộc vào nền tảng, API và yêu cầu triển khai. Gcalls hiện có các trang giải pháp riêng cho những nền tảng đã được xác nhận như Freshdesk và Zendesk.</p></div><div class="gc-faq__item"><h3 class="gc-faq__q">Cuộc gọi có thể được gắn với ticket không?</h3><p class="gc-faq__a">Với nền tảng và cấu hình phù hợp, dữ liệu cuộc gọi có thể được liên kết với ticket hoặc hồ sơ hỗ trợ để agent có thêm context khi xử lý yêu cầu.</p></div><div class="gc-faq__item"><h3 class="gc-faq__q">Gcalls có tự động tạo ticket sau cuộc gọi không?</h3><p class="gc-faq__a">Khả năng tạo hoặc cập nhật ticket phụ thuộc vào nền tảng Helpdesk và workflow tích hợp. Gcalls cần khảo sát hệ thống hiện tại để xác định luồng xử lý có thể triển khai.</p></div><div class="gc-faq__item"><h3 class="gc-faq__q">Lịch sử cuộc gọi có được lưu trong Helpdesk không?</h3><p class="gc-faq__a">Dữ liệu lịch sử cuộc gọi có thể được ghi nhận hoặc liên kết theo phạm vi tích hợp và khả năng của nền tảng. Các trường dữ liệu cụ thể cần được xác định trong quá trình khảo sát kỹ thuật.</p></div><div class="gc-faq__item"><h3 class="gc-faq__q">Helpdesk Integration khác Gcalls CX như thế nào?</h3><p class="gc-faq__a">Helpdesk Integration tập trung kết nối cuộc gọi với ticket và workflow hỗ trợ hiện có. Gcalls CX giải quyết bài toán rộng hơn về quản lý giao tiếp đa kênh trên một Contact Center tập trung.</p></div></div></div></section><section class="gc-section gc-section--final"><div class="gc-container"><div class="gc-cta"><h2 class="gc-head__title">Đưa cuộc gọi vào đúng quy trình hỗ trợ đội CSKH đang sử dụng</h2><p class="gc-head__desc">Chia sẻ nền tảng Helpdesk, cấu trúc ticket và workflow hiện tại để Gcalls xác định cách tích hợp phù hợp.</p><div class="gc-cta__row"><a class="gc-btn gc-btn--primary" href="/lien-he/?intent=consultation">Đăng ký tư vấn</a></div></div></div></section></main></body></html>

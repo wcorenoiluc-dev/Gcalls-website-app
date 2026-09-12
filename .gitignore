@@ -49,10 +49,16 @@ wordpress/wp-content/uploads/
 wordpress/wp-content/cache/
 wordpress/wp-content/upgrade/
 wordpress/wp-content/languages/
-# Every plugin except the one we author. Elementor and Rank Math are installed
+# Every plugin except the ones we author. Elementor and Rank Math are installed
 # from wordpress.org on the host, never vendored here.
 wordpress/wp-content/plugins/*
 !wordpress/wp-content/plugins/gcalls-core/
+!wordpress/wp-content/plugins/gcalls-react-shell/
+!wordpress/wp-content/plugins/gcalls-content-studio/
+# The React build output inside gcalls-react-shell is still caught by the
+# top-level `dist/` rule below — source (PHP, routes.json, README) is
+# tracked, the compiled bundle is a derivable artefact of a commit, same
+# reasoning as wordpress/dist/.
 # Same rule for themes.
 wordpress/wp-content/themes/*
 !wordpress/wp-content/themes/gcalls-theme/
@@ -68,3 +74,10 @@ wordpress/dist/
 wordpress/**/*.sql
 wordpress/**/*.sql.gz
 wordpress/backups/
+
+# Extracted Core 0.10.1 package data used by the contract test and preview.
+# Build output, reproducible from the release zip — never committed.
+wordpress/.pkg/
+
+# GCALLS-039 release build output — reproducible from build-039-release.mjs.
+wordpress/.release/

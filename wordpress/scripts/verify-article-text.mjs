@@ -42,12 +42,32 @@ function columns(table) {
 }
 
 function rows(table) {
-  const cols = columns(table)
   const out = []
-  const marker = 'INSERT INTO `' + table + '` VALUES '
+  /*
+   * phpMyAdmin writes either `INSERT INTO `t` VALUES (...)` or
+   * `INSERT INTO `t` (`col`, ...) VALUES (...)`, and which one you get depends
+   * on the export options. This only understood the first form, so against a
+   * dump using the second it read ZERO rows — and then reported that every
+   * article was intact, because nothing had disagreed. Both forms are handled
+   * here, and the column names come from the INSERT itself when it names them.
+   */
+  const marker = 'INSERT INTO `' + table + '`'
   let idx = 0
   while ((idx = sql.indexOf(marker, idx)) !== -1) {
     let i = idx + marker.length
+    let cols = columns(table)
+
+    while (i < sql.length && /\s/.test(sql[i])) i++
+
+    if (sql[i] === '(') {
+      const close = sql.indexOf(')', i)
+      cols = sql.slice(i + 1, close).split(',').map((c) => c.trim().replace(/`/g, ''))
+      i = close + 1
+    }
+
+    const valuesAt = sql.indexOf('VALUES', i)
+    if (valuesAt === -1) break
+    i = valuesAt + 'VALUES'.length
     while (i < sql.length) {
       if (sql[i] === ';') { i++; break }
       if (sql[i] !== '(') { i++; continue }
@@ -210,6 +230,18 @@ for (const post of articles) {
 
 console.log('-'.repeat(92))
 console.log(`${same} intact, ${differ} differing, of ${articles.length}`)
+
+/*
+ * A verification that compared nothing has not verified anything. This used to
+ * print "every published article still says exactly what the database said"
+ * after reading zero rows, which is the most dangerous shape a test can take:
+ * it is loudest exactly when it knows least.
+ */
+if (articles.length === 0) {
+  console.error('\nNOT VERIFIED: no published articles were read from the dump.')
+  console.error('Nothing was compared, so nothing is proven.')
+  process.exit(2)
+}
 console.log(`db text hash set:   ${sha(articles.map((p) => words(p.post_content)).join('|')).slice(0, 32)}`)
 
 if (problems.length > 0) {

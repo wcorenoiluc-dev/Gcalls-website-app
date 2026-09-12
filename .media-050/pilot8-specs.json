@@ -1,0 +1,326 @@
+{
+ "articles": [
+  {
+   "legacyId": 588,
+   "livePostId": 186,
+   "slug": "call-center-la-mot-trai-nghiem-thuong-hieu-trong-nganh-dich-vu-suc-khoe",
+   "title": "Tổng Đài Call Center Và Những Kiến Thức \"Cứu Sống\" Doanh Nghiệp",
+   "hub": "HUB-01",
+   "role": "featured",
+   "archetype": "DEFINITION_ANCHOR",
+   "designArchetype": "ROLE_MAP",
+   "whyThisArchetype": "Heading mở bài hỏi thẳng “Tổng đài Call Center là gì?” rồi toả ra cách hoạt động, ba loại tổng đài và các vị trí quản lý.",
+   "kicker": "Tổng đài & Call Center",
+   "headline": "Tổng đài Call Center là gì?",
+   "elements": [
+    "Hoạt động như thế nào?",
+    "Cuộc gọi đến, cuộc gọi đi, kết hợp",
+    "Các vị trí quản lý của Call Center",
+    "Vì sao doanh nghiệp cần bộ phận CSKH"
+   ],
+   "anchor": "Tổng đài Call Center",
+   "palette": {
+    "tokens": [
+     "ground #FFFFFF",
+     "panel #F7F5FA",
+     "cardFill #EFEBF5",
+     "hairline #E3DCEE",
+     "ink #191324",
+     "muted #5C5568",
+     "primary #673AB7",
+     "primaryTint rgba(103,58,183,.06–.14)"
+    ],
+    "accentUsed": false,
+    "accent": null,
+    "note": "Purple family + neutrals only; #00A88F unused in this archetype."
+   },
+   "altText": "Vòng tròn “Tổng đài Call Center” với các thuộc tính toả ra: Hoạt động như thế nào?, Cuộc gọi đến, cuộc gọi đi, kết hợp…",
+   "caption": "Sơ đồ minh hoạ — hình vẽ mới, không phải ảnh chụp màn hình sản phẩm",
+   "filename": "cac-vi-tri-quan-ly-call-center.webp",
+   "captionFull": "Hình minh hoạ do Gcalls thiết kế cho bài viết: Tổng đài Call Center là gì?. Đây là hình vẽ mới, không phải ảnh chụp màn hình sản phẩm."
+  },
+  {
+   "legacyId": 1705,
+   "livePostId": 225,
+   "slug": "cach-viet-ban-tu-danh-gia-cong-viec-cua-nhan-vien",
+   "title": "Cách viết bản tự đánh giá công việc của nhân viên đầy đủ và ấn tượng",
+   "hub": "HUB-11",
+   "role": "featured",
+   "archetype": "PROCESS_FLOW",
+   "designArchetype": "PROCESS_FLOW",
+   "whyThisArchetype": "Heading ghi rõ trình tự viết: “1. Xác định rõ phạm vi” đến “6. Nói lên tham vọng của bạn”.",
+   "kicker": "Nhân sự & đánh giá",
+   "headline": "6 bước viết bản tự đánh giá công việc",
+   "elements": [
+    "Xác định rõ phạm vi",
+    "Liệt kê phẩm chất tích cực",
+    "Nâng cao thành tích của bạn",
+    "Thừa nhận sai lầm và điểm yếu",
+    "Phản hồi cho quản lý"
+   ],
+   "palette": {
+    "tokens": [
+     "ground #FFFFFF",
+     "panel #F7F5FA",
+     "cardFill #EFEBF5",
+     "hairline #E3DCEE",
+     "ink #191324",
+     "muted #5C5568",
+     "primary #673AB7",
+     "primaryTint rgba(103,58,183,.06–.14)"
+    ],
+    "accentUsed": false,
+    "accent": null,
+    "note": "Purple family + neutrals only; #00A88F unused in this archetype."
+   },
+   "altText": "Sơ đồ 5 chặng nối tiếp nhau: Xác định rõ phạm vi, Liệt kê phẩm chất tích cực, Nâng cao thành tích của bạn…",
+   "caption": "Sơ đồ minh hoạ — hình vẽ mới, không phải ảnh chụp màn hình sản phẩm",
+   "filename": "cach-viet-ban-tu-danh-gia-cong-viec.webp",
+   "captionFull": "Sơ đồ minh hoạ do Gcalls thiết kế cho bài viết: 6 bước viết bản tự đánh giá công việc. Đây là hình vẽ mới, không phải ảnh chụp màn hình sản phẩm."
+  },
+  {
+   "legacyId": 1157,
+   "livePostId": 204,
+   "slug": "cac-phan-mem-call-center-phu-hop-voi-cac-tong-dai-doanh-nghiep-hien-nay",
+   "title": "Phần Mềm Contact Center - Giải Pháp Tổng Đài Chuyên Nghiệp 2023",
+   "hub": "HUB-04",
+   "role": "featured",
+   "archetype": "SPLIT_COMPARE",
+   "designArchetype": "SPLIT_COMPARE",
+   "whyThisArchetype": "Heading “2. 7 điểm khác biệt nhất giữa Call Center và Contact Center” yêu cầu đúng một bố cục đối chiếu.",
+   "kicker": "Tổng đài & Call Center",
+   "headline": "Call Center và Contact Center khác gì?",
+   "elements": [
+    {
+     "label": "Call Center",
+     "points": [
+      "Kênh liên lạc thoại",
+      "Tiếp nhận cuộc gọi"
+     ]
+    },
+    {
+     "label": "Contact Center",
+     "points": [
+      "Hàng đợi omnichannel",
+      "Tự phục vụ và định tuyến",
+      "Đồng bộ hồ sơ khách hàng"
+     ]
+    }
+   ],
+   "palette": {
+    "tokens": [
+     "ground #FFFFFF",
+     "panel #F7F5FA",
+     "cardFill #EFEBF5",
+     "hairline #E3DCEE",
+     "ink #191324",
+     "muted #5C5568",
+     "primary #673AB7",
+     "primaryTint rgba(103,58,183,.06–.14)"
+    ],
+    "accentUsed": true,
+    "accent": "#00A88F",
+    "note": "Accent #00A88F carries ONLY the right-hand column (label, border, row marks); the left column stays on #673AB7. No third hue."
+   },
+   "altText": "Hai cột đối chiếu: Call Center, Contact Center, Kênh liên lạc thoại, Hàng đợi omnichannel.",
+   "caption": "Sơ đồ minh hoạ — hình vẽ mới, không phải ảnh chụp màn hình sản phẩm",
+   "filename": "phan-mem-contact-center-va-call-center.webp",
+   "captionFull": "Hình minh hoạ so sánh do Gcalls thiết kế cho bài viết: Call Center và Contact Center khác gì?. Đây là hình vẽ mới, không phải ảnh chụp màn hình sản phẩm."
+  },
+  {
+   "legacyId": 15332,
+   "livePostId": 343,
+   "slug": "dich-vu-voice-brandname-la-gi",
+   "title": "Dịch Vụ Voice Brandname Là Gì?",
+   "hub": "HUB-11",
+   "role": "featured",
+   "archetype": "CRITERIA_GRID",
+   "designArchetype": "DEFINITION_ANCHOR",
+   "whyThisArchetype": "Heading “4. Top 7+ lợi ích tuyệt vời khi đăng ký Voice Brandname” là một danh sách kiểm các lợi ích ngang hàng, cộng thêm khối thủ tục đăng ký.",
+   "kicker": "SMS & Voice Brandname",
+   "headline": "Đăng ký Voice Brandname được gì?",
+   "elements": [
+    "Độ tin cậy cao",
+    "Tỷ lệ nhận cuộc gọi cao",
+    "Tương tác khách hàng mới",
+    "Giữ chân khách hàng cũ",
+    "Chống cuộc gọi spam, cuộc gọi rác",
+    "Thủ tục đăng ký"
+   ],
+   "palette": {
+    "tokens": [
+     "ground #FFFFFF",
+     "panel #F7F5FA",
+     "cardFill #EFEBF5",
+     "hairline #E3DCEE",
+     "ink #191324",
+     "muted #5C5568",
+     "primary #673AB7",
+     "primaryTint rgba(103,58,183,.06–.14)"
+    ],
+    "accentUsed": false,
+    "accent": null,
+    "note": "Purple family + neutrals only; #00A88F unused in this archetype."
+   },
+   "altText": "Lưới 6 thẻ nhãn: Độ tin cậy cao, Tỷ lệ nhận cuộc gọi cao, Tương tác khách hàng mới, Giữ chân khách hàng cũ…",
+   "caption": "Sơ đồ minh hoạ — hình vẽ mới, không phải ảnh chụp màn hình sản phẩm",
+   "filename": "dich-vu-voice-brandname-la-gi.webp",
+   "captionFull": "Hình minh hoạ do Gcalls thiết kế cho bài viết: Đăng ký Voice Brandname được gì?. Đây là hình vẽ mới, không phải ảnh chụp màn hình sản phẩm."
+  },
+  {
+   "legacyId": 2784,
+   "livePostId": 251,
+   "slug": "loi-ich-ma-giai-phap-tich-hop-dien-thoai-may-tinh-dem-den-cho-call-center",
+   "title": "18 lợi ích mà giải pháp tích hợp điện thoại máy tính đem đến cho Call Center",
+   "hub": "HUB-01",
+   "role": "featured",
+   "archetype": "LAYERED_STACK",
+   "designArchetype": "CRITERIA_GRID",
+   "whyThisArchetype": "Bài mô tả các lớp của một hệ thống CTI chồng lên nhau: từ IVR, tới click-to-call trên màn hình, tới tích hợp phần mềm, tới “Các tính năng định tuyến cuộc gọi”.",
+   "kicker": "Tổng đài & Call Center",
+   "headline": "Tích hợp điện thoại – máy tính cho tổng đài",
+   "elements": [
+    "Tự động tương tác theo lời thoại (IVR)",
+    "Nhấp để gọi (Click to call)",
+    "Tích hợp phần mềm bán hàng và chăm sóc khách hàng",
+    "Định tuyến và theo dõi cuộc gọi"
+   ],
+   "palette": {
+    "tokens": [
+     "ground #FFFFFF",
+     "panel #F7F5FA",
+     "cardFill #EFEBF5",
+     "hairline #E3DCEE",
+     "ink #191324",
+     "muted #5C5568",
+     "primary #673AB7",
+     "primaryTint rgba(103,58,183,.06–.14)"
+    ],
+    "accentUsed": false,
+    "accent": null,
+    "note": "Purple family + neutrals only; #00A88F unused in this archetype."
+   },
+   "altText": "Các tầng xếp chồng: Tự động tương tác theo lời thoại (IVR), Nhấp để gọi (Click to call)…",
+   "caption": "Sơ đồ minh hoạ — hình vẽ mới, không phải ảnh chụp màn hình sản phẩm",
+   "filename": "loi-ich-tich-hop-dien-thoai-may-tinh-cti.webp",
+   "captionFull": "Sơ đồ minh hoạ do Gcalls thiết kế cho bài viết: Tích hợp điện thoại – máy tính cho tổng đài. Đây là hình vẽ mới, không phải ảnh chụp màn hình sản phẩm."
+  },
+  {
+   "legacyId": 15558,
+   "livePostId": 349,
+   "slug": "8-cach-giu-khach-hang-cu-hieu-qua",
+   "title": "8 Cách Giữ Khách Hàng Cũ Hiệu Quả",
+   "hub": "HUB-05",
+   "role": "featured",
+   "archetype": "CONVERSATION_MOMENT",
+   "designArchetype": "ADVICE_STACK",
+   "whyThisArchetype": "Các heading đều là lời nói và hành vi hướng thẳng tới khách: “Nói lời cảm ơn là một cách tuyệt vời để giữ chân khách hàng cũ”, “Lắng nghe khách hàng”, “chủ động liên lạc thường xuyên hơn với khách hàng”.",
+   "kicker": "Chăm sóc & trải nghiệm KH",
+   "headline": "Giữ chân khách hàng cũ bằng cách nào?",
+   "elements": [
+    "Nói lời cảm ơn",
+    "Lắng nghe khách hàng",
+    "Chủ động liên lạc thường xuyên hơn"
+   ],
+   "parties": {
+    "sideA": "Doanh nghiệp",
+    "sideB": "Khách hàng cũ"
+   },
+   "palette": {
+    "tokens": [
+     "ground #FFFFFF",
+     "panel #F7F5FA",
+     "cardFill #EFEBF5",
+     "hairline #E3DCEE",
+     "ink #191324",
+     "muted #5C5568",
+     "primary #673AB7",
+     "primaryTint rgba(103,58,183,.06–.14)"
+    ],
+    "accentUsed": false,
+    "accent": null,
+    "note": "Purple family + neutrals only; #00A88F unused in this archetype."
+   },
+   "altText": "Hai bên đối thoại (Doanh nghiệp – Khách hàng cũ): Nói lời cảm ơn, Lắng nghe khách hàng, Chủ động liên lạc thường xuyên hơn.",
+   "caption": "Sơ đồ minh hoạ — hình vẽ mới, không phải ảnh chụp màn hình sản phẩm",
+   "filename": "cach-giu-khach-hang-cu-hieu-qua.webp",
+   "captionFull": "Hình minh hoạ do Gcalls thiết kế cho bài viết: Giữ chân khách hàng cũ bằng cách nào?. Đây là hình vẽ mới, không phải ảnh chụp màn hình sản phẩm."
+  },
+  {
+   "legacyId": 1082,
+   "livePostId": 200,
+   "slug": "top-10-phan-mem-theo-doi-ban-hang-hang-dau-danh-cho-doanh-nghiep",
+   "title": "TOP 10 phần mềm theo dõi bán hàng hàng đầu dành cho doanh nghiệp",
+   "hub": "HUB-04",
+   "role": "featured",
+   "archetype": "CRITERIA_GRID",
+   "designArchetype": "TOOL_LINEUP",
+   "whyThisArchetype": "Nửa sau bài quy về một câu hỏi chung — “Bạn tìm kiếm điều gì ở một phần mềm theo dõi bán hàng?” — rồi treo quanh nó các sản phẩm có tên: Pipedrive, Insightly, HubSpot CRM, Agile CRM, Bitrix24.",
+   "kicker": "Telesales & Sales Ops",
+   "headline": "Chọn phần mềm theo dõi bán hàng: nhìn vào đâu?",
+   "elements": [
+    "Tỷ lệ chuyển đổi",
+    "Số liệu bán hàng từ nguồn khách hàng tiềm năng",
+    "Doanh thu mỗi đơn hàng"
+   ],
+   "palette": {
+    "tokens": [
+     "ground #FFFFFF",
+     "panel #F7F5FA",
+     "cardFill #EFEBF5",
+     "hairline #E3DCEE",
+     "ink #191324",
+     "muted #5C5568",
+     "primary #673AB7",
+     "primaryTint rgba(103,58,183,.06–.14)"
+    ],
+    "accentUsed": false,
+    "accent": null,
+    "note": "Purple family + neutrals only; #00A88F unused in this archetype."
+   },
+   "altText": "Lưới ba tiêu chí đánh giá phần mềm theo dõi bán hàng: tỷ lệ chuyển đổi, số liệu từ nguồn khách hàng tiềm năng, doanh thu mỗi đơn hàng.",
+   "caption": "Sơ đồ minh hoạ — hình vẽ mới, không phải ảnh chụp màn hình sản phẩm",
+   "filename": "phan-mem-theo-doi-ban-hang.webp",
+   "captionFull": "Sơ đồ minh hoạ do Gcalls thiết kế cho bài viết: Phần mềm theo dõi bán hàng cho doanh nghiệp. Đây là hình vẽ mới, không phải ảnh chụp màn hình sản phẩm.",
+   "coordinatorOverride": "CHANNEL_MAP put five competitor brand names (Pipedrive, HubSpot, Bitrix24...) on a Gcalls-branded share image, and its converging arrows imply integration rather than a comparison listicle. Switched to the evaluation criteria the article itself opens with (headings 0-3)."
+  },
+  {
+   "legacyId": 15738,
+   "livePostId": 359,
+   "slug": "tai-sao-dich-vu-tong-dai-ao-danh-cho-startup-bung-no-2023",
+   "title": "Tại Sao Dịch Vụ Tổng Đài Ảo Dành Cho Startup \"Bùng Nổ\" 2023?",
+   "hub": "HUB-01",
+   "role": "featured",
+   "archetype": "TIMELINE_TREND",
+   "designArchetype": "CRITERIA_GRID",
+   "whyThisArchetype": "Bài đọc như một đường tiến: từ “Dịch vụ tổng đài ảo cho startup là gì?” sang “Tại sao các Startup cần phải dùng đến giải pháp…?” rồi tới “Cần lưu ý điều gì khi sử dụng…?” và “Chọn nhà cung cấp dịch vụ uy tín”.",
+   "kicker": "Tổng đài & Call Center",
+   "headline": "Vì sao startup chuyển sang tổng đài ảo",
+   "elements": [
+    "Tổng đài ảo cho startup là gì",
+    "Vì sao startup cần đến giải pháp này",
+    "Cần lưu ý điều gì khi triển khai",
+    "Chọn nhà cung cấp uy tín"
+   ],
+   "palette": {
+    "tokens": [
+     "ground #FFFFFF",
+     "panel #F7F5FA",
+     "cardFill #EFEBF5",
+     "hairline #E3DCEE",
+     "ink #191324",
+     "muted #5C5568",
+     "primary #673AB7",
+     "primaryTint rgba(103,58,183,.06–.14)"
+    ],
+    "accentUsed": false,
+    "accent": null,
+    "note": "Purple family + neutrals only; #00A88F unused in this archetype."
+   },
+   "altText": "Trục ngang với các mốc: Tổng đài ảo cho startup là gì, Vì sao startup cần đến giải pháp này…",
+   "caption": "Sơ đồ minh hoạ — hình vẽ mới, không phải ảnh chụp màn hình sản phẩm",
+   "filename": "tong-dai-ao-cho-startup.webp",
+   "captionFull": "Sơ đồ minh hoạ do Gcalls thiết kế cho bài viết: Vì sao startup chuyển sang tổng đài ảo. Đây là hình vẽ mới, không phải ảnh chụp màn hình sản phẩm."
+  }
+ ]
+}

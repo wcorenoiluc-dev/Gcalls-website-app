@@ -415,6 +415,32 @@ $headers = Env::$mail[0]['headers'] ?? array();
 ok( '21 Reply-To set for a valid email', (bool) preg_grep( '/^Reply-To: a@example\.com$/', $headers ) );
 ok( '21 From is on this site\'s domain', (bool) preg_grep( '/^From: .*@example\.test>?$/', $headers ) );
 
+/* 22. The configured recipient, and what it must NOT change ------------
+ *
+ * GCALLS-041 names socialgcall@gmail.com as the notification recipient. It is
+ * an option, not a constant: the code default stays on the company domain, so
+ * a site that was never configured mails sales@gcalls.co rather than a
+ * personal mailbox someone typed into a release once.
+ *
+ * The second assertion is the one that matters. Routing TO a Gmail address
+ * must not tempt anything into sending FROM one — a From on gmail.com that
+ * this server is not authorised to send for is what gets the whole domain's
+ * mail classified as spoofing and dropped before anyone sees it.
+ */
+Env::reset();
+update_option( 'gcalls_lead_recipient', 'socialgcall@gmail.com' );
+submit( valid() );
+ok( '22 configured recipient is honoured', 'socialgcall@gmail.com' === ( Env::$mail[0]['to'] ?? '' ) );
+
+$headers = Env::$mail[0]['headers'] ?? array();
+ok( '22 From stays on this site, not the recipient domain', (bool) preg_grep( '/^From: .*@example\\.test>?$/', $headers ) );
+ok( '22 nothing sends From a gmail.com address', ! (bool) preg_grep( '/^From:.*gmail\\.com/i', $headers ) );
+
+Env::reset();
+update_option( 'gcalls_lead_recipient', 'not-an-email' );
+submit( valid() );
+ok( '22 an invalid configured recipient falls back to the default', 'sales@gcalls.co' === ( Env::$mail[0]['to'] ?? '' ) );
+
 /* ------------------------------------------------------------- summary */
 
 echo "\n$pass pass, $fail fail\n";

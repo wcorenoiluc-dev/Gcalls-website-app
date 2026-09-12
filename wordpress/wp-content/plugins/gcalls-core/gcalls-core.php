@@ -48,6 +48,8 @@ require_once GCALLS_CORE_DIR . 'includes/class-seo.php';
 require_once GCALLS_CORE_DIR . 'includes/class-redirects.php';
 require_once GCALLS_CORE_DIR . 'includes/class-hardening.php';
 require_once GCALLS_CORE_DIR . 'includes/class-importer.php';
+require_once GCALLS_CORE_DIR . 'includes/class-icons.php';
+require_once GCALLS_CORE_DIR . 'includes/class-sections.php';
 require_once GCALLS_CORE_DIR . 'includes/class-shortcodes.php';
 require_once GCALLS_CORE_DIR . 'includes/class-leads.php';
 require_once GCALLS_CORE_DIR . 'includes/class-mockups.php';

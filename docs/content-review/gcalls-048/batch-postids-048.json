@@ -1,0 +1,1626 @@
+{
+ "kind": "gcalls-batch-to-demo-postid-map",
+ "generatedBy": "WORKER D, read-only join",
+ "join": "blog-dryrun-047.json (legacyId,slug) x gcalls-core/data/corpus-migration.json built_from gc-db.sql (demo post id,status,outcome), joined on slug",
+ "caveat": "The demo post ids come from the gc-db.sql snapshot the media manifest was built from, not from a live read. Confirm one id in wp-admin before acting on the list.",
+ "batches": [
+  {
+   "batchId": "B01",
+   "decision": "REBUILD_KEEP_URL",
+   "hub": "HUB-01",
+   "articleCount": 20,
+   "demoPostIds": [
+    190,
+    189,
+    271,
+    187,
+    186,
+    208,
+    251,
+    252,
+    302,
+    303,
+    306,
+    309,
+    304,
+    310,
+    314,
+    315,
+    317,
+    318,
+    321,
+    320
+   ],
+   "articles": [
+    {
+     "legacyId": 669,
+     "slug": "5-loi-ich-cua-viec-su-dung-bao-cao-tong-dai-call-center-phan-1",
+     "demoPostId": 190,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 654,
+     "slug": "5-loi-ich-cua-viec-su-dung-bao-cao-tong-dai-call-center-phan-cuoi",
+     "demoPostId": 189,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 10741,
+     "slug": "8-loi-khuyen-danh-cho-nha-quan-ly-call-center",
+     "demoPostId": 271,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 603,
+     "slug": "10-thong-ke-ve-he-thong-voip-chung-minh-tam-quan-trong-cua-cong-nghe",
+     "demoPostId": 187,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 588,
+     "slug": "call-center-la-mot-trai-nghiem-thuong-hieu-trong-nganh-dich-vu-suc-khoe",
+     "demoPostId": 186,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 18
+    },
+    {
+     "legacyId": 1231,
+     "slug": "tuong-lai-cua-tong-dai-doanh-nghiep-10-xu-huong-noi-bat-nhat",
+     "demoPostId": 208,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 2784,
+     "slug": "loi-ich-ma-giai-phap-tich-hop-dien-thoai-may-tinh-dem-den-cho-call-center",
+     "demoPostId": 251,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 2811,
+     "slug": "call-center-diem-khac-biet-giua-on-premises-va-cloud-call-center-phan-cuoi",
+     "demoPostId": 252,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 13208,
+     "slug": "dich-vu-call-center-la-gi-cong-ty-cung-cap-uy-tin-nhat",
+     "demoPostId": 302,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 13242,
+     "slug": "tong-dai-ao-mien-phi-la-gi-top-5-tong-dai-ao-mien-phi-crm",
+     "demoPostId": 303,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 6
+    },
+    {
+     "legacyId": 13388,
+     "slug": "tong-dai-noi-bo-ao-khac-tong-dai-ao-diem-nao",
+     "demoPostId": 306,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 13427,
+     "slug": "giai-phap-tong-dai-ao-khong-day-co-gi-tot",
+     "demoPostId": 309,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 13286,
+     "slug": "tong-dai-ao-la-gi-loi-ich-hang-dau-danh-cho-doanh-nghiep",
+     "demoPostId": 304,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 13483,
+     "slug": "tong-dai-cong-nghe-la-gi-co-nen-dau-tu-vao-tong-dai-ao",
+     "demoPostId": 310,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 14462,
+     "slug": "hotline-la-gi-co-nhung-loai-dau-so-hotline-nao-hien-nay",
+     "demoPostId": 314,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 14502,
+     "slug": "ivr-la-gi-va-nhung-dieu-can-biet-ve",
+     "demoPostId": 315,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 14522,
+     "slug": "acd-la-gi-ung-dung-thuc-te-cua-acd-vao-call-center",
+     "demoPostId": 317,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 14536,
+     "slug": "dich-vu-tong-dai-ao-13-tinh-nang-noi-bat",
+     "demoPostId": 318,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 2
+    },
+    {
+     "legacyId": 14568,
+     "slug": "giai-dap-thong-tin-ve-voip-va-ung-dung-thuc-te",
+     "demoPostId": 321,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 14560,
+     "slug": "so-tong-dai-1800-la-gi-huong-dan-dang-ky-dau-so-1800-don-gian",
+     "demoPostId": 320,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    }
+   ]
+  },
+  {
+   "batchId": "B02",
+   "decision": "REBUILD_KEEP_URL",
+   "hub": "HUB-01",
+   "articleCount": 11,
+   "demoPostIds": [
+    328,
+    330,
+    322,
+    337,
+    338,
+    339,
+    359,
+    363,
+    366,
+    368,
+    376
+   ],
+   "articles": [
+    {
+     "legacyId": 14890,
+     "slug": "he-thong-tong-dai-dien-thoai-chuan-la-nhu-the-nao",
+     "demoPostId": 328,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 15008,
+     "slug": "tong-dai-ip-va-nhung-khac-biet-so-voi-tong-dai-analog",
+     "demoPostId": 330,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 14607,
+     "slug": "mau-loi-chao-tong-dai-dien-thoai-pho-bien-hien-nay",
+     "demoPostId": 322,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 15250,
+     "slug": "tong-dai-contact-center-la-gi",
+     "demoPostId": 337,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 15262,
+     "slug": "phan-mem-tong-dai-ao-la-gi",
+     "demoPostId": 338,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 15281,
+     "slug": "mua-so-tong-dai-1900-co-loi-ich-gi-nen-mua-o-dau-uy-tin",
+     "demoPostId": 339,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 15738,
+     "slug": "tai-sao-dich-vu-tong-dai-ao-danh-cho-startup-bung-no-2023",
+     "demoPostId": 359,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 15806,
+     "slug": "giai-phap-tong-dai-ao-cho-doanh-nghiep-vua-va-nho",
+     "demoPostId": 363,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 15859,
+     "slug": "tong-dai-ip-va-nhung-dieu-can-biet",
+     "demoPostId": 366,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 15884,
+     "slug": "dich-vu-tong-dai-dam-may-cho-start-up",
+     "demoPostId": 368,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 16018,
+     "slug": "dang-ky-tong-dai-ao-giai-phap-cham-soc-khach-hang-hieu-qua",
+     "demoPostId": 376,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    }
+   ]
+  },
+  {
+   "batchId": "B03",
+   "decision": "REBUILD_KEEP_URL",
+   "hub": "HUB-03",
+   "articleCount": 6,
+   "demoPostIds": [
+    185,
+    341,
+    344,
+    346,
+    348,
+    347
+   ],
+   "articles": [
+    {
+     "legacyId": 553,
+     "slug": "gcalls-va-ban-doi-tac-gioi-thieu-khach-hang",
+     "demoPostId": 185,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 15314,
+     "slug": "salesforce-la-gi-nhung-thong-tin-quan-trong-nhat",
+     "demoPostId": 341,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 15335,
+     "slug": "phan-mem-crm-viet-nam-la-gi",
+     "demoPostId": 344,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 15363,
+     "slug": "vi-sao-chien-luoc-cham-soc-khach-hang-voi-salesforce-can-thiet",
+     "demoPostId": 346,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 15384,
+     "slug": "salesforce-marketing-cloud-la-gi-tim-hieu-thong-tin-tu-a-z",
+     "demoPostId": 348,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 15380,
+     "slug": "so-sanh-salesforce-crm-va-cac-phan-mem-khac",
+     "demoPostId": 347,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    }
+   ]
+  },
+  {
+   "batchId": "B04",
+   "decision": "REBUILD_KEEP_URL",
+   "hub": "HUB-04",
+   "articleCount": 20,
+   "demoPostIds": [
+    191,
+    284,
+    188,
+    270,
+    274,
+    275,
+    199,
+    200,
+    201,
+    202,
+    203,
+    276,
+    204,
+    205,
+    206,
+    207,
+    277,
+    209,
+    279,
+    210
+   ],
+   "articles": [
+    {
+     "legacyId": 676,
+     "slug": "lam-the-nao-de-mo-rong-mot-nhom-ban-hang-toan-cau",
+     "demoPostId": 191,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 10756,
+     "slug": "telesales-va-telemarketing",
+     "demoPostId": 284,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 615,
+     "slug": "10-meo-hay-nhat-de-telesales-thanh-cong",
+     "demoPostId": 188,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 10740,
+     "slug": "bo-cau-hoi-phong-van-chuyen-vien-telemarketing-va-telesales",
+     "demoPostId": 270,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 10745,
+     "slug": "xay-dung-chien-luoc-email-follow-up-giup-ban-hang-hieu-qua-phan-1",
+     "demoPostId": 274,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 10746,
+     "slug": "xay-dung-chien-luoc-email-follow-up-phan-cuoi",
+     "demoPostId": 275,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1071,
+     "slug": "cach-tao-ho-so-khach-hang-ly-tuong-cho-nhom-khach-hang-tiem-nang-b2b",
+     "demoPostId": 199,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1082,
+     "slug": "top-10-phan-mem-theo-doi-ban-hang-hang-dau-danh-cho-doanh-nghiep",
+     "demoPostId": 200,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1102,
+     "slug": "5-chi-so-do-luong-hieu-suat-ban-hang-quan-trong-nen-theo-doi",
+     "demoPostId": 201,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1113,
+     "slug": "9-meo-cold-calling-danh-cho-nhan-vien-ban-hang-phan-1",
+     "demoPostId": 202,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1134,
+     "slug": "9-meo-cold-calling-danh-cho-nhan-vien-ban-hang-phan-cuoi",
+     "demoPostId": 203,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 10747,
+     "slug": "7-buoc-lap-ke-hoach-telesales-hieu-qua",
+     "demoPostId": 276,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1157,
+     "slug": "cac-phan-mem-call-center-phu-hop-voi-cac-tong-dai-doanh-nghiep-hien-nay",
+     "demoPostId": 204,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 17
+    },
+    {
+     "legacyId": 1187,
+     "slug": "ban-hang-inbound-hay-ban-hang-outbound-phan-1",
+     "demoPostId": 205,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1198,
+     "slug": "ban-hang-inbound-hay-ban-hang-outbound-phan-2",
+     "demoPostId": 206,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1219,
+     "slug": "ban-hang-inbound-hay-outbound-dau-la-phuong-phap-ban-hang-ma-ban-nen-quan-tam-phan-3",
+     "demoPostId": 207,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 10748,
+     "slug": "5-dieu-ve-trai-nghiem-khach-hang-moi-nhan-vien-ban-hang-nen-biet",
+     "demoPostId": 277,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1296,
+     "slug": "bi-quyet-telesales-nen-hay-khong-nen-su-dung-kich-ban-cuoc-goi-ban-hang",
+     "demoPostId": 209,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 10750,
+     "slug": "cach-ban-hang-hieu-qua-bang-giong-noi",
+     "demoPostId": 279,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1314,
+     "slug": "telesales-cach-tap-trung-khi-goi-dien-ban-hang",
+     "demoPostId": 210,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    }
+   ]
+  },
+  {
+   "batchId": "B05",
+   "decision": "REBUILD_KEEP_URL",
+   "hub": "HUB-04",
+   "articleCount": 20,
+   "demoPostIds": [
+    211,
+    280,
+    212,
+    213,
+    214,
+    281,
+    215,
+    216,
+    217,
+    222,
+    282,
+    283,
+    268,
+    269,
+    226,
+    223,
+    227,
+    261,
+    293,
+    292
+   ],
+   "articles": [
+    {
+     "legacyId": 1324,
+     "slug": "telesales-thanh-cong-va-cach-danh-gia-cuoc-goi-ban-hang",
+     "demoPostId": 211,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 10751,
+     "slug": "5-buoc-de-thiet-ke-mot-kich-ban-ban-hang-thanh-cong",
+     "demoPostId": 280,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1351,
+     "slug": "6-cach-nhan-tin-cho-khach-hang-dat-hieu-qua-trong-quy-trinh-ban-hang",
+     "demoPostId": 212,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1381,
+     "slug": "6-buoc-xay-dung-kich-ban-ban-hang-dinh-cao",
+     "demoPostId": 213,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1396,
+     "slug": "cach-goi-dien-thoai-cho-khach-hang-tiem-nang-da-mo-email",
+     "demoPostId": 214,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 10752,
+     "slug": "dung-bao-gia-giai-phap-truoc-khi-truyen-tai-duoc-gia-tri-den-khach-hang",
+     "demoPostId": 281,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1420,
+     "slug": "cach-giam-ap-luc-khi-lam-telesales",
+     "demoPostId": 215,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1427,
+     "slug": "cac-chi-so-danh-gia-pheu-ban-hang-hieu-qua",
+     "demoPostId": 216,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1440,
+     "slug": "tiep-thi-qua-dien-thoai-huong-dan-nhanh-cold-calling-chuyen-nghiep",
+     "demoPostId": 217,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1560,
+     "slug": "tiep-thi-qua-dien-thoai-ky-nang-xu-ly-tu-choi",
+     "demoPostId": 222,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 10753,
+     "slug": "mau-bang-danh-gia-nhan-vien-ban-hang",
+     "demoPostId": 282,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 10754,
+     "slug": "8-buoc-quan-trong-de-thuc-hien-cuoc-hop-danh-gia-ban-hang-hang-nam",
+     "demoPostId": 283,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 10733,
+     "slug": "cuoc-goi-tiep-thi-qua-dien-thoai-la-gi",
+     "demoPostId": 268,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 10734,
+     "slug": "cach-tiep-thi-qua-dien-thoai-hieu-qua-xu-ly-3-loi-tu-choi-cuoc-goi-chao-hang",
+     "demoPostId": 269,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1805,
+     "slug": "ban-hang-qua-dien-thoai-3-cau-hoi-ban-nen-tu-hoi-truoc-khi-thuc-hien-cuoc-goi",
+     "demoPostId": 226,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1591,
+     "slug": "giong-noi-yeu-to-quyet-dinh-thanh-cong-trong-tiep-thi-qua-dien-thoai",
+     "demoPostId": 223,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1817,
+     "slug": "cach-chiem-duoc-long-tin-cua-khach-hang-kin-tieng",
+     "demoPostId": 227,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 2958,
+     "slug": "ban-hang-qua-dien-thoai-lam-gi-neu-khach-hang-noi-toi-khong-co-thoi-gian",
+     "demoPostId": 261,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 2
+    },
+    {
+     "legacyId": 12751,
+     "slug": "kinh-nghiem-kinh-doanh-shopee-ban-hang-online",
+     "demoPostId": 293,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 12686,
+     "slug": "hoc-ngay-5-kinh-nghiem-ban-hang-tren-shopee",
+     "demoPostId": 292,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    }
+   ]
+  },
+  {
+   "batchId": "B06",
+   "decision": "REBUILD_KEEP_URL",
+   "hub": "HUB-04",
+   "articleCount": 13,
+   "demoPostIds": [
+    295,
+    298,
+    299,
+    316,
+    325,
+    334,
+    345,
+    353,
+    369,
+    370,
+    371,
+    374,
+    377
+   ],
+   "articles": [
+    {
+     "legacyId": 12797,
+     "slug": "khoa-hoc-ban-hang-tren-shopee-nao-hieu-qua-nhat",
+     "demoPostId": 295,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 13020,
+     "slug": "khoa-hoc-kinh-doanh-shopee-hieu-qua-trong-top-3",
+     "demoPostId": 298,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 13047,
+     "slug": "cach-toi-uu-san-pham-tren-shopee-hieu-qua-nhat",
+     "demoPostId": 299,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 14506,
+     "slug": "quy-trinh-cham-soc-khach-hang-sau-ban-hang",
+     "demoPostId": 316,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 14787,
+     "slug": "cach-xu-ly-cac-tinh-huong-cham-soc-khach-hang",
+     "demoPostId": 325,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 15217,
+     "slug": "phan-mem-quan-ly-ban-hang-da-kenh-la-gi-co-nen-su-dung",
+     "demoPostId": 334,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 15353,
+     "slug": "cach-xay-dung-quy-trinh-ban-hang-cua-doanh-nghiep-hieu-qua",
+     "demoPostId": 345,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 15646,
+     "slug": "top-5-loi-ich-cua-phan-mem-auto-answer",
+     "demoPostId": 353,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 15904,
+     "slug": "8-buoc-ban-hang-co-ban-va-hieu-qua-cho-nhan-vien-sales",
+     "demoPostId": 369,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 15916,
+     "slug": "cach-goi-sale-hieu-qua-co-the-ban-khong-biet",
+     "demoPostId": 370,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 15926,
+     "slug": "cach-telesale-cho-nguoi-moi-bat-dau",
+     "demoPostId": 371,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 15993,
+     "slug": "phuong-phap-quan-ly-telesale-hieu-qua",
+     "demoPostId": 374,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 16022,
+     "slug": "cach-goi-telesale-hieu-qua-ma-ban-chua-biet",
+     "demoPostId": 377,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    }
+   ]
+  },
+  {
+   "batchId": "B07",
+   "decision": "REBUILD_KEEP_URL",
+   "hub": "HUB-05",
+   "articleCount": 20,
+   "demoPostIds": [
+    184,
+    195,
+    313,
+    326,
+    329,
+    331,
+    333,
+    336,
+    340,
+    350,
+    349,
+    351,
+    352,
+    354,
+    355,
+    358,
+    364,
+    372,
+    375,
+    378
+   ],
+   "articles": [
+    {
+     "legacyId": 439,
+     "slug": "goc-nhin-cua-doanh-nghiep-va-khach-hang-ve-tong-dai-cskh-va-ban-hang",
+     "demoPostId": 184,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 861,
+     "slug": "11-chi-so-danh-gia-quan-trong-doi-voi-bo-phan-cham-soc-khach-hang",
+     "demoPostId": 195,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 14415,
+     "slug": "ke-hoach-cham-soc-khach-hang-cu-hieu-qua-nhat",
+     "demoPostId": 313,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 14797,
+     "slug": "tin-nhan-cham-soc-khach-hang-cu-hieu-qua-nhat",
+     "demoPostId": 326,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 14902,
+     "slug": "dich-vu-cham-soc-khach-hang-la-gi",
+     "demoPostId": 329,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 15049,
+     "slug": "kich-ban-tu-van-khach-hang-spa-la-gi",
+     "demoPostId": 331,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 15207,
+     "slug": "5-ly-do-nen-chon-dich-vu-cham-soc-khach-hang-viettel",
+     "demoPostId": 333,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 15235,
+     "slug": "customer-success-la-gi-nhung-thong-tin-cu-the-nhat",
+     "demoPostId": 336,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 15306,
+     "slug": "cham-soc-khach-hang-qua-dien-thoai",
+     "demoPostId": 340,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 15561,
+     "slug": "trai-nghiem-khach-hang-xuat-sac-la-gi-cach-nang-cap",
+     "demoPostId": 350,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 15558,
+     "slug": "8-cach-giu-khach-hang-cu-hieu-qua",
+     "demoPostId": 349,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 15589,
+     "slug": "cau-hoi-cham-soc-khach-hang-cu-kich-ban-cskh-hieu-qua",
+     "demoPostId": 351,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 15604,
+     "slug": "giai-phap-cham-soc-khach-hang-nao-toi-uu-nhat",
+     "demoPostId": 352,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 15660,
+     "slug": "chien-luoc-giu-chan-khach-hang-hieu-qua-nhat",
+     "demoPostId": 354,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 15681,
+     "slug": "tin-nhan-cham-soc-khach-hang-cu-giup-gia-tang-hieu-qua",
+     "demoPostId": 355,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 15724,
+     "slug": "bi-quyet-cham-soc-khach-hang-tuyet-dinh-nhat",
+     "demoPostId": 358,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 15830,
+     "slug": "mo-hinh-trai-nghiem-khach-hang-la-gi",
+     "demoPostId": 364,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 15943,
+     "slug": "chuong-trinh-cham-soc-khach-hang-toi-uu-nhat",
+     "demoPostId": 372,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 16005,
+     "slug": "he-thong-cham-soc-khach-hang-loi-ich-va-6-tinh-nang",
+     "demoPostId": 375,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 16035,
+     "slug": "8-cach-nang-cao-trai-nghiem-dich-vu-khach-hang",
+     "demoPostId": 378,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    }
+   ]
+  },
+  {
+   "batchId": "B08",
+   "decision": "REBUILD_KEEP_URL",
+   "hub": "HUB-05",
+   "articleCount": 2,
+   "demoPostIds": [
+    380,
+    382
+   ],
+   "articles": [
+    {
+     "legacyId": 16109,
+     "slug": "chu-y-khi-xay-dung-so-do-quy-trinh-cham-soc-khach-hang",
+     "demoPostId": 380,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 16145,
+     "slug": "phuong-phap-cham-soc-khach-hang-hieu-qua",
+     "demoPostId": 382,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    }
+   ]
+  },
+  {
+   "batchId": "B09",
+   "decision": "REBUILD_KEEP_URL",
+   "hub": "HUB-07",
+   "articleCount": 1,
+   "demoPostIds": [
+    393
+   ],
+   "articles": [
+    {
+     "legacyId": 16324,
+     "slug": "tu-ghi-am-cuoc-goi-va-cach-huong-dan-cai",
+     "demoPostId": 393,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    }
+   ]
+  },
+  {
+   "batchId": "B10",
+   "decision": "REBUILD_KEEP_URL",
+   "hub": "HUB-08",
+   "articleCount": 3,
+   "demoPostIds": [
+    294,
+    312,
+    391
+   ],
+   "articles": [
+    {
+     "legacyId": 12770,
+     "slug": "shopee-template-va-cach-thiet-ke-chi-tiet-tren-canva",
+     "demoPostId": 294,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 14292,
+     "slug": "marketing-automation-la-gi-nhung-thong-tin-can-biet",
+     "demoPostId": 312,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 16271,
+     "slug": "nha-dau-tu-thien-than-cuu-tinh-cua-start-up",
+     "demoPostId": 391,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    }
+   ]
+  },
+  {
+   "batchId": "B11",
+   "decision": "REBUILD_KEEP_URL",
+   "hub": "HUB-09",
+   "articleCount": 1,
+   "demoPostIds": [
+    228
+   ],
+   "articles": [
+    {
+     "legacyId": 1967,
+     "slug": "chien-luoc-mo-rong-ra-thi-truong-nuoc-ngoai-va-phuc-vu-khach-hang-quoc-te",
+     "demoPostId": 228,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    }
+   ]
+  },
+  {
+   "batchId": "B12",
+   "decision": "REBUILD_KEEP_URL",
+   "hub": "HUB-10",
+   "articleCount": 2,
+   "demoPostIds": [
+    196,
+    198
+   ],
+   "articles": [
+    {
+     "legacyId": 872,
+     "slug": "cong-nghe-dang-thay-doi-cach-moi-nguoi-lam-viec-tu-xa-nhu-the-nao",
+     "demoPostId": 196,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 897,
+     "slug": "10-cong-nghe-phai-co-de-co-the-xay-dung-team-lam-viec-tu-xa-hieu-qua",
+     "demoPostId": 198,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    }
+   ]
+  },
+  {
+   "batchId": "B13",
+   "decision": "REBUILD_UPDATE_TOPIC",
+   "hub": "HUB-11",
+   "articleCount": 20,
+   "demoPostIds": [
+    192,
+    193,
+    183,
+    272,
+    194,
+    197,
+    225,
+    285,
+    286,
+    399,
+    287,
+    289,
+    288,
+    291,
+    290,
+    319,
+    323,
+    327,
+    332,
+    335
+   ],
+   "articles": [
+    {
+     "legacyId": 684,
+     "slug": "goals-muc-dich-vs-objectives-muc-tieu-phan-biet-don-gian",
+     "demoPostId": 192,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 694,
+     "slug": "tai-sao-khong-tuy-y-dua-y-kien-trong-content-marketing",
+     "demoPostId": 193,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 410,
+     "slug": "nang-tam-gia-tri-thuong-hieu-cua-doanh-nghiep-ban-voi-voice-brandname",
+     "demoPostId": 183,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 10742,
+     "slug": "quyet-toan-thue-tncn-doanh-nghiep-va-nguoi-lao-dong-can-biet",
+     "demoPostId": 272,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 826,
+     "slug": "cach-mang-cong-nghiep-4-0-va-loi-ich-doi-voi-doanh-nghiep",
+     "demoPostId": 194,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 884,
+     "slug": "tiep-thi-qua-dien-thoai-13-meo-chinh-phuc-khach-hang",
+     "demoPostId": 197,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 1705,
+     "slug": "cach-viet-ban-tu-danh-gia-cong-viec-cua-nhan-vien",
+     "demoPostId": 225,
+     "demoStatus": "draft",
+     "mediaOutcome": "NO_WORK",
+     "rewritableUrls": 0
+    },
+    {
+     "legacyId": 12281,
+     "slug": "sms-marketing-la-gi-vi-sao-ban-nen-dung-sms-marketing",
+     "demoPostId": 285,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 12293,
+     "slug": "phan-mem-sms-marketing-va-nhung-dieu-can-biet",
+     "demoPostId": 286,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 17741,
+     "slug": "thu-thuat-tang-traffic-website-uy-tin-tai-trafficseo",
+     "demoPostId": 399,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 12309,
+     "slug": "dich-vu-tin-nhan-sms-brandname-la-gi",
+     "demoPostId": 287,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 12590,
+     "slug": "phan-mem-sms-brandname-nao-tot-nhat",
+     "demoPostId": 289,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 12326,
+     "slug": "sms-brandname-la-gi-gom-may-loai-va-co-loi-ich-gi-cho-doanh-nghiep",
+     "demoPostId": 288,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 12625,
+     "slug": "sms-brandname-gia-re-uy-tin-tai-gcalls",
+     "demoPostId": 291,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 12599,
+     "slug": "sms-marketing-gia-re-bao-gia-nhanh-hieu-qua-hang-dau",
+     "demoPostId": 290,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 14539,
+     "slug": "sip-trunk-la-gi-loi-ich-dich-vu-nay-mang-den-nhu-the-nao",
+     "demoPostId": 319,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 14614,
+     "slug": "service-level-agreement-la-gi-tu-a-z-thong-tin-ve-sla",
+     "demoPostId": 323,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 14870,
+     "slug": "on-premise-la-gi-va-day-co-phai-la-giai-phap-tot-nhat",
+     "demoPostId": 327,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 15195,
+     "slug": "customer-lifetime-value-la-gi-vai-tro-va-cach-tinh",
+     "demoPostId": 332,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    },
+    {
+     "legacyId": 15221,
+     "slug": "dich-vu-voice-brandname-la-gi-va-nhung-loi-ich",
+     "demoPostId": 335,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 3
+    }
+   ]
+  },
+  {
+   "batchId": "B14",
+   "decision": "REBUILD_UPDATE_TOPIC",
+   "hub": "HUB-11",
+   "articleCount": 20,
+   "demoPostIds": [
+    343,
+    356,
+    357,
+    360,
+    361,
+    362,
+    365,
+    367,
+    373,
+    379,
+    381,
+    383,
+    384,
+    386,
+    385,
+    387,
+    390,
+    392,
+    389,
+    388
+   ],
+   "articles": [
+    {
+     "legacyId": 15332,
+     "slug": "dich-vu-voice-brandname-la-gi",
+     "demoPostId": 343,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 7
+    },
+    {
+     "legacyId": 15687,
+     "slug": "quan-ly-thong-tin-khach-hang-hieu-qua-qua-he-thong-nao",
+     "demoPostId": 356,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 1
+    },
+    {
+     "legacyId": 15713,
+     "slug": "quan-ly-cuoc-goi-khach-hang",
+     "demoPostId": 357,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 15765,
+     "slug": "phan-mem-auto-call-va-nhung-loi-ich-cho-doanh-nghiep",
+     "demoPostId": 360,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 15775,
+     "slug": "5-loi-ich-cua-dich-vu-ho-tro-truc-tuyen",
+     "demoPostId": 361,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 15794,
+     "slug": "he-thong-quan-ly-khach-hang",
+     "demoPostId": 362,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 15847,
+     "slug": "luu-tru-thong-tin-khach-hang-voi-top-3-phan-mem-tot-nhat",
+     "demoPostId": 365,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 15870,
+     "slug": "nhan-vien-ho-tro-khach-hang-chia-khoa-thanh-cong-cua-doanh-nghiep",
+     "demoPostId": 367,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 15982,
+     "slug": "quan-ly-quan-he-khach-hang",
+     "demoPostId": 373,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 16095,
+     "slug": "he-thong-quan-ly-khach-hang-trong-nha-hang-khach-san",
+     "demoPostId": 379,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 16131,
+     "slug": "phan-mem-quan-ly-khach-hang-mien-phi",
+     "demoPostId": 381,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 16176,
+     "slug": "nang-cao-chat-luong-nguon-nhan-luc",
+     "demoPostId": 383,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 16180,
+     "slug": "xay-dung-chien-luoc-marketing-hieu-qua-nhu-the-nao",
+     "demoPostId": 384,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 16202,
+     "slug": "8-phuong-phap-tiep-can-khach-hang-hieu-qua",
+     "demoPostId": 386,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 16201,
+     "slug": "9-y-tuong-khoi-nghiep-tuyet-voi-cho-ban",
+     "demoPostId": 385,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 16240,
+     "slug": "xac-dinh-khach-hang-muc-tieu-vai-tro-cach-xac-dinh",
+     "demoPostId": 387,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 16257,
+     "slug": "xac-dinh-ngan-sach-marketing-nhu-the-nao",
+     "demoPostId": 390,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 16284,
+     "slug": "9-buoc-lap-ke-hoach-digital-marketing",
+     "demoPostId": 392,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 16254,
+     "slug": "5-buoc-lap-ke-hoach-marketing-hieu-qua-cho-doanh-nghiep",
+     "demoPostId": 389,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 16252,
+     "slug": "muc-tieu-smart-la-gi-vi-du-va-cach-dat-muc-tieu-smart",
+     "demoPostId": 388,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    }
+   ]
+  },
+  {
+   "batchId": "B15",
+   "decision": "REBUILD_UPDATE_TOPIC",
+   "hub": "HUB-11",
+   "articleCount": 4,
+   "demoPostIds": [
+    395,
+    394,
+    396,
+    398
+   ],
+   "articles": [
+    {
+     "legacyId": 16348,
+     "slug": "huong-dan-khoi-nghiep-hieu-qua",
+     "demoPostId": 395,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 16329,
+     "slug": "4-website-goi-von-cong-dong-hieu-qua-danh-cho-start-up",
+     "demoPostId": 394,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 5
+    },
+    {
+     "legacyId": 16376,
+     "slug": "quan-tri-theo-muc-tieu-smart-la-gi",
+     "demoPostId": 396,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 4
+    },
+    {
+     "legacyId": 16611,
+     "slug": "9-viec-nen-va-khong-nen-lam-trong-quy-trinh-danh-gia-nhan-vien",
+     "demoPostId": 398,
+     "demoStatus": "draft",
+     "mediaOutcome": "ELIGIBLE",
+     "rewritableUrls": 2
+    }
+   ]
+  }
+ ],
+ "unresolved": 0
+}

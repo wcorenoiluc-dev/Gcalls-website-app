@@ -1,0 +1,335 @@
+[
+ {
+  "path": "/",
+  "family": "home",
+  "source": "homepage-elementor.json",
+  "sections": 13,
+  "local": "complete",
+  "liveWords": 2765,
+  "live": "content"
+ },
+ {
+  "path": "/bang-gia/",
+  "family": "pricing",
+  "source": "ADAPTED · src/data/pricing.ts (PRICING_FACTORS, PRICING_ADDONS, SOLUTION_PRICING, PRICING_FAQ)",
+  "sections": 6,
+  "local": "complete",
+  "liveWords": 116,
+  "live": "SHELL"
+ },
+ {
+  "path": "/cong-ty/",
+  "family": "company-overview",
+  "source": "ADAPTED · src/data/company/index.ts",
+  "sections": 1,
+  "local": "complete",
+  "liveWords": 108,
+  "live": "SHELL"
+ },
+ {
+  "path": "/cong-ty/doi-tac/",
+  "family": "company",
+  "source": "PORTED · src/data/company/partners.ts",
+  "sections": 9,
+  "local": "complete",
+  "liveWords": 103,
+  "live": "SHELL"
+ },
+ {
+  "path": "/cong-ty/khach-hang/",
+  "family": "company",
+  "source": "PORTED · src/data/company/customers.ts",
+  "sections": 9,
+  "local": "complete",
+  "liveWords": 102,
+  "live": "SHELL"
+ },
+ {
+  "path": "/gcalls-cx/",
+  "family": "product",
+  "source": "product-pages.json",
+  "sections": "—",
+  "local": "complete",
+  "liveWords": 2316,
+  "live": "content"
+ },
+ {
+  "path": "/gcalls-plus-webphone/",
+  "family": "product",
+  "source": "product-pages.json",
+  "sections": "—",
+  "local": "complete",
+  "liveWords": 1764,
+  "live": "content"
+ },
+ {
+  "path": "/giai-phap/",
+  "family": "solution-overview",
+  "source": "0.10.1 manifest",
+  "sections": 4,
+  "local": "complete",
+  "liveWords": 894,
+  "live": "content"
+ },
+ {
+  "path": "/lien-he/",
+  "family": "contact",
+  "source": "0.10.1 manifest",
+  "sections": 1,
+  "local": "complete",
+  "liveWords": 136,
+  "live": "SHELL"
+ },
+ {
+  "path": "/nganh/",
+  "family": "industry-overview",
+  "source": "ADAPTED · src/data/industries/index.ts (INDUSTRIES)",
+  "sections": 1,
+  "local": "complete",
+  "liveWords": 122,
+  "live": "SHELL"
+ },
+ {
+  "path": "/nganh/bao-hiem/",
+  "family": "industry",
+  "source": "PORTED · src/data/industries/insurance.ts",
+  "sections": 6,
+  "local": "complete",
+  "liveWords": 105,
+  "live": "SHELL"
+ },
+ {
+  "path": "/nganh/bat-dong-san/",
+  "family": "industry",
+  "source": "PORTED · src/data/industries/real-estate.ts",
+  "sections": 6,
+  "local": "complete",
+  "liveWords": 104,
+  "live": "SHELL"
+ },
+ {
+  "path": "/nganh/bpo/",
+  "family": "industry",
+  "source": "PORTED · src/data/industries/bpo.ts",
+  "sections": 6,
+  "local": "complete",
+  "liveWords": 102,
+  "live": "SHELL"
+ },
+ {
+  "path": "/nganh/giao-duc/",
+  "family": "industry",
+  "source": "PORTED · src/data/industries/education.ts",
+  "sections": 6,
+  "local": "complete",
+  "liveWords": 104,
+  "live": "SHELL"
+ },
+ {
+  "path": "/nganh/tai-chinh/",
+  "family": "industry",
+  "source": "PORTED · src/data/industries/finance.ts",
+  "sections": 6,
+  "local": "complete",
+  "liveWords": 104,
+  "live": "SHELL"
+ },
+ {
+  "path": "/nganh/thuong-mai-dien-tu/",
+  "family": "industry",
+  "source": "PORTED · src/data/industries/ecommerce.ts",
+  "sections": 6,
+  "local": "complete",
+  "liveWords": 104,
+  "live": "SHELL"
+ },
+ {
+  "path": "/qc-bot-ai/",
+  "family": "product",
+  "source": "product-pages.json",
+  "sections": "—",
+  "local": "complete",
+  "liveWords": 2245,
+  "live": "content"
+ },
+ {
+  "path": "/referral/",
+  "family": "referral",
+  "source": "PORTED · src/pages/ReferralPage.tsx (STEPS, REFERRAL_LEAD)",
+  "sections": 2,
+  "local": "complete",
+  "liveWords": 100,
+  "live": "SHELL"
+ },
+ {
+  "path": "/san-pham/",
+  "family": "product-overview",
+  "source": "0.10.1 manifest",
+  "sections": 4,
+  "local": "complete",
+  "liveWords": 653,
+  "live": "content"
+ },
+ {
+  "path": "/tai-nguyen/",
+  "family": "resource-overview",
+  "source": "ADAPTED · src/data/resources/index.ts (RESOURCE_NAV)",
+  "sections": 1,
+  "local": "complete",
+  "liveWords": 114,
+  "live": "SHELL"
+ },
+ {
+  "path": "/tai-nguyen/case-studies/",
+  "family": "resource",
+  "source": "PORTED · src/data/resources/caseStudies.ts",
+  "sections": 6,
+  "local": "complete",
+  "liveWords": 101,
+  "live": "SHELL"
+ },
+ {
+  "path": "/tai-nguyen/ebook/",
+  "family": "resource",
+  "source": "PORTED · src/data/resources/ebook.ts",
+  "sections": 5,
+  "local": "complete",
+  "liveWords": 101,
+  "live": "SHELL"
+ },
+ {
+  "path": "/tai-nguyen/faq/",
+  "family": "resource",
+  "source": "PORTED · src/data/resources/faq.ts",
+  "sections": 9,
+  "local": "complete",
+  "liveWords": 102,
+  "live": "SHELL"
+ },
+ {
+  "path": "/tai-nguyen/glossary/",
+  "family": "resource",
+  "source": "PORTED · src/data/resources/glossary.ts",
+  "sections": 9,
+  "local": "complete",
+  "liveWords": 101,
+  "live": "SHELL"
+ },
+ {
+  "path": "/tai-nguyen/guides/",
+  "family": "resource",
+  "source": "PORTED · src/data/resources/guides.ts",
+  "sections": 4,
+  "local": "complete",
+  "liveWords": 102,
+  "live": "SHELL"
+ },
+ {
+  "path": "/tich-hop/",
+  "family": "integration-overview",
+  "source": "0.10.1 manifest",
+  "sections": 4,
+  "local": "complete",
+  "liveWords": 114,
+  "live": "SHELL"
+ },
+ {
+  "path": "/tich-hop/freshdesk/",
+  "family": "integration-detail",
+  "source": "0.10.1 manifest",
+  "sections": 16,
+  "local": "complete",
+  "liveWords": 100,
+  "live": "SHELL"
+ },
+ {
+  "path": "/tich-hop/hubspot/",
+  "family": "integration-detail",
+  "source": "0.10.1 manifest",
+  "sections": 13,
+  "local": "complete",
+  "liveWords": 100,
+  "live": "SHELL"
+ },
+ {
+  "path": "/tich-hop/salesforce/",
+  "family": "integration-detail",
+  "source": "0.10.1 manifest",
+  "sections": 15,
+  "local": "complete",
+  "liveWords": 100,
+  "live": "SHELL"
+ },
+ {
+  "path": "/tich-hop/zendesk/",
+  "family": "integration-detail",
+  "source": "0.10.1 manifest",
+  "sections": 16,
+  "local": "complete",
+  "liveWords": 100,
+  "live": "SHELL"
+ },
+ {
+  "path": "/tich-hop/zoho-crm/",
+  "family": "integration-detail",
+  "source": "0.10.1 manifest",
+  "sections": 15,
+  "local": "complete",
+  "liveWords": 102,
+  "live": "SHELL"
+ },
+ {
+  "path": "/tong-dai-quoc-te/",
+  "family": "solution-detail",
+  "source": "0.10.1 manifest",
+  "sections": 14,
+  "local": "complete",
+  "liveWords": 2191,
+  "live": "content"
+ },
+ {
+  "path": "/tong-dai-tich-hop-crm/",
+  "family": "solution-detail",
+  "source": "0.10.1 manifest",
+  "sections": 14,
+  "local": "complete",
+  "liveWords": 1693,
+  "live": "content"
+ },
+ {
+  "path": "/tong-dai-tich-hop-helpdesk/",
+  "family": "solution-detail",
+  "source": "0.10.1 manifest",
+  "sections": 12,
+  "local": "complete",
+  "liveWords": 1611,
+  "live": "content"
+ },
+ {
+  "path": "/tong-dai-tich-hop-pos/",
+  "family": "solution-detail",
+  "source": "0.10.1 manifest",
+  "sections": 13,
+  "local": "complete",
+  "liveWords": 1645,
+  "live": "content"
+ },
+ {
+  "path": "/uoc-tinh-chi-phi/",
+  "family": "tool",
+  "source": "loss-estimator shortcode",
+  "sections": "—",
+  "local": "complete",
+  "liveWords": 731,
+  "live": "content"
+ },
+ {
+  "path": "/voicebot-ai/",
+  "family": "product",
+  "source": "product-pages.json",
+  "sections": "—",
+  "local": "complete",
+  "liveWords": 2258,
+  "live": "content"
+ }
+]

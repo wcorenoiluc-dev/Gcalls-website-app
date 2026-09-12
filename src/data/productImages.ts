@@ -35,7 +35,23 @@ export interface ProductImage {
   readonly alt: string
 }
 
-const BASE = '/images/products/gcalls-plus'
+/**
+ * Under the normal domain build these are served from `public/` at the
+ * site root. Under the gcalls-react-shell WordPress plugin the app is
+ * mounted from `wp-content/plugins/gcalls-react-shell/dist/`, so a
+ * root-absolute `/images/...` path would 404 — the plugin template copies
+ * this same folder into its own `dist/images/` and publishes the resulting
+ * URL at runtime via `window.__GCALLS_SHELL_CONFIG__.assetsUrl`.
+ */
+const SHELL_ASSETS_URL =
+  typeof window !== 'undefined'
+    ? (window as { __GCALLS_SHELL_CONFIG__?: { assetsUrl?: string } }).__GCALLS_SHELL_CONFIG__
+        ?.assetsUrl
+    : undefined
+
+const BASE = SHELL_ASSETS_URL
+  ? `${SHELL_ASSETS_URL.replace(/\/$/, '')}/images/products/gcalls-plus`
+  : '/images/products/gcalls-plus'
 
 export const GCALLS_PLUS_IMAGES = {
   /** Webphone: contact profile + activity feed + keypad on one screen. */

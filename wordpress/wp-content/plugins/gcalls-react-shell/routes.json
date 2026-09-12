@@ -1,0 +1,154 @@
+[
+  {
+    "key": "home",
+    "path": "/"
+  },
+  {
+    "key": "products",
+    "path": "/san-pham/"
+  },
+  {
+    "key": "gcallsPlus",
+    "path": "/gcalls-plus-webphone/"
+  },
+  {
+    "key": "qcCenter",
+    "path": "/qc-bot-ai/"
+  },
+  {
+    "key": "gcallsCx",
+    "path": "/gcalls-cx/"
+  },
+  {
+    "key": "voicebotAi",
+    "path": "/voicebot-ai/"
+  },
+  {
+    "key": "solutions",
+    "path": "/giai-phap/"
+  },
+  {
+    "key": "crmIntegration",
+    "path": "/tong-dai-tich-hop-crm/"
+  },
+  {
+    "key": "helpdeskIntegration",
+    "path": "/tong-dai-tich-hop-helpdesk/"
+  },
+  {
+    "key": "posIntegration",
+    "path": "/tong-dai-tich-hop-pos/"
+  },
+  {
+    "key": "internationalCalling",
+    "path": "/tong-dai-quoc-te/"
+  },
+  {
+    "key": "integrations",
+    "path": "/tich-hop/"
+  },
+  {
+    "key": "hubspot",
+    "path": "/tich-hop/hubspot/"
+  },
+  {
+    "key": "salesforce",
+    "path": "/tich-hop/salesforce/"
+  },
+  {
+    "key": "zohoCrm",
+    "path": "/tich-hop/zoho-crm/"
+  },
+  {
+    "key": "freshdesk",
+    "path": "/tich-hop/freshdesk/"
+  },
+  {
+    "key": "zendesk",
+    "path": "/tich-hop/zendesk/"
+  },
+  {
+    "key": "industries",
+    "path": "/nganh/"
+  },
+  {
+    "key": "education",
+    "path": "/nganh/giao-duc/"
+  },
+  {
+    "key": "finance",
+    "path": "/nganh/tai-chinh/"
+  },
+  {
+    "key": "insurance",
+    "path": "/nganh/bao-hiem/"
+  },
+  {
+    "key": "realEstate",
+    "path": "/nganh/bat-dong-san/"
+  },
+  {
+    "key": "ecommerce",
+    "path": "/nganh/thuong-mai-dien-tu/"
+  },
+  {
+    "key": "bpo",
+    "path": "/nganh/bpo/"
+  },
+  {
+    "key": "pricing",
+    "path": "/bang-gia/"
+  },
+  {
+    "key": "costEstimator",
+    "path": "/uoc-tinh-chi-phi/"
+  },
+  {
+    "key": "resources",
+    "path": "/tai-nguyen/"
+  },
+  {
+    "key": "blog",
+    "path": "/blog/"
+  },
+  {
+    "key": "guides",
+    "path": "/tai-nguyen/guides/"
+  },
+  {
+    "key": "caseStudies",
+    "path": "/tai-nguyen/case-studies/"
+  },
+  {
+    "key": "ebook",
+    "path": "/tai-nguyen/ebook/"
+  },
+  {
+    "key": "glossary",
+    "path": "/tai-nguyen/glossary/"
+  },
+  {
+    "key": "faq",
+    "path": "/tai-nguyen/faq/"
+  },
+  {
+    "key": "company",
+    "path": "/cong-ty/"
+  },
+  {
+    "key": "customers",
+    "path": "/cong-ty/khach-hang/"
+  },
+  {
+    "key": "partners",
+    "path": "/cong-ty/doi-tac/"
+  },
+  {
+    "key": "contact",
+    "path": "/lien-he/"
+  },
+  {
+    "key": "referral",
+    "path": "/referral/"
+  }
+]

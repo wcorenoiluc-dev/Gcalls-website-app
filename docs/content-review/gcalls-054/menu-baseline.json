@@ -1,0 +1,252 @@
+{
+  "source": "rendered DOM (REST wp/v2/menus=401 anonymous)",
+  "header": [
+    {
+      "label": "gcalls",
+      "href": "https://ashernguyenxuanthuy.com/"
+    },
+    {
+      "label": "Sản phẩm",
+      "href": "https://ashernguyenxuanthuy.com/san-pham/"
+    },
+    {
+      "label": "Gcalls Plus Webphone",
+      "href": "https://ashernguyenxuanthuy.com/gcalls-plus-webphone/"
+    },
+    {
+      "label": "QA QC Center",
+      "href": "https://ashernguyenxuanthuy.com/qc-bot-ai/"
+    },
+    {
+      "label": "Gcalls CX",
+      "href": "https://ashernguyenxuanthuy.com/gcalls-cx/"
+    },
+    {
+      "label": "Gcalls Voicebot AI",
+      "href": "https://ashernguyenxuanthuy.com/voicebot-ai/"
+    },
+    {
+      "label": "Giải pháp",
+      "href": "https://ashernguyenxuanthuy.com/giai-phap/"
+    },
+    {
+      "label": "Tích hợp CRM",
+      "href": "https://ashernguyenxuanthuy.com/tong-dai-tich-hop-crm/"
+    },
+    {
+      "label": "Tích hợp Helpdesk",
+      "href": "https://ashernguyenxuanthuy.com/tong-dai-tich-hop-helpdesk/"
+    },
+    {
+      "label": "Tích hợp POS",
+      "href": "https://ashernguyenxuanthuy.com/tong-dai-tich-hop-pos/"
+    },
+    {
+      "label": "Tổng đài quốc tế",
+      "href": "https://ashernguyenxuanthuy.com/tong-dai-quoc-te/"
+    },
+    {
+      "label": "Tích hợp",
+      "href": "https://ashernguyenxuanthuy.com/tich-hop/"
+    },
+    {
+      "label": "HubSpot",
+      "href": "https://ashernguyenxuanthuy.com/tich-hop/hubspot/"
+    },
+    {
+      "label": "Salesforce",
+      "href": "https://ashernguyenxuanthuy.com/tich-hop/salesforce/"
+    },
+    {
+      "label": "Zoho CRM",
+      "href": "https://ashernguyenxuanthuy.com/tich-hop/zoho-crm/"
+    },
+    {
+      "label": "Freshdesk",
+      "href": "https://ashernguyenxuanthuy.com/tich-hop/freshdesk/"
+    },
+    {
+      "label": "Zendesk",
+      "href": "https://ashernguyenxuanthuy.com/tich-hop/zendesk/"
+    },
+    {
+      "label": "Theo ngành",
+      "href": "https://ashernguyenxuanthuy.com/nganh/"
+    },
+    {
+      "label": "Giáo dục",
+      "href": "https://ashernguyenxuanthuy.com/nganh/giao-duc/"
+    },
+    {
+      "label": "Tài chính",
+      "href": "https://ashernguyenxuanthuy.com/nganh/tai-chinh/"
+    },
+    {
+      "label": "Bảo hiểm",
+      "href": "https://ashernguyenxuanthuy.com/nganh/bao-hiem/"
+    },
+    {
+      "label": "Bất động sản",
+      "href": "https://ashernguyenxuanthuy.com/nganh/bat-dong-san/"
+    },
+    {
+      "label": "Thương mại điện tử",
+      "href": "https://ashernguyenxuanthuy.com/nganh/thuong-mai-dien-tu/"
+    },
+    {
+      "label": "BPO",
+      "href": "https://ashernguyenxuanthuy.com/nganh/bpo/"
+    },
+    {
+      "label": "Tài nguyên",
+      "href": "https://ashernguyenxuanthuy.com/tai-nguyen/"
+    },
+    {
+      "label": "Blog",
+      "href": "https://ashernguyenxuanthuy.com/blog/"
+    },
+    {
+      "label": "Guides",
+      "href": "https://ashernguyenxuanthuy.com/tai-nguyen/guides/"
+    },
+    {
+      "label": "Glossary",
+      "href": "https://ashernguyenxuanthuy.com/tai-nguyen/glossary/"
+    },
+    {
+      "label": "FAQ",
+      "href": "https://ashernguyenxuanthuy.com/tai-nguyen/faq/"
+    },
+    {
+      "label": "Case Studies",
+      "href": "https://ashernguyenxuanthuy.com/tai-nguyen/case-studies/"
+    },
+    {
+      "label": "Ebook",
+      "href": "https://ashernguyenxuanthuy.com/tai-nguyen/ebook/"
+    },
+    {
+      "label": "Bảng giá",
+      "href": "#"
+    },
+    {
+      "label": "Bảng giá Gcalls",
+      "href": "https://ashernguyenxuanthuy.com/bang-gia/"
+    },
+    {
+      "label": "Ước tính chi phí",
+      "href": "https://ashernguyenxuanthuy.com/uoc-tinh-chi-phi/"
+    },
+    {
+      "label": "Blog",
+      "href": "https://ashernguyenxuanthuy.com/blog/"
+    },
+    {
+      "label": "Đăng ký tư vấn",
+      "href": "https://ashernguyenxuanthuy.com/lien-he/?intent=consultation&source=header"
+    }
+  ],
+  "footer": [
+    {
+      "label": "sales@gcalls.co",
+      "href": "mailto:sales@gcalls.co"
+    },
+    {
+      "label": "028 7302 5469",
+      "href": "tel:+842873025469"
+    },
+    {
+      "label": "Gcalls Plus",
+      "href": "https://ashernguyenxuanthuy.com/gcalls-plus-webphone/"
+    },
+    {
+      "label": "QA QC Center",
+      "href": "https://ashernguyenxuanthuy.com/qc-bot-ai/"
+    },
+    {
+      "label": "Gcalls CX",
+      "href": "https://ashernguyenxuanthuy.com/gcalls-cx/"
+    },
+    {
+      "label": "Gcalls Voicebot AI",
+      "href": "https://ashernguyenxuanthuy.com/voicebot-ai/"
+    },
+    {
+      "label": "CRM Integration",
+      "href": "https://ashernguyenxuanthuy.com/tong-dai-tich-hop-crm/"
+    },
+    {
+      "label": "Helpdesk Integration",
+      "href": "https://ashernguyenxuanthuy.com/tong-dai-tich-hop-helpdesk/"
+    },
+    {
+      "label": "POS Integration",
+      "href": "https://ashernguyenxuanthuy.com/tong-dai-tich-hop-pos/"
+    },
+    {
+      "label": "Tổng đài quốc tế",
+      "href": "https://ashernguyenxuanthuy.com/tong-dai-quoc-te/"
+    },
+    {
+      "label": "Tích hợp",
+      "href": "https://ashernguyenxuanthuy.com/tich-hop/"
+    },
+    {
+      "label": "Theo ngành",
+      "href": "https://ashernguyenxuanthuy.com/nganh/"
+    },
+    {
+      "label": "Bảng giá",
+      "href": "https://ashernguyenxuanthuy.com/bang-gia/"
+    },
+    {
+      "label": "Ước tính chi phí",
+      "href": "https://ashernguyenxuanthuy.com/uoc-tinh-chi-phi/"
+    },
+    {
+      "label": "Blog",
+      "href": "https://ashernguyenxuanthuy.com/blog/"
+    },
+    {
+      "label": "Guides",
+      "href": "https://ashernguyenxuanthuy.com/tai-nguyen/guides/"
+    },
+    {
+      "label": "Case Studies",
+      "href": "https://ashernguyenxuanthuy.com/tai-nguyen/case-studies/"
+    },
+    {
+      "label": "Ebook",
+      "href": "https://ashernguyenxuanthuy.com/tai-nguyen/ebook/"
+    },
+    {
+      "label": "Glossary",
+      "href": "https://ashernguyenxuanthuy.com/tai-nguyen/glossary/"
+    },
+    {
+      "label": "FAQ",
+      "href": "https://ashernguyenxuanthuy.com/tai-nguyen/faq/"
+    },
+    {
+      "label": "Về Gcalls",
+      "href": "https://ashernguyenxuanthuy.com/cong-ty/"
+    },
+    {
+      "label": "Khách hàng",
+      "href": "https://ashernguyenxuanthuy.com/cong-ty/khach-hang/"
+    },
+    {
+      "label": "Đối tác",
+      "href": "https://ashernguyenxuanthuy.com/cong-ty/doi-tac/"
+    },
+    {
+      "label": "Referral",
+      "href": "https://ashernguyenxuanthuy.com/referral/"
+    },
+    {
+      "label": "Liên hệ",
+      "href": "https://ashernguyenxuanthuy.com/lien-he/"
+    }
+  ],
+  "note": "Full menu item IDs/parent-child/order require wp-admin; this is the anonymous rendered-nav baseline."
+}

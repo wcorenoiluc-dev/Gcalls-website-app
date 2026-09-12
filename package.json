@@ -30,6 +30,10 @@
     "wp:corpus-package": "node wordpress/scripts/build-corpus-package.mjs",
     "wp:check": "npm run wp:estimator && npm run wp:loss && npm run wp:test-loss && npm run wp:product && npm run wp:lint && npm run wp:css && npm run wp:qa && npm run wp:test-import && npm run wp:reconcile",
     "wp:live-verify": "node wordpress/scripts/live-003a-verify.mjs",
+    "build:wordpress": "node wordpress/scripts/generate-shell-routes.mjs && vite build --config vite.config.wordpress.ts",
+    "package:react-shell": "node wordpress/scripts/package-react-shell.mjs",
+    "release:react-shell": "npm run build:wordpress && npm run package:react-shell",
+    "package:content-studio": "node wordpress/scripts/package-content-studio.mjs",
     "wp:test-leads": "php wordpress/tests/leads-test.php"
   },
   "dependencies": {

@@ -1,0 +1,198 @@
+/* ─────────────────────────────────────────────────────────────────────────
+ * GCALLS-033 — homepage visual candidate. NOT DEPLOYED.
+ *
+ * Preview-only stylesheet. It is injected over the live page by
+ * scripts/preview (Playwright) to produce the before/after screenshots at
+ * CHECKPOINT GCALLS-033-VISUAL-PREVIEW. Nothing here is packaged into a
+ * release until the owner approves the images.
+ *
+ * WHY THE HOME PAGE IS IN SCOPE NOW
+ * Theme 0.8.5 deliberately excluded `body.home` from the 50px rhythm, on the
+ * grounds that its Elementor spacing was signed off. GCALLS-033 reverses that
+ * decision explicitly, so the exclusion is lifted here and only here.
+ *
+ * WHERE THE SPACE ACTUALLY IS — measured, not assumed
+ * The home page carries no section margins. Every top section is padded
+ * 70px/70px, so each seam between two compositions reads as 140px, and the
+ * hero-to-painpoints seam reads as 174px (104 + 70). The rhythm is therefore
+ * a PADDING problem here, unlike the product pages where it was a margin.
+ *
+ * "50px rhythm" is read as the gap BETWEEN compositions, which is how it was
+ * read for the product pages in Theme 0.8.5. Two adjacent sections each
+ * contribute half, so 25px + 25px = a 50px seam.
+ *
+ * NOT TOUCHED, deliberately: horizontal padding of cards and panels, mock
+ * canvas interiors, form fields, the header and the footer's internals.
+ *
+ * WHY `!important` IS HERE AND WHY IT DOES NOT SHIP
+ * The home page's section padding is not authored in CSS at all. It lives in
+ * the Elementor template data — `data/homepage-elementor.json` carries twelve
+ * sections at `padding: 104px 0` — and Elementor emits it as
+ * `.elementor-<page> .elementor-element.elementor-element-<id>`, which outranks
+ * any sane hand-written selector. Overriding it from a stylesheet would mean
+ * either `!important` or an id-weighted selector per section, and both are the
+ * wrong artefact to deploy.
+ *
+ * So this file is a PREVIEW INSTRUMENT, not the patch. It exists to render the
+ * proposed geometry for approval. The change that ships is a regenerated
+ * `homepage-elementor.json` whose sections are authored at the target padding
+ * and whose fragmented sections are merged — the same numbers, expressed where
+ * the home page actually keeps them.
+ * ───────────────────────────────────────────────────────────────────────── */
+
+:root {
+	--g33-rhythm: 50px;   /* seam between top-level compositions */
+	--g33-inner: 44px;    /* spacing inside one composition (36–56 band) */
+	--g33-container: 1200px;
+	--g33-text-col: 640px;
+	--g33-radius: 20px;
+	--g33-border: rgba(17, 24, 39, 0.08);
+	--g33-shadow: 0 1px 2px rgba(17, 24, 39, 0.04), 0 8px 24px rgba(17, 24, 39, 0.06);
+}
+
+/* 1 ── Vertical rhythm ─────────────────────────────────────────────────── */
+
+body.home .elementor-top-section {
+	padding-top: calc(var(--g33-rhythm) / 2) !important;
+	padding-bottom: calc(var(--g33-rhythm) / 2) !important;
+}
+
+/* The hero and the closing CTA are the two places where air is the point, but
+ * only on their OUTER edge — the one facing the header and the footer. Their
+ * inner edge stays on the rhythm, so the seam they form with the neighbouring
+ * composition is still 50px and not 81px. */
+body.home .elementor-top-section:first-of-type {
+	padding-top: 56px !important;
+	padding-bottom: calc(var(--g33-rhythm) / 2) !important;
+}
+
+body.home .elementor-top-section:last-of-type {
+	padding-top: calc(var(--g33-rhythm) / 2) !important;
+	padding-bottom: 56px !important;
+}
+
+/* 2 ── Regrouped compositions ──────────────────────────────────────────────
+ * A `.g33-group` is one React composition that Elementor had split across
+ * several sibling top sections. The group owns the rhythm; its members are
+ * demoted to internal spacing so the seam inside a composition can never be
+ * larger than the seam between two compositions. */
+
+body.home .g33-group {
+	padding-top: calc(var(--g33-rhythm) / 2) !important;
+	padding-bottom: calc(var(--g33-rhythm) / 2) !important;
+}
+
+body.home .g33-group > .g33-sub {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+body.home .g33-group > .g33-sub + .g33-sub {
+	margin-top: var(--g33-inner);
+}
+
+/* 3 ── Container and measure ───────────────────────────────────────────── */
+
+body.home .elementor-container {
+	max-width: var(--g33-container) !important;
+}
+
+/* 4 ── Card wall relief ────────────────────────────────────────────────────
+ * Softer corners and a light border instead of stacked filled blocks. Radius
+ * only — no horizontal padding is touched, so panel insets stay as authored. */
+
+body.home .gcalls-mock {
+	border-radius: var(--g33-radius);
+	border: 1px solid var(--g33-border);
+	box-shadow: var(--g33-shadow);
+}
+
+/* 5 ── Real product screenshots ────────────────────────────────────────────
+ * A screenshot is shown inside a CSS browser frame at or below its native
+ * resolution. Sources are capped at 821px wide and are never upscaled. */
+
+body.home .g33-shot {
+	margin: 0;
+	max-width: 100%;
+}
+
+body.home .g33-frame {
+	border-radius: var(--g33-radius);
+	border: 1px solid var(--g33-border);
+	box-shadow: var(--g33-shadow);
+	overflow: hidden;
+	background: #fff;
+}
+
+body.home .g33-frame__bar {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 10px 14px;
+	background: #f7f8fa;
+	border-bottom: 1px solid var(--g33-border);
+}
+
+body.home .g33-frame__bar i {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #d8dbe2;
+	display: block;
+}
+
+body.home .g33-frame img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+body.home .g33-shot figcaption {
+	margin-top: 10px;
+	font-size: 13px;
+	line-height: 1.5;
+	color: #6b7280;
+}
+
+/* 6 ── Illustrative-diagram label ──────────────────────────────────────────
+ * Any composition that shows a drawn diagram rather than a screenshot says so,
+ * so a diagram can never be mistaken for a product screenshot. */
+
+body.home .g33-illus {
+	display: inline-block;
+	margin-top: 10px;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	color: #6b7280;
+	background: #f3f4f6;
+	border: 1px solid var(--g33-border);
+	border-radius: 999px;
+	padding: 4px 12px;
+}
+
+/* 7 ── Mobile ─────────────────────────────────────────────────────────────
+ * The rhythm is already small; below 768 it tightens once more and the
+ * grouped members close up rather than keeping desktop internal spacing. */
+
+@media (max-width: 767px) {
+	body.home .elementor-top-section,
+	body.home .g33-group {
+		padding-top: 20px !important;
+		padding-bottom: 20px !important;
+	}
+
+	body.home .elementor-top-section:first-of-type {
+		padding-top: 40px !important;
+		padding-bottom: 20px !important;
+	}
+
+	body.home .elementor-top-section:last-of-type {
+		padding-top: 20px !important;
+		padding-bottom: 40px !important;
+	}
+
+	body.home .g33-group > .g33-sub + .g33-sub {
+		margin-top: 32px;
+	}
+}

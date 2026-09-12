@@ -1,0 +1,190 @@
+{
+ "kind": "GCALLS-050 LOCALISE — recovery reconciliation",
+ "at": "2026-09-04T03:20:21.064Z",
+ "connection": "live, authenticated as gcalls_owner",
+ "inFlightOperations": "NONE — media total stable at 352 over 8s; in-page tracker stable at 15",
+ "reconciliation": {
+  "method": "composite key = fnv(filename|filesize|width|height) compared against locally hashed processed files; not filename alone",
+  "plannedForUpload": 444,
+  "CONFIRMED_UPLOADED": 66,
+  "CONFIRMED_MISSING": 378,
+  "DUPLICATE": 2,
+  "UNKNOWN": 0,
+  "uploadedButNotPlanned": 0,
+  "piiFileOnServer": false
+ },
+ "duplicates": [
+  {
+   "id": 1086,
+   "file": "call-center-la-mot-trai-nghiem-thuong-hieu-tro-08-1.webp",
+   "bytes": 44948,
+   "dims": "1280x714",
+   "twin": 1085,
+   "referencedBy": "nothing (no parent, no post cites filename or wp-image-1086)",
+   "action": "RECORDED ONLY — not deleted"
+  },
+  {
+   "id": 1088,
+   "file": "call-center-la-mot-trai-nghiem-thuong-hieu-tro-09-1.webp",
+   "bytes": 136578,
+   "dims": "1600x1600",
+   "twin": 1087,
+   "referencedBy": "nothing (no parent, no post cites filename or wp-image-1088)",
+   "action": "RECORDED ONLY — not deleted"
+  }
+ ],
+ "duplicateCause": "a retry was fired while the original call was still running server-side; both passed the pre-upload existence check before either finished",
+ "pilot8": {
+  "verified": 8,
+  "allDraft": true,
+  "textLenMatchesSnapshot": true,
+  "linkCountMatchesSnapshot": true,
+  "imgCountMatchesSnapshot": true,
+  "featuredMediaUnchanged": true,
+  "everyDemoImageResolvesToItsOwnAttachment": true,
+  "badPointers": 0,
+  "heldLegacyHotlinks": {
+   "post287": 1
+  }
+ },
+ "protected": {
+  "publishedPosts": 18,
+  "pages": 38,
+  "mediaTotal": 730,
+  "checkedAnonymously": true
+ },
+ "postsFullyCovered": [
+  186,
+  204,
+  287,
+  291,
+  302,
+  303,
+  304,
+  306,
+  356,
+  398,
+  399
+ ],
+ "postsPartiallyCovered": [
+  289,
+  290,
+  309
+ ],
+ "nextSafeStep": "upload only the 378 CONFIRMED_MISSING files, single coordinator, batches of 3-5, confirm server receipt + journal after each batch; on disconnect reconcile read-only before any resend",
+ "state": "PAUSED — Chrome extension disconnected during apply of posts 388-393",
+ "progress": {
+  "uniqueFilesUploaded": 381,
+  "plannedTotal": 444,
+  "remaining": 63,
+  "attachments": 383,
+  "knownDuplicates": [
+   1086,
+   1088
+  ],
+  "newDuplicates": 0,
+  "hashVerified": "383/383 from server bytes"
+ },
+ "evidenceLevel": "SERVER CONTENT HASH VERIFIED — sha256 of bytes downloaded from the demo compared to sha256 of the locally processed file; 113/113 attachments match, 0 mismatches",
+ "rightsConclusions": {
+  "OWNER_HOSTED_generic": {
+   "n": 364,
+   "verdict": "PROCEED",
+   "basis": "already embedded in Gcalls own published article bodies and hosted on gcalls.co; rehosting moves the file between two hosts the same owner controls; drafts are not public. Not based on HTTP 200."
+  },
+  "OWNER_HOSTED_thirdPartyBrandDepicted": {
+   "n": 14,
+   "verdict": "PROCEED",
+   "basis": "editorial/nominative depiction in articles about those products; existing Nguon:/caption lines in the body left untouched"
+  },
+  "NOT_OWNER_HOSTED_googleusercontent": {
+   "n": 3,
+   "verdict": "RIGHTS_UNVERIFIED — HOLD",
+   "ids": [
+    1128,
+    1129,
+    1130
+   ],
+   "post": 399,
+   "note": "uploaded during the pilot BEFORE this rights rule was set; not deleted; post 399 is MEDIA_PARTIAL / RIGHTS_HOLD, not PASS; owner decision required"
+  }
+ },
+ "piiBasis": "OCR pattern scan over 445/445 processed files + visual review of all 445 + individual inspection of high-signal candidates; 1 file blocked (post 287 slot 0), its hash never appears on the server",
+ "timeoutsHandled": [
+  {
+   "at": "batch offsets 30-44",
+   "action": "read-only reconciliation; waited until media total settled (397, 4 stable reads); confirmed all 15 landed with no duplicates; did NOT resend"
+  }
+ ],
+ "environment": {
+  "origin": "https://ashernguyenxuanthuy.com",
+  "restRoot": "https://ashernguyenxuanthuy.com/wp-json/",
+  "user": "gcalls_owner",
+  "localhostUrlsWritten": 0,
+  "note": "product-preview localhost:9400 is a separate task and is not used here"
+ },
+ "sendingPolicy": "one batch per Chrome call, cap 5, in-page __RUNNING guard refuses overlap; no chaining",
+ "stateLabels": {
+  "UPLOADED": "file bytes are on the demo",
+  "HASH_VERIFIED": "sha256 of server bytes == sha256 of local processed file",
+  "MEDIA_APPROVED": "PII + rights cleared",
+  "APPLIED_TO_POST": "post_content rewritten to reference the attachment"
+ },
+ "holds": {
+  "RIGHTS_HOLD": {
+   "attachments": [
+    1128,
+    1129,
+    1130
+   ],
+   "post": 399,
+   "rule": "not reused elsewhere, not counted MEDIA_APPROVED, not deleted"
+  },
+  "PII_HOLD": {
+   "post": 287,
+   "slot": 0,
+   "rule": "not uploaded, not duplicated, body hotlink untouched; post 287 = MEDIA_PARTIAL"
+  }
+ },
+ "upload": {
+  "UPLOADED": 444,
+  "HASH_VERIFIED": 444,
+  "remaining": 0,
+  "attachments": 446,
+  "knownDuplicates": [
+   1086,
+   1088
+  ],
+  "newDuplicates": 0,
+  "piiOnServer": false
+ },
+ "apply": {
+  "postsAppliedConfirmed": 98,
+  "occurrencesApplied": 415,
+  "postsTotal": 107,
+  "occurrencesTotal": 458,
+  "unknownAtDisconnect": [
+   388,
+   389,
+   390,
+   391,
+   392,
+   393
+  ],
+  "unknownOccurrences": 29,
+  "notYetStarted": [
+   394,
+   395,
+   396
+  ],
+  "notStartedOccurrences": 14,
+  "perPostChecks": "draft kept, featured_media unchanged, slug unchanged, skeleton-outside-img byte-identical, normalized text identical, ordered link list identical, 0 disallowed attr changes, rerun=0, 0 legacy URLs left",
+  "resumeSafety": "__apply re-reads and rebuilds; an already-applied post fails the old-URL match and returns BUILD_ERRORS without writing, so re-running the unknown set cannot double-write",
+  "aborts": [
+   {
+    "pid": 303,
+    "reason": "NFC/NFD filename mismatch, no write, fixed then applied"
+   }
+  ]
+ }
+}

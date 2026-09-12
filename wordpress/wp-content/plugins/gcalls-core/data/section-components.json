@@ -1,0 +1,1677 @@
+{
+  "schema": 1,
+  "note": "GCALLS-036B. The single contract both the PHP renderer and the Node preview read. A section is placed by its declared semantic source, never by its heading text and never by passing the source through into a class name. A source absent from `product` or `content` is UNMAPPED_SOURCE and fails the build.",
+  "components": [
+    "comparison",
+    "cta",
+    "decision",
+    "diagram",
+    "direct",
+    "faq",
+    "grid",
+    "groups",
+    "hero",
+    "leadslot",
+    "placeholder",
+    "prose",
+    "related",
+    "skip",
+    "split",
+    "steps",
+    "taglist",
+    "trustbar",
+    "usecases",
+    "vendors"
+  ],
+  "unmappedPolicy": "fail",
+  "rules": {
+    "note": "Column reconciliation lives here so the PHP renderer and the Node preview cannot drift. Both read this table; neither hard-codes it.",
+    "gridColumnsByCount": {
+      "0": 1,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 2,
+      "5": 3,
+      "6": 3,
+      "7": 4,
+      "8": 4
+    },
+    "clampColumnsToItemCount": true,
+    "stepsMaxColumns": 5,
+    "altBandEveryOtherSection": true,
+    "skipComponents": [
+      "skip"
+    ]
+  },
+  "product": {
+    "GP_PROBLEMS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--2",
+      "icon": "alert",
+      "mockup": null,
+      "diagram": null,
+      "media": "GP-13",
+      "reactLayout": "grid",
+      "reactCols": 2,
+      "items": 4
+    },
+    "GP_OVERVIEW": {
+      "component": "split",
+      "modifier": "gc-split",
+      "icon": "layers",
+      "mockup": "widget",
+      "diagram": null,
+      "media": "GP-09",
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 4,
+      "mockupSubstituted": true,
+      "mockupNote": "Substituted while GP-09 is unapproved: webphone widget — mock_widget carries no figures. Labelled \"Giao diện minh hoạ\"."
+    },
+    "GP_FEATURES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--3",
+      "icon": "grid",
+      "mockup": null,
+      "diagram": null,
+      "media": "GP-14",
+      "reactLayout": "grid",
+      "reactCols": 3,
+      "items": 6
+    },
+    "GP_HISTORY": {
+      "component": "split",
+      "modifier": "gc-split",
+      "icon": "clock",
+      "mockup": "call_timeline",
+      "diagram": null,
+      "media": "GP-15",
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 5,
+      "mockupSubstituted": true,
+      "mockupNote": "Substituted while GP-15 is unapproved: call timeline — durations/timestamps only, no outcome claims. Labelled \"Giao diện minh hoạ\"."
+    },
+    "GP_CONTEXT": {
+      "component": "split",
+      "modifier": "gc-split",
+      "icon": "user",
+      "mockup": "customer_popup",
+      "diagram": null,
+      "media": "GP-10",
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 3,
+      "mockupSubstituted": true,
+      "mockupNote": "Substituted while GP-10 is unapproved: customer popup — durations/timestamps only. Labelled \"Giao diện minh hoạ\"."
+    },
+    "GP_WORKFLOW": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--4",
+      "icon": "route",
+      "mockup": null,
+      "diagram": null,
+      "media": "GP-07",
+      "reactLayout": "grid",
+      "reactCols": 4,
+      "items": 4
+    },
+    "GP_PERFORMANCE": {
+      "component": "split",
+      "modifier": "gc-split",
+      "icon": "chart",
+      "mockup": null,
+      "diagram": null,
+      "media": "GP-05",
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 3,
+      "mockupNote": "No substitute offered. The only topically matching mockup is mock_analytics, whose KPI tiles (114 / 73% / 3:25) and bar values are invented figures — REFUSED_DATA."
+    },
+    "GP_INTEGRATION": {
+      "component": "vendors",
+      "modifier": "gc-vendors",
+      "icon": "plug",
+      "mockup": null,
+      "diagram": null,
+      "media": "GP-12",
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 0
+    },
+    "GP_USE_CASES": {
+      "component": "usecases",
+      "modifier": "gc-grid gc-grid--3",
+      "icon": "target",
+      "mockup": null,
+      "diagram": null,
+      "media": "GP-03",
+      "reactLayout": "grid",
+      "reactCols": 3,
+      "items": 5
+    },
+    "GP_BOUNDARIES": {
+      "component": "groups",
+      "modifier": "gc-groups",
+      "icon": "shield",
+      "mockup": null,
+      "diagram": null,
+      "media": "GP-02",
+      "reactLayout": "grid",
+      "reactCols": 2,
+      "items": 0,
+      "note": "Two labelled groups: who it fits vs what to move to. React shows them side by side."
+    },
+    "GP_DEPLOYMENT": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "rocket",
+      "mockup": null,
+      "diagram": null,
+      "media": "GP-11",
+      "reactLayout": "grid",
+      "reactCols": 3,
+      "items": 6
+    },
+    "GP_PRICING": {
+      "component": "cta",
+      "modifier": "gc-cta gc-cta--pricing",
+      "icon": "tag",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 0
+    },
+    "GP_STORY": {
+      "component": "placeholder",
+      "modifier": "gc-placeholder",
+      "icon": "quote",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "plain",
+      "reactCols": null,
+      "items": 0,
+      "note": "Empty BY DESIGN — no customer story is approved for publication. React renders the same placeholder."
+    },
+    "CX_PROBLEMS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--2",
+      "icon": "alert",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 2,
+      "items": 4
+    },
+    "CX_OVERVIEW": {
+      "component": "split",
+      "modifier": "gc-split",
+      "icon": "layers",
+      "mockup": "cx_context",
+      "diagram": null,
+      "media": null,
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 0
+    },
+    "CX_CHANNELS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--5",
+      "icon": "message",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 5,
+      "items": 5
+    },
+    "CX_INBOX": {
+      "component": "split",
+      "modifier": "gc-split",
+      "icon": "inbox",
+      "mockup": "cx_inbox",
+      "diagram": null,
+      "media": null,
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 5
+    },
+    "CX_TICKETS": {
+      "component": "split",
+      "modifier": "gc-split",
+      "icon": "ticket",
+      "mockup": "cx_ticket",
+      "diagram": null,
+      "media": null,
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 5
+    },
+    "CX_CONTEXT": {
+      "component": "split",
+      "modifier": "gc-split",
+      "icon": "user",
+      "mockup": "cx_context",
+      "diagram": null,
+      "media": null,
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 6
+    },
+    "CX_HOW_IT_WORKS": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "route",
+      "mockup": null,
+      "diagram": "flow",
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 5,
+      "items": 5
+    },
+    "CX_REPORTING": {
+      "component": "split",
+      "modifier": "gc-split",
+      "icon": "chart",
+      "mockup": "cx_report",
+      "diagram": null,
+      "media": null,
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 4
+    },
+    "CX_BENEFITS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "check",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 4,
+      "items": 4
+    },
+    "CX_USE_CASES": {
+      "component": "usecases",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "target",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 4,
+      "items": 4
+    },
+    "CX_INTEGRATION": {
+      "component": "vendors",
+      "modifier": "gc-vendors",
+      "icon": "plug",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "plain",
+      "reactCols": null,
+      "items": 0
+    },
+    "CX_BOUNDARIES": {
+      "component": "decision",
+      "modifier": "gc-decision",
+      "icon": "shield",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 5,
+      "items": 0,
+      "note": "Decision table: need -> product, each row linking to that product."
+    },
+    "CX_DEPLOYMENT": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "rocket",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 4,
+      "items": 7
+    },
+    "CX_TRUST": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "shield",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "plain",
+      "reactCols": null,
+      "items": 0,
+      "note": "TRUST sections carry a prose body, not items — a trustbar renders empty here."
+    },
+    "CX_PRICING": {
+      "component": "cta",
+      "modifier": "gc-cta gc-cta--pricing",
+      "icon": "tag",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 0
+    },
+    "VB_PROBLEMS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--3",
+      "icon": "alert",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 3,
+      "items": 3
+    },
+    "VB_USE_CASES": {
+      "component": "usecases",
+      "modifier": "gc-grid gc-grid--3",
+      "icon": "target",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 3,
+      "items": 6
+    },
+    "VB_HOW_IT_WORKS": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "route",
+      "mockup": null,
+      "diagram": "flow",
+      "media": null,
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 6
+    },
+    "VB_CAPABILITIES": {
+      "component": "split",
+      "modifier": "gc-split",
+      "icon": "sparkles",
+      "mockup": "voicebot_handoff",
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 2,
+      "items": 5
+    },
+    "VB_HUMAN_AI": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--3",
+      "icon": "users",
+      "mockup": null,
+      "diagram": "handover",
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 3,
+      "items": 0
+    },
+    "VB_INTEGRATION": {
+      "component": "vendors",
+      "modifier": "gc-vendors",
+      "icon": "plug",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 4,
+      "items": 5
+    },
+    "VB_INDUSTRIES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--5",
+      "icon": "building",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 5,
+      "items": 4
+    },
+    "VB_DEPLOYMENT": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "rocket",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 3,
+      "items": 5
+    },
+    "VB_OUTCOMES": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "trending",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "plain",
+      "reactCols": null,
+      "items": 5
+    },
+    "QQ_PROBLEMS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--2",
+      "icon": "alert",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 2,
+      "items": 4
+    },
+    "QQ_OVERVIEW": {
+      "component": "split",
+      "modifier": "gc-split",
+      "icon": "layers",
+      "mockup": "qc_transcript",
+      "diagram": null,
+      "media": null,
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 0
+    },
+    "QQ_HOW_IT_WORKS": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "route",
+      "mockup": null,
+      "diagram": "flow",
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 5,
+      "items": 5
+    },
+    "QQ_CAPABILITIES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--3",
+      "icon": "sparkles",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 3,
+      "items": 7
+    },
+    "QQ_SCORING": {
+      "component": "split",
+      "modifier": "gc-split",
+      "icon": "gauge",
+      "mockup": "qc_scorecard",
+      "diagram": null,
+      "media": null,
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 5
+    },
+    "QQ_SIGNALS": {
+      "component": "split",
+      "modifier": "gc-split",
+      "icon": "radar",
+      "mockup": "qc_signals",
+      "diagram": null,
+      "media": null,
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 4
+    },
+    "QQ_HUMAN_LOOP": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--3",
+      "icon": "users",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 3,
+      "items": 0
+    },
+    "QQ_DASHBOARD": {
+      "component": "split",
+      "modifier": "gc-split",
+      "icon": "chart",
+      "mockup": "qc_dashboard",
+      "diagram": null,
+      "media": null,
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 0
+    },
+    "QQ_BENEFITS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "check",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 4,
+      "items": 4
+    },
+    "QQ_USE_CASES": {
+      "component": "usecases",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "target",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 4,
+      "items": 4
+    },
+    "QQ_INTEGRATION": {
+      "component": "vendors",
+      "modifier": "gc-vendors",
+      "icon": "plug",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "plain",
+      "reactCols": null,
+      "items": 0
+    },
+    "QQ_BOUNDARIES": {
+      "component": "decision",
+      "modifier": "gc-decision",
+      "icon": "shield",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "grid",
+      "reactCols": 4,
+      "items": 0,
+      "note": "Decision table: need -> product."
+    },
+    "QQ_PRICING": {
+      "component": "cta",
+      "modifier": "gc-cta gc-cta--pricing",
+      "icon": "tag",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "plain",
+      "reactCols": null,
+      "items": 0
+    },
+    "QQ_STORY": {
+      "component": "split",
+      "modifier": "gc-split",
+      "icon": "quote",
+      "mockup": null,
+      "diagram": null,
+      "media": null,
+      "reactLayout": "split",
+      "reactCols": null,
+      "items": 0
+    },
+    "GP_FINAL_CTA": {
+      "component": "skip",
+      "modifier": null,
+      "icon": null,
+      "reason": "page.finalCta renders this band once; the section is a duplicate"
+    },
+    "CX_FINAL_CTA": {
+      "component": "skip",
+      "modifier": null,
+      "icon": null,
+      "reason": "page.finalCta renders this band once; the section is a duplicate"
+    },
+    "VB_FINAL_CTA": {
+      "component": "skip",
+      "modifier": null,
+      "icon": null,
+      "reason": "page.finalCta renders this band once; the section is a duplicate"
+    },
+    "QQ_FINAL_CTA": {
+      "component": "skip",
+      "modifier": null,
+      "icon": null,
+      "reason": "page.finalCta renders this band once; the section is a duplicate"
+    }
+  },
+  "content": {
+    "FD_BEFORE_AFTER": {
+      "component": "comparison",
+      "modifier": "gc-compare",
+      "icon": "compare",
+      "sourceType": "comparison",
+      "items": 0
+    },
+    "FD_BENEFITS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "check",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "FD_BOUNDARY": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--3",
+      "icon": "shield",
+      "sourceType": "cards",
+      "items": 5
+    },
+    "FD_CAPABILITIES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "sparkles",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "FD_DIRECT_ANSWER": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "info",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "FD_LINKS": {
+      "component": "related",
+      "modifier": "gc-related",
+      "icon": "link",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "FD_OVERVIEW": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "layers",
+      "sourceType": "steps",
+      "items": 6
+    },
+    "FD_PROBLEMS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "alert",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "FD_RELATED": {
+      "component": "related",
+      "modifier": "gc-related",
+      "icon": "link",
+      "sourceType": "cards",
+      "items": 2
+    },
+    "FD_SETUP": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "settings",
+      "sourceType": "steps",
+      "items": 9
+    },
+    "FD_SUPPORT_CONTEXT": {
+      "component": "taglist",
+      "modifier": "gc-taglist",
+      "icon": "lifebuoy",
+      "sourceType": "taglist",
+      "items": 6
+    },
+    "FD_TRUST": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "shield",
+      "sourceType": "prose",
+      "items": 0,
+      "note": "TRUST sections carry a prose body, not items — a trustbar renders empty here."
+    },
+    "FD_UI_PREVIEW": {
+      "component": "diagram",
+      "modifier": "gc-diagram",
+      "icon": "monitor",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "FD_USE_CASES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "target",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "FD_VS_HELPDESK": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "compare",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "FD_WORKFLOW": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "route",
+      "sourceType": "steps",
+      "items": 6
+    },
+    "directAnswer": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "info",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "cards": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "grid",
+      "sourceType": "cards",
+      "items": 7
+    },
+    "decisionGuide": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "route",
+      "sourceType": "steps",
+      "items": 5
+    },
+    "links": {
+      "component": "related",
+      "modifier": "gc-related",
+      "icon": "link",
+      "sourceType": "cards",
+      "items": 5
+    },
+    "HS_BENEFITS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "check",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "HS_CAPABILITIES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "sparkles",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "HS_DIRECT_ANSWER": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "info",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "HS_LINKS": {
+      "component": "related",
+      "modifier": "gc-related",
+      "icon": "link",
+      "sourceType": "cards",
+      "items": 6
+    },
+    "HS_OVERVIEW": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "layers",
+      "sourceType": "steps",
+      "items": 6
+    },
+    "HS_PROBLEMS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "alert",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "HS_RELATED": {
+      "component": "related",
+      "modifier": "gc-related",
+      "icon": "link",
+      "sourceType": "cards",
+      "items": 3
+    },
+    "HS_SETUP": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "settings",
+      "sourceType": "steps",
+      "items": 8
+    },
+    "HS_TRUST": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "shield",
+      "sourceType": "prose",
+      "items": 0,
+      "note": "TRUST sections carry a prose body, not items — a trustbar renders empty here."
+    },
+    "HS_UI_PREVIEW": {
+      "component": "diagram",
+      "modifier": "gc-diagram",
+      "icon": "monitor",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "HS_USE_CASES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "target",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "HS_VS_CRM": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "compare",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "HS_WORKFLOW": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "route",
+      "sourceType": "steps",
+      "items": 6
+    },
+    "ContactPage.tsx — direct contact card": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--2",
+      "icon": "dot",
+      "sourceType": "cards",
+      "items": 2
+    },
+    "SF_BEFORE_AFTER": {
+      "component": "comparison",
+      "modifier": "gc-compare",
+      "icon": "compare",
+      "sourceType": "comparison",
+      "items": 0
+    },
+    "SF_BENEFITS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "check",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "SF_CAPABILITIES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "sparkles",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "SF_DIRECT_ANSWER": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "info",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "SF_LINKS": {
+      "component": "related",
+      "modifier": "gc-related",
+      "icon": "link",
+      "sourceType": "cards",
+      "items": 5
+    },
+    "SF_OVERVIEW": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "layers",
+      "sourceType": "steps",
+      "items": 6
+    },
+    "SF_PROBLEMS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "alert",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "SF_RELATED": {
+      "component": "related",
+      "modifier": "gc-related",
+      "icon": "link",
+      "sourceType": "cards",
+      "items": 3
+    },
+    "SF_RELATIONSHIPS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "users",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "SF_SETUP": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "settings",
+      "sourceType": "steps",
+      "items": 9
+    },
+    "SF_TRUST": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "shield",
+      "sourceType": "prose",
+      "items": 0,
+      "note": "TRUST sections carry a prose body, not items — a trustbar renders empty here."
+    },
+    "SF_UI_PREVIEW": {
+      "component": "diagram",
+      "modifier": "gc-diagram",
+      "icon": "monitor",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "SF_USE_CASES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "target",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "SF_VS_CRM": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "compare",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "SF_WORKFLOW": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "route",
+      "sourceType": "steps",
+      "items": 6
+    },
+    "INTL_BOUNDARIES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "shield",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "INTL_DEPLOYMENT": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "rocket",
+      "sourceType": "steps",
+      "items": 8
+    },
+    "INTL_DIRECT_ANSWER": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "info",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "INTL_HOW_IT_WORKS": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "route",
+      "sourceType": "steps",
+      "items": 6
+    },
+    "INTL_INBOUND": {
+      "component": "taglist",
+      "modifier": "gc-taglist",
+      "icon": "arrow-in",
+      "sourceType": "taglist",
+      "items": 4
+    },
+    "INTL_MARKETS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "globe",
+      "sourceType": "cards",
+      "items": 7
+    },
+    "INTL_NUMBER_CONCEPT": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "phone",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "INTL_OPERATIONS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "settings",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "INTL_OUTBOUND": {
+      "component": "taglist",
+      "modifier": "gc-taglist",
+      "icon": "arrow-out",
+      "sourceType": "taglist",
+      "items": 4
+    },
+    "INTL_PROBLEMS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "alert",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "INTL_REGISTRATION": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "file",
+      "sourceType": "steps",
+      "items": 7
+    },
+    "INTL_REGULATION": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "scale",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "INTL_TRUST": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "shield",
+      "sourceType": "prose",
+      "items": 0,
+      "note": "TRUST sections carry a prose body, not items — a trustbar renders empty here."
+    },
+    "INTL_USE_CASES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "target",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "CRM_BEFORE_AFTER": {
+      "component": "comparison",
+      "modifier": "gc-compare",
+      "icon": "compare",
+      "sourceType": "comparison",
+      "items": 0
+    },
+    "CRM_BOUNDARIES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "shield",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "CRM_CAPABILITIES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--3",
+      "icon": "sparkles",
+      "sourceType": "cards",
+      "items": 3
+    },
+    "CRM_CONTEXT": {
+      "component": "taglist",
+      "modifier": "gc-taglist",
+      "icon": "user",
+      "sourceType": "taglist",
+      "items": 5
+    },
+    "CRM_DATA_SYNC": {
+      "component": "taglist",
+      "modifier": "gc-taglist",
+      "icon": "sync",
+      "sourceType": "taglist",
+      "items": 4
+    },
+    "CRM_DEPLOYMENT": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "rocket",
+      "sourceType": "steps",
+      "items": 6
+    },
+    "CRM_DIRECT_ANSWER": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "info",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "CRM_HOW_IT_WORKS": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "route",
+      "sourceType": "steps",
+      "items": 5
+    },
+    "CRM_OVERVIEW": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "layers",
+      "sourceType": "steps",
+      "items": 6
+    },
+    "CRM_PLATFORMS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "plug",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "CRM_PROBLEMS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "alert",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "CRM_SALES_USE_CASE": {
+      "component": "taglist",
+      "modifier": "gc-taglist",
+      "icon": "target",
+      "sourceType": "taglist",
+      "items": 5
+    },
+    "CRM_SERVICE_USE_CASE": {
+      "component": "taglist",
+      "modifier": "gc-taglist",
+      "icon": "lifebuoy",
+      "sourceType": "taglist",
+      "items": 5
+    },
+    "CRM_TRUST": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "shield",
+      "sourceType": "prose",
+      "items": 0,
+      "note": "TRUST sections carry a prose body, not items — a trustbar renders empty here."
+    },
+    "HD_BEFORE_AFTER": {
+      "component": "comparison",
+      "modifier": "gc-compare",
+      "icon": "compare",
+      "sourceType": "comparison",
+      "items": 0
+    },
+    "HD_BOUNDARIES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "shield",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "HD_CAPABILITIES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "sparkles",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "HD_DEPLOYMENT": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "rocket",
+      "sourceType": "steps",
+      "items": 7
+    },
+    "HD_DIRECT_ANSWER": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "info",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "HD_HOW_IT_WORKS": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "route",
+      "sourceType": "steps",
+      "items": 5
+    },
+    "HD_OVERVIEW": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "layers",
+      "sourceType": "steps",
+      "items": 6
+    },
+    "HD_PLATFORMS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--3",
+      "icon": "plug",
+      "sourceType": "cards",
+      "items": 3
+    },
+    "HD_PROBLEMS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "alert",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "HD_SUPPORT_CONTEXT": {
+      "component": "taglist",
+      "modifier": "gc-taglist",
+      "icon": "lifebuoy",
+      "sourceType": "taglist",
+      "items": 6
+    },
+    "HD_TRUST": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "shield",
+      "sourceType": "prose",
+      "items": 0,
+      "note": "TRUST sections carry a prose body, not items — a trustbar renders empty here."
+    },
+    "HD_USE_CASES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "target",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "POS_BEFORE_AFTER": {
+      "component": "comparison",
+      "modifier": "gc-compare",
+      "icon": "compare",
+      "sourceType": "comparison",
+      "items": 0
+    },
+    "POS_BOUNDARIES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "shield",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "POS_CAPABILITIES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "sparkles",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "POS_DEPLOYMENT": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "rocket",
+      "sourceType": "steps",
+      "items": 8
+    },
+    "POS_DIRECT_ANSWER": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "info",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "POS_ECOMMERCE": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "cart",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "POS_HOW_IT_WORKS": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "route",
+      "sourceType": "steps",
+      "items": 6
+    },
+    "POS_OVERVIEW": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "layers",
+      "sourceType": "steps",
+      "items": 7
+    },
+    "POS_PLUS_RELATION": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "layers",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "POS_PROBLEMS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "alert",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "POS_RETAIL": {
+      "component": "taglist",
+      "modifier": "gc-taglist",
+      "icon": "store",
+      "sourceType": "taglist",
+      "items": 4
+    },
+    "POS_SALES_CONTEXT": {
+      "component": "taglist",
+      "modifier": "gc-taglist",
+      "icon": "target",
+      "sourceType": "taglist",
+      "items": 4
+    },
+    "POS_TRUST": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "shield",
+      "sourceType": "prose",
+      "items": 0,
+      "note": "TRUST sections carry a prose body, not items — a trustbar renders empty here."
+    },
+    "ZD_BEFORE_AFTER": {
+      "component": "comparison",
+      "modifier": "gc-compare",
+      "icon": "compare",
+      "sourceType": "comparison",
+      "items": 0
+    },
+    "ZD_BENEFITS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "check",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "ZD_BOUNDARY": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--3",
+      "icon": "shield",
+      "sourceType": "cards",
+      "items": 5
+    },
+    "ZD_CAPABILITIES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "sparkles",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "ZD_DIRECT_ANSWER": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "info",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "ZD_LINKS": {
+      "component": "related",
+      "modifier": "gc-related",
+      "icon": "link",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "ZD_OVERVIEW": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "layers",
+      "sourceType": "steps",
+      "items": 6
+    },
+    "ZD_PROBLEMS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "alert",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "ZD_RELATED": {
+      "component": "related",
+      "modifier": "gc-related",
+      "icon": "link",
+      "sourceType": "cards",
+      "items": 2
+    },
+    "ZD_SETUP": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "settings",
+      "sourceType": "steps",
+      "items": 9
+    },
+    "ZD_SUPPORT_CONTEXT": {
+      "component": "taglist",
+      "modifier": "gc-taglist",
+      "icon": "lifebuoy",
+      "sourceType": "taglist",
+      "items": 6
+    },
+    "ZD_TRUST": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "shield",
+      "sourceType": "prose",
+      "items": 0,
+      "note": "TRUST sections carry a prose body, not items — a trustbar renders empty here."
+    },
+    "ZD_UI_PREVIEW": {
+      "component": "diagram",
+      "modifier": "gc-diagram",
+      "icon": "monitor",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "ZD_USE_CASES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "target",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "ZD_VS_HELPDESK": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "compare",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "ZD_WORKFLOW": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "route",
+      "sourceType": "steps",
+      "items": 6
+    },
+    "ZH_BEFORE_AFTER": {
+      "component": "comparison",
+      "modifier": "gc-compare",
+      "icon": "compare",
+      "sourceType": "comparison",
+      "items": 0
+    },
+    "ZH_BENEFITS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "check",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "ZH_BOUNDARY": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "shield",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "ZH_CAPABILITIES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "sparkles",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "ZH_DIRECT_ANSWER": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "info",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "ZH_LINKS": {
+      "component": "related",
+      "modifier": "gc-related",
+      "icon": "link",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "ZH_OVERVIEW": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "layers",
+      "sourceType": "steps",
+      "items": 6
+    },
+    "ZH_PROBLEMS": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "alert",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "ZH_RELATED": {
+      "component": "related",
+      "modifier": "gc-related",
+      "icon": "link",
+      "sourceType": "cards",
+      "items": 3
+    },
+    "ZH_SETUP": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "settings",
+      "sourceType": "steps",
+      "items": 9
+    },
+    "ZH_TRUST": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "shield",
+      "sourceType": "prose",
+      "items": 0,
+      "note": "TRUST sections carry a prose body, not items — a trustbar renders empty here."
+    },
+    "ZH_UI_PREVIEW": {
+      "component": "diagram",
+      "modifier": "gc-diagram",
+      "icon": "monitor",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "ZH_USE_CASES": {
+      "component": "grid",
+      "modifier": "gc-grid gc-grid--4",
+      "icon": "target",
+      "sourceType": "cards",
+      "items": 4
+    },
+    "ZH_VS_CRM": {
+      "component": "prose",
+      "modifier": "gc-prose",
+      "icon": "compare",
+      "sourceType": "prose",
+      "items": 0
+    },
+    "ZH_WORKFLOW": {
+      "component": "steps",
+      "modifier": "gc-steps gc-steps--5",
+      "icon": "route",
+      "sourceType": "steps",
+      "items": 6
+    }
+  },
+  "mediaVerdicts": {
+    "note": "Mockup verdicts from a literal scan of class-mockups.php, then read by hand.",
+    "REFUSED_DATA": [
+      "mock_analytics"
+    ],
+    "NEEDS_OWNER_REVIEW": [
+      "mock_hero",
+      "mock_cx_report",
+      "mock_qc_dashboard",
+      "mock_voicebot_builder"
+    ],
+    "ILLUSTRATIVE_MOCKUP": [
+      "mock_plus_gallery",
+      "mock_cloud",
+      "mock_integrations",
+      "mock_widget",
+      "mock_qc_signals",
+      "mock_qc_review",
+      "mock_voicebot_handoff",
+      "mock_cx_showcase",
+      "mock_voicebot_showcase",
+      "mock_qc_showcase",
+      "mock_call_timeline",
+      "mock_crm",
+      "mock_work_anywhere",
+      "mock_cx_inbox",
+      "mock_cx_ticket",
+      "mock_cx_context",
+      "mock_qc_transcript",
+      "mock_qc_scorecard",
+      "mock_customer_popup"
+    ],
+    "REFUSED_DATA_removed_from_render": [
+      "mock_analytics"
+    ],
+    "figureTilesLabelled": [
+      "mock_cx_report",
+      "mock_voicebot_builder",
+      "mock_qc_dashboard"
+    ],
+    "unlabelledOutOfScope": {
+      "mock_hero": "KPI tiles 84 / 11 / 73% on the FROZEN homepage; needs owner sign-off before touching"
+    }
+  },
+  "approvedMedia": {
+    "note": "Media ids cleared for rendering. Derived by matching the live render order on /gcalls-plus-webphone/ to the manifest section order, then confirmed against docs/content-review/images/product-media-manifest.json (sanitization_status PASS, source_approval \"APPROVED for anonymised derivative only\") and a fresh OCR + visual inspection in GCALLS-036B. Every one carries a burnt-in \"Ảnh minh hoạ — dữ liệu đã được che\" badge.",
+    "approved": {
+      "GP-13": "keypad-mobile — pure keypad UI, no data at all",
+      "GP-14": "overview-activity — empty state, demo.user, Nhóm 01–06",
+      "GP-15": "timeline-history — demo.user, Khách hàng NN, generated 09xxxxxxxx (step 137)",
+      "GP-07": "call-history — nhanvien.a–d, Khách hàng 01–19, generated numbers",
+      "GP-05": "agent-status-log — nhanvien.a/.b, demo.user",
+      "GP-02": "activity-type-dropdown — Demo Workspace, no records",
+      "GP-11": "integration-config — empty table, no host/API values"
+    },
+    "blocked": {
+      "GP-09": "PII_BLOCKED — webphone-desktop-v1, attachment 39, v2 ready",
+      "GP-10": "PII_BLOCKED — contact-profile-desktop-v1, attachment 40, v2 ready",
+      "GP-12": "PII_BLOCKED — integrations-desktop-v1, attachment 42, v2 ready",
+      "GP-03": "PII_BLOCKED — advanced-filter-desktop-v1, attachment 35, v2 ready",
+      "GP-08": "PII_BLOCKED — click-to-call-config, tên công ty + số điện thoại + URL, no v2 yet",
+      "GP-04": "REFUSED — agent-performance, danh sách nhân viên thật và máy nhánh; not a sanitisation problem",
+      "GP-06": "REFUSED — analytics-dashboard, dữ liệu hiệu suất thật presented as product proof"
+    },
+    "lowValue": [
+      "GP-14",
+      "GP-11"
+    ],
+    "emptyState": {
+      "note": "Two approved assets show an EMPTY interface. They are honest and they are useful where the section is about starting out, but an empty activity list placed under \"the functions your operation needs\" is a feature claim illustrated by a screenshot of nothing. Allowed only on the sections listed.",
+      "GP-14": {
+        "asset": "overview-activity",
+        "allowedSections": [
+          "GP_DEPLOYMENT"
+        ],
+        "blockedOn": "GP_FEATURES — feature proof, and the screenshot shows no features in use"
+      },
+      "GP-11": {
+        "asset": "integration-config",
+        "allowedSections": [
+          "GP_DEPLOYMENT",
+          "GP_INTEGRATION"
+        ],
+        "blockedOn": "—"
+      }
+    },
+    "caption": "Giao diện Gcalls — dữ liệu đã được ẩn danh",
+    "blockedNote": "Five originals are BLOCKED for PII (GP-03, GP-08, GP-09, GP-10, GP-12) and two are REFUSED outright (GP-04, GP-06) — refusal is not a sanitisation queue, a -v2 does not unblock them. Enforcement is the `approved` allowlist above, which is fail-closed; this map is the record of WHY each id is absent, and contract-test asserts it against docs/content-review/images/product-media-manifest.json."
+  }
+}

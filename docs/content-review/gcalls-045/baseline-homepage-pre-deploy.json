@@ -1,0 +1,21 @@
+{
+ "sha256_full": "6851e896f198261d24fd66ee0d8566db2d9e2d04ad52c9b5f90a43fd970ba37f",
+ "bytes": 140211,
+ "top_sections": 18,
+ "inner_sections": 0,
+ "h1": 1,
+ "mockups": [
+  "hero",
+  "call_timeline",
+  "crm",
+  "analytics",
+  "cloud",
+  "customer_popup",
+  "widget",
+  "integrations",
+  "work_anywhere"
+ ],
+ "core_ver": "0.10.0",
+ "theme_ver": "4.2.3",
+ "words": 3552
+}

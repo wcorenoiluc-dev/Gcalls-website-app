@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "additionalDirectories": [
+      "/Users/macos/Desktop/Gcalls/App/gcalls-ui-v2-integration/docs/content-review/gcalls-055/homepage"
+    ],
+    "allow": [
+      "Bash(cd /Users/macos/Desktop/Gcalls/App/gcalls-059-ia-seo-audit && sed -i '' \"s#root + '/docs/content-review/gcalls-054#'/Users/macos/Desktop/Gcalls/App/Gcalls-website-app/docs/content-review/gcalls-054#\" /private/tmp/claude-501/-Users-macos-Desktop-Gcalls-App-Gcalls-website-app/5cb51309-ecc2-48b1-951a-427d7ea6ebd7/scratchpad/analyze.mjs && node /private/tmp/claude-501/-Users-macos-Desktop-Gcalls-App-Gcalls-website-app/5cb51309-ecc2-48b1-951a-427d7ea6ebd7/scratchpad/analyze.mjs 2>&1 | grep -A20 \"ENTRY COUNT\")"
+    ]
+  }
+}

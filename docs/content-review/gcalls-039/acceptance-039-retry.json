@@ -1,0 +1,127 @@
+[
+ {
+  "route": "/voicebot-ai/",
+  "width": 1440,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/voicebot-ai/",
+  "width": 1024,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/voicebot-ai/",
+  "width": 768,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/voicebot-ai/",
+  "width": 390,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ },
+ {
+  "route": "/voicebot-ai/",
+  "width": 320,
+  "status": 200,
+  "verdict": "PASS",
+  "failed": [],
+  "h1s": [
+   "Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI"
+  ],
+  "overflow": 0,
+  "wideEls": [],
+  "brokenImgs": [],
+  "emptyGrids": [],
+  "orphans": [],
+  "finals": 1,
+  "heroCta": [
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI",
+   "http://127.0.0.1:9400/lien-he/?intent=consultation&source=voicebot_ai&product=Gcalls%20Voicebot%20AI"
+  ],
+  "consoleErrors": [],
+  "failedRequests": [
+   "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800|DM+Mono:wght@400;500&display=swap"
+  ],
+  "imgCount": 0
+ }
+]

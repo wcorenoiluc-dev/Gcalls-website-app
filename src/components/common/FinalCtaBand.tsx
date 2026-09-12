@@ -4,6 +4,7 @@ import { CONTACT } from '@/config/navigation'
 import { track } from '@/lib/analytics'
 import { leadCtaHref, type LeadCtaContext } from '@/lib/leads/ctaLink'
 import { Container } from './primitives'
+import { darkSection } from '@/lib/theme/darkSection'
 
 /**
  * Shared closing CTA band — full-width brand gradient card, centred copy,
@@ -56,9 +57,10 @@ export function FinalCtaBand({
 
         <h2
           id={titleId}
-          className={`mx-auto max-w-2xl text-[26px] font-extrabold leading-[1.2] tracking-tight text-white sm:text-[34px] lg:text-[40px] ${
+          className={`mx-auto max-w-2xl text-[26px] font-extrabold leading-[1.2] tracking-tight sm:text-[34px] lg:text-[40px] ${
             eyebrow ? 'mt-4' : ''
           }`}
+          style={{ color: darkSection.heading }}
         >
           {title}
         </h2>

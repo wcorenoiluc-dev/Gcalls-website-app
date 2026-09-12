@@ -1,0 +1,2392 @@
+[
+ {
+  "page": "freshdesk",
+  "section": "Giữ cuộc gọi gần hơn với quy trình ticket và customer support",
+  "index": 0,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Giữ cuộc gọi gần hơn với quy trình ticket và customer support",
+  "index": 1,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Giữ cuộc gọi gần hơn với quy trình ticket và customer support",
+  "index": 2,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Giữ cuộc gọi gần hơn với quy trình ticket và customer support",
+  "index": 3,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Freshdesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 0,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Freshdesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 1,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Freshdesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 2,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Freshdesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 3,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Freshdesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 4,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Những năng lực được xác nhận khi kết nối Gcalls với Freshdesk",
+  "index": 0,
+  "kind": "informational",
+  "title": "Customer Context",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Những năng lực được xác nhận khi kết nối Gcalls với Freshdesk",
+  "index": 1,
+  "kind": "informational",
+  "title": "Call Activity",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Những năng lực được xác nhận khi kết nối Gcalls với Freshdesk",
+  "index": 2,
+  "kind": "informational",
+  "title": "Ticket / Support Record Context",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Những năng lực được xác nhận khi kết nối Gcalls với Freshdesk",
+  "index": 3,
+  "kind": "informational",
+  "title": "Support Workflow Continuity",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Xem thêm",
+  "index": 0,
+  "kind": "navigation",
+  "title": "Tổng đài cho Thương mại điện tử",
+  "href": "",
+  "proposed": "",
+  "status": "UNRESOLVED — no known route for this title"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Xem thêm",
+  "index": 1,
+  "kind": "navigation",
+  "title": "Tổng đài cho BPO",
+  "href": "",
+  "proposed": "",
+  "status": "UNRESOLVED — no known route for this title"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Xem thêm",
+  "index": 2,
+  "kind": "navigation",
+  "title": "Blog Gcalls",
+  "href": "/blog/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Xem thêm",
+  "index": 3,
+  "kind": "navigation",
+  "title": "Liên hệ",
+  "href": "/lien-he/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Freshdesk quản lý ticket, nhưng cuộc gọi vẫn có thể nằm ngoài lịch sử hỗ trợ",
+  "index": 0,
+  "kind": "informational",
+  "title": "Nhân viên phải chuyển đổi giữa hai hệ thống",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Freshdesk quản lý ticket, nhưng cuộc gọi vẫn có thể nằm ngoài lịch sử hỗ trợ",
+  "index": 1,
+  "kind": "informational",
+  "title": "Cuộc gọi đến thiếu customer context",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Freshdesk quản lý ticket, nhưng cuộc gọi vẫn có thể nằm ngoài lịch sử hỗ trợ",
+  "index": 2,
+  "kind": "informational",
+  "title": "Ticket thiếu lịch sử cuộc hội thoại",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Freshdesk quản lý ticket, nhưng cuộc gọi vẫn có thể nằm ngoài lịch sử hỗ trợ",
+  "index": 3,
+  "kind": "informational",
+  "title": "Follow-up phụ thuộc vào ghi chú thủ công",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Doanh nghiệp đang sử dụng Helpdesk khác?",
+  "index": 0,
+  "kind": "navigation",
+  "title": "Zendesk",
+  "href": "/tich-hop/zendesk/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Doanh nghiệp đang sử dụng Helpdesk khác?",
+  "index": 1,
+  "kind": "navigation",
+  "title": "Danh mục tích hợp",
+  "href": "/tich-hop/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Gcalls × Freshdesk phù hợp với những workflow hỗ trợ nào?",
+  "index": 0,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Gcalls × Freshdesk phù hợp với những workflow hỗ trợ nào?",
+  "index": 1,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Gcalls × Freshdesk phù hợp với những workflow hỗ trợ nào?",
+  "index": 2,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "freshdesk",
+  "section": "Gcalls × Freshdesk phù hợp với những workflow hỗ trợ nào?",
+  "index": 3,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "giai-phap",
+  "section": "Chọn theo hệ thống và thị trường doanh nghiệp đang vận hành",
+  "index": 0,
+  "kind": "navigation",
+  "title": "Giải pháp tích hợp Voicebot AI",
+  "href": "/voicebot-ai/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "giai-phap",
+  "section": "Chọn theo hệ thống và thị trường doanh nghiệp đang vận hành",
+  "index": 1,
+  "kind": "navigation",
+  "title": "Tổng đài tích hợp CRM",
+  "href": "/tong-dai-tich-hop-crm/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "giai-phap",
+  "section": "Chọn theo hệ thống và thị trường doanh nghiệp đang vận hành",
+  "index": 2,
+  "kind": "navigation",
+  "title": "Tổng đài tích hợp Helpdesk",
+  "href": "/tong-dai-tich-hop-helpdesk/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "giai-phap",
+  "section": "Chọn theo hệ thống và thị trường doanh nghiệp đang vận hành",
+  "index": 3,
+  "kind": "navigation",
+  "title": "Tổng đài tích hợp POS",
+  "href": "/tong-dai-tich-hop-pos/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "giai-phap",
+  "section": "Chọn theo hệ thống và thị trường doanh nghiệp đang vận hành",
+  "index": 4,
+  "kind": "navigation",
+  "title": "Tổng đài quốc tế",
+  "href": "/tong-dai-quoc-te/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "giai-phap",
+  "section": "Chọn theo hệ thống và thị trường doanh nghiệp đang vận hành",
+  "index": 5,
+  "kind": "navigation",
+  "title": "Cloud Call Center",
+  "href": "/lien-he/?intent=consultation&source=consultation&solution=Cloud%20Call%20Center",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "giai-phap",
+  "section": "Chọn theo hệ thống và thị trường doanh nghiệp đang vận hành",
+  "index": 6,
+  "kind": "navigation",
+  "title": "Call Button Widget",
+  "href": "/lien-he/?intent=consultation&source=consultation&solution=Call%20Button%20Widget",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "giai-phap",
+  "section": "Xem thêm",
+  "index": 0,
+  "kind": "navigation",
+  "title": "Tất cả sản phẩm",
+  "href": "/san-pham/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "giai-phap",
+  "section": "Xem thêm",
+  "index": 1,
+  "kind": "navigation",
+  "title": "Danh mục tích hợp",
+  "href": "/tich-hop/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "giai-phap",
+  "section": "Xem thêm",
+  "index": 2,
+  "kind": "navigation",
+  "title": "Giải pháp theo ngành",
+  "href": "/nganh/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "giai-phap",
+  "section": "Xem thêm",
+  "index": 3,
+  "kind": "navigation",
+  "title": "Bảng giá Gcalls",
+  "href": "/bang-gia/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "giai-phap",
+  "section": "Xem thêm",
+  "index": 4,
+  "kind": "navigation",
+  "title": "Ước tính chi phí",
+  "href": "/uoc-tinh-chi-phi/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Giảm những điểm chuyển đổi không cần thiết trong quy trình HubSpot",
+  "index": 0,
+  "kind": "informational",
+  "title": "Giảm thao tác copy số",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Giảm những điểm chuyển đổi không cần thiết trong quy trình HubSpot",
+  "index": 1,
+  "kind": "informational",
+  "title": "Có context trước cuộc hội thoại",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Giảm những điểm chuyển đổi không cần thiết trong quy trình HubSpot",
+  "index": 2,
+  "kind": "informational",
+  "title": "Theo dõi tương tác tập trung hơn",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Giảm những điểm chuyển đổi không cần thiết trong quy trình HubSpot",
+  "index": 3,
+  "kind": "informational",
+  "title": "Giảm dữ liệu bị phân mảnh",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Những năng lực giúp kết nối cuộc gọi với workflow HubSpot",
+  "index": 0,
+  "kind": "informational",
+  "title": "Click-to-Call",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Những năng lực giúp kết nối cuộc gọi với workflow HubSpot",
+  "index": 1,
+  "kind": "informational",
+  "title": "Incoming Call Notification",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Những năng lực giúp kết nối cuộc gọi với workflow HubSpot",
+  "index": 2,
+  "kind": "informational",
+  "title": "Customer Context",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Những năng lực giúp kết nối cuộc gọi với workflow HubSpot",
+  "index": 3,
+  "kind": "informational",
+  "title": "Call Activity / History",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Xem thêm",
+  "index": 0,
+  "kind": "navigation",
+  "title": "Gcalls Plus Webphone",
+  "href": "/gcalls-plus-webphone/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Xem thêm",
+  "index": 1,
+  "kind": "navigation",
+  "title": "Gcalls CX",
+  "href": "/gcalls-cx/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Xem thêm",
+  "index": 2,
+  "kind": "navigation",
+  "title": "Bảng giá Gcalls",
+  "href": "/bang-gia/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Xem thêm",
+  "index": 3,
+  "kind": "navigation",
+  "title": "Ước tính chi phí",
+  "href": "/uoc-tinh-chi-phi/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Xem thêm",
+  "index": 4,
+  "kind": "navigation",
+  "title": "Blog Gcalls",
+  "href": "/blog/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Xem thêm",
+  "index": 5,
+  "kind": "navigation",
+  "title": "Liên hệ",
+  "href": "/lien-he/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "HubSpot quản lý khách hàng, nhưng cuộc gọi vẫn có thể nằm ngoài workflow",
+  "index": 0,
+  "kind": "informational",
+  "title": "Phải copy số điện thoại để gọi",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "HubSpot quản lý khách hàng, nhưng cuộc gọi vẫn có thể nằm ngoài workflow",
+  "index": 1,
+  "kind": "informational",
+  "title": "Không biết ngay ai đang gọi",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "HubSpot quản lý khách hàng, nhưng cuộc gọi vẫn có thể nằm ngoài workflow",
+  "index": 2,
+  "kind": "informational",
+  "title": "Call activity bị tách khỏi CRM",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "HubSpot quản lý khách hàng, nhưng cuộc gọi vẫn có thể nằm ngoài workflow",
+  "index": 3,
+  "kind": "informational",
+  "title": "Follow-up dễ trở thành quy trình thủ công",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Doanh nghiệp đang sử dụng CRM khác?",
+  "index": 0,
+  "kind": "navigation",
+  "title": "Salesforce",
+  "href": "/tich-hop/salesforce/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Doanh nghiệp đang sử dụng CRM khác?",
+  "index": 1,
+  "kind": "navigation",
+  "title": "Zoho CRM",
+  "href": "/tich-hop/zoho-crm/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Doanh nghiệp đang sử dụng CRM khác?",
+  "index": 2,
+  "kind": "navigation",
+  "title": "Danh mục tích hợp",
+  "href": "/tich-hop/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "hubspot",
+  "section": "Gcalls × HubSpot phù hợp với những workflow nào?",
+  "index": 0,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "hubspot",
+  "section": "Gcalls × HubSpot phù hợp với những workflow nào?",
+  "index": 1,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "hubspot",
+  "section": "Gcalls × HubSpot phù hợp với những workflow nào?",
+  "index": 2,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "hubspot",
+  "section": "Gcalls × HubSpot phù hợp với những workflow nào?",
+  "index": 3,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "lien-he",
+  "section": "Liên hệ trực tiếp",
+  "index": 0,
+  "kind": "informational",
+  "title": "Email",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "lien-he",
+  "section": "Liên hệ trực tiếp",
+  "index": 1,
+  "kind": "informational",
+  "title": "Hotline",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Giữ dữ liệu cuộc gọi gần hơn với quy trình Sales và Service",
+  "index": 0,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Giữ dữ liệu cuộc gọi gần hơn với quy trình Sales và Service",
+  "index": 1,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Giữ dữ liệu cuộc gọi gần hơn với quy trình Sales và Service",
+  "index": 2,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Giữ dữ liệu cuộc gọi gần hơn với quy trình Sales và Service",
+  "index": 3,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Những năng lực cốt lõi khi kết nối Gcalls với Salesforce",
+  "index": 0,
+  "kind": "informational",
+  "title": "Click-to-Call",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Những năng lực cốt lõi khi kết nối Gcalls với Salesforce",
+  "index": 1,
+  "kind": "informational",
+  "title": "Incoming Customer Context",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Những năng lực cốt lõi khi kết nối Gcalls với Salesforce",
+  "index": 2,
+  "kind": "informational",
+  "title": "Call Activity",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Những năng lực cốt lõi khi kết nối Gcalls với Salesforce",
+  "index": 3,
+  "kind": "informational",
+  "title": "Interaction History",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Xem thêm",
+  "index": 0,
+  "kind": "navigation",
+  "title": "Gcalls CX",
+  "href": "/gcalls-cx/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Xem thêm",
+  "index": 1,
+  "kind": "navigation",
+  "title": "Bảng giá Gcalls",
+  "href": "/bang-gia/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Xem thêm",
+  "index": 2,
+  "kind": "navigation",
+  "title": "Ước tính chi phí",
+  "href": "/uoc-tinh-chi-phi/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Xem thêm",
+  "index": 3,
+  "kind": "navigation",
+  "title": "Blog Gcalls",
+  "href": "/blog/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Xem thêm",
+  "index": 4,
+  "kind": "navigation",
+  "title": "Liên hệ",
+  "href": "/lien-he/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Salesforce quản lý quy trình khách hàng, nhưng cuộc gọi vẫn có thể nằm ngoài dữ liệu CRM",
+  "index": 0,
+  "kind": "informational",
+  "title": "Nhân viên phải copy số để gọi",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Salesforce quản lý quy trình khách hàng, nhưng cuộc gọi vẫn có thể nằm ngoài dữ liệu CRM",
+  "index": 1,
+  "kind": "informational",
+  "title": "Cuộc gọi đến thiếu customer context",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Salesforce quản lý quy trình khách hàng, nhưng cuộc gọi vẫn có thể nằm ngoài dữ liệu CRM",
+  "index": 2,
+  "kind": "informational",
+  "title": "Call history bị phân mảnh",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Salesforce quản lý quy trình khách hàng, nhưng cuộc gọi vẫn có thể nằm ngoài dữ liệu CRM",
+  "index": 3,
+  "kind": "informational",
+  "title": "Dữ liệu khó tiếp tục khi ownership thay đổi",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Doanh nghiệp đang sử dụng CRM khác?",
+  "index": 0,
+  "kind": "navigation",
+  "title": "HubSpot",
+  "href": "/tich-hop/hubspot/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Doanh nghiệp đang sử dụng CRM khác?",
+  "index": 1,
+  "kind": "navigation",
+  "title": "Zoho CRM",
+  "href": "/tich-hop/zoho-crm/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Doanh nghiệp đang sử dụng CRM khác?",
+  "index": 2,
+  "kind": "navigation",
+  "title": "Danh mục tích hợp",
+  "href": "/tich-hop/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "salesforce",
+  "section": "Salesforce Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 0,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "salesforce",
+  "section": "Salesforce Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 1,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "salesforce",
+  "section": "Salesforce Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 2,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "salesforce",
+  "section": "Salesforce Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 3,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "salesforce",
+  "section": "Gcalls × Salesforce phù hợp với những workflow nào?",
+  "index": 0,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "salesforce",
+  "section": "Gcalls × Salesforce phù hợp với những workflow nào?",
+  "index": 1,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "salesforce",
+  "section": "Gcalls × Salesforce phù hợp với những workflow nào?",
+  "index": 2,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "salesforce",
+  "section": "Gcalls × Salesforce phù hợp với những workflow nào?",
+  "index": 3,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "san-pham",
+  "section": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+  "index": 0,
+  "kind": "navigation",
+  "title": "Gcalls Plus Webphone",
+  "href": "/gcalls-plus-webphone/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "san-pham",
+  "section": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+  "index": 1,
+  "kind": "navigation",
+  "title": "QA QC Center",
+  "href": "/qc-bot-ai/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "san-pham",
+  "section": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+  "index": 2,
+  "kind": "navigation",
+  "title": "Gcalls CX",
+  "href": "/gcalls-cx/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "san-pham",
+  "section": "Xem thêm",
+  "index": 0,
+  "kind": "navigation",
+  "title": "Tất cả giải pháp",
+  "href": "/giai-phap/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "san-pham",
+  "section": "Xem thêm",
+  "index": 1,
+  "kind": "navigation",
+  "title": "Danh mục tích hợp",
+  "href": "/tich-hop/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "san-pham",
+  "section": "Xem thêm",
+  "index": 2,
+  "kind": "navigation",
+  "title": "Bảng giá Gcalls",
+  "href": "/bang-gia/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "san-pham",
+  "section": "Xem thêm",
+  "index": 3,
+  "kind": "navigation",
+  "title": "Ước tính chi phí",
+  "href": "/uoc-tinh-chi-phi/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "san-pham",
+  "section": "Xem thêm",
+  "index": 4,
+  "kind": "navigation",
+  "title": "Giải pháp theo ngành",
+  "href": "/nganh/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tich-hop",
+  "section": "Các nền tảng đang có trang tích hợp riêng",
+  "index": 0,
+  "kind": "navigation",
+  "title": "HubSpot",
+  "href": "/tich-hop/hubspot/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tich-hop",
+  "section": "Các nền tảng đang có trang tích hợp riêng",
+  "index": 1,
+  "kind": "navigation",
+  "title": "Salesforce",
+  "href": "/tich-hop/salesforce/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tich-hop",
+  "section": "Các nền tảng đang có trang tích hợp riêng",
+  "index": 2,
+  "kind": "navigation",
+  "title": "Zoho CRM",
+  "href": "/tich-hop/zoho-crm/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tich-hop",
+  "section": "Các nền tảng đang có trang tích hợp riêng",
+  "index": 3,
+  "kind": "navigation",
+  "title": "Freshdesk",
+  "href": "/tich-hop/freshdesk/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tich-hop",
+  "section": "Các nền tảng đang có trang tích hợp riêng",
+  "index": 4,
+  "kind": "navigation",
+  "title": "Zendesk",
+  "href": "/tich-hop/zendesk/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tich-hop",
+  "section": "Xem thêm",
+  "index": 0,
+  "kind": "navigation",
+  "title": "Tất cả giải pháp",
+  "href": "/giai-phap/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tich-hop",
+  "section": "Xem thêm",
+  "index": 1,
+  "kind": "navigation",
+  "title": "Gcalls Plus Webphone",
+  "href": "/gcalls-plus-webphone/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tich-hop",
+  "section": "Xem thêm",
+  "index": 2,
+  "kind": "navigation",
+  "title": "Tổng đài quốc tế",
+  "href": "/tong-dai-quoc-te/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tich-hop",
+  "section": "Xem thêm",
+  "index": 3,
+  "kind": "navigation",
+  "title": "Ước tính chi phí",
+  "href": "/uoc-tinh-chi-phi/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tich-hop",
+  "section": "Xem thêm",
+  "index": 4,
+  "kind": "navigation",
+  "title": "Bảng giá Gcalls",
+  "href": "/bang-gia/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Tổng đài quốc tế giải quyết bài toán thị trường, không thay thế các luồng tích hợp",
+  "index": 0,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Tổng đài quốc tế giải quyết bài toán thị trường, không thay thế các luồng tích hợp",
+  "index": 1,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Tổng đài quốc tế giải quyết bài toán thị trường, không thay thế các luồng tích hợp",
+  "index": 2,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Tổng đài quốc tế giải quyết bài toán thị trường, không thay thế các luồng tích hợp",
+  "index": 3,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Doanh nghiệp Việt Nam thường bắt đầu từ những thị trường nào",
+  "index": 0,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Doanh nghiệp Việt Nam thường bắt đầu từ những thị trường nào",
+  "index": 1,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Doanh nghiệp Việt Nam thường bắt đầu từ những thị trường nào",
+  "index": 2,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Doanh nghiệp Việt Nam thường bắt đầu từ những thị trường nào",
+  "index": 3,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Doanh nghiệp Việt Nam thường bắt đầu từ những thị trường nào",
+  "index": 4,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Doanh nghiệp Việt Nam thường bắt đầu từ những thị trường nào",
+  "index": 5,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Doanh nghiệp Việt Nam thường bắt đầu từ những thị trường nào",
+  "index": 6,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Quản lý đầu số, đội ngũ và hoạt động gọi ở nhiều thị trường trong một nền tảng",
+  "index": 0,
+  "kind": "informational",
+  "title": "Quản lý danh mục đầu số",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Quản lý đầu số, đội ngũ và hoạt động gọi ở nhiều thị trường trong một nền tảng",
+  "index": 1,
+  "kind": "informational",
+  "title": "Phân quyền và phân công đội ngũ",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Quản lý đầu số, đội ngũ và hoạt động gọi ở nhiều thị trường trong một nền tảng",
+  "index": 2,
+  "kind": "informational",
+  "title": "Theo dõi hoạt động cuộc gọi",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Quản lý đầu số, đội ngũ và hoạt động gọi ở nhiều thị trường trong một nền tảng",
+  "index": 3,
+  "kind": "informational",
+  "title": "Lịch sử tương tác tập trung",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Khi khách hàng ở nhiều quốc gia, hoạt động liên lạc dễ bị phân mảnh theo từng thị trường",
+  "index": 0,
+  "kind": "informational",
+  "title": "Khách hàng quốc tế khó liên hệ lại",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Khi khách hàng ở nhiều quốc gia, hoạt động liên lạc dễ bị phân mảnh theo từng thị trường",
+  "index": 1,
+  "kind": "informational",
+  "title": "Mỗi thị trường một cách làm khác nhau",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Khi khách hàng ở nhiều quốc gia, hoạt động liên lạc dễ bị phân mảnh theo từng thị trường",
+  "index": 2,
+  "kind": "informational",
+  "title": "Hoạt động nghe gọi nằm rải rác",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Khi khách hàng ở nhiều quốc gia, hoạt động liên lạc dễ bị phân mảnh theo từng thị trường",
+  "index": 3,
+  "kind": "informational",
+  "title": "Thủ tục đăng ký đầu số không rõ ràng",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Mỗi thị trường có quy định riêng về đầu số và điều kiện sử dụng",
+  "index": 0,
+  "kind": "informational",
+  "title": "Hồ sơ doanh nghiệp",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Mỗi thị trường có quy định riêng về đầu số và điều kiện sử dụng",
+  "index": 1,
+  "kind": "informational",
+  "title": "Yêu cầu hiện diện tại thị trường",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Mỗi thị trường có quy định riêng về đầu số và điều kiện sử dụng",
+  "index": 2,
+  "kind": "informational",
+  "title": "Loại đầu số được phép sử dụng",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Mỗi thị trường có quy định riêng về đầu số và điều kiện sử dụng",
+  "index": 3,
+  "kind": "informational",
+  "title": "Điều kiện vận hành và thời gian xử lý",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Doanh nghiệp dùng tổng đài quốc tế cho những bài toán nào",
+  "index": 0,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Doanh nghiệp dùng tổng đài quốc tế cho những bài toán nào",
+  "index": 1,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Doanh nghiệp dùng tổng đài quốc tế cho những bài toán nào",
+  "index": 2,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-quoc-te",
+  "section": "Doanh nghiệp dùng tổng đài quốc tế cho những bài toán nào",
+  "index": 3,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-tich-hop-crm",
+  "section": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+  "index": 0,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-tich-hop-crm",
+  "section": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+  "index": 1,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-tich-hop-crm",
+  "section": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+  "index": 2,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-tich-hop-crm",
+  "section": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+  "index": 3,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-tich-hop-crm",
+  "section": "Ba năng lực cốt lõi giúp kết nối cuộc gọi với CRM",
+  "index": 0,
+  "kind": "informational",
+  "title": "Click-to-Call",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-crm",
+  "section": "Ba năng lực cốt lõi giúp kết nối cuộc gọi với CRM",
+  "index": 1,
+  "kind": "informational",
+  "title": "Customer Popup",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-crm",
+  "section": "Ba năng lực cốt lõi giúp kết nối cuộc gọi với CRM",
+  "index": 2,
+  "kind": "informational",
+  "title": "Interaction History Sync",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-crm",
+  "section": "(untitled)",
+  "index": 0,
+  "kind": "informational",
+  "title": "HubSpot",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-crm",
+  "section": "(untitled)",
+  "index": 1,
+  "kind": "informational",
+  "title": "Salesforce",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-crm",
+  "section": "(untitled)",
+  "index": 2,
+  "kind": "informational",
+  "title": "Zoho CRM",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-crm",
+  "section": "(untitled)",
+  "index": 3,
+  "kind": "informational",
+  "title": "Khác",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-crm",
+  "section": "Khi CRM và tổng đài hoạt động riêng, nhân viên phải tự nối hai quy trình bằng thao tác thủ công",
+  "index": 0,
+  "kind": "informational",
+  "title": "Nhập lại số điện thoại",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-crm",
+  "section": "Khi CRM và tổng đài hoạt động riêng, nhân viên phải tự nối hai quy trình bằng thao tác thủ công",
+  "index": 1,
+  "kind": "informational",
+  "title": "Không có customer context khi chuông reo",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-crm",
+  "section": "Khi CRM và tổng đài hoạt động riêng, nhân viên phải tự nối hai quy trình bằng thao tác thủ công",
+  "index": 2,
+  "kind": "informational",
+  "title": "Lịch sử cuộc gọi nằm ngoài CRM",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-crm",
+  "section": "Khi CRM và tổng đài hoạt động riêng, nhân viên phải tự nối hai quy trình bằng thao tác thủ công",
+  "index": 3,
+  "kind": "informational",
+  "title": "Quản lý khó theo dõi quy trình xuyên hệ thống",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+  "index": 0,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+  "index": 1,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+  "index": 2,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khách hàng",
+  "index": 3,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "Kết nối cuộc gọi với những dữ liệu đội CSKH cần để xử lý ticket",
+  "index": 0,
+  "kind": "informational",
+  "title": "Call Context",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "Kết nối cuộc gọi với những dữ liệu đội CSKH cần để xử lý ticket",
+  "index": 1,
+  "kind": "informational",
+  "title": "Ticket / Support Record Connection",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "Kết nối cuộc gọi với những dữ liệu đội CSKH cần để xử lý ticket",
+  "index": 2,
+  "kind": "informational",
+  "title": "Interaction History",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "Kết nối cuộc gọi với những dữ liệu đội CSKH cần để xử lý ticket",
+  "index": 3,
+  "kind": "informational",
+  "title": "Customer Identification",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "(untitled)",
+  "index": 0,
+  "kind": "informational",
+  "title": "Freshdesk",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "(untitled)",
+  "index": 1,
+  "kind": "informational",
+  "title": "Zendesk",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "(untitled)",
+  "index": 2,
+  "kind": "informational",
+  "title": "Khác",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "Khi cuộc gọi và ticket nằm ở hai nơi, đội CSKH phải tự ghép lại hành trình hỗ trợ",
+  "index": 0,
+  "kind": "informational",
+  "title": "Nhân viên phải chuyển đổi giữa nhiều công cụ",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "Khi cuộc gọi và ticket nằm ở hai nơi, đội CSKH phải tự ghép lại hành trình hỗ trợ",
+  "index": 1,
+  "kind": "informational",
+  "title": "Ticket thiếu context cuộc gọi",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "Khi cuộc gọi và ticket nằm ở hai nơi, đội CSKH phải tự ghép lại hành trình hỗ trợ",
+  "index": 2,
+  "kind": "informational",
+  "title": "Lịch sử hỗ trợ bị phân mảnh",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "Khi cuộc gọi và ticket nằm ở hai nơi, đội CSKH phải tự ghép lại hành trình hỗ trợ",
+  "index": 3,
+  "kind": "informational",
+  "title": "Nhập lại thông tin làm tăng thao tác thủ công",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "Phù hợp với những đội hỗ trợ cần theo dõi cuộc gọi và ticket trong cùng hành trình",
+  "index": 0,
+  "kind": "informational",
+  "title": "SaaS Customer Support",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "Phù hợp với những đội hỗ trợ cần theo dõi cuộc gọi và ticket trong cùng hành trình",
+  "index": 1,
+  "kind": "informational",
+  "title": "E-commerce Customer Service",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "Phù hợp với những đội hỗ trợ cần theo dõi cuộc gọi và ticket trong cùng hành trình",
+  "index": 2,
+  "kind": "informational",
+  "title": "Service Operations",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-helpdesk",
+  "section": "Phù hợp với những đội hỗ trợ cần theo dõi cuộc gọi và ticket trong cùng hành trình",
+  "index": 3,
+  "kind": "informational",
+  "title": "BPO / Support Center",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-pos",
+  "section": "CRM, Helpdesk và POS cung cấp những loại customer context khác nhau",
+  "index": 0,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-tich-hop-pos",
+  "section": "CRM, Helpdesk và POS cung cấp những loại customer context khác nhau",
+  "index": 1,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-tich-hop-pos",
+  "section": "CRM, Helpdesk và POS cung cấp những loại customer context khác nhau",
+  "index": 2,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-tich-hop-pos",
+  "section": "CRM, Helpdesk và POS cung cấp những loại customer context khác nhau",
+  "index": 3,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "tong-dai-tich-hop-pos",
+  "section": "Kết nối cuộc gọi với những dữ liệu đội bán hàng và CSKH cần",
+  "index": 0,
+  "kind": "informational",
+  "title": "Customer Identification",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-pos",
+  "section": "Kết nối cuộc gọi với những dữ liệu đội bán hàng và CSKH cần",
+  "index": 1,
+  "kind": "informational",
+  "title": "Customer Context",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-pos",
+  "section": "Kết nối cuộc gọi với những dữ liệu đội bán hàng và CSKH cần",
+  "index": 2,
+  "kind": "informational",
+  "title": "Sales Data Context",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-pos",
+  "section": "Kết nối cuộc gọi với những dữ liệu đội bán hàng và CSKH cần",
+  "index": 3,
+  "kind": "informational",
+  "title": "Interaction History",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-pos",
+  "section": "Khi dữ liệu bán hàng và cuộc gọi nằm ở hai nơi, nhân viên phải tự tìm context trong lúc khách hàng đang chờ",
+  "index": 0,
+  "kind": "informational",
+  "title": "Khó nhận biết khách hàng khi có cuộc gọi",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-pos",
+  "section": "Khi dữ liệu bán hàng và cuộc gọi nằm ở hai nơi, nhân viên phải tự tìm context trong lúc khách hàng đang chờ",
+  "index": 1,
+  "kind": "informational",
+  "title": "Dữ liệu mua hàng không nằm cạnh cuộc hội thoại",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-pos",
+  "section": "Khi dữ liệu bán hàng và cuộc gọi nằm ở hai nơi, nhân viên phải tự tìm context trong lúc khách hàng đang chờ",
+  "index": 2,
+  "kind": "informational",
+  "title": "Chăm sóc sau mua bị phân mảnh",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "tong-dai-tich-hop-pos",
+  "section": "Khi dữ liệu bán hàng và cuộc gọi nằm ở hai nơi, nhân viên phải tự tìm context trong lúc khách hàng đang chờ",
+  "index": 3,
+  "kind": "informational",
+  "title": "Nhập lại thông tin tạo thêm thao tác",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Giữ cuộc gọi gần hơn với quy trình ticket và customer support",
+  "index": 0,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Giữ cuộc gọi gần hơn với quy trình ticket và customer support",
+  "index": 1,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Giữ cuộc gọi gần hơn với quy trình ticket và customer support",
+  "index": 2,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Giữ cuộc gọi gần hơn với quy trình ticket và customer support",
+  "index": 3,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Zendesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 0,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zendesk",
+  "section": "Zendesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 1,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zendesk",
+  "section": "Zendesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 2,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zendesk",
+  "section": "Zendesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 3,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zendesk",
+  "section": "Zendesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 4,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zendesk",
+  "section": "Những năng lực được xác nhận khi kết nối Gcalls với Zendesk",
+  "index": 0,
+  "kind": "informational",
+  "title": "Customer Context",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Những năng lực được xác nhận khi kết nối Gcalls với Zendesk",
+  "index": 1,
+  "kind": "informational",
+  "title": "Ticket / Support Record Context",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Những năng lực được xác nhận khi kết nối Gcalls với Zendesk",
+  "index": 2,
+  "kind": "informational",
+  "title": "Call Activity",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Những năng lực được xác nhận khi kết nối Gcalls với Zendesk",
+  "index": 3,
+  "kind": "informational",
+  "title": "Support Workflow Continuity",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Xem thêm",
+  "index": 0,
+  "kind": "navigation",
+  "title": "Tổng đài cho BPO",
+  "href": "",
+  "proposed": "",
+  "status": "UNRESOLVED — no known route for this title"
+ },
+ {
+  "page": "zendesk",
+  "section": "Xem thêm",
+  "index": 1,
+  "kind": "navigation",
+  "title": "Tổng đài cho Thương mại điện tử",
+  "href": "",
+  "proposed": "",
+  "status": "UNRESOLVED — no known route for this title"
+ },
+ {
+  "page": "zendesk",
+  "section": "Xem thêm",
+  "index": 2,
+  "kind": "navigation",
+  "title": "Blog Gcalls",
+  "href": "/blog/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Xem thêm",
+  "index": 3,
+  "kind": "navigation",
+  "title": "Liên hệ",
+  "href": "/lien-he/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Zendesk quản lý ticket, nhưng cuộc gọi vẫn có thể nằm ngoài lịch sử hỗ trợ",
+  "index": 0,
+  "kind": "informational",
+  "title": "Nhân viên phải chuyển đổi giữa nhiều công cụ",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Zendesk quản lý ticket, nhưng cuộc gọi vẫn có thể nằm ngoài lịch sử hỗ trợ",
+  "index": 1,
+  "kind": "informational",
+  "title": "Thiếu customer context khi cuộc gọi bắt đầu",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Zendesk quản lý ticket, nhưng cuộc gọi vẫn có thể nằm ngoài lịch sử hỗ trợ",
+  "index": 2,
+  "kind": "informational",
+  "title": "Lịch sử cuộc hội thoại bị phân mảnh",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Zendesk quản lý ticket, nhưng cuộc gọi vẫn có thể nằm ngoài lịch sử hỗ trợ",
+  "index": 3,
+  "kind": "informational",
+  "title": "Follow-up phụ thuộc vào ghi chú thủ công",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Doanh nghiệp đang sử dụng Helpdesk khác?",
+  "index": 0,
+  "kind": "navigation",
+  "title": "Freshdesk",
+  "href": "/tich-hop/freshdesk/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Doanh nghiệp đang sử dụng Helpdesk khác?",
+  "index": 1,
+  "kind": "navigation",
+  "title": "Danh mục tích hợp",
+  "href": "/tich-hop/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zendesk",
+  "section": "Gcalls × Zendesk phù hợp với những workflow hỗ trợ nào?",
+  "index": 0,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zendesk",
+  "section": "Gcalls × Zendesk phù hợp với những workflow hỗ trợ nào?",
+  "index": 1,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zendesk",
+  "section": "Gcalls × Zendesk phù hợp với những workflow hỗ trợ nào?",
+  "index": 2,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zendesk",
+  "section": "Gcalls × Zendesk phù hợp với những workflow hỗ trợ nào?",
+  "index": 3,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Giữ hoạt động gọi gần hơn với dữ liệu Sales và CSKH",
+  "index": 0,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Giữ hoạt động gọi gần hơn với dữ liệu Sales và CSKH",
+  "index": 1,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Giữ hoạt động gọi gần hơn với dữ liệu Sales và CSKH",
+  "index": 2,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Giữ hoạt động gọi gần hơn với dữ liệu Sales và CSKH",
+  "index": 3,
+  "kind": "informational",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Zoho CRM Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 0,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Zoho CRM Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 1,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Zoho CRM Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 2,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Zoho CRM Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+  "index": 3,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Những năng lực được xác nhận khi kết nối Gcalls với Zoho CRM",
+  "index": 0,
+  "kind": "informational",
+  "title": "Click-to-Call",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Những năng lực được xác nhận khi kết nối Gcalls với Zoho CRM",
+  "index": 1,
+  "kind": "informational",
+  "title": "Customer Context",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Những năng lực được xác nhận khi kết nối Gcalls với Zoho CRM",
+  "index": 2,
+  "kind": "informational",
+  "title": "Call Activity / Interaction History",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Những năng lực được xác nhận khi kết nối Gcalls với Zoho CRM",
+  "index": 3,
+  "kind": "informational",
+  "title": "CRM Workflow Continuity",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Xem thêm",
+  "index": 0,
+  "kind": "navigation",
+  "title": "Bảng giá Gcalls",
+  "href": "/bang-gia/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Xem thêm",
+  "index": 1,
+  "kind": "navigation",
+  "title": "Ước tính chi phí",
+  "href": "/uoc-tinh-chi-phi/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Xem thêm",
+  "index": 2,
+  "kind": "navigation",
+  "title": "Blog Gcalls",
+  "href": "/blog/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Xem thêm",
+  "index": 3,
+  "kind": "navigation",
+  "title": "Liên hệ",
+  "href": "/lien-he/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Zoho CRM quản lý khách hàng, nhưng hoạt động gọi vẫn có thể nằm ngoài workflow",
+  "index": 0,
+  "kind": "informational",
+  "title": "Phải chuyển đổi giữa CRM và công cụ gọi",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Zoho CRM quản lý khách hàng, nhưng hoạt động gọi vẫn có thể nằm ngoài workflow",
+  "index": 1,
+  "kind": "informational",
+  "title": "Thiếu customer context khi cuộc gọi bắt đầu",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Zoho CRM quản lý khách hàng, nhưng hoạt động gọi vẫn có thể nằm ngoài workflow",
+  "index": 2,
+  "kind": "informational",
+  "title": "Lịch sử tương tác bị phân mảnh",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Zoho CRM quản lý khách hàng, nhưng hoạt động gọi vẫn có thể nằm ngoài workflow",
+  "index": 3,
+  "kind": "informational",
+  "title": "Follow-up phụ thuộc vào ghi chú thủ công",
+  "href": "",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Doanh nghiệp đang sử dụng CRM khác?",
+  "index": 0,
+  "kind": "navigation",
+  "title": "HubSpot",
+  "href": "/tich-hop/hubspot/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Doanh nghiệp đang sử dụng CRM khác?",
+  "index": 1,
+  "kind": "navigation",
+  "title": "Salesforce",
+  "href": "/tich-hop/salesforce/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Doanh nghiệp đang sử dụng CRM khác?",
+  "index": 2,
+  "kind": "navigation",
+  "title": "Danh mục tích hợp",
+  "href": "/tich-hop/",
+  "proposed": "",
+  "status": "ok"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Gcalls × Zoho CRM phù hợp với những workflow nào?",
+  "index": 0,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Gcalls × Zoho CRM phù hợp với những workflow nào?",
+  "index": 1,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Gcalls × Zoho CRM phù hợp với những workflow nào?",
+  "index": 2,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ },
+ {
+  "page": "zoho-crm",
+  "section": "Gcalls × Zoho CRM phù hợp với những workflow nào?",
+  "index": 3,
+  "kind": "empty",
+  "title": "",
+  "href": "",
+  "proposed": "",
+  "status": "EMPTY — content export gap"
+ }
+]

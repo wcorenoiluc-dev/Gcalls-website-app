@@ -1,0 +1,178 @@
+[
+ {
+  "route": "/",
+  "status": 200,
+  "finalUrl": "/",
+  "words": 2864,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/gcalls-plus-webphone/",
+  "status": 200,
+  "finalUrl": "/gcalls-plus-webphone/",
+  "words": 1863,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/gcalls-cx/",
+  "status": 200,
+  "finalUrl": "/gcalls-cx/",
+  "words": 2413,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/voicebot-ai/",
+  "status": 200,
+  "finalUrl": "/voicebot-ai/",
+  "words": 2357,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/qc-bot-ai/",
+  "status": 200,
+  "finalUrl": "/qc-bot-ai/",
+  "words": 2344,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/san-pham/",
+  "status": 200,
+  "finalUrl": "/san-pham/",
+  "words": 750,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/giai-phap/",
+  "status": 200,
+  "finalUrl": "/giai-phap/",
+  "words": 993,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/lien-he/",
+  "status": 200,
+  "finalUrl": "/lien-he/",
+  "words": 235,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/tong-dai-quoc-te/",
+  "status": 200,
+  "finalUrl": "/tong-dai-quoc-te/",
+  "words": 2292,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/tong-dai-tich-hop-crm/",
+  "status": 200,
+  "finalUrl": "/tong-dai-tich-hop-crm/",
+  "words": 1791,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/tong-dai-tich-hop-helpdesk/",
+  "status": 200,
+  "finalUrl": "/tong-dai-tich-hop-helpdesk/",
+  "words": 1710,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/tong-dai-tich-hop-pos/",
+  "status": 200,
+  "finalUrl": "/tong-dai-tich-hop-pos/",
+  "words": 1746,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/tich-hop/",
+  "status": 200,
+  "finalUrl": "/tich-hop/",
+  "words": 213,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/tich-hop/freshdesk/",
+  "status": 200,
+  "finalUrl": "/tich-hop/freshdesk/",
+  "words": 199,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/tich-hop/hubspot/",
+  "status": 200,
+  "finalUrl": "/tich-hop/hubspot/",
+  "words": 200,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/tich-hop/salesforce/",
+  "status": 200,
+  "finalUrl": "/tich-hop/salesforce/",
+  "words": 198,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/tich-hop/zendesk/",
+  "status": 200,
+  "finalUrl": "/tich-hop/zendesk/",
+  "words": 199,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/tich-hop/zoho-crm/",
+  "status": 200,
+  "finalUrl": "/tich-hop/zoho-crm/",
+  "words": 202,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/bang-gia/",
+  "status": 200,
+  "finalUrl": "/bang-gia/",
+  "words": 216,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/nganh/",
+  "status": 200,
+  "finalUrl": "/nganh/",
+  "words": 221,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/uoc-tinh-chi-phi/",
+  "status": 200,
+  "finalUrl": "/uoc-tinh-chi-phi/",
+  "words": 831,
+  "h1": 1,
+  "elementor": []
+ },
+ {
+  "route": "/blog/",
+  "status": 200,
+  "finalUrl": "/blog/",
+  "words": 2545,
+  "h1": 1,
+  "elementor": []
+ }
+]

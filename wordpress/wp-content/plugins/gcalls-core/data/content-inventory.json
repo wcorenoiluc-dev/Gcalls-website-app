@@ -1,0 +1,495 @@
+{
+  "note": "GCALLS-047. The expected shape of every content page. content-completeness-test.php reads this so that DELETING a section fails, not just emptying one. Regenerate deliberately and review the diff.",
+  "generated_at_gmt": "2026-09-03T05:49:18.335Z",
+  "pages": {
+    "bang-gia": 6,
+    "bao-hiem": 6,
+    "bat-dong-san": 6,
+    "bpo": 6,
+    "case-studies": 6,
+    "cong-ty": 1,
+    "doi-tac": 9,
+    "ebook": 5,
+    "faq": 9,
+    "freshdesk": 16,
+    "giai-phap": 4,
+    "giao-duc": 6,
+    "glossary": 9,
+    "guides": 4,
+    "hubspot": 13,
+    "khach-hang": 9,
+    "lien-he": 1,
+    "nganh": 1,
+    "referral": 2,
+    "salesforce": 15,
+    "san-pham": 4,
+    "tai-chinh": 6,
+    "tai-nguyen": 1,
+    "thuong-mai-dien-tu": 6,
+    "tich-hop": 4,
+    "tong-dai-quoc-te": 14,
+    "tong-dai-tich-hop-crm": 14,
+    "tong-dai-tich-hop-helpdesk": 12,
+    "tong-dai-tich-hop-pos": 13,
+    "zendesk": 16,
+    "zoho-crm": 15
+  },
+  "detail": {
+    "bang-gia": {
+      "sections": 6,
+      "headings": [
+        "Những yếu tố quyết định chi phí",
+        "Sản phẩm và giải pháp được báo giá",
+        "Hạng mục bổ sung có thể phát sinh",
+        "Thông tin cần cung cấp để nhận báo giá",
+        "Ước tính khác với báo giá chính thức",
+        "Bước tiếp theo"
+      ],
+      "faq": 7,
+      "cta": true
+    },
+    "bao-hiem": {
+      "sections": 6,
+      "headings": [
+        "Liên hệ nhiều lần, nhưng mỗi lần lại bắt đầu từ con số không",
+        "Mất ngữ cảnh làm hỏng cả trải nghiệm lẫn khả năng kiểm soát",
+        "Một hệ thống cho cả hoạt động gọi ra và lịch sử chăm sóc",
+        "Triển khai theo vòng đời hợp đồng đang vận hành",
+        "Những thay đổi thường được đặt làm mục tiêu",
+        "Các trang liên quan tới bài toán bảo hiểm"
+      ],
+      "faq": 4,
+      "cta": true
+    },
+    "bat-dong-san": {
+      "sections": 6,
+      "headings": [
+        "Ba nút thắt quen thuộc của đội kinh doanh bất động sản",
+        "Chi phí dồn vào lead đã mua nhưng không khai thác được",
+        "Đưa toàn bộ hoạt động gọi và trạng thái lead về một hệ thống",
+        "Giữ nguyên cách phân bổ lead, thay đổi nơi dữ liệu được lưu",
+        "Những thay đổi thường được đặt làm mục tiêu",
+        "Các trang liên quan tới bài toán bất động sản"
+      ],
+      "faq": 4,
+      "cta": true
+    },
+    "bpo": {
+      "sections": 6,
+      "headings": [
+        "Quy mô lớn làm lộ ra giới hạn của cách kiểm soát thủ công",
+        "Chất lượng không đo được là rủi ro hợp đồng",
+        "Một lớp vận hành và giám sát chung cho nhiều nhóm dự án",
+        "Triển khai theo từng dự án, không thay đổi toàn bộ cùng lúc",
+        "Những thay đổi thường được đặt làm mục tiêu",
+        "Các trang liên quan tới bài toán BPO"
+      ],
+      "faq": 4,
+      "cta": true
+    },
+    "case-studies": {
+      "sections": 6,
+      "headings": [
+        "Dành cho người phải thẩm định một tuyên bố kết quả",
+        "Một con số không kèm cách đo thì không nói lên điều gì",
+        "Case study sẽ được phân loại theo năm chiều",
+        "Tám điều kiện bắt buộc trước khi một case study được công bố",
+        "Thư viện case study đang trong giai đoạn thu thập bằng chứng",
+        "Những nơi có thể đánh giá Gcalls mà không cần case study"
+      ],
+      "faq": 4,
+      "cta": true
+    },
+    "cong-ty": {
+      "sections": 1,
+      "headings": [
+        "Tìm hiểu thêm"
+      ],
+      "faq": 0,
+      "cta": true
+    },
+    "doi-tac": {
+      "sections": 9,
+      "headings": [
+        "Dành cho tổ chức đang cân nhắc làm việc cùng Gcalls",
+        "Một hệ thống liên lạc hiếm khi đứng một mình",
+        "Các nhóm hợp tác Gcalls sẵn sàng trao đổi",
+        "Các hình thức hợp tác có thể trao đổi",
+        "Chín hạng mục được làm rõ trước khi hai bên cam kết",
+        "Từ liên hệ ban đầu tới thỏa thuận",
+        "Hiện chưa có danh sách đối tác công khai",
+        "Tích hợp kỹ thuật không đồng nghĩa với quan hệ đối tác",
+        "Nội dung kỹ thuật liên quan tới hợp tác"
+      ],
+      "faq": 6,
+      "cta": true
+    },
+    "ebook": {
+      "sections": 5,
+      "headings": [
+        "Dành cho người phải xây dựng phương án, không chỉ chọn công cụ",
+        "Các chủ đề đang được chuẩn bị ở dạng tài liệu chuyên sâu",
+        "Một tài liệu chuyên sâu của Gcalls cần có gì",
+        "Thư viện tài liệu đang được chuẩn bị",
+        "Đi theo hướng giải pháp đang quan tâm"
+      ],
+      "faq": 3,
+      "cta": true
+    },
+    "faq": {
+      "sections": 9,
+      "headings": [
+        "Trả lời trước những câu hỏi thường xuất hiện ở cuộc gọi tư vấn đầu tiên",
+        "Sáu nhóm câu hỏi",
+        "Chọn giải pháp",
+        "Tích hợp CRM và Helpdesk",
+        "Gọi quốc tế",
+        "Vận hành đa kênh",
+        "Voicebot và AI QC",
+        "Triển khai, bảo mật và hỗ trợ",
+        "Câu hỏi theo từng chủ đề cụ thể"
+      ],
+      "faq": 0,
+      "cta": true
+    },
+    "freshdesk": {
+      "sections": 16,
+      "headings": [
+        "Giảm những bước chuyển đổi thủ công giữa Freshdesk và hệ thống gọi",
+        "Giữ cuộc gọi gần hơn với quy trình ticket và customer support",
+        "Freshdesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+        "Những năng lực được xác nhận khi kết nối Gcalls với Freshdesk",
+        "",
+        "Xem thêm",
+        "Đưa lớp giao tiếp thoại vào nơi đội Support đang quản lý yêu cầu khách hàng",
+        "Freshdesk quản lý ticket, nhưng cuộc gọi vẫn có thể nằm ngoài lịch sử hỗ trợ",
+        "Doanh nghiệp đang sử dụng Helpdesk khác?",
+        "Tích hợp theo cấu hình Freshdesk và workflow hỗ trợ đang sử dụng",
+        "Hiểu yêu cầu hỗ trợ trước khi tiếp tục cuộc hội thoại",
+        "Tích hợp Freshdesk cần bắt đầu từ ticket structure, permission và workflow thực ",
+        "Giữ customer context và ticket gần hoạt động nghe gọi",
+        "Gcalls × Freshdesk phù hợp với những workflow hỗ trợ nào?",
+        "Trang này dành cho doanh nghiệp đã sử dụng Freshdesk",
+        "Từ Freshdesk contact hoặc ticket đến cuộc gọi và bước hỗ trợ tiếp theo"
+      ],
+      "faq": 7,
+      "cta": true
+    },
+    "giai-phap": {
+      "sections": 4,
+      "headings": [
+        "Giải pháp Gcalls gồm những gì?",
+        "Chọn theo hệ thống và thị trường doanh nghiệp đang vận hành",
+        "Bắt đầu từ bài toán của đội ngũ",
+        "Xem thêm"
+      ],
+      "faq": 0,
+      "cta": true
+    },
+    "giao-duc": {
+      "sections": 6,
+      "headings": [
+        "Nơi hoạt động tư vấn tuyển sinh thường bị hao hụt",
+        "Chi phí thật sự nằm ở những lần không kết nối được",
+        "Đưa hoạt động gọi ra và lịch sử tư vấn về cùng một chỗ",
+        "Triển khai theo quy trình tuyển sinh đang chạy, không thay thế nó",
+        "Những thay đổi thường được đặt làm mục tiêu",
+        "Các trang liên quan tới bài toán tuyển sinh"
+      ],
+      "faq": 4,
+      "cta": true
+    },
+    "glossary": {
+      "sections": 9,
+      "headings": [
+        "Để đọc tài liệu và báo giá mà không phải đoán nghĩa",
+        "Sáu nhóm thuật ngữ",
+        "Nền tảng tổng đài",
+        "Luồng cuộc gọi và kênh tương tác",
+        "Gọi ra quy mô lớn và nhận diện cuộc gọi",
+        "Tích hợp hệ thống",
+        "AI và chất lượng hội thoại",
+        "Kỹ thuật và cam kết dịch vụ",
+        "Từ thuật ngữ tới trang trình bày chi tiết"
+      ],
+      "faq": 3,
+      "cta": true
+    },
+    "guides": {
+      "sections": 4,
+      "headings": [
+        "Dành cho người phải chuẩn bị quyết định, không chỉ người tìm hiểu",
+        "Chọn lộ trình theo câu hỏi đang cần trả lời",
+        "Hướng dẫn nằm trên trang, chưa có bản tải về",
+        "Đi tiếp theo hướng đang quan tâm"
+      ],
+      "faq": 4,
+      "cta": true
+    },
+    "hubspot": {
+      "sections": 13,
+      "headings": [
+        "Giảm những điểm chuyển đổi không cần thiết trong quy trình HubSpot",
+        "Những năng lực giúp kết nối cuộc gọi với workflow HubSpot",
+        "",
+        "Xem thêm",
+        "Đưa lớp giao tiếp thoại vào nơi đội ngũ đang quản lý khách hàng",
+        "HubSpot quản lý khách hàng, nhưng cuộc gọi vẫn có thể nằm ngoài workflow",
+        "Doanh nghiệp đang sử dụng CRM khác?",
+        "Tích hợp theo cấu hình HubSpot và workflow doanh nghiệp đang sử dụng",
+        "Tích hợp cần bắt đầu từ workflow và dữ liệu doanh nghiệp đang sử dụng",
+        "Giữ customer context gần cuộc gọi",
+        "Gcalls × HubSpot phù hợp với những workflow nào?",
+        "Trang này dành cho doanh nghiệp đã chọn HubSpot làm CRM",
+        "Từ HubSpot contact đến cuộc gọi và follow-up"
+      ],
+      "faq": 7,
+      "cta": true
+    },
+    "khach-hang": {
+      "sections": 9,
+      "headings": [
+        "Để bạn tự trả lời câu hỏi \"Gcalls có hợp với đội của mình không?\"",
+        "Điều kiện khiến một doanh nghiệp thật sự cần tới Gcalls",
+        "Các mô hình vận hành Gcalls đang phục vụ",
+        "Các vấn đề Gcalls giúp doanh nghiệp đánh giá",
+        "Từ mô hình vận hành tới giải pháp tương ứng",
+        "Bảy giai đoạn từ khảo sát tới vận hành",
+        "Vì sao trang này không có tên hay logo khách hàng",
+        "Thư viện khách hàng công khai đang được chuẩn bị",
+        "Đặc thù vận hành theo ngành"
+      ],
+      "faq": 5,
+      "cta": true
+    },
+    "lien-he": {
+      "sections": 1,
+      "headings": [
+        "Liên hệ trực tiếp"
+      ],
+      "faq": 0,
+      "cta": false
+    },
+    "nganh": {
+      "sections": 1,
+      "headings": [
+        "Sáu ngành đang có trang riêng"
+      ],
+      "faq": 0,
+      "cta": true
+    },
+    "referral": {
+      "sections": 2,
+      "headings": [
+        "Cách chương trình hoạt động",
+        "Điều khoản được trao đổi trực tiếp"
+      ],
+      "faq": 0,
+      "cta": true
+    },
+    "salesforce": {
+      "sections": 15,
+      "headings": [
+        "Giảm những bước chuyển đổi thủ công giữa Salesforce và hệ thống gọi",
+        "Giữ dữ liệu cuộc gọi gần hơn với quy trình Sales và Service",
+        "Những năng lực cốt lõi khi kết nối Gcalls với Salesforce",
+        "",
+        "Xem thêm",
+        "Đưa lớp giao tiếp thoại vào workflow Salesforce",
+        "Salesforce quản lý quy trình khách hàng, nhưng cuộc gọi vẫn có thể nằm ngoài dữ ",
+        "Doanh nghiệp đang sử dụng CRM khác?",
+        "Salesforce Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+        "Tích hợp theo cấu hình Salesforce và workflow doanh nghiệp đang sử dụng",
+        "Tích hợp Salesforce cần bắt đầu từ object, permission và workflow thực tế",
+        "Giữ customer context gần hoạt động nghe gọi",
+        "Gcalls × Salesforce phù hợp với những workflow nào?",
+        "Trang này dành cho doanh nghiệp đã sử dụng Salesforce",
+        "Từ Salesforce record đến cuộc gọi và bước xử lý tiếp theo"
+      ],
+      "faq": 7,
+      "cta": true
+    },
+    "san-pham": {
+      "sections": 4,
+      "headings": [
+        "Gcalls có những sản phẩm nào?",
+        "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+        "Ranh giới giữa ba sản phẩm",
+        "Xem thêm"
+      ],
+      "faq": 0,
+      "cta": true
+    },
+    "tai-chinh": {
+      "sections": 6,
+      "headings": [
+        "Khi tổng đài và hệ thống quản lý khách hàng chạy song song",
+        "Dữ liệu không liền mạch làm chậm cả đội ngũ lẫn quản lý",
+        "Kết nối tổng đài với hệ thống doanh nghiệp đang dùng",
+        "Giữ nguyên hệ thống lõi, bổ sung lớp kết nối",
+        "Những thay đổi thường được đặt làm mục tiêu",
+        "Các trang liên quan tới bài toán tài chính"
+      ],
+      "faq": 4,
+      "cta": true
+    },
+    "tai-nguyen": {
+      "sections": 1,
+      "headings": [
+        "Các nhóm tài nguyên"
+      ],
+      "faq": 0,
+      "cta": true
+    },
+    "thuong-mai-dien-tu": {
+      "sections": 6,
+      "headings": [
+        "Khách hàng đã mua hàng, nhưng vẫn không bắt máy",
+        "Không liên lạc được với khách hàng cũ là chi phí kép",
+        "Tập trung hoạt động gọi ra và gắn nó với dữ liệu đơn hàng",
+        "Triển khai theo các luồng gọi ra đang chạy",
+        "Những thay đổi thường được đặt làm mục tiêu",
+        "Các trang liên quan tới bài toán thương mại điện tử"
+      ],
+      "faq": 4,
+      "cta": true
+    },
+    "tich-hop": {
+      "sections": 4,
+      "headings": [
+        "Gcalls tích hợp được với những hệ thống nào?",
+        "Các nền tảng đang có trang tích hợp riêng",
+        "Nếu chưa rõ nên bắt đầu từ đâu",
+        "Xem thêm"
+      ],
+      "faq": 0,
+      "cta": true
+    },
+    "tong-dai-quoc-te": {
+      "sections": 14,
+      "headings": [
+        "Tổng đài quốc tế giải quyết bài toán thị trường, không thay thế các luồng tích h",
+        "Triển khai theo từng thị trường và theo quy định áp dụng",
+        "",
+        "Từ thị trường mục tiêu đến đầu số hoạt động trong quy trình của đội ngũ",
+        "Nhận cuộc gọi từ khách hàng quốc tế trên cùng hệ thống với đội ngũ trong nước",
+        "Doanh nghiệp Việt Nam thường bắt đầu từ những thị trường nào",
+        "Đầu số quốc tế là cách doanh nghiệp hiện diện tại một thị trường mà không cần đặ",
+        "Quản lý đầu số, đội ngũ và hoạt động gọi ở nhiều thị trường trong một nền tảng",
+        "Gọi ra thị trường quốc tế từ chính công cụ đội ngũ đang dùng",
+        "Khi khách hàng ở nhiều quốc gia, hoạt động liên lạc dễ bị phân mảnh theo từng th",
+        "Quy trình chuẩn bị hồ sơ và đăng ký đầu số theo từng thị trường",
+        "Mỗi thị trường có quy định riêng về đầu số và điều kiện sử dụng",
+        "Mỗi thị trường được khảo sát trước khi cam kết phạm vi triển khai",
+        "Doanh nghiệp dùng tổng đài quốc tế cho những bài toán nào"
+      ],
+      "faq": 7,
+      "cta": true
+    },
+    "tong-dai-tich-hop-crm": {
+      "sections": 14,
+      "headings": [
+        "Giảm những điểm chuyển đổi thủ công trong quy trình Sales và CSKH",
+        "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khác",
+        "Ba năng lực cốt lõi giúp kết nối cuộc gọi với CRM",
+        "Biết khách hàng đang nói chuyện với mình là ai trước khi tiếp tục xử lý",
+        "Giữ dữ liệu cuộc gọi gần với hồ sơ khách hàng",
+        "Từ kết nối đến vận hành theo quy trình rõ ràng",
+        "",
+        "Từ dữ liệu CRM đến cuộc gọi và lịch sử tương tác",
+        "Đưa hoạt động cuộc gọi vào nơi đội Sales và CSKH đang làm việc",
+        "",
+        "Khi CRM và tổng đài hoạt động riêng, nhân viên phải tự nối hai quy trình bằng th",
+        "Giảm thao tác giữa gọi điện và quản lý cơ hội bán hàng",
+        "Đưa customer context vào quy trình tiếp nhận cuộc gọi",
+        "Tích hợp cần bắt đầu từ workflow thực tế của doanh nghiệp"
+      ],
+      "faq": 6,
+      "cta": true
+    },
+    "tong-dai-tich-hop-helpdesk": {
+      "sections": 12,
+      "headings": [
+        "Giảm những bước chuyển đổi thủ công trong quy trình CSKH",
+        "CRM, Helpdesk và Omnichannel giải quyết những phần khác nhau của hành trình khác",
+        "Kết nối cuộc gọi với những dữ liệu đội CSKH cần để xử lý ticket",
+        "Kết nối Helpdesk theo workflow hỗ trợ doanh nghiệp đang sử dụng",
+        "",
+        "Từ cuộc gọi đến ticket và bước xử lý tiếp theo",
+        "Đưa cuộc gọi vào quy trình xử lý yêu cầu hỗ trợ",
+        "",
+        "Khi cuộc gọi và ticket nằm ở hai nơi, đội CSKH phải tự ghép lại hành trình hỗ tr",
+        "Hiểu lịch sử hỗ trợ trước khi tiếp tục cuộc hội thoại",
+        "Mỗi Helpdesk có cấu trúc ticket và dữ liệu khác nhau",
+        "Phù hợp với những đội hỗ trợ cần theo dõi cuộc gọi và ticket trong cùng hành trì"
+      ],
+      "faq": 6,
+      "cta": true
+    },
+    "tong-dai-tich-hop-pos": {
+      "sections": 13,
+      "headings": [
+        "Giảm việc tra cứu thủ công giữa cuộc gọi và hệ thống bán hàng",
+        "CRM, Helpdesk và POS cung cấp những loại customer context khác nhau",
+        "Kết nối cuộc gọi với những dữ liệu đội bán hàng và CSKH cần",
+        "Tích hợp theo hệ thống bán hàng và dữ liệu doanh nghiệp đang sử dụng",
+        "",
+        "Giữ cuộc gọi gần hơn với quy trình bán hàng trực tuyến",
+        "Từ cuộc gọi đến customer context và bước chăm sóc tiếp theo",
+        "Đưa dữ liệu bán hàng vào đúng thời điểm khách hàng đang tương tác",
+        "Kết nối tổng đài với dữ liệu bán hàng khi đội ngũ cần nhiều context hơn",
+        "Khi dữ liệu bán hàng và cuộc gọi nằm ở hai nơi, nhân viên phải tự tìm context tr",
+        "Kết nối cuộc gọi với quá trình chăm sóc khách hàng tại cửa hàng hoặc chuỗi",
+        "Sử dụng dữ liệu phù hợp để hiểu khách hàng trước khi tư vấn",
+        "Mỗi hệ thống bán hàng có cấu trúc dữ liệu và API khác nhau"
+      ],
+      "faq": 6,
+      "cta": true
+    },
+    "zendesk": {
+      "sections": 16,
+      "headings": [
+        "Giảm những bước chuyển đổi thủ công giữa Zendesk và hệ thống gọi",
+        "Giữ cuộc gọi gần hơn với quy trình ticket và customer support",
+        "Zendesk Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+        "Những năng lực được xác nhận khi kết nối Gcalls với Zendesk",
+        "",
+        "Xem thêm",
+        "Đưa lớp giao tiếp thoại vào nơi đội Support đang quản lý ticket",
+        "Zendesk quản lý ticket, nhưng cuộc gọi vẫn có thể nằm ngoài lịch sử hỗ trợ",
+        "Doanh nghiệp đang sử dụng Helpdesk khác?",
+        "Tích hợp theo cấu hình Zendesk và workflow hỗ trợ đang sử dụng",
+        "Hiểu yêu cầu hỗ trợ trước khi tiếp tục cuộc hội thoại",
+        "Tích hợp Zendesk cần bắt đầu từ ticket structure, permission và workflow thực tế",
+        "Giữ customer context và ticket gần hoạt động nghe gọi",
+        "Gcalls × Zendesk phù hợp với những workflow hỗ trợ nào?",
+        "Trang này dành cho doanh nghiệp đã sử dụng Zendesk",
+        "Từ Zendesk contact hoặc ticket đến cuộc gọi và bước hỗ trợ tiếp theo"
+      ],
+      "faq": 7,
+      "cta": true
+    },
+    "zoho-crm": {
+      "sections": 15,
+      "headings": [
+        "Giảm những bước thủ công giữa Zoho CRM và hệ thống gọi",
+        "Giữ hoạt động gọi gần hơn với dữ liệu Sales và CSKH",
+        "Zoho CRM Integration nằm ở đâu trong hệ sản phẩm Gcalls?",
+        "Những năng lực được xác nhận khi kết nối Gcalls với Zoho CRM",
+        "",
+        "Xem thêm",
+        "Kết nối lớp giao tiếp thoại với CRM đội ngũ đang sử dụng",
+        "Zoho CRM quản lý khách hàng, nhưng hoạt động gọi vẫn có thể nằm ngoài workflow",
+        "Doanh nghiệp đang sử dụng CRM khác?",
+        "Tích hợp theo cấu hình Zoho CRM và workflow doanh nghiệp đang sử dụng",
+        "Tích hợp Zoho CRM cần bắt đầu từ module, permission và workflow thực tế",
+        "Giữ customer context gần hoạt động gọi",
+        "Gcalls × Zoho CRM phù hợp với những workflow nào?",
+        "Trang này dành cho doanh nghiệp đã sử dụng Zoho CRM",
+        "Từ Zoho CRM record đến cuộc gọi và bước follow-up tiếp theo"
+      ],
+      "faq": 7,
+      "cta": true
+    }
+  }
+}

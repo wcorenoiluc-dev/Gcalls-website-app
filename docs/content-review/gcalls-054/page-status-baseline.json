@@ -1,0 +1,385 @@
+{
+  "total": "38",
+  "items": [
+    {
+      "id": 81,
+      "slug": "referral",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/referral/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:19",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 80,
+      "slug": "lien-he",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/lien-he/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:18",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 79,
+      "slug": "doi-tac",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/cong-ty/doi-tac/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 77
+    },
+    {
+      "id": 78,
+      "slug": "khach-hang",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/cong-ty/khach-hang/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 77
+    },
+    {
+      "id": 77,
+      "slug": "cong-ty",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/cong-ty/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:15",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 76,
+      "slug": "faq",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tai-nguyen/faq/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 71
+    },
+    {
+      "id": 75,
+      "slug": "glossary",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tai-nguyen/glossary/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 71
+    },
+    {
+      "id": 74,
+      "slug": "ebook",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tai-nguyen/ebook/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 71
+    },
+    {
+      "id": 73,
+      "slug": "case-studies",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tai-nguyen/case-studies/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 71
+    },
+    {
+      "id": 72,
+      "slug": "guides",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tai-nguyen/guides/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 71
+    },
+    {
+      "id": 16,
+      "slug": "blog",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/blog/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:09",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 71,
+      "slug": "tai-nguyen",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tai-nguyen/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:08",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 70,
+      "slug": "uoc-tinh-chi-phi",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/uoc-tinh-chi-phi/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:07",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 69,
+      "slug": "bang-gia",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/bang-gia/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:06",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 68,
+      "slug": "bpo",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/nganh/bpo/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 62
+    },
+    {
+      "id": 67,
+      "slug": "thuong-mai-dien-tu",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/nganh/thuong-mai-dien-tu/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 62
+    },
+    {
+      "id": 66,
+      "slug": "bat-dong-san",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/nganh/bat-dong-san/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 62
+    },
+    {
+      "id": 65,
+      "slug": "bao-hiem",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/nganh/bao-hiem/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 62
+    },
+    {
+      "id": 64,
+      "slug": "tai-chinh",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/nganh/tai-chinh/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 62
+    },
+    {
+      "id": 63,
+      "slug": "giao-duc",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/nganh/giao-duc/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 62
+    },
+    {
+      "id": 62,
+      "slug": "nganh",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/nganh/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:51:59",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 61,
+      "slug": "zendesk",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tich-hop/zendesk/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 56
+    },
+    {
+      "id": 60,
+      "slug": "freshdesk",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tich-hop/freshdesk/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 56
+    },
+    {
+      "id": 59,
+      "slug": "zoho-crm",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tich-hop/zoho-crm/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 56
+    },
+    {
+      "id": 58,
+      "slug": "salesforce",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tich-hop/salesforce/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 56
+    },
+    {
+      "id": 57,
+      "slug": "hubspot",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tich-hop/hubspot/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:52:21",
+      "featured_media": 0,
+      "parent": 56
+    },
+    {
+      "id": 56,
+      "slug": "tich-hop",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tich-hop/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:51:53",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 55,
+      "slug": "tong-dai-quoc-te",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tong-dai-quoc-te/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:51:52",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 54,
+      "slug": "tong-dai-tich-hop-pos",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tong-dai-tich-hop-pos/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:51:51",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 53,
+      "slug": "tong-dai-tich-hop-helpdesk",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tong-dai-tich-hop-helpdesk/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:51:50",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 52,
+      "slug": "tong-dai-tich-hop-crm",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/tong-dai-tich-hop-crm/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:51:49",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 51,
+      "slug": "giai-phap",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/giai-phap/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:51:48",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 50,
+      "slug": "voicebot-ai",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/voicebot-ai/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:51:47",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 49,
+      "slug": "gcalls-cx",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/gcalls-cx/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:51:46",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 48,
+      "slug": "qc-bot-ai",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/qc-bot-ai/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:51:45",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 47,
+      "slug": "gcalls-plus-webphone",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/gcalls-plus-webphone/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:51:44",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 46,
+      "slug": "san-pham",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/san-pham/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-29T12:51:43",
+      "featured_media": 0,
+      "parent": 0
+    },
+    {
+      "id": 13,
+      "slug": "trang-chu",
+      "status": "publish",
+      "link": "https://ashernguyenxuanthuy.com/",
+      "template": "page-templates/full-width.php",
+      "modified": "2026-08-30T12:54:27",
+      "featured_media": 0,
+      "parent": 0
+    }
+  ]
+}

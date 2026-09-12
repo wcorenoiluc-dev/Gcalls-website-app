@@ -1,6 +1,7 @@
 import { ArrowRight, BarChart3, Check, Globe2, MonitorSmartphone, Plug } from "lucide-react";
 import { Link } from "react-router";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
+import { darkSection } from "@/lib/theme/darkSection";
 
 // ─── Section 3: Solution Bridge ──────────────────────────────────────────────
 
@@ -81,8 +82,8 @@ export function SolutionBridgeSection() {
 
               <h2
                 id="home-solution-bridge-heading"
-                className="font-extrabold mb-4 text-white"
-                style={{ fontSize: "clamp(24px, 3vw, 38px)", lineHeight: 1.18 }}
+                className="font-extrabold mb-4"
+                style={{ fontSize: "clamp(24px, 3vw, 38px)", lineHeight: 1.18, color: darkSection.heading }}
               >
                 Tổng Đài Thông Minh Gcalls: Bứt Phá Doanh Số Đội Ngũ &amp; Nâng Cao Trải Nghiệm Khách Hàng
               </h2>

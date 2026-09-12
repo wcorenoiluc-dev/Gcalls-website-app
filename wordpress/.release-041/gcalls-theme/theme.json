@@ -1,0 +1,98 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "useRootPaddingAwareAlignments": true,
+    "layout": {
+      "contentSize": "760px",
+      "wideSize": "1280px"
+    },
+    "color": {
+      "custom": false,
+      "customDuotone": false,
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "palette": [
+        { "slug": "brand", "color": "#673ab7", "name": "Gcalls tím" },
+        { "slug": "brand-dark", "color": "#4a2391", "name": "Gcalls tím đậm" },
+        { "slug": "brand-light", "color": "#f5f1fc", "name": "Gcalls tím nhạt" },
+        { "slug": "foreground", "color": "#1e2026", "name": "Chữ chính" },
+        { "slug": "muted", "color": "#5b5f6b", "name": "Chữ phụ" },
+        { "slug": "surface", "color": "#ffffff", "name": "Nền trắng" },
+        { "slug": "surface-alt", "color": "#faf9fc", "name": "Nền phụ" },
+        { "slug": "border", "color": "#e8e5ef", "name": "Đường viền" }
+      ],
+      "gradients": [
+        {
+          "slug": "brand-gradient",
+          "name": "Gcalls gradient",
+          "gradient": "linear-gradient(135deg, #673ab7 0%, #4a2391 100%)"
+        }
+      ]
+    },
+    "typography": {
+      "customFontSize": false,
+      "fluid": true,
+      "fontFamilies": [
+        {
+          "slug": "sans",
+          "name": "Open Sans",
+          "fontFamily": "'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif"
+        },
+        {
+          "slug": "mono",
+          "name": "DM Mono",
+          "fontFamily": "'DM Mono', ui-monospace, SFMono-Regular, monospace"
+        }
+      ],
+      "fontSizes": [
+        { "slug": "small", "size": "0.875rem", "name": "Nhỏ" },
+        { "slug": "medium", "size": "1rem", "name": "Thường" },
+        { "slug": "large", "size": "1.25rem", "name": "Lớn" },
+        { "slug": "x-large", "size": "1.75rem", "name": "Rất lớn" },
+        {
+          "slug": "xx-large",
+          "size": "2.25rem",
+          "name": "Tiêu đề",
+          "fluid": { "min": "1.875rem", "max": "3rem" }
+        }
+      ]
+    },
+    "spacing": {
+      "units": ["px", "rem", "em", "%", "vw"],
+      "spacingSizes": [
+        { "slug": "20", "size": "0.5rem", "name": "1" },
+        { "slug": "30", "size": "1rem", "name": "2" },
+        { "slug": "40", "size": "1.5rem", "name": "3" },
+        { "slug": "50", "size": "2.5rem", "name": "4" },
+        { "slug": "60", "size": "4rem", "name": "5" },
+        { "slug": "70", "size": "6rem", "name": "6" }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--surface)",
+      "text": "var(--wp--preset--color--foreground)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--sans)",
+      "fontSize": "var(--wp--preset--font-size--medium)",
+      "lineHeight": "1.65"
+    },
+    "spacing": {
+      "padding": { "left": "1.25rem", "right": "1.25rem" }
+    },
+    "elements": {
+      "link": {
+        "color": { "text": "var(--wp--preset--color--brand)" },
+        ":hover": { "color": { "text": "var(--wp--preset--color--brand-dark)" } }
+      },
+      "heading": {
+        "typography": { "fontWeight": "700", "lineHeight": "1.25" },
+        "color": { "text": "var(--wp--preset--color--foreground)" }
+      }
+    }
+  }
+}

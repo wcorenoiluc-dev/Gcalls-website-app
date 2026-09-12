@@ -2,6 +2,7 @@ import { Check, Phone, Sparkles } from "lucide-react";
 import { Link } from "react-router";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { remoteUseCases, wfaStats } from "./sectionData";
+import { darkSection } from "@/lib/theme/darkSection";
 
 // ─── Section 13: Use Cases & Final CTA ───────────────────────────────────────
 
@@ -181,8 +182,8 @@ export function UseCasesFinalCtaSection() {
               </div>
 
               <h3
-                className="font-extrabold text-white mb-4"
-                style={{ fontSize: "clamp(22px, 2.8vw, 34px)", lineHeight: 1.15 }}
+                className="font-extrabold mb-4"
+                style={{ fontSize: "clamp(22px, 2.8vw, 34px)", lineHeight: 1.15, color: darkSection.heading }}
               >
                 Bắt đầu với đội ngũ hiện tại của bạn
               </h3>

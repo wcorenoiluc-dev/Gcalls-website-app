@@ -1,0 +1,230 @@
+{
+ "gcalls-plus": [
+  {
+   "section": 0,
+   "sectionHeading": "Gcalls Plus Webphone – tổng đài doanh nghiệp",
+   "label": "Đăng ký tư vấn",
+   "path": "/lien-he/",
+   "intent": "consultation",
+   "source": "gcalls_plus",
+   "product": "Gcalls Plus Webphone",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 13,
+   "sectionHeading": "Chi phí phụ thuộc vào cấu hình đội ngũ và nh",
+   "label": "Ước tính cấu hình & chi phí",
+   "path": "/uoc-tinh-chi-phi/",
+   "intent": "",
+   "source": "",
+   "product": "gcalls-plus",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 13,
+   "sectionHeading": "Chi phí phụ thuộc vào cấu hình đội ngũ và nh",
+   "label": "Xem bảng giá Gcalls",
+   "path": "/bang-gia/",
+   "intent": "",
+   "source": "",
+   "product": "",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 16,
+   "sectionHeading": "Bắt đầu với một hệ thống nghe gọi phù hợp vớ",
+   "label": "Đăng ký tư vấn",
+   "path": "/lien-he/",
+   "intent": "consultation",
+   "source": "gcalls_plus",
+   "product": "Gcalls Plus Webphone",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 16,
+   "sectionHeading": "Bắt đầu với một hệ thống nghe gọi phù hợp vớ",
+   "label": "Ước tính cấu hình",
+   "path": "/uoc-tinh-chi-phi/",
+   "intent": "",
+   "source": "",
+   "product": "gcalls-plus",
+   "solution": "",
+   "extra": []
+  }
+ ],
+ "cx": [
+  {
+   "section": 0,
+   "sectionHeading": "Gcalls CX – hợp nhất mọi điểm chạm khách hàn",
+   "label": "Yêu cầu demo Gcalls CX",
+   "path": "/lien-he/",
+   "intent": "demo",
+   "source": "gcalls_cx",
+   "product": "Gcalls CX",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 15,
+   "sectionHeading": "Mỗi hành trình khách hàng cần một workflow k",
+   "label": "Yêu cầu demo theo workflow của doanh ngh",
+   "path": "/lien-he/",
+   "intent": "demo",
+   "source": "gcalls_cx",
+   "product": "Gcalls CX",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 16,
+   "sectionHeading": "Chi phí phụ thuộc vào số kênh, người dùng và",
+   "label": "Ước tính cấu hình & chi phí",
+   "path": "/uoc-tinh-chi-phi/",
+   "intent": "",
+   "source": "",
+   "product": "gcalls-cx",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 16,
+   "sectionHeading": "Chi phí phụ thuộc vào số kênh, người dùng và",
+   "label": "Xem bảng giá Gcalls",
+   "path": "/bang-gia/",
+   "intent": "",
+   "source": "",
+   "product": "",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 18,
+   "sectionHeading": "Xem Gcalls CX hoạt động trên chính hành trìn",
+   "label": "Yêu cầu demo Gcalls CX",
+   "path": "/lien-he/",
+   "intent": "demo",
+   "source": "gcalls_cx",
+   "product": "Gcalls CX",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 18,
+   "sectionHeading": "Xem Gcalls CX hoạt động trên chính hành trìn",
+   "label": "Đăng ký tư vấn",
+   "path": "/lien-he/",
+   "intent": "consultation",
+   "source": "gcalls_cx",
+   "product": "Gcalls CX",
+   "solution": "",
+   "extra": []
+  }
+ ],
+ "voicebot": [
+  {
+   "section": 0,
+   "sectionHeading": "Tự động hóa các cuộc gọi lặp lại bằng Voiceb",
+   "label": "Đăng ký tư vấn Voicebot",
+   "path": "/lien-he/",
+   "intent": "consultation",
+   "source": "voicebot_ai",
+   "product": "Gcalls Voicebot AI",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 8,
+   "sectionHeading": "Từ khảo sát nhu cầu đến vận hành và tối ưu",
+   "label": "Đăng ký tư vấn Voicebot",
+   "path": "/lien-he/",
+   "intent": "consultation",
+   "source": "voicebot_ai",
+   "product": "Gcalls Voicebot AI",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 11,
+   "sectionHeading": "Bắt đầu từ một tình huống cuộc gọi phù hợp v",
+   "label": "Đăng ký tư vấn Voicebot",
+   "path": "/lien-he/",
+   "intent": "consultation",
+   "source": "voicebot_ai",
+   "product": "Gcalls Voicebot AI",
+   "solution": "",
+   "extra": []
+  }
+ ],
+ "qa-qc": [
+  {
+   "section": 0,
+   "sectionHeading": "QA QC Center – AI hỗ trợ kiểm soát chất lượn",
+   "label": "Yêu cầu demo QA QC Center",
+   "path": "/lien-he/",
+   "intent": "demo",
+   "source": "qa_qc_center",
+   "product": "QA QC Center",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 14,
+   "sectionHeading": "Xây dựng quy trình QA dựa trên dữ liệu hội t",
+   "label": "Yêu cầu demo theo quy trình QA của doanh",
+   "path": "/lien-he/",
+   "intent": "demo",
+   "source": "qa_qc_center",
+   "product": "QA QC Center",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 15,
+   "sectionHeading": "Cấu hình QA QC Center theo quy mô và bộ tiêu",
+   "label": "Ước tính cấu hình & chi phí",
+   "path": "/uoc-tinh-chi-phi/",
+   "intent": "",
+   "source": "",
+   "product": "qa-qc",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 15,
+   "sectionHeading": "Cấu hình QA QC Center theo quy mô và bộ tiêu",
+   "label": "Xem bảng giá Gcalls",
+   "path": "/bang-gia/",
+   "intent": "",
+   "source": "",
+   "product": "",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 17,
+   "sectionHeading": "Xem QA QC Center hoạt động trên chính bộ tiê",
+   "label": "Yêu cầu demo QA QC Center",
+   "path": "/lien-he/",
+   "intent": "demo",
+   "source": "qa_qc_center",
+   "product": "QA QC Center",
+   "solution": "",
+   "extra": []
+  },
+  {
+   "section": 17,
+   "sectionHeading": "Xem QA QC Center hoạt động trên chính bộ tiê",
+   "label": "Đăng ký tư vấn",
+   "path": "/lien-he/",
+   "intent": "consultation",
+   "source": "qa_qc_center",
+   "product": "QA QC Center",
+   "solution": "",
+   "extra": []
+  }
+ ]
+}
