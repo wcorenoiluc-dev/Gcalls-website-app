@@ -5,11 +5,37 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 /**
+ * Files this build must never ship, regardless of what productImages.ts
+ * references. `docs/content-review/images/product-media-manifest.json`
+ * (GCALLS-032) records these five as PII_BLOCKED — the mask on each misses
+ * a real account tag or other identifying value, no re-masked v2 exists,
+ * and the automated sanitizer's own verdict for each is BLOCKED. The
+ * WordPress side (gcalls-core) already fails closed on the same five via
+ * `section-components.json → approvedMedia.blocked`; this is that same
+ * rule applied to the React Shell's own bundled dist/, which has no
+ * equivalent gate of its own yet. Omitting the file makes the <img> src
+ * 404 — the same "broken image" state already visible in production today
+ * — rather than resolving to a working URL that serves the leak.
+ *
+ * Do not remove an entry here without independently confirming its v2
+ * cleared the sanitizer; do not "fix" the resulting broken image by
+ * re-adding the file.
+ */
+const PII_BLOCKED_IMAGE_FILENAMES = new Set([
+  'gcalls-plus-webphone-desktop-v1.webp', // GP-09
+  'gcalls-plus-contact-profile-desktop-v1.webp', // GP-10
+  'gcalls-plus-integrations-desktop-v1.webp', // GP-12
+  'gcalls-plus-advanced-filter-desktop-v1.webp', // GP-03
+  'gcalls-plus-click-to-call-config-desktop-v1.webp', // GP-08
+])
+
+/**
  * Copies only the images actually referenced by root-absolute `/images/...`
  * paths (see src/data/productImages.ts) into the plugin's own dist/, so they
  * resolve under the plugin's runtime assetsUrl instead of the (nonexistent,
  * under a WP install) domain-root /images/ path. Nothing else under public/
- * is copied — see the publicDir: false note below.
+ * is copied — see the publicDir: false note below. PII_BLOCKED_IMAGE_FILENAMES
+ * is excluded from the copy regardless of source-tree state.
  */
 function copyShellImages() {
   return {
@@ -21,7 +47,10 @@ function copyShellImages() {
         'wordpress/wp-content/plugins/gcalls-react-shell/dist/images',
       )
       if (existsSync(from)) {
-        cpSync(from, to, { recursive: true })
+        cpSync(from, to, {
+          recursive: true,
+          filter: (src) => !PII_BLOCKED_IMAGE_FILENAMES.has(path.basename(src)),
+        })
       }
     },
   }
