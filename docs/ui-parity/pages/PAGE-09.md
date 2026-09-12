@@ -1,0 +1,22 @@
+# PAGE 09 — helpdeskIntegration
+
+ROUTE: /tong-dai-tich-hop-helpdesk/
+PAGE_GROUP: Solution
+STATUS: TODO
+
+## Fields (filled in during audit)
+
+REACT_AUTHORITY:
+SECTION_COUNT:
+BREADCRUMB:
+TYPOGRAPHY:
+CTA:
+IMAGES:
+SAFE_DEMO_DATA:
+DESKTOP_1440:
+TABLET_768:
+MOBILE_390:
+VISUAL_PARITY:
+SOURCE_COMMIT:
+LIVE_DEPLOYED:
+NOTES:
