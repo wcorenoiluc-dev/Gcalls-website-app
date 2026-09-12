@@ -10,6 +10,8 @@ on:
     branches: [main, 'feature/**']
     paths:
       - 'wordpress/wp-content/plugins/gcalls-core/**'
+      - 'wordpress/wp-content/plugins/gcalls-react-shell/**'
+      - 'wordpress/wp-content/plugins/gcalls-content-studio/**'
       - 'wordpress/tests/**'
       - '.github/workflows/php-renderer.yml'
   pull_request:
@@ -32,7 +34,10 @@ jobs:
 
       - name: Lint every plugin file
         run: |
-          find wordpress/wp-content/plugins/gcalls-core -name '*.php' -print0 \
+          find wordpress/wp-content/plugins/gcalls-core \
+               wordpress/wp-content/plugins/gcalls-react-shell \
+               wordpress/wp-content/plugins/gcalls-content-studio \
+               -name '*.php' -print0 \
             | xargs -0 -n1 php -l
 
       - name: Renderer contract

@@ -161,35 +161,65 @@ class Gcalls_React_Shell {
 			return;
 		}
 
-		self::render_shell( $path, $routes[ $path ] );
+		status_header( 200 );
+		nocache_headers();
+		echo self::render_root_html( $path, $routes[ $path ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- render_root_html() escapes every dynamic value itself; this is its own finished document.
 		exit;
 	}
 
-	private static function render_shell( $path, $route_key ) {
-		status_header( 200 );
-		nocache_headers();
+	/**
+	 * Renders the same document `maybe_serve_shell()` serves on the public
+	 * site, as a string rather than direct output — the integration point
+	 * other plugins (Content Studio's preview) call into, via
+	 * `gcalls_react_shell_render_root()`, so preview and production always
+	 * run the exact same template against the exact same build.
+	 *
+	 * @param array<string, mixed> $extra_config Merged into the `window.__GCALLS_SHELL_CONFIG__`
+	 *   object after the standard keys — used by Content Studio to add a
+	 *   `previewMode`/content payload without this plugin knowing anything
+	 *   about drafts or sections.
+	 */
+	public static function render_root_html( $path, $route_key, array $extra_config = array() ) {
+		$manifest = self::get_manifest();
 
-		$manifest = self::read_manifest();
+		/**
+		 * Filters the extra keys merged into `window.__GCALLS_SHELL_CONFIG__`.
+		 * Lets another plugin (Content Studio) contribute content for a
+		 * route without this plugin knowing anything about drafts, sections
+		 * or capabilities — this plugin owns rendering the build; it never
+		 * owns what content a filter callback decides to attach.
+		 *
+		 * @param array<string, mixed> $extra_config
+		 * @param string               $route_key
+		 * @param string               $path
+		 */
+		$extra_config = apply_filters( 'gcalls_react_shell_config', $extra_config, $route_key, $path );
 
-		$config = array(
-			'siteUrl'    => home_url( '/' ),
-			'restUrl'    => esc_url_raw( rest_url() ),
-			'restNonce'  => wp_create_nonce( 'wp_rest' ),
-			'assetsUrl'  => GCALLS_REACT_SHELL_URL . 'dist/',
-			'routeKey'   => $route_key,
-			'routePath'  => $path,
-			'pluginVersion' => GCALLS_REACT_SHELL_VERSION,
+		$config = array_merge(
+			array(
+				'siteUrl'       => home_url( '/' ),
+				'restUrl'       => esc_url_raw( rest_url() ),
+				'restNonce'     => wp_create_nonce( 'wp_rest' ),
+				'assetsUrl'     => GCALLS_REACT_SHELL_URL . 'dist/',
+				'routeKey'      => $route_key,
+				'routePath'     => $path,
+				'pluginVersion' => GCALLS_REACT_SHELL_VERSION,
+			),
+			$extra_config
 		);
 
+		ob_start();
 		include GCALLS_REACT_SHELL_DIR . 'templates/react-shell.php';
+		return ob_get_clean();
 	}
 
 	/**
 	 * Reads the Vite manifest, so entry/chunk URLs are never hand-guessed.
+	 * Public: this is the `gcalls_react_shell_manifest()` integration point.
 	 *
 	 * @return array{entry:?string, css:string[]}
 	 */
-	private static function read_manifest() {
+	public static function get_manifest() {
 		$manifest_path = GCALLS_REACT_SHELL_DIR . 'dist/.vite/manifest.json';
 		if ( ! file_exists( $manifest_path ) ) {
 			$manifest_path = GCALLS_REACT_SHELL_DIR . 'dist/manifest.json';
@@ -214,5 +244,27 @@ class Gcalls_React_Shell {
 		}
 
 		return array( 'entry' => null, 'css' => array() );
+	}
+
+	/**
+	 * True when the manifest points at a real, existing built entry file —
+	 * the "assets are missing / manifest cannot be read" check other
+	 * plugins should make before trying to embed this shell.
+	 */
+	public static function has_valid_build() {
+		$manifest = self::get_manifest();
+		if ( empty( $manifest['entry'] ) ) {
+			return false;
+		}
+		return file_exists( GCALLS_REACT_SHELL_DIR . 'dist/' . $manifest['entry'] );
+	}
+
+	/** Public accessor for the route allowlist — `key => path`, not `path => key`, since callers think in route keys. */
+	public static function get_routes_by_key() {
+		$by_key = array();
+		foreach ( self::get_routes() as $path => $key ) {
+			$by_key[ $key ] = $path;
+		}
+		return $by_key;
 	}
 }
