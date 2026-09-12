@@ -1,7 +1,24 @@
 import { Link } from 'react-router'
 import { ROUTES } from '@/config/navigation'
 
-const LOGO_SRC = '/brand/gcalls-logo-primary.png'
+/**
+ * Under the normal domain build this is served from `public/` at the site
+ * root. Under the gcalls-react-shell WordPress plugin the app is mounted
+ * from `wp-content/plugins/gcalls-react-shell/dist/`, so a root-absolute
+ * `/brand/...` path would 404 — the plugin build copies `public/brand` into
+ * its own `dist/brand/` and publishes the resulting URL at runtime via
+ * `window.__GCALLS_SHELL_CONFIG__.assetsUrl` (see src/data/productImages.ts
+ * for the same pattern applied to product screenshots).
+ */
+const SHELL_ASSETS_URL =
+  typeof window !== 'undefined'
+    ? (window as { __GCALLS_SHELL_CONFIG__?: { assetsUrl?: string } }).__GCALLS_SHELL_CONFIG__
+        ?.assetsUrl
+    : undefined
+
+const LOGO_SRC = SHELL_ASSETS_URL
+  ? `${SHELL_ASSETS_URL.replace(/\/$/, '')}/brand/gcalls-logo-primary.png`
+  : '/brand/gcalls-logo-primary.png'
 const LOGO_NATURAL_WIDTH = 389
 const LOGO_NATURAL_HEIGHT = 129
 

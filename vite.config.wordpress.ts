@@ -57,6 +57,26 @@ function copyShellImages() {
 }
 
 /**
+ * Same reasoning as copyShellImages, for the brand assets referenced by
+ * root-absolute `/brand/...` paths (see src/components/brand/GcallsLogo.tsx).
+ */
+function copyShellBrand() {
+  return {
+    name: 'gcalls-shell-copy-brand',
+    closeBundle() {
+      const from = path.resolve(__dirname, 'public/brand')
+      const to = path.resolve(
+        __dirname,
+        'wordpress/wp-content/plugins/gcalls-react-shell/dist/brand',
+      )
+      if (existsSync(from)) {
+        cpSync(from, to, { recursive: true })
+      }
+    },
+  }
+}
+
+/**
  * Dedicated build for the gcalls-react-shell WordPress plugin.
  *
  * Separate from vite.config.ts (the normal local/preview build) because this
@@ -107,7 +127,14 @@ const OUT_DIR = path.resolve(
 )
 
 export default defineConfig({
-  plugins: [figmaAssetResolver(), react(), tailwindcss(), copyShellImages(), flattenManifest()],
+  plugins: [
+    figmaAssetResolver(),
+    react(),
+    tailwindcss(),
+    copyShellImages(),
+    copyShellBrand(),
+    flattenManifest(),
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
