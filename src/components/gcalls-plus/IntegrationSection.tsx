@@ -1,7 +1,7 @@
 import { ArrowRight, Plug } from 'lucide-react'
 import { Link } from 'react-router'
 import { ProductVisual } from '@/components/common/ProductVisual'
-import { ProductScreenshot } from '@/components/common/ProductScreenshot'
+import { ProductScreenshotPlaceholder } from '@/components/common/ProductScreenshotPlaceholder'
 import { GCALLS_PLUS_IMAGES } from '@/data/productImages'
 import { GP_INTEGRATION } from '@/data/gcallsPlus'
 import { FeatureSplit } from '@/components/common/FeatureSplit'
@@ -36,7 +36,10 @@ export function IntegrationSection() {
       description={GP_INTEGRATION.description}
       visual={
         <ProductVisual maxWidth="560px" note={MASKED_SCREENSHOT_NOTE}>
-          <ProductScreenshot image={GCALLS_PLUS_IMAGES.integrationsDesktop} />
+          <ProductScreenshotPlaceholder
+            width={GCALLS_PLUS_IMAGES.integrationsDesktop.width}
+            height={GCALLS_PLUS_IMAGES.integrationsDesktop.height}
+          />
         </ProductVisual>
       }
     >

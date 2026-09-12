@@ -35,8 +35,8 @@ const barData = [
 const maxBar = 100;
 
 const agentRows = [
-  { name: "Nguyễn Hằng",    avatar: "NH", color: "#673ab7", out: 38, in: 29, missed: 2, rate: "97%",  dur: "3:52" },
-  { name: "Trần M. Tuấn",   avatar: "TT", color: "#0891b2", out: 31, in: 22, missed: 4, rate: "92%",  dur: "4:10" },
+  { name: "Nhân viên D",    avatar: "NH", color: "#673ab7", out: 38, in: 29, missed: 2, rate: "97%",  dur: "3:52" },
+  { name: "Nhân viên A",   avatar: "TT", color: "#0891b2", out: 31, in: 22, missed: 4, rate: "92%",  dur: "4:10" },
   { name: "Lê P. Linh",     avatar: "LL", color: "#16a34a", out: 44, in: 35, missed: 1, rate: "98%",  dur: "3:18" },
   { name: "Phạm Đ. Dương",  avatar: "PD", color: "#d97706", out: 19, in: 14, missed: 6, rate: "86%",  dur: "5:04" },
 ];

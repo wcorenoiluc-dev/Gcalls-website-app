@@ -192,7 +192,7 @@ export function APIManagerMockup() {
         <pre className="text-[10px] leading-relaxed overflow-x-auto" style={{ color: "#a78bfa", fontFamily: "'DM Mono',monospace" }}>
 {`{
   "id": "call_8f3kd9",
-  "contact": "Nguyễn Văn Minh",
+  "contact": "Khách hàng A",
   "phone": "0901234567",
   "status": "answered",
   "duration": 222,
@@ -251,8 +251,8 @@ export function CustomerPopupMockup() {
         <div className="flex items-start gap-3 mb-3">
           <div className="w-10 h-10 rounded-2xl flex items-center justify-center text-sm font-bold flex-shrink-0" style={{ background: "#ede8f9", color: "#673ab7" }}>NM</div>
           <div className="flex-1 min-w-0">
-            <div className="text-sm font-bold" style={{ color: "#1e2026" }}>Nguyễn Văn Minh</div>
-            <div className="text-[11px]" style={{ color: "#5b5f6b" }}>Công ty TNHH Bình Minh</div>
+            <div className="text-sm font-bold" style={{ color: "#1e2026" }}>Khách hàng A</div>
+            <div className="text-[11px]" style={{ color: "#5b5f6b" }}>Công ty Demo A</div>
             <div className="flex items-center gap-1 mt-1">
               <span className="text-[9px] px-1.5 py-0.5 rounded-full font-bold" style={{ background: "#ede8f9", color: "#673ab7" }}>Demo</span>
               <span className="text-[9px] px-1.5 py-0.5 rounded-full font-bold" style={{ background: "#dcfce7", color: "#16a34a" }}>VIP</span>

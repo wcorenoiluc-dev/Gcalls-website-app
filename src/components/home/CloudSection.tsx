@@ -8,11 +8,11 @@ import { darkSection } from "@/lib/theme/darkSection";
 // ─── Section 7: Cloud Call Center ────────────────────────────────────────────
 
 const sipAccounts = [
-  { ext: "101", name: "Nguyễn Hằng",    hotline: "1900 1234", status: "registered", calls: 3,  color: "#22c55e" },
-  { ext: "102", name: "Trần M. Tuấn",   hotline: "1900 1234", status: "on-call",    calls: 1,  color: "#673ab7" },
+  { ext: "101", name: "Nhân viên D",    hotline: "1900 1234", status: "registered", calls: 3,  color: "#22c55e" },
+  { ext: "102", name: "Nhân viên A",   hotline: "1900 1234", status: "on-call",    calls: 1,  color: "#673ab7" },
   { ext: "103", name: "Lê P. Linh",     hotline: "1900 5678", status: "registered", calls: 0,  color: "#22c55e" },
   { ext: "104", name: "Phạm Đ. Dương",  hotline: "1900 5678", status: "offline",    calls: 0,  color: "#9ca3af" },
-  { ext: "105", name: "Võ Thị Thanh",   hotline: "1900 1234", status: "registered", calls: 2,  color: "#22c55e" },
+  { ext: "105", name: "Nhân viên B",   hotline: "1900 1234", status: "registered", calls: 2,  color: "#22c55e" },
 ];
 
 const hotlines = [

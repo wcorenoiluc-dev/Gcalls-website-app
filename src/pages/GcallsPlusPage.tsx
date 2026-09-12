@@ -48,7 +48,7 @@ export function GcallsPlusPage() {
     <>
       <JsonLd id="gcalls-plus" data={jsonLd} />
 
-      <div className="bg-brand-light/60 pt-20 sm:pt-24">
+      <div className="bg-brand-light/60 pt-16 pb-3">
         <Container>
           <Breadcrumb
             trail={[{ label: 'Sản phẩm' }, { label: 'Gcalls Plus Webphone' }]}

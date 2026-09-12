@@ -1,6 +1,7 @@
 import { Users } from 'lucide-react'
 import { ProductVisualWithSupport } from '@/components/common/ProductVisual'
 import { ProductScreenshot } from '@/components/common/ProductScreenshot'
+import { ProductScreenshotPlaceholder } from '@/components/common/ProductScreenshotPlaceholder'
 import { GCALLS_PLUS_IMAGES } from '@/data/productImages'
 import { GP_CONTEXT } from '@/data/gcallsPlus'
 import { FeatureSplit } from '@/components/common/FeatureSplit'
@@ -28,7 +29,12 @@ export function CustomerContext() {
       points={GP_CONTEXT.points}
       visual={
         <ProductVisualWithSupport
-          main={<ProductScreenshot image={GCALLS_PLUS_IMAGES.contactProfileDesktop} />}
+          main={
+            <ProductScreenshotPlaceholder
+              width={GCALLS_PLUS_IMAGES.contactProfileDesktop.width}
+              height={GCALLS_PLUS_IMAGES.contactProfileDesktop.height}
+            />
+          }
           support={<ProductScreenshot image={GCALLS_PLUS_IMAGES.keypadMobile} />}
           mainMaxWidth="560px"
           note={MASKED_SCREENSHOT_NOTE}

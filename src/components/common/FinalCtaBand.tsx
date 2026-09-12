@@ -81,7 +81,7 @@ export function FinalCtaBand({
                 solution: lead?.solution,
               })
             }
-            className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[10px] bg-white px-7 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
+            className="gcalls-button--light inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[10px] px-7 text-base font-semibold transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
           >
             {primary.label}
             <ArrowRight size={18} aria-hidden="true" />
@@ -90,7 +90,7 @@ export function FinalCtaBand({
           {secondary && (
             <Link
               to={secondary.path}
-              className="inline-flex min-h-[52px] w-full items-center justify-center rounded-[10px] border border-white/45 px-7 text-base font-semibold text-white transition-colors duration-150 hover:bg-white/12 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
+              className="gcalls-button--outline-dark inline-flex min-h-[52px] w-full items-center justify-center rounded-[10px] border px-7 text-base font-semibold transition-colors duration-150 hover:bg-white/12 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
             >
               {secondary.label}
             </Link>
@@ -100,7 +100,7 @@ export function FinalCtaBand({
         {showPhone && (
           <a
             href={CONTACT.phoneHref}
-            className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] px-4 text-base font-medium text-white/90 transition-colors duration-150 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="gcalls-link--on-dark mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] px-4 text-base font-medium transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             <Phone size={17} aria-hidden="true" />
             {CONTACT.phone}

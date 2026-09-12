@@ -9,8 +9,8 @@ import { stageClass, stageMainClass, stageFloatClass } from "@/components/common
 const timelineItems = [
   {
     id: 1,
-    name: "Nguyễn Văn Minh",
-    phone: "0901 234 567",
+    name: "Khách hàng A",
+    phone: "090x xxx 001",
     hotline: "1900 1234",
     type: "out" as const,
     status: "answered" as const,
@@ -24,8 +24,8 @@ const timelineItems = [
   },
   {
     id: 2,
-    name: "Trần Thị Lan",
-    phone: "0912 345 678",
+    name: "Khách hàng B",
+    phone: "090x xxx 002",
     hotline: "1900 5678",
     type: "in" as const,
     status: "answered" as const,
@@ -39,8 +39,8 @@ const timelineItems = [
   },
   {
     id: 3,
-    name: "Lê Hoàng Phúc",
-    phone: "0888 901 234",
+    name: "Khách hàng C",
+    phone: "090x xxx 003",
     hotline: "1900 1234",
     type: "out" as const,
     status: "missed" as const,
@@ -54,8 +54,8 @@ const timelineItems = [
   },
   {
     id: 4,
-    name: "Phạm Thu Hà",
-    phone: "0976 543 210",
+    name: "Khách hàng D",
+    phone: "090x xxx 004",
     hotline: "1900 5678",
     type: "in" as const,
     status: "answered" as const,
@@ -69,8 +69,8 @@ const timelineItems = [
   },
   {
     id: 5,
-    name: "Võ Minh Tuấn",
-    phone: "0933 210 987",
+    name: "Khách hàng E",
+    phone: "090x xxx 005",
     hotline: "1900 1234",
     type: "out" as const,
     status: "answered" as const,

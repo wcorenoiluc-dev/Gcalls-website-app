@@ -9,17 +9,17 @@ import { useGcallsContent } from "@/lib/gcallsContent/useGcallsContent";
 import type { HomeHeroContent } from "@/lib/gcallsContent/types";
 
 const callLog = [
-  { id: 1, name: "Nguyễn Văn Minh", phone: "0901 234 567", type: "out", duration: "3:42", status: "answered", time: "09:14", tag: "Khách hàng mới" },
-  { id: 2, name: "Trần Thị Lan", phone: "0912 345 678", type: "in", duration: "7:18", status: "answered", time: "09:31", tag: "Gia hạn" },
-  { id: 3, name: "Lê Hoàng Phúc", phone: "0888 901 234", type: "out", duration: "—", status: "missed", time: "09:52", tag: null },
-  { id: 4, name: "Phạm Thu Hà", phone: "0976 543 210", type: "in", duration: "12:05", status: "answered", time: "10:08", tag: "Demo" },
-  { id: 5, name: "Võ Minh Tuấn", phone: "0933 210 987", type: "out", duration: "5:20", status: "answered", time: "10:45", tag: "Upsell" },
+  { id: 1, name: "Khách hàng A", phone: "090x xxx 001", type: "out", duration: "3:42", status: "answered", time: "09:14", tag: "Khách hàng mới" },
+  { id: 2, name: "Khách hàng B", phone: "090x xxx 002", type: "in", duration: "7:18", status: "answered", time: "09:31", tag: "Gia hạn" },
+  { id: 3, name: "Khách hàng C", phone: "090x xxx 003", type: "out", duration: "—", status: "missed", time: "09:52", tag: null },
+  { id: 4, name: "Khách hàng D", phone: "090x xxx 004", type: "in", duration: "12:05", status: "answered", time: "10:08", tag: "Demo" },
+  { id: 5, name: "Khách hàng E", phone: "090x xxx 005", type: "out", duration: "5:20", status: "answered", time: "10:45", tag: "Upsell" },
 ];
 
 const contacts = [
-  { id: 1, name: "Công ty TNHH Bình Minh", contact: "Nguyễn Văn Minh", calls: 12, lastCall: "Hôm nay 09:14", stage: "Demo", avatar: "BM" },
-  { id: 2, name: "CTCP Việt Phát", contact: "Trần Thị Lan", calls: 8, lastCall: "Hôm nay 09:31", stage: "Đàm phán", avatar: "VP" },
-  { id: 3, name: "Tập đoàn Sao Việt", contact: "Phạm Thu Hà", calls: 24, lastCall: "Hôm nay 10:08", stage: "Đề xuất", avatar: "SV" },
+  { id: 1, name: "Công ty Demo A", contact: "Khách hàng A", calls: 12, lastCall: "Hôm nay 09:14", stage: "Demo", avatar: "DA" },
+  { id: 2, name: "Công ty Demo B", contact: "Khách hàng B", calls: 8, lastCall: "Hôm nay 09:31", stage: "Đàm phán", avatar: "DB" },
+  { id: 3, name: "Công ty Demo C", contact: "Khách hàng D", calls: 24, lastCall: "Hôm nay 10:08", stage: "Đề xuất", avatar: "DC" },
 ];
 
 const kpiData = [
@@ -100,10 +100,10 @@ export function DashboardMain() {
         </div>
         <div className="flex-1 min-w-0">
           <div className="text-xs font-semibold truncate" style={{ color: "#1e2026" }}>
-            Cuộc gọi đến · Nguyễn Văn Minh
+            Cuộc gọi đến · Khách hàng A
           </div>
           <div className="text-[10px]" style={{ color: "#5b5f6b" }}>
-            0901 234 567 · Hotline 1900 1234
+            090x xxx 001 · Hotline 1900 1234
           </div>
         </div>
         <span
@@ -280,8 +280,8 @@ export function FloatingCustomerPopup() {
             BM
           </div>
           <div className="min-w-0">
-            <div className="text-xs font-bold truncate" style={{ color: "#1e2026" }}>Nguyễn Văn Minh</div>
-            <div className="text-[10px] truncate" style={{ color: "#5b5f6b" }}>Công ty TNHH Bình Minh</div>
+            <div className="text-xs font-bold truncate" style={{ color: "#1e2026" }}>Khách hàng A</div>
+            <div className="text-[10px] truncate" style={{ color: "#5b5f6b" }}>Công ty Demo A</div>
           </div>
         </div>
 
@@ -362,7 +362,7 @@ export function FloatingTimeline() {
           <Voicemail size={11} color="#673ab7" />
         </div>
         <div>
-          <div className="text-xs font-semibold" style={{ color: "#1e2026" }}>Trần Thị Lan</div>
+          <div className="text-xs font-semibold" style={{ color: "#1e2026" }}>Khách hàng B</div>
           <div className="text-[10px]" style={{ color: "#5b5f6b" }}>Cuộc gọi đến · 7:18 phút</div>
         </div>
         <span className="ml-auto text-[9px] px-1.5 py-0.5 rounded-full font-medium" style={{ background: "#dcfce7", color: "#16a34a" }}>Đã nghe</span>

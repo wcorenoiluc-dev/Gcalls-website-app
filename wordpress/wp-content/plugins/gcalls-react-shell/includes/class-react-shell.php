@@ -19,8 +19,42 @@ class Gcalls_React_Shell {
 	/** @var array<string,string>|null */
 	private static $routes = null;
 
+	/**
+	 * Set the moment `render_root_html()` is about to call `wp_head()` for a
+	 * route this plugin is serving — the signal `dequeue_theme_styles()`
+	 * checks, since by the time `wp_enqueue_scripts` fires (WordPress hooks
+	 * it to `wp_head` at priority 1) the route/scope decision has already
+	 * been made and should not be re-derived.
+	 */
+	private static $serving_shell = false;
+
 	public static function init() {
 		add_action( 'template_redirect', array( __CLASS__, 'maybe_serve_shell' ), 0 );
+		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'dequeue_theme_styles' ), 20 );
+	}
+
+	/**
+	 * React Shell renders its own header/footer/typography entirely and
+	 * depends on none of gcalls-theme's front-end CSS. That CSS's bare
+	 * `a { color }` / `a:hover` / `a:focus` rules (theme.css) are NOT inside
+	 * any `@layer`, so per the CSS Cascade Layers spec they beat every
+	 * Tailwind utility class (Tailwind's own output lives in `@layer
+	 * utilities`) regardless of selector specificity or stylesheet order —
+	 * which is why an `<a>` styled with Tailwind's `text-white` rendered in
+	 * the theme's brand-purple link color instead. Reordering or adding
+	 * higher-specificity Tailwind classes cannot win that fight; the only
+	 * fixes are an equally-unlayered override (see buttons.css) or removing
+	 * the competing rule from pages that do not need it. Both are applied:
+	 * this dequeues the handle, buttons.css is the defence in depth.
+	 */
+	public static function dequeue_theme_styles() {
+		if ( ! self::$serving_shell ) {
+			return;
+		}
+		foreach ( array( 'gcalls-theme', 'gcalls-components' ) as $handle ) {
+			wp_dequeue_style( $handle );
+			wp_deregister_style( $handle );
+		}
 	}
 
 	/**
@@ -208,6 +242,7 @@ class Gcalls_React_Shell {
 			$extra_config
 		);
 
+		self::$serving_shell = true;
 		ob_start();
 		include GCALLS_REACT_SHELL_DIR . 'templates/react-shell.php';
 		return ob_get_clean();

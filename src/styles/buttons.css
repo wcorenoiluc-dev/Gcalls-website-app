@@ -1,0 +1,78 @@
+/* -----------------------------------------------------------------------
+ * Semantic button/link color variants — plain, unlayered CSS on purpose.
+ *
+ * WordPress's gcalls-theme sets `a { color: var(--gcalls-brand) }` (plus
+ * :hover/:focus) as a bare, unlayered rule. Tailwind v4's utilities compile
+ * into `@layer utilities`, and per the CSS Cascade Layers spec any unlayered
+ * rule beats any layered rule regardless of specificity or source order — so
+ * an `<a>` styled only via Tailwind's `text-white`/`text-brand` classes
+ * silently lost that fight and rendered in the theme's brand-purple link
+ * color instead, on every route (see the "CTA color collision", "dark-
+ * section secondary CTA" and "dark-section phone link" defects). React
+ * Shell's own class-react-shell.php now also dequeues gcalls-theme's CSS on
+ * every route it serves, which independently removes the competing rule —
+ * these classes are the second, defence-in-depth half of that fix: plain,
+ * unlayered, single-class-selector (0,1,0) rules, so a color declared here
+ * still wins even if the theme stylesheet is ever re-introduced.
+ *
+ * These set color only. Layout, spacing, radius, typography and hover
+ * background all remain ordinary Tailwind utility classes alongside these.
+ * ------------------------------------------------------------------------- */
+
+.gcalls-button--brand,
+.gcalls-button--brand:link,
+.gcalls-button--brand:visited {
+  background-color: #673ab7;
+  color: #ffffff;
+}
+.gcalls-button--brand:hover,
+.gcalls-button--brand:focus {
+  color: #ffffff;
+}
+.gcalls-button--brand:disabled,
+.gcalls-button--brand[aria-disabled='true'] {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.gcalls-button--light,
+.gcalls-button--light:link,
+.gcalls-button--light:visited {
+  background-color: #ffffff;
+  color: #673ab7;
+}
+.gcalls-button--light:hover,
+.gcalls-button--light:focus {
+  color: #673ab7;
+}
+.gcalls-button--light:disabled,
+.gcalls-button--light[aria-disabled='true'] {
+  color: rgba(103, 58, 183, 0.6);
+}
+
+.gcalls-button--outline-dark,
+.gcalls-button--outline-dark:link,
+.gcalls-button--outline-dark:visited {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+}
+.gcalls-button--outline-dark:hover,
+.gcalls-button--outline-dark:focus {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.gcalls-button--outline-dark:disabled,
+.gcalls-button--outline-dark[aria-disabled='true'] {
+  color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.gcalls-link--on-dark,
+.gcalls-link--on-dark:link,
+.gcalls-link--on-dark:visited {
+  color: rgba(255, 255, 255, 0.9);
+}
+.gcalls-link--on-dark:hover,
+.gcalls-link--on-dark:focus {
+  color: #ffffff;
+}

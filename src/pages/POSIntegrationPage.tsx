@@ -76,7 +76,7 @@ export function POSIntegrationPage() {
     <>
       <JsonLd id="pos-integration" data={jsonLd} />
 
-      <div className="bg-brand-light/60 pt-20 sm:pt-24">
+      <div className="bg-brand-light/60 pt-16 pb-3">
         <Container>
           <Breadcrumb
             trail={[{ label: 'Giải pháp' }, { label: 'Tổng đài tích hợp POS' }]}

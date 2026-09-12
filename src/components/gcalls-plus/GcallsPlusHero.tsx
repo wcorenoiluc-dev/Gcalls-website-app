@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { Container, Eyebrow, GradientHeading } from '@/components/common/primitives'
 import { ProductVisualWithSupport } from '@/components/common/ProductVisual'
 import { ProductScreenshot } from '@/components/common/ProductScreenshot'
+import { ProductScreenshotPlaceholder } from '@/components/common/ProductScreenshotPlaceholder'
 import { GCALLS_PLUS_IMAGES } from '@/data/productImages'
 import { track } from '@/lib/analytics'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
@@ -98,9 +99,9 @@ export function GcallsPlusHero() {
           {/* Visual second. */}
           <ProductVisualWithSupport
             main={
-              <ProductScreenshot
-                image={GCALLS_PLUS_IMAGES.webphoneDesktop}
-                priority
+              <ProductScreenshotPlaceholder
+                width={GCALLS_PLUS_IMAGES.webphoneDesktop.width}
+                height={GCALLS_PLUS_IMAGES.webphoneDesktop.height}
               />
             }
             support={

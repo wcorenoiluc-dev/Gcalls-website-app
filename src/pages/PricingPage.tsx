@@ -58,7 +58,7 @@ export function PricingPage() {
       <JsonLd id="pricing" data={jsonLd} />
 
       {/* Breadcrumb sits above the hero, matching the other routes. */}
-      <div className="bg-brand-light/60 pt-20 sm:pt-24">
+      <div className="bg-brand-light/60 pt-16 pb-3">
         <Container>
           <Breadcrumb trail={[{ label: 'Bảng giá' }]} />
         </Container>
@@ -305,7 +305,7 @@ export function PricingPage() {
             <div className="mx-auto mt-8 flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center">
               <Link
                 to={ROUTES.costEstimator}
-                className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[10px] bg-white px-7 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
+                className="gcalls-button--light inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[10px] px-7 text-base font-semibold transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
               >
                 Ước tính chi phí
                 <ArrowRight size={18} aria-hidden="true" />
@@ -313,7 +313,7 @@ export function PricingPage() {
 
               <Link
                 to={leadCtaHref({ intent: 'consultation', source: 'pricing' })}
-                className="inline-flex min-h-[52px] w-full items-center justify-center rounded-[10px] border border-white/45 px-7 text-base font-semibold text-white transition-colors duration-150 hover:bg-white/12 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
+                className="gcalls-button--outline-dark inline-flex min-h-[52px] w-full items-center justify-center rounded-[10px] border px-7 text-base font-semibold transition-colors duration-150 hover:bg-white/12 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
               >
                 Đăng ký tư vấn
               </Link>
@@ -321,7 +321,7 @@ export function PricingPage() {
 
             <a
               href={CONTACT.phoneHref}
-              className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] px-4 text-base font-medium text-white/90 transition-colors duration-150 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="gcalls-link--on-dark mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] px-4 text-base font-medium transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               <Phone size={17} aria-hidden="true" />
               {CONTACT.phone}

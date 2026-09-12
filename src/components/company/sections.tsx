@@ -551,7 +551,7 @@ export function CompanyPageLayout({
     <>
       <JsonLd id={`company-${content.id}`} data={jsonLd} />
 
-      <div className="bg-brand-light/60 pt-20 sm:pt-24">
+      <div className="bg-brand-light/60 pt-16 pb-3">
         <Container>
           <Breadcrumb
             trail={[
