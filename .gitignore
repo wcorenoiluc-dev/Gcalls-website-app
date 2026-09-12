@@ -49,10 +49,14 @@ wordpress/wp-content/uploads/
 wordpress/wp-content/cache/
 wordpress/wp-content/upgrade/
 wordpress/wp-content/languages/
-# Every plugin except the one we author. Elementor and Rank Math are installed
+# Every plugin except the ones we author. Elementor and Rank Math are installed
 # from wordpress.org on the host, never vendored here.
 wordpress/wp-content/plugins/*
 !wordpress/wp-content/plugins/gcalls-core/
+!wordpress/wp-content/plugins/gcalls-react-shell/
+# The React build output inside it is still caught by the top-level `dist/`
+# rule above — source (PHP, routes.json, README) is tracked, the compiled
+# bundle is a derivable artefact of a commit, same reasoning as wordpress/dist/.
 # Same rule for themes.
 wordpress/wp-content/themes/*
 !wordpress/wp-content/themes/gcalls-theme/
