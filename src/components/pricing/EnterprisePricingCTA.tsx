@@ -2,6 +2,7 @@ import { ArrowRight, Check } from 'lucide-react'
 import { Link } from 'react-router'
 import { Container } from '@/components/common/primitives'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
+import { darkSection } from '@/lib/theme/darkSection'
 
 /**
  * Enterprise section.
@@ -35,7 +36,8 @@ export function EnterprisePricingCTA() {
 
             <h2
               id="enterprise-heading"
-              className="mt-4 text-[26px] font-extrabold leading-[1.2] tracking-tight text-white sm:text-[34px] lg:text-[40px]"
+              className="mt-4 text-[26px] font-extrabold leading-[1.2] tracking-tight sm:text-[34px] lg:text-[40px]"
+              style={{ color: darkSection.heading }}
             >
               Cần một cấu hình riêng cho hệ thống hiện tại?
             </h2>
