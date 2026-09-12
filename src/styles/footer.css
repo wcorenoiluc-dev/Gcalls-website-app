@@ -1,0 +1,100 @@
+/* -----------------------------------------------------------------------
+ * Footer typography — plain, unlayered CSS on purpose.
+ *
+ * WordPress's own theme.css sets `font-size`/`line-height`/`font-weight`
+ * directly on bare `h1,h2,h3,h4,h5,h6` selectors, and that stylesheet is
+ * unlayered (a normal enqueued file, not wrapped in `@layer`). Tailwind v4's
+ * utilities compile into `@layer utilities`, and per the CSS Cascade Layers
+ * spec any unlayered rule beats any layered rule regardless of specificity —
+ * so a footer heading styled only via Tailwind classes (e.g. `text-sm
+ * font-bold`) silently loses to WordPress's own h2 rule and renders at
+ * clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem) instead. These classes are
+ * deliberately plain, unlayered CSS with a single-class selector (0,1,0),
+ * which beats the bare element selector (0,0,1) within that same unlayered
+ * bucket — no `!important`, no blanket reset, no effect on any other
+ * heading on the page.
+ * ------------------------------------------------------------------------- */
+
+.gcalls-footer__heading {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #1e2026;
+  margin: 0;
+}
+
+.gcalls-footer__link {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #5b5f6b;
+  text-decoration: none;
+}
+
+.gcalls-footer__link:hover {
+  color: #673ab7;
+}
+
+.gcalls-footer__description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #5b5f6b;
+}
+
+.gcalls-footer__contact {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1e2026;
+}
+
+/* -----------------------------------------------------------------------
+ * Mobile accordion (<768px): each nav group collapses to a toggle button.
+ * At >=768px the grid takes over and every group is always expanded —
+ * the toggle stops doing anything visually, but stays a real, focusable
+ * button rather than being ripped out of the tab order.
+ * ------------------------------------------------------------------------- */
+
+.gcalls-footer__links {
+  display: none;
+  flex-direction: column;
+}
+
+.gcalls-footer__links.is-open {
+  display: flex;
+}
+
+.gcalls-footer__chevron {
+  transition: transform 150ms ease;
+}
+
+.gcalls-footer__chevron.is-open {
+  transform: rotate(180deg);
+}
+
+@media (min-width: 768px) {
+  .gcalls-footer__toggle {
+    cursor: default;
+  }
+
+  .gcalls-footer__chevron {
+    display: none;
+  }
+
+  .gcalls-footer__links {
+    display: flex !important;
+  }
+}
+
+/* -----------------------------------------------------------------------
+ * Desktop grid: brand/contact column plus five navigation columns.
+ * ------------------------------------------------------------------------- */
+
+@media (min-width: 1024px) {
+  .gcalls-footer__grid {
+    display: grid;
+    grid-template-columns: minmax(230px, 1.35fr) repeat(5, minmax(130px, 1fr));
+    column-gap: 48px;
+    row-gap: 32px;
+  }
+}
