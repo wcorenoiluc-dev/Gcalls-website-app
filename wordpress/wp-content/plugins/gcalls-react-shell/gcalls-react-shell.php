@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Gcalls React Shell
  * Description: Serves the built React marketing site for an explicit allowlist of routes, entirely separate from gcalls-core. Disabled by default; safe to activate.
- * Version: 0.1.0
+ * Version: 0.2.0
  * Requires at least: 6.0
  * Requires PHP: 8.0
  * Author: Gcalls
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'GCALLS_REACT_SHELL_VERSION', '0.1.0' );
+define( 'GCALLS_REACT_SHELL_VERSION', '0.2.0' );
 define( 'GCALLS_REACT_SHELL_FILE', __FILE__ );
 define( 'GCALLS_REACT_SHELL_DIR', plugin_dir_path( __FILE__ ) );
 define( 'GCALLS_REACT_SHELL_URL', plugin_dir_url( __FILE__ ) );
