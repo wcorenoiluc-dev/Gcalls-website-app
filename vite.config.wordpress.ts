@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import path from 'path'
-import { cpSync, existsSync } from 'fs'
+import { cpSync, existsSync, renameSync, rmdirSync } from 'fs'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
@@ -37,6 +37,29 @@ function copyShellImages() {
  * supplies its own PHP template instead of index.html).
  */
 
+/**
+ * Vite writes the manifest to dist/.vite/manifest.json by default. The
+ * packaging vet rejects dotfile/dot-directory segments outright (see
+ * wordpress/scripts/lib/package.mjs FORBIDDEN_SEGMENTS) — a rule that exists
+ * so a stray `.env` or `.git` never rides along in a shipped ZIP — so the
+ * manifest is relocated to dist/manifest.json instead of carving out an
+ * exception to that rule. class-react-shell.php checks both locations.
+ */
+function flattenManifest() {
+  return {
+    name: 'gcalls-shell-flatten-manifest',
+    closeBundle() {
+      const viteDir = path.resolve(OUT_DIR, '.vite')
+      const from = path.join(viteDir, 'manifest.json')
+      const to = path.resolve(OUT_DIR, 'manifest.json')
+      if (existsSync(from)) {
+        renameSync(from, to)
+        rmdirSync(viteDir)
+      }
+    },
+  }
+}
+
 function figmaAssetResolver() {
   return {
     name: 'figma-asset-resolver',
@@ -55,7 +78,7 @@ const OUT_DIR = path.resolve(
 )
 
 export default defineConfig({
-  plugins: [figmaAssetResolver(), react(), tailwindcss(), copyShellImages()],
+  plugins: [figmaAssetResolver(), react(), tailwindcss(), copyShellImages(), flattenManifest()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
