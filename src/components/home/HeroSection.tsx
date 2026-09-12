@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import type { ReactNode, AnchorHTMLAttributes } from "react";
 import { ROUTES } from '@/config/navigation';
 import { ArrowUpRight, BarChart2, Check, ChevronRight, Pause, Phone, PhoneCall, PhoneIncoming, Play, Search, TrendingUp, Users, Voicemail, Wifi } from "lucide-react";
 import { Link } from "react-router";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { stageClass, stageMainClass, stageFloatFullClass, hideBelowLgClass } from "@/components/common/ResponsiveProductVisual";
+import { useGcallsContent } from "@/lib/gcallsContent/useGcallsContent";
+import type { HomeHeroContent } from "@/lib/gcallsContent/types";
 
 const callLog = [
   { id: 1, name: "Nguyễn Văn Minh", phone: "0901 234 567", type: "out", duration: "3:42", status: "answered", time: "09:14", tag: "Khách hàng mới" },
@@ -562,7 +565,62 @@ const highlights = [
   "Theo dõi KPI realtime",
 ];
 
+/**
+ * Source-controlled default — what renders when Content Studio has never
+ * published anything for `/` → `hero`, and the value every field falls back
+ * to individually if a published or preview override is missing or has the
+ * wrong shape. See `useGcallsContent` for the merge rules.
+ */
+const DEFAULT_HERO_CONTENT: HomeHeroContent = {
+  enabled: true,
+  badgeText: "GCALLS WEBPHONE",
+  heading: "Tổng Đài Ảo Tích Hợp CRM -",
+  headingHighlight: "Bứt Phá Doanh Số",
+  description:
+    "Giải pháp tổng đài thông minh giúp đội Sales và CSKH thực hiện cuộc gọi trên trình duyệt, lưu lịch sử và ghi âm, quản lý thông tin khách hàng, theo dõi hiệu suất và kết nối với hệ thống quản trị doanh nghiệp.",
+  primaryCtaLabel: "Đăng ký demo",
+  primaryCtaUrl: "",
+  secondaryCtaLabel: "Khám phá Gcalls Webphone",
+  secondaryCtaUrl: "",
+  checklist: highlights,
+  heroImage: null,
+  heroImageAlt: "",
+  heroImageDecorative: false,
+  disclaimerText:
+    "Phạm vi triển khai và cấu hình được xác nhận cùng đội ngũ Gcalls theo hệ thống thực tế của doanh nghiệp.",
+};
+
+/**
+ * CTA URLs are the one field Content Studio lets an editor override with an
+ * arbitrary (scheme-checked) URL, which may be external — react-router's
+ * `Link` assumes an internal route and won't navigate an absolute URL
+ * correctly, so this picks a plain `<a>` for anything that looks external.
+ */
+function HeroCtaLink({ href, children, ...rest }: { href: string; children: ReactNode } & AnchorHTMLAttributes<HTMLAnchorElement>) {
+  if (/^https?:\/\//i.test(href)) {
+    return (
+      <a href={href} {...rest}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link to={href} {...rest}>
+      {children}
+    </Link>
+  );
+}
+
 export function Hero() {
+  const content = useGcallsContent('/', 'hero', DEFAULT_HERO_CONTENT);
+
+  if (!content.enabled) {
+    return null;
+  }
+
+  const primaryHref = content.primaryCtaUrl || leadCtaHref({ intent: 'demo', source: 'consultation', product: 'Gcalls Plus Webphone' });
+  const secondaryHref = content.secondaryCtaUrl || ROUTES.gcallsPlus;
+
   return (
     <section
       aria-labelledby="home-hero-heading"
@@ -617,7 +675,7 @@ export function Hero() {
                 style={{ background: "rgba(103,58,183,0.1)", color: "#673ab7", letterSpacing: "0.08em" }}
               >
                 <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#673ab7" }} aria-hidden="true" />
-                GCALLS WEBPHONE
+                {content.badgeText}
               </div>
             </div>
 
@@ -632,7 +690,7 @@ export function Hero() {
                   lineHeight: 1.12,
                 }}
               >
-                Tổng Đài Ảo Tích Hợp CRM -{" "}
+                {content.heading}{" "}
                 <span
                   style={{
                     background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)",
@@ -641,21 +699,19 @@ export function Hero() {
                     backgroundClip: "text",
                   }}
                 >
-                  Bứt Phá Doanh Số
+                  {content.headingHighlight}
                 </span>{" "}
                 Cho Đội Sales &amp; CSKH
               </h1>
 
               <p className="text-base leading-relaxed" style={{ color: "#5b5f6b", maxWidth: "560px", fontSize: "17px" }}>
-                Giải pháp tổng đài thông minh giúp đội Sales và CSKH thực hiện cuộc gọi trên trình
-                duyệt, lưu lịch sử và ghi âm, quản lý thông tin khách hàng, theo dõi hiệu suất và
-                kết nối với hệ thống quản trị doanh nghiệp.
+                {content.description}
               </p>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-3">
-              <Link to={leadCtaHref({ intent: 'demo', source: 'consultation', product: 'Gcalls Plus Webphone' })}
+              <HeroCtaLink href={primaryHref}
                 className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-[15px] transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
                 style={{
                   background: "#673ab7",
@@ -674,10 +730,10 @@ export function Hero() {
                 }}
               >
                 <Phone size={16} aria-hidden="true" />
-                Đăng ký demo
-              </Link>
-              <Link
-                to={ROUTES.gcallsPlus}
+                {content.primaryCtaLabel}
+              </HeroCtaLink>
+              <HeroCtaLink
+                href={secondaryHref}
                 className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-[15px] transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
                 style={{
                   background: "#fff",
@@ -696,14 +752,14 @@ export function Hero() {
                   (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
                 }}
               >
-                Khám phá Gcalls Webphone
+                {content.secondaryCtaLabel}
                 <ChevronRight size={16} aria-hidden="true" />
-              </Link>
+              </HeroCtaLink>
             </div>
 
             {/* Quick highlights */}
             <div className="flex flex-col gap-2.5 pt-1">
-              {highlights.map((h) => (
+              {content.checklist.map((h) => (
                 <div key={h} className="flex items-center gap-2.5">
                   <div
                     className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
@@ -741,8 +797,7 @@ export function Hero() {
             */}
             <div className="pt-2" style={{ borderTop: "1px solid rgba(103,58,183,0.10)" }}>
               <div className="text-xs" style={{ color: "#5b5f6b" }}>
-                Phạm vi triển khai và cấu hình được xác nhận cùng đội ngũ Gcalls theo hệ
-                thống thực tế của doanh nghiệp.
+                {content.disclaimerText}
               </div>
               {/*
                 The illustrative-data label is repeated here, in flowing text,
@@ -769,9 +824,24 @@ export function Hero() {
             className={`${stageClass} flex items-center justify-center`}
             style={{ minHeight: "560px" }}
           >
-            {/* Main dashboard */}
+            {/* Main dashboard — a manager-supplied hero image (e.g. a real
+                product screenshot approved for publication) replaces the
+                illustrative mockup; otherwise the safety-labelled mockup
+                below is the default and always what ships out of the box. */}
             <div className={stageMainClass} style={{ maxWidth: "540px" }}>
-              <DashboardMain />
+              {content.heroImage ? (
+                <img
+                  src={content.heroImage.url}
+                  width={content.heroImage.width}
+                  height={content.heroImage.height}
+                  alt={content.heroImageDecorative ? "" : content.heroImageAlt}
+                  aria-hidden={content.heroImageDecorative || undefined}
+                  className="w-full h-auto rounded-3xl"
+                  style={{ boxShadow: "0 24px 80px rgba(103,58,183,0.18), 0 2px 8px rgba(0,0,0,0.06)" }}
+                />
+              ) : (
+                <DashboardMain />
+              )}
             </div>
 
             {/* Timeline/audio — top-right. The one supporting visual kept below lg. */}
