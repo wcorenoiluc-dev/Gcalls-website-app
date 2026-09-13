@@ -1,4 +1,5 @@
 import { Check, Minus, Plus } from 'lucide-react'
+import { ctaAttrs } from '@/components/common/Button'
 import type { EstimatorField } from '@/data/estimator'
 import type { EstimatorAnswers } from '@/lib/estimate'
 
@@ -82,6 +83,7 @@ export function RequirementsForm({
                           key={option.value}
                           type="button"
                           aria-pressed={on}
+                          {...(on ? ctaAttrs('primary') : {})}
                           onClick={() =>
                             onChange(
                               field.id,
@@ -114,6 +116,7 @@ export function RequirementsForm({
                           key={String(choice.value)}
                           type="button"
                           aria-pressed={on}
+                          {...(on ? ctaAttrs('primary') : {})}
                           onClick={() => onChange(field.id, choice.value)}
                           className={`inline-flex min-h-12 flex-1 items-center justify-center rounded-[10px] border-2 px-4 text-[15px] font-semibold transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:flex-none sm:px-8 ${
                             on

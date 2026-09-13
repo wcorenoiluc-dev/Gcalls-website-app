@@ -16,6 +16,7 @@ import {
   Users,
 } from 'lucide-react'
 import { Link } from 'react-router'
+import { CtaLink, type CtaVariant } from '@/components/common/Button'
 import {
   Card,
   Container,
@@ -54,25 +55,21 @@ import {
   TranscriptMockup,
 } from './visuals'
 
-const PRIMARY_BTN =
-  'inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto'
-
-const SECONDARY_BTN =
-  'inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-7 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto'
-
 const INLINE_LINK =
   'inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-brand underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand'
 
 /** Shared demo CTA — always routes through the shared lead architecture. */
 export function DemoCta({
   label,
-  className = PRIMARY_BTN,
+  variant = 'primary',
 }: {
   label: string
-  className?: string
+  variant?: CtaVariant
 }) {
   return (
-    <Link
+    <CtaLink
+      variant={variant}
+      fullWidth
       to={leadCtaHref(QQ_DEMO_LEAD)}
       onClick={() =>
         track('cta_clicked', {
@@ -82,10 +79,9 @@ export function DemoCta({
           product: QQ_DEMO_LEAD.product,
         })
       }
-      className={className}
     >
       {label}
-    </Link>
+    </CtaLink>
   )
 }
 
@@ -138,10 +134,10 @@ export function QaQcHero() {
             <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
               <DemoCta label={QQ_HERO.primaryCta.label} />
 
-              <a href={QQ_HERO.secondaryCta.href} className={SECONDARY_BTN}>
+              <CtaLink to={QQ_HERO.secondaryCta.href} variant="outline" fullWidth>
                 {QQ_HERO.secondaryCta.label}
                 <ArrowRight size={18} aria-hidden="true" />
-              </a>
+              </CtaLink>
             </div>
           </div>
 

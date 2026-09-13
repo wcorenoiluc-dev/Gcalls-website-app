@@ -1,10 +1,10 @@
 import { ArrowRight, Phone } from 'lucide-react'
-import { Link } from 'react-router'
 import { CONTACT } from '@/config/navigation'
 import { track } from '@/lib/analytics'
 import { leadCtaHref, type LeadCtaContext } from '@/lib/leads/ctaLink'
 import { Container } from './primitives'
 import { darkSection } from '@/lib/theme/darkSection'
+import { CtaLink } from './Button'
 
 /**
  * Shared closing CTA band — full-width brand gradient card, centred copy,
@@ -70,8 +70,11 @@ export function FinalCtaBand({
         </p>
 
         <div className="mx-auto mt-8 flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center">
-          <Link
+          <CtaLink
             to={primaryHref}
+            variant="light"
+            size="lg"
+            fullWidth
             onClick={() =>
               track('cta_clicked', {
                 label: primary.label,
@@ -81,19 +84,15 @@ export function FinalCtaBand({
                 solution: lead?.solution,
               })
             }
-            className="gcalls-button--light inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[10px] px-7 text-base font-semibold transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
           >
             {primary.label}
             <ArrowRight size={18} aria-hidden="true" />
-          </Link>
+          </CtaLink>
 
           {secondary && (
-            <Link
-              to={secondary.path}
-              className="gcalls-button--outline-dark inline-flex min-h-[52px] w-full items-center justify-center rounded-[10px] border px-7 text-base font-semibold transition-colors duration-150 hover:bg-white/12 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
-            >
+            <CtaLink to={secondary.path} variant="outline-dark" size="lg" fullWidth>
               {secondary.label}
-            </Link>
+            </CtaLink>
           )}
         </div>
 

@@ -9,6 +9,7 @@ import {
   Users,
 } from 'lucide-react'
 import { Link } from 'react-router'
+import { CtaLink, type CtaVariant } from '@/components/common/Button'
 import {
   Card,
   Container,
@@ -45,12 +46,6 @@ import type {
  * allowed to wrap rather than being truncated.
  */
 
-const PRIMARY_BTN =
-  'inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto'
-
-const SECONDARY_BTN =
-  'inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-7 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto'
-
 /** Card footer link. Callers add nothing; `mt-auto` pins it to the card base. */
 const CARD_LINK =
   'mt-auto inline-flex min-h-11 items-center gap-1.5 pt-3 text-[15px] font-semibold text-brand underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand'
@@ -63,14 +58,16 @@ export const INLINE_LINK =
 export function ResourceConsultCta({
   content,
   label,
-  className = PRIMARY_BTN,
+  variant = 'primary',
 }: {
   content: ResourcePageBase
   label: string
-  className?: string
+  variant?: CtaVariant
 }) {
   return (
-    <Link
+    <CtaLink
+      variant={variant}
+      fullWidth
       to={leadCtaHref(content.lead)}
       onClick={() =>
         track('cta_clicked', {
@@ -80,10 +77,9 @@ export function ResourceConsultCta({
           solution: content.lead.solution,
         })
       }
-      className={className}
     >
       {label}
-    </Link>
+    </CtaLink>
   )
 }
 
@@ -120,10 +116,10 @@ export function ResourceHeroSection({ content }: { content: ResourcePageBase }) 
           <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
             <ResourceConsultCta content={content} label={hero.primaryCta.label} />
 
-            <a href={hero.secondaryCta.href} className={SECONDARY_BTN}>
+            <CtaLink to={hero.secondaryCta.href} variant="outline" fullWidth>
               {hero.secondaryCta.label}
               <ArrowRight size={18} aria-hidden="true" />
-            </a>
+            </CtaLink>
           </div>
 
           <p className="mt-5 flex items-start gap-2 text-[15px] leading-relaxed text-muted-foreground">

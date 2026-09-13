@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { ArrowRight, Check } from 'lucide-react'
-import { Link } from 'react-router'
 import { Container, Eyebrow, GradientHeading } from '@/components/common/primitives'
+import { CtaLink } from '@/components/common/Button'
 
 /**
  * Hero for an integration page. Props-driven so Helpdesk and POS reuse it.
@@ -63,20 +63,14 @@ export function IntegrationHero({
             </ul>
 
             <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
-              <Link
-                to={primaryCta.path}
-                className="gcalls-button--brand inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] px-7 text-base font-semibold shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
-              >
+              <CtaLink to={primaryCta.path} variant="primary" fullWidth>
                 {primaryCta.label}
-              </Link>
+              </CtaLink>
 
-              <a
-                href={secondaryCta.href}
-                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-7 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
-              >
+              <CtaLink to={secondaryCta.href} variant="outline" fullWidth>
                 {secondaryCta.label}
                 <ArrowRight size={18} aria-hidden="true" />
-              </a>
+              </CtaLink>
             </div>
           </div>
 

@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { ArrowRight, Layers, Phone, Puzzle, Sparkles } from 'lucide-react'
-import { Link } from 'react-router'
+import { CtaLink } from '@/components/common/Button'
 import { CONTACT, ROUTES } from '@/config/navigation'
 import { SITE_ORIGIN } from '@/config/seo'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
@@ -138,23 +138,27 @@ export function PricingPage() {
                     </p>
 
                     <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                      <Link
+                      <CtaLink
+                        variant="primary"
+                        size="sm"
+                        fullWidth
                         to={selected.cta.path}
-                        className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-6 text-[15px] font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
                       >
                         {selected.cta.label}
                         <ArrowRight size={16} aria-hidden="true" />
-                      </Link>
-                      <Link
+                      </CtaLink>
+                      <CtaLink
+                        variant="outline"
+                        size="sm"
+                        fullWidth
                         to={leadCtaHref({
                           intent: 'quote',
                           source: 'pricing',
                           product: selected.name,
                         })}
-                        className="inline-flex min-h-12 w-full items-center justify-center rounded-[10px] border-2 border-brand bg-background px-6 text-[15px] font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
                       >
                         Nhận báo giá
-                      </Link>
+                      </CtaLink>
                     </div>
                   </div>
                 </div>
@@ -303,20 +307,24 @@ export function PricingPage() {
             </p>
 
             <div className="mx-auto mt-8 flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center">
-              <Link
+              <CtaLink
+                variant="light"
+                size="lg"
+                fullWidth
                 to={ROUTES.costEstimator}
-                className="gcalls-button--light inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[10px] px-7 text-base font-semibold transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
               >
                 Ước tính chi phí
                 <ArrowRight size={18} aria-hidden="true" />
-              </Link>
+              </CtaLink>
 
-              <Link
+              <CtaLink
+                variant="outline-dark"
+                size="lg"
+                fullWidth
                 to={leadCtaHref({ intent: 'consultation', source: 'pricing' })}
-                className="gcalls-button--outline-dark inline-flex min-h-[52px] w-full items-center justify-center rounded-[10px] border px-7 text-base font-semibold transition-colors duration-150 hover:bg-white/12 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
               >
                 Đăng ký tư vấn
-              </Link>
+              </CtaLink>
             </div>
 
             <a

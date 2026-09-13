@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ROUTES } from '@/config/navigation';
 import { Link } from "react-router";
+import { ctaAttrs } from "@/components/common/Button";
 import { Activity, ArrowRight, ArrowUpRight, BarChart2, Check, ChevronRight, Clock, HeadphonesIcon, PhoneCall, PhoneIncoming, PhoneMissed, PhoneOutgoing, Settings, Star, TrendingUp } from "lucide-react";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 
@@ -366,6 +367,7 @@ export function AnalyticsSection() {
             </p>
           </div>
           <Link
+                {...ctaAttrs('primary')}
                 to={ROUTES.gcallsPlus}
             className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm flex-shrink-0 transition-all duration-150 whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
             style={{ background: "#673ab7", color: "#fff", boxShadow: "0 4px 20px rgba(103,58,183,0.30)" }}

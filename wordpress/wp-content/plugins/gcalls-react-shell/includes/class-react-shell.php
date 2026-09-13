@@ -31,6 +31,8 @@ class Gcalls_React_Shell {
 	public static function init() {
 		add_action( 'template_redirect', array( __CLASS__, 'maybe_serve_shell' ), 0 );
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'dequeue_theme_styles' ), 20 );
+		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'remove_global_styles' ), 0 );
+		add_action( 'wp_footer', array( __CLASS__, 'remove_global_styles' ), 0 );
 	}
 
 	/**
@@ -51,10 +53,31 @@ class Gcalls_React_Shell {
 		if ( ! self::$serving_shell ) {
 			return;
 		}
-		foreach ( array( 'gcalls-theme', 'gcalls-components' ) as $handle ) {
+		foreach ( array( 'gcalls-theme', 'gcalls-components', 'global-styles', 'classic-theme-styles' ) as $handle ) {
 			wp_dequeue_style( $handle );
 			wp_deregister_style( $handle );
 		}
+	}
+
+	/**
+	 * WordPress also prints theme.json global styles as an inline
+	 * `<style id="global-styles-inline-css">` — on a classic theme from
+	 * `wp_footer` (priority 1), after `wp_enqueue_scripts` has already run,
+	 * so `dequeue_theme_styles()` cannot reach it. That sheet carries the
+	 * unlayered `a:where(:not(.wp-element-button)) { color: brand }` rule
+	 * which out-cascades every Tailwind `text-white` utility and turned the
+	 * label of every purple `<a>` CTA purple-on-purple (React Shell 0.3.3
+	 * "invisible CTA" defect). The shell renders no blocks and needs none of
+	 * it; buttons.css is the in-bundle defence in depth for the same rule.
+	 * Only runs for a route this plugin is serving.
+	 */
+	public static function remove_global_styles() {
+		if ( ! self::$serving_shell ) {
+			return;
+		}
+		remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+		remove_action( 'wp_footer', 'wp_enqueue_global_styles', 1 );
+		remove_action( 'wp_enqueue_scripts', 'wp_enqueue_classic_theme_styles' );
 	}
 
 	/**

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ROUTES } from '@/config/navigation';
 import { Link } from "react-router";
+import { ctaAttrs } from "@/components/common/Button";
 import { ArrowRight, BarChart2, Check, ChevronRight, Cloud, GitBranch, Globe, HeadphonesIcon, Layers, Mic, MoreHorizontal, Network, Phone, PhoneForwarded, PhoneIncoming, Plus, RefreshCw, Server, Settings, Users, Voicemail, Wifi, Zap } from "lucide-react";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 import { darkSection } from "@/lib/theme/darkSection";
@@ -130,7 +131,7 @@ function CloudMockup() {
         ))}
         <div className="ml-auto pb-2 flex items-center gap-1.5">
           <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full" style={{ background: "#f0ecf9", color: "#673ab7" }}>5 extensions</span>
-          <button className="flex items-center gap-1 text-[10px] font-semibold px-2.5 py-1 rounded-lg" style={{ background: "#673ab7", color: "#fff" }}>
+          <button {...ctaAttrs('primary')} className="flex items-center gap-1 text-[10px] font-semibold px-2.5 py-1 rounded-lg" style={{ background: "#673ab7", color: "#fff" }}>
             <Plus size={9} /> Thêm
           </button>
         </div>
@@ -419,6 +420,7 @@ export function CloudSection() {
             </p>
           </div>
           <Link
+                {...ctaAttrs('light')}
                 to={ROUTES.gcallsPlus}
             className="flex items-center gap-2 px-7 py-4 rounded-2xl font-bold text-sm flex-shrink-0 transition-all duration-150 whitespace-nowrap relative focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             style={{ background: "#fff", color: "#673ab7", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}

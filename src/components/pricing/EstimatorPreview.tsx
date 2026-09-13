@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react'
-import { Link } from 'react-router'
 import { ROUTES } from '@/config/navigation'
 import { SOLUTION_PRICING, estimateCost } from '@/data/pricing'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
 import { Card } from '@/components/common/primitives'
+import { CtaLink } from '@/components/common/Button'
 
 /**
  * Interactive cost-estimator preview.
@@ -157,21 +157,20 @@ export function EstimatorPreview() {
           </p>
         )}
 
-        <Link
-          to={ROUTES.costEstimator}
-          className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-5 text-[15px] font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-        >
+        <CtaLink to={ROUTES.costEstimator} variant="primary" size="sm" className="mt-6 w-full">
           <Sparkles size={16} aria-hidden="true" />
           Ước tính chi phí chi tiết
-        </Link>
+        </CtaLink>
 
-        <Link
+        <CtaLink
           to={leadCtaHref({ intent: 'quote', source: 'pricing', product: solution.name })}
-          className="mt-3 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-5 text-[15px] font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+          variant="outline"
+          size="sm"
+          className="mt-3 w-full"
         >
           Nhận báo giá
           <ArrowRight size={16} aria-hidden="true" />
-        </Link>
+        </CtaLink>
       </Card>
     </div>
   )

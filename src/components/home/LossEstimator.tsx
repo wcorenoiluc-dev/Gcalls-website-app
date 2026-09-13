@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router";
+import { ctaAttrs } from "@/components/common/Button";
 import { AlertTriangle, ArrowRight, Calculator, Clock, RotateCcw } from "lucide-react";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 import {
@@ -231,6 +232,7 @@ export function LossEstimator() {
           </div>
 
           <button
+            {...ctaAttrs('outline')}
             type="button"
             onClick={() => setInput(DEFAULT_LOSS_INPUT)}
             disabled={isDefault}
@@ -305,6 +307,7 @@ export function LossEstimator() {
           </p>
 
           <Link
+            {...ctaAttrs('light')}
             to={leadCtaHref({ intent: "consultation", source: "consultation" })}
             className="flex items-center justify-center gap-2.5 w-full px-6 py-3.5 rounded-2xl font-bold text-sm transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             style={{ background: "#fff", color: "#673ab7", boxShadow: "0 4px 20px rgba(0,0,0,0.18)" }}

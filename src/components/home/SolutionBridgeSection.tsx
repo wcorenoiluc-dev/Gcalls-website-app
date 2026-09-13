@@ -1,5 +1,6 @@
 import { ArrowRight, BarChart3, Check, Globe2, MonitorSmartphone, Plug } from "lucide-react";
 import { Link } from "react-router";
+import { ctaAttrs } from "@/components/common/Button";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { darkSection } from "@/lib/theme/darkSection";
 
@@ -129,6 +130,7 @@ export function SolutionBridgeSection() {
                 then has to re-resolve — see the note in `common/Seo.tsx`.
               */}
               <a
+                {...ctaAttrs('light')}
                 href="#home-ecosystem"
                 /* No `whitespace-nowrap`: at 320px the label plus the 32px
                    horizontal padding overran the card and the arrow clipped.

@@ -12,7 +12,7 @@ import { previewStore } from './store';
  * already renders, never introduce a new shape (e.g. raw HTML) the
  * component wasn't built to handle.
  */
-function mergeKnown<T extends Record<string, unknown>>(defaults: T, source: unknown): T {
+function mergeKnown<T extends object>(defaults: T, source: unknown): T {
   if (!source || typeof source !== 'object') return defaults;
   const merged = { ...defaults };
   for (const key of Object.keys(defaults) as Array<keyof T>) {
@@ -62,7 +62,7 @@ function mergeKnown<T extends Record<string, unknown>>(defaults: T, source: unkn
  * and only inside the same-origin preview iframe — never for a logged-out
  * visitor on the public site.
  */
-export function useGcallsContent<T extends Record<string, unknown>>(route: string, section: string, defaults: T): T {
+export function useGcallsContent<T extends object>(route: string, section: string, defaults: T): T {
   const shellConfig = typeof window !== 'undefined' ? window.__GCALLS_SHELL_CONFIG__ : undefined;
   const bootstrap = shellConfig?.routePath === route ? shellConfig.gcallsContent : undefined;
 

@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { ctaAttrs } from '@/components/common/Button'
 import { SOLUTION_PRICING } from '@/data/pricing'
 
 /**
@@ -60,6 +61,7 @@ export function PricingProductSelector({
             key={solution.id}
             type="button"
             role="tab"
+            {...(selected ? ctaAttrs('primary') : {})}
             data-chip={solution.id}
             id={`chip-${solution.id}`}
             aria-selected={selected}

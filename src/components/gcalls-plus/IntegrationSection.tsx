@@ -1,10 +1,10 @@
 import { ArrowRight, Plug } from 'lucide-react'
-import { Link } from 'react-router'
 import { ProductVisual } from '@/components/common/ProductVisual'
 import { ProductScreenshotPlaceholder } from '@/components/common/ProductScreenshotPlaceholder'
 import { GCALLS_PLUS_IMAGES } from '@/data/productImages'
 import { GP_INTEGRATION } from '@/data/gcallsPlus'
 import { FeatureSplit } from '@/components/common/FeatureSplit'
+import { CtaLink } from '@/components/common/Button'
 
 /**
  * CRM / system integration.
@@ -43,13 +43,10 @@ export function IntegrationSection() {
         </ProductVisual>
       }
     >
-      <Link
-        to={GP_INTEGRATION.cta.path}
-        className="mt-8 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-6 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
-      >
+      <CtaLink to={GP_INTEGRATION.cta.path} variant="outline" fullWidth className="mt-8">
         {GP_INTEGRATION.cta.label}
         <ArrowRight size={18} aria-hidden="true" />
-      </Link>
+      </CtaLink>
     </FeatureSplit>
   )
 }

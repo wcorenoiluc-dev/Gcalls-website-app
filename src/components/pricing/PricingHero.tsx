@@ -1,8 +1,8 @@
 import { ArrowRight, Calculator } from 'lucide-react'
-import { Link } from 'react-router'
 import { ROUTES } from '@/config/navigation'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
 import { Container, Eyebrow, GradientHeading } from '@/components/common/primitives'
+import { CtaLink } from '@/components/common/Button'
 
 /**
  * Pricing hero.
@@ -37,21 +37,19 @@ export function PricingHero() {
 
           {/* CTAs — full width below sm, inline from sm up. */}
           <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
-            <Link
-              to={ROUTES.costEstimator}
-              className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
-            >
+            <CtaLink to={ROUTES.costEstimator} variant="primary" fullWidth>
               <Calculator size={18} aria-hidden="true" />
               Ước tính chi phí
-            </Link>
+            </CtaLink>
 
-            <Link
+            <CtaLink
               to={leadCtaHref({ intent: 'quote', source: 'pricing' })}
-              className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-7 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
+              variant="outline"
+              fullWidth
             >
               Nhận báo giá
               <ArrowRight size={18} aria-hidden="true" />
-            </Link>
+            </CtaLink>
           </div>
 
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">

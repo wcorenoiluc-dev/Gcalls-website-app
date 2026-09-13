@@ -1,5 +1,4 @@
 import { ArrowRight, Info } from 'lucide-react'
-import { Link } from 'react-router'
 import {
   PRICE_FALLBACK,
   PRICING_NOTE,
@@ -8,6 +7,7 @@ import {
   type PricingPlan,
 } from '@/data/pricing'
 import { Card, PriceState } from '@/components/common/primitives'
+import { CtaLink } from '@/components/common/Button'
 
 /**
  * Gcalls Plus package card.
@@ -67,22 +67,15 @@ export function PricingPlanCard({ plan }: { plan: PricingPlan }) {
         className="mt-5"
       />
 
-      <Link
+      <CtaLink
         to={plan.cta.path}
-        className={`
-          mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px]
-          px-5 text-[15px] font-semibold transition-colors duration-150
-          focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand
-          ${
-            highlighted
-              ? 'bg-brand text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] hover:bg-brand-dark'
-              : 'border-2 border-brand bg-background text-brand hover:bg-brand-light'
-          }
-        `}
+        variant={highlighted ? 'primary' : 'outline'}
+        size="sm"
+        className="mt-6 w-full"
       >
         {plan.cta.label}
         <ArrowRight size={16} aria-hidden="true" />
-      </Link>
+      </CtaLink>
 
       <div className="mt-auto pt-6">
         <p className="flex items-start gap-2 border-t border-brand-border pt-4 text-sm leading-relaxed text-muted-foreground">

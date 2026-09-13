@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { Card } from '@/components/common/primitives'
 import { COST_DRIVERS } from '@/data/estimator'
 import type { EstimatorResultData, PriceState, Recommendation } from '@/lib/estimate'
+import { CtaButton } from '@/components/common/Button'
 
 /**
  * Step 4 — recommended configuration, cost model and price state.
@@ -134,14 +135,10 @@ export function EstimatorResult({
           {price.supporting}
         </p>
 
-        <button
-          type="button"
-          onClick={onRequestQuote}
-          className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-6 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
-        >
+        <CtaButton onClick={onRequestQuote} variant="primary" fullWidth className="mt-6">
           Nhận báo giá chi tiết
           <ArrowRight size={18} aria-hidden="true" />
-        </button>
+        </CtaButton>
       </Card>
     </div>
   )

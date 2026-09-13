@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { MoreHorizontal, X } from 'lucide-react'
 import { Link } from 'react-router'
+import { ctaAttrs } from '@/components/common/Button'
 import { PRIMARY_CTA } from '@/config/navigation'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
 import { GcallsLogo } from '@/components/brand/GcallsLogo'
@@ -48,6 +49,7 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <Link
+              {...ctaAttrs('primary')}
               /* Carries conversion context so a header lead is attributed to
                  the header, not recorded as an untracked direct visit. */
               to={leadCtaHref({ intent: 'consultation', source: 'consultation' })}

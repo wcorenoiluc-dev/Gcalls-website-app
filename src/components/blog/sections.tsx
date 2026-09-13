@@ -9,6 +9,7 @@ import {
   PenLine,
 } from 'lucide-react'
 import { Link } from 'react-router'
+import { CtaLink } from '@/components/common/Button'
 import { Breadcrumb } from '@/components/layout/Breadcrumb'
 import { FaqAccordion } from '@/components/common/FaqAccordion'
 import { JsonLd } from '@/components/common/JsonLd'
@@ -338,7 +339,10 @@ export function ArticleCta({ article }: { article: BlogArticleMeta }) {
 
           return (
             <li key={cta.id} className="flex flex-col gap-2">
-              <Link
+              <CtaLink
+                variant="primary"
+                size="sm"
+                fullWidth
                 to={href}
                 onClick={() =>
                   track('cta_clicked', {
@@ -349,11 +353,11 @@ export function ArticleCta({ article }: { article: BlogArticleMeta }) {
                     ...(cta.lead.product ? { product: cta.lead.product } : {}),
                   })
                 }
-                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-6 text-center text-[15px] font-semibold text-white transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto sm:justify-start"
+                className="text-center sm:justify-start"
               >
                 {cta.action}
                 <ArrowRight size={17} aria-hidden="true" />
-              </Link>
+              </CtaLink>
               <p className="text-[14px] leading-relaxed text-muted-foreground">
                 {cta.detail}
               </p>

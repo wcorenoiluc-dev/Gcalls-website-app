@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Activity, Bell, ChevronRight, Code2, FileText, Key, Link2, MousePointerClick, Phone, PhoneIncoming, PhoneOff, PhoneOutgoing, RefreshCw, Webhook, X } from "lucide-react";
 import { Link } from "react-router";
+import { ctaAttrs } from "@/components/common/Button";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 import { ecosystemGroups } from "./sectionData";
@@ -150,7 +151,7 @@ export function APIManagerMockup() {
         <div className="flex items-center gap-2 flex-1 px-3 py-2 rounded-xl" style={{ background: "#f0ecf9" }}>
           <Key size={11} color="#673ab7" />
           <span className="text-[11px] font-medium flex-1" style={{ color: "#673ab7", fontFamily: "'DM Mono',monospace" }}>sk-gc-••••••••••••••••4f2a</span>
-          <button className="text-[9px] px-2 py-0.5 rounded font-semibold" style={{ background: "#673ab7", color: "#fff" }}>Copy</button>
+          <button {...ctaAttrs('primary')} className="text-[9px] px-2 py-0.5 rounded font-semibold" style={{ background: "#673ab7", color: "#fff" }}>Copy</button>
         </div>
         <div className="flex items-center gap-1.5 px-3 py-2 rounded-xl" style={{ background: "#f0fdf4" }}>
           <Activity size={11} color="#16a34a" />
@@ -341,7 +342,7 @@ export function WidgetMockup() {
                 style={{ color: "#1e2026" }}
               />
             </div>
-            <button className="w-full py-2.5 rounded-xl text-xs font-bold text-white" style={{ background: "#673ab7" }}>
+            <button {...ctaAttrs('primary')} className="w-full py-2.5 rounded-xl text-xs font-bold text-white" style={{ background: "#673ab7" }}>
               📞 Nhận cuộc gọi ngay
             </button>
             <div className="flex items-center justify-center gap-1.5">
@@ -355,7 +356,8 @@ export function WidgetMockup() {
       {/* Floating button */}
       <button
         type="button"
-        aria-label={widgetOpen ? "Đóng nút gọi minh họa" : "Mở nút gọi minh họa"}
+        {...ctaAttrs('primary')}
+aria-label={widgetOpen ? "Đóng nút gọi minh họa" : "Mở nút gọi minh họa"}
         aria-expanded={widgetOpen}
         className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
         style={{
@@ -512,7 +514,7 @@ export function IntegrationCtaSection() {
               và công việc cần thiết được đánh giá trong quá trình khảo sát kỹ thuật.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link to={leadCtaHref({ intent: 'demo', source: 'consultation' })}
+              <Link {...ctaAttrs('light')} to={leadCtaHref({ intent: 'demo', source: 'consultation' })}
                 className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 style={{ background: "#fff", color: "#673ab7", boxShadow: "0 4px 24px rgba(0,0,0,0.18)" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.22)"; }}
@@ -520,7 +522,7 @@ export function IntegrationCtaSection() {
               >
                 <Phone size={15} aria-hidden="true" /> Đăng ký demo
               </Link>
-              <Link to={leadCtaHref({ intent: 'integration', source: 'consultation' })}
+              <Link {...ctaAttrs('outline-dark')} to={leadCtaHref({ intent: 'integration', source: 'consultation' })}
                 className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1.5px solid rgba(255,255,255,0.30)" }}
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.22)"}

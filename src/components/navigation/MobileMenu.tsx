@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { ChevronDown, Phone, X } from 'lucide-react'
 import { Link, useLocation } from 'react-router'
+import { ctaAttrs } from '@/components/common/Button'
 import { CONTACT, NAV_GROUPS, PRIMARY_CTA } from '@/config/navigation'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
 
@@ -256,6 +257,7 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
           {/* Primary CTA — full width on mobile. */}
           <div className="px-1 pt-2">
             <Link
+              {...ctaAttrs('primary')}
               /* Same conversion context as the desktop header CTA. */
               to={leadCtaHref({ intent: 'consultation', source: 'consultation' })}
               className="flex items-center justify-center gap-2 w-full min-h-[52px] rounded-xl text-base font-semibold transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
@@ -269,6 +271,7 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
             </Link>
 
             <a
+              {...ctaAttrs('outline')}
               href={CONTACT.phoneHref}
               className="flex items-center justify-center gap-2 w-full min-h-[48px] mt-2 rounded-xl text-base font-medium transition-colors duration-150 hover:bg-[#f6f3fc] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
               style={{ color: '#673ab7', border: '1px solid rgba(103,58,183,0.24)' }}

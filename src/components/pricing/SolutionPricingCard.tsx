@@ -1,7 +1,7 @@
 import { ArrowRight, Receipt } from 'lucide-react'
-import { Link } from 'react-router'
 import { PRICE_FALLBACK, type SolutionPricing } from '@/data/pricing'
 import { Card } from '@/components/common/primitives'
+import { CtaLink } from '@/components/common/Button'
 
 /**
  * Solution pricing-model card.
@@ -36,13 +36,10 @@ export function SolutionPricingCard({ solution }: { solution: SolutionPricing })
       </p>
 
       <div className="mt-auto pt-6">
-        <Link
-          to={solution.cta.path}
-          className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-5 text-[15px] font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-        >
+        <CtaLink to={solution.cta.path} variant="outline" size="sm" className="w-full">
           {solution.cta.label}
           <ArrowRight size={16} aria-hidden="true" />
-        </Link>
+        </CtaLink>
       </div>
     </Card>
   )

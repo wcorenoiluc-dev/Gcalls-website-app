@@ -15,6 +15,7 @@ import {
   UserCheck,
 } from 'lucide-react'
 import { Link } from 'react-router'
+import { CtaLink, type CtaVariant } from '@/components/common/Button'
 import {
   Card,
   Container,
@@ -42,12 +43,6 @@ import {
 } from '@/data/voicebotAi'
 import { VoicebotCampaignMockup, VoicebotHandoffMockup } from './visuals'
 
-const PRIMARY_BTN =
-  'inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto'
-
-const SECONDARY_BTN =
-  'inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-7 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto'
-
 const INLINE_LINK =
   'inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-brand underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand'
 
@@ -57,13 +52,15 @@ const INLINE_LINK =
  */
 export function ConsultCta({
   label,
-  className = PRIMARY_BTN,
+  variant = 'primary',
 }: {
   label: string
-  className?: string
+  variant?: CtaVariant
 }) {
   return (
-    <Link
+    <CtaLink
+      variant={variant}
+      fullWidth
       to={leadCtaHref(VB_CONSULT_LEAD)}
       onClick={() =>
         track('cta_clicked', {
@@ -73,10 +70,9 @@ export function ConsultCta({
           product: VB_CONSULT_LEAD.product,
         })
       }
-      className={className}
     >
       {label}
-    </Link>
+    </CtaLink>
   )
 }
 
@@ -108,10 +104,10 @@ export function VoicebotHero() {
             <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
               <ConsultCta label={VB_HERO.primaryCta.label} />
 
-              <a href={VB_HERO.secondaryCta.href} className={SECONDARY_BTN}>
+              <CtaLink to={VB_HERO.secondaryCta.href} variant="outline" fullWidth>
                 {VB_HERO.secondaryCta.label}
                 <ArrowRight size={18} aria-hidden="true" />
-              </a>
+              </CtaLink>
             </div>
 
             <p className="mt-5 flex max-w-xl items-start gap-2 text-[15px] leading-relaxed text-muted-foreground">
@@ -475,7 +471,7 @@ export function VoicebotDeployment() {
         </ol>
 
         <div className="mt-8 flex justify-center">
-          <ConsultCta label="Đăng ký tư vấn Voicebot" className={SECONDARY_BTN} />
+          <ConsultCta label="Đăng ký tư vấn Voicebot" variant="outline" />
         </div>
       </Container>
     </Section>

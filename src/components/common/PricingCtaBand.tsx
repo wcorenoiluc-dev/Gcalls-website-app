@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react'
 import { ArrowRight, Calculator, Receipt } from 'lucide-react'
-import { Link } from 'react-router'
 import { Container, Eyebrow, GradientHeading, Section } from './primitives'
 import { PRICING_NOTE } from '@/data/pricing'
+import { CtaLink } from './Button'
 
 /**
  * Shared "estimate your cost" band used by every product and solution page.
@@ -50,21 +50,15 @@ export function PricingCtaBand({
             </div>
 
             <div className="flex flex-col gap-3 lg:items-end">
-              <Link
-                to={primary.path}
-                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
-              >
+              <CtaLink to={primary.path} variant="primary" fullWidth>
                 <Calculator size={18} aria-hidden="true" />
                 {primary.label}
-              </Link>
+              </CtaLink>
 
-              <Link
-                to={secondary.path}
-                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-7 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
-              >
+              <CtaLink to={secondary.path} variant="outline" fullWidth>
                 {secondary.label}
                 <ArrowRight size={18} aria-hidden="true" />
-              </Link>
+              </CtaLink>
 
               <p className="mt-1 text-sm text-muted-foreground lg:text-right">
                 {PRICING_NOTE}.

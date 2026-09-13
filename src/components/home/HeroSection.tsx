@@ -3,6 +3,7 @@ import type { ReactNode, AnchorHTMLAttributes } from "react";
 import { ROUTES } from '@/config/navigation';
 import { ArrowUpRight, BarChart2, Check, ChevronRight, Pause, Phone, PhoneCall, PhoneIncoming, Play, Search, TrendingUp, Users, Voicemail, Wifi } from "lucide-react";
 import { Link } from "react-router";
+import { ctaAttrs } from "@/components/common/Button";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { stageClass, stageMainClass, stageFloatFullClass, hideBelowLgClass } from "@/components/common/ResponsiveProductVisual";
 import { useGcallsContent } from "@/lib/gcallsContent/useGcallsContent";
@@ -389,7 +390,8 @@ export function FloatingTimeline() {
       <div className="flex items-center gap-2">
         <button
           type="button"
-          aria-label={playing ? "Tạm dừng ghi âm minh họa" : "Phát ghi âm minh họa"}
+          {...ctaAttrs('primary')}
+aria-label={playing ? "Tạm dừng ghi âm minh họa" : "Phát ghi âm minh họa"}
           className="w-7 h-7 rounded-full flex items-center justify-center transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
           style={{ background: "#673ab7" }}
           onClick={() => setPlaying(!playing)}
@@ -712,6 +714,7 @@ export function Hero() {
             {/* CTAs */}
             <div className="flex flex-wrap gap-3">
               <HeroCtaLink href={primaryHref}
+                {...ctaAttrs('primary')}
                 className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-[15px] transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
                 style={{
                   background: "#673ab7",
@@ -733,6 +736,7 @@ export function Hero() {
                 {content.primaryCtaLabel}
               </HeroCtaLink>
               <HeroCtaLink
+                {...ctaAttrs('outline')}
                 href={secondaryHref}
                 className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-[15px] transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
                 style={{

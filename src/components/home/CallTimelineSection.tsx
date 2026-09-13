@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { ROUTES } from '@/config/navigation';
 import { Link } from "react-router";
+import { ctaAttrs } from "@/components/common/Button";
 import { ArrowRight, Check, Clock, Download, FileText, Mic, Pause, PhoneCall, PhoneIncoming, PhoneMissed, PhoneOutgoing, Play, Search, SlidersHorizontal, Star, Tag, Voicemail, Volume2 } from "lucide-react";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 
@@ -295,7 +296,8 @@ export function CallTimelineMockup() {
           <div className="flex items-center gap-3">
             <button
               type="button"
-              aria-label={playing ? "Tạm dừng ghi âm minh họa" : "Phát ghi âm minh họa"}
+              {...ctaAttrs('primary')}
+aria-label={playing ? "Tạm dừng ghi âm minh họa" : "Phát ghi âm minh họa"}
               className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
               style={{ background: "#673ab7" }}
               onClick={() => setPlaying(!playing)}
@@ -518,6 +520,7 @@ export function CallTimelineSection() {
           </div>
 
           <Link
+                {...ctaAttrs('primary')}
                 to={ROUTES.gcallsPlus}
             className="flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-sm flex-shrink-0 transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
             style={{

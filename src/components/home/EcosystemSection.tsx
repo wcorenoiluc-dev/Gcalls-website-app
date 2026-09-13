@@ -1,6 +1,7 @@
 import { ArrowRight, Bot, Cloud, Headphones, Layers, LifeBuoy, MonitorSmartphone, MousePointerClick, Globe2, ShoppingCart, Sparkles, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Link } from "react-router";
+import { ctaAttrs } from "@/components/common/Button";
 import { ROUTES } from "@/config/navigation";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 
@@ -318,6 +319,7 @@ export function EcosystemSection() {
         {/* Overview CTAs — wayfinding, deliberately untagged for lead attribution. */}
         <div className="mt-14 flex flex-wrap items-center justify-center gap-4">
           <Link
+            {...ctaAttrs('primary')}
             to={ROUTES.products}
             className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
             style={{ background: "#673ab7", color: "#fff", boxShadow: "0 4px 20px rgba(103,58,183,0.30)" }}
@@ -328,6 +330,7 @@ export function EcosystemSection() {
             <ArrowRight size={15} aria-hidden="true" />
           </Link>
           <Link
+            {...ctaAttrs('outline')}
             to={ROUTES.solutions}
             className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
             style={{

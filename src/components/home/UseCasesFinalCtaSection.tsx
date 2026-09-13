@@ -1,5 +1,6 @@
 import { Check, Phone, Sparkles } from "lucide-react";
 import { Link } from "react-router";
+import { ctaAttrs } from "@/components/common/Button";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { remoteUseCases, wfaStats } from "./sectionData";
 import { darkSection } from "@/lib/theme/darkSection";
@@ -195,6 +196,7 @@ export function UseCasesFinalCtaSection() {
 
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                 <Link
+                  {...ctaAttrs('light')}
                   to={leadCtaHref({ intent: 'demo', source: 'consultation' })}
                   className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                   style={{ background: "#fff", color: "#673ab7", boxShadow: "0 4px 24px rgba(0,0,0,0.18)" }}
@@ -204,6 +206,7 @@ export function UseCasesFinalCtaSection() {
                   <Phone size={15} aria-hidden="true" /> Đăng ký demo
                 </Link>
                 <Link
+                  {...ctaAttrs('outline-dark')}
                   to={leadCtaHref({ intent: 'consultation', source: 'consultation' })}
                   className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                   style={{ background: "rgba(255,255,255,0.15)", color: "#fff", border: "1.5px solid rgba(255,255,255,0.28)" }}

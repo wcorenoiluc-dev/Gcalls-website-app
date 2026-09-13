@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router'
+import { CtaLink } from '@/components/common/Button'
 import { ROUTES } from '@/config/navigation'
 
 export function NotFoundPage() {
@@ -25,18 +25,10 @@ export function NotFoundPage() {
           Đường dẫn bạn truy cập không tồn tại hoặc đã được thay đổi.
         </p>
 
-        <Link
-          to={ROUTES.home}
-          className="mt-8 inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[52px] px-7 rounded-xl text-base font-semibold transition-colors duration-150 hover:bg-[#5929a8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#673ab7]"
-          style={{
-            background: '#673ab7',
-            color: '#ffffff',
-            boxShadow: '0 2px 16px rgba(103,58,183,0.28)',
-          }}
-        >
+        <CtaLink variant="primary" size="lg" fullWidth className="mt-8" to={ROUTES.home}>
           Về trang chủ
           <ArrowRight size={18} />
-        </Link>
+        </CtaLink>
       </div>
     </section>
   )

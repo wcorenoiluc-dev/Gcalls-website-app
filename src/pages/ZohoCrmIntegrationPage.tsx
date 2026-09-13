@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { ArrowRight, Compass, Info } from 'lucide-react'
 import { Link } from 'react-router'
+import { CtaLink } from '@/components/common/Button'
 import {
   Card,
   Container,
@@ -375,12 +376,9 @@ export function ZohoCrmIntegrationPage() {
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                to={consultHref}
-                className="inline-flex min-h-12 w-full items-center justify-center rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
-              >
+              <CtaLink variant="primary" fullWidth to={consultHref}>
                 {ZH_TRUST.cta.label}
-              </Link>
+              </CtaLink>
               {ZH_TRUST.links.map((link) => (
                 <Link
                   key={link.path}

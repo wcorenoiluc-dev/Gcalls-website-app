@@ -1,5 +1,4 @@
 import { ArrowRight, Check } from 'lucide-react'
-import { Link } from 'react-router'
 import { Container, Eyebrow, GradientHeading } from '@/components/common/primitives'
 import { ProductVisualWithSupport } from '@/components/common/ProductVisual'
 import { ProductScreenshot } from '@/components/common/ProductScreenshot'
@@ -8,6 +7,7 @@ import { GCALLS_PLUS_IMAGES } from '@/data/productImages'
 import { track } from '@/lib/analytics'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
 import { GP_HERO, GP_LEAD_CONTEXT } from '@/data/gcallsPlus'
+import { CtaLink } from '@/components/common/Button'
 
 /**
  * Page hero. Carries the page's single H1.
@@ -71,8 +71,10 @@ export function GcallsPlusHero() {
             </ul>
 
             <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
-              <Link
+              <CtaLink
                 to={leadCtaHref(GP_LEAD_CONTEXT)}
+                variant="primary"
+                fullWidth
                 onClick={() =>
                   track('cta_clicked', {
                     label: GP_HERO.primaryCta.label,
@@ -81,18 +83,14 @@ export function GcallsPlusHero() {
                     product: GP_LEAD_CONTEXT.product,
                   })
                 }
-                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
               >
                 {GP_HERO.primaryCta.label}
-              </Link>
+              </CtaLink>
 
-              <a
-                href={GP_HERO.secondaryCta.href}
-                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-7 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
-              >
+              <CtaLink to={GP_HERO.secondaryCta.href} variant="outline" fullWidth>
                 {GP_HERO.secondaryCta.label}
                 <ArrowRight size={18} aria-hidden="true" />
-              </a>
+              </CtaLink>
             </div>
           </div>
 

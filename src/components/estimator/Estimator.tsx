@@ -16,6 +16,7 @@ import { ProductSelector } from './ProductSelector'
 import { RequirementsForm } from './RequirementsForm'
 import { EstimatorResult } from './EstimatorResult'
 import { QuoteRequestForm } from './QuoteRequestForm'
+import { CtaButton } from '@/components/common/Button'
 
 /**
  * Step-driven estimator.
@@ -191,25 +192,17 @@ export function Estimator() {
   const navButtons = (
     <div className="mt-8 flex flex-col gap-3 sm:flex-row-reverse sm:justify-end">
       {step < 4 && (
-        <button
-          type="button"
-          onClick={goNext}
-          className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
-        >
+        <CtaButton onClick={goNext} variant="primary" fullWidth>
           Tiếp tục
           <ArrowRight size={18} aria-hidden="true" />
-        </button>
+        </CtaButton>
       )}
 
       {step > 1 && (
-        <button
-          type="button"
-          onClick={goBack}
-          className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-7 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
-        >
+        <CtaButton onClick={goBack} variant="outline" fullWidth>
           <ArrowLeft size={18} aria-hidden="true" />
           Quay lại
-        </button>
+        </CtaButton>
       )}
 
       {step === 4 && (

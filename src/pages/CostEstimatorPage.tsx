@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { ArrowRight, Calculator, Info, ListChecks, Sparkles } from 'lucide-react'
-import { Link } from 'react-router'
+import { CtaLink } from '@/components/common/Button'
 import {
   Card,
   Container,
@@ -121,21 +121,15 @@ export function CostEstimatorPage() {
             </p>
 
             <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
-              <a
-                href="#estimator"
-                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
-              >
+              <CtaLink variant="primary" fullWidth to="#estimator">
                 <Sparkles size={18} aria-hidden="true" />
                 Bắt đầu ước tính
-              </a>
+              </CtaLink>
 
-              <Link
-                to={ROUTES.pricing}
-                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] border-2 border-brand bg-background px-7 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto"
-              >
+              <CtaLink variant="outline" fullWidth to={ROUTES.pricing}>
                 Xem bảng giá
                 <ArrowRight size={18} aria-hidden="true" />
-              </Link>
+              </CtaLink>
             </div>
 
             {/* Direct-answer paragraph — approved copy, verbatim. */}

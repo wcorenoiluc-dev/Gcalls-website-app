@@ -16,6 +16,7 @@ import type { Crumb } from '@/components/layout/Breadcrumb'
 import { SITE_ORIGIN } from '@/config/seo'
 import { leadAwareHref, leadCtaHref } from '@/lib/leads/ctaLink'
 import type { HubContent } from '@/data/hubs'
+import { CtaLink } from '@/components/common/Button'
 
 /**
  * Shared layout for the six navigation hubs.
@@ -83,19 +84,13 @@ export function HubLayout({
           </p>
 
           <div className="mt-8 flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row">
-            <Link
-              to={leadHref}
-              className="inline-flex min-h-12 items-center justify-center rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-            >
+            <CtaLink to={leadHref} variant="primary">
               {content.hero.primaryCta.label}
-            </Link>
-            <Link
-              to={content.hero.secondaryCta.path}
-              className="inline-flex min-h-12 items-center justify-center gap-1.5 rounded-[10px] border border-brand-border bg-background px-7 text-base font-semibold text-brand transition-colors duration-150 hover:bg-brand-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-            >
+            </CtaLink>
+            <CtaLink to={content.hero.secondaryCta.path} variant="outline">
               {content.hero.secondaryCta.label}
               <ArrowRight size={16} aria-hidden="true" />
-            </Link>
+            </CtaLink>
           </div>
         </Container>
       </section>

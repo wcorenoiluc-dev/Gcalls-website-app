@@ -1,5 +1,5 @@
 import { ArrowRight, Check } from 'lucide-react'
-import { Link } from 'react-router'
+import { CtaLink } from '@/components/common/Button'
 import { Card } from '@/components/common/primitives'
 import { RouteShell } from '@/components/layout/RouteShell'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
@@ -82,13 +82,15 @@ export function ReferralPage() {
             tiếp với đội ngũ Gcalls theo từng trường hợp.
           </p>
 
-          <Link
+          <CtaLink
+            variant="primary"
+            fullWidth
             to={leadCtaHref(REFERRAL_LEAD)}
-            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:w-auto sm:self-start"
+            className="sm:self-start"
           >
             Trở thành đối tác giới thiệu Gcalls
             <ArrowRight size={18} aria-hidden="true" />
-          </Link>
+          </CtaLink>
         </Card>
       </div>
     </RouteShell>

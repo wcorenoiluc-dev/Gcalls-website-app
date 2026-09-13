@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ctaAttrs } from '@/components/common/Button'
 import { Activity, Briefcase, Building2, Check, ExternalLink, FileText, Filter, HeadphonesIcon, Mail, MoreHorizontal, Phone, PhoneCall, PhoneIncoming, PhoneOutgoing, Plug, Plus, Search, ShieldCheck, Tag, Users } from "lucide-react";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
 
@@ -144,7 +145,7 @@ export function CRMMockup() {
               <button type="button" aria-label="Lọc danh bạ" className="w-5 h-5 rounded-md flex items-center justify-center" style={{ background: "#f0ecf9" }}>
                 <Filter size={10} color="#673ab7" aria-hidden="true" />
               </button>
-              <button type="button" aria-label="Thêm liên hệ" className="w-5 h-5 rounded-md flex items-center justify-center" style={{ background: "#673ab7" }}>
+              <button type="button" {...ctaAttrs('primary')} aria-label="Thêm liên hệ" className="w-5 h-5 rounded-md flex items-center justify-center" style={{ background: "#673ab7" }}>
                 <Plus size={10} color="#fff" aria-hidden="true" />
               </button>
             </div>

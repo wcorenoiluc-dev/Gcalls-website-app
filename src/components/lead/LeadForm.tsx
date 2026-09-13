@@ -19,6 +19,7 @@ import {
   type LeadFormVariant,
   LEAD_NEEDS,
 } from '@/lib/leads'
+import { CtaButton } from '@/components/common/Button'
 
 /**
  * The site's single lead form.
@@ -460,15 +461,18 @@ export function LeadForm({
           </p>
         )}
 
-        <button
+        <CtaButton
           type="submit"
+          variant="primary"
+          size="lg"
+          fullWidth
+          className="sm:self-start"
           disabled={submitting}
           aria-busy={submitting}
-          className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[10px] bg-brand px-7 text-base font-semibold text-white shadow-[0_2px_16px_rgba(103,58,183,0.28)] transition-colors duration-150 hover:bg-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand disabled:opacity-60 sm:w-auto sm:self-start"
         >
           <Send size={17} aria-hidden="true" />
           {submitting ? 'Đang gửi...' : headings.title}
-        </button>
+        </CtaButton>
 
         <p className="text-sm leading-relaxed text-muted-foreground">
           Thông tin được sử dụng để Gcalls liên hệ và tư vấn theo yêu cầu của bạn.
