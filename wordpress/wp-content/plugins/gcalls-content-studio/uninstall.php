@@ -1,25 +1,46 @@
 <?php
 /**
- * Uninstall.
- *
- * Runs only when the plugin is DELETED from the admin, never on deactivation.
- *
- * WHAT IS REMOVED: this plugin's own setting (the public-base-URL option).
- *
- * WHAT IS KEPT: every `gcalls_content` post, its meta and its revisions —
- * that is the site's edited content. There is no setting that opts into
- * deleting it, so uninstalling never can, deliberately: the same content is
- * what `gcalls_content_studio_version()`-unaware code (React Shell, or the
- * REST API directly) keeps reading regardless of whether this admin UI is
- * still installed, and losing it because someone removed an *editor* would
- * be a data-loss surprise, not cleanup.
- *
- * Deactivating and later reactivating this plugin is unaffected either way
- * — deactivation runs none of this plugin's code at all.
+ * Uninstall: content records, revisions and the audit log are KEPT by default
+ * so an accidental "Delete" in the plugin list cannot erase published copy.
+ * Define `GCALLS_CS_UNINSTALL_PURGE` as true in wp-config.php before deleting
+ * the plugin to remove everything.
  *
  * @package Gcalls\ContentStudio
  */
 
-defined( 'WP_UNINSTALL_PLUGIN' ) || exit;
+declare( strict_types = 1 );
+
+if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
+	exit;
+}
+
+if ( ! defined( 'GCALLS_CS_UNINSTALL_PURGE' ) || true !== GCALLS_CS_UNINSTALL_PURGE ) {
+	return;
+}
+
+foreach ( array( 'gcalls_content', 'gcalls_cs_audit' ) as $post_type ) {
+	$posts = get_posts(
+		array(
+			'post_type'        => $post_type,
+			'post_status'      => 'any',
+			'numberposts'      => -1,
+			'fields'           => 'ids',
+			'suppress_filters' => true,
+		)
+	);
+	foreach ( $posts as $post_id ) {
+		wp_delete_post( (int) $post_id, true );
+	}
+}
 
 delete_option( 'gcalls_cs_public_base_url' );
+delete_option( 'gcalls_cs_pilot_mode' );
+
+foreach ( array( 'administrator', 'editor' ) as $role_name ) {
+	$role = get_role( $role_name );
+	if ( $role ) {
+		$role->remove_cap( 'edit_gcalls_content' );
+		$role->remove_cap( 'publish_gcalls_content' );
+		$role->remove_cap( 'manage_gcalls_content' );
+	}
+}

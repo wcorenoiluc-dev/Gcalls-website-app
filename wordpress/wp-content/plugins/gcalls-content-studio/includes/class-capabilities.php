@@ -1,10 +1,12 @@
 <?php
 /**
- * Two dedicated capabilities, granted to administrator and editor on
- * activation. Every permission check in this plugin — REST, admin menu,
- * preview — goes through current_user_can() against these, never through a
- * role-name string comparison, so a site owner can later re-grant them to a
- * different role without touching code.
+ * Three dedicated capabilities. Every permission check in this plugin — REST,
+ * admin menu, preview, settings — goes through current_user_can() against
+ * these, never through a role-name comparison, so a site owner can re-grant
+ * them to a different role without touching code.
+ *
+ * Pilot defaults: administrator gets all three; editor may edit drafts but
+ * not publish; every other role has no access.
  *
  * @package Gcalls\ContentStudio
  */
@@ -18,25 +20,33 @@ defined( 'ABSPATH' ) || exit;
 class Capabilities {
 
 	public function __construct() {
-		// Re-grant on every plugin update too, in case a site owner runs an
-		// older DB dump forward — cheap idempotent calls, no-op if present.
 		add_action( 'admin_init', array( $this, 'grant_default_roles' ) );
 	}
 
 	public function grant_default_roles(): void {
 		$administrator = get_role( 'administrator' );
-		if ( $administrator && ! $administrator->has_cap( CAP_EDIT ) ) {
-			$administrator->add_cap( CAP_EDIT );
-			$administrator->add_cap( CAP_PUBLISH );
+		if ( $administrator ) {
+			foreach ( array( CAP_EDIT, CAP_PUBLISH, CAP_MANAGE ) as $cap ) {
+				if ( ! $administrator->has_cap( $cap ) ) {
+					$administrator->add_cap( $cap );
+				}
+			}
 		}
 
 		$editor = get_role( 'editor' );
-		if ( $editor && ! $editor->has_cap( CAP_EDIT ) ) {
-			$editor->add_cap( CAP_EDIT );
-			$editor->add_cap( CAP_PUBLISH );
+		if ( $editor ) {
+			if ( ! $editor->has_cap( CAP_EDIT ) ) {
+				$editor->add_cap( CAP_EDIT );
+			}
+			// Pilot: editors do not publish. A 0.1.0 install granted this;
+			// revoke it so the pilot policy holds on upgraded sites too.
+			if ( $editor->has_cap( CAP_PUBLISH ) ) {
+				$editor->remove_cap( CAP_PUBLISH );
+			}
+			if ( $editor->has_cap( CAP_MANAGE ) ) {
+				$editor->remove_cap( CAP_MANAGE );
+			}
 		}
-		// Every other role: no access by default. Nothing to do — WordPress
-		// roles start without these capabilities.
 	}
 
 	public static function can_edit(): bool {
@@ -45,5 +55,9 @@ class Capabilities {
 
 	public static function can_publish(): bool {
 		return current_user_can( CAP_PUBLISH );
+	}
+
+	public static function can_manage(): bool {
+		return current_user_can( CAP_MANAGE );
 	}
 }

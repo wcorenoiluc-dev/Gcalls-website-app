@@ -1,13 +1,13 @@
 <?php
 /**
- * The `gcalls_content` post type: one post per React route.
+ * The `gcalls_content` post type: one post per React route key.
  *
  * `post_content` holds the *published* JSON for the whole route (every
- * section, keyed by section slug) — deliberately, so WordPress's native
- * revision system (declared via `supports => revisions`) tracks every
- * publish as a real revision for free, with no hand-rolled history table.
- * `post_meta` holds the separate in-progress draft, which is why "Save
- * Draft" never disturbs the published version or its revision trail.
+ * section keyed by section key) so WordPress's native revision system tracks
+ * every publish as a real revision. Post meta holds the separate in-progress
+ * draft, the record version (optimistic lock), the audit-relevant who/when
+ * fields and the SEO fallback. Nothing here is public, queryable, or given a
+ * frontend URL.
  *
  * @package Gcalls\ContentStudio
  */
@@ -20,10 +20,15 @@ defined( 'ABSPATH' ) || exit;
 
 class Cpt {
 
-	public const META_DRAFT             = '_gcalls_draft_json';
-	public const META_SCHEMA_VERSION    = '_gcalls_schema_version';
-	public const META_PUBLISHED_REV     = '_gcalls_published_revision';
-	public const META_LAST_EDITOR       = '_gcalls_last_editor';
+	public const META_DRAFT          = '_gcalls_draft_json';
+	public const META_SCHEMA_VERSION = '_gcalls_schema_version';
+	public const META_VERSION        = '_gcalls_version';
+	public const META_PUBLISHED_REV  = '_gcalls_published_revision';
+	public const META_UPDATED_BY     = '_gcalls_updated_by';
+	public const META_UPDATED_AT     = '_gcalls_updated_at';
+	public const META_PUBLISHED_BY   = '_gcalls_published_by';
+	public const META_PUBLISHED_AT   = '_gcalls_published_at';
+	public const META_SEO            = '_gcalls_seo_json';
 
 	public function __construct() {
 		add_action( 'init', array( $this, 'register' ) );
@@ -36,9 +41,9 @@ class Cpt {
 				'label'               => 'Gcalls Content',
 				'public'              => false,
 				'publicly_queryable'  => false,
-				'show_ui'             => false, // Custom admin screens own the UI, not the default post-list table.
+				'show_ui'             => false,
 				'show_in_menu'        => false,
-				'show_in_rest'        => false, // This plugin's own REST controller replaces the default one.
+				'show_in_rest'        => false,
 				'exclude_from_search' => true,
 				'has_archive'         => false,
 				'rewrite'             => false,
@@ -62,35 +67,44 @@ class Cpt {
 		);
 	}
 
-	/** Finds (or, once, creates) the single content record for a route. */
+	/** Finds (or, once, creates) the single content record for a route key. */
 	public function get_or_create( string $route ): int {
-		$existing = get_page_by_path( $route, OBJECT, CPT );
-		if ( $existing instanceof \WP_Post ) {
+		$existing = $this->find( $route );
+		if ( $existing ) {
 			return $existing->ID;
 		}
 
-		$route_meta = Schema::routes()[ $route ] ?? null;
-		$post_id    = wp_insert_post(
+		$post_id = wp_insert_post(
 			array(
 				'post_type'    => CPT,
 				'post_status'  => 'publish',
-				'post_title'   => $route_meta['label'] ?? $route,
+				'post_title'   => Manifest::route_label( $route ),
 				'post_name'    => $route,
-				'post_content' => wp_json_encode( array() ),
+				'post_content' => wp_json_encode( array( 'sections' => array() ) ),
 			),
 			true
 		);
 
-		if ( is_wp_error( $post_id ) ) {
+		if ( is_wp_error( $post_id ) || ! is_int( $post_id ) || 0 === $post_id ) {
 			return 0;
 		}
 
 		update_post_meta( $post_id, self::META_SCHEMA_VERSION, SCHEMA_VERSION );
+		update_post_meta( $post_id, self::META_VERSION, 0 );
 		return $post_id;
 	}
 
 	public function find( string $route ): ?\WP_Post {
-		$post = get_page_by_path( $route, OBJECT, CPT );
+		$posts = get_posts(
+			array(
+				'post_type'        => CPT,
+				'name'             => $route,
+				'post_status'      => 'any',
+				'numberposts'      => 1,
+				'suppress_filters' => true,
+			)
+		);
+		$post = $posts[0] ?? null;
 		return $post instanceof \WP_Post ? $post : null;
 	}
 }
