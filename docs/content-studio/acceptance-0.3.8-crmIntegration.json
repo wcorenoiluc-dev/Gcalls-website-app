@@ -1,0 +1,133 @@
+{
+  "base": "http://127.0.0.1:9491",
+  "results": [
+    {
+      "n": 5,
+      "name": "Activate without fatal",
+      "pass": true,
+      "detail": "already-active: gcalls-react-shell/gcalls-react-shell.php | already-active: gcalls-content-studio/gcalls-content-studio.php"
+    },
+    {
+      "n": 6,
+      "name": "Admin menu shows Gcalls Content Studio",
+      "pass": true,
+      "detail": "slug=gcalls-content-studio"
+    },
+    {
+      "n": 7,
+      "name": "Manifest lists 38 routes in routes.json order",
+      "pass": true,
+      "detail": "38 pages"
+    },
+    {
+      "n": 8,
+      "name": "Only pages 01–05 editable",
+      "pass": true,
+      "detail": "home,products,gcallsPlus,qcCenter,gcallsCx,voicebotAi,solutions,crmIntegration,helpdeskIntegration"
+    },
+    {
+      "n": 9,
+      "name": "Draft never reaches public",
+      "pass": true,
+      "detail": "draft=200"
+    },
+    {
+      "n": 10,
+      "name": "Preview updates while typing (postMessage)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "n": 11,
+      "name": "Preview renders a Media Library image",
+      "pass": true,
+      "detail": "n/a — this route has no image field in its hero (covered on home)"
+    },
+    {
+      "n": 12,
+      "name": "Desktop/Tablet/Mobile preview widths",
+      "pass": true,
+      "detail": "{\"Desktop\":1440,\"Tablet\":768,\"Mobile\":390}"
+    },
+    {
+      "n": 22,
+      "name": "Preview: no duplicate header/footer, no theme CSS",
+      "pass": true,
+      "detail": "{\"headers\":1,\"footers\":1,\"broken\":0,\"themeCss\":0,\"robots\":\"noindex, nofollow\"}"
+    },
+    {
+      "n": 23,
+      "name": "Preview: no broken images",
+      "pass": true,
+      "detail": "broken=0"
+    },
+    {
+      "n": 24,
+      "name": "No severe layout shift on public page",
+      "pass": true,
+      "detail": "CLS=0.000"
+    },
+    {
+      "n": 13,
+      "name": "Publish changes the live route payload",
+      "pass": true,
+      "detail": "status=200"
+    },
+    {
+      "n": 14,
+      "name": "Hard refresh still shows published content",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "n": 15,
+      "name": "Restore revision republishes the older content",
+      "pass": true,
+      "detail": "revisions=5 single=200 restore=200 afterHasOld=true afterHasNew=false"
+    },
+    {
+      "n": 16,
+      "name": "Deactivated plugin ⇒ React defaults, page still renders",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "n": 17,
+      "name": "Reactivated plugin keeps saved content",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "n": 18,
+      "name": "Subscriber 403; Editor may draft but not publish",
+      "pass": true,
+      "detail": "sub=403/403 editor=200/403"
+    },
+    {
+      "n": 19,
+      "name": "Wrong nonce ⇒ 403",
+      "pass": true,
+      "detail": "status=403"
+    },
+    {
+      "n": 20,
+      "name": "Invalid route/section rejected (incl. review-only page)",
+      "pass": true,
+      "detail": "400/400/403"
+    },
+    {
+      "n": 21,
+      "name": "XSS payloads sanitized; javascript: URL and blocked image refused",
+      "pass": true,
+      "detail": "status=422 heading=\"\""
+    },
+    {
+      "n": 25,
+      "name": "Header + CTA audits on all routes (fixture)",
+      "pass": true,
+      "detail": "skipped (--skip-audits; use the previous full run)"
+    }
+  ],
+  "pageErrors": [],
+  "unsavedGuard": false
+}
