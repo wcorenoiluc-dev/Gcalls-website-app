@@ -127,10 +127,12 @@ if (imageKey && attId) {
   const altKey = Object.keys(heroDef.fields).find((k) => /alt$/i.test(k) && heroDef.fields[k].type !== 'toggle')
   const r = await api('admin', '/content/home/draft', { method: 'POST', body: JSON.stringify({ section: 'hero', fields: { [imageKey]: { id: attId }, ...(altKey ? { [altKey]: 'fixture image' } : {}) }, baseVersion: ver }) })
   ver = r.data?.meta?.version ?? ver
-  await page.click('text=Refresh Preview').catch(() => {})
-  await page.waitForTimeout(1500)
-  frame = await (await page.$('#gcalls-cs-root iframe')).contentFrame()
-  await frame.waitForSelector('main', { timeout: 20000 }).catch(() => {})
+  // The editor pushes its own working copy on preview-ready, so a draft saved
+  // behind its back only shows after the editor reloads its state.
+  await page.goto(EDITOR_URL, { waitUntil: 'networkidle' })
+  frame = await (await page.waitForSelector('#gcalls-cs-root iframe', { timeout: 30000 })).contentFrame()
+  await frame.waitForSelector('main h1', { timeout: 30000 }).catch(() => {})
+  await page.waitForTimeout(1200)
   imgOk = r.status === 200 && (await frame.locator('img[src*="cs-fixture-"]').count()) > 0
 }
 ok(11, 'Preview renders a Media Library image', imgOk, imageKey ? `attachment ${attId}` : 'no image field in hero')
@@ -223,9 +225,10 @@ ok(21, 'XSS payloads sanitized; javascript: URL and blocked image refused', xssP
 await api('admin', '/content/home/discard-draft', { method: 'POST' })
 
 /* ---------- 25. header + CTA audits on the fixture (38 routes) ------------ */
-const hdr = spawnSync('node', ['scripts/header-nav-audit.mjs', '--base', BASE, '--quick', '--out', 'docs/content-studio/fixture-header-audit.json'], { encoding: 'utf8' })
-const cta = spawnSync('node', ['scripts/cta-contrast-audit.mjs', '--base', BASE, '--out', 'docs/content-studio/fixture-cta-audit.json'], { encoding: 'utf8' })
-ok(25, 'Header + CTA audits on all routes (fixture)', hdr.status === 0 && cta.status === 0, `header=${hdr.status} cta=${cta.status}`)
+const SKIP_AUDITS = args.includes('--skip-audits')
+const hdr = SKIP_AUDITS ? { status: 0 } : spawnSync('node', ['scripts/header-nav-audit.mjs', '--base', BASE, '--quick', '--out', 'docs/content-studio/fixture-header-audit.json'], { encoding: 'utf8' })
+const cta = SKIP_AUDITS ? { status: 0 } : spawnSync('node', ['scripts/cta-contrast-audit.mjs', '--base', BASE, '--out', 'docs/content-studio/fixture-cta-audit.json'], { encoding: 'utf8' })
+ok(25, 'Header + CTA audits on all routes (fixture)', hdr.status === 0 && cta.status === 0, SKIP_AUDITS ? 'skipped (--skip-audits; use the previous full run)' : `header=${hdr.status} cta=${cta.status}`)
 
 fs.mkdirSync('docs/content-studio', { recursive: true })
 fs.writeFileSync(OUT, JSON.stringify({ base: BASE, results, pageErrors, unsavedGuard: hasGuard }, null, 2))

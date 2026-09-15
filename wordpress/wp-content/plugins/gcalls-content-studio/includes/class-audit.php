@@ -41,15 +41,17 @@ class Audit {
 				'supports'            => array( 'title' ),
 				'capability_type'     => array( 'gcalls_content_item', 'gcalls_content_items' ),
 				'map_meta_cap'        => true,
+				// Primitive caps only. Never alias edit_post/read_post/delete_post to these
+				// names: WordPress would register them as META caps that need a post ID and
+				// current_user_can( 'edit_gcalls_content' ) would always be denied.
 				'capabilities'        => array(
-					'edit_post'          => CAP_MANAGE,
-					'read_post'          => CAP_EDIT,
-					'delete_post'        => CAP_MANAGE,
 					'edit_posts'         => CAP_MANAGE,
 					'edit_others_posts'  => CAP_MANAGE,
 					'publish_posts'      => CAP_MANAGE,
 					'read_private_posts' => CAP_EDIT,
 					'delete_posts'       => CAP_MANAGE,
+					'delete_others_posts' => CAP_MANAGE,
+					'create_posts'       => CAP_MANAGE,
 				),
 			)
 		);

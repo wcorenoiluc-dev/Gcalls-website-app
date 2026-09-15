@@ -576,7 +576,7 @@
 	function renderField( section, name, field, values, readOnly, path, onChange ) {
 		var value = values[ name ];
 		var id = uid( 'f' );
-		var wrap = h( 'div', { class: 'gcs-field gcs-field--' + field.type } );
+		var wrap = h( 'div', { class: 'gcs-field gcs-field--' + field.type, dataset: { field: Array.isArray( path ) ? path.filter( function ( _, i ) { return i > 0; } ).join( '.' ) : ( path || name ), section: section } } );
 		var labelText = field.label || name;
 		var isToggle = 'toggle' === field.type || 'decorative' === field.type;
 		if ( ! isToggle ) {
@@ -1144,7 +1144,9 @@
 		var wrap = h( 'div', { class: 'gcs-preview__frame-wrap' } );
 		frame = h( 'iframe', { class: 'gcs-preview__frame', title: 'Xem trước website', sandbox: 'allow-scripts allow-same-origin allow-forms allow-popups' } );
 		frame.addEventListener( 'load', function () {
-			previewStatus.textContent = 'Preview sẵn sàng.';
+			if ( previewStatus ) {
+				previewStatus.textContent = 'Preview sẵn sàng.';
+			}
 			state.previewReady = false; // React announces readiness itself
 			setTimeout( function () { sendUpdate( state.section ); }, 50 );
 		} );

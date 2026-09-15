@@ -98,7 +98,7 @@
 .gcs-preview__viewports, .gcs-preview__tools { display: flex; gap: 4px; flex-wrap: wrap; }
 .gcs-preview__viewports .is-active { background: var(--gcs-brand); border-color: var(--gcs-brand); color: #fff; }
 .gcs-preview__frame-wrap { flex: 1; overflow: auto; background: #ececf1; padding: 10px; min-height: 480px; }
-.gcs-preview__frame { display: block; height: calc(100vh - 220px); min-height: 460px; max-width: 100%; border: 0; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.12); margin: 0 auto; }
+.gcs-preview__frame { display: block; height: calc(100vh - 220px); min-height: 460px; max-width: none; border: 0; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.12); margin: 0 auto; }
 .gcs-preview__status { padding: 6px 10px; color: var(--gcs-muted); font-size: 11px; border-top: 1px solid var(--gcs-line); }
 
 /* modal */
