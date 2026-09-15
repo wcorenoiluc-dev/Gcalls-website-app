@@ -119,11 +119,13 @@ for (const w of WIDTHS) {
   const ctx = await browser.newContext({ viewport: { width: w, height: 900 } })
   const page = await ctx.newPage()
   await page.goto(BASE + ROUTE, { waitUntil: 'networkidle' })
+  await page.waitForSelector('main h1', { timeout: 15000 }).catch(() => {})
   await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 700) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 40)) } window.scrollTo(0, 0) })
   await page.waitForTimeout(300)
   const r = await page.evaluate(inspect)
   results.viewports[w] = r
   if (r.h1 !== 1) fail(scope, `h1 count ${r.h1}`)
+  if (r.headings.length === 0) fail(scope, 'no headings found in main (page did not render)')
   if (r.overflow > 0) fail(scope, `horizontal overflow ${r.overflow}px`)
   if (r.broken.length) fail(scope, `broken images ${r.broken.join(', ')}`)
   if (r.cards.length) fail(scope, `cards clipped: ${r.cards.join(' | ')}`)

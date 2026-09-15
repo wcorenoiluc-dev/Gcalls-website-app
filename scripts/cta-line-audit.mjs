@@ -101,9 +101,11 @@ for (const w of WIDTHS) {
   const ctx = await browser.newContext({ viewport: { width: w, height: 900 } })
   const page = await ctx.newPage()
   await page.goto(BASE + ROUTE, { waitUntil: 'networkidle' })
+  await page.waitForSelector('main [data-gcalls-button]', { timeout: 15000 }).catch(() => {})
   await page.waitForTimeout(300)
   const r = await page.evaluate(inspect)
   results.viewports[w] = r
+  if (r.ctas.length === 0) fail(scope, 'no CTA found in main (page did not render)')
   if (r.overflow > 0) fail(scope, `horizontal overflow ${r.overflow}px`)
   for (const c of r.ctas.filter((x) => x.visible)) {
     ctaTotal++
