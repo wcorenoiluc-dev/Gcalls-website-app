@@ -83,8 +83,8 @@ class Preview {
 		header( 'X-Robots-Tag: noindex, nofollow' );
 		header( 'Content-Type: text/html; charset=UTF-8' );
 
-		$route    = isset( $_GET['route'] ) ? sanitize_key( wp_unslash( (string) $_GET['route'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$section  = isset( $_GET['section'] ) ? sanitize_key( wp_unslash( (string) $_GET['section'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$route    = isset( $_GET['route'] ) ? sanitize_content_key( wp_unslash( (string) $_GET['route'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$section  = isset( $_GET['section'] ) ? sanitize_content_key( wp_unslash( (string) $_GET['section'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		$nonce    = isset( $_GET['_wpnonce'] ) ? (string) wp_unslash( $_GET['_wpnonce'] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		$revision = isset( $_GET['revision'] ) ? absint( wp_unslash( $_GET['revision'] ) ) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 

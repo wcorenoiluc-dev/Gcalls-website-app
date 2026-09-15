@@ -49,6 +49,16 @@ define( 'GCALLS_CS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'GCALLS_CS_URL', plugin_dir_url( __FILE__ ) );
 
 require_once GCALLS_CS_DIR . 'includes/class-manifest.php';
+/**
+ * Route/section keys are camelCase (routes.json: `voicebotAi`, manifest
+ * sections: `directAnswer`). WordPress's sanitize_key() lower-cases its input,
+ * which silently turned every such key into an unknown one (preview 400,
+ * draft save 400). This keeps case and strips everything else.
+ */
+function sanitize_content_key( string $value ): string {
+	return substr( (string) preg_replace( '/[^A-Za-z0-9_-]/', '', $value ), 0, 100 );
+}
+
 require_once GCALLS_CS_DIR . 'includes/class-schema.php';
 require_once GCALLS_CS_DIR . 'includes/class-capabilities.php';
 require_once GCALLS_CS_DIR . 'includes/class-cpt.php';

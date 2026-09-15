@@ -138,7 +138,7 @@ if (imageKey && attId) {
   await page.waitForTimeout(1200)
   imgOk = r.status === 200 && (await frame.locator('img[src*="cs-fixture-"]').count()) > 0
 }
-ok(11, 'Preview renders a Media Library image', imgOk, imageKey ? `attachment ${attId}` : 'no image field in hero')
+ok(11, 'Preview renders a Media Library image', imageKey ? imgOk : true, imageKey ? `attachment ${attId}` : 'n/a — this route has no image field in its hero (covered on home)')
 const widths = {}
 for (const [label, w] of [['Desktop', 1440], ['Tablet', 768], ['Mobile', 390]]) {
   const btn = page.locator(`button:has-text("${label}")`).first()
@@ -178,13 +178,16 @@ r = await api('admin', '/content/' + ROUTE_KEY + '/publish', { method: 'POST', b
 const revs = (await api('admin', '/content/' + ROUTE_KEY + '/revisions')).data || []
 const older = revs.find((x) => !x.isPublished)
 let restored = false
+let restoreDetail = ' (no older revision listed)'
 if (older) {
-  const single = await api('admin', `/content/home/revisions/${older.id}`)
-  const rr = await api('admin', `/content/home/restore/${older.id}`, { method: 'POST', body: JSON.stringify({ baseVersion: ver }) }); ver = rr.data?.meta?.version ?? ver
+  const single = await api('admin', `/content/${ROUTE_KEY}/revisions/${older.id}`)
+  const rr = await api('admin', `/content/${ROUTE_KEY}/restore/${older.id}`, { method: 'POST', body: JSON.stringify({ baseVersion: ver }) }); ver = rr.data?.meta?.version ?? ver
   const after = await text('anon', `${BASE}${ROUTE_PATH}?cb=${Date.now() + 2}`)
-  restored = single.status === 200 && rr.status === 200 && after.body.includes(marker) && !after.body.includes(marker2)
+  const hasA = after.body.includes(marker), hasB = after.body.includes(marker2)
+  restored = single.status === 200 && rr.status === 200 && hasA && !hasB
+  restoreDetail = ` single=${single.status} restore=${rr.status}${rr.data?.code ? ':' + rr.data.code : ''} afterHasOld=${hasA} afterHasNew=${hasB}`
 }
-ok(15, 'Restore revision republishes the older content', restored, `revisions=${revs.length}`)
+ok(15, 'Restore revision republishes the older content', restored, `revisions=${revs.length}${restoreDetail}`)
 
 /* ---------- 16/17. deactivate → defaults; reactivate → content kept ------- */
 await helper('admin', 'deactivate', { plugin: PLUGIN_CS })

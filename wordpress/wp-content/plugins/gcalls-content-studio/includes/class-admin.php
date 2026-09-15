@@ -189,7 +189,7 @@ class Admin {
 	public function render_revisions_page(): void {
 		$this->guard( CAP_EDIT );
 		$pages = Manifest::pages();
-		$route = isset( $_GET['route'] ) ? sanitize_key( wp_unslash( (string) $_GET['route'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$route = isset( $_GET['route'] ) ? sanitize_content_key( wp_unslash( (string) $_GET['route'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		if ( ! isset( $pages[ $route ] ) ) {
 			$route = (string) ( array_key_first( $pages ) ?? '' );
 		}

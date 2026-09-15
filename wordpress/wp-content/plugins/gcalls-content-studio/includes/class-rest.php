@@ -203,7 +203,7 @@ class Rest {
 			return $err;
 		}
 		$body    = $request->get_json_params();
-		$section = isset( $body['section'] ) ? sanitize_key( (string) $body['section'] ) : '';
+		$section = isset( $body['section'] ) ? sanitize_content_key( (string) $body['section'] ) : '';
 		$fields  = is_array( $body['fields'] ?? null ) ? $body['fields'] : array();
 
 		if ( ! Manifest::section_exists( $route, $section ) ) {
@@ -270,7 +270,7 @@ class Rest {
 			return $err;
 		}
 		$body    = $request->get_json_params();
-		$section = isset( $body['section'] ) ? sanitize_key( (string) $body['section'] ) : '';
+		$section = isset( $body['section'] ) ? sanitize_content_key( (string) $body['section'] ) : '';
 		if ( ! Manifest::section_exists( $route, $section ) ) {
 			return new \WP_Error( 'gcalls_cs_unknown_section', 'Unknown route/section.', array( 'status' => 400 ) );
 		}
@@ -354,7 +354,7 @@ class Rest {
 	}
 
 	public function audit( \WP_REST_Request $request ): \WP_REST_Response {
-		$route = sanitize_key( (string) $request->get_param( 'route' ) );
+		$route = sanitize_content_key( (string) $request->get_param( 'route' ) );
 		$limit = (int) ( $request->get_param( 'limit' ) ?: 50 );
 		return $this->no_cache_no_index( new \WP_REST_Response( Audit::query( $route, $limit ), 200 ) );
 	}
