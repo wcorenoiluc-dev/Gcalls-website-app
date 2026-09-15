@@ -326,7 +326,7 @@ export const SOLUTIONS_HUB: HubContent = {
         cta: 'Xem tổng đài quốc tế',
       },
     ],
-    note: 'Các giải pháp trên đều triển khai cùng lớp nghe gọi của Gcalls. Phạm vi dữ liệu, khả năng kết nối và điều kiện triển khai được Gcalls xác nhận theo hệ thống và thị trường thực tế của doanh nghiệp.',
+    note: 'Phạm vi dữ liệu, khả năng kết nối và điều kiện triển khai được Gcalls xác nhận theo hệ thống và thị trường thực tế của doanh nghiệp.',
   },
   decisionGuide: {
     eyebrow: 'BÀI TOÁN → GIẢI PHÁP',

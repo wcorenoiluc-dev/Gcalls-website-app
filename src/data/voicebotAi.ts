@@ -77,9 +77,9 @@ export const VB_HERO = {
   h1: 'Tự động hóa các cuộc gọi lặp lại bằng Voicebot AI',
   description:
     'Gcalls giúp doanh nghiệp triển khai Voicebot cho các tác vụ như nhắc lịch, xác nhận thông tin, sàng lọc nhu cầu và xử lý bước đầu ngoài giờ — để đội ngũ tập trung vào những tương tác cần chuyên môn và sự thấu hiểu của con người.',
-  primaryCta: { label: 'Đăng ký tư vấn Voicebot' },
+  primaryCta: { label: 'Tư vấn Voicebot' },
   secondaryCta: {
-    label: 'Khám phá tình huống ứng dụng',
+    label: 'Xem tình huống ứng dụng',
     href: '#tinh-huong-ung-dung',
   },
   microcopy:

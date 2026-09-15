@@ -95,9 +95,9 @@ export const HD_HERO = {
         'Dữ liệu cuộc gọi phù hợp có thể được ghi nhận cùng workflow Helpdesk để đội ngũ tiếp tục xử lý thuận tiện hơn.',
     },
   ],
-  primaryCta: { label: 'Tư vấn tích hợp Helpdesk' },
+  primaryCta: { label: 'Tư vấn Helpdesk' },
   secondaryCta: {
-    label: 'Khám phá cách tích hợp hoạt động',
+    label: 'Xem cách tích hợp',
     href: '#cach-hoat-dong',
   },
 } as const

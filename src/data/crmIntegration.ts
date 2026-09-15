@@ -90,7 +90,7 @@ export const CRM_HERO = {
   ],
   primaryCta: { label: 'Tư vấn tích hợp CRM' },
   secondaryCta: {
-    label: 'Khám phá cách tích hợp hoạt động',
+    label: 'Xem cách tích hợp',
     href: '#cach-hoat-dong',
   },
 } as const

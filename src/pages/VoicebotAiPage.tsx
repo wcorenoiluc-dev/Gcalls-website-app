@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import '@/styles/pages-06-09.css'
 import { Container, Section, SectionHeader } from '@/components/common/primitives'
 import { JsonLd } from '@/components/common/JsonLd'
 import { FaqAccordion } from '@/components/common/FaqAccordion'
@@ -47,7 +48,8 @@ export function VoicebotAiPage() {
   const jsonLd = useMemo(() => buildVoicebotJsonLd(SITE_ORIGIN), [])
 
   return (
-    <>
+    /* Page-scoped heading + CTA polish — see src/styles/pages-06-09.css. */
+    <div data-page="voicebot-ai">
       <JsonLd id="voicebot-ai" data={jsonLd} />
 
       <div className="bg-brand-light/60 pt-16 pb-3">
@@ -99,6 +101,6 @@ export function VoicebotAiPage() {
           showPhone
         />
       </Section>
-    </>
+    </div>
   )
 }

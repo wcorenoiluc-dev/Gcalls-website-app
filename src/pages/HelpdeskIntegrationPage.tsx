@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import '@/styles/pages-06-09.css'
 import { ArrowRight, LifeBuoy, Users } from 'lucide-react'
 import { Link } from 'react-router'
 import { CtaLink } from '@/components/common/Button'
@@ -79,7 +80,8 @@ export function HelpdeskIntegrationPage() {
   const leadHref = leadCtaHref(HELPDESK_LEAD)
 
   return (
-    <>
+    /* Page-scoped heading + CTA polish — see src/styles/pages-06-09.css. */
+    <div data-page="tong-dai-tich-hop-helpdesk">
       <JsonLd id="helpdesk-integration" data={jsonLd} />
 
       <div className="bg-brand-light/60 pt-16 pb-3">
@@ -353,6 +355,6 @@ export function HelpdeskIntegrationPage() {
           showPhone
         />
       </Section>
-    </>
+    </div>
   )
 }

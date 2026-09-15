@@ -1,4 +1,5 @@
 import { useMemo, type ReactNode } from 'react'
+import '@/styles/pages-06-09.css'
 import { Database, Headset, MousePointerClick, Target, Users } from 'lucide-react'
 import { Link } from 'react-router'
 import { CtaLink } from '@/components/common/Button'
@@ -86,7 +87,8 @@ export function CRMIntegrationPage() {
   const leadHref = leadCtaHref(CRM_LEAD)
 
   return (
-    <>
+    /* Page-scoped heading + CTA polish — see src/styles/pages-06-09.css. */
+    <div data-page="tong-dai-tich-hop-crm">
       <JsonLd id="crm-integration" data={jsonLd} />
 
       <div className="bg-brand-light/60 pt-16 pb-3">
@@ -387,7 +389,7 @@ export function CRMIntegrationPage() {
           showPhone
         />
       </Section>
-    </>
+    </div>
   )
 }
 
