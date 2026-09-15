@@ -184,8 +184,14 @@ for (const vp of VIEWPORTS.filter((v) => !ONLY_VP || v.name === ONLY_VP)) {
         // exactly one open
         const openCount = await page.locator(`${BTN}[aria-expanded="true"]`).count()
         if (openCount !== 1) fail(scope, `${label}: ${openCount} menus open at once`)
-        // highlight
-        const bg = await btn.evaluate((b) => getComputedStyle(b).backgroundColor)
+        // highlight — the button has a 150ms colour transition; poll past it
+        // instead of sampling mid-transition on a slow host.
+        let bg = ''
+        for (let t = 0; t < 8; t++) {
+          bg = await btn.evaluate((b) => getComputedStyle(b).backgroundColor)
+          if (bg === 'rgb(246, 243, 252)') break
+          await page.waitForTimeout(100)
+        }
         if (bg !== 'rgb(246, 243, 252)') fail(scope, `${label}: open button not highlighted (${bg})`)
         // second click closes
         await page.mouse.down(); await page.mouse.up(); await page.waitForTimeout(100)
