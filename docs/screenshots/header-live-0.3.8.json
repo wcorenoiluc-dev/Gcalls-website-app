@@ -1,0 +1,82 @@
+{
+  "base": "https://ashernguyenxuanthuy.com",
+  "canonicalRouteCount": 38,
+  "viewports": {
+    "desktop_1440": {
+      "routes": 38,
+      "failuresBefore": 0,
+      "failures": 0
+    },
+    "desktop_1024": {
+      "routes": 38,
+      "failuresBefore": 0,
+      "failures": 0
+    },
+    "tablet_768": {
+      "routes": 38,
+      "failuresBefore": 0,
+      "failures": 0
+    },
+    "mobile_390": {
+      "routes": 38,
+      "failuresBefore": 0,
+      "failures": 0
+    }
+  },
+  "menuLinks": {
+    "Sản phẩm": [
+      "/san-pham/",
+      "/gcalls-plus-webphone/",
+      "/qc-bot-ai/",
+      "/gcalls-cx/",
+      "/voicebot-ai/",
+      "/san-pham/"
+    ],
+    "Giải pháp": [
+      "/giai-phap/",
+      "/tong-dai-tich-hop-crm/",
+      "/tong-dai-tich-hop-helpdesk/",
+      "/tong-dai-tich-hop-pos/",
+      "/tong-dai-quoc-te/",
+      "/giai-phap/"
+    ],
+    "Tích hợp": [
+      "/tich-hop/",
+      "/tich-hop/hubspot/",
+      "/tich-hop/salesforce/",
+      "/tich-hop/zoho-crm/",
+      "/tich-hop/freshdesk/",
+      "/tich-hop/zendesk/",
+      "/tich-hop/"
+    ],
+    "Theo ngành": [
+      "/nganh/",
+      "/nganh/giao-duc/",
+      "/nganh/tai-chinh/",
+      "/nganh/bao-hiem/",
+      "/nganh/bat-dong-san/",
+      "/nganh/thuong-mai-dien-tu/",
+      "/nganh/bpo/",
+      "/nganh/"
+    ],
+    "Tài nguyên": [
+      "/tai-nguyen/",
+      "/blog/",
+      "/tai-nguyen/guides/",
+      "/tai-nguyen/glossary/",
+      "/tai-nguyen/faq/",
+      "/tai-nguyen/case-studies/",
+      "/tai-nguyen/ebook/",
+      "/tai-nguyen/"
+    ],
+    "Bảng giá": [
+      "/bang-gia/",
+      "/bang-gia/",
+      "/uoc-tinh-chi-phi/",
+      "/bang-gia/"
+    ]
+  },
+  "brokenLinks": [],
+  "menuHrefCount": 32,
+  "failures": []
+}

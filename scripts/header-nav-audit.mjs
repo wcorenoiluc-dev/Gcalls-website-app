@@ -111,7 +111,7 @@ for (const vp of VIEWPORTS.filter((v) => !ONLY_VP || v.name === ONLY_VP)) {
   // Resource failures are reported with their URL from the response/requestfailed
   // hooks (the console line for them has no URL); favicon and third-party font
   // hosts are noise, first-party 4xx/5xx and app errors are not.
-  const NOISE = /favicon|fonts\.googleapis\.com|fonts\.gstatic\.com/i
+  const NOISE = /favicon|fonts\.googleapis\.com|fonts\.gstatic\.com|\/_osh\//i  // _osh = OneShield edge telemetry beacon, not the app
   page.on('console', (m) => { if (m.type() === 'error' && !/Failed to load resource/i.test(m.text())) consoleErrors.push(m.text().slice(0, 160)) })
   page.on('pageerror', (e) => consoleErrors.push('pageerror: ' + String(e.message).slice(0, 160)))
   page.on('response', (r) => { if (r.status() >= 400 && !NOISE.test(r.url())) consoleErrors.push(`HTTP ${r.status()} ${r.url().slice(0, 140)}`) })
@@ -203,13 +203,15 @@ for (const vp of VIEWPORTS.filter((v) => !ONLY_VP || v.name === ONLY_VP)) {
         if (openCount !== 1) fail(scope, `${label}: ${openCount} menus open at once`)
         // highlight — the button has a 150ms colour transition; poll past it
         // instead of sampling mid-transition on a slow host.
-        let bg = ''
-        for (let t = 0; t < 8; t++) {
-          bg = await btn.evaluate((b) => getComputedStyle(b).backgroundColor)
-          if (bg === 'rgb(246, 243, 252)') break
+        // Ground truth is the highlight class the component stamps while open;
+        // the computed colour is also accepted once its transition has settled.
+        let bg = '', hasClass = false
+        for (let t = 0; t < 10; t++) {
+          ;[bg, hasClass] = await btn.evaluate((b) => [getComputedStyle(b).backgroundColor, b.classList.contains('bg-[#f6f3fc]')])
+          if (bg === 'rgb(246, 243, 252)' || hasClass) break
           await page.waitForTimeout(100)
         }
-        if (bg !== 'rgb(246, 243, 252)') fail(scope, `${label}: open button not highlighted (${bg})`)
+        if (bg !== 'rgb(246, 243, 252)' && !hasClass) fail(scope, `${label}: open button not highlighted (${bg})`)
         // second click closes
         await page.mouse.down(); await page.mouse.up(); await page.waitForTimeout(100)
         if ((await btn.getAttribute('aria-expanded')) !== 'false') fail(scope, `${label}: second click did not close`)
