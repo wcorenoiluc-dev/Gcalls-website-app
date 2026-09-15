@@ -139,7 +139,17 @@ const inspect = () => {
     // overlay check at the label centre (first text node), scrolled into view
     let overlay = null
     const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT)
-    let tn; while ((tn = walker.nextNode())) if (tn.textContent.trim()) break
+    // First RENDERED text node: a responsive label swap (e.g. `<span
+    // class="sm:hidden">` + `<span class="hidden sm:inline">`) leaves an
+    // earlier, display:none text node whose rect is empty — probing it would
+    // hit whatever sits under (0,0), i.e. the fixed header, and report a
+    // phantom overlay.
+    let tn; while ((tn = walker.nextNode())) {
+      if (!tn.textContent.trim()) continue
+      const probe = document.createRange(); probe.selectNodeContents(tn)
+      const pr = probe.getBoundingClientRect()
+      if (pr.width > 0 && pr.height > 0) break
+    }
     if (tn) {
       const range = document.createRange(); range.selectNodeContents(tn)
       const tr = range.getBoundingClientRect()
