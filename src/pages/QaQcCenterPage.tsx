@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import '@/styles/qc-bot-ai.css'
 import { Container, Section, SectionHeader } from '@/components/common/primitives'
 import { JsonLd } from '@/components/common/JsonLd'
 import { FaqAccordion } from '@/components/common/FaqAccordion'
@@ -54,7 +55,8 @@ export function QaQcCenterPage() {
   const jsonLd = useMemo(() => buildQaQcJsonLd(SITE_ORIGIN), [])
 
   return (
-    <>
+    /* Page-scoped heading system — see src/styles/qc-bot-ai.css. */
+    <div data-page="qc-bot-ai">
       <JsonLd id="qa-qc-center" data={jsonLd} />
 
       <div className="bg-brand-light/60 pt-16 pb-3">
@@ -121,6 +123,6 @@ export function QaQcCenterPage() {
           showPhone
         />
       </Section>
-    </>
+    </div>
   )
 }

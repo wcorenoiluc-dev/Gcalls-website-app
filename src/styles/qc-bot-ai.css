@@ -1,0 +1,68 @@
+/* -----------------------------------------------------------------------
+ * /qc-bot-ai/ — page-scoped heading system (React Shell 0.3.6, Page 04).
+ *
+ * WHY
+ * The shared GradientHeading paints its gradient with `background-clip:
+ * text`. Anything a glyph draws outside the element's own box gets no
+ * background and is therefore transparent — invisible. Open Sans Vietnamese
+ * stacks diacritics above the ascender and dips below the baseline, so at
+ * the shared sizes (H1 56px / 1.15, H2 40px / 1.2) the live page measured
+ * scrollHeight 3–6px taller than the rendered box on every heading: the
+ * tone marks and descenders were literally clipped off.
+ *
+ * SCOPE
+ * Every rule is scoped to `[data-page="qc-bot-ai"]` (the page wrapper in
+ * QaQcCenterPage.tsx). Nothing here touches global typography or the other
+ * 37 routes. Rules are plain and unlayered on purpose: Tailwind utilities
+ * live in `@layer utilities`, so these win without `!important`.
+ *
+ * WHAT
+ *  - smaller, fluid sizes (H1 ≤ 52px, H2 ≤ 36px desktop; 34 / 27px at 390);
+ *  - line-height ≥ 1.24 and a small `padding-block` so the painted box
+ *    covers the full glyph extent — no fixed height, no max-height,
+ *    `overflow: visible`, no negative margins;
+ *  - `text-wrap: balance` for even line breaks and fewer orphans;
+ *  - heading → following paragraph gap of at least 20px.
+ * ------------------------------------------------------------------------- */
+
+[data-page='qc-bot-ai'] h1,
+[data-page='qc-bot-ai'] h2:not([data-heading='compact']) {
+  overflow: visible;
+  height: auto;
+  max-height: none;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+[data-page='qc-bot-ai'] h1 {
+  /* 34px at 390 → 52px from ~1280 */
+  font-size: clamp(34px, 2.1vw + 25px, 52px);
+  line-height: 1.24;
+  padding-block: 0.08em;
+  max-width: 18ch;
+}
+
+[data-page='qc-bot-ai'] h2:not([data-heading='compact']) {
+  /* 27px at 390 → 36px from ~1200 */
+  font-size: clamp(27px, 1.1vw + 22.5px, 36px);
+  line-height: 1.28;
+  padding-block: 0.07em;
+}
+
+/* Centred section headers may balance across a wide measure; cap it so a
+ * balanced heading does not spread to a single very long line. */
+[data-page='qc-bot-ai'] h2:not([data-heading='compact']) {
+  max-width: 28ch;
+}
+[data-page='qc-bot-ai'] .text-center h2,
+[data-page='qc-bot-ai'] .items-center.text-center h2 {
+  margin-inline: auto;
+}
+
+/* Heading → next paragraph: at least 20px (Tailwind's mt-4 = 16px loses). */
+[data-page='qc-bot-ai'] h1 + p,
+[data-page='qc-bot-ai'] h2 + p {
+  margin-top: 1.25rem;
+}

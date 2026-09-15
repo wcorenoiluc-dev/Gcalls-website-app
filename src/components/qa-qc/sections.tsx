@@ -169,6 +169,7 @@ export function QaQcDirectAnswer() {
 
           <h2
             id="qa-qc-la-gi"
+            data-heading="compact"
             className="mt-4 text-[22px] font-extrabold leading-snug tracking-tight text-foreground sm:text-[26px]"
           >
             {QQ_DIRECT_ANSWER.question}
