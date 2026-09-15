@@ -503,6 +503,12 @@ export const HD_FAQ: HdFaqItem[] = [
   },
 ]
 
+/** FAQ section header (rendered by HelpdeskIntegrationPage; editable via Content Studio). */
+export const HD_FAQ_SECTION = {
+  eyebrow: 'Câu hỏi thường gặp',
+  h2: 'Câu hỏi thường gặp về tổng đài tích hợp Helpdesk',
+} as const
+
 export const HD_FINAL_CTA = {
   eyebrow: 'HELPDESK INTEGRATION',
   h2: 'Đưa cuộc gọi vào đúng quy trình hỗ trợ đội CSKH đang sử dụng',

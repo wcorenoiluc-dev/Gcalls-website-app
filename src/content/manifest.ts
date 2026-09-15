@@ -6,7 +6,7 @@
  * routes.json (the React Shell's canonical 38-route contract) — nothing here
  * hard-codes a route count. Page labels come from src/config/sitemap.ts.
  *
- * Pages 01–05 are editable and carry their sections; every other page is
+ * Pages 01–09 are editable and carry their sections; every other page is
  * listed read-only with the review label, so the admin shows all routes in
  * the canonical order.
  */
@@ -18,6 +18,10 @@ import { PRODUCTS_SECTIONS } from './sections/products'
 import { GCALLS_PLUS_SECTIONS } from './sections/gcallsPlus'
 import { QC_BOT_AI_SECTIONS } from './sections/qcBotAi'
 import { GCALLS_CX_SECTIONS } from './sections/gcallsCx'
+import { VOICEBOT_SECTIONS } from './sections/voicebotAi'
+import { SOLUTIONS_SECTIONS } from './sections/solutions'
+import { CRM_SECTIONS } from './sections/crmIntegration'
+import { HELPDESK_SECTIONS } from './sections/helpdeskIntegration'
 import {
   EDITABLE_STATUS_LABEL,
   MANIFEST_VERSION,
@@ -41,6 +45,10 @@ const EDITABLE: Record<string, SectionDef[]> = {
   gcallsPlus: GCALLS_PLUS_SECTIONS,
   qcCenter: QC_BOT_AI_SECTIONS,
   gcallsCx: GCALLS_CX_SECTIONS,
+  voicebotAi: VOICEBOT_SECTIONS,
+  solutions: SOLUTIONS_SECTIONS,
+  crmIntegration: CRM_SECTIONS,
+  helpdeskIntegration: HELPDESK_SECTIONS,
 }
 
 /** Deep-clones plain data so `as const`/readonly objects serialise as fresh JSON. */

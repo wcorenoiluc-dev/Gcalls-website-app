@@ -15,6 +15,9 @@ import {
   UserCheck,
 } from 'lucide-react'
 import { Link } from 'react-router'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
+import { VB_USE_CASES_CONTENT } from '@/content/sections/voicebotAi'
 import { CtaLink, type CtaVariant } from '@/components/common/Button'
 import {
   Card,
@@ -79,6 +82,8 @@ export function ConsultCta({
 /* ── 01 Hero ─────────────────────────────────────────────────────────────── */
 
 export function VoicebotHero() {
+  const content = useGcallsContent(ROUTES.voicebotAi, 'hero', VB_HERO)
+
   return (
     <section
       className="w-full pt-24 pb-14 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-24"
@@ -91,28 +96,28 @@ export function VoicebotHero() {
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
           {/* Text first in DOM order → first on mobile. */}
           <div>
-            <Eyebrow>{VB_HERO.eyebrow}</Eyebrow>
+            <Eyebrow>{content.eyebrow}</Eyebrow>
 
             <GradientHeading as="h1" className="mt-5">
-              {VB_HERO.h1}
+              {content.h1}
             </GradientHeading>
 
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              {VB_HERO.description}
+              {content.description}
             </p>
 
             <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
-              <ConsultCta label={VB_HERO.primaryCta.label} />
+              <ConsultCta label={content.primaryCta.label} />
 
-              <CtaLink to={VB_HERO.secondaryCta.href} variant="outline" fullWidth>
-                {VB_HERO.secondaryCta.label}
+              <CtaLink to={content.secondaryCta.href} variant="outline" fullWidth>
+                {content.secondaryCta.label}
                 <ArrowRight size={18} aria-hidden="true" />
               </CtaLink>
             </div>
 
             <p className="mt-5 flex max-w-xl items-start gap-2 text-[15px] leading-relaxed text-muted-foreground">
               <Info size={15} className="mt-0.5 shrink-0 text-brand" aria-hidden="true" />
-              {VB_HERO.microcopy}
+              {content.microcopy}
             </p>
           </div>
 
@@ -132,19 +137,21 @@ export function VoicebotHero() {
 /* ── 02 Operational problem ──────────────────────────────────────────────── */
 
 export function VoicebotProblems() {
+  const content = useGcallsContent(ROUTES.voicebotAi, 'problems', VB_PROBLEMS)
+
   return (
     <Section tinted ariaLabelledBy="bai-toan-van-hanh">
       <Container>
         <SectionHeader
-          eyebrow={VB_PROBLEMS.eyebrow}
+          eyebrow={content.eyebrow}
           eyebrowIcon={<AlertCircle size={14} aria-hidden="true" />}
-          title={VB_PROBLEMS.h2}
+          title={content.h2}
           titleId="bai-toan-van-hanh"
-          lead={VB_PROBLEMS.description}
+          lead={content.description}
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {VB_PROBLEMS.items.map((item) => (
+          {content.items.map((item) => (
             <Card as="li" key={item.n} className="flex h-full gap-4 p-6">
               <span
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] bg-brand-light text-base font-extrabold text-brand"
@@ -172,21 +179,23 @@ export function VoicebotProblems() {
 
 /** Target of the hero's secondary CTA — the anchor must stay on this section. */
 export function VoicebotUseCases() {
+  const content = useGcallsContent(ROUTES.voicebotAi, 'useCases', VB_USE_CASES_CONTENT)
+
   return (
     <Section ariaLabelledBy="tinh-huong-ung-dung-heading">
       <Container>
         <div id={VB_USE_CASES.anchorId} className="scroll-mt-24" />
 
         <SectionHeader
-          eyebrow={VB_USE_CASES.eyebrow}
+          eyebrow={content.eyebrow}
           eyebrowIcon={<Target size={14} aria-hidden="true" />}
-          title={VB_USE_CASES.h2}
+          title={content.h2}
           titleId="tinh-huong-ung-dung-heading"
-          lead={VB_USE_CASES.description}
+          lead={content.description}
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {VB_USE_CASES.items.map((item) => (
+          {content.items.map((item) => (
             <Card as="li" key={item.n} className="flex h-full flex-col p-6">
               <span
                 className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-brand-light text-base font-extrabold text-brand"
@@ -211,19 +220,21 @@ export function VoicebotUseCases() {
 /* ── 04 How it works ─────────────────────────────────────────────────────── */
 
 export function VoicebotHowItWorks() {
+  const content = useGcallsContent(ROUTES.voicebotAi, 'howItWorks', VB_HOW_IT_WORKS)
+
   return (
     <Section tinted ariaLabelledBy="quy-trinh-hoat-dong">
       <Container>
         <SectionHeader
-          eyebrow={VB_HOW_IT_WORKS.eyebrow}
+          eyebrow={content.eyebrow}
           eyebrowIcon={<Route size={14} aria-hidden="true" />}
-          title={VB_HOW_IT_WORKS.h2}
+          title={content.h2}
           titleId="quy-trinh-hoat-dong"
-          lead={VB_HOW_IT_WORKS.description}
+          lead={content.description}
         />
 
         <ol className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {VB_HOW_IT_WORKS.steps.map((step) => (
+          {content.steps.map((step) => (
             <Card as="li" key={step.n} className="flex h-full flex-col p-6">
               <span
                 className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-brand-light text-base font-extrabold text-brand"
@@ -252,14 +263,16 @@ export function VoicebotHowItWorks() {
  * these five lines readable as survey scope rather than a committed feature set.
  */
 export function VoicebotCapabilities() {
+  const content = useGcallsContent(ROUTES.voicebotAi, 'capabilities', VB_CAPABILITIES)
+
   return (
     <FeatureSplit
-      eyebrow={VB_CAPABILITIES.eyebrow}
+      eyebrow={content.eyebrow}
       eyebrowIcon={<ListChecks size={14} aria-hidden="true" />}
-      title={VB_CAPABILITIES.h2}
+      title={content.h2}
       titleId="kha-nang-giai-phap"
-      description={VB_CAPABILITIES.description}
-      points={VB_CAPABILITIES.points}
+      description={content.description}
+      points={content.points}
       visual={
         <ProductVisual
           maxWidth="480px"
@@ -271,7 +284,7 @@ export function VoicebotCapabilities() {
     >
       <p className="mt-6 flex max-w-xl items-start gap-2 text-[15px] leading-relaxed text-muted-foreground">
         <Info size={15} className="mt-0.5 shrink-0 text-brand" aria-hidden="true" />
-        {VB_CAPABILITIES.note}
+        {content.note}
       </p>
     </FeatureSplit>
   )
@@ -284,19 +297,21 @@ export function VoicebotCapabilities() {
  * viên". Placed immediately after the capability section, deliberately.
  */
 export function VoicebotHumanAi() {
+  const content = useGcallsContent(ROUTES.voicebotAi, 'humanAi', VB_HUMAN_AI)
+
   return (
     <Section tinted ariaLabelledBy="con-nguoi-va-ai">
       <Container>
         <SectionHeader
-          eyebrow={VB_HUMAN_AI.eyebrow}
+          eyebrow={content.eyebrow}
           eyebrowIcon={<UserCheck size={14} aria-hidden="true" />}
-          title={VB_HUMAN_AI.h2}
+          title={content.h2}
           titleId="con-nguoi-va-ai"
-          lead={VB_HUMAN_AI.description}
+          lead={content.description}
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-          {VB_HUMAN_AI.columns.map((column, i) => (
+          {content.columns.map((column, i) => (
             <Card as="li" key={column.role} className="flex h-full flex-col p-6 sm:p-8">
               <span
                 className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-brand-light text-brand"
@@ -332,7 +347,7 @@ export function VoicebotHumanAi() {
         </ul>
 
         <p className="mx-auto mt-8 max-w-3xl text-center text-base leading-relaxed text-muted-foreground sm:text-lg">
-          {VB_HUMAN_AI.closing}
+          {content.closing}
         </p>
       </Container>
     </Section>
@@ -342,19 +357,21 @@ export function VoicebotHumanAi() {
 /* ── 07 Integration ──────────────────────────────────────────────────────── */
 
 export function VoicebotIntegration() {
+  const content = useGcallsContent(ROUTES.voicebotAi, 'integration', VB_INTEGRATION)
+
   return (
     <Section ariaLabelledBy="tich-hop-quy-trinh">
       <Container>
         <SectionHeader
-          eyebrow={VB_INTEGRATION.eyebrow}
+          eyebrow={content.eyebrow}
           eyebrowIcon={<Plug size={14} aria-hidden="true" />}
-          title={VB_INTEGRATION.h2}
+          title={content.h2}
           titleId="tich-hop-quy-trinh"
-          lead={VB_INTEGRATION.description}
+          lead={content.description}
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {VB_INTEGRATION.items.map((item) => (
+          {content.items.map((item) => (
             <Card as="li" key={item.title} className="flex h-full flex-col p-6">
               <h3 className="text-base font-bold leading-snug text-foreground sm:text-lg">
                 {item.title}
@@ -367,7 +384,7 @@ export function VoicebotIntegration() {
         </ul>
 
         <ul className="mt-8 flex flex-wrap justify-center gap-3">
-          {VB_INTEGRATION.links.map((l) => (
+          {content.links.map((l) => (
             <li key={l.path}>
               <Link
                 to={l.path}
@@ -381,7 +398,7 @@ export function VoicebotIntegration() {
         </ul>
 
         <ul className="mt-5 flex flex-wrap justify-center gap-x-6">
-          {VB_INTEGRATION.hubLinks.map((l) => (
+          {content.hubLinks.map((l) => (
             <li key={l.path}>
               <Link to={l.path} className={INLINE_LINK}>
                 {l.label}
@@ -398,19 +415,21 @@ export function VoicebotIntegration() {
 /* ── 08 Industries ───────────────────────────────────────────────────────── */
 
 export function VoicebotIndustries() {
+  const content = useGcallsContent(ROUTES.voicebotAi, 'industries', VB_INDUSTRIES)
+
   return (
     <Section tinted ariaLabelledBy="nganh-phu-hop">
       <Container>
         <SectionHeader
-          eyebrow={VB_INDUSTRIES.eyebrow}
+          eyebrow={content.eyebrow}
           eyebrowIcon={<Building2 size={14} aria-hidden="true" />}
-          title={VB_INDUSTRIES.h2}
+          title={content.h2}
           titleId="nganh-phu-hop"
-          lead={VB_INDUSTRIES.description}
+          lead={content.description}
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {VB_INDUSTRIES.items.map((item) => (
+          {content.items.map((item) => (
             <Card as="li" key={item.title} className="flex h-full flex-col p-6">
               <h3 className="text-lg font-extrabold tracking-tight text-foreground">
                 {item.title}
@@ -440,19 +459,21 @@ export function VoicebotIndustries() {
 /* ── 09 Deployment ───────────────────────────────────────────────────────── */
 
 export function VoicebotDeployment() {
+  const content = useGcallsContent(ROUTES.voicebotAi, 'deployment', VB_DEPLOYMENT)
+
   return (
     <Section ariaLabelledBy="quy-trinh-trien-khai">
       <Container>
         <SectionHeader
-          eyebrow={VB_DEPLOYMENT.eyebrow}
+          eyebrow={content.eyebrow}
           eyebrowIcon={<Rocket size={14} aria-hidden="true" />}
-          title={VB_DEPLOYMENT.h2}
+          title={content.h2}
           titleId="quy-trinh-trien-khai"
-          lead={VB_DEPLOYMENT.description}
+          lead={content.description}
         />
 
         <ol className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {VB_DEPLOYMENT.steps.map((step) => (
+          {content.steps.map((step) => (
             <Card as="li" key={step.n} className="flex h-full flex-col p-6">
               <span
                 className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-brand-light text-base font-extrabold text-brand"
@@ -471,7 +492,7 @@ export function VoicebotDeployment() {
         </ol>
 
         <div className="mt-8 flex justify-center">
-          <ConsultCta label="Đăng ký tư vấn Voicebot" variant="outline" />
+          <ConsultCta label={content.cta.label} variant="outline" />
         </div>
       </Container>
     </Section>
@@ -482,19 +503,21 @@ export function VoicebotDeployment() {
 
 /** Qualitative only — no percentage, hour count or cost figure appears here. */
 export function VoicebotOutcomes() {
+  const content = useGcallsContent(ROUTES.voicebotAi, 'outcomes', VB_OUTCOMES)
+
   return (
     <Section tinted ariaLabelledBy="gia-tri-dau-ra">
       <Container>
         <SectionHeader
-          eyebrow={VB_OUTCOMES.eyebrow}
+          eyebrow={content.eyebrow}
           eyebrowIcon={<TrendingUp size={14} aria-hidden="true" />}
-          title={VB_OUTCOMES.h2}
+          title={content.h2}
           titleId="gia-tri-dau-ra"
-          lead={VB_OUTCOMES.description}
+          lead={content.description}
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {VB_OUTCOMES.items.map((item) => (
+          {content.items.map((item) => (
             <Card as="li" key={item.title} className="flex h-full gap-4 p-6">
               <span
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] bg-brand-light text-brand"

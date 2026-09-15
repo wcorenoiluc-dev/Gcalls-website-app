@@ -68,6 +68,30 @@
   margin-top: 1.25rem;
 }
 
+/* Every other heading (solid H2/H3 on CTA bands, sub-section H2s): same
+ * line-height / paint padding / spacing contract, sizes untouched. The 22px
+ * compact definition heading in HubLayout is excluded by its size class. */
+[data-page='voicebot-ai'] :is(h2, h3):not(.text-brand):not(.text-\[22px\]),
+[data-page='giai-phap'] :is(h2, h3):not(.text-brand):not(.text-\[22px\]),
+[data-page='tong-dai-tich-hop-crm'] :is(h2, h3):not(.text-brand):not(.text-\[22px\]),
+[data-page='tong-dai-tich-hop-helpdesk'] :is(h2, h3):not(.text-brand):not(.text-\[22px\]) {
+  overflow: visible;
+  height: auto;
+  max-height: none;
+  line-height: 1.28;
+  padding-block: 0.06em;
+  text-wrap: balance;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+[data-page='voicebot-ai'] :is(h2, h3):not(.text-\[22px\]) + p,
+[data-page='giai-phap'] :is(h2, h3):not(.text-\[22px\]) + p,
+[data-page='tong-dai-tich-hop-crm'] :is(h2, h3):not(.text-\[22px\]) + p,
+[data-page='tong-dai-tich-hop-helpdesk'] :is(h2, h3):not(.text-\[22px\]) + p {
+  margin-top: 1.25rem;
+}
+
 /* CTA: one line, never shrinks; rows with 2+ CTAs wrap whole buttons. */
 [data-page='voicebot-ai'] [data-gcalls-button],
 [data-page='giai-phap'] [data-gcalls-button],

@@ -20,6 +20,9 @@ import { ProductVisual } from '@/components/common/ProductVisual'
 import { Breadcrumb } from '@/components/layout/Breadcrumb'
 import { SITE_ORIGIN } from '@/config/seo'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
+import { HD_HOW_IT_WORKS_CONTENT, HD_PLATFORMS_CONTENT } from '@/content/sections/helpdeskIntegration'
 import {
   HD_BEFORE_AFTER,
   HD_BOUNDARIES,
@@ -27,13 +30,11 @@ import {
   HD_DEPLOYMENT,
   HD_DIRECT_ANSWER,
   HD_FAQ,
+  HD_FAQ_SECTION,
   HD_FINAL_CTA,
   HD_HERO,
   HD_HOW_IT_WORKS,
   HD_OVERVIEW,
-  HD_PLATFORMS,
-  HD_PLATFORM_NOTE,
-  HD_PLATFORM_SECTION,
   HD_PRICING,
   HD_PROBLEMS,
   HD_SUPPORT_CONTEXT,
@@ -78,6 +79,23 @@ import { IntegrationWorkflow } from '@/components/integration/IntegrationWorkflo
 export function HelpdeskIntegrationPage() {
   const jsonLd = useMemo(() => buildHelpdeskJsonLd(SITE_ORIGIN), [])
   const leadHref = leadCtaHref(HELPDESK_LEAD)
+  const R = ROUTES.helpdeskIntegration
+  const hero = useGcallsContent(R, 'hero', HD_HERO)
+  const directAnswer = useGcallsContent(R, 'directAnswer', HD_DIRECT_ANSWER)
+  const problems = useGcallsContent(R, 'problems', HD_PROBLEMS)
+  const overview = useGcallsContent(R, 'overview', HD_OVERVIEW)
+  const howItWorks = useGcallsContent(R, 'howItWorks', HD_HOW_IT_WORKS_CONTENT)
+  const capabilities = useGcallsContent(R, 'capabilities', HD_CAPABILITIES)
+  const supportContext = useGcallsContent(R, 'supportContext', HD_SUPPORT_CONTEXT)
+  const beforeAfter = useGcallsContent(R, 'beforeAfter', HD_BEFORE_AFTER)
+  const platforms = useGcallsContent(R, 'platforms', HD_PLATFORMS_CONTENT)
+  const useCases = useGcallsContent(R, 'useCases', HD_USE_CASES)
+  const boundaries = useGcallsContent(R, 'boundaries', HD_BOUNDARIES)
+  const deployment = useGcallsContent(R, 'deployment', HD_DEPLOYMENT)
+  const trust = useGcallsContent(R, 'trust', HD_TRUST)
+  const pricing = useGcallsContent(R, 'pricing', HD_PRICING)
+  const faq = useGcallsContent(R, 'faq', { ...HD_FAQ_SECTION, items: HD_FAQ })
+  const finalCta = useGcallsContent(R, 'finalCta', HD_FINAL_CTA)
 
   return (
     /* Page-scoped heading + CTA polish — see src/styles/pages-06-09.css. */
@@ -94,12 +112,12 @@ export function HelpdeskIntegrationPage() {
 
       {/* 01 — Hero. Primary CTA routes through the shared lead form. */}
       <IntegrationHero
-        eyebrow={HD_HERO.eyebrow}
-        title={HD_HERO.h1}
-        description={HD_HERO.description}
-        keyPoints={HD_HERO.valuePoints.map((v) => `${v.title} — ${v.detail}`)}
-        primaryCta={{ label: HD_HERO.primaryCta.label, path: leadHref }}
-        secondaryCta={HD_HERO.secondaryCta}
+        eyebrow={hero.eyebrow}
+        title={hero.h1}
+        description={hero.description}
+        keyPoints={hero.valuePoints.map((v) => `${v.title} — ${v.detail}`)}
+        primaryCta={{ label: hero.primaryCta.label, path: leadHref }}
+        secondaryCta={hero.secondaryCta}
         visual={
           <ProductVisual maxWidth="420px">
             <HelpdeskFlowMockup />
@@ -114,11 +132,11 @@ export function HelpdeskIntegrationPage() {
             <Eyebrow>Định nghĩa</Eyebrow>
 
             <GradientHeading id="helpdesk-la-gi" className="mt-4">
-              {HD_DIRECT_ANSWER.question}
+              {directAnswer.question}
             </GradientHeading>
 
             <p className="mt-5 rounded-[14px] border border-brand-border bg-background px-5 py-4 text-base leading-relaxed text-muted-foreground">
-              {HD_DIRECT_ANSWER.answer}
+              {directAnswer.answer}
             </p>
           </div>
         </Container>
@@ -126,18 +144,18 @@ export function HelpdeskIntegrationPage() {
 
       {/* 03 */}
       <IntegrationProblems
-        eyebrow={HD_PROBLEMS.eyebrow}
-        title={HD_PROBLEMS.h2}
+        eyebrow={problems.eyebrow}
+        title={problems.h2}
         titleId="bai-toan-helpdesk"
-        items={HD_PROBLEMS.items}
+        items={problems.items}
       />
 
       {/* 04 — Overview + core flow diagram */}
       <IntegrationWorkflow
-        eyebrow={HD_OVERVIEW.eyebrow}
-        title={HD_OVERVIEW.h2}
+        eyebrow={overview.eyebrow}
+        title={overview.h2}
         titleId="tong-quan-helpdesk"
-        steps={HD_OVERVIEW.flow}
+        steps={overview.flow}
       />
 
       {/* 05 — How it works */}
@@ -146,13 +164,13 @@ export function HelpdeskIntegrationPage() {
           <div id={HD_HOW_IT_WORKS.anchorId} className="scroll-mt-24" />
 
           <SectionHeader
-            eyebrow={HD_HOW_IT_WORKS.eyebrow}
-            title={HD_HOW_IT_WORKS.h2}
+            eyebrow={howItWorks.eyebrow}
+            title={howItWorks.h2}
             titleId="cach-hoat-dong-heading"
           />
 
           <ol className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {HD_HOW_IT_WORKS.steps.map((step) => (
+            {howItWorks.steps.map((step) => (
               <Card as="li" key={step.n} className="flex h-full flex-col p-6">
                 <span
                   className="flex h-9 w-9 items-center justify-center rounded-[9px] bg-brand-light text-sm font-extrabold text-brand"
@@ -176,13 +194,13 @@ export function HelpdeskIntegrationPage() {
       <Section ariaLabelledBy="nang-luc-helpdesk">
         <Container>
           <SectionHeader
-            eyebrow={HD_CAPABILITIES.eyebrow}
-            title={HD_CAPABILITIES.h2}
+            eyebrow={capabilities.eyebrow}
+            title={capabilities.h2}
             titleId="nang-luc-helpdesk"
           />
 
           <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-            {HD_CAPABILITIES.items.map((item) => (
+            {capabilities.items.map((item) => (
               <Card as="li" key={item.n} className="flex h-full flex-col p-6 sm:p-7">
                 <span
                   className="flex h-9 w-9 items-center justify-center rounded-[9px] bg-brand-light text-sm font-extrabold text-brand"
@@ -205,12 +223,12 @@ export function HelpdeskIntegrationPage() {
       {/* 07 — Support context */}
       <FeatureSplit
         tinted
-        eyebrow={HD_SUPPORT_CONTEXT.eyebrow}
+        eyebrow={supportContext.eyebrow}
         eyebrowIcon={<Users size={14} aria-hidden="true" />}
-        title={HD_SUPPORT_CONTEXT.h2}
+        title={supportContext.h2}
         titleId="support-context"
-        description={HD_SUPPORT_CONTEXT.description}
-        points={HD_SUPPORT_CONTEXT.points}
+        description={supportContext.description}
+        points={supportContext.points}
         visual={
           <ProductVisual maxWidth="380px">
             <SupportContextMockup />
@@ -220,35 +238,35 @@ export function HelpdeskIntegrationPage() {
 
       {/* 08 — Before / after workflow */}
       <IntegrationBeforeAfter
-        eyebrow={HD_BEFORE_AFTER.eyebrow}
-        title={HD_BEFORE_AFTER.h2}
+        eyebrow={beforeAfter.eyebrow}
+        title={beforeAfter.h2}
         titleId="truoc-sau-helpdesk"
-        before={HD_BEFORE_AFTER.before}
-        after={HD_BEFORE_AFTER.after}
+        before={beforeAfter.before}
+        after={beforeAfter.after}
       />
 
       {/* 09 — Helpdesk ecosystem. Each card routes to the page owning its keyword. */}
       <IntegrationPlatforms
-        eyebrow={HD_PLATFORM_SECTION.eyebrow}
-        title={HD_PLATFORM_SECTION.h2}
+        eyebrow={platforms.eyebrow}
+        title={platforms.h2}
         titleId="he-sinh-thai-helpdesk"
-        platforms={HD_PLATFORMS}
-        note={HD_PLATFORM_NOTE}
-        cta={{ label: 'Tìm hiểu tích hợp', path: HD_PLATFORMS[2].path }}
+        platforms={platforms.platforms}
+        note={platforms.note}
+        cta={{ label: 'Tìm hiểu tích hợp', path: platforms.platforms[2].path }}
       />
 
       {/* 10 — Support workflow use cases */}
       <Section ariaLabelledBy="use-case-helpdesk">
         <Container>
           <SectionHeader
-            eyebrow={HD_USE_CASES.eyebrow}
+            eyebrow={useCases.eyebrow}
             eyebrowIcon={<LifeBuoy size={14} aria-hidden="true" />}
-            title={HD_USE_CASES.h2}
+            title={useCases.h2}
             titleId="use-case-helpdesk"
           />
 
           <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-            {HD_USE_CASES.items.map((item) => (
+            {useCases.items.map((item) => (
               <Card as="li" key={item.n} className="flex h-full flex-col p-6">
                 <h3 className="text-lg font-extrabold tracking-tight text-foreground">
                   {item.title}
@@ -276,42 +294,42 @@ export function HelpdeskIntegrationPage() {
       {/* 11 — Helpdesk / CRM / CX / Plus boundary */}
       <IntegrationBoundaries
         tinted
-        eyebrow={HD_BOUNDARIES.eyebrow}
-        title={HD_BOUNDARIES.h2}
+        eyebrow={boundaries.eyebrow}
+        title={boundaries.h2}
         titleId="ranh-gioi-helpdesk"
-        items={HD_BOUNDARIES.items}
-        related={HD_BOUNDARIES.related}
+        items={boundaries.items}
+        related={boundaries.related}
       />
 
       {/* 12 — Implementation process */}
       <IntegrationSteps
-        eyebrow={HD_DEPLOYMENT.eyebrow}
-        title={HD_DEPLOYMENT.h2}
+        eyebrow={deployment.eyebrow}
+        title={deployment.h2}
         titleId="trien-khai-helpdesk"
-        steps={HD_DEPLOYMENT.steps}
+        steps={deployment.steps}
       />
 
       {/* 13 — Trust. Neutral: no case, quote or figure is fabricated. */}
       <Section tinted ariaLabelledBy="workflow-thuc-te">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <Eyebrow>{HD_TRUST.eyebrow}</Eyebrow>
+            <Eyebrow>{trust.eyebrow}</Eyebrow>
             <GradientHeading id="workflow-thuc-te" className="mt-4">
-              {HD_TRUST.h2}
+              {trust.h2}
             </GradientHeading>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              {HD_TRUST.description}
+              {trust.description}
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <CtaLink variant="primary" fullWidth to={leadHref}>
-                {HD_TRUST.cta.label}
+                {trust.cta.label}
               </CtaLink>
               <Link
-                to={HD_TRUST.link.path}
+                to={trust.link.path}
                 className="inline-flex min-h-12 items-center gap-1.5 text-[15px] font-semibold text-brand underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
               >
-                {HD_TRUST.link.label}
+                {trust.link.label}
               </Link>
             </div>
           </div>
@@ -320,24 +338,24 @@ export function HelpdeskIntegrationPage() {
 
       {/* 14 — Configuration & cost */}
       <PricingCtaBand
-        eyebrow={HD_PRICING.eyebrow}
-        title={HD_PRICING.h2}
+        eyebrow={pricing.eyebrow}
+        title={pricing.h2}
         titleId="chi-phi-helpdesk"
-        description={HD_PRICING.description}
-        primary={HD_PRICING.primaryCta}
-        secondary={HD_PRICING.secondaryCta}
+        description={pricing.description}
+        primary={pricing.primaryCta}
+        secondary={pricing.secondaryCta}
       />
 
       {/* 15 — FAQ */}
       <Section tinted ariaLabelledBy="faq-helpdesk">
         <Container>
           <SectionHeader
-            eyebrow="Câu hỏi thường gặp"
-            title="Câu hỏi thường gặp về tổng đài tích hợp Helpdesk"
+            eyebrow={faq.eyebrow}
+            title={faq.h2}
             titleId="faq-helpdesk"
           />
           <div className="mt-10">
-            <FaqAccordion items={HD_FAQ} idPrefix="hd-faq" />
+            <FaqAccordion items={faq.items} idPrefix="hd-faq" />
           </div>
         </Container>
       </Section>
@@ -345,13 +363,13 @@ export function HelpdeskIntegrationPage() {
       {/* 16 — Final CTA */}
       <Section ariaLabelledBy="cta-helpdesk">
         <FinalCtaBand
-          eyebrow={HD_FINAL_CTA.eyebrow}
-          title={HD_FINAL_CTA.h2}
+          eyebrow={finalCta.eyebrow}
+          title={finalCta.h2}
           titleId="cta-helpdesk"
-          description={HD_FINAL_CTA.description}
-          primary={HD_FINAL_CTA.primaryCta}
+          description={finalCta.description}
+          primary={finalCta.primaryCta}
           lead={HELPDESK_LEAD}
-          secondary={HD_FINAL_CTA.secondaryCta}
+          secondary={finalCta.secondaryCta}
           showPhone
         />
       </Section>

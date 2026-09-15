@@ -409,6 +409,7 @@ export const VB_DEPLOYMENT = {
         'Theo dõi kết quả thực tế và điều chỉnh kịch bản, dữ liệu hoặc phân luồng theo từng đợt.',
     },
   ],
+  cta: { label: 'Đăng ký tư vấn Voicebot' },
 } as const
 
 /* ── 10 · Outcomes ──────────────────────────────────────────────── */
@@ -488,6 +489,12 @@ export const VB_FAQ: VbFaqItem[] = [
     link: { label: 'Đăng ký tư vấn Voicebot', path: ROUTES.contact },
   },
 ]
+
+/** FAQ section header (rendered by VoicebotAiPage; editable via Content Studio). */
+export const VB_FAQ_SECTION = {
+  eyebrow: 'Câu hỏi thường gặp',
+  h2: 'Câu hỏi thường gặp về Voicebot AI',
+} as const
 
 /* ── 12 · Final CTA ─────────────────────────────────────────────── */
 

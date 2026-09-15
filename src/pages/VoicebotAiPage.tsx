@@ -10,9 +10,11 @@ import { SITE_ORIGIN } from '@/config/seo'
 import {
   VB_CONSULT_LEAD,
   VB_FAQ,
+  VB_FAQ_SECTION,
   VB_FINAL_CTA,
   buildVoicebotJsonLd,
 } from '@/data/voicebotAi'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 import {
   VoicebotCapabilities,
   VoicebotDeployment,
@@ -46,6 +48,8 @@ import {
  */
 export function VoicebotAiPage() {
   const jsonLd = useMemo(() => buildVoicebotJsonLd(SITE_ORIGIN), [])
+  const faq = useGcallsContent(ROUTES.voicebotAi, 'faq', { ...VB_FAQ_SECTION, items: VB_FAQ })
+  const finalCta = useGcallsContent(ROUTES.voicebotAi, 'finalCta', VB_FINAL_CTA)
 
   return (
     /* Page-scoped heading + CTA polish — see src/styles/pages-06-09.css. */
@@ -78,13 +82,13 @@ export function VoicebotAiPage() {
       <Section ariaLabelledBy="faq-voicebot">
         <Container>
           <SectionHeader
-            eyebrow="Câu hỏi thường gặp"
-            title="Câu hỏi thường gặp về Voicebot AI"
+            eyebrow={faq.eyebrow}
+            title={faq.h2}
             titleId="faq-voicebot"
           />
           <div className="mt-10">
             {/* Same array as the FAQPage JSON-LD, so the two cannot drift. */}
-            <FaqAccordion items={VB_FAQ} idPrefix="vb-faq" />
+            <FaqAccordion items={faq.items} idPrefix="vb-faq" />
           </div>
         </Container>
       </Section>
@@ -92,11 +96,11 @@ export function VoicebotAiPage() {
       {/* 12 */}
       <Section ariaLabelledBy="cta-voicebot">
         <FinalCtaBand
-          eyebrow={VB_FINAL_CTA.eyebrow}
-          title={VB_FINAL_CTA.h2}
+          eyebrow={finalCta.eyebrow}
+          title={finalCta.h2}
           titleId="cta-voicebot"
-          description={VB_FINAL_CTA.description}
-          primary={VB_FINAL_CTA.primaryCta}
+          description={finalCta.description}
+          primary={finalCta.primaryCta}
           lead={VB_CONSULT_LEAD}
           showPhone
         />

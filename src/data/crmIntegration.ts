@@ -491,6 +491,12 @@ export const CRM_FAQ: CrmFaqItem[] = [
   },
 ]
 
+/** FAQ section header (rendered by CRMIntegrationPage; editable via Content Studio). */
+export const CRM_FAQ_SECTION = {
+  eyebrow: 'Câu hỏi thường gặp',
+  h2: 'Câu hỏi thường gặp về tổng đài tích hợp CRM',
+} as const
+
 export const CRM_FINAL_CTA = {
   eyebrow: 'CRM INTEGRATION',
   h2: 'Đưa cuộc gọi vào đúng quy trình Sales và CSKH đang sử dụng',
