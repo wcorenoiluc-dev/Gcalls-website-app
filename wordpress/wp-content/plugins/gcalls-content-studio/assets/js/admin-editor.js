@@ -1178,7 +1178,10 @@
 		if ( state.previewRevision ) {
 			params.set( 'revision', String( state.previewRevision ) );
 		}
-		return ( cfg.homeUrl || '/' ).replace( /\/$/, '' ) + '/?' + params.toString();
+		// The preview document is served on the route's OWN path so the React
+		// router renders that route (a preview on "/" would always show Home).
+		var routePath = ( state.page && state.page.path ) || '/';
+		return ( cfg.homeUrl || '/' ).replace( /\/$/, '' ) + routePath + '?' + params.toString();
 	}
 
 	function loadPreview() {

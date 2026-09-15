@@ -40,7 +40,9 @@ class Preview {
 		if ( $revision ) {
 			$args['revision'] = (string) $revision;
 		}
-		return add_query_arg( $args, home_url( '/' ) );
+		// Served on the route's own path so the React router renders that route.
+		$path = Manifest::route_path( $route );
+		return add_query_arg( $args, home_url( '' === $path ? '/' : $path ) );
 	}
 
 	/**

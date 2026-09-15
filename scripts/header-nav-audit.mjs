@@ -108,8 +108,14 @@ for (const vp of VIEWPORTS.filter((v) => !ONLY_VP || v.name === ONLY_VP)) {
   // module may have failed (stale chunk after a deploy). Console/page errors
   // from the app fail the route too; favicon 404s are noise.
   const consoleErrors = []
-  page.on('console', (m) => { if (m.type() === 'error' && !/favicon/i.test(m.text())) consoleErrors.push(m.text().slice(0, 160)) })
+  // Resource failures are reported with their URL from the response/requestfailed
+  // hooks (the console line for them has no URL); favicon and third-party font
+  // hosts are noise, first-party 4xx/5xx and app errors are not.
+  const NOISE = /favicon|fonts\.googleapis\.com|fonts\.gstatic\.com/i
+  page.on('console', (m) => { if (m.type() === 'error' && !/Failed to load resource/i.test(m.text())) consoleErrors.push(m.text().slice(0, 160)) })
   page.on('pageerror', (e) => consoleErrors.push('pageerror: ' + String(e.message).slice(0, 160)))
+  page.on('response', (r) => { if (r.status() >= 400 && !NOISE.test(r.url())) consoleErrors.push(`HTTP ${r.status()} ${r.url().slice(0, 140)}`) })
+  page.on('requestfailed', (r) => { if (!NOISE.test(r.url())) consoleErrors.push(`request failed ${r.url().slice(0, 140)}`) })
 
   for (const route of routes) {
     const scope = `${vp.name} ${route}`

@@ -3,7 +3,7 @@
  * Plugin Name:       Gcalls Content Studio
  * Plugin URI:        https://gcalls.co/
  * Description:       WordPress-native visual content editing for the Gcalls React Shell — manifest-driven structured fields, same-origin live preview, drafts, native revisions, audit log and SEO. No Elementor, no ACF.
- * Version:           0.2.0
+ * Version:           0.2.1
  * Requires at least: 6.4
  * Requires PHP:      8.1
  * Author:            Gcalls
@@ -30,7 +30,7 @@ namespace Gcalls\ContentStudio;
 
 defined( 'ABSPATH' ) || exit;
 
-const VERSION           = '0.2.0';
+const VERSION = '0.2.1';
 const SCHEMA_VERSION    = 2;
 const MANIFEST_VERSION  = 2;
 const CPT               = 'gcalls_content';
