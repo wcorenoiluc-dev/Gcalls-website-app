@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import '@/styles/gcalls-cx.css'
 import { Container, Section, SectionHeader } from '@/components/common/primitives'
 import { JsonLd } from '@/components/common/JsonLd'
 import { FaqAccordion } from '@/components/common/FaqAccordion'
@@ -54,7 +55,8 @@ export function GcallsCxPage() {
   const jsonLd = useMemo(() => buildGcallsCxJsonLd(SITE_ORIGIN), [])
 
   return (
-    <>
+    /* Page-scoped single-line CTA rules — see src/styles/gcalls-cx.css. */
+    <div data-page="gcalls-cx">
       <JsonLd id="gcalls-cx" data={jsonLd} />
 
       <div className="bg-brand-light/60 pt-16 pb-3">
@@ -123,6 +125,6 @@ export function GcallsCxPage() {
           showPhone
         />
       </Section>
-    </>
+    </div>
   )
 }

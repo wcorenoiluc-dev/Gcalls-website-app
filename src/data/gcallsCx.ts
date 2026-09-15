@@ -452,7 +452,12 @@ export const CX_TRUST = {
   h2: 'Mỗi hành trình khách hàng cần một workflow khác nhau',
   description:
     'Kênh giao tiếp, cấu trúc đội ngũ và cách xử lý ticket khác nhau giữa từng doanh nghiệp. Gcalls CX cần được cấu hình theo quy trình vận hành thực tế thay vì áp dụng một mô hình giống nhau cho mọi tổ chức.',
-  cta: { label: 'Yêu cầu demo theo workflow của doanh nghiệp' },
+  /**
+   * `mobileLabel` is the approved short form for viewports below `sm`: the
+   * full label does not fit a 350px content box on one line at 14px, and a
+   * CTA label must never wrap (Page 05, React Shell 0.3.6).
+   */
+  cta: { label: 'Yêu cầu demo theo workflow của doanh nghiệp', mobileLabel: 'Yêu cầu demo theo workflow' },
   link: { label: 'Đọc bài viết trên Blog Gcalls', path: ROUTES.blog },
 } as const
 

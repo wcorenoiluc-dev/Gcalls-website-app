@@ -62,9 +62,12 @@ const INLINE_LINK =
 /** Shared demo CTA — always routes through the shared lead architecture. */
 export function CxDemoCta({
   label,
+  mobileLabel,
   variant = 'primary',
 }: {
   label: string
+  /** Shorter approved copy shown below `sm` so the label stays on one line. */
+  mobileLabel?: string
   variant?: CtaVariant
 }) {
   return (
@@ -81,7 +84,14 @@ export function CxDemoCta({
         })
       }
     >
-      {label}
+      {mobileLabel ? (
+        <>
+          <span className="sm:hidden">{mobileLabel}</span>
+          <span className="hidden sm:inline">{label}</span>
+        </>
+      ) : (
+        label
+      )}
     </CtaLink>
   )
 }
@@ -661,7 +671,7 @@ export function CxTrust() {
           </p>
 
           <div className="mt-7 w-full sm:w-auto">
-            <CxDemoCta label={CX_TRUST.cta.label} />
+            <CxDemoCta label={CX_TRUST.cta.label} mobileLabel={CX_TRUST.cta.mobileLabel} />
           </div>
 
           <Link to={CX_TRUST.link.path} className={`mt-4 ${INLINE_LINK}`}>

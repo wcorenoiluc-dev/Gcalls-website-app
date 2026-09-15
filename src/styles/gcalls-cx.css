@@ -1,0 +1,53 @@
+/* -----------------------------------------------------------------------
+ * /gcalls-cx/ — page-scoped CTA line rules (React Shell 0.3.6, Page 05).
+ *
+ * WHY
+ * The CTA primitive is `inline-flex` with `white-space: normal` and the
+ * items are allowed to shrink. On this page two CTAs sit side by side in a
+ * column that is narrower than their combined natural width (~580px) from
+ * ~1100px down to `sm`, so the flex algorithm squeezed each button and its
+ * label wrapped onto two lines. The colour contract is untouched — this is
+ * a layout defect only.
+ *
+ * SCOPE
+ * Everything is scoped to `[data-page="gcalls-cx"]` (the wrapper in
+ * GcallsCxPage.tsx). The Button primitive, buttons.css and the other 37
+ * routes are not modified. Plain unlayered rules beat Tailwind's layered
+ * utilities without `!important`.
+ *
+ * WHAT
+ *  - a label never wraps: `white-space: nowrap`, the control never shrinks,
+ *    its icon never shrinks;
+ *  - any flex row holding two or more CTAs wraps, so the SECOND BUTTON drops
+ *    to the next line as a whole, left-aligned, at its natural size;
+ *  - below `sm` the control is compact (14px label, 16px inline padding,
+ *    smaller gap, 18px icon) so the longest label fits the 350px content box
+ *    at 390px; `w-full` from the primitive still applies there.
+ * ------------------------------------------------------------------------- */
+
+[data-page='gcalls-cx'] [data-gcalls-button] {
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+[data-page='gcalls-cx'] [data-gcalls-button] > svg {
+  flex-shrink: 0;
+}
+
+/* Any flex container with two or more CTA controls wraps whole buttons. */
+[data-page='gcalls-cx'] :has(> [data-gcalls-button] ~ [data-gcalls-button]) {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 639px) {
+  [data-page='gcalls-cx'] [data-gcalls-button] {
+    font-size: 14px;
+    padding-inline: 1rem;
+    gap: 0.5rem;
+  }
+  [data-page='gcalls-cx'] [data-gcalls-button] > svg {
+    width: 18px;
+    height: 18px;
+  }
+}
