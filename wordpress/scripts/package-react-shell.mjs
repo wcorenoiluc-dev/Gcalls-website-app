@@ -95,6 +95,18 @@ if (!manifestPresent) {
 
 const tracked = [...trackedSource, ...distFiles].sort()
 
+/* --- 2b. The build must be complete: every dynamic import resolves, every
+ *        route has its chunk (verify-shell-build.mjs). A ZIP that ships a
+ *        route whose chunk is missing is exactly the 0.3.7 stale-chunk class
+ *        of failure, so packaging refuses it outright. ------------------- */
+
+try {
+  execFileSync('node', [path.join(WP_DIR, 'scripts/verify-shell-build.mjs')], { cwd: ROOT, stdio: 'inherit' })
+} catch {
+  console.error('package-react-shell: build verification failed — not packaging')
+  process.exit(1)
+}
+
 /* --- 3. Vet every path and its content -------------------------------------- */
 
 const problems = await vet(root, tracked)
@@ -130,6 +142,14 @@ const verifyProblems = await verifyZip(outPath, SLUG, tracked)
 if (verifyProblems.length) {
   console.error('package-react-shell: the built archive is not what was intended\n')
   for (const problem of verifyProblems) console.error(`  FAIL ${problem}`)
+  process.exit(1)
+}
+
+// Verify the archive itself carries the same complete chunk set.
+try {
+  execFileSync('node', [path.join(WP_DIR, 'scripts/verify-shell-build.mjs'), '--zip', outPath], { cwd: ROOT, stdio: 'inherit' })
+} catch {
+  console.error('package-react-shell: the archive does not contain a complete build — not publishing it')
   process.exit(1)
 }
 

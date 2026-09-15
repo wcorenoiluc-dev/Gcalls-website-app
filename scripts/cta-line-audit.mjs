@@ -76,8 +76,10 @@ const inspect = () => {
     for (let k = 1; k < tops.length; k++) if (tops[k] - tops[k - 1] > lh * 0.6) lines++
     const parent = el.parentElement.getBoundingClientRect()
     const siblings = ctas.filter((o) => o !== el && o.parentElement === el.parentElement)
+    const textLabel = el.textContent.trim()
+    const ariaLabel = (el.getAttribute('aria-label') || '').trim()
     return {
-      i, label: el.textContent.trim().slice(0, 48), variant: el.getAttribute('data-variant'),
+      i, label: (textLabel || ariaLabel).slice(0, 48), iconOnly: !textLabel && !!ariaLabel, variant: el.getAttribute('data-variant'),
       ws: cs.whiteSpace, lines, w: Math.round(r.width), h: Math.round(r.height),
       overflowLabel: el.scrollWidth > el.clientWidth + 1,
       exceedsParent: r.right > parent.right + 1 || r.left < parent.left - 1,
@@ -110,6 +112,13 @@ for (const w of WIDTHS) {
   for (const c of r.ctas.filter((x) => x.visible)) {
     ctaTotal++
     const id = `CTA "${c.label}" [${c.variant}]`
+    if (!c.label) fail(scope, `${id} has no visible or accessible label`)
+    if (c.iconOnly) {
+      // Icon-only control (aria-label, no text) — e.g. a mockup's "+" button.
+      // It cannot wrap; only its name and colours are checked.
+      if (c.variant === 'primary' && (!PURPLES.has(c.bg) || c.fg !== WHITE)) fail(scope, `${id} colours bg=${c.bg} fg=${c.fg}`)
+      continue
+    }
     if (c.ws !== 'nowrap') fail(scope, `${id} white-space ${c.ws}`)
     if (c.lines === 1) singleLine++; else fail(scope, `${id} renders ${c.lines} lines`)
     if (c.overflowLabel) { overflowing++; fail(scope, `${id} label overflows control`) }

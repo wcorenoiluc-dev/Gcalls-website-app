@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router'
 import { ROUTES, type RoutePath } from '@/config/navigation'
 import { SiteLayout } from '@/layouts/SiteLayout'
 import { RouteFallback } from '@/components/common/RouteFallback'
+import { RouteErrorBoundary } from '@/components/common/RouteErrorBoundary'
 import { HomePage } from '@/pages/HomePage'
 import { VISIBLE_ARTICLES } from '@/data/blog/visibility'
 
@@ -165,6 +166,14 @@ function lazyRoute(element: React.ReactNode) {
 }
 
 /**
+ * Every lazy child route carries its own `errorElement`, so a chunk that
+ * fails to load (a tab that outlived a deploy) shows a friendly message inside
+ * <main> while the header and footer of SiteLayout keep working. The layout
+ * route has one too, for errors thrown before any child renders.
+ */
+const lazyError = { errorElement: <RouteErrorBoundary /> }
+
+/**
  * Routes served by the sitemap-driven shell.
  *
  * EMPTY as of Checkpoint WEB-COMPANY-001: every public content route on this
@@ -184,73 +193,78 @@ export const router = createBrowserRouter([
   {
     path: ROUTES.home,
     element: <SiteLayout />,
+    errorElement: (
+      <SiteLayout>
+        <RouteErrorBoundary />
+      </SiteLayout>
+    ),
     children: [
       { index: true, element: <HomePage /> },
 
       // Fully built pages
-      { path: ROUTES.gcallsPlus, element: lazyRoute(<GcallsPlusPage />) },
-      { path: ROUTES.qcCenter, element: lazyRoute(<QaQcCenterPage />) },
-      { path: ROUTES.gcallsCx, element: lazyRoute(<GcallsCxPage />) },
-      { path: ROUTES.voicebotAi, element: lazyRoute(<VoicebotAiPage />) },
-      { path: ROUTES.crmIntegration, element: lazyRoute(<CRMIntegrationPage />) },
+      { path: ROUTES.gcallsPlus, ...lazyError, element: lazyRoute(<GcallsPlusPage />) },
+      { path: ROUTES.qcCenter, ...lazyError, element: lazyRoute(<QaQcCenterPage />) },
+      { path: ROUTES.gcallsCx, ...lazyError, element: lazyRoute(<GcallsCxPage />) },
+      { path: ROUTES.voicebotAi, ...lazyError, element: lazyRoute(<VoicebotAiPage />) },
+      { path: ROUTES.crmIntegration, ...lazyError, element: lazyRoute(<CRMIntegrationPage />) },
       {
         path: ROUTES.helpdeskIntegration,
-        element: lazyRoute(<HelpdeskIntegrationPage />),
+        ...lazyError, element: lazyRoute(<HelpdeskIntegrationPage />),
       },
-      { path: ROUTES.posIntegration, element: lazyRoute(<POSIntegrationPage />) },
+      { path: ROUTES.posIntegration, ...lazyError, element: lazyRoute(<POSIntegrationPage />) },
       {
         path: ROUTES.internationalCalling,
-        element: lazyRoute(<InternationalCallingPage />),
+        ...lazyError, element: lazyRoute(<InternationalCallingPage />),
       },
-      { path: ROUTES.pricing, element: lazyRoute(<PricingPage />) },
-      { path: ROUTES.costEstimator, element: lazyRoute(<CostEstimatorPage />) },
+      { path: ROUTES.pricing, ...lazyError, element: lazyRoute(<PricingPage />) },
+      { path: ROUTES.costEstimator, ...lazyError, element: lazyRoute(<CostEstimatorPage />) },
 
       // Integration platform pages
-      { path: ROUTES.hubspot, element: lazyRoute(<HubspotIntegrationPage />) },
-      { path: ROUTES.salesforce, element: lazyRoute(<SalesforceIntegrationPage />) },
-      { path: ROUTES.zohoCrm, element: lazyRoute(<ZohoCrmIntegrationPage />) },
-      { path: ROUTES.freshdesk, element: lazyRoute(<FreshdeskIntegrationPage />) },
-      { path: ROUTES.zendesk, element: lazyRoute(<ZendeskIntegrationPage />) },
+      { path: ROUTES.hubspot, ...lazyError, element: lazyRoute(<HubspotIntegrationPage />) },
+      { path: ROUTES.salesforce, ...lazyError, element: lazyRoute(<SalesforceIntegrationPage />) },
+      { path: ROUTES.zohoCrm, ...lazyError, element: lazyRoute(<ZohoCrmIntegrationPage />) },
+      { path: ROUTES.freshdesk, ...lazyError, element: lazyRoute(<FreshdeskIntegrationPage />) },
+      { path: ROUTES.zendesk, ...lazyError, element: lazyRoute(<ZendeskIntegrationPage />) },
 
       // Industry pages — one component, six content objects
-      { path: ROUTES.education, element: lazyRoute(<IndustryPage industry="education" />) },
-      { path: ROUTES.finance, element: lazyRoute(<IndustryPage industry="finance" />) },
-      { path: ROUTES.insurance, element: lazyRoute(<IndustryPage industry="insurance" />) },
+      { path: ROUTES.education, ...lazyError, element: lazyRoute(<IndustryPage industry="education" />) },
+      { path: ROUTES.finance, ...lazyError, element: lazyRoute(<IndustryPage industry="finance" />) },
+      { path: ROUTES.insurance, ...lazyError, element: lazyRoute(<IndustryPage industry="insurance" />) },
       {
         path: ROUTES.realEstate,
-        element: lazyRoute(<IndustryPage industry="real-estate" />),
+        ...lazyError, element: lazyRoute(<IndustryPage industry="real-estate" />),
       },
-      { path: ROUTES.ecommerce, element: lazyRoute(<IndustryPage industry="ecommerce" />) },
-      { path: ROUTES.bpo, element: lazyRoute(<IndustryPage industry="bpo" />) },
+      { path: ROUTES.ecommerce, ...lazyError, element: lazyRoute(<IndustryPage industry="ecommerce" />) },
+      { path: ROUTES.bpo, ...lazyError, element: lazyRoute(<IndustryPage industry="bpo" />) },
 
       // Resource pages
-      { path: ROUTES.blog, element: lazyRoute(<BlogPage />) },
-      { path: ROUTES.guides, element: lazyRoute(<GuidesPage />) },
-      { path: ROUTES.caseStudies, element: lazyRoute(<CaseStudiesPage />) },
-      { path: ROUTES.ebook, element: lazyRoute(<EbookPage />) },
-      { path: ROUTES.glossary, element: lazyRoute(<GlossaryPage />) },
-      { path: ROUTES.faq, element: lazyRoute(<FaqPage />) },
+      { path: ROUTES.blog, ...lazyError, element: lazyRoute(<BlogPage />) },
+      { path: ROUTES.guides, ...lazyError, element: lazyRoute(<GuidesPage />) },
+      { path: ROUTES.caseStudies, ...lazyError, element: lazyRoute(<CaseStudiesPage />) },
+      { path: ROUTES.ebook, ...lazyError, element: lazyRoute(<EbookPage />) },
+      { path: ROUTES.glossary, ...lazyError, element: lazyRoute(<GlossaryPage />) },
+      { path: ROUTES.faq, ...lazyError, element: lazyRoute(<FaqPage />) },
 
       // Company pages
-      { path: ROUTES.customers, element: lazyRoute(<CustomersPage />) },
-      { path: ROUTES.partners, element: lazyRoute(<PartnersPage />) },
+      { path: ROUTES.customers, ...lazyError, element: lazyRoute(<CustomersPage />) },
+      { path: ROUTES.partners, ...lazyError, element: lazyRoute(<PartnersPage />) },
 
       // Navigation hubs — all six, so no header path lands on a shell
-      { path: ROUTES.products, element: lazyRoute(<ProductsHubPage />) },
-      { path: ROUTES.solutions, element: lazyRoute(<SolutionsHubPage />) },
-      { path: ROUTES.integrations, element: lazyRoute(<IntegrationsHubPage />) },
-      { path: ROUTES.industries, element: lazyRoute(<IndustriesHubPage />) },
-      { path: ROUTES.resources, element: lazyRoute(<ResourcesHubPage />) },
-      { path: ROUTES.company, element: lazyRoute(<CompanyHubPage />) },
+      { path: ROUTES.products, ...lazyError, element: lazyRoute(<ProductsHubPage />) },
+      { path: ROUTES.solutions, ...lazyError, element: lazyRoute(<SolutionsHubPage />) },
+      { path: ROUTES.integrations, ...lazyError, element: lazyRoute(<IntegrationsHubPage />) },
+      { path: ROUTES.industries, ...lazyError, element: lazyRoute(<IndustriesHubPage />) },
+      { path: ROUTES.resources, ...lazyError, element: lazyRoute(<ResourcesHubPage />) },
+      { path: ROUTES.company, ...lazyError, element: lazyRoute(<CompanyHubPage />) },
 
       // Pages with bespoke content
-      { path: ROUTES.contact, element: lazyRoute(<ContactPage />) },
-      { path: ROUTES.referral, element: lazyRoute(<ReferralPage />) },
+      { path: ROUTES.contact, ...lazyError, element: lazyRoute(<ContactPage />) },
+      { path: ROUTES.referral, ...lazyError, element: lazyRoute(<ReferralPage />) },
 
       // Sitemap-driven shells
       ...SHELL_ROUTES.map((path) => ({
         path,
-        element: lazyRoute(<ShellPage />),
+        ...lazyError, element: lazyRoute(<ShellPage />),
       })),
 
       /**
@@ -264,10 +278,10 @@ export const router = createBrowserRouter([
        */
       ...VISIBLE_ARTICLES.map((article) => ({
         path: article.url,
-        element: lazyRoute(<BlogArticlePage slug={article.slug} />),
+        ...lazyError, element: lazyRoute(<BlogArticlePage slug={article.slug} />),
       })),
 
-      { path: '*', element: lazyRoute(<NotFoundPage />) },
+      { path: '*', ...lazyError, element: lazyRoute(<NotFoundPage />) },
     ],
   },
 ])

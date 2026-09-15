@@ -104,10 +104,21 @@ for (const vp of VIEWPORTS.filter((v) => !ONLY_VP || v.name === ONLY_VP)) {
   const ctx = await browser.newContext({ viewport: { width: vp.width, height: vp.height } })
   const page = await ctx.newPage()
   const vpResult = { routes: 0, failuresBefore: failures.length }
+  // A page that shows only header + footer has NOT loaded: the lazy page
+  // module may have failed (stale chunk after a deploy). Console/page errors
+  // from the app fail the route too; favicon 404s are noise.
+  const consoleErrors = []
+  page.on('console', (m) => { if (m.type() === 'error' && !/favicon/i.test(m.text())) consoleErrors.push(m.text().slice(0, 160)) })
+  page.on('pageerror', (e) => consoleErrors.push('pageerror: ' + String(e.message).slice(0, 160)))
 
   for (const route of routes) {
     const scope = `${vp.name} ${route}`
+    consoleErrors.length = 0
     await page.goto(BASE + route, { waitUntil: 'networkidle' })
+    const mainLoaded = await page.waitForSelector('main h1', { timeout: 15000 }).then(() => true).catch(() => false)
+    if (!mainLoaded) fail(scope, 'main content did not load (no <main> h1 within 15s — lazy chunk missing?)')
+    if (await page.locator('text=Unexpected Application Error').count()) fail(scope, 'default React Router error screen rendered')
+    for (const err of consoleErrors) fail(scope, `console error: ${err}`)
     const st = await page.evaluate(pageState)
     vpResult.routes++
     if (st.headers !== 1) fail(scope, `header count ${st.headers}`)

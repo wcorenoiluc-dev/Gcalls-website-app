@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { Outlet } from 'react-router'
 import { Header } from '@/components/navigation/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -11,7 +12,12 @@ import { ScrollManager, Seo } from '@/components/common/Seo'
  * horizontal overflow while silently clipping ~100 elements at 390px.
  * Overflow is now fixed at the source; if it reappears it should be visible.
  */
-export function SiteLayout() {
+/**
+ * `children` is only used by the layout route's `errorElement`, so a route
+ * error still renders inside the same header/footer chrome. Normal routing
+ * goes through <Outlet />.
+ */
+export function SiteLayout({ children }: { children?: ReactNode } = {}) {
   return (
     <div className="relative bg-background text-foreground min-h-screen flex flex-col">
       <Seo />
@@ -28,7 +34,7 @@ export function SiteLayout() {
       <Header />
 
       <main id="main-content" className="flex-1">
-        <Outlet />
+        {children ?? <Outlet />}
       </main>
 
       <Footer />

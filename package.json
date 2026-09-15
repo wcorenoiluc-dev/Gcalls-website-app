@@ -33,6 +33,7 @@
     "wp:check": "npm run wp:estimator && npm run wp:loss && npm run wp:test-loss && npm run wp:product && npm run wp:lint && npm run wp:css && npm run wp:qa && npm run wp:test-import && npm run wp:reconcile",
     "wp:live-verify": "node wordpress/scripts/live-003a-verify.mjs",
     "build:wordpress": "node wordpress/scripts/generate-shell-routes.mjs && node wordpress/scripts/generate-content-manifest.mjs && vite build --config vite.config.wordpress.ts",
+    "verify:shell": "node wordpress/scripts/verify-shell-build.mjs",
     "package:react-shell": "node wordpress/scripts/package-react-shell.mjs",
     "release:react-shell": "npm run build:wordpress && npm run package:react-shell",
     "package:content-studio": "node wordpress/scripts/package-content-studio.mjs",

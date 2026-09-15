@@ -86,8 +86,8 @@ try {
   await p4.evaluate(() => {
     document.getElementById('f').contentWindow.postMessage({ source: 'gcalls-content-studio', type: 'preview-focus', route: '/qc-bot-ai/', section: 'faq', selector: 'section[aria-labelledby="faq-qa-qc"]' }, window.location.origin)
   })
-  await frame.waitForTimeout(900)
-  const scrolled = await frame.evaluate(() => window.scrollY > 500)
+  // smooth scroll over a ~13k px document takes >1s; poll instead of a fixed wait
+  const scrolled = await frame.waitForFunction(() => window.scrollY > 500, null, { timeout: 4000 }).then(() => true).catch(() => false)
   check(scrolled, 'preview-focus scrolls the section into view')
   // spoofed source (message from a different window) must be ignored: simulate via the iframe itself posting to itself
   await frame.evaluate(() => window.postMessage({ source: 'gcalls-content-studio', type: 'preview-update', route: '/qc-bot-ai/', section: 'hero', fields: { h1: 'SPOOFED' } }, window.location.origin))
