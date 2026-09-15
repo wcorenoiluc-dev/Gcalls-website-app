@@ -1,22 +1,18 @@
 import { Users } from 'lucide-react'
-import { ProductVisualWithSupport } from '@/components/common/ProductVisual'
-import { ProductScreenshot } from '@/components/common/ProductScreenshot'
-import { ProductScreenshotPlaceholder } from '@/components/common/ProductScreenshotPlaceholder'
-import { GCALLS_PLUS_IMAGES } from '@/data/productImages'
-import { GP_CONTEXT } from '@/data/gcallsPlus'
+import { ProductMediaFrame } from '@/components/common/ProductMediaFrame'
+import { CustomerContextMockup } from './ProductInterfaceMockup'
+import { GP_CONTEXT, GP_MEDIA } from '@/data/gcallsPlus'
 import { FeatureSplit } from '@/components/common/FeatureSplit'
 
 /**
  * Customer context — contact profile alongside the call.
  *
- * Contact Profile is the main visual; the phone keypad is the single
- * supporting card. Both are real captures with customer data masked out of the
- * file. Deliberately not labelled "CRM": this is the Gcalls side of the
- * workflow, not a CRM product.
+ * Rendered as a code-native mockup (profile, call history, notes, owner, live
+ * call status) with sample data only. The masked contact-profile capture this
+ * section used to reference is PII_BLOCKED and the keypad capture that stood
+ * beside it showed a dialpad — the wrong subject for a section about context.
+ * Deliberately not labelled "CRM": this is the Gcalls side of the workflow.
  */
-const MASKED_SCREENSHOT_NOTE =
-  'Ảnh chụp thật từ môi trường demo nội bộ. Dữ liệu khách hàng và nhân viên đã được che vĩnh viễn.'
-
 export function CustomerContext() {
   return (
     <FeatureSplit
@@ -28,17 +24,16 @@ export function CustomerContext() {
       description={GP_CONTEXT.description}
       points={GP_CONTEXT.points}
       visual={
-        <ProductVisualWithSupport
-          main={
-            <ProductScreenshotPlaceholder
-              width={GCALLS_PLUS_IMAGES.contactProfileDesktop.width}
-              height={GCALLS_PLUS_IMAGES.contactProfileDesktop.height}
-            />
-          }
-          support={<ProductScreenshot image={GCALLS_PLUS_IMAGES.keypadMobile} />}
-          mainMaxWidth="560px"
-          note={MASKED_SCREENSHOT_NOTE}
-        />
+        <ProductMediaFrame
+          caption={GP_MEDIA.context.caption}
+          aspectRatio="16 / 11"
+          maxWidth="600px"
+          maxHeight="440px"
+          padded={false}
+          label="Giao diện mô phỏng hồ sơ liên hệ Gcalls Plus: thông tin liên hệ, người phụ trách, trạng thái cuộc gọi, lịch sử cuộc gọi và ghi chú; dữ liệu mẫu"
+        >
+          <CustomerContextMockup />
+        </ProductMediaFrame>
       }
     />
   )

@@ -1,30 +1,26 @@
 import { ArrowRight, Check } from 'lucide-react'
 import { Container, Eyebrow, GradientHeading } from '@/components/common/primitives'
-import { ProductVisualWithSupport } from '@/components/common/ProductVisual'
-import { ProductScreenshot } from '@/components/common/ProductScreenshot'
-import { ProductScreenshotPlaceholder } from '@/components/common/ProductScreenshotPlaceholder'
-import { GCALLS_PLUS_IMAGES } from '@/data/productImages'
+import { ProductMediaFrame } from '@/components/common/ProductMediaFrame'
+import { WebphoneWorkspaceMockup } from './ProductInterfaceMockup'
 import { track } from '@/lib/analytics'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
-import { GP_HERO, GP_LEAD_CONTEXT } from '@/data/gcallsPlus'
+import { GP_HERO, GP_LEAD_CONTEXT, GP_MEDIA } from '@/data/gcallsPlus'
 import { CtaLink } from '@/components/common/Button'
 
 /**
  * Page hero. Carries the page's single H1.
  *
- * Visual composition per brief §3:
- *   MAIN     Webphone — contact profile + activity feed + keypad, one screen
- *   SUPPORT  Active Call, as it renders on a phone
+ * Visual (Page 03 polish, React Shell 0.3.5): ONE complete code-native
+ * composition in the right column — a browser frame holding the webphone
+ * workspace, with the docked call panel inside the frame beside the contact
+ * view. It sits in a ProductMediaFrame with an explicit aspect ratio,
+ * max-width and max-height, so it can never overflow its column, overlap the
+ * copy, or stretch. Nothing is floated over a placeholder: the previous
+ * layout put a portrait phone capture (553×1084) over an empty "image
+ * pending" box, which read as a hole in the page.
  *
- * Both are real captures, masked irreversibly before they entered the repo.
- * The main visual is this page's LCP image: eager, sync-decoded,
- * fetchpriority=high. The supporting card sits above the fold from `lg` up, so
- * it is eager too — but without the priority hint, so it does not compete with
- * the LCP image.
- * Desktop shows both, supporting card overlapping. Mobile stacks them — one
- * main visual, then the supporting card below. Never 3–4 floating screenshots.
- *
- * Content order is text-first, visual-second at every breakpoint.
+ * Desktop: balanced two columns. Tablet and mobile: stacked, copy first,
+ * visual second (DOM order is text-first at every breakpoint).
  */
 export function GcallsPlusHero() {
   return (
@@ -95,22 +91,16 @@ export function GcallsPlusHero() {
           </div>
 
           {/* Visual second. */}
-          <ProductVisualWithSupport
-            main={
-              <ProductScreenshotPlaceholder
-                width={GCALLS_PLUS_IMAGES.webphoneDesktop.width}
-                height={GCALLS_PLUS_IMAGES.webphoneDesktop.height}
-              />
-            }
-            support={
-              <ProductScreenshot
-                image={GCALLS_PLUS_IMAGES.activeCallMobile}
-                aboveFold
-              />
-            }
-            mainMaxWidth="580px"
-            note="Ảnh chụp thật từ môi trường demo nội bộ. Dữ liệu khách hàng và nhân viên đã được che vĩnh viễn."
-          />
+          <ProductMediaFrame
+            caption={GP_MEDIA.hero.caption}
+            aspectClassName="aspect-square sm:aspect-[16/11]"
+            maxWidth="620px"
+            maxHeight="470px"
+            padded={false}
+            label="Giao diện mô phỏng Gcalls Plus Webphone trên trình duyệt: danh sách liên hệ, hồ sơ khách hàng đang gọi, ghi chú, lịch sử cuộc gọi và bảng điều khiển cuộc gọi; dữ liệu mẫu"
+          >
+            <WebphoneWorkspaceMockup />
+          </ProductMediaFrame>
         </div>
       </Container>
     </section>

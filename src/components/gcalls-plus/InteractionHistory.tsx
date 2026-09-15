@@ -1,21 +1,18 @@
 import { History } from 'lucide-react'
-import { ProductVisual } from '@/components/common/ProductVisual'
-import { ProductScreenshot } from '@/components/common/ProductScreenshot'
+import { FramedCapture, ProductMediaFrame } from '@/components/common/ProductMediaFrame'
 import { GCALLS_PLUS_IMAGES } from '@/data/productImages'
-import { GP_HISTORY } from '@/data/gcallsPlus'
+import { GP_HISTORY, GP_MEDIA } from '@/data/gcallsPlus'
 import { FeatureSplit } from '@/components/common/FeatureSplit'
 
 /**
  * Interaction history — timeline, call history and filtering.
  *
- * The visual is a real capture of the call-history table with every customer
- * name, phone number and agent account masked out of the file itself. It is
- * portrait and dense, so it is never scaled below its column width; the
- * section's meaning is carried by the live bullet list beside it.
+ * The visual is the approved, masked call-history capture — the one section
+ * whose subject it actually depicts. It is portrait (808×983) and dense, so
+ * it sits `object-fit: contain` inside a bounded frame rather than being
+ * scaled to full column width; the section's meaning is carried by the live
+ * bullet list beside it.
  */
-const MASKED_SCREENSHOT_NOTE =
-  'Ảnh chụp thật từ môi trường demo nội bộ. Dữ liệu khách hàng và nhân viên đã được che vĩnh viễn.'
-
 export function InteractionHistory() {
   return (
     <FeatureSplit
@@ -27,9 +24,14 @@ export function InteractionHistory() {
       points={GP_HISTORY.points}
       reverse
       visual={
-        <ProductVisual maxWidth="560px" note={MASKED_SCREENSHOT_NOTE}>
-          <ProductScreenshot image={GCALLS_PLUS_IMAGES.callHistoryDesktop} />
-        </ProductVisual>
+        <ProductMediaFrame
+          caption={GP_MEDIA.history.caption}
+          aspectRatio="1 / 1"
+          maxWidth="500px"
+          maxHeight="500px"
+        >
+          <FramedCapture image={GCALLS_PLUS_IMAGES.callHistoryDesktop} />
+        </ProductMediaFrame>
       }
     />
   )

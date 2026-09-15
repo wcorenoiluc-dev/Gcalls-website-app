@@ -395,13 +395,50 @@ export const GP_PRICING = {
  * nothing is invented here — no testimonial, quote, percentage improvement,
  * case study or customer count.
  */
+/**
+ * Media contract for every product visual on this page.
+ *
+ * `caption` is the ONE approved caption for mockups and masked captures on
+ * this page. The two older strings ("Ảnh minh hoạ đang được cập nhật" and
+ * "Ảnh chụp thật từ môi trường demo nội bộ…") are retired: the first admitted
+ * a hole in the page, the second described captures this page no longer
+ * ships. Every section's `media.variant` names the code-native mockup (or
+ * approved capture) that renders it, so Content Studio can later swap a
+ * variant or caption without touching JSX.
+ */
+export const GP_MEDIA_CAPTION =
+  'Giao diện mô phỏng · Dữ liệu mẫu, không chứa thông tin khách hàng thật.'
+
+export type GpMediaVariant =
+  | 'webphone-workspace'
+  | 'customer-context'
+  | 'integration-map'
+  | 'capture:callHistoryDesktop'
+
+export interface GpSectionMedia {
+  readonly variant: GpMediaVariant
+  readonly caption: string
+}
+
+export const GP_MEDIA: Record<'hero' | 'history' | 'context' | 'integration', GpSectionMedia> = {
+  hero: { variant: 'webphone-workspace', caption: GP_MEDIA_CAPTION },
+  history: { variant: 'capture:callHistoryDesktop', caption: GP_MEDIA_CAPTION },
+  context: { variant: 'customer-context', caption: GP_MEDIA_CAPTION },
+  integration: { variant: 'integration-map', caption: GP_MEDIA_CAPTION },
+}
+
+/**
+ * Customer section. Quotes live in `src/data/testimonials.ts` (verbatim from
+ * the public Gcalls site, with source URL + retrieval date); this object only
+ * carries the section chrome. The CTA hands off to the Case Studies hub — a
+ * canonical route — never to a per-customer detail page, because no such
+ * route exists in routes.json.
+ */
 export const GP_STORY = {
   eyebrow: 'KHÁCH HÀNG',
   h2: 'Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau',
-  placeholder: 'Nội dung khách hàng đang được cập nhật',
-  placeholderNote:
-    'Câu chuyện khách hàng sẽ được bổ sung khi có thông tin được duyệt công bố.',
-  link: { label: 'Đọc bài viết trên Blog Gcalls', path: ROUTES.blog },
+  lead: 'Lắng nghe khách hàng nói về trải nghiệm của họ khi đồng hành cùng Gcalls.',
+  cta: { label: 'Xem các câu chuyện khách hàng', path: ROUTES.caseStudies },
 } as const
 
 export interface GpFaqItem {
