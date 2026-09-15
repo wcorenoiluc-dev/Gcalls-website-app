@@ -1,6 +1,8 @@
 import { HelpCircle } from 'lucide-react'
 import { Container, Section } from '@/components/common/primitives'
 import { GP_DIRECT_ANSWER } from '@/data/gcallsPlus'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 /**
  * Direct answer / AIO block.
@@ -15,6 +17,7 @@ import { GP_DIRECT_ANSWER } from '@/data/gcallsPlus'
  * the primary keyword "phần mềm tổng đài webphone".
  */
 export function DirectAnswer() {
+  const cDirectAnswer = useGcallsContent(ROUTES.gcallsPlus, 'directAnswer', GP_DIRECT_ANSWER)
   return (
     <Section ariaLabelledBy="gcalls-plus-la-gi">
       <Container>
@@ -30,11 +33,11 @@ export function DirectAnswer() {
             id="gcalls-plus-la-gi"
             className="mt-4 text-[22px] font-extrabold leading-snug tracking-tight text-foreground sm:text-[26px]"
           >
-            {GP_DIRECT_ANSWER.question}
+            {cDirectAnswer.question}
           </h2>
 
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {GP_DIRECT_ANSWER.answer}
+            {cDirectAnswer.answer}
           </p>
         </div>
       </Container>

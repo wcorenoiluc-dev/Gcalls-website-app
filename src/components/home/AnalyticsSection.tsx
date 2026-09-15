@@ -4,17 +4,12 @@ import { Link } from "react-router";
 import { ctaAttrs } from "@/components/common/Button";
 import { Activity, ArrowRight, ArrowUpRight, BarChart2, Check, ChevronRight, Clock, HeadphonesIcon, PhoneCall, PhoneIncoming, PhoneMissed, PhoneOutgoing, Settings, Star, TrendingUp } from "lucide-react";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
+import { HOME_ANALYTICS } from "./homeContent";
+import { useGcallsContent } from "@/lib/gcallsContent/useGcallsContent";
 
 // ─── Section 6: Analytics ────────────────────────────────────────────────────
 
-const analyticsFeatures = [
-  "Thống kê cuộc gọi theo ngày, tuần, tháng",
-  "Theo dõi hiệu suất từng nhân viên",
-  "Báo cáo cuộc gọi đến và đi",
-  "Theo dõi cuộc gọi nhỡ",
-  "Đo lường thời lượng cuộc gọi",
-  "Dashboard realtime",
-];
+// Feature list copy lives in homeContent.ts.
 
 const kpiCards = [
   { value: "Live",   label: "Tỷ lệ bắt máy realtime",     icon: PhoneCall,  color: "#673ab7", trend: "Minh họa" },
@@ -51,11 +46,12 @@ const metricCards = [
   { label: "Hiệu suất nhân viên", value: "4.7",   unit: "/ 5",  icon: Star,          color: "#7c3aed", bg: "#f5f0ff",  change: "+0.3",  up: true },
 ];
 
-const analyticUseCases = [
-  { role: "Sales Manager",    icon: BarChart2,     color: "#673ab7", bg: "#f5f0fd",  desc: "Theo dõi KPI từng nhân viên Sales, phân tích tỷ lệ chốt deal và hiệu quả cuộc gọi." },
-  { role: "CSKH Manager",     icon: HeadphonesIcon,color: "#0891b2", bg: "#f0f9ff",  desc: "Giám sát chất lượng phục vụ, theo dõi thời gian xử lý và mức độ hài lòng khách hàng." },
-  { role: "Business Owner",   icon: TrendingUp,    color: "#16a34a", bg: "#f0fdf4",  desc: "Nắm tổng quan hiệu suất vận hành, so sánh theo giai đoạn và ra quyết định chiến lược." },
-  { role: "Operation Team",   icon: Settings,      color: "#d97706", bg: "#fffbeb",  desc: "Cấu hình báo cáo tự động, phân tích tắc nghẽn luồng cuộc gọi và tối ưu phân công." },
+/** Use-case icon/colours by index; role + desc live in homeContent.ts. */
+const analyticUseCaseStyles = [
+  { icon: BarChart2, color: "#673ab7", bg: "#f5f0fd" },
+  { icon: HeadphonesIcon, color: "#0891b2", bg: "#f0f9ff" },
+  { icon: TrendingUp, color: "#16a34a", bg: "#f0fdf4" },
+  { icon: Settings, color: "#d97706", bg: "#fffbeb" },
 ];
 
 export function AnalyticsDashboardMockup() {
@@ -232,6 +228,9 @@ export function AnalyticsDashboardMockup() {
 }
 
 export function AnalyticsSection() {
+  const content = useGcallsContent('/', 'analytics', HOME_ANALYTICS);
+  const analyticsFeatures = content.features;
+  const analyticUseCases = content.useCases.map((uc, i) => ({ ...analyticUseCaseStyles[i % analyticUseCaseStyles.length], ...uc }));
   return (
     <section className="py-28 overflow-hidden" style={{ background: "#fff", fontFamily: "'Open Sans', sans-serif" }}>
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
@@ -246,7 +245,7 @@ export function AnalyticsSection() {
               style={{ background: "rgba(103,58,183,0.08)", color: "#673ab7", letterSpacing: "0.08em" }}
             >
               <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#673ab7" }} />
-              Analytics & KPI Dashboard
+              {content.badge}
             </div>
 
             <div>
@@ -254,13 +253,13 @@ export function AnalyticsSection() {
                 className="font-extrabold tracking-tight mb-5"
                 style={{ fontSize: "clamp(26px, 3.2vw, 42px)", color: "#1e2026", lineHeight: 1.14 }}
               >
-                Theo dõi hiệu suất đội ngũ{" "}
+                {content.heading}{" "}
                 <span style={{ background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  theo thời gian thực
+                  {content.headingHighlight}
                 </span>
               </h2>
               <p style={{ color: "#5b5f6b", fontSize: "16px", lineHeight: 1.7, maxWidth: "480px" }}>
-                Dashboard trực quan giúp quản lý theo dõi tình trạng cuộc gọi, hiệu suất nhân viên và chất lượng vận hành chỉ trong vài giây.
+                {content.description}
               </p>
             </div>
 
@@ -359,11 +358,11 @@ export function AnalyticsSection() {
               className="font-extrabold mb-3"
               style={{ fontSize: "clamp(18px, 2.2vw, 28px)", color: "#1e2026", lineHeight: 1.2 }}
             >
-              Ra quyết định nhanh hơn với{" "}
-              <span style={{ color: "#673ab7" }}>dữ liệu trực quan</span>
+              {content.highlightHeading}{" "}
+              <span style={{ color: "#673ab7" }}>{content.highlightHighlight}</span>
             </h3>
             <p className="text-base leading-relaxed" style={{ color: "#5b5f6b", maxWidth: "560px" }}>
-              Không cần tổng hợp báo cáo thủ công từ nhiều nguồn. Mọi chỉ số quan trọng đều được hiển thị trực quan giúp quản lý nhanh chóng nắm bắt tình hình vận hành.
+              {content.highlightDescription}
             </p>
           </div>
           <Link
@@ -374,7 +373,7 @@ export function AnalyticsSection() {
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#5929a8"; (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)"; }}
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "#673ab7"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}
           >
-            Khám phá Analytics
+            {content.ctaLabel}
             <ArrowRight size={15} />
           </Link>
         </div>
@@ -398,12 +397,11 @@ export function AnalyticsSection() {
           */}
           <div className="text-center mb-8">
             <h3 className="font-extrabold" style={{ fontSize: "clamp(18px, 2.2vw, 28px)", color: "#1e2026" }}>
-              Các chỉ số quan trọng trong{" "}
-              <span style={{ color: "#673ab7" }}>một màn hình</span>
+              {content.metricsHeading}{" "}
+              <span style={{ color: "#673ab7" }}>{content.metricsHighlight}</span>
             </h3>
             <p className="mt-2 text-sm" style={{ color: "#5b5f6b" }}>
-              Các chỉ số Gcalls Analytics theo dõi. Số liệu bên dưới là dữ liệu minh họa,
-              không phải kết quả đo được của một doanh nghiệp cụ thể.
+              {content.metricsNote}
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -440,8 +438,8 @@ export function AnalyticsSection() {
         <div>
           <div className="text-center mb-8">
             <h3 className="font-extrabold" style={{ fontSize: "clamp(18px, 2.2vw, 28px)", color: "#1e2026" }}>
-              Dành cho{" "}
-              <span style={{ color: "#673ab7" }}>quản lý, trưởng nhóm và chủ doanh nghiệp</span>
+              {content.useCasesHeading}{" "}
+              <span style={{ color: "#673ab7" }}>{content.useCasesHighlight}</span>
             </h3>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">

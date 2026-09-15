@@ -34,6 +34,8 @@ import {
   CxTrust,
   CxUseCases,
 } from '@/components/gcalls-cx/sections'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 /**
  * `/gcalls-cx/` — Gcalls CX, omnichannel Contact Center.
@@ -53,6 +55,9 @@ import {
  */
 export function GcallsCxPage() {
   const jsonLd = useMemo(() => buildGcallsCxJsonLd(SITE_ORIGIN), [])
+  const pricing = useGcallsContent(ROUTES.gcallsCx, 'pricing', CX_PRICING)
+  const faq = useGcallsContent(ROUTES.gcallsCx, 'faq', { items: CX_FAQ })
+  const finalCta = useGcallsContent(ROUTES.gcallsCx, 'finalCta', CX_FINAL_CTA)
 
   return (
     /* Page-scoped single-line CTA rules — see src/styles/gcalls-cx.css. */
@@ -85,12 +90,12 @@ export function GcallsCxPage() {
       {/* 17 */}
       <PricingCtaBand
         tinted
-        eyebrow={CX_PRICING.eyebrow}
-        title={CX_PRICING.h2}
+        eyebrow={pricing.eyebrow}
+        title={pricing.h2}
         titleId="cau-hinh-chi-phi-cx"
-        description={CX_PRICING.description}
-        primary={CX_PRICING.primaryCta}
-        secondary={CX_PRICING.secondaryCta}
+        description={pricing.description}
+        primary={pricing.primaryCta}
+        secondary={pricing.secondaryCta}
       />
 
       {/* 18 */}
@@ -102,7 +107,7 @@ export function GcallsCxPage() {
             titleId="faq-gcalls-cx"
           />
           <div className="mt-10">
-            <FaqAccordion items={CX_FAQ} idPrefix="cx-faq" />
+            <FaqAccordion items={faq.items} idPrefix="cx-faq" />
           </div>
         </Container>
       </Section>
@@ -110,16 +115,16 @@ export function GcallsCxPage() {
       {/* 19 */}
       <Section tinted ariaLabelledBy="cta-gcalls-cx">
         <FinalCtaBand
-          eyebrow={CX_FINAL_CTA.eyebrow}
-          title={CX_FINAL_CTA.h2}
+          eyebrow={finalCta.eyebrow}
+          title={finalCta.h2}
           titleId="cta-gcalls-cx"
-          description={CX_FINAL_CTA.description}
+          description={finalCta.description}
           /* Primary = demo request; secondary = plain consultation. Both go to
              the shared lead form, each carrying its own intent. */
-          primary={CX_FINAL_CTA.primaryCta}
+          primary={finalCta.primaryCta}
           lead={CX_DEMO_LEAD}
           secondary={{
-            label: CX_FINAL_CTA.secondaryCta.label,
+            label: finalCta.secondaryCta.label,
             path: leadCtaHref(CX_CONSULT_LEAD),
           }}
           showPhone

@@ -4,6 +4,8 @@ import { Link } from "react-router";
 import { ctaAttrs } from "@/components/common/Button";
 import { ArrowRight, BarChart2, Check, ChevronRight, Cloud, GitBranch, Globe, HeadphonesIcon, Layers, Mic, MoreHorizontal, Network, Phone, PhoneForwarded, PhoneIncoming, Plus, RefreshCw, Server, Settings, Users, Voicemail, Wifi, Zap } from "lucide-react";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
+import { HOME_CLOUD } from "./homeContent";
+import { useGcallsContent } from "@/lib/gcallsContent/useGcallsContent";
 import { darkSection } from "@/lib/theme/darkSection";
 
 // ─── Section 7: Cloud Call Center ────────────────────────────────────────────
@@ -30,14 +32,7 @@ const ivrTree = [
   { level: 3, key: "agent",  label: "Agent nhận máy",       sub: "Ghi âm tự động",      color: "#d97706" },
 ];
 
-const cloudFeatures = [
-  "SIP Account Management",
-  "IVR nhiều cấp",
-  "Call Routing thông minh",
-  "Nhóm đổ chuông",
-  "Chuyển tiếp cuộc gọi",
-  "Hotline đa đầu số",
-];
+// Feature list copy lives in homeContent.ts.
 
 const cloudFloats = [
   { value: "Cloud",     label: "Hạ tầng Cloud SaaS",       icon: Cloud,       color: "#673ab7" },
@@ -46,25 +41,27 @@ const cloudFloats = [
   { value: "Multi",     label: "Hotline đa đầu số",        icon: Globe,       color: "#d97706" },
 ];
 
-const featureGrid = [
-  { label: "SIP Account",         icon: Server,        color: "#673ab7", bg: "#f5f0fd",  desc: "Tài khoản SIP cho từng nhân viên, đa thiết bị" },
-  { label: "IVR",                 icon: GitBranch,     color: "#7c3aed", bg: "#f3f0fe",  desc: "Cây menu tự động nhiều cấp, cấu hình linh hoạt" },
-  { label: "Call Routing",        icon: Network,       color: "#0891b2", bg: "#f0f9ff",  desc: "Điều hướng thông minh theo kỹ năng, thời gian" },
-  { label: "Ring Group",          icon: Users,         color: "#16a34a", bg: "#f0fdf4",  desc: "Đổ chuông đồng thời hoặc tuần tự nhiều agent" },
-  { label: "Multi Branch",        icon: Layers,        color: "#0284c7", bg: "#e0f2fe",  desc: "Kết nối nhiều văn phòng, chi nhánh trên 1 hệ thống" },
-  { label: "Số quốc tế",          icon: Globe,         color: "#059669", bg: "#ecfdf5",  desc: "DID nội địa & quốc tế, số ảo nhiều vùng" },
-  { label: "Call Forwarding",     icon: PhoneForwarded,color: "#d97706", bg: "#fffbeb",  desc: "Chuyển tiếp đến di động, email hoặc voicemail" },
-  { label: "Voicemail",           icon: Voicemail,     color: "#7c3aed", bg: "#f5f0ff",  desc: "Hộp thư thoại, nhận qua email, ghi âm lưu trữ" },
+/** Feature-grid icon/colours by index; label + desc live in homeContent.ts. */
+const featureGridStyles = [
+  { icon: Server, color: "#673ab7", bg: "#f5f0fd" },
+  { icon: GitBranch, color: "#7c3aed", bg: "#f3f0fe" },
+  { icon: Network, color: "#0891b2", bg: "#f0f9ff" },
+  { icon: Users, color: "#16a34a", bg: "#f0fdf4" },
+  { icon: Layers, color: "#0284c7", bg: "#e0f2fe" },
+  { icon: Globe, color: "#059669", bg: "#ecfdf5" },
+  { icon: PhoneForwarded, color: "#d97706", bg: "#fffbeb" },
+  { icon: Voicemail, color: "#7c3aed", bg: "#f5f0ff" },
 ];
 
-const flowSteps = [
-  { label: "Khách hàng gọi đến", icon: Phone,         color: "#673ab7", note: "1900 1234 · 028 xxxx" },
-  { label: "IVR",                icon: GitBranch,     color: "#7c3aed", note: "Bấm 1–Sales, 2–CSKH" },
-  { label: "Call Routing",       icon: Network,       color: "#0891b2", note: "Phân phối thông minh" },
-  { label: "Ring Group",         icon: Users,         color: "#16a34a", note: "Đổ chuông đồng thời" },
-  { label: "Agent",              icon: HeadphonesIcon,color: "#d97706", note: "Nhân viên nhận máy" },
-  { label: "Recording",          icon: Mic,           color: "#dc2626", note: "Ghi âm tự động cuộc gọi" },
-  { label: "Analytics",          icon: BarChart2,     color: "#6d28d9", note: "Báo cáo realtime" },
+/** Flow-step icon/colours by index; label + note live in homeContent.ts. */
+const flowStepStyles = [
+  { icon: Phone, color: "#673ab7" },
+  { icon: GitBranch, color: "#7c3aed" },
+  { icon: Network, color: "#0891b2" },
+  { icon: Users, color: "#16a34a" },
+  { icon: HeadphonesIcon, color: "#d97706" },
+  { icon: Mic, color: "#dc2626" },
+  { icon: BarChart2, color: "#6d28d9" },
 ];
 
 const sipStatusLabel: Record<string, { label: string; bg: string; dot: string }> = {
@@ -293,6 +290,10 @@ function CloudMockup() {
 }
 
 export function CloudSection() {
+  const content = useGcallsContent('/', 'cloud', HOME_CLOUD);
+  const cloudFeatures = content.features;
+  const featureGrid = content.gridItems.map((f, i) => ({ ...featureGridStyles[i % featureGridStyles.length], ...f }));
+  const flowSteps = content.flowSteps.map((step, i) => ({ ...flowStepStyles[i % flowStepStyles.length], ...step }));
   return (
     <section className="py-28 overflow-hidden" style={{ background: "#fff", fontFamily: "'Open Sans', sans-serif" }}>
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
@@ -307,7 +308,7 @@ export function CloudSection() {
               style={{ background: "rgba(103,58,183,0.08)", color: "#673ab7", letterSpacing: "0.08em" }}
             >
               <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#673ab7" }} />
-              Cloud Call Center
+              {content.badge}
             </div>
 
             <div>
@@ -315,13 +316,13 @@ export function CloudSection() {
                 className="font-extrabold tracking-tight mb-5"
                 style={{ fontSize: "clamp(26px, 3.2vw, 42px)", color: "#1e2026", lineHeight: 1.14 }}
               >
-                Xây dựng hệ thống tổng đài doanh nghiệp{" "}
+                {content.heading}{" "}
                 <span style={{ background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  trên nền tảng Cloud
+                  {content.headingHighlight}
                 </span>
               </h2>
               <p style={{ color: "#5b5f6b", fontSize: "16px", lineHeight: 1.7, maxWidth: "480px" }}>
-                Từ doanh nghiệp nhỏ đến Contact Center nhiều chi nhánh, Gcalls giúp triển khai hệ thống tổng đài linh hoạt, dễ mở rộng và vận hành hoàn toàn trên nền tảng điện toán đám mây.
+                {content.description}
               </p>
             </div>
 
@@ -412,11 +413,10 @@ export function CloudSection() {
               carrier conditions Gcalls does not control.
             */}
             <h3 className="font-extrabold mb-3" style={{ fontSize: "clamp(20px, 2.4vw, 30px)", lineHeight: 1.2, color: darkSection.heading }}>
-              Điều hướng cuộc gọi đến <span style={{ color: "rgba(255,255,255,0.75)" }}>đúng người phụ trách</span>
+              {content.highlightHeading}{" "}<span style={{ color: "rgba(255,255,255,0.75)" }}>{content.highlightHighlight}</span>
             </h3>
             <p style={{ color: "rgba(255,255,255,0.72)", maxWidth: "540px", fontSize: "15px", lineHeight: 1.7 }}>
-              Cấu hình luồng cuộc gọi tới đúng bộ phận, đúng nhân viên hoặc đúng chi nhánh, kèm
-              nhóm đổ chuông và chuyển tiếp cho trường hợp không có người nhận máy.
+              {content.highlightDescription}
             </p>
           </div>
           <Link
@@ -427,7 +427,7 @@ export function CloudSection() {
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "none"; }}
           >
-            Xem Cloud PBX
+            {content.ctaLabel}
             <ArrowRight size={15} />
           </Link>
         </div>
@@ -436,8 +436,8 @@ export function CloudSection() {
         <div className="mb-16">
           <div className="text-center mb-8">
             <h3 className="font-extrabold" style={{ fontSize: "clamp(18px, 2.2vw, 28px)", color: "#1e2026" }}>
-              Đầy đủ tính năng{" "}
-              <span style={{ color: "#673ab7" }}>Cloud PBX doanh nghiệp</span>
+              {content.gridHeading}{" "}
+              <span style={{ color: "#673ab7" }}>{content.gridHighlight}</span>
             </h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -466,11 +466,11 @@ export function CloudSection() {
         <div className="rounded-3xl px-8 py-12" style={{ background: "#f6f3fc", border: "1px solid rgba(103,58,183,0.10)" }}>
           <div className="text-center mb-10">
             <h3 className="font-extrabold mb-2" style={{ fontSize: "clamp(18px, 2.2vw, 26px)", color: "#1e2026" }}>
-              Hành trình cuộc gọi từ{" "}
-              <span style={{ color: "#673ab7" }}>đầu đến cuối</span>
+              {content.flowHeading}{" "}
+              <span style={{ color: "#673ab7" }}>{content.flowHighlight}</span>
             </h3>
             {/* "hoàn toàn tự động" overstated: each step below is configured, not automatic by default. */}
-            <p className="text-sm" style={{ color: "#5b5f6b" }}>Các bước một cuộc gọi đi qua, theo luồng doanh nghiệp cấu hình</p>
+            <p className="text-sm" style={{ color: "#5b5f6b" }}>{content.flowNote}</p>
           </div>
 
           {/* Flow steps — horizontal on desktop, vertical on mobile */}

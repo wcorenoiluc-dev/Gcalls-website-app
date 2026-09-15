@@ -76,3 +76,19 @@ export const TESTIMONIALS: readonly Testimonial[] = [
     source: SOURCE,
   },
 ]
+
+/**
+ * The editable projection of TESTIMONIALS for Gcalls Content Studio: the
+ * fields a card renders, without `source` (provenance is not editable copy).
+ * Referenced by both `src/content/sections/gcallsPlus.ts` and CustomerStory.
+ */
+export const TESTIMONIALS_CONTENT = {
+  items: TESTIMONIALS.map(({ id, company, monogram, representative, role, quote }) => ({
+    id,
+    company,
+    monogram,
+    representative,
+    role,
+    quote,
+  })),
+}

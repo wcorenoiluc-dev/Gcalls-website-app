@@ -1,0 +1,5377 @@
+{
+  "manifestVersion": 2,
+  "schemaVersion": 2,
+  "blockedMedia": [
+    "gcalls-plus-webphone-desktop-v1.webp",
+    "gcalls-plus-contact-profile-desktop-v1.webp",
+    "gcalls-plus-integrations-desktop-v1.webp",
+    "gcalls-plus-advanced-filter-desktop-v1.webp",
+    "gcalls-plus-click-to-call-config-desktop-v1.webp"
+  ],
+  "pages": [
+    {
+      "key": "home",
+      "path": "/",
+      "label": "Trang chủ",
+      "order": 0,
+      "status": "editable",
+      "statusLabel": "Có thể chỉnh sửa",
+      "sections": [
+        {
+          "key": "hero",
+          "label": "Hero",
+          "order": 0,
+          "previewSelector": "section[aria-labelledby=\"home-hero-heading\"]",
+          "fields": {
+            "enabled": {
+              "type": "toggle",
+              "label": "Hiển thị section"
+            },
+            "badgeText": {
+              "type": "text",
+              "label": "Nhãn (badge)",
+              "maxLen": 40
+            },
+            "heading": {
+              "type": "text",
+              "label": "Tiêu đề chính",
+              "maxLen": 160,
+              "required": true
+            },
+            "headingHighlight": {
+              "type": "text",
+              "label": "Phần nhấn mạnh của tiêu đề",
+              "maxLen": 80
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 600
+            },
+            "primaryCtaLabel": {
+              "type": "ctaLabel",
+              "label": "Nút chính · Nhãn",
+              "maxLen": 60
+            },
+            "primaryCtaUrl": {
+              "type": "url",
+              "label": "Nút chính · Liên kết",
+              "maxLen": 500
+            },
+            "secondaryCtaLabel": {
+              "type": "ctaLabel",
+              "label": "Nút phụ · Nhãn",
+              "maxLen": 60
+            },
+            "secondaryCtaUrl": {
+              "type": "url",
+              "label": "Nút phụ · Liên kết",
+              "maxLen": 500
+            },
+            "checklist": {
+              "type": "checklist",
+              "label": "Checklist",
+              "maxItems": 6,
+              "maxLen": 100
+            },
+            "heroImage": {
+              "type": "image",
+              "label": "Ảnh hero",
+              "help": "Chọn ảnh từ Thư viện Media; ảnh có ý nghĩa cần alt, ảnh trang trí thì bật \"decorative\"."
+            },
+            "heroImageAlt": {
+              "type": "imageAlt",
+              "label": "Alt ảnh hero",
+              "maxLen": 160
+            },
+            "heroImageDecorative": {
+              "type": "decorative",
+              "label": "Ảnh hero chỉ trang trí"
+            },
+            "disclaimerText": {
+              "type": "text",
+              "label": "Dòng lưu ý",
+              "maxLen": 220
+            }
+          },
+          "defaults": {
+            "enabled": true,
+            "badgeText": "GCALLS WEBPHONE",
+            "heading": "Tổng Đài Ảo Tích Hợp CRM -",
+            "headingHighlight": "Bứt Phá Doanh Số",
+            "description": "Giải pháp tổng đài thông minh giúp đội Sales và CSKH thực hiện cuộc gọi trên trình duyệt, lưu lịch sử và ghi âm, quản lý thông tin khách hàng, theo dõi hiệu suất và kết nối với hệ thống quản trị doanh nghiệp.",
+            "primaryCtaLabel": "Đăng ký demo",
+            "primaryCtaUrl": "",
+            "secondaryCtaLabel": "Khám phá Gcalls Webphone",
+            "secondaryCtaUrl": "",
+            "checklist": [
+              "Gọi trực tiếp trên trình duyệt",
+              "Lưu lịch sử và ghi âm cuộc gọi",
+              "Quản lý danh bạ khách hàng",
+              "Theo dõi KPI realtime"
+            ],
+            "heroImage": null,
+            "heroImageAlt": "",
+            "heroImageDecorative": false,
+            "disclaimerText": "Phạm vi triển khai và cấu hình được xác nhận cùng đội ngũ Gcalls theo hệ thống thực tế của doanh nghiệp."
+          }
+        },
+        {
+          "key": "painPoints",
+          "label": "Nỗi đau doanh nghiệp",
+          "order": 1,
+          "previewSelector": "section[aria-labelledby=\"home-pain-points-heading\"]",
+          "fields": {
+            "badge": {
+              "type": "text",
+              "label": "Nhãn (badge)",
+              "maxLen": 240
+            },
+            "heading": {
+              "type": "text",
+              "label": "Tiêu đề",
+              "maxLen": 240
+            },
+            "headingHighlight": {
+              "type": "text",
+              "label": "Phần nhấn mạnh của tiêu đề",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "items": {
+              "type": "cards",
+              "label": "Sáu nỗi đau",
+              "maxItems": 6,
+              "item": {
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                },
+                "desc": {
+                  "type": "textarea",
+                  "label": "Mô tả",
+                  "maxLen": 1200
+                }
+              },
+              "help": "Nội dung đã duyệt — không thêm số liệu."
+            }
+          },
+          "defaults": {
+            "badge": "NỖI ĐAU DOANH NGHIỆP",
+            "heading": "“Khoảng Trống” Vận Hành Khiến Doanh Nghiệp",
+            "headingHighlight": "Rò Rỉ Khách Hàng Và Thất Thoát Doanh Thu",
+            "description": "Đội Sales và CSKH có thể mất nhiều thời gian và dữ liệu khi hệ thống nghe gọi, quản lý khách hàng và báo cáo vận hành hoạt động rời rạc.",
+            "items": [
+              {
+                "title": "Gián đoạn hoạt động telesales khi số gọi ra bị khóa hoặc bị người nhận báo cáo spam",
+                "desc": "Chiến dịch gọi ra đang chạy có thể dừng giữa chừng, đội ngũ phải chờ xử lý đầu số trước khi tiếp tục liên hệ khách hàng."
+              },
+              {
+                "title": "Khách hàng e ngại và từ chối cuộc gọi đến từ số lạ",
+                "desc": "Khi cuộc gọi không mang dấu hiệu nhận diện, người nhận khó biết ai đang gọi và thường bỏ qua trước khi nghe nội dung tư vấn."
+              },
+              {
+                "title": "Quản lý khó kiểm soát chất lượng tư vấn thực tế",
+                "desc": "Nếu không có ghi âm, ghi chú và tiêu chí đánh giá tập trung, quản lý chỉ nắm được một phần nội dung trao đổi giữa nhân viên và khách hàng."
+              },
+              {
+                "title": "Thiếu dữ liệu thời gian thực để đánh giá hiệu suất đội ngũ",
+                "desc": "Báo cáo tổng hợp thủ công thường đến sau khi vấn đề đã xảy ra, khiến quản lý khó điều phối nguồn lực trong ngày."
+              },
+              {
+                "title": "Chi phí cao và tỷ lệ bắt máy thấp khi liên hệ thị trường quốc tế",
+                "desc": "Gọi ra thị trường nước ngoài bằng đầu số không phù hợp làm tăng chi phí liên lạc và giảm khả năng khách hàng nhận máy."
+              },
+              {
+                "title": "Nhân viên mất thời gian nhập liệu và đối chiếu thông tin thủ công",
+                "desc": "Mỗi cuộc gọi kéo theo thao tác sao chép, nhập lại và kiểm tra chéo giữa các hệ thống, làm chậm quy trình và dễ phát sinh sai sót."
+              }
+            ]
+          }
+        },
+        {
+          "key": "solutionBridge",
+          "label": "Giải pháp tổng đài Gcalls",
+          "order": 2,
+          "previewSelector": "section[aria-labelledby=\"home-solution-bridge-heading\"]",
+          "fields": {
+            "badge": {
+              "type": "text",
+              "label": "Nhãn (badge)",
+              "maxLen": 240
+            },
+            "heading": {
+              "type": "text",
+              "label": "Tiêu đề",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "chips": {
+              "type": "checklist",
+              "label": "Chip năng lực",
+              "maxItems": 4,
+              "maxLen": 200
+            },
+            "ctaLabel": {
+              "type": "ctaLabel",
+              "label": "Cta label",
+              "maxLen": 80
+            },
+            "secondaryLabel": {
+              "type": "ctaLabel",
+              "label": "Secondary label",
+              "maxLen": 80
+            }
+          },
+          "defaults": {
+            "badge": "GIẢI PHÁP TỔNG ĐÀI GCALLS",
+            "heading": "Tổng Đài Thông Minh Gcalls: Bứt Phá Doanh Số Đội Ngũ & Nâng Cao Trải Nghiệm Khách Hàng",
+            "description": "Gcalls kết nối hoạt động nghe gọi, dữ liệu khách hàng, lịch sử chăm sóc và báo cáo vận hành trong một hệ thống thống nhất, đồng thời hỗ trợ tích hợp với CRM, Helpdesk, POS và các giải pháp tự động hóa phù hợp.",
+            "chips": [
+              "Vận hành trên trình duyệt",
+              "Tích hợp CRM, POS và Helpdesk",
+              "Hỗ trợ nhu cầu liên lạc quốc tế",
+              "Báo cáo theo thời gian thực"
+            ],
+            "ctaLabel": "Khám phá hệ sinh thái Gcalls",
+            "secondaryLabel": "Hoặc trao đổi trực tiếp với đội ngũ Gcalls"
+          }
+        },
+        {
+          "key": "ecosystem",
+          "label": "Hệ sinh thái Gcalls",
+          "order": 3,
+          "previewSelector": "section[aria-labelledby=\"home-ecosystem-heading\"]",
+          "fields": {
+            "badge": {
+              "type": "text",
+              "label": "Nhãn (badge)",
+              "maxLen": 240
+            },
+            "heading": {
+              "type": "text",
+              "label": "Tiêu đề",
+              "maxLen": 240
+            },
+            "headingHighlight": {
+              "type": "text",
+              "label": "Phần nhấn mạnh của tiêu đề",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "productsEyebrow": {
+              "type": "text",
+              "label": "Products eyebrow",
+              "maxLen": 240
+            },
+            "productsTitle": {
+              "type": "text",
+              "label": "Products title",
+              "maxLen": 240
+            },
+            "productsLead": {
+              "type": "text",
+              "label": "Products lead",
+              "maxLen": 240
+            },
+            "products": {
+              "type": "cards",
+              "label": "Sản phẩm",
+              "maxItems": 3,
+              "item": {
+                "name": {
+                  "type": "text",
+                  "label": "Name",
+                  "maxLen": 240
+                },
+                "supporting": {
+                  "type": "text",
+                  "label": "Supporting",
+                  "maxLen": 240
+                },
+                "desc": {
+                  "type": "text",
+                  "label": "Mô tả",
+                  "maxLen": 240
+                }
+              },
+              "help": "Liên kết và biểu tượng cố định theo thứ tự thẻ."
+            },
+            "solutionsEyebrow": {
+              "type": "text",
+              "label": "Solutions eyebrow",
+              "maxLen": 240
+            },
+            "solutionsTitle": {
+              "type": "text",
+              "label": "Solutions title",
+              "maxLen": 240
+            },
+            "solutionsLead": {
+              "type": "text",
+              "label": "Solutions lead",
+              "maxLen": 240
+            },
+            "solutions": {
+              "type": "cards",
+              "label": "Giải pháp",
+              "maxItems": 7,
+              "item": {
+                "name": {
+                  "type": "text",
+                  "label": "Name",
+                  "maxLen": 240
+                },
+                "desc": {
+                  "type": "text",
+                  "label": "Mô tả",
+                  "maxLen": 240
+                }
+              }
+            },
+            "primaryCtaLabel": {
+              "type": "ctaLabel",
+              "label": "Primary cta label",
+              "maxLen": 80
+            },
+            "secondaryCtaLabel": {
+              "type": "ctaLabel",
+              "label": "Secondary cta label",
+              "maxLen": 80
+            }
+          },
+          "defaults": {
+            "badge": "HỆ SINH THÁI GCALLS",
+            "heading": "Hệ sinh thái sản phẩm và",
+            "headingHighlight": "giải pháp Gcalls",
+            "description": "Doanh nghiệp có thể bắt đầu từ một sản phẩm phù hợp với nhu cầu hiện tại, sau đó mở rộng sang các giải pháp tích hợp khi quy mô vận hành thay đổi.",
+            "productsEyebrow": "Sản phẩm",
+            "productsTitle": "Sản phẩm Gcalls",
+            "productsLead": "Ba nền tảng Gcalls xây dựng cho hoạt động nghe gọi, kiểm soát chất lượng và chăm sóc khách hàng đa kênh.",
+            "products": [
+              {
+                "name": "Gcalls Plus Webphone",
+                "supporting": "",
+                "desc": "Tổng đài trên trình duyệt hỗ trợ nghe gọi, lịch sử cuộc gọi, ghi âm, danh bạ và theo dõi hoạt động đội ngũ."
+              },
+              {
+                "name": "QA/QC Center",
+                "supporting": "QC Bot AI",
+                "desc": "Hỗ trợ chuyển giọng nói thành văn bản, phân tích từ khóa, chấm điểm theo tiêu chí và tổng hợp dữ liệu phục vụ kiểm soát chất lượng."
+              },
+              {
+                "name": "Gcalls CX",
+                "supporting": "",
+                "desc": "Nền tảng Contact Center hỗ trợ quản lý tương tác đa kênh và quy trình chăm sóc khách hàng."
+              }
+            ],
+            "solutionsEyebrow": "Giải pháp",
+            "solutionsTitle": "Giải pháp Gcalls",
+            "solutionsLead": "Các cấu hình triển khai theo hệ thống, thị trường và nhu cầu tự động hóa doanh nghiệp đang vận hành.",
+            "solutions": [
+              {
+                "name": "Giải pháp tích hợp Voicebot AI",
+                "desc": "Gcalls tư vấn, kết nối và tích hợp Voicebot vào hệ thống tổng đài theo kịch bản và phạm vi triển khai của doanh nghiệp."
+              },
+              {
+                "name": "Tổng đài tích hợp CRM",
+                "desc": "Kết nối cuộc gọi với dữ liệu và quy trình trên CRM của doanh nghiệp."
+              },
+              {
+                "name": "Tổng đài tích hợp Helpdesk",
+                "desc": "Đưa cuộc gọi vào quy trình hỗ trợ và ticket của đội CSKH."
+              },
+              {
+                "name": "Tổng đài tích hợp POS",
+                "desc": "Kết nối cuộc gọi với dữ liệu bán hàng và đơn hàng trên hệ thống POS."
+              },
+              {
+                "name": "Tổng đài quốc tế",
+                "desc": "Đầu số và phương án liên lạc theo từng thị trường doanh nghiệp phục vụ."
+              },
+              {
+                "name": "Cloud Call Center",
+                "desc": "Hệ thống tổng đài vận hành trên nền tảng Cloud với SIP, IVR và điều hướng cuộc gọi."
+              },
+              {
+                "name": "Call Button Widget",
+                "desc": "Nút gọi nhúng vào website để khách truy cập để lại số điện thoại cho đội ngũ liên hệ lại."
+              }
+            ],
+            "primaryCtaLabel": "Xem tất cả sản phẩm",
+            "secondaryCtaLabel": "Xem tất cả giải pháp"
+          }
+        },
+        {
+          "key": "callTimeline",
+          "label": "Hoạt động cuộc gọi realtime",
+          "order": 4,
+          "previewSelector": "main > section:nth-of-type(5)",
+          "fields": {
+            "badge": {
+              "type": "text",
+              "label": "Nhãn (badge)",
+              "maxLen": 240
+            },
+            "heading": {
+              "type": "text",
+              "label": "Tiêu đề",
+              "maxLen": 240
+            },
+            "headingHighlight": {
+              "type": "text",
+              "label": "Phần nhấn mạnh của tiêu đề",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "features": {
+              "type": "checklist",
+              "label": "Features",
+              "maxItems": 10,
+              "maxLen": 200
+            },
+            "highlightHeading": {
+              "type": "text",
+              "label": "Highlight heading",
+              "maxLen": 240
+            },
+            "highlightHighlight": {
+              "type": "text",
+              "label": "Highlight highlight",
+              "maxLen": 240
+            },
+            "highlightDescription": {
+              "type": "textarea",
+              "label": "Highlight description",
+              "maxLen": 1200
+            },
+            "ctaLabel": {
+              "type": "ctaLabel",
+              "label": "Cta label",
+              "maxLen": 80
+            }
+          },
+          "defaults": {
+            "badge": "Hoạt động cuộc gọi Realtime",
+            "heading": "Theo dõi toàn bộ hoạt động cuộc gọi",
+            "headingHighlight": "theo thời gian thực",
+            "description": "Từ cuộc gọi đến, cuộc gọi đi, cuộc gọi nhỡ, ghi âm, ghi chú đến đánh giá chất lượng cuộc gọi — tất cả đều được lưu trữ tập trung trên Gcalls Webphone.",
+            "features": [
+              "Lưu lịch sử cuộc gọi tự động",
+              "Ghi âm và nghe lại cuộc gọi",
+              "Gắn nhãn và phân loại khách hàng",
+              "Ghi chú sau mỗi cuộc gọi",
+              "Theo dõi trạng thái cuộc gọi",
+              "Tìm kiếm lịch sử nhanh chóng"
+            ],
+            "highlightHeading": "Mỗi cuộc gọi đều trở thành",
+            "highlightHighlight": "dữ liệu giá trị",
+            "highlightDescription": "Lịch sử trao đổi, ghi âm, ghi chú và kết quả cuộc gọi được lưu lại giúp đội Sales và CSKH tiếp nối công việc với đầy đủ ngữ cảnh của lần liên hệ trước.",
+            "ctaLabel": "Xem tính năng Timeline"
+          }
+        },
+        {
+          "key": "crm",
+          "label": "CRM mini tích hợp",
+          "order": 5,
+          "previewSelector": "main > section:nth-of-type(6)",
+          "fields": {
+            "badge": {
+              "type": "text",
+              "label": "Nhãn (badge)",
+              "maxLen": 240
+            },
+            "heading": {
+              "type": "text",
+              "label": "Tiêu đề",
+              "maxLen": 240
+            },
+            "headingHighlight": {
+              "type": "text",
+              "label": "Phần nhấn mạnh của tiêu đề",
+              "maxLen": 240
+            },
+            "headingTail": {
+              "type": "text",
+              "label": "Phần cuối tiêu đề",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "features": {
+              "type": "checklist",
+              "label": "Features",
+              "maxItems": 10,
+              "maxLen": 200
+            },
+            "highlightHeading": {
+              "type": "text",
+              "label": "Highlight heading",
+              "maxLen": 240
+            },
+            "highlightHighlight": {
+              "type": "text",
+              "label": "Highlight highlight",
+              "maxLen": 240
+            },
+            "highlightDescription": {
+              "type": "textarea",
+              "label": "Highlight description",
+              "maxLen": 1200
+            },
+            "useCases": {
+              "type": "cards",
+              "label": "Use case",
+              "maxItems": 3,
+              "item": {
+                "role": {
+                  "type": "text",
+                  "label": "Vai trò",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "badge": "CRM Mini Tích Hợp",
+            "heading": "Quản lý khách hàng",
+            "headingHighlight": "tập trung",
+            "headingTail": "ngay trên Gcalls",
+            "description": "Toàn bộ thông tin khách hàng, lịch sử tương tác và ghi chú chăm sóc được lưu trữ tập trung giúp đội Sales và CSKH làm việc hiệu quả hơn.",
+            "features": [
+              "Danh bạ khách hàng tập trung",
+              "Hồ sơ khách hàng chi tiết",
+              "Ghi chú và lịch sử chăm sóc",
+              "Phân loại khách hàng bằng Tag",
+              "Tìm kiếm khách hàng nhanh chóng",
+              "Theo dõi hoạt động theo thời gian thực"
+            ],
+            "highlightHeading": "Mỗi khách hàng đều có",
+            "highlightHighlight": "một hồ sơ riêng",
+            "highlightDescription": "Khi có cuộc gọi đến hoặc đi, nhân viên có thể xem ngay thông tin khách hàng, lịch sử chăm sóc, ghi chú và các hoạt động liên quan mà không cần chuyển đổi giữa nhiều hệ thống.",
+            "useCases": [
+              {
+                "role": "Sales Team",
+                "points": [
+                  "Xem hồ sơ KH trước khi gọi",
+                  "Ghi chú kết quả tư vấn ngay sau cuộc gọi",
+                  "Theo dõi pipeline theo từng KH"
+                ]
+              },
+              {
+                "role": "CSKH Team",
+                "points": [
+                  "Biết ngay lịch sử KH khi nhận cuộc gọi",
+                  "Gắn nhãn phân loại mức độ ưu tiên",
+                  "Ghi nhận phản hồi và yêu cầu hỗ trợ"
+                ]
+              },
+              {
+                "role": "Manager",
+                "points": [
+                  "Theo dõi tương tác toàn đội ngũ",
+                  "Kiểm soát chất lượng chăm sóc KH",
+                  "Báo cáo hoạt động theo KH / nhân viên"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "key": "analytics",
+          "label": "Analytics & KPI dashboard",
+          "order": 6,
+          "previewSelector": "main > section:nth-of-type(7)",
+          "fields": {
+            "badge": {
+              "type": "text",
+              "label": "Nhãn (badge)",
+              "maxLen": 240
+            },
+            "heading": {
+              "type": "text",
+              "label": "Tiêu đề",
+              "maxLen": 240
+            },
+            "headingHighlight": {
+              "type": "text",
+              "label": "Phần nhấn mạnh của tiêu đề",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "features": {
+              "type": "checklist",
+              "label": "Features",
+              "maxItems": 10,
+              "maxLen": 200
+            },
+            "highlightHeading": {
+              "type": "text",
+              "label": "Highlight heading",
+              "maxLen": 240
+            },
+            "highlightHighlight": {
+              "type": "text",
+              "label": "Highlight highlight",
+              "maxLen": 240
+            },
+            "highlightDescription": {
+              "type": "textarea",
+              "label": "Highlight description",
+              "maxLen": 1200
+            },
+            "ctaLabel": {
+              "type": "ctaLabel",
+              "label": "Cta label",
+              "maxLen": 80
+            },
+            "metricsHeading": {
+              "type": "text",
+              "label": "Metrics heading",
+              "maxLen": 240
+            },
+            "metricsHighlight": {
+              "type": "text",
+              "label": "Metrics highlight",
+              "maxLen": 240
+            },
+            "metricsNote": {
+              "type": "textarea",
+              "label": "Metrics note",
+              "maxLen": 1200
+            },
+            "useCasesHeading": {
+              "type": "text",
+              "label": "Use cases heading",
+              "maxLen": 240
+            },
+            "useCasesHighlight": {
+              "type": "text",
+              "label": "Use cases highlight",
+              "maxLen": 240
+            },
+            "useCases": {
+              "type": "cards",
+              "label": "Dành cho",
+              "maxItems": 4,
+              "item": {
+                "role": {
+                  "type": "text",
+                  "label": "Vai trò",
+                  "maxLen": 240
+                },
+                "desc": {
+                  "type": "text",
+                  "label": "Mô tả",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "badge": "Analytics & KPI Dashboard",
+            "heading": "Theo dõi hiệu suất đội ngũ",
+            "headingHighlight": "theo thời gian thực",
+            "description": "Dashboard trực quan giúp quản lý theo dõi tình trạng cuộc gọi, hiệu suất nhân viên và chất lượng vận hành chỉ trong vài giây.",
+            "features": [
+              "Thống kê cuộc gọi theo ngày, tuần, tháng",
+              "Theo dõi hiệu suất từng nhân viên",
+              "Báo cáo cuộc gọi đến và đi",
+              "Theo dõi cuộc gọi nhỡ",
+              "Đo lường thời lượng cuộc gọi",
+              "Dashboard realtime"
+            ],
+            "highlightHeading": "Ra quyết định nhanh hơn với",
+            "highlightHighlight": "dữ liệu trực quan",
+            "highlightDescription": "Không cần tổng hợp báo cáo thủ công từ nhiều nguồn. Mọi chỉ số quan trọng đều được hiển thị trực quan giúp quản lý nhanh chóng nắm bắt tình hình vận hành.",
+            "ctaLabel": "Khám phá Analytics",
+            "metricsHeading": "Các chỉ số quan trọng trong",
+            "metricsHighlight": "một màn hình",
+            "metricsNote": "Các chỉ số Gcalls Analytics theo dõi. Số liệu bên dưới là dữ liệu minh họa, không phải kết quả đo được của một doanh nghiệp cụ thể.",
+            "useCasesHeading": "Dành cho",
+            "useCasesHighlight": "quản lý, trưởng nhóm và chủ doanh nghiệp",
+            "useCases": [
+              {
+                "role": "Sales Manager",
+                "desc": "Theo dõi KPI từng nhân viên Sales, phân tích tỷ lệ chốt deal và hiệu quả cuộc gọi."
+              },
+              {
+                "role": "CSKH Manager",
+                "desc": "Giám sát chất lượng phục vụ, theo dõi thời gian xử lý và mức độ hài lòng khách hàng."
+              },
+              {
+                "role": "Business Owner",
+                "desc": "Nắm tổng quan hiệu suất vận hành, so sánh theo giai đoạn và ra quyết định chiến lược."
+              },
+              {
+                "role": "Operation Team",
+                "desc": "Cấu hình báo cáo tự động, phân tích tắc nghẽn luồng cuộc gọi và tối ưu phân công."
+              }
+            ]
+          }
+        },
+        {
+          "key": "cloud",
+          "label": "Cloud Call Center",
+          "order": 7,
+          "previewSelector": "main > section:nth-of-type(8)",
+          "fields": {
+            "badge": {
+              "type": "text",
+              "label": "Nhãn (badge)",
+              "maxLen": 240
+            },
+            "heading": {
+              "type": "text",
+              "label": "Tiêu đề",
+              "maxLen": 240
+            },
+            "headingHighlight": {
+              "type": "text",
+              "label": "Phần nhấn mạnh của tiêu đề",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "features": {
+              "type": "checklist",
+              "label": "Features",
+              "maxItems": 10,
+              "maxLen": 200
+            },
+            "highlightHeading": {
+              "type": "text",
+              "label": "Highlight heading",
+              "maxLen": 240
+            },
+            "highlightHighlight": {
+              "type": "text",
+              "label": "Highlight highlight",
+              "maxLen": 240
+            },
+            "highlightDescription": {
+              "type": "textarea",
+              "label": "Highlight description",
+              "maxLen": 1200
+            },
+            "ctaLabel": {
+              "type": "ctaLabel",
+              "label": "Cta label",
+              "maxLen": 80
+            },
+            "gridHeading": {
+              "type": "text",
+              "label": "Grid heading",
+              "maxLen": 240
+            },
+            "gridHighlight": {
+              "type": "text",
+              "label": "Grid highlight",
+              "maxLen": 240
+            },
+            "gridItems": {
+              "type": "cards",
+              "label": "Tính năng Cloud PBX",
+              "maxItems": 8,
+              "item": {
+                "label": {
+                  "type": "ctaLabel",
+                  "label": "Nhãn nút",
+                  "maxLen": 80
+                },
+                "desc": {
+                  "type": "text",
+                  "label": "Mô tả",
+                  "maxLen": 240
+                }
+              }
+            },
+            "flowHeading": {
+              "type": "text",
+              "label": "Flow heading",
+              "maxLen": 240
+            },
+            "flowHighlight": {
+              "type": "text",
+              "label": "Flow highlight",
+              "maxLen": 240
+            },
+            "flowNote": {
+              "type": "text",
+              "label": "Flow note",
+              "maxLen": 240
+            },
+            "flowSteps": {
+              "type": "cards",
+              "label": "Hành trình cuộc gọi",
+              "maxItems": 7,
+              "item": {
+                "label": {
+                  "type": "ctaLabel",
+                  "label": "Nhãn nút",
+                  "maxLen": 80
+                },
+                "note": {
+                  "type": "text",
+                  "label": "Ghi chú",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "badge": "Cloud Call Center",
+            "heading": "Xây dựng hệ thống tổng đài doanh nghiệp",
+            "headingHighlight": "trên nền tảng Cloud",
+            "description": "Từ doanh nghiệp nhỏ đến Contact Center nhiều chi nhánh, Gcalls giúp triển khai hệ thống tổng đài linh hoạt, dễ mở rộng và vận hành hoàn toàn trên nền tảng điện toán đám mây.",
+            "features": [
+              "SIP Account Management",
+              "IVR nhiều cấp",
+              "Call Routing thông minh",
+              "Nhóm đổ chuông",
+              "Chuyển tiếp cuộc gọi",
+              "Hotline đa đầu số"
+            ],
+            "highlightHeading": "Điều hướng cuộc gọi đến",
+            "highlightHighlight": "đúng người phụ trách",
+            "highlightDescription": "Cấu hình luồng cuộc gọi tới đúng bộ phận, đúng nhân viên hoặc đúng chi nhánh, kèm nhóm đổ chuông và chuyển tiếp cho trường hợp không có người nhận máy.",
+            "ctaLabel": "Xem Cloud PBX",
+            "gridHeading": "Đầy đủ tính năng",
+            "gridHighlight": "Cloud PBX doanh nghiệp",
+            "gridItems": [
+              {
+                "label": "SIP Account",
+                "desc": "Tài khoản SIP cho từng nhân viên, đa thiết bị"
+              },
+              {
+                "label": "IVR",
+                "desc": "Cây menu tự động nhiều cấp, cấu hình linh hoạt"
+              },
+              {
+                "label": "Call Routing",
+                "desc": "Điều hướng thông minh theo kỹ năng, thời gian"
+              },
+              {
+                "label": "Ring Group",
+                "desc": "Đổ chuông đồng thời hoặc tuần tự nhiều agent"
+              },
+              {
+                "label": "Multi Branch",
+                "desc": "Kết nối nhiều văn phòng, chi nhánh trên 1 hệ thống"
+              },
+              {
+                "label": "Số quốc tế",
+                "desc": "DID nội địa & quốc tế, số ảo nhiều vùng"
+              },
+              {
+                "label": "Call Forwarding",
+                "desc": "Chuyển tiếp đến di động, email hoặc voicemail"
+              },
+              {
+                "label": "Voicemail",
+                "desc": "Hộp thư thoại, nhận qua email, ghi âm lưu trữ"
+              }
+            ],
+            "flowHeading": "Hành trình cuộc gọi từ",
+            "flowHighlight": "đầu đến cuối",
+            "flowNote": "Các bước một cuộc gọi đi qua, theo luồng doanh nghiệp cấu hình",
+            "flowSteps": [
+              {
+                "label": "Khách hàng gọi đến",
+                "note": "1900 1234 · 028 xxxx"
+              },
+              {
+                "label": "IVR",
+                "note": "Bấm 1–Sales, 2–CSKH"
+              },
+              {
+                "label": "Call Routing",
+                "note": "Phân phối thông minh"
+              },
+              {
+                "label": "Ring Group",
+                "note": "Đổ chuông đồng thời"
+              },
+              {
+                "label": "Agent",
+                "note": "Nhân viên nhận máy"
+              },
+              {
+                "label": "Recording",
+                "note": "Ghi âm tự động cuộc gọi"
+              },
+              {
+                "label": "Analytics",
+                "note": "Báo cáo realtime"
+              }
+            ]
+          }
+        },
+        {
+          "key": "customerPopup",
+          "label": "Customer popup",
+          "order": 8,
+          "previewSelector": "section[aria-labelledby=\"home-customer-popup-heading\"]",
+          "fields": {
+            "badge": {
+              "type": "text",
+              "label": "Nhãn (badge)",
+              "maxLen": 240
+            },
+            "heading": {
+              "type": "text",
+              "label": "Tiêu đề",
+              "maxLen": 240
+            },
+            "headingHighlight": {
+              "type": "text",
+              "label": "Phần nhấn mạnh của tiêu đề",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "benefits": {
+              "type": "checklist",
+              "label": "Benefits",
+              "maxItems": 8,
+              "maxLen": 200
+            },
+            "note": {
+              "type": "text",
+              "label": "Ghi chú",
+              "maxLen": 240
+            }
+          },
+          "defaults": {
+            "badge": "Customer Popup",
+            "heading": "Nhận diện khách hàng",
+            "headingHighlight": "ngay khi cuộc gọi đến",
+            "description": "Khi có cuộc gọi đến, nhân viên xem được thông tin khách hàng lấy từ hệ thống đã kết nối — trong phạm vi tích hợp được cấu hình cho doanh nghiệp.",
+            "benefits": [
+              "Biết khách hàng là ai trước khi bắt máy",
+              "Xem lịch sử chăm sóc và ghi chú đã lưu",
+              "Không cần hỏi lại thông tin đã có",
+              "Giữ ngữ cảnh trao đổi giữa các lần liên hệ"
+            ],
+            "note": "Thông tin hiển thị theo dữ liệu có trong hệ thống đã kết nối"
+          }
+        },
+        {
+          "key": "callWidget",
+          "label": "Call button widget & hệ sinh thái",
+          "order": 9,
+          "previewSelector": "section[aria-labelledby=\"home-call-widget-heading\"]",
+          "fields": {
+            "badge": {
+              "type": "text",
+              "label": "Nhãn (badge)",
+              "maxLen": 240
+            },
+            "heading": {
+              "type": "text",
+              "label": "Tiêu đề",
+              "maxLen": 240
+            },
+            "headingHighlight": {
+              "type": "text",
+              "label": "Phần nhấn mạnh của tiêu đề",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "benefits": {
+              "type": "checklist",
+              "label": "Benefits",
+              "maxItems": 8,
+              "maxLen": 200
+            },
+            "callbackChip": {
+              "type": "text",
+              "label": "Callback chip",
+              "maxLen": 240
+            },
+            "ecosystemHeading": {
+              "type": "text",
+              "label": "Ecosystem heading",
+              "maxLen": 240
+            },
+            "ecosystemHighlight": {
+              "type": "text",
+              "label": "Ecosystem highlight",
+              "maxLen": 240
+            },
+            "ecosystemNote": {
+              "type": "text",
+              "label": "Ecosystem note",
+              "maxLen": 240
+            }
+          },
+          "defaults": {
+            "badge": "Call Button Widget",
+            "heading": "Biến khách truy cập website",
+            "headingHighlight": "thành cuộc gọi",
+            "description": "Nhúng nút gọi vào website chỉ với vài dòng code. Khách truy cập để lại số điện thoại và đội ngũ gọi lại theo cấu hình phân phối cuộc gọi của doanh nghiệp.",
+            "benefits": [
+              "Tăng tỷ lệ chuyển đổi từ visitor thành lead",
+              "Thu thập số điện thoại và gọi lại tức thì",
+              "Theo dõi nguồn cuộc gọi từ từng trang web"
+            ],
+            "callbackChip": "Gọi lại theo cấu hình",
+            "ecosystemHeading": "Hệ sinh thái",
+            "ecosystemHighlight": "tích hợp của Gcalls",
+            "ecosystemNote": "Các nền tảng Gcalls có thể kết nối, theo phạm vi tích hợp được xác nhận"
+          }
+        },
+        {
+          "key": "integrationCta",
+          "label": "Integration CTA",
+          "order": 10,
+          "previewSelector": "section[aria-labelledby=\"home-integration-cta-heading\"]",
+          "fields": {
+            "badge": {
+              "type": "text",
+              "label": "Nhãn (badge)",
+              "maxLen": 240
+            },
+            "heading": {
+              "type": "text",
+              "label": "Tiêu đề",
+              "maxLen": 240
+            },
+            "headingHighlight": {
+              "type": "text",
+              "label": "Phần nhấn mạnh của tiêu đề",
+              "maxLen": 240
+            },
+            "headingTail": {
+              "type": "text",
+              "label": "Phần cuối tiêu đề",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "features": {
+              "type": "cards",
+              "label": "Năng lực tích hợp",
+              "maxItems": 6,
+              "item": {
+                "label": {
+                  "type": "ctaLabel",
+                  "label": "Nhãn nút",
+                  "maxLen": 80
+                },
+                "desc": {
+                  "type": "text",
+                  "label": "Mô tả",
+                  "maxLen": 240
+                }
+              }
+            },
+            "ctaBadge": {
+              "type": "text",
+              "label": "Cta badge",
+              "maxLen": 240
+            },
+            "ctaHeading": {
+              "type": "text",
+              "label": "Cta heading",
+              "maxLen": 240
+            },
+            "ctaDescription": {
+              "type": "textarea",
+              "label": "Cta description",
+              "maxLen": 1200
+            },
+            "ctaPrimaryLabel": {
+              "type": "ctaLabel",
+              "label": "Cta primary label",
+              "maxLen": 80
+            },
+            "ctaSecondaryLabel": {
+              "type": "ctaLabel",
+              "label": "Cta secondary label",
+              "maxLen": 80
+            },
+            "ctaNote": {
+              "type": "text",
+              "label": "Cta note",
+              "maxLen": 240
+            }
+          },
+          "defaults": {
+            "badge": "Integration CTA",
+            "heading": "Kết nối Gcalls với",
+            "headingHighlight": "hệ thống CRM",
+            "headingTail": "của doanh nghiệp bạn",
+            "description": "Gcalls giúp doanh nghiệp đồng bộ dữ liệu khách hàng, cuộc gọi và hoạt động chăm sóc khách hàng với CRM, Helpdesk và các hệ thống nội bộ thông qua API mở và Webhook.",
+            "features": [
+              {
+                "label": "Open API",
+                "desc": "API để kết nối Gcalls với hệ thống nội bộ. Phạm vi được xác nhận theo yêu cầu triển khai."
+              },
+              {
+                "label": "Webhook",
+                "desc": "Nhận sự kiện cuộc gọi để hệ thống của doanh nghiệp xử lý tiếp, theo cấu hình."
+              },
+              {
+                "label": "Customer Context",
+                "desc": "Hiển thị thông tin khách hàng lấy từ hệ thống đã kết nối, theo phạm vi cấu hình."
+              },
+              {
+                "label": "Click To Call",
+                "desc": "Gọi từ hệ thống đang dùng, ở những nền tảng có hỗ trợ trong phạm vi tích hợp."
+              },
+              {
+                "label": "CRM Integration",
+                "desc": "Kết nối cuộc gọi với HubSpot, Salesforce và Zoho CRM. Mỗi nền tảng có trang riêng."
+              },
+              {
+                "label": "Data Sync",
+                "desc": "Đồng bộ liên hệ và lịch sử tương tác theo cấu hình, thay cho nhập liệu thủ công."
+              }
+            ],
+            "ctaBadge": "Tích hợp theo phạm vi được xác nhận",
+            "ctaHeading": "Trao đổi phạm vi tích hợp cùng đội ngũ Gcalls",
+            "ctaDescription": "Từ CRM, Helpdesk đến các hệ thống nội bộ — Gcalls kết nối qua API mở. Phạm vi và công việc cần thiết được đánh giá trong quá trình khảo sát kỹ thuật.",
+            "ctaPrimaryLabel": "Đăng ký demo",
+            "ctaSecondaryLabel": "Tư vấn tích hợp",
+            "ctaNote": "Đăng ký để nhận tư vấn cấu hình phù hợp với nhu cầu"
+          }
+        },
+        {
+          "key": "workFromAnywhere",
+          "label": "Work from anywhere",
+          "order": 11,
+          "previewSelector": "section[aria-labelledby=\"home-wfa-heading\"]",
+          "fields": {
+            "badge": {
+              "type": "text",
+              "label": "Nhãn (badge)",
+              "maxLen": 240
+            },
+            "heading": {
+              "type": "text",
+              "label": "Tiêu đề",
+              "maxLen": 240
+            },
+            "headingHighlight": {
+              "type": "text",
+              "label": "Phần nhấn mạnh của tiêu đề",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "quickBenefits": {
+              "type": "checklist",
+              "label": "Quick benefits",
+              "maxItems": 4,
+              "maxLen": 200
+            },
+            "featuresHeading": {
+              "type": "text",
+              "label": "Features heading",
+              "maxLen": 240
+            },
+            "featuresHighlight": {
+              "type": "text",
+              "label": "Features highlight",
+              "maxLen": 240
+            },
+            "features": {
+              "type": "cards",
+              "label": "Features",
+              "maxItems": 4,
+              "item": {
+                "label": {
+                  "type": "ctaLabel",
+                  "label": "Nhãn nút",
+                  "maxLen": 80
+                },
+                "desc": {
+                  "type": "text",
+                  "label": "Mô tả",
+                  "maxLen": 240
+                }
+              }
+            },
+            "statusHeading": {
+              "type": "text",
+              "label": "Status heading",
+              "maxLen": 240
+            },
+            "statusHighlight": {
+              "type": "text",
+              "label": "Status highlight",
+              "maxLen": 240
+            },
+            "statusDescription": {
+              "type": "text",
+              "label": "Status description",
+              "maxLen": 240
+            },
+            "statusBenefits": {
+              "type": "cards",
+              "label": "Status benefits",
+              "maxItems": 4,
+              "item": {
+                "label": {
+                  "type": "ctaLabel",
+                  "label": "Nhãn nút",
+                  "maxLen": 80
+                },
+                "desc": {
+                  "type": "text",
+                  "label": "Mô tả",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "badge": "Work From Anywhere",
+            "heading": "Mang tổng đài doanh nghiệp",
+            "headingHighlight": "theo bạn đến bất kỳ đâu",
+            "description": "Dù đang ở văn phòng, làm việc tại nhà hay di chuyển gặp khách hàng, đội ngũ vẫn có thể tiếp nhận và thực hiện cuộc gọi như đang ngồi tại tổng đài.",
+            "quickBenefits": [
+              "Đăng nhập trên trình duyệt",
+              "Không cần cài đặt phức tạp",
+              "Làm việc mọi nơi",
+              "Đồng bộ dữ liệu realtime"
+            ],
+            "featuresHeading": "Chỉ cần trình duyệt là",
+            "featuresHighlight": "có thể bắt đầu",
+            "features": [
+              {
+                "label": "Webphone",
+                "desc": "Gọi điện trực tiếp trên Chrome, Edge, Safari — không cài extension"
+              },
+              {
+                "label": "Softphone",
+                "desc": "Chất lượng âm thanh HD, noise cancellation, dễ cấu hình"
+              },
+              {
+                "label": "Cloud System",
+                "desc": "Dữ liệu lưu trên Cloud, truy cập bất cứ đâu, không phụ thuộc server nội bộ"
+              },
+              {
+                "label": "Auto Sync",
+                "desc": "Lịch sử, ghi chú, trạng thái đồng bộ tức thì giữa các thiết bị"
+              }
+            ],
+            "statusHeading": "Biết đội ngũ đang làm gì",
+            "statusHighlight": "theo thời gian thực",
+            "statusDescription": "Quản lý theo dõi trạng thái từng nhân viên, lịch sử hoạt động và hiệu suất — dù đội ngũ đang làm việc từ bất kỳ đâu.",
+            "statusBenefits": [
+              {
+                "label": "Quản lý từ xa",
+                "desc": "Theo dõi đội ngũ làm việc ở mọi nơi"
+              },
+              {
+                "label": "Activity Tracking",
+                "desc": "Ghi lại mọi thay đổi trạng thái"
+              },
+              {
+                "label": "KPI Support",
+                "desc": "Dữ liệu hỗ trợ đánh giá năng suất"
+              },
+              {
+                "label": "Minh bạch hoạt động",
+                "desc": "Mọi hành động đều được ghi nhận"
+              }
+            ]
+          }
+        },
+        {
+          "key": "useCasesFinalCta",
+          "label": "Use cases & CTA cuối trang",
+          "order": 12,
+          "previewSelector": "section[aria-labelledby=\"home-final-cta-heading\"]",
+          "fields": {
+            "badge": {
+              "type": "text",
+              "label": "Nhãn (badge)",
+              "maxLen": 240
+            },
+            "heading": {
+              "type": "text",
+              "label": "Tiêu đề",
+              "maxLen": 240
+            },
+            "headingHighlight": {
+              "type": "text",
+              "label": "Phần nhấn mạnh của tiêu đề",
+              "maxLen": 240
+            },
+            "headingTail": {
+              "type": "text",
+              "label": "Phần cuối tiêu đề",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "useCasesHeading": {
+              "type": "text",
+              "label": "Use cases heading",
+              "maxLen": 240
+            },
+            "useCasesHighlight": {
+              "type": "text",
+              "label": "Use cases highlight",
+              "maxLen": 240
+            },
+            "useCases": {
+              "type": "cards",
+              "label": "Use case",
+              "maxItems": 4,
+              "item": {
+                "role": {
+                  "type": "text",
+                  "label": "Vai trò",
+                  "maxLen": 240
+                }
+              }
+            },
+            "ctaBadge": {
+              "type": "text",
+              "label": "Cta badge",
+              "maxLen": 240
+            },
+            "ctaHeading": {
+              "type": "text",
+              "label": "Cta heading",
+              "maxLen": 240
+            },
+            "ctaDescription": {
+              "type": "textarea",
+              "label": "Cta description",
+              "maxLen": 1200
+            },
+            "ctaPrimaryLabel": {
+              "type": "ctaLabel",
+              "label": "Cta primary label",
+              "maxLen": 80
+            },
+            "ctaSecondaryLabel": {
+              "type": "ctaLabel",
+              "label": "Cta secondary label",
+              "maxLen": 80
+            },
+            "ctaNote": {
+              "type": "text",
+              "label": "Cta note",
+              "maxLen": 240
+            }
+          },
+          "defaults": {
+            "badge": "USE CASES",
+            "heading": "Tổng đài doanh nghiệp",
+            "headingHighlight": "luôn đồng hành",
+            "headingTail": "cùng đội ngũ của bạn",
+            "description": "Không cần phần cứng, không cần cài đặt phức tạp — chỉ cần trình duyệt và kết nối internet, đội ngũ của bạn đã có thể bắt đầu ngay.",
+            "useCasesHeading": "Gcalls phù hợp với",
+            "useCasesHighlight": "mô hình đội ngũ nào",
+            "useCases": [
+              {
+                "role": "Sales Team",
+                "points": [
+                  "Gọi cho KH từ bất kỳ đâu",
+                  "Xem hồ sơ KH ngay trên trình duyệt",
+                  "Ghi chú kết quả sau mỗi cuộc gọi"
+                ]
+              },
+              {
+                "role": "Remote Team",
+                "points": [
+                  "Làm việc từ xa như tại văn phòng",
+                  "Quản lý theo dõi realtime",
+                  "Không cần VPN hay thiết bị đặc biệt"
+                ]
+              },
+              {
+                "role": "Multi Branch",
+                "points": [
+                  "Kết nối nhiều chi nhánh trên 1 hệ thống",
+                  "Đổ chuông liên chi nhánh",
+                  "Báo cáo tổng hợp toàn bộ"
+                ]
+              },
+              {
+                "role": "Contact Center",
+                "points": [
+                  "Điều phối đội ngũ theo ca",
+                  "Giám sát trạng thái realtime",
+                  "Ghi âm cuộc gọi theo cấu hình"
+                ]
+              }
+            ],
+            "ctaBadge": "Sẵn sàng triển khai cùng đội ngũ Gcalls",
+            "ctaHeading": "Bắt đầu với đội ngũ hiện tại của bạn",
+            "ctaDescription": "Đội ngũ Gcalls trao đổi về quy mô, hệ thống đang dùng và quy trình vận hành để đề xuất cấu hình phù hợp trước khi triển khai.",
+            "ctaPrimaryLabel": "Đăng ký demo",
+            "ctaSecondaryLabel": "Nhận tư vấn giải pháp",
+            "ctaNote": "Đội ngũ Gcalls hỗ trợ cấu hình và triển khai theo nhu cầu thực tế"
+          }
+        }
+      ]
+    },
+    {
+      "key": "products",
+      "path": "/san-pham/",
+      "label": "Tổng quan sản phẩm",
+      "order": 1,
+      "status": "editable",
+      "statusLabel": "Có thể chỉnh sửa",
+      "sections": [
+        {
+          "key": "hero",
+          "label": "Hero",
+          "order": 0,
+          "previewSelector": "section[aria-labelledby=\"products-h1\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h1": {
+              "type": "text",
+              "label": "Tiêu đề chính (H1)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "primaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút chính · Nhãn nút",
+              "maxLen": 80
+            },
+            "secondaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút phụ · Nhãn nút",
+              "maxLen": 80
+            },
+            "secondaryCta.path": {
+              "type": "url",
+              "label": "Nút phụ · Liên kết",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "SẢN PHẨM GCALLS",
+            "h1": "Hệ sinh thái sản phẩm Gcalls cho đội Sales, CSKH và QA",
+            "description": "Gcalls có bốn sản phẩm phục vụ bốn bài toán khác nhau trong hoạt động giao tiếp với khách hàng: kênh nghe gọi cho đội ngũ, kiểm soát chất lượng hội thoại, vận hành chăm sóc khách hàng đa kênh, và tự động hóa các cuộc gọi lặp lại.",
+            "primaryCta": {
+              "label": "Đăng ký tư vấn sản phẩm"
+            },
+            "secondaryCta": {
+              "label": "Xem bảng giá",
+              "path": "/bang-gia/"
+            }
+          }
+        },
+        {
+          "key": "directAnswer",
+          "label": "Định nghĩa (Direct answer)",
+          "order": 1,
+          "previewSelector": "section[aria-labelledby=\"products-answer\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "question": {
+              "type": "text",
+              "label": "Câu hỏi",
+              "maxLen": 240
+            },
+            "answer": {
+              "type": "textarea",
+              "label": "Câu trả lời",
+              "maxLen": 1200
+            }
+          },
+          "defaults": {
+            "eyebrow": "Tổng quan",
+            "question": "Gcalls có những sản phẩm nào?",
+            "answer": "Gcalls có bốn sản phẩm: Gcalls Plus Webphone là kênh nghe gọi và quản lý hoạt động cuộc gọi trên trình duyệt; QA QC Center sử dụng QC Bot AI để hỗ trợ đánh giá chất lượng hội thoại; Gcalls CX là nền tảng chăm sóc khách hàng đa kênh; Gcalls Voicebot AI dành cho các cuộc gọi lặp lại theo kịch bản đã thiết lập. Bốn sản phẩm giải quyết các bài toán khác nhau, không phải bốn mức giá của cùng một sản phẩm, và được chọn theo nhu cầu vận hành thực tế của doanh nghiệp."
+          }
+        },
+        {
+          "key": "cards",
+          "label": "Thẻ sản phẩm",
+          "order": 2,
+          "previewSelector": "section[aria-labelledby=\"products-cards\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "items": {
+              "type": "cards",
+              "label": "Sản phẩm",
+              "maxItems": 8,
+              "item": {
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "textarea",
+                  "label": "Chi tiết",
+                  "maxLen": 1200
+                },
+                "path": {
+                  "type": "url",
+                  "label": "Path",
+                  "maxLen": 500
+                },
+                "cta": {
+                  "type": "text",
+                  "label": "Nút kêu gọi hành động",
+                  "maxLen": 240
+                }
+              },
+              "help": "Đường dẫn phải là route tồn tại trong routes.json."
+            },
+            "note": {
+              "type": "textarea",
+              "label": "Ghi chú",
+              "maxLen": 1200
+            }
+          },
+          "defaults": {
+            "eyebrow": "BỐN SẢN PHẨM",
+            "h2": "Mỗi sản phẩm giải quyết một bài toán vận hành khác nhau",
+            "items": [
+              {
+                "title": "Gcalls Plus Webphone",
+                "detail": "Kênh nghe gọi trên trình duyệt cho đội Sales và CSKH, kèm danh bạ, lịch sử tương tác, ghi chú và theo dõi hoạt động cuộc gọi.",
+                "points": [
+                  "Webphone",
+                  "Call management",
+                  "Interaction history"
+                ],
+                "path": "/gcalls-plus-webphone/",
+                "cta": "Xem Gcalls Plus Webphone"
+              },
+              {
+                "title": "QA QC Center",
+                "supportingLabel": "Powered by QC Bot AI",
+                "detail": "Đưa hội thoại thành dữ liệu có thể đánh giá: transcript, hỗ trợ chấm điểm theo bộ tiêu chí QA và làm nổi bật các tín hiệu cần kiểm tra.",
+                "points": [
+                  "Transcript",
+                  "QA scoring",
+                  "Quality signals"
+                ],
+                "path": "/qc-bot-ai/",
+                "cta": "Xem QA QC Center"
+              },
+              {
+                "title": "Gcalls CX",
+                "detail": "Hợp nhất hội thoại từ nhiều kênh giao tiếp vào một màn hình để đội CSKH quản lý yêu cầu và ngữ cảnh khách hàng tập trung hơn.",
+                "points": [
+                  "Omnichannel",
+                  "Ticket",
+                  "Customer context"
+                ],
+                "path": "/gcalls-cx/",
+                "cta": "Xem Gcalls CX"
+              },
+              {
+                "title": "Gcalls Voicebot AI",
+                "supportingLabel": "Voicebot AI",
+                "detail": "Tự động hóa những cuộc gọi lặp lại theo kịch bản đã thiết lập — nhắc lịch, xác nhận thông tin, sàng lọc nhu cầu — và chuyển tình huống cần chuyên môn cho nhân viên.",
+                "points": [
+                  "Kịch bản cuộc gọi",
+                  "Chiến dịch tự động",
+                  "Chuyển tiếp nhân viên"
+                ],
+                "path": "/voicebot-ai/",
+                "cta": "Xem Gcalls Voicebot AI"
+              }
+            ],
+            "note": "Bốn sản phẩm có thể dùng độc lập hoặc cùng nhau. Cấu hình phù hợp phụ thuộc vào quy mô đội ngũ, kênh giao tiếp và nhu cầu kiểm soát chất lượng của doanh nghiệp."
+          }
+        },
+        {
+          "key": "decisionGuide",
+          "label": "Hướng dẫn lựa chọn",
+          "order": 3,
+          "previewSelector": "section[aria-labelledby=\"products-guide\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "lead": {
+              "type": "text",
+              "label": "Đoạn dẫn",
+              "maxLen": 240
+            },
+            "rows": {
+              "type": "cards",
+              "label": "Bài toán → hướng phù hợp",
+              "maxItems": 9,
+              "item": {
+                "problem": {
+                  "type": "text",
+                  "label": "Problem",
+                  "maxLen": 240
+                },
+                "solution": {
+                  "type": "text",
+                  "label": "Solution",
+                  "maxLen": 240
+                },
+                "reason": {
+                  "type": "text",
+                  "label": "Reason",
+                  "maxLen": 240
+                },
+                "path": {
+                  "type": "url",
+                  "label": "Path",
+                  "maxLen": 500
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "CHỌN ĐÚNG SẢN PHẨM",
+            "h2": "Ranh giới giữa bốn sản phẩm",
+            "lead": "Nếu bài toán hiện tại thuộc một trong các trường hợp dưới đây, đây là sản phẩm nên xem trước.",
+            "rows": [
+              {
+                "problem": "Đội ngũ cần một kênh nghe gọi ổn định và cần biết ai đã gọi cho khách hàng, khi nào, nội dung ra sao.",
+                "solution": "Gcalls Plus Webphone",
+                "reason": "Bài toán nằm ở lớp thực hiện cuộc gọi và quản lý hoạt động nghe gọi hằng ngày.",
+                "path": "/gcalls-plus-webphone/"
+              },
+              {
+                "problem": "Quản lý cần đánh giá chất lượng hội thoại của đội ngũ nhưng không thể nghe lại toàn bộ cuộc gọi.",
+                "solution": "QA QC Center",
+                "reason": "Bài toán nằm ở lớp kiểm soát chất lượng: cần transcript và bộ tiêu chí để đánh giá có hệ thống.",
+                "path": "/qc-bot-ai/"
+              },
+              {
+                "problem": "Khách hàng liên hệ qua nhiều kênh khác nhau và đội CSKH phải mở nhiều công cụ để trả lời.",
+                "solution": "Gcalls CX",
+                "reason": "Bài toán nằm ở lớp vận hành đa kênh, rộng hơn kênh thoại đơn thuần.",
+                "path": "/gcalls-cx/"
+              },
+              {
+                "problem": "Một phần lớn cuộc gọi lặp lại gần như nguyên vẹn mỗi lần — nhắc lịch, xác nhận thông tin, sàng lọc danh sách.",
+                "solution": "Gcalls Voicebot AI",
+                "reason": "Bài toán nằm ở lớp tự động hóa tác vụ có kịch bản rõ ràng, để nhân viên còn thời gian cho những cuộc trao đổi cần tư vấn thật sự.",
+                "path": "/voicebot-ai/"
+              },
+              {
+                "problem": "Doanh nghiệp cần cuộc gọi hoạt động cùng dữ liệu trong CRM, Helpdesk hoặc hệ thống bán hàng đang dùng.",
+                "solution": "Xem các giải pháp tích hợp",
+                "reason": "Đây là bài toán giải pháp, không phải chọn sản phẩm: sản phẩm giữ nguyên và được kết nối với hệ thống hiện có.",
+                "path": "/giai-phap/"
+              }
+            ]
+          }
+        },
+        {
+          "key": "links",
+          "label": "Liên kết tiếp theo",
+          "order": 4,
+          "previewSelector": "section[aria-labelledby=\"products-links\"]",
+          "fields": {
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "items": {
+              "type": "repeater",
+              "label": "Liên kết",
+              "maxItems": 9,
+              "item": {
+                "label": {
+                  "type": "ctaLabel",
+                  "label": "Nhãn nút",
+                  "maxLen": 80
+                },
+                "path": {
+                  "type": "url",
+                  "label": "Path",
+                  "maxLen": 500
+                }
+              }
+            }
+          },
+          "defaults": {
+            "h2": "Xem thêm",
+            "items": [
+              {
+                "label": "Tất cả giải pháp",
+                "path": "/giai-phap/"
+              },
+              {
+                "label": "Danh mục tích hợp",
+                "path": "/tich-hop/"
+              },
+              {
+                "label": "Bảng giá Gcalls",
+                "path": "/bang-gia/"
+              },
+              {
+                "label": "Ước tính chi phí",
+                "path": "/uoc-tinh-chi-phi/"
+              },
+              {
+                "label": "Giải pháp theo ngành",
+                "path": "/nganh/"
+              }
+            ]
+          }
+        },
+        {
+          "key": "finalCta",
+          "label": "CTA cuối trang",
+          "order": 5,
+          "previewSelector": "section[aria-labelledby=\"products-cta\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "text",
+              "label": "Mô tả",
+              "maxLen": 240
+            },
+            "primaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút chính · Nhãn nút",
+              "maxLen": 80
+            },
+            "primaryCta.path": {
+              "type": "url",
+              "label": "Nút chính · Path",
+              "maxLen": 500
+            },
+            "secondaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút phụ · Nhãn nút",
+              "maxLen": 80
+            },
+            "secondaryCta.path": {
+              "type": "url",
+              "label": "Nút phụ · Path",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "BẮT ĐẦU",
+            "h2": "Chưa rõ sản phẩm nào phù hợp với đội ngũ hiện tại?",
+            "description": "Chia sẻ quy mô đội ngũ, kênh khách hàng đang dùng và hệ thống nội bộ để Gcalls đề xuất sản phẩm và cấu hình phù hợp.",
+            "primaryCta": {
+              "label": "Đăng ký tư vấn",
+              "path": "/lien-he/"
+            },
+            "secondaryCta": {
+              "label": "Ước tính chi phí",
+              "path": "/uoc-tinh-chi-phi/"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "gcallsPlus",
+      "path": "/gcalls-plus-webphone/",
+      "label": "Gcalls Plus Webphone",
+      "order": 2,
+      "status": "editable",
+      "statusLabel": "Có thể chỉnh sửa",
+      "sections": [
+        {
+          "key": "hero",
+          "label": "Hero",
+          "order": 0,
+          "previewSelector": "main > section:first-of-type",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h1": {
+              "type": "text",
+              "label": "Tiêu đề chính (H1)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "valuePoints": {
+              "type": "repeater",
+              "label": "Value points",
+              "maxItems": 8,
+              "item": {
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            },
+            "primaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút chính · Nhãn nút",
+              "maxLen": 80
+            },
+            "secondaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút phụ · Nhãn nút",
+              "maxLen": 80
+            },
+            "secondaryCta.href": {
+              "type": "url",
+              "label": "Nút phụ · Liên kết",
+              "maxLen": 500,
+              "help": "Có thể dùng #anchor trên trang."
+            }
+          },
+          "defaults": {
+            "eyebrow": "GCALLS PLUS WEBPHONE",
+            "h1": "Gcalls Plus Webphone – tổng đài doanh nghiệp ngay trên trình duyệt",
+            "description": "Nghe gọi, quản lý danh bạ, theo dõi lịch sử tương tác và hoạt động của đội ngũ Sales/CSKH trong một giao diện Webphone tập trung.",
+            "valuePoints": [
+              {
+                "title": "Làm việc ngay trên trình duyệt",
+                "detail": "Đưa hoạt động nghe gọi vào môi trường làm việc trên máy tính thay vì phụ thuộc vào một hệ thống điện thoại rời rạc."
+              },
+              {
+                "title": "Theo dõi context khách hàng",
+                "detail": "Danh bạ, lịch sử tương tác, ghi chú và thông tin cuộc gọi được tổ chức để nhân viên dễ tiếp tục cuộc hội thoại."
+              },
+              {
+                "title": "Quản lý hoạt động đội ngũ",
+                "detail": "Theo dõi lịch sử và dữ liệu hoạt động cuộc gọi để hỗ trợ quản lý vận hành."
+              }
+            ],
+            "primaryCta": {
+              "label": "Đăng ký tư vấn"
+            },
+            "secondaryCta": {
+              "label": "Khám phá tính năng",
+              "href": "#tinh-nang"
+            }
+          }
+        },
+        {
+          "key": "directAnswer",
+          "label": "Định nghĩa (Direct answer)",
+          "order": 1,
+          "previewSelector": "section[aria-labelledby=\"gcalls-plus-la-gi\"]",
+          "fields": {
+            "question": {
+              "type": "text",
+              "label": "Câu hỏi",
+              "maxLen": 240
+            },
+            "answer": {
+              "type": "textarea",
+              "label": "Câu trả lời",
+              "maxLen": 1200
+            }
+          },
+          "defaults": {
+            "question": "Gcalls Plus Webphone là gì?",
+            "answer": "Gcalls Plus Webphone là phần mềm tổng đài Webphone hoạt động trực tiếp trên trình duyệt, giúp đội Sales và Chăm sóc khách hàng thực hiện cuộc gọi, quản lý danh bạ, theo dõi lịch sử tương tác, ghi chú và hoạt động cuộc gọi trên một giao diện tập trung. Giải pháp phù hợp với các đội ngũ cần triển khai kênh nghe gọi chuyên nghiệp nhưng muốn giữ quy trình vận hành đơn giản."
+          }
+        },
+        {
+          "key": "problems",
+          "label": "Bài toán",
+          "order": 2,
+          "previewSelector": "section[aria-labelledby=\"bai-toan\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "items": {
+              "type": "cards",
+              "label": "Danh sách",
+              "maxItems": 8,
+              "item": {
+                "n": {
+                  "type": "text",
+                  "label": "N",
+                  "maxLen": 240
+                },
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "BÀI TOÁN",
+            "h2": "Một đội ngũ nhỏ cũng cần quy trình nghe gọi chuyên nghiệp",
+            "description": "Khi dữ liệu cuộc gọi, ghi chú và lịch sử khách hàng nằm rải rác, ngay cả một đội Sales hoặc CSKH nhỏ cũng có thể mất nhiều thời gian để theo dõi và tiếp tục từng cuộc hội thoại.",
+            "items": [
+              {
+                "n": "01",
+                "title": "Thông tin cuộc gọi nằm rời rạc",
+                "detail": "Nhân viên gọi điện nhưng lịch sử trao đổi, ghi chú và thông tin khách hàng không nằm trong cùng một luồng làm việc."
+              },
+              {
+                "n": "02",
+                "title": "Khó theo dõi những gì đã trao đổi",
+                "detail": "Khi khách hàng quay lại, nhân viên cần biết ai đã liên hệ, trao đổi nội dung gì và bước tiếp theo là gì."
+              },
+              {
+                "n": "03",
+                "title": "Quản lý khó nhìn thấy hoạt động của đội ngũ",
+                "detail": "Không có dữ liệu tập trung khiến việc theo dõi lượng cuộc gọi và hoạt động của nhân viên trở nên khó khăn hơn."
+              },
+              {
+                "n": "04",
+                "title": "Giải pháp quá phức tạp so với nhu cầu thực tế",
+                "detail": "SME có thể chỉ cần một hệ thống nghe gọi gọn nhẹ thay vì bắt đầu bằng một Contact Center với quá nhiều lớp vận hành."
+              }
+            ]
+          }
+        },
+        {
+          "key": "overview",
+          "label": "Tổng quan Webphone",
+          "order": 3,
+          "previewSelector": "section[aria-labelledby=\"tong-quan-webphone\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "capabilities": {
+              "type": "checklist",
+              "label": "Capabilities",
+              "maxItems": 8,
+              "maxLen": 200
+            }
+          },
+          "defaults": {
+            "eyebrow": "GCALLS PLUS WEBPHONE",
+            "h2": "Webphone đưa chức năng tổng đài vào trình duyệt",
+            "description": "Gcalls Plus tập trung các chức năng nghe gọi và quản lý tương tác vào giao diện Webphone để nhân viên có thể xử lý công việc trên máy tính.",
+            "capabilities": [
+              "Hoạt động trực tiếp trên trình duyệt",
+              "Tập trung vào hoạt động nghe gọi và quản lý tương tác",
+              "Gọn nhẹ hơn so với một Contact Center đa kênh đầy đủ",
+              "Phù hợp với đội Sales và Chăm sóc khách hàng"
+            ]
+          }
+        },
+        {
+          "key": "features",
+          "label": "Tính năng",
+          "order": 4,
+          "previewSelector": "section[aria-labelledby=\"tinh-nang-heading\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "items": {
+              "type": "cards",
+              "label": "Danh sách",
+              "maxItems": 10,
+              "item": {
+                "n": {
+                  "type": "text",
+                  "label": "N",
+                  "maxLen": 240
+                },
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "NĂNG LỰC CỐT LÕI",
+            "h2": "Các chức năng cần thiết cho hoạt động nghe gọi hằng ngày",
+            "items": [
+              {
+                "n": "01",
+                "title": "Webphone",
+                "detail": "Thực hiện và tiếp nhận cuộc gọi trực tiếp từ giao diện làm việc trên trình duyệt."
+              },
+              {
+                "n": "02",
+                "title": "IVR & Call Flow",
+                "detail": "Thiết lập lời chào và luồng xử lý cuộc gọi phù hợp với cách doanh nghiệp tổ chức tiếp nhận khách hàng."
+              },
+              {
+                "n": "03",
+                "title": "Quản lý danh bạ",
+                "detail": "Quản lý thông tin liên hệ phục vụ hoạt động Sales hoặc Chăm sóc khách hàng."
+              },
+              {
+                "n": "04",
+                "title": "Lịch sử tương tác",
+                "detail": "Theo dõi lịch sử tương tác để nhân viên có thêm context khi tiếp tục làm việc với khách hàng."
+              },
+              {
+                "n": "05",
+                "title": "Ghi chú & Follow-up",
+                "detail": "Ghi lại thông tin liên quan đến cuộc gọi và hỗ trợ nhân viên tiếp tục xử lý ở bước tiếp theo."
+              },
+              {
+                "n": "06",
+                "title": "Phân loại cuộc gọi",
+                "detail": "Phân loại cuộc gọi theo nội dung hoặc mục đích để thuận tiện cho quản lý và báo cáo."
+              }
+            ]
+          }
+        },
+        {
+          "key": "history",
+          "label": "Lịch sử tương tác",
+          "order": 5,
+          "previewSelector": "section[aria-labelledby=\"lich-su-tuong-tac\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "points": {
+              "type": "checklist",
+              "label": "Các ý",
+              "maxItems": 9,
+              "maxLen": 200
+            }
+          },
+          "defaults": {
+            "eyebrow": "LỊCH SỬ TƯƠNG TÁC",
+            "h2": "Theo dõi hành trình tương tác thay vì chỉ nhìn từng cuộc gọi riêng lẻ",
+            "description": "Lịch sử tương tác giúp nhân viên xem lại những lần liên hệ trước, nội dung đã ghi chú và các hoạt động liên quan trước khi tiếp tục xử lý khách hàng.",
+            "points": [
+              "Lịch sử cuộc gọi",
+              "Thời gian tương tác",
+              "Ghi chú",
+              "Phân loại",
+              "Hoạt động liên quan"
+            ]
+          }
+        },
+        {
+          "key": "context",
+          "label": "Customer context",
+          "order": 6,
+          "previewSelector": "section[aria-labelledby=\"ngu-canh-khach-hang\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "points": {
+              "type": "checklist",
+              "label": "Các ý",
+              "maxItems": 8,
+              "maxLen": 200
+            }
+          },
+          "defaults": {
+            "eyebrow": "CUSTOMER CONTEXT",
+            "h2": "Hiểu khách hàng trước khi tiếp tục cuộc hội thoại",
+            "description": "Khi thông tin liên hệ, lịch sử cuộc gọi và ghi chú được tập trung trong cùng một giao diện, nhân viên có thể nhanh chóng xem lại những gì đã diễn ra trước khi tiếp tục trao đổi với khách hàng.",
+            "points": [
+              "Thông tin liên hệ",
+              "Lịch sử cuộc gọi",
+              "Ghi chú"
+            ]
+          }
+        },
+        {
+          "key": "workflow",
+          "label": "Quy trình",
+          "order": 7,
+          "previewSelector": "section[aria-labelledby=\"quy-trinh\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "steps": {
+              "type": "cards",
+              "label": "Các bước",
+              "maxItems": 8,
+              "item": {
+                "n": {
+                  "type": "text",
+                  "label": "N",
+                  "maxLen": 240
+                },
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "QUY TRÌNH",
+            "h2": "Từ cuộc gọi đến bước follow-up tiếp theo",
+            "steps": [
+              {
+                "n": "01",
+                "title": "Tiếp nhận hoặc thực hiện cuộc gọi",
+                "detail": "Nhân viên xử lý cuộc gọi trên Webphone."
+              },
+              {
+                "n": "02",
+                "title": "Xem context liên hệ",
+                "detail": "Thông tin khách hàng và lịch sử tương tác hỗ trợ nhân viên hiểu bối cảnh trước khi trao đổi."
+              },
+              {
+                "n": "03",
+                "title": "Ghi lại nội dung quan trọng",
+                "detail": "Nhân viên thêm ghi chú, phân loại hoặc thông tin cần follow-up."
+              },
+              {
+                "n": "04",
+                "title": "Theo dõi lịch sử",
+                "detail": "Hoạt động được lưu trong lịch sử để đội ngũ có thể tiếp tục xử lý ở lần tương tác tiếp theo."
+              }
+            ]
+          }
+        },
+        {
+          "key": "performance",
+          "label": "Hiệu suất đội ngũ",
+          "order": 8,
+          "previewSelector": "section[aria-labelledby=\"hieu-suat-doi-ngu\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "points": {
+              "type": "checklist",
+              "label": "Các ý",
+              "maxItems": 8,
+              "maxLen": 200
+            }
+          },
+          "defaults": {
+            "eyebrow": "QUẢN LÝ HOẠT ĐỘNG",
+            "h2": "Theo dõi hoạt động cuộc gọi của đội ngũ từ dữ liệu tập trung",
+            "description": "Lịch sử và dữ liệu hoạt động cuộc gọi giúp người quản lý có thêm cơ sở để theo dõi cách đội Sales/CSKH đang vận hành thay vì chỉ dựa vào báo cáo thủ công từ từng nhân viên.",
+            "points": [
+              "Lịch sử cuộc gọi của đội ngũ",
+              "Dữ liệu hoạt động tập trung",
+              "Trạng thái Agent trong quá trình vận hành"
+            ]
+          }
+        },
+        {
+          "key": "integration",
+          "label": "Kết nối hệ thống",
+          "order": 9,
+          "previewSelector": "section[aria-labelledby=\"tich-hop-he-thong\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "cta.label": {
+              "type": "ctaLabel",
+              "label": "Nút kêu gọi hành động · Nhãn nút",
+              "maxLen": 80
+            },
+            "cta.path": {
+              "type": "url",
+              "label": "Nút kêu gọi hành động · Path",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "KẾT NỐI HỆ THỐNG",
+            "h2": "Mở rộng Gcalls Plus vào quy trình CRM khi doanh nghiệp cần",
+            "description": "Khi quy trình Sales hoặc CSKH đã vận hành trên CRM, Gcalls có thể mở rộng từ Webphone sang mô hình tích hợp sâu hơn để hoạt động cuộc gọi gắn với dữ liệu và workflow hiện có của doanh nghiệp.",
+            "cta": {
+              "label": "Khám phá Tổng đài tích hợp CRM",
+              "path": "/tong-dai-tich-hop-crm/"
+            }
+          }
+        },
+        {
+          "key": "useCases",
+          "label": "Tình huống sử dụng",
+          "order": 10,
+          "previewSelector": "section[aria-labelledby=\"phu-hop-voi\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "items": {
+              "type": "cards",
+              "label": "Danh sách",
+              "maxItems": 9,
+              "item": {
+                "role": {
+                  "type": "text",
+                  "label": "Vai trò",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
+            "h2": "Gcalls Plus phù hợp với những đội ngũ nào?",
+            "items": [
+              {
+                "role": "Sales",
+                "detail": "Quản lý hoạt động gọi lead, lịch sử liên hệ, ghi chú và follow-up trong một luồng làm việc gọn hơn."
+              },
+              {
+                "role": "Chăm sóc khách hàng",
+                "detail": "Tiếp nhận cuộc gọi và xem lại lịch sử tương tác trước khi hỗ trợ khách hàng."
+              },
+              {
+                "role": "Giáo dục",
+                "detail": "Phù hợp với đội tư vấn tuyển sinh và chăm sóc học viên cần xử lý lượng liên hệ thường xuyên.",
+                "link": {
+                  "label": "Giải pháp cho ngành Giáo dục",
+                  "path": "/nganh/giao-duc/"
+                }
+              },
+              {
+                "role": "Dịch vụ",
+                "detail": "Phù hợp với các doanh nghiệp dịch vụ cần hotline và hệ thống quản lý hoạt động gọi tập trung."
+              },
+              {
+                "role": "Thương mại điện tử",
+                "detail": "Hỗ trợ đội bán hàng hoặc CSKH xử lý cuộc gọi liên quan tới tư vấn, đơn hàng và chăm sóc sau bán.",
+                "link": {
+                  "label": "Giải pháp cho ngành Thương mại điện tử",
+                  "path": "/nganh/thuong-mai-dien-tu/"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key": "boundaries",
+          "label": "Phạm vi phù hợp",
+          "order": 11,
+          "previewSelector": "section[aria-labelledby=\"pham-vi-phu-hop\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "fitTitle": {
+              "type": "text",
+              "label": "Fit title",
+              "maxLen": 240
+            },
+            "fitItems": {
+              "type": "checklist",
+              "label": "Fit items",
+              "maxItems": 9,
+              "maxLen": 200
+            },
+            "expandTitle": {
+              "type": "text",
+              "label": "Expand title",
+              "maxLen": 240
+            },
+            "expandItems": {
+              "type": "repeater",
+              "label": "Expand items",
+              "maxItems": 8,
+              "item": {
+                "need": {
+                  "type": "text",
+                  "label": "Need",
+                  "maxLen": 240
+                },
+                "solution": {
+                  "type": "text",
+                  "label": "Solution",
+                  "maxLen": 240
+                },
+                "path": {
+                  "type": "url",
+                  "label": "Path",
+                  "maxLen": 500
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "PHẠM VI PHÙ HỢP",
+            "h2": "Phù hợp khi doanh nghiệp cần sự gọn nhẹ trước khi cần một Contact Center phức tạp",
+            "fitTitle": "PHÙ HỢP VỚI GCALLS PLUS",
+            "fitItems": [
+              "SME / Startup",
+              "Sales team",
+              "Customer Service team",
+              "Đội ngũ quy mô nhỏ và vừa",
+              "Doanh nghiệp cần quản lý cuộc gọi tập trung"
+            ],
+            "expandTitle": "KHI NHU CẦU MỞ RỘNG",
+            "expandItems": [
+              {
+                "need": "CRM workflow sâu hơn",
+                "solution": "Tổng đài tích hợp CRM",
+                "path": "/tong-dai-tich-hop-crm/"
+              },
+              {
+                "need": "Giao tiếp đa kênh",
+                "solution": "Gcalls CX",
+                "path": "/gcalls-cx/"
+              },
+              {
+                "need": "Kiểm soát chất lượng hội thoại bằng AI",
+                "solution": "QA QC Center",
+                "path": "/qc-bot-ai/"
+              },
+              {
+                "need": "Liên lạc quốc tế",
+                "solution": "International Calling",
+                "path": "/tong-dai-quoc-te/"
+              }
+            ]
+          }
+        },
+        {
+          "key": "deployment",
+          "label": "Triển khai",
+          "order": 12,
+          "previewSelector": "section[aria-labelledby=\"trien-khai\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "steps": {
+              "type": "cards",
+              "label": "Các bước",
+              "maxItems": 10,
+              "item": {
+                "n": {
+                  "type": "text",
+                  "label": "N",
+                  "maxLen": 240
+                },
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "TRIỂN KHAI",
+            "h2": "Triển khai theo nhu cầu vận hành thực tế",
+            "description": "Gcalls Plus được thiết kế theo mô hình Webphone để giảm độ phức tạp khi triển khai cho đội ngũ cần một hệ thống nghe gọi tập trung. Thời gian triển khai thực tế phụ thuộc vào cấu hình hotline, call flow, số lượng người dùng và yêu cầu tích hợp của doanh nghiệp.",
+            "steps": [
+              {
+                "n": "01",
+                "title": "Khảo sát nhu cầu"
+              },
+              {
+                "n": "02",
+                "title": "Xác định hotline và người dùng"
+              },
+              {
+                "n": "03",
+                "title": "Thiết lập call flow"
+              },
+              {
+                "n": "04",
+                "title": "Kiểm thử"
+              },
+              {
+                "n": "05",
+                "title": "Hướng dẫn sử dụng"
+              },
+              {
+                "n": "06",
+                "title": "Vận hành"
+              }
+            ]
+          }
+        },
+        {
+          "key": "pricing",
+          "label": "Chi phí",
+          "order": 13,
+          "previewSelector": "section[aria-labelledby=\"chi-phi\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "primaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút chính · Nhãn nút",
+              "maxLen": 80
+            },
+            "primaryCta.path": {
+              "type": "url",
+              "label": "Nút chính · Path",
+              "maxLen": 500
+            },
+            "secondaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút phụ · Nhãn nút",
+              "maxLen": 80
+            },
+            "secondaryCta.path": {
+              "type": "url",
+              "label": "Nút phụ · Path",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "CẤU HÌNH & CHI PHÍ",
+            "h2": "Chi phí phụ thuộc vào cấu hình đội ngũ và nhu cầu sử dụng",
+            "description": "Quy mô người dùng, hotline, lưu lượng gọi và yêu cầu tích hợp có thể ảnh hưởng đến cấu hình giải pháp. Sử dụng công cụ ước tính để mô tả nhu cầu trước khi nhận tư vấn.",
+            "primaryCta": {
+              "label": "Ước tính cấu hình & chi phí",
+              "path": "/uoc-tinh-chi-phi/?product=gcalls-plus"
+            },
+            "secondaryCta": {
+              "label": "Xem bảng giá Gcalls",
+              "path": "/bang-gia/"
+            }
+          }
+        },
+        {
+          "key": "story",
+          "label": "Khách hàng",
+          "order": 14,
+          "previewSelector": "section[aria-labelledby=\"cau-chuyen-khach-hang\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "lead": {
+              "type": "text",
+              "label": "Đoạn dẫn",
+              "maxLen": 240
+            },
+            "cta.label": {
+              "type": "ctaLabel",
+              "label": "Nút kêu gọi hành động · Nhãn nút",
+              "maxLen": 80
+            },
+            "cta.path": {
+              "type": "url",
+              "label": "Nút kêu gọi hành động · Path",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "KHÁCH HÀNG",
+            "h2": "Đồng hành cùng nhiều mô hình doanh nghiệp khác nhau",
+            "lead": "Lắng nghe khách hàng nói về trải nghiệm của họ khi đồng hành cùng Gcalls.",
+            "cta": {
+              "label": "Xem các câu chuyện khách hàng",
+              "path": "/tai-nguyen/case-studies/"
+            }
+          }
+        },
+        {
+          "key": "testimonials",
+          "label": "Testimonial khách hàng",
+          "order": 15,
+          "previewSelector": "section[aria-labelledby=\"cau-chuyen-khach-hang\"]",
+          "fields": {
+            "items": {
+              "type": "testimonials",
+              "label": "Testimonial",
+              "maxItems": 8,
+              "item": {
+                "id": {
+                  "type": "text",
+                  "label": "Mã (không đổi)",
+                  "maxLen": 240
+                },
+                "company": {
+                  "type": "text",
+                  "label": "Công ty",
+                  "maxLen": 240
+                },
+                "monogram": {
+                  "type": "text",
+                  "label": "Chữ cái đại diện",
+                  "maxLen": 2
+                },
+                "representative": {
+                  "type": "text",
+                  "label": "Người đại diện",
+                  "maxLen": 240
+                },
+                "role": {
+                  "type": "text",
+                  "label": "Vai trò",
+                  "maxLen": 240
+                },
+                "quote": {
+                  "type": "textarea",
+                  "label": "Trích dẫn",
+                  "maxLen": 1200
+                }
+              },
+              "help": "Trích dẫn nguyên văn từ nguồn đã công bố; không thêm số liệu."
+            }
+          },
+          "defaults": {
+            "items": [
+              {
+                "id": "ktdc-group",
+                "company": "KTDC Group",
+                "monogram": "K",
+                "representative": "Ms. Thư Nguyễn",
+                "role": "Managing Director",
+                "quote": "Gcalls giúp KTDC hạn chế tối đa cuộc gọi nhỡ của khách hàng. Ngay cả khi có gọi nhỡ, KTDC cũng có thông tin để follow up và gọi lại. Với mỗi cuộc gọi đến, bất cứ bạn chăm sóc khách hàng nào cũng có thể tư vấn và chăm sóc một cách hiệu quả nhất vì mọi thông tin đều được lưu lại trên hệ thống Gcalls. Giá trị mà Gcalls mang lại cho KTDC Group không chỉ về mặt chất lượng và hiệu quả công việc, mà còn là sự tận tâm của đội ngũ nhân viên hỗ trợ hết mình."
+              },
+              {
+                "id": "ofelia",
+                "company": "OFÉLIA",
+                "monogram": "O",
+                "representative": "Ms. Nguyễn Diệp Trân",
+                "role": "Trưởng bộ phận CSKH",
+                "quote": "Gcalls giúp OFÉLIA tăng hiệu suất hỗ trợ khách hàng so với công cụ truyền thống. Đồng thời, tính năng lưu lại dữ liệu giúp tôi kiểm soát chất lượng chăm sóc khách hàng để mang lại hiệu quả cao nhất. Khi cần hỗ trợ trong quá trình sử dụng, Gcalls cũng xử lý rất nhanh chóng và nhiệt tình."
+              },
+              {
+                "id": "zuttoride",
+                "company": "ZuttoRide",
+                "monogram": "Z",
+                "representative": "Ms. Trúc Phương",
+                "role": "Customer Service Manager",
+                "quote": "Trong quá trình 2 năm qua, rất nhiều công ty khác đã giới thiệu dịch vụ tổng đài nhưng chị vẫn chọn Gcalls. Vì Gcalls đáp ứng đầy đủ nhu cầu đối với một tổng đài 24/7. Và chị đánh giá rất cao về khả năng hỗ trợ khách hàng của Gcalls. Gần như 24/24, lúc nào team ZuttoRide cần là Gcalls sẽ có mặt."
+              }
+            ]
+          }
+        },
+        {
+          "key": "faq",
+          "label": "FAQ",
+          "order": 16,
+          "previewSelector": "section[aria-labelledby=\"faq-gcalls-plus\"]",
+          "fields": {
+            "items": {
+              "type": "repeater",
+              "label": "Câu hỏi thường gặp",
+              "maxItems": 10,
+              "item": {
+                "q": {
+                  "type": "text",
+                  "label": "Câu hỏi",
+                  "maxLen": 240
+                },
+                "a": {
+                  "type": "textarea",
+                  "label": "Câu trả lời",
+                  "maxLen": 1200
+                }
+              }
+            }
+          },
+          "defaults": {
+            "items": [
+              {
+                "q": "Gcalls Plus Webphone là gì?",
+                "a": "Gcalls Plus Webphone là giải pháp tổng đài hoạt động trên trình duyệt giúp doanh nghiệp thực hiện cuộc gọi và quản lý các thông tin liên quan đến hoạt động tương tác trong một giao diện tập trung."
+              },
+              {
+                "q": "Gcalls Plus có cần điện thoại bàn không?",
+                "a": "Webphone được thiết kế để hoạt động thông qua môi trường trình duyệt trên máy tính. Yêu cầu thiết bị và cấu hình thực tế sẽ tùy thuộc vào mô hình triển khai."
+              },
+              {
+                "q": "Gcalls Plus có lưu lịch sử cuộc gọi không?",
+                "a": "Có. Gcalls Plus hỗ trợ theo dõi lịch sử và dữ liệu hoạt động cuộc gọi để nhân viên và người quản lý có thêm context trong quá trình làm việc."
+              },
+              {
+                "q": "Gcalls Plus có tích hợp CRM không?",
+                "a": "Gcalls có khả năng kết nối hoạt động nghe gọi với CRM. Với doanh nghiệp cần workflow sâu hơn như Click-to-Call, context khách hàng hoặc đồng bộ lịch sử cuộc gọi, hãy tham khảo giải pháp Tổng đài tích hợp CRM.",
+                "link": {
+                  "label": "Tổng đài tích hợp CRM",
+                  "path": "/tong-dai-tich-hop-crm/"
+                }
+              },
+              {
+                "q": "Gcalls Plus phù hợp với ai?",
+                "a": "Gcalls Plus hướng tới các SME và đội Sales/CSKH cần một hệ thống nghe gọi tập trung trên trình duyệt nhưng chưa cần một Contact Center đa kênh phức tạp."
+              },
+              {
+                "q": "Tôi có thể biết chi phí trước khi tư vấn không?",
+                "a": "Doanh nghiệp có thể sử dụng công cụ Ước tính cấu hình & chi phí để mô tả quy mô và nhu cầu trước khi nhận báo giá chính thức.",
+                "link": {
+                  "label": "Ước tính cấu hình & chi phí",
+                  "path": "/uoc-tinh-chi-phi/?product=gcalls-plus"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "key": "finalCta",
+          "label": "CTA cuối trang",
+          "order": 17,
+          "previewSelector": "section[aria-labelledby=\"cta-gcalls-plus\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "text",
+              "label": "Mô tả",
+              "maxLen": 240
+            },
+            "primaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút chính · Nhãn nút",
+              "maxLen": 80
+            },
+            "primaryCta.path": {
+              "type": "url",
+              "label": "Nút chính · Path",
+              "maxLen": 500
+            },
+            "secondaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút phụ · Nhãn nút",
+              "maxLen": 80
+            },
+            "secondaryCta.path": {
+              "type": "url",
+              "label": "Nút phụ · Path",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "GCALLS PLUS WEBPHONE",
+            "h2": "Bắt đầu với một hệ thống nghe gọi phù hợp với cách đội ngũ của bạn đang làm việc",
+            "description": "Chia sẻ quy mô Sales/CSKH, số hotline và quy trình hiện tại để Gcalls tư vấn cấu hình Webphone phù hợp.",
+            "primaryCta": {
+              "label": "Đăng ký tư vấn",
+              "path": "/lien-he/"
+            },
+            "secondaryCta": {
+              "label": "Ước tính cấu hình",
+              "path": "/uoc-tinh-chi-phi/?product=gcalls-plus"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "qcCenter",
+      "path": "/qc-bot-ai/",
+      "label": "QA QC Center",
+      "order": 3,
+      "status": "editable",
+      "statusLabel": "Có thể chỉnh sửa",
+      "sections": [
+        {
+          "key": "hero",
+          "label": "Hero",
+          "order": 0,
+          "previewSelector": "main > section:first-of-type",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h1": {
+              "type": "text",
+              "label": "Tiêu đề chính (H1)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "valuePoints": {
+              "type": "repeater",
+              "label": "Value points",
+              "maxItems": 8,
+              "item": {
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            },
+            "primaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút chính · Nhãn nút",
+              "maxLen": 80
+            },
+            "secondaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút phụ · Nhãn nút",
+              "maxLen": 80
+            },
+            "secondaryCta.href": {
+              "type": "url",
+              "label": "Nút phụ · Href",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "QA QC CENTER • POWERED BY QC BOT AI",
+            "h1": "QA QC Center – AI hỗ trợ kiểm soát chất lượng cuộc gọi",
+            "description": "Chuyển nội dung cuộc gọi thành dữ liệu có cấu trúc, áp dụng tiêu chí QA và làm nổi bật những tín hiệu cần kiểm tra để đội quản lý tập trung vào các hội thoại quan trọng.",
+            "valuePoints": [
+              {
+                "title": "Chuyển hội thoại thành dữ liệu",
+                "detail": "Speech-to-Text giúp đội QA đọc, tìm kiếm và xem lại nội dung cuộc gọi thuận tiện hơn."
+              },
+              {
+                "title": "Chuẩn hóa tiêu chí đánh giá",
+                "detail": "Áp dụng bộ tiêu chí và trọng số QA được cấu hình để hỗ trợ quá trình chấm điểm nhất quán hơn."
+              },
+              {
+                "title": "Ưu tiên cuộc gọi cần xem lại",
+                "detail": "Từ khóa, tín hiệu cảm xúc và kết quả phân tích giúp đội QA xác định những hội thoại cần chú ý."
+              }
+            ],
+            "primaryCta": {
+              "label": "Yêu cầu demo QA QC Center"
+            },
+            "secondaryCta": {
+              "label": "Khám phá cách hoạt động",
+              "href": "#cach-hoat-dong"
+            }
+          }
+        },
+        {
+          "key": "directAnswer",
+          "label": "Định nghĩa (Direct answer)",
+          "order": 1,
+          "previewSelector": "section[aria-labelledby=\"qa-qc-la-gi\"]",
+          "fields": {
+            "question": {
+              "type": "text",
+              "label": "Câu hỏi",
+              "maxLen": 240
+            },
+            "answer": {
+              "type": "textarea",
+              "label": "Câu trả lời",
+              "maxLen": 1200
+            }
+          },
+          "defaults": {
+            "question": "QA QC Center là gì?",
+            "answer": "QA QC Center sử dụng năng lực QC Bot AI để chuyển nội dung cuộc gọi thành transcript, đánh giá theo các tiêu chí QA được cấu hình và làm nổi bật những tín hiệu cần kiểm tra như từ khóa, cảm xúc hoặc mức độ tuân thủ. Giải pháp giúp đội QA và quản lý tập trung vào các hội thoại cần được xem xét thay vì phụ thuộc hoàn toàn vào việc nghe lại thủ công."
+          }
+        },
+        {
+          "key": "problems",
+          "label": "Bài toán QA",
+          "order": 2,
+          "previewSelector": "section[aria-labelledby=\"bai-toan-qa\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "items": {
+              "type": "cards",
+              "label": "Danh sách",
+              "maxItems": 8,
+              "item": {
+                "n": {
+                  "type": "text",
+                  "label": "N",
+                  "maxLen": 240
+                },
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "textarea",
+                  "label": "Chi tiết",
+                  "maxLen": 1200
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "BÀI TOÁN QA",
+            "h2": "Khi số lượng cuộc gọi tăng, nghe lại thủ công không còn đủ để kiểm soát chất lượng",
+            "description": "Đội QA thường phải chọn một phần nhỏ cuộc gọi để nghe lại, trong khi những cuộc hội thoại còn lại vẫn có thể chứa vấn đề về quy trình, trải nghiệm khách hàng hoặc cách nhân viên xử lý tình huống.",
+            "items": [
+              {
+                "n": "01",
+                "title": "Khó xem xét toàn bộ khối lượng hội thoại",
+                "detail": "Số lượng cuộc gọi lớn khiến đội QA phải ưu tiên mẫu kiểm tra thay vì có góc nhìn có cấu trúc trên toàn bộ dữ liệu được đưa vào hệ thống."
+              },
+              {
+                "n": "02",
+                "title": "Chấm điểm dễ phụ thuộc vào cách đánh giá của từng người",
+                "detail": "Nếu tiêu chí và trọng số chưa được chuẩn hóa, kết quả đánh giá giữa các QA có thể thiếu nhất quán."
+              },
+              {
+                "n": "03",
+                "title": "Tốn thời gian tìm cuộc gọi có vấn đề",
+                "detail": "QA phải nghe lại nhiều cuộc gọi để xác định những hội thoại có từ khóa, nội dung hoặc dấu hiệu cần được kiểm tra."
+              },
+              {
+                "n": "04",
+                "title": "Dữ liệu QA khó tổng hợp thành xu hướng",
+                "detail": "Khi đánh giá nằm ở nhiều file hoặc thao tác thủ công, người quản lý khó nhìn thấy xu hướng chất lượng theo đội ngũ và thời gian."
+              }
+            ]
+          }
+        },
+        {
+          "key": "overview",
+          "label": "Tổng quan",
+          "order": 3,
+          "previewSelector": "section[aria-labelledby=\"tong-quan-qa-qc\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "keywordLead": {
+              "type": "textarea",
+              "label": "Keyword lead",
+              "maxLen": 1200
+            },
+            "components": {
+              "type": "checklist",
+              "label": "Components",
+              "maxItems": 11,
+              "maxLen": 200
+            }
+          },
+          "defaults": {
+            "eyebrow": "QC BOT AI",
+            "h2": "Biến cuộc gọi thành dữ liệu có thể tìm kiếm, đánh giá và xem lại",
+            "description": "QA QC Center kết hợp dữ liệu hội thoại với bộ tiêu chí đánh giá để hỗ trợ đội QA theo dõi chất lượng cuộc gọi theo một quy trình có cấu trúc hơn.",
+            "keywordLead": "Là phần mềm QA cuộc gọi, QA QC Center tập hợp bảy thành phần dưới đây thành một quy trình kiểm soát chất lượng duy nhất.",
+            "components": [
+              "Transcript",
+              "QA criteria",
+              "Scoring",
+              "Keyword signals",
+              "Sentiment signals",
+              "Conversation review",
+              "Quality dashboard"
+            ]
+          }
+        },
+        {
+          "key": "howItWorks",
+          "label": "Cách hoạt động",
+          "order": 4,
+          "previewSelector": "section[aria-labelledby=\"cach-hoat-dong-heading\"]",
+          "fields": {
+            "anchorId": {
+              "type": "text",
+              "label": "Anchor id",
+              "maxLen": 240
+            },
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "steps": {
+              "type": "cards",
+              "label": "Các bước",
+              "maxItems": 9,
+              "item": {
+                "n": {
+                  "type": "text",
+                  "label": "N",
+                  "maxLen": 240
+                },
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "anchorId": "cach-hoat-dong",
+            "eyebrow": "CÁCH HOẠT ĐỘNG",
+            "h2": "Từ bản ghi cuộc gọi đến phiên đánh giá QA",
+            "steps": [
+              {
+                "n": "01",
+                "title": "Tiếp nhận dữ liệu cuộc gọi",
+                "detail": "Cuộc gọi được đưa vào luồng phân tích theo cấu hình của hệ thống."
+              },
+              {
+                "n": "02",
+                "title": "Chuyển giọng nói thành văn bản",
+                "detail": "Speech-to-Text tạo transcript để nội dung hội thoại có thể được đọc và xử lý dưới dạng dữ liệu."
+              },
+              {
+                "n": "03",
+                "title": "Áp dụng tiêu chí QA",
+                "detail": "Hệ thống sử dụng bộ tiêu chí và trọng số được cấu hình để hỗ trợ đánh giá nội dung cuộc gọi."
+              },
+              {
+                "n": "04",
+                "title": "Phát hiện tín hiệu cần chú ý",
+                "detail": "Từ khóa, tín hiệu cảm xúc và các điều kiện đánh giá giúp làm nổi bật những cuộc gọi cần được xem xét."
+              },
+              {
+                "n": "05",
+                "title": "QA xem lại và phân tích",
+                "detail": "Đội QA sử dụng transcript, scoring và context của cuộc gọi để kiểm tra, xác nhận và tiếp tục quá trình coaching hoặc cải thiện vận hành."
+              }
+            ]
+          }
+        },
+        {
+          "key": "capabilities",
+          "label": "Năng lực AI",
+          "order": 5,
+          "previewSelector": "section[aria-labelledby=\"nang-luc-ai\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "items": {
+              "type": "cards",
+              "label": "Danh sách",
+              "maxItems": 11,
+              "item": {
+                "n": {
+                  "type": "text",
+                  "label": "N",
+                  "maxLen": 240
+                },
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "NĂNG LỰC AI",
+            "h2": "Các năng lực cốt lõi hỗ trợ đội QA",
+            "items": [
+              {
+                "n": "01",
+                "title": "Speech-to-Text",
+                "detail": "Chuyển nội dung hội thoại thành transcript để hỗ trợ tìm kiếm, đọc và xem lại cuộc gọi."
+              },
+              {
+                "n": "02",
+                "title": "QA Criteria",
+                "detail": "Thiết lập các tiêu chí đánh giá phù hợp với quy trình chất lượng của doanh nghiệp."
+              },
+              {
+                "n": "03",
+                "title": "AI-assisted Scoring",
+                "detail": "Hỗ trợ chấm điểm trên dữ liệu đã được phân tích dựa trên bộ tiêu chí và trọng số được cấu hình."
+              },
+              {
+                "n": "04",
+                "title": "Keyword Analysis",
+                "detail": "Phát hiện các từ khóa hoặc cụm nội dung cần được đội QA chú ý."
+              },
+              {
+                "n": "05",
+                "title": "Sentiment Signals",
+                "detail": "Làm nổi bật tín hiệu cảm xúc trong hội thoại để hỗ trợ quá trình xem xét."
+              },
+              {
+                "n": "06",
+                "title": "Conversation Review",
+                "detail": "Tập trung transcript, kết quả đánh giá và các tín hiệu liên quan để QA xem lại cuộc gọi hiệu quả hơn."
+              },
+              {
+                "n": "07",
+                "title": "Quality Dashboard",
+                "detail": "Tổng hợp dữ liệu đánh giá để người quản lý theo dõi chất lượng và xu hướng vận hành."
+              }
+            ]
+          }
+        },
+        {
+          "key": "scoring",
+          "label": "QA Scoring",
+          "order": 6,
+          "previewSelector": "section[aria-labelledby=\"qa-scoring\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "points": {
+              "type": "checklist",
+              "label": "Các ý",
+              "maxItems": 9,
+              "maxLen": 200
+            }
+          },
+          "defaults": {
+            "eyebrow": "QA SCORING",
+            "h2": "Chuẩn hóa chấm điểm cuộc gọi theo tiêu chí rõ ràng",
+            "description": "Thay vì chỉ dựa vào cảm nhận khi nghe lại, doanh nghiệp có thể cấu hình bộ tiêu chí và trọng số để tạo một khung đánh giá nhất quán hơn.",
+            "points": [
+              "Thiết lập tiêu chí QA",
+              "Gán trọng số theo mức độ quan trọng",
+              "Hỗ trợ scoring trên dữ liệu được phân tích",
+              "Đưa cuộc gọi cần chú ý vào luồng review",
+              "Cho phép QA xem lại context trước khi kết luận"
+            ]
+          }
+        },
+        {
+          "key": "signals",
+          "label": "Conversation signals",
+          "order": 7,
+          "previewSelector": "section[aria-labelledby=\"conversation-signals\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "points": {
+              "type": "checklist",
+              "label": "Các ý",
+              "maxItems": 8,
+              "maxLen": 200
+            }
+          },
+          "defaults": {
+            "eyebrow": "CONVERSATION SIGNALS",
+            "h2": "Nhận diện từ khóa và tín hiệu hội thoại cần được chú ý",
+            "description": "Không phải mọi cuộc gọi đều cần mức độ kiểm tra như nhau. Các tín hiệu từ nội dung hội thoại có thể giúp đội QA ưu tiên những cuộc gọi cần xem lại trước.",
+            "points": [
+              "Tìm từ khóa/cụm nội dung theo cấu hình",
+              "Làm nổi bật tín hiệu cảm xúc",
+              "Xác định hội thoại có dấu hiệu bất thường",
+              "Theo dõi xu hướng thay vì chỉ nhìn từng cuộc gọi riêng lẻ"
+            ]
+          }
+        },
+        {
+          "key": "humanLoop",
+          "label": "AI + con người",
+          "order": 8,
+          "previewSelector": "section[aria-labelledby=\"ai-human-qa\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "roles": {
+              "type": "cards",
+              "label": "Roles",
+              "maxItems": 8,
+              "item": {
+                "role": {
+                  "type": "text",
+                  "label": "Vai trò",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "AI + HUMAN QA",
+            "h2": "AI hỗ trợ sàng lọc dữ liệu, con người vẫn giữ vai trò đánh giá và cải thiện",
+            "description": "QA QC Center giúp tự động hóa các bước xử lý dữ liệu và làm nổi bật tín hiệu, nhưng quyết định đánh giá, coaching và thay đổi quy trình vẫn cần được đặt trong bối cảnh vận hành thực tế của doanh nghiệp.",
+            "roles": [
+              {
+                "role": "AI hỗ trợ",
+                "detail": "Phân tích dữ liệu và phát hiện tín hiệu."
+              },
+              {
+                "role": "QA xác nhận",
+                "detail": "Xem lại transcript, scoring và context."
+              },
+              {
+                "role": "Manager cải thiện",
+                "detail": "Sử dụng dữ liệu để coaching hoặc điều chỉnh quy trình."
+              }
+            ]
+          }
+        },
+        {
+          "key": "dashboard",
+          "label": "Quality dashboard",
+          "order": 9,
+          "previewSelector": "section[aria-labelledby=\"quality-dashboard\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            }
+          },
+          "defaults": {
+            "eyebrow": "QUALITY DASHBOARD",
+            "h2": "Từ từng cuộc gọi đến góc nhìn chất lượng của cả đội ngũ",
+            "description": "Dashboard tập hợp dữ liệu đánh giá để QA Manager và người vận hành theo dõi các cuộc gọi cần chú ý, kết quả scoring và xu hướng chất lượng theo thời gian."
+          }
+        },
+        {
+          "key": "benefits",
+          "label": "Giá trị vận hành",
+          "order": 10,
+          "previewSelector": "section[aria-labelledby=\"gia-tri-van-hanh\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "items": {
+              "type": "cards",
+              "label": "Danh sách",
+              "maxItems": 8,
+              "item": {
+                "n": {
+                  "type": "text",
+                  "label": "N",
+                  "maxLen": 240
+                },
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "GIÁ TRỊ VẬN HÀNH",
+            "h2": "Giúp đội QA tập trung thời gian vào việc cần con người xử lý",
+            "items": [
+              {
+                "n": "01",
+                "title": "Giảm thời gian tìm cuộc gọi cần kiểm tra",
+                "detail": "Sử dụng dữ liệu và tín hiệu để ưu tiên review thay vì phải tìm thủ công trong danh sách lớn."
+              },
+              {
+                "n": "02",
+                "title": "Chuẩn hóa khung đánh giá",
+                "detail": "Tiêu chí và trọng số được cấu hình giúp đội QA làm việc trên cùng một framework."
+              },
+              {
+                "n": "03",
+                "title": "Dễ phát hiện xu hướng",
+                "detail": "Dashboard và dữ liệu có cấu trúc giúp người quản lý theo dõi các mẫu vấn đề lặp lại theo thời gian."
+              },
+              {
+                "n": "04",
+                "title": "Hỗ trợ coaching có context",
+                "detail": "Transcript và kết quả review tạo thêm dữ liệu để trao đổi với nhân viên về những tình huống cụ thể."
+              }
+            ]
+          }
+        },
+        {
+          "key": "useCases",
+          "label": "Tình huống sử dụng",
+          "order": 11,
+          "previewSelector": "section[aria-labelledby=\"tinh-huong-su-dung\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "items": {
+              "type": "cards",
+              "label": "Danh sách",
+              "maxItems": 8,
+              "item": {
+                "role": {
+                  "type": "text",
+                  "label": "Vai trò",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
+            "h2": "QA QC Center phù hợp với những hoạt động nào?",
+            "items": [
+              {
+                "role": "Customer Service QA",
+                "detail": "Kiểm tra cách đội CSKH giao tiếp, xử lý tình huống và tuân thủ quy trình dịch vụ."
+              },
+              {
+                "role": "Telesales QA",
+                "detail": "Theo dõi nội dung tư vấn, cách trình bày thông tin và những tín hiệu cần coaching trong cuộc gọi bán hàng."
+              },
+              {
+                "role": "BPO / Contact Center",
+                "detail": "Hỗ trợ đội QA xử lý lượng lớn dữ liệu hội thoại và ưu tiên những cuộc gọi cần review.",
+                "links": [
+                  {
+                    "label": "Giải pháp cho ngành BPO",
+                    "path": "/nganh/bpo/"
+                  }
+                ]
+              },
+              {
+                "role": "Finance & Insurance",
+                "detail": "Hỗ trợ quy trình QA đối với những cuộc gọi có tiêu chí đánh giá rõ ràng và yêu cầu kiểm tra nội dung hội thoại.",
+                "links": [
+                  {
+                    "label": "Tài chính",
+                    "path": "/nganh/tai-chinh/"
+                  },
+                  {
+                    "label": "Bảo hiểm",
+                    "path": "/nganh/bao-hiem/"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "key": "integration",
+          "label": "Kết nối dữ liệu",
+          "order": 12,
+          "previewSelector": "section[aria-labelledby=\"ket-noi-du-lieu\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "links": {
+              "type": "repeater",
+              "label": "Links",
+              "maxItems": 8,
+              "item": {
+                "label": {
+                  "type": "ctaLabel",
+                  "label": "Nhãn nút",
+                  "maxLen": 80
+                },
+                "path": {
+                  "type": "url",
+                  "label": "Path",
+                  "maxLen": 500
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "KẾT NỐI DỮ LIỆU",
+            "h2": "Kết nối dữ liệu cuộc gọi với hệ thống vận hành khi cần",
+            "description": "QA QC Center có thể nằm trong hệ sinh thái giao tiếp Gcalls và được triển khai cùng các giải pháp nghe gọi hoặc tích hợp hệ thống tùy theo kiến trúc của doanh nghiệp.",
+            "links": [
+              {
+                "label": "Gcalls Plus",
+                "path": "/gcalls-plus-webphone/"
+              },
+              {
+                "label": "CRM Integration",
+                "path": "/tong-dai-tich-hop-crm/"
+              },
+              {
+                "label": "Gcalls CX",
+                "path": "/gcalls-cx/"
+              }
+            ]
+          }
+        },
+        {
+          "key": "boundaries",
+          "label": "Chọn sản phẩm",
+          "order": 13,
+          "previewSelector": "section[aria-labelledby=\"chon-san-pham\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "items": {
+              "type": "cards",
+              "label": "Danh sách",
+              "maxItems": 8,
+              "item": {
+                "need": {
+                  "type": "text",
+                  "label": "Need",
+                  "maxLen": 240
+                },
+                "product": {
+                  "type": "text",
+                  "label": "Product",
+                  "maxLen": 240
+                },
+                "path": {
+                  "type": "url",
+                  "label": "Path",
+                  "maxLen": 500
+                }
+              }
+            },
+            "allSolutions.label": {
+              "type": "ctaLabel",
+              "label": "All solutions · Nhãn nút",
+              "maxLen": 80
+            },
+            "allSolutions.path": {
+              "type": "url",
+              "label": "All solutions · Path",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "CHỌN SẢN PHẨM",
+            "h2": "Chọn đúng sản phẩm theo bài toán cần giải quyết",
+            "items": [
+              {
+                "need": "Nghe gọi trên trình duyệt",
+                "product": "Gcalls Plus Webphone",
+                "path": "/gcalls-plus-webphone/"
+              },
+              {
+                "need": "Quản lý giao tiếp đa kênh",
+                "product": "Gcalls CX",
+                "path": "/gcalls-cx/"
+              },
+              {
+                "need": "Tích hợp cuộc gọi sâu vào CRM",
+                "product": "CRM Integration",
+                "path": "/tong-dai-tich-hop-crm/"
+              },
+              {
+                "need": "Kiểm soát chất lượng hội thoại",
+                "product": "QA QC Center",
+                "path": "/qc-bot-ai/",
+                "current": true
+              }
+            ],
+            "allSolutions": {
+              "label": "Xem tất cả giải pháp",
+              "path": "/giai-phap/"
+            }
+          }
+        },
+        {
+          "key": "story",
+          "label": "Quy trình QA",
+          "order": 14,
+          "previewSelector": "section[aria-labelledby=\"quy-trinh-qa\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "cta.label": {
+              "type": "ctaLabel",
+              "label": "Nút kêu gọi hành động · Nhãn nút",
+              "maxLen": 80
+            },
+            "link.label": {
+              "type": "ctaLabel",
+              "label": "Link · Nhãn nút",
+              "maxLen": 80
+            },
+            "link.path": {
+              "type": "url",
+              "label": "Link · Path",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "QUY TRÌNH QA",
+            "h2": "Xây dựng quy trình QA dựa trên dữ liệu hội thoại",
+            "description": "Mỗi doanh nghiệp có bộ tiêu chí, quy trình kiểm tra và mục tiêu chất lượng khác nhau. QA QC Center cần được cấu hình theo bối cảnh vận hành thực tế trước khi dữ liệu được sử dụng cho đánh giá hoặc coaching.",
+            "cta": {
+              "label": "Yêu cầu demo theo quy trình QA của doanh nghiệp"
+            },
+            "link": {
+              "label": "Đọc bài viết trên Blog Gcalls",
+              "path": "/blog/"
+            }
+          }
+        },
+        {
+          "key": "pricing",
+          "label": "Cấu hình chi phí",
+          "order": 15,
+          "previewSelector": "section[aria-labelledby=\"cau-hinh-chi-phi\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "primaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút chính · Nhãn nút",
+              "maxLen": 80
+            },
+            "primaryCta.path": {
+              "type": "url",
+              "label": "Nút chính · Path",
+              "maxLen": 500
+            },
+            "secondaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút phụ · Nhãn nút",
+              "maxLen": 80
+            },
+            "secondaryCta.path": {
+              "type": "url",
+              "label": "Nút phụ · Path",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "CẤU HÌNH & CHI PHÍ",
+            "h2": "Cấu hình QA QC Center theo quy mô và bộ tiêu chí QA",
+            "description": "Cấu hình QA QC Center có thể phụ thuộc vào quy mô đội ngũ, khối lượng hội thoại cần phân tích và bộ tiêu chí QA cần áp dụng.",
+            "primaryCta": {
+              "label": "Ước tính cấu hình & chi phí",
+              "path": "/uoc-tinh-chi-phi/?product=qa-qc"
+            },
+            "secondaryCta": {
+              "label": "Xem bảng giá Gcalls",
+              "path": "/bang-gia/"
+            }
+          }
+        },
+        {
+          "key": "faq",
+          "label": "FAQ",
+          "order": 16,
+          "previewSelector": "section[aria-labelledby=\"faq-qa-qc\"]",
+          "fields": {
+            "items": {
+              "type": "repeater",
+              "label": "Câu hỏi thường gặp",
+              "maxItems": 10,
+              "item": {
+                "q": {
+                  "type": "text",
+                  "label": "Câu hỏi",
+                  "maxLen": 240
+                },
+                "a": {
+                  "type": "textarea",
+                  "label": "Câu trả lời",
+                  "maxLen": 1200
+                }
+              }
+            }
+          },
+          "defaults": {
+            "items": [
+              {
+                "q": "QA QC Center là gì?",
+                "a": "QA QC Center là giải pháp sử dụng QC Bot AI để chuyển cuộc gọi thành transcript, hỗ trợ đánh giá theo tiêu chí QA và làm nổi bật những tín hiệu cần được đội kiểm soát chất lượng xem xét."
+              },
+              {
+                "q": "QC Bot AI có thể tự động chấm điểm cuộc gọi không?",
+                "a": "QC Bot AI có thể hỗ trợ chấm điểm trên dữ liệu cuộc gọi dựa trên bộ tiêu chí và trọng số được cấu hình. Kết quả cần được sử dụng phù hợp với quy trình QA và bối cảnh vận hành của doanh nghiệp."
+              },
+              {
+                "q": "QC Bot có phân tích từ khóa và cảm xúc không?",
+                "a": "QA QC Center có thể làm nổi bật từ khóa và các tín hiệu cảm xúc trong hội thoại để hỗ trợ đội QA xác định những cuộc gọi cần chú ý."
+              },
+              {
+                "q": "AI có thay thế hoàn toàn nhân viên QA không?",
+                "a": "Không nên xem QA QC Center là công cụ thay thế hoàn toàn vai trò QA. AI hỗ trợ xử lý dữ liệu, scoring và phát hiện tín hiệu; đội QA vẫn cần xem xét context, xác nhận kết quả và thực hiện coaching hoặc cải thiện quy trình."
+              },
+              {
+                "q": "QA QC Center phù hợp với doanh nghiệp nào?",
+                "a": "Giải pháp phù hợp với doanh nghiệp có lượng cuộc gọi đáng kể và cần một quy trình có cấu trúc để theo dõi chất lượng hội thoại, đặc biệt ở Customer Service, Telesales, Contact Center và BPO."
+              },
+              {
+                "q": "QA QC Center có phân tích tất cả cuộc gọi không?",
+                "a": "Phạm vi phân tích phụ thuộc vào dữ liệu cuộc gọi được đưa vào hệ thống, cấu hình triển khai và điều kiện kỹ thuật thực tế. Gcalls sẽ xác định phạm vi phù hợp trong quá trình tư vấn và kiểm thử."
+              }
+            ]
+          }
+        },
+        {
+          "key": "finalCta",
+          "label": "CTA cuối trang",
+          "order": 17,
+          "previewSelector": "section[aria-labelledby=\"cta-qa-qc\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "text",
+              "label": "Mô tả",
+              "maxLen": 240
+            },
+            "primaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút chính · Nhãn nút",
+              "maxLen": 80
+            },
+            "primaryCta.path": {
+              "type": "url",
+              "label": "Nút chính · Path",
+              "maxLen": 500
+            },
+            "secondaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút phụ · Nhãn nút",
+              "maxLen": 80
+            },
+            "secondaryCta.path": {
+              "type": "url",
+              "label": "Nút phụ · Path",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "QA QC CENTER • POWERED BY QC BOT AI",
+            "h2": "Xem QA QC Center hoạt động trên chính bộ tiêu chí của đội ngũ bạn",
+            "description": "Chia sẻ quy trình QA, tiêu chí đánh giá và cách đội ngũ đang kiểm tra cuộc gọi để Gcalls tư vấn cấu hình phù hợp.",
+            "primaryCta": {
+              "label": "Yêu cầu demo QA QC Center",
+              "path": "/lien-he/"
+            },
+            "secondaryCta": {
+              "label": "Đăng ký tư vấn",
+              "path": "/lien-he/"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "gcallsCx",
+      "path": "/gcalls-cx/",
+      "label": "Gcalls CX",
+      "order": 4,
+      "status": "editable",
+      "statusLabel": "Có thể chỉnh sửa",
+      "sections": [
+        {
+          "key": "hero",
+          "label": "Hero",
+          "order": 0,
+          "previewSelector": "main > section:first-of-type",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h1": {
+              "type": "text",
+              "label": "Tiêu đề chính (H1)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "valuePoints": {
+              "type": "repeater",
+              "label": "Value points",
+              "maxItems": 8,
+              "item": {
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            },
+            "primaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút chính · Nhãn nút",
+              "maxLen": 80
+            },
+            "secondaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút phụ · Nhãn nút",
+              "maxLen": 80
+            },
+            "secondaryCta.href": {
+              "type": "url",
+              "label": "Nút phụ · Href",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "GCALLS CX • OMNICHANNEL CONTACT CENTER",
+            "h1": "Gcalls CX – hợp nhất mọi điểm chạm khách hàng trên một màn hình",
+            "description": "Tập trung Voice, Zalo, Facebook, SMS, Email và quy trình hỗ trợ khách hàng vào một không gian làm việc để đội CSKH dễ theo dõi hội thoại, ticket và customer context hơn.",
+            "valuePoints": [
+              {
+                "title": "Hợp nhất điểm chạm",
+                "detail": "Đưa các kênh giao tiếp được triển khai vào một không gian làm việc tập trung hơn."
+              },
+              {
+                "title": "Quản lý xử lý rõ ràng hơn",
+                "detail": "Tổ chức hội thoại, ticket và trạng thái xử lý để đội ngũ dễ theo dõi công việc đang diễn ra."
+              },
+              {
+                "title": "Có thêm context khi chăm sóc khách hàng",
+                "detail": "Kết nối lịch sử tương tác và dữ liệu liên quan để nhân viên hiểu bối cảnh trước khi phản hồi."
+              }
+            ],
+            "primaryCta": {
+              "label": "Yêu cầu demo Gcalls CX"
+            },
+            "secondaryCta": {
+              "label": "Khám phá cách Gcalls CX hoạt động",
+              "href": "#cach-hoat-dong"
+            }
+          }
+        },
+        {
+          "key": "directAnswer",
+          "label": "Định nghĩa (Direct answer)",
+          "order": 1,
+          "previewSelector": "section[aria-labelledby=\"gcalls-cx-la-gi\"]",
+          "fields": {
+            "question": {
+              "type": "text",
+              "label": "Câu hỏi",
+              "maxLen": 240
+            },
+            "answer": {
+              "type": "textarea",
+              "label": "Câu trả lời",
+              "maxLen": 1200
+            }
+          },
+          "defaults": {
+            "question": "Gcalls CX là gì?",
+            "answer": "Gcalls CX là giải pháp Contact Center đa kênh giúp doanh nghiệp tập trung các điểm chạm như Voice, Zalo, Facebook, SMS và Email vào một không gian quản lý. Nền tảng hỗ trợ đội CSKH theo dõi hội thoại, ticket, customer context và hoạt động vận hành tập trung hơn thay vì xử lý từng kênh trên các hệ thống rời rạc."
+          }
+        },
+        {
+          "key": "problems",
+          "label": "Bài toán đa kênh",
+          "order": 2,
+          "previewSelector": "section[aria-labelledby=\"bai-toan-da-kenh\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "items": {
+              "type": "cards",
+              "label": "Danh sách",
+              "maxItems": 8,
+              "item": {
+                "n": {
+                  "type": "text",
+                  "label": "N",
+                  "maxLen": 240
+                },
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "textarea",
+                  "label": "Chi tiết",
+                  "maxLen": 1200
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "BÀI TOÁN ĐA KÊNH",
+            "h2": "Nhiều kênh giao tiếp không đồng nghĩa với một trải nghiệm liền mạch",
+            "description": "Khi mỗi kênh được vận hành trên một công cụ khác nhau, đội CSKH dễ mất context, khó theo dõi trạng thái xử lý và khó có một bức tranh thống nhất về hành trình tương tác của khách hàng.",
+            "items": [
+              {
+                "n": "01",
+                "title": "Hội thoại nằm ở nhiều nơi",
+                "detail": "Tin nhắn, cuộc gọi và yêu cầu hỗ trợ được xử lý trên các công cụ riêng khiến nhân viên phải liên tục chuyển đổi giữa nhiều màn hình."
+              },
+              {
+                "n": "02",
+                "title": "Tương tác dễ bị bỏ sót",
+                "detail": "Khi khối lượng trao đổi tăng, những hội thoại chưa được phản hồi hoặc chưa có người xử lý có thể khó được phát hiện kịp thời."
+              },
+              {
+                "n": "03",
+                "title": "Customer context bị phân mảnh",
+                "detail": "Nhân viên khó nhìn lại lịch sử tương tác khi dữ liệu khách hàng nằm rải rác giữa các kênh."
+              },
+              {
+                "n": "04",
+                "title": "Quản lý khó theo dõi hiệu suất đa kênh",
+                "detail": "Dữ liệu riêng lẻ ở từng công cụ khiến người quản lý khó có góc nhìn tập trung về workload, trạng thái xử lý và hoạt động của đội ngũ."
+              }
+            ]
+          }
+        },
+        {
+          "key": "overview",
+          "label": "Omnichannel workspace",
+          "order": 3,
+          "previewSelector": "section[aria-labelledby=\"omnichannel-workspace\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "components": {
+              "type": "checklist",
+              "label": "Components",
+              "maxItems": 13,
+              "maxLen": 200
+            }
+          },
+          "defaults": {
+            "eyebrow": "OMNICHANNEL WORKSPACE",
+            "h2": "Một không gian làm việc cho nhiều điểm chạm khách hàng",
+            "description": "Gcalls CX tập trung các kênh giao tiếp và quy trình chăm sóc vào một workspace để nhân viên có thể theo dõi hội thoại, customer context và trạng thái xử lý thuận tiện hơn.",
+            "components": [
+              "Omnichannel Inbox",
+              "Voice / Hotline",
+              "Zalo OA",
+              "Facebook",
+              "SMS",
+              "Email",
+              "Ticket / Workflow",
+              "Customer Context",
+              "Reporting"
+            ]
+          }
+        },
+        {
+          "key": "channels",
+          "label": "Điểm chạm",
+          "order": 4,
+          "previewSelector": "section[aria-labelledby=\"diem-cham\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "items": {
+              "type": "cards",
+              "label": "Danh sách",
+              "maxItems": 9,
+              "item": {
+                "name": {
+                  "type": "text",
+                  "label": "Name",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "ĐIỂM CHẠM",
+            "h2": "Kết nối những kênh khách hàng đang sử dụng",
+            "items": [
+              {
+                "name": "Voice / Hotline",
+                "detail": "Tiếp nhận và quản lý tương tác thoại trong cùng hệ sinh thái vận hành."
+              },
+              {
+                "name": "Zalo OA",
+                "detail": "Đưa hội thoại từ Zalo OA vào luồng xử lý tập trung khi kênh này được cấu hình triển khai."
+              },
+              {
+                "name": "Facebook",
+                "detail": "Theo dõi hội thoại từ Facebook Fanpage cùng với các kênh chăm sóc khác."
+              },
+              {
+                "name": "SMS",
+                "detail": "Bổ sung SMS vào hành trình giao tiếp khi doanh nghiệp sử dụng kênh nhắn tin này."
+              },
+              {
+                "name": "Email",
+                "detail": "Quản lý email như một phần của quy trình hỗ trợ đa kênh nếu được cấu hình."
+              }
+            ]
+          }
+        },
+        {
+          "key": "inbox",
+          "label": "Omnichannel inbox",
+          "order": 5,
+          "previewSelector": "section[aria-labelledby=\"omnichannel-inbox\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "points": {
+              "type": "checklist",
+              "label": "Các ý",
+              "maxItems": 9,
+              "maxLen": 200
+            }
+          },
+          "defaults": {
+            "eyebrow": "OMNICHANNEL INBOX",
+            "h2": "Giảm việc chuyển đổi giữa nhiều màn hình khi xử lý khách hàng",
+            "description": "Thay vì mở từng ứng dụng riêng lẻ, đội CSKH có thể làm việc trên một giao diện tập trung hơn để theo dõi hội thoại và trạng thái xử lý của các kênh được kết nối.",
+            "points": [
+              "Xem hội thoại theo kênh",
+              "Theo dõi trạng thái xử lý",
+              "Xác định hội thoại cần tiếp tục",
+              "Hỗ trợ phân công xử lý khi workflow được cấu hình",
+              "Duy trì customer context liên quan"
+            ]
+          }
+        },
+        {
+          "key": "tickets",
+          "label": "Ticket workflow",
+          "order": 6,
+          "previewSelector": "section[aria-labelledby=\"ticket-workflow\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "points": {
+              "type": "checklist",
+              "label": "Các ý",
+              "maxItems": 9,
+              "maxLen": 200
+            }
+          },
+          "defaults": {
+            "eyebrow": "TICKET & WORKFLOW",
+            "h2": "Biến hội thoại thành công việc có trạng thái và người chịu trách nhiệm",
+            "description": "Khi một yêu cầu cần được theo dõi qua nhiều bước, ticket và workflow giúp đội ngũ tổ chức việc tiếp nhận, phân công và tiếp tục xử lý rõ ràng hơn.",
+            "points": [
+              "Tạo hoặc quản lý ticket theo workflow được triển khai",
+              "Theo dõi trạng thái xử lý",
+              "Phân công người phụ trách",
+              "Duy trì lịch sử liên quan",
+              "Hỗ trợ quá trình follow-up"
+            ]
+          }
+        },
+        {
+          "key": "context",
+          "label": "Customer context",
+          "order": 7,
+          "previewSelector": "section[aria-labelledby=\"customer-context\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "points": {
+              "type": "checklist",
+              "label": "Các ý",
+              "maxItems": 10,
+              "maxLen": 200
+            }
+          },
+          "defaults": {
+            "eyebrow": "CUSTOMER CONTEXT",
+            "h2": "Hiểu những gì đã xảy ra trước khi phản hồi khách hàng",
+            "description": "Lịch sử tương tác và dữ liệu liên quan giúp nhân viên có thêm bối cảnh khi tiếp nhận một hội thoại mới hoặc tiếp tục yêu cầu đang xử lý.",
+            "points": [
+              "Hồ sơ khách hàng",
+              "Lịch sử theo kênh",
+              "Tương tác gần đây",
+              "Lịch sử ticket",
+              "Trạng thái xử lý",
+              "Ghi chú và context liên quan"
+            ]
+          }
+        },
+        {
+          "key": "howItWorks",
+          "label": "Cách hoạt động",
+          "order": 8,
+          "previewSelector": "section[aria-labelledby=\"cach-hoat-dong-heading\"]",
+          "fields": {
+            "anchorId": {
+              "type": "text",
+              "label": "Anchor id",
+              "maxLen": 240
+            },
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "steps": {
+              "type": "cards",
+              "label": "Các bước",
+              "maxItems": 9,
+              "item": {
+                "n": {
+                  "type": "text",
+                  "label": "N",
+                  "maxLen": 240
+                },
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "anchorId": "cach-hoat-dong",
+            "eyebrow": "CÁCH HOẠT ĐỘNG",
+            "h2": "Từ nhiều điểm chạm đến một quy trình chăm sóc tập trung hơn",
+            "steps": [
+              {
+                "n": "01",
+                "title": "Khách hàng liên hệ qua kênh phù hợp",
+                "detail": "Tương tác có thể bắt đầu từ Voice, Zalo, Facebook, SMS, Email hoặc kênh được doanh nghiệp triển khai."
+              },
+              {
+                "n": "02",
+                "title": "Gcalls CX tập trung hội thoại",
+                "detail": "Các điểm chạm được kết nối được đưa vào workspace để đội ngũ theo dõi thuận tiện hơn."
+              },
+              {
+                "n": "03",
+                "title": "Xác định context và trạng thái",
+                "detail": "Nhân viên xem thông tin liên quan, lịch sử tương tác và trạng thái xử lý trước khi tiếp tục."
+              },
+              {
+                "n": "04",
+                "title": "Phân công hoặc tiếp tục xử lý",
+                "detail": "Hội thoại hoặc ticket được xử lý theo workflow vận hành của doanh nghiệp."
+              },
+              {
+                "n": "05",
+                "title": "Theo dõi hoạt động và kết quả",
+                "detail": "Dữ liệu vận hành được tổng hợp để người quản lý có thêm góc nhìn về hoạt động chăm sóc khách hàng."
+              }
+            ]
+          }
+        },
+        {
+          "key": "reporting",
+          "label": "Báo cáo vận hành",
+          "order": 9,
+          "previewSelector": "section[aria-labelledby=\"bao-cao-van-hanh\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "points": {
+              "type": "checklist",
+              "label": "Các ý",
+              "maxItems": 8,
+              "maxLen": 200
+            }
+          },
+          "defaults": {
+            "eyebrow": "BÁO CÁO VẬN HÀNH",
+            "h2": "Theo dõi hoạt động đa kênh từ dữ liệu tập trung",
+            "description": "Dữ liệu từ các kênh và workflow được triển khai giúp người quản lý có thêm góc nhìn về workload, trạng thái xử lý và hoạt động của đội CSKH.",
+            "points": [
+              "Khối lượng hội thoại",
+              "Trạng thái ticket",
+              "Phân bổ theo kênh",
+              "Workload của đội ngũ"
+            ]
+          }
+        },
+        {
+          "key": "benefits",
+          "label": "Giá trị vận hành",
+          "order": 10,
+          "previewSelector": "section[aria-labelledby=\"gia-tri-van-hanh\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "items": {
+              "type": "cards",
+              "label": "Danh sách",
+              "maxItems": 8,
+              "item": {
+                "n": {
+                  "type": "text",
+                  "label": "N",
+                  "maxLen": 240
+                },
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "GIÁ TRỊ VẬN HÀNH",
+            "h2": "Giúp đội CSKH làm việc với ít điểm đứt gãy hơn",
+            "items": [
+              {
+                "n": "01",
+                "title": "Giảm phân mảnh công cụ",
+                "detail": "Đưa nhiều điểm chạm vào cùng một luồng làm việc giúp nhân viên hạn chế việc chuyển đổi giữa các hệ thống rời rạc."
+              },
+              {
+                "n": "02",
+                "title": "Giảm nguy cơ bỏ sót tương tác",
+                "detail": "Trạng thái xử lý tập trung giúp đội ngũ dễ nhận biết những hội thoại cần tiếp tục."
+              },
+              {
+                "n": "03",
+                "title": "Giữ customer context xuyên kênh",
+                "detail": "Lịch sử liên quan giúp nhân viên hiểu những tương tác đã diễn ra trước đó."
+              },
+              {
+                "n": "04",
+                "title": "Có thêm dữ liệu cho quản lý",
+                "detail": "Reporting giúp người quản lý quan sát hoạt động đa kênh thay vì chỉ theo dõi từng công cụ riêng biệt."
+              }
+            ]
+          }
+        },
+        {
+          "key": "useCases",
+          "label": "Tình huống sử dụng",
+          "order": 11,
+          "previewSelector": "section[aria-labelledby=\"tinh-huong-su-dung\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "items": {
+              "type": "cards",
+              "label": "Danh sách",
+              "maxItems": 8,
+              "item": {
+                "role": {
+                  "type": "text",
+                  "label": "Vai trò",
+                  "maxLen": 240
+                },
+                "detail": {
+                  "type": "text",
+                  "label": "Chi tiết",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "TÌNH HUỐNG SỬ DỤNG",
+            "h2": "Gcalls CX phù hợp với những mô hình có nhiều điểm chạm khách hàng",
+            "items": [
+              {
+                "role": "Tài chính",
+                "detail": "Hỗ trợ đội chăm sóc quản lý lượng tương tác lớn và theo dõi yêu cầu trên nhiều điểm chạm.",
+                "link": {
+                  "label": "Giải pháp cho ngành Tài chính",
+                  "path": "/nganh/tai-chinh/"
+                }
+              },
+              {
+                "role": "Bảo hiểm",
+                "detail": "Tập trung hội thoại và quá trình follow-up khi khách hàng tương tác qua nhiều kênh.",
+                "link": {
+                  "label": "Giải pháp cho ngành Bảo hiểm",
+                  "path": "/nganh/bao-hiem/"
+                }
+              },
+              {
+                "role": "Bất động sản",
+                "detail": "Hỗ trợ đội tư vấn và CSKH theo dõi hội thoại, lead và quá trình chăm sóc trên nhiều điểm chạm.",
+                "link": {
+                  "label": "Giải pháp cho ngành Bất động sản",
+                  "path": "/nganh/bat-dong-san/"
+                }
+              },
+              {
+                "role": "Doanh nghiệp tăng trưởng nhanh",
+                "detail": "Phù hợp khi số lượng kênh, nhân viên và tương tác tăng khiến mô hình xử lý riêng lẻ không còn dễ quản lý."
+              }
+            ]
+          }
+        },
+        {
+          "key": "integration",
+          "label": "Kết nối hệ thống",
+          "order": 12,
+          "previewSelector": "section[aria-labelledby=\"ket-noi-he-thong\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "primaryLink.label": {
+              "type": "ctaLabel",
+              "label": "Primary link · Nhãn nút",
+              "maxLen": 80
+            },
+            "primaryLink.path": {
+              "type": "url",
+              "label": "Primary link · Path",
+              "maxLen": 500
+            },
+            "relatedLinks": {
+              "type": "repeater",
+              "label": "Related links",
+              "maxItems": 8,
+              "item": {
+                "label": {
+                  "type": "ctaLabel",
+                  "label": "Nhãn nút",
+                  "maxLen": 80
+                },
+                "path": {
+                  "type": "url",
+                  "label": "Path",
+                  "maxLen": 500
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "KẾT NỐI HỆ THỐNG",
+            "h2": "Kết nối giao tiếp đa kênh với dữ liệu và quy trình doanh nghiệp",
+            "description": "Gcalls CX tập trung vào vận hành giao tiếp đa kênh. Khi doanh nghiệp cần kết nối sâu hoạt động cuộc gọi với CRM, Gcalls có giải pháp tích hợp riêng cho workflow Sales và Customer Service.",
+            "primaryLink": {
+              "label": "Tổng đài tích hợp CRM",
+              "path": "/tong-dai-tich-hop-crm/"
+            },
+            "relatedLinks": [
+              {
+                "label": "QA QC Center",
+                "path": "/qc-bot-ai/"
+              },
+              {
+                "label": "Gcalls Plus",
+                "path": "/gcalls-plus-webphone/"
+              }
+            ]
+          }
+        },
+        {
+          "key": "boundaries",
+          "label": "Chọn đúng giải pháp",
+          "order": 13,
+          "previewSelector": "section[aria-labelledby=\"chon-dung-giai-phap\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "items": {
+              "type": "cards",
+              "label": "Danh sách",
+              "maxItems": 9,
+              "item": {
+                "need": {
+                  "type": "text",
+                  "label": "Need",
+                  "maxLen": 240
+                },
+                "product": {
+                  "type": "text",
+                  "label": "Product",
+                  "maxLen": 240
+                },
+                "path": {
+                  "type": "url",
+                  "label": "Path",
+                  "maxLen": 500
+                }
+              }
+            },
+            "allSolutions.label": {
+              "type": "ctaLabel",
+              "label": "All solutions · Nhãn nút",
+              "maxLen": 80
+            },
+            "allSolutions.path": {
+              "type": "url",
+              "label": "All solutions · Path",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "CHỌN ĐÚNG GIẢI PHÁP",
+            "h2": "Mỗi bài toán giao tiếp cần một lớp sản phẩm khác nhau",
+            "items": [
+              {
+                "need": "Nghe gọi tập trung trên trình duyệt",
+                "product": "Gcalls Plus Webphone",
+                "path": "/gcalls-plus-webphone/"
+              },
+              {
+                "need": "Quản lý giao tiếp đa kênh",
+                "product": "Gcalls CX",
+                "path": "/gcalls-cx/",
+                "current": true
+              },
+              {
+                "need": "Kiểm soát chất lượng cuộc gọi bằng AI",
+                "product": "QA QC Center",
+                "path": "/qc-bot-ai/"
+              },
+              {
+                "need": "Tích hợp cuộc gọi sâu vào CRM",
+                "product": "CRM Integration",
+                "path": "/tong-dai-tich-hop-crm/"
+              },
+              {
+                "need": "Liên lạc với thị trường quốc tế",
+                "product": "International Calling",
+                "path": "/tong-dai-quoc-te/"
+              }
+            ],
+            "allSolutions": {
+              "label": "Xem tất cả giải pháp",
+              "path": "/giai-phap/"
+            }
+          }
+        },
+        {
+          "key": "deployment",
+          "label": "Triển khai",
+          "order": 14,
+          "previewSelector": "section[aria-labelledby=\"trien-khai-cx\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "steps": {
+              "type": "cards",
+              "label": "Các bước",
+              "maxItems": 11,
+              "item": {
+                "n": {
+                  "type": "text",
+                  "label": "N",
+                  "maxLen": 240
+                },
+                "title": {
+                  "type": "text",
+                  "label": "Tiêu đề",
+                  "maxLen": 240
+                }
+              }
+            }
+          },
+          "defaults": {
+            "eyebrow": "TRIỂN KHAI",
+            "h2": "Thiết kế cấu hình theo kênh và workflow doanh nghiệp đang sử dụng",
+            "description": "Phạm vi triển khai Gcalls CX phụ thuộc vào các kênh cần kết nối, quy trình ticket, số lượng người dùng và hệ thống doanh nghiệp liên quan.",
+            "steps": [
+              {
+                "n": "01",
+                "title": "Khảo sát các điểm chạm hiện tại"
+              },
+              {
+                "n": "02",
+                "title": "Xác định kênh cần kết nối"
+              },
+              {
+                "n": "03",
+                "title": "Thiết kế workflow xử lý"
+              },
+              {
+                "n": "04",
+                "title": "Cấu hình người dùng và phân quyền"
+              },
+              {
+                "n": "05",
+                "title": "Kiểm thử"
+              },
+              {
+                "n": "06",
+                "title": "Hướng dẫn vận hành"
+              },
+              {
+                "n": "07",
+                "title": "Go-live theo phạm vi đã thống nhất"
+              }
+            ]
+          }
+        },
+        {
+          "key": "pricing",
+          "label": "Cấu hình chi phí",
+          "order": 15,
+          "previewSelector": "section[aria-labelledby=\"cau-hinh-chi-phi-cx\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "primaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút chính · Nhãn nút",
+              "maxLen": 80
+            },
+            "primaryCta.path": {
+              "type": "url",
+              "label": "Nút chính · Path",
+              "maxLen": 500
+            },
+            "secondaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút phụ · Nhãn nút",
+              "maxLen": 80
+            },
+            "secondaryCta.path": {
+              "type": "url",
+              "label": "Nút phụ · Path",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "CẤU HÌNH & CHI PHÍ",
+            "h2": "Chi phí phụ thuộc vào số kênh, người dùng và phạm vi triển khai",
+            "description": "Cấu hình Gcalls CX có thể thay đổi theo số lượng Agent, các kênh cần kết nối, workflow ticket và yêu cầu tích hợp hệ thống. Công cụ ước tính giúp doanh nghiệp mô tả nhu cầu trước khi nhận báo giá chính thức.",
+            "primaryCta": {
+              "label": "Ước tính cấu hình & chi phí",
+              "path": "/uoc-tinh-chi-phi/?product=gcalls-cx"
+            },
+            "secondaryCta": {
+              "label": "Xem bảng giá Gcalls",
+              "path": "/bang-gia/"
+            }
+          }
+        },
+        {
+          "key": "trust",
+          "label": "Triển khai thực tế",
+          "order": 16,
+          "previewSelector": "section[aria-labelledby=\"trien-khai-thuc-te\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "textarea",
+              "label": "Mô tả",
+              "maxLen": 1200
+            },
+            "cta.label": {
+              "type": "ctaLabel",
+              "label": "Nút kêu gọi hành động · Nhãn nút",
+              "maxLen": 80
+            },
+            "cta.mobileLabel": {
+              "type": "ctaLabel",
+              "label": "Nút demo · Nhãn rút gọn (mobile)",
+              "maxLen": 80,
+              "help": "Hiển thị dưới 640px để nhãn luôn một dòng."
+            },
+            "link.label": {
+              "type": "ctaLabel",
+              "label": "Link · Nhãn nút",
+              "maxLen": 80
+            },
+            "link.path": {
+              "type": "url",
+              "label": "Link · Path",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "TRIỂN KHAI THEO BỐI CẢNH THỰC TẾ",
+            "h2": "Mỗi hành trình khách hàng cần một workflow khác nhau",
+            "description": "Kênh giao tiếp, cấu trúc đội ngũ và cách xử lý ticket khác nhau giữa từng doanh nghiệp. Gcalls CX cần được cấu hình theo quy trình vận hành thực tế thay vì áp dụng một mô hình giống nhau cho mọi tổ chức.",
+            "cta": {
+              "label": "Yêu cầu demo theo workflow của doanh nghiệp",
+              "mobileLabel": "Yêu cầu demo theo workflow"
+            },
+            "link": {
+              "label": "Đọc bài viết trên Blog Gcalls",
+              "path": "/blog/"
+            }
+          }
+        },
+        {
+          "key": "faq",
+          "label": "FAQ",
+          "order": 17,
+          "previewSelector": "section[aria-labelledby=\"faq-gcalls-cx\"]",
+          "fields": {
+            "items": {
+              "type": "repeater",
+              "label": "Câu hỏi thường gặp",
+              "maxItems": 10,
+              "item": {
+                "q": {
+                  "type": "text",
+                  "label": "Câu hỏi",
+                  "maxLen": 240
+                },
+                "a": {
+                  "type": "textarea",
+                  "label": "Câu trả lời",
+                  "maxLen": 1200
+                }
+              }
+            }
+          },
+          "defaults": {
+            "items": [
+              {
+                "q": "Gcalls CX là gì?",
+                "a": "Gcalls CX là giải pháp Contact Center đa kênh giúp doanh nghiệp tập trung các điểm chạm giao tiếp và quy trình chăm sóc khách hàng trong một không gian làm việc thống nhất hơn."
+              },
+              {
+                "q": "Gcalls CX hỗ trợ những kênh nào?",
+                "a": "Theo phạm vi sản phẩm hiện tại, Gcalls CX có thể hỗ trợ các điểm chạm như Voice/Hotline, Zalo OA, Facebook Fanpage, SMS và Email. Khả năng triển khai cụ thể phụ thuộc vào kênh, tài khoản và cấu hình của doanh nghiệp."
+              },
+              {
+                "q": "Gcalls CX có quản lý ticket không?",
+                "a": "Có. Quản lý ticket là một trong những năng lực của Gcalls CX, giúp đội ngũ theo dõi trạng thái và quá trình xử lý yêu cầu theo workflow được cấu hình."
+              },
+              {
+                "q": "Gcalls CX khác Gcalls Plus như thế nào?",
+                "a": "Gcalls Plus tập trung vào hoạt động nghe gọi Webphone gọn nhẹ, trong khi Gcalls CX được thiết kế cho bài toán Contact Center đa kênh với nhiều điểm chạm và quy trình chăm sóc khách hàng phức tạp hơn.",
+                "link": {
+                  "label": "Gcalls Plus Webphone",
+                  "path": "/gcalls-plus-webphone/"
+                }
+              },
+              {
+                "q": "Gcalls CX có thay thế CRM không?",
+                "a": "Gcalls CX tập trung vào giao tiếp và quy trình Contact Center đa kênh. CRM vẫn có vai trò quản lý dữ liệu và quy trình khách hàng; tùy mô hình triển khai, Gcalls có thể kết nối với CRM để hai hệ thống hỗ trợ nhau.",
+                "link": {
+                  "label": "Tổng đài tích hợp CRM",
+                  "path": "/tong-dai-tich-hop-crm/"
+                }
+              },
+              {
+                "q": "Gcalls CX phù hợp với doanh nghiệp nào?",
+                "a": "Gcalls CX phù hợp với doanh nghiệp có lượng tương tác lớn hoặc nhiều kênh chăm sóc khách hàng và cần quản lý hội thoại, ticket, customer context và hoạt động đội ngũ tập trung hơn."
+              }
+            ]
+          }
+        },
+        {
+          "key": "finalCta",
+          "label": "CTA cuối trang",
+          "order": 18,
+          "previewSelector": "section[aria-labelledby=\"cta-gcalls-cx\"]",
+          "fields": {
+            "eyebrow": {
+              "type": "text",
+              "label": "Nhãn nhỏ (eyebrow)",
+              "maxLen": 240
+            },
+            "h2": {
+              "type": "text",
+              "label": "Tiêu đề (H2)",
+              "maxLen": 240
+            },
+            "description": {
+              "type": "text",
+              "label": "Mô tả",
+              "maxLen": 240
+            },
+            "primaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút chính · Nhãn nút",
+              "maxLen": 80
+            },
+            "primaryCta.path": {
+              "type": "url",
+              "label": "Nút chính · Path",
+              "maxLen": 500
+            },
+            "secondaryCta.label": {
+              "type": "ctaLabel",
+              "label": "Nút phụ · Nhãn nút",
+              "maxLen": 80
+            },
+            "secondaryCta.path": {
+              "type": "url",
+              "label": "Nút phụ · Path",
+              "maxLen": 500
+            }
+          },
+          "defaults": {
+            "eyebrow": "GCALLS CX • OMNICHANNEL CONTACT CENTER",
+            "h2": "Xem Gcalls CX hoạt động trên chính hành trình chăm sóc khách hàng của doanh nghiệp bạn",
+            "description": "Chia sẻ các kênh đang sử dụng, cấu trúc đội CSKH và workflow hiện tại để Gcalls tư vấn cấu hình Contact Center phù hợp.",
+            "primaryCta": {
+              "label": "Yêu cầu demo Gcalls CX",
+              "path": "/lien-he/"
+            },
+            "secondaryCta": {
+              "label": "Đăng ký tư vấn",
+              "path": "/lien-he/"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "voicebotAi",
+      "path": "/voicebot-ai/",
+      "label": "Gcalls Voicebot AI",
+      "order": 5,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "solutions",
+      "path": "/giai-phap/",
+      "label": "Tổng quan giải pháp",
+      "order": 6,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "crmIntegration",
+      "path": "/tong-dai-tich-hop-crm/",
+      "label": "Tích hợp CRM",
+      "order": 7,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "helpdeskIntegration",
+      "path": "/tong-dai-tich-hop-helpdesk/",
+      "label": "Tích hợp Helpdesk",
+      "order": 8,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "posIntegration",
+      "path": "/tong-dai-tich-hop-pos/",
+      "label": "Tích hợp POS",
+      "order": 9,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "internationalCalling",
+      "path": "/tong-dai-quoc-te/",
+      "label": "Tổng đài quốc tế",
+      "order": 10,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "integrations",
+      "path": "/tich-hop/",
+      "label": "Tổng quan tích hợp",
+      "order": 11,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "hubspot",
+      "path": "/tich-hop/hubspot/",
+      "label": "HubSpot",
+      "order": 12,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "salesforce",
+      "path": "/tich-hop/salesforce/",
+      "label": "Salesforce",
+      "order": 13,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "zohoCrm",
+      "path": "/tich-hop/zoho-crm/",
+      "label": "Zoho CRM",
+      "order": 14,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "freshdesk",
+      "path": "/tich-hop/freshdesk/",
+      "label": "Freshdesk",
+      "order": 15,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "zendesk",
+      "path": "/tich-hop/zendesk/",
+      "label": "Zendesk",
+      "order": 16,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "industries",
+      "path": "/nganh/",
+      "label": "Giải pháp theo ngành",
+      "order": 17,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "education",
+      "path": "/nganh/giao-duc/",
+      "label": "Giáo dục",
+      "order": 18,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "finance",
+      "path": "/nganh/tai-chinh/",
+      "label": "Tài chính",
+      "order": 19,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "insurance",
+      "path": "/nganh/bao-hiem/",
+      "label": "Bảo hiểm",
+      "order": 20,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "realEstate",
+      "path": "/nganh/bat-dong-san/",
+      "label": "Bất động sản",
+      "order": 21,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "ecommerce",
+      "path": "/nganh/thuong-mai-dien-tu/",
+      "label": "Thương mại điện tử",
+      "order": 22,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "bpo",
+      "path": "/nganh/bpo/",
+      "label": "BPO",
+      "order": 23,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "pricing",
+      "path": "/bang-gia/",
+      "label": "Bảng giá Gcalls",
+      "order": 24,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "costEstimator",
+      "path": "/uoc-tinh-chi-phi/",
+      "label": "Ước tính chi phí",
+      "order": 25,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "resources",
+      "path": "/tai-nguyen/",
+      "label": "Trung tâm tài nguyên",
+      "order": 26,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "blog",
+      "path": "/blog/",
+      "label": "Blog",
+      "order": 27,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "guides",
+      "path": "/tai-nguyen/guides/",
+      "label": "Guides",
+      "order": 28,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "caseStudies",
+      "path": "/tai-nguyen/case-studies/",
+      "label": "Case Studies",
+      "order": 29,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "ebook",
+      "path": "/tai-nguyen/ebook/",
+      "label": "Ebook",
+      "order": 30,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "glossary",
+      "path": "/tai-nguyen/glossary/",
+      "label": "Glossary",
+      "order": 31,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "faq",
+      "path": "/tai-nguyen/faq/",
+      "label": "FAQ",
+      "order": 32,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "company",
+      "path": "/cong-ty/",
+      "label": "Về Gcalls",
+      "order": 33,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "customers",
+      "path": "/cong-ty/khach-hang/",
+      "label": "Khách hàng",
+      "order": 34,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "partners",
+      "path": "/cong-ty/doi-tac/",
+      "label": "Đối tác",
+      "order": 35,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "contact",
+      "path": "/lien-he/",
+      "label": "Liên hệ",
+      "order": 36,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    },
+    {
+      "key": "referral",
+      "path": "/referral/",
+      "label": "Referral",
+      "order": 37,
+      "status": "review",
+      "statusLabel": "Đang kiểm tra giao diện",
+      "sections": []
+    }
+  ]
+}

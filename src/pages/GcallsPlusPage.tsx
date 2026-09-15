@@ -26,6 +26,8 @@ import { ProductBoundaries } from '@/components/gcalls-plus/ProductBoundaries'
 import { DeploymentSection } from '@/components/gcalls-plus/DeploymentSection'
 import { PricingCTA } from '@/components/gcalls-plus/PricingCTA'
 import { CustomerStory } from '@/components/gcalls-plus/CustomerStory'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 /**
  * `/gcalls-plus-webphone/` — Gcalls Plus Webphone product page.
@@ -43,6 +45,8 @@ import { CustomerStory } from '@/components/gcalls-plus/CustomerStory'
  */
 export function GcallsPlusPage() {
   const jsonLd = useMemo(() => buildGcallsPlusJsonLd(SITE_ORIGIN), [])
+  const faq = useGcallsContent(ROUTES.gcallsPlus, 'faq', { items: GP_FAQ })
+  const finalCta = useGcallsContent(ROUTES.gcallsPlus, 'finalCta', GP_FINAL_CTA)
 
   return (
     <>
@@ -81,7 +85,7 @@ export function GcallsPlusPage() {
             titleId="faq-gcalls-plus"
           />
           <div className="mt-10">
-            <FaqAccordion items={GP_FAQ} idPrefix="gp-faq" />
+            <FaqAccordion items={faq.items} idPrefix="gp-faq" />
           </div>
         </Container>
       </Section>
@@ -89,12 +93,12 @@ export function GcallsPlusPage() {
       {/* 17 */}
       <Section tinted ariaLabelledBy="cta-gcalls-plus">
         <FinalCtaBand
-          eyebrow={GP_FINAL_CTA.eyebrow}
-          title={GP_FINAL_CTA.h2}
+          eyebrow={finalCta.eyebrow}
+          title={finalCta.h2}
           titleId="cta-gcalls-plus"
-          description={GP_FINAL_CTA.description}
-          primary={GP_FINAL_CTA.primaryCta}
-          secondary={GP_FINAL_CTA.secondaryCta}
+          description={finalCta.description}
+          primary={finalCta.primaryCta}
+          secondary={finalCta.secondaryCta}
           lead={GP_LEAD_CONTEXT}
           showPhone
         />

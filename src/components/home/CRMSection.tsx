@@ -2,6 +2,8 @@ import { useState } from "react";
 import { ctaAttrs } from '@/components/common/Button'
 import { Activity, Briefcase, Building2, Check, ExternalLink, FileText, Filter, HeadphonesIcon, Mail, MoreHorizontal, Phone, PhoneCall, PhoneIncoming, PhoneOutgoing, Plug, Plus, Search, ShieldCheck, Tag, Users } from "lucide-react";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
+import { HOME_CRM } from "./homeContent";
+import { useGcallsContent } from "@/lib/gcallsContent/useGcallsContent";
 
 // ─── Section 4: CRM ──────────────────────────────────────────────────────────
 
@@ -75,14 +77,7 @@ const crmInteractions = [
   { type: "tag", label: "Gắn nhãn VIP", detail: "Thêm tag: VIP, Gia hạn", time: "2 ngày trước", icon: Tag, color: "#d97706" },
 ];
 
-const crmFeatures = [
-  "Danh bạ khách hàng tập trung",
-  "Hồ sơ khách hàng chi tiết",
-  "Ghi chú và lịch sử chăm sóc",
-  "Phân loại khách hàng bằng Tag",
-  "Tìm kiếm khách hàng nhanh chóng",
-  "Theo dõi hoạt động theo thời gian thực",
-];
+// Feature list copy lives in homeContent.ts.
 
 const crmStats = [
   { value: "Danh bạ", label: "Quản lý tập trung trên Webphone", icon: Users, color: "#673ab7" },
@@ -90,28 +85,11 @@ const crmStats = [
   { value: "CRM", label: "Tích hợp sẵn trong nền tảng", icon: Plug, color: "#0891b2" },
 ];
 
-const useCases = [
-  {
-    icon: Briefcase,
-    role: "Sales Team",
-    color: "#673ab7",
-    bg: "#f5f0fd",
-    points: ["Xem hồ sơ KH trước khi gọi", "Ghi chú kết quả tư vấn ngay sau cuộc gọi", "Theo dõi pipeline theo từng KH"],
-  },
-  {
-    icon: HeadphonesIcon,
-    role: "CSKH Team",
-    color: "#0891b2",
-    bg: "#f0f9ff",
-    points: ["Biết ngay lịch sử KH khi nhận cuộc gọi", "Gắn nhãn phân loại mức độ ưu tiên", "Ghi nhận phản hồi và yêu cầu hỗ trợ"],
-  },
-  {
-    icon: ShieldCheck,
-    role: "Manager",
-    color: "#16a34a",
-    bg: "#f0fdf4",
-    points: ["Theo dõi tương tác toàn đội ngũ", "Kiểm soát chất lượng chăm sóc KH", "Báo cáo hoạt động theo KH / nhân viên"],
-  },
+/** Use-case icon/colours by index; role + points live in homeContent.ts. */
+const useCaseStyles = [
+  { icon: Briefcase, color: "#673ab7", bg: "#f5f0fd" },
+  { icon: HeadphonesIcon, color: "#0891b2", bg: "#f0f9ff" },
+  { icon: ShieldCheck, color: "#16a34a", bg: "#f0fdf4" },
 ];
 
 export function CRMMockup() {
@@ -329,6 +307,9 @@ export function CRMMockup() {
 }
 
 export function CRMSection() {
+  const content = useGcallsContent('/', 'crm', HOME_CRM);
+  const crmFeatures = content.features;
+  const useCases = content.useCases.map((uc, i) => ({ ...useCaseStyles[i % useCaseStyles.length], ...uc }));
   return (
     <section
       className="py-28 overflow-hidden"
@@ -397,7 +378,7 @@ export function CRMSection() {
               style={{ background: "rgba(103,58,183,0.08)", color: "#673ab7", letterSpacing: "0.08em" }}
             >
               <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#673ab7" }} />
-              CRM Mini Tích Hợp
+              {content.badge}
             </div>
 
             <div>
@@ -405,7 +386,7 @@ export function CRMSection() {
                 className="font-extrabold tracking-tight mb-5"
                 style={{ fontSize: "clamp(26px, 3.2vw, 42px)", color: "#1e2026", lineHeight: 1.14 }}
               >
-                Quản lý khách hàng{" "}
+                {content.heading}{" "}
                 <span
                   style={{
                     background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)",
@@ -414,12 +395,12 @@ export function CRMSection() {
                     backgroundClip: "text",
                   }}
                 >
-                  tập trung
+                  {content.headingHighlight}
                 </span>{" "}
-                ngay trên Gcalls
+                {content.headingTail}
               </h2>
               <p className="text-base leading-relaxed" style={{ color: "#5b5f6b", fontSize: "16px", maxWidth: "480px" }}>
-                Toàn bộ thông tin khách hàng, lịch sử tương tác và ghi chú chăm sóc được lưu trữ tập trung giúp đội Sales và CSKH làm việc hiệu quả hơn.
+                {content.description}
               </p>
             </div>
 
@@ -469,14 +450,14 @@ export function CRMSection() {
               className="font-extrabold mb-4"
               style={{ fontSize: "clamp(20px, 2.4vw, 30px)", color: "#1e2026", lineHeight: 1.2 }}
             >
-              Mỗi khách hàng đều có{" "}
-              <span style={{ color: "#673ab7" }}>một hồ sơ riêng</span>
+              {content.highlightHeading}{" "}
+              <span style={{ color: "#673ab7" }}>{content.highlightHighlight}</span>
             </h3>
             <p
               className="text-base leading-relaxed mx-auto"
               style={{ color: "#5b5f6b", maxWidth: "560px" }}
             >
-              Khi có cuộc gọi đến hoặc đi, nhân viên có thể xem ngay thông tin khách hàng, lịch sử chăm sóc, ghi chú và các hoạt động liên quan mà không cần chuyển đổi giữa nhiều hệ thống.
+              {content.highlightDescription}
             </p>
           </div>
 

@@ -2,6 +2,8 @@ import { ArrowRight, Check, Compass } from 'lucide-react'
 import { Link } from 'react-router'
 import { Card, Container, Section, SectionHeader } from '@/components/common/primitives'
 import { GP_BOUNDARIES } from '@/data/gcallsPlus'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 /**
  * Product boundaries — what Gcalls Plus is for, and where each adjacent need
@@ -14,13 +16,14 @@ import { GP_BOUNDARIES } from '@/data/gcallsPlus'
  * Keep the framing "khi nhu cầu mở rộng" — never "Gcalls Plus also does this".
  */
 export function ProductBoundaries() {
+  const cBoundaries = useGcallsContent(ROUTES.gcallsPlus, 'boundaries', GP_BOUNDARIES)
   return (
     <Section tinted ariaLabelledBy="pham-vi-phu-hop">
       <Container>
         <SectionHeader
-          eyebrow={GP_BOUNDARIES.eyebrow}
+          eyebrow={cBoundaries.eyebrow}
           eyebrowIcon={<Compass size={14} aria-hidden="true" />}
-          title={GP_BOUNDARIES.h2}
+          title={cBoundaries.h2}
           titleId="pham-vi-phu-hop"
         />
 
@@ -28,11 +31,11 @@ export function ProductBoundaries() {
           {/* Group A — fit */}
           <Card highlighted className="flex h-full flex-col p-6 sm:p-8">
             <h3 className="text-[13px] font-bold uppercase tracking-wider text-brand">
-              {GP_BOUNDARIES.fitTitle}
+              {cBoundaries.fitTitle}
             </h3>
 
             <ul className="mt-5 flex flex-col gap-3">
-              {GP_BOUNDARIES.fitItems.map((item) => (
+              {cBoundaries.fitItems.map((item) => (
                 <li key={item} className="flex items-start gap-2.5">
                   <span
                     className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-light"
@@ -51,11 +54,11 @@ export function ProductBoundaries() {
           {/* Group B — hand-off to the product that owns each need */}
           <div className="flex h-full flex-col">
             <h3 className="text-[13px] font-bold uppercase tracking-wider text-muted-foreground">
-              {GP_BOUNDARIES.expandTitle}
+              {cBoundaries.expandTitle}
             </h3>
 
             <ul className="mt-5 flex flex-col gap-3">
-              {GP_BOUNDARIES.expandItems.map((item) => (
+              {cBoundaries.expandItems.map((item) => (
                 <Card as="li" key={item.solution} className="p-5">
                   <Link
                     to={item.path}

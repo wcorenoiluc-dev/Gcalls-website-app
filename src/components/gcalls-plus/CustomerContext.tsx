@@ -3,6 +3,8 @@ import { ProductMediaFrame } from '@/components/common/ProductMediaFrame'
 import { CustomerContextMockup } from './ProductInterfaceMockup'
 import { GP_CONTEXT, GP_MEDIA } from '@/data/gcallsPlus'
 import { FeatureSplit } from '@/components/common/FeatureSplit'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 /**
  * Customer context — contact profile alongside the call.
@@ -14,15 +16,16 @@ import { FeatureSplit } from '@/components/common/FeatureSplit'
  * Deliberately not labelled "CRM": this is the Gcalls side of the workflow.
  */
 export function CustomerContext() {
+  const cContext = useGcallsContent(ROUTES.gcallsPlus, 'context', GP_CONTEXT)
   return (
     <FeatureSplit
       tinted
-      eyebrow={GP_CONTEXT.eyebrow}
+      eyebrow={cContext.eyebrow}
       eyebrowIcon={<Users size={14} aria-hidden="true" />}
-      title={GP_CONTEXT.h2}
+      title={cContext.h2}
       titleId="ngu-canh-khach-hang"
-      description={GP_CONTEXT.description}
-      points={GP_CONTEXT.points}
+      description={cContext.description}
+      points={cContext.points}
       visual={
         <ProductMediaFrame
           caption={GP_MEDIA.context.caption}

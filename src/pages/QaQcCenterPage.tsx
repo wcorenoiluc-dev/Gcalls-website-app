@@ -33,6 +33,8 @@ import {
   QaQcStory,
   QaQcUseCases,
 } from '@/components/qa-qc/sections'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 /**
  * `/qc-bot-ai/` — QA QC Center, powered by QC Bot AI.
@@ -53,6 +55,9 @@ import {
  */
 export function QaQcCenterPage() {
   const jsonLd = useMemo(() => buildQaQcJsonLd(SITE_ORIGIN), [])
+  const pricing = useGcallsContent(ROUTES.qcCenter, 'pricing', QQ_PRICING)
+  const faq = useGcallsContent(ROUTES.qcCenter, 'faq', { items: QQ_FAQ })
+  const finalCta = useGcallsContent(ROUTES.qcCenter, 'finalCta', QQ_FINAL_CTA)
 
   return (
     /* Page-scoped heading system — see src/styles/qc-bot-ai.css. */
@@ -83,12 +88,12 @@ export function QaQcCenterPage() {
 
       {/* 16 */}
       <PricingCtaBand
-        eyebrow={QQ_PRICING.eyebrow}
-        title={QQ_PRICING.h2}
+        eyebrow={pricing.eyebrow}
+        title={pricing.h2}
         titleId="cau-hinh-chi-phi"
-        description={QQ_PRICING.description}
-        primary={QQ_PRICING.primaryCta}
-        secondary={QQ_PRICING.secondaryCta}
+        description={pricing.description}
+        primary={pricing.primaryCta}
+        secondary={pricing.secondaryCta}
       />
 
       {/* 17 */}
@@ -100,7 +105,7 @@ export function QaQcCenterPage() {
             titleId="faq-qa-qc"
           />
           <div className="mt-10">
-            <FaqAccordion items={QQ_FAQ} idPrefix="qq-faq" />
+            <FaqAccordion items={faq.items} idPrefix="qq-faq" />
           </div>
         </Container>
       </Section>
@@ -108,16 +113,16 @@ export function QaQcCenterPage() {
       {/* 18 */}
       <Section ariaLabelledBy="cta-qa-qc">
         <FinalCtaBand
-          eyebrow={QQ_FINAL_CTA.eyebrow}
-          title={QQ_FINAL_CTA.h2}
+          eyebrow={finalCta.eyebrow}
+          title={finalCta.h2}
           titleId="cta-qa-qc"
-          description={QQ_FINAL_CTA.description}
+          description={finalCta.description}
           /* Primary = demo request; secondary = plain consultation. Both go to
              the shared lead form, each carrying its own intent. */
-          primary={QQ_FINAL_CTA.primaryCta}
+          primary={finalCta.primaryCta}
           lead={QQ_DEMO_LEAD}
           secondary={{
-            label: QQ_FINAL_CTA.secondaryCta.label,
+            label: finalCta.secondaryCta.label,
             path: leadCtaHref(QQ_CONSULT_LEAD),
           }}
           showPhone

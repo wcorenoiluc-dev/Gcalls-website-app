@@ -3,6 +3,7 @@ import path from 'path'
 import { cpSync, existsSync, renameSync, rmdirSync } from 'fs'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
+import { PII_BLOCKED_IMAGE_FILENAMES as PII_BLOCKED_IMAGE_FILENAMES_LIST } from './src/content/piiBlocked'
 
 /**
  * Files this build must never ship, regardless of what productImages.ts
@@ -17,17 +18,12 @@ import react from '@vitejs/plugin-react'
  * 404 — the same "broken image" state already visible in production today
  * — rather than resolving to a working URL that serves the leak.
  *
- * Do not remove an entry here without independently confirming its v2
- * cleared the sanitizer; do not "fix" the resulting broken image by
- * re-adding the file.
+ * The list itself lives in `src/content/piiBlocked.ts` (shared with the
+ * content manifest so Content Studio refuses the same files). Do not remove
+ * an entry there without independently confirming its v2 cleared the
+ * sanitizer; do not "fix" the resulting broken image by re-adding the file.
  */
-const PII_BLOCKED_IMAGE_FILENAMES = new Set([
-  'gcalls-plus-webphone-desktop-v1.webp', // GP-09
-  'gcalls-plus-contact-profile-desktop-v1.webp', // GP-10
-  'gcalls-plus-integrations-desktop-v1.webp', // GP-12
-  'gcalls-plus-advanced-filter-desktop-v1.webp', // GP-03
-  'gcalls-plus-click-to-call-config-desktop-v1.webp', // GP-08
-])
+const PII_BLOCKED_IMAGE_FILENAMES = new Set(PII_BLOCKED_IMAGE_FILENAMES_LIST)
 
 /**
  * Copies only the images actually referenced by root-absolute `/images/...`

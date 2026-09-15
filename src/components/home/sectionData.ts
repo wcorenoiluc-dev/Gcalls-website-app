@@ -68,21 +68,18 @@ export const ecosystemGroups = [
 ];
 
 /**
- * The four approved homepage use cases (§13).
+ * Icon/colour per homepage use case (§13), by index. The role + points copy
+ * lives in `homeContent.ts` (HOME_USE_CASES_FINAL_CTA.useCases).
  *
  * Withheld from the Contact Center card: "ghi âm 100% cuộc gọi" from the source
  * content. A total-coverage absolute of exactly the kind already blocked in
  * `src/data/resources/types.ts`.
  */
-export const remoteUseCases = [
-  { role: "Sales Team",      icon: Briefcase,       color: "#673ab7", bg: "#f5f0fd",
-    points: ["Gọi cho KH từ bất kỳ đâu", "Xem hồ sơ KH ngay trên trình duyệt", "Ghi chú kết quả sau mỗi cuộc gọi"] },
-  { role: "Remote Team",     icon: Globe,           color: "#0891b2", bg: "#f0f9ff",
-    points: ["Làm việc từ xa như tại văn phòng", "Quản lý theo dõi realtime", "Không cần VPN hay thiết bị đặc biệt"] },
-  { role: "Multi Branch",    icon: Layers,          color: "#16a34a", bg: "#f0fdf4",
-    points: ["Kết nối nhiều chi nhánh trên 1 hệ thống", "Đổ chuông liên chi nhánh", "Báo cáo tổng hợp toàn bộ"] },
-  { role: "Contact Center",  icon: HeadphonesIcon,  color: "#d97706", bg: "#fffbeb",
-    points: ["Điều phối đội ngũ theo ca", "Giám sát trạng thái realtime", "Ghi âm cuộc gọi theo cấu hình"] },
+export const remoteUseCaseStyles = [
+  { icon: Briefcase,       color: "#673ab7", bg: "#f5f0fd" },
+  { icon: Globe,           color: "#0891b2", bg: "#f0f9ff" },
+  { icon: Layers,          color: "#16a34a", bg: "#f0fdf4" },
+  { icon: HeadphonesIcon,  color: "#d97706", bg: "#fffbeb" },
 ];
 
 /**

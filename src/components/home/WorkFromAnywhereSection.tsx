@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Activity, BarChart2, Check, Clock, Cloud, Globe, MapPin, Mic, MicOff, Phone, PhoneCall, PhoneForwarded, PhoneIncoming, PhoneOff, RefreshCw, ShieldCheck, Volume2, Wifi, X, Zap } from "lucide-react";
+import { HOME_WORK_FROM_ANYWHERE } from "./homeContent";
+import { useGcallsContent } from "@/lib/gcallsContent/useGcallsContent";
 
 // ─── Section 9: Work From Anywhere ───────────────────────────────────────────
 
@@ -21,11 +23,24 @@ const statusLog = [
   { time: "09:55", agent: "Nhân viên C",  event: "Đăng xuất khỏi hệ thống",       icon: X,             color: "#9ca3af" },
 ];
 
-const remoteFeatures2 = [
-  { icon: Globe,   label: "Webphone",     desc: "Gọi điện trực tiếp trên Chrome, Edge, Safari — không cài extension", color: "#673ab7", bg: "#f5f0fd" },
-  { icon: Mic,     label: "Softphone",    desc: "Chất lượng âm thanh HD, noise cancellation, dễ cấu hình",            color: "#0891b2", bg: "#f0f9ff" },
-  { icon: Cloud,   label: "Cloud System", desc: "Dữ liệu lưu trên Cloud, truy cập bất cứ đâu, không phụ thuộc server nội bộ", color: "#16a34a", bg: "#f0fdf4" },
-  { icon: RefreshCw, label: "Auto Sync", desc: "Lịch sử, ghi chú, trạng thái đồng bộ tức thì giữa các thiết bị",     color: "#d97706", bg: "#fffbeb" },
+/** Feature-card icon/colours by index; label + desc live in homeContent.ts. */
+const remoteFeatureStyles = [
+  { icon: Globe, color: "#673ab7", bg: "#f5f0fd" },
+  { icon: Mic, color: "#0891b2", bg: "#f0f9ff" },
+  { icon: Cloud, color: "#16a34a", bg: "#f0fdf4" },
+  { icon: RefreshCw, color: "#d97706", bg: "#fffbeb" },
+];
+const quickBenefitStyles = [
+  { icon: Globe, color: "#673ab7" },
+  { icon: Zap, color: "#0891b2" },
+  { icon: MapPin, color: "#16a34a" },
+  { icon: RefreshCw, color: "#d97706" },
+];
+const statusBenefitStyles = [
+  { icon: Globe, color: "#673ab7" },
+  { icon: Activity, color: "#0891b2" },
+  { icon: BarChart2, color: "#16a34a" },
+  { icon: ShieldCheck, color: "#d97706" },
 ];
 
 export function DialpadMockup() {
@@ -357,6 +372,10 @@ export function UserStatusDashboard() {
 }
 
 export function WorkFromAnywhereSection() {
+  const content = useGcallsContent('/', 'workFromAnywhere', HOME_WORK_FROM_ANYWHERE);
+  const remoteFeatures2 = content.features.map((f, i) => ({ ...remoteFeatureStyles[i % remoteFeatureStyles.length], ...f }));
+  const quickBenefits = content.quickBenefits.map((label, i) => ({ ...quickBenefitStyles[i % quickBenefitStyles.length], label }));
+  const statusBenefits = content.statusBenefits.map((b, i) => ({ ...statusBenefitStyles[i % statusBenefitStyles.length], ...b }));
   return (
     <section
       aria-labelledby="home-wfa-heading"
@@ -371,27 +390,22 @@ export function WorkFromAnywhereSection() {
           <div className="flex flex-col gap-7">
             <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase" style={{ background: "rgba(103,58,183,0.08)", color: "#673ab7", letterSpacing: "0.08em" }}>
               <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#673ab7" }} />
-              Work From Anywhere
+              {content.badge}
             </div>
             <div>
               <h2 id="home-wfa-heading" className="font-extrabold tracking-tight mb-5" style={{ fontSize: "clamp(26px, 3.2vw, 42px)", color: "#1e2026", lineHeight: 1.14 }}>
-                Mang tổng đài doanh nghiệp{" "}
+                {content.heading}{" "}
                 <span style={{ background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  theo bạn đến bất kỳ đâu
+                  {content.headingHighlight}
                 </span>
               </h2>
               <p style={{ color: "#5b5f6b", fontSize: "16px", lineHeight: 1.7, maxWidth: "480px" }}>
-                Dù đang ở văn phòng, làm việc tại nhà hay di chuyển gặp khách hàng, đội ngũ vẫn có thể tiếp nhận và thực hiện cuộc gọi như đang ngồi tại tổng đài.
+                {content.description}
               </p>
             </div>
             {/* Quick benefits */}
             <div className="grid grid-cols-2 gap-3">
-              {[
-                { icon: Globe,      label: "Đăng nhập trên trình duyệt", color: "#673ab7" },
-                { icon: Zap,        label: "Không cần cài đặt phức tạp",  color: "#0891b2" },
-                { icon: MapPin,     label: "Làm việc mọi nơi",            color: "#16a34a" },
-                { icon: RefreshCw,  label: "Đồng bộ dữ liệu realtime",    color: "#d97706" },
-              ].map((b) => {
+              {quickBenefits.map((b) => {
                 const Icon = b.icon;
                 return (
                   <div key={b.label} className="flex items-center gap-2.5 px-3.5 py-3 rounded-2xl" style={{ background: b.color + "0c", border: `1px solid ${b.color}20` }}>
@@ -443,8 +457,8 @@ export function WorkFromAnywhereSection() {
         <div className="mb-16">
           <div className="text-center mb-8">
             <h3 className="font-extrabold" style={{ fontSize: "clamp(18px, 2.2vw, 28px)", color: "#1e2026" }}>
-              Chỉ cần trình duyệt là{" "}
-              <span style={{ color: "#673ab7" }}>có thể bắt đầu</span>
+              {content.featuresHeading}{" "}
+              <span style={{ color: "#673ab7" }}>{content.featuresHighlight}</span>
             </h3>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -473,11 +487,11 @@ export function WorkFromAnywhereSection() {
         <div className="rounded-3xl overflow-hidden" style={{ background: "#f6f3fc", border: "1px solid rgba(103,58,183,0.09)" }}>
           <div className="px-8 pt-10 pb-6 text-center">
             <h3 className="font-extrabold mb-2" style={{ fontSize: "clamp(18px, 2.2vw, 28px)", color: "#1e2026" }}>
-              Biết đội ngũ đang làm gì{" "}
-              <span style={{ color: "#673ab7" }}>theo thời gian thực</span>
+              {content.statusHeading}{" "}
+              <span style={{ color: "#673ab7" }}>{content.statusHighlight}</span>
             </h3>
             <p className="text-sm mx-auto" style={{ color: "#5b5f6b", maxWidth: "480px" }}>
-              Quản lý theo dõi trạng thái từng nhân viên, lịch sử hoạt động và hiệu suất — dù đội ngũ đang làm việc từ bất kỳ đâu.
+              {content.statusDescription}
             </p>
           </div>
           <div className="px-8 pb-8 flex justify-center">
@@ -486,12 +500,7 @@ export function WorkFromAnywhereSection() {
 
           {/* Block 4 benefits */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-8 pb-10">
-            {[
-              { label: "Quản lý từ xa",          icon: Globe,       color: "#673ab7", desc: "Theo dõi đội ngũ làm việc ở mọi nơi" },
-              { label: "Activity Tracking",       icon: Activity,    color: "#0891b2", desc: "Ghi lại mọi thay đổi trạng thái" },
-              { label: "KPI Support",             icon: BarChart2,   color: "#16a34a", desc: "Dữ liệu hỗ trợ đánh giá năng suất" },
-              { label: "Minh bạch hoạt động",     icon: ShieldCheck, color: "#d97706", desc: "Mọi hành động đều được ghi nhận" },
-            ].map((b) => {
+            {statusBenefits.map((b) => {
               const Icon = b.icon;
               return (
                 <div key={b.label} className="flex items-start gap-3 p-4 rounded-2xl" style={{ background: "#fff", border: `1px solid ${b.color}18` }}>

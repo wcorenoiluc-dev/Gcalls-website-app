@@ -1,5 +1,7 @@
 import { Bell, Check, PhoneIncoming } from "lucide-react";
 import { CustomerPopupMockup } from "./IntegrationsSection";
+import { HOME_CUSTOMER_POPUP } from "./homeContent";
+import { useGcallsContent } from "@/lib/gcallsContent/useGcallsContent";
 
 // ─── Section 9: Customer Popup ───────────────────────────────────────────────
 
@@ -18,14 +20,11 @@ import { CustomerPopupMockup } from "./IntegrationsSection";
  * ---------------------------------------------------------------------------
  */
 
-const benefits = [
-  "Biết khách hàng là ai trước khi bắt máy",
-  "Xem lịch sử chăm sóc và ghi chú đã lưu",
-  "Không cần hỏi lại thông tin đã có",
-  "Giữ ngữ cảnh trao đổi giữa các lần liên hệ",
-];
+// Benefit copy lives in homeContent.ts.
 
 export function CustomerPopupSection() {
+  const content = useGcallsContent('/', 'customerPopup', HOME_CUSTOMER_POPUP);
+  const benefits = content.benefits;
   return (
     <section
       aria-labelledby="home-customer-popup-heading"
@@ -44,7 +43,7 @@ export function CustomerPopupSection() {
               style={{ background: "rgba(103,58,183,0.10)", color: "#673ab7", letterSpacing: "0.08em" }}
             >
               <Bell size={11} color="#673ab7" aria-hidden="true" />
-              Customer Popup
+              {content.badge}
             </div>
 
             <h2
@@ -52,7 +51,7 @@ export function CustomerPopupSection() {
               className="font-extrabold tracking-tight"
               style={{ fontSize: "clamp(26px, 3.2vw, 42px)", color: "#1e2026", lineHeight: 1.14 }}
             >
-              Nhận diện khách hàng{" "}
+              {content.heading}{" "}
               <span
                 style={{
                   background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)",
@@ -61,13 +60,12 @@ export function CustomerPopupSection() {
                   backgroundClip: "text",
                 }}
               >
-                ngay khi cuộc gọi đến
+                {content.headingHighlight}
               </span>
             </h2>
 
             <p style={{ color: "#5b5f6b", fontSize: "16px", lineHeight: 1.7, maxWidth: "500px" }}>
-              Khi có cuộc gọi đến, nhân viên xem được thông tin khách hàng lấy từ hệ thống
-              đã kết nối — trong phạm vi tích hợp được cấu hình cho doanh nghiệp.
+              {content.description}
             </p>
 
             <ul className="flex flex-col gap-2.5">
@@ -97,7 +95,7 @@ export function CustomerPopupSection() {
                 <PhoneIncoming size={13} color="#16a34a" strokeWidth={2} />
               </span>
               <span className="text-xs font-semibold" style={{ color: "#1e2026" }}>
-                Thông tin hiển thị theo dữ liệu có trong hệ thống đã kết nối
+                {content.note}
               </span>
             </div>
           </div>

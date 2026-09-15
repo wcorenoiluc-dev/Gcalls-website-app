@@ -2,7 +2,9 @@ import { ArrowRight, Quote } from 'lucide-react'
 import { Card, Container, Section, SectionHeader } from '@/components/common/primitives'
 import { CtaLink } from '@/components/common/Button'
 import { GP_STORY } from '@/data/gcallsPlus'
-import { TESTIMONIALS } from '@/data/testimonials'
+import { TESTIMONIALS_CONTENT } from '@/data/testimonials'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 /**
  * Trust / customer section — three published testimonials.
@@ -14,19 +16,21 @@ import { TESTIMONIALS } from '@/data/testimonials'
  * contain. The CTA goes to the Case Studies hub, a canonical route.
  */
 export function CustomerStory() {
+  const story = useGcallsContent(ROUTES.gcallsPlus, 'story', GP_STORY)
+  const testimonials = useGcallsContent(ROUTES.gcallsPlus, 'testimonials', TESTIMONIALS_CONTENT)
   return (
     <Section tinted ariaLabelledBy="cau-chuyen-khach-hang">
       <Container>
         <SectionHeader
-          eyebrow={GP_STORY.eyebrow}
+          eyebrow={story.eyebrow}
           eyebrowIcon={<Quote size={14} aria-hidden="true" />}
-          title={GP_STORY.h2}
+          title={story.h2}
           titleId="cau-chuyen-khach-hang"
-          lead={GP_STORY.lead}
+          lead={story.lead}
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3" data-testimonial-list>
-          {TESTIMONIALS.map((t) => (
+          {testimonials.items.map((t) => (
             <Card as="li" key={t.id} className="flex h-full flex-col p-6">
               <figure className="flex h-full flex-col" data-testimonial={t.id}>
                 <span
@@ -61,8 +65,8 @@ export function CustomerStory() {
         </ul>
 
         <div className="mt-10 flex justify-center">
-          <CtaLink to={GP_STORY.cta.path} variant="outline">
-            {GP_STORY.cta.label}
+          <CtaLink to={story.cta.path} variant="outline">
+            {story.cta.label}
             <ArrowRight size={18} aria-hidden="true" />
           </CtaLink>
         </div>

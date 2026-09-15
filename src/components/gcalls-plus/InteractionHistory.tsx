@@ -3,6 +3,8 @@ import { FramedCapture, ProductMediaFrame } from '@/components/common/ProductMed
 import { GCALLS_PLUS_IMAGES } from '@/data/productImages'
 import { GP_HISTORY, GP_MEDIA } from '@/data/gcallsPlus'
 import { FeatureSplit } from '@/components/common/FeatureSplit'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 /**
  * Interaction history — timeline, call history and filtering.
@@ -14,14 +16,15 @@ import { FeatureSplit } from '@/components/common/FeatureSplit'
  * bullet list beside it.
  */
 export function InteractionHistory() {
+  const cHistory = useGcallsContent(ROUTES.gcallsPlus, 'history', GP_HISTORY)
   return (
     <FeatureSplit
-      eyebrow={GP_HISTORY.eyebrow}
+      eyebrow={cHistory.eyebrow}
       eyebrowIcon={<History size={14} aria-hidden="true" />}
-      title={GP_HISTORY.h2}
+      title={cHistory.h2}
       titleId="lich-su-tuong-tac"
-      description={GP_HISTORY.description}
-      points={GP_HISTORY.points}
+      description={cHistory.description}
+      points={cHistory.points}
       reverse
       visual={
         <ProductMediaFrame

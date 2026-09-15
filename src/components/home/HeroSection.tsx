@@ -573,7 +573,9 @@ const highlights = [
  * to individually if a published or preview override is missing or has the
  * wrong shape. See `useGcallsContent` for the merge rules.
  */
-const DEFAULT_HERO_CONTENT: HomeHeroContent = {
+// Exported so src/content/sections/home.ts can reference it as the manifest default.
+// eslint-disable-next-line react-refresh/only-export-components
+export const DEFAULT_HERO_CONTENT: HomeHeroContent = {
   enabled: true,
   badgeText: "GCALLS WEBPHONE",
   heading: "Tổng Đài Ảo Tích Hợp CRM -",

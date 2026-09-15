@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { BarChart3, Globe2, Keyboard, PhoneOff, ShieldAlert, UserX } from "lucide-react";
 import { LossEstimator } from "./LossEstimator";
+import { HOME_PAIN_POINTS } from "./homeContent";
+import { useGcallsContent } from "@/lib/gcallsContent/useGcallsContent";
 
 // ─── Section 2: Pain Points + operational-loss estimator ─────────────────────
 
@@ -18,52 +20,18 @@ import { LossEstimator } from "./LossEstimator";
  * are the ones a visitor types into the estimator below.
  * ---------------------------------------------------------------------------
  */
-const painPoints = [
-  {
-    icon: PhoneOff,
-    title: "Gián đoạn hoạt động telesales khi số gọi ra bị khóa hoặc bị người nhận báo cáo spam",
-    desc: "Chiến dịch gọi ra đang chạy có thể dừng giữa chừng, đội ngũ phải chờ xử lý đầu số trước khi tiếp tục liên hệ khách hàng.",
-    accent: "#673ab7",
-    bg: "#f5f0fd",
-  },
-  {
-    icon: UserX,
-    title: "Khách hàng e ngại và từ chối cuộc gọi đến từ số lạ",
-    desc: "Khi cuộc gọi không mang dấu hiệu nhận diện, người nhận khó biết ai đang gọi và thường bỏ qua trước khi nghe nội dung tư vấn.",
-    accent: "#7c3aed",
-    bg: "#f3f0fe",
-  },
-  {
-    icon: ShieldAlert,
-    title: "Quản lý khó kiểm soát chất lượng tư vấn thực tế",
-    desc: "Nếu không có ghi âm, ghi chú và tiêu chí đánh giá tập trung, quản lý chỉ nắm được một phần nội dung trao đổi giữa nhân viên và khách hàng.",
-    accent: "#5b21b6",
-    bg: "#f0ebfd",
-  },
-  {
-    icon: BarChart3,
-    title: "Thiếu dữ liệu thời gian thực để đánh giá hiệu suất đội ngũ",
-    desc: "Báo cáo tổng hợp thủ công thường đến sau khi vấn đề đã xảy ra, khiến quản lý khó điều phối nguồn lực trong ngày.",
-    accent: "#673ab7",
-    bg: "#f5f0fd",
-  },
-  {
-    icon: Globe2,
-    title: "Chi phí cao và tỷ lệ bắt máy thấp khi liên hệ thị trường quốc tế",
-    desc: "Gọi ra thị trường nước ngoài bằng đầu số không phù hợp làm tăng chi phí liên lạc và giảm khả năng khách hàng nhận máy.",
-    accent: "#7c3aed",
-    bg: "#f3f0fe",
-  },
-  {
-    icon: Keyboard,
-    title: "Nhân viên mất thời gian nhập liệu và đối chiếu thông tin thủ công",
-    desc: "Mỗi cuộc gọi kéo theo thao tác sao chép, nhập lại và kiểm tra chéo giữa các hệ thống, làm chậm quy trình và dễ phát sinh sai sót.",
-    accent: "#5b21b6",
-    bg: "#f0ebfd",
-  },
+/** Icon + colour per pain point, by index. Copy lives in homeContent.ts. */
+const painPointStyles = [
+  { icon: PhoneOff, accent: "#673ab7", bg: "#f5f0fd" },
+  { icon: UserX, accent: "#7c3aed", bg: "#f3f0fe" },
+  { icon: ShieldAlert, accent: "#5b21b6", bg: "#f0ebfd" },
+  { icon: BarChart3, accent: "#673ab7", bg: "#f5f0fd" },
+  { icon: Globe2, accent: "#7c3aed", bg: "#f3f0fe" },
+  { icon: Keyboard, accent: "#5b21b6", bg: "#f0ebfd" },
 ];
+type PainPoint = { title: string; desc: string } & (typeof painPointStyles)[number];
 
-function PainCard({ item, index }: { item: typeof painPoints[0]; index: number }) {
+function PainCard({ item, index }: { item: PainPoint; index: number }) {
   const [hovered, setHovered] = useState(false);
   const Icon = item.icon;
 
@@ -126,6 +94,11 @@ function PainCard({ item, index }: { item: typeof painPoints[0]; index: number }
 }
 
 export function PainPointsSection() {
+  const content = useGcallsContent('/', 'painPoints', HOME_PAIN_POINTS);
+  const painPoints: PainPoint[] = content.items.map((item, i) => ({
+    ...painPointStyles[i % painPointStyles.length],
+    ...item,
+  }));
   return (
     <section
       aria-labelledby="home-pain-points-heading"
@@ -143,7 +116,7 @@ export function PainPointsSection() {
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6"
             style={{ background: "rgba(103,58,183,0.08)", color: "#673ab7", letterSpacing: "0.08em" }}
           >
-            <span>NỖI ĐAU DOANH NGHIỆP</span>
+            <span>{content.badge}</span>
           </div>
 
           <h2
@@ -151,7 +124,7 @@ export function PainPointsSection() {
             className="font-extrabold tracking-tight mb-5"
             style={{ fontSize: "clamp(28px, 3.5vw, 44px)", color: "#1e2026", lineHeight: 1.15 }}
           >
-            “Khoảng Trống” Vận Hành Khiến Doanh Nghiệp{" "}
+            {content.heading}{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)",
@@ -160,13 +133,12 @@ export function PainPointsSection() {
                 backgroundClip: "text",
               }}
             >
-              Rò Rỉ Khách Hàng Và Thất Thoát Doanh Thu
+              {content.headingHighlight}
             </span>
           </h2>
 
           <p className="text-base leading-relaxed" style={{ color: "#5b5f6b", fontSize: "17px" }}>
-            Đội Sales và CSKH có thể mất nhiều thời gian và dữ liệu khi hệ thống nghe gọi,
-            quản lý khách hàng và báo cáo vận hành hoạt động rời rạc.
+            {content.description}
           </p>
         </div>
 

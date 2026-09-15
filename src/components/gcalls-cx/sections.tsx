@@ -55,6 +55,8 @@ import {
   OmnichannelInboxMockup,
   TicketPanelMockup,
 } from './visuals'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 const INLINE_LINK =
   'inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-brand underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand'
@@ -99,6 +101,7 @@ export function CxDemoCta({
 /* ── 01 Hero ─────────────────────────────────────────────────────────────── */
 
 export function CxHero() {
+  const cHero = useGcallsContent(ROUTES.gcallsCx, 'hero', CX_HERO)
   return (
     <section
       className="w-full pt-24 pb-14 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-24"
@@ -110,18 +113,18 @@ export function CxHero() {
       <Container>
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
-            <Eyebrow>{CX_HERO.eyebrow}</Eyebrow>
+            <Eyebrow>{cHero.eyebrow}</Eyebrow>
 
             <GradientHeading as="h1" className="mt-5">
-              {CX_HERO.h1}
+              {cHero.h1}
             </GradientHeading>
 
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              {CX_HERO.description}
+              {cHero.description}
             </p>
 
             <ul className="mt-7 flex flex-col gap-5">
-              {CX_HERO.valuePoints.map((point) => (
+              {cHero.valuePoints.map((point) => (
                 <li key={point.title} className="flex items-start gap-3">
                   <span
                     className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-light"
@@ -142,10 +145,10 @@ export function CxHero() {
             </ul>
 
             <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
-              <CxDemoCta label={CX_HERO.primaryCta.label} />
+              <CxDemoCta label={cHero.primaryCta.label} />
 
-              <CtaLink to={CX_HERO.secondaryCta.href} variant="outline" fullWidth>
-                {CX_HERO.secondaryCta.label}
+              <CtaLink to={cHero.secondaryCta.href} variant="outline" fullWidth>
+                {cHero.secondaryCta.label}
                 <ArrowRight size={18} aria-hidden="true" />
               </CtaLink>
             </div>
@@ -163,6 +166,7 @@ export function CxHero() {
 /* ── 02 Direct answer / AIO ──────────────────────────────────────────────── */
 
 export function CxDirectAnswer() {
+  const cDirectAnswer = useGcallsContent(ROUTES.gcallsCx, 'directAnswer', CX_DIRECT_ANSWER)
   return (
     <Section ariaLabelledBy="gcalls-cx-la-gi">
       <Container>
@@ -176,11 +180,11 @@ export function CxDirectAnswer() {
             id="gcalls-cx-la-gi"
             className="mt-4 text-[22px] font-extrabold leading-snug tracking-tight text-foreground sm:text-[26px]"
           >
-            {CX_DIRECT_ANSWER.question}
+            {cDirectAnswer.question}
           </h2>
 
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {CX_DIRECT_ANSWER.answer}
+            {cDirectAnswer.answer}
           </p>
         </div>
       </Container>
@@ -191,19 +195,20 @@ export function CxDirectAnswer() {
 /* ── 03 Problems ─────────────────────────────────────────────────────────── */
 
 export function CxProblems() {
+  const cProblems = useGcallsContent(ROUTES.gcallsCx, 'problems', CX_PROBLEMS)
   return (
     <Section tinted ariaLabelledBy="bai-toan-da-kenh">
       <Container>
         <SectionHeader
-          eyebrow={CX_PROBLEMS.eyebrow}
+          eyebrow={cProblems.eyebrow}
           eyebrowIcon={<AlertCircle size={14} aria-hidden="true" />}
-          title={CX_PROBLEMS.h2}
+          title={cProblems.h2}
           titleId="bai-toan-da-kenh"
-          lead={CX_PROBLEMS.description}
+          lead={cProblems.description}
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-          {CX_PROBLEMS.items.map((item) => (
+          {cProblems.items.map((item) => (
             <Card as="li" key={item.n} className="flex h-full gap-4 p-6">
               <span
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] bg-brand-light text-base font-extrabold text-brand"
@@ -230,25 +235,26 @@ export function CxProblems() {
 /* ── 04 Overview ─────────────────────────────────────────────────────────── */
 
 export function CxOverview() {
+  const cOverview = useGcallsContent(ROUTES.gcallsCx, 'overview', CX_OVERVIEW)
   return (
     <Section ariaLabelledBy="omnichannel-workspace">
       <Container>
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
             <Eyebrow icon={<Layers size={14} aria-hidden="true" />}>
-              {CX_OVERVIEW.eyebrow}
+              {cOverview.eyebrow}
             </Eyebrow>
 
             <GradientHeading id="omnichannel-workspace" className="mt-4">
-              {CX_OVERVIEW.h2}
+              {cOverview.h2}
             </GradientHeading>
 
             <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              {CX_OVERVIEW.description}
+              {cOverview.description}
             </p>
 
             <ul className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {CX_OVERVIEW.components.map((component) => (
+              {cOverview.components.map((component) => (
                 <li key={component} className="flex items-start gap-2.5">
                   <span
                     className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-light"
@@ -280,18 +286,19 @@ export function CxOverview() {
  * description is conditional on deployment — no universal connector guarantee.
  */
 export function CxChannels() {
+  const cChannels = useGcallsContent(ROUTES.gcallsCx, 'channels', CX_CHANNELS)
   return (
     <Section tinted ariaLabelledBy="diem-cham">
       <Container>
         <SectionHeader
-          eyebrow={CX_CHANNELS.eyebrow}
+          eyebrow={cChannels.eyebrow}
           eyebrowIcon={<MessagesSquare size={14} aria-hidden="true" />}
-          title={CX_CHANNELS.h2}
+          title={cChannels.h2}
           titleId="diem-cham"
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {CX_CHANNELS.items.map((item) => (
+          {cChannels.items.map((item) => (
             <Card as="li" key={item.name} className="flex h-full flex-col p-6">
               <h3 className="text-base font-extrabold tracking-tight text-foreground">
                 {item.name}
@@ -310,14 +317,15 @@ export function CxChannels() {
 /* ── 06 Omnichannel inbox ────────────────────────────────────────────────── */
 
 export function CxInbox() {
+  const cInbox = useGcallsContent(ROUTES.gcallsCx, 'inbox', CX_INBOX)
   return (
     <FeatureSplit
-      eyebrow={CX_INBOX.eyebrow}
+      eyebrow={cInbox.eyebrow}
       eyebrowIcon={<Inbox size={14} aria-hidden="true" />}
-      title={CX_INBOX.h2}
+      title={cInbox.h2}
       titleId="omnichannel-inbox"
-      description={CX_INBOX.description}
-      points={CX_INBOX.points}
+      description={cInbox.description}
+      points={cInbox.points}
       visual={
         <ProductVisual
           maxWidth="520px"
@@ -333,16 +341,17 @@ export function CxInbox() {
 /* ── 07 Ticket & workflow ────────────────────────────────────────────────── */
 
 export function CxTickets() {
+  const cTickets = useGcallsContent(ROUTES.gcallsCx, 'tickets', CX_TICKETS)
   return (
     <FeatureSplit
       reverse
       tinted
-      eyebrow={CX_TICKETS.eyebrow}
+      eyebrow={cTickets.eyebrow}
       eyebrowIcon={<TicketCheck size={14} aria-hidden="true" />}
-      title={CX_TICKETS.h2}
+      title={cTickets.h2}
       titleId="ticket-workflow"
-      description={CX_TICKETS.description}
-      points={CX_TICKETS.points}
+      description={cTickets.description}
+      points={cTickets.points}
       visual={
         <ProductVisual
           maxWidth="480px"
@@ -358,14 +367,15 @@ export function CxTickets() {
 /* ── 08 Customer context ─────────────────────────────────────────────────── */
 
 export function CxCustomerContext() {
+  const cContext = useGcallsContent(ROUTES.gcallsCx, 'context', CX_CONTEXT)
   return (
     <FeatureSplit
-      eyebrow={CX_CONTEXT.eyebrow}
+      eyebrow={cContext.eyebrow}
       eyebrowIcon={<UserSearch size={14} aria-hidden="true" />}
-      title={CX_CONTEXT.h2}
+      title={cContext.h2}
       titleId="customer-context"
-      description={CX_CONTEXT.description}
-      points={CX_CONTEXT.points}
+      description={cContext.description}
+      points={cContext.points}
       visual={
         <ProductVisual
           maxWidth="480px"
@@ -381,20 +391,21 @@ export function CxCustomerContext() {
 /* ── 09 How it works ─────────────────────────────────────────────────────── */
 
 export function CxHowItWorks() {
+  const cHowItWorks = useGcallsContent(ROUTES.gcallsCx, 'howItWorks', CX_HOW_IT_WORKS)
   return (
     <Section tinted ariaLabelledBy="cach-hoat-dong-heading" className="scroll-mt-20">
       <Container>
-        <div id={CX_HOW_IT_WORKS.anchorId} className="scroll-mt-24" />
+        <div id={cHowItWorks.anchorId} className="scroll-mt-24" />
 
         <SectionHeader
-          eyebrow={CX_HOW_IT_WORKS.eyebrow}
+          eyebrow={cHowItWorks.eyebrow}
           eyebrowIcon={<Route size={14} aria-hidden="true" />}
-          title={CX_HOW_IT_WORKS.h2}
+          title={cHowItWorks.h2}
           titleId="cach-hoat-dong-heading"
         />
 
         <ol className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {CX_HOW_IT_WORKS.steps.map((step) => (
+          {cHowItWorks.steps.map((step) => (
             <Card as="li" key={step.n} className="flex h-full flex-col p-6">
               <span
                 className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-brand-light text-base font-extrabold text-brand"
@@ -419,15 +430,16 @@ export function CxHowItWorks() {
 /* ── 10 Reporting ────────────────────────────────────────────────────────── */
 
 export function CxReporting() {
+  const cReporting = useGcallsContent(ROUTES.gcallsCx, 'reporting', CX_REPORTING)
   return (
     <FeatureSplit
       reverse
-      eyebrow={CX_REPORTING.eyebrow}
+      eyebrow={cReporting.eyebrow}
       eyebrowIcon={<BarChart3 size={14} aria-hidden="true" />}
-      title={CX_REPORTING.h2}
+      title={cReporting.h2}
       titleId="bao-cao-van-hanh"
-      description={CX_REPORTING.description}
-      points={CX_REPORTING.points}
+      description={cReporting.description}
+      points={cReporting.points}
       visual={
         <ProductVisual
           maxWidth="460px"
@@ -443,18 +455,19 @@ export function CxReporting() {
 /* ── 11 Operational benefits ─────────────────────────────────────────────── */
 
 export function CxBenefits() {
+  const cBenefits = useGcallsContent(ROUTES.gcallsCx, 'benefits', CX_BENEFITS)
   return (
     <Section tinted ariaLabelledBy="gia-tri-van-hanh">
       <Container>
         <SectionHeader
-          eyebrow={CX_BENEFITS.eyebrow}
+          eyebrow={cBenefits.eyebrow}
           eyebrowIcon={<TrendingUp size={14} aria-hidden="true" />}
-          title={CX_BENEFITS.h2}
+          title={cBenefits.h2}
           titleId="gia-tri-van-hanh"
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {CX_BENEFITS.items.map((item) => (
+          {cBenefits.items.map((item) => (
             <Card as="li" key={item.n} className="flex h-full flex-col p-6">
               <h3 className="text-base font-bold leading-snug text-foreground">
                 {item.title}
@@ -473,18 +486,19 @@ export function CxBenefits() {
 /* ── 12 Use cases ────────────────────────────────────────────────────────── */
 
 export function CxUseCases() {
+  const cUseCases = useGcallsContent(ROUTES.gcallsCx, 'useCases', CX_USE_CASES)
   return (
     <Section ariaLabelledBy="tinh-huong-su-dung">
       <Container>
         <SectionHeader
-          eyebrow={CX_USE_CASES.eyebrow}
+          eyebrow={cUseCases.eyebrow}
           eyebrowIcon={<Target size={14} aria-hidden="true" />}
-          title={CX_USE_CASES.h2}
+          title={cUseCases.h2}
           titleId="tinh-huong-su-dung"
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {CX_USE_CASES.items.map((item) => (
+          {cUseCases.items.map((item) => (
             <Card as="li" key={item.role} className="flex h-full flex-col p-6">
               <h3 className="text-lg font-extrabold tracking-tight text-foreground">
                 {item.role}
@@ -511,31 +525,32 @@ export function CxUseCases() {
 
 /** Hand-off only. The CRM keyword stays owned by /tong-dai-tich-hop-crm/. */
 export function CxIntegration() {
+  const cIntegration = useGcallsContent(ROUTES.gcallsCx, 'integration', CX_INTEGRATION)
   return (
     <Section tinted ariaLabelledBy="ket-noi-he-thong">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow icon={<Plug size={14} aria-hidden="true" />}>
-            {CX_INTEGRATION.eyebrow}
+            {cIntegration.eyebrow}
           </Eyebrow>
 
           <GradientHeading id="ket-noi-he-thong" className="mt-4">
-            {CX_INTEGRATION.h2}
+            {cIntegration.h2}
           </GradientHeading>
 
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {CX_INTEGRATION.description}
+            {cIntegration.description}
           </p>
 
           <div className="mt-7 flex justify-center">
-            <CtaLink to={CX_INTEGRATION.primaryLink.path} variant="outline" fullWidth>
-              {CX_INTEGRATION.primaryLink.label}
+            <CtaLink to={cIntegration.primaryLink.path} variant="outline" fullWidth>
+              {cIntegration.primaryLink.label}
               <ArrowRight size={18} aria-hidden="true" />
             </CtaLink>
           </div>
 
           <ul className="mt-5 flex flex-wrap justify-center gap-x-6">
-            {CX_INTEGRATION.relatedLinks.map((l) => (
+            {cIntegration.relatedLinks.map((l) => (
               <li key={l.path}>
                 <Link to={l.path} className={INLINE_LINK}>
                   {l.label}
@@ -553,18 +568,19 @@ export function CxIntegration() {
 /* ── 14 Product boundaries ───────────────────────────────────────────────── */
 
 export function CxBoundaries() {
+  const cBoundaries = useGcallsContent(ROUTES.gcallsCx, 'boundaries', CX_BOUNDARIES)
   return (
     <Section ariaLabelledBy="chon-dung-giai-phap">
       <Container>
         <SectionHeader
-          eyebrow={CX_BOUNDARIES.eyebrow}
+          eyebrow={cBoundaries.eyebrow}
           eyebrowIcon={<Compass size={14} aria-hidden="true" />}
-          title={CX_BOUNDARIES.h2}
+          title={cBoundaries.h2}
           titleId="chon-dung-giai-phap"
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {CX_BOUNDARIES.items.map((item) => {
+          {cBoundaries.items.map((item) => {
             const body = (
               <>
                 <span className="block text-[15px] leading-snug text-muted-foreground">
@@ -604,8 +620,8 @@ export function CxBoundaries() {
         </ul>
 
         <div className="mt-8 flex justify-center">
-          <Link to={CX_BOUNDARIES.allSolutions.path} className={INLINE_LINK}>
-            {CX_BOUNDARIES.allSolutions.label}
+          <Link to={cBoundaries.allSolutions.path} className={INLINE_LINK}>
+            {cBoundaries.allSolutions.label}
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </div>
@@ -618,19 +634,20 @@ export function CxBoundaries() {
 
 /** No fixed duration is promised anywhere — none is evidenced. */
 export function CxDeployment() {
+  const cDeployment = useGcallsContent(ROUTES.gcallsCx, 'deployment', CX_DEPLOYMENT)
   return (
     <Section tinted ariaLabelledBy="trien-khai-cx">
       <Container>
         <SectionHeader
-          eyebrow={CX_DEPLOYMENT.eyebrow}
+          eyebrow={cDeployment.eyebrow}
           eyebrowIcon={<Rocket size={14} aria-hidden="true" />}
-          title={CX_DEPLOYMENT.h2}
+          title={cDeployment.h2}
           titleId="trien-khai-cx"
-          lead={CX_DEPLOYMENT.description}
+          lead={cDeployment.description}
         />
 
         <ol className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {CX_DEPLOYMENT.steps.map((step) => (
+          {cDeployment.steps.map((step) => (
             <Card as="li" key={step.n} className="flex h-full flex-col p-6">
               <span
                 className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-brand-light text-base font-extrabold text-brand"
@@ -656,26 +673,27 @@ export function CxDeployment() {
  * shown. Nothing is fabricated — no logo, quote, result or figure.
  */
 export function CxTrust() {
+  const cTrust = useGcallsContent(ROUTES.gcallsCx, 'trust', CX_TRUST)
   return (
     <Section ariaLabelledBy="trien-khai-thuc-te">
       <Container>
         <Card className="mx-auto flex max-w-3xl flex-col items-center px-6 py-12 text-center sm:px-10">
-          <Eyebrow>{CX_TRUST.eyebrow}</Eyebrow>
+          <Eyebrow>{cTrust.eyebrow}</Eyebrow>
 
           <GradientHeading id="trien-khai-thuc-te" className="mt-4">
-            {CX_TRUST.h2}
+            {cTrust.h2}
           </GradientHeading>
 
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {CX_TRUST.description}
+            {cTrust.description}
           </p>
 
           <div className="mt-7 w-full sm:w-auto">
-            <CxDemoCta label={CX_TRUST.cta.label} mobileLabel={CX_TRUST.cta.mobileLabel} />
+            <CxDemoCta label={cTrust.cta.label} mobileLabel={cTrust.cta.mobileLabel} />
           </div>
 
-          <Link to={CX_TRUST.link.path} className={`mt-4 ${INLINE_LINK}`}>
-            {CX_TRUST.link.label}
+          <Link to={cTrust.link.path} className={`mt-4 ${INLINE_LINK}`}>
+            {cTrust.link.label}
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </Card>

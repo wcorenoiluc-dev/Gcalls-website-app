@@ -54,6 +54,8 @@ import {
   SignalsMockup,
   TranscriptMockup,
 } from './visuals'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 const INLINE_LINK =
   'inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-brand underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand'
@@ -88,6 +90,7 @@ export function DemoCta({
 /* ── 01 Hero ─────────────────────────────────────────────────────────────── */
 
 export function QaQcHero() {
+  const cHero = useGcallsContent(ROUTES.qcCenter, 'hero', QQ_HERO)
   return (
     <section
       className="w-full pt-24 pb-14 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-24"
@@ -100,18 +103,18 @@ export function QaQcHero() {
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
           {/* Text first in DOM order → first on mobile. */}
           <div>
-            <Eyebrow>{QQ_HERO.eyebrow}</Eyebrow>
+            <Eyebrow>{cHero.eyebrow}</Eyebrow>
 
             <GradientHeading as="h1" className="mt-5">
-              {QQ_HERO.h1}
+              {cHero.h1}
             </GradientHeading>
 
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              {QQ_HERO.description}
+              {cHero.description}
             </p>
 
             <ul className="mt-7 flex flex-col gap-5">
-              {QQ_HERO.valuePoints.map((point) => (
+              {cHero.valuePoints.map((point) => (
                 <li key={point.title} className="flex items-start gap-3">
                   <span
                     className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-light"
@@ -132,10 +135,10 @@ export function QaQcHero() {
             </ul>
 
             <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
-              <DemoCta label={QQ_HERO.primaryCta.label} />
+              <DemoCta label={cHero.primaryCta.label} />
 
-              <CtaLink to={QQ_HERO.secondaryCta.href} variant="outline" fullWidth>
-                {QQ_HERO.secondaryCta.label}
+              <CtaLink to={cHero.secondaryCta.href} variant="outline" fullWidth>
+                {cHero.secondaryCta.label}
                 <ArrowRight size={18} aria-hidden="true" />
               </CtaLink>
             </div>
@@ -158,6 +161,7 @@ export function QaQcHero() {
  * reader and an answer engine get the definition without interacting.
  */
 export function QaQcDirectAnswer() {
+  const cDirectAnswer = useGcallsContent(ROUTES.qcCenter, 'directAnswer', QQ_DIRECT_ANSWER)
   return (
     <Section ariaLabelledBy="qa-qc-la-gi">
       <Container>
@@ -172,11 +176,11 @@ export function QaQcDirectAnswer() {
             data-heading="compact"
             className="mt-4 text-[22px] font-extrabold leading-snug tracking-tight text-foreground sm:text-[26px]"
           >
-            {QQ_DIRECT_ANSWER.question}
+            {cDirectAnswer.question}
           </h2>
 
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {QQ_DIRECT_ANSWER.answer}
+            {cDirectAnswer.answer}
           </p>
         </div>
       </Container>
@@ -187,19 +191,20 @@ export function QaQcDirectAnswer() {
 /* ── 03 Problems ─────────────────────────────────────────────────────────── */
 
 export function QaQcProblems() {
+  const cProblems = useGcallsContent(ROUTES.qcCenter, 'problems', QQ_PROBLEMS)
   return (
     <Section tinted ariaLabelledBy="bai-toan-qa">
       <Container>
         <SectionHeader
-          eyebrow={QQ_PROBLEMS.eyebrow}
+          eyebrow={cProblems.eyebrow}
           eyebrowIcon={<AlertCircle size={14} aria-hidden="true" />}
-          title={QQ_PROBLEMS.h2}
+          title={cProblems.h2}
           titleId="bai-toan-qa"
-          lead={QQ_PROBLEMS.description}
+          lead={cProblems.description}
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-          {QQ_PROBLEMS.items.map((item) => (
+          {cProblems.items.map((item) => (
             <Card as="li" key={item.n} className="flex h-full gap-4 p-6">
               <span
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] bg-brand-light text-base font-extrabold text-brand"
@@ -226,30 +231,31 @@ export function QaQcProblems() {
 /* ── 04 Overview ─────────────────────────────────────────────────────────── */
 
 export function QaQcOverview() {
+  const cOverview = useGcallsContent(ROUTES.qcCenter, 'overview', QQ_OVERVIEW)
   return (
     <Section ariaLabelledBy="tong-quan-qa-qc">
       <Container>
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
             <Eyebrow icon={<Layers size={14} aria-hidden="true" />}>
-              {QQ_OVERVIEW.eyebrow}
+              {cOverview.eyebrow}
             </Eyebrow>
 
             <GradientHeading id="tong-quan-qa-qc" className="mt-4">
-              {QQ_OVERVIEW.h2}
+              {cOverview.h2}
             </GradientHeading>
 
             <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              {QQ_OVERVIEW.description}
+              {cOverview.description}
             </p>
 
             {/* Single natural occurrence of the primary keyword. */}
             <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              {QQ_OVERVIEW.keywordLead}
+              {cOverview.keywordLead}
             </p>
 
             <ul className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {QQ_OVERVIEW.components.map((component) => (
+              {cOverview.components.map((component) => (
                 <li key={component} className="flex items-start gap-2.5">
                   <span
                     className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-light"
@@ -277,20 +283,21 @@ export function QaQcOverview() {
 /* ── 05 How it works ─────────────────────────────────────────────────────── */
 
 export function QaQcHowItWorks() {
+  const cHowItWorks = useGcallsContent(ROUTES.qcCenter, 'howItWorks', QQ_HOW_IT_WORKS)
   return (
     <Section tinted ariaLabelledBy="cach-hoat-dong-heading" className="scroll-mt-20">
       <Container>
-        <div id={QQ_HOW_IT_WORKS.anchorId} className="scroll-mt-24" />
+        <div id={cHowItWorks.anchorId} className="scroll-mt-24" />
 
         <SectionHeader
-          eyebrow={QQ_HOW_IT_WORKS.eyebrow}
+          eyebrow={cHowItWorks.eyebrow}
           eyebrowIcon={<Route size={14} aria-hidden="true" />}
-          title={QQ_HOW_IT_WORKS.h2}
+          title={cHowItWorks.h2}
           titleId="cach-hoat-dong-heading"
         />
 
         <ol className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {QQ_HOW_IT_WORKS.steps.map((step) => (
+          {cHowItWorks.steps.map((step) => (
             <Card as="li" key={step.n} className="flex h-full flex-col p-6">
               <span
                 className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-brand-light text-base font-extrabold text-brand"
@@ -315,18 +322,19 @@ export function QaQcHowItWorks() {
 /* ── 06 Core AI capabilities ─────────────────────────────────────────────── */
 
 export function QaQcCapabilities() {
+  const cCapabilities = useGcallsContent(ROUTES.qcCenter, 'capabilities', QQ_CAPABILITIES)
   return (
     <Section ariaLabelledBy="nang-luc-ai">
       <Container>
         <SectionHeader
-          eyebrow={QQ_CAPABILITIES.eyebrow}
+          eyebrow={cCapabilities.eyebrow}
           eyebrowIcon={<Sparkles size={14} aria-hidden="true" />}
-          title={QQ_CAPABILITIES.h2}
+          title={cCapabilities.h2}
           titleId="nang-luc-ai"
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {QQ_CAPABILITIES.items.map((item) => (
+          {cCapabilities.items.map((item) => (
             <Card as="li" key={item.n} className="flex h-full flex-col p-6">
               <span
                 className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-brand-light text-base font-extrabold text-brand"
@@ -351,15 +359,16 @@ export function QaQcCapabilities() {
 /* ── 07 Scoring ──────────────────────────────────────────────────────────── */
 
 export function QaQcScoring() {
+  const cScoring = useGcallsContent(ROUTES.qcCenter, 'scoring', QQ_SCORING)
   return (
     <FeatureSplit
       tinted
-      eyebrow={QQ_SCORING.eyebrow}
+      eyebrow={cScoring.eyebrow}
       eyebrowIcon={<ListChecks size={14} aria-hidden="true" />}
-      title={QQ_SCORING.h2}
+      title={cScoring.h2}
       titleId="qa-scoring"
-      description={QQ_SCORING.description}
-      points={QQ_SCORING.points}
+      description={cScoring.description}
+      points={cScoring.points}
       visual={
         <ProductVisual
           maxWidth="480px"
@@ -375,15 +384,16 @@ export function QaQcScoring() {
 /* ── 08 Conversation signals ─────────────────────────────────────────────── */
 
 export function QaQcSignals() {
+  const cSignals = useGcallsContent(ROUTES.qcCenter, 'signals', QQ_SIGNALS)
   return (
     <FeatureSplit
       reverse
-      eyebrow={QQ_SIGNALS.eyebrow}
+      eyebrow={cSignals.eyebrow}
       eyebrowIcon={<Sparkles size={14} aria-hidden="true" />}
-      title={QQ_SIGNALS.h2}
+      title={cSignals.h2}
       titleId="conversation-signals"
-      description={QQ_SIGNALS.description}
-      points={QQ_SIGNALS.points}
+      description={cSignals.description}
+      points={cSignals.points}
       visual={
         <ProductVisual
           maxWidth="480px"
@@ -403,19 +413,20 @@ export function QaQcSignals() {
  * Placed immediately after the AI capability sections, deliberately.
  */
 export function QaQcHumanLoop() {
+  const cHumanLoop = useGcallsContent(ROUTES.qcCenter, 'humanLoop', QQ_HUMAN_LOOP)
   return (
     <Section tinted ariaLabelledBy="ai-human-qa">
       <Container>
         <SectionHeader
-          eyebrow={QQ_HUMAN_LOOP.eyebrow}
+          eyebrow={cHumanLoop.eyebrow}
           eyebrowIcon={<ShieldCheck size={14} aria-hidden="true" />}
-          title={QQ_HUMAN_LOOP.h2}
+          title={cHumanLoop.h2}
           titleId="ai-human-qa"
-          lead={QQ_HUMAN_LOOP.description}
+          lead={cHumanLoop.description}
         />
 
         <ol className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
-          {QQ_HUMAN_LOOP.roles.map((role, i) => (
+          {cHumanLoop.roles.map((role, i) => (
             <Card as="li" key={role.role} className="flex h-full flex-col p-6">
               <span
                 className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-brand-light text-base font-extrabold text-brand"
@@ -440,13 +451,14 @@ export function QaQcHumanLoop() {
 /* ── 10 Quality dashboard ────────────────────────────────────────────────── */
 
 export function QaQcDashboard() {
+  const cDashboard = useGcallsContent(ROUTES.qcCenter, 'dashboard', QQ_DASHBOARD)
   return (
     <FeatureSplit
-      eyebrow={QQ_DASHBOARD.eyebrow}
+      eyebrow={cDashboard.eyebrow}
       eyebrowIcon={<BarChart3 size={14} aria-hidden="true" />}
-      title={QQ_DASHBOARD.h2}
+      title={cDashboard.h2}
       titleId="quality-dashboard"
-      description={QQ_DASHBOARD.description}
+      description={cDashboard.description}
       visual={
         <ProductVisual
           maxWidth="520px"
@@ -462,18 +474,19 @@ export function QaQcDashboard() {
 /* ── 11 Operational benefits ─────────────────────────────────────────────── */
 
 export function QaQcBenefits() {
+  const cBenefits = useGcallsContent(ROUTES.qcCenter, 'benefits', QQ_BENEFITS)
   return (
     <Section tinted ariaLabelledBy="gia-tri-van-hanh">
       <Container>
         <SectionHeader
-          eyebrow={QQ_BENEFITS.eyebrow}
+          eyebrow={cBenefits.eyebrow}
           eyebrowIcon={<TrendingUp size={14} aria-hidden="true" />}
-          title={QQ_BENEFITS.h2}
+          title={cBenefits.h2}
           titleId="gia-tri-van-hanh"
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {QQ_BENEFITS.items.map((item) => (
+          {cBenefits.items.map((item) => (
             <Card as="li" key={item.n} className="flex h-full flex-col p-6">
               <h3 className="text-base font-bold leading-snug text-foreground">
                 {item.title}
@@ -492,18 +505,19 @@ export function QaQcBenefits() {
 /* ── 12 Use cases ────────────────────────────────────────────────────────── */
 
 export function QaQcUseCases() {
+  const cUseCases = useGcallsContent(ROUTES.qcCenter, 'useCases', QQ_USE_CASES)
   return (
     <Section ariaLabelledBy="tinh-huong-su-dung">
       <Container>
         <SectionHeader
-          eyebrow={QQ_USE_CASES.eyebrow}
+          eyebrow={cUseCases.eyebrow}
           eyebrowIcon={<Target size={14} aria-hidden="true" />}
-          title={QQ_USE_CASES.h2}
+          title={cUseCases.h2}
           titleId="tinh-huong-su-dung"
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {QQ_USE_CASES.items.map((item) => (
+          {cUseCases.items.map((item) => (
             <Card as="li" key={item.role} className="flex h-full flex-col p-6">
               <h3 className="text-lg font-extrabold tracking-tight text-foreground">
                 {item.role}
@@ -535,24 +549,25 @@ export function QaQcUseCases() {
 /* ── 13 Integration ──────────────────────────────────────────────────────── */
 
 export function QaQcIntegration() {
+  const cIntegration = useGcallsContent(ROUTES.qcCenter, 'integration', QQ_INTEGRATION)
   return (
     <Section tinted ariaLabelledBy="ket-noi-du-lieu">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow icon={<Plug size={14} aria-hidden="true" />}>
-            {QQ_INTEGRATION.eyebrow}
+            {cIntegration.eyebrow}
           </Eyebrow>
 
           <GradientHeading id="ket-noi-du-lieu" className="mt-4">
-            {QQ_INTEGRATION.h2}
+            {cIntegration.h2}
           </GradientHeading>
 
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {QQ_INTEGRATION.description}
+            {cIntegration.description}
           </p>
 
           <ul className="mt-7 flex flex-wrap justify-center gap-3">
-            {QQ_INTEGRATION.links.map((l) => (
+            {cIntegration.links.map((l) => (
               <li key={l.path}>
                 <Link
                   to={l.path}
@@ -573,18 +588,19 @@ export function QaQcIntegration() {
 /* ── 14 Product boundaries ───────────────────────────────────────────────── */
 
 export function QaQcBoundaries() {
+  const cBoundaries = useGcallsContent(ROUTES.qcCenter, 'boundaries', QQ_BOUNDARIES)
   return (
     <Section ariaLabelledBy="chon-san-pham">
       <Container>
         <SectionHeader
-          eyebrow={QQ_BOUNDARIES.eyebrow}
+          eyebrow={cBoundaries.eyebrow}
           eyebrowIcon={<Compass size={14} aria-hidden="true" />}
-          title={QQ_BOUNDARIES.h2}
+          title={cBoundaries.h2}
           titleId="chon-san-pham"
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {QQ_BOUNDARIES.items.map((item) => {
+          {cBoundaries.items.map((item) => {
             const body = (
               <>
                 <span className="block text-[15px] leading-snug text-muted-foreground">
@@ -624,8 +640,8 @@ export function QaQcBoundaries() {
         </ul>
 
         <div className="mt-8 flex justify-center">
-          <Link to={QQ_BOUNDARIES.allSolutions.path} className={INLINE_LINK}>
-            {QQ_BOUNDARIES.allSolutions.label}
+          <Link to={cBoundaries.allSolutions.path} className={INLINE_LINK}>
+            {cBoundaries.allSolutions.label}
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </div>
@@ -641,28 +657,29 @@ export function QaQcBoundaries() {
  * shown. Nothing is fabricated here — no results, quotes, logos or figures.
  */
 export function QaQcStory() {
+  const cStory = useGcallsContent(ROUTES.qcCenter, 'story', QQ_STORY)
   return (
     <Section tinted ariaLabelledBy="quy-trinh-qa">
       <Container>
         <Card className="mx-auto flex max-w-3xl flex-col items-center px-6 py-12 text-center sm:px-10">
           <Eyebrow icon={<Users size={14} aria-hidden="true" />}>
-            {QQ_STORY.eyebrow}
+            {cStory.eyebrow}
           </Eyebrow>
 
           <GradientHeading id="quy-trinh-qa" className="mt-4">
-            {QQ_STORY.h2}
+            {cStory.h2}
           </GradientHeading>
 
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {QQ_STORY.description}
+            {cStory.description}
           </p>
 
           <div className="mt-7 w-full sm:w-auto">
-            <DemoCta label={QQ_STORY.cta.label} />
+            <DemoCta label={cStory.cta.label} />
           </div>
 
-          <Link to={QQ_STORY.link.path} className={`mt-4 ${INLINE_LINK}`}>
-            {QQ_STORY.link.label}
+          <Link to={cStory.link.path} className={`mt-4 ${INLINE_LINK}`}>
+            {cStory.link.label}
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </Card>

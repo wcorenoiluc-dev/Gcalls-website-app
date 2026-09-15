@@ -4,6 +4,8 @@ import { IntegrationMapMockup } from './ProductInterfaceMockup'
 import { GP_INTEGRATION, GP_MEDIA } from '@/data/gcallsPlus'
 import { FeatureSplit } from '@/components/common/FeatureSplit'
 import { CtaLink } from '@/components/common/Button'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 /**
  * CRM / system integration.
@@ -19,14 +21,15 @@ import { CtaLink } from '@/components/common/Button'
  * landing page (P01-B §10).
  */
 export function IntegrationSection() {
+  const cIntegration = useGcallsContent(ROUTES.gcallsPlus, 'integration', GP_INTEGRATION)
   return (
     <FeatureSplit
       tinted
-      eyebrow={GP_INTEGRATION.eyebrow}
+      eyebrow={cIntegration.eyebrow}
       eyebrowIcon={<Plug size={14} aria-hidden="true" />}
-      title={GP_INTEGRATION.h2}
+      title={cIntegration.h2}
       titleId="tich-hop-he-thong"
-      description={GP_INTEGRATION.description}
+      description={cIntegration.description}
       visual={
         <ProductMediaFrame
           caption={GP_MEDIA.integration.caption}
@@ -40,8 +43,8 @@ export function IntegrationSection() {
         </ProductMediaFrame>
       }
     >
-      <CtaLink to={GP_INTEGRATION.cta.path} variant="outline" fullWidth className="mt-8">
-        {GP_INTEGRATION.cta.label}
+      <CtaLink to={cIntegration.cta.path} variant="outline" fullWidth className="mt-8">
+        {cIntegration.cta.label}
         <ArrowRight size={18} aria-hidden="true" />
       </CtaLink>
     </FeatureSplit>

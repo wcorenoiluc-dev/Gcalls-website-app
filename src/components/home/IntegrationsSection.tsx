@@ -4,6 +4,8 @@ import { Link } from "react-router";
 import { ctaAttrs } from "@/components/common/Button";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
+import { HOME_INTEGRATION_CTA } from "./homeContent";
+import { useGcallsContent } from "@/lib/gcallsContent/useGcallsContent";
 import { ecosystemGroups } from "./sectionData";
 import { darkSection } from "@/lib/theme/darkSection";
 
@@ -59,49 +61,14 @@ import { darkSection } from "@/lib/theme/darkSection";
  * hợp với…", "phạm vi tích hợp phụ thuộc API, gói dịch vụ và yêu cầu triển
  * khai", "được đánh giá trong quá trình khảo sát kỹ thuật". Keep to it.
  */
-const integrationFeatures = [
-  {
-    icon: Code2,
-    label: "Open API",
-    color: "#673ab7",
-    bg: "#f5f0fd",
-    desc: "API để kết nối Gcalls với hệ thống nội bộ. Phạm vi được xác nhận theo yêu cầu triển khai.",
-  },
-  {
-    icon: Webhook,
-    label: "Webhook",
-    color: "#0891b2",
-    bg: "#f0f9ff",
-    desc: "Nhận sự kiện cuộc gọi để hệ thống của doanh nghiệp xử lý tiếp, theo cấu hình.",
-  },
-  {
-    icon: Bell,
-    label: "Customer Context",
-    color: "#16a34a",
-    bg: "#f0fdf4",
-    desc: "Hiển thị thông tin khách hàng lấy từ hệ thống đã kết nối, theo phạm vi cấu hình.",
-  },
-  {
-    icon: MousePointerClick,
-    label: "Click To Call",
-    color: "#d97706",
-    bg: "#fffbeb",
-    desc: "Gọi từ hệ thống đang dùng, ở những nền tảng có hỗ trợ trong phạm vi tích hợp.",
-  },
-  {
-    icon: Link2,
-    label: "CRM Integration",
-    color: "#7c3aed",
-    bg: "#f5f0ff",
-    desc: "Kết nối cuộc gọi với HubSpot, Salesforce và Zoho CRM. Mỗi nền tảng có trang riêng.",
-  },
-  {
-    icon: RefreshCw,
-    label: "Data Sync",
-    color: "#0284c7",
-    bg: "#e0f2fe",
-    desc: "Đồng bộ liên hệ và lịch sử tương tác theo cấu hình, thay cho nhập liệu thủ công.",
-  },
+/** Feature-card icon/colours by index; label + desc live in homeContent.ts. */
+const integrationFeatureStyles = [
+  { icon: Code2, color: "#673ab7", bg: "#f5f0fd" },
+  { icon: Webhook, color: "#0891b2", bg: "#f0f9ff" },
+  { icon: Bell, color: "#16a34a", bg: "#f0fdf4" },
+  { icon: MousePointerClick, color: "#d97706", bg: "#fffbeb" },
+  { icon: Link2, color: "#7c3aed", bg: "#f5f0ff" },
+  { icon: RefreshCw, color: "#0284c7", bg: "#e0f2fe" },
 ];
 
 const apiEndpoints = [
@@ -374,6 +341,8 @@ aria-label={widgetOpen ? "Đóng nút gọi minh họa" : "Mở nút gọi minh 
 }
 
 export function IntegrationCtaSection() {
+  const content = useGcallsContent('/', 'integrationCta', HOME_INTEGRATION_CTA);
+  const integrationFeatures = content.features.map((f, i) => ({ ...integrationFeatureStyles[i % integrationFeatureStyles.length], ...f }));
   return (
     <section
       aria-labelledby="home-integration-cta-heading"
@@ -389,7 +358,7 @@ export function IntegrationCtaSection() {
           <div className="flex flex-col gap-7 order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase" style={{ background: "rgba(103,58,183,0.08)", color: "#673ab7", letterSpacing: "0.08em" }}>
               <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#673ab7" }} aria-hidden="true" />
-              Integration CTA
+              {content.badge}
             </div>
 
             <div>
@@ -398,14 +367,14 @@ export function IntegrationCtaSection() {
                 className="font-extrabold tracking-tight mb-5"
                 style={{ fontSize: "clamp(26px, 3.2vw, 42px)", color: "#1e2026", lineHeight: 1.14 }}
               >
-                Kết nối Gcalls với{" "}
+                {content.heading}{" "}
                 <span style={{ background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  hệ thống CRM
+                  {content.headingHighlight}
                 </span>{" "}
-                của doanh nghiệp bạn
+                {content.headingTail}
               </h2>
               <p style={{ color: "#5b5f6b", fontSize: "16px", lineHeight: 1.7, maxWidth: "480px" }}>
-                Gcalls giúp doanh nghiệp đồng bộ dữ liệu khách hàng, cuộc gọi và hoạt động chăm sóc khách hàng với CRM, Helpdesk và các hệ thống nội bộ thông qua API mở và Webhook.
+                {content.description}
               </p>
             </div>
 
@@ -504,14 +473,13 @@ export function IntegrationCtaSection() {
                 records that "Không cần IT" is NOT approved as an absolute claim;
                 this is the same claim in the same place on the same site.
               */}
-              Tích hợp theo phạm vi được xác nhận
+              {content.ctaBadge}
             </div>
             <h3 className="font-extrabold mb-4" style={{ fontSize: "clamp(22px, 3vw, 36px)", lineHeight: 1.15, color: darkSection.heading }}>
-              Trao đổi phạm vi tích hợp cùng đội ngũ Gcalls
+              {content.ctaHeading}
             </h3>
             <p className="mb-8" style={{ color: "rgba(255,255,255,0.72)", fontSize: "16px", lineHeight: 1.7 }}>
-              Từ CRM, Helpdesk đến các hệ thống nội bộ — Gcalls kết nối qua API mở. Phạm vi
-              và công việc cần thiết được đánh giá trong quá trình khảo sát kỹ thuật.
+              {content.ctaDescription}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link {...ctaAttrs('light')} to={leadCtaHref({ intent: 'demo', source: 'consultation' })}
@@ -520,7 +488,7 @@ export function IntegrationCtaSection() {
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.22)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "none"; (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.18)"; }}
               >
-                <Phone size={15} aria-hidden="true" /> Đăng ký demo
+                <Phone size={15} aria-hidden="true" />{" "}{content.ctaPrimaryLabel}
               </Link>
               <Link {...ctaAttrs('outline-dark')} to={leadCtaHref({ intent: 'integration', source: 'consultation' })}
                 className="flex items-center gap-2.5 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
@@ -528,10 +496,10 @@ export function IntegrationCtaSection() {
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.22)"}
                 onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.15)"}
               >
-                <Code2 size={15} aria-hidden="true" /> Tư vấn tích hợp
+                <Code2 size={15} aria-hidden="true" />{" "}{content.ctaSecondaryLabel}
               </Link>
             </div>
-            <p className="mt-5 text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>Đăng ký để nhận tư vấn cấu hình phù hợp với nhu cầu</p>
+            <p className="mt-5 text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>{content.ctaNote}</p>
           </div>
         </div>
 

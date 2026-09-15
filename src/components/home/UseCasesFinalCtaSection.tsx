@@ -2,7 +2,9 @@ import { Check, Phone, Sparkles } from "lucide-react";
 import { Link } from "react-router";
 import { ctaAttrs } from "@/components/common/Button";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
-import { remoteUseCases, wfaStats } from "./sectionData";
+import { remoteUseCaseStyles, wfaStats } from "./sectionData";
+import { HOME_USE_CASES_FINAL_CTA } from "./homeContent";
+import { useGcallsContent } from "@/lib/gcallsContent/useGcallsContent";
 import { darkSection } from "@/lib/theme/darkSection";
 
 // ─── Section 13: Use Cases & Final CTA ───────────────────────────────────────
@@ -31,6 +33,8 @@ import { darkSection } from "@/lib/theme/darkSection";
  */
 
 export function UseCasesFinalCtaSection() {
+  const content = useGcallsContent('/', 'useCasesFinalCta', HOME_USE_CASES_FINAL_CTA);
+  const remoteUseCases = content.useCases.map((uc, i) => ({ ...remoteUseCaseStyles[i % remoteUseCaseStyles.length], ...uc }));
   return (
     <section
       aria-labelledby="home-final-cta-heading"
@@ -50,14 +54,14 @@ export function UseCasesFinalCtaSection() {
             style={{ background: "rgba(103,58,183,0.08)", color: "#673ab7", letterSpacing: "0.08em" }}
           >
             <Sparkles size={12} aria-hidden="true" />
-            USE CASES
+            {content.badge}
           </div>
           <h2
             id="home-final-cta-heading"
             className="font-extrabold tracking-tight mb-5"
             style={{ fontSize: "clamp(26px, 3.2vw, 42px)", color: "#1e2026", lineHeight: 1.15 }}
           >
-            Tổng đài doanh nghiệp{" "}
+            {content.heading}{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)",
@@ -66,13 +70,12 @@ export function UseCasesFinalCtaSection() {
                 backgroundClip: "text",
               }}
             >
-              luôn đồng hành
+              {content.headingHighlight}
             </span>{" "}
-            cùng đội ngũ của bạn
+            {content.headingTail}
           </h2>
           <p className="text-base leading-relaxed" style={{ color: "#5b5f6b", fontSize: "17px" }}>
-            Không cần phần cứng, không cần cài đặt phức tạp — chỉ cần trình duyệt và kết nối
-            internet, đội ngũ của bạn đã có thể bắt đầu ngay.
+            {content.description}
           </p>
         </div>
 
@@ -83,8 +86,8 @@ export function UseCasesFinalCtaSection() {
               className="font-extrabold tracking-tight"
               style={{ fontSize: "clamp(20px, 2.4vw, 28px)", color: "#1e2026", lineHeight: 1.18 }}
             >
-              Gcalls phù hợp với{" "}
-              <span style={{ color: "#673ab7" }}>mô hình đội ngũ nào</span>
+              {content.useCasesHeading}{" "}
+              <span style={{ color: "#673ab7" }}>{content.useCasesHighlight}</span>
             </h3>
           </div>
 
@@ -179,19 +182,18 @@ export function UseCasesFinalCtaSection() {
                 style={{ background: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.9)" }}
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" aria-hidden="true" />
-                Sẵn sàng triển khai cùng đội ngũ Gcalls
+                {content.ctaBadge}
               </div>
 
               <h3
                 className="font-extrabold mb-4"
                 style={{ fontSize: "clamp(22px, 2.8vw, 34px)", lineHeight: 1.15, color: darkSection.heading }}
               >
-                Bắt đầu với đội ngũ hiện tại của bạn
+                {content.ctaHeading}
               </h3>
 
               <p className="mb-8" style={{ color: "rgba(255,255,255,0.70)", fontSize: "15px", lineHeight: 1.7 }}>
-                Đội ngũ Gcalls trao đổi về quy mô, hệ thống đang dùng và quy trình vận hành để
-                đề xuất cấu hình phù hợp trước khi triển khai.
+                {content.ctaDescription}
               </p>
 
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
@@ -203,7 +205,7 @@ export function UseCasesFinalCtaSection() {
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "none"; }}
                 >
-                  <Phone size={15} aria-hidden="true" /> Đăng ký demo
+                  <Phone size={15} aria-hidden="true" />{" "}{content.ctaPrimaryLabel}
                 </Link>
                 <Link
                   {...ctaAttrs('outline-dark')}
@@ -213,12 +215,12 @@ export function UseCasesFinalCtaSection() {
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.22)"}
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.15)"}
                 >
-                  <Sparkles size={15} aria-hidden="true" /> Nhận tư vấn giải pháp
+                  <Sparkles size={15} aria-hidden="true" />{" "}{content.ctaSecondaryLabel}
                 </Link>
               </div>
 
               <p className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.40)" }}>
-                Đội ngũ Gcalls hỗ trợ cấu hình và triển khai theo nhu cầu thực tế
+                {content.ctaNote}
               </p>
             </div>
           </div>

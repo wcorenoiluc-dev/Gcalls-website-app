@@ -3,6 +3,8 @@ import { ProductVisual } from '@/components/common/ProductVisual'
 import { AnalyticsDashboardMockup, UserStatusDashboard } from '@/components/product-ui'
 import { GP_PERFORMANCE } from '@/data/gcallsPlus'
 import { FeatureSplit } from '@/components/common/FeatureSplit'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 /**
  * Analytics & team performance.
@@ -14,15 +16,16 @@ import { FeatureSplit } from '@/components/common/FeatureSplit'
  * dashboard values must not be converted into marketing claims.
  */
 export function PerformanceSection() {
+  const cPerformance = useGcallsContent(ROUTES.gcallsPlus, 'performance', GP_PERFORMANCE)
   return (
     <FeatureSplit
       reverse
-      eyebrow={GP_PERFORMANCE.eyebrow}
+      eyebrow={cPerformance.eyebrow}
       eyebrowIcon={<BarChart2 size={14} aria-hidden="true" />}
-      title={GP_PERFORMANCE.h2}
+      title={cPerformance.h2}
       titleId="hieu-suat-doi-ngu"
-      description={GP_PERFORMANCE.description}
-      points={GP_PERFORMANCE.points}
+      description={cPerformance.description}
+      points={cPerformance.points}
       visual={
         <div className="flex flex-col gap-5">
           <ProductVisual maxWidth="560px" note={false}>

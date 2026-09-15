@@ -1,6 +1,8 @@
 import { Rocket } from 'lucide-react'
 import { Card, Container, Section, SectionHeader } from '@/components/common/primitives'
 import { GP_DEPLOYMENT } from '@/data/gcallsPlus'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 /**
  * Deployment steps.
@@ -10,19 +12,20 @@ import { GP_DEPLOYMENT } from '@/data/gcallsPlus'
  * the lead paragraph states plainly that timing depends on configuration.
  */
 export function DeploymentSection() {
+  const cDeployment = useGcallsContent(ROUTES.gcallsPlus, 'deployment', GP_DEPLOYMENT)
   return (
     <Section tinted ariaLabelledBy="trien-khai">
       <Container>
         <SectionHeader
-          eyebrow={GP_DEPLOYMENT.eyebrow}
+          eyebrow={cDeployment.eyebrow}
           eyebrowIcon={<Rocket size={14} aria-hidden="true" />}
-          title={GP_DEPLOYMENT.h2}
+          title={cDeployment.h2}
           titleId="trien-khai"
-          lead={GP_DEPLOYMENT.description}
+          lead={cDeployment.description}
         />
 
         <ol className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {GP_DEPLOYMENT.steps.map((step) => (
+          {cDeployment.steps.map((step) => (
             <Card as="li" key={step.n} className="flex h-full flex-col p-6">
               <span
                 className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-brand-light text-base font-extrabold text-brand"

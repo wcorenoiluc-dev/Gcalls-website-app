@@ -9,6 +9,7 @@ import {
   buildTitle,
   getPageMeta,
 } from '@/config/seo'
+import type { GcallsSeoOverride } from '@/lib/gcallsContent/types'
 
 /**
  * Applies per-route document metadata.
@@ -42,33 +43,69 @@ function upsertLink(rel: string, href: string): void {
   el.setAttribute('href', href)
 }
 
+/**
+ * Per-route SEO override published from Gcalls Content Studio (contract §3
+ * `gcallsContent.seo`). Only non-empty fields win; anything malformed or
+ * absent leaves the source-controlled meta untouched. Read per render so a
+ * route change (the bootstrap is per-route) is honoured.
+ */
+function readSeoOverride(pathname: string): GcallsSeoOverride {
+  if (typeof window === 'undefined') return {}
+  const cfg = window.__GCALLS_SHELL_CONFIG__
+  if (!cfg || cfg.routePath !== pathname || !cfg.gcallsContent?.seo) return {}
+  const raw = cfg.gcallsContent.seo
+  if (!raw || typeof raw !== 'object') return {}
+  const str = (v: unknown) => (typeof v === 'string' && v.trim() !== '' ? v.trim() : undefined)
+  const image =
+    raw.ogImage && typeof raw.ogImage === 'object' && typeof raw.ogImage.url === 'string' && raw.ogImage.url !== ''
+      ? raw.ogImage
+      : undefined
+  return {
+    title: str(raw.title),
+    description: str(raw.description),
+    canonical: str(raw.canonical),
+    ogTitle: str(raw.ogTitle),
+    ogDescription: str(raw.ogDescription),
+    ogImage: image,
+    noindex: typeof raw.noindex === 'boolean' ? raw.noindex : undefined,
+  }
+}
+
 export function Seo() {
   const { pathname } = useLocation()
 
   useEffect(() => {
     const meta = getPageMeta(pathname)
-    const title = buildTitle(meta)
-    const canonical = buildCanonical(pathname)
+    const override = readSeoOverride(pathname)
+    const title = override.title ?? buildTitle(meta)
+    const description = override.description ?? meta.description
+    const canonical = override.canonical ?? buildCanonical(pathname)
+    const ogTitle = override.ogTitle ?? title
+    const ogDescription = override.ogDescription ?? description
+    const robots = override.noindex === true ? 'noindex, nofollow' : buildRobots(pathname)
 
     document.title = title
     document.documentElement.lang = 'vi'
 
     upsertMeta('meta[name="description"]', {
       name: 'description',
-      content: meta.description,
+      content: description,
     })
     upsertMeta('meta[name="robots"]', {
       name: 'robots',
-      content: buildRobots(pathname),
+      content: robots,
     })
 
     upsertLink('canonical', canonical)
 
-    upsertMeta('meta[property="og:title"]', { property: 'og:title', content: title })
+    upsertMeta('meta[property="og:title"]', { property: 'og:title', content: ogTitle })
     upsertMeta('meta[property="og:description"]', {
       property: 'og:description',
-      content: meta.description,
+      content: ogDescription,
     })
+    if (override.ogImage) {
+      upsertMeta('meta[property="og:image"]', { property: 'og:image', content: override.ogImage.url })
+    }
     upsertMeta('meta[property="og:type"]', {
       property: 'og:type',
       content: buildOgType(pathname),
@@ -89,11 +126,11 @@ export function Seo() {
     })
     upsertMeta('meta[name="twitter:title"]', {
       name: 'twitter:title',
-      content: title,
+      content: ogTitle,
     })
     upsertMeta('meta[name="twitter:description"]', {
       name: 'twitter:description',
-      content: meta.description,
+      content: ogDescription,
     })
   }, [pathname])
 

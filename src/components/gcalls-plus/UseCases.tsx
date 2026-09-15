@@ -2,6 +2,8 @@ import { ArrowRight, Target } from 'lucide-react'
 import { Link } from 'react-router'
 import { Card, Container, Section, SectionHeader } from '@/components/common/primitives'
 import { GP_USE_CASES } from '@/data/gcallsPlus'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 /**
  * Use cases. Neutral descriptions only — no industry-specific results,
@@ -12,18 +14,19 @@ import { GP_USE_CASES } from '@/data/gcallsPlus'
  * add links for their own sake.
  */
 export function UseCases() {
+  const cUseCases = useGcallsContent(ROUTES.gcallsPlus, 'useCases', GP_USE_CASES)
   return (
     <Section ariaLabelledBy="phu-hop-voi">
       <Container>
         <SectionHeader
-          eyebrow={GP_USE_CASES.eyebrow}
+          eyebrow={cUseCases.eyebrow}
           eyebrowIcon={<Target size={14} aria-hidden="true" />}
-          title={GP_USE_CASES.h2}
+          title={cUseCases.h2}
           titleId="phu-hop-voi"
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {GP_USE_CASES.items.map((item) => (
+          {cUseCases.items.map((item) => (
             <Card as="li" key={item.role} className="flex h-full flex-col p-6">
               <h3 className="text-lg font-extrabold tracking-tight text-foreground">
                 {item.role}

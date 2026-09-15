@@ -1,6 +1,8 @@
 import { Check, Code2, MousePointerClick, Zap } from "lucide-react";
 import { WidgetMockup } from "./IntegrationsSection";
 import { ecosystemGroups } from "./sectionData";
+import { HOME_CALL_WIDGET } from "./homeContent";
+import { useGcallsContent } from "@/lib/gcallsContent/useGcallsContent";
 
 // ─── Section 10: Call Button Widget & Integration Ecosystem ──────────────────
 
@@ -15,13 +17,15 @@ import { ecosystemGroups } from "./sectionData";
  * the same family of claim as the withheld deployment-time figures.
  */
 
-const widgetBenefits = [
-  { label: "Tăng tỷ lệ chuyển đổi từ visitor thành lead", color: "#673ab7" },
-  { label: "Thu thập số điện thoại và gọi lại tức thì", color: "#0891b2" },
-  { label: "Theo dõi nguồn cuộc gọi từ từng trang web", color: "#16a34a" },
-];
+/** Benefit accent colours by index; labels live in homeContent.ts. */
+const widgetBenefitColors = ["#673ab7", "#0891b2", "#16a34a"];
 
 export function CallWidgetSection() {
+  const content = useGcallsContent('/', 'callWidget', HOME_CALL_WIDGET);
+  const widgetBenefits = content.benefits.map((label, i) => ({
+    label,
+    color: widgetBenefitColors[i % widgetBenefitColors.length],
+  }));
   return (
     <section
       aria-labelledby="home-call-widget-heading"
@@ -44,7 +48,7 @@ export function CallWidgetSection() {
               style={{ background: "rgba(103,58,183,0.10)", color: "#673ab7", letterSpacing: "0.08em" }}
             >
               <MousePointerClick size={11} color="#673ab7" aria-hidden="true" />
-              Call Button Widget
+              {content.badge}
             </div>
 
             <h2
@@ -52,7 +56,7 @@ export function CallWidgetSection() {
               className="font-extrabold tracking-tight"
               style={{ fontSize: "clamp(26px, 3.2vw, 42px)", color: "#1e2026", lineHeight: 1.14 }}
             >
-              Biến khách truy cập website{" "}
+              {content.heading}{" "}
               <span
                 style={{
                   background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)",
@@ -61,13 +65,12 @@ export function CallWidgetSection() {
                   backgroundClip: "text",
                 }}
               >
-                thành cuộc gọi
+                {content.headingHighlight}
               </span>
             </h2>
 
             <p style={{ color: "#5b5f6b", fontSize: "16px", lineHeight: 1.7, maxWidth: "500px" }}>
-              Nhúng nút gọi vào website chỉ với vài dòng code. Khách truy cập để lại số
-              điện thoại và đội ngũ gọi lại theo cấu hình phân phối cuộc gọi của doanh nghiệp.
+              {content.description}
             </p>
 
             <ul className="flex flex-col gap-2.5">
@@ -92,7 +95,7 @@ export function CallWidgetSection() {
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl" style={{ background: "#f0fdf4" }}>
                 <Zap size={12} color="#16a34a" aria-hidden="true" />
-                <span className="text-xs font-semibold" style={{ color: "#16a34a" }}>Gọi lại theo cấu hình</span>
+                <span className="text-xs font-semibold" style={{ color: "#16a34a" }}>{content.callbackChip}</span>
               </div>
             </div>
           </div>
@@ -105,11 +108,11 @@ export function CallWidgetSection() {
         >
           <div className="text-center mb-8">
             <h3 className="font-extrabold mb-2" style={{ fontSize: "clamp(18px, 2.2vw, 26px)", color: "#1e2026" }}>
-              Hệ sinh thái <span style={{ color: "#673ab7" }}>tích hợp của Gcalls</span>
+              {content.ecosystemHeading}{" "}<span style={{ color: "#673ab7" }}>{content.ecosystemHighlight}</span>
             </h3>
             {/* "phổ biến nhất" is an unsupported superlative — dropped. */}
             <p className="text-sm" style={{ color: "#5b5f6b" }}>
-              Các nền tảng Gcalls có thể kết nối, theo phạm vi tích hợp được xác nhận
+              {content.ecosystemNote}
             </p>
           </div>
 

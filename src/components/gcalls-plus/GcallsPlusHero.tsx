@@ -6,6 +6,8 @@ import { track } from '@/lib/analytics'
 import { leadCtaHref } from '@/lib/leads/ctaLink'
 import { GP_HERO, GP_LEAD_CONTEXT, GP_MEDIA } from '@/data/gcallsPlus'
 import { CtaLink } from '@/components/common/Button'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 /**
  * Page hero. Carries the page's single H1.
@@ -23,6 +25,7 @@ import { CtaLink } from '@/components/common/Button'
  * visual second (DOM order is text-first at every breakpoint).
  */
 export function GcallsPlusHero() {
+  const cHero = useGcallsContent(ROUTES.gcallsPlus, 'hero', GP_HERO)
   return (
     <section
       className="w-full pt-24 pb-14 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-24"
@@ -35,18 +38,18 @@ export function GcallsPlusHero() {
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
           {/* Text first in DOM order → first on mobile. */}
           <div>
-            <Eyebrow>{GP_HERO.eyebrow}</Eyebrow>
+            <Eyebrow>{cHero.eyebrow}</Eyebrow>
 
             <GradientHeading as="h1" className="mt-5">
-              {GP_HERO.h1}
+              {cHero.h1}
             </GradientHeading>
 
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              {GP_HERO.description}
+              {cHero.description}
             </p>
 
             <ul className="mt-7 flex flex-col gap-5">
-              {GP_HERO.valuePoints.map((point) => (
+              {cHero.valuePoints.map((point) => (
                 <li key={point.title} className="flex items-start gap-3">
                   <span
                     className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-light"
@@ -73,18 +76,18 @@ export function GcallsPlusHero() {
                 fullWidth
                 onClick={() =>
                   track('cta_clicked', {
-                    label: GP_HERO.primaryCta.label,
+                    label: cHero.primaryCta.label,
                     source: GP_LEAD_CONTEXT.source,
                     intent: GP_LEAD_CONTEXT.intent,
                     product: GP_LEAD_CONTEXT.product,
                   })
                 }
               >
-                {GP_HERO.primaryCta.label}
+                {cHero.primaryCta.label}
               </CtaLink>
 
-              <CtaLink to={GP_HERO.secondaryCta.href} variant="outline" fullWidth>
-                {GP_HERO.secondaryCta.label}
+              <CtaLink to={cHero.secondaryCta.href} variant="outline" fullWidth>
+                {cHero.secondaryCta.label}
                 <ArrowRight size={18} aria-hidden="true" />
               </CtaLink>
             </div>

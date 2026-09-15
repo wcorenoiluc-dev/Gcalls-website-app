@@ -1,5 +1,7 @@
 import { Card, Container, Section, SectionHeader } from '@/components/common/primitives'
 import { GP_FEATURES } from '@/data/gcallsPlus'
+import { ROUTES } from '@/config/navigation'
+import { useGcallsContent } from '@/lib/gcallsContent/useGcallsContent'
 
 /**
  * Core features grid. Six cards, one per row at 390px.
@@ -7,19 +9,20 @@ import { GP_FEATURES } from '@/data/gcallsPlus'
  * Anchor target for the hero's "Khám phá tính năng" CTA.
  */
 export function GcallsPlusFeatures() {
+  const cFeatures = useGcallsContent(ROUTES.gcallsPlus, 'features', GP_FEATURES)
   return (
     <Section tinted ariaLabelledBy="tinh-nang-heading" className="scroll-mt-20">
       <Container>
         <div id="tinh-nang" className="scroll-mt-24" />
 
         <SectionHeader
-          eyebrow={GP_FEATURES.eyebrow}
-          title={GP_FEATURES.h2}
+          eyebrow={cFeatures.eyebrow}
+          title={cFeatures.h2}
           titleId="tinh-nang-heading"
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {GP_FEATURES.items.map((item) => (
+          {cFeatures.items.map((item) => (
             <Card as="li" key={item.n} className="flex h-full flex-col p-6">
               <span
                 className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-brand-light text-base font-extrabold text-brand"

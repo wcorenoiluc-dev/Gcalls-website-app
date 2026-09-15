@@ -4,6 +4,8 @@ import { Link } from "react-router";
 import { ctaAttrs } from "@/components/common/Button";
 import { ArrowRight, Check, Clock, Download, FileText, Mic, Pause, PhoneCall, PhoneIncoming, PhoneMissed, PhoneOutgoing, Play, Search, SlidersHorizontal, Star, Tag, Voicemail, Volume2 } from "lucide-react";
 import { stageClass, stageMainClass, stageFloatClass } from "@/components/common/ResponsiveProductVisual";
+import { HOME_CALL_TIMELINE } from "./homeContent";
+import { useGcallsContent } from "@/lib/gcallsContent/useGcallsContent";
 
 // ─── Section 3: Call Timeline ────────────────────────────────────────────────
 
@@ -85,14 +87,7 @@ const timelineItems = [
   },
 ];
 
-const featureList = [
-  "Lưu lịch sử cuộc gọi tự động",
-  "Ghi âm và nghe lại cuộc gọi",
-  "Gắn nhãn và phân loại khách hàng",
-  "Ghi chú sau mỗi cuộc gọi",
-  "Theo dõi trạng thái cuộc gọi",
-  "Tìm kiếm lịch sử nhanh chóng",
-];
+// Feature list copy lives in homeContent.ts.
 
 const floatingStats = [
   { value: "84", label: "Cuộc gọi hôm nay (minh họa)", icon: PhoneCall, color: "#673ab7" },
@@ -342,6 +337,8 @@ aria-label={playing ? "Tạm dừng ghi âm minh họa" : "Phát ghi âm minh h�
 }
 
 export function CallTimelineSection() {
+  const content = useGcallsContent('/', 'callTimeline', HOME_CALL_TIMELINE);
+  const featureList = content.features;
   return (
     <section
       className="py-28 overflow-hidden"
@@ -358,7 +355,7 @@ export function CallTimelineSection() {
               style={{ background: "rgba(103,58,183,0.08)", color: "#673ab7", letterSpacing: "0.08em" }}
             >
               <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#673ab7" }} />
-              Hoạt động cuộc gọi Realtime
+              {content.badge}
             </div>
 
             {/* Headline */}
@@ -367,7 +364,7 @@ export function CallTimelineSection() {
                 className="font-extrabold tracking-tight mb-5"
                 style={{ fontSize: "clamp(26px, 3.2vw, 42px)", color: "#1e2026", lineHeight: 1.14 }}
               >
-                Theo dõi toàn bộ hoạt động cuộc gọi{" "}
+                {content.heading}{" "}
                 <span
                   style={{
                     background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)",
@@ -376,11 +373,11 @@ export function CallTimelineSection() {
                     backgroundClip: "text",
                   }}
                 >
-                  theo thời gian thực
+                  {content.headingHighlight}
                 </span>
               </h2>
               <p className="text-base leading-relaxed" style={{ color: "#5b5f6b", fontSize: "16px", maxWidth: "480px" }}>
-                Từ cuộc gọi đến, cuộc gọi đi, cuộc gọi nhỡ, ghi âm, ghi chú đến đánh giá chất lượng cuộc gọi — tất cả đều được lưu trữ tập trung trên Gcalls Webphone.
+                {content.description}
               </p>
             </div>
 
@@ -510,12 +507,12 @@ export function CallTimelineSection() {
               className="font-extrabold mb-3"
               style={{ fontSize: "clamp(20px, 2.4vw, 28px)", color: "#1e2026", lineHeight: 1.2 }}
             >
-              Mỗi cuộc gọi đều trở thành{" "}
-              <span style={{ color: "#673ab7" }}>dữ liệu giá trị</span>
+              {content.highlightHeading}{" "}
+              <span style={{ color: "#673ab7" }}>{content.highlightHighlight}</span>
             </h3>
             <p className="text-base leading-relaxed" style={{ color: "#5b5f6b", maxWidth: "580px" }}>
               {/* "không bỏ lỡ bất kỳ cơ hội nào" was an absolute outcome guarantee. */}
-              Lịch sử trao đổi, ghi âm, ghi chú và kết quả cuộc gọi được lưu lại giúp đội Sales và CSKH tiếp nối công việc với đầy đủ ngữ cảnh của lần liên hệ trước.
+              {content.highlightDescription}
             </p>
           </div>
 
@@ -538,7 +535,7 @@ export function CallTimelineSection() {
               (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
             }}
           >
-            Xem tính năng Timeline
+            {content.ctaLabel}
             <ArrowRight size={16} />
           </Link>
         </div>

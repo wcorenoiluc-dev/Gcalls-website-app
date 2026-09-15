@@ -4,6 +4,8 @@ import { Link } from "react-router";
 import { ctaAttrs } from "@/components/common/Button";
 import { ROUTES } from "@/config/navigation";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
+import { HOME_ECOSYSTEM } from "./homeContent";
+import { useGcallsContent } from "@/lib/gcallsContent/useGcallsContent";
 
 // ─── Section 4: Gcalls product & solution ecosystem ──────────────────────────
 
@@ -37,106 +39,32 @@ interface EcosystemCard {
   bg: string;
 }
 
-const products: EcosystemCard[] = [
-  {
-    name: "Gcalls Plus Webphone",
-    icon: MonitorSmartphone,
-    href: ROUTES.gcallsPlus,
-    desc: "Tổng đài trên trình duyệt hỗ trợ nghe gọi, lịch sử cuộc gọi, ghi âm, danh bạ và theo dõi hoạt động đội ngũ.",
-    color: "#673ab7",
-    bg: "#f5f0fd",
-  },
-  {
-    name: "QA/QC Center",
-    supporting: "QC Bot AI",
-    icon: Sparkles,
-    href: ROUTES.qcCenter,
-    desc: "Hỗ trợ chuyển giọng nói thành văn bản, phân tích từ khóa, chấm điểm theo tiêu chí và tổng hợp dữ liệu phục vụ kiểm soát chất lượng.",
-    color: "#0891b2",
-    bg: "#f0f9ff",
-  },
-  {
-    name: "Gcalls CX",
-    icon: Headphones,
-    href: ROUTES.gcallsCx,
-    desc: "Nền tảng Contact Center hỗ trợ quản lý tương tác đa kênh và quy trình chăm sóc khách hàng.",
-    color: "#d97706",
-    bg: "#fffbeb",
-  },
+/**
+ * Icon, route and colour per card, by index. Names and descriptions live in
+ * homeContent.ts so Content Studio can edit the words but never the target.
+ */
+const productStyles = [
+  { icon: MonitorSmartphone, href: ROUTES.gcallsPlus, color: "#673ab7", bg: "#f5f0fd" },
+  { icon: Sparkles, href: ROUTES.qcCenter, color: "#0891b2", bg: "#f0f9ff" },
+  { icon: Headphones, href: ROUTES.gcallsCx, color: "#d97706", bg: "#fffbeb" },
 ];
-
-const solutions: EcosystemCard[] = [
-  /*
-    VOICEBOT IS A SOLUTION, NOT A GCALLS PRODUCT.
-    ---------------------------------------------------------------------------
-    Two checkpoints acted on this card. HOME-CONTENT-AUDIT-CORRECTION-001 fixed
-    the WORDING — it read "Voicebot AI" beside three offerings Gcalls does
-    build, which positioned Gcalls as the owner of the voicebot engine. It is
-    not; Gcalls advises, connects and integrates. GCALLS-WP-DEMO-FOUNDATION-001
-    then fixed the PLACEMENT, moving it out of the "Sản phẩm" group into this
-    one, which is what the corrected wording had been implying all along.
-
-    Must NOT be reintroduced in any form: that Gcalls owns the voicebot engine
-    or develops its AI components; that a voicebot replaces staff; a 24/7
-    availability claim; or any success-rate or ROI figure. None has an evidence
-    record. Do not move this card back into `products` without one.
-    ---------------------------------------------------------------------------
-  */
+const solutionStyles = [
+  { icon: Bot, href: ROUTES.voicebotAi, color: "#16a34a", bg: "#f0fdf4" },
+  { icon: Users, href: ROUTES.crmIntegration, color: "#673ab7", bg: "#f5f0fd" },
+  { icon: LifeBuoy, href: ROUTES.helpdeskIntegration, color: "#0891b2", bg: "#f0f9ff" },
+  { icon: ShoppingCart, href: ROUTES.posIntegration, color: "#16a34a", bg: "#f0fdf4" },
+  { icon: Globe2, href: ROUTES.internationalCalling, color: "#0284c7", bg: "#e0f2fe" },
   {
-    name: "Giải pháp tích hợp Voicebot AI",
-    icon: Bot,
-    href: ROUTES.voicebotAi,
-    desc: "Gcalls tư vấn, kết nối và tích hợp Voicebot vào hệ thống tổng đài theo kịch bản và phạm vi triển khai của doanh nghiệp.",
-    color: "#16a34a",
-    bg: "#f0fdf4",
-  },
-  {
-    name: "Tổng đài tích hợp CRM",
-    icon: Users,
-    href: ROUTES.crmIntegration,
-    desc: "Kết nối cuộc gọi với dữ liệu và quy trình trên CRM của doanh nghiệp.",
-    color: "#673ab7",
-    bg: "#f5f0fd",
-  },
-  {
-    name: "Tổng đài tích hợp Helpdesk",
-    icon: LifeBuoy,
-    href: ROUTES.helpdeskIntegration,
-    desc: "Đưa cuộc gọi vào quy trình hỗ trợ và ticket của đội CSKH.",
-    color: "#0891b2",
-    bg: "#f0f9ff",
-  },
-  {
-    name: "Tổng đài tích hợp POS",
-    icon: ShoppingCart,
-    href: ROUTES.posIntegration,
-    desc: "Kết nối cuộc gọi với dữ liệu bán hàng và đơn hàng trên hệ thống POS.",
-    color: "#16a34a",
-    bg: "#f0fdf4",
-  },
-  {
-    name: "Tổng đài quốc tế",
-    icon: Globe2,
-    href: ROUTES.internationalCalling,
-    desc: "Đầu số và phương án liên lạc theo từng thị trường doanh nghiệp phục vụ.",
-    color: "#0284c7",
-    bg: "#e0f2fe",
-  },
-  {
-    name: "Cloud Call Center",
     icon: Cloud,
     href: leadCtaHref({ intent: "consultation", source: "consultation", solution: "Cloud Call Center" }),
     ctaLabel: "Nhận tư vấn",
-    desc: "Hệ thống tổng đài vận hành trên nền tảng Cloud với SIP, IVR và điều hướng cuộc gọi.",
     color: "#7c3aed",
     bg: "#f3f0fe",
   },
   {
-    name: "Call Button Widget",
     icon: MousePointerClick,
     href: leadCtaHref({ intent: "consultation", source: "consultation", solution: "Call Button Widget" }),
     ctaLabel: "Nhận tư vấn",
-    desc: "Nút gọi nhúng vào website để khách truy cập để lại số điện thoại cho đội ngũ liên hệ lại.",
     color: "#d97706",
     bg: "#fffbeb",
   },
@@ -244,6 +172,18 @@ function Group({
 }
 
 export function EcosystemSection() {
+  const content = useGcallsContent('/', 'ecosystem', HOME_ECOSYSTEM);
+  const products: EcosystemCard[] = content.products.map((card, i) => ({
+    ...productStyles[i % productStyles.length],
+    name: card.name,
+    desc: card.desc,
+    supporting: card.supporting || undefined,
+  }));
+  const solutions: EcosystemCard[] = content.solutions.map((card, i) => ({
+    ...solutionStyles[i % solutionStyles.length],
+    name: card.name,
+    desc: card.desc,
+  }));
   return (
     <section
       id="home-ecosystem"
@@ -260,7 +200,7 @@ export function EcosystemSection() {
             style={{ background: "rgba(103,58,183,0.08)", color: "#673ab7", letterSpacing: "0.08em" }}
           >
             <Layers size={12} aria-hidden="true" />
-            HỆ SINH THÁI GCALLS
+            {content.badge}
           </div>
 
           <h2
@@ -268,7 +208,7 @@ export function EcosystemSection() {
             className="font-extrabold tracking-tight mb-5"
             style={{ fontSize: "clamp(26px, 3.2vw, 42px)", color: "#1e2026", lineHeight: 1.15 }}
           >
-            Hệ sinh thái sản phẩm và{" "}
+            {content.heading}{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #673ab7 0%, #9c63d6 100%)",
@@ -277,21 +217,20 @@ export function EcosystemSection() {
                 backgroundClip: "text",
               }}
             >
-              giải pháp Gcalls
+              {content.headingHighlight}
             </span>
           </h2>
 
           <p className="text-base leading-relaxed" style={{ color: "#5b5f6b", fontSize: "17px" }}>
-            Doanh nghiệp có thể bắt đầu từ một sản phẩm phù hợp với nhu cầu hiện tại, sau đó
-            mở rộng sang các giải pháp tích hợp khi quy mô vận hành thay đổi.
+            {content.description}
           </p>
         </div>
 
         <div className="flex flex-col gap-16">
           <Group
             id="home-ecosystem-products"
-            eyebrow="Sản phẩm"
-            title="Sản phẩm Gcalls"
+            eyebrow={content.productsEyebrow}
+            title={content.productsTitle}
             /*
               Reworded twice, both times to stop this line asserting more than
               the cards below it. It first read "Bốn sản phẩm nền tảng cho…",
@@ -301,16 +240,16 @@ export function EcosystemSection() {
               clause is gone too, and the line now describes exactly the three
               products Gcalls does build.
             */
-            lead="Ba nền tảng Gcalls xây dựng cho hoạt động nghe gọi, kiểm soát chất lượng và chăm sóc khách hàng đa kênh."
+            lead={content.productsLead}
             cards={products}
             columns="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
           />
 
           <Group
             id="home-ecosystem-solutions"
-            eyebrow="Giải pháp"
-            title="Giải pháp Gcalls"
-            lead="Các cấu hình triển khai theo hệ thống, thị trường và nhu cầu tự động hóa doanh nghiệp đang vận hành."
+            eyebrow={content.solutionsEyebrow}
+            title={content.solutionsTitle}
+            lead={content.solutionsLead}
             cards={solutions}
             columns="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
           />
@@ -326,7 +265,7 @@ export function EcosystemSection() {
             onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#5929a8"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#673ab7"; }}
           >
-            Xem tất cả sản phẩm
+            {content.primaryCtaLabel}
             <ArrowRight size={15} aria-hidden="true" />
           </Link>
           <Link
@@ -341,7 +280,7 @@ export function EcosystemSection() {
             onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#673ab7"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(103,58,183,0.25)"; }}
           >
-            Xem tất cả giải pháp
+            {content.secondaryCtaLabel}
             <ArrowRight size={15} aria-hidden="true" />
           </Link>
         </div>

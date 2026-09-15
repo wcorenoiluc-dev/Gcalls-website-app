@@ -3,6 +3,8 @@ import { Link } from "react-router";
 import { ctaAttrs } from "@/components/common/Button";
 import { leadCtaHref } from "@/lib/leads/ctaLink";
 import { darkSection } from "@/lib/theme/darkSection";
+import { HOME_SOLUTION_BRIDGE } from "./homeContent";
+import { useGcallsContent } from "@/lib/gcallsContent/useGcallsContent";
 
 // ─── Section 3: Solution Bridge ──────────────────────────────────────────────
 
@@ -19,14 +21,12 @@ import { darkSection } from "@/lib/theme/darkSection";
  * withheld set for this page — setup time, integration counts, market counts,
  * uptime, latency — must not reappear here in any form.
  */
-const chips = [
-  { icon: MonitorSmartphone, label: "Vận hành trên trình duyệt" },
-  { icon: Plug, label: "Tích hợp CRM, POS và Helpdesk" },
-  { icon: Globe2, label: "Hỗ trợ nhu cầu liên lạc quốc tế" },
-  { icon: BarChart3, label: "Báo cáo theo thời gian thực" },
-];
+/** Chip icons by index; labels live in homeContent.ts. */
+const chipIcons = [MonitorSmartphone, Plug, Globe2, BarChart3];
 
 export function SolutionBridgeSection() {
+  const content = useGcallsContent('/', 'solutionBridge', HOME_SOLUTION_BRIDGE);
+  const chips = content.chips.map((label, i) => ({ label, icon: chipIcons[i % chipIcons.length] }));
   return (
     <section
       aria-labelledby="home-solution-bridge-heading"
@@ -78,7 +78,7 @@ export function SolutionBridgeSection() {
                 style={{ background: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.92)", letterSpacing: "0.08em" }}
               >
                 <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" aria-hidden="true" />
-                GIẢI PHÁP TỔNG ĐÀI GCALLS
+                {content.badge}
               </div>
 
               <h2
@@ -86,13 +86,11 @@ export function SolutionBridgeSection() {
                 className="font-extrabold mb-4"
                 style={{ fontSize: "clamp(24px, 3vw, 38px)", lineHeight: 1.18, color: darkSection.heading }}
               >
-                Tổng Đài Thông Minh Gcalls: Bứt Phá Doanh Số Đội Ngũ &amp; Nâng Cao Trải Nghiệm Khách Hàng
+                {content.heading}
               </h2>
 
               <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.76)" }}>
-                Gcalls kết nối hoạt động nghe gọi, dữ liệu khách hàng, lịch sử chăm sóc và báo cáo
-                vận hành trong một hệ thống thống nhất, đồng thời hỗ trợ tích hợp với CRM, Helpdesk,
-                POS và các giải pháp tự động hóa phù hợp.
+                {content.description}
               </p>
 
               {/* Chips */}
@@ -147,7 +145,7 @@ export function SolutionBridgeSection() {
                   (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.15)";
                 }}
               >
-                Khám phá hệ sinh thái Gcalls
+                {content.ctaLabel}
                 <ArrowRight size={16} className="flex-shrink-0 transition-transform duration-150 group-hover:translate-x-1" aria-hidden="true" />
               </a>
 
@@ -156,7 +154,7 @@ export function SolutionBridgeSection() {
                 className="text-xs font-semibold underline underline-offset-4 rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 style={{ color: "rgba(255,255,255,0.72)" }}
               >
-                Hoặc trao đổi trực tiếp với đội ngũ Gcalls
+                {content.secondaryLabel}
               </Link>
             </div>
           </div>
