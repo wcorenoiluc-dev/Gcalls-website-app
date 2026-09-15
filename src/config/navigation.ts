@@ -149,11 +149,13 @@ export const NAV_GROUPS: NavGroup[] = [
      */
     id: 'pricing',
     label: 'Bảng giá',
+    overview: item(ROUTES.pricing, { label: 'Bảng giá Gcalls' }),
     columns: [
       {
         items: [item(ROUTES.pricing), item(ROUTES.costEstimator)],
       },
     ],
+    cta: { label: 'Xem bảng giá', path: ROUTES.pricing },
   },
 ]
 

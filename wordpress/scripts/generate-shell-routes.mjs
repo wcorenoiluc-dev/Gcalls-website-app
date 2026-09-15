@@ -35,9 +35,13 @@ while ((match = ROUTE_LINE.exec(source))) {
   routes.push({ key, path: routePath })
 }
 
-if (routes.length !== 38) {
+// Cross-check against the number of keys in the ROUTES object literal itself
+// (no hard-coded count): every `key: '/path/'` line must have been captured.
+const routesBlock = source.match(/export const ROUTES\s*=\s*\{([\s\S]*?)\n\}/)?.[1] ?? ''
+const declaredKeys = (routesBlock.match(/^\s*[a-zA-Z]+:\s*'\//gm) ?? []).length
+if (routes.length === 0 || routes.length !== declaredKeys) {
   console.error(
-    `generate-shell-routes: expected 38 routes from sitemap.ts, found ${routes.length}. ` +
+    `generate-shell-routes: parsed ${routes.length} routes but ROUTES declares ${declaredKeys}. ` +
       'Refusing to write routes.json — check that ROUTES parsing still matches the source shape.',
   )
   process.exit(1)

@@ -93,8 +93,19 @@
 @media (min-width: 1024px) {
   .gcalls-footer__grid {
     display: grid;
+    /* Columns may shrink to content width (minmax(0, …)) so the six-column
+     * grid never exceeds the 960px content box at 1024px; the fixed 130px
+     * minimums + 48px gaps summed to 1120px and forced horizontal overflow
+     * on every route at compact-desktop width (React Shell 0.3.4). */
+    grid-template-columns: minmax(200px, 1.35fr) repeat(5, minmax(0, 1fr));
+    column-gap: 28px;
+    row-gap: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .gcalls-footer__grid {
     grid-template-columns: minmax(230px, 1.35fr) repeat(5, minmax(130px, 1fr));
     column-gap: 48px;
-    row-gap: 32px;
   }
 }
